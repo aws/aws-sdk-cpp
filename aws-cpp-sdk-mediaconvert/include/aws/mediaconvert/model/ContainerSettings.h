@@ -21,6 +21,7 @@
 #include <aws/mediaconvert/model/M3u8Settings.h>
 #include <aws/mediaconvert/model/MovSettings.h>
 #include <aws/mediaconvert/model/Mp4Settings.h>
+#include <aws/mediaconvert/model/MpdSettings.h>
 #include <utility>
 
 namespace Aws
@@ -303,6 +304,37 @@ namespace Model
      */
     inline ContainerSettings& WithMp4Settings(Mp4Settings&& value) { SetMp4Settings(std::move(value)); return *this;}
 
+
+    /**
+     * Settings for MP4 segments in DASH
+     */
+    inline const MpdSettings& GetMpdSettings() const{ return m_mpdSettings; }
+
+    /**
+     * Settings for MP4 segments in DASH
+     */
+    inline bool MpdSettingsHasBeenSet() const { return m_mpdSettingsHasBeenSet; }
+
+    /**
+     * Settings for MP4 segments in DASH
+     */
+    inline void SetMpdSettings(const MpdSettings& value) { m_mpdSettingsHasBeenSet = true; m_mpdSettings = value; }
+
+    /**
+     * Settings for MP4 segments in DASH
+     */
+    inline void SetMpdSettings(MpdSettings&& value) { m_mpdSettingsHasBeenSet = true; m_mpdSettings = std::move(value); }
+
+    /**
+     * Settings for MP4 segments in DASH
+     */
+    inline ContainerSettings& WithMpdSettings(const MpdSettings& value) { SetMpdSettings(value); return *this;}
+
+    /**
+     * Settings for MP4 segments in DASH
+     */
+    inline ContainerSettings& WithMpdSettings(MpdSettings&& value) { SetMpdSettings(std::move(value)); return *this;}
+
   private:
 
     ContainerType m_container;
@@ -322,6 +354,9 @@ namespace Model
 
     Mp4Settings m_mp4Settings;
     bool m_mp4SettingsHasBeenSet;
+
+    MpdSettings m_mpdSettings;
+    bool m_mpdSettingsHasBeenSet;
   };
 
 } // namespace Model

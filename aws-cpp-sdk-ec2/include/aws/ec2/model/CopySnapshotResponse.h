@@ -16,7 +16,9 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -85,6 +87,28 @@ namespace Model
 
 
     
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
+
+    
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
+
+    
+    inline CopySnapshotResponse& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    
+    inline CopySnapshotResponse& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    
+    inline CopySnapshotResponse& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
+
+    
+    inline CopySnapshotResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+
+
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
     
@@ -102,6 +126,8 @@ namespace Model
   private:
 
     Aws::String m_snapshotId;
+
+    Aws::Vector<Tag> m_tags;
 
     ResponseMetadata m_responseMetadata;
   };

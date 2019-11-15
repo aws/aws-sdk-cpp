@@ -101,6 +101,27 @@ namespace Model
 
 
     /**
+     * <p>The maximum number of directories to return.</p>
+     */
+    inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of directories to return.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of directories to return.</p>
+     */
+    inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
+
+    /**
+     * <p>The maximum number of directories to return.</p>
+     */
+    inline DescribeWorkspaceDirectoriesRequest& WithLimit(int value) { SetLimit(value); return *this;}
+
+
+    /**
      * <p>If you received a <code>NextToken</code> from a previous call that was
      * paginated, provide this token to receive the next set of results.</p>
      */
@@ -152,6 +173,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_directoryIds;
     bool m_directoryIdsHasBeenSet;
+
+    int m_limit;
+    bool m_limitHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

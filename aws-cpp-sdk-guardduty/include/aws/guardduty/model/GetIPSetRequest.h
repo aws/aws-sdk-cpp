@@ -84,42 +84,42 @@ namespace Model
 
 
     /**
-     * <p>The unique ID of the ipSet you want to get.</p>
+     * <p>The unique ID of the IPSet to retrieve.</p>
      */
     inline const Aws::String& GetIpSetId() const{ return m_ipSetId; }
 
     /**
-     * <p>The unique ID of the ipSet you want to get.</p>
+     * <p>The unique ID of the IPSet to retrieve.</p>
      */
     inline bool IpSetIdHasBeenSet() const { return m_ipSetIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the ipSet you want to get.</p>
+     * <p>The unique ID of the IPSet to retrieve.</p>
      */
     inline void SetIpSetId(const Aws::String& value) { m_ipSetIdHasBeenSet = true; m_ipSetId = value; }
 
     /**
-     * <p>The unique ID of the ipSet you want to get.</p>
+     * <p>The unique ID of the IPSet to retrieve.</p>
      */
     inline void SetIpSetId(Aws::String&& value) { m_ipSetIdHasBeenSet = true; m_ipSetId = std::move(value); }
 
     /**
-     * <p>The unique ID of the ipSet you want to get.</p>
+     * <p>The unique ID of the IPSet to retrieve.</p>
      */
     inline void SetIpSetId(const char* value) { m_ipSetIdHasBeenSet = true; m_ipSetId.assign(value); }
 
     /**
-     * <p>The unique ID of the ipSet you want to get.</p>
+     * <p>The unique ID of the IPSet to retrieve.</p>
      */
     inline GetIPSetRequest& WithIpSetId(const Aws::String& value) { SetIpSetId(value); return *this;}
 
     /**
-     * <p>The unique ID of the ipSet you want to get.</p>
+     * <p>The unique ID of the IPSet to retrieve.</p>
      */
     inline GetIPSetRequest& WithIpSetId(Aws::String&& value) { SetIpSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the ipSet you want to get.</p>
+     * <p>The unique ID of the IPSet to retrieve.</p>
      */
     inline GetIPSetRequest& WithIpSetId(const char* value) { SetIpSetId(value); return *this;}
 

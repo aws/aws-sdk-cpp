@@ -36,7 +36,9 @@ DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties() :
     m_defaultOuHasBeenSet(false),
     m_customSecurityGroupIdHasBeenSet(false),
     m_userEnabledAsLocalAdministrator(false),
-    m_userEnabledAsLocalAdministratorHasBeenSet(false)
+    m_userEnabledAsLocalAdministratorHasBeenSet(false),
+    m_enableMaintenanceMode(false),
+    m_enableMaintenanceModeHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties(JsonView 
     m_defaultOuHasBeenSet(false),
     m_customSecurityGroupIdHasBeenSet(false),
     m_userEnabledAsLocalAdministrator(false),
-    m_userEnabledAsLocalAdministratorHasBeenSet(false)
+    m_userEnabledAsLocalAdministratorHasBeenSet(false),
+    m_enableMaintenanceMode(false),
+    m_enableMaintenanceModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -90,6 +94,13 @@ DefaultWorkspaceCreationProperties& DefaultWorkspaceCreationProperties::operator
     m_userEnabledAsLocalAdministratorHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableMaintenanceMode"))
+  {
+    m_enableMaintenanceMode = jsonValue.GetBool("EnableMaintenanceMode");
+
+    m_enableMaintenanceModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -124,6 +135,12 @@ JsonValue DefaultWorkspaceCreationProperties::Jsonize() const
   if(m_userEnabledAsLocalAdministratorHasBeenSet)
   {
    payload.WithBool("UserEnabledAsLocalAdministrator", m_userEnabledAsLocalAdministrator);
+
+  }
+
+  if(m_enableMaintenanceModeHasBeenSet)
+  {
+   payload.WithBool("EnableMaintenanceMode", m_enableMaintenanceMode);
 
   }
 

@@ -53,6 +53,12 @@ AddInstanceGroupsResult& AddInstanceGroupsResult::operator =(const Aws::AmazonWe
     }
   }
 
+  if(jsonValue.ValueExists("ClusterArn"))
+  {
+    m_clusterArn = jsonValue.GetString("ClusterArn");
+
+  }
+
 
 
   return *this;

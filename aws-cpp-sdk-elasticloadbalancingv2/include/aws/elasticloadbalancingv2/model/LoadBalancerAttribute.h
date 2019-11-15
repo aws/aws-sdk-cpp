@@ -69,7 +69,7 @@ namespace Model
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether
      * HTTP headers with invalid header fields are removed by the load balancer
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
-     * <code>true</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
+     * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
      * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
@@ -99,7 +99,7 @@ namespace Model
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether
      * HTTP headers with invalid header fields are removed by the load balancer
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
-     * <code>true</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
+     * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
      * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
@@ -129,7 +129,7 @@ namespace Model
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether
      * HTTP headers with invalid header fields are removed by the load balancer
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
-     * <code>true</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
+     * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
      * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
@@ -159,7 +159,7 @@ namespace Model
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether
      * HTTP headers with invalid header fields are removed by the load balancer
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
-     * <code>true</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
+     * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
      * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
@@ -189,7 +189,7 @@ namespace Model
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether
      * HTTP headers with invalid header fields are removed by the load balancer
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
-     * <code>true</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
+     * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
      * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
@@ -219,7 +219,7 @@ namespace Model
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether
      * HTTP headers with invalid header fields are removed by the load balancer
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
-     * <code>true</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
+     * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
      * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
@@ -249,7 +249,7 @@ namespace Model
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether
      * HTTP headers with invalid header fields are removed by the load balancer
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
-     * <code>true</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
+     * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
      * following attributes are supported by only Network Load Balancers:</p> <ul> <li>
@@ -279,7 +279,7 @@ namespace Model
      * <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether
      * HTTP headers with invalid header fields are removed by the load balancer
      * (<code>true</code>) or routed to targets (<code>false</code>). The default is
-     * <code>true</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
+     * <code>false</code>.</p> </li> <li> <p> <code>routing.http2.enabled</code> -
      * Indicates whether HTTP/2 is enabled. The value is <code>true</code> or
      * <code>false</code>. The default is <code>true</code>.</p> </li> </ul> <p>The
      * following attributes are supported by only Network Load Balancers:</p> <ul> <li>

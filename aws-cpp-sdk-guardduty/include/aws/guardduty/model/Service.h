@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the service.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains additional information about the generated finding.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Service">AWS
    * API Reference</a></p>
    */

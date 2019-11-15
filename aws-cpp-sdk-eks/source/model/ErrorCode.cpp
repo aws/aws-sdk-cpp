@@ -38,6 +38,9 @@ namespace Aws
         static const int OperationNotPermitted_HASH = HashingUtils::HashString("OperationNotPermitted");
         static const int VpcIdNotFound_HASH = HashingUtils::HashString("VpcIdNotFound");
         static const int Unknown_HASH = HashingUtils::HashString("Unknown");
+        static const int NodeCreationFailure_HASH = HashingUtils::HashString("NodeCreationFailure");
+        static const int PodEvictionFailure_HASH = HashingUtils::HashString("PodEvictionFailure");
+        static const int InsufficientFreeAddresses_HASH = HashingUtils::HashString("InsufficientFreeAddresses");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
@@ -75,6 +78,18 @@ namespace Aws
           {
             return ErrorCode::Unknown;
           }
+          else if (hashCode == NodeCreationFailure_HASH)
+          {
+            return ErrorCode::NodeCreationFailure;
+          }
+          else if (hashCode == PodEvictionFailure_HASH)
+          {
+            return ErrorCode::PodEvictionFailure;
+          }
+          else if (hashCode == InsufficientFreeAddresses_HASH)
+          {
+            return ErrorCode::InsufficientFreeAddresses;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -105,6 +120,12 @@ namespace Aws
             return "VpcIdNotFound";
           case ErrorCode::Unknown:
             return "Unknown";
+          case ErrorCode::NodeCreationFailure:
+            return "NodeCreationFailure";
+          case ErrorCode::PodEvictionFailure:
+            return "PodEvictionFailure";
+          case ErrorCode::InsufficientFreeAddresses:
+            return "InsufficientFreeAddresses";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

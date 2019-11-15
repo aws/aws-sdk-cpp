@@ -2398,28 +2398,30 @@ namespace Model
         virtual void DescribeOpsItemsAsync(const Model::DescribeOpsItemsRequest& request, const DescribeOpsItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Get information about a parameter.</p> <p>Request results are returned on a
-         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
-         * response includes information up to the limit specified. The number of items
+         * <p>Get information about a parameter.</p> <note> <p>Request results are returned
+         * on a best-effort basis. If you specify <code>MaxResults</code> in the request,
+         * the response includes information up to the limit specified. The number of items
          * returned, however, can be between zero and the value of <code>MaxResults</code>.
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
+         * subsequent call to get the next set of results.</p> </note><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeParametersOutcome DescribeParameters(const Model::DescribeParametersRequest& request) const;
 
         /**
-         * <p>Get information about a parameter.</p> <p>Request results are returned on a
-         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
-         * response includes information up to the limit specified. The number of items
+         * <p>Get information about a parameter.</p> <note> <p>Request results are returned
+         * on a best-effort basis. If you specify <code>MaxResults</code> in the request,
+         * the response includes information up to the limit specified. The number of items
          * returned, however, can be between zero and the value of <code>MaxResults</code>.
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
+         * subsequent call to get the next set of results.</p> </note><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          *
@@ -2428,14 +2430,15 @@ namespace Model
         virtual Model::DescribeParametersOutcomeCallable DescribeParametersCallable(const Model::DescribeParametersRequest& request) const;
 
         /**
-         * <p>Get information about a parameter.</p> <p>Request results are returned on a
-         * best-effort basis. If you specify <code>MaxResults</code> in the request, the
-         * response includes information up to the limit specified. The number of items
+         * <p>Get information about a parameter.</p> <note> <p>Request results are returned
+         * on a best-effort basis. If you specify <code>MaxResults</code> in the request,
+         * the response includes information up to the limit specified. The number of items
          * returned, however, can be between zero and the value of <code>MaxResults</code>.
          * If the service reaches an internal limit while processing the results, it stops
          * the operation and returns the matching values up to that point and a
          * <code>NextToken</code>. You can specify the <code>NextToken</code> in a
-         * subsequent call to get the next set of results.</p><p><h3>See Also:</h3>   <a
+         * subsequent call to get the next set of results.</p> </note><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeParameters">AWS
          * API Reference</a></p>
          *
@@ -3166,36 +3169,30 @@ namespace Model
         virtual void GetParametersAsync(const Model::GetParametersRequest& request, const GetParametersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieve parameters in a specific hierarchy. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-         * with Systems Manager Parameters</a> in the <i>AWS Systems Manager User
-         * Guide</i>. </p> <p>Request results are returned on a best-effort basis. If you
+         * <p>Retrieve information about one or more parameters in a specific hierarchy.
+         * </p> <note> <p>Request results are returned on a best-effort basis. If you
          * specify <code>MaxResults</code> in the request, the response includes
          * information up to the limit specified. The number of items returned, however,
          * can be between zero and the value of <code>MaxResults</code>. If the service
          * reaches an internal limit while processing the results, it stops the operation
          * and returns the matching values up to that point and a <code>NextToken</code>.
          * You can specify the <code>NextToken</code> in a subsequent call to get the next
-         * set of results.</p> <note> <p>This API action doesn't support filtering by tags.
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * set of results.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          */
         virtual Model::GetParametersByPathOutcome GetParametersByPath(const Model::GetParametersByPathRequest& request) const;
 
         /**
-         * <p>Retrieve parameters in a specific hierarchy. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-         * with Systems Manager Parameters</a> in the <i>AWS Systems Manager User
-         * Guide</i>. </p> <p>Request results are returned on a best-effort basis. If you
+         * <p>Retrieve information about one or more parameters in a specific hierarchy.
+         * </p> <note> <p>Request results are returned on a best-effort basis. If you
          * specify <code>MaxResults</code> in the request, the response includes
          * information up to the limit specified. The number of items returned, however,
          * can be between zero and the value of <code>MaxResults</code>. If the service
          * reaches an internal limit while processing the results, it stops the operation
          * and returns the matching values up to that point and a <code>NextToken</code>.
          * You can specify the <code>NextToken</code> in a subsequent call to get the next
-         * set of results.</p> <note> <p>This API action doesn't support filtering by tags.
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * set of results.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *
@@ -3204,18 +3201,15 @@ namespace Model
         virtual Model::GetParametersByPathOutcomeCallable GetParametersByPathCallable(const Model::GetParametersByPathRequest& request) const;
 
         /**
-         * <p>Retrieve parameters in a specific hierarchy. For more information, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-working.html">Working
-         * with Systems Manager Parameters</a> in the <i>AWS Systems Manager User
-         * Guide</i>. </p> <p>Request results are returned on a best-effort basis. If you
+         * <p>Retrieve information about one or more parameters in a specific hierarchy.
+         * </p> <note> <p>Request results are returned on a best-effort basis. If you
          * specify <code>MaxResults</code> in the request, the response includes
          * information up to the limit specified. The number of items returned, however,
          * can be between zero and the value of <code>MaxResults</code>. If the service
          * reaches an internal limit while processing the results, it stops the operation
          * and returns the matching values up to that point and a <code>NextToken</code>.
          * You can specify the <code>NextToken</code> in a subsequent call to get the next
-         * set of results.</p> <note> <p>This API action doesn't support filtering by tags.
-         * </p> </note><p><h3>See Also:</h3>   <a
+         * set of results.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetParametersByPath">AWS
          * API Reference</a></p>
          *

@@ -37,8 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the network connection.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Contains information about the NETWORK_CONNECTION action described in the
+   * finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/NetworkConnectionAction">AWS
    * API Reference</a></p>
    */

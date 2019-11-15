@@ -85,47 +85,47 @@ namespace Model
 
 
     /**
-     * <p>Types of sample findings that you want to generate.</p>
+     * <p>Types of sample findings to generate.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFindingTypes() const{ return m_findingTypes; }
 
     /**
-     * <p>Types of sample findings that you want to generate.</p>
+     * <p>Types of sample findings to generate.</p>
      */
     inline bool FindingTypesHasBeenSet() const { return m_findingTypesHasBeenSet; }
 
     /**
-     * <p>Types of sample findings that you want to generate.</p>
+     * <p>Types of sample findings to generate.</p>
      */
     inline void SetFindingTypes(const Aws::Vector<Aws::String>& value) { m_findingTypesHasBeenSet = true; m_findingTypes = value; }
 
     /**
-     * <p>Types of sample findings that you want to generate.</p>
+     * <p>Types of sample findings to generate.</p>
      */
     inline void SetFindingTypes(Aws::Vector<Aws::String>&& value) { m_findingTypesHasBeenSet = true; m_findingTypes = std::move(value); }
 
     /**
-     * <p>Types of sample findings that you want to generate.</p>
+     * <p>Types of sample findings to generate.</p>
      */
     inline CreateSampleFindingsRequest& WithFindingTypes(const Aws::Vector<Aws::String>& value) { SetFindingTypes(value); return *this;}
 
     /**
-     * <p>Types of sample findings that you want to generate.</p>
+     * <p>Types of sample findings to generate.</p>
      */
     inline CreateSampleFindingsRequest& WithFindingTypes(Aws::Vector<Aws::String>&& value) { SetFindingTypes(std::move(value)); return *this;}
 
     /**
-     * <p>Types of sample findings that you want to generate.</p>
+     * <p>Types of sample findings to generate.</p>
      */
     inline CreateSampleFindingsRequest& AddFindingTypes(const Aws::String& value) { m_findingTypesHasBeenSet = true; m_findingTypes.push_back(value); return *this; }
 
     /**
-     * <p>Types of sample findings that you want to generate.</p>
+     * <p>Types of sample findings to generate.</p>
      */
     inline CreateSampleFindingsRequest& AddFindingTypes(Aws::String&& value) { m_findingTypesHasBeenSet = true; m_findingTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Types of sample findings that you want to generate.</p>
+     * <p>Types of sample findings to generate.</p>
      */
     inline CreateSampleFindingsRequest& AddFindingTypes(const char* value) { m_findingTypesHasBeenSet = true; m_findingTypes.push_back(value); return *this; }
 

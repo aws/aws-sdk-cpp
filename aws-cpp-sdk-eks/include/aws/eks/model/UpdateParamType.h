@@ -30,7 +30,13 @@ namespace Model
     PlatformVersion,
     EndpointPrivateAccess,
     EndpointPublicAccess,
-    ClusterLogging
+    ClusterLogging,
+    DesiredSize,
+    LabelsToAdd,
+    LabelsToRemove,
+    MaxSize,
+    MinSize,
+    ReleaseVersion
   };
 
 namespace UpdateParamTypeMapper

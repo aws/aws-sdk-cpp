@@ -157,50 +157,42 @@ namespace Model
 
 
     /**
-     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
-     * the parameter name.</p> </note>
+     * <p>Filters to limit the request results.</p>
      */
     inline const Aws::Vector<ParameterStringFilter>& GetParameterFilters() const{ return m_parameterFilters; }
 
     /**
-     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
-     * the parameter name.</p> </note>
+     * <p>Filters to limit the request results.</p>
      */
     inline bool ParameterFiltersHasBeenSet() const { return m_parameterFiltersHasBeenSet; }
 
     /**
-     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
-     * the parameter name.</p> </note>
+     * <p>Filters to limit the request results.</p>
      */
     inline void SetParameterFilters(const Aws::Vector<ParameterStringFilter>& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters = value; }
 
     /**
-     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
-     * the parameter name.</p> </note>
+     * <p>Filters to limit the request results.</p>
      */
     inline void SetParameterFilters(Aws::Vector<ParameterStringFilter>&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters = std::move(value); }
 
     /**
-     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
-     * the parameter name.</p> </note>
+     * <p>Filters to limit the request results.</p>
      */
     inline GetParametersByPathRequest& WithParameterFilters(const Aws::Vector<ParameterStringFilter>& value) { SetParameterFilters(value); return *this;}
 
     /**
-     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
-     * the parameter name.</p> </note>
+     * <p>Filters to limit the request results.</p>
      */
     inline GetParametersByPathRequest& WithParameterFilters(Aws::Vector<ParameterStringFilter>&& value) { SetParameterFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
-     * the parameter name.</p> </note>
+     * <p>Filters to limit the request results.</p>
      */
     inline GetParametersByPathRequest& AddParameterFilters(const ParameterStringFilter& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters.push_back(value); return *this; }
 
     /**
-     * <p>Filters to limit the request results.</p> <note> <p>You can't filter using
-     * the parameter name.</p> </note>
+     * <p>Filters to limit the request results.</p>
      */
     inline GetParametersByPathRequest& AddParameterFilters(ParameterStringFilter&& value) { m_parameterFiltersHasBeenSet = true; m_parameterFilters.push_back(std::move(value)); return *this; }
 

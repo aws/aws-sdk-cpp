@@ -22,16 +22,22 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eks/model/CreateClusterResult.h>
+#include <aws/eks/model/CreateNodegroupResult.h>
 #include <aws/eks/model/DeleteClusterResult.h>
+#include <aws/eks/model/DeleteNodegroupResult.h>
 #include <aws/eks/model/DescribeClusterResult.h>
+#include <aws/eks/model/DescribeNodegroupResult.h>
 #include <aws/eks/model/DescribeUpdateResult.h>
 #include <aws/eks/model/ListClustersResult.h>
+#include <aws/eks/model/ListNodegroupsResult.h>
 #include <aws/eks/model/ListTagsForResourceResult.h>
 #include <aws/eks/model/ListUpdatesResult.h>
 #include <aws/eks/model/TagResourceResult.h>
 #include <aws/eks/model/UntagResourceResult.h>
 #include <aws/eks/model/UpdateClusterConfigResult.h>
 #include <aws/eks/model/UpdateClusterVersionResult.h>
+#include <aws/eks/model/UpdateNodegroupConfigResult.h>
+#include <aws/eks/model/UpdateNodegroupVersionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -72,55 +78,79 @@ namespace EKS
 namespace Model
 {
         class CreateClusterRequest;
+        class CreateNodegroupRequest;
         class DeleteClusterRequest;
+        class DeleteNodegroupRequest;
         class DescribeClusterRequest;
+        class DescribeNodegroupRequest;
         class DescribeUpdateRequest;
         class ListClustersRequest;
+        class ListNodegroupsRequest;
         class ListTagsForResourceRequest;
         class ListUpdatesRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateClusterConfigRequest;
         class UpdateClusterVersionRequest;
+        class UpdateNodegroupConfigRequest;
+        class UpdateNodegroupVersionRequest;
 
         typedef Aws::Utils::Outcome<CreateClusterResult, Aws::Client::AWSError<EKSErrors>> CreateClusterOutcome;
+        typedef Aws::Utils::Outcome<CreateNodegroupResult, Aws::Client::AWSError<EKSErrors>> CreateNodegroupOutcome;
         typedef Aws::Utils::Outcome<DeleteClusterResult, Aws::Client::AWSError<EKSErrors>> DeleteClusterOutcome;
+        typedef Aws::Utils::Outcome<DeleteNodegroupResult, Aws::Client::AWSError<EKSErrors>> DeleteNodegroupOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterResult, Aws::Client::AWSError<EKSErrors>> DescribeClusterOutcome;
+        typedef Aws::Utils::Outcome<DescribeNodegroupResult, Aws::Client::AWSError<EKSErrors>> DescribeNodegroupOutcome;
         typedef Aws::Utils::Outcome<DescribeUpdateResult, Aws::Client::AWSError<EKSErrors>> DescribeUpdateOutcome;
         typedef Aws::Utils::Outcome<ListClustersResult, Aws::Client::AWSError<EKSErrors>> ListClustersOutcome;
+        typedef Aws::Utils::Outcome<ListNodegroupsResult, Aws::Client::AWSError<EKSErrors>> ListNodegroupsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<EKSErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListUpdatesResult, Aws::Client::AWSError<EKSErrors>> ListUpdatesOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<EKSErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<EKSErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateClusterConfigResult, Aws::Client::AWSError<EKSErrors>> UpdateClusterConfigOutcome;
         typedef Aws::Utils::Outcome<UpdateClusterVersionResult, Aws::Client::AWSError<EKSErrors>> UpdateClusterVersionOutcome;
+        typedef Aws::Utils::Outcome<UpdateNodegroupConfigResult, Aws::Client::AWSError<EKSErrors>> UpdateNodegroupConfigOutcome;
+        typedef Aws::Utils::Outcome<UpdateNodegroupVersionResult, Aws::Client::AWSError<EKSErrors>> UpdateNodegroupVersionOutcome;
 
         typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
+        typedef std::future<CreateNodegroupOutcome> CreateNodegroupOutcomeCallable;
         typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
+        typedef std::future<DeleteNodegroupOutcome> DeleteNodegroupOutcomeCallable;
         typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
+        typedef std::future<DescribeNodegroupOutcome> DescribeNodegroupOutcomeCallable;
         typedef std::future<DescribeUpdateOutcome> DescribeUpdateOutcomeCallable;
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
+        typedef std::future<ListNodegroupsOutcome> ListNodegroupsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListUpdatesOutcome> ListUpdatesOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateClusterConfigOutcome> UpdateClusterConfigOutcomeCallable;
         typedef std::future<UpdateClusterVersionOutcome> UpdateClusterVersionOutcomeCallable;
+        typedef std::future<UpdateNodegroupConfigOutcome> UpdateNodegroupConfigOutcomeCallable;
+        typedef std::future<UpdateNodegroupVersionOutcome> UpdateNodegroupVersionOutcomeCallable;
 } // namespace Model
 
   class EKSClient;
 
     typedef std::function<void(const EKSClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::CreateNodegroupRequest&, const Model::CreateNodegroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNodegroupResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::DeleteNodegroupRequest&, const Model::DeleteNodegroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNodegroupResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::DescribeNodegroupRequest&, const Model::DescribeNodegroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNodegroupResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeUpdateRequest&, const Model::DescribeUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUpdateResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::ListNodegroupsRequest&, const Model::ListNodegroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNodegroupsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListUpdatesRequest&, const Model::ListUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUpdatesResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::UpdateClusterConfigRequest&, const Model::UpdateClusterConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterConfigResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::UpdateClusterVersionRequest&, const Model::UpdateClusterVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateClusterVersionResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::UpdateNodegroupConfigRequest&, const Model::UpdateNodegroupConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNodegroupConfigResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::UpdateNodegroupVersionRequest&, const Model::UpdateNodegroupVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNodegroupVersionResponseReceivedHandler;
 
   /**
    * <p>Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that
@@ -301,30 +331,85 @@ namespace Model
         virtual void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the Amazon EKS cluster control plane. </p> <note> <p>If you have
-         * active services in your cluster that are associated with a load balancer, you
-         * must delete those services before deleting the cluster so that the load
-         * balancers are deleted properly. Otherwise, you can have orphaned resources in
-         * your VPC that prevent you from being able to delete the VPC. For more
-         * information, see <a
+         * <p>Creates a managed worker node group for an Amazon EKS cluster. You can only
+         * create a node group for your cluster that is equal to the current Kubernetes
+         * version for the cluster. All node groups are created with the latest AMI release
+         * version for the respective minor Kubernetes version of the cluster.</p> <p>An
+         * Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
+         * Amazon EC2 instances that are managed by AWS for an Amazon EKS cluster. Each
+         * node group uses a version of the Amazon EKS-optimized Amazon Linux 2 AMI. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
+         * Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateNodegroupOutcome CreateNodegroup(const Model::CreateNodegroupRequest& request) const;
+
+        /**
+         * <p>Creates a managed worker node group for an Amazon EKS cluster. You can only
+         * create a node group for your cluster that is equal to the current Kubernetes
+         * version for the cluster. All node groups are created with the latest AMI release
+         * version for the respective minor Kubernetes version of the cluster.</p> <p>An
+         * Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
+         * Amazon EC2 instances that are managed by AWS for an Amazon EKS cluster. Each
+         * node group uses a version of the Amazon EKS-optimized Amazon Linux 2 AMI. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
+         * Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateNodegroupOutcomeCallable CreateNodegroupCallable(const Model::CreateNodegroupRequest& request) const;
+
+        /**
+         * <p>Creates a managed worker node group for an Amazon EKS cluster. You can only
+         * create a node group for your cluster that is equal to the current Kubernetes
+         * version for the cluster. All node groups are created with the latest AMI release
+         * version for the respective minor Kubernetes version of the cluster.</p> <p>An
+         * Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated
+         * Amazon EC2 instances that are managed by AWS for an Amazon EKS cluster. Each
+         * node group uses a version of the Amazon EKS-optimized Amazon Linux 2 AMI. For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed
+         * Node Groups</a> in the <i>Amazon EKS User Guide</i>. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateNodegroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateNodegroupAsync(const Model::CreateNodegroupRequest& request, const CreateNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the Amazon EKS cluster control plane.</p> <p>If you have active
+         * services in your cluster that are associated with a load balancer, you must
+         * delete those services before deleting the cluster so that the load balancers are
+         * deleted properly. Otherwise, you can have orphaned resources in your VPC that
+         * prevent you from being able to delete the VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
-         * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> <p>If you have managed
+         * node groups attached to the cluster, you must delete them first. For more
+         * information, see <a>DeleteNodegroup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest& request) const;
 
         /**
-         * <p>Deletes the Amazon EKS cluster control plane. </p> <note> <p>If you have
-         * active services in your cluster that are associated with a load balancer, you
-         * must delete those services before deleting the cluster so that the load
-         * balancers are deleted properly. Otherwise, you can have orphaned resources in
-         * your VPC that prevent you from being able to delete the VPC. For more
-         * information, see <a
+         * <p>Deletes the Amazon EKS cluster control plane.</p> <p>If you have active
+         * services in your cluster that are associated with a load balancer, you must
+         * delete those services before deleting the cluster so that the load balancers are
+         * deleted properly. Otherwise, you can have orphaned resources in your VPC that
+         * prevent you from being able to delete the VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
-         * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> <p>If you have managed
+         * node groups attached to the cluster, you must delete them first. For more
+         * information, see <a>DeleteNodegroup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">AWS
          * API Reference</a></p>
          *
@@ -333,21 +418,46 @@ namespace Model
         virtual Model::DeleteClusterOutcomeCallable DeleteClusterCallable(const Model::DeleteClusterRequest& request) const;
 
         /**
-         * <p>Deletes the Amazon EKS cluster control plane. </p> <note> <p>If you have
-         * active services in your cluster that are associated with a load balancer, you
-         * must delete those services before deleting the cluster so that the load
-         * balancers are deleted properly. Otherwise, you can have orphaned resources in
-         * your VPC that prevent you from being able to delete the VPC. For more
-         * information, see <a
+         * <p>Deletes the Amazon EKS cluster control plane.</p> <p>If you have active
+         * services in your cluster that are associated with a load balancer, you must
+         * delete those services before deleting the cluster so that the load balancers are
+         * deleted properly. Otherwise, you can have orphaned resources in your VPC that
+         * prevent you from being able to delete the VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
-         * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> <p>If you have managed
+         * node groups attached to the cluster, you must delete them first. For more
+         * information, see <a>DeleteNodegroup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an Amazon EKS node group for a cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteNodegroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteNodegroupOutcome DeleteNodegroup(const Model::DeleteNodegroupRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon EKS node group for a cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteNodegroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteNodegroupOutcomeCallable DeleteNodegroupCallable(const Model::DeleteNodegroupRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon EKS node group for a cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteNodegroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteNodegroupAsync(const Model::DeleteNodegroupRequest& request, const DeleteNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns descriptive information about an Amazon EKS cluster.</p> <p>The API
@@ -396,11 +506,39 @@ namespace Model
         virtual void DescribeClusterAsync(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns descriptive information about an Amazon EKS node group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeNodegroupOutcome DescribeNodegroup(const Model::DescribeNodegroupRequest& request) const;
+
+        /**
+         * <p>Returns descriptive information about an Amazon EKS node group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeNodegroupOutcomeCallable DescribeNodegroupCallable(const Model::DescribeNodegroupRequest& request) const;
+
+        /**
+         * <p>Returns descriptive information about an Amazon EKS node group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeNodegroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeNodegroupAsync(const Model::DescribeNodegroupRequest& request, const DescribeNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns descriptive information about an update against your Amazon EKS
-         * cluster.</p> <p>When the status of the update is <code>Succeeded</code>, the
-         * update is complete. If an update fails, the status is <code>Failed</code>, and
-         * an error detail explains the reason for the failure.</p><p><h3>See Also:</h3>  
-         * <a
+         * cluster or associated managed node group.</p> <p>When the status of the update
+         * is <code>Succeeded</code>, the update is complete. If an update fails, the
+         * status is <code>Failed</code>, and an error detail explains the reason for the
+         * failure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate">AWS
          * API Reference</a></p>
          */
@@ -408,10 +546,10 @@ namespace Model
 
         /**
          * <p>Returns descriptive information about an update against your Amazon EKS
-         * cluster.</p> <p>When the status of the update is <code>Succeeded</code>, the
-         * update is complete. If an update fails, the status is <code>Failed</code>, and
-         * an error detail explains the reason for the failure.</p><p><h3>See Also:</h3>  
-         * <a
+         * cluster or associated managed node group.</p> <p>When the status of the update
+         * is <code>Succeeded</code>, the update is complete. If an update fails, the
+         * status is <code>Failed</code>, and an error detail explains the reason for the
+         * failure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate">AWS
          * API Reference</a></p>
          *
@@ -421,10 +559,10 @@ namespace Model
 
         /**
          * <p>Returns descriptive information about an update against your Amazon EKS
-         * cluster.</p> <p>When the status of the update is <code>Succeeded</code>, the
-         * update is complete. If an update fails, the status is <code>Failed</code>, and
-         * an error detail explains the reason for the failure.</p><p><h3>See Also:</h3>  
-         * <a
+         * cluster or associated managed node group.</p> <p>When the status of the update
+         * is <code>Succeeded</code>, the update is complete. If an update fails, the
+         * status is <code>Failed</code>, and an error detail explains the reason for the
+         * failure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeUpdate">AWS
          * API Reference</a></p>
          *
@@ -461,6 +599,34 @@ namespace Model
         virtual void ListClustersAsync(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the Amazon EKS node groups associated with the specified cluster in
+         * your AWS account in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListNodegroupsOutcome ListNodegroups(const Model::ListNodegroupsRequest& request) const;
+
+        /**
+         * <p>Lists the Amazon EKS node groups associated with the specified cluster in
+         * your AWS account in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListNodegroupsOutcomeCallable ListNodegroupsCallable(const Model::ListNodegroupsRequest& request) const;
+
+        /**
+         * <p>Lists the Amazon EKS node groups associated with the specified cluster in
+         * your AWS account in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListNodegroups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListNodegroupsAsync(const Model::ListNodegroupsRequest& request, const ListNodegroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>List the tags for an Amazon EKS resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -486,16 +652,16 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the updates associated with an Amazon EKS cluster in your AWS account,
-         * in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the updates associated with an Amazon EKS cluster or managed node group
+         * in your AWS account, in the specified Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">AWS API
          * Reference</a></p>
          */
         virtual Model::ListUpdatesOutcome ListUpdates(const Model::ListUpdatesRequest& request) const;
 
         /**
-         * <p>Lists the updates associated with an Amazon EKS cluster in your AWS account,
-         * in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the updates associated with an Amazon EKS cluster or managed node group
+         * in your AWS account, in the specified Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">AWS API
          * Reference</a></p>
          *
@@ -504,8 +670,8 @@ namespace Model
         virtual Model::ListUpdatesOutcomeCallable ListUpdatesCallable(const Model::ListUpdatesRequest& request) const;
 
         /**
-         * <p>Lists the updates associated with an Amazon EKS cluster in your AWS account,
-         * in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the updates associated with an Amazon EKS cluster or managed node group
+         * in your AWS account, in the specified Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListUpdates">AWS API
          * Reference</a></p>
          *
@@ -517,9 +683,13 @@ namespace Model
          * <p>Associates the specified tags to a resource with the specified
          * <code>resourceArn</code>. If existing tags on a resource are not specified in
          * the request parameters, they are not changed. When a resource is deleted, the
-         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">AWS
-         * API Reference</a></p>
+         * tags associated with that resource are deleted as well. Tags that you create for
+         * Amazon EKS resources do not propagate to any other resources associated with the
+         * cluster. For example, if you tag a cluster with this operation, that tag does
+         * not automatically propagate to the subnets and worker nodes associated with the
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">AWS API
+         * Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
@@ -527,9 +697,13 @@ namespace Model
          * <p>Associates the specified tags to a resource with the specified
          * <code>resourceArn</code>. If existing tags on a resource are not specified in
          * the request parameters, they are not changed. When a resource is deleted, the
-         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">AWS
-         * API Reference</a></p>
+         * tags associated with that resource are deleted as well. Tags that you create for
+         * Amazon EKS resources do not propagate to any other resources associated with the
+         * cluster. For example, if you tag a cluster with this operation, that tag does
+         * not automatically propagate to the subnets and worker nodes associated with the
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
@@ -539,9 +713,13 @@ namespace Model
          * <p>Associates the specified tags to a resource with the specified
          * <code>resourceArn</code>. If existing tags on a resource are not specified in
          * the request parameters, they are not changed. When a resource is deleted, the
-         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">AWS
-         * API Reference</a></p>
+         * tags associated with that resource are deleted as well. Tags that you create for
+         * Amazon EKS resources do not propagate to any other resources associated with the
+         * cluster. For example, if you tag a cluster with this operation, that tag does
+         * not automatically propagate to the subnets and worker nodes associated with the
+         * cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/TagResource">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -677,8 +855,10 @@ namespace Model
          * and they should finish within a few minutes. During an update, the cluster
          * status moves to <code>UPDATING</code> (this status transition is eventually
          * consistent). When the update is complete (either <code>Failed</code> or
-         * <code>Successful</code>), the cluster status moves to
-         * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>Successful</code>), the cluster status moves to <code>Active</code>.</p>
+         * <p>If your cluster has managed node groups attached to it, all of your node
+         * groups’ Kubernetes versions must match the cluster’s Kubernetes version in order
+         * to update the cluster to a new Kubernetes version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">AWS
          * API Reference</a></p>
          */
@@ -692,8 +872,10 @@ namespace Model
          * and they should finish within a few minutes. During an update, the cluster
          * status moves to <code>UPDATING</code> (this status transition is eventually
          * consistent). When the update is complete (either <code>Failed</code> or
-         * <code>Successful</code>), the cluster status moves to
-         * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>Successful</code>), the cluster status moves to <code>Active</code>.</p>
+         * <p>If your cluster has managed node groups attached to it, all of your node
+         * groups’ Kubernetes versions must match the cluster’s Kubernetes version in order
+         * to update the cluster to a new Kubernetes version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">AWS
          * API Reference</a></p>
          *
@@ -709,8 +891,10 @@ namespace Model
          * and they should finish within a few minutes. During an update, the cluster
          * status moves to <code>UPDATING</code> (this status transition is eventually
          * consistent). When the update is complete (either <code>Failed</code> or
-         * <code>Successful</code>), the cluster status moves to
-         * <code>Active</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>Successful</code>), the cluster status moves to <code>Active</code>.</p>
+         * <p>If your cluster has managed node groups attached to it, all of your node
+         * groups’ Kubernetes versions must match the cluster’s Kubernetes version in order
+         * to update the cluster to a new Kubernetes version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateClusterVersion">AWS
          * API Reference</a></p>
          *
@@ -718,21 +902,131 @@ namespace Model
          */
         virtual void UpdateClusterVersionAsync(const Model::UpdateClusterVersionRequest& request, const UpdateClusterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates an Amazon EKS managed node group configuration. Your node group
+         * continues to function during the update. The response output includes an update
+         * ID that you can use to track the status of your node group update with the
+         * <a>DescribeUpdate</a> API operation. Currently you can update the Kubernetes
+         * labels for a node group or the scaling configuration.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNodegroupConfigOutcome UpdateNodegroupConfig(const Model::UpdateNodegroupConfigRequest& request) const;
+
+        /**
+         * <p>Updates an Amazon EKS managed node group configuration. Your node group
+         * continues to function during the update. The response output includes an update
+         * ID that you can use to track the status of your node group update with the
+         * <a>DescribeUpdate</a> API operation. Currently you can update the Kubernetes
+         * labels for a node group or the scaling configuration.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateNodegroupConfigOutcomeCallable UpdateNodegroupConfigCallable(const Model::UpdateNodegroupConfigRequest& request) const;
+
+        /**
+         * <p>Updates an Amazon EKS managed node group configuration. Your node group
+         * continues to function during the update. The response output includes an update
+         * ID that you can use to track the status of your node group update with the
+         * <a>DescribeUpdate</a> API operation. Currently you can update the Kubernetes
+         * labels for a node group or the scaling configuration.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateNodegroupConfigAsync(const Model::UpdateNodegroupConfigRequest& request, const UpdateNodegroupConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the Kubernetes version or AMI version of an Amazon EKS managed node
+         * group.</p> <p>You can update to the latest available AMI version of a node
+         * group's current Kubernetes version by not specifying a Kubernetes version in the
+         * request. You can update to the latest AMI version of your cluster's current
+         * Kubernetes version by specifying your cluster's Kubernetes version in the
+         * request. For more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
+         * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+         * <p>You cannot roll back a node group to an earlier Kubernetes version or AMI
+         * version.</p> <p>When a node in a managed node group is terminated due to a
+         * scaling action or update, the pods in that node are drained first. Amazon EKS
+         * attempts to drain the nodes gracefully and will fail if it is unable to do so.
+         * You can <code>force</code> the update if Amazon EKS is unable to drain the nodes
+         * as a result of a pod disruption budget issue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateNodegroupVersionOutcome UpdateNodegroupVersion(const Model::UpdateNodegroupVersionRequest& request) const;
+
+        /**
+         * <p>Updates the Kubernetes version or AMI version of an Amazon EKS managed node
+         * group.</p> <p>You can update to the latest available AMI version of a node
+         * group's current Kubernetes version by not specifying a Kubernetes version in the
+         * request. You can update to the latest AMI version of your cluster's current
+         * Kubernetes version by specifying your cluster's Kubernetes version in the
+         * request. For more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
+         * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+         * <p>You cannot roll back a node group to an earlier Kubernetes version or AMI
+         * version.</p> <p>When a node in a managed node group is terminated due to a
+         * scaling action or update, the pods in that node are drained first. Amazon EKS
+         * attempts to drain the nodes gracefully and will fail if it is unable to do so.
+         * You can <code>force</code> the update if Amazon EKS is unable to drain the nodes
+         * as a result of a pod disruption budget issue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateNodegroupVersionOutcomeCallable UpdateNodegroupVersionCallable(const Model::UpdateNodegroupVersionRequest& request) const;
+
+        /**
+         * <p>Updates the Kubernetes version or AMI version of an Amazon EKS managed node
+         * group.</p> <p>You can update to the latest available AMI version of a node
+         * group's current Kubernetes version by not specifying a Kubernetes version in the
+         * request. You can update to the latest AMI version of your cluster's current
+         * Kubernetes version by specifying your cluster's Kubernetes version in the
+         * request. For more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon
+         * EKS-Optimized Linux AMI Versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+         * <p>You cannot roll back a node group to an earlier Kubernetes version or AMI
+         * version.</p> <p>When a node in a managed node group is terminated due to a
+         * scaling action or update, the pods in that node are drained first. Amazon EKS
+         * attempts to drain the nodes gracefully and will fail if it is unable to do so.
+         * You can <code>force</code> the update if Amazon EKS is unable to drain the nodes
+         * as a result of a pod disruption budget issue.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateNodegroupVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateNodegroupVersionAsync(const Model::UpdateNodegroupVersionRequest& request, const UpdateNodegroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateNodegroupAsyncHelper(const Model::CreateNodegroupRequest& request, const CreateNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteNodegroupAsyncHelper(const Model::DeleteNodegroupRequest& request, const DeleteNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterAsyncHelper(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeNodegroupAsyncHelper(const Model::DescribeNodegroupRequest& request, const DescribeNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUpdateAsyncHelper(const Model::DescribeUpdateRequest& request, const DescribeUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListNodegroupsAsyncHelper(const Model::ListNodegroupsRequest& request, const ListNodegroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUpdatesAsyncHelper(const Model::ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClusterConfigAsyncHelper(const Model::UpdateClusterConfigRequest& request, const UpdateClusterConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateClusterVersionAsyncHelper(const Model::UpdateClusterVersionRequest& request, const UpdateClusterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateNodegroupConfigAsyncHelper(const Model::UpdateNodegroupConfigRequest& request, const UpdateNodegroupConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateNodegroupVersionAsyncHelper(const Model::UpdateNodegroupVersionRequest& request, const UpdateNodegroupVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

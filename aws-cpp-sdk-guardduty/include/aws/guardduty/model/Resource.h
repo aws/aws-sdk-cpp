@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the AWS resource associated with the activity that
+   * prompted GuardDuty to generate a finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Resource">AWS
    * API Reference</a></p>
    */

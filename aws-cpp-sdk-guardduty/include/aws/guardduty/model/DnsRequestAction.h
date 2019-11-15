@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the DNS request.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the DNS_REQUEST action described in this
+   * finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DnsRequestAction">AWS
    * API Reference</a></p>
    */
@@ -48,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>Domain information for the DNS request.</p>
+     * <p>Domain information for the API request.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>Domain information for the DNS request.</p>
+     * <p>Domain information for the API request.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>Domain information for the DNS request.</p>
+     * <p>Domain information for the API request.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>Domain information for the DNS request.</p>
+     * <p>Domain information for the API request.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>Domain information for the DNS request.</p>
+     * <p>Domain information for the API request.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>Domain information for the DNS request.</p>
+     * <p>Domain information for the API request.</p>
      */
     inline DnsRequestAction& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>Domain information for the DNS request.</p>
+     * <p>Domain information for the API request.</p>
      */
     inline DnsRequestAction& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>Domain information for the DNS request.</p>
+     * <p>Domain information for the API request.</p>
      */
     inline DnsRequestAction& WithDomain(const char* value) { SetDomain(value); return *this;}
 

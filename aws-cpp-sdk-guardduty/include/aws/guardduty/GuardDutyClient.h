@@ -27,6 +27,7 @@
 #include <aws/guardduty/model/CreateFilterResult.h>
 #include <aws/guardduty/model/CreateIPSetResult.h>
 #include <aws/guardduty/model/CreateMembersResult.h>
+#include <aws/guardduty/model/CreatePublishingDestinationResult.h>
 #include <aws/guardduty/model/CreateSampleFindingsResult.h>
 #include <aws/guardduty/model/CreateThreatIntelSetResult.h>
 #include <aws/guardduty/model/DeclineInvitationsResult.h>
@@ -35,7 +36,9 @@
 #include <aws/guardduty/model/DeleteIPSetResult.h>
 #include <aws/guardduty/model/DeleteInvitationsResult.h>
 #include <aws/guardduty/model/DeleteMembersResult.h>
+#include <aws/guardduty/model/DeletePublishingDestinationResult.h>
 #include <aws/guardduty/model/DeleteThreatIntelSetResult.h>
+#include <aws/guardduty/model/DescribePublishingDestinationResult.h>
 #include <aws/guardduty/model/DisassociateFromMasterAccountResult.h>
 #include <aws/guardduty/model/DisassociateMembersResult.h>
 #include <aws/guardduty/model/GetDetectorResult.h>
@@ -54,6 +57,7 @@
 #include <aws/guardduty/model/ListIPSetsResult.h>
 #include <aws/guardduty/model/ListInvitationsResult.h>
 #include <aws/guardduty/model/ListMembersResult.h>
+#include <aws/guardduty/model/ListPublishingDestinationsResult.h>
 #include <aws/guardduty/model/ListTagsForResourceResult.h>
 #include <aws/guardduty/model/ListThreatIntelSetsResult.h>
 #include <aws/guardduty/model/StartMonitoringMembersResult.h>
@@ -65,6 +69,7 @@
 #include <aws/guardduty/model/UpdateFilterResult.h>
 #include <aws/guardduty/model/UpdateFindingsFeedbackResult.h>
 #include <aws/guardduty/model/UpdateIPSetResult.h>
+#include <aws/guardduty/model/UpdatePublishingDestinationResult.h>
 #include <aws/guardduty/model/UpdateThreatIntelSetResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -111,6 +116,7 @@ namespace Model
         class CreateFilterRequest;
         class CreateIPSetRequest;
         class CreateMembersRequest;
+        class CreatePublishingDestinationRequest;
         class CreateSampleFindingsRequest;
         class CreateThreatIntelSetRequest;
         class DeclineInvitationsRequest;
@@ -119,7 +125,9 @@ namespace Model
         class DeleteIPSetRequest;
         class DeleteInvitationsRequest;
         class DeleteMembersRequest;
+        class DeletePublishingDestinationRequest;
         class DeleteThreatIntelSetRequest;
+        class DescribePublishingDestinationRequest;
         class DisassociateFromMasterAccountRequest;
         class DisassociateMembersRequest;
         class GetDetectorRequest;
@@ -138,6 +146,7 @@ namespace Model
         class ListIPSetsRequest;
         class ListInvitationsRequest;
         class ListMembersRequest;
+        class ListPublishingDestinationsRequest;
         class ListTagsForResourceRequest;
         class ListThreatIntelSetsRequest;
         class StartMonitoringMembersRequest;
@@ -149,6 +158,7 @@ namespace Model
         class UpdateFilterRequest;
         class UpdateFindingsFeedbackRequest;
         class UpdateIPSetRequest;
+        class UpdatePublishingDestinationRequest;
         class UpdateThreatIntelSetRequest;
 
         typedef Aws::Utils::Outcome<AcceptInvitationResult, Aws::Client::AWSError<GuardDutyErrors>> AcceptInvitationOutcome;
@@ -157,6 +167,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateFilterResult, Aws::Client::AWSError<GuardDutyErrors>> CreateFilterOutcome;
         typedef Aws::Utils::Outcome<CreateIPSetResult, Aws::Client::AWSError<GuardDutyErrors>> CreateIPSetOutcome;
         typedef Aws::Utils::Outcome<CreateMembersResult, Aws::Client::AWSError<GuardDutyErrors>> CreateMembersOutcome;
+        typedef Aws::Utils::Outcome<CreatePublishingDestinationResult, Aws::Client::AWSError<GuardDutyErrors>> CreatePublishingDestinationOutcome;
         typedef Aws::Utils::Outcome<CreateSampleFindingsResult, Aws::Client::AWSError<GuardDutyErrors>> CreateSampleFindingsOutcome;
         typedef Aws::Utils::Outcome<CreateThreatIntelSetResult, Aws::Client::AWSError<GuardDutyErrors>> CreateThreatIntelSetOutcome;
         typedef Aws::Utils::Outcome<DeclineInvitationsResult, Aws::Client::AWSError<GuardDutyErrors>> DeclineInvitationsOutcome;
@@ -165,7 +176,9 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteIPSetResult, Aws::Client::AWSError<GuardDutyErrors>> DeleteIPSetOutcome;
         typedef Aws::Utils::Outcome<DeleteInvitationsResult, Aws::Client::AWSError<GuardDutyErrors>> DeleteInvitationsOutcome;
         typedef Aws::Utils::Outcome<DeleteMembersResult, Aws::Client::AWSError<GuardDutyErrors>> DeleteMembersOutcome;
+        typedef Aws::Utils::Outcome<DeletePublishingDestinationResult, Aws::Client::AWSError<GuardDutyErrors>> DeletePublishingDestinationOutcome;
         typedef Aws::Utils::Outcome<DeleteThreatIntelSetResult, Aws::Client::AWSError<GuardDutyErrors>> DeleteThreatIntelSetOutcome;
+        typedef Aws::Utils::Outcome<DescribePublishingDestinationResult, Aws::Client::AWSError<GuardDutyErrors>> DescribePublishingDestinationOutcome;
         typedef Aws::Utils::Outcome<DisassociateFromMasterAccountResult, Aws::Client::AWSError<GuardDutyErrors>> DisassociateFromMasterAccountOutcome;
         typedef Aws::Utils::Outcome<DisassociateMembersResult, Aws::Client::AWSError<GuardDutyErrors>> DisassociateMembersOutcome;
         typedef Aws::Utils::Outcome<GetDetectorResult, Aws::Client::AWSError<GuardDutyErrors>> GetDetectorOutcome;
@@ -184,6 +197,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListIPSetsResult, Aws::Client::AWSError<GuardDutyErrors>> ListIPSetsOutcome;
         typedef Aws::Utils::Outcome<ListInvitationsResult, Aws::Client::AWSError<GuardDutyErrors>> ListInvitationsOutcome;
         typedef Aws::Utils::Outcome<ListMembersResult, Aws::Client::AWSError<GuardDutyErrors>> ListMembersOutcome;
+        typedef Aws::Utils::Outcome<ListPublishingDestinationsResult, Aws::Client::AWSError<GuardDutyErrors>> ListPublishingDestinationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<GuardDutyErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListThreatIntelSetsResult, Aws::Client::AWSError<GuardDutyErrors>> ListThreatIntelSetsOutcome;
         typedef Aws::Utils::Outcome<StartMonitoringMembersResult, Aws::Client::AWSError<GuardDutyErrors>> StartMonitoringMembersOutcome;
@@ -195,6 +209,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateFilterResult, Aws::Client::AWSError<GuardDutyErrors>> UpdateFilterOutcome;
         typedef Aws::Utils::Outcome<UpdateFindingsFeedbackResult, Aws::Client::AWSError<GuardDutyErrors>> UpdateFindingsFeedbackOutcome;
         typedef Aws::Utils::Outcome<UpdateIPSetResult, Aws::Client::AWSError<GuardDutyErrors>> UpdateIPSetOutcome;
+        typedef Aws::Utils::Outcome<UpdatePublishingDestinationResult, Aws::Client::AWSError<GuardDutyErrors>> UpdatePublishingDestinationOutcome;
         typedef Aws::Utils::Outcome<UpdateThreatIntelSetResult, Aws::Client::AWSError<GuardDutyErrors>> UpdateThreatIntelSetOutcome;
 
         typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
@@ -203,6 +218,7 @@ namespace Model
         typedef std::future<CreateFilterOutcome> CreateFilterOutcomeCallable;
         typedef std::future<CreateIPSetOutcome> CreateIPSetOutcomeCallable;
         typedef std::future<CreateMembersOutcome> CreateMembersOutcomeCallable;
+        typedef std::future<CreatePublishingDestinationOutcome> CreatePublishingDestinationOutcomeCallable;
         typedef std::future<CreateSampleFindingsOutcome> CreateSampleFindingsOutcomeCallable;
         typedef std::future<CreateThreatIntelSetOutcome> CreateThreatIntelSetOutcomeCallable;
         typedef std::future<DeclineInvitationsOutcome> DeclineInvitationsOutcomeCallable;
@@ -211,7 +227,9 @@ namespace Model
         typedef std::future<DeleteIPSetOutcome> DeleteIPSetOutcomeCallable;
         typedef std::future<DeleteInvitationsOutcome> DeleteInvitationsOutcomeCallable;
         typedef std::future<DeleteMembersOutcome> DeleteMembersOutcomeCallable;
+        typedef std::future<DeletePublishingDestinationOutcome> DeletePublishingDestinationOutcomeCallable;
         typedef std::future<DeleteThreatIntelSetOutcome> DeleteThreatIntelSetOutcomeCallable;
+        typedef std::future<DescribePublishingDestinationOutcome> DescribePublishingDestinationOutcomeCallable;
         typedef std::future<DisassociateFromMasterAccountOutcome> DisassociateFromMasterAccountOutcomeCallable;
         typedef std::future<DisassociateMembersOutcome> DisassociateMembersOutcomeCallable;
         typedef std::future<GetDetectorOutcome> GetDetectorOutcomeCallable;
@@ -230,6 +248,7 @@ namespace Model
         typedef std::future<ListIPSetsOutcome> ListIPSetsOutcomeCallable;
         typedef std::future<ListInvitationsOutcome> ListInvitationsOutcomeCallable;
         typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
+        typedef std::future<ListPublishingDestinationsOutcome> ListPublishingDestinationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListThreatIntelSetsOutcome> ListThreatIntelSetsOutcomeCallable;
         typedef std::future<StartMonitoringMembersOutcome> StartMonitoringMembersOutcomeCallable;
@@ -241,6 +260,7 @@ namespace Model
         typedef std::future<UpdateFilterOutcome> UpdateFilterOutcomeCallable;
         typedef std::future<UpdateFindingsFeedbackOutcome> UpdateFindingsFeedbackOutcomeCallable;
         typedef std::future<UpdateIPSetOutcome> UpdateIPSetOutcomeCallable;
+        typedef std::future<UpdatePublishingDestinationOutcome> UpdatePublishingDestinationOutcomeCallable;
         typedef std::future<UpdateThreatIntelSetOutcome> UpdateThreatIntelSetOutcomeCallable;
 } // namespace Model
 
@@ -252,6 +272,7 @@ namespace Model
     typedef std::function<void(const GuardDutyClient*, const Model::CreateFilterRequest&, const Model::CreateFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFilterResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::CreateIPSetRequest&, const Model::CreateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIPSetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::CreateMembersRequest&, const Model::CreateMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMembersResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::CreatePublishingDestinationRequest&, const Model::CreatePublishingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePublishingDestinationResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::CreateSampleFindingsRequest&, const Model::CreateSampleFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSampleFindingsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::CreateThreatIntelSetRequest&, const Model::CreateThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThreatIntelSetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeclineInvitationsRequest&, const Model::DeclineInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeclineInvitationsResponseReceivedHandler;
@@ -260,7 +281,9 @@ namespace Model
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteIPSetRequest&, const Model::DeleteIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIPSetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteInvitationsRequest&, const Model::DeleteInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInvitationsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteMembersRequest&, const Model::DeleteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMembersResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::DeletePublishingDestinationRequest&, const Model::DeletePublishingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePublishingDestinationResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DeleteThreatIntelSetRequest&, const Model::DeleteThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThreatIntelSetResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::DescribePublishingDestinationRequest&, const Model::DescribePublishingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePublishingDestinationResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DisassociateFromMasterAccountRequest&, const Model::DisassociateFromMasterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFromMasterAccountResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::DisassociateMembersRequest&, const Model::DisassociateMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetDetectorRequest&, const Model::GetDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDetectorResponseReceivedHandler;
@@ -279,6 +302,7 @@ namespace Model
     typedef std::function<void(const GuardDutyClient*, const Model::ListIPSetsRequest&, const Model::ListIPSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIPSetsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListInvitationsRequest&, const Model::ListInvitationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInvitationsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::ListPublishingDestinationsRequest&, const Model::ListPublishingDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPublishingDestinationsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListThreatIntelSetsRequest&, const Model::ListThreatIntelSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThreatIntelSetsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::StartMonitoringMembersRequest&, const Model::StartMonitoringMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringMembersResponseReceivedHandler;
@@ -290,6 +314,7 @@ namespace Model
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateFilterRequest&, const Model::UpdateFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFilterResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateFindingsFeedbackRequest&, const Model::UpdateFindingsFeedbackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsFeedbackResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateIPSetRequest&, const Model::UpdateIPSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIPSetResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::UpdatePublishingDestinationRequest&, const Model::UpdatePublishingDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePublishingDestinationResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::UpdateThreatIntelSetRequest&, const Model::UpdateThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThreatIntelSetResponseReceivedHandler;
 
   /**
@@ -308,8 +333,8 @@ namespace Model
    * AWS environment by producing security findings that you can view in the
    * GuardDuty console or through Amazon CloudWatch events. For more information, see
    * <a
-   * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">
-   * Amazon GuardDuty User Guide</a>. </p>
+   * href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon
+   * GuardDuty User Guide</a>. </p>
    */
   class AWS_GUARDDUTY_API GuardDutyClient : public Aws::Client::AWSJsonClient
   {
@@ -465,18 +490,22 @@ namespace Model
         virtual void CreateFilterAsync(const Model::CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new IPSet - a list of trusted IP addresses that have been
-         * whitelisted for secure communication with AWS infrastructure and
-         * applications.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new IPSet, called Trusted IP list in the consoler user interface.
+         * An IPSet is a list IP addresses trusted for secure communication with AWS
+         * infrastructure and applications. GuardDuty does not generate findings for IP
+         * addresses included in IPSets. Only users from the master account can use this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateIPSetOutcome CreateIPSet(const Model::CreateIPSetRequest& request) const;
 
         /**
-         * <p>Creates a new IPSet - a list of trusted IP addresses that have been
-         * whitelisted for secure communication with AWS infrastructure and
-         * applications.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new IPSet, called Trusted IP list in the consoler user interface.
+         * An IPSet is a list IP addresses trusted for secure communication with AWS
+         * infrastructure and applications. GuardDuty does not generate findings for IP
+         * addresses included in IPSets. Only users from the master account can use this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet">AWS
          * API Reference</a></p>
          *
@@ -485,9 +514,11 @@ namespace Model
         virtual Model::CreateIPSetOutcomeCallable CreateIPSetCallable(const Model::CreateIPSetRequest& request) const;
 
         /**
-         * <p>Creates a new IPSet - a list of trusted IP addresses that have been
-         * whitelisted for secure communication with AWS infrastructure and
-         * applications.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a new IPSet, called Trusted IP list in the consoler user interface.
+         * An IPSet is a list IP addresses trusted for secure communication with AWS
+         * infrastructure and applications. GuardDuty does not generate findings for IP
+         * addresses included in IPSets. Only users from the master account can use this
+         * operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet">AWS
          * API Reference</a></p>
          *
@@ -527,9 +558,40 @@ namespace Model
         virtual void CreateMembersAsync(const Model::CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a publishing destination to send findings to. The resource to send
+         * findings to must exist before you use this operation.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreatePublishingDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePublishingDestinationOutcome CreatePublishingDestination(const Model::CreatePublishingDestinationRequest& request) const;
+
+        /**
+         * <p>Creates a publishing destination to send findings to. The resource to send
+         * findings to must exist before you use this operation.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreatePublishingDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreatePublishingDestinationOutcomeCallable CreatePublishingDestinationCallable(const Model::CreatePublishingDestinationRequest& request) const;
+
+        /**
+         * <p>Creates a publishing destination to send findings to. The resource to send
+         * findings to must exist before you use this operation.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreatePublishingDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreatePublishingDestinationAsync(const Model::CreatePublishingDestinationRequest& request, const CreatePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Generates example findings of types specified by the list of finding types.
-         * If 'NULL' is specified for findingTypes, the API generates example findings of
-         * all supported finding types.</p><p><h3>See Also:</h3>   <a
+         * If 'NULL' is specified for <code>findingTypes</code>, the API generates example
+         * findings of all supported finding types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateSampleFindings">AWS
          * API Reference</a></p>
          */
@@ -537,8 +599,8 @@ namespace Model
 
         /**
          * <p>Generates example findings of types specified by the list of finding types.
-         * If 'NULL' is specified for findingTypes, the API generates example findings of
-         * all supported finding types.</p><p><h3>See Also:</h3>   <a
+         * If 'NULL' is specified for <code>findingTypes</code>, the API generates example
+         * findings of all supported finding types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateSampleFindings">AWS
          * API Reference</a></p>
          *
@@ -548,8 +610,8 @@ namespace Model
 
         /**
          * <p>Generates example findings of types specified by the list of finding types.
-         * If 'NULL' is specified for findingTypes, the API generates example findings of
-         * all supported finding types.</p><p><h3>See Also:</h3>   <a
+         * If 'NULL' is specified for <code>findingTypes</code>, the API generates example
+         * findings of all supported finding types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateSampleFindings">AWS
          * API Reference</a></p>
          *
@@ -559,8 +621,8 @@ namespace Model
 
         /**
          * <p>Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP
-         * addresses. GuardDuty generates findings based on ThreatIntelSets.</p><p><h3>See
-         * Also:</h3>   <a
+         * addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of
+         * the master account can use this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatIntelSet">AWS
          * API Reference</a></p>
          */
@@ -568,8 +630,8 @@ namespace Model
 
         /**
          * <p>Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP
-         * addresses. GuardDuty generates findings based on ThreatIntelSets.</p><p><h3>See
-         * Also:</h3>   <a
+         * addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of
+         * the master account can use this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatIntelSet">AWS
          * API Reference</a></p>
          *
@@ -579,8 +641,8 @@ namespace Model
 
         /**
          * <p>Create a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP
-         * addresses. GuardDuty generates findings based on ThreatIntelSets.</p><p><h3>See
-         * Also:</h3>   <a
+         * addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of
+         * the master account can use this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateThreatIntelSet">AWS
          * API Reference</a></p>
          *
@@ -673,14 +735,16 @@ namespace Model
         virtual void DeleteFilterAsync(const Model::DeleteFilterRequest& request, const DeleteFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the IPSet specified by the IPSet ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called
+         * Trusted IP lists in the console user interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteIPSet">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteIPSetOutcome DeleteIPSet(const Model::DeleteIPSetRequest& request) const;
 
         /**
-         * <p>Deletes the IPSet specified by the IPSet ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called
+         * Trusted IP lists in the console user interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteIPSet">AWS
          * API Reference</a></p>
          *
@@ -689,7 +753,8 @@ namespace Model
         virtual Model::DeleteIPSetOutcomeCallable DeleteIPSetCallable(const Model::DeleteIPSetRequest& request) const;
 
         /**
-         * <p>Deletes the IPSet specified by the IPSet ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called
+         * Trusted IP lists in the console user interface.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteIPSet">AWS
          * API Reference</a></p>
          *
@@ -754,6 +819,34 @@ namespace Model
         virtual void DeleteMembersAsync(const Model::DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the publishing definition with the specified
+         * <code>destinationId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeletePublishingDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePublishingDestinationOutcome DeletePublishingDestination(const Model::DeletePublishingDestinationRequest& request) const;
+
+        /**
+         * <p>Deletes the publishing definition with the specified
+         * <code>destinationId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeletePublishingDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeletePublishingDestinationOutcomeCallable DeletePublishingDestinationCallable(const Model::DeletePublishingDestinationRequest& request) const;
+
+        /**
+         * <p>Deletes the publishing definition with the specified
+         * <code>destinationId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeletePublishingDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeletePublishingDestinationAsync(const Model::DeletePublishingDestinationRequest& request, const DeletePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes ThreatIntelSet specified by the ThreatIntelSet ID.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteThreatIntelSet">AWS
@@ -780,6 +873,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteThreatIntelSetAsync(const Model::DeleteThreatIntelSetRequest& request, const DeleteThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the publishing destination specified by the
+         * provided <code>destinationId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribePublishingDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePublishingDestinationOutcome DescribePublishingDestination(const Model::DescribePublishingDestinationRequest& request) const;
+
+        /**
+         * <p>Returns information about the publishing destination specified by the
+         * provided <code>destinationId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribePublishingDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribePublishingDestinationOutcomeCallable DescribePublishingDestinationCallable(const Model::DescribePublishingDestinationRequest& request) const;
+
+        /**
+         * <p>Returns information about the publishing destination specified by the
+         * provided <code>destinationId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DescribePublishingDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribePublishingDestinationAsync(const Model::DescribePublishingDestinationRequest& request, const DescribePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disassociates the current GuardDuty member account from its master
@@ -950,14 +1071,16 @@ namespace Model
         virtual void GetFindingsStatisticsAsync(const Model::GetFindingsStatisticsRequest& request, const GetFindingsStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the IPSet specified by the IPSet ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the IPSet specified by the <code>ipSetId</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetIPSet">AWS
          * API Reference</a></p>
          */
         virtual Model::GetIPSetOutcome GetIPSet(const Model::GetIPSetRequest& request) const;
 
         /**
-         * <p>Retrieves the IPSet specified by the IPSet ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the IPSet specified by the <code>ipSetId</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetIPSet">AWS
          * API Reference</a></p>
          *
@@ -966,7 +1089,8 @@ namespace Model
         virtual Model::GetIPSetOutcomeCallable GetIPSetCallable(const Model::GetIPSetRequest& request) const;
 
         /**
-         * <p>Retrieves the IPSet specified by the IPSet ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the IPSet specified by the <code>ipSetId</code>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetIPSet">AWS
          * API Reference</a></p>
          *
@@ -1208,16 +1332,18 @@ namespace Model
         virtual void ListFindingsAsync(const Model::ListFindingsRequest& request, const ListFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the IPSets of the GuardDuty service specified by the detector
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the IPSets of the GuardDuty service specified by the detector ID. If
+         * you use this operation from a member account, the IPSets returned are the IPSets
+         * from the associated master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListIPSets">AWS
          * API Reference</a></p>
          */
         virtual Model::ListIPSetsOutcome ListIPSets(const Model::ListIPSetsRequest& request) const;
 
         /**
-         * <p>Lists the IPSets of the GuardDuty service specified by the detector
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the IPSets of the GuardDuty service specified by the detector ID. If
+         * you use this operation from a member account, the IPSets returned are the IPSets
+         * from the associated master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListIPSets">AWS
          * API Reference</a></p>
          *
@@ -1226,8 +1352,9 @@ namespace Model
         virtual Model::ListIPSetsOutcomeCallable ListIPSetsCallable(const Model::ListIPSetsRequest& request) const;
 
         /**
-         * <p>Lists the IPSets of the GuardDuty service specified by the detector
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the IPSets of the GuardDuty service specified by the detector ID. If
+         * you use this operation from a member account, the IPSets returned are the IPSets
+         * from the associated master account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListIPSets">AWS
          * API Reference</a></p>
          *
@@ -1292,6 +1419,34 @@ namespace Model
         virtual void ListMembersAsync(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of publishing destinations associated with the specified
+         * <code>dectectorId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPublishingDestinationsOutcome ListPublishingDestinations(const Model::ListPublishingDestinationsRequest& request) const;
+
+        /**
+         * <p>Returns a list of publishing destinations associated with the specified
+         * <code>dectectorId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListPublishingDestinationsOutcomeCallable ListPublishingDestinationsCallable(const Model::ListPublishingDestinationsRequest& request) const;
+
+        /**
+         * <p>Returns a list of publishing destinations associated with the specified
+         * <code>dectectorId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListPublishingDestinations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListPublishingDestinationsAsync(const Model::ListPublishingDestinationsRequest& request, const ListPublishingDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists tags for a resource. Tagging is currently supported for detectors,
          * finding filters, IP sets, and Threat Intel sets, with a limit of 50 tags per
          * resource. When invoked, this operation returns all assigned tags for a given
@@ -1327,7 +1482,8 @@ namespace Model
 
         /**
          * <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * ID. If you use this operation from a member account, the ThreatIntelSets
+         * associated with the master account are returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatIntelSets">AWS
          * API Reference</a></p>
          */
@@ -1335,7 +1491,8 @@ namespace Model
 
         /**
          * <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * ID. If you use this operation from a member account, the ThreatIntelSets
+         * associated with the master account are returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatIntelSets">AWS
          * API Reference</a></p>
          *
@@ -1345,7 +1502,8 @@ namespace Model
 
         /**
          * <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector
-         * ID.</p><p><h3>See Also:</h3>   <a
+         * ID. If you use this operation from a member account, the ThreatIntelSets
+         * associated with the master account are returned.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatIntelSets">AWS
          * API Reference</a></p>
          *
@@ -1354,20 +1512,18 @@ namespace Model
         virtual void ListThreatIntelSetsAsync(const Model::ListThreatIntelSetsRequest& request, const ListThreatIntelSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Re-enables GuardDuty to monitor findings of the member accounts specified by
-         * the account IDs. A master GuardDuty account can run this command after disabling
-         * GuardDuty from monitoring these members' findings by running
-         * StopMonitoringMembers.</p><p><h3>See Also:</h3>   <a
+         * <p>Turns on GuardDuty monitoring of the specified member accounts. Use this
+         * operation to restart monitoring of accounts that you stopped monitoring with the
+         * <code>StopMonitoringMembers</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMonitoringMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::StartMonitoringMembersOutcome StartMonitoringMembers(const Model::StartMonitoringMembersRequest& request) const;
 
         /**
-         * <p>Re-enables GuardDuty to monitor findings of the member accounts specified by
-         * the account IDs. A master GuardDuty account can run this command after disabling
-         * GuardDuty from monitoring these members' findings by running
-         * StopMonitoringMembers.</p><p><h3>See Also:</h3>   <a
+         * <p>Turns on GuardDuty monitoring of the specified member accounts. Use this
+         * operation to restart monitoring of accounts that you stopped monitoring with the
+         * <code>StopMonitoringMembers</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMonitoringMembers">AWS
          * API Reference</a></p>
          *
@@ -1376,10 +1532,9 @@ namespace Model
         virtual Model::StartMonitoringMembersOutcomeCallable StartMonitoringMembersCallable(const Model::StartMonitoringMembersRequest& request) const;
 
         /**
-         * <p>Re-enables GuardDuty to monitor findings of the member accounts specified by
-         * the account IDs. A master GuardDuty account can run this command after disabling
-         * GuardDuty from monitoring these members' findings by running
-         * StopMonitoringMembers.</p><p><h3>See Also:</h3>   <a
+         * <p>Turns on GuardDuty monitoring of the specified member accounts. Use this
+         * operation to restart monitoring of accounts that you stopped monitoring with the
+         * <code>StopMonitoringMembers</code> operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMonitoringMembers">AWS
          * API Reference</a></p>
          *
@@ -1388,20 +1543,18 @@ namespace Model
         virtual void StartMonitoringMembersAsync(const Model::StartMonitoringMembersRequest& request, const StartMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Disables GuardDuty from monitoring findings of the member accounts specified
-         * by the account IDs. After running this command, a master GuardDuty account can
-         * run StartMonitoringMembers to re-enable GuardDuty to monitor these members’
-         * findings.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops GuardDuty monitoring for the specified member accounnts. Use the
+         * <code>StartMonitoringMembers</code> to restart monitoring for those
+         * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">AWS
          * API Reference</a></p>
          */
         virtual Model::StopMonitoringMembersOutcome StopMonitoringMembers(const Model::StopMonitoringMembersRequest& request) const;
 
         /**
-         * <p>Disables GuardDuty from monitoring findings of the member accounts specified
-         * by the account IDs. After running this command, a master GuardDuty account can
-         * run StartMonitoringMembers to re-enable GuardDuty to monitor these members’
-         * findings.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops GuardDuty monitoring for the specified member accounnts. Use the
+         * <code>StartMonitoringMembers</code> to restart monitoring for those
+         * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">AWS
          * API Reference</a></p>
          *
@@ -1410,10 +1563,9 @@ namespace Model
         virtual Model::StopMonitoringMembersOutcomeCallable StopMonitoringMembersCallable(const Model::StopMonitoringMembersRequest& request) const;
 
         /**
-         * <p>Disables GuardDuty from monitoring findings of the member accounts specified
-         * by the account IDs. After running this command, a master GuardDuty account can
-         * run StartMonitoringMembers to re-enable GuardDuty to monitor these members’
-         * findings.</p><p><h3>See Also:</h3>   <a
+         * <p>Stops GuardDuty monitoring for the specified member accounnts. Use the
+         * <code>StartMonitoringMembers</code> to restart monitoring for those
+         * accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StopMonitoringMembers">AWS
          * API Reference</a></p>
          *
@@ -1447,16 +1599,16 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Unarchives Amazon GuardDuty findings specified by the list of finding
-         * IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Unarchives GuardDuty findings specified by the
+         * <code>findingIds</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnarchiveFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::UnarchiveFindingsOutcome UnarchiveFindings(const Model::UnarchiveFindingsRequest& request) const;
 
         /**
-         * <p>Unarchives Amazon GuardDuty findings specified by the list of finding
-         * IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Unarchives GuardDuty findings specified by the
+         * <code>findingIds</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnarchiveFindings">AWS
          * API Reference</a></p>
          *
@@ -1465,8 +1617,8 @@ namespace Model
         virtual Model::UnarchiveFindingsOutcomeCallable UnarchiveFindingsCallable(const Model::UnarchiveFindingsRequest& request) const;
 
         /**
-         * <p>Unarchives Amazon GuardDuty findings specified by the list of finding
-         * IDs.</p><p><h3>See Also:</h3>   <a
+         * <p>Unarchives GuardDuty findings specified by the
+         * <code>findingIds</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UnarchiveFindings">AWS
          * API Reference</a></p>
          *
@@ -1500,7 +1652,7 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an Amazon GuardDuty detector specified by the
+         * <p>Updates the Amazon GuardDuty detector specified by the
          * detectorId.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateDetector">AWS
          * API Reference</a></p>
@@ -1508,7 +1660,7 @@ namespace Model
         virtual Model::UpdateDetectorOutcome UpdateDetector(const Model::UpdateDetectorRequest& request) const;
 
         /**
-         * <p>Updates an Amazon GuardDuty detector specified by the
+         * <p>Updates the Amazon GuardDuty detector specified by the
          * detectorId.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateDetector">AWS
          * API Reference</a></p>
@@ -1518,7 +1670,7 @@ namespace Model
         virtual Model::UpdateDetectorOutcomeCallable UpdateDetectorCallable(const Model::UpdateDetectorRequest& request) const;
 
         /**
-         * <p>Updates an Amazon GuardDuty detector specified by the
+         * <p>Updates the Amazon GuardDuty detector specified by the
          * detectorId.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateDetector">AWS
          * API Reference</a></p>
@@ -1556,16 +1708,16 @@ namespace Model
         virtual void UpdateFilterAsync(const Model::UpdateFilterRequest& request, const UpdateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Marks specified Amazon GuardDuty findings as useful or not
-         * useful.</p><p><h3>See Also:</h3>   <a
+         * <p>Marks the specified GuardDuty findings as useful or not useful.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFindingsFeedback">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateFindingsFeedbackOutcome UpdateFindingsFeedback(const Model::UpdateFindingsFeedbackRequest& request) const;
 
         /**
-         * <p>Marks specified Amazon GuardDuty findings as useful or not
-         * useful.</p><p><h3>See Also:</h3>   <a
+         * <p>Marks the specified GuardDuty findings as useful or not useful.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFindingsFeedback">AWS
          * API Reference</a></p>
          *
@@ -1574,8 +1726,8 @@ namespace Model
         virtual Model::UpdateFindingsFeedbackOutcomeCallable UpdateFindingsFeedbackCallable(const Model::UpdateFindingsFeedbackRequest& request) const;
 
         /**
-         * <p>Marks specified Amazon GuardDuty findings as useful or not
-         * useful.</p><p><h3>See Also:</h3>   <a
+         * <p>Marks the specified GuardDuty findings as useful or not useful.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateFindingsFeedback">AWS
          * API Reference</a></p>
          *
@@ -1607,6 +1759,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateIPSetAsync(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates information about the publishing destination specified by the
+         * <code>destinationId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdatePublishingDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePublishingDestinationOutcome UpdatePublishingDestination(const Model::UpdatePublishingDestinationRequest& request) const;
+
+        /**
+         * <p>Updates information about the publishing destination specified by the
+         * <code>destinationId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdatePublishingDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdatePublishingDestinationOutcomeCallable UpdatePublishingDestinationCallable(const Model::UpdatePublishingDestinationRequest& request) const;
+
+        /**
+         * <p>Updates information about the publishing destination specified by the
+         * <code>destinationId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdatePublishingDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdatePublishingDestinationAsync(const Model::UpdatePublishingDestinationRequest& request, const UpdatePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates the ThreatIntelSet specified by ThreatIntelSet ID.</p><p><h3>See
@@ -1646,6 +1826,7 @@ namespace Model
         void CreateFilterAsyncHelper(const Model::CreateFilterRequest& request, const CreateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateIPSetAsyncHelper(const Model::CreateIPSetRequest& request, const CreateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMembersAsyncHelper(const Model::CreateMembersRequest& request, const CreateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreatePublishingDestinationAsyncHelper(const Model::CreatePublishingDestinationRequest& request, const CreatePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSampleFindingsAsyncHelper(const Model::CreateSampleFindingsRequest& request, const CreateSampleFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateThreatIntelSetAsyncHelper(const Model::CreateThreatIntelSetRequest& request, const CreateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeclineInvitationsAsyncHelper(const Model::DeclineInvitationsRequest& request, const DeclineInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1654,7 +1835,9 @@ namespace Model
         void DeleteIPSetAsyncHelper(const Model::DeleteIPSetRequest& request, const DeleteIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInvitationsAsyncHelper(const Model::DeleteInvitationsRequest& request, const DeleteInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMembersAsyncHelper(const Model::DeleteMembersRequest& request, const DeleteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeletePublishingDestinationAsyncHelper(const Model::DeletePublishingDestinationRequest& request, const DeletePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteThreatIntelSetAsyncHelper(const Model::DeleteThreatIntelSetRequest& request, const DeleteThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribePublishingDestinationAsyncHelper(const Model::DescribePublishingDestinationRequest& request, const DescribePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateFromMasterAccountAsyncHelper(const Model::DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateMembersAsyncHelper(const Model::DisassociateMembersRequest& request, const DisassociateMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDetectorAsyncHelper(const Model::GetDetectorRequest& request, const GetDetectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1673,6 +1856,7 @@ namespace Model
         void ListIPSetsAsyncHelper(const Model::ListIPSetsRequest& request, const ListIPSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInvitationsAsyncHelper(const Model::ListInvitationsRequest& request, const ListInvitationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMembersAsyncHelper(const Model::ListMembersRequest& request, const ListMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListPublishingDestinationsAsyncHelper(const Model::ListPublishingDestinationsRequest& request, const ListPublishingDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListThreatIntelSetsAsyncHelper(const Model::ListThreatIntelSetsRequest& request, const ListThreatIntelSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMonitoringMembersAsyncHelper(const Model::StartMonitoringMembersRequest& request, const StartMonitoringMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1684,6 +1868,7 @@ namespace Model
         void UpdateFilterAsyncHelper(const Model::UpdateFilterRequest& request, const UpdateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFindingsFeedbackAsyncHelper(const Model::UpdateFindingsFeedbackRequest& request, const UpdateFindingsFeedbackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateIPSetAsyncHelper(const Model::UpdateIPSetRequest& request, const UpdateIPSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdatePublishingDestinationAsyncHelper(const Model::UpdatePublishingDestinationRequest& request, const UpdatePublishingDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateThreatIntelSetAsyncHelper(const Model::UpdateThreatIntelSetRequest& request, const UpdateThreatIntelSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

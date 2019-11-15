@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the product code.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the product code for the Ec2
+   * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ProductCode">AWS
    * API Reference</a></p>
    */

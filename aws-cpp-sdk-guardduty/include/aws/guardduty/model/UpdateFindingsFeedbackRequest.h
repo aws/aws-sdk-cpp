@@ -45,50 +45,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the detector that specifies the GuardDuty service whose findings
-     * you want to mark as useful or not useful.</p>
+     * <p>The ID of the detector associated with the findings to update feedback
+     * for.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The ID of the detector that specifies the GuardDuty service whose findings
-     * you want to mark as useful or not useful.</p>
+     * <p>The ID of the detector associated with the findings to update feedback
+     * for.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The ID of the detector that specifies the GuardDuty service whose findings
-     * you want to mark as useful or not useful.</p>
+     * <p>The ID of the detector associated with the findings to update feedback
+     * for.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The ID of the detector that specifies the GuardDuty service whose findings
-     * you want to mark as useful or not useful.</p>
+     * <p>The ID of the detector associated with the findings to update feedback
+     * for.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The ID of the detector that specifies the GuardDuty service whose findings
-     * you want to mark as useful or not useful.</p>
+     * <p>The ID of the detector associated with the findings to update feedback
+     * for.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The ID of the detector that specifies the GuardDuty service whose findings
-     * you want to mark as useful or not useful.</p>
+     * <p>The ID of the detector associated with the findings to update feedback
+     * for.</p>
      */
     inline UpdateFindingsFeedbackRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The ID of the detector that specifies the GuardDuty service whose findings
-     * you want to mark as useful or not useful.</p>
+     * <p>The ID of the detector associated with the findings to update feedback
+     * for.</p>
      */
     inline UpdateFindingsFeedbackRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the detector that specifies the GuardDuty service whose findings
-     * you want to mark as useful or not useful.</p>
+     * <p>The ID of the detector associated with the findings to update feedback
+     * for.</p>
      */
     inline UpdateFindingsFeedbackRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
@@ -140,32 +140,32 @@ namespace Model
 
 
     /**
-     * <p>Valid values: USEFUL | NOT_USEFUL</p>
+     * <p>The feedback for the finding.</p>
      */
     inline const Feedback& GetFeedback() const{ return m_feedback; }
 
     /**
-     * <p>Valid values: USEFUL | NOT_USEFUL</p>
+     * <p>The feedback for the finding.</p>
      */
     inline bool FeedbackHasBeenSet() const { return m_feedbackHasBeenSet; }
 
     /**
-     * <p>Valid values: USEFUL | NOT_USEFUL</p>
+     * <p>The feedback for the finding.</p>
      */
     inline void SetFeedback(const Feedback& value) { m_feedbackHasBeenSet = true; m_feedback = value; }
 
     /**
-     * <p>Valid values: USEFUL | NOT_USEFUL</p>
+     * <p>The feedback for the finding.</p>
      */
     inline void SetFeedback(Feedback&& value) { m_feedbackHasBeenSet = true; m_feedback = std::move(value); }
 
     /**
-     * <p>Valid values: USEFUL | NOT_USEFUL</p>
+     * <p>The feedback for the finding.</p>
      */
     inline UpdateFindingsFeedbackRequest& WithFeedback(const Feedback& value) { SetFeedback(value); return *this;}
 
     /**
-     * <p>Valid values: USEFUL | NOT_USEFUL</p>
+     * <p>The feedback for the finding.</p>
      */
     inline UpdateFindingsFeedbackRequest& WithFeedback(Feedback&& value) { SetFeedback(std::move(value)); return *this;}
 

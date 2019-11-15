@@ -24,6 +24,7 @@
 #include <aws/chime/model/AssociatePhoneNumberWithUserResult.h>
 #include <aws/chime/model/AssociatePhoneNumbersWithVoiceConnectorResult.h>
 #include <aws/chime/model/AssociatePhoneNumbersWithVoiceConnectorGroupResult.h>
+#include <aws/chime/model/BatchCreateRoomMembershipResult.h>
 #include <aws/chime/model/BatchDeletePhoneNumberResult.h>
 #include <aws/chime/model/BatchSuspendUserResult.h>
 #include <aws/chime/model/BatchUnsuspendUserResult.h>
@@ -32,6 +33,8 @@
 #include <aws/chime/model/CreateAccountResult.h>
 #include <aws/chime/model/CreateBotResult.h>
 #include <aws/chime/model/CreatePhoneNumberOrderResult.h>
+#include <aws/chime/model/CreateRoomResult.h>
+#include <aws/chime/model/CreateRoomMembershipResult.h>
 #include <aws/chime/model/CreateVoiceConnectorResult.h>
 #include <aws/chime/model/CreateVoiceConnectorGroupResult.h>
 #include <aws/chime/model/DeleteAccountResult.h>
@@ -46,6 +49,7 @@
 #include <aws/chime/model/GetPhoneNumberResult.h>
 #include <aws/chime/model/GetPhoneNumberOrderResult.h>
 #include <aws/chime/model/GetPhoneNumberSettingsResult.h>
+#include <aws/chime/model/GetRoomResult.h>
 #include <aws/chime/model/GetUserResult.h>
 #include <aws/chime/model/GetUserSettingsResult.h>
 #include <aws/chime/model/GetVoiceConnectorResult.h>
@@ -60,6 +64,8 @@
 #include <aws/chime/model/ListBotsResult.h>
 #include <aws/chime/model/ListPhoneNumberOrdersResult.h>
 #include <aws/chime/model/ListPhoneNumbersResult.h>
+#include <aws/chime/model/ListRoomMembershipsResult.h>
+#include <aws/chime/model/ListRoomsResult.h>
 #include <aws/chime/model/ListUsersResult.h>
 #include <aws/chime/model/ListVoiceConnectorGroupsResult.h>
 #include <aws/chime/model/ListVoiceConnectorTerminationCredentialsResult.h>
@@ -78,6 +84,8 @@
 #include <aws/chime/model/UpdateAccountSettingsResult.h>
 #include <aws/chime/model/UpdateBotResult.h>
 #include <aws/chime/model/UpdatePhoneNumberResult.h>
+#include <aws/chime/model/UpdateRoomResult.h>
+#include <aws/chime/model/UpdateRoomMembershipResult.h>
 #include <aws/chime/model/UpdateUserResult.h>
 #include <aws/chime/model/UpdateVoiceConnectorResult.h>
 #include <aws/chime/model/UpdateVoiceConnectorGroupResult.h>
@@ -124,6 +132,7 @@ namespace Model
         class AssociatePhoneNumberWithUserRequest;
         class AssociatePhoneNumbersWithVoiceConnectorRequest;
         class AssociatePhoneNumbersWithVoiceConnectorGroupRequest;
+        class BatchCreateRoomMembershipRequest;
         class BatchDeletePhoneNumberRequest;
         class BatchSuspendUserRequest;
         class BatchUnsuspendUserRequest;
@@ -132,11 +141,15 @@ namespace Model
         class CreateAccountRequest;
         class CreateBotRequest;
         class CreatePhoneNumberOrderRequest;
+        class CreateRoomRequest;
+        class CreateRoomMembershipRequest;
         class CreateVoiceConnectorRequest;
         class CreateVoiceConnectorGroupRequest;
         class DeleteAccountRequest;
         class DeleteEventsConfigurationRequest;
         class DeletePhoneNumberRequest;
+        class DeleteRoomRequest;
+        class DeleteRoomMembershipRequest;
         class DeleteVoiceConnectorRequest;
         class DeleteVoiceConnectorGroupRequest;
         class DeleteVoiceConnectorOriginationRequest;
@@ -152,6 +165,7 @@ namespace Model
         class GetEventsConfigurationRequest;
         class GetPhoneNumberRequest;
         class GetPhoneNumberOrderRequest;
+        class GetRoomRequest;
         class GetUserRequest;
         class GetUserSettingsRequest;
         class GetVoiceConnectorRequest;
@@ -166,6 +180,8 @@ namespace Model
         class ListBotsRequest;
         class ListPhoneNumberOrdersRequest;
         class ListPhoneNumbersRequest;
+        class ListRoomMembershipsRequest;
+        class ListRoomsRequest;
         class ListUsersRequest;
         class ListVoiceConnectorGroupsRequest;
         class ListVoiceConnectorTerminationCredentialsRequest;
@@ -187,6 +203,8 @@ namespace Model
         class UpdateGlobalSettingsRequest;
         class UpdatePhoneNumberRequest;
         class UpdatePhoneNumberSettingsRequest;
+        class UpdateRoomRequest;
+        class UpdateRoomMembershipRequest;
         class UpdateUserRequest;
         class UpdateUserSettingsRequest;
         class UpdateVoiceConnectorRequest;
@@ -195,6 +213,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociatePhoneNumberWithUserResult, Aws::Client::AWSError<ChimeErrors>> AssociatePhoneNumberWithUserOutcome;
         typedef Aws::Utils::Outcome<AssociatePhoneNumbersWithVoiceConnectorResult, Aws::Client::AWSError<ChimeErrors>> AssociatePhoneNumbersWithVoiceConnectorOutcome;
         typedef Aws::Utils::Outcome<AssociatePhoneNumbersWithVoiceConnectorGroupResult, Aws::Client::AWSError<ChimeErrors>> AssociatePhoneNumbersWithVoiceConnectorGroupOutcome;
+        typedef Aws::Utils::Outcome<BatchCreateRoomMembershipResult, Aws::Client::AWSError<ChimeErrors>> BatchCreateRoomMembershipOutcome;
         typedef Aws::Utils::Outcome<BatchDeletePhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> BatchDeletePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<BatchSuspendUserResult, Aws::Client::AWSError<ChimeErrors>> BatchSuspendUserOutcome;
         typedef Aws::Utils::Outcome<BatchUnsuspendUserResult, Aws::Client::AWSError<ChimeErrors>> BatchUnsuspendUserOutcome;
@@ -203,11 +222,15 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateAccountResult, Aws::Client::AWSError<ChimeErrors>> CreateAccountOutcome;
         typedef Aws::Utils::Outcome<CreateBotResult, Aws::Client::AWSError<ChimeErrors>> CreateBotOutcome;
         typedef Aws::Utils::Outcome<CreatePhoneNumberOrderResult, Aws::Client::AWSError<ChimeErrors>> CreatePhoneNumberOrderOutcome;
+        typedef Aws::Utils::Outcome<CreateRoomResult, Aws::Client::AWSError<ChimeErrors>> CreateRoomOutcome;
+        typedef Aws::Utils::Outcome<CreateRoomMembershipResult, Aws::Client::AWSError<ChimeErrors>> CreateRoomMembershipOutcome;
         typedef Aws::Utils::Outcome<CreateVoiceConnectorResult, Aws::Client::AWSError<ChimeErrors>> CreateVoiceConnectorOutcome;
         typedef Aws::Utils::Outcome<CreateVoiceConnectorGroupResult, Aws::Client::AWSError<ChimeErrors>> CreateVoiceConnectorGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteAccountResult, Aws::Client::AWSError<ChimeErrors>> DeleteAccountOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteEventsConfigurationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeletePhoneNumberOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteRoomOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteRoomMembershipOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteVoiceConnectorOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteVoiceConnectorGroupOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteVoiceConnectorOriginationOutcome;
@@ -225,6 +248,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetPhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> GetPhoneNumberOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberOrderResult, Aws::Client::AWSError<ChimeErrors>> GetPhoneNumberOrderOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberSettingsResult, Aws::Client::AWSError<ChimeErrors>> GetPhoneNumberSettingsOutcome;
+        typedef Aws::Utils::Outcome<GetRoomResult, Aws::Client::AWSError<ChimeErrors>> GetRoomOutcome;
         typedef Aws::Utils::Outcome<GetUserResult, Aws::Client::AWSError<ChimeErrors>> GetUserOutcome;
         typedef Aws::Utils::Outcome<GetUserSettingsResult, Aws::Client::AWSError<ChimeErrors>> GetUserSettingsOutcome;
         typedef Aws::Utils::Outcome<GetVoiceConnectorResult, Aws::Client::AWSError<ChimeErrors>> GetVoiceConnectorOutcome;
@@ -239,6 +263,8 @@ namespace Model
         typedef Aws::Utils::Outcome<ListBotsResult, Aws::Client::AWSError<ChimeErrors>> ListBotsOutcome;
         typedef Aws::Utils::Outcome<ListPhoneNumberOrdersResult, Aws::Client::AWSError<ChimeErrors>> ListPhoneNumberOrdersOutcome;
         typedef Aws::Utils::Outcome<ListPhoneNumbersResult, Aws::Client::AWSError<ChimeErrors>> ListPhoneNumbersOutcome;
+        typedef Aws::Utils::Outcome<ListRoomMembershipsResult, Aws::Client::AWSError<ChimeErrors>> ListRoomMembershipsOutcome;
+        typedef Aws::Utils::Outcome<ListRoomsResult, Aws::Client::AWSError<ChimeErrors>> ListRoomsOutcome;
         typedef Aws::Utils::Outcome<ListUsersResult, Aws::Client::AWSError<ChimeErrors>> ListUsersOutcome;
         typedef Aws::Utils::Outcome<ListVoiceConnectorGroupsResult, Aws::Client::AWSError<ChimeErrors>> ListVoiceConnectorGroupsOutcome;
         typedef Aws::Utils::Outcome<ListVoiceConnectorTerminationCredentialsResult, Aws::Client::AWSError<ChimeErrors>> ListVoiceConnectorTerminationCredentialsOutcome;
@@ -260,6 +286,8 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> UpdateGlobalSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdatePhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> UpdatePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> UpdatePhoneNumberSettingsOutcome;
+        typedef Aws::Utils::Outcome<UpdateRoomResult, Aws::Client::AWSError<ChimeErrors>> UpdateRoomOutcome;
+        typedef Aws::Utils::Outcome<UpdateRoomMembershipResult, Aws::Client::AWSError<ChimeErrors>> UpdateRoomMembershipOutcome;
         typedef Aws::Utils::Outcome<UpdateUserResult, Aws::Client::AWSError<ChimeErrors>> UpdateUserOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> UpdateUserSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdateVoiceConnectorResult, Aws::Client::AWSError<ChimeErrors>> UpdateVoiceConnectorOutcome;
@@ -268,6 +296,7 @@ namespace Model
         typedef std::future<AssociatePhoneNumberWithUserOutcome> AssociatePhoneNumberWithUserOutcomeCallable;
         typedef std::future<AssociatePhoneNumbersWithVoiceConnectorOutcome> AssociatePhoneNumbersWithVoiceConnectorOutcomeCallable;
         typedef std::future<AssociatePhoneNumbersWithVoiceConnectorGroupOutcome> AssociatePhoneNumbersWithVoiceConnectorGroupOutcomeCallable;
+        typedef std::future<BatchCreateRoomMembershipOutcome> BatchCreateRoomMembershipOutcomeCallable;
         typedef std::future<BatchDeletePhoneNumberOutcome> BatchDeletePhoneNumberOutcomeCallable;
         typedef std::future<BatchSuspendUserOutcome> BatchSuspendUserOutcomeCallable;
         typedef std::future<BatchUnsuspendUserOutcome> BatchUnsuspendUserOutcomeCallable;
@@ -276,11 +305,15 @@ namespace Model
         typedef std::future<CreateAccountOutcome> CreateAccountOutcomeCallable;
         typedef std::future<CreateBotOutcome> CreateBotOutcomeCallable;
         typedef std::future<CreatePhoneNumberOrderOutcome> CreatePhoneNumberOrderOutcomeCallable;
+        typedef std::future<CreateRoomOutcome> CreateRoomOutcomeCallable;
+        typedef std::future<CreateRoomMembershipOutcome> CreateRoomMembershipOutcomeCallable;
         typedef std::future<CreateVoiceConnectorOutcome> CreateVoiceConnectorOutcomeCallable;
         typedef std::future<CreateVoiceConnectorGroupOutcome> CreateVoiceConnectorGroupOutcomeCallable;
         typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
         typedef std::future<DeleteEventsConfigurationOutcome> DeleteEventsConfigurationOutcomeCallable;
         typedef std::future<DeletePhoneNumberOutcome> DeletePhoneNumberOutcomeCallable;
+        typedef std::future<DeleteRoomOutcome> DeleteRoomOutcomeCallable;
+        typedef std::future<DeleteRoomMembershipOutcome> DeleteRoomMembershipOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorOutcome> DeleteVoiceConnectorOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorGroupOutcome> DeleteVoiceConnectorGroupOutcomeCallable;
         typedef std::future<DeleteVoiceConnectorOriginationOutcome> DeleteVoiceConnectorOriginationOutcomeCallable;
@@ -298,6 +331,7 @@ namespace Model
         typedef std::future<GetPhoneNumberOutcome> GetPhoneNumberOutcomeCallable;
         typedef std::future<GetPhoneNumberOrderOutcome> GetPhoneNumberOrderOutcomeCallable;
         typedef std::future<GetPhoneNumberSettingsOutcome> GetPhoneNumberSettingsOutcomeCallable;
+        typedef std::future<GetRoomOutcome> GetRoomOutcomeCallable;
         typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
         typedef std::future<GetUserSettingsOutcome> GetUserSettingsOutcomeCallable;
         typedef std::future<GetVoiceConnectorOutcome> GetVoiceConnectorOutcomeCallable;
@@ -312,6 +346,8 @@ namespace Model
         typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
         typedef std::future<ListPhoneNumberOrdersOutcome> ListPhoneNumberOrdersOutcomeCallable;
         typedef std::future<ListPhoneNumbersOutcome> ListPhoneNumbersOutcomeCallable;
+        typedef std::future<ListRoomMembershipsOutcome> ListRoomMembershipsOutcomeCallable;
+        typedef std::future<ListRoomsOutcome> ListRoomsOutcomeCallable;
         typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
         typedef std::future<ListVoiceConnectorGroupsOutcome> ListVoiceConnectorGroupsOutcomeCallable;
         typedef std::future<ListVoiceConnectorTerminationCredentialsOutcome> ListVoiceConnectorTerminationCredentialsOutcomeCallable;
@@ -333,6 +369,8 @@ namespace Model
         typedef std::future<UpdateGlobalSettingsOutcome> UpdateGlobalSettingsOutcomeCallable;
         typedef std::future<UpdatePhoneNumberOutcome> UpdatePhoneNumberOutcomeCallable;
         typedef std::future<UpdatePhoneNumberSettingsOutcome> UpdatePhoneNumberSettingsOutcomeCallable;
+        typedef std::future<UpdateRoomOutcome> UpdateRoomOutcomeCallable;
+        typedef std::future<UpdateRoomMembershipOutcome> UpdateRoomMembershipOutcomeCallable;
         typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
         typedef std::future<UpdateUserSettingsOutcome> UpdateUserSettingsOutcomeCallable;
         typedef std::future<UpdateVoiceConnectorOutcome> UpdateVoiceConnectorOutcomeCallable;
@@ -344,6 +382,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::AssociatePhoneNumberWithUserRequest&, const Model::AssociatePhoneNumberWithUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePhoneNumberWithUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::AssociatePhoneNumbersWithVoiceConnectorRequest&, const Model::AssociatePhoneNumbersWithVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePhoneNumbersWithVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::AssociatePhoneNumbersWithVoiceConnectorGroupRequest&, const Model::AssociatePhoneNumbersWithVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePhoneNumbersWithVoiceConnectorGroupResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::BatchCreateRoomMembershipRequest&, const Model::BatchCreateRoomMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateRoomMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::BatchDeletePhoneNumberRequest&, const Model::BatchDeletePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeletePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::BatchSuspendUserRequest&, const Model::BatchSuspendUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchSuspendUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::BatchUnsuspendUserRequest&, const Model::BatchUnsuspendUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUnsuspendUserResponseReceivedHandler;
@@ -352,11 +391,15 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::CreateAccountRequest&, const Model::CreateAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccountResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateBotRequest&, const Model::CreateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreatePhoneNumberOrderRequest&, const Model::CreatePhoneNumberOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePhoneNumberOrderResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateRoomRequest&, const Model::CreateRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoomResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateRoomMembershipRequest&, const Model::CreateRoomMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoomMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateVoiceConnectorRequest&, const Model::CreateVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateVoiceConnectorGroupRequest&, const Model::CreateVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVoiceConnectorGroupResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteAccountRequest&, const Model::DeleteAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteEventsConfigurationRequest&, const Model::DeleteEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeletePhoneNumberRequest&, const Model::DeletePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePhoneNumberResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteRoomRequest&, const Model::DeleteRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoomResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteRoomMembershipRequest&, const Model::DeleteRoomMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoomMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorRequest&, const Model::DeleteVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorGroupRequest&, const Model::DeleteVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorGroupResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteVoiceConnectorOriginationRequest&, const Model::DeleteVoiceConnectorOriginationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceConnectorOriginationResponseReceivedHandler;
@@ -374,6 +417,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberRequest&, const Model::GetPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberOrderRequest&, const Model::GetPhoneNumberOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberOrderResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetRoomRequest&, const Model::GetRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRoomResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetUserRequest&, const Model::GetUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetUserSettingsRequest&, const Model::GetUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorRequest&, const Model::GetVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorResponseReceivedHandler;
@@ -388,6 +432,8 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListPhoneNumberOrdersRequest&, const Model::ListPhoneNumberOrdersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumberOrdersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListPhoneNumbersRequest&, const Model::ListPhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumbersResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListRoomMembershipsRequest&, const Model::ListRoomMembershipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoomMembershipsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListRoomsRequest&, const Model::ListRoomsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoomsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListVoiceConnectorGroupsRequest&, const Model::ListVoiceConnectorGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceConnectorGroupsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListVoiceConnectorTerminationCredentialsRequest&, const Model::ListVoiceConnectorTerminationCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVoiceConnectorTerminationCredentialsResponseReceivedHandler;
@@ -409,6 +455,8 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::UpdateGlobalSettingsRequest&, const Model::UpdateGlobalSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdatePhoneNumberRequest&, const Model::UpdatePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdatePhoneNumberSettingsRequest&, const Model::UpdatePhoneNumberSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePhoneNumberSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::UpdateRoomRequest&, const Model::UpdateRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoomResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::UpdateRoomMembershipRequest&, const Model::UpdateRoomMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRoomMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateUserSettingsRequest&, const Model::UpdateUserSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserSettingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::UpdateVoiceConnectorRequest&, const Model::UpdateVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVoiceConnectorResponseReceivedHandler;
@@ -560,6 +608,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociatePhoneNumbersWithVoiceConnectorGroupAsync(const Model::AssociatePhoneNumbersWithVoiceConnectorGroupRequest& request, const AssociatePhoneNumbersWithVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds up to 50 members to a chat room. Members can be either users or bots.
+         * The member role designates whether the member is a chat room administrator or a
+         * general chat room member.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateRoomMembership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchCreateRoomMembershipOutcome BatchCreateRoomMembership(const Model::BatchCreateRoomMembershipRequest& request) const;
+
+        /**
+         * <p>Adds up to 50 members to a chat room. Members can be either users or bots.
+         * The member role designates whether the member is a chat room administrator or a
+         * general chat room member.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateRoomMembership">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchCreateRoomMembershipOutcomeCallable BatchCreateRoomMembershipCallable(const Model::BatchCreateRoomMembershipRequest& request) const;
+
+        /**
+         * <p>Adds up to 50 members to a chat room. Members can be either users or bots.
+         * The member role designates whether the member is a chat room administrator or a
+         * general chat room member.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateRoomMembership">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchCreateRoomMembershipAsync(const Model::BatchCreateRoomMembershipRequest& request, const BatchCreateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be
@@ -894,6 +973,65 @@ namespace Model
         virtual void CreatePhoneNumberOrderAsync(const Model::CreatePhoneNumberOrderRequest& request, const CreatePhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a chat room for the specified Amazon Chime account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoom">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRoomOutcome CreateRoom(const Model::CreateRoomRequest& request) const;
+
+        /**
+         * <p>Creates a chat room for the specified Amazon Chime account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoom">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateRoomOutcomeCallable CreateRoomCallable(const Model::CreateRoomRequest& request) const;
+
+        /**
+         * <p>Creates a chat room for the specified Amazon Chime account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoom">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateRoomAsync(const Model::CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Adds a member to a chat room. A member can be either a user or a bot. The
+         * member role designates whether the member is a chat room administrator or a
+         * general chat room member.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoomMembership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRoomMembershipOutcome CreateRoomMembership(const Model::CreateRoomMembershipRequest& request) const;
+
+        /**
+         * <p>Adds a member to a chat room. A member can be either a user or a bot. The
+         * member role designates whether the member is a chat room administrator or a
+         * general chat room member.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoomMembership">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateRoomMembershipOutcomeCallable CreateRoomMembershipCallable(const Model::CreateRoomMembershipRequest& request) const;
+
+        /**
+         * <p>Adds a member to a chat room. A member can be either a user or a bot. The
+         * member role designates whether the member is a chat room administrator or a
+         * general chat room member.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateRoomMembership">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateRoomMembershipAsync(const Model::CreateRoomMembershipRequest& request, const CreateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an Amazon Chime Voice Connector under the administrator's AWS
          * account. You can choose to create an Amazon Chime Voice Connector in a specific
          * AWS Region.</p> <p>Enabling <a>CreateVoiceConnectorRequest$RequireEncryption</a>
@@ -1092,6 +1230,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeletePhoneNumberAsync(const Model::DeletePhoneNumberRequest& request, const DeletePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a chat room.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoom">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRoomOutcome DeleteRoom(const Model::DeleteRoomRequest& request) const;
+
+        /**
+         * <p>Deletes a chat room.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoom">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRoomOutcomeCallable DeleteRoomCallable(const Model::DeleteRoomRequest& request) const;
+
+        /**
+         * <p>Deletes a chat room.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoom">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRoomAsync(const Model::DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a member from a chat room.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoomMembership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRoomMembershipOutcome DeleteRoomMembership(const Model::DeleteRoomMembershipRequest& request) const;
+
+        /**
+         * <p>Removes a member from a chat room.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoomMembership">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteRoomMembershipOutcomeCallable DeleteRoomMembershipCallable(const Model::DeleteRoomMembershipRequest& request) const;
+
+        /**
+         * <p>Removes a member from a chat room.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteRoomMembership">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteRoomMembershipAsync(const Model::DeleteRoomMembershipRequest& request, const DeleteRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified Amazon Chime Voice Connector. Any phone numbers
@@ -1592,6 +1780,31 @@ namespace Model
          */
         virtual void GetPhoneNumberSettingsAsync(const GetPhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
         /**
+         * <p>Retrieves room details, such as name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRoom">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::GetRoomOutcome GetRoom(const Model::GetRoomRequest& request) const;
+
+        /**
+         * <p>Retrieves room details, such as name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRoom">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetRoomOutcomeCallable GetRoomCallable(const Model::GetRoomRequest& request) const;
+
+        /**
+         * <p>Retrieves room details, such as name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetRoom">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetRoomAsync(const Model::GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves details for the specified user ID, such as primary email address,
          * license type, and personal meeting PIN.</p> <p>To retrieve user details with an
          * email address instead of a user ID, use the <a>ListUsers</a> action, and then
@@ -1777,8 +1990,8 @@ namespace Model
         /**
          * <p>Retrieves the streaming configuration details for the specified Amazon Chime
          * Voice Connector. Shows whether media streaming is enabled for sending to Amazon
-         * Kinesis, and shows the retention period for the Amazon Kinesis data, in
-         * hours.</p><p><h3>See Also:</h3>   <a
+         * Kinesis. It also shows the retention period, in hours, for the Amazon Kinesis
+         * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorStreamingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -1787,8 +2000,8 @@ namespace Model
         /**
          * <p>Retrieves the streaming configuration details for the specified Amazon Chime
          * Voice Connector. Shows whether media streaming is enabled for sending to Amazon
-         * Kinesis, and shows the retention period for the Amazon Kinesis data, in
-         * hours.</p><p><h3>See Also:</h3>   <a
+         * Kinesis. It also shows the retention period, in hours, for the Amazon Kinesis
+         * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorStreamingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1799,8 +2012,8 @@ namespace Model
         /**
          * <p>Retrieves the streaming configuration details for the specified Amazon Chime
          * Voice Connector. Shows whether media streaming is enabled for sending to Amazon
-         * Kinesis, and shows the retention period for the Amazon Kinesis data, in
-         * hours.</p><p><h3>See Also:</h3>   <a
+         * Kinesis. It also shows the retention period, in hours, for the Amazon Kinesis
+         * data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorStreamingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1868,8 +2081,8 @@ namespace Model
         virtual void GetVoiceConnectorTerminationHealthAsync(const Model::GetVoiceConnectorTerminationHealthRequest& request, const GetVoiceConnectorTerminationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Sends email invites to as many as 50 users, inviting them to the specified
-         * Amazon Chime <code>Team</code> account. Only <code>Team</code> account types are
+         * <p>Sends email to a maximum of 50 users, inviting them to the specified Amazon
+         * Chime <code>Team</code> account. Only <code>Team</code> account types are
          * currently supported for this action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/InviteUsers">AWS
          * API Reference</a></p>
@@ -1877,8 +2090,8 @@ namespace Model
         virtual Model::InviteUsersOutcome InviteUsers(const Model::InviteUsersRequest& request) const;
 
         /**
-         * <p>Sends email invites to as many as 50 users, inviting them to the specified
-         * Amazon Chime <code>Team</code> account. Only <code>Team</code> account types are
+         * <p>Sends email to a maximum of 50 users, inviting them to the specified Amazon
+         * Chime <code>Team</code> account. Only <code>Team</code> account types are
          * currently supported for this action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/InviteUsers">AWS
          * API Reference</a></p>
@@ -1888,8 +2101,8 @@ namespace Model
         virtual Model::InviteUsersOutcomeCallable InviteUsersCallable(const Model::InviteUsersRequest& request) const;
 
         /**
-         * <p>Sends email invites to as many as 50 users, inviting them to the specified
-         * Amazon Chime <code>Team</code> account. Only <code>Team</code> account types are
+         * <p>Sends email to a maximum of 50 users, inviting them to the specified Amazon
+         * Chime <code>Team</code> account. Only <code>Team</code> account types are
          * currently supported for this action. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/InviteUsers">AWS
          * API Reference</a></p>
@@ -2018,6 +2231,65 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListPhoneNumbersAsync(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the membership details for the specified room, such as member IDs,
+         * member email addresses, and member names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRoomMemberships">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRoomMembershipsOutcome ListRoomMemberships(const Model::ListRoomMembershipsRequest& request) const;
+
+        /**
+         * <p>Lists the membership details for the specified room, such as member IDs,
+         * member email addresses, and member names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRoomMemberships">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRoomMembershipsOutcomeCallable ListRoomMembershipsCallable(const Model::ListRoomMembershipsRequest& request) const;
+
+        /**
+         * <p>Lists the membership details for the specified room, such as member IDs,
+         * member email addresses, and member names.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRoomMemberships">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRoomMembershipsAsync(const Model::ListRoomMembershipsRequest& request, const ListRoomMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the room details for the specified Amazon Chime account. Optionally,
+         * filter the results by a member ID (user ID or bot ID) to see a list of rooms
+         * that the member belongs to.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRooms">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::ListRoomsOutcome ListRooms(const Model::ListRoomsRequest& request) const;
+
+        /**
+         * <p>Lists the room details for the specified Amazon Chime account. Optionally,
+         * filter the results by a member ID (user ID or bot ID) to see a list of rooms
+         * that the member belongs to.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRooms">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListRoomsOutcomeCallable ListRoomsCallable(const Model::ListRoomsRequest& request) const;
+
+        /**
+         * <p>Lists the room details for the specified Amazon Chime account. Optionally,
+         * filter the results by a member ID (user ID or bot ID) to see a list of rooms
+         * that the member belongs to.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListRooms">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListRoomsAsync(const Model::ListRoomsRequest& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the users that belong to the specified Amazon Chime account. You can
@@ -2255,8 +2527,8 @@ namespace Model
         /**
          * <p>Adds a streaming configuration for the specified Amazon Chime Voice
          * Connector. The streaming configuration specifies whether media streaming is
-         * enabled for sending to Amazon Kinesis, and sets the retention period for the
-         * Amazon Kinesis data, in hours.</p><p><h3>See Also:</h3>   <a
+         * enabled for sending to Amazon Kinesis. It also sets the retention period, in
+         * hours, for the Amazon Kinesis data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorStreamingConfiguration">AWS
          * API Reference</a></p>
          */
@@ -2265,8 +2537,8 @@ namespace Model
         /**
          * <p>Adds a streaming configuration for the specified Amazon Chime Voice
          * Connector. The streaming configuration specifies whether media streaming is
-         * enabled for sending to Amazon Kinesis, and sets the retention period for the
-         * Amazon Kinesis data, in hours.</p><p><h3>See Also:</h3>   <a
+         * enabled for sending to Amazon Kinesis. It also sets the retention period, in
+         * hours, for the Amazon Kinesis data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorStreamingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2277,8 +2549,8 @@ namespace Model
         /**
          * <p>Adds a streaming configuration for the specified Amazon Chime Voice
          * Connector. The streaming configuration specifies whether media streaming is
-         * enabled for sending to Amazon Kinesis, and sets the retention period for the
-         * Amazon Kinesis data, in hours.</p><p><h3>See Also:</h3>   <a
+         * enabled for sending to Amazon Kinesis. It also sets the retention period, in
+         * hours, for the Amazon Kinesis data.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorStreamingConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2628,7 +2900,7 @@ namespace Model
          * <p>Updates the phone number settings for the administrator's AWS account, such
          * as the default outbound calling name. You can update the default outbound
          * calling name once every seven days. Outbound calling names can take up to 72
-         * hours to be updated.</p><p><h3>See Also:</h3>   <a
+         * hours to update.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumberSettings">AWS
          * API Reference</a></p>
          */
@@ -2638,7 +2910,7 @@ namespace Model
          * <p>Updates the phone number settings for the administrator's AWS account, such
          * as the default outbound calling name. You can update the default outbound
          * calling name once every seven days. Outbound calling names can take up to 72
-         * hours to be updated.</p><p><h3>See Also:</h3>   <a
+         * hours to update.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumberSettings">AWS
          * API Reference</a></p>
          *
@@ -2650,13 +2922,72 @@ namespace Model
          * <p>Updates the phone number settings for the administrator's AWS account, such
          * as the default outbound calling name. You can update the default outbound
          * calling name once every seven days. Outbound calling names can take up to 72
-         * hours to be updated.</p><p><h3>See Also:</h3>   <a
+         * hours to update.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdatePhoneNumberSettings">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdatePhoneNumberSettingsAsync(const Model::UpdatePhoneNumberSettingsRequest& request, const UpdatePhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates room details, such as the room name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoom">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRoomOutcome UpdateRoom(const Model::UpdateRoomRequest& request) const;
+
+        /**
+         * <p>Updates room details, such as the room name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoom">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRoomOutcomeCallable UpdateRoomCallable(const Model::UpdateRoomRequest& request) const;
+
+        /**
+         * <p>Updates room details, such as the room name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoom">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRoomAsync(const Model::UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates room membership details, such as member role. The member role
+         * designates whether the member is a chat room administrator or a general chat
+         * room member. Member role can only be updated for user IDs.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoomMembership">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRoomMembershipOutcome UpdateRoomMembership(const Model::UpdateRoomMembershipRequest& request) const;
+
+        /**
+         * <p>Updates room membership details, such as member role. The member role
+         * designates whether the member is a chat room administrator or a general chat
+         * room member. Member role can only be updated for user IDs.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoomMembership">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateRoomMembershipOutcomeCallable UpdateRoomMembershipCallable(const Model::UpdateRoomMembershipRequest& request) const;
+
+        /**
+         * <p>Updates room membership details, such as member role. The member role
+         * designates whether the member is a chat room administrator or a general chat
+         * room member. Member role can only be updated for user IDs.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateRoomMembership">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateRoomMembershipAsync(const Model::UpdateRoomMembershipRequest& request, const UpdateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Updates user details for a specified user ID. Currently, only
@@ -2783,6 +3114,7 @@ namespace Model
         void AssociatePhoneNumberWithUserAsyncHelper(const Model::AssociatePhoneNumberWithUserRequest& request, const AssociatePhoneNumberWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociatePhoneNumbersWithVoiceConnectorAsyncHelper(const Model::AssociatePhoneNumbersWithVoiceConnectorRequest& request, const AssociatePhoneNumbersWithVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociatePhoneNumbersWithVoiceConnectorGroupAsyncHelper(const Model::AssociatePhoneNumbersWithVoiceConnectorGroupRequest& request, const AssociatePhoneNumbersWithVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchCreateRoomMembershipAsyncHelper(const Model::BatchCreateRoomMembershipRequest& request, const BatchCreateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDeletePhoneNumberAsyncHelper(const Model::BatchDeletePhoneNumberRequest& request, const BatchDeletePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchSuspendUserAsyncHelper(const Model::BatchSuspendUserRequest& request, const BatchSuspendUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchUnsuspendUserAsyncHelper(const Model::BatchUnsuspendUserRequest& request, const BatchUnsuspendUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2791,11 +3123,15 @@ namespace Model
         void CreateAccountAsyncHelper(const Model::CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBotAsyncHelper(const Model::CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePhoneNumberOrderAsyncHelper(const Model::CreatePhoneNumberOrderRequest& request, const CreatePhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateRoomAsyncHelper(const Model::CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateRoomMembershipAsyncHelper(const Model::CreateRoomMembershipRequest& request, const CreateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVoiceConnectorAsyncHelper(const Model::CreateVoiceConnectorRequest& request, const CreateVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVoiceConnectorGroupAsyncHelper(const Model::CreateVoiceConnectorGroupRequest& request, const CreateVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccountAsyncHelper(const Model::DeleteAccountRequest& request, const DeleteAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventsConfigurationAsyncHelper(const Model::DeleteEventsConfigurationRequest& request, const DeleteEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePhoneNumberAsyncHelper(const Model::DeletePhoneNumberRequest& request, const DeletePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRoomAsyncHelper(const Model::DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteRoomMembershipAsyncHelper(const Model::DeleteRoomMembershipRequest& request, const DeleteRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorAsyncHelper(const Model::DeleteVoiceConnectorRequest& request, const DeleteVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorGroupAsyncHelper(const Model::DeleteVoiceConnectorGroupRequest& request, const DeleteVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceConnectorOriginationAsyncHelper(const Model::DeleteVoiceConnectorOriginationRequest& request, const DeleteVoiceConnectorOriginationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2813,6 +3149,7 @@ namespace Model
         void GetPhoneNumberAsyncHelper(const Model::GetPhoneNumberRequest& request, const GetPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberOrderAsyncHelper(const Model::GetPhoneNumberOrderRequest& request, const GetPhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberSettingsAsyncHelper(const GetPhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetRoomAsyncHelper(const Model::GetRoomRequest& request, const GetRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserAsyncHelper(const Model::GetUserRequest& request, const GetUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserSettingsAsyncHelper(const Model::GetUserSettingsRequest& request, const GetUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVoiceConnectorAsyncHelper(const Model::GetVoiceConnectorRequest& request, const GetVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2827,6 +3164,8 @@ namespace Model
         void ListBotsAsyncHelper(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPhoneNumberOrdersAsyncHelper(const Model::ListPhoneNumberOrdersRequest& request, const ListPhoneNumberOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPhoneNumbersAsyncHelper(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListRoomMembershipsAsyncHelper(const Model::ListRoomMembershipsRequest& request, const ListRoomMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListRoomsAsyncHelper(const Model::ListRoomsRequest& request, const ListRoomsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUsersAsyncHelper(const Model::ListUsersRequest& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVoiceConnectorGroupsAsyncHelper(const Model::ListVoiceConnectorGroupsRequest& request, const ListVoiceConnectorGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListVoiceConnectorTerminationCredentialsAsyncHelper(const Model::ListVoiceConnectorTerminationCredentialsRequest& request, const ListVoiceConnectorTerminationCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2848,6 +3187,8 @@ namespace Model
         void UpdateGlobalSettingsAsyncHelper(const Model::UpdateGlobalSettingsRequest& request, const UpdateGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePhoneNumberAsyncHelper(const Model::UpdatePhoneNumberRequest& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePhoneNumberSettingsAsyncHelper(const Model::UpdatePhoneNumberSettingsRequest& request, const UpdatePhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateRoomAsyncHelper(const Model::UpdateRoomRequest& request, const UpdateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateRoomMembershipAsyncHelper(const Model::UpdateRoomMembershipRequest& request, const UpdateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserAsyncHelper(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserSettingsAsyncHelper(const Model::UpdateUserSettingsRequest& request, const UpdateUserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVoiceConnectorAsyncHelper(const Model::UpdateVoiceConnectorRequest& request, const UpdateVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

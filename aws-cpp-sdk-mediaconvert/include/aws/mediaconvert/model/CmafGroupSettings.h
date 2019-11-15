@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/CmafClientCache.h>
 #include <aws/mediaconvert/model/CmafCodecSpecification.h>
@@ -27,6 +28,7 @@
 #include <aws/mediaconvert/model/CmafStreamInfResolution.h>
 #include <aws/mediaconvert/model/CmafWriteDASHManifest.h>
 #include <aws/mediaconvert/model/CmafWriteHLSManifest.h>
+#include <aws/mediaconvert/model/CmafAdditionalManifest.h>
 #include <utility>
 
 namespace Aws
@@ -58,6 +60,87 @@ namespace Model
     CmafGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     CmafGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest and one top
+     * -level .mpd DASH manifest for each CMAF output group in your job. These default
+     * manifests reference every output in the output group. To create additional
+     * top-level manifests that reference a subset of the outputs in the output group,
+     * specify a list of them here. For each additional manifest that you specify, the
+     * service creates one HLS manifest and one DASH manifest.
+     */
+    inline const Aws::Vector<CmafAdditionalManifest>& GetAdditionalManifests() const{ return m_additionalManifests; }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest and one top
+     * -level .mpd DASH manifest for each CMAF output group in your job. These default
+     * manifests reference every output in the output group. To create additional
+     * top-level manifests that reference a subset of the outputs in the output group,
+     * specify a list of them here. For each additional manifest that you specify, the
+     * service creates one HLS manifest and one DASH manifest.
+     */
+    inline bool AdditionalManifestsHasBeenSet() const { return m_additionalManifestsHasBeenSet; }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest and one top
+     * -level .mpd DASH manifest for each CMAF output group in your job. These default
+     * manifests reference every output in the output group. To create additional
+     * top-level manifests that reference a subset of the outputs in the output group,
+     * specify a list of them here. For each additional manifest that you specify, the
+     * service creates one HLS manifest and one DASH manifest.
+     */
+    inline void SetAdditionalManifests(const Aws::Vector<CmafAdditionalManifest>& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests = value; }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest and one top
+     * -level .mpd DASH manifest for each CMAF output group in your job. These default
+     * manifests reference every output in the output group. To create additional
+     * top-level manifests that reference a subset of the outputs in the output group,
+     * specify a list of them here. For each additional manifest that you specify, the
+     * service creates one HLS manifest and one DASH manifest.
+     */
+    inline void SetAdditionalManifests(Aws::Vector<CmafAdditionalManifest>&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests = std::move(value); }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest and one top
+     * -level .mpd DASH manifest for each CMAF output group in your job. These default
+     * manifests reference every output in the output group. To create additional
+     * top-level manifests that reference a subset of the outputs in the output group,
+     * specify a list of them here. For each additional manifest that you specify, the
+     * service creates one HLS manifest and one DASH manifest.
+     */
+    inline CmafGroupSettings& WithAdditionalManifests(const Aws::Vector<CmafAdditionalManifest>& value) { SetAdditionalManifests(value); return *this;}
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest and one top
+     * -level .mpd DASH manifest for each CMAF output group in your job. These default
+     * manifests reference every output in the output group. To create additional
+     * top-level manifests that reference a subset of the outputs in the output group,
+     * specify a list of them here. For each additional manifest that you specify, the
+     * service creates one HLS manifest and one DASH manifest.
+     */
+    inline CmafGroupSettings& WithAdditionalManifests(Aws::Vector<CmafAdditionalManifest>&& value) { SetAdditionalManifests(std::move(value)); return *this;}
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest and one top
+     * -level .mpd DASH manifest for each CMAF output group in your job. These default
+     * manifests reference every output in the output group. To create additional
+     * top-level manifests that reference a subset of the outputs in the output group,
+     * specify a list of them here. For each additional manifest that you specify, the
+     * service creates one HLS manifest and one DASH manifest.
+     */
+    inline CmafGroupSettings& AddAdditionalManifests(const CmafAdditionalManifest& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests.push_back(value); return *this; }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest and one top
+     * -level .mpd DASH manifest for each CMAF output group in your job. These default
+     * manifests reference every output in the output group. To create additional
+     * top-level manifests that reference a subset of the outputs in the output group,
+     * specify a list of them here. For each additional manifest that you specify, the
+     * service creates one HLS manifest and one DASH manifest.
+     */
+    inline CmafGroupSettings& AddAdditionalManifests(CmafAdditionalManifest&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -785,6 +868,9 @@ namespace Model
     inline CmafGroupSettings& WithWriteHlsManifest(CmafWriteHLSManifest&& value) { SetWriteHlsManifest(std::move(value)); return *this;}
 
   private:
+
+    Aws::Vector<CmafAdditionalManifest> m_additionalManifests;
+    bool m_additionalManifestsHasBeenSet;
 
     Aws::String m_baseUrl;
     bool m_baseUrlHasBeenSet;

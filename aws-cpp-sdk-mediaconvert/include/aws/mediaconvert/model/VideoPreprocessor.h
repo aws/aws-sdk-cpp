@@ -17,6 +17,7 @@
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/ColorCorrector.h>
 #include <aws/mediaconvert/model/Deinterlacer.h>
+#include <aws/mediaconvert/model/DolbyVision.h>
 #include <aws/mediaconvert/model/ImageInserter.h>
 #include <aws/mediaconvert/model/NoiseReducer.h>
 #include <aws/mediaconvert/model/TimecodeBurnin.h>
@@ -131,6 +132,37 @@ namespace Model
      * picture.
      */
     inline VideoPreprocessor& WithDeinterlacer(Deinterlacer&& value) { SetDeinterlacer(std::move(value)); return *this;}
+
+
+    /**
+     * Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+     */
+    inline const DolbyVision& GetDolbyVision() const{ return m_dolbyVision; }
+
+    /**
+     * Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+     */
+    inline bool DolbyVisionHasBeenSet() const { return m_dolbyVisionHasBeenSet; }
+
+    /**
+     * Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+     */
+    inline void SetDolbyVision(const DolbyVision& value) { m_dolbyVisionHasBeenSet = true; m_dolbyVision = value; }
+
+    /**
+     * Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+     */
+    inline void SetDolbyVision(DolbyVision&& value) { m_dolbyVisionHasBeenSet = true; m_dolbyVision = std::move(value); }
+
+    /**
+     * Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+     */
+    inline VideoPreprocessor& WithDolbyVision(const DolbyVision& value) { SetDolbyVision(value); return *this;}
+
+    /**
+     * Enable Dolby Vision feature to produce Dolby Vision compatible video output.
+     */
+    inline VideoPreprocessor& WithDolbyVision(DolbyVision&& value) { SetDolbyVision(std::move(value)); return *this;}
 
 
     /**
@@ -262,6 +294,9 @@ namespace Model
 
     Deinterlacer m_deinterlacer;
     bool m_deinterlacerHasBeenSet;
+
+    DolbyVision m_dolbyVision;
+    bool m_dolbyVisionHasBeenSet;
 
     ImageInserter m_imageInserter;
     bool m_imageInserterHasBeenSet;

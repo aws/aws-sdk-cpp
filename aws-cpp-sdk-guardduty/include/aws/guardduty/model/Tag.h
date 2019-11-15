@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the tag associated with the
-   * resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about a tag associated with the Ec2
+   * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Tag">AWS API
    * Reference</a></p>
    */

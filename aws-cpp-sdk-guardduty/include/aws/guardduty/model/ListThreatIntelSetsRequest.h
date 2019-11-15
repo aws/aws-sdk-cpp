@@ -115,66 +115,66 @@ namespace Model
 
 
     /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>You can use this parameter to paginate results in the response. Set the value
+     * of this parameter to null on your first call to the list action. For subsequent
+     * calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>You can use this parameter to paginate results in the response. Set the value
+     * of this parameter to null on your first call to the list action. For subsequent
+     * calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>You can use this parameter to paginate results in the response. Set the value
+     * of this parameter to null on your first call to the list action. For subsequent
+     * calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>You can use this parameter to paginate results in the response. Set the value
+     * of this parameter to null on your first call to the list action. For subsequent
+     * calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>You can use this parameter to paginate results in the response. Set the value
+     * of this parameter to null on your first call to the list action. For subsequent
+     * calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>You can use this parameter to paginate results in the response. Set the value
+     * of this parameter to null on your first call to the list action. For subsequent
+     * calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.</p>
      */
     inline ListThreatIntelSetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>You can use this parameter to paginate results in the response. Set the value
+     * of this parameter to null on your first call to the list action. For subsequent
+     * calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.</p>
      */
     inline ListThreatIntelSetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
+     * <p>You can use this parameter to paginate results in the response. Set the value
+     * of this parameter to null on your first call to the list action. For subsequent
+     * calls to the action fill nextToken in the request with the value of NextToken
+     * from the previous response to continue listing data.</p>
      */
     inline ListThreatIntelSetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

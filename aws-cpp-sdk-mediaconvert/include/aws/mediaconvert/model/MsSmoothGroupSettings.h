@@ -15,11 +15,13 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/MsSmoothAudioDeduplication.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/MsSmoothEncryptionSettings.h>
 #include <aws/mediaconvert/model/MsSmoothManifestEncoding.h>
+#include <aws/mediaconvert/model/MsSmoothAdditionalManifest.h>
 #include <utility>
 
 namespace Aws
@@ -50,6 +52,79 @@ namespace Model
     MsSmoothGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     MsSmoothGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * By default, the service creates one .ism Microsoft Smooth Streaming manifest for
+     * each Microsoft Smooth Streaming output group in your job. This default manifest
+     * references every output in the output group. To create additional manifests that
+     * reference a subset of the outputs in the output group, specify a list of them
+     * here.
+     */
+    inline const Aws::Vector<MsSmoothAdditionalManifest>& GetAdditionalManifests() const{ return m_additionalManifests; }
+
+    /**
+     * By default, the service creates one .ism Microsoft Smooth Streaming manifest for
+     * each Microsoft Smooth Streaming output group in your job. This default manifest
+     * references every output in the output group. To create additional manifests that
+     * reference a subset of the outputs in the output group, specify a list of them
+     * here.
+     */
+    inline bool AdditionalManifestsHasBeenSet() const { return m_additionalManifestsHasBeenSet; }
+
+    /**
+     * By default, the service creates one .ism Microsoft Smooth Streaming manifest for
+     * each Microsoft Smooth Streaming output group in your job. This default manifest
+     * references every output in the output group. To create additional manifests that
+     * reference a subset of the outputs in the output group, specify a list of them
+     * here.
+     */
+    inline void SetAdditionalManifests(const Aws::Vector<MsSmoothAdditionalManifest>& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests = value; }
+
+    /**
+     * By default, the service creates one .ism Microsoft Smooth Streaming manifest for
+     * each Microsoft Smooth Streaming output group in your job. This default manifest
+     * references every output in the output group. To create additional manifests that
+     * reference a subset of the outputs in the output group, specify a list of them
+     * here.
+     */
+    inline void SetAdditionalManifests(Aws::Vector<MsSmoothAdditionalManifest>&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests = std::move(value); }
+
+    /**
+     * By default, the service creates one .ism Microsoft Smooth Streaming manifest for
+     * each Microsoft Smooth Streaming output group in your job. This default manifest
+     * references every output in the output group. To create additional manifests that
+     * reference a subset of the outputs in the output group, specify a list of them
+     * here.
+     */
+    inline MsSmoothGroupSettings& WithAdditionalManifests(const Aws::Vector<MsSmoothAdditionalManifest>& value) { SetAdditionalManifests(value); return *this;}
+
+    /**
+     * By default, the service creates one .ism Microsoft Smooth Streaming manifest for
+     * each Microsoft Smooth Streaming output group in your job. This default manifest
+     * references every output in the output group. To create additional manifests that
+     * reference a subset of the outputs in the output group, specify a list of them
+     * here.
+     */
+    inline MsSmoothGroupSettings& WithAdditionalManifests(Aws::Vector<MsSmoothAdditionalManifest>&& value) { SetAdditionalManifests(std::move(value)); return *this;}
+
+    /**
+     * By default, the service creates one .ism Microsoft Smooth Streaming manifest for
+     * each Microsoft Smooth Streaming output group in your job. This default manifest
+     * references every output in the output group. To create additional manifests that
+     * reference a subset of the outputs in the output group, specify a list of them
+     * here.
+     */
+    inline MsSmoothGroupSettings& AddAdditionalManifests(const MsSmoothAdditionalManifest& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests.push_back(value); return *this; }
+
+    /**
+     * By default, the service creates one .ism Microsoft Smooth Streaming manifest for
+     * each Microsoft Smooth Streaming output group in your job. This default manifest
+     * references every output in the output group. To create additional manifests that
+     * reference a subset of the outputs in the output group, specify a list of them
+     * here.
+     */
+    inline MsSmoothGroupSettings& AddAdditionalManifests(MsSmoothAdditionalManifest&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -298,6 +373,9 @@ namespace Model
     inline MsSmoothGroupSettings& WithManifestEncoding(MsSmoothManifestEncoding&& value) { SetManifestEncoding(std::move(value)); return *this;}
 
   private:
+
+    Aws::Vector<MsSmoothAdditionalManifest> m_additionalManifests;
+    bool m_additionalManifestsHasBeenSet;
 
     MsSmoothAudioDeduplication m_audioDeduplication;
     bool m_audioDeduplicationHasBeenSet;

@@ -824,7 +824,8 @@ namespace Model
 
         /**
          * <p>Provides a list of steps for the cluster in reverse order unless you specify
-         * stepIds with the request.</p><p><h3>See Also:</h3>   <a
+         * <code>stepIds</code> with the request of filter by <code>StepStates</code>. You
+         * can specify a maximum of ten <code>stepIDs</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">AWS
          * API Reference</a></p>
          */
@@ -832,7 +833,8 @@ namespace Model
 
         /**
          * <p>Provides a list of steps for the cluster in reverse order unless you specify
-         * stepIds with the request.</p><p><h3>See Also:</h3>   <a
+         * <code>stepIds</code> with the request of filter by <code>StepStates</code>. You
+         * can specify a maximum of ten <code>stepIDs</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">AWS
          * API Reference</a></p>
          *
@@ -842,7 +844,8 @@ namespace Model
 
         /**
          * <p>Provides a list of steps for the cluster in reverse order unless you specify
-         * stepIds with the request.</p><p><h3>See Also:</h3>   <a
+         * <code>stepIds</code> with the request of filter by <code>StepStates</code>. You
+         * can specify a maximum of ten <code>stepIDs</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListSteps">AWS
          * API Reference</a></p>
          *
@@ -1225,26 +1228,32 @@ namespace Model
         virtual void SetTerminationProtectionAsync(const Model::SetTerminationProtectionRequest& request, const SetTerminationProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p> <i>This member will be deprecated.</i> </p> <p>Sets whether all AWS Identity
-         * and Access Management (IAM) users under your account can access the specified
-         * clusters (job flows). This action works on running clusters. You can also set
-         * the visibility of a cluster when you launch it using the
-         * <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
-         * SetVisibleToAllUsers action can be called only by an IAM user who created the
-         * cluster or the AWS account that owns the cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the <a>Cluster$VisibleToAllUsers</a> value, which determines whether the
+         * cluster is visible to all IAM users of the AWS account associated with the
+         * cluster. Only the IAM user who created the cluster or the AWS account root user
+         * can call this action. The default value, <code>true</code>, indicates that all
+         * IAM users in the AWS account can perform cluster actions if they have the proper
+         * IAM policy permissions. If set to <code>false</code>, only the IAM user that
+         * created the cluster can perform actions. This action works on running clusters.
+         * You can override the default <code>true</code> setting when you create a cluster
+         * by using the <code>VisibleToAllUsers</code> parameter with
+         * <code>RunJobFlow</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">AWS
          * API Reference</a></p>
          */
         virtual Model::SetVisibleToAllUsersOutcome SetVisibleToAllUsers(const Model::SetVisibleToAllUsersRequest& request) const;
 
         /**
-         * <p> <i>This member will be deprecated.</i> </p> <p>Sets whether all AWS Identity
-         * and Access Management (IAM) users under your account can access the specified
-         * clusters (job flows). This action works on running clusters. You can also set
-         * the visibility of a cluster when you launch it using the
-         * <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
-         * SetVisibleToAllUsers action can be called only by an IAM user who created the
-         * cluster or the AWS account that owns the cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the <a>Cluster$VisibleToAllUsers</a> value, which determines whether the
+         * cluster is visible to all IAM users of the AWS account associated with the
+         * cluster. Only the IAM user who created the cluster or the AWS account root user
+         * can call this action. The default value, <code>true</code>, indicates that all
+         * IAM users in the AWS account can perform cluster actions if they have the proper
+         * IAM policy permissions. If set to <code>false</code>, only the IAM user that
+         * created the cluster can perform actions. This action works on running clusters.
+         * You can override the default <code>true</code> setting when you create a cluster
+         * by using the <code>VisibleToAllUsers</code> parameter with
+         * <code>RunJobFlow</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">AWS
          * API Reference</a></p>
          *
@@ -1253,13 +1262,16 @@ namespace Model
         virtual Model::SetVisibleToAllUsersOutcomeCallable SetVisibleToAllUsersCallable(const Model::SetVisibleToAllUsersRequest& request) const;
 
         /**
-         * <p> <i>This member will be deprecated.</i> </p> <p>Sets whether all AWS Identity
-         * and Access Management (IAM) users under your account can access the specified
-         * clusters (job flows). This action works on running clusters. You can also set
-         * the visibility of a cluster when you launch it using the
-         * <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The
-         * SetVisibleToAllUsers action can be called only by an IAM user who created the
-         * cluster or the AWS account that owns the cluster.</p><p><h3>See Also:</h3>   <a
+         * <p>Sets the <a>Cluster$VisibleToAllUsers</a> value, which determines whether the
+         * cluster is visible to all IAM users of the AWS account associated with the
+         * cluster. Only the IAM user who created the cluster or the AWS account root user
+         * can call this action. The default value, <code>true</code>, indicates that all
+         * IAM users in the AWS account can perform cluster actions if they have the proper
+         * IAM policy permissions. If set to <code>false</code>, only the IAM user that
+         * created the cluster can perform actions. This action works on running clusters.
+         * You can override the default <code>true</code> setting when you create a cluster
+         * by using the <code>VisibleToAllUsers</code> parameter with
+         * <code>RunJobFlow</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">AWS
          * API Reference</a></p>
          *

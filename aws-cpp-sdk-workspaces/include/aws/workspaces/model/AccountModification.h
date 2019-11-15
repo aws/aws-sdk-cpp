@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes a modification to the configuration of bring your own license
+   * <p>Describes a modification to the configuration of Bring Your Own License
    * (BYOL) for the specified account. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/AccountModification">AWS
    * API Reference</a></p>

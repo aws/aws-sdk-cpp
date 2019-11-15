@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/DashIsoEncryptionSettings.h>
@@ -22,6 +23,7 @@
 #include <aws/mediaconvert/model/DashIsoMpdProfile.h>
 #include <aws/mediaconvert/model/DashIsoSegmentControl.h>
 #include <aws/mediaconvert/model/DashIsoWriteSegmentTimelineInRepresentation.h>
+#include <aws/mediaconvert/model/DashAdditionalManifest.h>
 #include <utility>
 
 namespace Aws
@@ -52,6 +54,71 @@ namespace Model
     DashIsoGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     DashIsoGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * By default, the service creates one .mpd DASH manifest for each DASH ISO output
+     * group in your job. This default manifest references every output in the output
+     * group. To create additional DASH manifests that reference a subset of the
+     * outputs in the output group, specify a list of them here.
+     */
+    inline const Aws::Vector<DashAdditionalManifest>& GetAdditionalManifests() const{ return m_additionalManifests; }
+
+    /**
+     * By default, the service creates one .mpd DASH manifest for each DASH ISO output
+     * group in your job. This default manifest references every output in the output
+     * group. To create additional DASH manifests that reference a subset of the
+     * outputs in the output group, specify a list of them here.
+     */
+    inline bool AdditionalManifestsHasBeenSet() const { return m_additionalManifestsHasBeenSet; }
+
+    /**
+     * By default, the service creates one .mpd DASH manifest for each DASH ISO output
+     * group in your job. This default manifest references every output in the output
+     * group. To create additional DASH manifests that reference a subset of the
+     * outputs in the output group, specify a list of them here.
+     */
+    inline void SetAdditionalManifests(const Aws::Vector<DashAdditionalManifest>& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests = value; }
+
+    /**
+     * By default, the service creates one .mpd DASH manifest for each DASH ISO output
+     * group in your job. This default manifest references every output in the output
+     * group. To create additional DASH manifests that reference a subset of the
+     * outputs in the output group, specify a list of them here.
+     */
+    inline void SetAdditionalManifests(Aws::Vector<DashAdditionalManifest>&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests = std::move(value); }
+
+    /**
+     * By default, the service creates one .mpd DASH manifest for each DASH ISO output
+     * group in your job. This default manifest references every output in the output
+     * group. To create additional DASH manifests that reference a subset of the
+     * outputs in the output group, specify a list of them here.
+     */
+    inline DashIsoGroupSettings& WithAdditionalManifests(const Aws::Vector<DashAdditionalManifest>& value) { SetAdditionalManifests(value); return *this;}
+
+    /**
+     * By default, the service creates one .mpd DASH manifest for each DASH ISO output
+     * group in your job. This default manifest references every output in the output
+     * group. To create additional DASH manifests that reference a subset of the
+     * outputs in the output group, specify a list of them here.
+     */
+    inline DashIsoGroupSettings& WithAdditionalManifests(Aws::Vector<DashAdditionalManifest>&& value) { SetAdditionalManifests(std::move(value)); return *this;}
+
+    /**
+     * By default, the service creates one .mpd DASH manifest for each DASH ISO output
+     * group in your job. This default manifest references every output in the output
+     * group. To create additional DASH manifests that reference a subset of the
+     * outputs in the output group, specify a list of them here.
+     */
+    inline DashIsoGroupSettings& AddAdditionalManifests(const DashAdditionalManifest& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests.push_back(value); return *this; }
+
+    /**
+     * By default, the service creates one .mpd DASH manifest for each DASH ISO output
+     * group in your job. This default manifest references every output in the output
+     * group. To create additional DASH manifests that reference a subset of the
+     * outputs in the output group, specify a list of them here.
+     */
+    inline DashIsoGroupSettings& AddAdditionalManifests(DashAdditionalManifest&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -557,6 +624,9 @@ namespace Model
     inline DashIsoGroupSettings& WithWriteSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation&& value) { SetWriteSegmentTimelineInRepresentation(std::move(value)); return *this;}
 
   private:
+
+    Aws::Vector<DashAdditionalManifest> m_additionalManifests;
+    bool m_additionalManifestsHasBeenSet;
 
     Aws::String m_baseUrl;
     bool m_baseUrlHasBeenSet;

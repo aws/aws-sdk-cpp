@@ -29,11 +29,13 @@ namespace Model
 {
 
 S3DestinationSettings::S3DestinationSettings() : 
+    m_accessControlHasBeenSet(false),
     m_encryptionHasBeenSet(false)
 {
 }
 
 S3DestinationSettings::S3DestinationSettings(JsonView jsonValue) : 
+    m_accessControlHasBeenSet(false),
     m_encryptionHasBeenSet(false)
 {
   *this = jsonValue;
@@ -41,6 +43,13 @@ S3DestinationSettings::S3DestinationSettings(JsonView jsonValue) :
 
 S3DestinationSettings& S3DestinationSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("accessControl"))
+  {
+    m_accessControl = jsonValue.GetObject("accessControl");
+
+    m_accessControlHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("encryption"))
   {
     m_encryption = jsonValue.GetObject("encryption");
@@ -54,6 +63,12 @@ S3DestinationSettings& S3DestinationSettings::operator =(JsonView jsonValue)
 JsonValue S3DestinationSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_accessControlHasBeenSet)
+  {
+   payload.WithObject("accessControl", m_accessControl.Jsonize());
+
+  }
 
   if(m_encryptionHasBeenSet)
   {

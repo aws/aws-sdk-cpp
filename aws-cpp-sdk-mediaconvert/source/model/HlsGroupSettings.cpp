@@ -30,6 +30,7 @@ namespace Model
 
 HlsGroupSettings::HlsGroupSettings() : 
     m_adMarkersHasBeenSet(false),
+    m_additionalManifestsHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
     m_captionLanguageMappingsHasBeenSet(false),
     m_captionLanguageSetting(HlsCaptionLanguageSetting::NOT_SET),
@@ -76,6 +77,7 @@ HlsGroupSettings::HlsGroupSettings() :
 
 HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) : 
     m_adMarkersHasBeenSet(false),
+    m_additionalManifestsHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
     m_captionLanguageMappingsHasBeenSet(false),
     m_captionLanguageSetting(HlsCaptionLanguageSetting::NOT_SET),
@@ -131,6 +133,16 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
       m_adMarkers.push_back(HlsAdMarkersMapper::GetHlsAdMarkersForName(adMarkersJsonList[adMarkersIndex].AsString()));
     }
     m_adMarkersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("additionalManifests"))
+  {
+    Array<JsonView> additionalManifestsJsonList = jsonValue.GetArray("additionalManifests");
+    for(unsigned additionalManifestsIndex = 0; additionalManifestsIndex < additionalManifestsJsonList.GetLength(); ++additionalManifestsIndex)
+    {
+      m_additionalManifests.push_back(additionalManifestsJsonList[additionalManifestsIndex].AsObject());
+    }
+    m_additionalManifestsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("baseUrl"))
@@ -312,6 +324,17 @@ JsonValue HlsGroupSettings::Jsonize() const
      adMarkersJsonList[adMarkersIndex].AsString(HlsAdMarkersMapper::GetNameForHlsAdMarkers(m_adMarkers[adMarkersIndex]));
    }
    payload.WithArray("adMarkers", std::move(adMarkersJsonList));
+
+  }
+
+  if(m_additionalManifestsHasBeenSet)
+  {
+   Array<JsonValue> additionalManifestsJsonList(m_additionalManifests.size());
+   for(unsigned additionalManifestsIndex = 0; additionalManifestsIndex < additionalManifestsJsonList.GetLength(); ++additionalManifestsIndex)
+   {
+     additionalManifestsJsonList[additionalManifestsIndex].AsObject(m_additionalManifests[additionalManifestsIndex].Jsonize());
+   }
+   payload.WithArray("additionalManifests", std::move(additionalManifestsJsonList));
 
   }
 

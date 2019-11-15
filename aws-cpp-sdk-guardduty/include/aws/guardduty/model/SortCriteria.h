@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the criteria for sorting.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>Contains information about the criteria used for sorting
+   * findings.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/SortCriteria">AWS
    * API Reference</a></p>
    */

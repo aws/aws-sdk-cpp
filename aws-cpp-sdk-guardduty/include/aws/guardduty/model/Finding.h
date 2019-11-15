@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the finding.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the finding, which is generated when abnormal or
+   * suspicious activity is detected.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Finding">AWS
    * API Reference</a></p>
    */

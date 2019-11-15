@@ -92,30 +92,30 @@ namespace Model
 
 
     /**
-     * <p>The number of periods, expressed in seconds using <code>Period</code>, during
-     * which the alarm condition must exist before the alarm triggers automatic scaling
-     * activity. The default value is <code>1</code>.</p>
+     * <p>The number of periods, in five-minute increments, during which the alarm
+     * condition must exist before the alarm triggers automatic scaling activity. The
+     * default value is <code>1</code>.</p>
      */
     inline int GetEvaluationPeriods() const{ return m_evaluationPeriods; }
 
     /**
-     * <p>The number of periods, expressed in seconds using <code>Period</code>, during
-     * which the alarm condition must exist before the alarm triggers automatic scaling
-     * activity. The default value is <code>1</code>.</p>
+     * <p>The number of periods, in five-minute increments, during which the alarm
+     * condition must exist before the alarm triggers automatic scaling activity. The
+     * default value is <code>1</code>.</p>
      */
     inline bool EvaluationPeriodsHasBeenSet() const { return m_evaluationPeriodsHasBeenSet; }
 
     /**
-     * <p>The number of periods, expressed in seconds using <code>Period</code>, during
-     * which the alarm condition must exist before the alarm triggers automatic scaling
-     * activity. The default value is <code>1</code>.</p>
+     * <p>The number of periods, in five-minute increments, during which the alarm
+     * condition must exist before the alarm triggers automatic scaling activity. The
+     * default value is <code>1</code>.</p>
      */
     inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
 
     /**
-     * <p>The number of periods, expressed in seconds using <code>Period</code>, during
-     * which the alarm condition must exist before the alarm triggers automatic scaling
-     * activity. The default value is <code>1</code>.</p>
+     * <p>The number of periods, in five-minute increments, during which the alarm
+     * condition must exist before the alarm triggers automatic scaling activity. The
+     * default value is <code>1</code>.</p>
      */
     inline CloudWatchAlarmDefinition& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
 

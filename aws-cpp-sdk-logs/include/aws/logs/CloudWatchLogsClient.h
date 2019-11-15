@@ -448,40 +448,40 @@ namespace Model
         virtual void CreateExportTaskAsync(const Model::CreateExportTaskRequest& request, const CreateExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a log group with the specified name.</p> <p>You can create up to 5000
-         * log groups per account.</p> <p>You must use the following guidelines when naming
-         * a log group:</p> <ul> <li> <p>Log group names must be unique within a region for
-         * an AWS account.</p> </li> <li> <p>Log group names can be between 1 and 512
-         * characters long.</p> </li> <li> <p>Log group names consist of the following
-         * characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash),
-         * and '.' (period).</p> </li> </ul> <p>If you associate a AWS Key Management
-         * Service (AWS KMS) customer master key (CMK) with the log group, ingested data is
-         * encrypted using the CMK. This association is stored as long as the data
-         * encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
-         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> <p>If
-         * you attempt to associate a CMK with the log group but the CMK does not exist or
-         * the CMK is disabled, you will receive an <code>InvalidParameterException</code>
-         * error. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a log group with the specified name.</p> <p>You can create up to
+         * 20,000 log groups per account.</p> <p>You must use the following guidelines when
+         * naming a log group:</p> <ul> <li> <p>Log group names must be unique within a
+         * region for an AWS account.</p> </li> <li> <p>Log group names can be between 1
+         * and 512 characters long.</p> </li> <li> <p>Log group names consist of the
+         * following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/'
+         * (forward slash), '.' (period), and '#' (number sign)</p> </li> </ul> <p>If you
+         * associate a AWS Key Management Service (AWS KMS) customer master key (CMK) with
+         * the log group, ingested data is encrypted using the CMK. This association is
+         * stored as long as the data encrypted with the CMK is still within Amazon
+         * CloudWatch Logs. This enables Amazon CloudWatch Logs to decrypt this data
+         * whenever it is requested.</p> <p>If you attempt to associate a CMK with the log
+         * group but the CMK does not exist or the CMK is disabled, you will receive an
+         * <code>InvalidParameterException</code> error. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateLogGroupOutcome CreateLogGroup(const Model::CreateLogGroupRequest& request) const;
 
         /**
-         * <p>Creates a log group with the specified name.</p> <p>You can create up to 5000
-         * log groups per account.</p> <p>You must use the following guidelines when naming
-         * a log group:</p> <ul> <li> <p>Log group names must be unique within a region for
-         * an AWS account.</p> </li> <li> <p>Log group names can be between 1 and 512
-         * characters long.</p> </li> <li> <p>Log group names consist of the following
-         * characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash),
-         * and '.' (period).</p> </li> </ul> <p>If you associate a AWS Key Management
-         * Service (AWS KMS) customer master key (CMK) with the log group, ingested data is
-         * encrypted using the CMK. This association is stored as long as the data
-         * encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
-         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> <p>If
-         * you attempt to associate a CMK with the log group but the CMK does not exist or
-         * the CMK is disabled, you will receive an <code>InvalidParameterException</code>
-         * error. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a log group with the specified name.</p> <p>You can create up to
+         * 20,000 log groups per account.</p> <p>You must use the following guidelines when
+         * naming a log group:</p> <ul> <li> <p>Log group names must be unique within a
+         * region for an AWS account.</p> </li> <li> <p>Log group names can be between 1
+         * and 512 characters long.</p> </li> <li> <p>Log group names consist of the
+         * following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/'
+         * (forward slash), '.' (period), and '#' (number sign)</p> </li> </ul> <p>If you
+         * associate a AWS Key Management Service (AWS KMS) customer master key (CMK) with
+         * the log group, ingested data is encrypted using the CMK. This association is
+         * stored as long as the data encrypted with the CMK is still within Amazon
+         * CloudWatch Logs. This enables Amazon CloudWatch Logs to decrypt this data
+         * whenever it is requested.</p> <p>If you attempt to associate a CMK with the log
+         * group but the CMK does not exist or the CMK is disabled, you will receive an
+         * <code>InvalidParameterException</code> error. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">AWS
          * API Reference</a></p>
          *
@@ -490,20 +490,20 @@ namespace Model
         virtual Model::CreateLogGroupOutcomeCallable CreateLogGroupCallable(const Model::CreateLogGroupRequest& request) const;
 
         /**
-         * <p>Creates a log group with the specified name.</p> <p>You can create up to 5000
-         * log groups per account.</p> <p>You must use the following guidelines when naming
-         * a log group:</p> <ul> <li> <p>Log group names must be unique within a region for
-         * an AWS account.</p> </li> <li> <p>Log group names can be between 1 and 512
-         * characters long.</p> </li> <li> <p>Log group names consist of the following
-         * characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash),
-         * and '.' (period).</p> </li> </ul> <p>If you associate a AWS Key Management
-         * Service (AWS KMS) customer master key (CMK) with the log group, ingested data is
-         * encrypted using the CMK. This association is stored as long as the data
-         * encrypted with the CMK is still within Amazon CloudWatch Logs. This enables
-         * Amazon CloudWatch Logs to decrypt this data whenever it is requested.</p> <p>If
-         * you attempt to associate a CMK with the log group but the CMK does not exist or
-         * the CMK is disabled, you will receive an <code>InvalidParameterException</code>
-         * error. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates a log group with the specified name.</p> <p>You can create up to
+         * 20,000 log groups per account.</p> <p>You must use the following guidelines when
+         * naming a log group:</p> <ul> <li> <p>Log group names must be unique within a
+         * region for an AWS account.</p> </li> <li> <p>Log group names can be between 1
+         * and 512 characters long.</p> </li> <li> <p>Log group names consist of the
+         * following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/'
+         * (forward slash), '.' (period), and '#' (number sign)</p> </li> </ul> <p>If you
+         * associate a AWS Key Management Service (AWS KMS) customer master key (CMK) with
+         * the log group, ingested data is encrypted using the CMK. This association is
+         * stored as long as the data encrypted with the CMK is still within Amazon
+         * CloudWatch Logs. This enables Amazon CloudWatch Logs to decrypt this data
+         * whenever it is requested.</p> <p>If you attempt to associate a CMK with the log
+         * group but the CMK does not exist or the CMK is disabled, you will receive an
+         * <code>InvalidParameterException</code> error. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogGroup">AWS
          * API Reference</a></p>
          *
@@ -1279,34 +1279,32 @@ namespace Model
         virtual void ListTagsLogGroupAsync(const Model::ListTagsLogGroupRequest& request, const ListTagsLogGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or updates a destination. A destination encapsulates a physical
-         * resource (such as an Amazon Kinesis stream) and enables you to subscribe to a
-         * real-time stream of log events for a different account, ingested using
-         * <a>PutLogEvents</a>. A destination can be an Amazon Kinesis stream, Amazon
-         * Kinesis Data Firehose strea, or an AWS Lambda function.</p> <p>Through an access
-         * policy, a destination controls what is written to it. By default,
-         * <code>PutDestination</code> does not set any access policy with the destination,
-         * which means a cross-account user cannot call <a>PutSubscriptionFilter</a>
-         * against this destination. To enable this, the destination owner must call
-         * <a>PutDestinationPolicy</a> after <code>PutDestination</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates or updates a destination. This operation is used only to create
+         * destinations for cross-account subscriptions.</p> <p>A destination encapsulates
+         * a physical resource (such as an Amazon Kinesis stream) and enables you to
+         * subscribe to a real-time stream of log events for a different account, ingested
+         * using <a>PutLogEvents</a>.</p> <p>Through an access policy, a destination
+         * controls what is written to it. By default, <code>PutDestination</code> does not
+         * set any access policy with the destination, which means a cross-account user
+         * cannot call <a>PutSubscriptionFilter</a> against this destination. To enable
+         * this, the destination owner must call <a>PutDestinationPolicy</a> after
+         * <code>PutDestination</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">AWS
          * API Reference</a></p>
          */
         virtual Model::PutDestinationOutcome PutDestination(const Model::PutDestinationRequest& request) const;
 
         /**
-         * <p>Creates or updates a destination. A destination encapsulates a physical
-         * resource (such as an Amazon Kinesis stream) and enables you to subscribe to a
-         * real-time stream of log events for a different account, ingested using
-         * <a>PutLogEvents</a>. A destination can be an Amazon Kinesis stream, Amazon
-         * Kinesis Data Firehose strea, or an AWS Lambda function.</p> <p>Through an access
-         * policy, a destination controls what is written to it. By default,
-         * <code>PutDestination</code> does not set any access policy with the destination,
-         * which means a cross-account user cannot call <a>PutSubscriptionFilter</a>
-         * against this destination. To enable this, the destination owner must call
-         * <a>PutDestinationPolicy</a> after <code>PutDestination</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates or updates a destination. This operation is used only to create
+         * destinations for cross-account subscriptions.</p> <p>A destination encapsulates
+         * a physical resource (such as an Amazon Kinesis stream) and enables you to
+         * subscribe to a real-time stream of log events for a different account, ingested
+         * using <a>PutLogEvents</a>.</p> <p>Through an access policy, a destination
+         * controls what is written to it. By default, <code>PutDestination</code> does not
+         * set any access policy with the destination, which means a cross-account user
+         * cannot call <a>PutSubscriptionFilter</a> against this destination. To enable
+         * this, the destination owner must call <a>PutDestinationPolicy</a> after
+         * <code>PutDestination</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">AWS
          * API Reference</a></p>
          *
@@ -1315,17 +1313,16 @@ namespace Model
         virtual Model::PutDestinationOutcomeCallable PutDestinationCallable(const Model::PutDestinationRequest& request) const;
 
         /**
-         * <p>Creates or updates a destination. A destination encapsulates a physical
-         * resource (such as an Amazon Kinesis stream) and enables you to subscribe to a
-         * real-time stream of log events for a different account, ingested using
-         * <a>PutLogEvents</a>. A destination can be an Amazon Kinesis stream, Amazon
-         * Kinesis Data Firehose strea, or an AWS Lambda function.</p> <p>Through an access
-         * policy, a destination controls what is written to it. By default,
-         * <code>PutDestination</code> does not set any access policy with the destination,
-         * which means a cross-account user cannot call <a>PutSubscriptionFilter</a>
-         * against this destination. To enable this, the destination owner must call
-         * <a>PutDestinationPolicy</a> after <code>PutDestination</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates or updates a destination. This operation is used only to create
+         * destinations for cross-account subscriptions.</p> <p>A destination encapsulates
+         * a physical resource (such as an Amazon Kinesis stream) and enables you to
+         * subscribe to a real-time stream of log events for a different account, ingested
+         * using <a>PutLogEvents</a>.</p> <p>Through an access policy, a destination
+         * controls what is written to it. By default, <code>PutDestination</code> does not
+         * set any access policy with the destination, which means a cross-account user
+         * cannot call <a>PutSubscriptionFilter</a> against this destination. To enable
+         * this, the destination owner must call <a>PutDestinationPolicy</a> after
+         * <code>PutDestination</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDestination">AWS
          * API Reference</a></p>
          *

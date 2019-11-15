@@ -29,6 +29,7 @@ namespace Model
 {
 
 CmafGroupSettings::CmafGroupSettings() : 
+    m_additionalManifestsHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
     m_clientCache(CmafClientCache::NOT_SET),
     m_clientCacheHasBeenSet(false),
@@ -63,6 +64,7 @@ CmafGroupSettings::CmafGroupSettings() :
 }
 
 CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) : 
+    m_additionalManifestsHasBeenSet(false),
     m_baseUrlHasBeenSet(false),
     m_clientCache(CmafClientCache::NOT_SET),
     m_clientCacheHasBeenSet(false),
@@ -99,6 +101,16 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
 
 CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("additionalManifests"))
+  {
+    Array<JsonView> additionalManifestsJsonList = jsonValue.GetArray("additionalManifests");
+    for(unsigned additionalManifestsIndex = 0; additionalManifestsIndex < additionalManifestsJsonList.GetLength(); ++additionalManifestsIndex)
+    {
+      m_additionalManifests.push_back(additionalManifestsJsonList[additionalManifestsIndex].AsObject());
+    }
+    m_additionalManifestsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("baseUrl"))
   {
     m_baseUrl = jsonValue.GetString("baseUrl");
@@ -224,6 +236,17 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
 JsonValue CmafGroupSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_additionalManifestsHasBeenSet)
+  {
+   Array<JsonValue> additionalManifestsJsonList(m_additionalManifests.size());
+   for(unsigned additionalManifestsIndex = 0; additionalManifestsIndex < additionalManifestsJsonList.GetLength(); ++additionalManifestsIndex)
+   {
+     additionalManifestsJsonList[additionalManifestsIndex].AsObject(m_additionalManifests[additionalManifestsIndex].Jsonize());
+   }
+   payload.WithArray("additionalManifests", std::move(additionalManifestsJsonList));
+
+  }
 
   if(m_baseUrlHasBeenSet)
   {

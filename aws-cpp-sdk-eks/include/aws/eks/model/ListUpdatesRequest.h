@@ -90,6 +90,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the Amazon EKS managed node group to list updates for.</p>
+     */
+    inline const Aws::String& GetNodegroupName() const{ return m_nodegroupName; }
+
+    /**
+     * <p>The name of the Amazon EKS managed node group to list updates for.</p>
+     */
+    inline bool NodegroupNameHasBeenSet() const { return m_nodegroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon EKS managed node group to list updates for.</p>
+     */
+    inline void SetNodegroupName(const Aws::String& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = value; }
+
+    /**
+     * <p>The name of the Amazon EKS managed node group to list updates for.</p>
+     */
+    inline void SetNodegroupName(Aws::String&& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = std::move(value); }
+
+    /**
+     * <p>The name of the Amazon EKS managed node group to list updates for.</p>
+     */
+    inline void SetNodegroupName(const char* value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName.assign(value); }
+
+    /**
+     * <p>The name of the Amazon EKS managed node group to list updates for.</p>
+     */
+    inline ListUpdatesRequest& WithNodegroupName(const Aws::String& value) { SetNodegroupName(value); return *this;}
+
+    /**
+     * <p>The name of the Amazon EKS managed node group to list updates for.</p>
+     */
+    inline ListUpdatesRequest& WithNodegroupName(Aws::String&& value) { SetNodegroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Amazon EKS managed node group to list updates for.</p>
+     */
+    inline ListUpdatesRequest& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
+
+
+    /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>ListUpdates</code> request where <code>maxResults</code> was used and the
      * results exceeded the value of that parameter. Pagination continues from the end
@@ -206,6 +247,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::String m_nodegroupName;
+    bool m_nodegroupNameHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

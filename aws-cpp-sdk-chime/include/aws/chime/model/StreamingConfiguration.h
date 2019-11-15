@@ -49,22 +49,22 @@ namespace Model
 
 
     /**
-     * <p>The retention period for the Amazon Kinesis data, in hours.</p>
+     * <p>The retention period, in hours, for the Amazon Kinesis data.</p>
      */
     inline int GetDataRetentionInHours() const{ return m_dataRetentionInHours; }
 
     /**
-     * <p>The retention period for the Amazon Kinesis data, in hours.</p>
+     * <p>The retention period, in hours, for the Amazon Kinesis data.</p>
      */
     inline bool DataRetentionInHoursHasBeenSet() const { return m_dataRetentionInHoursHasBeenSet; }
 
     /**
-     * <p>The retention period for the Amazon Kinesis data, in hours.</p>
+     * <p>The retention period, in hours, for the Amazon Kinesis data.</p>
      */
     inline void SetDataRetentionInHours(int value) { m_dataRetentionInHoursHasBeenSet = true; m_dataRetentionInHours = value; }
 
     /**
-     * <p>The retention period for the Amazon Kinesis data, in hours.</p>
+     * <p>The retention period, in hours, for the Amazon Kinesis data.</p>
      */
     inline StreamingConfiguration& WithDataRetentionInHours(int value) { SetDataRetentionInHours(value); return *this;}
 

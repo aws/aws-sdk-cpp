@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the instance profile.</p><p><h3>See Also:</h3>  
+   * <p>Contains information about the EC2 instance profile.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/IamInstanceProfile">AWS
    * API Reference</a></p>

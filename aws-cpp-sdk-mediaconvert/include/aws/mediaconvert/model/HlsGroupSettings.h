@@ -31,6 +31,7 @@
 #include <aws/mediaconvert/model/HlsStreamInfResolution.h>
 #include <aws/mediaconvert/model/HlsTimedMetadataId3Frame.h>
 #include <aws/mediaconvert/model/HlsAdMarkers.h>
+#include <aws/mediaconvert/model/HlsAdditionalManifest.h>
 #include <aws/mediaconvert/model/HlsCaptionLanguageMapping.h>
 #include <utility>
 
@@ -119,6 +120,71 @@ namespace Model
      * themselves.
      */
     inline HlsGroupSettings& AddAdMarkers(HlsAdMarkers&& value) { m_adMarkersHasBeenSet = true; m_adMarkers.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest for each HLS
+     * output group in your job. This default manifest references every output in the
+     * output group. To create additional top-level manifests that reference a subset
+     * of the outputs in the output group, specify a list of them here.
+     */
+    inline const Aws::Vector<HlsAdditionalManifest>& GetAdditionalManifests() const{ return m_additionalManifests; }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest for each HLS
+     * output group in your job. This default manifest references every output in the
+     * output group. To create additional top-level manifests that reference a subset
+     * of the outputs in the output group, specify a list of them here.
+     */
+    inline bool AdditionalManifestsHasBeenSet() const { return m_additionalManifestsHasBeenSet; }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest for each HLS
+     * output group in your job. This default manifest references every output in the
+     * output group. To create additional top-level manifests that reference a subset
+     * of the outputs in the output group, specify a list of them here.
+     */
+    inline void SetAdditionalManifests(const Aws::Vector<HlsAdditionalManifest>& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests = value; }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest for each HLS
+     * output group in your job. This default manifest references every output in the
+     * output group. To create additional top-level manifests that reference a subset
+     * of the outputs in the output group, specify a list of them here.
+     */
+    inline void SetAdditionalManifests(Aws::Vector<HlsAdditionalManifest>&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests = std::move(value); }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest for each HLS
+     * output group in your job. This default manifest references every output in the
+     * output group. To create additional top-level manifests that reference a subset
+     * of the outputs in the output group, specify a list of them here.
+     */
+    inline HlsGroupSettings& WithAdditionalManifests(const Aws::Vector<HlsAdditionalManifest>& value) { SetAdditionalManifests(value); return *this;}
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest for each HLS
+     * output group in your job. This default manifest references every output in the
+     * output group. To create additional top-level manifests that reference a subset
+     * of the outputs in the output group, specify a list of them here.
+     */
+    inline HlsGroupSettings& WithAdditionalManifests(Aws::Vector<HlsAdditionalManifest>&& value) { SetAdditionalManifests(std::move(value)); return *this;}
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest for each HLS
+     * output group in your job. This default manifest references every output in the
+     * output group. To create additional top-level manifests that reference a subset
+     * of the outputs in the output group, specify a list of them here.
+     */
+    inline HlsGroupSettings& AddAdditionalManifests(const HlsAdditionalManifest& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests.push_back(value); return *this; }
+
+    /**
+     * By default, the service creates one top-level .m3u8 HLS manifest for each HLS
+     * output group in your job. This default manifest references every output in the
+     * output group. To create additional top-level manifests that reference a subset
+     * of the outputs in the output group, specify a list of them here.
+     */
+    inline HlsGroupSettings& AddAdditionalManifests(HlsAdditionalManifest&& value) { m_additionalManifestsHasBeenSet = true; m_additionalManifests.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -1009,6 +1075,9 @@ namespace Model
 
     Aws::Vector<HlsAdMarkers> m_adMarkers;
     bool m_adMarkersHasBeenSet;
+
+    Aws::Vector<HlsAdditionalManifest> m_additionalManifests;
+    bool m_additionalManifestsHasBeenSet;
 
     Aws::String m_baseUrl;
     bool m_baseUrlHasBeenSet;

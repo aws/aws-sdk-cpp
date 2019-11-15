@@ -109,49 +109,49 @@ namespace Model
 
 
     /**
-     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * <p>The user name of the user for the WorkSpace. This user name must exist in the
      * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * <p>The user name of the user for the WorkSpace. This user name must exist in the
      * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * <p>The user name of the user for the WorkSpace. This user name must exist in the
      * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * <p>The user name of the user for the WorkSpace. This user name must exist in the
      * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * <p>The user name of the user for the WorkSpace. This user name must exist in the
      * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * <p>The user name of the user for the WorkSpace. This user name must exist in the
      * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline WorkspaceRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * <p>The user name of the user for the WorkSpace. This user name must exist in the
      * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline WorkspaceRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The username of the user for the WorkSpace. This username must exist in the
+     * <p>The user name of the user for the WorkSpace. This user name must exist in the
      * AWS Directory Service directory for the WorkSpace.</p>
      */
     inline WorkspaceRequest& WithUserName(const char* value) { SetUserName(value); return *this;}

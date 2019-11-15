@@ -43,7 +43,11 @@ WorkspaceDirectory::WorkspaceDirectory() :
     m_state(WorkspaceDirectoryState::NOT_SET),
     m_stateHasBeenSet(false),
     m_workspaceCreationPropertiesHasBeenSet(false),
-    m_ipGroupIdsHasBeenSet(false)
+    m_ipGroupIdsHasBeenSet(false),
+    m_workspaceAccessPropertiesHasBeenSet(false),
+    m_tenancy(Tenancy::NOT_SET),
+    m_tenancyHasBeenSet(false),
+    m_selfservicePermissionsHasBeenSet(false)
 {
 }
 
@@ -62,7 +66,11 @@ WorkspaceDirectory::WorkspaceDirectory(JsonView jsonValue) :
     m_state(WorkspaceDirectoryState::NOT_SET),
     m_stateHasBeenSet(false),
     m_workspaceCreationPropertiesHasBeenSet(false),
-    m_ipGroupIdsHasBeenSet(false)
+    m_ipGroupIdsHasBeenSet(false),
+    m_workspaceAccessPropertiesHasBeenSet(false),
+    m_tenancy(Tenancy::NOT_SET),
+    m_tenancyHasBeenSet(false),
+    m_selfservicePermissionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -169,6 +177,27 @@ WorkspaceDirectory& WorkspaceDirectory::operator =(JsonView jsonValue)
     m_ipGroupIdsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WorkspaceAccessProperties"))
+  {
+    m_workspaceAccessProperties = jsonValue.GetObject("WorkspaceAccessProperties");
+
+    m_workspaceAccessPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Tenancy"))
+  {
+    m_tenancy = TenancyMapper::GetTenancyForName(jsonValue.GetString("Tenancy"));
+
+    m_tenancyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SelfservicePermissions"))
+  {
+    m_selfservicePermissions = jsonValue.GetObject("SelfservicePermissions");
+
+    m_selfservicePermissionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -264,6 +293,23 @@ JsonValue WorkspaceDirectory::Jsonize() const
      ipGroupIdsJsonList[ipGroupIdsIndex].AsString(m_ipGroupIds[ipGroupIdsIndex]);
    }
    payload.WithArray("ipGroupIds", std::move(ipGroupIdsJsonList));
+
+  }
+
+  if(m_workspaceAccessPropertiesHasBeenSet)
+  {
+   payload.WithObject("WorkspaceAccessProperties", m_workspaceAccessProperties.Jsonize());
+
+  }
+
+  if(m_tenancyHasBeenSet)
+  {
+   payload.WithString("Tenancy", TenancyMapper::GetNameForTenancy(m_tenancy));
+  }
+
+  if(m_selfservicePermissionsHasBeenSet)
+  {
+   payload.WithObject("SelfservicePermissions", m_selfservicePermissions.Jsonize());
 
   }
 

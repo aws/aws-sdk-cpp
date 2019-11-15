@@ -30,6 +30,7 @@
 #include <aws/workspaces/model/DeleteIpGroupResult.h>
 #include <aws/workspaces/model/DeleteTagsResult.h>
 #include <aws/workspaces/model/DeleteWorkspaceImageResult.h>
+#include <aws/workspaces/model/DeregisterWorkspaceDirectoryResult.h>
 #include <aws/workspaces/model/DescribeAccountResult.h>
 #include <aws/workspaces/model/DescribeAccountModificationsResult.h>
 #include <aws/workspaces/model/DescribeClientPropertiesResult.h>
@@ -46,10 +47,14 @@
 #include <aws/workspaces/model/ListAvailableManagementCidrRangesResult.h>
 #include <aws/workspaces/model/ModifyAccountResult.h>
 #include <aws/workspaces/model/ModifyClientPropertiesResult.h>
+#include <aws/workspaces/model/ModifySelfservicePermissionsResult.h>
+#include <aws/workspaces/model/ModifyWorkspaceAccessPropertiesResult.h>
+#include <aws/workspaces/model/ModifyWorkspaceCreationPropertiesResult.h>
 #include <aws/workspaces/model/ModifyWorkspacePropertiesResult.h>
 #include <aws/workspaces/model/ModifyWorkspaceStateResult.h>
 #include <aws/workspaces/model/RebootWorkspacesResult.h>
 #include <aws/workspaces/model/RebuildWorkspacesResult.h>
+#include <aws/workspaces/model/RegisterWorkspaceDirectoryResult.h>
 #include <aws/workspaces/model/RestoreWorkspaceResult.h>
 #include <aws/workspaces/model/RevokeIpRulesResult.h>
 #include <aws/workspaces/model/StartWorkspacesResult.h>
@@ -104,6 +109,7 @@ namespace Model
         class DeleteIpGroupRequest;
         class DeleteTagsRequest;
         class DeleteWorkspaceImageRequest;
+        class DeregisterWorkspaceDirectoryRequest;
         class DescribeAccountRequest;
         class DescribeAccountModificationsRequest;
         class DescribeClientPropertiesRequest;
@@ -120,10 +126,14 @@ namespace Model
         class ListAvailableManagementCidrRangesRequest;
         class ModifyAccountRequest;
         class ModifyClientPropertiesRequest;
+        class ModifySelfservicePermissionsRequest;
+        class ModifyWorkspaceAccessPropertiesRequest;
+        class ModifyWorkspaceCreationPropertiesRequest;
         class ModifyWorkspacePropertiesRequest;
         class ModifyWorkspaceStateRequest;
         class RebootWorkspacesRequest;
         class RebuildWorkspacesRequest;
+        class RegisterWorkspaceDirectoryRequest;
         class RestoreWorkspaceRequest;
         class RevokeIpRulesRequest;
         class StartWorkspacesRequest;
@@ -140,6 +150,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteIpGroupResult, Aws::Client::AWSError<WorkSpacesErrors>> DeleteIpGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteTagsResult, Aws::Client::AWSError<WorkSpacesErrors>> DeleteTagsOutcome;
         typedef Aws::Utils::Outcome<DeleteWorkspaceImageResult, Aws::Client::AWSError<WorkSpacesErrors>> DeleteWorkspaceImageOutcome;
+        typedef Aws::Utils::Outcome<DeregisterWorkspaceDirectoryResult, Aws::Client::AWSError<WorkSpacesErrors>> DeregisterWorkspaceDirectoryOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeAccountOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountModificationsResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeAccountModificationsOutcome;
         typedef Aws::Utils::Outcome<DescribeClientPropertiesResult, Aws::Client::AWSError<WorkSpacesErrors>> DescribeClientPropertiesOutcome;
@@ -156,10 +167,14 @@ namespace Model
         typedef Aws::Utils::Outcome<ListAvailableManagementCidrRangesResult, Aws::Client::AWSError<WorkSpacesErrors>> ListAvailableManagementCidrRangesOutcome;
         typedef Aws::Utils::Outcome<ModifyAccountResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyAccountOutcome;
         typedef Aws::Utils::Outcome<ModifyClientPropertiesResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyClientPropertiesOutcome;
+        typedef Aws::Utils::Outcome<ModifySelfservicePermissionsResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifySelfservicePermissionsOutcome;
+        typedef Aws::Utils::Outcome<ModifyWorkspaceAccessPropertiesResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyWorkspaceAccessPropertiesOutcome;
+        typedef Aws::Utils::Outcome<ModifyWorkspaceCreationPropertiesResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyWorkspaceCreationPropertiesOutcome;
         typedef Aws::Utils::Outcome<ModifyWorkspacePropertiesResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyWorkspacePropertiesOutcome;
         typedef Aws::Utils::Outcome<ModifyWorkspaceStateResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyWorkspaceStateOutcome;
         typedef Aws::Utils::Outcome<RebootWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> RebootWorkspacesOutcome;
         typedef Aws::Utils::Outcome<RebuildWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> RebuildWorkspacesOutcome;
+        typedef Aws::Utils::Outcome<RegisterWorkspaceDirectoryResult, Aws::Client::AWSError<WorkSpacesErrors>> RegisterWorkspaceDirectoryOutcome;
         typedef Aws::Utils::Outcome<RestoreWorkspaceResult, Aws::Client::AWSError<WorkSpacesErrors>> RestoreWorkspaceOutcome;
         typedef Aws::Utils::Outcome<RevokeIpRulesResult, Aws::Client::AWSError<WorkSpacesErrors>> RevokeIpRulesOutcome;
         typedef Aws::Utils::Outcome<StartWorkspacesResult, Aws::Client::AWSError<WorkSpacesErrors>> StartWorkspacesOutcome;
@@ -176,6 +191,7 @@ namespace Model
         typedef std::future<DeleteIpGroupOutcome> DeleteIpGroupOutcomeCallable;
         typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
         typedef std::future<DeleteWorkspaceImageOutcome> DeleteWorkspaceImageOutcomeCallable;
+        typedef std::future<DeregisterWorkspaceDirectoryOutcome> DeregisterWorkspaceDirectoryOutcomeCallable;
         typedef std::future<DescribeAccountOutcome> DescribeAccountOutcomeCallable;
         typedef std::future<DescribeAccountModificationsOutcome> DescribeAccountModificationsOutcomeCallable;
         typedef std::future<DescribeClientPropertiesOutcome> DescribeClientPropertiesOutcomeCallable;
@@ -192,10 +208,14 @@ namespace Model
         typedef std::future<ListAvailableManagementCidrRangesOutcome> ListAvailableManagementCidrRangesOutcomeCallable;
         typedef std::future<ModifyAccountOutcome> ModifyAccountOutcomeCallable;
         typedef std::future<ModifyClientPropertiesOutcome> ModifyClientPropertiesOutcomeCallable;
+        typedef std::future<ModifySelfservicePermissionsOutcome> ModifySelfservicePermissionsOutcomeCallable;
+        typedef std::future<ModifyWorkspaceAccessPropertiesOutcome> ModifyWorkspaceAccessPropertiesOutcomeCallable;
+        typedef std::future<ModifyWorkspaceCreationPropertiesOutcome> ModifyWorkspaceCreationPropertiesOutcomeCallable;
         typedef std::future<ModifyWorkspacePropertiesOutcome> ModifyWorkspacePropertiesOutcomeCallable;
         typedef std::future<ModifyWorkspaceStateOutcome> ModifyWorkspaceStateOutcomeCallable;
         typedef std::future<RebootWorkspacesOutcome> RebootWorkspacesOutcomeCallable;
         typedef std::future<RebuildWorkspacesOutcome> RebuildWorkspacesOutcomeCallable;
+        typedef std::future<RegisterWorkspaceDirectoryOutcome> RegisterWorkspaceDirectoryOutcomeCallable;
         typedef std::future<RestoreWorkspaceOutcome> RestoreWorkspaceOutcomeCallable;
         typedef std::future<RevokeIpRulesOutcome> RevokeIpRulesOutcomeCallable;
         typedef std::future<StartWorkspacesOutcome> StartWorkspacesOutcomeCallable;
@@ -215,6 +235,7 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteIpGroupRequest&, const Model::DeleteIpGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIpGroupResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DeleteWorkspaceImageRequest&, const Model::DeleteWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkspaceImageResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::DeregisterWorkspaceDirectoryRequest&, const Model::DeregisterWorkspaceDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterWorkspaceDirectoryResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeAccountRequest&, const Model::DescribeAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeAccountModificationsRequest&, const Model::DescribeAccountModificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountModificationsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::DescribeClientPropertiesRequest&, const Model::DescribeClientPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientPropertiesResponseReceivedHandler;
@@ -231,10 +252,14 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::ListAvailableManagementCidrRangesRequest&, const Model::ListAvailableManagementCidrRangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableManagementCidrRangesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyAccountRequest&, const Model::ModifyAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAccountResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyClientPropertiesRequest&, const Model::ModifyClientPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClientPropertiesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::ModifySelfservicePermissionsRequest&, const Model::ModifySelfservicePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySelfservicePermissionsResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::ModifyWorkspaceAccessPropertiesRequest&, const Model::ModifyWorkspaceAccessPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyWorkspaceAccessPropertiesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::ModifyWorkspaceCreationPropertiesRequest&, const Model::ModifyWorkspaceCreationPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyWorkspaceCreationPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyWorkspacePropertiesRequest&, const Model::ModifyWorkspacePropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyWorkspacePropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyWorkspaceStateRequest&, const Model::ModifyWorkspaceStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyWorkspaceStateResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::RebootWorkspacesRequest&, const Model::RebootWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootWorkspacesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::RebuildWorkspacesRequest&, const Model::RebuildWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebuildWorkspacesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::RegisterWorkspaceDirectoryRequest&, const Model::RegisterWorkspaceDirectoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterWorkspaceDirectoryResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::RestoreWorkspaceRequest&, const Model::RestoreWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreWorkspaceResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::RevokeIpRulesRequest&, const Model::RevokeIpRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeIpRulesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::StartWorkspacesRequest&, const Model::StartWorkspacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartWorkspacesResponseReceivedHandler;
@@ -565,7 +590,41 @@ namespace Model
         virtual void DeleteWorkspaceImageAsync(const Model::DeleteWorkspaceImageRequest& request, const DeleteWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list that describes the configuration of bring your own license
+         * <p>Deregisters the specified directory. This operation is asynchronous and
+         * returns before the WorkSpace directory is deregistered. If any WorkSpaces are
+         * registered to this directory, you must remove them before you can deregister the
+         * directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeregisterWorkspaceDirectory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterWorkspaceDirectoryOutcome DeregisterWorkspaceDirectory(const Model::DeregisterWorkspaceDirectoryRequest& request) const;
+
+        /**
+         * <p>Deregisters the specified directory. This operation is asynchronous and
+         * returns before the WorkSpace directory is deregistered. If any WorkSpaces are
+         * registered to this directory, you must remove them before you can deregister the
+         * directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeregisterWorkspaceDirectory">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeregisterWorkspaceDirectoryOutcomeCallable DeregisterWorkspaceDirectoryCallable(const Model::DeregisterWorkspaceDirectoryRequest& request) const;
+
+        /**
+         * <p>Deregisters the specified directory. This operation is asynchronous and
+         * returns before the WorkSpace directory is deregistered. If any WorkSpaces are
+         * registered to this directory, you must remove them before you can deregister the
+         * directory.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DeregisterWorkspaceDirectory">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeregisterWorkspaceDirectoryAsync(const Model::DeregisterWorkspaceDirectoryRequest& request, const DeregisterWorkspaceDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a list that describes the configuration of Bring Your Own License
          * (BYOL) for the specified account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccount">AWS
          * API Reference</a></p>
@@ -573,7 +632,7 @@ namespace Model
         virtual Model::DescribeAccountOutcome DescribeAccount(const Model::DescribeAccountRequest& request) const;
 
         /**
-         * <p>Retrieves a list that describes the configuration of bring your own license
+         * <p>Retrieves a list that describes the configuration of Bring Your Own License
          * (BYOL) for the specified account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccount">AWS
          * API Reference</a></p>
@@ -583,7 +642,7 @@ namespace Model
         virtual Model::DescribeAccountOutcomeCallable DescribeAccountCallable(const Model::DescribeAccountRequest& request) const;
 
         /**
-         * <p>Retrieves a list that describes the configuration of bring your own license
+         * <p>Retrieves a list that describes the configuration of Bring Your Own License
          * (BYOL) for the specified account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccount">AWS
          * API Reference</a></p>
@@ -593,16 +652,16 @@ namespace Model
         virtual void DescribeAccountAsync(const Model::DescribeAccountRequest& request, const DescribeAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list that describes modifications to the configuration of bring
-         * your own license (BYOL) for the specified account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes modifications to the configuration of Bring
+         * Your Own License (BYOL) for the specified account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccountModifications">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeAccountModificationsOutcome DescribeAccountModifications(const Model::DescribeAccountModificationsRequest& request) const;
 
         /**
-         * <p>Retrieves a list that describes modifications to the configuration of bring
-         * your own license (BYOL) for the specified account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes modifications to the configuration of Bring
+         * Your Own License (BYOL) for the specified account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccountModifications">AWS
          * API Reference</a></p>
          *
@@ -611,8 +670,8 @@ namespace Model
         virtual Model::DescribeAccountModificationsOutcomeCallable DescribeAccountModificationsCallable(const Model::DescribeAccountModificationsRequest& request) const;
 
         /**
-         * <p>Retrieves a list that describes modifications to the configuration of bring
-         * your own license (BYOL) for the specified account.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list that describes modifications to the configuration of Bring
+         * Your Own License (BYOL) for the specified account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeAccountModifications">AWS
          * API Reference</a></p>
          *
@@ -736,16 +795,16 @@ namespace Model
         virtual void DescribeWorkspaceBundlesAsync(const Model::DescribeWorkspaceBundlesRequest& request, const DescribeWorkspaceBundlesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the available AWS Directory Service directories that are registered
-         * with Amazon WorkSpaces.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the available directories that are registered with Amazon
+         * WorkSpaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeWorkspaceDirectoriesOutcome DescribeWorkspaceDirectories(const Model::DescribeWorkspaceDirectoriesRequest& request) const;
 
         /**
-         * <p>Describes the available AWS Directory Service directories that are registered
-         * with Amazon WorkSpaces.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the available directories that are registered with Amazon
+         * WorkSpaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">AWS
          * API Reference</a></p>
          *
@@ -754,8 +813,8 @@ namespace Model
         virtual Model::DescribeWorkspaceDirectoriesOutcomeCallable DescribeWorkspaceDirectoriesCallable(const Model::DescribeWorkspaceDirectoriesRequest& request) const;
 
         /**
-         * <p>Describes the available AWS Directory Service directories that are registered
-         * with Amazon WorkSpaces.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the available directories that are registered with Amazon
+         * WorkSpaces.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">AWS
          * API Reference</a></p>
          *
@@ -910,7 +969,7 @@ namespace Model
         virtual void DisassociateIpGroupsAsync(const Model::DisassociateIpGroupsRequest& request, const DisassociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Imports the specified Windows 7 or Windows 10 bring your own license (BYOL)
+         * <p>Imports the specified Windows 7 or Windows 10 Bring Your Own License (BYOL)
          * image into Amazon WorkSpaces. The image must be an already licensed EC2 image
          * that is in your AWS account, and you must own the image. </p><p><h3>See
          * Also:</h3>   <a
@@ -920,7 +979,7 @@ namespace Model
         virtual Model::ImportWorkspaceImageOutcome ImportWorkspaceImage(const Model::ImportWorkspaceImageRequest& request) const;
 
         /**
-         * <p>Imports the specified Windows 7 or Windows 10 bring your own license (BYOL)
+         * <p>Imports the specified Windows 7 or Windows 10 Bring Your Own License (BYOL)
          * image into Amazon WorkSpaces. The image must be an already licensed EC2 image
          * that is in your AWS account, and you must own the image. </p><p><h3>See
          * Also:</h3>   <a
@@ -932,7 +991,7 @@ namespace Model
         virtual Model::ImportWorkspaceImageOutcomeCallable ImportWorkspaceImageCallable(const Model::ImportWorkspaceImageRequest& request) const;
 
         /**
-         * <p>Imports the specified Windows 7 or Windows 10 bring your own license (BYOL)
+         * <p>Imports the specified Windows 7 or Windows 10 Bring Your Own License (BYOL)
          * image into Amazon WorkSpaces. The image must be an already licensed EC2 image
          * that is in your AWS account, and you must own the image. </p><p><h3>See
          * Also:</h3>   <a
@@ -945,8 +1004,8 @@ namespace Model
 
         /**
          * <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that
-         * you can use for the network management interface when you enable bring your own
-         * license (BYOL). </p> <p>The management network interface is connected to a
+         * you can use for the network management interface when you enable Bring Your Own
+         * License (BYOL). </p> <p>The management network interface is connected to a
          * secure Amazon WorkSpaces management network. It is used for interactive
          * streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow
          * Amazon WorkSpaces to manage the WorkSpace.</p><p><h3>See Also:</h3>   <a
@@ -957,8 +1016,8 @@ namespace Model
 
         /**
          * <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that
-         * you can use for the network management interface when you enable bring your own
-         * license (BYOL). </p> <p>The management network interface is connected to a
+         * you can use for the network management interface when you enable Bring Your Own
+         * License (BYOL). </p> <p>The management network interface is connected to a
          * secure Amazon WorkSpaces management network. It is used for interactive
          * streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow
          * Amazon WorkSpaces to manage the WorkSpace.</p><p><h3>See Also:</h3>   <a
@@ -971,8 +1030,8 @@ namespace Model
 
         /**
          * <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that
-         * you can use for the network management interface when you enable bring your own
-         * license (BYOL). </p> <p>The management network interface is connected to a
+         * you can use for the network management interface when you enable Bring Your Own
+         * License (BYOL). </p> <p>The management network interface is connected to a
          * secure Amazon WorkSpaces management network. It is used for interactive
          * streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow
          * Amazon WorkSpaces to manage the WorkSpace.</p><p><h3>See Also:</h3>   <a
@@ -984,7 +1043,7 @@ namespace Model
         virtual void ListAvailableManagementCidrRangesAsync(const Model::ListAvailableManagementCidrRangesRequest& request, const ListAvailableManagementCidrRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the configuration of bring your own license (BYOL) for the specified
+         * <p>Modifies the configuration of Bring Your Own License (BYOL) for the specified
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount">AWS
          * API Reference</a></p>
@@ -992,7 +1051,7 @@ namespace Model
         virtual Model::ModifyAccountOutcome ModifyAccount(const Model::ModifyAccountRequest& request) const;
 
         /**
-         * <p>Modifies the configuration of bring your own license (BYOL) for the specified
+         * <p>Modifies the configuration of Bring Your Own License (BYOL) for the specified
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount">AWS
          * API Reference</a></p>
@@ -1002,7 +1061,7 @@ namespace Model
         virtual Model::ModifyAccountOutcomeCallable ModifyAccountCallable(const Model::ModifyAccountRequest& request) const;
 
         /**
-         * <p>Modifies the configuration of bring your own license (BYOL) for the specified
+         * <p>Modifies the configuration of Bring Your Own License (BYOL) for the specified
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount">AWS
          * API Reference</a></p>
@@ -1038,6 +1097,105 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyClientPropertiesAsync(const Model::ModifyClientPropertiesRequest& request, const ModifyClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies the self-service WorkSpace management capabilities for your users.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable
+         * Self-Service WorkSpace Management Capabilities for Your Users</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySelfservicePermissions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifySelfservicePermissionsOutcome ModifySelfservicePermissions(const Model::ModifySelfservicePermissionsRequest& request) const;
+
+        /**
+         * <p>Modifies the self-service WorkSpace management capabilities for your users.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable
+         * Self-Service WorkSpace Management Capabilities for Your Users</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySelfservicePermissions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifySelfservicePermissionsOutcomeCallable ModifySelfservicePermissionsCallable(const Model::ModifySelfservicePermissionsRequest& request) const;
+
+        /**
+         * <p>Modifies the self-service WorkSpace management capabilities for your users.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable
+         * Self-Service WorkSpace Management Capabilities for Your Users</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifySelfservicePermissions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifySelfservicePermissionsAsync(const Model::ModifySelfservicePermissionsRequest& request, const ModifySelfservicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Specifies which devices and operating systems users can use to access their
+         * Workspaces. For more information, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access">
+         * Control Device Access</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceAccessProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyWorkspaceAccessPropertiesOutcome ModifyWorkspaceAccessProperties(const Model::ModifyWorkspaceAccessPropertiesRequest& request) const;
+
+        /**
+         * <p>Specifies which devices and operating systems users can use to access their
+         * Workspaces. For more information, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access">
+         * Control Device Access</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceAccessProperties">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyWorkspaceAccessPropertiesOutcomeCallable ModifyWorkspaceAccessPropertiesCallable(const Model::ModifyWorkspaceAccessPropertiesRequest& request) const;
+
+        /**
+         * <p>Specifies which devices and operating systems users can use to access their
+         * Workspaces. For more information, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access">
+         * Control Device Access</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceAccessProperties">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyWorkspaceAccessPropertiesAsync(const Model::ModifyWorkspaceAccessPropertiesRequest& request, const ModifyWorkspaceAccessPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modify the default properties used to create WorkSpaces.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceCreationProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyWorkspaceCreationPropertiesOutcome ModifyWorkspaceCreationProperties(const Model::ModifyWorkspaceCreationPropertiesRequest& request) const;
+
+        /**
+         * <p>Modify the default properties used to create WorkSpaces.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceCreationProperties">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyWorkspaceCreationPropertiesOutcomeCallable ModifyWorkspaceCreationPropertiesCallable(const Model::ModifyWorkspaceCreationPropertiesRequest& request) const;
+
+        /**
+         * <p>Modify the default properties used to create WorkSpaces.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceCreationProperties">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyWorkspaceCreationPropertiesAsync(const Model::ModifyWorkspaceCreationPropertiesRequest& request, const ModifyWorkspaceCreationPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the specified WorkSpace properties.</p><p><h3>See Also:</h3>   <a
@@ -1183,6 +1341,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void RebuildWorkspacesAsync(const Model::RebuildWorkspacesRequest& request, const RebuildWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Registers the specified directory. This operation is asynchronous and returns
+         * before the WorkSpace directory is registered. If this is the first time you are
+         * registering a directory, you will need to create the workspaces_DefaultRole role
+         * before you can register a directory. For more information, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">
+         * Creating the workspaces_DefaultRole Role</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RegisterWorkspaceDirectory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterWorkspaceDirectoryOutcome RegisterWorkspaceDirectory(const Model::RegisterWorkspaceDirectoryRequest& request) const;
+
+        /**
+         * <p>Registers the specified directory. This operation is asynchronous and returns
+         * before the WorkSpace directory is registered. If this is the first time you are
+         * registering a directory, you will need to create the workspaces_DefaultRole role
+         * before you can register a directory. For more information, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">
+         * Creating the workspaces_DefaultRole Role</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RegisterWorkspaceDirectory">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterWorkspaceDirectoryOutcomeCallable RegisterWorkspaceDirectoryCallable(const Model::RegisterWorkspaceDirectoryRequest& request) const;
+
+        /**
+         * <p>Registers the specified directory. This operation is asynchronous and returns
+         * before the WorkSpace directory is registered. If this is the first time you are
+         * registering a directory, you will need to create the workspaces_DefaultRole role
+         * before you can register a directory. For more information, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">
+         * Creating the workspaces_DefaultRole Role</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RegisterWorkspaceDirectory">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterWorkspaceDirectoryAsync(const Model::RegisterWorkspaceDirectoryRequest& request, const RegisterWorkspaceDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Restores the specified WorkSpace to its last known healthy state.</p> <p>You
@@ -1404,6 +1602,7 @@ namespace Model
         void DeleteIpGroupAsyncHelper(const Model::DeleteIpGroupRequest& request, const DeleteIpGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWorkspaceImageAsyncHelper(const Model::DeleteWorkspaceImageRequest& request, const DeleteWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeregisterWorkspaceDirectoryAsyncHelper(const Model::DeregisterWorkspaceDirectoryRequest& request, const DeregisterWorkspaceDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAsyncHelper(const Model::DescribeAccountRequest& request, const DescribeAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountModificationsAsyncHelper(const Model::DescribeAccountModificationsRequest& request, const DescribeAccountModificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClientPropertiesAsyncHelper(const Model::DescribeClientPropertiesRequest& request, const DescribeClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1420,10 +1619,14 @@ namespace Model
         void ListAvailableManagementCidrRangesAsyncHelper(const Model::ListAvailableManagementCidrRangesRequest& request, const ListAvailableManagementCidrRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyAccountAsyncHelper(const Model::ModifyAccountRequest& request, const ModifyAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClientPropertiesAsyncHelper(const Model::ModifyClientPropertiesRequest& request, const ModifyClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifySelfservicePermissionsAsyncHelper(const Model::ModifySelfservicePermissionsRequest& request, const ModifySelfservicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyWorkspaceAccessPropertiesAsyncHelper(const Model::ModifyWorkspaceAccessPropertiesRequest& request, const ModifyWorkspaceAccessPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyWorkspaceCreationPropertiesAsyncHelper(const Model::ModifyWorkspaceCreationPropertiesRequest& request, const ModifyWorkspaceCreationPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyWorkspacePropertiesAsyncHelper(const Model::ModifyWorkspacePropertiesRequest& request, const ModifyWorkspacePropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyWorkspaceStateAsyncHelper(const Model::ModifyWorkspaceStateRequest& request, const ModifyWorkspaceStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootWorkspacesAsyncHelper(const Model::RebootWorkspacesRequest& request, const RebootWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebuildWorkspacesAsyncHelper(const Model::RebuildWorkspacesRequest& request, const RebuildWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegisterWorkspaceDirectoryAsyncHelper(const Model::RegisterWorkspaceDirectoryRequest& request, const RegisterWorkspaceDirectoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreWorkspaceAsyncHelper(const Model::RestoreWorkspaceRequest& request, const RestoreWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RevokeIpRulesAsyncHelper(const Model::RevokeIpRulesRequest& request, const RevokeIpRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartWorkspacesAsyncHelper(const Model::StartWorkspacesRequest& request, const StartWorkspacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -132,47 +132,65 @@ namespace Model
 
 
     /**
-     * <p>The filter to limit the step list based on the identifier of the steps.</p>
+     * <p>The filter to limit the step list based on the identifier of the steps. You
+     * can specify a maximum of ten Step IDs. The character constraint applies to the
+     * overall length of the array.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStepIds() const{ return m_stepIds; }
 
     /**
-     * <p>The filter to limit the step list based on the identifier of the steps.</p>
+     * <p>The filter to limit the step list based on the identifier of the steps. You
+     * can specify a maximum of ten Step IDs. The character constraint applies to the
+     * overall length of the array.</p>
      */
     inline bool StepIdsHasBeenSet() const { return m_stepIdsHasBeenSet; }
 
     /**
-     * <p>The filter to limit the step list based on the identifier of the steps.</p>
+     * <p>The filter to limit the step list based on the identifier of the steps. You
+     * can specify a maximum of ten Step IDs. The character constraint applies to the
+     * overall length of the array.</p>
      */
     inline void SetStepIds(const Aws::Vector<Aws::String>& value) { m_stepIdsHasBeenSet = true; m_stepIds = value; }
 
     /**
-     * <p>The filter to limit the step list based on the identifier of the steps.</p>
+     * <p>The filter to limit the step list based on the identifier of the steps. You
+     * can specify a maximum of ten Step IDs. The character constraint applies to the
+     * overall length of the array.</p>
      */
     inline void SetStepIds(Aws::Vector<Aws::String>&& value) { m_stepIdsHasBeenSet = true; m_stepIds = std::move(value); }
 
     /**
-     * <p>The filter to limit the step list based on the identifier of the steps.</p>
+     * <p>The filter to limit the step list based on the identifier of the steps. You
+     * can specify a maximum of ten Step IDs. The character constraint applies to the
+     * overall length of the array.</p>
      */
     inline ListStepsRequest& WithStepIds(const Aws::Vector<Aws::String>& value) { SetStepIds(value); return *this;}
 
     /**
-     * <p>The filter to limit the step list based on the identifier of the steps.</p>
+     * <p>The filter to limit the step list based on the identifier of the steps. You
+     * can specify a maximum of ten Step IDs. The character constraint applies to the
+     * overall length of the array.</p>
      */
     inline ListStepsRequest& WithStepIds(Aws::Vector<Aws::String>&& value) { SetStepIds(std::move(value)); return *this;}
 
     /**
-     * <p>The filter to limit the step list based on the identifier of the steps.</p>
+     * <p>The filter to limit the step list based on the identifier of the steps. You
+     * can specify a maximum of ten Step IDs. The character constraint applies to the
+     * overall length of the array.</p>
      */
     inline ListStepsRequest& AddStepIds(const Aws::String& value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
 
     /**
-     * <p>The filter to limit the step list based on the identifier of the steps.</p>
+     * <p>The filter to limit the step list based on the identifier of the steps. You
+     * can specify a maximum of ten Step IDs. The character constraint applies to the
+     * overall length of the array.</p>
      */
     inline ListStepsRequest& AddStepIds(Aws::String&& value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The filter to limit the step list based on the identifier of the steps.</p>
+     * <p>The filter to limit the step list based on the identifier of the steps. You
+     * can specify a maximum of ten Step IDs. The character constraint applies to the
+     * overall length of the array.</p>
      */
     inline ListStepsRequest& AddStepIds(const char* value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
 

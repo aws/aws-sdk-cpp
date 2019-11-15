@@ -48,50 +48,42 @@ namespace Model
 
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>
+     * <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
      */
     inline const Aws::Vector<ParametersFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>
+     * <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>
+     * <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
      */
     inline void SetFilters(const Aws::Vector<ParametersFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>
+     * <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
      */
     inline void SetFilters(Aws::Vector<ParametersFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>
+     * <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
      */
     inline DescribeParametersRequest& WithFilters(const Aws::Vector<ParametersFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>
+     * <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
      */
     inline DescribeParametersRequest& WithFilters(Aws::Vector<ParametersFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>
+     * <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
      */
     inline DescribeParametersRequest& AddFilters(const ParametersFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters. Use a filter to return a more specific list of
-     * results.</p>
+     * <p>This data type is deprecated. Instead, use <code>ParameterFilters</code>.</p>
      */
     inline DescribeParametersRequest& AddFilters(ParametersFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

@@ -856,42 +856,34 @@ namespace Model
 
 
     /**
-     * <p> <i>This member will be deprecated.</i> </p> <p>Whether the cluster is
-     * visible to all IAM users of the AWS account associated with the cluster. If this
-     * value is set to <code>true</code>, all IAM users of that AWS account can view
-     * and (if they have the proper policy permissions set) manage the cluster. If it
-     * is set to <code>false</code>, only the IAM user that created the cluster can
-     * view and manage it.</p>
+     * <p>A value of <code>true</code> indicates that all IAM users in the AWS account
+     * can perform cluster actions if they have the proper IAM policy permissions. This
+     * is the default. A value of <code>false</code> indicates that only the IAM user
+     * who created the cluster can perform actions.</p>
      */
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
 
     /**
-     * <p> <i>This member will be deprecated.</i> </p> <p>Whether the cluster is
-     * visible to all IAM users of the AWS account associated with the cluster. If this
-     * value is set to <code>true</code>, all IAM users of that AWS account can view
-     * and (if they have the proper policy permissions set) manage the cluster. If it
-     * is set to <code>false</code>, only the IAM user that created the cluster can
-     * view and manage it.</p>
+     * <p>A value of <code>true</code> indicates that all IAM users in the AWS account
+     * can perform cluster actions if they have the proper IAM policy permissions. This
+     * is the default. A value of <code>false</code> indicates that only the IAM user
+     * who created the cluster can perform actions.</p>
      */
     inline bool VisibleToAllUsersHasBeenSet() const { return m_visibleToAllUsersHasBeenSet; }
 
     /**
-     * <p> <i>This member will be deprecated.</i> </p> <p>Whether the cluster is
-     * visible to all IAM users of the AWS account associated with the cluster. If this
-     * value is set to <code>true</code>, all IAM users of that AWS account can view
-     * and (if they have the proper policy permissions set) manage the cluster. If it
-     * is set to <code>false</code>, only the IAM user that created the cluster can
-     * view and manage it.</p>
+     * <p>A value of <code>true</code> indicates that all IAM users in the AWS account
+     * can perform cluster actions if they have the proper IAM policy permissions. This
+     * is the default. A value of <code>false</code> indicates that only the IAM user
+     * who created the cluster can perform actions.</p>
      */
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
 
     /**
-     * <p> <i>This member will be deprecated.</i> </p> <p>Whether the cluster is
-     * visible to all IAM users of the AWS account associated with the cluster. If this
-     * value is set to <code>true</code>, all IAM users of that AWS account can view
-     * and (if they have the proper policy permissions set) manage the cluster. If it
-     * is set to <code>false</code>, only the IAM user that created the cluster can
-     * view and manage it.</p>
+     * <p>A value of <code>true</code> indicates that all IAM users in the AWS account
+     * can perform cluster actions if they have the proper IAM policy permissions. This
+     * is the default. A value of <code>false</code> indicates that only the IAM user
+     * who created the cluster can perform actions.</p>
      */
     inline RunJobFlowRequest& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
 

@@ -236,38 +236,56 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the image is running on dedicated hardware. When bring your
-     * own license (BYOL) is enabled, this value is set to DEDICATED. </p>
+     * <p>Specifies whether the image is running on dedicated hardware. When Bring Your
+     * Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
+     * Your Own Windows Desktop Images</a>.</p>
      */
     inline const WorkspaceImageRequiredTenancy& GetRequiredTenancy() const{ return m_requiredTenancy; }
 
     /**
-     * <p>Specifies whether the image is running on dedicated hardware. When bring your
-     * own license (BYOL) is enabled, this value is set to DEDICATED. </p>
+     * <p>Specifies whether the image is running on dedicated hardware. When Bring Your
+     * Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
+     * Your Own Windows Desktop Images</a>.</p>
      */
     inline bool RequiredTenancyHasBeenSet() const { return m_requiredTenancyHasBeenSet; }
 
     /**
-     * <p>Specifies whether the image is running on dedicated hardware. When bring your
-     * own license (BYOL) is enabled, this value is set to DEDICATED. </p>
+     * <p>Specifies whether the image is running on dedicated hardware. When Bring Your
+     * Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
+     * Your Own Windows Desktop Images</a>.</p>
      */
     inline void SetRequiredTenancy(const WorkspaceImageRequiredTenancy& value) { m_requiredTenancyHasBeenSet = true; m_requiredTenancy = value; }
 
     /**
-     * <p>Specifies whether the image is running on dedicated hardware. When bring your
-     * own license (BYOL) is enabled, this value is set to DEDICATED. </p>
+     * <p>Specifies whether the image is running on dedicated hardware. When Bring Your
+     * Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
+     * Your Own Windows Desktop Images</a>.</p>
      */
     inline void SetRequiredTenancy(WorkspaceImageRequiredTenancy&& value) { m_requiredTenancyHasBeenSet = true; m_requiredTenancy = std::move(value); }
 
     /**
-     * <p>Specifies whether the image is running on dedicated hardware. When bring your
-     * own license (BYOL) is enabled, this value is set to DEDICATED. </p>
+     * <p>Specifies whether the image is running on dedicated hardware. When Bring Your
+     * Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
+     * Your Own Windows Desktop Images</a>.</p>
      */
     inline WorkspaceImage& WithRequiredTenancy(const WorkspaceImageRequiredTenancy& value) { SetRequiredTenancy(value); return *this;}
 
     /**
-     * <p>Specifies whether the image is running on dedicated hardware. When bring your
-     * own license (BYOL) is enabled, this value is set to DEDICATED. </p>
+     * <p>Specifies whether the image is running on dedicated hardware. When Bring Your
+     * Own License (BYOL) is enabled, this value is set to <code>DEDICATED</code>. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
+     * Your Own Windows Desktop Images</a>.</p>
      */
     inline WorkspaceImage& WithRequiredTenancy(WorkspaceImageRequiredTenancy&& value) { SetRequiredTenancy(std::move(value)); return *this;}
 

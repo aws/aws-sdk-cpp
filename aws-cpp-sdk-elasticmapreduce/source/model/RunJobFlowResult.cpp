@@ -44,6 +44,12 @@ RunJobFlowResult& RunJobFlowResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("ClusterArn"))
+  {
+    m_clusterArn = jsonValue.GetString("ClusterArn");
+
+  }
+
 
 
   return *this;

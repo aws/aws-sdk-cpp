@@ -34,6 +34,7 @@ namespace Aws
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 
 
         ClusterStatus GetClusterStatusForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == FAILED_HASH)
           {
             return ClusterStatus::FAILED;
+          }
+          else if (hashCode == UPDATING_HASH)
+          {
+            return ClusterStatus::UPDATING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "DELETING";
           case ClusterStatus::FAILED:
             return "FAILED";
+          case ClusterStatus::UPDATING:
+            return "UPDATING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

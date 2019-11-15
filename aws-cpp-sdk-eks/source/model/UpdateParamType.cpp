@@ -35,6 +35,12 @@ namespace Aws
         static const int EndpointPrivateAccess_HASH = HashingUtils::HashString("EndpointPrivateAccess");
         static const int EndpointPublicAccess_HASH = HashingUtils::HashString("EndpointPublicAccess");
         static const int ClusterLogging_HASH = HashingUtils::HashString("ClusterLogging");
+        static const int DesiredSize_HASH = HashingUtils::HashString("DesiredSize");
+        static const int LabelsToAdd_HASH = HashingUtils::HashString("LabelsToAdd");
+        static const int LabelsToRemove_HASH = HashingUtils::HashString("LabelsToRemove");
+        static const int MaxSize_HASH = HashingUtils::HashString("MaxSize");
+        static const int MinSize_HASH = HashingUtils::HashString("MinSize");
+        static const int ReleaseVersion_HASH = HashingUtils::HashString("ReleaseVersion");
 
 
         UpdateParamType GetUpdateParamTypeForName(const Aws::String& name)
@@ -60,6 +66,30 @@ namespace Aws
           {
             return UpdateParamType::ClusterLogging;
           }
+          else if (hashCode == DesiredSize_HASH)
+          {
+            return UpdateParamType::DesiredSize;
+          }
+          else if (hashCode == LabelsToAdd_HASH)
+          {
+            return UpdateParamType::LabelsToAdd;
+          }
+          else if (hashCode == LabelsToRemove_HASH)
+          {
+            return UpdateParamType::LabelsToRemove;
+          }
+          else if (hashCode == MaxSize_HASH)
+          {
+            return UpdateParamType::MaxSize;
+          }
+          else if (hashCode == MinSize_HASH)
+          {
+            return UpdateParamType::MinSize;
+          }
+          else if (hashCode == ReleaseVersion_HASH)
+          {
+            return UpdateParamType::ReleaseVersion;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +114,18 @@ namespace Aws
             return "EndpointPublicAccess";
           case UpdateParamType::ClusterLogging:
             return "ClusterLogging";
+          case UpdateParamType::DesiredSize:
+            return "DesiredSize";
+          case UpdateParamType::LabelsToAdd:
+            return "LabelsToAdd";
+          case UpdateParamType::LabelsToRemove:
+            return "LabelsToRemove";
+          case UpdateParamType::MaxSize:
+            return "MaxSize";
+          case UpdateParamType::MinSize:
+            return "MinSize";
+          case UpdateParamType::ReleaseVersion:
+            return "ReleaseVersion";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -34,8 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Describes the default values used to create a WorkSpace.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes the default values that are used to create WorkSpaces. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update
+   * Directory Details for Your WorkSpaces</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DefaultWorkspaceCreationProperties">AWS
    * API Reference</a></p>
    */
@@ -229,28 +231,61 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the WorkSpace user is an administrator on the
-     * WorkSpace.</p>
+     * <p>Specifies whether WorkSpace users are local administrators on their
+     * WorkSpaces.</p>
      */
     inline bool GetUserEnabledAsLocalAdministrator() const{ return m_userEnabledAsLocalAdministrator; }
 
     /**
-     * <p>Specifies whether the WorkSpace user is an administrator on the
-     * WorkSpace.</p>
+     * <p>Specifies whether WorkSpace users are local administrators on their
+     * WorkSpaces.</p>
      */
     inline bool UserEnabledAsLocalAdministratorHasBeenSet() const { return m_userEnabledAsLocalAdministratorHasBeenSet; }
 
     /**
-     * <p>Specifies whether the WorkSpace user is an administrator on the
-     * WorkSpace.</p>
+     * <p>Specifies whether WorkSpace users are local administrators on their
+     * WorkSpaces.</p>
      */
     inline void SetUserEnabledAsLocalAdministrator(bool value) { m_userEnabledAsLocalAdministratorHasBeenSet = true; m_userEnabledAsLocalAdministrator = value; }
 
     /**
-     * <p>Specifies whether the WorkSpace user is an administrator on the
-     * WorkSpace.</p>
+     * <p>Specifies whether WorkSpace users are local administrators on their
+     * WorkSpaces.</p>
      */
     inline DefaultWorkspaceCreationProperties& WithUserEnabledAsLocalAdministrator(bool value) { SetUserEnabledAsLocalAdministrator(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
+     * Maintenance</a>.</p>
+     */
+    inline bool GetEnableMaintenanceMode() const{ return m_enableMaintenanceMode; }
+
+    /**
+     * <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
+     * Maintenance</a>.</p>
+     */
+    inline bool EnableMaintenanceModeHasBeenSet() const { return m_enableMaintenanceModeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
+     * Maintenance</a>.</p>
+     */
+    inline void SetEnableMaintenanceMode(bool value) { m_enableMaintenanceModeHasBeenSet = true; m_enableMaintenanceMode = value; }
+
+    /**
+     * <p>Specifies whether maintenance mode is enabled for WorkSpaces. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspace-maintenance.html">WorkSpace
+     * Maintenance</a>.</p>
+     */
+    inline DefaultWorkspaceCreationProperties& WithEnableMaintenanceMode(bool value) { SetEnableMaintenanceMode(value); return *this;}
 
   private:
 
@@ -268,6 +303,9 @@ namespace Model
 
     bool m_userEnabledAsLocalAdministrator;
     bool m_userEnabledAsLocalAdministratorHasBeenSet;
+
+    bool m_enableMaintenanceMode;
+    bool m_enableMaintenanceModeHasBeenSet;
   };
 
 } // namespace Model

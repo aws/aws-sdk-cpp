@@ -90,22 +90,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return in a single call. Default is 10.</p>
+     * <p>The maximum number of results to return in a single call. The default is
+     * 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return in a single call. Default is 10.</p>
+     * <p>The maximum number of results to return in a single call. The default is
+     * 10.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return in a single call. Default is 10.</p>
+     * <p>The maximum number of results to return in a single call. The default is
+     * 10.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return in a single call. Default is 10.</p>
+     * <p>The maximum number of results to return in a single call. The default is
+     * 10.</p>
      */
     inline ListBotsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -24,6 +24,8 @@ using namespace Aws::Utils;
 
 DescribeWorkspaceDirectoriesRequest::DescribeWorkspaceDirectoriesRequest() : 
     m_directoryIdsHasBeenSet(false),
+    m_limit(0),
+    m_limitHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
 {
 }
@@ -40,6 +42,12 @@ Aws::String DescribeWorkspaceDirectoriesRequest::SerializePayload() const
      directoryIdsJsonList[directoryIdsIndex].AsString(m_directoryIds[directoryIdsIndex]);
    }
    payload.WithArray("DirectoryIds", std::move(directoryIdsJsonList));
+
+  }
+
+  if(m_limitHasBeenSet)
+  {
+   payload.WithInteger("Limit", m_limit);
 
   }
 

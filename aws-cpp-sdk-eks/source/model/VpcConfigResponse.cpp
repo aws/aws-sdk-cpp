@@ -31,6 +31,7 @@ namespace Model
 VpcConfigResponse::VpcConfigResponse() : 
     m_subnetIdsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
+    m_clusterSecurityGroupIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_endpointPublicAccess(false),
     m_endpointPublicAccessHasBeenSet(false),
@@ -42,6 +43,7 @@ VpcConfigResponse::VpcConfigResponse() :
 VpcConfigResponse::VpcConfigResponse(JsonView jsonValue) : 
     m_subnetIdsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
+    m_clusterSecurityGroupIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_endpointPublicAccess(false),
     m_endpointPublicAccessHasBeenSet(false),
@@ -71,6 +73,13 @@ VpcConfigResponse& VpcConfigResponse::operator =(JsonView jsonValue)
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
     }
     m_securityGroupIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("clusterSecurityGroupId"))
+  {
+    m_clusterSecurityGroupId = jsonValue.GetString("clusterSecurityGroupId");
+
+    m_clusterSecurityGroupIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("vpcId"))
@@ -120,6 +129,12 @@ JsonValue VpcConfigResponse::Jsonize() const
      securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
    }
    payload.WithArray("securityGroupIds", std::move(securityGroupIdsJsonList));
+
+  }
+
+  if(m_clusterSecurityGroupIdHasBeenSet)
+  {
+   payload.WithString("clusterSecurityGroupId", m_clusterSecurityGroupId);
 
   }
 

@@ -201,6 +201,47 @@ namespace Model
      */
     inline ClusterSummary& WithNormalizedInstanceHours(int value) { SetNormalizedInstanceHours(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name of the cluster.</p>
+     */
+    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+
+    /**
+     * <p>The Amazon Resource Name of the cluster.</p>
+     */
+    inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name of the cluster.</p>
+     */
+    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name of the cluster.</p>
+     */
+    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the cluster.</p>
+     */
+    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name of the cluster.</p>
+     */
+    inline ClusterSummary& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the cluster.</p>
+     */
+    inline ClusterSummary& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name of the cluster.</p>
+     */
+    inline ClusterSummary& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -214,6 +255,9 @@ namespace Model
 
     int m_normalizedInstanceHours;
     bool m_normalizedInstanceHoursHasBeenSet;
+
+    Aws::String m_clusterArn;
+    bool m_clusterArnHasBeenSet;
   };
 
 } // namespace Model

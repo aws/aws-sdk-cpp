@@ -43,83 +43,83 @@ namespace Model
 
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector associated with the IPSet.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector associated with the IPSet.</p>
      */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector associated with the IPSet.</p>
      */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector associated with the IPSet.</p>
      */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector associated with the IPSet.</p>
      */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector associated with the IPSet.</p>
      */
     inline DeleteIPSetRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector associated with the IPSet.</p>
      */
     inline DeleteIPSetRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the detector the ipSet is associated with.</p>
+     * <p>The unique ID of the detector associated with the IPSet.</p>
      */
     inline DeleteIPSetRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
 
 
     /**
-     * <p>The unique ID of the ipSet you want to delete.</p>
+     * <p>The unique ID of the IPSet to delete.</p>
      */
     inline const Aws::String& GetIpSetId() const{ return m_ipSetId; }
 
     /**
-     * <p>The unique ID of the ipSet you want to delete.</p>
+     * <p>The unique ID of the IPSet to delete.</p>
      */
     inline bool IpSetIdHasBeenSet() const { return m_ipSetIdHasBeenSet; }
 
     /**
-     * <p>The unique ID of the ipSet you want to delete.</p>
+     * <p>The unique ID of the IPSet to delete.</p>
      */
     inline void SetIpSetId(const Aws::String& value) { m_ipSetIdHasBeenSet = true; m_ipSetId = value; }
 
     /**
-     * <p>The unique ID of the ipSet you want to delete.</p>
+     * <p>The unique ID of the IPSet to delete.</p>
      */
     inline void SetIpSetId(Aws::String&& value) { m_ipSetIdHasBeenSet = true; m_ipSetId = std::move(value); }
 
     /**
-     * <p>The unique ID of the ipSet you want to delete.</p>
+     * <p>The unique ID of the IPSet to delete.</p>
      */
     inline void SetIpSetId(const char* value) { m_ipSetIdHasBeenSet = true; m_ipSetId.assign(value); }
 
     /**
-     * <p>The unique ID of the ipSet you want to delete.</p>
+     * <p>The unique ID of the IPSet to delete.</p>
      */
     inline DeleteIPSetRequest& WithIpSetId(const Aws::String& value) { SetIpSetId(value); return *this;}
 
     /**
-     * <p>The unique ID of the ipSet you want to delete.</p>
+     * <p>The unique ID of the IPSet to delete.</p>
      */
     inline DeleteIPSetRequest& WithIpSetId(Aws::String&& value) { SetIpSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique ID of the ipSet you want to delete.</p>
+     * <p>The unique ID of the IPSet to delete.</p>
      */
     inline DeleteIPSetRequest& WithIpSetId(const char* value) { SetIpSetId(value); return *this;}
 

@@ -33,7 +33,10 @@ namespace Model
     AccessDenied,
     OperationNotPermitted,
     VpcIdNotFound,
-    Unknown
+    Unknown,
+    NodeCreationFailure,
+    PodEvictionFailure,
+    InsufficientFreeAddresses
   };
 
 namespace ErrorCodeMapper

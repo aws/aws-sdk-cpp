@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>The invite details.</p>
+     * <p>The email invitation details.</p>
      */
     inline const Aws::Vector<Invite>& GetInvites() const{ return m_invites; }
 
     /**
-     * <p>The invite details.</p>
+     * <p>The email invitation details.</p>
      */
     inline void SetInvites(const Aws::Vector<Invite>& value) { m_invites = value; }
 
     /**
-     * <p>The invite details.</p>
+     * <p>The email invitation details.</p>
      */
     inline void SetInvites(Aws::Vector<Invite>&& value) { m_invites = std::move(value); }
 
     /**
-     * <p>The invite details.</p>
+     * <p>The email invitation details.</p>
      */
     inline InviteUsersResult& WithInvites(const Aws::Vector<Invite>& value) { SetInvites(value); return *this;}
 
     /**
-     * <p>The invite details.</p>
+     * <p>The email invitation details.</p>
      */
     inline InviteUsersResult& WithInvites(Aws::Vector<Invite>&& value) { SetInvites(std::move(value)); return *this;}
 
     /**
-     * <p>The invite details.</p>
+     * <p>The email invitation details.</p>
      */
     inline InviteUsersResult& AddInvites(const Invite& value) { m_invites.push_back(value); return *this; }
 
     /**
-     * <p>The invite details.</p>
+     * <p>The email invitation details.</p>
      */
     inline InviteUsersResult& AddInvites(Invite&& value) { m_invites.push_back(std::move(value)); return *this; }
 

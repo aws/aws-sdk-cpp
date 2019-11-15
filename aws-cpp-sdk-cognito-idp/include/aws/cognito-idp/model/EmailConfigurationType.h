@@ -384,6 +384,200 @@ namespace Model
      */
     inline EmailConfigurationType& WithEmailSendingAccount(EmailSendingAccountType&& value) { SetEmailSendingAccount(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Identifies either the sender’s email address or the sender’s name with their
+     * email address. For example, <code>testuser@example.com</code> or <code>Test User
+     * &lt;testuser@example.com&gt;</code>. This address will appear before the body of
+     * the email.</p>
+     */
+    inline const Aws::String& GetFrom() const{ return m_from; }
+
+    /**
+     * <p>Identifies either the sender’s email address or the sender’s name with their
+     * email address. For example, <code>testuser@example.com</code> or <code>Test User
+     * &lt;testuser@example.com&gt;</code>. This address will appear before the body of
+     * the email.</p>
+     */
+    inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
+
+    /**
+     * <p>Identifies either the sender’s email address or the sender’s name with their
+     * email address. For example, <code>testuser@example.com</code> or <code>Test User
+     * &lt;testuser@example.com&gt;</code>. This address will appear before the body of
+     * the email.</p>
+     */
+    inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
+
+    /**
+     * <p>Identifies either the sender’s email address or the sender’s name with their
+     * email address. For example, <code>testuser@example.com</code> or <code>Test User
+     * &lt;testuser@example.com&gt;</code>. This address will appear before the body of
+     * the email.</p>
+     */
+    inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
+
+    /**
+     * <p>Identifies either the sender’s email address or the sender’s name with their
+     * email address. For example, <code>testuser@example.com</code> or <code>Test User
+     * &lt;testuser@example.com&gt;</code>. This address will appear before the body of
+     * the email.</p>
+     */
+    inline void SetFrom(const char* value) { m_fromHasBeenSet = true; m_from.assign(value); }
+
+    /**
+     * <p>Identifies either the sender’s email address or the sender’s name with their
+     * email address. For example, <code>testuser@example.com</code> or <code>Test User
+     * &lt;testuser@example.com&gt;</code>. This address will appear before the body of
+     * the email.</p>
+     */
+    inline EmailConfigurationType& WithFrom(const Aws::String& value) { SetFrom(value); return *this;}
+
+    /**
+     * <p>Identifies either the sender’s email address or the sender’s name with their
+     * email address. For example, <code>testuser@example.com</code> or <code>Test User
+     * &lt;testuser@example.com&gt;</code>. This address will appear before the body of
+     * the email.</p>
+     */
+    inline EmailConfigurationType& WithFrom(Aws::String&& value) { SetFrom(std::move(value)); return *this;}
+
+    /**
+     * <p>Identifies either the sender’s email address or the sender’s name with their
+     * email address. For example, <code>testuser@example.com</code> or <code>Test User
+     * &lt;testuser@example.com&gt;</code>. This address will appear before the body of
+     * the email.</p>
+     */
+    inline EmailConfigurationType& WithFrom(const char* value) { SetFrom(value); return *this;}
+
+
+    /**
+     * <p>The set of configuration rules that can be applied to emails sent using
+     * Amazon SES. A configuration set is applied to an email by including a reference
+     * to the configuration set in the headers of the email. Once applied, all of the
+     * rules in that configuration set are applied to the email. Configuration sets can
+     * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
+     * publishing – Amazon SES can track the number of send, delivery, open, click,
+     * bounce, and complaint events for each email sent. Use event publishing to send
+     * information about these events to other AWS services such as SNS and
+     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * addresses with Amazon SES, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </li> </ul>
+     */
+    inline const Aws::String& GetConfigurationSet() const{ return m_configurationSet; }
+
+    /**
+     * <p>The set of configuration rules that can be applied to emails sent using
+     * Amazon SES. A configuration set is applied to an email by including a reference
+     * to the configuration set in the headers of the email. Once applied, all of the
+     * rules in that configuration set are applied to the email. Configuration sets can
+     * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
+     * publishing – Amazon SES can track the number of send, delivery, open, click,
+     * bounce, and complaint events for each email sent. Use event publishing to send
+     * information about these events to other AWS services such as SNS and
+     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * addresses with Amazon SES, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </li> </ul>
+     */
+    inline bool ConfigurationSetHasBeenSet() const { return m_configurationSetHasBeenSet; }
+
+    /**
+     * <p>The set of configuration rules that can be applied to emails sent using
+     * Amazon SES. A configuration set is applied to an email by including a reference
+     * to the configuration set in the headers of the email. Once applied, all of the
+     * rules in that configuration set are applied to the email. Configuration sets can
+     * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
+     * publishing – Amazon SES can track the number of send, delivery, open, click,
+     * bounce, and complaint events for each email sent. Use event publishing to send
+     * information about these events to other AWS services such as SNS and
+     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * addresses with Amazon SES, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </li> </ul>
+     */
+    inline void SetConfigurationSet(const Aws::String& value) { m_configurationSetHasBeenSet = true; m_configurationSet = value; }
+
+    /**
+     * <p>The set of configuration rules that can be applied to emails sent using
+     * Amazon SES. A configuration set is applied to an email by including a reference
+     * to the configuration set in the headers of the email. Once applied, all of the
+     * rules in that configuration set are applied to the email. Configuration sets can
+     * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
+     * publishing – Amazon SES can track the number of send, delivery, open, click,
+     * bounce, and complaint events for each email sent. Use event publishing to send
+     * information about these events to other AWS services such as SNS and
+     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * addresses with Amazon SES, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </li> </ul>
+     */
+    inline void SetConfigurationSet(Aws::String&& value) { m_configurationSetHasBeenSet = true; m_configurationSet = std::move(value); }
+
+    /**
+     * <p>The set of configuration rules that can be applied to emails sent using
+     * Amazon SES. A configuration set is applied to an email by including a reference
+     * to the configuration set in the headers of the email. Once applied, all of the
+     * rules in that configuration set are applied to the email. Configuration sets can
+     * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
+     * publishing – Amazon SES can track the number of send, delivery, open, click,
+     * bounce, and complaint events for each email sent. Use event publishing to send
+     * information about these events to other AWS services such as SNS and
+     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * addresses with Amazon SES, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </li> </ul>
+     */
+    inline void SetConfigurationSet(const char* value) { m_configurationSetHasBeenSet = true; m_configurationSet.assign(value); }
+
+    /**
+     * <p>The set of configuration rules that can be applied to emails sent using
+     * Amazon SES. A configuration set is applied to an email by including a reference
+     * to the configuration set in the headers of the email. Once applied, all of the
+     * rules in that configuration set are applied to the email. Configuration sets can
+     * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
+     * publishing – Amazon SES can track the number of send, delivery, open, click,
+     * bounce, and complaint events for each email sent. Use event publishing to send
+     * information about these events to other AWS services such as SNS and
+     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * addresses with Amazon SES, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </li> </ul>
+     */
+    inline EmailConfigurationType& WithConfigurationSet(const Aws::String& value) { SetConfigurationSet(value); return *this;}
+
+    /**
+     * <p>The set of configuration rules that can be applied to emails sent using
+     * Amazon SES. A configuration set is applied to an email by including a reference
+     * to the configuration set in the headers of the email. Once applied, all of the
+     * rules in that configuration set are applied to the email. Configuration sets can
+     * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
+     * publishing – Amazon SES can track the number of send, delivery, open, click,
+     * bounce, and complaint events for each email sent. Use event publishing to send
+     * information about these events to other AWS services such as SNS and
+     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * addresses with Amazon SES, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </li> </ul>
+     */
+    inline EmailConfigurationType& WithConfigurationSet(Aws::String&& value) { SetConfigurationSet(std::move(value)); return *this;}
+
+    /**
+     * <p>The set of configuration rules that can be applied to emails sent using
+     * Amazon SES. A configuration set is applied to an email by including a reference
+     * to the configuration set in the headers of the email. Once applied, all of the
+     * rules in that configuration set are applied to the email. Configuration sets can
+     * be used to apply the following types of rules to emails: </p> <ul> <li> <p>Event
+     * publishing – Amazon SES can track the number of send, delivery, open, click,
+     * bounce, and complaint events for each email sent. Use event publishing to send
+     * information about these events to other AWS services such as SNS and
+     * CloudWatch.</p> </li> <li> <p>IP pool management – When leasing dedicated IP
+     * addresses with Amazon SES, you can create groups of IP addresses, called
+     * dedicated IP pools. You can then associate the dedicated IP pools with
+     * configuration sets.</p> </li> </ul>
+     */
+    inline EmailConfigurationType& WithConfigurationSet(const char* value) { SetConfigurationSet(value); return *this;}
+
   private:
 
     Aws::String m_sourceArn;
@@ -394,6 +588,12 @@ namespace Model
 
     EmailSendingAccountType m_emailSendingAccount;
     bool m_emailSendingAccountHasBeenSet;
+
+    Aws::String m_from;
+    bool m_fromHasBeenSet;
+
+    Aws::String m_configurationSet;
+    bool m_configurationSetHasBeenSet;
   };
 
 } // namespace Model

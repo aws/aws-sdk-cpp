@@ -293,28 +293,28 @@ namespace Model
     /**
      * <p>The maximum number of log events to return in the query. If the query string
      * uses the <code>fields</code> command, only the specified fields and their values
-     * are returned.</p>
+     * are returned. The default is 1000.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
      * <p>The maximum number of log events to return in the query. If the query string
      * uses the <code>fields</code> command, only the specified fields and their values
-     * are returned.</p>
+     * are returned. The default is 1000.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of log events to return in the query. If the query string
      * uses the <code>fields</code> command, only the specified fields and their values
-     * are returned.</p>
+     * are returned. The default is 1000.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
      * <p>The maximum number of log events to return in the query. If the query string
      * uses the <code>fields</code> command, only the specified fields and their values
-     * are returned.</p>
+     * are returned. The default is 1000.</p>
      */
     inline StartQueryRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

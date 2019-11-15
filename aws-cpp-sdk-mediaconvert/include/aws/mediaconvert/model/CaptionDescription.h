@@ -115,74 +115,106 @@ namespace Model
 
 
     /**
-     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code. For most captions output formats, the encoder
-     * puts this language information in the output captions metadata. If your output
-     * captions format is DVB-Sub or Burn in, the encoder uses this language
-     * information to choose the font language for rendering the captions text.
+     * Specify the language for this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information when  automatically selecting the font script for
+     * rendering the captions text. For all outputs, you can use an ISO 639-2 or ISO
+     * 639-3 code. For streaming outputs, you can also use any other code in the full
+     * RFC-5646 specification. Streaming outputs are those that are in one of the
+     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
+     * Streaming.
      */
     inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
 
     /**
-     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code. For most captions output formats, the encoder
-     * puts this language information in the output captions metadata. If your output
-     * captions format is DVB-Sub or Burn in, the encoder uses this language
-     * information to choose the font language for rendering the captions text.
+     * Specify the language for this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information when  automatically selecting the font script for
+     * rendering the captions text. For all outputs, you can use an ISO 639-2 or ISO
+     * 639-3 code. For streaming outputs, you can also use any other code in the full
+     * RFC-5646 specification. Streaming outputs are those that are in one of the
+     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
+     * Streaming.
      */
     inline bool CustomLanguageCodeHasBeenSet() const { return m_customLanguageCodeHasBeenSet; }
 
     /**
-     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code. For most captions output formats, the encoder
-     * puts this language information in the output captions metadata. If your output
-     * captions format is DVB-Sub or Burn in, the encoder uses this language
-     * information to choose the font language for rendering the captions text.
+     * Specify the language for this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information when  automatically selecting the font script for
+     * rendering the captions text. For all outputs, you can use an ISO 639-2 or ISO
+     * 639-3 code. For streaming outputs, you can also use any other code in the full
+     * RFC-5646 specification. Streaming outputs are those that are in one of the
+     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
+     * Streaming.
      */
     inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
 
     /**
-     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code. For most captions output formats, the encoder
-     * puts this language information in the output captions metadata. If your output
-     * captions format is DVB-Sub or Burn in, the encoder uses this language
-     * information to choose the font language for rendering the captions text.
+     * Specify the language for this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information when  automatically selecting the font script for
+     * rendering the captions text. For all outputs, you can use an ISO 639-2 or ISO
+     * 639-3 code. For streaming outputs, you can also use any other code in the full
+     * RFC-5646 specification. Streaming outputs are those that are in one of the
+     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
+     * Streaming.
      */
     inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
 
     /**
-     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code. For most captions output formats, the encoder
-     * puts this language information in the output captions metadata. If your output
-     * captions format is DVB-Sub or Burn in, the encoder uses this language
-     * information to choose the font language for rendering the captions text.
+     * Specify the language for this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information when  automatically selecting the font script for
+     * rendering the captions text. For all outputs, you can use an ISO 639-2 or ISO
+     * 639-3 code. For streaming outputs, you can also use any other code in the full
+     * RFC-5646 specification. Streaming outputs are those that are in one of the
+     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
+     * Streaming.
      */
     inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
 
     /**
-     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code. For most captions output formats, the encoder
-     * puts this language information in the output captions metadata. If your output
-     * captions format is DVB-Sub or Burn in, the encoder uses this language
-     * information to choose the font language for rendering the captions text.
+     * Specify the language for this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information when  automatically selecting the font script for
+     * rendering the captions text. For all outputs, you can use an ISO 639-2 or ISO
+     * 639-3 code. For streaming outputs, you can also use any other code in the full
+     * RFC-5646 specification. Streaming outputs are those that are in one of the
+     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
+     * Streaming.
      */
     inline CaptionDescription& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
 
     /**
-     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code. For most captions output formats, the encoder
-     * puts this language information in the output captions metadata. If your output
-     * captions format is DVB-Sub or Burn in, the encoder uses this language
-     * information to choose the font language for rendering the captions text.
+     * Specify the language for this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information when  automatically selecting the font script for
+     * rendering the captions text. For all outputs, you can use an ISO 639-2 or ISO
+     * 639-3 code. For streaming outputs, you can also use any other code in the full
+     * RFC-5646 specification. Streaming outputs are those that are in one of the
+     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
+     * Streaming.
      */
     inline CaptionDescription& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
 
     /**
-     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code. For most captions output formats, the encoder
-     * puts this language information in the output captions metadata. If your output
-     * captions format is DVB-Sub or Burn in, the encoder uses this language
-     * information to choose the font language for rendering the captions text.
+     * Specify the language for this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information when  automatically selecting the font script for
+     * rendering the captions text. For all outputs, you can use an ISO 639-2 or ISO
+     * 639-3 code. For streaming outputs, you can also use any other code in the full
+     * RFC-5646 specification. Streaming outputs are those that are in one of the
+     * following output groups: CMAF, DASH ISO, Apple HLS, or Microsoft Smooth
+     * Streaming.
      */
     inline CaptionDescription& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
 

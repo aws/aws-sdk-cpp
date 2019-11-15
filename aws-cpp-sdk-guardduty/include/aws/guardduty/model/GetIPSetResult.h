@@ -46,51 +46,37 @@ namespace Model
 
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user friendly name for the IPSet.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user friendly name for the IPSet.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user friendly name for the IPSet.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user friendly name for the IPSet.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user friendly name for the IPSet.</p>
      */
     inline GetIPSetResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user friendly name for the IPSet.</p>
      */
     inline GetIPSetResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The user friendly name to identify the IPSet. This name is displayed in all
-     * findings that are triggered by activity that involves IP addresses included in
-     * this IPSet.</p>
+     * <p>The user friendly name for the IPSet.</p>
      */
     inline GetIPSetResult& WithName(const char* value) { SetName(value); return *this;}
 

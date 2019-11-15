@@ -35,7 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the port probe.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains information about the PORT_PROBE action described in the
+   * finding.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/PortProbeAction">AWS
    * API Reference</a></p>
    */

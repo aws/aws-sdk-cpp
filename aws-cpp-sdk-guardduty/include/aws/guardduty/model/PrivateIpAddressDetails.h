@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the private IP address.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Contains other private IP address information of the EC2
+   * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/PrivateIpAddressDetails">AWS
    * API Reference</a></p>
    */

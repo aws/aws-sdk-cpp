@@ -50,6 +50,12 @@ AddInstanceFleetResult& AddInstanceFleetResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("ClusterArn"))
+  {
+    m_clusterArn = jsonValue.GetString("ClusterArn");
+
+  }
+
 
 
   return *this;

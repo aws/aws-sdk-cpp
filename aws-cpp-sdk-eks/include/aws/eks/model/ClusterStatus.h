@@ -29,7 +29,8 @@ namespace Model
     CREATING,
     ACTIVE,
     DELETING,
-    FAILED
+    FAILED,
+    UPDATING
   };
 
 namespace ClusterStatusMapper

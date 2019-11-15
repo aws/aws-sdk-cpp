@@ -85,47 +85,47 @@ namespace Model
 
 
     /**
-     * <p>The user email addresses to which to send the invite.</p>
+     * <p>The user email addresses to which to send the email invitation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserEmailList() const{ return m_userEmailList; }
 
     /**
-     * <p>The user email addresses to which to send the invite.</p>
+     * <p>The user email addresses to which to send the email invitation.</p>
      */
     inline bool UserEmailListHasBeenSet() const { return m_userEmailListHasBeenSet; }
 
     /**
-     * <p>The user email addresses to which to send the invite.</p>
+     * <p>The user email addresses to which to send the email invitation.</p>
      */
     inline void SetUserEmailList(const Aws::Vector<Aws::String>& value) { m_userEmailListHasBeenSet = true; m_userEmailList = value; }
 
     /**
-     * <p>The user email addresses to which to send the invite.</p>
+     * <p>The user email addresses to which to send the email invitation.</p>
      */
     inline void SetUserEmailList(Aws::Vector<Aws::String>&& value) { m_userEmailListHasBeenSet = true; m_userEmailList = std::move(value); }
 
     /**
-     * <p>The user email addresses to which to send the invite.</p>
+     * <p>The user email addresses to which to send the email invitation.</p>
      */
     inline InviteUsersRequest& WithUserEmailList(const Aws::Vector<Aws::String>& value) { SetUserEmailList(value); return *this;}
 
     /**
-     * <p>The user email addresses to which to send the invite.</p>
+     * <p>The user email addresses to which to send the email invitation.</p>
      */
     inline InviteUsersRequest& WithUserEmailList(Aws::Vector<Aws::String>&& value) { SetUserEmailList(std::move(value)); return *this;}
 
     /**
-     * <p>The user email addresses to which to send the invite.</p>
+     * <p>The user email addresses to which to send the email invitation.</p>
      */
     inline InviteUsersRequest& AddUserEmailList(const Aws::String& value) { m_userEmailListHasBeenSet = true; m_userEmailList.push_back(value); return *this; }
 
     /**
-     * <p>The user email addresses to which to send the invite.</p>
+     * <p>The user email addresses to which to send the email invitation.</p>
      */
     inline InviteUsersRequest& AddUserEmailList(Aws::String&& value) { m_userEmailListHasBeenSet = true; m_userEmailList.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The user email addresses to which to send the invite.</p>
+     * <p>The user email addresses to which to send the email invitation.</p>
      */
     inline InviteUsersRequest& AddUserEmailList(const char* value) { m_userEmailListHasBeenSet = true; m_userEmailList.push_back(value); return *this; }
 

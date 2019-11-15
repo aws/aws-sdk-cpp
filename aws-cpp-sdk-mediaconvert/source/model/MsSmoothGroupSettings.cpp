@@ -29,6 +29,7 @@ namespace Model
 {
 
 MsSmoothGroupSettings::MsSmoothGroupSettings() : 
+    m_additionalManifestsHasBeenSet(false),
     m_audioDeduplication(MsSmoothAudioDeduplication::NOT_SET),
     m_audioDeduplicationHasBeenSet(false),
     m_destinationHasBeenSet(false),
@@ -42,6 +43,7 @@ MsSmoothGroupSettings::MsSmoothGroupSettings() :
 }
 
 MsSmoothGroupSettings::MsSmoothGroupSettings(JsonView jsonValue) : 
+    m_additionalManifestsHasBeenSet(false),
     m_audioDeduplication(MsSmoothAudioDeduplication::NOT_SET),
     m_audioDeduplicationHasBeenSet(false),
     m_destinationHasBeenSet(false),
@@ -57,6 +59,16 @@ MsSmoothGroupSettings::MsSmoothGroupSettings(JsonView jsonValue) :
 
 MsSmoothGroupSettings& MsSmoothGroupSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("additionalManifests"))
+  {
+    Array<JsonView> additionalManifestsJsonList = jsonValue.GetArray("additionalManifests");
+    for(unsigned additionalManifestsIndex = 0; additionalManifestsIndex < additionalManifestsJsonList.GetLength(); ++additionalManifestsIndex)
+    {
+      m_additionalManifests.push_back(additionalManifestsJsonList[additionalManifestsIndex].AsObject());
+    }
+    m_additionalManifestsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("audioDeduplication"))
   {
     m_audioDeduplication = MsSmoothAudioDeduplicationMapper::GetMsSmoothAudioDeduplicationForName(jsonValue.GetString("audioDeduplication"));
@@ -105,6 +117,17 @@ MsSmoothGroupSettings& MsSmoothGroupSettings::operator =(JsonView jsonValue)
 JsonValue MsSmoothGroupSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_additionalManifestsHasBeenSet)
+  {
+   Array<JsonValue> additionalManifestsJsonList(m_additionalManifests.size());
+   for(unsigned additionalManifestsIndex = 0; additionalManifestsIndex < additionalManifestsJsonList.GetLength(); ++additionalManifestsIndex)
+   {
+     additionalManifestsJsonList[additionalManifestsIndex].AsObject(m_additionalManifests[additionalManifestsIndex].Jsonize());
+   }
+   payload.WithArray("additionalManifests", std::move(additionalManifestsJsonList));
+
+  }
 
   if(m_audioDeduplicationHasBeenSet)
   {

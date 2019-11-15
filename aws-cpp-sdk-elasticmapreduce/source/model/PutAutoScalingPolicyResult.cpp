@@ -56,6 +56,12 @@ PutAutoScalingPolicyResult& PutAutoScalingPolicyResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("ClusterArn"))
+  {
+    m_clusterArn = jsonValue.GetString("ClusterArn");
+
+  }
+
 
 
   return *this;

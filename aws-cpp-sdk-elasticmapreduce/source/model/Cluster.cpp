@@ -61,7 +61,8 @@ Cluster::Cluster() :
     m_ebsRootVolumeSizeHasBeenSet(false),
     m_repoUpgradeOnBoot(RepoUpgradeOnBoot::NOT_SET),
     m_repoUpgradeOnBootHasBeenSet(false),
-    m_kerberosAttributesHasBeenSet(false)
+    m_kerberosAttributesHasBeenSet(false),
+    m_clusterArnHasBeenSet(false)
 {
 }
 
@@ -98,7 +99,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_ebsRootVolumeSizeHasBeenSet(false),
     m_repoUpgradeOnBoot(RepoUpgradeOnBoot::NOT_SET),
     m_repoUpgradeOnBootHasBeenSet(false),
-    m_kerberosAttributesHasBeenSet(false)
+    m_kerberosAttributesHasBeenSet(false),
+    m_clusterArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -289,6 +291,13 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_kerberosAttributesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ClusterArn"))
+  {
+    m_clusterArn = jsonValue.GetString("ClusterArn");
+
+    m_clusterArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -455,6 +464,12 @@ JsonValue Cluster::Jsonize() const
   if(m_kerberosAttributesHasBeenSet)
   {
    payload.WithObject("KerberosAttributes", m_kerberosAttributes.Jsonize());
+
+  }
+
+  if(m_clusterArnHasBeenSet)
+  {
+   payload.WithString("ClusterArn", m_clusterArn);
 
   }
 

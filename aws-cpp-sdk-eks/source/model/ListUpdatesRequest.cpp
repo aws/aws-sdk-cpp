@@ -27,6 +27,7 @@ using namespace Aws::Http;
 
 ListUpdatesRequest::ListUpdatesRequest() : 
     m_nameHasBeenSet(false),
+    m_nodegroupNameHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -41,6 +42,13 @@ Aws::String ListUpdatesRequest::SerializePayload() const
 void ListUpdatesRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
+    if(m_nodegroupNameHasBeenSet)
+    {
+      ss << m_nodegroupName;
+      uri.AddQueryStringParameter("nodegroupName", ss.str());
+      ss.str("");
+    }
+
     if(m_nextTokenHasBeenSet)
     {
       ss << m_nextToken;

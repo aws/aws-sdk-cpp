@@ -33,7 +33,8 @@ ClusterSummary::ClusterSummary() :
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_normalizedInstanceHours(0),
-    m_normalizedInstanceHoursHasBeenSet(false)
+    m_normalizedInstanceHoursHasBeenSet(false),
+    m_clusterArnHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ClusterSummary::ClusterSummary(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_normalizedInstanceHours(0),
-    m_normalizedInstanceHoursHasBeenSet(false)
+    m_normalizedInstanceHoursHasBeenSet(false),
+    m_clusterArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,13 @@ ClusterSummary& ClusterSummary::operator =(JsonView jsonValue)
     m_normalizedInstanceHoursHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ClusterArn"))
+  {
+    m_clusterArn = jsonValue.GetString("ClusterArn");
+
+    m_clusterArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -105,6 +114,12 @@ JsonValue ClusterSummary::Jsonize() const
   if(m_normalizedInstanceHoursHasBeenSet)
   {
    payload.WithInteger("NormalizedInstanceHours", m_normalizedInstanceHours);
+
+  }
+
+  if(m_clusterArnHasBeenSet)
+  {
+   payload.WithString("ClusterArn", m_clusterArn);
 
   }
 

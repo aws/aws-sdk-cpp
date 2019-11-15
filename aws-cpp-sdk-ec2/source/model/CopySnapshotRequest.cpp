@@ -29,6 +29,7 @@ CopySnapshotRequest::CopySnapshotRequest() :
     m_presignedUrlHasBeenSet(false),
     m_sourceRegionHasBeenSet(false),
     m_sourceSnapshotIdHasBeenSet(false),
+    m_tagSpecificationsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -71,6 +72,16 @@ Aws::String CopySnapshotRequest::SerializePayload() const
   if(m_sourceSnapshotIdHasBeenSet)
   {
     ss << "SourceSnapshotId=" << StringUtils::URLEncode(m_sourceSnapshotId.c_str()) << "&";
+  }
+
+  if(m_tagSpecificationsHasBeenSet)
+  {
+    unsigned tagSpecificationsCount = 1;
+    for(auto& item : m_tagSpecifications)
+    {
+      item.OutputToStream(ss, "TagSpecification.", tagSpecificationsCount, "");
+      tagSpecificationsCount++;
+    }
   }
 
   if(m_dryRunHasBeenSet)
