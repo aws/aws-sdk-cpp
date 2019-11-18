@@ -46,37 +46,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Container element for a successful delete. It identifies the object that was
+     * successfully deleted.</p>
      */
     inline const Aws::Vector<DeletedObject>& GetDeleted() const{ return m_deleted; }
 
     /**
-     * <p/>
+     * <p>Container element for a successful delete. It identifies the object that was
+     * successfully deleted.</p>
      */
     inline void SetDeleted(const Aws::Vector<DeletedObject>& value) { m_deleted = value; }
 
     /**
-     * <p/>
+     * <p>Container element for a successful delete. It identifies the object that was
+     * successfully deleted.</p>
      */
     inline void SetDeleted(Aws::Vector<DeletedObject>&& value) { m_deleted = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Container element for a successful delete. It identifies the object that was
+     * successfully deleted.</p>
      */
     inline DeleteObjectsResult& WithDeleted(const Aws::Vector<DeletedObject>& value) { SetDeleted(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Container element for a successful delete. It identifies the object that was
+     * successfully deleted.</p>
      */
     inline DeleteObjectsResult& WithDeleted(Aws::Vector<DeletedObject>&& value) { SetDeleted(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Container element for a successful delete. It identifies the object that was
+     * successfully deleted.</p>
      */
     inline DeleteObjectsResult& AddDeleted(const DeletedObject& value) { m_deleted.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Container element for a successful delete. It identifies the object that was
+     * successfully deleted.</p>
      */
     inline DeleteObjectsResult& AddDeleted(DeletedObject&& value) { m_deleted.push_back(std::move(value)); return *this; }
 
@@ -98,37 +105,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Container for a failed delete operation that describes the object that Amazon
+     * S3 attempted to delete and the error it encountered.</p>
      */
     inline const Aws::Vector<Error>& GetErrors() const{ return m_errors; }
 
     /**
-     * <p/>
+     * <p>Container for a failed delete operation that describes the object that Amazon
+     * S3 attempted to delete and the error it encountered.</p>
      */
     inline void SetErrors(const Aws::Vector<Error>& value) { m_errors = value; }
 
     /**
-     * <p/>
+     * <p>Container for a failed delete operation that describes the object that Amazon
+     * S3 attempted to delete and the error it encountered.</p>
      */
     inline void SetErrors(Aws::Vector<Error>&& value) { m_errors = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Container for a failed delete operation that describes the object that Amazon
+     * S3 attempted to delete and the error it encountered.</p>
      */
     inline DeleteObjectsResult& WithErrors(const Aws::Vector<Error>& value) { SetErrors(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for a failed delete operation that describes the object that Amazon
+     * S3 attempted to delete and the error it encountered.</p>
      */
     inline DeleteObjectsResult& WithErrors(Aws::Vector<Error>&& value) { SetErrors(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for a failed delete operation that describes the object that Amazon
+     * S3 attempted to delete and the error it encountered.</p>
      */
     inline DeleteObjectsResult& AddErrors(const Error& value) { m_errors.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Container for a failed delete operation that describes the object that Amazon
+     * S3 attempted to delete and the error it encountered.</p>
      */
     inline DeleteObjectsResult& AddErrors(Error&& value) { m_errors.push_back(std::move(value)); return *this; }
 

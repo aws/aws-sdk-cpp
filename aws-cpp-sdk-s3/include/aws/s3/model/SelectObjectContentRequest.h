@@ -516,7 +516,15 @@ namespace Model
      * <p>Specifies the byte range of the object to get the records from. A record is
      * processed when its first byte is contained by the range. This parameter is
      * optional, but when specified, it must not be empty. See RFC 2616, Section
-     * 14.35.1 about how to specify the start and end of the range.</p>
+     * 14.35.1 about how to specify the start and end of the range.</p> <p>
+     * <code>ScanRange</code>may be used in the following ways:</p> <ul> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;end&gt;100&lt;/end&gt;&lt;/scanrange&gt;</code>
+     * - process only the records starting between the bytes 50 and 100 (inclusive,
+     * counting from zero)</p> </li> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code> -
+     * process only the records starting after the byte 50</p> </li> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;end&gt;50&lt;/end&gt;&lt;/scanrange&gt;</code> -
+     * process only the records within the last 50 bytes of the file.</p> </li> </ul>
      */
     inline const ScanRange& GetScanRange() const{ return m_scanRange; }
 
@@ -524,7 +532,15 @@ namespace Model
      * <p>Specifies the byte range of the object to get the records from. A record is
      * processed when its first byte is contained by the range. This parameter is
      * optional, but when specified, it must not be empty. See RFC 2616, Section
-     * 14.35.1 about how to specify the start and end of the range.</p>
+     * 14.35.1 about how to specify the start and end of the range.</p> <p>
+     * <code>ScanRange</code>may be used in the following ways:</p> <ul> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;end&gt;100&lt;/end&gt;&lt;/scanrange&gt;</code>
+     * - process only the records starting between the bytes 50 and 100 (inclusive,
+     * counting from zero)</p> </li> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code> -
+     * process only the records starting after the byte 50</p> </li> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;end&gt;50&lt;/end&gt;&lt;/scanrange&gt;</code> -
+     * process only the records within the last 50 bytes of the file.</p> </li> </ul>
      */
     inline bool ScanRangeHasBeenSet() const { return m_scanRangeHasBeenSet; }
 
@@ -532,7 +548,15 @@ namespace Model
      * <p>Specifies the byte range of the object to get the records from. A record is
      * processed when its first byte is contained by the range. This parameter is
      * optional, but when specified, it must not be empty. See RFC 2616, Section
-     * 14.35.1 about how to specify the start and end of the range.</p>
+     * 14.35.1 about how to specify the start and end of the range.</p> <p>
+     * <code>ScanRange</code>may be used in the following ways:</p> <ul> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;end&gt;100&lt;/end&gt;&lt;/scanrange&gt;</code>
+     * - process only the records starting between the bytes 50 and 100 (inclusive,
+     * counting from zero)</p> </li> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code> -
+     * process only the records starting after the byte 50</p> </li> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;end&gt;50&lt;/end&gt;&lt;/scanrange&gt;</code> -
+     * process only the records within the last 50 bytes of the file.</p> </li> </ul>
      */
     inline void SetScanRange(const ScanRange& value) { m_scanRangeHasBeenSet = true; m_scanRange = value; }
 
@@ -540,7 +564,15 @@ namespace Model
      * <p>Specifies the byte range of the object to get the records from. A record is
      * processed when its first byte is contained by the range. This parameter is
      * optional, but when specified, it must not be empty. See RFC 2616, Section
-     * 14.35.1 about how to specify the start and end of the range.</p>
+     * 14.35.1 about how to specify the start and end of the range.</p> <p>
+     * <code>ScanRange</code>may be used in the following ways:</p> <ul> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;end&gt;100&lt;/end&gt;&lt;/scanrange&gt;</code>
+     * - process only the records starting between the bytes 50 and 100 (inclusive,
+     * counting from zero)</p> </li> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code> -
+     * process only the records starting after the byte 50</p> </li> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;end&gt;50&lt;/end&gt;&lt;/scanrange&gt;</code> -
+     * process only the records within the last 50 bytes of the file.</p> </li> </ul>
      */
     inline void SetScanRange(ScanRange&& value) { m_scanRangeHasBeenSet = true; m_scanRange = std::move(value); }
 
@@ -548,7 +580,15 @@ namespace Model
      * <p>Specifies the byte range of the object to get the records from. A record is
      * processed when its first byte is contained by the range. This parameter is
      * optional, but when specified, it must not be empty. See RFC 2616, Section
-     * 14.35.1 about how to specify the start and end of the range.</p>
+     * 14.35.1 about how to specify the start and end of the range.</p> <p>
+     * <code>ScanRange</code>may be used in the following ways:</p> <ul> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;end&gt;100&lt;/end&gt;&lt;/scanrange&gt;</code>
+     * - process only the records starting between the bytes 50 and 100 (inclusive,
+     * counting from zero)</p> </li> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code> -
+     * process only the records starting after the byte 50</p> </li> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;end&gt;50&lt;/end&gt;&lt;/scanrange&gt;</code> -
+     * process only the records within the last 50 bytes of the file.</p> </li> </ul>
      */
     inline SelectObjectContentRequest& WithScanRange(const ScanRange& value) { SetScanRange(value); return *this;}
 
@@ -556,7 +596,15 @@ namespace Model
      * <p>Specifies the byte range of the object to get the records from. A record is
      * processed when its first byte is contained by the range. This parameter is
      * optional, but when specified, it must not be empty. See RFC 2616, Section
-     * 14.35.1 about how to specify the start and end of the range.</p>
+     * 14.35.1 about how to specify the start and end of the range.</p> <p>
+     * <code>ScanRange</code>may be used in the following ways:</p> <ul> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;end&gt;100&lt;/end&gt;&lt;/scanrange&gt;</code>
+     * - process only the records starting between the bytes 50 and 100 (inclusive,
+     * counting from zero)</p> </li> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;start&gt;50&lt;/start&gt;&lt;/scanrange&gt;</code> -
+     * process only the records starting after the byte 50</p> </li> <li> <p>
+     * <code>&lt;scanrange&gt;&lt;end&gt;50&lt;/end&gt;&lt;/scanrange&gt;</code> -
+     * process only the records within the last 50 bytes of the file.</p> </li> </ul>
      */
     inline SelectObjectContentRequest& WithScanRange(ScanRange&& value) { SetScanRange(std::move(value)); return *this;}
 

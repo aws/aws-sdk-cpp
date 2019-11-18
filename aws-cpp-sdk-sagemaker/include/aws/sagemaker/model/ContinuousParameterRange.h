@@ -198,7 +198,7 @@ namespace Model
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
      * hyperparameter range by using a logarithmic scale.</p> <p>Logarithmic scaling
      * works only for ranges that have only values greater than 0.</p> </dd>
-     * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in
+     * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in
      * the hyperparameter range by using a reverse logarithmic scale.</p> <p>Reverse
      * logarithmic scaling works only for ranges that are entirely within the range
      * 0&lt;=x&lt;1.0.</p> </dd> </dl>
@@ -216,7 +216,7 @@ namespace Model
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
      * hyperparameter range by using a logarithmic scale.</p> <p>Logarithmic scaling
      * works only for ranges that have only values greater than 0.</p> </dd>
-     * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in
+     * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in
      * the hyperparameter range by using a reverse logarithmic scale.</p> <p>Reverse
      * logarithmic scaling works only for ranges that are entirely within the range
      * 0&lt;=x&lt;1.0.</p> </dd> </dl>
@@ -234,7 +234,7 @@ namespace Model
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
      * hyperparameter range by using a logarithmic scale.</p> <p>Logarithmic scaling
      * works only for ranges that have only values greater than 0.</p> </dd>
-     * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in
+     * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in
      * the hyperparameter range by using a reverse logarithmic scale.</p> <p>Reverse
      * logarithmic scaling works only for ranges that are entirely within the range
      * 0&lt;=x&lt;1.0.</p> </dd> </dl>
@@ -252,7 +252,7 @@ namespace Model
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
      * hyperparameter range by using a logarithmic scale.</p> <p>Logarithmic scaling
      * works only for ranges that have only values greater than 0.</p> </dd>
-     * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in
+     * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in
      * the hyperparameter range by using a reverse logarithmic scale.</p> <p>Reverse
      * logarithmic scaling works only for ranges that are entirely within the range
      * 0&lt;=x&lt;1.0.</p> </dd> </dl>
@@ -270,7 +270,7 @@ namespace Model
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
      * hyperparameter range by using a logarithmic scale.</p> <p>Logarithmic scaling
      * works only for ranges that have only values greater than 0.</p> </dd>
-     * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in
+     * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in
      * the hyperparameter range by using a reverse logarithmic scale.</p> <p>Reverse
      * logarithmic scaling works only for ranges that are entirely within the range
      * 0&lt;=x&lt;1.0.</p> </dd> </dl>
@@ -288,7 +288,7 @@ namespace Model
      * <dt>Logarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in the
      * hyperparameter range by using a logarithmic scale.</p> <p>Logarithmic scaling
      * works only for ranges that have only values greater than 0.</p> </dd>
-     * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparemeter tuning searches the values in
+     * <dt>ReverseLogarithmic</dt> <dd> <p>Hyperparameter tuning searches the values in
      * the hyperparameter range by using a reverse logarithmic scale.</p> <p>Reverse
      * logarithmic scaling works only for ranges that are entirely within the range
      * 0&lt;=x&lt;1.0.</p> </dd> </dl>

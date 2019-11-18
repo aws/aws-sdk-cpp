@@ -53,83 +53,107 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The bucket name.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p/>
+     * <p>The bucket name.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The bucket name.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p/>
+     * <p>The bucket name.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The bucket name.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p/>
+     * <p>The bucket name.</p>
      */
     inline PutBucketVersioningRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The bucket name.</p>
      */
     inline PutBucketVersioningRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The bucket name.</p>
      */
     inline PutBucketVersioningRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
+     * header as a message integrity check to verify that the request body was not
+     * corrupted in transit. For more information, see <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
     /**
-     * <p/>
+     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
+     * header as a message integrity check to verify that the request body was not
+     * corrupted in transit. For more information, see <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
      */
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
     /**
-     * <p/>
+     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
+     * header as a message integrity check to verify that the request body was not
+     * corrupted in transit. For more information, see <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
-     * <p/>
+     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
+     * header as a message integrity check to verify that the request body was not
+     * corrupted in transit. For more information, see <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
-     * <p/>
+     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
+     * header as a message integrity check to verify that the request body was not
+     * corrupted in transit. For more information, see <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     /**
-     * <p/>
+     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
+     * header as a message integrity check to verify that the request body was not
+     * corrupted in transit. For more information, see <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
      */
     inline PutBucketVersioningRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     /**
-     * <p/>
+     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
+     * header as a message integrity check to verify that the request body was not
+     * corrupted in transit. For more information, see <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
      */
     inline PutBucketVersioningRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>&gt;The base64-encoded 128-bit MD5 digest of the data. You must use this
+     * header as a message integrity check to verify that the request body was not
+     * corrupted in transit. For more information, see <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864</a>.</p>
      */
     inline PutBucketVersioningRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
@@ -184,32 +208,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Container for setting the versioning state.</p>
      */
     inline const VersioningConfiguration& GetVersioningConfiguration() const{ return m_versioningConfiguration; }
 
     /**
-     * <p/>
+     * <p>Container for setting the versioning state.</p>
      */
     inline bool VersioningConfigurationHasBeenSet() const { return m_versioningConfigurationHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Container for setting the versioning state.</p>
      */
     inline void SetVersioningConfiguration(const VersioningConfiguration& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = value; }
 
     /**
-     * <p/>
+     * <p>Container for setting the versioning state.</p>
      */
     inline void SetVersioningConfiguration(VersioningConfiguration&& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Container for setting the versioning state.</p>
      */
     inline PutBucketVersioningRequest& WithVersioningConfiguration(const VersioningConfiguration& value) { SetVersioningConfiguration(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for setting the versioning state.</p>
      */
     inline PutBucketVersioningRequest& WithVersioningConfiguration(VersioningConfiguration&& value) { SetVersioningConfiguration(std::move(value)); return *this;}
 

@@ -29,17 +29,21 @@ namespace Model
 {
 
 EmailTemplateRequest::EmailTemplateRequest() : 
+    m_defaultSubstitutionsHasBeenSet(false),
     m_htmlPartHasBeenSet(false),
     m_subjectHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_templateDescriptionHasBeenSet(false),
     m_textPartHasBeenSet(false)
 {
 }
 
 EmailTemplateRequest::EmailTemplateRequest(JsonView jsonValue) : 
+    m_defaultSubstitutionsHasBeenSet(false),
     m_htmlPartHasBeenSet(false),
     m_subjectHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_templateDescriptionHasBeenSet(false),
     m_textPartHasBeenSet(false)
 {
   *this = jsonValue;
@@ -47,6 +51,13 @@ EmailTemplateRequest::EmailTemplateRequest(JsonView jsonValue) :
 
 EmailTemplateRequest& EmailTemplateRequest::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("DefaultSubstitutions"))
+  {
+    m_defaultSubstitutions = jsonValue.GetString("DefaultSubstitutions");
+
+    m_defaultSubstitutionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("HtmlPart"))
   {
     m_htmlPart = jsonValue.GetString("HtmlPart");
@@ -71,6 +82,13 @@ EmailTemplateRequest& EmailTemplateRequest::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TemplateDescription"))
+  {
+    m_templateDescription = jsonValue.GetString("TemplateDescription");
+
+    m_templateDescriptionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("TextPart"))
   {
     m_textPart = jsonValue.GetString("TextPart");
@@ -84,6 +102,12 @@ EmailTemplateRequest& EmailTemplateRequest::operator =(JsonView jsonValue)
 JsonValue EmailTemplateRequest::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_defaultSubstitutionsHasBeenSet)
+  {
+   payload.WithString("DefaultSubstitutions", m_defaultSubstitutions);
+
+  }
 
   if(m_htmlPartHasBeenSet)
   {
@@ -105,6 +129,12 @@ JsonValue EmailTemplateRequest::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_templateDescriptionHasBeenSet)
+  {
+   payload.WithString("TemplateDescription", m_templateDescription);
 
   }
 

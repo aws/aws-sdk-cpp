@@ -51,83 +51,115 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The name of the bucket that contains the objects.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket that contains the objects.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket that contains the objects.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket that contains the objects.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name of the bucket that contains the objects.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of the bucket that contains the objects.</p>
      */
     inline ListObjectVersionsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the bucket that contains the objects.</p>
      */
     inline ListObjectVersionsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the bucket that contains the objects.</p>
      */
     inline ListObjectVersionsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you specify to group keys. All keys that
+     * contain the same string between the <code>prefix</code> and the first occurrence
+     * of the delimiter are grouped under a single result element in CommonPrefixes.
+     * These groups are counted as one result against the max-keys limitation. These
+     * keys are not returned elsewhere in the response.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you specify to group keys. All keys that
+     * contain the same string between the <code>prefix</code> and the first occurrence
+     * of the delimiter are grouped under a single result element in CommonPrefixes.
+     * These groups are counted as one result against the max-keys limitation. These
+     * keys are not returned elsewhere in the response.</p>
      */
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you specify to group keys. All keys that
+     * contain the same string between the <code>prefix</code> and the first occurrence
+     * of the delimiter are grouped under a single result element in CommonPrefixes.
+     * These groups are counted as one result against the max-keys limitation. These
+     * keys are not returned elsewhere in the response.</p>
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you specify to group keys. All keys that
+     * contain the same string between the <code>prefix</code> and the first occurrence
+     * of the delimiter are grouped under a single result element in CommonPrefixes.
+     * These groups are counted as one result against the max-keys limitation. These
+     * keys are not returned elsewhere in the response.</p>
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you specify to group keys. All keys that
+     * contain the same string between the <code>prefix</code> and the first occurrence
+     * of the delimiter are grouped under a single result element in CommonPrefixes.
+     * These groups are counted as one result against the max-keys limitation. These
+     * keys are not returned elsewhere in the response.</p>
      */
     inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you specify to group keys. All keys that
+     * contain the same string between the <code>prefix</code> and the first occurrence
+     * of the delimiter are grouped under a single result element in CommonPrefixes.
+     * These groups are counted as one result against the max-keys limitation. These
+     * keys are not returned elsewhere in the response.</p>
      */
     inline ListObjectVersionsRequest& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you specify to group keys. All keys that
+     * contain the same string between the <code>prefix</code> and the first occurrence
+     * of the delimiter are grouped under a single result element in CommonPrefixes.
+     * These groups are counted as one result against the max-keys limitation. These
+     * keys are not returned elsewhere in the response.</p>
      */
     inline ListObjectVersionsRequest& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>A delimiter is a character that you specify to group keys. All keys that
+     * contain the same string between the <code>prefix</code> and the first occurrence
+     * of the delimiter are grouped under a single result element in CommonPrefixes.
+     * These groups are counted as one result against the max-keys limitation. These
+     * keys are not returned elsewhere in the response.</p>
      */
     inline ListObjectVersionsRequest& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
@@ -194,66 +226,110 @@ namespace Model
 
     /**
      * <p>Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.</p>
+     * contain fewer keys but will never contain more. If additional keys satisfy the
+     * search criteria, but were not returned because max-keys was exceeded, the
+     * response contains &lt;isTruncated&gt;true&lt;/isTruncated&gt;. To return the
+     * additional keys, see key-marker and version-id-marker.</p>
      */
     inline int GetMaxKeys() const{ return m_maxKeys; }
 
     /**
      * <p>Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.</p>
+     * contain fewer keys but will never contain more. If additional keys satisfy the
+     * search criteria, but were not returned because max-keys was exceeded, the
+     * response contains &lt;isTruncated&gt;true&lt;/isTruncated&gt;. To return the
+     * additional keys, see key-marker and version-id-marker.</p>
      */
     inline bool MaxKeysHasBeenSet() const { return m_maxKeysHasBeenSet; }
 
     /**
      * <p>Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.</p>
+     * contain fewer keys but will never contain more. If additional keys satisfy the
+     * search criteria, but were not returned because max-keys was exceeded, the
+     * response contains &lt;isTruncated&gt;true&lt;/isTruncated&gt;. To return the
+     * additional keys, see key-marker and version-id-marker.</p>
      */
     inline void SetMaxKeys(int value) { m_maxKeysHasBeenSet = true; m_maxKeys = value; }
 
     /**
      * <p>Sets the maximum number of keys returned in the response. The response might
-     * contain fewer keys but will never contain more.</p>
+     * contain fewer keys but will never contain more. If additional keys satisfy the
+     * search criteria, but were not returned because max-keys was exceeded, the
+     * response contains &lt;isTruncated&gt;true&lt;/isTruncated&gt;. To return the
+     * additional keys, see key-marker and version-id-marker.</p>
      */
     inline ListObjectVersionsRequest& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
 
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p>Use this parameter to select only those keys that begin with the specified
+     * prefix. You can use prefixes to separate a bucket into different groupings of
+     * keys. (You can think of using prefix to make groups in the same way you'd use a
+     * folder in a file system.) You can use prefix with delimiter to roll up numerous
+     * objects into a single result under CommonPrefixes. </p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p>Use this parameter to select only those keys that begin with the specified
+     * prefix. You can use prefixes to separate a bucket into different groupings of
+     * keys. (You can think of using prefix to make groups in the same way you'd use a
+     * folder in a file system.) You can use prefix with delimiter to roll up numerous
+     * objects into a single result under CommonPrefixes. </p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p>Use this parameter to select only those keys that begin with the specified
+     * prefix. You can use prefixes to separate a bucket into different groupings of
+     * keys. (You can think of using prefix to make groups in the same way you'd use a
+     * folder in a file system.) You can use prefix with delimiter to roll up numerous
+     * objects into a single result under CommonPrefixes. </p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p>Use this parameter to select only those keys that begin with the specified
+     * prefix. You can use prefixes to separate a bucket into different groupings of
+     * keys. (You can think of using prefix to make groups in the same way you'd use a
+     * folder in a file system.) You can use prefix with delimiter to roll up numerous
+     * objects into a single result under CommonPrefixes. </p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p>Use this parameter to select only those keys that begin with the specified
+     * prefix. You can use prefixes to separate a bucket into different groupings of
+     * keys. (You can think of using prefix to make groups in the same way you'd use a
+     * folder in a file system.) You can use prefix with delimiter to roll up numerous
+     * objects into a single result under CommonPrefixes. </p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p>Use this parameter to select only those keys that begin with the specified
+     * prefix. You can use prefixes to separate a bucket into different groupings of
+     * keys. (You can think of using prefix to make groups in the same way you'd use a
+     * folder in a file system.) You can use prefix with delimiter to roll up numerous
+     * objects into a single result under CommonPrefixes. </p>
      */
     inline ListObjectVersionsRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p>Use this parameter to select only those keys that begin with the specified
+     * prefix. You can use prefixes to separate a bucket into different groupings of
+     * keys. (You can think of using prefix to make groups in the same way you'd use a
+     * folder in a file system.) You can use prefix with delimiter to roll up numerous
+     * objects into a single result under CommonPrefixes. </p>
      */
     inline ListObjectVersionsRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p>Use this parameter to select only those keys that begin with the specified
+     * prefix. You can use prefixes to separate a bucket into different groupings of
+     * keys. (You can think of using prefix to make groups in the same way you'd use a
+     * folder in a file system.) You can use prefix with delimiter to roll up numerous
+     * objects into a single result under CommonPrefixes. </p>
      */
     inline ListObjectVersionsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

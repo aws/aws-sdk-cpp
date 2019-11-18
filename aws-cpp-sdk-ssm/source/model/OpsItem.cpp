@@ -44,7 +44,9 @@ OpsItem::OpsItem() :
     m_versionHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_sourceHasBeenSet(false),
-    m_operationalDataHasBeenSet(false)
+    m_operationalDataHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_severityHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ OpsItem::OpsItem(JsonView jsonValue) :
     m_versionHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_sourceHasBeenSet(false),
-    m_operationalDataHasBeenSet(false)
+    m_operationalDataHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_severityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -178,6 +182,20 @@ OpsItem& OpsItem::operator =(JsonView jsonValue)
     m_operationalDataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Category"))
+  {
+    m_category = jsonValue.GetString("Category");
+
+    m_categoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Severity"))
+  {
+    m_severity = jsonValue.GetString("Severity");
+
+    m_severityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -278,6 +296,18 @@ JsonValue OpsItem::Jsonize() const
      operationalDataJsonMap.WithObject(operationalDataItem.first, operationalDataItem.second.Jsonize());
    }
    payload.WithObject("OperationalData", std::move(operationalDataJsonMap));
+
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   payload.WithString("Category", m_category);
+
+  }
+
+  if(m_severityHasBeenSet)
+  {
+   payload.WithString("Severity", m_severity);
 
   }
 

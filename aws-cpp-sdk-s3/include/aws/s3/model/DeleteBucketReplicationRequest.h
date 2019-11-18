@@ -50,50 +50,42 @@ namespace Model
 
 
     /**
-     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
-     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
+     * <p> The bucket name. </p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
-     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
+     * <p> The bucket name. </p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
-     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
+     * <p> The bucket name. </p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
-     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
+     * <p> The bucket name. </p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
-     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
+     * <p> The bucket name. </p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
-     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
+     * <p> The bucket name. </p>
      */
     inline DeleteBucketReplicationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
-     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
+     * <p> The bucket name. </p>
      */
     inline DeleteBucketReplicationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p> The bucket name. </p> <note> <p>It can take a while to propagate the
-     * deletion of a replication configuration to all Amazon S3 systems.</p> </note>
+     * <p> The bucket name. </p>
      */
     inline DeleteBucketReplicationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

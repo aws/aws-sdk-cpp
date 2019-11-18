@@ -159,38 +159,38 @@ namespace Model
 
 
     /**
-     * <p>The message definitions for the default message and any default messages that
-     * you defined for specific channels.</p>
+     * <p>The settings and content for the default message and any default messages
+     * that you defined for specific channels.</p>
      */
     inline const DirectMessageConfiguration& GetMessageConfiguration() const{ return m_messageConfiguration; }
 
     /**
-     * <p>The message definitions for the default message and any default messages that
-     * you defined for specific channels.</p>
+     * <p>The settings and content for the default message and any default messages
+     * that you defined for specific channels.</p>
      */
     inline bool MessageConfigurationHasBeenSet() const { return m_messageConfigurationHasBeenSet; }
 
     /**
-     * <p>The message definitions for the default message and any default messages that
-     * you defined for specific channels.</p>
+     * <p>The settings and content for the default message and any default messages
+     * that you defined for specific channels.</p>
      */
     inline void SetMessageConfiguration(const DirectMessageConfiguration& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = value; }
 
     /**
-     * <p>The message definitions for the default message and any default messages that
-     * you defined for specific channels.</p>
+     * <p>The settings and content for the default message and any default messages
+     * that you defined for specific channels.</p>
      */
     inline void SetMessageConfiguration(DirectMessageConfiguration&& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = std::move(value); }
 
     /**
-     * <p>The message definitions for the default message and any default messages that
-     * you defined for specific channels.</p>
+     * <p>The settings and content for the default message and any default messages
+     * that you defined for specific channels.</p>
      */
     inline SendUsersMessageRequest& WithMessageConfiguration(const DirectMessageConfiguration& value) { SetMessageConfiguration(value); return *this;}
 
     /**
-     * <p>The message definitions for the default message and any default messages that
-     * you defined for specific channels.</p>
+     * <p>The settings and content for the default message and any default messages
+     * that you defined for specific channels.</p>
      */
     inline SendUsersMessageRequest& WithMessageConfiguration(DirectMessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
 

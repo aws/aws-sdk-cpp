@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Container for granting information.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/TargetGrant">AWS API
    * Reference</a></p>
    */
@@ -49,32 +49,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Container for the person being granted permissions.</p>
      */
     inline const Grantee& GetGrantee() const{ return m_grantee; }
 
     /**
-     * <p/>
+     * <p>Container for the person being granted permissions.</p>
      */
     inline bool GranteeHasBeenSet() const { return m_granteeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Container for the person being granted permissions.</p>
      */
     inline void SetGrantee(const Grantee& value) { m_granteeHasBeenSet = true; m_grantee = value; }
 
     /**
-     * <p/>
+     * <p>Container for the person being granted permissions.</p>
      */
     inline void SetGrantee(Grantee&& value) { m_granteeHasBeenSet = true; m_grantee = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Container for the person being granted permissions.</p>
      */
     inline TargetGrant& WithGrantee(const Grantee& value) { SetGrantee(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for the person being granted permissions.</p>
      */
     inline TargetGrant& WithGrantee(Grantee&& value) { SetGrantee(std::move(value)); return *this;}
 

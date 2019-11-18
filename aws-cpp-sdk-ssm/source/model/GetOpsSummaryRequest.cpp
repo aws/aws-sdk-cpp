@@ -23,8 +23,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetOpsSummaryRequest::GetOpsSummaryRequest() : 
+    m_syncNameHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_aggregatorsHasBeenSet(false),
+    m_resultAttributesHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -34,6 +36,12 @@ GetOpsSummaryRequest::GetOpsSummaryRequest() :
 Aws::String GetOpsSummaryRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_syncNameHasBeenSet)
+  {
+   payload.WithString("SyncName", m_syncName);
+
+  }
 
   if(m_filtersHasBeenSet)
   {
@@ -54,6 +62,17 @@ Aws::String GetOpsSummaryRequest::SerializePayload() const
      aggregatorsJsonList[aggregatorsIndex].AsObject(m_aggregators[aggregatorsIndex].Jsonize());
    }
    payload.WithArray("Aggregators", std::move(aggregatorsJsonList));
+
+  }
+
+  if(m_resultAttributesHasBeenSet)
+  {
+   Array<JsonValue> resultAttributesJsonList(m_resultAttributes.size());
+   for(unsigned resultAttributesIndex = 0; resultAttributesIndex < resultAttributesJsonList.GetLength(); ++resultAttributesIndex)
+   {
+     resultAttributesJsonList[resultAttributesIndex].AsObject(m_resultAttributes[resultAttributesIndex].Jsonize());
+   }
+   payload.WithArray("ResultAttributes", std::move(resultAttributesJsonList));
 
   }
 

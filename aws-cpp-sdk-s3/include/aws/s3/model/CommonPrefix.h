@@ -33,9 +33,13 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CommonPrefix">AWS API
-   * Reference</a></p>
+   * <p>Container for all (if there are any) keys between Prefix and the next
+   * occurrence of the string specified by a delimiter. CommonPrefixes lists keys
+   * that act like subdirectories in the directory specified by Prefix. For example,
+   * if the prefix is notes/ and the delimiter is a slash (/) as in
+   * notes/summer/july, the common prefix is notes/summer/. </p><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CommonPrefix">AWS
+   * API Reference</a></p>
    */
   class AWS_S3_API CommonPrefix
   {
@@ -48,42 +52,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Container for the specified common prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p/>
+     * <p>Container for the specified common prefix.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Container for the specified common prefix.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p/>
+     * <p>Container for the specified common prefix.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Container for the specified common prefix.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p/>
+     * <p>Container for the specified common prefix.</p>
      */
     inline CommonPrefix& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for the specified common prefix.</p>
      */
     inline CommonPrefix& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for the specified common prefix.</p>
      */
     inline CommonPrefix& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

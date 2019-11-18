@@ -39,8 +39,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the objects that define configuration and other settings for a
-   * message.</p><p><h3>See Also:</h3>   <a
+   * <p>Specifies the configuration and other settings for a message.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/MessageRequest">AWS
    * API Reference</a></p>
    */
@@ -352,38 +352,38 @@ namespace Model
 
 
     /**
-     * <p>The set of properties that defines the configuration settings for the
-     * message.</p>
+     * <p>The settings and content for the default message and any default messages
+     * that you defined for specific channels.</p>
      */
     inline const DirectMessageConfiguration& GetMessageConfiguration() const{ return m_messageConfiguration; }
 
     /**
-     * <p>The set of properties that defines the configuration settings for the
-     * message.</p>
+     * <p>The settings and content for the default message and any default messages
+     * that you defined for specific channels.</p>
      */
     inline bool MessageConfigurationHasBeenSet() const { return m_messageConfigurationHasBeenSet; }
 
     /**
-     * <p>The set of properties that defines the configuration settings for the
-     * message.</p>
+     * <p>The settings and content for the default message and any default messages
+     * that you defined for specific channels.</p>
      */
     inline void SetMessageConfiguration(const DirectMessageConfiguration& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = value; }
 
     /**
-     * <p>The set of properties that defines the configuration settings for the
-     * message.</p>
+     * <p>The settings and content for the default message and any default messages
+     * that you defined for specific channels.</p>
      */
     inline void SetMessageConfiguration(DirectMessageConfiguration&& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = std::move(value); }
 
     /**
-     * <p>The set of properties that defines the configuration settings for the
-     * message.</p>
+     * <p>The settings and content for the default message and any default messages
+     * that you defined for specific channels.</p>
      */
     inline MessageRequest& WithMessageConfiguration(const DirectMessageConfiguration& value) { SetMessageConfiguration(value); return *this;}
 
     /**
-     * <p>The set of properties that defines the configuration settings for the
-     * message.</p>
+     * <p>The settings and content for the default message and any default messages
+     * that you defined for specific channels.</p>
      */
     inline MessageRequest& WithMessageConfiguration(DirectMessageConfiguration&& value) { SetMessageConfiguration(std::move(value)); return *this;}
 

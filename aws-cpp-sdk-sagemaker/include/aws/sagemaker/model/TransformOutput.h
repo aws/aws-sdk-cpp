@@ -322,8 +322,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTramsformJob</code> request. For more information,
-     * see <a
+     * specify in your <a>CreateModel</a> request. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -345,8 +344,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTramsformJob</code> request. For more information,
-     * see <a
+     * specify in your <a>CreateModel</a> request. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -368,8 +366,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTramsformJob</code> request. For more information,
-     * see <a
+     * specify in your <a>CreateModel</a> request. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -391,8 +388,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTramsformJob</code> request. For more information,
-     * see <a
+     * specify in your <a>CreateModel</a> request. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -414,8 +410,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTramsformJob</code> request. For more information,
-     * see <a
+     * specify in your <a>CreateModel</a> request. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -437,8 +432,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTramsformJob</code> request. For more information,
-     * see <a
+     * specify in your <a>CreateModel</a> request. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -460,8 +454,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTramsformJob</code> request. For more information,
-     * see <a
+     * specify in your <a>CreateModel</a> request. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
@@ -483,8 +476,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
      * Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p> <p>The KMS key policy must grant permission to the IAM role that you
-     * specify in your <code>CreateTramsformJob</code> request. For more information,
-     * see <a
+     * specify in your <a>CreateModel</a> request. For more information, see <a
      * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>

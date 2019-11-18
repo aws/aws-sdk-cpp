@@ -46,27 +46,27 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p> Container for the bucket owner's display name and ID.</p>
      */
     inline const Owner& GetOwner() const{ return m_owner; }
 
     /**
-     * <p/>
+     * <p> Container for the bucket owner's display name and ID.</p>
      */
     inline void SetOwner(const Owner& value) { m_owner = value; }
 
     /**
-     * <p/>
+     * <p> Container for the bucket owner's display name and ID.</p>
      */
     inline void SetOwner(Owner&& value) { m_owner = std::move(value); }
 
     /**
-     * <p/>
+     * <p> Container for the bucket owner's display name and ID.</p>
      */
     inline GetObjectAclResult& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
     /**
-     * <p/>
+     * <p> Container for the bucket owner's display name and ID.</p>
      */
     inline GetObjectAclResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 

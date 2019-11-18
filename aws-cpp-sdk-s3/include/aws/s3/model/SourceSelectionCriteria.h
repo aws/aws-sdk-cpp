@@ -36,8 +36,9 @@ namespace Model
    * <p>A container that describes additional filters for identifying the source
    * objects that you want to replicate. You can choose to enable or disable the
    * replication of these objects. Currently, Amazon S3 supports only the filter that
-   * you can specify for objects created with server-side encryption using an AWS
-   * KMS-Managed Key (SSE-KMS).</p><p><h3>See Also:</h3>   <a
+   * you can specify for objects created with server-side encryption using a customer
+   * master key (CMK) stored in AWS Key Management Service (SSE-KMS).</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SourceSelectionCriteria">AWS
    * API Reference</a></p>
    */

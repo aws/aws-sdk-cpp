@@ -30,6 +30,7 @@
 #include <aws/cloudformation/model/DeleteChangeSetResult.h>
 #include <aws/cloudformation/model/DeleteStackInstancesResult.h>
 #include <aws/cloudformation/model/DeleteStackSetResult.h>
+#include <aws/cloudformation/model/DeregisterTypeResult.h>
 #include <aws/cloudformation/model/DescribeAccountLimitsResult.h>
 #include <aws/cloudformation/model/DescribeChangeSetResult.h>
 #include <aws/cloudformation/model/DescribeStackDriftDetectionStatusResult.h>
@@ -41,6 +42,8 @@
 #include <aws/cloudformation/model/DescribeStackSetResult.h>
 #include <aws/cloudformation/model/DescribeStackSetOperationResult.h>
 #include <aws/cloudformation/model/DescribeStacksResult.h>
+#include <aws/cloudformation/model/DescribeTypeResult.h>
+#include <aws/cloudformation/model/DescribeTypeRegistrationResult.h>
 #include <aws/cloudformation/model/DetectStackDriftResult.h>
 #include <aws/cloudformation/model/DetectStackResourceDriftResult.h>
 #include <aws/cloudformation/model/EstimateTemplateCostResult.h>
@@ -57,6 +60,12 @@
 #include <aws/cloudformation/model/ListStackSetOperationsResult.h>
 #include <aws/cloudformation/model/ListStackSetsResult.h>
 #include <aws/cloudformation/model/ListStacksResult.h>
+#include <aws/cloudformation/model/ListTypeRegistrationsResult.h>
+#include <aws/cloudformation/model/ListTypeVersionsResult.h>
+#include <aws/cloudformation/model/ListTypesResult.h>
+#include <aws/cloudformation/model/RecordHandlerProgressResult.h>
+#include <aws/cloudformation/model/RegisterTypeResult.h>
+#include <aws/cloudformation/model/SetTypeDefaultVersionResult.h>
 #include <aws/cloudformation/model/StopStackSetOperationResult.h>
 #include <aws/cloudformation/model/UpdateStackResult.h>
 #include <aws/cloudformation/model/UpdateStackInstancesResult.h>
@@ -119,6 +128,7 @@ namespace Model
         class DeleteStackRequest;
         class DeleteStackInstancesRequest;
         class DeleteStackSetRequest;
+        class DeregisterTypeRequest;
         class DescribeAccountLimitsRequest;
         class DescribeChangeSetRequest;
         class DescribeStackDriftDetectionStatusRequest;
@@ -130,6 +140,8 @@ namespace Model
         class DescribeStackSetRequest;
         class DescribeStackSetOperationRequest;
         class DescribeStacksRequest;
+        class DescribeTypeRequest;
+        class DescribeTypeRegistrationRequest;
         class DetectStackDriftRequest;
         class DetectStackResourceDriftRequest;
         class EstimateTemplateCostRequest;
@@ -146,7 +158,13 @@ namespace Model
         class ListStackSetOperationsRequest;
         class ListStackSetsRequest;
         class ListStacksRequest;
+        class ListTypeRegistrationsRequest;
+        class ListTypeVersionsRequest;
+        class ListTypesRequest;
+        class RecordHandlerProgressRequest;
+        class RegisterTypeRequest;
         class SetStackPolicyRequest;
+        class SetTypeDefaultVersionRequest;
         class SignalResourceRequest;
         class StopStackSetOperationRequest;
         class UpdateStackRequest;
@@ -165,6 +183,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackOutcome;
         typedef Aws::Utils::Outcome<DeleteStackInstancesResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackInstancesOutcome;
         typedef Aws::Utils::Outcome<DeleteStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> DeleteStackSetOutcome;
+        typedef Aws::Utils::Outcome<DeregisterTypeResult, Aws::Client::AWSError<CloudFormationErrors>> DeregisterTypeOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountLimitsResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeAccountLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeChangeSetResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeChangeSetOutcome;
         typedef Aws::Utils::Outcome<DescribeStackDriftDetectionStatusResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackDriftDetectionStatusOutcome;
@@ -176,6 +195,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeStackSetResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackSetOutcome;
         typedef Aws::Utils::Outcome<DescribeStackSetOperationResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStackSetOperationOutcome;
         typedef Aws::Utils::Outcome<DescribeStacksResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeStacksOutcome;
+        typedef Aws::Utils::Outcome<DescribeTypeResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeTypeOutcome;
+        typedef Aws::Utils::Outcome<DescribeTypeRegistrationResult, Aws::Client::AWSError<CloudFormationErrors>> DescribeTypeRegistrationOutcome;
         typedef Aws::Utils::Outcome<DetectStackDriftResult, Aws::Client::AWSError<CloudFormationErrors>> DetectStackDriftOutcome;
         typedef Aws::Utils::Outcome<DetectStackResourceDriftResult, Aws::Client::AWSError<CloudFormationErrors>> DetectStackResourceDriftOutcome;
         typedef Aws::Utils::Outcome<EstimateTemplateCostResult, Aws::Client::AWSError<CloudFormationErrors>> EstimateTemplateCostOutcome;
@@ -192,7 +213,13 @@ namespace Model
         typedef Aws::Utils::Outcome<ListStackSetOperationsResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackSetOperationsOutcome;
         typedef Aws::Utils::Outcome<ListStackSetsResult, Aws::Client::AWSError<CloudFormationErrors>> ListStackSetsOutcome;
         typedef Aws::Utils::Outcome<ListStacksResult, Aws::Client::AWSError<CloudFormationErrors>> ListStacksOutcome;
+        typedef Aws::Utils::Outcome<ListTypeRegistrationsResult, Aws::Client::AWSError<CloudFormationErrors>> ListTypeRegistrationsOutcome;
+        typedef Aws::Utils::Outcome<ListTypeVersionsResult, Aws::Client::AWSError<CloudFormationErrors>> ListTypeVersionsOutcome;
+        typedef Aws::Utils::Outcome<ListTypesResult, Aws::Client::AWSError<CloudFormationErrors>> ListTypesOutcome;
+        typedef Aws::Utils::Outcome<RecordHandlerProgressResult, Aws::Client::AWSError<CloudFormationErrors>> RecordHandlerProgressOutcome;
+        typedef Aws::Utils::Outcome<RegisterTypeResult, Aws::Client::AWSError<CloudFormationErrors>> RegisterTypeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> SetStackPolicyOutcome;
+        typedef Aws::Utils::Outcome<SetTypeDefaultVersionResult, Aws::Client::AWSError<CloudFormationErrors>> SetTypeDefaultVersionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<CloudFormationErrors>> SignalResourceOutcome;
         typedef Aws::Utils::Outcome<StopStackSetOperationResult, Aws::Client::AWSError<CloudFormationErrors>> StopStackSetOperationOutcome;
         typedef Aws::Utils::Outcome<UpdateStackResult, Aws::Client::AWSError<CloudFormationErrors>> UpdateStackOutcome;
@@ -211,6 +238,7 @@ namespace Model
         typedef std::future<DeleteStackOutcome> DeleteStackOutcomeCallable;
         typedef std::future<DeleteStackInstancesOutcome> DeleteStackInstancesOutcomeCallable;
         typedef std::future<DeleteStackSetOutcome> DeleteStackSetOutcomeCallable;
+        typedef std::future<DeregisterTypeOutcome> DeregisterTypeOutcomeCallable;
         typedef std::future<DescribeAccountLimitsOutcome> DescribeAccountLimitsOutcomeCallable;
         typedef std::future<DescribeChangeSetOutcome> DescribeChangeSetOutcomeCallable;
         typedef std::future<DescribeStackDriftDetectionStatusOutcome> DescribeStackDriftDetectionStatusOutcomeCallable;
@@ -222,6 +250,8 @@ namespace Model
         typedef std::future<DescribeStackSetOutcome> DescribeStackSetOutcomeCallable;
         typedef std::future<DescribeStackSetOperationOutcome> DescribeStackSetOperationOutcomeCallable;
         typedef std::future<DescribeStacksOutcome> DescribeStacksOutcomeCallable;
+        typedef std::future<DescribeTypeOutcome> DescribeTypeOutcomeCallable;
+        typedef std::future<DescribeTypeRegistrationOutcome> DescribeTypeRegistrationOutcomeCallable;
         typedef std::future<DetectStackDriftOutcome> DetectStackDriftOutcomeCallable;
         typedef std::future<DetectStackResourceDriftOutcome> DetectStackResourceDriftOutcomeCallable;
         typedef std::future<EstimateTemplateCostOutcome> EstimateTemplateCostOutcomeCallable;
@@ -238,7 +268,13 @@ namespace Model
         typedef std::future<ListStackSetOperationsOutcome> ListStackSetOperationsOutcomeCallable;
         typedef std::future<ListStackSetsOutcome> ListStackSetsOutcomeCallable;
         typedef std::future<ListStacksOutcome> ListStacksOutcomeCallable;
+        typedef std::future<ListTypeRegistrationsOutcome> ListTypeRegistrationsOutcomeCallable;
+        typedef std::future<ListTypeVersionsOutcome> ListTypeVersionsOutcomeCallable;
+        typedef std::future<ListTypesOutcome> ListTypesOutcomeCallable;
+        typedef std::future<RecordHandlerProgressOutcome> RecordHandlerProgressOutcomeCallable;
+        typedef std::future<RegisterTypeOutcome> RegisterTypeOutcomeCallable;
         typedef std::future<SetStackPolicyOutcome> SetStackPolicyOutcomeCallable;
+        typedef std::future<SetTypeDefaultVersionOutcome> SetTypeDefaultVersionOutcomeCallable;
         typedef std::future<SignalResourceOutcome> SignalResourceOutcomeCallable;
         typedef std::future<StopStackSetOperationOutcome> StopStackSetOperationOutcomeCallable;
         typedef std::future<UpdateStackOutcome> UpdateStackOutcomeCallable;
@@ -260,6 +296,7 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::DeleteStackRequest&, const Model::DeleteStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DeleteStackInstancesRequest&, const Model::DeleteStackInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackInstancesResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DeleteStackSetRequest&, const Model::DeleteStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStackSetResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DeregisterTypeRequest&, const Model::DeregisterTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTypeResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeAccountLimitsRequest&, const Model::DescribeAccountLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountLimitsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeChangeSetRequest&, const Model::DescribeChangeSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChangeSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackDriftDetectionStatusRequest&, const Model::DescribeStackDriftDetectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackDriftDetectionStatusResponseReceivedHandler;
@@ -271,6 +308,8 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackSetRequest&, const Model::DescribeStackSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackSetResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStackSetOperationRequest&, const Model::DescribeStackSetOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStackSetOperationResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DescribeStacksRequest&, const Model::DescribeStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStacksResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DescribeTypeRequest&, const Model::DescribeTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTypeResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::DescribeTypeRegistrationRequest&, const Model::DescribeTypeRegistrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTypeRegistrationResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DetectStackDriftRequest&, const Model::DetectStackDriftOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectStackDriftResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::DetectStackResourceDriftRequest&, const Model::DetectStackResourceDriftOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectStackResourceDriftResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::EstimateTemplateCostRequest&, const Model::EstimateTemplateCostOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EstimateTemplateCostResponseReceivedHandler;
@@ -287,7 +326,13 @@ namespace Model
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackSetOperationsRequest&, const Model::ListStackSetOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackSetOperationsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStackSetsRequest&, const Model::ListStackSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackSetsResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::ListStacksRequest&, const Model::ListStacksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStacksResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ListTypeRegistrationsRequest&, const Model::ListTypeRegistrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTypeRegistrationsResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ListTypeVersionsRequest&, const Model::ListTypeVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTypeVersionsResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::ListTypesRequest&, const Model::ListTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTypesResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::RecordHandlerProgressRequest&, const Model::RecordHandlerProgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RecordHandlerProgressResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::RegisterTypeRequest&, const Model::RegisterTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTypeResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::SetStackPolicyRequest&, const Model::SetStackPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetStackPolicyResponseReceivedHandler;
+    typedef std::function<void(const CloudFormationClient*, const Model::SetTypeDefaultVersionRequest&, const Model::SetTypeDefaultVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetTypeDefaultVersionResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::SignalResourceRequest&, const Model::SignalResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SignalResourceResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::StopStackSetOperationRequest&, const Model::StopStackSetOperationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStackSetOperationResponseReceivedHandler;
     typedef std::function<void(const CloudFormationClient*, const Model::UpdateStackRequest&, const Model::UpdateStackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStackResponseReceivedHandler;
@@ -739,6 +784,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteStackSetAsync(const Model::DeleteStackSetRequest& request, const DeleteStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes a type or type version from active use in the CloudFormation
+         * registry. If a type or type version is deregistered, it cannot be used in
+         * CloudFormation operations.</p> <p>To deregister a type, you must individually
+         * deregister all registered versions of that type. If a type has only a single
+         * registered version, deregistering that version results in the type itself being
+         * deregistered. </p> <p>You cannot deregister the default version of a type,
+         * unless it is the only registered version of that type, in which case the type
+         * itself is deregistered as well. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterTypeOutcome DeregisterType(const Model::DeregisterTypeRequest& request) const;
+
+        /**
+         * <p>Removes a type or type version from active use in the CloudFormation
+         * registry. If a type or type version is deregistered, it cannot be used in
+         * CloudFormation operations.</p> <p>To deregister a type, you must individually
+         * deregister all registered versions of that type. If a type has only a single
+         * registered version, deregistering that version results in the type itself being
+         * deregistered. </p> <p>You cannot deregister the default version of a type,
+         * unless it is the only registered version of that type, in which case the type
+         * itself is deregistered as well. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeregisterTypeOutcomeCallable DeregisterTypeCallable(const Model::DeregisterTypeRequest& request) const;
+
+        /**
+         * <p>Removes a type or type version from active use in the CloudFormation
+         * registry. If a type or type version is deregistered, it cannot be used in
+         * CloudFormation operations.</p> <p>To deregister a type, you must individually
+         * deregister all registered versions of that type. If a type has only a single
+         * registered version, deregistering that version results in the type itself being
+         * deregistered. </p> <p>You cannot deregister the default version of a type,
+         * unless it is the only registered version of that type, in which case the type
+         * itself is deregistered as well. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeregisterType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeregisterTypeAsync(const Model::DeregisterTypeRequest& request, const DeregisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves your account's AWS CloudFormation limits, such as the maximum
@@ -1218,6 +1309,83 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeStacksAsync(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns detailed information about a type that has been registered.</p> <p>If
+         * you specify a <code>VersionId</code>, <code>DescribeType</code> returns
+         * information about that specific type version. Otherwise, it returns information
+         * about the default type version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTypeOutcome DescribeType(const Model::DescribeTypeRequest& request) const;
+
+        /**
+         * <p>Returns detailed information about a type that has been registered.</p> <p>If
+         * you specify a <code>VersionId</code>, <code>DescribeType</code> returns
+         * information about that specific type version. Otherwise, it returns information
+         * about the default type version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTypeOutcomeCallable DescribeTypeCallable(const Model::DescribeTypeRequest& request) const;
+
+        /**
+         * <p>Returns detailed information about a type that has been registered.</p> <p>If
+         * you specify a <code>VersionId</code>, <code>DescribeType</code> returns
+         * information about that specific type version. Otherwise, it returns information
+         * about the default type version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTypeAsync(const Model::DescribeTypeRequest& request, const DescribeTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about a type's registration, including its current status
+         * and type and version identifiers.</p> <p>When you initiate a registration
+         * request using <code> <a>RegisterType</a> </code>, you can then use <code>
+         * <a>DescribeTypeRegistration</a> </code> to monitor the progress of that
+         * registration request.</p> <p>Once the registration request has completed, use
+         * <code> <a>DescribeType</a> </code> to return detailed informaiton about a
+         * type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeTypeRegistration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTypeRegistrationOutcome DescribeTypeRegistration(const Model::DescribeTypeRegistrationRequest& request) const;
+
+        /**
+         * <p>Returns information about a type's registration, including its current status
+         * and type and version identifiers.</p> <p>When you initiate a registration
+         * request using <code> <a>RegisterType</a> </code>, you can then use <code>
+         * <a>DescribeTypeRegistration</a> </code> to monitor the progress of that
+         * registration request.</p> <p>Once the registration request has completed, use
+         * <code> <a>DescribeType</a> </code> to return detailed informaiton about a
+         * type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeTypeRegistration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTypeRegistrationOutcomeCallable DescribeTypeRegistrationCallable(const Model::DescribeTypeRegistrationRequest& request) const;
+
+        /**
+         * <p>Returns information about a type's registration, including its current status
+         * and type and version identifiers.</p> <p>When you initiate a registration
+         * request using <code> <a>RegisterType</a> </code>, you can then use <code>
+         * <a>DescribeTypeRegistration</a> </code> to monitor the progress of that
+         * registration request.</p> <p>Once the registration request has completed, use
+         * <code> <a>DescribeType</a> </code> to return detailed informaiton about a
+         * type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeTypeRegistration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTypeRegistrationAsync(const Model::DescribeTypeRegistrationRequest& request, const DescribeTypeRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects whether a stack's actual configuration differs, or has
@@ -1884,6 +2052,182 @@ namespace Model
         virtual void ListStacksAsync(const Model::ListStacksRequest& request, const ListStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of registration tokens for the specified type.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTypeRegistrationsOutcome ListTypeRegistrations(const Model::ListTypeRegistrationsRequest& request) const;
+
+        /**
+         * <p>Returns a list of registration tokens for the specified type.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTypeRegistrationsOutcomeCallable ListTypeRegistrationsCallable(const Model::ListTypeRegistrationsRequest& request) const;
+
+        /**
+         * <p>Returns a list of registration tokens for the specified type.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeRegistrations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTypeRegistrationsAsync(const Model::ListTypeRegistrationsRequest& request, const ListTypeRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns summary information about the versions of a type.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTypeVersionsOutcome ListTypeVersions(const Model::ListTypeVersionsRequest& request) const;
+
+        /**
+         * <p>Returns summary information about the versions of a type.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTypeVersionsOutcomeCallable ListTypeVersionsCallable(const Model::ListTypeVersionsRequest& request) const;
+
+        /**
+         * <p>Returns summary information about the versions of a type.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypeVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTypeVersionsAsync(const Model::ListTypeVersionsRequest& request, const ListTypeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns summary information about types that have been registered with
+         * CloudFormation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTypesOutcome ListTypes(const Model::ListTypesRequest& request) const;
+
+        /**
+         * <p>Returns summary information about types that have been registered with
+         * CloudFormation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTypesOutcomeCallable ListTypesCallable(const Model::ListTypesRequest& request) const;
+
+        /**
+         * <p>Returns summary information about types that have been registered with
+         * CloudFormation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListTypes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTypesAsync(const Model::ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Reports progress of a resource handler to CloudFormation.</p> <p>Reserved for
+         * use by the <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
+         * CLI</a>. Do not use this API in your code.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RecordHandlerProgress">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RecordHandlerProgressOutcome RecordHandlerProgress(const Model::RecordHandlerProgressRequest& request) const;
+
+        /**
+         * <p>Reports progress of a resource handler to CloudFormation.</p> <p>Reserved for
+         * use by the <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
+         * CLI</a>. Do not use this API in your code.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RecordHandlerProgress">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RecordHandlerProgressOutcomeCallable RecordHandlerProgressCallable(const Model::RecordHandlerProgressRequest& request) const;
+
+        /**
+         * <p>Reports progress of a resource handler to CloudFormation.</p> <p>Reserved for
+         * use by the <a
+         * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation
+         * CLI</a>. Do not use this API in your code.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RecordHandlerProgress">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RecordHandlerProgressAsync(const Model::RecordHandlerProgressRequest& request, const RecordHandlerProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Registers a type with the CloudFormation service. Registering a type makes it
+         * available for use in CloudFormation templates in your AWS account, and
+         * includes:</p> <ul> <li> <p>Validating the resource schema</p> </li> <li>
+         * <p>Determining which handlers have been specified for the resource</p> </li>
+         * <li> <p>Making the resource type available for use in your account</p> </li>
+         * </ul> <p>For more information on how to develop types and ready them for
+         * registeration, see <a
+         * href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
+         * Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>Once you have
+         * initiated a registration request using <code> <a>RegisterType</a> </code>, you
+         * can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
+         * of the registration request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterTypeOutcome RegisterType(const Model::RegisterTypeRequest& request) const;
+
+        /**
+         * <p>Registers a type with the CloudFormation service. Registering a type makes it
+         * available for use in CloudFormation templates in your AWS account, and
+         * includes:</p> <ul> <li> <p>Validating the resource schema</p> </li> <li>
+         * <p>Determining which handlers have been specified for the resource</p> </li>
+         * <li> <p>Making the resource type available for use in your account</p> </li>
+         * </ul> <p>For more information on how to develop types and ready them for
+         * registeration, see <a
+         * href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
+         * Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>Once you have
+         * initiated a registration request using <code> <a>RegisterType</a> </code>, you
+         * can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
+         * of the registration request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterTypeOutcomeCallable RegisterTypeCallable(const Model::RegisterTypeRequest& request) const;
+
+        /**
+         * <p>Registers a type with the CloudFormation service. Registering a type makes it
+         * available for use in CloudFormation templates in your AWS account, and
+         * includes:</p> <ul> <li> <p>Validating the resource schema</p> </li> <li>
+         * <p>Determining which handlers have been specified for the resource</p> </li>
+         * <li> <p>Making the resource type available for use in your account</p> </li>
+         * </ul> <p>For more information on how to develop types and ready them for
+         * registeration, see <a
+         * href="cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
+         * Providers</a> in the <i>CloudFormation CLI User Guide</i>.</p> <p>Once you have
+         * initiated a registration request using <code> <a>RegisterType</a> </code>, you
+         * can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
+         * of the registration request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RegisterType">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterTypeAsync(const Model::RegisterTypeRequest& request, const RegisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sets a stack policy for a specified stack.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetStackPolicy">AWS
          * API Reference</a></p>
@@ -1907,6 +2251,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SetStackPolicyAsync(const Model::SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Specify the default version of a type. The default version of a type will be
+         * used in CloudFormation operations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SetTypeDefaultVersionOutcome SetTypeDefaultVersion(const Model::SetTypeDefaultVersionRequest& request) const;
+
+        /**
+         * <p>Specify the default version of a type. The default version of a type will be
+         * used in CloudFormation operations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SetTypeDefaultVersionOutcomeCallable SetTypeDefaultVersionCallable(const Model::SetTypeDefaultVersionRequest& request) const;
+
+        /**
+         * <p>Specify the default version of a type. The default version of a type will be
+         * used in CloudFormation operations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/SetTypeDefaultVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SetTypeDefaultVersionAsync(const Model::SetTypeDefaultVersionRequest& request, const SetTypeDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Sends a signal to the specified resource with a success or failure status.
@@ -2238,6 +2610,7 @@ namespace Model
         void DeleteStackAsyncHelper(const Model::DeleteStackRequest& request, const DeleteStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStackInstancesAsyncHelper(const Model::DeleteStackInstancesRequest& request, const DeleteStackInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStackSetAsyncHelper(const Model::DeleteStackSetRequest& request, const DeleteStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeregisterTypeAsyncHelper(const Model::DeregisterTypeRequest& request, const DeregisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountLimitsAsyncHelper(const Model::DescribeAccountLimitsRequest& request, const DescribeAccountLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChangeSetAsyncHelper(const Model::DescribeChangeSetRequest& request, const DescribeChangeSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackDriftDetectionStatusAsyncHelper(const Model::DescribeStackDriftDetectionStatusRequest& request, const DescribeStackDriftDetectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2249,6 +2622,8 @@ namespace Model
         void DescribeStackSetAsyncHelper(const Model::DescribeStackSetRequest& request, const DescribeStackSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStackSetOperationAsyncHelper(const Model::DescribeStackSetOperationRequest& request, const DescribeStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStacksAsyncHelper(const Model::DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTypeAsyncHelper(const Model::DescribeTypeRequest& request, const DescribeTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTypeRegistrationAsyncHelper(const Model::DescribeTypeRegistrationRequest& request, const DescribeTypeRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectStackDriftAsyncHelper(const Model::DetectStackDriftRequest& request, const DetectStackDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectStackResourceDriftAsyncHelper(const Model::DetectStackResourceDriftRequest& request, const DetectStackResourceDriftResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EstimateTemplateCostAsyncHelper(const Model::EstimateTemplateCostRequest& request, const EstimateTemplateCostResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2265,7 +2640,13 @@ namespace Model
         void ListStackSetOperationsAsyncHelper(const Model::ListStackSetOperationsRequest& request, const ListStackSetOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStackSetsAsyncHelper(const Model::ListStackSetsRequest& request, const ListStackSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListStacksAsyncHelper(const Model::ListStacksRequest& request, const ListStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTypeRegistrationsAsyncHelper(const Model::ListTypeRegistrationsRequest& request, const ListTypeRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTypeVersionsAsyncHelper(const Model::ListTypeVersionsRequest& request, const ListTypeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTypesAsyncHelper(const Model::ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RecordHandlerProgressAsyncHelper(const Model::RecordHandlerProgressRequest& request, const RecordHandlerProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegisterTypeAsyncHelper(const Model::RegisterTypeRequest& request, const RegisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetStackPolicyAsyncHelper(const Model::SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SetTypeDefaultVersionAsyncHelper(const Model::SetTypeDefaultVersionRequest& request, const SetTypeDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SignalResourceAsyncHelper(const Model::SignalResourceRequest& request, const SignalResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopStackSetOperationAsyncHelper(const Model::StopStackSetOperationRequest& request, const StopStackSetOperationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateStackAsyncHelper(const Model::UpdateStackRequest& request, const UpdateStackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

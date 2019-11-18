@@ -28,7 +28,8 @@ using namespace Aws;
 InvokeEndpointRequest::InvokeEndpointRequest() : 
     m_endpointNameHasBeenSet(false),
     m_acceptHasBeenSet(false),
-    m_customAttributesHasBeenSet(false)
+    m_customAttributesHasBeenSet(false),
+    m_targetModelHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,13 @@ Aws::Http::HeaderValueCollection InvokeEndpointRequest::GetRequestSpecificHeader
   {
     ss << m_customAttributes;
     headers.emplace("x-amzn-sagemaker-custom-attributes",  ss.str());
+    ss.str("");
+  }
+
+  if(m_targetModelHasBeenSet)
+  {
+    ss << m_targetModel;
+    headers.emplace("x-amzn-sagemaker-target-model",  ss.str());
     ss.str("");
   }
 

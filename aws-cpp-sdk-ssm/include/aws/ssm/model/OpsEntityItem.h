@@ -15,9 +15,9 @@
 
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -47,6 +47,47 @@ namespace Model
     OpsEntityItem(Aws::Utils::Json::JsonView jsonValue);
     OpsEntityItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The time OpsItem data was captured.</p>
+     */
+    inline const Aws::String& GetCaptureTime() const{ return m_captureTime; }
+
+    /**
+     * <p>The time OpsItem data was captured.</p>
+     */
+    inline bool CaptureTimeHasBeenSet() const { return m_captureTimeHasBeenSet; }
+
+    /**
+     * <p>The time OpsItem data was captured.</p>
+     */
+    inline void SetCaptureTime(const Aws::String& value) { m_captureTimeHasBeenSet = true; m_captureTime = value; }
+
+    /**
+     * <p>The time OpsItem data was captured.</p>
+     */
+    inline void SetCaptureTime(Aws::String&& value) { m_captureTimeHasBeenSet = true; m_captureTime = std::move(value); }
+
+    /**
+     * <p>The time OpsItem data was captured.</p>
+     */
+    inline void SetCaptureTime(const char* value) { m_captureTimeHasBeenSet = true; m_captureTime.assign(value); }
+
+    /**
+     * <p>The time OpsItem data was captured.</p>
+     */
+    inline OpsEntityItem& WithCaptureTime(const Aws::String& value) { SetCaptureTime(value); return *this;}
+
+    /**
+     * <p>The time OpsItem data was captured.</p>
+     */
+    inline OpsEntityItem& WithCaptureTime(Aws::String&& value) { SetCaptureTime(std::move(value)); return *this;}
+
+    /**
+     * <p>The time OpsItem data was captured.</p>
+     */
+    inline OpsEntityItem& WithCaptureTime(const char* value) { SetCaptureTime(value); return *this;}
 
 
     /**
@@ -90,6 +131,9 @@ namespace Model
     inline OpsEntityItem& AddContent(Aws::Map<Aws::String, Aws::String>&& value) { m_contentHasBeenSet = true; m_content.push_back(std::move(value)); return *this; }
 
   private:
+
+    Aws::String m_captureTime;
+    bool m_captureTimeHasBeenSet;
 
     Aws::Vector<Aws::Map<Aws::String, Aws::String>> m_content;
     bool m_contentHasBeenSet;

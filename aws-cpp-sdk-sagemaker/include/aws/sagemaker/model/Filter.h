@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>A conditional statement for a search expression that includes a Boolean
-   * operator, a resource property, and a value.</p> <p>If you don't specify an
+   * <p>A conditional statement for a search expression that includes a resource
+   * property, a Boolean operator, and a value.</p> <p>If you don't specify an
    * <code>Operator</code> and a <code>Value</code>, the filter searches for only the
    * specified property. For example, defining a <code>Filter</code> for the
    * <code>FailureReason</code> for the <code>TrainingJob</code>
@@ -157,7 +157,8 @@ namespace Model
      * in <code>Name</code> is less than or equal to the specified <code>Value</code>.
      * Not supported for text-based properties.</p> </dd> <dt>Contains</dt> <dd>
      * <p>Only supported for text-based properties. The word-list of the property
-     * contains the specified <code>Value</code>.</p> </dd> </dl> <p>If you have
+     * contains the specified <code>Value</code>. A <code>SearchExpression</code> can
+     * include only one <code>Contains</code> operator.</p> </dd> </dl> <p>If you have
      * specified a filter <code>Value</code>, the default is <code>Equals</code>.</p>
      */
     inline const Operator& GetOperator() const{ return m_operator; }
@@ -179,7 +180,8 @@ namespace Model
      * in <code>Name</code> is less than or equal to the specified <code>Value</code>.
      * Not supported for text-based properties.</p> </dd> <dt>Contains</dt> <dd>
      * <p>Only supported for text-based properties. The word-list of the property
-     * contains the specified <code>Value</code>.</p> </dd> </dl> <p>If you have
+     * contains the specified <code>Value</code>. A <code>SearchExpression</code> can
+     * include only one <code>Contains</code> operator.</p> </dd> </dl> <p>If you have
      * specified a filter <code>Value</code>, the default is <code>Equals</code>.</p>
      */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
@@ -201,7 +203,8 @@ namespace Model
      * in <code>Name</code> is less than or equal to the specified <code>Value</code>.
      * Not supported for text-based properties.</p> </dd> <dt>Contains</dt> <dd>
      * <p>Only supported for text-based properties. The word-list of the property
-     * contains the specified <code>Value</code>.</p> </dd> </dl> <p>If you have
+     * contains the specified <code>Value</code>. A <code>SearchExpression</code> can
+     * include only one <code>Contains</code> operator.</p> </dd> </dl> <p>If you have
      * specified a filter <code>Value</code>, the default is <code>Equals</code>.</p>
      */
     inline void SetOperator(const Operator& value) { m_operatorHasBeenSet = true; m_operator = value; }
@@ -223,7 +226,8 @@ namespace Model
      * in <code>Name</code> is less than or equal to the specified <code>Value</code>.
      * Not supported for text-based properties.</p> </dd> <dt>Contains</dt> <dd>
      * <p>Only supported for text-based properties. The word-list of the property
-     * contains the specified <code>Value</code>.</p> </dd> </dl> <p>If you have
+     * contains the specified <code>Value</code>. A <code>SearchExpression</code> can
+     * include only one <code>Contains</code> operator.</p> </dd> </dl> <p>If you have
      * specified a filter <code>Value</code>, the default is <code>Equals</code>.</p>
      */
     inline void SetOperator(Operator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
@@ -245,7 +249,8 @@ namespace Model
      * in <code>Name</code> is less than or equal to the specified <code>Value</code>.
      * Not supported for text-based properties.</p> </dd> <dt>Contains</dt> <dd>
      * <p>Only supported for text-based properties. The word-list of the property
-     * contains the specified <code>Value</code>.</p> </dd> </dl> <p>If you have
+     * contains the specified <code>Value</code>. A <code>SearchExpression</code> can
+     * include only one <code>Contains</code> operator.</p> </dd> </dl> <p>If you have
      * specified a filter <code>Value</code>, the default is <code>Equals</code>.</p>
      */
     inline Filter& WithOperator(const Operator& value) { SetOperator(value); return *this;}
@@ -267,7 +272,8 @@ namespace Model
      * in <code>Name</code> is less than or equal to the specified <code>Value</code>.
      * Not supported for text-based properties.</p> </dd> <dt>Contains</dt> <dd>
      * <p>Only supported for text-based properties. The word-list of the property
-     * contains the specified <code>Value</code>.</p> </dd> </dl> <p>If you have
+     * contains the specified <code>Value</code>. A <code>SearchExpression</code> can
+     * include only one <code>Contains</code> operator.</p> </dd> </dl> <p>If you have
      * specified a filter <code>Value</code>, the default is <code>Equals</code>.</p>
      */
     inline Filter& WithOperator(Operator&& value) { SetOperator(std::move(value)); return *this;}

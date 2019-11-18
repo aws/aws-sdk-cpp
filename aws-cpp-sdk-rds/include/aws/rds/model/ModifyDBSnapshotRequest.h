@@ -95,7 +95,10 @@ namespace Model
      * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
      * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
      * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul>
+     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
+     * engine versions that are available for upgrading a DB snapshot, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
+     * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>. </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -107,7 +110,10 @@ namespace Model
      * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
      * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
      * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul>
+     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
+     * engine versions that are available for upgrading a DB snapshot, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
+     * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>. </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -119,7 +125,10 @@ namespace Model
      * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
      * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
      * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul>
+     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
+     * engine versions that are available for upgrading a DB snapshot, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
+     * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>. </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -131,7 +140,10 @@ namespace Model
      * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
      * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
      * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul>
+     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
+     * engine versions that are available for upgrading a DB snapshot, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
+     * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>. </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -143,7 +155,10 @@ namespace Model
      * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
      * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
      * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul>
+     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
+     * engine versions that are available for upgrading a DB snapshot, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
+     * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>. </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -155,7 +170,10 @@ namespace Model
      * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
      * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
      * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul>
+     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
+     * engine versions that are available for upgrading a DB snapshot, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
+     * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>. </p>
      */
     inline ModifyDBSnapshotRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -167,7 +185,10 @@ namespace Model
      * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
      * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
      * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul>
+     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
+     * engine versions that are available for upgrading a DB snapshot, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
+     * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>. </p>
      */
     inline ModifyDBSnapshotRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -179,7 +200,10 @@ namespace Model
      * <li> <p> <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)</p>
      * </li> <li> <p> <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB
      * snapshots)</p> </li> <li> <p> <code>11.2.0.4.v11</code> (supported for 11.2.0.3
-     * DB snapshots)</p> </li> </ul>
+     * DB snapshots)</p> </li> </ul> <p> <b>PostgreSQL</b> </p> <p>For the list of
+     * engine versions that are available for upgrading a DB snapshot, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.PostgreSQL.html#USER_UpgradeDBInstance.PostgreSQL.MajorVersion">
+     * Upgrading the PostgreSQL DB Engine for Amazon RDS</a>. </p>
      */
     inline ModifyDBSnapshotRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

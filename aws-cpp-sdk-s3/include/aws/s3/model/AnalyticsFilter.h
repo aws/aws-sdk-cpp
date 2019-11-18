@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The filter used to describe a set of objects for analyses. A filter must have
+   * exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no
+   * filter is provided, all objects will be considered in any
+   * analysis.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AnalyticsFilter">AWS
    * API Reference</a></p>
    */

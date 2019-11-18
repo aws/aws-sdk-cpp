@@ -31,7 +31,9 @@ CreateOpsItemRequest::CreateOpsItemRequest() :
     m_relatedOpsItemsHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_titleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_severityHasBeenSet(false)
 {
 }
 
@@ -104,6 +106,18 @@ Aws::String CreateOpsItemRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   payload.WithString("Category", m_category);
+
+  }
+
+  if(m_severityHasBeenSet)
+  {
+   payload.WithString("Severity", m_severity);
 
   }
 

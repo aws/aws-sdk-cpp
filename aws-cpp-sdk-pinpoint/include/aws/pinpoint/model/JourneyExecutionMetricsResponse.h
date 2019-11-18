@@ -36,7 +36,8 @@ namespace Model
 
   /**
    * <p>Provides the results of a query that retrieved the data for a standard
-   * execution metric that applies to a journey.</p><p><h3>See Also:</h3>   <a
+   * execution metric that applies to a journey, and provides information about that
+   * query.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/JourneyExecutionMetricsResponse">AWS
    * API Reference</a></p>
    */

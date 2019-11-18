@@ -45,7 +45,8 @@ namespace Model
    * twenty elements.</p> <p>A <code>SearchExpression</code> contains the following
    * components:</p> <ul> <li> <p>A list of <code>Filter</code> objects. Each filter
    * defines a simple Boolean expression comprised of a resource property name,
-   * Boolean operator, and value.</p> </li> <li> <p>A list of
+   * Boolean operator, and value. A <code>SearchExpression</code> can include only
+   * one <code>Contains</code> operator.</p> </li> <li> <p>A list of
    * <code>NestedFilter</code> objects. Each nested filter defines a list of Boolean
    * expressions using a list of resource properties. A nested filter is satisfied if
    * a single object in the list satisfies all Boolean expressions.</p> </li> <li>

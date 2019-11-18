@@ -135,42 +135,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Container for granting information.</p>
      */
     inline const Aws::Vector<TargetGrant>& GetTargetGrants() const{ return m_targetGrants; }
 
     /**
-     * <p/>
+     * <p>Container for granting information.</p>
      */
     inline bool TargetGrantsHasBeenSet() const { return m_targetGrantsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Container for granting information.</p>
      */
     inline void SetTargetGrants(const Aws::Vector<TargetGrant>& value) { m_targetGrantsHasBeenSet = true; m_targetGrants = value; }
 
     /**
-     * <p/>
+     * <p>Container for granting information.</p>
      */
     inline void SetTargetGrants(Aws::Vector<TargetGrant>&& value) { m_targetGrantsHasBeenSet = true; m_targetGrants = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Container for granting information.</p>
      */
     inline LoggingEnabled& WithTargetGrants(const Aws::Vector<TargetGrant>& value) { SetTargetGrants(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for granting information.</p>
      */
     inline LoggingEnabled& WithTargetGrants(Aws::Vector<TargetGrant>&& value) { SetTargetGrants(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for granting information.</p>
      */
     inline LoggingEnabled& AddTargetGrants(const TargetGrant& value) { m_targetGrantsHasBeenSet = true; m_targetGrants.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Container for granting information.</p>
      */
     inline LoggingEnabled& AddTargetGrants(TargetGrant&& value) { m_targetGrantsHasBeenSet = true; m_targetGrants.push_back(std::move(value)); return *this; }
 

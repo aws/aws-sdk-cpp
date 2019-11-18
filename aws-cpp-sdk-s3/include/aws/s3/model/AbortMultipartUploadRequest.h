@@ -53,42 +53,42 @@ namespace Model
 
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The bucket to which the upload was taking place.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The bucket to which the upload was taking place.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The bucket to which the upload was taking place.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The bucket to which the upload was taking place.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The bucket to which the upload was taking place.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The bucket to which the upload was taking place.</p>
      */
     inline AbortMultipartUploadRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The bucket to which the upload was taking place.</p>
      */
     inline AbortMultipartUploadRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>The bucket to which the upload was taking place.</p>
      */
     inline AbortMultipartUploadRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

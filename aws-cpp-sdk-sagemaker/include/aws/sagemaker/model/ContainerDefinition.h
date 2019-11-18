@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/ContainerMode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -289,6 +290,37 @@ namespace Model
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
     inline ContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether the container hosts a single model or multiple models.</p>
+     */
+    inline const ContainerMode& GetMode() const{ return m_mode; }
+
+    /**
+     * <p>Specifies whether the container hosts a single model or multiple models.</p>
+     */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the container hosts a single model or multiple models.</p>
+     */
+    inline void SetMode(const ContainerMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+
+    /**
+     * <p>Specifies whether the container hosts a single model or multiple models.</p>
+     */
+    inline void SetMode(ContainerMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+
+    /**
+     * <p>Specifies whether the container hosts a single model or multiple models.</p>
+     */
+    inline ContainerDefinition& WithMode(const ContainerMode& value) { SetMode(value); return *this;}
+
+    /**
+     * <p>Specifies whether the container hosts a single model or multiple models.</p>
+     */
+    inline ContainerDefinition& WithMode(ContainerMode&& value) { SetMode(std::move(value)); return *this;}
 
 
     /**
@@ -599,6 +631,9 @@ namespace Model
 
     Aws::String m_image;
     bool m_imageHasBeenSet;
+
+    ContainerMode m_mode;
+    bool m_modeHasBeenSet;
 
     Aws::String m_modelDataUrl;
     bool m_modelDataUrlHasBeenSet;

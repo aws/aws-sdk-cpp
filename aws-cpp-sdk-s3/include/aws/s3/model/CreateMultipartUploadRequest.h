@@ -90,42 +90,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which to initiate the upload</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which to initiate the upload</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which to initiate the upload</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which to initiate the upload</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which to initiate the upload</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which to initiate the upload</p>
      */
     inline CreateMultipartUploadRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which to initiate the upload</p>
      */
     inline CreateMultipartUploadRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which to initiate the upload</p>
      */
     inline CreateMultipartUploadRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -555,42 +555,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Object key for which the multipart upload is to be initiated.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p/>
+     * <p>Object key for which the multipart upload is to be initiated.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Object key for which the multipart upload is to be initiated.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p/>
+     * <p>Object key for which the multipart upload is to be initiated.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Object key for which the multipart upload is to be initiated.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p/>
+     * <p>Object key for which the multipart upload is to be initiated.</p>
      */
     inline CreateMultipartUploadRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Object key for which the multipart upload is to be initiated.</p>
      */
     inline CreateMultipartUploadRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Object key for which the multipart upload is to be initiated.</p>
      */
     inline CreateMultipartUploadRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
@@ -1164,69 +1164,69 @@ namespace Model
 
 
     /**
-     * <p>Specifies the object lock mode that you want to apply to the uploaded
+     * <p>Specifies the Object Lock mode that you want to apply to the uploaded
      * object.</p>
      */
     inline const ObjectLockMode& GetObjectLockMode() const{ return m_objectLockMode; }
 
     /**
-     * <p>Specifies the object lock mode that you want to apply to the uploaded
+     * <p>Specifies the Object Lock mode that you want to apply to the uploaded
      * object.</p>
      */
     inline bool ObjectLockModeHasBeenSet() const { return m_objectLockModeHasBeenSet; }
 
     /**
-     * <p>Specifies the object lock mode that you want to apply to the uploaded
+     * <p>Specifies the Object Lock mode that you want to apply to the uploaded
      * object.</p>
      */
     inline void SetObjectLockMode(const ObjectLockMode& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = value; }
 
     /**
-     * <p>Specifies the object lock mode that you want to apply to the uploaded
+     * <p>Specifies the Object Lock mode that you want to apply to the uploaded
      * object.</p>
      */
     inline void SetObjectLockMode(ObjectLockMode&& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = std::move(value); }
 
     /**
-     * <p>Specifies the object lock mode that you want to apply to the uploaded
+     * <p>Specifies the Object Lock mode that you want to apply to the uploaded
      * object.</p>
      */
     inline CreateMultipartUploadRequest& WithObjectLockMode(const ObjectLockMode& value) { SetObjectLockMode(value); return *this;}
 
     /**
-     * <p>Specifies the object lock mode that you want to apply to the uploaded
+     * <p>Specifies the Object Lock mode that you want to apply to the uploaded
      * object.</p>
      */
     inline CreateMultipartUploadRequest& WithObjectLockMode(ObjectLockMode&& value) { SetObjectLockMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies the date and time when you want the object lock to expire.</p>
+     * <p>Specifies the date and time when you want the Object Lock to expire.</p>
      */
     inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
 
     /**
-     * <p>Specifies the date and time when you want the object lock to expire.</p>
+     * <p>Specifies the date and time when you want the Object Lock to expire.</p>
      */
     inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
 
     /**
-     * <p>Specifies the date and time when you want the object lock to expire.</p>
+     * <p>Specifies the date and time when you want the Object Lock to expire.</p>
      */
     inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = value; }
 
     /**
-     * <p>Specifies the date and time when you want the object lock to expire.</p>
+     * <p>Specifies the date and time when you want the Object Lock to expire.</p>
      */
     inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::move(value); }
 
     /**
-     * <p>Specifies the date and time when you want the object lock to expire.</p>
+     * <p>Specifies the date and time when you want the Object Lock to expire.</p>
      */
     inline CreateMultipartUploadRequest& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
 
     /**
-     * <p>Specifies the date and time when you want the object lock to expire.</p>
+     * <p>Specifies the date and time when you want the Object Lock to expire.</p>
      */
     inline CreateMultipartUploadRequest& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}
 

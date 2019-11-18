@@ -1509,10 +1509,10 @@ namespace Model
          * stored.</p> </li> <li> <p> <code>TransformOutput</code> - Identifies the Amazon
          * S3 location where you want Amazon SageMaker to save the results from the
          * transform job.</p> </li> <li> <p> <code>TransformResources</code> - Identifies
-         * the ML compute instances for the transform job.</p> </li> </ul> <p> For more
-         * information about how batch transformation works Amazon SageMaker, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How
-         * It Works</a>. </p><p><h3>See Also:</h3>   <a
+         * the ML compute instances for the transform job.</p> </li> </ul> <p>For more
+         * information about how batch transformation works, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Batch
+         * Transform</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">AWS
          * API Reference</a></p>
          */
@@ -1533,10 +1533,10 @@ namespace Model
          * stored.</p> </li> <li> <p> <code>TransformOutput</code> - Identifies the Amazon
          * S3 location where you want Amazon SageMaker to save the results from the
          * transform job.</p> </li> <li> <p> <code>TransformResources</code> - Identifies
-         * the ML compute instances for the transform job.</p> </li> </ul> <p> For more
-         * information about how batch transformation works Amazon SageMaker, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How
-         * It Works</a>. </p><p><h3>See Also:</h3>   <a
+         * the ML compute instances for the transform job.</p> </li> </ul> <p>For more
+         * information about how batch transformation works, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Batch
+         * Transform</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">AWS
          * API Reference</a></p>
          *
@@ -1559,10 +1559,10 @@ namespace Model
          * stored.</p> </li> <li> <p> <code>TransformOutput</code> - Identifies the Amazon
          * S3 location where you want Amazon SageMaker to save the results from the
          * transform job.</p> </li> <li> <p> <code>TransformResources</code> - Identifies
-         * the ML compute instances for the transform job.</p> </li> </ul> <p> For more
-         * information about how batch transformation works Amazon SageMaker, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">How
-         * It Works</a>. </p><p><h3>See Also:</h3>   <a
+         * the ML compute instances for the transform job.</p> </li> </ul> <p>For more
+         * information about how batch transformation works, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform.html">Batch
+         * Transform</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTransformJob">AWS
          * API Reference</a></p>
          *

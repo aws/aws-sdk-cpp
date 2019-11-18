@@ -37,7 +37,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Container for the MultipartUpload for the Amazon S3 object.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MultipartUpload">AWS
    * API Reference</a></p>
    */
@@ -196,32 +197,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Specifies the owner of the object that is part of the multipart upload. </p>
      */
     inline const Owner& GetOwner() const{ return m_owner; }
 
     /**
-     * <p/>
+     * <p>Specifies the owner of the object that is part of the multipart upload. </p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Specifies the owner of the object that is part of the multipart upload. </p>
      */
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p/>
+     * <p>Specifies the owner of the object that is part of the multipart upload. </p>
      */
     inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Specifies the owner of the object that is part of the multipart upload. </p>
      */
     inline MultipartUpload& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies the owner of the object that is part of the multipart upload. </p>
      */
     inline MultipartUpload& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 

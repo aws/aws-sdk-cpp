@@ -33,7 +33,9 @@ UpdateOpsItemRequest::UpdateOpsItemRequest() :
     m_status(OpsItemStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_opsItemIdHasBeenSet(false),
-    m_titleHasBeenSet(false)
+    m_titleHasBeenSet(false),
+    m_categoryHasBeenSet(false),
+    m_severityHasBeenSet(false)
 {
 }
 
@@ -111,6 +113,18 @@ Aws::String UpdateOpsItemRequest::SerializePayload() const
   if(m_titleHasBeenSet)
   {
    payload.WithString("Title", m_title);
+
+  }
+
+  if(m_categoryHasBeenSet)
+  {
+   payload.WithString("Category", m_category);
+
+  }
+
+  if(m_severityHasBeenSet)
+  {
+   payload.WithString("Severity", m_severity);
 
   }
 

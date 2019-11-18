@@ -1855,7 +1855,10 @@ namespace Aws
          * SourceIdentifier, you receive notice of the events for that source type for all
          * your RDS sources. If you do not specify either the SourceType nor the
          * SourceIdentifier, you are notified of events generated from all RDS sources
-         * belonging to your customer account.</p><p><h3>See Also:</h3>   <a
+         * belonging to your customer account.</p> <note> <p>RDS event notification is only
+         * available for unencrypted SNS topics. If you specify an encrypted SNS topic,
+         * event notifications aren't sent for the topic.</p> </note><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">AWS
          * API Reference</a></p>
          */
@@ -1877,7 +1880,10 @@ namespace Aws
          * SourceIdentifier, you receive notice of the events for that source type for all
          * your RDS sources. If you do not specify either the SourceType nor the
          * SourceIdentifier, you are notified of events generated from all RDS sources
-         * belonging to your customer account.</p><p><h3>See Also:</h3>   <a
+         * belonging to your customer account.</p> <note> <p>RDS event notification is only
+         * available for unencrypted SNS topics. If you specify an encrypted SNS topic,
+         * event notifications aren't sent for the topic.</p> </note><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">AWS
          * API Reference</a></p>
          *
@@ -1901,7 +1907,10 @@ namespace Aws
          * SourceIdentifier, you receive notice of the events for that source type for all
          * your RDS sources. If you do not specify either the SourceType nor the
          * SourceIdentifier, you are notified of events generated from all RDS sources
-         * belonging to your customer account.</p><p><h3>See Also:</h3>   <a
+         * belonging to your customer account.</p> <note> <p>RDS event notification is only
+         * available for unencrypted SNS topics. If you specify an encrypted SNS topic,
+         * event notifications aren't sent for the topic.</p> </note><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateEventSubscription">AWS
          * API Reference</a></p>
          *
@@ -4314,8 +4323,8 @@ namespace Aws
 
         /**
          * <p>Updates a manual DB snapshot, which can be encrypted or not encrypted, with a
-         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for MySQL
-         * and Oracle. </p><p><h3>See Also:</h3>   <a
+         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for
+         * MySQL, Oracle, and PostgreSQL. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          */
@@ -4323,8 +4332,8 @@ namespace Aws
 
         /**
          * <p>Updates a manual DB snapshot, which can be encrypted or not encrypted, with a
-         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for MySQL
-         * and Oracle. </p><p><h3>See Also:</h3>   <a
+         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for
+         * MySQL, Oracle, and PostgreSQL. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          *
@@ -4334,8 +4343,8 @@ namespace Aws
 
         /**
          * <p>Updates a manual DB snapshot, which can be encrypted or not encrypted, with a
-         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for MySQL
-         * and Oracle. </p><p><h3>See Also:</h3>   <a
+         * new engine version. </p> <p>Amazon RDS supports upgrading DB snapshots for
+         * MySQL, Oracle, and PostgreSQL. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSnapshot">AWS
          * API Reference</a></p>
          *

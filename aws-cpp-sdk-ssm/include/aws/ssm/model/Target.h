@@ -53,11 +53,18 @@ namespace Model
    * <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code> </p>
    * </li> <li> <p> <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code>
    * </p> </li> <li> <p>(Maintenance window targets only)
-   * <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code> </p> </li>
-   * <li> <p>(Maintenance window targets only)
+   * <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code> </p>
+   * <p>This example demonstrates how to target all resources in the resource group
+   * <b>ProductionResourceGroup</b> in your maintenance window.</p> </li> <li>
+   * <p>(Maintenance window targets only)
    * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
-   * </code> </p> </li> </ul> <p>For information about how to send commands that
-   * target instances using <code>Key,Value</code> parameters, see <a
+   * </code> </p> <p>This example demonstrates how to target only Amazon EC2
+   * instances and VPCs in your maintenance window.</p> </li> <li> <p>(State Manager
+   * association targets only) <code>Key=InstanceIds,Values=<i>*</i> </code> </p>
+   * <p>This example demonstrates how to target all managed instances in the AWS
+   * Region where the association was created.</p> </li> </ul> <p>For information
+   * about how to send commands that target instances using <code>Key,Value</code>
+   * parameters, see <a
    * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Using
    * Targets and Rate Controls to Send Commands to a Fleet</a> in the <i>AWS Systems
    * Manager User Guide</i>.</p><p><h3>See Also:</h3>   <a

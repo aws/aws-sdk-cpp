@@ -53,83 +53,91 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The name of the bucket containing the object for which to get the torrent
+     * files.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket containing the object for which to get the torrent
+     * files.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket containing the object for which to get the torrent
+     * files.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket containing the object for which to get the torrent
+     * files.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name of the bucket containing the object for which to get the torrent
+     * files.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of the bucket containing the object for which to get the torrent
+     * files.</p>
      */
     inline GetObjectTorrentRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the bucket containing the object for which to get the torrent
+     * files.</p>
      */
     inline GetObjectTorrentRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the bucket containing the object for which to get the torrent
+     * files.</p>
      */
     inline GetObjectTorrentRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The object key for which to get the information.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p/>
+     * <p>The object key for which to get the information.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The object key for which to get the information.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p/>
+     * <p>The object key for which to get the information.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The object key for which to get the information.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p/>
+     * <p>The object key for which to get the information.</p>
      */
     inline GetObjectTorrentRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The object key for which to get the information.</p>
      */
     inline GetObjectTorrentRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The object key for which to get the information.</p>
      */
     inline GetObjectTorrentRequest& WithKey(const char* value) { SetKey(value); return *this;}
 

@@ -34,6 +34,7 @@ AndroidPushNotificationTemplate::AndroidPushNotificationTemplate() :
     m_bodyHasBeenSet(false),
     m_imageIconUrlHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
+    m_rawContentHasBeenSet(false),
     m_smallImageIconUrlHasBeenSet(false),
     m_soundHasBeenSet(false),
     m_titleHasBeenSet(false),
@@ -47,6 +48,7 @@ AndroidPushNotificationTemplate::AndroidPushNotificationTemplate(JsonView jsonVa
     m_bodyHasBeenSet(false),
     m_imageIconUrlHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
+    m_rawContentHasBeenSet(false),
     m_smallImageIconUrlHasBeenSet(false),
     m_soundHasBeenSet(false),
     m_titleHasBeenSet(false),
@@ -83,6 +85,13 @@ AndroidPushNotificationTemplate& AndroidPushNotificationTemplate::operator =(Jso
     m_imageUrl = jsonValue.GetString("ImageUrl");
 
     m_imageUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RawContent"))
+  {
+    m_rawContent = jsonValue.GetString("RawContent");
+
+    m_rawContentHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SmallImageIconUrl"))
@@ -140,6 +149,12 @@ JsonValue AndroidPushNotificationTemplate::Jsonize() const
   if(m_imageUrlHasBeenSet)
   {
    payload.WithString("ImageUrl", m_imageUrl);
+
+  }
+
+  if(m_rawContentHasBeenSet)
+  {
+   payload.WithString("RawContent", m_rawContent);
 
   }
 

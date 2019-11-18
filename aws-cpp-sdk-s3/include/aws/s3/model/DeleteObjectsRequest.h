@@ -56,122 +56,138 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The bucket name containing the objects to delete.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p/>
+     * <p>The bucket name containing the objects to delete.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The bucket name containing the objects to delete.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p/>
+     * <p>The bucket name containing the objects to delete.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The bucket name containing the objects to delete.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p/>
+     * <p>The bucket name containing the objects to delete.</p>
      */
     inline DeleteObjectsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The bucket name containing the objects to delete.</p>
      */
     inline DeleteObjectsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The bucket name containing the objects to delete.</p>
      */
     inline DeleteObjectsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Container for the request.</p>
      */
     inline const Delete& GetDelete() const{ return m_delete; }
 
     /**
-     * <p/>
+     * <p>Container for the request.</p>
      */
     inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Container for the request.</p>
      */
     inline void SetDelete(const Delete& value) { m_deleteHasBeenSet = true; m_delete = value; }
 
     /**
-     * <p/>
+     * <p>Container for the request.</p>
      */
     inline void SetDelete(Delete&& value) { m_deleteHasBeenSet = true; m_delete = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Container for the request.</p>
      */
     inline DeleteObjectsRequest& WithDelete(const Delete& value) { SetDelete(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for the request.</p>
      */
     inline DeleteObjectsRequest& WithDelete(Delete&& value) { SetDelete(std::move(value)); return *this;}
 
 
     /**
      * <p>The concatenation of the authentication device's serial number, a space, and
-     * the value that is displayed on your authentication device.</p>
+     * the value that is displayed on your authentication device. Required to
+     * permanently delete a versioned object if versioning is configured with MFA
+     * Delete enabled.</p>
      */
     inline const Aws::String& GetMFA() const{ return m_mFA; }
 
     /**
      * <p>The concatenation of the authentication device's serial number, a space, and
-     * the value that is displayed on your authentication device.</p>
+     * the value that is displayed on your authentication device. Required to
+     * permanently delete a versioned object if versioning is configured with MFA
+     * Delete enabled.</p>
      */
     inline bool MFAHasBeenSet() const { return m_mFAHasBeenSet; }
 
     /**
      * <p>The concatenation of the authentication device's serial number, a space, and
-     * the value that is displayed on your authentication device.</p>
+     * the value that is displayed on your authentication device. Required to
+     * permanently delete a versioned object if versioning is configured with MFA
+     * Delete enabled.</p>
      */
     inline void SetMFA(const Aws::String& value) { m_mFAHasBeenSet = true; m_mFA = value; }
 
     /**
      * <p>The concatenation of the authentication device's serial number, a space, and
-     * the value that is displayed on your authentication device.</p>
+     * the value that is displayed on your authentication device. Required to
+     * permanently delete a versioned object if versioning is configured with MFA
+     * Delete enabled.</p>
      */
     inline void SetMFA(Aws::String&& value) { m_mFAHasBeenSet = true; m_mFA = std::move(value); }
 
     /**
      * <p>The concatenation of the authentication device's serial number, a space, and
-     * the value that is displayed on your authentication device.</p>
+     * the value that is displayed on your authentication device. Required to
+     * permanently delete a versioned object if versioning is configured with MFA
+     * Delete enabled.</p>
      */
     inline void SetMFA(const char* value) { m_mFAHasBeenSet = true; m_mFA.assign(value); }
 
     /**
      * <p>The concatenation of the authentication device's serial number, a space, and
-     * the value that is displayed on your authentication device.</p>
+     * the value that is displayed on your authentication device. Required to
+     * permanently delete a versioned object if versioning is configured with MFA
+     * Delete enabled.</p>
      */
     inline DeleteObjectsRequest& WithMFA(const Aws::String& value) { SetMFA(value); return *this;}
 
     /**
      * <p>The concatenation of the authentication device's serial number, a space, and
-     * the value that is displayed on your authentication device.</p>
+     * the value that is displayed on your authentication device. Required to
+     * permanently delete a versioned object if versioning is configured with MFA
+     * Delete enabled.</p>
      */
     inline DeleteObjectsRequest& WithMFA(Aws::String&& value) { SetMFA(std::move(value)); return *this;}
 
     /**
      * <p>The concatenation of the authentication device's serial number, a space, and
-     * the value that is displayed on your authentication device.</p>
+     * the value that is displayed on your authentication device. Required to
+     * permanently delete a versioned object if versioning is configured with MFA
+     * Delete enabled.</p>
      */
     inline DeleteObjectsRequest& WithMFA(const char* value) { SetMFA(value); return *this;}
 
@@ -197,28 +213,28 @@ namespace Model
 
     /**
      * <p>Specifies whether you want to delete this object even if it has a
-     * Governance-type object lock in place. You must have sufficient permissions to
+     * Governance-type Object Lock in place. You must have sufficient permissions to
      * perform this operation.</p>
      */
     inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
 
     /**
      * <p>Specifies whether you want to delete this object even if it has a
-     * Governance-type object lock in place. You must have sufficient permissions to
+     * Governance-type Object Lock in place. You must have sufficient permissions to
      * perform this operation.</p>
      */
     inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
 
     /**
      * <p>Specifies whether you want to delete this object even if it has a
-     * Governance-type object lock in place. You must have sufficient permissions to
+     * Governance-type Object Lock in place. You must have sufficient permissions to
      * perform this operation.</p>
      */
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
 
     /**
      * <p>Specifies whether you want to delete this object even if it has a
-     * Governance-type object lock in place. You must have sufficient permissions to
+     * Governance-type Object Lock in place. You must have sufficient permissions to
      * perform this operation.</p>
      */
     inline DeleteObjectsRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}

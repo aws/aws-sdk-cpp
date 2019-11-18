@@ -33,6 +33,7 @@ APNSPushNotificationTemplate::APNSPushNotificationTemplate() :
     m_actionHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_mediaUrlHasBeenSet(false),
+    m_rawContentHasBeenSet(false),
     m_soundHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_urlHasBeenSet(false)
@@ -44,6 +45,7 @@ APNSPushNotificationTemplate::APNSPushNotificationTemplate(JsonView jsonValue) :
     m_actionHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_mediaUrlHasBeenSet(false),
+    m_rawContentHasBeenSet(false),
     m_soundHasBeenSet(false),
     m_titleHasBeenSet(false),
     m_urlHasBeenSet(false)
@@ -72,6 +74,13 @@ APNSPushNotificationTemplate& APNSPushNotificationTemplate::operator =(JsonView 
     m_mediaUrl = jsonValue.GetString("MediaUrl");
 
     m_mediaUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RawContent"))
+  {
+    m_rawContent = jsonValue.GetString("RawContent");
+
+    m_rawContentHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Sound"))
@@ -116,6 +125,12 @@ JsonValue APNSPushNotificationTemplate::Jsonize() const
   if(m_mediaUrlHasBeenSet)
   {
    payload.WithString("MediaUrl", m_mediaUrl);
+
+  }
+
+  if(m_rawContentHasBeenSet)
+  {
+   payload.WithString("RawContent", m_rawContent);
 
   }
 

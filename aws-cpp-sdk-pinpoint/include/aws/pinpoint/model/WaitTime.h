@@ -50,56 +50,56 @@ namespace Model
 
 
     /**
-     * <p>The amount of time, as a duration in ISO 8601 format, to wait before
+     * <p>The amount of time to wait, as a duration in ISO 8601 format, before
      * determining whether the activity's conditions have been met or moving
      * participants to the next activity in the journey.</p>
      */
     inline const Aws::String& GetWaitFor() const{ return m_waitFor; }
 
     /**
-     * <p>The amount of time, as a duration in ISO 8601 format, to wait before
+     * <p>The amount of time to wait, as a duration in ISO 8601 format, before
      * determining whether the activity's conditions have been met or moving
      * participants to the next activity in the journey.</p>
      */
     inline bool WaitForHasBeenSet() const { return m_waitForHasBeenSet; }
 
     /**
-     * <p>The amount of time, as a duration in ISO 8601 format, to wait before
+     * <p>The amount of time to wait, as a duration in ISO 8601 format, before
      * determining whether the activity's conditions have been met or moving
      * participants to the next activity in the journey.</p>
      */
     inline void SetWaitFor(const Aws::String& value) { m_waitForHasBeenSet = true; m_waitFor = value; }
 
     /**
-     * <p>The amount of time, as a duration in ISO 8601 format, to wait before
+     * <p>The amount of time to wait, as a duration in ISO 8601 format, before
      * determining whether the activity's conditions have been met or moving
      * participants to the next activity in the journey.</p>
      */
     inline void SetWaitFor(Aws::String&& value) { m_waitForHasBeenSet = true; m_waitFor = std::move(value); }
 
     /**
-     * <p>The amount of time, as a duration in ISO 8601 format, to wait before
+     * <p>The amount of time to wait, as a duration in ISO 8601 format, before
      * determining whether the activity's conditions have been met or moving
      * participants to the next activity in the journey.</p>
      */
     inline void SetWaitFor(const char* value) { m_waitForHasBeenSet = true; m_waitFor.assign(value); }
 
     /**
-     * <p>The amount of time, as a duration in ISO 8601 format, to wait before
+     * <p>The amount of time to wait, as a duration in ISO 8601 format, before
      * determining whether the activity's conditions have been met or moving
      * participants to the next activity in the journey.</p>
      */
     inline WaitTime& WithWaitFor(const Aws::String& value) { SetWaitFor(value); return *this;}
 
     /**
-     * <p>The amount of time, as a duration in ISO 8601 format, to wait before
+     * <p>The amount of time to wait, as a duration in ISO 8601 format, before
      * determining whether the activity's conditions have been met or moving
      * participants to the next activity in the journey.</p>
      */
     inline WaitTime& WithWaitFor(Aws::String&& value) { SetWaitFor(std::move(value)); return *this;}
 
     /**
-     * <p>The amount of time, as a duration in ISO 8601 format, to wait before
+     * <p>The amount of time to wait, as a duration in ISO 8601 format, before
      * determining whether the activity's conditions have been met or moving
      * participants to the next activity in the journey.</p>
      */

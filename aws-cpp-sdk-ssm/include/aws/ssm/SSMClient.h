@@ -1152,34 +1152,62 @@ namespace Model
         virtual void CreatePatchBaselineAsync(const Model::CreatePatchBaselineRequest& request, const CreatePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a resource data sync configuration to a single bucket in Amazon S3.
-         * This is an asynchronous operation that returns immediately. After a successful
-         * initial sync is completed, the system continuously syncs data to the Amazon S3
-         * bucket. To check the status of the sync, use the
-         * <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon
-         * S3. We strongly recommend that you enable encryption in Amazon S3 to ensure
-         * secure data storage. We also recommend that you secure access to the Amazon S3
-         * bucket by creating a restrictive bucket policy. For more information, see <a
+         * <p>A resource data sync helps you view data from multiple sources in a single
+         * location. Systems Manager offers two types of resource data sync:
+         * <code>SyncToDestination</code> and <code>SyncFromSource</code>.</p> <p>You can
+         * configure Systems Manager Inventory to use the <code>SyncToDestination</code>
+         * type to synchronize Inventory data from multiple AWS Regions to a single Amazon
+         * S3 bucket. For more information, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
          * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>You can configure Systems Manager Explorer to use the
+         * <code>SyncToDestination</code> type to synchronize operational work items
+         * (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single
+         * Amazon S3 bucket. You can also configure Explorer to use the
+         * <code>SyncFromSource</code> type. This type synchronizes OpsItems and OpsData
+         * from multiple AWS accounts and Regions by using AWS Organizations. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+         * Up Explorer to Display Data from Multiple Accounts and Regions</a> in the <i>AWS
+         * Systems Manager User Guide</i>.</p> <p>A resource data sync is an asynchronous
+         * operation that returns immediately. After a successful initial sync is
+         * completed, the system continuously syncs data. To check the status of a sync,
+         * use the <a>ListResourceDataSync</a>.</p> <note> <p>By default, data is not
+         * encrypted in Amazon S3. We strongly recommend that you enable encryption in
+         * Amazon S3 to ensure secure data storage. We also recommend that you secure
+         * access to the Amazon S3 bucket by creating a restrictive bucket policy. </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateResourceDataSyncOutcome CreateResourceDataSync(const Model::CreateResourceDataSyncRequest& request) const;
 
         /**
-         * <p>Creates a resource data sync configuration to a single bucket in Amazon S3.
-         * This is an asynchronous operation that returns immediately. After a successful
-         * initial sync is completed, the system continuously syncs data to the Amazon S3
-         * bucket. To check the status of the sync, use the
-         * <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon
-         * S3. We strongly recommend that you enable encryption in Amazon S3 to ensure
-         * secure data storage. We also recommend that you secure access to the Amazon S3
-         * bucket by creating a restrictive bucket policy. For more information, see <a
+         * <p>A resource data sync helps you view data from multiple sources in a single
+         * location. Systems Manager offers two types of resource data sync:
+         * <code>SyncToDestination</code> and <code>SyncFromSource</code>.</p> <p>You can
+         * configure Systems Manager Inventory to use the <code>SyncToDestination</code>
+         * type to synchronize Inventory data from multiple AWS Regions to a single Amazon
+         * S3 bucket. For more information, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
          * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>You can configure Systems Manager Explorer to use the
+         * <code>SyncToDestination</code> type to synchronize operational work items
+         * (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single
+         * Amazon S3 bucket. You can also configure Explorer to use the
+         * <code>SyncFromSource</code> type. This type synchronizes OpsItems and OpsData
+         * from multiple AWS accounts and Regions by using AWS Organizations. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+         * Up Explorer to Display Data from Multiple Accounts and Regions</a> in the <i>AWS
+         * Systems Manager User Guide</i>.</p> <p>A resource data sync is an asynchronous
+         * operation that returns immediately. After a successful initial sync is
+         * completed, the system continuously syncs data. To check the status of a sync,
+         * use the <a>ListResourceDataSync</a>.</p> <note> <p>By default, data is not
+         * encrypted in Amazon S3. We strongly recommend that you enable encryption in
+         * Amazon S3 to ensure secure data storage. We also recommend that you secure
+         * access to the Amazon S3 bucket by creating a restrictive bucket policy. </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -1188,17 +1216,31 @@ namespace Model
         virtual Model::CreateResourceDataSyncOutcomeCallable CreateResourceDataSyncCallable(const Model::CreateResourceDataSyncRequest& request) const;
 
         /**
-         * <p>Creates a resource data sync configuration to a single bucket in Amazon S3.
-         * This is an asynchronous operation that returns immediately. After a successful
-         * initial sync is completed, the system continuously syncs data to the Amazon S3
-         * bucket. To check the status of the sync, use the
-         * <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon
-         * S3. We strongly recommend that you enable encryption in Amazon S3 to ensure
-         * secure data storage. We also recommend that you secure access to the Amazon S3
-         * bucket by creating a restrictive bucket policy. For more information, see <a
+         * <p>A resource data sync helps you view data from multiple sources in a single
+         * location. Systems Manager offers two types of resource data sync:
+         * <code>SyncToDestination</code> and <code>SyncFromSource</code>.</p> <p>You can
+         * configure Systems Manager Inventory to use the <code>SyncToDestination</code>
+         * type to synchronize Inventory data from multiple AWS Regions to a single Amazon
+         * S3 bucket. For more information, see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
          * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Guide</i>.</p> <p>You can configure Systems Manager Explorer to use the
+         * <code>SyncToDestination</code> type to synchronize operational work items
+         * (OpsItems) and operational data (OpsData) from multiple AWS Regions to a single
+         * Amazon S3 bucket. You can also configure Explorer to use the
+         * <code>SyncFromSource</code> type. This type synchronizes OpsItems and OpsData
+         * from multiple AWS accounts and Regions by using AWS Organizations. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+         * Up Explorer to Display Data from Multiple Accounts and Regions</a> in the <i>AWS
+         * Systems Manager User Guide</i>.</p> <p>A resource data sync is an asynchronous
+         * operation that returns immediately. After a successful initial sync is
+         * completed, the system continuously syncs data. To check the status of a sync,
+         * use the <a>ListResourceDataSync</a>.</p> <note> <p>By default, data is not
+         * encrypted in Amazon S3. We strongly recommend that you enable encryption in
+         * Amazon S3 to ensure secure data storage. We also recommend that you secure
+         * access to the Amazon S3 bucket by creating a restrictive bucket policy. </p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -1447,9 +1489,9 @@ namespace Model
 
         /**
          * <p>Deletes a Resource Data Sync configuration. After the configuration is
-         * deleted, changes to inventory data on managed instances are no longer synced
-         * with the target Amazon S3 bucket. Deleting a sync configuration does not delete
-         * data in the target Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * deleted, changes to data on managed instances are no longer synced to or from
+         * the target. Deleting a sync configuration does not delete data.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">AWS
          * API Reference</a></p>
          */
@@ -1457,9 +1499,9 @@ namespace Model
 
         /**
          * <p>Deletes a Resource Data Sync configuration. After the configuration is
-         * deleted, changes to inventory data on managed instances are no longer synced
-         * with the target Amazon S3 bucket. Deleting a sync configuration does not delete
-         * data in the target Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * deleted, changes to data on managed instances are no longer synced to or from
+         * the target. Deleting a sync configuration does not delete data.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">AWS
          * API Reference</a></p>
          *
@@ -1469,9 +1511,9 @@ namespace Model
 
         /**
          * <p>Deletes a Resource Data Sync configuration. After the configuration is
-         * deleted, changes to inventory data on managed instances are no longer synced
-         * with the target Amazon S3 bucket. Deleting a sync configuration does not delete
-         * data in the target Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+         * deleted, changes to data on managed instances are no longer synced to or from
+         * the target. Deleting a sync configuration does not delete data.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourceDataSync">AWS
          * API Reference</a></p>
          *

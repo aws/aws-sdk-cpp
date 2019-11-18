@@ -30,6 +30,8 @@ namespace CloudFormationErrorMapper
 
 static const int STACK_INSTANCE_NOT_FOUND_HASH = HashingUtils::HashString("StackInstanceNotFoundException");
 static const int STACK_SET_NOT_FOUND_HASH = HashingUtils::HashString("StackSetNotFoundException");
+static const int OPERATION_STATUS_CHECK_FAILED_HASH = HashingUtils::HashString("ConditionalCheckFailed");
+static const int C_F_N_REGISTRY_HASH = HashingUtils::HashString("CFNRegistryException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
 static const int OPERATION_IN_PROGRESS_HASH = HashingUtils::HashString("OperationInProgressException");
@@ -38,12 +40,14 @@ static const int OPERATION_ID_ALREADY_EXISTS_HASH = HashingUtils::HashString("Op
 static const int STALE_REQUEST_HASH = HashingUtils::HashString("StaleRequestException");
 static const int OPERATION_NOT_FOUND_HASH = HashingUtils::HashString("OperationNotFoundException");
 static const int INVALID_CHANGE_SET_STATUS_HASH = HashingUtils::HashString("InvalidChangeSetStatus");
+static const int TYPE_NOT_FOUND_HASH = HashingUtils::HashString("TypeNotFoundException");
 static const int INSUFFICIENT_CAPABILITIES_HASH = HashingUtils::HashString("InsufficientCapabilitiesException");
 static const int CREATED_BUT_MODIFIED_HASH = HashingUtils::HashString("CreatedButModifiedException");
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
 static const int TOKEN_ALREADY_EXISTS_HASH = HashingUtils::HashString("TokenAlreadyExistsException");
 static const int NAME_ALREADY_EXISTS_HASH = HashingUtils::HashString("NameAlreadyExistsException");
 static const int STACK_SET_NOT_EMPTY_HASH = HashingUtils::HashString("StackSetNotEmptyException");
+static const int INVALID_STATE_TRANSITION_HASH = HashingUtils::HashString("InvalidStateTransition");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -57,6 +61,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == STACK_SET_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::STACK_SET_NOT_FOUND), false);
+  }
+  else if (hashCode == OPERATION_STATUS_CHECK_FAILED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::OPERATION_STATUS_CHECK_FAILED), false);
+  }
+  else if (hashCode == C_F_N_REGISTRY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::C_F_N_REGISTRY), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
@@ -90,6 +102,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::INVALID_CHANGE_SET_STATUS), false);
   }
+  else if (hashCode == TYPE_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::TYPE_NOT_FOUND), false);
+  }
   else if (hashCode == INSUFFICIENT_CAPABILITIES_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::INSUFFICIENT_CAPABILITIES), false);
@@ -113,6 +129,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == STACK_SET_NOT_EMPTY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::STACK_SET_NOT_EMPTY), false);
+  }
+  else if (hashCode == INVALID_STATE_TRANSITION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudFormationErrors::INVALID_STATE_TRANSITION), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

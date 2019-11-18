@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListResourceDataSyncRequest::ListResourceDataSyncRequest() : 
+    m_syncTypeHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -32,6 +33,12 @@ ListResourceDataSyncRequest::ListResourceDataSyncRequest() :
 Aws::String ListResourceDataSyncRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_syncTypeHasBeenSet)
+  {
+   payload.WithString("SyncType", m_syncType);
+
+  }
 
   if(m_nextTokenHasBeenSet)
   {

@@ -222,6 +222,63 @@ namespace Model
 
 
     /**
+     * <p>The raw, JSON-formatted string to use as the payload for push notifications
+     * that are based on the message template. If specified, this value overrides all
+     * other content for the message template.</p>
+     */
+    inline const Aws::String& GetRawContent() const{ return m_rawContent; }
+
+    /**
+     * <p>The raw, JSON-formatted string to use as the payload for push notifications
+     * that are based on the message template. If specified, this value overrides all
+     * other content for the message template.</p>
+     */
+    inline bool RawContentHasBeenSet() const { return m_rawContentHasBeenSet; }
+
+    /**
+     * <p>The raw, JSON-formatted string to use as the payload for push notifications
+     * that are based on the message template. If specified, this value overrides all
+     * other content for the message template.</p>
+     */
+    inline void SetRawContent(const Aws::String& value) { m_rawContentHasBeenSet = true; m_rawContent = value; }
+
+    /**
+     * <p>The raw, JSON-formatted string to use as the payload for push notifications
+     * that are based on the message template. If specified, this value overrides all
+     * other content for the message template.</p>
+     */
+    inline void SetRawContent(Aws::String&& value) { m_rawContentHasBeenSet = true; m_rawContent = std::move(value); }
+
+    /**
+     * <p>The raw, JSON-formatted string to use as the payload for push notifications
+     * that are based on the message template. If specified, this value overrides all
+     * other content for the message template.</p>
+     */
+    inline void SetRawContent(const char* value) { m_rawContentHasBeenSet = true; m_rawContent.assign(value); }
+
+    /**
+     * <p>The raw, JSON-formatted string to use as the payload for push notifications
+     * that are based on the message template. If specified, this value overrides all
+     * other content for the message template.</p>
+     */
+    inline APNSPushNotificationTemplate& WithRawContent(const Aws::String& value) { SetRawContent(value); return *this;}
+
+    /**
+     * <p>The raw, JSON-formatted string to use as the payload for push notifications
+     * that are based on the message template. If specified, this value overrides all
+     * other content for the message template.</p>
+     */
+    inline APNSPushNotificationTemplate& WithRawContent(Aws::String&& value) { SetRawContent(std::move(value)); return *this;}
+
+    /**
+     * <p>The raw, JSON-formatted string to use as the payload for push notifications
+     * that are based on the message template. If specified, this value overrides all
+     * other content for the message template.</p>
+     */
+    inline APNSPushNotificationTemplate& WithRawContent(const char* value) { SetRawContent(value); return *this;}
+
+
+    /**
      * <p>The key for the sound to play when the recipient receives a push notification
      * that's based on the message template. The value for this key is the name of a
      * sound file in your app's main bundle or the Library/Sounds folder in your app's
@@ -417,6 +474,9 @@ namespace Model
 
     Aws::String m_mediaUrl;
     bool m_mediaUrlHasBeenSet;
+
+    Aws::String m_rawContent;
+    bool m_rawContentHasBeenSet;
 
     Aws::String m_sound;
     bool m_soundHasBeenSet;

@@ -31,8 +31,12 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the Block Public Access configuration for an Amazon S3
-   * bucket.</p><p><h3>See Also:</h3>   <a
+   * <p>The PublicAccessBlock configuration that you want to apply to this Amazon S3
+   * bucket. You can enable the configuration options in any combination. For more
+   * information about when Amazon S3 considers a bucket or object public, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev//access-control-block-public-access.html#access-control-block-public-access-policy-status">The
+   * Meaning of "Public"</a> in the Amazon Simple Storage Service Developer Guide.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PublicAccessBlockConfiguration">AWS
    * API Reference</a></p>
    */
@@ -51,7 +55,8 @@ namespace Model
      * for this bucket and objects in this bucket. Setting this element to
      * <code>TRUE</code> causes the following behavior:</p> <ul> <li> <p>PUT Bucket acl
      * and PUT Object acl calls fail if the specified ACL is public.</p> </li> <li>
-     * <p>PUT Object calls fail if the request includes a public ACL.</p> </li> </ul>
+     * <p>PUT Object calls fail if the request includes a public ACL.</p> </li> <li>
+     * <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li> </ul>
      * <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
      */
     inline bool GetBlockPublicAcls() const{ return m_blockPublicAcls; }
@@ -61,7 +66,8 @@ namespace Model
      * for this bucket and objects in this bucket. Setting this element to
      * <code>TRUE</code> causes the following behavior:</p> <ul> <li> <p>PUT Bucket acl
      * and PUT Object acl calls fail if the specified ACL is public.</p> </li> <li>
-     * <p>PUT Object calls fail if the request includes a public ACL.</p> </li> </ul>
+     * <p>PUT Object calls fail if the request includes a public ACL.</p> </li> <li>
+     * <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li> </ul>
      * <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
      */
     inline bool BlockPublicAclsHasBeenSet() const { return m_blockPublicAclsHasBeenSet; }
@@ -71,7 +77,8 @@ namespace Model
      * for this bucket and objects in this bucket. Setting this element to
      * <code>TRUE</code> causes the following behavior:</p> <ul> <li> <p>PUT Bucket acl
      * and PUT Object acl calls fail if the specified ACL is public.</p> </li> <li>
-     * <p>PUT Object calls fail if the request includes a public ACL.</p> </li> </ul>
+     * <p>PUT Object calls fail if the request includes a public ACL.</p> </li> <li>
+     * <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li> </ul>
      * <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
      */
     inline void SetBlockPublicAcls(bool value) { m_blockPublicAclsHasBeenSet = true; m_blockPublicAcls = value; }
@@ -81,7 +88,8 @@ namespace Model
      * for this bucket and objects in this bucket. Setting this element to
      * <code>TRUE</code> causes the following behavior:</p> <ul> <li> <p>PUT Bucket acl
      * and PUT Object acl calls fail if the specified ACL is public.</p> </li> <li>
-     * <p>PUT Object calls fail if the request includes a public ACL.</p> </li> </ul>
+     * <p>PUT Object calls fail if the request includes a public ACL.</p> </li> <li>
+     * <p>PUT Bucket calls fail if the request includes a public ACL.</p> </li> </ul>
      * <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
      */
     inline PublicAccessBlockConfiguration& WithBlockPublicAcls(bool value) { SetBlockPublicAcls(value); return *this;}

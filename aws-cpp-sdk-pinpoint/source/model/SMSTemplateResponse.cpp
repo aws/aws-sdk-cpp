@@ -32,8 +32,10 @@ SMSTemplateResponse::SMSTemplateResponse() :
     m_arnHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_defaultSubstitutionsHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_templateType(TemplateType::NOT_SET),
     m_templateTypeHasBeenSet(false)
@@ -44,8 +46,10 @@ SMSTemplateResponse::SMSTemplateResponse(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_bodyHasBeenSet(false),
     m_creationDateHasBeenSet(false),
+    m_defaultSubstitutionsHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_templateType(TemplateType::NOT_SET),
     m_templateTypeHasBeenSet(false)
@@ -76,6 +80,13 @@ SMSTemplateResponse& SMSTemplateResponse::operator =(JsonView jsonValue)
     m_creationDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultSubstitutions"))
+  {
+    m_defaultSubstitutions = jsonValue.GetString("DefaultSubstitutions");
+
+    m_defaultSubstitutionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
@@ -91,6 +102,13 @@ SMSTemplateResponse& SMSTemplateResponse::operator =(JsonView jsonValue)
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TemplateDescription"))
+  {
+    m_templateDescription = jsonValue.GetString("TemplateDescription");
+
+    m_templateDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TemplateName"))
@@ -132,6 +150,12 @@ JsonValue SMSTemplateResponse::Jsonize() const
 
   }
 
+  if(m_defaultSubstitutionsHasBeenSet)
+  {
+   payload.WithString("DefaultSubstitutions", m_defaultSubstitutions);
+
+  }
+
   if(m_lastModifiedDateHasBeenSet)
   {
    payload.WithString("LastModifiedDate", m_lastModifiedDate);
@@ -146,6 +170,12 @@ JsonValue SMSTemplateResponse::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_templateDescriptionHasBeenSet)
+  {
+   payload.WithString("TemplateDescription", m_templateDescription);
 
   }
 

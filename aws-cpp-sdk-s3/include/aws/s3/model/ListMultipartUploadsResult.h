@@ -241,37 +241,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Contains the delimiter you specified in the request. If you don't specify a
+     * delimiter in your request, this element is absent from the response.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
     /**
-     * <p/>
+     * <p>Contains the delimiter you specified in the request. If you don't specify a
+     * delimiter in your request, this element is absent from the response.</p>
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
 
     /**
-     * <p/>
+     * <p>Contains the delimiter you specified in the request. If you don't specify a
+     * delimiter in your request, this element is absent from the response.</p>
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Contains the delimiter you specified in the request. If you don't specify a
+     * delimiter in your request, this element is absent from the response.</p>
      */
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
     /**
-     * <p/>
+     * <p>Contains the delimiter you specified in the request. If you don't specify a
+     * delimiter in your request, this element is absent from the response.</p>
      */
     inline ListMultipartUploadsResult& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Contains the delimiter you specified in the request. If you don't specify a
+     * delimiter in your request, this element is absent from the response.</p>
      */
     inline ListMultipartUploadsResult& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Contains the delimiter you specified in the request. If you don't specify a
+     * delimiter in your request, this element is absent from the response.</p>
      */
     inline ListMultipartUploadsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
@@ -364,99 +371,145 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Container for elements related to a particular multipart upload. A response
+     * can contain zero or more Upload elements.</p>
      */
     inline const Aws::Vector<MultipartUpload>& GetUploads() const{ return m_uploads; }
 
     /**
-     * <p/>
+     * <p>Container for elements related to a particular multipart upload. A response
+     * can contain zero or more Upload elements.</p>
      */
     inline void SetUploads(const Aws::Vector<MultipartUpload>& value) { m_uploads = value; }
 
     /**
-     * <p/>
+     * <p>Container for elements related to a particular multipart upload. A response
+     * can contain zero or more Upload elements.</p>
      */
     inline void SetUploads(Aws::Vector<MultipartUpload>&& value) { m_uploads = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Container for elements related to a particular multipart upload. A response
+     * can contain zero or more Upload elements.</p>
      */
     inline ListMultipartUploadsResult& WithUploads(const Aws::Vector<MultipartUpload>& value) { SetUploads(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for elements related to a particular multipart upload. A response
+     * can contain zero or more Upload elements.</p>
      */
     inline ListMultipartUploadsResult& WithUploads(Aws::Vector<MultipartUpload>&& value) { SetUploads(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for elements related to a particular multipart upload. A response
+     * can contain zero or more Upload elements.</p>
      */
     inline ListMultipartUploadsResult& AddUploads(const MultipartUpload& value) { m_uploads.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Container for elements related to a particular multipart upload. A response
+     * can contain zero or more Upload elements.</p>
      */
     inline ListMultipartUploadsResult& AddUploads(MultipartUpload&& value) { m_uploads.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p/>
+     * <p>If you specify a delimiter in the request, then the result returns each
+     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
+     * distinct key prefixes are returned in the Prefix child element.</p>
      */
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
 
     /**
-     * <p/>
+     * <p>If you specify a delimiter in the request, then the result returns each
+     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
+     * distinct key prefixes are returned in the Prefix child element.</p>
      */
     inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
 
     /**
-     * <p/>
+     * <p>If you specify a delimiter in the request, then the result returns each
+     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
+     * distinct key prefixes are returned in the Prefix child element.</p>
      */
     inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
 
     /**
-     * <p/>
+     * <p>If you specify a delimiter in the request, then the result returns each
+     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
+     * distinct key prefixes are returned in the Prefix child element.</p>
      */
     inline ListMultipartUploadsResult& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
 
     /**
-     * <p/>
+     * <p>If you specify a delimiter in the request, then the result returns each
+     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
+     * distinct key prefixes are returned in the Prefix child element.</p>
      */
     inline ListMultipartUploadsResult& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>If you specify a delimiter in the request, then the result returns each
+     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
+     * distinct key prefixes are returned in the Prefix child element.</p>
      */
     inline ListMultipartUploadsResult& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>If you specify a delimiter in the request, then the result returns each
+     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
+     * distinct key prefixes are returned in the Prefix child element.</p>
      */
     inline ListMultipartUploadsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>If you specify <code>encoding-type</code> request parameter, Amazon S3
+     * includes this element in the response, and returns encoded key name values in
+     * the following response elements:</p> <p> <code>Delimiter</code>,
+     * <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>,
+     * <code>Key</code>.</p>
      */
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>If you specify <code>encoding-type</code> request parameter, Amazon S3
+     * includes this element in the response, and returns encoded key name values in
+     * the following response elements:</p> <p> <code>Delimiter</code>,
+     * <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>,
+     * <code>Key</code>.</p>
      */
     inline void SetEncodingType(const EncodingType& value) { m_encodingType = value; }
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>If you specify <code>encoding-type</code> request parameter, Amazon S3
+     * includes this element in the response, and returns encoded key name values in
+     * the following response elements:</p> <p> <code>Delimiter</code>,
+     * <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>,
+     * <code>Key</code>.</p>
      */
     inline void SetEncodingType(EncodingType&& value) { m_encodingType = std::move(value); }
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>If you specify <code>encoding-type</code> request parameter, Amazon S3
+     * includes this element in the response, and returns encoded key name values in
+     * the following response elements:</p> <p> <code>Delimiter</code>,
+     * <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>,
+     * <code>Key</code>.</p>
      */
     inline ListMultipartUploadsResult& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
 
     /**
      * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>If you specify <code>encoding-type</code> request parameter, Amazon S3
+     * includes this element in the response, and returns encoded key name values in
+     * the following response elements:</p> <p> <code>Delimiter</code>,
+     * <code>KeyMarker</code>, <code>Prefix</code>, <code>NextKeyMarker</code>,
+     * <code>Key</code>.</p>
      */
     inline ListMultipartUploadsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
 

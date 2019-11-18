@@ -221,57 +221,57 @@ namespace Model
 
     /**
      * <p>The type of message template to include in the results. Valid values are:
-     * EMAIL, SMS, and PUSH. To include all types of templates in the results, don't
-     * include this parameter in your request.</p>
+     * EMAIL, SMS, PUSH, and VOICE. To include all types of templates in the results,
+     * don't include this parameter in your request.</p>
      */
     inline const Aws::String& GetTemplateType() const{ return m_templateType; }
 
     /**
      * <p>The type of message template to include in the results. Valid values are:
-     * EMAIL, SMS, and PUSH. To include all types of templates in the results, don't
-     * include this parameter in your request.</p>
+     * EMAIL, SMS, PUSH, and VOICE. To include all types of templates in the results,
+     * don't include this parameter in your request.</p>
      */
     inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
 
     /**
      * <p>The type of message template to include in the results. Valid values are:
-     * EMAIL, SMS, and PUSH. To include all types of templates in the results, don't
-     * include this parameter in your request.</p>
+     * EMAIL, SMS, PUSH, and VOICE. To include all types of templates in the results,
+     * don't include this parameter in your request.</p>
      */
     inline void SetTemplateType(const Aws::String& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
 
     /**
      * <p>The type of message template to include in the results. Valid values are:
-     * EMAIL, SMS, and PUSH. To include all types of templates in the results, don't
-     * include this parameter in your request.</p>
+     * EMAIL, SMS, PUSH, and VOICE. To include all types of templates in the results,
+     * don't include this parameter in your request.</p>
      */
     inline void SetTemplateType(Aws::String&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
 
     /**
      * <p>The type of message template to include in the results. Valid values are:
-     * EMAIL, SMS, and PUSH. To include all types of templates in the results, don't
-     * include this parameter in your request.</p>
+     * EMAIL, SMS, PUSH, and VOICE. To include all types of templates in the results,
+     * don't include this parameter in your request.</p>
      */
     inline void SetTemplateType(const char* value) { m_templateTypeHasBeenSet = true; m_templateType.assign(value); }
 
     /**
      * <p>The type of message template to include in the results. Valid values are:
-     * EMAIL, SMS, and PUSH. To include all types of templates in the results, don't
-     * include this parameter in your request.</p>
+     * EMAIL, SMS, PUSH, and VOICE. To include all types of templates in the results,
+     * don't include this parameter in your request.</p>
      */
     inline ListTemplatesRequest& WithTemplateType(const Aws::String& value) { SetTemplateType(value); return *this;}
 
     /**
      * <p>The type of message template to include in the results. Valid values are:
-     * EMAIL, SMS, and PUSH. To include all types of templates in the results, don't
-     * include this parameter in your request.</p>
+     * EMAIL, SMS, PUSH, and VOICE. To include all types of templates in the results,
+     * don't include this parameter in your request.</p>
      */
     inline ListTemplatesRequest& WithTemplateType(Aws::String&& value) { SetTemplateType(std::move(value)); return *this;}
 
     /**
      * <p>The type of message template to include in the results. Valid values are:
-     * EMAIL, SMS, and PUSH. To include all types of templates in the results, don't
-     * include this parameter in your request.</p>
+     * EMAIL, SMS, PUSH, and VOICE. To include all types of templates in the results,
+     * don't include this parameter in your request.</p>
      */
     inline ListTemplatesRequest& WithTemplateType(const char* value) { SetTemplateType(value); return *this;}
 

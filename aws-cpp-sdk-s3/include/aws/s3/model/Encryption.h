@@ -34,10 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Describes the server-side encryption that will be applied to the restore
-   * results.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Encryption">AWS API
-   * Reference</a></p>
+   * <p>Contains the type of server-side encryption used.</p><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Encryption">AWS
+   * API Reference</a></p>
    */
   class AWS_S3_API Encryption
   {

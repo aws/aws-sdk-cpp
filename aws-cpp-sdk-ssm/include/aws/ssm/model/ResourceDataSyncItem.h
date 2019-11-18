@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/ResourceDataSyncSourceWithState.h>
 #include <aws/ssm/model/ResourceDataSyncS3Destination.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ssm/model/LastResourceDataSyncStatus.h>
@@ -90,6 +91,110 @@ namespace Model
      * <p>The name of the Resource Data Sync.</p>
      */
     inline ResourceDataSyncItem& WithSyncName(const char* value) { SetSyncName(value); return *this;}
+
+
+    /**
+     * <p>The type of resource data sync. If <code>SyncType</code> is
+     * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
+     * an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
+     * then the resource data sync synchronizes data from AWS Organizations or from
+     * multiple AWS Regions.</p>
+     */
+    inline const Aws::String& GetSyncType() const{ return m_syncType; }
+
+    /**
+     * <p>The type of resource data sync. If <code>SyncType</code> is
+     * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
+     * an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
+     * then the resource data sync synchronizes data from AWS Organizations or from
+     * multiple AWS Regions.</p>
+     */
+    inline bool SyncTypeHasBeenSet() const { return m_syncTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource data sync. If <code>SyncType</code> is
+     * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
+     * an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
+     * then the resource data sync synchronizes data from AWS Organizations or from
+     * multiple AWS Regions.</p>
+     */
+    inline void SetSyncType(const Aws::String& value) { m_syncTypeHasBeenSet = true; m_syncType = value; }
+
+    /**
+     * <p>The type of resource data sync. If <code>SyncType</code> is
+     * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
+     * an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
+     * then the resource data sync synchronizes data from AWS Organizations or from
+     * multiple AWS Regions.</p>
+     */
+    inline void SetSyncType(Aws::String&& value) { m_syncTypeHasBeenSet = true; m_syncType = std::move(value); }
+
+    /**
+     * <p>The type of resource data sync. If <code>SyncType</code> is
+     * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
+     * an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
+     * then the resource data sync synchronizes data from AWS Organizations or from
+     * multiple AWS Regions.</p>
+     */
+    inline void SetSyncType(const char* value) { m_syncTypeHasBeenSet = true; m_syncType.assign(value); }
+
+    /**
+     * <p>The type of resource data sync. If <code>SyncType</code> is
+     * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
+     * an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
+     * then the resource data sync synchronizes data from AWS Organizations or from
+     * multiple AWS Regions.</p>
+     */
+    inline ResourceDataSyncItem& WithSyncType(const Aws::String& value) { SetSyncType(value); return *this;}
+
+    /**
+     * <p>The type of resource data sync. If <code>SyncType</code> is
+     * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
+     * an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
+     * then the resource data sync synchronizes data from AWS Organizations or from
+     * multiple AWS Regions.</p>
+     */
+    inline ResourceDataSyncItem& WithSyncType(Aws::String&& value) { SetSyncType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of resource data sync. If <code>SyncType</code> is
+     * <code>SyncToDestination</code>, then the resource data sync synchronizes data to
+     * an Amazon S3 bucket. If the <code>SyncType</code> is <code>SyncFromSource</code>
+     * then the resource data sync synchronizes data from AWS Organizations or from
+     * multiple AWS Regions.</p>
+     */
+    inline ResourceDataSyncItem& WithSyncType(const char* value) { SetSyncType(value); return *this;}
+
+
+    /**
+     * <p>Information about the source where the data was synchronized. </p>
+     */
+    inline const ResourceDataSyncSourceWithState& GetSyncSource() const{ return m_syncSource; }
+
+    /**
+     * <p>Information about the source where the data was synchronized. </p>
+     */
+    inline bool SyncSourceHasBeenSet() const { return m_syncSourceHasBeenSet; }
+
+    /**
+     * <p>Information about the source where the data was synchronized. </p>
+     */
+    inline void SetSyncSource(const ResourceDataSyncSourceWithState& value) { m_syncSourceHasBeenSet = true; m_syncSource = value; }
+
+    /**
+     * <p>Information about the source where the data was synchronized. </p>
+     */
+    inline void SetSyncSource(ResourceDataSyncSourceWithState&& value) { m_syncSourceHasBeenSet = true; m_syncSource = std::move(value); }
+
+    /**
+     * <p>Information about the source where the data was synchronized. </p>
+     */
+    inline ResourceDataSyncItem& WithSyncSource(const ResourceDataSyncSourceWithState& value) { SetSyncSource(value); return *this;}
+
+    /**
+     * <p>Information about the source where the data was synchronized. </p>
+     */
+    inline ResourceDataSyncItem& WithSyncSource(ResourceDataSyncSourceWithState&& value) { SetSyncSource(std::move(value)); return *this;}
 
 
     /**
@@ -189,6 +294,37 @@ namespace Model
      * <code>SUCCESSFUL</code> (UTC).</p>
      */
     inline ResourceDataSyncItem& WithLastSuccessfulSyncTime(Aws::Utils::DateTime&& value) { SetLastSuccessfulSyncTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The date and time the resource data sync was changed. </p>
+     */
+    inline const Aws::Utils::DateTime& GetSyncLastModifiedTime() const{ return m_syncLastModifiedTime; }
+
+    /**
+     * <p>The date and time the resource data sync was changed. </p>
+     */
+    inline bool SyncLastModifiedTimeHasBeenSet() const { return m_syncLastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the resource data sync was changed. </p>
+     */
+    inline void SetSyncLastModifiedTime(const Aws::Utils::DateTime& value) { m_syncLastModifiedTimeHasBeenSet = true; m_syncLastModifiedTime = value; }
+
+    /**
+     * <p>The date and time the resource data sync was changed. </p>
+     */
+    inline void SetSyncLastModifiedTime(Aws::Utils::DateTime&& value) { m_syncLastModifiedTimeHasBeenSet = true; m_syncLastModifiedTime = std::move(value); }
+
+    /**
+     * <p>The date and time the resource data sync was changed. </p>
+     */
+    inline ResourceDataSyncItem& WithSyncLastModifiedTime(const Aws::Utils::DateTime& value) { SetSyncLastModifiedTime(value); return *this;}
+
+    /**
+     * <p>The date and time the resource data sync was changed. </p>
+     */
+    inline ResourceDataSyncItem& WithSyncLastModifiedTime(Aws::Utils::DateTime&& value) { SetSyncLastModifiedTime(std::move(value)); return *this;}
 
 
     /**
@@ -298,6 +434,12 @@ namespace Model
     Aws::String m_syncName;
     bool m_syncNameHasBeenSet;
 
+    Aws::String m_syncType;
+    bool m_syncTypeHasBeenSet;
+
+    ResourceDataSyncSourceWithState m_syncSource;
+    bool m_syncSourceHasBeenSet;
+
     ResourceDataSyncS3Destination m_s3Destination;
     bool m_s3DestinationHasBeenSet;
 
@@ -306,6 +448,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastSuccessfulSyncTime;
     bool m_lastSuccessfulSyncTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_syncLastModifiedTime;
+    bool m_syncLastModifiedTimeHasBeenSet;
 
     LastResourceDataSyncStatus m_lastStatus;
     bool m_lastStatusHasBeenSet;

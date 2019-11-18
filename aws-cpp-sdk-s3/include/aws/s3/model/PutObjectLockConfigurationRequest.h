@@ -56,78 +56,78 @@ namespace Model
 
 
     /**
-     * <p>The bucket whose object lock configuration you want to create or replace.</p>
+     * <p>The bucket whose Object Lock configuration you want to create or replace.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The bucket whose object lock configuration you want to create or replace.</p>
+     * <p>The bucket whose Object Lock configuration you want to create or replace.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The bucket whose object lock configuration you want to create or replace.</p>
+     * <p>The bucket whose Object Lock configuration you want to create or replace.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The bucket whose object lock configuration you want to create or replace.</p>
+     * <p>The bucket whose Object Lock configuration you want to create or replace.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The bucket whose object lock configuration you want to create or replace.</p>
+     * <p>The bucket whose Object Lock configuration you want to create or replace.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The bucket whose object lock configuration you want to create or replace.</p>
+     * <p>The bucket whose Object Lock configuration you want to create or replace.</p>
      */
     inline PutObjectLockConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The bucket whose object lock configuration you want to create or replace.</p>
+     * <p>The bucket whose Object Lock configuration you want to create or replace.</p>
      */
     inline PutObjectLockConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The bucket whose object lock configuration you want to create or replace.</p>
+     * <p>The bucket whose Object Lock configuration you want to create or replace.</p>
      */
     inline PutObjectLockConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p>The object lock configuration that you want to apply to the specified
+     * <p>The Object Lock configuration that you want to apply to the specified
      * bucket.</p>
      */
     inline const ObjectLockConfiguration& GetObjectLockConfiguration() const{ return m_objectLockConfiguration; }
 
     /**
-     * <p>The object lock configuration that you want to apply to the specified
+     * <p>The Object Lock configuration that you want to apply to the specified
      * bucket.</p>
      */
     inline bool ObjectLockConfigurationHasBeenSet() const { return m_objectLockConfigurationHasBeenSet; }
 
     /**
-     * <p>The object lock configuration that you want to apply to the specified
+     * <p>The Object Lock configuration that you want to apply to the specified
      * bucket.</p>
      */
     inline void SetObjectLockConfiguration(const ObjectLockConfiguration& value) { m_objectLockConfigurationHasBeenSet = true; m_objectLockConfiguration = value; }
 
     /**
-     * <p>The object lock configuration that you want to apply to the specified
+     * <p>The Object Lock configuration that you want to apply to the specified
      * bucket.</p>
      */
     inline void SetObjectLockConfiguration(ObjectLockConfiguration&& value) { m_objectLockConfigurationHasBeenSet = true; m_objectLockConfiguration = std::move(value); }
 
     /**
-     * <p>The object lock configuration that you want to apply to the specified
+     * <p>The Object Lock configuration that you want to apply to the specified
      * bucket.</p>
      */
     inline PutObjectLockConfigurationRequest& WithObjectLockConfiguration(const ObjectLockConfiguration& value) { SetObjectLockConfiguration(value); return *this;}
 
     /**
-     * <p>The object lock configuration that you want to apply to the specified
+     * <p>The Object Lock configuration that you want to apply to the specified
      * bucket.</p>
      */
     inline PutObjectLockConfigurationRequest& WithObjectLockConfiguration(ObjectLockConfiguration&& value) { SetObjectLockConfiguration(std::move(value)); return *this;}
@@ -153,50 +153,42 @@ namespace Model
 
 
     /**
-     * <p>A token to allow Amazon S3 object lock to be enabled for an existing
-     * bucket.</p>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
 
     /**
-     * <p>A token to allow Amazon S3 object lock to be enabled for an existing
-     * bucket.</p>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
-     * <p>A token to allow Amazon S3 object lock to be enabled for an existing
-     * bucket.</p>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /**
-     * <p>A token to allow Amazon S3 object lock to be enabled for an existing
-     * bucket.</p>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
 
     /**
-     * <p>A token to allow Amazon S3 object lock to be enabled for an existing
-     * bucket.</p>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
 
     /**
-     * <p>A token to allow Amazon S3 object lock to be enabled for an existing
-     * bucket.</p>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline PutObjectLockConfigurationRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
     /**
-     * <p>A token to allow Amazon S3 object lock to be enabled for an existing
-     * bucket.</p>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline PutObjectLockConfigurationRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to allow Amazon S3 object lock to be enabled for an existing
-     * bucket.</p>
+     * <p>A token to allow Object Lock to be enabled for an existing bucket.</p>
      */
     inline PutObjectLockConfigurationRequest& WithToken(const char* value) { SetToken(value); return *this;}
 

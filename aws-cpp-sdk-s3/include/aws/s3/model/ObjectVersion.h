@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The version of an object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ObjectVersion">AWS
    * API Reference</a></p>
    */
@@ -51,42 +51,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of that version of the object</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of that version of the object</p>
      */
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of that version of the object</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of that version of the object</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of that version of the object</p>
      */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of that version of the object</p>
      */
     inline ObjectVersion& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of that version of the object</p>
      */
     inline ObjectVersion& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of that version of the object</p>
      */
     inline ObjectVersion& WithETag(const char* value) { SetETag(value); return *this;}
 
@@ -282,32 +282,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Specifies the Owner of the object.</p>
      */
     inline const Owner& GetOwner() const{ return m_owner; }
 
     /**
-     * <p/>
+     * <p>Specifies the Owner of the object.</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Specifies the Owner of the object.</p>
      */
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p/>
+     * <p>Specifies the Owner of the object.</p>
      */
     inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Specifies the Owner of the object.</p>
      */
     inline ObjectVersion& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies the Owner of the object.</p>
      */
     inline ObjectVersion& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 

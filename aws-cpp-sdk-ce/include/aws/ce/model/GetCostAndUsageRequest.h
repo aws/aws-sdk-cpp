@@ -108,9 +108,7 @@ namespace Model
      * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>,
      * or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response
      * object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code>
-     * or <code>DAILY</code>, or <code>HOURLY</code>. </p> <p>The
-     * <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * or <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline const Granularity& GetGranularity() const{ return m_granularity; }
 
@@ -118,9 +116,7 @@ namespace Model
      * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>,
      * or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response
      * object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code>
-     * or <code>DAILY</code>, or <code>HOURLY</code>. </p> <p>The
-     * <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * or <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
 
@@ -128,9 +124,7 @@ namespace Model
      * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>,
      * or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response
      * object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code>
-     * or <code>DAILY</code>, or <code>HOURLY</code>. </p> <p>The
-     * <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * or <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline void SetGranularity(const Granularity& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
@@ -138,9 +132,7 @@ namespace Model
      * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>,
      * or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response
      * object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code>
-     * or <code>DAILY</code>, or <code>HOURLY</code>. </p> <p>The
-     * <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * or <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline void SetGranularity(Granularity&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
 
@@ -148,9 +140,7 @@ namespace Model
      * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>,
      * or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response
      * object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code>
-     * or <code>DAILY</code>, or <code>HOURLY</code>. </p> <p>The
-     * <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * or <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline GetCostAndUsageRequest& WithGranularity(const Granularity& value) { SetGranularity(value); return *this;}
 
@@ -158,9 +148,7 @@ namespace Model
      * <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>,
      * or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response
      * object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code>
-     * or <code>DAILY</code>, or <code>HOURLY</code>. </p> <p>The
-     * <code>GetCostAndUsageRequest</code> operation supports only <code>DAILY</code>
-     * and <code>MONTHLY</code> granularities.</p>
+     * or <code>DAILY</code>, or <code>HOURLY</code>. </p>
      */
     inline GetCostAndUsageRequest& WithGranularity(Granularity&& value) { SetGranularity(std::move(value)); return *this;}
 
@@ -420,7 +408,7 @@ namespace Model
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
-     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline const Aws::Vector<GroupDefinition>& GetGroupBy() const{ return m_groupBy; }
 
@@ -431,7 +419,7 @@ namespace Model
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
-     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
 
@@ -442,7 +430,7 @@ namespace Model
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
-     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline void SetGroupBy(const Aws::Vector<GroupDefinition>& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
 
@@ -453,7 +441,7 @@ namespace Model
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
-     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline void SetGroupBy(Aws::Vector<GroupDefinition>&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
 
@@ -464,7 +452,7 @@ namespace Model
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
-     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline GetCostAndUsageRequest& WithGroupBy(const Aws::Vector<GroupDefinition>& value) { SetGroupBy(value); return *this;}
 
@@ -475,7 +463,7 @@ namespace Model
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
-     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline GetCostAndUsageRequest& WithGroupBy(Aws::Vector<GroupDefinition>&& value) { SetGroupBy(std::move(value)); return *this;}
 
@@ -486,7 +474,7 @@ namespace Model
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
-     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline GetCostAndUsageRequest& AddGroupBy(const GroupDefinition& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(value); return *this; }
 
@@ -497,7 +485,7 @@ namespace Model
      * <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>,
      * <code>LINKED_ACCOUNT</code>, <code>OPERATION</code>, <code>PLATFORM</code>,
      * <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
-     * <code>TENANCY</code>, and <code>USAGE_TYPE</code>.</p>
+     * <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
      */
     inline GetCostAndUsageRequest& AddGroupBy(GroupDefinition&& value) { m_groupByHasBeenSet = true; m_groupBy.push_back(std::move(value)); return *this; }
 

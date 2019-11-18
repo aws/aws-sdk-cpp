@@ -25,7 +25,7 @@ namespace S3
 namespace Model
 {
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The container for the records event.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RecordsEvent">AWS API
    * Reference</a></p>
    */

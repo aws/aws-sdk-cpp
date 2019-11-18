@@ -53,73 +53,49 @@ namespace Model
 
     /**
      * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
-     * store replicas of the object identified by the rule.</p> <p>A replication
-     * configuration can replicate objects to only one destination bucket. If there are
-     * multiple rules in your replication configuration, all rules must specify the
-     * same destination bucket.</p>
+     * store the results.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
-     * store replicas of the object identified by the rule.</p> <p>A replication
-     * configuration can replicate objects to only one destination bucket. If there are
-     * multiple rules in your replication configuration, all rules must specify the
-     * same destination bucket.</p>
+     * store the results.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
-     * store replicas of the object identified by the rule.</p> <p>A replication
-     * configuration can replicate objects to only one destination bucket. If there are
-     * multiple rules in your replication configuration, all rules must specify the
-     * same destination bucket.</p>
+     * store the results.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
-     * store replicas of the object identified by the rule.</p> <p>A replication
-     * configuration can replicate objects to only one destination bucket. If there are
-     * multiple rules in your replication configuration, all rules must specify the
-     * same destination bucket.</p>
+     * store the results.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
-     * store replicas of the object identified by the rule.</p> <p>A replication
-     * configuration can replicate objects to only one destination bucket. If there are
-     * multiple rules in your replication configuration, all rules must specify the
-     * same destination bucket.</p>
+     * store the results.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
-     * store replicas of the object identified by the rule.</p> <p>A replication
-     * configuration can replicate objects to only one destination bucket. If there are
-     * multiple rules in your replication configuration, all rules must specify the
-     * same destination bucket.</p>
+     * store the results.</p>
      */
     inline Destination& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
-     * store replicas of the object identified by the rule.</p> <p>A replication
-     * configuration can replicate objects to only one destination bucket. If there are
-     * multiple rules in your replication configuration, all rules must specify the
-     * same destination bucket.</p>
+     * store the results.</p>
      */
     inline Destination& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
-     * store replicas of the object identified by the rule.</p> <p>A replication
-     * configuration can replicate objects to only one destination bucket. If there are
-     * multiple rules in your replication configuration, all rules must specify the
-     * same destination bucket.</p>
+     * store the results.</p>
      */
     inline Destination& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -130,9 +106,9 @@ namespace Model
      * destination bucket by specifying the <code>AccessControlTranslation</code>
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr-change-owner.html">Cross-Region
-     * Replication Additional Configuration: Change Replica Owner</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
+     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
 
@@ -142,9 +118,9 @@ namespace Model
      * destination bucket by specifying the <code>AccessControlTranslation</code>
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr-change-owner.html">Cross-Region
-     * Replication Additional Configuration: Change Replica Owner</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
+     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
@@ -154,9 +130,9 @@ namespace Model
      * destination bucket by specifying the <code>AccessControlTranslation</code>
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr-change-owner.html">Cross-Region
-     * Replication Additional Configuration: Change Replica Owner</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
+     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
@@ -166,9 +142,9 @@ namespace Model
      * destination bucket by specifying the <code>AccessControlTranslation</code>
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr-change-owner.html">Cross-Region
-     * Replication Additional Configuration: Change Replica Owner</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
+     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
 
@@ -178,9 +154,9 @@ namespace Model
      * destination bucket by specifying the <code>AccessControlTranslation</code>
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr-change-owner.html">Cross-Region
-     * Replication Additional Configuration: Change Replica Owner</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
+     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
 
@@ -190,9 +166,9 @@ namespace Model
      * destination bucket by specifying the <code>AccessControlTranslation</code>
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr-change-owner.html">Cross-Region
-     * Replication Additional Configuration: Change Replica Owner</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
+     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline Destination& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
 
@@ -202,9 +178,9 @@ namespace Model
      * destination bucket by specifying the <code>AccessControlTranslation</code>
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr-change-owner.html">Cross-Region
-     * Replication Additional Configuration: Change Replica Owner</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
+     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline Destination& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
 
@@ -214,9 +190,9 @@ namespace Model
      * destination bucket by specifying the <code>AccessControlTranslation</code>
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/crr-change-owner.html">Cross-Region
-     * Replication Additional Configuration: Change Replica Owner</a> in the <i>Amazon
-     * Simple Storage Service Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
+     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Storage Service Developer Guide</i>.</p>
      */
     inline Destination& WithAccount(const char* value) { SetAccount(value); return *this;}
 

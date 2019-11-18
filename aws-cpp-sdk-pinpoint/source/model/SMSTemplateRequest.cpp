@@ -30,13 +30,17 @@ namespace Model
 
 SMSTemplateRequest::SMSTemplateRequest() : 
     m_bodyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_defaultSubstitutionsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_templateDescriptionHasBeenSet(false)
 {
 }
 
 SMSTemplateRequest::SMSTemplateRequest(JsonView jsonValue) : 
     m_bodyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_defaultSubstitutionsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_templateDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +54,13 @@ SMSTemplateRequest& SMSTemplateRequest::operator =(JsonView jsonValue)
     m_bodyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultSubstitutions"))
+  {
+    m_defaultSubstitutions = jsonValue.GetString("DefaultSubstitutions");
+
+    m_defaultSubstitutionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -58,6 +69,13 @@ SMSTemplateRequest& SMSTemplateRequest::operator =(JsonView jsonValue)
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TemplateDescription"))
+  {
+    m_templateDescription = jsonValue.GetString("TemplateDescription");
+
+    m_templateDescriptionHasBeenSet = true;
   }
 
   return *this;
@@ -73,6 +91,12 @@ JsonValue SMSTemplateRequest::Jsonize() const
 
   }
 
+  if(m_defaultSubstitutionsHasBeenSet)
+  {
+   payload.WithString("DefaultSubstitutions", m_defaultSubstitutions);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    JsonValue tagsJsonMap;
@@ -81,6 +105,12 @@ JsonValue SMSTemplateRequest::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_templateDescriptionHasBeenSet)
+  {
+   payload.WithString("TemplateDescription", m_templateDescription);
 
   }
 

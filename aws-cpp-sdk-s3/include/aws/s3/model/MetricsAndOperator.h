@@ -35,7 +35,10 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>A conjunction (logical AND) of predicates, which is used in evaluating a
+   * metrics filter. The operator must have at least two predicates, and an object
+   * must match all of the predicates in order for the filter to apply.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MetricsAndOperator">AWS
    * API Reference</a></p>
    */

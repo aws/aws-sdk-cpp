@@ -48,83 +48,83 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Name of the Object.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p/>
+     * <p>Name of the Object.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Name of the Object.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p/>
+     * <p>Name of the Object.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Name of the Object.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p/>
+     * <p>Name of the Object.</p>
      */
     inline MetadataEntry& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Name of the Object.</p>
      */
     inline MetadataEntry& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Name of the Object.</p>
      */
     inline MetadataEntry& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Value of the Object.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p/>
+     * <p>Value of the Object.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Value of the Object.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p/>
+     * <p>Value of the Object.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Value of the Object.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p/>
+     * <p>Value of the Object.</p>
      */
     inline MetadataEntry& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Value of the Object.</p>
      */
     inline MetadataEntry& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Value of the Object.</p>
      */
     inline MetadataEntry& WithValue(const char* value) { SetValue(value); return *this;}
 

@@ -67,37 +67,44 @@ namespace Model
 
 
     /**
-     * <p>The ContinuationToken that represents where this request began.</p>
+     * <p>The marker that is used as a starting point for this analytics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
-     * <p>The ContinuationToken that represents where this request began.</p>
+     * <p>The marker that is used as a starting point for this analytics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationToken = value; }
 
     /**
-     * <p>The ContinuationToken that represents where this request began.</p>
+     * <p>The marker that is used as a starting point for this analytics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
 
     /**
-     * <p>The ContinuationToken that represents where this request began.</p>
+     * <p>The marker that is used as a starting point for this analytics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationToken.assign(value); }
 
     /**
-     * <p>The ContinuationToken that represents where this request began.</p>
+     * <p>The marker that is used as a starting point for this analytics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline ListBucketAnalyticsConfigurationsResult& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
-     * <p>The ContinuationToken that represents where this request began.</p>
+     * <p>The marker that is used as a starting point for this analytics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline ListBucketAnalyticsConfigurationsResult& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
-     * <p>The ContinuationToken that represents where this request began.</p>
+     * <p>The marker that is used as a starting point for this analytics configuration
+     * list response. This value is present if it was sent in the request.</p>
      */
     inline ListBucketAnalyticsConfigurationsResult& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 

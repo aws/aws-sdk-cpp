@@ -191,34 +191,22 @@ namespace Model
     inline TopicConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
 
-    /**
-     * <p/>
-     */
+    
     inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
 
-    /**
-     * <p/>
-     */
+    
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetFilter(const NotificationConfigurationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetFilter(NotificationConfigurationFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
-    /**
-     * <p/>
-     */
+    
     inline TopicConfiguration& WithFilter(const NotificationConfigurationFilter& value) { SetFilter(value); return *this;}
 
-    /**
-     * <p/>
-     */
+    
     inline TopicConfiguration& WithFilter(NotificationConfigurationFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:

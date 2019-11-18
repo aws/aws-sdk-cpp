@@ -53,196 +53,196 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The bucket containing the object.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p/>
+     * <p>The bucket containing the object.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The bucket containing the object.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p/>
+     * <p>The bucket containing the object.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The bucket containing the object.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p/>
+     * <p>The bucket containing the object.</p>
      */
     inline PutObjectTaggingRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The bucket containing the object.</p>
      */
     inline PutObjectTaggingRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The bucket containing the object.</p>
      */
     inline PutObjectTaggingRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Name of the tag.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p/>
+     * <p>Name of the tag.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Name of the tag.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p/>
+     * <p>Name of the tag.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Name of the tag.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p/>
+     * <p>Name of the tag.</p>
      */
     inline PutObjectTaggingRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Name of the tag.</p>
      */
     inline PutObjectTaggingRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Name of the tag.</p>
      */
     inline PutObjectTaggingRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The versionId of the object that the tag-set will be added to.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p/>
+     * <p>The versionId of the object that the tag-set will be added to.</p>
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The versionId of the object that the tag-set will be added to.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p/>
+     * <p>The versionId of the object that the tag-set will be added to.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The versionId of the object that the tag-set will be added to.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The versionId of the object that the tag-set will be added to.</p>
      */
     inline PutObjectTaggingRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The versionId of the object that the tag-set will be added to.</p>
      */
     inline PutObjectTaggingRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The versionId of the object that the tag-set will be added to.</p>
      */
     inline PutObjectTaggingRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
     /**
-     * <p/>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
-     * <p/>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     /**
-     * <p/>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline PutObjectTaggingRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline PutObjectTaggingRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The MD5 hash for the request body.</p>
      */
     inline PutObjectTaggingRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Container for the TagSet and Tag elements</p>
      */
     inline const Tagging& GetTagging() const{ return m_tagging; }
 
     /**
-     * <p/>
+     * <p>Container for the TagSet and Tag elements</p>
      */
     inline bool TaggingHasBeenSet() const { return m_taggingHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Container for the TagSet and Tag elements</p>
      */
     inline void SetTagging(const Tagging& value) { m_taggingHasBeenSet = true; m_tagging = value; }
 
     /**
-     * <p/>
+     * <p>Container for the TagSet and Tag elements</p>
      */
     inline void SetTagging(Tagging&& value) { m_taggingHasBeenSet = true; m_tagging = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Container for the TagSet and Tag elements</p>
      */
     inline PutObjectTaggingRequest& WithTagging(const Tagging& value) { SetTagging(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for the TagSet and Tag elements</p>
      */
     inline PutObjectTaggingRequest& WithTagging(Tagging&& value) { SetTagging(std::move(value)); return *this;}
 

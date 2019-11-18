@@ -171,42 +171,42 @@ namespace Model
 
 
     /**
-     * <p>The custom description of the treatment.</p>
+     * <p>A custom description of the treatment.</p>
      */
     inline const Aws::String& GetTreatmentDescription() const{ return m_treatmentDescription; }
 
     /**
-     * <p>The custom description of the treatment.</p>
+     * <p>A custom description of the treatment.</p>
      */
     inline bool TreatmentDescriptionHasBeenSet() const { return m_treatmentDescriptionHasBeenSet; }
 
     /**
-     * <p>The custom description of the treatment.</p>
+     * <p>A custom description of the treatment.</p>
      */
     inline void SetTreatmentDescription(const Aws::String& value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription = value; }
 
     /**
-     * <p>The custom description of the treatment.</p>
+     * <p>A custom description of the treatment.</p>
      */
     inline void SetTreatmentDescription(Aws::String&& value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription = std::move(value); }
 
     /**
-     * <p>The custom description of the treatment.</p>
+     * <p>A custom description of the treatment.</p>
      */
     inline void SetTreatmentDescription(const char* value) { m_treatmentDescriptionHasBeenSet = true; m_treatmentDescription.assign(value); }
 
     /**
-     * <p>The custom description of the treatment.</p>
+     * <p>A custom description of the treatment.</p>
      */
     inline WriteTreatmentResource& WithTreatmentDescription(const Aws::String& value) { SetTreatmentDescription(value); return *this;}
 
     /**
-     * <p>The custom description of the treatment.</p>
+     * <p>A custom description of the treatment.</p>
      */
     inline WriteTreatmentResource& WithTreatmentDescription(Aws::String&& value) { SetTreatmentDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The custom description of the treatment.</p>
+     * <p>A custom description of the treatment.</p>
      */
     inline WriteTreatmentResource& WithTreatmentDescription(const char* value) { SetTreatmentDescription(value); return *this;}
 

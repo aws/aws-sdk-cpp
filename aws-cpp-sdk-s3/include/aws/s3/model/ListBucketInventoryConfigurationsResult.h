@@ -124,20 +124,23 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the returned list of inventory configurations is truncated
-     * in this response. A value of true indicates that the list is truncated.</p>
+     * <p>Tells whether the returned list of inventory configurations is complete. A
+     * value of true indicates that the list is not complete and the
+     * NextContinuationToken is provided for a subsequent request.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
-     * <p>Indicates whether the returned list of inventory configurations is truncated
-     * in this response. A value of true indicates that the list is truncated.</p>
+     * <p>Tells whether the returned list of inventory configurations is complete. A
+     * value of true indicates that the list is not complete and the
+     * NextContinuationToken is provided for a subsequent request.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
-     * <p>Indicates whether the returned list of inventory configurations is truncated
-     * in this response. A value of true indicates that the list is truncated.</p>
+     * <p>Tells whether the returned list of inventory configurations is complete. A
+     * value of true indicates that the list is not complete and the
+     * NextContinuationToken is provided for a subsequent request.</p>
      */
     inline ListBucketInventoryConfigurationsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 

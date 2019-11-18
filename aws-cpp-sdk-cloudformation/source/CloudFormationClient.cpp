@@ -40,6 +40,7 @@
 #include <aws/cloudformation/model/DeleteStackRequest.h>
 #include <aws/cloudformation/model/DeleteStackInstancesRequest.h>
 #include <aws/cloudformation/model/DeleteStackSetRequest.h>
+#include <aws/cloudformation/model/DeregisterTypeRequest.h>
 #include <aws/cloudformation/model/DescribeAccountLimitsRequest.h>
 #include <aws/cloudformation/model/DescribeChangeSetRequest.h>
 #include <aws/cloudformation/model/DescribeStackDriftDetectionStatusRequest.h>
@@ -51,6 +52,8 @@
 #include <aws/cloudformation/model/DescribeStackSetRequest.h>
 #include <aws/cloudformation/model/DescribeStackSetOperationRequest.h>
 #include <aws/cloudformation/model/DescribeStacksRequest.h>
+#include <aws/cloudformation/model/DescribeTypeRequest.h>
+#include <aws/cloudformation/model/DescribeTypeRegistrationRequest.h>
 #include <aws/cloudformation/model/DetectStackDriftRequest.h>
 #include <aws/cloudformation/model/DetectStackResourceDriftRequest.h>
 #include <aws/cloudformation/model/EstimateTemplateCostRequest.h>
@@ -67,7 +70,13 @@
 #include <aws/cloudformation/model/ListStackSetOperationsRequest.h>
 #include <aws/cloudformation/model/ListStackSetsRequest.h>
 #include <aws/cloudformation/model/ListStacksRequest.h>
+#include <aws/cloudformation/model/ListTypeRegistrationsRequest.h>
+#include <aws/cloudformation/model/ListTypeVersionsRequest.h>
+#include <aws/cloudformation/model/ListTypesRequest.h>
+#include <aws/cloudformation/model/RecordHandlerProgressRequest.h>
+#include <aws/cloudformation/model/RegisterTypeRequest.h>
 #include <aws/cloudformation/model/SetStackPolicyRequest.h>
+#include <aws/cloudformation/model/SetTypeDefaultVersionRequest.h>
 #include <aws/cloudformation/model/SignalResourceRequest.h>
 #include <aws/cloudformation/model/StopStackSetOperationRequest.h>
 #include <aws/cloudformation/model/UpdateStackRequest.h>
@@ -509,6 +518,41 @@ void CloudFormationClient::DeleteStackSetAsyncHelper(const DeleteStackSetRequest
   handler(this, request, DeleteStackSet(request), context);
 }
 
+DeregisterTypeOutcome CloudFormationClient::DeregisterType(const DeregisterTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeregisterTypeOutcome(DeregisterTypeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeregisterTypeOutcome(outcome.GetError());
+  }
+}
+
+DeregisterTypeOutcomeCallable CloudFormationClient::DeregisterTypeCallable(const DeregisterTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::DeregisterTypeAsync(const DeregisterTypeRequest& request, const DeregisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeregisterTypeAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::DeregisterTypeAsyncHelper(const DeregisterTypeRequest& request, const DeregisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeregisterType(request), context);
+}
+
 DescribeAccountLimitsOutcome CloudFormationClient::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -892,6 +936,76 @@ void CloudFormationClient::DescribeStacksAsync(const DescribeStacksRequest& requ
 void CloudFormationClient::DescribeStacksAsyncHelper(const DescribeStacksRequest& request, const DescribeStacksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeStacks(request), context);
+}
+
+DescribeTypeOutcome CloudFormationClient::DescribeType(const DescribeTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeTypeOutcome(DescribeTypeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeTypeOutcome(outcome.GetError());
+  }
+}
+
+DescribeTypeOutcomeCallable CloudFormationClient::DescribeTypeCallable(const DescribeTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::DescribeTypeAsync(const DescribeTypeRequest& request, const DescribeTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTypeAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::DescribeTypeAsyncHelper(const DescribeTypeRequest& request, const DescribeTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeType(request), context);
+}
+
+DescribeTypeRegistrationOutcome CloudFormationClient::DescribeTypeRegistration(const DescribeTypeRegistrationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeTypeRegistrationOutcome(DescribeTypeRegistrationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeTypeRegistrationOutcome(outcome.GetError());
+  }
+}
+
+DescribeTypeRegistrationOutcomeCallable CloudFormationClient::DescribeTypeRegistrationCallable(const DescribeTypeRegistrationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTypeRegistrationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTypeRegistration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::DescribeTypeRegistrationAsync(const DescribeTypeRegistrationRequest& request, const DescribeTypeRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTypeRegistrationAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::DescribeTypeRegistrationAsyncHelper(const DescribeTypeRegistrationRequest& request, const DescribeTypeRegistrationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeTypeRegistration(request), context);
 }
 
 DetectStackDriftOutcome CloudFormationClient::DetectStackDrift(const DetectStackDriftRequest& request) const
@@ -1454,6 +1568,181 @@ void CloudFormationClient::ListStacksAsyncHelper(const ListStacksRequest& reques
   handler(this, request, ListStacks(request), context);
 }
 
+ListTypeRegistrationsOutcome CloudFormationClient::ListTypeRegistrations(const ListTypeRegistrationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListTypeRegistrationsOutcome(ListTypeRegistrationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTypeRegistrationsOutcome(outcome.GetError());
+  }
+}
+
+ListTypeRegistrationsOutcomeCallable CloudFormationClient::ListTypeRegistrationsCallable(const ListTypeRegistrationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTypeRegistrationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTypeRegistrations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::ListTypeRegistrationsAsync(const ListTypeRegistrationsRequest& request, const ListTypeRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTypeRegistrationsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::ListTypeRegistrationsAsyncHelper(const ListTypeRegistrationsRequest& request, const ListTypeRegistrationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTypeRegistrations(request), context);
+}
+
+ListTypeVersionsOutcome CloudFormationClient::ListTypeVersions(const ListTypeVersionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListTypeVersionsOutcome(ListTypeVersionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTypeVersionsOutcome(outcome.GetError());
+  }
+}
+
+ListTypeVersionsOutcomeCallable CloudFormationClient::ListTypeVersionsCallable(const ListTypeVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTypeVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTypeVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::ListTypeVersionsAsync(const ListTypeVersionsRequest& request, const ListTypeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTypeVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::ListTypeVersionsAsyncHelper(const ListTypeVersionsRequest& request, const ListTypeVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTypeVersions(request), context);
+}
+
+ListTypesOutcome CloudFormationClient::ListTypes(const ListTypesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ListTypesOutcome(ListTypesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTypesOutcome(outcome.GetError());
+  }
+}
+
+ListTypesOutcomeCallable CloudFormationClient::ListTypesCallable(const ListTypesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTypesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTypes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::ListTypesAsync(const ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTypesAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::ListTypesAsyncHelper(const ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTypes(request), context);
+}
+
+RecordHandlerProgressOutcome CloudFormationClient::RecordHandlerProgress(const RecordHandlerProgressRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RecordHandlerProgressOutcome(RecordHandlerProgressResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RecordHandlerProgressOutcome(outcome.GetError());
+  }
+}
+
+RecordHandlerProgressOutcomeCallable CloudFormationClient::RecordHandlerProgressCallable(const RecordHandlerProgressRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RecordHandlerProgressOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RecordHandlerProgress(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::RecordHandlerProgressAsync(const RecordHandlerProgressRequest& request, const RecordHandlerProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RecordHandlerProgressAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::RecordHandlerProgressAsyncHelper(const RecordHandlerProgressRequest& request, const RecordHandlerProgressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RecordHandlerProgress(request), context);
+}
+
+RegisterTypeOutcome CloudFormationClient::RegisterType(const RegisterTypeRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RegisterTypeOutcome(RegisterTypeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RegisterTypeOutcome(outcome.GetError());
+  }
+}
+
+RegisterTypeOutcomeCallable CloudFormationClient::RegisterTypeCallable(const RegisterTypeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterTypeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterType(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::RegisterTypeAsync(const RegisterTypeRequest& request, const RegisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterTypeAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::RegisterTypeAsyncHelper(const RegisterTypeRequest& request, const RegisterTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterType(request), context);
+}
+
 SetStackPolicyOutcome CloudFormationClient::SetStackPolicy(const SetStackPolicyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1487,6 +1776,41 @@ void CloudFormationClient::SetStackPolicyAsync(const SetStackPolicyRequest& requ
 void CloudFormationClient::SetStackPolicyAsyncHelper(const SetStackPolicyRequest& request, const SetStackPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, SetStackPolicy(request), context);
+}
+
+SetTypeDefaultVersionOutcome CloudFormationClient::SetTypeDefaultVersion(const SetTypeDefaultVersionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SetTypeDefaultVersionOutcome(SetTypeDefaultVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return SetTypeDefaultVersionOutcome(outcome.GetError());
+  }
+}
+
+SetTypeDefaultVersionOutcomeCallable CloudFormationClient::SetTypeDefaultVersionCallable(const SetTypeDefaultVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SetTypeDefaultVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SetTypeDefaultVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudFormationClient::SetTypeDefaultVersionAsync(const SetTypeDefaultVersionRequest& request, const SetTypeDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SetTypeDefaultVersionAsyncHelper( request, handler, context ); } );
+}
+
+void CloudFormationClient::SetTypeDefaultVersionAsyncHelper(const SetTypeDefaultVersionRequest& request, const SetTypeDefaultVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SetTypeDefaultVersion(request), context);
 }
 
 SignalResourceOutcome CloudFormationClient::SignalResource(const SignalResourceRequest& request) const

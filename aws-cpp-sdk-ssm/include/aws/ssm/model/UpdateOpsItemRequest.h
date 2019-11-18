@@ -703,6 +703,88 @@ namespace Model
      */
     inline UpdateOpsItemRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
 
+
+    /**
+     * <p>Specify a new category for an OpsItem.</p>
+     */
+    inline const Aws::String& GetCategory() const{ return m_category; }
+
+    /**
+     * <p>Specify a new category for an OpsItem.</p>
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>Specify a new category for an OpsItem.</p>
+     */
+    inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
+
+    /**
+     * <p>Specify a new category for an OpsItem.</p>
+     */
+    inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+
+    /**
+     * <p>Specify a new category for an OpsItem.</p>
+     */
+    inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
+
+    /**
+     * <p>Specify a new category for an OpsItem.</p>
+     */
+    inline UpdateOpsItemRequest& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
+
+    /**
+     * <p>Specify a new category for an OpsItem.</p>
+     */
+    inline UpdateOpsItemRequest& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify a new category for an OpsItem.</p>
+     */
+    inline UpdateOpsItemRequest& WithCategory(const char* value) { SetCategory(value); return *this;}
+
+
+    /**
+     * <p>Specify a new severity for an OpsItem.</p>
+     */
+    inline const Aws::String& GetSeverity() const{ return m_severity; }
+
+    /**
+     * <p>Specify a new severity for an OpsItem.</p>
+     */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+
+    /**
+     * <p>Specify a new severity for an OpsItem.</p>
+     */
+    inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
+
+    /**
+     * <p>Specify a new severity for an OpsItem.</p>
+     */
+    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
+
+    /**
+     * <p>Specify a new severity for an OpsItem.</p>
+     */
+    inline void SetSeverity(const char* value) { m_severityHasBeenSet = true; m_severity.assign(value); }
+
+    /**
+     * <p>Specify a new severity for an OpsItem.</p>
+     */
+    inline UpdateOpsItemRequest& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
+
+    /**
+     * <p>Specify a new severity for an OpsItem.</p>
+     */
+    inline UpdateOpsItemRequest& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify a new severity for an OpsItem.</p>
+     */
+    inline UpdateOpsItemRequest& WithSeverity(const char* value) { SetSeverity(value); return *this;}
+
   private:
 
     Aws::String m_description;
@@ -731,6 +813,12 @@ namespace Model
 
     Aws::String m_title;
     bool m_titleHasBeenSet;
+
+    Aws::String m_category;
+    bool m_categoryHasBeenSet;
+
+    Aws::String m_severity;
+    bool m_severityHasBeenSet;
   };
 
 } // namespace Model

@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Container for a lifecycle rule.</p>
      */
     inline const Aws::Vector<LifecycleRule>& GetRules() const{ return m_rules; }
 
     /**
-     * <p/>
+     * <p>Container for a lifecycle rule.</p>
      */
     inline void SetRules(const Aws::Vector<LifecycleRule>& value) { m_rules = value; }
 
     /**
-     * <p/>
+     * <p>Container for a lifecycle rule.</p>
      */
     inline void SetRules(Aws::Vector<LifecycleRule>&& value) { m_rules = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Container for a lifecycle rule.</p>
      */
     inline GetBucketLifecycleConfigurationResult& WithRules(const Aws::Vector<LifecycleRule>& value) { SetRules(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for a lifecycle rule.</p>
      */
     inline GetBucketLifecycleConfigurationResult& WithRules(Aws::Vector<LifecycleRule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for a lifecycle rule.</p>
      */
     inline GetBucketLifecycleConfigurationResult& AddRules(const LifecycleRule& value) { m_rules.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Container for a lifecycle rule.</p>
      */
     inline GetBucketLifecycleConfigurationResult& AddRules(LifecycleRule&& value) { m_rules.push_back(std::move(value)); return *this; }
 

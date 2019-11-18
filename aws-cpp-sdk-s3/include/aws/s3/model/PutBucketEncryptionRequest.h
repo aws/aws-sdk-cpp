@@ -54,8 +54,9 @@ namespace Model
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or AWS KMS-managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * Amazon S3-managed keys (SSE-S3) or customer master keys stored in AWS KMS
+     * (SSE-KMS). For information about the Amazon S3 default encryption feature, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
      * S3 Default Bucket Encryption</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</p>
@@ -64,8 +65,9 @@ namespace Model
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or AWS KMS-managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * Amazon S3-managed keys (SSE-S3) or customer master keys stored in AWS KMS
+     * (SSE-KMS). For information about the Amazon S3 default encryption feature, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
      * S3 Default Bucket Encryption</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</p>
@@ -74,8 +76,9 @@ namespace Model
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or AWS KMS-managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * Amazon S3-managed keys (SSE-S3) or customer master keys stored in AWS KMS
+     * (SSE-KMS). For information about the Amazon S3 default encryption feature, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
      * S3 Default Bucket Encryption</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</p>
@@ -84,8 +87,9 @@ namespace Model
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or AWS KMS-managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * Amazon S3-managed keys (SSE-S3) or customer master keys stored in AWS KMS
+     * (SSE-KMS). For information about the Amazon S3 default encryption feature, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
      * S3 Default Bucket Encryption</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</p>
@@ -94,8 +98,9 @@ namespace Model
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or AWS KMS-managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * Amazon S3-managed keys (SSE-S3) or customer master keys stored in AWS KMS
+     * (SSE-KMS). For information about the Amazon S3 default encryption feature, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
      * S3 Default Bucket Encryption</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</p>
@@ -104,8 +109,9 @@ namespace Model
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or AWS KMS-managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * Amazon S3-managed keys (SSE-S3) or customer master keys stored in AWS KMS
+     * (SSE-KMS). For information about the Amazon S3 default encryption feature, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
      * S3 Default Bucket Encryption</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</p>
@@ -114,8 +120,9 @@ namespace Model
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or AWS KMS-managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * Amazon S3-managed keys (SSE-S3) or customer master keys stored in AWS KMS
+     * (SSE-KMS). For information about the Amazon S3 default encryption feature, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
      * S3 Default Bucket Encryption</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</p>
@@ -124,8 +131,9 @@ namespace Model
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or AWS KMS-managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * Amazon S3-managed keys (SSE-S3) or customer master keys stored in AWS KMS
+     * (SSE-KMS). For information about the Amazon S3 default encryption feature, see
+     * <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
      * S3 Default Bucket Encryption</a> in the <i>Amazon Simple Storage Service
      * Developer Guide</i>.</p>
@@ -190,34 +198,22 @@ namespace Model
     inline PutBucketEncryptionRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
 
-    /**
-     * <p/>
-     */
+    
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
-    /**
-     * <p/>
-     */
+    
     inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
 
-    /**
-     * <p/>
-     */
+    
     inline PutBucketEncryptionRequest& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
 
-    /**
-     * <p/>
-     */
+    
     inline PutBucketEncryptionRequest& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
 
 

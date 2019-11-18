@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The bucket name for which to get the website configuration.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p/>
+     * <p>The bucket name for which to get the website configuration.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The bucket name for which to get the website configuration.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p/>
+     * <p>The bucket name for which to get the website configuration.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The bucket name for which to get the website configuration.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p/>
+     * <p>The bucket name for which to get the website configuration.</p>
      */
     inline GetBucketWebsiteRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The bucket name for which to get the website configuration.</p>
      */
     inline GetBucketWebsiteRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The bucket name for which to get the website configuration.</p>
      */
     inline GetBucketWebsiteRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

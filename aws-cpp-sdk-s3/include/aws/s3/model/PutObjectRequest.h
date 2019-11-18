@@ -58,32 +58,44 @@ namespace Model
 
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a>.</p>
      */
     inline const ObjectCannedACL& GetACL() const{ return m_aCL; }
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a>.</p>
      */
     inline bool ACLHasBeenSet() const { return m_aCLHasBeenSet; }
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a>.</p>
      */
     inline void SetACL(const ObjectCannedACL& value) { m_aCLHasBeenSet = true; m_aCL = value; }
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a>.</p>
      */
     inline void SetACL(ObjectCannedACL&& value) { m_aCLHasBeenSet = true; m_aCL = std::move(value); }
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a>.</p>
      */
     inline PutObjectRequest& WithACL(const ObjectCannedACL& value) { SetACL(value); return *this;}
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a>.</p>
      */
     inline PutObjectRequest& WithACL(ObjectCannedACL&& value) { SetACL(std::move(value)); return *this;}
 
@@ -130,83 +142,115 @@ namespace Model
 
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p> Can be used to specify caching behavior along the request/reply chain. For
+     * more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
      */
     inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p> Can be used to specify caching behavior along the request/reply chain. For
+     * more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
      */
     inline bool CacheControlHasBeenSet() const { return m_cacheControlHasBeenSet; }
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p> Can be used to specify caching behavior along the request/reply chain. For
+     * more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
      */
     inline void SetCacheControl(const Aws::String& value) { m_cacheControlHasBeenSet = true; m_cacheControl = value; }
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p> Can be used to specify caching behavior along the request/reply chain. For
+     * more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
      */
     inline void SetCacheControl(Aws::String&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::move(value); }
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p> Can be used to specify caching behavior along the request/reply chain. For
+     * more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
      */
     inline void SetCacheControl(const char* value) { m_cacheControlHasBeenSet = true; m_cacheControl.assign(value); }
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p> Can be used to specify caching behavior along the request/reply chain. For
+     * more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
      */
     inline PutObjectRequest& WithCacheControl(const Aws::String& value) { SetCacheControl(value); return *this;}
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p> Can be used to specify caching behavior along the request/reply chain. For
+     * more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
      */
     inline PutObjectRequest& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies caching behavior along the request/reply chain.</p>
+     * <p> Can be used to specify caching behavior along the request/reply chain. For
+     * more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
      */
     inline PutObjectRequest& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
 
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. For more information,
+     * see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
      */
     inline const Aws::String& GetContentDisposition() const{ return m_contentDisposition; }
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. For more information,
+     * see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
      */
     inline bool ContentDispositionHasBeenSet() const { return m_contentDispositionHasBeenSet; }
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. For more information,
+     * see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
      */
     inline void SetContentDisposition(const Aws::String& value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = value; }
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. For more information,
+     * see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
      */
     inline void SetContentDisposition(Aws::String&& value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = std::move(value); }
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. For more information,
+     * see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
      */
     inline void SetContentDisposition(const char* value) { m_contentDispositionHasBeenSet = true; m_contentDisposition.assign(value); }
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. For more information,
+     * see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
      */
     inline PutObjectRequest& WithContentDisposition(const Aws::String& value) { SetContentDisposition(value); return *this;}
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. For more information,
+     * see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
      */
     inline PutObjectRequest& WithContentDisposition(Aws::String&& value) { SetContentDisposition(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies presentational information for the object.</p>
+     * <p>Specifies presentational information for the object. For more information,
+     * see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
      */
     inline PutObjectRequest& WithContentDisposition(const char* value) { SetContentDisposition(value); return *this;}
 
@@ -214,56 +258,64 @@ namespace Model
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field. For more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
      */
     inline const Aws::String& GetContentEncoding() const{ return m_contentEncoding; }
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field. For more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
      */
     inline bool ContentEncodingHasBeenSet() const { return m_contentEncodingHasBeenSet; }
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field. For more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
      */
     inline void SetContentEncoding(const Aws::String& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = value; }
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field. For more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
      */
     inline void SetContentEncoding(Aws::String&& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = std::move(value); }
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field. For more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
      */
     inline void SetContentEncoding(const char* value) { m_contentEncodingHasBeenSet = true; m_contentEncoding.assign(value); }
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field. For more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
      */
     inline PutObjectRequest& WithContentEncoding(const Aws::String& value) { SetContentEncoding(value); return *this;}
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field. For more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
      */
     inline PutObjectRequest& WithContentEncoding(Aws::String&& value) { SetContentEncoding(std::move(value)); return *this;}
 
     /**
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
-     * the Content-Type header field.</p>
+     * the Content-Type header field. For more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
      */
     inline PutObjectRequest& WithContentEncoding(const char* value) { SetContentEncoding(value); return *this;}
 
@@ -311,113 +363,161 @@ namespace Model
 
     /**
      * <p>Size of the body in bytes. This parameter is useful when the size of the body
-     * cannot be determined automatically.</p>
+     * cannot be determined automatically. For more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
      */
     inline long long GetContentLength() const{ return m_contentLength; }
 
     /**
      * <p>Size of the body in bytes. This parameter is useful when the size of the body
-     * cannot be determined automatically.</p>
+     * cannot be determined automatically. For more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
      */
     inline bool ContentLengthHasBeenSet() const { return m_contentLengthHasBeenSet; }
 
     /**
      * <p>Size of the body in bytes. This parameter is useful when the size of the body
-     * cannot be determined automatically.</p>
+     * cannot be determined automatically. For more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
      */
     inline void SetContentLength(long long value) { m_contentLengthHasBeenSet = true; m_contentLength = value; }
 
     /**
      * <p>Size of the body in bytes. This parameter is useful when the size of the body
-     * cannot be determined automatically.</p>
+     * cannot be determined automatically. For more information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
      */
     inline PutObjectRequest& WithContentLength(long long value) { SetContentLength(value); return *this;}
 
 
     /**
-     * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI. This parameted is required
-     * if object lock parameters are specified.</p>
+     * <p>The base64-encoded 128-bit MD5 digest of the message (without the headers)
+     * according to RFC 1864. This header can be used as a message integrity check to
+     * verify that the data is the same data that was originally sent. Although it is
+     * optional, we recommend using the Content-MD5 mechanism as an end-to-end
+     * integrity check. For more information about REST request authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+     * Authentication</a>.</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
     /**
-     * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI. This parameted is required
-     * if object lock parameters are specified.</p>
+     * <p>The base64-encoded 128-bit MD5 digest of the message (without the headers)
+     * according to RFC 1864. This header can be used as a message integrity check to
+     * verify that the data is the same data that was originally sent. Although it is
+     * optional, we recommend using the Content-MD5 mechanism as an end-to-end
+     * integrity check. For more information about REST request authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+     * Authentication</a>.</p>
      */
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
     /**
-     * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI. This parameted is required
-     * if object lock parameters are specified.</p>
+     * <p>The base64-encoded 128-bit MD5 digest of the message (without the headers)
+     * according to RFC 1864. This header can be used as a message integrity check to
+     * verify that the data is the same data that was originally sent. Although it is
+     * optional, we recommend using the Content-MD5 mechanism as an end-to-end
+     * integrity check. For more information about REST request authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+     * Authentication</a>.</p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
-     * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI. This parameted is required
-     * if object lock parameters are specified.</p>
+     * <p>The base64-encoded 128-bit MD5 digest of the message (without the headers)
+     * according to RFC 1864. This header can be used as a message integrity check to
+     * verify that the data is the same data that was originally sent. Although it is
+     * optional, we recommend using the Content-MD5 mechanism as an end-to-end
+     * integrity check. For more information about REST request authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+     * Authentication</a>.</p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
-     * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI. This parameted is required
-     * if object lock parameters are specified.</p>
+     * <p>The base64-encoded 128-bit MD5 digest of the message (without the headers)
+     * according to RFC 1864. This header can be used as a message integrity check to
+     * verify that the data is the same data that was originally sent. Although it is
+     * optional, we recommend using the Content-MD5 mechanism as an end-to-end
+     * integrity check. For more information about REST request authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+     * Authentication</a>.</p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     /**
-     * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI. This parameted is required
-     * if object lock parameters are specified.</p>
+     * <p>The base64-encoded 128-bit MD5 digest of the message (without the headers)
+     * according to RFC 1864. This header can be used as a message integrity check to
+     * verify that the data is the same data that was originally sent. Although it is
+     * optional, we recommend using the Content-MD5 mechanism as an end-to-end
+     * integrity check. For more information about REST request authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+     * Authentication</a>.</p>
      */
     inline PutObjectRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     /**
-     * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI. This parameted is required
-     * if object lock parameters are specified.</p>
+     * <p>The base64-encoded 128-bit MD5 digest of the message (without the headers)
+     * according to RFC 1864. This header can be used as a message integrity check to
+     * verify that the data is the same data that was originally sent. Although it is
+     * optional, we recommend using the Content-MD5 mechanism as an end-to-end
+     * integrity check. For more information about REST request authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+     * Authentication</a>.</p>
      */
     inline PutObjectRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
-     * <p>The base64-encoded 128-bit MD5 digest of the part data. This parameter is
-     * auto-populated when using the command from the CLI. This parameted is required
-     * if object lock parameters are specified.</p>
+     * <p>The base64-encoded 128-bit MD5 digest of the message (without the headers)
+     * according to RFC 1864. This header can be used as a message integrity check to
+     * verify that the data is the same data that was originally sent. Although it is
+     * optional, we recommend using the Content-MD5 mechanism as an end-to-end
+     * integrity check. For more information about REST request authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST
+     * Authentication</a>.</p>
      */
     inline PutObjectRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
 
     /**
-     * <p>The date and time at which the object is no longer cacheable.</p>
+     * <p>The date and time at which the object is no longer cacheable. For more
+     * information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetExpires() const{ return m_expires; }
 
     /**
-     * <p>The date and time at which the object is no longer cacheable.</p>
+     * <p>The date and time at which the object is no longer cacheable. For more
+     * information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
      */
     inline bool ExpiresHasBeenSet() const { return m_expiresHasBeenSet; }
 
     /**
-     * <p>The date and time at which the object is no longer cacheable.</p>
+     * <p>The date and time at which the object is no longer cacheable. For more
+     * information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
      */
     inline void SetExpires(const Aws::Utils::DateTime& value) { m_expiresHasBeenSet = true; m_expires = value; }
 
     /**
-     * <p>The date and time at which the object is no longer cacheable.</p>
+     * <p>The date and time at which the object is no longer cacheable. For more
+     * information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
      */
     inline void SetExpires(Aws::Utils::DateTime&& value) { m_expiresHasBeenSet = true; m_expires = std::move(value); }
 
     /**
-     * <p>The date and time at which the object is no longer cacheable.</p>
+     * <p>The date and time at which the object is no longer cacheable. For more
+     * information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
      */
     inline PutObjectRequest& WithExpires(const Aws::Utils::DateTime& value) { SetExpires(value); return *this;}
 
     /**
-     * <p>The date and time at which the object is no longer cacheable.</p>
+     * <p>The date and time at which the object is no longer cacheable. For more
+     * information, see <a
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
      */
     inline PutObjectRequest& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
 
@@ -739,32 +839,38 @@ namespace Model
 
 
     /**
-     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
+     * <p>If you don't specify, Standard is the default storage class. Amazon S3
+     * supports other storage classes.</p>
      */
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
 
     /**
-     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
+     * <p>If you don't specify, Standard is the default storage class. Amazon S3
+     * supports other storage classes.</p>
      */
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
 
     /**
-     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
+     * <p>If you don't specify, Standard is the default storage class. Amazon S3
+     * supports other storage classes.</p>
      */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
-     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
+     * <p>If you don't specify, Standard is the default storage class. Amazon S3
+     * supports other storage classes.</p>
      */
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
 
     /**
-     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
+     * <p>If you don't specify, Standard is the default storage class. Amazon S3
+     * supports other storage classes.</p>
      */
     inline PutObjectRequest& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
 
     /**
-     * <p>The type of storage to use for the object. Defaults to 'STANDARD'.</p>
+     * <p>If you don't specify, Standard is the default storage class. Amazon S3
+     * supports other storage classes.</p>
      */
     inline PutObjectRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
@@ -772,56 +878,144 @@ namespace Model
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. For information about object
+     * metadata, see .</p> <p>In the following example, the request header sets the
+     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
+     * following example, the request header sets the object redirect to another
+     * website:</p> <p> <code>x-amz-website-redirect-location:
+     * http://www.example.com/</code> </p> <p>For more information about website
+     * hosting in Amazon S3, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
+     * Websites on Amazon S3</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How
+     * to Configure Website Page Redirects</a>. </p>
      */
     inline const Aws::String& GetWebsiteRedirectLocation() const{ return m_websiteRedirectLocation; }
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. For information about object
+     * metadata, see .</p> <p>In the following example, the request header sets the
+     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
+     * following example, the request header sets the object redirect to another
+     * website:</p> <p> <code>x-amz-website-redirect-location:
+     * http://www.example.com/</code> </p> <p>For more information about website
+     * hosting in Amazon S3, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
+     * Websites on Amazon S3</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How
+     * to Configure Website Page Redirects</a>. </p>
      */
     inline bool WebsiteRedirectLocationHasBeenSet() const { return m_websiteRedirectLocationHasBeenSet; }
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. For information about object
+     * metadata, see .</p> <p>In the following example, the request header sets the
+     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
+     * following example, the request header sets the object redirect to another
+     * website:</p> <p> <code>x-amz-website-redirect-location:
+     * http://www.example.com/</code> </p> <p>For more information about website
+     * hosting in Amazon S3, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
+     * Websites on Amazon S3</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How
+     * to Configure Website Page Redirects</a>. </p>
      */
     inline void SetWebsiteRedirectLocation(const Aws::String& value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation = value; }
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. For information about object
+     * metadata, see .</p> <p>In the following example, the request header sets the
+     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
+     * following example, the request header sets the object redirect to another
+     * website:</p> <p> <code>x-amz-website-redirect-location:
+     * http://www.example.com/</code> </p> <p>For more information about website
+     * hosting in Amazon S3, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
+     * Websites on Amazon S3</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How
+     * to Configure Website Page Redirects</a>. </p>
      */
     inline void SetWebsiteRedirectLocation(Aws::String&& value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation = std::move(value); }
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. For information about object
+     * metadata, see .</p> <p>In the following example, the request header sets the
+     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
+     * following example, the request header sets the object redirect to another
+     * website:</p> <p> <code>x-amz-website-redirect-location:
+     * http://www.example.com/</code> </p> <p>For more information about website
+     * hosting in Amazon S3, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
+     * Websites on Amazon S3</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How
+     * to Configure Website Page Redirects</a>. </p>
      */
     inline void SetWebsiteRedirectLocation(const char* value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation.assign(value); }
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. For information about object
+     * metadata, see .</p> <p>In the following example, the request header sets the
+     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
+     * following example, the request header sets the object redirect to another
+     * website:</p> <p> <code>x-amz-website-redirect-location:
+     * http://www.example.com/</code> </p> <p>For more information about website
+     * hosting in Amazon S3, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
+     * Websites on Amazon S3</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How
+     * to Configure Website Page Redirects</a>. </p>
      */
     inline PutObjectRequest& WithWebsiteRedirectLocation(const Aws::String& value) { SetWebsiteRedirectLocation(value); return *this;}
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. For information about object
+     * metadata, see .</p> <p>In the following example, the request header sets the
+     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
+     * following example, the request header sets the object redirect to another
+     * website:</p> <p> <code>x-amz-website-redirect-location:
+     * http://www.example.com/</code> </p> <p>For more information about website
+     * hosting in Amazon S3, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
+     * Websites on Amazon S3</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How
+     * to Configure Website Page Redirects</a>. </p>
      */
     inline PutObjectRequest& WithWebsiteRedirectLocation(Aws::String&& value) { SetWebsiteRedirectLocation(std::move(value)); return *this;}
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. For information about object
+     * metadata, see .</p> <p>In the following example, the request header sets the
+     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
+     * following example, the request header sets the object redirect to another
+     * website:</p> <p> <code>x-amz-website-redirect-location:
+     * http://www.example.com/</code> </p> <p>For more information about website
+     * hosting in Amazon S3, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting
+     * Websites on Amazon S3</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/how-to-page-redirect.html">How
+     * to Configure Website Page Redirects</a>. </p>
      */
     inline PutObjectRequest& WithWebsiteRedirectLocation(const char* value) { SetWebsiteRedirectLocation(value); return *this;}
 
@@ -1006,74 +1200,98 @@ namespace Model
 
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
+     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p> <p> If the value of
+     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
+     * KMS CMK that will be used for the object. If you specify
+     * x-amz-server-side-encryption:aws:kms, but do not provide
+     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
+     * in AWS to protect the data.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
+     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p> <p> If the value of
+     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
+     * KMS CMK that will be used for the object. If you specify
+     * x-amz-server-side-encryption:aws:kms, but do not provide
+     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
+     * in AWS to protect the data.</p>
      */
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
+     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p> <p> If the value of
+     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
+     * KMS CMK that will be used for the object. If you specify
+     * x-amz-server-side-encryption:aws:kms, but do not provide
+     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
+     * in AWS to protect the data.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
+     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p> <p> If the value of
+     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
+     * KMS CMK that will be used for the object. If you specify
+     * x-amz-server-side-encryption:aws:kms, but do not provide
+     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
+     * in AWS to protect the data.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
+     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p> <p> If the value of
+     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
+     * KMS CMK that will be used for the object. If you specify
+     * x-amz-server-side-encryption:aws:kms, but do not provide
+     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
+     * in AWS to protect the data.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
+     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p> <p> If the value of
+     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
+     * KMS CMK that will be used for the object. If you specify
+     * x-amz-server-side-encryption:aws:kms, but do not provide
+     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
+     * in AWS to protect the data.</p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
+     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p> <p> If the value of
+     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
+     * KMS CMK that will be used for the object. If you specify
+     * x-amz-server-side-encryption:aws:kms, but do not provide
+     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
+     * in AWS to protect the data.</p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
+     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p> <p> If the value of
+     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
+     * KMS CMK that will be used for the object. If you specify
+     * x-amz-server-side-encryption:aws:kms, but do not provide
+     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
+     * in AWS to protect the data.</p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
@@ -1204,94 +1422,112 @@ namespace Model
 
 
     /**
-     * <p>The object lock mode that you want to apply to this object.</p>
+     * <p>The Object Lock mode that you want to apply to this object.</p>
      */
     inline const ObjectLockMode& GetObjectLockMode() const{ return m_objectLockMode; }
 
     /**
-     * <p>The object lock mode that you want to apply to this object.</p>
+     * <p>The Object Lock mode that you want to apply to this object.</p>
      */
     inline bool ObjectLockModeHasBeenSet() const { return m_objectLockModeHasBeenSet; }
 
     /**
-     * <p>The object lock mode that you want to apply to this object.</p>
+     * <p>The Object Lock mode that you want to apply to this object.</p>
      */
     inline void SetObjectLockMode(const ObjectLockMode& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = value; }
 
     /**
-     * <p>The object lock mode that you want to apply to this object.</p>
+     * <p>The Object Lock mode that you want to apply to this object.</p>
      */
     inline void SetObjectLockMode(ObjectLockMode&& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = std::move(value); }
 
     /**
-     * <p>The object lock mode that you want to apply to this object.</p>
+     * <p>The Object Lock mode that you want to apply to this object.</p>
      */
     inline PutObjectRequest& WithObjectLockMode(const ObjectLockMode& value) { SetObjectLockMode(value); return *this;}
 
     /**
-     * <p>The object lock mode that you want to apply to this object.</p>
+     * <p>The Object Lock mode that you want to apply to this object.</p>
      */
     inline PutObjectRequest& WithObjectLockMode(ObjectLockMode&& value) { SetObjectLockMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time when you want this object's object lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire.</p>
      */
     inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
 
     /**
-     * <p>The date and time when you want this object's object lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire.</p>
      */
     inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
 
     /**
-     * <p>The date and time when you want this object's object lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire.</p>
      */
     inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = value; }
 
     /**
-     * <p>The date and time when you want this object's object lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire.</p>
      */
     inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::move(value); }
 
     /**
-     * <p>The date and time when you want this object's object lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire.</p>
      */
     inline PutObjectRequest& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
 
     /**
-     * <p>The date and time when you want this object's object lock to expire.</p>
+     * <p>The date and time when you want this object's Object Lock to expire.</p>
      */
     inline PutObjectRequest& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Legal Hold status that you want to apply to the specified object.</p>
+     * <p>Specifies whether a legal hold will be applied to this object. For more
+     * information about S3 Object Lock, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
+     * Lock</a>.</p>
      */
     inline const ObjectLockLegalHoldStatus& GetObjectLockLegalHoldStatus() const{ return m_objectLockLegalHoldStatus; }
 
     /**
-     * <p>The Legal Hold status that you want to apply to the specified object.</p>
+     * <p>Specifies whether a legal hold will be applied to this object. For more
+     * information about S3 Object Lock, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
+     * Lock</a>.</p>
      */
     inline bool ObjectLockLegalHoldStatusHasBeenSet() const { return m_objectLockLegalHoldStatusHasBeenSet; }
 
     /**
-     * <p>The Legal Hold status that you want to apply to the specified object.</p>
+     * <p>Specifies whether a legal hold will be applied to this object. For more
+     * information about S3 Object Lock, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
+     * Lock</a>.</p>
      */
     inline void SetObjectLockLegalHoldStatus(const ObjectLockLegalHoldStatus& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = value; }
 
     /**
-     * <p>The Legal Hold status that you want to apply to the specified object.</p>
+     * <p>Specifies whether a legal hold will be applied to this object. For more
+     * information about S3 Object Lock, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
+     * Lock</a>.</p>
      */
     inline void SetObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = std::move(value); }
 
     /**
-     * <p>The Legal Hold status that you want to apply to the specified object.</p>
+     * <p>Specifies whether a legal hold will be applied to this object. For more
+     * information about S3 Object Lock, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
+     * Lock</a>.</p>
      */
     inline PutObjectRequest& WithObjectLockLegalHoldStatus(const ObjectLockLegalHoldStatus& value) { SetObjectLockLegalHoldStatus(value); return *this;}
 
     /**
-     * <p>The Legal Hold status that you want to apply to the specified object.</p>
+     * <p>Specifies whether a legal hold will be applied to this object. For more
+     * information about S3 Object Lock, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Object
+     * Lock</a>.</p>
      */
     inline PutObjectRequest& WithObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus&& value) { SetObjectLockLegalHoldStatus(std::move(value)); return *this;}
 

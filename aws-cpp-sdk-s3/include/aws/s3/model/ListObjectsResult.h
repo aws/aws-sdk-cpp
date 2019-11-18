@@ -66,37 +66,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Indicates where in the bucket listing begins. Marker is included in the
+     * response if it was sent with the request.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p/>
+     * <p>Indicates where in the bucket listing begins. Marker is included in the
+     * response if it was sent with the request.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p/>
+     * <p>Indicates where in the bucket listing begins. Marker is included in the
+     * response if it was sent with the request.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Indicates where in the bucket listing begins. Marker is included in the
+     * response if it was sent with the request.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p/>
+     * <p>Indicates where in the bucket listing begins. Marker is included in the
+     * response if it was sent with the request.</p>
      */
     inline ListObjectsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Indicates where in the bucket listing begins. Marker is included in the
+     * response if it was sent with the request.</p>
      */
     inline ListObjectsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Indicates where in the bucket listing begins. Marker is included in the
+     * response if it was sent with the request.</p>
      */
     inline ListObjectsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
@@ -180,197 +187,281 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Metadata about each object returned.</p>
      */
     inline const Aws::Vector<Object>& GetContents() const{ return m_contents; }
 
     /**
-     * <p/>
+     * <p>Metadata about each object returned.</p>
      */
     inline void SetContents(const Aws::Vector<Object>& value) { m_contents = value; }
 
     /**
-     * <p/>
+     * <p>Metadata about each object returned.</p>
      */
     inline void SetContents(Aws::Vector<Object>&& value) { m_contents = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Metadata about each object returned.</p>
      */
     inline ListObjectsResult& WithContents(const Aws::Vector<Object>& value) { SetContents(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Metadata about each object returned.</p>
      */
     inline ListObjectsResult& WithContents(Aws::Vector<Object>&& value) { SetContents(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Metadata about each object returned.</p>
      */
     inline ListObjectsResult& AddContents(const Object& value) { m_contents.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Metadata about each object returned.</p>
      */
     inline ListObjectsResult& AddContents(Object&& value) { m_contents.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p/>
+     * <p>Name of the bucket.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p/>
+     * <p>Name of the bucket.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p/>
+     * <p>Name of the bucket.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Name of the bucket.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p/>
+     * <p>Name of the bucket.</p>
      */
     inline ListObjectsResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Name of the bucket.</p>
      */
     inline ListObjectsResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Name of the bucket.</p>
      */
     inline ListObjectsResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Keys that begin with the indicated prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p/>
+     * <p>Keys that begin with the indicated prefix.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
 
     /**
-     * <p/>
+     * <p>Keys that begin with the indicated prefix.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefix = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Keys that begin with the indicated prefix.</p>
      */
     inline void SetPrefix(const char* value) { m_prefix.assign(value); }
 
     /**
-     * <p/>
+     * <p>Keys that begin with the indicated prefix.</p>
      */
     inline ListObjectsResult& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Keys that begin with the indicated prefix.</p>
      */
     inline ListObjectsResult& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Keys that begin with the indicated prefix.</p>
      */
     inline ListObjectsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
     /**
-     * <p/>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
 
     /**
-     * <p/>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
     /**
-     * <p/>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline ListObjectsResult& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline ListObjectsResult& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline ListObjectsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The maximum number of keys returned in the response body.</p>
      */
     inline int GetMaxKeys() const{ return m_maxKeys; }
 
     /**
-     * <p/>
+     * <p>The maximum number of keys returned in the response body.</p>
      */
     inline void SetMaxKeys(int value) { m_maxKeys = value; }
 
     /**
-     * <p/>
+     * <p>The maximum number of keys returned in the response body.</p>
      */
     inline ListObjectsResult& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>All of the keys rolled up in a common prefix count as a single return when
+     * calculating the number of returns. </p> <p>A response can contain CommonPrefixes
+     * only if you specify a delimiter.</p> <p>CommonPrefixes contains all (if there
+     * are any) keys between Prefix and the next occurrence of the string specified by
+     * the delimiter.</p> <p> CommonPrefixes lists keys that act like subdirectories in
+     * the directory specified by Prefix.</p> <p>For example, if the prefix is notes/
+     * and the delimiter is a slash (/) as in notes/summer/july, the common prefix is
+     * notes/summer/. All of the keys that roll up into a common prefix count as a
+     * single return when calculating the number of returns.</p>
      */
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
 
     /**
-     * <p/>
+     * <p>All of the keys rolled up in a common prefix count as a single return when
+     * calculating the number of returns. </p> <p>A response can contain CommonPrefixes
+     * only if you specify a delimiter.</p> <p>CommonPrefixes contains all (if there
+     * are any) keys between Prefix and the next occurrence of the string specified by
+     * the delimiter.</p> <p> CommonPrefixes lists keys that act like subdirectories in
+     * the directory specified by Prefix.</p> <p>For example, if the prefix is notes/
+     * and the delimiter is a slash (/) as in notes/summer/july, the common prefix is
+     * notes/summer/. All of the keys that roll up into a common prefix count as a
+     * single return when calculating the number of returns.</p>
      */
     inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
 
     /**
-     * <p/>
+     * <p>All of the keys rolled up in a common prefix count as a single return when
+     * calculating the number of returns. </p> <p>A response can contain CommonPrefixes
+     * only if you specify a delimiter.</p> <p>CommonPrefixes contains all (if there
+     * are any) keys between Prefix and the next occurrence of the string specified by
+     * the delimiter.</p> <p> CommonPrefixes lists keys that act like subdirectories in
+     * the directory specified by Prefix.</p> <p>For example, if the prefix is notes/
+     * and the delimiter is a slash (/) as in notes/summer/july, the common prefix is
+     * notes/summer/. All of the keys that roll up into a common prefix count as a
+     * single return when calculating the number of returns.</p>
      */
     inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
 
     /**
-     * <p/>
+     * <p>All of the keys rolled up in a common prefix count as a single return when
+     * calculating the number of returns. </p> <p>A response can contain CommonPrefixes
+     * only if you specify a delimiter.</p> <p>CommonPrefixes contains all (if there
+     * are any) keys between Prefix and the next occurrence of the string specified by
+     * the delimiter.</p> <p> CommonPrefixes lists keys that act like subdirectories in
+     * the directory specified by Prefix.</p> <p>For example, if the prefix is notes/
+     * and the delimiter is a slash (/) as in notes/summer/july, the common prefix is
+     * notes/summer/. All of the keys that roll up into a common prefix count as a
+     * single return when calculating the number of returns.</p>
      */
     inline ListObjectsResult& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
 
     /**
-     * <p/>
+     * <p>All of the keys rolled up in a common prefix count as a single return when
+     * calculating the number of returns. </p> <p>A response can contain CommonPrefixes
+     * only if you specify a delimiter.</p> <p>CommonPrefixes contains all (if there
+     * are any) keys between Prefix and the next occurrence of the string specified by
+     * the delimiter.</p> <p> CommonPrefixes lists keys that act like subdirectories in
+     * the directory specified by Prefix.</p> <p>For example, if the prefix is notes/
+     * and the delimiter is a slash (/) as in notes/summer/july, the common prefix is
+     * notes/summer/. All of the keys that roll up into a common prefix count as a
+     * single return when calculating the number of returns.</p>
      */
     inline ListObjectsResult& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>All of the keys rolled up in a common prefix count as a single return when
+     * calculating the number of returns. </p> <p>A response can contain CommonPrefixes
+     * only if you specify a delimiter.</p> <p>CommonPrefixes contains all (if there
+     * are any) keys between Prefix and the next occurrence of the string specified by
+     * the delimiter.</p> <p> CommonPrefixes lists keys that act like subdirectories in
+     * the directory specified by Prefix.</p> <p>For example, if the prefix is notes/
+     * and the delimiter is a slash (/) as in notes/summer/july, the common prefix is
+     * notes/summer/. All of the keys that roll up into a common prefix count as a
+     * single return when calculating the number of returns.</p>
      */
     inline ListObjectsResult& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>All of the keys rolled up in a common prefix count as a single return when
+     * calculating the number of returns. </p> <p>A response can contain CommonPrefixes
+     * only if you specify a delimiter.</p> <p>CommonPrefixes contains all (if there
+     * are any) keys between Prefix and the next occurrence of the string specified by
+     * the delimiter.</p> <p> CommonPrefixes lists keys that act like subdirectories in
+     * the directory specified by Prefix.</p> <p>For example, if the prefix is notes/
+     * and the delimiter is a slash (/) as in notes/summer/july, the common prefix is
+     * notes/summer/. All of the keys that roll up into a common prefix count as a
+     * single return when calculating the number of returns.</p>
      */
     inline ListObjectsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
 

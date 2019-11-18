@@ -254,25 +254,25 @@ namespace Model
 
     /**
      * <p>Indicates whether this operation should bypass Governance-mode
-     * restrictions.j</p>
+     * restrictions.</p>
      */
     inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
 
     /**
      * <p>Indicates whether this operation should bypass Governance-mode
-     * restrictions.j</p>
+     * restrictions.</p>
      */
     inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
 
     /**
      * <p>Indicates whether this operation should bypass Governance-mode
-     * restrictions.j</p>
+     * restrictions.</p>
      */
     inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
 
     /**
      * <p>Indicates whether this operation should bypass Governance-mode
-     * restrictions.j</p>
+     * restrictions.</p>
      */
     inline PutObjectRetentionRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
 

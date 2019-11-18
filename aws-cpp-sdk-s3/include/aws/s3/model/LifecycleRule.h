@@ -41,7 +41,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LifecycleRule">AWS
    * API Reference</a></p>
    */
@@ -56,32 +57,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Specifies the expiration for the lifecycle of the object in the form of date,
+     * days and, whether the object has a delete marker.</p>
      */
     inline const LifecycleExpiration& GetExpiration() const{ return m_expiration; }
 
     /**
-     * <p/>
+     * <p>Specifies the expiration for the lifecycle of the object in the form of date,
+     * days and, whether the object has a delete marker.</p>
      */
     inline bool ExpirationHasBeenSet() const { return m_expirationHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Specifies the expiration for the lifecycle of the object in the form of date,
+     * days and, whether the object has a delete marker.</p>
      */
     inline void SetExpiration(const LifecycleExpiration& value) { m_expirationHasBeenSet = true; m_expiration = value; }
 
     /**
-     * <p/>
+     * <p>Specifies the expiration for the lifecycle of the object in the form of date,
+     * days and, whether the object has a delete marker.</p>
      */
     inline void SetExpiration(LifecycleExpiration&& value) { m_expirationHasBeenSet = true; m_expiration = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Specifies the expiration for the lifecycle of the object in the form of date,
+     * days and, whether the object has a delete marker.</p>
      */
     inline LifecycleRule& WithExpiration(const LifecycleExpiration& value) { SetExpiration(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies the expiration for the lifecycle of the object in the form of date,
+     * days and, whether the object has a delete marker.</p>
      */
     inline LifecycleRule& WithExpiration(LifecycleExpiration&& value) { SetExpiration(std::move(value)); return *this;}
 
@@ -135,34 +142,22 @@ namespace Model
     inline LifecycleRule& WithID(const char* value) { SetID(value); return *this;}
 
 
-    /**
-     * <p/>
-     */
+    
     inline const LifecycleRuleFilter& GetFilter() const{ return m_filter; }
 
-    /**
-     * <p/>
-     */
+    
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetFilter(const LifecycleRuleFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetFilter(LifecycleRuleFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
-    /**
-     * <p/>
-     */
+    
     inline LifecycleRule& WithFilter(const LifecycleRuleFilter& value) { SetFilter(value); return *this;}
 
-    /**
-     * <p/>
-     */
+    
     inline LifecycleRule& WithFilter(LifecycleRuleFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 
@@ -204,146 +199,162 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Specifies when an Amazon S3 object transitions to a specified storage
+     * class.</p>
      */
     inline const Aws::Vector<Transition>& GetTransitions() const{ return m_transitions; }
 
     /**
-     * <p/>
+     * <p>Specifies when an Amazon S3 object transitions to a specified storage
+     * class.</p>
      */
     inline bool TransitionsHasBeenSet() const { return m_transitionsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Specifies when an Amazon S3 object transitions to a specified storage
+     * class.</p>
      */
     inline void SetTransitions(const Aws::Vector<Transition>& value) { m_transitionsHasBeenSet = true; m_transitions = value; }
 
     /**
-     * <p/>
+     * <p>Specifies when an Amazon S3 object transitions to a specified storage
+     * class.</p>
      */
     inline void SetTransitions(Aws::Vector<Transition>&& value) { m_transitionsHasBeenSet = true; m_transitions = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Specifies when an Amazon S3 object transitions to a specified storage
+     * class.</p>
      */
     inline LifecycleRule& WithTransitions(const Aws::Vector<Transition>& value) { SetTransitions(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies when an Amazon S3 object transitions to a specified storage
+     * class.</p>
      */
     inline LifecycleRule& WithTransitions(Aws::Vector<Transition>&& value) { SetTransitions(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies when an Amazon S3 object transitions to a specified storage
+     * class.</p>
      */
     inline LifecycleRule& AddTransitions(const Transition& value) { m_transitionsHasBeenSet = true; m_transitions.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Specifies when an Amazon S3 object transitions to a specified storage
+     * class.</p>
      */
     inline LifecycleRule& AddTransitions(Transition&& value) { m_transitionsHasBeenSet = true; m_transitions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p/>
+     * <p> Specifies the transition rule for the lifecycle rule that describes when
+     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * versioning-enabled (or versioning is suspended), you can set this action to
+     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * storage class at a set period in the object's lifetime. </p>
      */
     inline const Aws::Vector<NoncurrentVersionTransition>& GetNoncurrentVersionTransitions() const{ return m_noncurrentVersionTransitions; }
 
     /**
-     * <p/>
+     * <p> Specifies the transition rule for the lifecycle rule that describes when
+     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * versioning-enabled (or versioning is suspended), you can set this action to
+     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * storage class at a set period in the object's lifetime. </p>
      */
     inline bool NoncurrentVersionTransitionsHasBeenSet() const { return m_noncurrentVersionTransitionsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p> Specifies the transition rule for the lifecycle rule that describes when
+     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * versioning-enabled (or versioning is suspended), you can set this action to
+     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * storage class at a set period in the object's lifetime. </p>
      */
     inline void SetNoncurrentVersionTransitions(const Aws::Vector<NoncurrentVersionTransition>& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions = value; }
 
     /**
-     * <p/>
+     * <p> Specifies the transition rule for the lifecycle rule that describes when
+     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * versioning-enabled (or versioning is suspended), you can set this action to
+     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * storage class at a set period in the object's lifetime. </p>
      */
     inline void SetNoncurrentVersionTransitions(Aws::Vector<NoncurrentVersionTransition>&& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions = std::move(value); }
 
     /**
-     * <p/>
+     * <p> Specifies the transition rule for the lifecycle rule that describes when
+     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * versioning-enabled (or versioning is suspended), you can set this action to
+     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * storage class at a set period in the object's lifetime. </p>
      */
     inline LifecycleRule& WithNoncurrentVersionTransitions(const Aws::Vector<NoncurrentVersionTransition>& value) { SetNoncurrentVersionTransitions(value); return *this;}
 
     /**
-     * <p/>
+     * <p> Specifies the transition rule for the lifecycle rule that describes when
+     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * versioning-enabled (or versioning is suspended), you can set this action to
+     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * storage class at a set period in the object's lifetime. </p>
      */
     inline LifecycleRule& WithNoncurrentVersionTransitions(Aws::Vector<NoncurrentVersionTransition>&& value) { SetNoncurrentVersionTransitions(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p> Specifies the transition rule for the lifecycle rule that describes when
+     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * versioning-enabled (or versioning is suspended), you can set this action to
+     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * storage class at a set period in the object's lifetime. </p>
      */
     inline LifecycleRule& AddNoncurrentVersionTransitions(const NoncurrentVersionTransition& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p> Specifies the transition rule for the lifecycle rule that describes when
+     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * versioning-enabled (or versioning is suspended), you can set this action to
+     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * storage class at a set period in the object's lifetime. </p>
      */
     inline LifecycleRule& AddNoncurrentVersionTransitions(NoncurrentVersionTransition&& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions.push_back(std::move(value)); return *this; }
 
 
-    /**
-     * <p/>
-     */
+    
     inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const{ return m_noncurrentVersionExpiration; }
 
-    /**
-     * <p/>
-     */
+    
     inline bool NoncurrentVersionExpirationHasBeenSet() const { return m_noncurrentVersionExpirationHasBeenSet; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = value; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = std::move(value); }
 
-    /**
-     * <p/>
-     */
+    
     inline LifecycleRule& WithNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { SetNoncurrentVersionExpiration(value); return *this;}
 
-    /**
-     * <p/>
-     */
+    
     inline LifecycleRule& WithNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { SetNoncurrentVersionExpiration(std::move(value)); return *this;}
 
 
-    /**
-     * <p/>
-     */
+    
     inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const{ return m_abortIncompleteMultipartUpload; }
 
-    /**
-     * <p/>
-     */
+    
     inline bool AbortIncompleteMultipartUploadHasBeenSet() const { return m_abortIncompleteMultipartUploadHasBeenSet; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = value; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = std::move(value); }
 
-    /**
-     * <p/>
-     */
+    
     inline LifecycleRule& WithAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { SetAbortIncompleteMultipartUpload(value); return *this;}
 
-    /**
-     * <p/>
-     */
+    
     inline LifecycleRule& WithAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { SetAbortIncompleteMultipartUpload(std::move(value)); return *this;}
 
   private:

@@ -55,32 +55,44 @@ namespace Model
 
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a> </p>
      */
     inline const ObjectCannedACL& GetACL() const{ return m_aCL; }
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a> </p>
      */
     inline bool ACLHasBeenSet() const { return m_aCLHasBeenSet; }
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a> </p>
      */
     inline void SetACL(const ObjectCannedACL& value) { m_aCLHasBeenSet = true; m_aCL = value; }
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a> </p>
      */
     inline void SetACL(ObjectCannedACL&& value) { m_aCLHasBeenSet = true; m_aCL = std::move(value); }
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a> </p>
      */
     inline PutObjectAclRequest& WithACL(const ObjectCannedACL& value) { SetACL(value); return *this;}
 
     /**
-     * <p>The canned ACL to apply to the object.</p>
+     * <p>The canned ACL to apply to the object. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a> </p>
      */
     inline PutObjectAclRequest& WithACL(ObjectCannedACL&& value) { SetACL(std::move(value)); return *this;}
 
@@ -123,83 +135,107 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which the ACL is being added.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which the ACL is being added.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which the ACL is being added.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which the ACL is being added.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which the ACL is being added.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which the ACL is being added.</p>
      */
     inline PutObjectAclRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which the ACL is being added.</p>
      */
     inline PutObjectAclRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the bucket to which the ACL is being added.</p>
      */
     inline PutObjectAclRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
      */
     inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
      */
     inline PutObjectAclRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
      */
     inline PutObjectAclRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The base64-encoded 128-bit MD5 digest of the data. This header must be used
+     * as a message integrity check to verify that the request body was not corrupted
+     * in transit. For more information, go to <a
+     * href="http://www.ietf.org/rfc/rfc1864.txt">RFC 1864.&gt;</a> </p>
      */
     inline PutObjectAclRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
@@ -418,42 +454,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Key for which the PUT operation was initiated.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p/>
+     * <p>Key for which the PUT operation was initiated.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Key for which the PUT operation was initiated.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p/>
+     * <p>Key for which the PUT operation was initiated.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Key for which the PUT operation was initiated.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p/>
+     * <p>Key for which the PUT operation was initiated.</p>
      */
     inline PutObjectAclRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Key for which the PUT operation was initiated.</p>
      */
     inline PutObjectAclRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Key for which the PUT operation was initiated.</p>
      */
     inline PutObjectAclRequest& WithKey(const char* value) { SetKey(value); return *this;}
 

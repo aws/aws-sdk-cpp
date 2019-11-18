@@ -100,6 +100,87 @@ namespace Model
 
 
     /**
+     * <p>A JSON object that specifies the default values to use for message variables
+     * in the message template. This object is a set of key-value pairs. Each key
+     * defines a message variable in the template. The corresponding value defines the
+     * default value for that variable. When you create a message that's based on the
+     * template, you can override these defaults with message-specific and
+     * address-specific variables and values.</p>
+     */
+    inline const Aws::String& GetDefaultSubstitutions() const{ return m_defaultSubstitutions; }
+
+    /**
+     * <p>A JSON object that specifies the default values to use for message variables
+     * in the message template. This object is a set of key-value pairs. Each key
+     * defines a message variable in the template. The corresponding value defines the
+     * default value for that variable. When you create a message that's based on the
+     * template, you can override these defaults with message-specific and
+     * address-specific variables and values.</p>
+     */
+    inline bool DefaultSubstitutionsHasBeenSet() const { return m_defaultSubstitutionsHasBeenSet; }
+
+    /**
+     * <p>A JSON object that specifies the default values to use for message variables
+     * in the message template. This object is a set of key-value pairs. Each key
+     * defines a message variable in the template. The corresponding value defines the
+     * default value for that variable. When you create a message that's based on the
+     * template, you can override these defaults with message-specific and
+     * address-specific variables and values.</p>
+     */
+    inline void SetDefaultSubstitutions(const Aws::String& value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions = value; }
+
+    /**
+     * <p>A JSON object that specifies the default values to use for message variables
+     * in the message template. This object is a set of key-value pairs. Each key
+     * defines a message variable in the template. The corresponding value defines the
+     * default value for that variable. When you create a message that's based on the
+     * template, you can override these defaults with message-specific and
+     * address-specific variables and values.</p>
+     */
+    inline void SetDefaultSubstitutions(Aws::String&& value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions = std::move(value); }
+
+    /**
+     * <p>A JSON object that specifies the default values to use for message variables
+     * in the message template. This object is a set of key-value pairs. Each key
+     * defines a message variable in the template. The corresponding value defines the
+     * default value for that variable. When you create a message that's based on the
+     * template, you can override these defaults with message-specific and
+     * address-specific variables and values.</p>
+     */
+    inline void SetDefaultSubstitutions(const char* value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions.assign(value); }
+
+    /**
+     * <p>A JSON object that specifies the default values to use for message variables
+     * in the message template. This object is a set of key-value pairs. Each key
+     * defines a message variable in the template. The corresponding value defines the
+     * default value for that variable. When you create a message that's based on the
+     * template, you can override these defaults with message-specific and
+     * address-specific variables and values.</p>
+     */
+    inline SMSTemplateRequest& WithDefaultSubstitutions(const Aws::String& value) { SetDefaultSubstitutions(value); return *this;}
+
+    /**
+     * <p>A JSON object that specifies the default values to use for message variables
+     * in the message template. This object is a set of key-value pairs. Each key
+     * defines a message variable in the template. The corresponding value defines the
+     * default value for that variable. When you create a message that's based on the
+     * template, you can override these defaults with message-specific and
+     * address-specific variables and values.</p>
+     */
+    inline SMSTemplateRequest& WithDefaultSubstitutions(Aws::String&& value) { SetDefaultSubstitutions(std::move(value)); return *this;}
+
+    /**
+     * <p>A JSON object that specifies the default values to use for message variables
+     * in the message template. This object is a set of key-value pairs. Each key
+     * defines a message variable in the template. The corresponding value defines the
+     * default value for that variable. When you create a message that's based on the
+     * template, you can override these defaults with message-specific and
+     * address-specific variables and values.</p>
+     */
+    inline SMSTemplateRequest& WithDefaultSubstitutions(const char* value) { SetDefaultSubstitutions(value); return *this;}
+
+
+    /**
      * <p>A string-to-string map of key-value pairs that defines the tags to associate
      * with the message template. Each tag consists of a required tag key and an
      * associated tag value.</p>
@@ -190,13 +271,60 @@ namespace Model
      */
     inline SMSTemplateRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A custom description of the message template.</p>
+     */
+    inline const Aws::String& GetTemplateDescription() const{ return m_templateDescription; }
+
+    /**
+     * <p>A custom description of the message template.</p>
+     */
+    inline bool TemplateDescriptionHasBeenSet() const { return m_templateDescriptionHasBeenSet; }
+
+    /**
+     * <p>A custom description of the message template.</p>
+     */
+    inline void SetTemplateDescription(const Aws::String& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = value; }
+
+    /**
+     * <p>A custom description of the message template.</p>
+     */
+    inline void SetTemplateDescription(Aws::String&& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = std::move(value); }
+
+    /**
+     * <p>A custom description of the message template.</p>
+     */
+    inline void SetTemplateDescription(const char* value) { m_templateDescriptionHasBeenSet = true; m_templateDescription.assign(value); }
+
+    /**
+     * <p>A custom description of the message template.</p>
+     */
+    inline SMSTemplateRequest& WithTemplateDescription(const Aws::String& value) { SetTemplateDescription(value); return *this;}
+
+    /**
+     * <p>A custom description of the message template.</p>
+     */
+    inline SMSTemplateRequest& WithTemplateDescription(Aws::String&& value) { SetTemplateDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A custom description of the message template.</p>
+     */
+    inline SMSTemplateRequest& WithTemplateDescription(const char* value) { SetTemplateDescription(value); return *this;}
+
   private:
 
     Aws::String m_body;
     bool m_bodyHasBeenSet;
 
+    Aws::String m_defaultSubstitutions;
+    bool m_defaultSubstitutionsHasBeenSet;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_templateDescription;
+    bool m_templateDescriptionHasBeenSet;
   };
 
 } // namespace Model

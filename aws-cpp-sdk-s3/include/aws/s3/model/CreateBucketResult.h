@@ -43,37 +43,51 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Specifies the region where the bucket will be created. If you are creating a
+     * bucket on the US East (N. Virginia) region (us-east-1), you do not need to
+     * specify the location.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
 
     /**
-     * <p/>
+     * <p>Specifies the region where the bucket will be created. If you are creating a
+     * bucket on the US East (N. Virginia) region (us-east-1), you do not need to
+     * specify the location.</p>
      */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
 
     /**
-     * <p/>
+     * <p>Specifies the region where the bucket will be created. If you are creating a
+     * bucket on the US East (N. Virginia) region (us-east-1), you do not need to
+     * specify the location.</p>
      */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Specifies the region where the bucket will be created. If you are creating a
+     * bucket on the US East (N. Virginia) region (us-east-1), you do not need to
+     * specify the location.</p>
      */
     inline void SetLocation(const char* value) { m_location.assign(value); }
 
     /**
-     * <p/>
+     * <p>Specifies the region where the bucket will be created. If you are creating a
+     * bucket on the US East (N. Virginia) region (us-east-1), you do not need to
+     * specify the location.</p>
      */
     inline CreateBucketResult& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies the region where the bucket will be created. If you are creating a
+     * bucket on the US East (N. Virginia) region (us-east-1), you do not need to
+     * specify the location.</p>
      */
     inline CreateBucketResult& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies the region where the bucket will be created. If you are creating a
+     * bucket on the US East (N. Virginia) region (us-east-1), you do not need to
+     * specify the location.</p>
      */
     inline CreateBucketResult& WithLocation(const char* value) { SetLocation(value); return *this;}
 

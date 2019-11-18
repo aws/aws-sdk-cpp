@@ -237,147 +237,135 @@ namespace Model
 
 
     /**
-     * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * <p>The raw, JSON-formatted string to use as the payload for the message. If
+     * specified, this value overrides all other values for the message.</p>
      */
     inline const Aws::String& GetRawContent() const{ return m_rawContent; }
 
     /**
-     * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * <p>The raw, JSON-formatted string to use as the payload for the message. If
+     * specified, this value overrides all other values for the message.</p>
      */
     inline bool RawContentHasBeenSet() const { return m_rawContentHasBeenSet; }
 
     /**
-     * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * <p>The raw, JSON-formatted string to use as the payload for the message. If
+     * specified, this value overrides all other values for the message.</p>
      */
     inline void SetRawContent(const Aws::String& value) { m_rawContentHasBeenSet = true; m_rawContent = value; }
 
     /**
-     * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * <p>The raw, JSON-formatted string to use as the payload for the message. If
+     * specified, this value overrides all other values for the message.</p>
      */
     inline void SetRawContent(Aws::String&& value) { m_rawContentHasBeenSet = true; m_rawContent = std::move(value); }
 
     /**
-     * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * <p>The raw, JSON-formatted string to use as the payload for the message. If
+     * specified, this value overrides all other values for the message.</p>
      */
     inline void SetRawContent(const char* value) { m_rawContentHasBeenSet = true; m_rawContent.assign(value); }
 
     /**
-     * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * <p>The raw, JSON-formatted string to use as the payload for the message. If
+     * specified, this value overrides all other values for the message.</p>
      */
     inline AddressConfiguration& WithRawContent(const Aws::String& value) { SetRawContent(value); return *this;}
 
     /**
-     * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * <p>The raw, JSON-formatted string to use as the payload for the message. If
+     * specified, this value overrides all other values for the message.</p>
      */
     inline AddressConfiguration& WithRawContent(Aws::String&& value) { SetRawContent(std::move(value)); return *this;}
 
     /**
-     * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * <p>The raw, JSON-formatted string to use as the payload for the message. If
+     * specified, this value overrides all other values for the message.</p>
      */
     inline AddressConfiguration& WithRawContent(const char* value) { SetRawContent(value); return *this;}
 
 
     /**
-     * <p>An object that maps variable values for the message. Amazon Pinpoint merges
-     * these values with the variable values specified by properties of the
-     * DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.</p>
+     * <p>A map of the message variables to merge with the variables specified by
+     * properties of the DefaultMessage object. The variables specified in this map
+     * take precedence over all other variables.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
 
     /**
-     * <p>An object that maps variable values for the message. Amazon Pinpoint merges
-     * these values with the variable values specified by properties of the
-     * DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.</p>
+     * <p>A map of the message variables to merge with the variables specified by
+     * properties of the DefaultMessage object. The variables specified in this map
+     * take precedence over all other variables.</p>
      */
     inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
 
     /**
-     * <p>An object that maps variable values for the message. Amazon Pinpoint merges
-     * these values with the variable values specified by properties of the
-     * DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.</p>
+     * <p>A map of the message variables to merge with the variables specified by
+     * properties of the DefaultMessage object. The variables specified in this map
+     * take precedence over all other variables.</p>
      */
     inline void SetSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_substitutionsHasBeenSet = true; m_substitutions = value; }
 
     /**
-     * <p>An object that maps variable values for the message. Amazon Pinpoint merges
-     * these values with the variable values specified by properties of the
-     * DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.</p>
+     * <p>A map of the message variables to merge with the variables specified by
+     * properties of the DefaultMessage object. The variables specified in this map
+     * take precedence over all other variables.</p>
      */
     inline void SetSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::move(value); }
 
     /**
-     * <p>An object that maps variable values for the message. Amazon Pinpoint merges
-     * these values with the variable values specified by properties of the
-     * DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.</p>
+     * <p>A map of the message variables to merge with the variables specified by
+     * properties of the DefaultMessage object. The variables specified in this map
+     * take precedence over all other variables.</p>
      */
     inline AddressConfiguration& WithSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetSubstitutions(value); return *this;}
 
     /**
-     * <p>An object that maps variable values for the message. Amazon Pinpoint merges
-     * these values with the variable values specified by properties of the
-     * DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.</p>
+     * <p>A map of the message variables to merge with the variables specified by
+     * properties of the DefaultMessage object. The variables specified in this map
+     * take precedence over all other variables.</p>
      */
     inline AddressConfiguration& WithSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetSubstitutions(std::move(value)); return *this;}
 
     /**
-     * <p>An object that maps variable values for the message. Amazon Pinpoint merges
-     * these values with the variable values specified by properties of the
-     * DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.</p>
+     * <p>A map of the message variables to merge with the variables specified by
+     * properties of the DefaultMessage object. The variables specified in this map
+     * take precedence over all other variables.</p>
      */
     inline AddressConfiguration& AddSubstitutions(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 
     /**
-     * <p>An object that maps variable values for the message. Amazon Pinpoint merges
-     * these values with the variable values specified by properties of the
-     * DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.</p>
+     * <p>A map of the message variables to merge with the variables specified by
+     * properties of the DefaultMessage object. The variables specified in this map
+     * take precedence over all other variables.</p>
      */
     inline AddressConfiguration& AddSubstitutions(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>An object that maps variable values for the message. Amazon Pinpoint merges
-     * these values with the variable values specified by properties of the
-     * DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.</p>
+     * <p>A map of the message variables to merge with the variables specified by
+     * properties of the DefaultMessage object. The variables specified in this map
+     * take precedence over all other variables.</p>
      */
     inline AddressConfiguration& AddSubstitutions(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>An object that maps variable values for the message. Amazon Pinpoint merges
-     * these values with the variable values specified by properties of the
-     * DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.</p>
+     * <p>A map of the message variables to merge with the variables specified by
+     * properties of the DefaultMessage object. The variables specified in this map
+     * take precedence over all other variables.</p>
      */
     inline AddressConfiguration& AddSubstitutions(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>An object that maps variable values for the message. Amazon Pinpoint merges
-     * these values with the variable values specified by properties of the
-     * DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.</p>
+     * <p>A map of the message variables to merge with the variables specified by
+     * properties of the DefaultMessage object. The variables specified in this map
+     * take precedence over all other variables.</p>
      */
     inline AddressConfiguration& AddSubstitutions(const char* key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>An object that maps variable values for the message. Amazon Pinpoint merges
-     * these values with the variable values specified by properties of the
-     * DefaultMessage object. The substitutions in this map take precedence over all
-     * other substitutions.</p>
+     * <p>A map of the message variables to merge with the variables specified by
+     * properties of the DefaultMessage object. The variables specified in this map
+     * take precedence over all other variables.</p>
      */
     inline AddressConfiguration& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
 

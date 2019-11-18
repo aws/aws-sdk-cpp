@@ -784,14 +784,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides all other content for the message.</p> <note><p>If
-     * you specify the raw content of an APNs push notification, the message payload
-     * has to include the content-available key. The value of the content-available key
-     * has to be an integer, and can only be 0 or 1. If you're sending a standard
-     * notification, set the value of content-available to 0. If you're sending a
-     * silent (background) notification, set the value of content-available to 1.
-     * Additionally, silent notification payloads can't include the alert, badge, or
-     * sound keys. For more information, see <a
+     * message. If specified, this value overrides all other content for the
+     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * notification, the message payload has to include the content-available key. The
+     * value of the content-available key has to be an integer, and can only be 0 or 1.
+     * If you're sending a standard notification, set the value of content-available to
+     * 0. If you're sending a silent (background) notification, set the value of
+     * content-available to 1. Additionally, silent notification payloads can't include
+     * the alert, badge, or sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -801,14 +801,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides all other content for the message.</p> <note><p>If
-     * you specify the raw content of an APNs push notification, the message payload
-     * has to include the content-available key. The value of the content-available key
-     * has to be an integer, and can only be 0 or 1. If you're sending a standard
-     * notification, set the value of content-available to 0. If you're sending a
-     * silent (background) notification, set the value of content-available to 1.
-     * Additionally, silent notification payloads can't include the alert, badge, or
-     * sound keys. For more information, see <a
+     * message. If specified, this value overrides all other content for the
+     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * notification, the message payload has to include the content-available key. The
+     * value of the content-available key has to be an integer, and can only be 0 or 1.
+     * If you're sending a standard notification, set the value of content-available to
+     * 0. If you're sending a silent (background) notification, set the value of
+     * content-available to 1. Additionally, silent notification payloads can't include
+     * the alert, badge, or sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -818,14 +818,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides all other content for the message.</p> <note><p>If
-     * you specify the raw content of an APNs push notification, the message payload
-     * has to include the content-available key. The value of the content-available key
-     * has to be an integer, and can only be 0 or 1. If you're sending a standard
-     * notification, set the value of content-available to 0. If you're sending a
-     * silent (background) notification, set the value of content-available to 1.
-     * Additionally, silent notification payloads can't include the alert, badge, or
-     * sound keys. For more information, see <a
+     * message. If specified, this value overrides all other content for the
+     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * notification, the message payload has to include the content-available key. The
+     * value of the content-available key has to be an integer, and can only be 0 or 1.
+     * If you're sending a standard notification, set the value of content-available to
+     * 0. If you're sending a silent (background) notification, set the value of
+     * content-available to 1. Additionally, silent notification payloads can't include
+     * the alert, badge, or sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -835,14 +835,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides all other content for the message.</p> <note><p>If
-     * you specify the raw content of an APNs push notification, the message payload
-     * has to include the content-available key. The value of the content-available key
-     * has to be an integer, and can only be 0 or 1. If you're sending a standard
-     * notification, set the value of content-available to 0. If you're sending a
-     * silent (background) notification, set the value of content-available to 1.
-     * Additionally, silent notification payloads can't include the alert, badge, or
-     * sound keys. For more information, see <a
+     * message. If specified, this value overrides all other content for the
+     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * notification, the message payload has to include the content-available key. The
+     * value of the content-available key has to be an integer, and can only be 0 or 1.
+     * If you're sending a standard notification, set the value of content-available to
+     * 0. If you're sending a silent (background) notification, set the value of
+     * content-available to 1. Additionally, silent notification payloads can't include
+     * the alert, badge, or sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -852,14 +852,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides all other content for the message.</p> <note><p>If
-     * you specify the raw content of an APNs push notification, the message payload
-     * has to include the content-available key. The value of the content-available key
-     * has to be an integer, and can only be 0 or 1. If you're sending a standard
-     * notification, set the value of content-available to 0. If you're sending a
-     * silent (background) notification, set the value of content-available to 1.
-     * Additionally, silent notification payloads can't include the alert, badge, or
-     * sound keys. For more information, see <a
+     * message. If specified, this value overrides all other content for the
+     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * notification, the message payload has to include the content-available key. The
+     * value of the content-available key has to be an integer, and can only be 0 or 1.
+     * If you're sending a standard notification, set the value of content-available to
+     * 0. If you're sending a silent (background) notification, set the value of
+     * content-available to 1. Additionally, silent notification payloads can't include
+     * the alert, badge, or sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -869,14 +869,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides all other content for the message.</p> <note><p>If
-     * you specify the raw content of an APNs push notification, the message payload
-     * has to include the content-available key. The value of the content-available key
-     * has to be an integer, and can only be 0 or 1. If you're sending a standard
-     * notification, set the value of content-available to 0. If you're sending a
-     * silent (background) notification, set the value of content-available to 1.
-     * Additionally, silent notification payloads can't include the alert, badge, or
-     * sound keys. For more information, see <a
+     * message. If specified, this value overrides all other content for the
+     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * notification, the message payload has to include the content-available key. The
+     * value of the content-available key has to be an integer, and can only be 0 or 1.
+     * If you're sending a standard notification, set the value of content-available to
+     * 0. If you're sending a silent (background) notification, set the value of
+     * content-available to 1. Additionally, silent notification payloads can't include
+     * the alert, badge, or sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -886,14 +886,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides all other content for the message.</p> <note><p>If
-     * you specify the raw content of an APNs push notification, the message payload
-     * has to include the content-available key. The value of the content-available key
-     * has to be an integer, and can only be 0 or 1. If you're sending a standard
-     * notification, set the value of content-available to 0. If you're sending a
-     * silent (background) notification, set the value of content-available to 1.
-     * Additionally, silent notification payloads can't include the alert, badge, or
-     * sound keys. For more information, see <a
+     * message. If specified, this value overrides all other content for the
+     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * notification, the message payload has to include the content-available key. The
+     * value of the content-available key has to be an integer, and can only be 0 or 1.
+     * If you're sending a standard notification, set the value of content-available to
+     * 0. If you're sending a silent (background) notification, set the value of
+     * content-available to 1. Additionally, silent notification payloads can't include
+     * the alert, badge, or sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
@@ -903,14 +903,14 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides all other content for the message.</p> <note><p>If
-     * you specify the raw content of an APNs push notification, the message payload
-     * has to include the content-available key. The value of the content-available key
-     * has to be an integer, and can only be 0 or 1. If you're sending a standard
-     * notification, set the value of content-available to 0. If you're sending a
-     * silent (background) notification, set the value of content-available to 1.
-     * Additionally, silent notification payloads can't include the alert, badge, or
-     * sound keys. For more information, see <a
+     * message. If specified, this value overrides all other content for the
+     * message.</p> <note><p>If you specify the raw content of an APNs push
+     * notification, the message payload has to include the content-available key. The
+     * value of the content-available key has to be an integer, and can only be 0 or 1.
+     * If you're sending a standard notification, set the value of content-available to
+     * 0. If you're sending a silent (background) notification, set the value of
+     * content-available to 1. Additionally, silent notification payloads can't include
+     * the alert, badge, or sound keys. For more information, see <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/generating_a_remote_notification">Generating
      * a Remote Notification</a> and <a
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing

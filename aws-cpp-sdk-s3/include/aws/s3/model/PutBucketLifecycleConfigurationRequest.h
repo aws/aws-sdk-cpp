@@ -53,73 +53,73 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The name of the bucket for which to set the configuration.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket for which to set the configuration.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket for which to set the configuration.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket for which to set the configuration.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name of the bucket for which to set the configuration.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of the bucket for which to set the configuration.</p>
      */
     inline PutBucketLifecycleConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the bucket for which to set the configuration.</p>
      */
     inline PutBucketLifecycleConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the bucket for which to set the configuration.</p>
      */
     inline PutBucketLifecycleConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
      */
     inline const BucketLifecycleConfiguration& GetLifecycleConfiguration() const{ return m_lifecycleConfiguration; }
 
     /**
-     * <p/>
+     * <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
      */
     inline bool LifecycleConfigurationHasBeenSet() const { return m_lifecycleConfigurationHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
      */
     inline void SetLifecycleConfiguration(const BucketLifecycleConfiguration& value) { m_lifecycleConfigurationHasBeenSet = true; m_lifecycleConfiguration = value; }
 
     /**
-     * <p/>
+     * <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
      */
     inline void SetLifecycleConfiguration(BucketLifecycleConfiguration&& value) { m_lifecycleConfigurationHasBeenSet = true; m_lifecycleConfiguration = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
      */
     inline PutBucketLifecycleConfigurationRequest& WithLifecycleConfiguration(const BucketLifecycleConfiguration& value) { SetLifecycleConfiguration(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for lifecycle rules. You can add as many as 1,000 rules.</p>
      */
     inline PutBucketLifecycleConfigurationRequest& WithLifecycleConfiguration(BucketLifecycleConfiguration&& value) { SetLifecycleConfiguration(std::move(value)); return *this;}
 

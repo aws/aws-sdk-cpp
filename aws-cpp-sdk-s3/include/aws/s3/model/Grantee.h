@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Grantee">AWS API
+   * <p>Container for the person being granted permissions.</p><p><h3>See Also:</h3> 
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Grantee">AWS API
    * Reference</a></p>
    */
   class AWS_S3_API Grantee

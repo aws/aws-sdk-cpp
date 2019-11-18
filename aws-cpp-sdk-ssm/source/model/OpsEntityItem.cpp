@@ -29,11 +29,13 @@ namespace Model
 {
 
 OpsEntityItem::OpsEntityItem() : 
+    m_captureTimeHasBeenSet(false),
     m_contentHasBeenSet(false)
 {
 }
 
 OpsEntityItem::OpsEntityItem(JsonView jsonValue) : 
+    m_captureTimeHasBeenSet(false),
     m_contentHasBeenSet(false)
 {
   *this = jsonValue;
@@ -41,6 +43,13 @@ OpsEntityItem::OpsEntityItem(JsonView jsonValue) :
 
 OpsEntityItem& OpsEntityItem::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("CaptureTime"))
+  {
+    m_captureTime = jsonValue.GetString("CaptureTime");
+
+    m_captureTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Content"))
   {
     Array<JsonView> contentJsonList = jsonValue.GetArray("Content");
@@ -63,6 +72,12 @@ OpsEntityItem& OpsEntityItem::operator =(JsonView jsonValue)
 JsonValue OpsEntityItem::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_captureTimeHasBeenSet)
+  {
+   payload.WithString("CaptureTime", m_captureTime);
+
+  }
 
   if(m_contentHasBeenSet)
   {

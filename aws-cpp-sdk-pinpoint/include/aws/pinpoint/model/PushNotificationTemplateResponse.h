@@ -297,6 +297,71 @@ namespace Model
 
 
     /**
+     * <p>The JSON object that specifies the default values that are used for message
+     * variables in the message template. This object is a set of key-value pairs. Each
+     * key defines a message variable in the template. The corresponding value defines
+     * the default value for that variable.</p>
+     */
+    inline const Aws::String& GetDefaultSubstitutions() const{ return m_defaultSubstitutions; }
+
+    /**
+     * <p>The JSON object that specifies the default values that are used for message
+     * variables in the message template. This object is a set of key-value pairs. Each
+     * key defines a message variable in the template. The corresponding value defines
+     * the default value for that variable.</p>
+     */
+    inline bool DefaultSubstitutionsHasBeenSet() const { return m_defaultSubstitutionsHasBeenSet; }
+
+    /**
+     * <p>The JSON object that specifies the default values that are used for message
+     * variables in the message template. This object is a set of key-value pairs. Each
+     * key defines a message variable in the template. The corresponding value defines
+     * the default value for that variable.</p>
+     */
+    inline void SetDefaultSubstitutions(const Aws::String& value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions = value; }
+
+    /**
+     * <p>The JSON object that specifies the default values that are used for message
+     * variables in the message template. This object is a set of key-value pairs. Each
+     * key defines a message variable in the template. The corresponding value defines
+     * the default value for that variable.</p>
+     */
+    inline void SetDefaultSubstitutions(Aws::String&& value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions = std::move(value); }
+
+    /**
+     * <p>The JSON object that specifies the default values that are used for message
+     * variables in the message template. This object is a set of key-value pairs. Each
+     * key defines a message variable in the template. The corresponding value defines
+     * the default value for that variable.</p>
+     */
+    inline void SetDefaultSubstitutions(const char* value) { m_defaultSubstitutionsHasBeenSet = true; m_defaultSubstitutions.assign(value); }
+
+    /**
+     * <p>The JSON object that specifies the default values that are used for message
+     * variables in the message template. This object is a set of key-value pairs. Each
+     * key defines a message variable in the template. The corresponding value defines
+     * the default value for that variable.</p>
+     */
+    inline PushNotificationTemplateResponse& WithDefaultSubstitutions(const Aws::String& value) { SetDefaultSubstitutions(value); return *this;}
+
+    /**
+     * <p>The JSON object that specifies the default values that are used for message
+     * variables in the message template. This object is a set of key-value pairs. Each
+     * key defines a message variable in the template. The corresponding value defines
+     * the default value for that variable.</p>
+     */
+    inline PushNotificationTemplateResponse& WithDefaultSubstitutions(Aws::String&& value) { SetDefaultSubstitutions(std::move(value)); return *this;}
+
+    /**
+     * <p>The JSON object that specifies the default values that are used for message
+     * variables in the message template. This object is a set of key-value pairs. Each
+     * key defines a message variable in the template. The corresponding value defines
+     * the default value for that variable.</p>
+     */
+    inline PushNotificationTemplateResponse& WithDefaultSubstitutions(const char* value) { SetDefaultSubstitutions(value); return *this;}
+
+
+    /**
      * <p>The message template that's used for the GCM channel, which is used to send
      * notifications through the Firebase Cloud Messaging (FCM), formerly Google Cloud
      * Messaging (GCM), service. This message template overrides the default template
@@ -479,6 +544,47 @@ namespace Model
 
 
     /**
+     * <p>The custom description of the message template.</p>
+     */
+    inline const Aws::String& GetTemplateDescription() const{ return m_templateDescription; }
+
+    /**
+     * <p>The custom description of the message template.</p>
+     */
+    inline bool TemplateDescriptionHasBeenSet() const { return m_templateDescriptionHasBeenSet; }
+
+    /**
+     * <p>The custom description of the message template.</p>
+     */
+    inline void SetTemplateDescription(const Aws::String& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = value; }
+
+    /**
+     * <p>The custom description of the message template.</p>
+     */
+    inline void SetTemplateDescription(Aws::String&& value) { m_templateDescriptionHasBeenSet = true; m_templateDescription = std::move(value); }
+
+    /**
+     * <p>The custom description of the message template.</p>
+     */
+    inline void SetTemplateDescription(const char* value) { m_templateDescriptionHasBeenSet = true; m_templateDescription.assign(value); }
+
+    /**
+     * <p>The custom description of the message template.</p>
+     */
+    inline PushNotificationTemplateResponse& WithTemplateDescription(const Aws::String& value) { SetTemplateDescription(value); return *this;}
+
+    /**
+     * <p>The custom description of the message template.</p>
+     */
+    inline PushNotificationTemplateResponse& WithTemplateDescription(Aws::String&& value) { SetTemplateDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom description of the message template.</p>
+     */
+    inline PushNotificationTemplateResponse& WithTemplateDescription(const char* value) { SetTemplateDescription(value); return *this;}
+
+
+    /**
      * <p>The name of the message template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
@@ -575,6 +681,9 @@ namespace Model
     DefaultPushNotificationTemplate m_default;
     bool m_defaultHasBeenSet;
 
+    Aws::String m_defaultSubstitutions;
+    bool m_defaultSubstitutionsHasBeenSet;
+
     AndroidPushNotificationTemplate m_gCM;
     bool m_gCMHasBeenSet;
 
@@ -583,6 +692,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_templateDescription;
+    bool m_templateDescriptionHasBeenSet;
 
     Aws::String m_templateName;
     bool m_templateNameHasBeenSet;

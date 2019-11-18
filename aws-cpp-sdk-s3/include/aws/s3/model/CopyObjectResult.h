@@ -89,37 +89,37 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Version of the copied object in the destination bucket.</p>
      */
     inline const Aws::String& GetCopySourceVersionId() const{ return m_copySourceVersionId; }
 
     /**
-     * <p/>
+     * <p>Version of the copied object in the destination bucket.</p>
      */
     inline void SetCopySourceVersionId(const Aws::String& value) { m_copySourceVersionId = value; }
 
     /**
-     * <p/>
+     * <p>Version of the copied object in the destination bucket.</p>
      */
     inline void SetCopySourceVersionId(Aws::String&& value) { m_copySourceVersionId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Version of the copied object in the destination bucket.</p>
      */
     inline void SetCopySourceVersionId(const char* value) { m_copySourceVersionId.assign(value); }
 
     /**
-     * <p/>
+     * <p>Version of the copied object in the destination bucket.</p>
      */
     inline CopyObjectResult& WithCopySourceVersionId(const Aws::String& value) { SetCopySourceVersionId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Version of the copied object in the destination bucket.</p>
      */
     inline CopyObjectResult& WithCopySourceVersionId(Aws::String&& value) { SetCopySourceVersionId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Version of the copied object in the destination bucket.</p>
      */
     inline CopyObjectResult& WithCopySourceVersionId(const char* value) { SetCopySourceVersionId(value); return *this;}
 
@@ -292,44 +292,44 @@ namespace Model
 
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline CopyObjectResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline CopyObjectResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline CopyObjectResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
@@ -401,27 +401,27 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Container for all response elements.</p>
      */
     inline const CopyObjectResultDetails& GetCopyObjectResultDetails() const{ return m_copyObjectResultDetails; }
 
     /**
-     * <p/>
+     * <p>Container for all response elements.</p>
      */
     inline void SetCopyObjectResultDetails(const CopyObjectResultDetails& value) { m_copyObjectResultDetails = value; }
 
     /**
-     * <p/>
+     * <p>Container for all response elements.</p>
      */
     inline void SetCopyObjectResultDetails(CopyObjectResultDetails&& value) { m_copyObjectResultDetails = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Container for all response elements.</p>
      */
     inline CopyObjectResult& WithCopyObjectResultDetails(const CopyObjectResultDetails& value) { SetCopyObjectResultDetails(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Container for all response elements.</p>
      */
     inline CopyObjectResult& WithCopyObjectResultDetails(CopyObjectResultDetails&& value) { SetCopyObjectResultDetails(std::move(value)); return *this;}
 

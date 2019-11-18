@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 CreateResourceDataSyncRequest::CreateResourceDataSyncRequest() : 
     m_syncNameHasBeenSet(false),
-    m_s3DestinationHasBeenSet(false)
+    m_s3DestinationHasBeenSet(false),
+    m_syncTypeHasBeenSet(false),
+    m_syncSourceHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,18 @@ Aws::String CreateResourceDataSyncRequest::SerializePayload() const
   if(m_s3DestinationHasBeenSet)
   {
    payload.WithObject("S3Destination", m_s3Destination.Jsonize());
+
+  }
+
+  if(m_syncTypeHasBeenSet)
+  {
+   payload.WithString("SyncType", m_syncType);
+
+  }
+
+  if(m_syncSourceHasBeenSet)
+  {
+   payload.WithObject("SyncSource", m_syncSource.Jsonize());
 
   }
 

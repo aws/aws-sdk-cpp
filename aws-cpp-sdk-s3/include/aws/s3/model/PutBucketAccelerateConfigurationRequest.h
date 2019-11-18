@@ -92,32 +92,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
+     * <p>Container for setting the transfer acceleration state.</p>
      */
     inline const AccelerateConfiguration& GetAccelerateConfiguration() const{ return m_accelerateConfiguration; }
 
     /**
-     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
+     * <p>Container for setting the transfer acceleration state.</p>
      */
     inline bool AccelerateConfigurationHasBeenSet() const { return m_accelerateConfigurationHasBeenSet; }
 
     /**
-     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
+     * <p>Container for setting the transfer acceleration state.</p>
      */
     inline void SetAccelerateConfiguration(const AccelerateConfiguration& value) { m_accelerateConfigurationHasBeenSet = true; m_accelerateConfiguration = value; }
 
     /**
-     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
+     * <p>Container for setting the transfer acceleration state.</p>
      */
     inline void SetAccelerateConfiguration(AccelerateConfiguration&& value) { m_accelerateConfigurationHasBeenSet = true; m_accelerateConfiguration = std::move(value); }
 
     /**
-     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
+     * <p>Container for setting the transfer acceleration state.</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithAccelerateConfiguration(const AccelerateConfiguration& value) { SetAccelerateConfiguration(value); return *this;}
 
     /**
-     * <p>Specifies the Accelerate Configuration you want to set for the bucket.</p>
+     * <p>Container for setting the transfer acceleration state.</p>
      */
     inline PutBucketAccelerateConfigurationRequest& WithAccelerateConfiguration(AccelerateConfiguration&& value) { SetAccelerateConfiguration(std::move(value)); return *this;}
 

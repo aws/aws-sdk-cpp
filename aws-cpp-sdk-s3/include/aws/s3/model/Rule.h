@@ -58,32 +58,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Specifies the expiration for the lifecycle of the object.</p>
      */
     inline const LifecycleExpiration& GetExpiration() const{ return m_expiration; }
 
     /**
-     * <p/>
+     * <p>Specifies the expiration for the lifecycle of the object.</p>
      */
     inline bool ExpirationHasBeenSet() const { return m_expirationHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Specifies the expiration for the lifecycle of the object.</p>
      */
     inline void SetExpiration(const LifecycleExpiration& value) { m_expirationHasBeenSet = true; m_expiration = value; }
 
     /**
-     * <p/>
+     * <p>Specifies the expiration for the lifecycle of the object.</p>
      */
     inline void SetExpiration(LifecycleExpiration&& value) { m_expirationHasBeenSet = true; m_expiration = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Specifies the expiration for the lifecycle of the object.</p>
      */
     inline Rule& WithExpiration(const LifecycleExpiration& value) { SetExpiration(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies the expiration for the lifecycle of the object.</p>
      */
     inline Rule& WithExpiration(LifecycleExpiration&& value) { SetExpiration(std::move(value)); return *this;}
 
@@ -224,126 +224,90 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Specifies when an object transitions to a specified storage class.</p>
      */
     inline const Transition& GetTransition() const{ return m_transition; }
 
     /**
-     * <p/>
+     * <p>Specifies when an object transitions to a specified storage class.</p>
      */
     inline bool TransitionHasBeenSet() const { return m_transitionHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Specifies when an object transitions to a specified storage class.</p>
      */
     inline void SetTransition(const Transition& value) { m_transitionHasBeenSet = true; m_transition = value; }
 
     /**
-     * <p/>
+     * <p>Specifies when an object transitions to a specified storage class.</p>
      */
     inline void SetTransition(Transition&& value) { m_transitionHasBeenSet = true; m_transition = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Specifies when an object transitions to a specified storage class.</p>
      */
     inline Rule& WithTransition(const Transition& value) { SetTransition(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies when an object transitions to a specified storage class.</p>
      */
     inline Rule& WithTransition(Transition&& value) { SetTransition(std::move(value)); return *this;}
 
 
-    /**
-     * <p/>
-     */
+    
     inline const NoncurrentVersionTransition& GetNoncurrentVersionTransition() const{ return m_noncurrentVersionTransition; }
 
-    /**
-     * <p/>
-     */
+    
     inline bool NoncurrentVersionTransitionHasBeenSet() const { return m_noncurrentVersionTransitionHasBeenSet; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetNoncurrentVersionTransition(const NoncurrentVersionTransition& value) { m_noncurrentVersionTransitionHasBeenSet = true; m_noncurrentVersionTransition = value; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetNoncurrentVersionTransition(NoncurrentVersionTransition&& value) { m_noncurrentVersionTransitionHasBeenSet = true; m_noncurrentVersionTransition = std::move(value); }
 
-    /**
-     * <p/>
-     */
+    
     inline Rule& WithNoncurrentVersionTransition(const NoncurrentVersionTransition& value) { SetNoncurrentVersionTransition(value); return *this;}
 
-    /**
-     * <p/>
-     */
+    
     inline Rule& WithNoncurrentVersionTransition(NoncurrentVersionTransition&& value) { SetNoncurrentVersionTransition(std::move(value)); return *this;}
 
 
-    /**
-     * <p/>
-     */
+    
     inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const{ return m_noncurrentVersionExpiration; }
 
-    /**
-     * <p/>
-     */
+    
     inline bool NoncurrentVersionExpirationHasBeenSet() const { return m_noncurrentVersionExpirationHasBeenSet; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = value; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = std::move(value); }
 
-    /**
-     * <p/>
-     */
+    
     inline Rule& WithNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { SetNoncurrentVersionExpiration(value); return *this;}
 
-    /**
-     * <p/>
-     */
+    
     inline Rule& WithNoncurrentVersionExpiration(NoncurrentVersionExpiration&& value) { SetNoncurrentVersionExpiration(std::move(value)); return *this;}
 
 
-    /**
-     * <p/>
-     */
+    
     inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const{ return m_abortIncompleteMultipartUpload; }
 
-    /**
-     * <p/>
-     */
+    
     inline bool AbortIncompleteMultipartUploadHasBeenSet() const { return m_abortIncompleteMultipartUploadHasBeenSet; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = value; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = std::move(value); }
 
-    /**
-     * <p/>
-     */
+    
     inline Rule& WithAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { SetAbortIncompleteMultipartUpload(value); return *this;}
 
-    /**
-     * <p/>
-     */
+    
     inline Rule& WithAbortIncompleteMultipartUpload(AbortIncompleteMultipartUpload&& value) { SetAbortIncompleteMultipartUpload(std::move(value)); return *this;}
 
   private:

@@ -876,6 +876,96 @@ namespace Model
      */
     inline OpsItem& AddOperationalData(const char* key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>An OpsItem category. Category options include: Availability, Cost,
+     * Performance, Recovery, Security.</p>
+     */
+    inline const Aws::String& GetCategory() const{ return m_category; }
+
+    /**
+     * <p>An OpsItem category. Category options include: Availability, Cost,
+     * Performance, Recovery, Security.</p>
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>An OpsItem category. Category options include: Availability, Cost,
+     * Performance, Recovery, Security.</p>
+     */
+    inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
+
+    /**
+     * <p>An OpsItem category. Category options include: Availability, Cost,
+     * Performance, Recovery, Security.</p>
+     */
+    inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+
+    /**
+     * <p>An OpsItem category. Category options include: Availability, Cost,
+     * Performance, Recovery, Security.</p>
+     */
+    inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
+
+    /**
+     * <p>An OpsItem category. Category options include: Availability, Cost,
+     * Performance, Recovery, Security.</p>
+     */
+    inline OpsItem& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
+
+    /**
+     * <p>An OpsItem category. Category options include: Availability, Cost,
+     * Performance, Recovery, Security.</p>
+     */
+    inline OpsItem& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
+
+    /**
+     * <p>An OpsItem category. Category options include: Availability, Cost,
+     * Performance, Recovery, Security.</p>
+     */
+    inline OpsItem& WithCategory(const char* value) { SetCategory(value); return *this;}
+
+
+    /**
+     * <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
+     */
+    inline const Aws::String& GetSeverity() const{ return m_severity; }
+
+    /**
+     * <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
+     */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+
+    /**
+     * <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
+     */
+    inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
+
+    /**
+     * <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
+     */
+    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
+
+    /**
+     * <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
+     */
+    inline void SetSeverity(const char* value) { m_severityHasBeenSet = true; m_severity.assign(value); }
+
+    /**
+     * <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
+     */
+    inline OpsItem& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
+
+    /**
+     * <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
+     */
+    inline OpsItem& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
+
+    /**
+     * <p>The severity of the OpsItem. Severity options range from 1 to 4.</p>
+     */
+    inline OpsItem& WithSeverity(const char* value) { SetSeverity(value); return *this;}
+
   private:
 
     Aws::String m_createdBy;
@@ -919,6 +1009,12 @@ namespace Model
 
     Aws::Map<Aws::String, OpsItemDataValue> m_operationalData;
     bool m_operationalDataHasBeenSet;
+
+    Aws::String m_category;
+    bool m_categoryHasBeenSet;
+
+    Aws::String m_severity;
+    bool m_severityHasBeenSet;
   };
 
 } // namespace Model

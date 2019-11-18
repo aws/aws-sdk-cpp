@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Specifies a metrics configuration filter. The metrics configuration only
+   * includes objects that meet the filter's criteria. A filter must be a prefix, a
+   * tag, or a conjunction (MetricsAndOperator).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MetricsFilter">AWS
    * API Reference</a></p>
    */

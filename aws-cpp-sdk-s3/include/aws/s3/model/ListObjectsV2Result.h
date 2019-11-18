@@ -47,20 +47,23 @@ namespace Model
 
 
     /**
-     * <p>A flag that indicates whether or not Amazon S3 returned all of the results
-     * that satisfied the search criteria.</p>
+     * <p>Set to false if all of the results were returned. Set to true if more keys
+     * are available to return. If the number of results exceeds that specified by
+     * MaxKeys, all of the results might not be returned.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
-     * <p>A flag that indicates whether or not Amazon S3 returned all of the results
-     * that satisfied the search criteria.</p>
+     * <p>Set to false if all of the results were returned. Set to true if more keys
+     * are available to return. If the number of results exceeds that specified by
+     * MaxKeys, all of the results might not be returned.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
-     * <p>A flag that indicates whether or not Amazon S3 returned all of the results
-     * that satisfied the search criteria.</p>
+     * <p>Set to false if all of the results were returned. Set to true if more keys
+     * are available to return. If the number of results exceeds that specified by
+     * MaxKeys, all of the results might not be returned.</p>
      */
     inline ListObjectsV2Result& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
@@ -102,109 +105,137 @@ namespace Model
 
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Name of the bucket.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Name of the bucket.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Name of the bucket.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Name of the bucket.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Name of the bucket.</p>
      */
     inline ListObjectsV2Result& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Name of the bucket.</p>
      */
     inline ListObjectsV2Result& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Name of the bucket.</p>
      */
     inline ListObjectsV2Result& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p> Keys that begin with the indicated prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p> Keys that begin with the indicated prefix.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p> Keys that begin with the indicated prefix.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefix = std::move(value); }
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p> Keys that begin with the indicated prefix.</p>
      */
     inline void SetPrefix(const char* value) { m_prefix.assign(value); }
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p> Keys that begin with the indicated prefix.</p>
      */
     inline ListObjectsV2Result& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p> Keys that begin with the indicated prefix.</p>
      */
     inline ListObjectsV2Result& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>Limits the response to keys that begin with the specified prefix.</p>
+     * <p> Keys that begin with the indicated prefix.</p>
      */
     inline ListObjectsV2Result& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline ListObjectsV2Result& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline ListObjectsV2Result& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p>A delimiter is a character you use to group keys.</p>
+     * <p>Causes keys that contain the same string between the prefix and the first
+     * occurrence of the delimiter to be rolled up into a single result element in the
+     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
+     * the response. Each rolled-up result counts as only one return against the
+     * MaxKeys value.</p>
      */
     inline ListObjectsV2Result& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
@@ -229,70 +260,153 @@ namespace Model
 
 
     /**
-     * <p>CommonPrefixes contains all (if there are any) keys between Prefix and the
-     * next occurrence of the string specified by delimiter</p>
+     * <p>All of the keys rolled up into a common prefix count as a single return when
+     * calculating the number of returns.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by a
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns. </p>
      */
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
 
     /**
-     * <p>CommonPrefixes contains all (if there are any) keys between Prefix and the
-     * next occurrence of the string specified by delimiter</p>
+     * <p>All of the keys rolled up into a common prefix count as a single return when
+     * calculating the number of returns.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by a
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns. </p>
      */
     inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
 
     /**
-     * <p>CommonPrefixes contains all (if there are any) keys between Prefix and the
-     * next occurrence of the string specified by delimiter</p>
+     * <p>All of the keys rolled up into a common prefix count as a single return when
+     * calculating the number of returns.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by a
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns. </p>
      */
     inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
 
     /**
-     * <p>CommonPrefixes contains all (if there are any) keys between Prefix and the
-     * next occurrence of the string specified by delimiter</p>
+     * <p>All of the keys rolled up into a common prefix count as a single return when
+     * calculating the number of returns.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by a
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns. </p>
      */
     inline ListObjectsV2Result& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
 
     /**
-     * <p>CommonPrefixes contains all (if there are any) keys between Prefix and the
-     * next occurrence of the string specified by delimiter</p>
+     * <p>All of the keys rolled up into a common prefix count as a single return when
+     * calculating the number of returns.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by a
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns. </p>
      */
     inline ListObjectsV2Result& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
 
     /**
-     * <p>CommonPrefixes contains all (if there are any) keys between Prefix and the
-     * next occurrence of the string specified by delimiter</p>
+     * <p>All of the keys rolled up into a common prefix count as a single return when
+     * calculating the number of returns.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by a
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns. </p>
      */
     inline ListObjectsV2Result& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
 
     /**
-     * <p>CommonPrefixes contains all (if there are any) keys between Prefix and the
-     * next occurrence of the string specified by delimiter</p>
+     * <p>All of the keys rolled up into a common prefix count as a single return when
+     * calculating the number of returns.</p> <p>A response can contain
+     * <code>CommonPrefixes</code> only if you specify a delimiter.</p> <p>
+     * <code>CommonPrefixes</code> contains all (if there are any) keys between
+     * <code>Prefix</code> and the next occurrence of the string specified by a
+     * delimiter.</p> <p> <code>CommonPrefixes</code> lists keys that act like
+     * subdirectories in the directory specified by <code>Prefix</code>.</p> <p>For
+     * example, if the prefix is <code>notes/</code> and the delimiter is a slash
+     * (<code>/</code>) as in <code>notes/summer/july</code>, the common prefix is
+     * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
+     * count as a single return when calculating the number of returns. </p>
      */
     inline ListObjectsV2Result& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object key names in the XML
+     * response.</p> <p>If you specify the encoding-type request parameter, Amazon S3
+     * includes this element in the response, and returns encoded key name values in
+     * the following response elements:</p> <p> <code>Delimiter, Prefix, Key,</code>
+     * and <code>StartAfter</code>.</p>
      */
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object key names in the XML
+     * response.</p> <p>If you specify the encoding-type request parameter, Amazon S3
+     * includes this element in the response, and returns encoded key name values in
+     * the following response elements:</p> <p> <code>Delimiter, Prefix, Key,</code>
+     * and <code>StartAfter</code>.</p>
      */
     inline void SetEncodingType(const EncodingType& value) { m_encodingType = value; }
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object key names in the XML
+     * response.</p> <p>If you specify the encoding-type request parameter, Amazon S3
+     * includes this element in the response, and returns encoded key name values in
+     * the following response elements:</p> <p> <code>Delimiter, Prefix, Key,</code>
+     * and <code>StartAfter</code>.</p>
      */
     inline void SetEncodingType(EncodingType&& value) { m_encodingType = std::move(value); }
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object key names in the XML
+     * response.</p> <p>If you specify the encoding-type request parameter, Amazon S3
+     * includes this element in the response, and returns encoded key name values in
+     * the following response elements:</p> <p> <code>Delimiter, Prefix, Key,</code>
+     * and <code>StartAfter</code>.</p>
      */
     inline ListObjectsV2Result& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
 
     /**
-     * <p>Encoding type used by Amazon S3 to encode object keys in the response.</p>
+     * <p>Encoding type used by Amazon S3 to encode object key names in the XML
+     * response.</p> <p>If you specify the encoding-type request parameter, Amazon S3
+     * includes this element in the response, and returns encoded key name values in
+     * the following response elements:</p> <p> <code>Delimiter, Prefix, Key,</code>
+     * and <code>StartAfter</code>.</p>
      */
     inline ListObjectsV2Result& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
 
@@ -320,51 +434,44 @@ namespace Model
 
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key</p>
+     * <p> If ContinuationToken was sent with the request, it is included in the
+     * response.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key</p>
+     * <p> If ContinuationToken was sent with the request, it is included in the
+     * response.</p>
      */
     inline void SetContinuationToken(const Aws::String& value) { m_continuationToken = value; }
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key</p>
+     * <p> If ContinuationToken was sent with the request, it is included in the
+     * response.</p>
      */
     inline void SetContinuationToken(Aws::String&& value) { m_continuationToken = std::move(value); }
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key</p>
+     * <p> If ContinuationToken was sent with the request, it is included in the
+     * response.</p>
      */
     inline void SetContinuationToken(const char* value) { m_continuationToken.assign(value); }
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key</p>
+     * <p> If ContinuationToken was sent with the request, it is included in the
+     * response.</p>
      */
     inline ListObjectsV2Result& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key</p>
+     * <p> If ContinuationToken was sent with the request, it is included in the
+     * response.</p>
      */
     inline ListObjectsV2Result& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
 
     /**
-     * <p>ContinuationToken indicates Amazon S3 that the list is being continued on
-     * this bucket with a token. ContinuationToken is obfuscated and is not a real
-     * key</p>
+     * <p> If ContinuationToken was sent with the request, it is included in the
+     * response.</p>
      */
     inline ListObjectsV2Result& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
 
@@ -427,51 +534,37 @@ namespace Model
 
 
     /**
-     * <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3
-     * starts listing after this specified key. StartAfter can be any key in the
-     * bucket</p>
+     * <p>If StartAfter was sent with the request, it is included in the response.</p>
      */
     inline const Aws::String& GetStartAfter() const{ return m_startAfter; }
 
     /**
-     * <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3
-     * starts listing after this specified key. StartAfter can be any key in the
-     * bucket</p>
+     * <p>If StartAfter was sent with the request, it is included in the response.</p>
      */
     inline void SetStartAfter(const Aws::String& value) { m_startAfter = value; }
 
     /**
-     * <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3
-     * starts listing after this specified key. StartAfter can be any key in the
-     * bucket</p>
+     * <p>If StartAfter was sent with the request, it is included in the response.</p>
      */
     inline void SetStartAfter(Aws::String&& value) { m_startAfter = std::move(value); }
 
     /**
-     * <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3
-     * starts listing after this specified key. StartAfter can be any key in the
-     * bucket</p>
+     * <p>If StartAfter was sent with the request, it is included in the response.</p>
      */
     inline void SetStartAfter(const char* value) { m_startAfter.assign(value); }
 
     /**
-     * <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3
-     * starts listing after this specified key. StartAfter can be any key in the
-     * bucket</p>
+     * <p>If StartAfter was sent with the request, it is included in the response.</p>
      */
     inline ListObjectsV2Result& WithStartAfter(const Aws::String& value) { SetStartAfter(value); return *this;}
 
     /**
-     * <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3
-     * starts listing after this specified key. StartAfter can be any key in the
-     * bucket</p>
+     * <p>If StartAfter was sent with the request, it is included in the response.</p>
      */
     inline ListObjectsV2Result& WithStartAfter(Aws::String&& value) { SetStartAfter(std::move(value)); return *this;}
 
     /**
-     * <p>StartAfter is where you want Amazon S3 to start listing from. Amazon S3
-     * starts listing after this specified key. StartAfter can be any key in the
-     * bucket</p>
+     * <p>If StartAfter was sent with the request, it is included in the response.</p>
      */
     inline ListObjectsV2Result& WithStartAfter(const char* value) { SetStartAfter(value); return *this;}
 

@@ -476,6 +476,88 @@ namespace Model
      */
     inline OpsItemSummary& AddOperationalData(const char* key, const OpsItemDataValue& value) { m_operationalDataHasBeenSet = true; m_operationalData.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>A list of OpsItems by category.</p>
+     */
+    inline const Aws::String& GetCategory() const{ return m_category; }
+
+    /**
+     * <p>A list of OpsItems by category.</p>
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>A list of OpsItems by category.</p>
+     */
+    inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
+
+    /**
+     * <p>A list of OpsItems by category.</p>
+     */
+    inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+
+    /**
+     * <p>A list of OpsItems by category.</p>
+     */
+    inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
+
+    /**
+     * <p>A list of OpsItems by category.</p>
+     */
+    inline OpsItemSummary& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
+
+    /**
+     * <p>A list of OpsItems by category.</p>
+     */
+    inline OpsItemSummary& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of OpsItems by category.</p>
+     */
+    inline OpsItemSummary& WithCategory(const char* value) { SetCategory(value); return *this;}
+
+
+    /**
+     * <p>A list of OpsItems by severity.</p>
+     */
+    inline const Aws::String& GetSeverity() const{ return m_severity; }
+
+    /**
+     * <p>A list of OpsItems by severity.</p>
+     */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+
+    /**
+     * <p>A list of OpsItems by severity.</p>
+     */
+    inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
+
+    /**
+     * <p>A list of OpsItems by severity.</p>
+     */
+    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
+
+    /**
+     * <p>A list of OpsItems by severity.</p>
+     */
+    inline void SetSeverity(const char* value) { m_severityHasBeenSet = true; m_severity.assign(value); }
+
+    /**
+     * <p>A list of OpsItems by severity.</p>
+     */
+    inline OpsItemSummary& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
+
+    /**
+     * <p>A list of OpsItems by severity.</p>
+     */
+    inline OpsItemSummary& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of OpsItems by severity.</p>
+     */
+    inline OpsItemSummary& WithSeverity(const char* value) { SetSeverity(value); return *this;}
+
   private:
 
     Aws::String m_createdBy;
@@ -507,6 +589,12 @@ namespace Model
 
     Aws::Map<Aws::String, OpsItemDataValue> m_operationalData;
     bool m_operationalDataHasBeenSet;
+
+    Aws::String m_category;
+    bool m_categoryHasBeenSet;
+
+    Aws::String m_severity;
+    bool m_severityHasBeenSet;
   };
 
 } // namespace Model

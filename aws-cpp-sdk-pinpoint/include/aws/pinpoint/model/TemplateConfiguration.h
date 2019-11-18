@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the message template for each type of channel.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Specifies the message template to use for the message, for each type of
+   * channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TemplateConfiguration">AWS
    * API Reference</a></p>
    */
@@ -140,6 +140,37 @@ namespace Model
      */
     inline TemplateConfiguration& WithSMSTemplate(Template&& value) { SetSMSTemplate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The voice template to use for the message.</p>
+     */
+    inline const Template& GetVoiceTemplate() const{ return m_voiceTemplate; }
+
+    /**
+     * <p>The voice template to use for the message.</p>
+     */
+    inline bool VoiceTemplateHasBeenSet() const { return m_voiceTemplateHasBeenSet; }
+
+    /**
+     * <p>The voice template to use for the message.</p>
+     */
+    inline void SetVoiceTemplate(const Template& value) { m_voiceTemplateHasBeenSet = true; m_voiceTemplate = value; }
+
+    /**
+     * <p>The voice template to use for the message.</p>
+     */
+    inline void SetVoiceTemplate(Template&& value) { m_voiceTemplateHasBeenSet = true; m_voiceTemplate = std::move(value); }
+
+    /**
+     * <p>The voice template to use for the message.</p>
+     */
+    inline TemplateConfiguration& WithVoiceTemplate(const Template& value) { SetVoiceTemplate(value); return *this;}
+
+    /**
+     * <p>The voice template to use for the message.</p>
+     */
+    inline TemplateConfiguration& WithVoiceTemplate(Template&& value) { SetVoiceTemplate(std::move(value)); return *this;}
+
   private:
 
     Template m_emailTemplate;
@@ -150,6 +181,9 @@ namespace Model
 
     Template m_sMSTemplate;
     bool m_sMSTemplateHasBeenSet;
+
+    Template m_voiceTemplate;
+    bool m_voiceTemplateHasBeenSet;
   };
 
 } // namespace Model

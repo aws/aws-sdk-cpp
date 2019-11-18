@@ -186,32 +186,32 @@ namespace Model
 
 
     /**
-     * <p>The default message body for all channels.</p>
+     * <p>The default message for all channels.</p>
      */
     inline const DefaultMessage& GetDefaultMessage() const{ return m_defaultMessage; }
 
     /**
-     * <p>The default message body for all channels.</p>
+     * <p>The default message for all channels.</p>
      */
     inline bool DefaultMessageHasBeenSet() const { return m_defaultMessageHasBeenSet; }
 
     /**
-     * <p>The default message body for all channels.</p>
+     * <p>The default message for all channels.</p>
      */
     inline void SetDefaultMessage(const DefaultMessage& value) { m_defaultMessageHasBeenSet = true; m_defaultMessage = value; }
 
     /**
-     * <p>The default message body for all channels.</p>
+     * <p>The default message for all channels.</p>
      */
     inline void SetDefaultMessage(DefaultMessage&& value) { m_defaultMessageHasBeenSet = true; m_defaultMessage = std::move(value); }
 
     /**
-     * <p>The default message body for all channels.</p>
+     * <p>The default message for all channels.</p>
      */
     inline DirectMessageConfiguration& WithDefaultMessage(const DefaultMessage& value) { SetDefaultMessage(value); return *this;}
 
     /**
-     * <p>The default message body for all channels.</p>
+     * <p>The default message for all channels.</p>
      */
     inline DirectMessageConfiguration& WithDefaultMessage(DefaultMessage&& value) { SetDefaultMessage(std::move(value)); return *this;}
 

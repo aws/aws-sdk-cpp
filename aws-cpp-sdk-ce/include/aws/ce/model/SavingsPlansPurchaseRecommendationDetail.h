@@ -374,6 +374,63 @@ namespace Model
 
 
     /**
+     * <p> The estimated On-Demand costs you would expect with no additional
+     * commitment, based on your usage of the selected time period and the Savings
+     * Plans you own. </p>
+     */
+    inline const Aws::String& GetEstimatedOnDemandCostWithCurrentCommitment() const{ return m_estimatedOnDemandCostWithCurrentCommitment; }
+
+    /**
+     * <p> The estimated On-Demand costs you would expect with no additional
+     * commitment, based on your usage of the selected time period and the Savings
+     * Plans you own. </p>
+     */
+    inline bool EstimatedOnDemandCostWithCurrentCommitmentHasBeenSet() const { return m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet; }
+
+    /**
+     * <p> The estimated On-Demand costs you would expect with no additional
+     * commitment, based on your usage of the selected time period and the Savings
+     * Plans you own. </p>
+     */
+    inline void SetEstimatedOnDemandCostWithCurrentCommitment(const Aws::String& value) { m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = true; m_estimatedOnDemandCostWithCurrentCommitment = value; }
+
+    /**
+     * <p> The estimated On-Demand costs you would expect with no additional
+     * commitment, based on your usage of the selected time period and the Savings
+     * Plans you own. </p>
+     */
+    inline void SetEstimatedOnDemandCostWithCurrentCommitment(Aws::String&& value) { m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = true; m_estimatedOnDemandCostWithCurrentCommitment = std::move(value); }
+
+    /**
+     * <p> The estimated On-Demand costs you would expect with no additional
+     * commitment, based on your usage of the selected time period and the Savings
+     * Plans you own. </p>
+     */
+    inline void SetEstimatedOnDemandCostWithCurrentCommitment(const char* value) { m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = true; m_estimatedOnDemandCostWithCurrentCommitment.assign(value); }
+
+    /**
+     * <p> The estimated On-Demand costs you would expect with no additional
+     * commitment, based on your usage of the selected time period and the Savings
+     * Plans you own. </p>
+     */
+    inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedOnDemandCostWithCurrentCommitment(const Aws::String& value) { SetEstimatedOnDemandCostWithCurrentCommitment(value); return *this;}
+
+    /**
+     * <p> The estimated On-Demand costs you would expect with no additional
+     * commitment, based on your usage of the selected time period and the Savings
+     * Plans you own. </p>
+     */
+    inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedOnDemandCostWithCurrentCommitment(Aws::String&& value) { SetEstimatedOnDemandCostWithCurrentCommitment(std::move(value)); return *this;}
+
+    /**
+     * <p> The estimated On-Demand costs you would expect with no additional
+     * commitment, based on your usage of the selected time period and the Savings
+     * Plans you own. </p>
+     */
+    inline SavingsPlansPurchaseRecommendationDetail& WithEstimatedOnDemandCostWithCurrentCommitment(const char* value) { SetEstimatedOnDemandCostWithCurrentCommitment(value); return *this;}
+
+
+    /**
      * <p>The estimated savings amount based on the recommended Savings Plans over the
      * length of the lookback period.</p>
      */
@@ -778,6 +835,9 @@ namespace Model
 
     Aws::String m_estimatedOnDemandCost;
     bool m_estimatedOnDemandCostHasBeenSet;
+
+    Aws::String m_estimatedOnDemandCostWithCurrentCommitment;
+    bool m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet;
 
     Aws::String m_estimatedSavingsAmount;
     bool m_estimatedSavingsAmountHasBeenSet;

@@ -3605,7 +3605,11 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection is disabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. You can enable or disable deletion protection for the DB cluster.
+     * For more information, see <code>CreateDBCluster</code>. DB instances in a DB
+     * cluster can be deleted even when deletion protection is enabled for the DB
+     * cluster. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
@@ -3614,7 +3618,11 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection is disabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. You can enable or disable deletion protection for the DB cluster.
+     * For more information, see <code>CreateDBCluster</code>. DB instances in a DB
+     * cluster can be deleted even when deletion protection is enabled for the DB
+     * cluster. </p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
@@ -3623,7 +3631,11 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection is disabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. You can enable or disable deletion protection for the DB cluster.
+     * For more information, see <code>CreateDBCluster</code>. DB instances in a DB
+     * cluster can be deleted even when deletion protection is enabled for the DB
+     * cluster. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
@@ -3632,7 +3644,11 @@ namespace Model
      * enabled. The database can't be deleted when deletion protection is enabled. By
      * default, deletion protection is disabled. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
-     * Deleting a DB Instance</a>. </p>
+     * Deleting a DB Instance</a>. </p> <p> <b>Amazon Aurora</b> </p> <p>Not
+     * applicable. You can enable or disable deletion protection for the DB cluster.
+     * For more information, see <code>CreateDBCluster</code>. DB instances in a DB
+     * cluster can be deleted even when deletion protection is enabled for the DB
+     * cluster. </p>
      */
     inline CreateDBInstanceRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 

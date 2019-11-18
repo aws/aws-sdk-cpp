@@ -30,6 +30,7 @@
 #include <aws/pinpoint/model/CreatePushTemplateResult.h>
 #include <aws/pinpoint/model/CreateSegmentResult.h>
 #include <aws/pinpoint/model/CreateSmsTemplateResult.h>
+#include <aws/pinpoint/model/CreateVoiceTemplateResult.h>
 #include <aws/pinpoint/model/DeleteAdmChannelResult.h>
 #include <aws/pinpoint/model/DeleteApnsChannelResult.h>
 #include <aws/pinpoint/model/DeleteApnsSandboxChannelResult.h>
@@ -50,6 +51,7 @@
 #include <aws/pinpoint/model/DeleteSmsTemplateResult.h>
 #include <aws/pinpoint/model/DeleteUserEndpointsResult.h>
 #include <aws/pinpoint/model/DeleteVoiceChannelResult.h>
+#include <aws/pinpoint/model/DeleteVoiceTemplateResult.h>
 #include <aws/pinpoint/model/GetAdmChannelResult.h>
 #include <aws/pinpoint/model/GetApnsChannelResult.h>
 #include <aws/pinpoint/model/GetApnsSandboxChannelResult.h>
@@ -91,6 +93,7 @@
 #include <aws/pinpoint/model/GetSmsTemplateResult.h>
 #include <aws/pinpoint/model/GetUserEndpointsResult.h>
 #include <aws/pinpoint/model/GetVoiceChannelResult.h>
+#include <aws/pinpoint/model/GetVoiceTemplateResult.h>
 #include <aws/pinpoint/model/ListJourneysResult.h>
 #include <aws/pinpoint/model/ListTagsForResourceResult.h>
 #include <aws/pinpoint/model/ListTemplatesResult.h>
@@ -120,6 +123,7 @@
 #include <aws/pinpoint/model/UpdateSmsChannelResult.h>
 #include <aws/pinpoint/model/UpdateSmsTemplateResult.h>
 #include <aws/pinpoint/model/UpdateVoiceChannelResult.h>
+#include <aws/pinpoint/model/UpdateVoiceTemplateResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -169,6 +173,7 @@ namespace Model
         class CreatePushTemplateRequest;
         class CreateSegmentRequest;
         class CreateSmsTemplateRequest;
+        class CreateVoiceTemplateRequest;
         class DeleteAdmChannelRequest;
         class DeleteApnsChannelRequest;
         class DeleteApnsSandboxChannelRequest;
@@ -189,6 +194,7 @@ namespace Model
         class DeleteSmsTemplateRequest;
         class DeleteUserEndpointsRequest;
         class DeleteVoiceChannelRequest;
+        class DeleteVoiceTemplateRequest;
         class GetAdmChannelRequest;
         class GetApnsChannelRequest;
         class GetApnsSandboxChannelRequest;
@@ -230,6 +236,7 @@ namespace Model
         class GetSmsTemplateRequest;
         class GetUserEndpointsRequest;
         class GetVoiceChannelRequest;
+        class GetVoiceTemplateRequest;
         class ListJourneysRequest;
         class ListTagsForResourceRequest;
         class ListTemplatesRequest;
@@ -261,6 +268,7 @@ namespace Model
         class UpdateSmsChannelRequest;
         class UpdateSmsTemplateRequest;
         class UpdateVoiceChannelRequest;
+        class UpdateVoiceTemplateRequest;
 
         typedef Aws::Utils::Outcome<CreateAppResult, Aws::Client::AWSError<PinpointErrors>> CreateAppOutcome;
         typedef Aws::Utils::Outcome<CreateCampaignResult, Aws::Client::AWSError<PinpointErrors>> CreateCampaignOutcome;
@@ -271,6 +279,7 @@ namespace Model
         typedef Aws::Utils::Outcome<CreatePushTemplateResult, Aws::Client::AWSError<PinpointErrors>> CreatePushTemplateOutcome;
         typedef Aws::Utils::Outcome<CreateSegmentResult, Aws::Client::AWSError<PinpointErrors>> CreateSegmentOutcome;
         typedef Aws::Utils::Outcome<CreateSmsTemplateResult, Aws::Client::AWSError<PinpointErrors>> CreateSmsTemplateOutcome;
+        typedef Aws::Utils::Outcome<CreateVoiceTemplateResult, Aws::Client::AWSError<PinpointErrors>> CreateVoiceTemplateOutcome;
         typedef Aws::Utils::Outcome<DeleteAdmChannelResult, Aws::Client::AWSError<PinpointErrors>> DeleteAdmChannelOutcome;
         typedef Aws::Utils::Outcome<DeleteApnsChannelResult, Aws::Client::AWSError<PinpointErrors>> DeleteApnsChannelOutcome;
         typedef Aws::Utils::Outcome<DeleteApnsSandboxChannelResult, Aws::Client::AWSError<PinpointErrors>> DeleteApnsSandboxChannelOutcome;
@@ -291,6 +300,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteSmsTemplateResult, Aws::Client::AWSError<PinpointErrors>> DeleteSmsTemplateOutcome;
         typedef Aws::Utils::Outcome<DeleteUserEndpointsResult, Aws::Client::AWSError<PinpointErrors>> DeleteUserEndpointsOutcome;
         typedef Aws::Utils::Outcome<DeleteVoiceChannelResult, Aws::Client::AWSError<PinpointErrors>> DeleteVoiceChannelOutcome;
+        typedef Aws::Utils::Outcome<DeleteVoiceTemplateResult, Aws::Client::AWSError<PinpointErrors>> DeleteVoiceTemplateOutcome;
         typedef Aws::Utils::Outcome<GetAdmChannelResult, Aws::Client::AWSError<PinpointErrors>> GetAdmChannelOutcome;
         typedef Aws::Utils::Outcome<GetApnsChannelResult, Aws::Client::AWSError<PinpointErrors>> GetApnsChannelOutcome;
         typedef Aws::Utils::Outcome<GetApnsSandboxChannelResult, Aws::Client::AWSError<PinpointErrors>> GetApnsSandboxChannelOutcome;
@@ -332,6 +342,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSmsTemplateResult, Aws::Client::AWSError<PinpointErrors>> GetSmsTemplateOutcome;
         typedef Aws::Utils::Outcome<GetUserEndpointsResult, Aws::Client::AWSError<PinpointErrors>> GetUserEndpointsOutcome;
         typedef Aws::Utils::Outcome<GetVoiceChannelResult, Aws::Client::AWSError<PinpointErrors>> GetVoiceChannelOutcome;
+        typedef Aws::Utils::Outcome<GetVoiceTemplateResult, Aws::Client::AWSError<PinpointErrors>> GetVoiceTemplateOutcome;
         typedef Aws::Utils::Outcome<ListJourneysResult, Aws::Client::AWSError<PinpointErrors>> ListJourneysOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<PinpointErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListTemplatesResult, Aws::Client::AWSError<PinpointErrors>> ListTemplatesOutcome;
@@ -363,6 +374,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateSmsChannelResult, Aws::Client::AWSError<PinpointErrors>> UpdateSmsChannelOutcome;
         typedef Aws::Utils::Outcome<UpdateSmsTemplateResult, Aws::Client::AWSError<PinpointErrors>> UpdateSmsTemplateOutcome;
         typedef Aws::Utils::Outcome<UpdateVoiceChannelResult, Aws::Client::AWSError<PinpointErrors>> UpdateVoiceChannelOutcome;
+        typedef Aws::Utils::Outcome<UpdateVoiceTemplateResult, Aws::Client::AWSError<PinpointErrors>> UpdateVoiceTemplateOutcome;
 
         typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
         typedef std::future<CreateCampaignOutcome> CreateCampaignOutcomeCallable;
@@ -373,6 +385,7 @@ namespace Model
         typedef std::future<CreatePushTemplateOutcome> CreatePushTemplateOutcomeCallable;
         typedef std::future<CreateSegmentOutcome> CreateSegmentOutcomeCallable;
         typedef std::future<CreateSmsTemplateOutcome> CreateSmsTemplateOutcomeCallable;
+        typedef std::future<CreateVoiceTemplateOutcome> CreateVoiceTemplateOutcomeCallable;
         typedef std::future<DeleteAdmChannelOutcome> DeleteAdmChannelOutcomeCallable;
         typedef std::future<DeleteApnsChannelOutcome> DeleteApnsChannelOutcomeCallable;
         typedef std::future<DeleteApnsSandboxChannelOutcome> DeleteApnsSandboxChannelOutcomeCallable;
@@ -393,6 +406,7 @@ namespace Model
         typedef std::future<DeleteSmsTemplateOutcome> DeleteSmsTemplateOutcomeCallable;
         typedef std::future<DeleteUserEndpointsOutcome> DeleteUserEndpointsOutcomeCallable;
         typedef std::future<DeleteVoiceChannelOutcome> DeleteVoiceChannelOutcomeCallable;
+        typedef std::future<DeleteVoiceTemplateOutcome> DeleteVoiceTemplateOutcomeCallable;
         typedef std::future<GetAdmChannelOutcome> GetAdmChannelOutcomeCallable;
         typedef std::future<GetApnsChannelOutcome> GetApnsChannelOutcomeCallable;
         typedef std::future<GetApnsSandboxChannelOutcome> GetApnsSandboxChannelOutcomeCallable;
@@ -434,6 +448,7 @@ namespace Model
         typedef std::future<GetSmsTemplateOutcome> GetSmsTemplateOutcomeCallable;
         typedef std::future<GetUserEndpointsOutcome> GetUserEndpointsOutcomeCallable;
         typedef std::future<GetVoiceChannelOutcome> GetVoiceChannelOutcomeCallable;
+        typedef std::future<GetVoiceTemplateOutcome> GetVoiceTemplateOutcomeCallable;
         typedef std::future<ListJourneysOutcome> ListJourneysOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListTemplatesOutcome> ListTemplatesOutcomeCallable;
@@ -465,6 +480,7 @@ namespace Model
         typedef std::future<UpdateSmsChannelOutcome> UpdateSmsChannelOutcomeCallable;
         typedef std::future<UpdateSmsTemplateOutcome> UpdateSmsTemplateOutcomeCallable;
         typedef std::future<UpdateVoiceChannelOutcome> UpdateVoiceChannelOutcomeCallable;
+        typedef std::future<UpdateVoiceTemplateOutcome> UpdateVoiceTemplateOutcomeCallable;
 } // namespace Model
 
   class PinpointClient;
@@ -478,6 +494,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::CreatePushTemplateRequest&, const Model::CreatePushTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePushTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::CreateSegmentRequest&, const Model::CreateSegmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSegmentResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::CreateSmsTemplateRequest&, const Model::CreateSmsTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSmsTemplateResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::CreateVoiceTemplateRequest&, const Model::CreateVoiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVoiceTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteAdmChannelRequest&, const Model::DeleteAdmChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAdmChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteApnsChannelRequest&, const Model::DeleteApnsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApnsChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteApnsSandboxChannelRequest&, const Model::DeleteApnsSandboxChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApnsSandboxChannelResponseReceivedHandler;
@@ -498,6 +515,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::DeleteSmsTemplateRequest&, const Model::DeleteSmsTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSmsTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteUserEndpointsRequest&, const Model::DeleteUserEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserEndpointsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::DeleteVoiceChannelRequest&, const Model::DeleteVoiceChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceChannelResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::DeleteVoiceTemplateRequest&, const Model::DeleteVoiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVoiceTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetAdmChannelRequest&, const Model::GetAdmChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAdmChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetApnsChannelRequest&, const Model::GetApnsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApnsChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetApnsSandboxChannelRequest&, const Model::GetApnsSandboxChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApnsSandboxChannelResponseReceivedHandler;
@@ -539,6 +557,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::GetSmsTemplateRequest&, const Model::GetSmsTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSmsTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetUserEndpointsRequest&, const Model::GetUserEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserEndpointsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::GetVoiceChannelRequest&, const Model::GetVoiceChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceChannelResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::GetVoiceTemplateRequest&, const Model::GetVoiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::ListJourneysRequest&, const Model::ListJourneysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJourneysResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::ListTemplatesRequest&, const Model::ListTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTemplatesResponseReceivedHandler;
@@ -570,6 +589,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::UpdateSmsChannelRequest&, const Model::UpdateSmsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSmsChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateSmsTemplateRequest&, const Model::UpdateSmsTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSmsTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateVoiceChannelRequest&, const Model::UpdateVoiceChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVoiceChannelResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::UpdateVoiceTemplateRequest&, const Model::UpdateVoiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVoiceTemplateResponseReceivedHandler;
 
   /**
    * <p>Doc Engage API - Amazon Pinpoint API</p>
@@ -845,6 +865,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSmsTemplateAsync(const Model::CreateSmsTemplateRequest& request, const CreateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a message template that you can use in messages that are sent through
+         * the voice channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateVoiceTemplateOutcome CreateVoiceTemplate(const Model::CreateVoiceTemplateRequest& request) const;
+
+        /**
+         * <p>Creates a message template that you can use in messages that are sent through
+         * the voice channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateVoiceTemplateOutcomeCallable CreateVoiceTemplateCallable(const Model::CreateVoiceTemplateRequest& request) const;
+
+        /**
+         * <p>Creates a message template that you can use in messages that are sent through
+         * the voice channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateVoiceTemplateAsync(const Model::CreateVoiceTemplateRequest& request, const CreateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the ADM channel for an application and deletes any existing settings
@@ -1387,6 +1435,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteVoiceChannelAsync(const Model::DeleteVoiceChannelRequest& request, const DeleteVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a message template that was designed for use in messages that were
+         * sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteVoiceTemplateOutcome DeleteVoiceTemplate(const Model::DeleteVoiceTemplateRequest& request) const;
+
+        /**
+         * <p>Deletes a message template that was designed for use in messages that were
+         * sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteVoiceTemplateOutcomeCallable DeleteVoiceTemplateCallable(const Model::DeleteVoiceTemplateRequest& request) const;
+
+        /**
+         * <p>Deletes a message template that was designed for use in messages that were
+         * sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteVoiceTemplateAsync(const Model::DeleteVoiceTemplateRequest& request, const DeleteVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about the status and settings of the ADM channel for an
@@ -2552,6 +2628,34 @@ namespace Model
         virtual void GetVoiceChannelAsync(const Model::GetVoiceChannelRequest& request, const GetVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the content and settings for a message template that you can use in
+         * messages that are sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVoiceTemplateOutcome GetVoiceTemplate(const Model::GetVoiceTemplateRequest& request) const;
+
+        /**
+         * <p>Retrieves the content and settings for a message template that you can use in
+         * messages that are sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetVoiceTemplateOutcomeCallable GetVoiceTemplateCallable(const Model::GetVoiceTemplateRequest& request) const;
+
+        /**
+         * <p>Retrieves the content and settings for a message template that you can use in
+         * messages that are sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetVoiceTemplateAsync(const Model::GetVoiceTemplateRequest& request, const GetVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves information about the status, configuration, and other settings for
          * all the journeys that are associated with an application.</p><p><h3>See
          * Also:</h3>   <a
@@ -3437,6 +3541,34 @@ namespace Model
          */
         virtual void UpdateVoiceChannelAsync(const Model::UpdateVoiceChannelRequest& request, const UpdateVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Updates an existing message template that you can use in messages that are
+         * sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateVoiceTemplateOutcome UpdateVoiceTemplate(const Model::UpdateVoiceTemplateRequest& request) const;
+
+        /**
+         * <p>Updates an existing message template that you can use in messages that are
+         * sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateVoiceTemplateOutcomeCallable UpdateVoiceTemplateCallable(const Model::UpdateVoiceTemplateRequest& request) const;
+
+        /**
+         * <p>Updates an existing message template that you can use in messages that are
+         * sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateVoiceTemplateAsync(const Model::UpdateVoiceTemplateRequest& request, const UpdateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -3450,6 +3582,7 @@ namespace Model
         void CreatePushTemplateAsyncHelper(const Model::CreatePushTemplateRequest& request, const CreatePushTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSegmentAsyncHelper(const Model::CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSmsTemplateAsyncHelper(const Model::CreateSmsTemplateRequest& request, const CreateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateVoiceTemplateAsyncHelper(const Model::CreateVoiceTemplateRequest& request, const CreateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAdmChannelAsyncHelper(const Model::DeleteAdmChannelRequest& request, const DeleteAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApnsChannelAsyncHelper(const Model::DeleteApnsChannelRequest& request, const DeleteApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApnsSandboxChannelAsyncHelper(const Model::DeleteApnsSandboxChannelRequest& request, const DeleteApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3470,6 +3603,7 @@ namespace Model
         void DeleteSmsTemplateAsyncHelper(const Model::DeleteSmsTemplateRequest& request, const DeleteSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserEndpointsAsyncHelper(const Model::DeleteUserEndpointsRequest& request, const DeleteUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVoiceChannelAsyncHelper(const Model::DeleteVoiceChannelRequest& request, const DeleteVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteVoiceTemplateAsyncHelper(const Model::DeleteVoiceTemplateRequest& request, const DeleteVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAdmChannelAsyncHelper(const Model::GetAdmChannelRequest& request, const GetAdmChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApnsChannelAsyncHelper(const Model::GetApnsChannelRequest& request, const GetApnsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApnsSandboxChannelAsyncHelper(const Model::GetApnsSandboxChannelRequest& request, const GetApnsSandboxChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3511,6 +3645,7 @@ namespace Model
         void GetSmsTemplateAsyncHelper(const Model::GetSmsTemplateRequest& request, const GetSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUserEndpointsAsyncHelper(const Model::GetUserEndpointsRequest& request, const GetUserEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVoiceChannelAsyncHelper(const Model::GetVoiceChannelRequest& request, const GetVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetVoiceTemplateAsyncHelper(const Model::GetVoiceTemplateRequest& request, const GetVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJourneysAsyncHelper(const Model::ListJourneysRequest& request, const ListJourneysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTemplatesAsyncHelper(const Model::ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3542,6 +3677,7 @@ namespace Model
         void UpdateSmsChannelAsyncHelper(const Model::UpdateSmsChannelRequest& request, const UpdateSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSmsTemplateAsyncHelper(const Model::UpdateSmsTemplateRequest& request, const UpdateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVoiceChannelAsyncHelper(const Model::UpdateVoiceChannelRequest& request, const UpdateVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateVoiceTemplateAsyncHelper(const Model::UpdateVoiceTemplateRequest& request, const UpdateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

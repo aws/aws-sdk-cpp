@@ -127,74 +127,62 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>A collection of bucket events for which to send notiications</p>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
     /**
-     * <p/>
+     * <p>A collection of bucket events for which to send notiications</p>
      */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A collection of bucket events for which to send notiications</p>
      */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
-     * <p/>
+     * <p>A collection of bucket events for which to send notiications</p>
      */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A collection of bucket events for which to send notiications</p>
      */
     inline QueueConfiguration& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A collection of bucket events for which to send notiications</p>
      */
     inline QueueConfiguration& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>A collection of bucket events for which to send notiications</p>
      */
     inline QueueConfiguration& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>A collection of bucket events for which to send notiications</p>
      */
     inline QueueConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
 
-    /**
-     * <p/>
-     */
+    
     inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
 
-    /**
-     * <p/>
-     */
+    
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetFilter(const NotificationConfigurationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    /**
-     * <p/>
-     */
+    
     inline void SetFilter(NotificationConfigurationFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
-    /**
-     * <p/>
-     */
+    
     inline QueueConfiguration& WithFilter(const NotificationConfigurationFilter& value) { SetFilter(value); return *this;}
 
-    /**
-     * <p/>
-     */
+    
     inline QueueConfiguration& WithFilter(NotificationConfigurationFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:

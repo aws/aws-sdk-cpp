@@ -43,6 +43,8 @@ namespace Aws
         static const int OperationalDataValue_HASH = HashingUtils::HashString("OperationalDataValue");
         static const int ResourceId_HASH = HashingUtils::HashString("ResourceId");
         static const int AutomationId_HASH = HashingUtils::HashString("AutomationId");
+        static const int Category_HASH = HashingUtils::HashString("Category");
+        static const int Severity_HASH = HashingUtils::HashString("Severity");
 
 
         OpsItemFilterKey GetOpsItemFilterKeyForName(const Aws::String& name)
@@ -100,6 +102,14 @@ namespace Aws
           {
             return OpsItemFilterKey::AutomationId;
           }
+          else if (hashCode == Category_HASH)
+          {
+            return OpsItemFilterKey::Category;
+          }
+          else if (hashCode == Severity_HASH)
+          {
+            return OpsItemFilterKey::Severity;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -140,6 +150,10 @@ namespace Aws
             return "ResourceId";
           case OpsItemFilterKey::AutomationId:
             return "AutomationId";
+          case OpsItemFilterKey::Category:
+            return "Category";
+          case OpsItemFilterKey::Severity:
+            return "Severity";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

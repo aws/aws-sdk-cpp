@@ -39,6 +39,7 @@
 #include <aws/pinpoint/model/CreatePushTemplateRequest.h>
 #include <aws/pinpoint/model/CreateSegmentRequest.h>
 #include <aws/pinpoint/model/CreateSmsTemplateRequest.h>
+#include <aws/pinpoint/model/CreateVoiceTemplateRequest.h>
 #include <aws/pinpoint/model/DeleteAdmChannelRequest.h>
 #include <aws/pinpoint/model/DeleteApnsChannelRequest.h>
 #include <aws/pinpoint/model/DeleteApnsSandboxChannelRequest.h>
@@ -59,6 +60,7 @@
 #include <aws/pinpoint/model/DeleteSmsTemplateRequest.h>
 #include <aws/pinpoint/model/DeleteUserEndpointsRequest.h>
 #include <aws/pinpoint/model/DeleteVoiceChannelRequest.h>
+#include <aws/pinpoint/model/DeleteVoiceTemplateRequest.h>
 #include <aws/pinpoint/model/GetAdmChannelRequest.h>
 #include <aws/pinpoint/model/GetApnsChannelRequest.h>
 #include <aws/pinpoint/model/GetApnsSandboxChannelRequest.h>
@@ -100,6 +102,7 @@
 #include <aws/pinpoint/model/GetSmsTemplateRequest.h>
 #include <aws/pinpoint/model/GetUserEndpointsRequest.h>
 #include <aws/pinpoint/model/GetVoiceChannelRequest.h>
+#include <aws/pinpoint/model/GetVoiceTemplateRequest.h>
 #include <aws/pinpoint/model/ListJourneysRequest.h>
 #include <aws/pinpoint/model/ListTagsForResourceRequest.h>
 #include <aws/pinpoint/model/ListTemplatesRequest.h>
@@ -131,6 +134,7 @@
 #include <aws/pinpoint/model/UpdateSmsChannelRequest.h>
 #include <aws/pinpoint/model/UpdateSmsTemplateRequest.h>
 #include <aws/pinpoint/model/UpdateVoiceChannelRequest.h>
+#include <aws/pinpoint/model/UpdateVoiceTemplateRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -573,6 +577,48 @@ void PinpointClient::CreateSmsTemplateAsync(const CreateSmsTemplateRequest& requ
 void PinpointClient::CreateSmsTemplateAsyncHelper(const CreateSmsTemplateRequest& request, const CreateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateSmsTemplate(request), context);
+}
+
+CreateVoiceTemplateOutcome PinpointClient::CreateVoiceTemplate(const CreateVoiceTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateVoiceTemplate", "Required field: TemplateName, is not set");
+    return CreateVoiceTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/voice";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateVoiceTemplateOutcome(CreateVoiceTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateVoiceTemplateOutcome(outcome.GetError());
+  }
+}
+
+CreateVoiceTemplateOutcomeCallable PinpointClient::CreateVoiceTemplateCallable(const CreateVoiceTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateVoiceTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateVoiceTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::CreateVoiceTemplateAsync(const CreateVoiceTemplateRequest& request, const CreateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateVoiceTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::CreateVoiceTemplateAsyncHelper(const CreateVoiceTemplateRequest& request, const CreateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateVoiceTemplate(request), context);
 }
 
 DeleteAdmChannelOutcome PinpointClient::DeleteAdmChannel(const DeleteAdmChannelRequest& request) const
@@ -1442,6 +1488,48 @@ void PinpointClient::DeleteVoiceChannelAsync(const DeleteVoiceChannelRequest& re
 void PinpointClient::DeleteVoiceChannelAsyncHelper(const DeleteVoiceChannelRequest& request, const DeleteVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteVoiceChannel(request), context);
+}
+
+DeleteVoiceTemplateOutcome PinpointClient::DeleteVoiceTemplate(const DeleteVoiceTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVoiceTemplate", "Required field: TemplateName, is not set");
+    return DeleteVoiceTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/voice";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteVoiceTemplateOutcome(DeleteVoiceTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteVoiceTemplateOutcome(outcome.GetError());
+  }
+}
+
+DeleteVoiceTemplateOutcomeCallable PinpointClient::DeleteVoiceTemplateCallable(const DeleteVoiceTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteVoiceTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteVoiceTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::DeleteVoiceTemplateAsync(const DeleteVoiceTemplateRequest& request, const DeleteVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteVoiceTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::DeleteVoiceTemplateAsyncHelper(const DeleteVoiceTemplateRequest& request, const DeleteVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteVoiceTemplate(request), context);
 }
 
 GetAdmChannelOutcome PinpointClient::GetAdmChannel(const GetAdmChannelRequest& request) const
@@ -3314,6 +3402,48 @@ void PinpointClient::GetVoiceChannelAsyncHelper(const GetVoiceChannelRequest& re
   handler(this, request, GetVoiceChannel(request), context);
 }
 
+GetVoiceTemplateOutcome PinpointClient::GetVoiceTemplate(const GetVoiceTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetVoiceTemplate", "Required field: TemplateName, is not set");
+    return GetVoiceTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/voice";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetVoiceTemplateOutcome(GetVoiceTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetVoiceTemplateOutcome(outcome.GetError());
+  }
+}
+
+GetVoiceTemplateOutcomeCallable PinpointClient::GetVoiceTemplateCallable(const GetVoiceTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetVoiceTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetVoiceTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::GetVoiceTemplateAsync(const GetVoiceTemplateRequest& request, const GetVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetVoiceTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::GetVoiceTemplateAsyncHelper(const GetVoiceTemplateRequest& request, const GetVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetVoiceTemplate(request), context);
+}
+
 ListJourneysOutcome PinpointClient::ListJourneys(const ListJourneysRequest& request) const
 {
   if (!request.ApplicationIdHasBeenSet())
@@ -4639,5 +4769,47 @@ void PinpointClient::UpdateVoiceChannelAsync(const UpdateVoiceChannelRequest& re
 void PinpointClient::UpdateVoiceChannelAsyncHelper(const UpdateVoiceChannelRequest& request, const UpdateVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateVoiceChannel(request), context);
+}
+
+UpdateVoiceTemplateOutcome PinpointClient::UpdateVoiceTemplate(const UpdateVoiceTemplateRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateVoiceTemplate", "Required field: TemplateName, is not set");
+    return UpdateVoiceTemplateOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/voice";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateVoiceTemplateOutcome(UpdateVoiceTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateVoiceTemplateOutcome(outcome.GetError());
+  }
+}
+
+UpdateVoiceTemplateOutcomeCallable PinpointClient::UpdateVoiceTemplateCallable(const UpdateVoiceTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateVoiceTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateVoiceTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateVoiceTemplateAsync(const UpdateVoiceTemplateRequest& request, const UpdateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateVoiceTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateVoiceTemplateAsyncHelper(const UpdateVoiceTemplateRequest& request, const UpdateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateVoiceTemplate(request), context);
 }
 

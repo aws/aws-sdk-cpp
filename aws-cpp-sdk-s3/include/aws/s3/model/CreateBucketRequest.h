@@ -85,73 +85,73 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The name of the bucket to create.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to create.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to create.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to create.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to create.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name of the bucket to create.</p>
      */
     inline CreateBucketRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the bucket to create.</p>
      */
     inline CreateBucketRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name of the bucket to create.</p>
      */
     inline CreateBucketRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The configuration information for the bucket.</p>
      */
     inline const CreateBucketConfiguration& GetCreateBucketConfiguration() const{ return m_createBucketConfiguration; }
 
     /**
-     * <p/>
+     * <p>The configuration information for the bucket.</p>
      */
     inline bool CreateBucketConfigurationHasBeenSet() const { return m_createBucketConfigurationHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The configuration information for the bucket.</p>
      */
     inline void SetCreateBucketConfiguration(const CreateBucketConfiguration& value) { m_createBucketConfigurationHasBeenSet = true; m_createBucketConfiguration = value; }
 
     /**
-     * <p/>
+     * <p>The configuration information for the bucket.</p>
      */
     inline void SetCreateBucketConfiguration(CreateBucketConfiguration&& value) { m_createBucketConfigurationHasBeenSet = true; m_createBucketConfiguration = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The configuration information for the bucket.</p>
      */
     inline CreateBucketRequest& WithCreateBucketConfiguration(const CreateBucketConfiguration& value) { SetCreateBucketConfiguration(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The configuration information for the bucket.</p>
      */
     inline CreateBucketRequest& WithCreateBucketConfiguration(CreateBucketConfiguration&& value) { SetCreateBucketConfiguration(std::move(value)); return *this;}
 
@@ -370,25 +370,25 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether you want Amazon S3 object lock to be enabled for the new
+     * <p>Specifies whether you want S3 Object Lock to be enabled for the new
      * bucket.</p>
      */
     inline bool GetObjectLockEnabledForBucket() const{ return m_objectLockEnabledForBucket; }
 
     /**
-     * <p>Specifies whether you want Amazon S3 object lock to be enabled for the new
+     * <p>Specifies whether you want S3 Object Lock to be enabled for the new
      * bucket.</p>
      */
     inline bool ObjectLockEnabledForBucketHasBeenSet() const { return m_objectLockEnabledForBucketHasBeenSet; }
 
     /**
-     * <p>Specifies whether you want Amazon S3 object lock to be enabled for the new
+     * <p>Specifies whether you want S3 Object Lock to be enabled for the new
      * bucket.</p>
      */
     inline void SetObjectLockEnabledForBucket(bool value) { m_objectLockEnabledForBucketHasBeenSet = true; m_objectLockEnabledForBucket = value; }
 
     /**
-     * <p>Specifies whether you want Amazon S3 object lock to be enabled for the new
+     * <p>Specifies whether you want S3 Object Lock to be enabled for the new
      * bucket.</p>
      */
     inline CreateBucketRequest& WithObjectLockEnabledForBucket(bool value) { SetObjectLockEnabledForBucket(value); return *this;}

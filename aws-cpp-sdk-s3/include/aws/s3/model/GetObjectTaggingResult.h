@@ -45,73 +45,73 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which you got the tagging information.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which you got the tagging information.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which you got the tagging information.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which you got the tagging information.</p>
      */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which you got the tagging information.</p>
      */
     inline GetObjectTaggingResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which you got the tagging information.</p>
      */
     inline GetObjectTaggingResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which you got the tagging information.</p>
      */
     inline GetObjectTaggingResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Contains the tag set.</p>
      */
     inline const Aws::Vector<Tag>& GetTagSet() const{ return m_tagSet; }
 
     /**
-     * <p/>
+     * <p>Contains the tag set.</p>
      */
     inline void SetTagSet(const Aws::Vector<Tag>& value) { m_tagSet = value; }
 
     /**
-     * <p/>
+     * <p>Contains the tag set.</p>
      */
     inline void SetTagSet(Aws::Vector<Tag>&& value) { m_tagSet = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Contains the tag set.</p>
      */
     inline GetObjectTaggingResult& WithTagSet(const Aws::Vector<Tag>& value) { SetTagSet(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Contains the tag set.</p>
      */
     inline GetObjectTaggingResult& WithTagSet(Aws::Vector<Tag>&& value) { SetTagSet(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Contains the tag set.</p>
      */
     inline GetObjectTaggingResult& AddTagSet(const Tag& value) { m_tagSet.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Contains the tag set.</p>
      */
     inline GetObjectTaggingResult& AddTagSet(Tag&& value) { m_tagSet.push_back(std::move(value)); return *this; }
 

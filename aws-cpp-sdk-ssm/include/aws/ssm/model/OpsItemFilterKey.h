@@ -38,7 +38,9 @@ namespace Model
     OperationalDataKey,
     OperationalDataValue,
     ResourceId,
-    AutomationId
+    AutomationId,
+    Category,
+    Severity
   };
 
 namespace OpsItemFilterKeyMapper

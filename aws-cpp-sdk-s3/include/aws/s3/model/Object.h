@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>An object consists of data and its descriptive metadata.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Object">AWS API
    * Reference</a></p>
    */
@@ -51,135 +52,151 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The name that you assign to an object. You use the object key to retrieve the
+     * object.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p/>
+     * <p>The name that you assign to an object. You use the object key to retrieve the
+     * object.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The name that you assign to an object. You use the object key to retrieve the
+     * object.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p/>
+     * <p>The name that you assign to an object. You use the object key to retrieve the
+     * object.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The name that you assign to an object. You use the object key to retrieve the
+     * object.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p/>
+     * <p>The name that you assign to an object. You use the object key to retrieve the
+     * object.</p>
      */
     inline Object& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The name that you assign to an object. You use the object key to retrieve the
+     * object.</p>
      */
     inline Object& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The name that you assign to an object. You use the object key to retrieve the
+     * object.</p>
      */
     inline Object& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The date the Object was Last Modified</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * <p/>
+     * <p>The date the Object was Last Modified</p>
      */
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The date the Object was Last Modified</p>
      */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
-     * <p/>
+     * <p>The date the Object was Last Modified</p>
      */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The date the Object was Last Modified</p>
      */
     inline Object& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The date the Object was Last Modified</p>
      */
     inline Object& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
+     * the contents of an object, not its metadata.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
+     * the contents of an object, not its metadata.</p>
      */
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
+     * the contents of an object, not its metadata.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
+     * the contents of an object, not its metadata.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
+     * the contents of an object, not its metadata.</p>
      */
     inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
+     * the contents of an object, not its metadata.</p>
      */
     inline Object& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
+     * the contents of an object, not its metadata.</p>
      */
     inline Object& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The entity tag is an MD5 hash of the object. ETag reflects only changes to
+     * the contents of an object, not its metadata.</p>
      */
     inline Object& WithETag(const char* value) { SetETag(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Size in bytes of the object</p>
      */
     inline long long GetSize() const{ return m_size; }
 
     /**
-     * <p/>
+     * <p>Size in bytes of the object</p>
      */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Size in bytes of the object</p>
      */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
-     * <p/>
+     * <p>Size in bytes of the object</p>
      */
     inline Object& WithSize(long long value) { SetSize(value); return *this;}
 
@@ -216,32 +233,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The owner of the object</p>
      */
     inline const Owner& GetOwner() const{ return m_owner; }
 
     /**
-     * <p/>
+     * <p>The owner of the object</p>
      */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The owner of the object</p>
      */
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
-     * <p/>
+     * <p>The owner of the object</p>
      */
     inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The owner of the object</p>
      */
     inline Object& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The owner of the object</p>
      */
     inline Object& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 

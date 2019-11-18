@@ -35,9 +35,11 @@ PushNotificationTemplateResponse::PushNotificationTemplateResponse() :
     m_baiduHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_defaultHasBeenSet(false),
+    m_defaultSubstitutionsHasBeenSet(false),
     m_gCMHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_templateType(TemplateType::NOT_SET),
     m_templateTypeHasBeenSet(false)
@@ -51,9 +53,11 @@ PushNotificationTemplateResponse::PushNotificationTemplateResponse(JsonView json
     m_baiduHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_defaultHasBeenSet(false),
+    m_defaultSubstitutionsHasBeenSet(false),
     m_gCMHasBeenSet(false),
     m_lastModifiedDateHasBeenSet(false),
     m_tagsHasBeenSet(false),
+    m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_templateType(TemplateType::NOT_SET),
     m_templateTypeHasBeenSet(false)
@@ -105,6 +109,13 @@ PushNotificationTemplateResponse& PushNotificationTemplateResponse::operator =(J
     m_defaultHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultSubstitutions"))
+  {
+    m_defaultSubstitutions = jsonValue.GetString("DefaultSubstitutions");
+
+    m_defaultSubstitutionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("GCM"))
   {
     m_gCM = jsonValue.GetObject("GCM");
@@ -127,6 +138,13 @@ PushNotificationTemplateResponse& PushNotificationTemplateResponse::operator =(J
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TemplateDescription"))
+  {
+    m_templateDescription = jsonValue.GetString("TemplateDescription");
+
+    m_templateDescriptionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TemplateName"))
@@ -186,6 +204,12 @@ JsonValue PushNotificationTemplateResponse::Jsonize() const
 
   }
 
+  if(m_defaultSubstitutionsHasBeenSet)
+  {
+   payload.WithString("DefaultSubstitutions", m_defaultSubstitutions);
+
+  }
+
   if(m_gCMHasBeenSet)
   {
    payload.WithObject("GCM", m_gCM.Jsonize());
@@ -206,6 +230,12 @@ JsonValue PushNotificationTemplateResponse::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_templateDescriptionHasBeenSet)
+  {
+   payload.WithString("TemplateDescription", m_templateDescription);
 
   }
 

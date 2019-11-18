@@ -16,10 +16,11 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ssm/model/OpsFilter.h>
 #include <aws/ssm/model/OpsAggregator.h>
+#include <aws/ssm/model/OpsResultAttribute.h>
 #include <utility>
 
 namespace Aws
@@ -45,6 +46,47 @@ namespace Model
     Aws::String SerializePayload() const override;
 
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>Specify the name of a resource data sync to get.</p>
+     */
+    inline const Aws::String& GetSyncName() const{ return m_syncName; }
+
+    /**
+     * <p>Specify the name of a resource data sync to get.</p>
+     */
+    inline bool SyncNameHasBeenSet() const { return m_syncNameHasBeenSet; }
+
+    /**
+     * <p>Specify the name of a resource data sync to get.</p>
+     */
+    inline void SetSyncName(const Aws::String& value) { m_syncNameHasBeenSet = true; m_syncName = value; }
+
+    /**
+     * <p>Specify the name of a resource data sync to get.</p>
+     */
+    inline void SetSyncName(Aws::String&& value) { m_syncNameHasBeenSet = true; m_syncName = std::move(value); }
+
+    /**
+     * <p>Specify the name of a resource data sync to get.</p>
+     */
+    inline void SetSyncName(const char* value) { m_syncNameHasBeenSet = true; m_syncName.assign(value); }
+
+    /**
+     * <p>Specify the name of a resource data sync to get.</p>
+     */
+    inline GetOpsSummaryRequest& WithSyncName(const Aws::String& value) { SetSyncName(value); return *this;}
+
+    /**
+     * <p>Specify the name of a resource data sync to get.</p>
+     */
+    inline GetOpsSummaryRequest& WithSyncName(Aws::String&& value) { SetSyncName(std::move(value)); return *this;}
+
+    /**
+     * <p>Specify the name of a resource data sync to get.</p>
+     */
+    inline GetOpsSummaryRequest& WithSyncName(const char* value) { SetSyncName(value); return *this;}
 
 
     /**
@@ -138,6 +180,47 @@ namespace Model
 
 
     /**
+     * <p>The OpsItem data type to return.</p>
+     */
+    inline const Aws::Vector<OpsResultAttribute>& GetResultAttributes() const{ return m_resultAttributes; }
+
+    /**
+     * <p>The OpsItem data type to return.</p>
+     */
+    inline bool ResultAttributesHasBeenSet() const { return m_resultAttributesHasBeenSet; }
+
+    /**
+     * <p>The OpsItem data type to return.</p>
+     */
+    inline void SetResultAttributes(const Aws::Vector<OpsResultAttribute>& value) { m_resultAttributesHasBeenSet = true; m_resultAttributes = value; }
+
+    /**
+     * <p>The OpsItem data type to return.</p>
+     */
+    inline void SetResultAttributes(Aws::Vector<OpsResultAttribute>&& value) { m_resultAttributesHasBeenSet = true; m_resultAttributes = std::move(value); }
+
+    /**
+     * <p>The OpsItem data type to return.</p>
+     */
+    inline GetOpsSummaryRequest& WithResultAttributes(const Aws::Vector<OpsResultAttribute>& value) { SetResultAttributes(value); return *this;}
+
+    /**
+     * <p>The OpsItem data type to return.</p>
+     */
+    inline GetOpsSummaryRequest& WithResultAttributes(Aws::Vector<OpsResultAttribute>&& value) { SetResultAttributes(std::move(value)); return *this;}
+
+    /**
+     * <p>The OpsItem data type to return.</p>
+     */
+    inline GetOpsSummaryRequest& AddResultAttributes(const OpsResultAttribute& value) { m_resultAttributesHasBeenSet = true; m_resultAttributes.push_back(value); return *this; }
+
+    /**
+     * <p>The OpsItem data type to return.</p>
+     */
+    inline GetOpsSummaryRequest& AddResultAttributes(OpsResultAttribute&& value) { m_resultAttributesHasBeenSet = true; m_resultAttributes.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>A token to start the list. Use this token to get the next set of results.
      * </p>
      */
@@ -216,11 +299,17 @@ namespace Model
 
   private:
 
+    Aws::String m_syncName;
+    bool m_syncNameHasBeenSet;
+
     Aws::Vector<OpsFilter> m_filters;
     bool m_filtersHasBeenSet;
 
     Aws::Vector<OpsAggregator> m_aggregators;
     bool m_aggregatorsHasBeenSet;
+
+    Aws::Vector<OpsResultAttribute> m_resultAttributes;
+    bool m_resultAttributesHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

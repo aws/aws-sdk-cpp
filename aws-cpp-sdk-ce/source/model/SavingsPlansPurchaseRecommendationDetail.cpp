@@ -36,6 +36,7 @@ SavingsPlansPurchaseRecommendationDetail::SavingsPlansPurchaseRecommendationDeta
     m_currencyCodeHasBeenSet(false),
     m_estimatedSPCostHasBeenSet(false),
     m_estimatedOnDemandCostHasBeenSet(false),
+    m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet(false),
     m_estimatedSavingsAmountHasBeenSet(false),
     m_estimatedSavingsPercentageHasBeenSet(false),
     m_hourlyCommitmentToPurchaseHasBeenSet(false),
@@ -55,6 +56,7 @@ SavingsPlansPurchaseRecommendationDetail::SavingsPlansPurchaseRecommendationDeta
     m_currencyCodeHasBeenSet(false),
     m_estimatedSPCostHasBeenSet(false),
     m_estimatedOnDemandCostHasBeenSet(false),
+    m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet(false),
     m_estimatedSavingsAmountHasBeenSet(false),
     m_estimatedSavingsPercentageHasBeenSet(false),
     m_hourlyCommitmentToPurchaseHasBeenSet(false),
@@ -116,6 +118,13 @@ SavingsPlansPurchaseRecommendationDetail& SavingsPlansPurchaseRecommendationDeta
     m_estimatedOnDemandCost = jsonValue.GetString("EstimatedOnDemandCost");
 
     m_estimatedOnDemandCostHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EstimatedOnDemandCostWithCurrentCommitment"))
+  {
+    m_estimatedOnDemandCostWithCurrentCommitment = jsonValue.GetString("EstimatedOnDemandCostWithCurrentCommitment");
+
+    m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EstimatedSavingsAmount"))
@@ -220,6 +229,12 @@ JsonValue SavingsPlansPurchaseRecommendationDetail::Jsonize() const
   if(m_estimatedOnDemandCostHasBeenSet)
   {
    payload.WithString("EstimatedOnDemandCost", m_estimatedOnDemandCost);
+
+  }
+
+  if(m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet)
+  {
+   payload.WithString("EstimatedOnDemandCostWithCurrentCommitment", m_estimatedOnDemandCostWithCurrentCommitment);
 
   }
 

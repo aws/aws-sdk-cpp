@@ -46,75 +46,117 @@ namespace Model
 
 
     /**
-     * <p>Date when multipart upload will become eligible for abort operation by
-     * lifecycle.</p>
+     * <p>If the bucket has a lifecycle rule configured with an action to abort
+     * incomplete multipart uploads and the prefix in the lifecycle rule matches the
+     * object name in the request, the response includes this header. The header
+     * indicates when the initiated multipart upload becomes eligible for an abort
+     * operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
+     * <p>The response also includes the x-amz-abort-rule-id header that provides the
+     * ID of the lifecycle configuration rule that defines this action.</p>
      */
     inline const Aws::Utils::DateTime& GetAbortDate() const{ return m_abortDate; }
 
     /**
-     * <p>Date when multipart upload will become eligible for abort operation by
-     * lifecycle.</p>
+     * <p>If the bucket has a lifecycle rule configured with an action to abort
+     * incomplete multipart uploads and the prefix in the lifecycle rule matches the
+     * object name in the request, the response includes this header. The header
+     * indicates when the initiated multipart upload becomes eligible for an abort
+     * operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
+     * <p>The response also includes the x-amz-abort-rule-id header that provides the
+     * ID of the lifecycle configuration rule that defines this action.</p>
      */
     inline void SetAbortDate(const Aws::Utils::DateTime& value) { m_abortDate = value; }
 
     /**
-     * <p>Date when multipart upload will become eligible for abort operation by
-     * lifecycle.</p>
+     * <p>If the bucket has a lifecycle rule configured with an action to abort
+     * incomplete multipart uploads and the prefix in the lifecycle rule matches the
+     * object name in the request, the response includes this header. The header
+     * indicates when the initiated multipart upload becomes eligible for an abort
+     * operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
+     * <p>The response also includes the x-amz-abort-rule-id header that provides the
+     * ID of the lifecycle configuration rule that defines this action.</p>
      */
     inline void SetAbortDate(Aws::Utils::DateTime&& value) { m_abortDate = std::move(value); }
 
     /**
-     * <p>Date when multipart upload will become eligible for abort operation by
-     * lifecycle.</p>
+     * <p>If the bucket has a lifecycle rule configured with an action to abort
+     * incomplete multipart uploads and the prefix in the lifecycle rule matches the
+     * object name in the request, the response includes this header. The header
+     * indicates when the initiated multipart upload becomes eligible for an abort
+     * operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
+     * <p>The response also includes the x-amz-abort-rule-id header that provides the
+     * ID of the lifecycle configuration rule that defines this action.</p>
      */
     inline CreateMultipartUploadResult& WithAbortDate(const Aws::Utils::DateTime& value) { SetAbortDate(value); return *this;}
 
     /**
-     * <p>Date when multipart upload will become eligible for abort operation by
-     * lifecycle.</p>
+     * <p>If the bucket has a lifecycle rule configured with an action to abort
+     * incomplete multipart uploads and the prefix in the lifecycle rule matches the
+     * object name in the request, the response includes this header. The header
+     * indicates when the initiated multipart upload becomes eligible for an abort
+     * operation. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
+     * <p>The response also includes the x-amz-abort-rule-id header that provides the
+     * ID of the lifecycle configuration rule that defines this action.</p>
      */
     inline CreateMultipartUploadResult& WithAbortDate(Aws::Utils::DateTime&& value) { SetAbortDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.</p>
+     * <p>This header is returned along with the x-amz-abort-date header. It identifies
+     * the applicable lifecycle configuration rule that defines the action to abort
+     * incomplete multipart uploads.</p>
      */
     inline const Aws::String& GetAbortRuleId() const{ return m_abortRuleId; }
 
     /**
-     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.</p>
+     * <p>This header is returned along with the x-amz-abort-date header. It identifies
+     * the applicable lifecycle configuration rule that defines the action to abort
+     * incomplete multipart uploads.</p>
      */
     inline void SetAbortRuleId(const Aws::String& value) { m_abortRuleId = value; }
 
     /**
-     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.</p>
+     * <p>This header is returned along with the x-amz-abort-date header. It identifies
+     * the applicable lifecycle configuration rule that defines the action to abort
+     * incomplete multipart uploads.</p>
      */
     inline void SetAbortRuleId(Aws::String&& value) { m_abortRuleId = std::move(value); }
 
     /**
-     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.</p>
+     * <p>This header is returned along with the x-amz-abort-date header. It identifies
+     * the applicable lifecycle configuration rule that defines the action to abort
+     * incomplete multipart uploads.</p>
      */
     inline void SetAbortRuleId(const char* value) { m_abortRuleId.assign(value); }
 
     /**
-     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.</p>
+     * <p>This header is returned along with the x-amz-abort-date header. It identifies
+     * the applicable lifecycle configuration rule that defines the action to abort
+     * incomplete multipart uploads.</p>
      */
     inline CreateMultipartUploadResult& WithAbortRuleId(const Aws::String& value) { SetAbortRuleId(value); return *this;}
 
     /**
-     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.</p>
+     * <p>This header is returned along with the x-amz-abort-date header. It identifies
+     * the applicable lifecycle configuration rule that defines the action to abort
+     * incomplete multipart uploads.</p>
      */
     inline CreateMultipartUploadResult& WithAbortRuleId(Aws::String&& value) { SetAbortRuleId(std::move(value)); return *this;}
 
     /**
-     * <p>Id of the lifecycle rule that makes a multipart upload eligible for abort
-     * operation.</p>
+     * <p>This header is returned along with the x-amz-abort-date header. It identifies
+     * the applicable lifecycle configuration rule that defines the action to abort
+     * incomplete multipart uploads.</p>
      */
     inline CreateMultipartUploadResult& WithAbortRuleId(const char* value) { SetAbortRuleId(value); return *this;}
 
@@ -359,44 +401,44 @@ namespace Model
 
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline CreateMultipartUploadResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline CreateMultipartUploadResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) master
-     * encryption key that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
+     * master key (CMK) that was used for the object.</p>
      */
     inline CreateMultipartUploadResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 

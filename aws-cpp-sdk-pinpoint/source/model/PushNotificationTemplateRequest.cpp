@@ -33,8 +33,10 @@ PushNotificationTemplateRequest::PushNotificationTemplateRequest() :
     m_aPNSHasBeenSet(false),
     m_baiduHasBeenSet(false),
     m_defaultHasBeenSet(false),
+    m_defaultSubstitutionsHasBeenSet(false),
     m_gCMHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_templateDescriptionHasBeenSet(false)
 {
 }
 
@@ -43,8 +45,10 @@ PushNotificationTemplateRequest::PushNotificationTemplateRequest(JsonView jsonVa
     m_aPNSHasBeenSet(false),
     m_baiduHasBeenSet(false),
     m_defaultHasBeenSet(false),
+    m_defaultSubstitutionsHasBeenSet(false),
     m_gCMHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_templateDescriptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +83,13 @@ PushNotificationTemplateRequest& PushNotificationTemplateRequest::operator =(Jso
     m_defaultHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultSubstitutions"))
+  {
+    m_defaultSubstitutions = jsonValue.GetString("DefaultSubstitutions");
+
+    m_defaultSubstitutionsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("GCM"))
   {
     m_gCM = jsonValue.GetObject("GCM");
@@ -94,6 +105,13 @@ PushNotificationTemplateRequest& PushNotificationTemplateRequest::operator =(Jso
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TemplateDescription"))
+  {
+    m_templateDescription = jsonValue.GetString("TemplateDescription");
+
+    m_templateDescriptionHasBeenSet = true;
   }
 
   return *this;
@@ -127,6 +145,12 @@ JsonValue PushNotificationTemplateRequest::Jsonize() const
 
   }
 
+  if(m_defaultSubstitutionsHasBeenSet)
+  {
+   payload.WithString("DefaultSubstitutions", m_defaultSubstitutions);
+
+  }
+
   if(m_gCMHasBeenSet)
   {
    payload.WithObject("GCM", m_gCM.Jsonize());
@@ -141,6 +165,12 @@ JsonValue PushNotificationTemplateRequest::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_templateDescriptionHasBeenSet)
+  {
+   payload.WithString("TemplateDescription", m_templateDescription);
 
   }
 

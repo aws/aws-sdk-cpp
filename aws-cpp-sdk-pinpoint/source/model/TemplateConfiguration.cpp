@@ -31,14 +31,16 @@ namespace Model
 TemplateConfiguration::TemplateConfiguration() : 
     m_emailTemplateHasBeenSet(false),
     m_pushTemplateHasBeenSet(false),
-    m_sMSTemplateHasBeenSet(false)
+    m_sMSTemplateHasBeenSet(false),
+    m_voiceTemplateHasBeenSet(false)
 {
 }
 
 TemplateConfiguration::TemplateConfiguration(JsonView jsonValue) : 
     m_emailTemplateHasBeenSet(false),
     m_pushTemplateHasBeenSet(false),
-    m_sMSTemplateHasBeenSet(false)
+    m_sMSTemplateHasBeenSet(false),
+    m_voiceTemplateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +68,13 @@ TemplateConfiguration& TemplateConfiguration::operator =(JsonView jsonValue)
     m_sMSTemplateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VoiceTemplate"))
+  {
+    m_voiceTemplate = jsonValue.GetObject("VoiceTemplate");
+
+    m_voiceTemplateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +97,12 @@ JsonValue TemplateConfiguration::Jsonize() const
   if(m_sMSTemplateHasBeenSet)
   {
    payload.WithObject("SMSTemplate", m_sMSTemplate.Jsonize());
+
+  }
+
+  if(m_voiceTemplateHasBeenSet)
+  {
+   payload.WithObject("VoiceTemplate", m_voiceTemplate.Jsonize());
 
   }
 

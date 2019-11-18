@@ -252,8 +252,8 @@ namespace Model
 
     /**
      * <p>Specifies the source of the data to join with the transformed data. The valid
-     * values are <code>None</code> and <code>Input</code> The default value is
-     * <code>None</code> which specifies not to join the input with the transformed
+     * values are <code>None</code> and <code>Input</code>. The default value is
+     * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
      * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
      * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
@@ -271,8 +271,8 @@ namespace Model
 
     /**
      * <p>Specifies the source of the data to join with the transformed data. The valid
-     * values are <code>None</code> and <code>Input</code> The default value is
-     * <code>None</code> which specifies not to join the input with the transformed
+     * values are <code>None</code> and <code>Input</code>. The default value is
+     * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
      * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
      * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
@@ -290,8 +290,8 @@ namespace Model
 
     /**
      * <p>Specifies the source of the data to join with the transformed data. The valid
-     * values are <code>None</code> and <code>Input</code> The default value is
-     * <code>None</code> which specifies not to join the input with the transformed
+     * values are <code>None</code> and <code>Input</code>. The default value is
+     * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
      * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
      * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
@@ -309,8 +309,8 @@ namespace Model
 
     /**
      * <p>Specifies the source of the data to join with the transformed data. The valid
-     * values are <code>None</code> and <code>Input</code> The default value is
-     * <code>None</code> which specifies not to join the input with the transformed
+     * values are <code>None</code> and <code>Input</code>. The default value is
+     * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
      * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
      * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
@@ -328,8 +328,8 @@ namespace Model
 
     /**
      * <p>Specifies the source of the data to join with the transformed data. The valid
-     * values are <code>None</code> and <code>Input</code> The default value is
-     * <code>None</code> which specifies not to join the input with the transformed
+     * values are <code>None</code> and <code>Input</code>. The default value is
+     * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
      * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
      * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds
@@ -347,8 +347,8 @@ namespace Model
 
     /**
      * <p>Specifies the source of the data to join with the transformed data. The valid
-     * values are <code>None</code> and <code>Input</code> The default value is
-     * <code>None</code> which specifies not to join the input with the transformed
+     * values are <code>None</code> and <code>Input</code>. The default value is
+     * <code>None</code>, which specifies not to join the input with the transformed
      * data. If you want the batch transform job to join the original input data with
      * the transformed data, set <code>JoinSource</code> to <code>Input</code>. </p>
      * <p>For JSON or JSONLines objects, such as a JSON array, Amazon SageMaker adds

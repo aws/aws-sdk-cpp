@@ -52,42 +52,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p/>
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p/>
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p/>
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline LifecycleRuleAndOperator& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline LifecycleRuleAndOperator& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
     inline LifecycleRuleAndOperator& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 

@@ -38,7 +38,8 @@ SavingsPlansPurchaseRecommendationSummary::SavingsPlansPurchaseRecommendationSum
     m_dailyCommitmentToPurchaseHasBeenSet(false),
     m_hourlyCommitmentToPurchaseHasBeenSet(false),
     m_estimatedSavingsPercentageHasBeenSet(false),
-    m_estimatedMonthlySavingsAmountHasBeenSet(false)
+    m_estimatedMonthlySavingsAmountHasBeenSet(false),
+    m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ SavingsPlansPurchaseRecommendationSummary::SavingsPlansPurchaseRecommendationSum
     m_dailyCommitmentToPurchaseHasBeenSet(false),
     m_hourlyCommitmentToPurchaseHasBeenSet(false),
     m_estimatedSavingsPercentageHasBeenSet(false),
-    m_estimatedMonthlySavingsAmountHasBeenSet(false)
+    m_estimatedMonthlySavingsAmountHasBeenSet(false),
+    m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -129,6 +131,13 @@ SavingsPlansPurchaseRecommendationSummary& SavingsPlansPurchaseRecommendationSum
     m_estimatedMonthlySavingsAmountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EstimatedOnDemandCostWithCurrentCommitment"))
+  {
+    m_estimatedOnDemandCostWithCurrentCommitment = jsonValue.GetString("EstimatedOnDemandCostWithCurrentCommitment");
+
+    m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -193,6 +202,12 @@ JsonValue SavingsPlansPurchaseRecommendationSummary::Jsonize() const
   if(m_estimatedMonthlySavingsAmountHasBeenSet)
   {
    payload.WithString("EstimatedMonthlySavingsAmount", m_estimatedMonthlySavingsAmount);
+
+  }
+
+  if(m_estimatedOnDemandCostWithCurrentCommitmentHasBeenSet)
+  {
+   payload.WithString("EstimatedOnDemandCostWithCurrentCommitment", m_estimatedOnDemandCostWithCurrentCommitment);
 
   }
 

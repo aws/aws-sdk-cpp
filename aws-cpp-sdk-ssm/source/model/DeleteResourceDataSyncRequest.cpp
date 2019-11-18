@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteResourceDataSyncRequest::DeleteResourceDataSyncRequest() : 
-    m_syncNameHasBeenSet(false)
+    m_syncNameHasBeenSet(false),
+    m_syncTypeHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,12 @@ Aws::String DeleteResourceDataSyncRequest::SerializePayload() const
   if(m_syncNameHasBeenSet)
   {
    payload.WithString("SyncName", m_syncName);
+
+  }
+
+  if(m_syncTypeHasBeenSet)
+  {
+   payload.WithString("SyncType", m_syncType);
 
   }
 

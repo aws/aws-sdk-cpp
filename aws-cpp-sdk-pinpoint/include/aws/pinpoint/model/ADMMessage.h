@@ -548,49 +548,57 @@ namespace Model
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * message. If specified, this value overrides all other content for the
+     * message.</p>
      */
     inline const Aws::String& GetRawContent() const{ return m_rawContent; }
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * message. If specified, this value overrides all other content for the
+     * message.</p>
      */
     inline bool RawContentHasBeenSet() const { return m_rawContentHasBeenSet; }
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * message. If specified, this value overrides all other content for the
+     * message.</p>
      */
     inline void SetRawContent(const Aws::String& value) { m_rawContentHasBeenSet = true; m_rawContent = value; }
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * message. If specified, this value overrides all other content for the
+     * message.</p>
      */
     inline void SetRawContent(Aws::String&& value) { m_rawContentHasBeenSet = true; m_rawContent = std::move(value); }
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * message. If specified, this value overrides all other content for the
+     * message.</p>
      */
     inline void SetRawContent(const char* value) { m_rawContentHasBeenSet = true; m_rawContent.assign(value); }
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * message. If specified, this value overrides all other content for the
+     * message.</p>
      */
     inline ADMMessage& WithRawContent(const Aws::String& value) { SetRawContent(value); return *this;}
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * message. If specified, this value overrides all other content for the
+     * message.</p>
      */
     inline ADMMessage& WithRawContent(Aws::String&& value) { SetRawContent(std::move(value)); return *this;}
 
     /**
      * <p>The raw, JSON-formatted string to use as the payload for the notification
-     * message. This value overrides the message.</p>
+     * message. If specified, this value overrides all other content for the
+     * message.</p>
      */
     inline ADMMessage& WithRawContent(const char* value) { SetRawContent(value); return *this;}
 

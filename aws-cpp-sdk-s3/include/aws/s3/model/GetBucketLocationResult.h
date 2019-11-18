@@ -43,27 +43,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Specifies the region where the bucket resides. For a list of all the Amazon
+     * S3 supported location constraints by region, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+     * and Endpoints</a>.</p>
      */
     inline const BucketLocationConstraint& GetLocationConstraint() const{ return m_locationConstraint; }
 
     /**
-     * <p/>
+     * <p>Specifies the region where the bucket resides. For a list of all the Amazon
+     * S3 supported location constraints by region, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+     * and Endpoints</a>.</p>
      */
     inline void SetLocationConstraint(const BucketLocationConstraint& value) { m_locationConstraint = value; }
 
     /**
-     * <p/>
+     * <p>Specifies the region where the bucket resides. For a list of all the Amazon
+     * S3 supported location constraints by region, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+     * and Endpoints</a>.</p>
      */
     inline void SetLocationConstraint(BucketLocationConstraint&& value) { m_locationConstraint = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Specifies the region where the bucket resides. For a list of all the Amazon
+     * S3 supported location constraints by region, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+     * and Endpoints</a>.</p>
      */
     inline GetBucketLocationResult& WithLocationConstraint(const BucketLocationConstraint& value) { SetLocationConstraint(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies the region where the bucket resides. For a list of all the Amazon
+     * S3 supported location constraints by region, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
+     * and Endpoints</a>.</p>
      */
     inline GetBucketLocationResult& WithLocationConstraint(BucketLocationConstraint&& value) { SetLocationConstraint(std::move(value)); return *this;}
 

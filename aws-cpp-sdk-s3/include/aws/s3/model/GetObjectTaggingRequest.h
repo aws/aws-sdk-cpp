@@ -50,124 +50,132 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The bucket name containing the object for which to get the tagging
+     * information.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p/>
+     * <p>The bucket name containing the object for which to get the tagging
+     * information.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The bucket name containing the object for which to get the tagging
+     * information.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p/>
+     * <p>The bucket name containing the object for which to get the tagging
+     * information.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The bucket name containing the object for which to get the tagging
+     * information.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p/>
+     * <p>The bucket name containing the object for which to get the tagging
+     * information.</p>
      */
     inline GetObjectTaggingRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The bucket name containing the object for which to get the tagging
+     * information.</p>
      */
     inline GetObjectTaggingRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The bucket name containing the object for which to get the tagging
+     * information.</p>
      */
     inline GetObjectTaggingRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Object key for which to get the tagging information.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p/>
+     * <p>Object key for which to get the tagging information.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Object key for which to get the tagging information.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p/>
+     * <p>Object key for which to get the tagging information.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Object key for which to get the tagging information.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p/>
+     * <p>Object key for which to get the tagging information.</p>
      */
     inline GetObjectTaggingRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Object key for which to get the tagging information.</p>
      */
     inline GetObjectTaggingRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Object key for which to get the tagging information.</p>
      */
     inline GetObjectTaggingRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which to get the tagging information.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which to get the tagging information.</p>
      */
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which to get the tagging information.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which to get the tagging information.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which to get the tagging information.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which to get the tagging information.</p>
      */
     inline GetObjectTaggingRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which to get the tagging information.</p>
      */
     inline GetObjectTaggingRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The versionId of the object for which to get the tagging information.</p>
      */
     inline GetObjectTaggingRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

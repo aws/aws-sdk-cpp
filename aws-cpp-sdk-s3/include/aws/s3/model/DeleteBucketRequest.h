@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Specifies the bucket being deleted.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p/>
+     * <p>Specifies the bucket being deleted.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Specifies the bucket being deleted.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p/>
+     * <p>Specifies the bucket being deleted.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Specifies the bucket being deleted.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p/>
+     * <p>Specifies the bucket being deleted.</p>
      */
     inline DeleteBucketRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies the bucket being deleted.</p>
      */
     inline DeleteBucketRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Specifies the bucket being deleted.</p>
      */
     inline DeleteBucketRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
