@@ -1,6 +1,37 @@
 #set($signPayloadsOptional = true)
 #set($virtualAddressingSupported = true)
+#set($USEast1RegionalEndpointArgString = ", Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption")
+#set($USEast1RegionalEndpointInitString = ", m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)")
+#set($AdditionalServiceSpecificConfigLoadString = "LoadS3SpecificConfig(config.profileName);")
+#set($ForRegionExtraArgsString = ", m_USEast1RegionalEndpointOption == Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
+
+\#include<aws/core/platform/Environment.h>
+
+static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
+static const char US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR[] = "s3_us_east_1_regional_endpoint";
+
+void S3Client::LoadS3SpecificConfig(const Aws::String& profile)
+{
+  if (m_USEast1RegionalEndpointOption == Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET)
+  {
+    Aws::String option = Aws::Environment::GetEnv(US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR);
+    if (option.empty())
+    {
+      option = Aws::Config::GetCachedConfigValue(profile, US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR);
+    }
+
+    if (Aws::Utils::StringUtils::ToLower(option.c_str()) == "regional")
+    {
+      m_USEast1RegionalEndpointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL;
+    }
+    else // defaults is legacy
+    {
+      m_USEast1RegionalEndpointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY;
+    }
+  }
+}
+
 \#include<aws/core/utils/HashingUtils.h>
 Aws::String ${className}::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
 {
@@ -90,8 +121,8 @@ Aws::String ${className}::ComputeEndpointString(const Aws::String& bucket) const
     // when using virtual hosting of buckets, the bucket name has to follow some rules.
     // Mainly, it has to be a valid DNS label, and it must be lowercase.
     // For more information see http://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket
-    if(m_useVirtualAdressing && Aws::Utils::IsValidDnsLabel(bucket) && 
-            bucket == Aws::Utils::StringUtils::ToLower(bucket.c_str())) 
+    if(m_useVirtualAdressing && Aws::Utils::IsValidDnsLabel(bucket) &&
+            bucket == Aws::Utils::StringUtils::ToLower(bucket.c_str()))
     {
         ss << m_scheme << "://" << bucket << "." << m_baseUri;
     }

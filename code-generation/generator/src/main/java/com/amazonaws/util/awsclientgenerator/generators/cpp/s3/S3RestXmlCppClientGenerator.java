@@ -78,7 +78,7 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
 
     @Override
     public SdkFileEntry[] generateSourceFiles(ServiceModel serviceModel) throws Exception {
-		
+
         // Add ID2 and RequestId to GetObjectResult
         hackGetObjectOutputResponse(serviceModel);
 
@@ -255,7 +255,31 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         context.put("shape", shape);
         context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
         context.put("CppViewHelper", CppViewHelper.class);
-        return makeFile(template, context, fileName, true); 
+        return makeFile(template, context, fileName, true);
+    }
+
+    @Override
+    protected SdkFileEntry generateRegionHeaderFile(ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/EndpointEnumHeader.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+
+        String fileName = String.format("include/aws/%s/%sEndpoint.h", serviceModel.getMetadata().getProjectName(),
+                serviceModel.getMetadata().getClassNamePrefix());
+
+        return makeFile(template, context, fileName, true);
+    }
+
+    @Override
+    protected SdkFileEntry generateRegionSourceFile(ServiceModel serviceModel) throws Exception {
+
+        Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/EndpointEnumSource.vm", StandardCharsets.UTF_8.name());
+
+        VelocityContext context = createContext(serviceModel);
+
+        String fileName = String.format("source/%sEndpoint.cpp", serviceModel.getMetadata().getClassNamePrefix());
+        return makeFile(template, context, fileName, true);
     }
 }
 

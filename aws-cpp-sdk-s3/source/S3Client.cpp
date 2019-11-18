@@ -128,33 +128,33 @@ static const char* SERVICE_NAME = "s3";
 static const char* ALLOCATION_TAG = "S3Client";
 
 
-S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing) :
+S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
         SERVICE_NAME, clientConfiguration.region, signPayloads, false),
     Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing)
+    m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
 {
   init(clientConfiguration);
 }
 
-S3Client::S3Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing) :
+S3Client::S3Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
          SERVICE_NAME, clientConfiguration.region, signPayloads, false),
     Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing)
+    m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
 {
   init(clientConfiguration);
 }
 
 S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing) :
+  const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, clientConfiguration.region, signPayloads, false),
     Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing)
+    m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
 {
   init(clientConfiguration);
 }
@@ -165,11 +165,12 @@ S3Client::~S3Client()
 
 void S3Client::init(const ClientConfiguration& config)
 {
+  LoadS3SpecificConfig(config.profileName);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;
   if (config.endpointOverride.empty())
   {
-      m_baseUri = S3Endpoint::ForRegion(config.region, config.useDualStack);
+      m_baseUri = S3Endpoint::ForRegion(config.region, config.useDualStack, m_USEast1RegionalEndpointOption == Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL);
   }
   else
   {
@@ -3806,6 +3807,33 @@ void S3Client::UploadPartCopyAsyncHelper(const UploadPartCopyRequest& request, c
 
 
 
+
+#include<aws/core/platform/Environment.h>
+
+static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
+static const char US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR[] = "s3_us_east_1_regional_endpoint";
+
+void S3Client::LoadS3SpecificConfig(const Aws::String& profile)
+{
+  if (m_USEast1RegionalEndpointOption == Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET)
+  {
+    Aws::String option = Aws::Environment::GetEnv(US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR);
+    if (option.empty())
+    {
+      option = Aws::Config::GetCachedConfigValue(profile, US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR);
+    }
+
+    if (Aws::Utils::StringUtils::ToLower(option.c_str()) == "regional")
+    {
+      m_USEast1RegionalEndpointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL;
+    }
+    else // defaults is legacy
+    {
+      m_USEast1RegionalEndpointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY;
+    }
+  }
+}
+
 #include<aws/core/utils/HashingUtils.h>
 Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
 {
@@ -3895,8 +3923,8 @@ Aws::String S3Client::ComputeEndpointString(const Aws::String& bucket) const
     // when using virtual hosting of buckets, the bucket name has to follow some rules.
     // Mainly, it has to be a valid DNS label, and it must be lowercase.
     // For more information see http://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket
-    if(m_useVirtualAdressing && Aws::Utils::IsValidDnsLabel(bucket) && 
-            bucket == Aws::Utils::StringUtils::ToLower(bucket.c_str())) 
+    if(m_useVirtualAdressing && Aws::Utils::IsValidDnsLabel(bucket) &&
+            bucket == Aws::Utils::StringUtils::ToLower(bucket.c_str()))
     {
         ss << m_scheme << "://" << bucket << "." << m_baseUri;
     }

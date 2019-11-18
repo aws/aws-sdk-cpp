@@ -21,6 +21,7 @@
 \#include <functional>
 #set($signPayloadsOptional = true)
 #set($virtualAddressingSupported = true)
+#set($USEast1RegionalEndpointArgString = ", Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::NOT_SET")
 namespace Aws
 {
 
@@ -85,6 +86,12 @@ namespace Aws
      * ${serviceModel.documentation}
      */
 #end
+    enum class AWS_S3_API US_EAST_1_REGIONAL_ENDPOINT_OPTION
+    {
+      NOT_SET,
+      LEGACY,   //stands for using global endpoint for us-east-1,
+      REGIONAL //stands for using regional endpoint for us-east-1
+    };
 #set($finalClass = " final")
 #if($serviceModel.enableVirtualOperations)
 #set($finalClass = "")
@@ -152,6 +159,7 @@ namespace Aws
 
         void OverrideEndpoint(const Aws::String& endpoint);
     private:
+        void LoadS3SpecificConfig(const Aws::String& profile);
         void init(const Client::ClientConfiguration& clientConfiguration);
         Aws::String ComputeEndpointString(const Aws::String& bucket) const;
         Aws::String ComputeEndpointString() const;
@@ -167,6 +175,7 @@ namespace Aws
         mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
         bool m_enableEndpointDiscovery;
 #end
+        Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION m_USEast1RegionalEndpointOption;
     };
 
   } // namespace ${metadata.namespace}

@@ -164,12 +164,12 @@ public abstract class CppClientGenerator implements ClientGenerator {
                     if (op.getResult().getShape().hasEventStreamMembers()) {
                         for (Map.Entry<String, ShapeMember> shapeMemberEntry : op.getResult().getShape().getMembers().entrySet()) {
                             if (shapeMemberEntry.getValue().getShape().isEventStream()) {
-                                context.put("eventStreamShape", shapeMemberEntry.getValue().getShape());                                             
+                                context.put("eventStreamShape", shapeMemberEntry.getValue().getShape());
                                 context.put("operation", op);
                                 context.put("shape", shape);
                                 context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
                                 context.put("CppViewHelper", CppViewHelper.class);
-    
+
                                 String fileName = String.format("include/aws/%s/model/%sHandler.h", serviceModel.getMetadata().getProjectName(), key);
                                 return makeFile(template, context, fileName, true);
                             }
@@ -245,12 +245,12 @@ public abstract class CppClientGenerator implements ClientGenerator {
                     if (op.getResult().getShape().hasEventStreamMembers()) {
                         for (Map.Entry<String, ShapeMember> shapeMemberEntry : op.getResult().getShape().getMembers().entrySet()) {
                             if (shapeMemberEntry.getValue().getShape().isEventStream()) {
-                                context.put("eventStreamShape", shapeMemberEntry.getValue().getShape());                                             
+                                context.put("eventStreamShape", shapeMemberEntry.getValue().getShape());
                                 context.put("operation", op);
                                 context.put("shape", shape);
                                 context.put("typeInfo", new CppShapeInformation(shape, serviceModel));
                                 context.put("CppViewHelper", CppViewHelper.class);
-    
+
                                 String fileName = String.format("source/model/%sHandler.cpp", key);
                                 return makeFile(template, context, fileName, true);
                             }
@@ -326,37 +326,37 @@ public abstract class CppClientGenerator implements ClientGenerator {
         return makeFile(template, context, fileName, true);
     }
 
-    private SdkFileEntry generateRegionHeaderFile(final ServiceModel serviceModel) throws Exception {
+    protected SdkFileEntry generateRegionHeaderFile(ServiceModel serviceModel) throws Exception {
 
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EndpointEnumHeader.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("exportValue", String.format("AWS_%s_API", serviceModel.getMetadata().getClassNamePrefix().toUpperCase()));
 
-        String fileName = String.format("include/aws/%s/%s%s.h", serviceModel.getMetadata().getProjectName(),
-                serviceModel.getMetadata().getClassNamePrefix(), "Endpoint");
+        String fileName = String.format("include/aws/%s/%sEndpoint.h", serviceModel.getMetadata().getProjectName(),
+                serviceModel.getMetadata().getClassNamePrefix());
 
         return makeFile(template, context, fileName, true);
     }
 
-    private SdkFileEntry generateRegionSourceFile(final ServiceModel serviceModel) throws Exception {
+    protected SdkFileEntry generateRegionSourceFile(ServiceModel serviceModel) throws Exception {
 
         Template template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/EndpointEnumSource.vm", StandardCharsets.UTF_8.name());
 
         VelocityContext context = createContext(serviceModel);
         context.put("endpointMapping", computeEndpointMappingForService(serviceModel));
 
-        String fileName = String.format("source/%s%s.cpp", serviceModel.getMetadata().getClassNamePrefix(), "Endpoint");
+        String fileName = String.format("source/%sEndpoint.cpp", serviceModel.getMetadata().getClassNamePrefix());
         return makeFile(template, context, fileName, true);
     }
 
-    private Map<String, String> computeEndpointMappingForService(final ServiceModel serviceModel) {
+    protected Map<String, String> computeEndpointMappingForService(ServiceModel serviceModel) {
         Map<String, String> endpoints = new HashMap<>();
 
-        if (serviceModel.getServiceName().equals("budgets") || 
-            serviceModel.getServiceName().equals("cloudfront") || 
+        if (serviceModel.getServiceName().equals("budgets") ||
+            serviceModel.getServiceName().equals("cloudfront") ||
             serviceModel.getServiceName().equals("importexport") ||
-            serviceModel.getServiceName().equals("route53") || 
+            serviceModel.getServiceName().equals("route53") ||
             serviceModel.getServiceName().equals("waf"))
         {
             serviceModel.getMetadata().setGlobalEndpoint(serviceModel.getServiceName() + ".amazonaws.com");
@@ -372,14 +372,8 @@ public abstract class CppClientGenerator implements ClientGenerator {
             endpoints.put("us-gov-west-1", "organizations.us-gov-west-1.amazonaws.com");
             serviceModel.getMetadata().setGlobalEndpoint("organizations.us-east-1.amazonaws.com");
 
-        } else if (serviceModel.getServiceName().equals("s3")) {
-            serviceModel.getMetadata().setGlobalEndpoint(null);
-            endpoints.put("us-east-1", "s3.amazonaws.com");
-            endpoints.put("us-gov-west-1", "s3-us-gov-west-1.amazonaws.com");
-            endpoints.put("fips-us-gov-west-1", "s3-fips-us-gov-west-1.amazonaws.com");
-
         } else if (serviceModel.getServiceName().equals("sts")) {
-             serviceModel.getMetadata().setGlobalEndpoint(null);           
+             serviceModel.getMetadata().setGlobalEndpoint(null);
         }
 
         return endpoints;

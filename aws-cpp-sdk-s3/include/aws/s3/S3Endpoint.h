@@ -25,7 +25,7 @@ namespace S3
 {
 namespace S3Endpoint
 {
-AWS_S3_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false);
+  AWS_S3_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false, bool USEast1UseRegionalEndpoint = false);
 } // namespace S3Endpoint
 } // namespace S3
 } // namespace Aws
