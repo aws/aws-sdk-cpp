@@ -26,7 +26,7 @@ namespace IAM
 {
 namespace IAMEndpoint
 {
-  
+
   static const int CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
   static const int US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1");
   static const int US_GOV_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-east-1");
@@ -35,9 +35,9 @@ namespace IAMEndpoint
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
     auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
-    
+
     if(!useDualStack)
-    {      
+    {
       if(hash == CN_NORTH_1_HASH)
       {
         return "iam.cn-north-1.amazonaws.com.cn";

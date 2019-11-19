@@ -33,6 +33,7 @@ namespace Aws
         static const int CREATE_HASH = HashingUtils::HashString("CREATE");
         static const int UPDATE_HASH = HashingUtils::HashString("UPDATE");
         static const int DELETE__HASH = HashingUtils::HashString("DELETE");
+        static const int DETECT_DRIFT_HASH = HashingUtils::HashString("DETECT_DRIFT");
 
 
         StackSetOperationAction GetStackSetOperationActionForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == DELETE__HASH)
           {
             return StackSetOperationAction::DELETE_;
+          }
+          else if (hashCode == DETECT_DRIFT_HASH)
+          {
+            return StackSetOperationAction::DETECT_DRIFT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "UPDATE";
           case StackSetOperationAction::DELETE_:
             return "DELETE";
+          case StackSetOperationAction::DETECT_DRIFT:
+            return "DETECT_DRIFT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

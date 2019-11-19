@@ -67,22 +67,22 @@ namespace Model
 
 
     /**
-     * <p>The value.</p>
+     * <p>The value of the percentile.</p>
      */
     inline double GetValue() const{ return m_value; }
 
     /**
-     * <p>The value.</p>
+     * <p>The value of the percentile.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>The value.</p>
+     * <p>The value of the percentile.</p>
      */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>The value.</p>
+     * <p>The value of the percentile.</p>
      */
     inline PercentPair& WithValue(double value) { SetValue(value); return *this;}
 

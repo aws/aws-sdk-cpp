@@ -41,7 +41,7 @@ namespace Model
    * <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information
    * about managed policies, refer to <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-   * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p><p><h3>See
+   * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PolicyVersion">AWS
    * API Reference</a></p>

@@ -32,6 +32,8 @@ namespace Aws
 
         static const int WINDOWS_CONTAINER_HASH = HashingUtils::HashString("WINDOWS_CONTAINER");
         static const int LINUX_CONTAINER_HASH = HashingUtils::HashString("LINUX_CONTAINER");
+        static const int LINUX_GPU_CONTAINER_HASH = HashingUtils::HashString("LINUX_GPU_CONTAINER");
+        static const int ARM_CONTAINER_HASH = HashingUtils::HashString("ARM_CONTAINER");
 
 
         EnvironmentType GetEnvironmentTypeForName(const Aws::String& name)
@@ -44,6 +46,14 @@ namespace Aws
           else if (hashCode == LINUX_CONTAINER_HASH)
           {
             return EnvironmentType::LINUX_CONTAINER;
+          }
+          else if (hashCode == LINUX_GPU_CONTAINER_HASH)
+          {
+            return EnvironmentType::LINUX_GPU_CONTAINER;
+          }
+          else if (hashCode == ARM_CONTAINER_HASH)
+          {
+            return EnvironmentType::ARM_CONTAINER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +73,10 @@ namespace Aws
             return "WINDOWS_CONTAINER";
           case EnvironmentType::LINUX_CONTAINER:
             return "LINUX_CONTAINER";
+          case EnvironmentType::LINUX_GPU_CONTAINER:
+            return "LINUX_GPU_CONTAINER";
+          case EnvironmentType::ARM_CONTAINER:
+            return "ARM_CONTAINER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

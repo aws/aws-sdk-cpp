@@ -38,8 +38,8 @@ namespace Model
    * <p>Describes one or more scheduled scaling action updates for a specified Auto
    * Scaling group. Used in combination with
    * <a>BatchPutScheduledUpdateGroupAction</a>.</p> <p>When updating a scheduled
-   * scaling action, all optional parameters are left unchanged if not specified.
-   * </p><p><h3>See Also:</h3>   <a
+   * scaling action, all optional parameters are left unchanged if not
+   * specified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ScheduledUpdateGroupActionRequest">AWS
    * API Reference</a></p>
    */

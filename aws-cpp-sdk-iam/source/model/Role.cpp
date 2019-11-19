@@ -41,7 +41,8 @@ Role::Role() :
     m_maxSessionDuration(0),
     m_maxSessionDurationHasBeenSet(false),
     m_permissionsBoundaryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_roleLastUsedHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ Role::Role(const XmlNode& xmlNode) :
     m_maxSessionDuration(0),
     m_maxSessionDurationHasBeenSet(false),
     m_permissionsBoundaryHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_roleLastUsedHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -133,6 +135,12 @@ Role& Role::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode roleLastUsedNode = resultNode.FirstChild("RoleLastUsed");
+    if(!roleLastUsedNode.IsNull())
+    {
+      m_roleLastUsed = roleLastUsedNode;
+      m_roleLastUsedHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -198,6 +206,13 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       }
   }
 
+  if(m_roleLastUsedHasBeenSet)
+  {
+      Aws::StringStream roleLastUsedLocationAndMemberSs;
+      roleLastUsedLocationAndMemberSs << location << index << locationValue << ".RoleLastUsed";
+      m_roleLastUsed.OutputToStream(oStream, roleLastUsedLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Role::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -249,6 +264,12 @@ void Role::OutputToStream(Aws::OStream& oStream, const char* location) const
         tagsSs << location <<  ".Tags.member." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_roleLastUsedHasBeenSet)
+  {
+      Aws::String roleLastUsedLocationAndMember(location);
+      roleLastUsedLocationAndMember += ".RoleLastUsed";
+      m_roleLastUsed.OutputToStream(oStream, roleLastUsedLocationAndMember.c_str());
   }
 }
 

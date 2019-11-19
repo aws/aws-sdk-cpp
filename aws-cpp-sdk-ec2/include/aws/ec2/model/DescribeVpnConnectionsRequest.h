@@ -77,7 +77,8 @@ namespace Model
      * only supported type is <code>ipsec.1</code>.</p> </li> <li> <p>
      * <code>vpn-connection-id</code> - The ID of the VPN connection.</p> </li> <li>
      * <p> <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated
-     * with the VPN connection.</p> </li> </ul>
+     * with the VPN connection.</p> </li> <li> <p> <code>transit-gateway-id</code> -
+     * The ID of a transit gateway associated with the VPN connection.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
@@ -106,7 +107,8 @@ namespace Model
      * only supported type is <code>ipsec.1</code>.</p> </li> <li> <p>
      * <code>vpn-connection-id</code> - The ID of the VPN connection.</p> </li> <li>
      * <p> <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated
-     * with the VPN connection.</p> </li> </ul>
+     * with the VPN connection.</p> </li> <li> <p> <code>transit-gateway-id</code> -
+     * The ID of a transit gateway associated with the VPN connection.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
@@ -135,7 +137,8 @@ namespace Model
      * only supported type is <code>ipsec.1</code>.</p> </li> <li> <p>
      * <code>vpn-connection-id</code> - The ID of the VPN connection.</p> </li> <li>
      * <p> <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated
-     * with the VPN connection.</p> </li> </ul>
+     * with the VPN connection.</p> </li> <li> <p> <code>transit-gateway-id</code> -
+     * The ID of a transit gateway associated with the VPN connection.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
@@ -164,7 +167,8 @@ namespace Model
      * only supported type is <code>ipsec.1</code>.</p> </li> <li> <p>
      * <code>vpn-connection-id</code> - The ID of the VPN connection.</p> </li> <li>
      * <p> <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated
-     * with the VPN connection.</p> </li> </ul>
+     * with the VPN connection.</p> </li> <li> <p> <code>transit-gateway-id</code> -
+     * The ID of a transit gateway associated with the VPN connection.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
@@ -193,7 +197,8 @@ namespace Model
      * only supported type is <code>ipsec.1</code>.</p> </li> <li> <p>
      * <code>vpn-connection-id</code> - The ID of the VPN connection.</p> </li> <li>
      * <p> <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated
-     * with the VPN connection.</p> </li> </ul>
+     * with the VPN connection.</p> </li> <li> <p> <code>transit-gateway-id</code> -
+     * The ID of a transit gateway associated with the VPN connection.</p> </li> </ul>
      */
     inline DescribeVpnConnectionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
@@ -222,7 +227,8 @@ namespace Model
      * only supported type is <code>ipsec.1</code>.</p> </li> <li> <p>
      * <code>vpn-connection-id</code> - The ID of the VPN connection.</p> </li> <li>
      * <p> <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated
-     * with the VPN connection.</p> </li> </ul>
+     * with the VPN connection.</p> </li> <li> <p> <code>transit-gateway-id</code> -
+     * The ID of a transit gateway associated with the VPN connection.</p> </li> </ul>
      */
     inline DescribeVpnConnectionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
@@ -251,7 +257,8 @@ namespace Model
      * only supported type is <code>ipsec.1</code>.</p> </li> <li> <p>
      * <code>vpn-connection-id</code> - The ID of the VPN connection.</p> </li> <li>
      * <p> <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated
-     * with the VPN connection.</p> </li> </ul>
+     * with the VPN connection.</p> </li> <li> <p> <code>transit-gateway-id</code> -
+     * The ID of a transit gateway associated with the VPN connection.</p> </li> </ul>
      */
     inline DescribeVpnConnectionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
@@ -280,7 +287,8 @@ namespace Model
      * only supported type is <code>ipsec.1</code>.</p> </li> <li> <p>
      * <code>vpn-connection-id</code> - The ID of the VPN connection.</p> </li> <li>
      * <p> <code>vpn-gateway-id</code> - The ID of a virtual private gateway associated
-     * with the VPN connection.</p> </li> </ul>
+     * with the VPN connection.</p> </li> <li> <p> <code>transit-gateway-id</code> -
+     * The ID of a transit gateway associated with the VPN connection.</p> </li> </ul>
      */
     inline DescribeVpnConnectionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

@@ -94,42 +94,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of organization config rule.</p>
+     * <p>Amazon Resource Name (ARN) of organization config rule.</p>
      */
     inline const Aws::String& GetOrganizationConfigRuleArn() const{ return m_organizationConfigRuleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of organization config rule.</p>
+     * <p>Amazon Resource Name (ARN) of organization config rule.</p>
      */
     inline bool OrganizationConfigRuleArnHasBeenSet() const { return m_organizationConfigRuleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of organization config rule.</p>
+     * <p>Amazon Resource Name (ARN) of organization config rule.</p>
      */
     inline void SetOrganizationConfigRuleArn(const Aws::String& value) { m_organizationConfigRuleArnHasBeenSet = true; m_organizationConfigRuleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of organization config rule.</p>
+     * <p>Amazon Resource Name (ARN) of organization config rule.</p>
      */
     inline void SetOrganizationConfigRuleArn(Aws::String&& value) { m_organizationConfigRuleArnHasBeenSet = true; m_organizationConfigRuleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of organization config rule.</p>
+     * <p>Amazon Resource Name (ARN) of organization config rule.</p>
      */
     inline void SetOrganizationConfigRuleArn(const char* value) { m_organizationConfigRuleArnHasBeenSet = true; m_organizationConfigRuleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of organization config rule.</p>
+     * <p>Amazon Resource Name (ARN) of organization config rule.</p>
      */
     inline OrganizationConfigRule& WithOrganizationConfigRuleArn(const Aws::String& value) { SetOrganizationConfigRuleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of organization config rule.</p>
+     * <p>Amazon Resource Name (ARN) of organization config rule.</p>
      */
     inline OrganizationConfigRule& WithOrganizationConfigRuleArn(Aws::String&& value) { SetOrganizationConfigRuleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of organization config rule.</p>
+     * <p>Amazon Resource Name (ARN) of organization config rule.</p>
      */
     inline OrganizationConfigRule& WithOrganizationConfigRuleArn(const char* value) { SetOrganizationConfigRuleArn(value); return *this;}
 

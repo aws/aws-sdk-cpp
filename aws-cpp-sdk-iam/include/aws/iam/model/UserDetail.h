@@ -61,56 +61,56 @@ namespace Model
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline UserDetail& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline UserDetail& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline UserDetail& WithPath(const char* value) { SetPath(value); return *this;}
 
@@ -160,7 +160,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
@@ -168,7 +168,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
@@ -176,7 +176,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
@@ -184,7 +184,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
@@ -192,7 +192,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
@@ -200,7 +200,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline UserDetail& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
@@ -208,7 +208,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline UserDetail& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
@@ -216,7 +216,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline UserDetail& WithUserId(const char* value) { SetUserId(value); return *this;}
 

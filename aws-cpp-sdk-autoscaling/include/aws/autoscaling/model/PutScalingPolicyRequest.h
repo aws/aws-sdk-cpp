@@ -381,7 +381,7 @@ namespace Model
      * specified in the <code>AdjustmentType</code> parameter (either an absolute
      * number or a percentage). A positive value adds to the current capacity and a
      * negative value subtracts from the current capacity. For exact capacity, you must
-     * specify a positive value. </p> <p>Conditional: If you specify
+     * specify a positive value.</p> <p>Conditional: If you specify
      * <code>SimpleScaling</code> for the policy type, you must specify this parameter.
      * (Not used with any other policy type.) </p>
      */
@@ -393,7 +393,7 @@ namespace Model
      * specified in the <code>AdjustmentType</code> parameter (either an absolute
      * number or a percentage). A positive value adds to the current capacity and a
      * negative value subtracts from the current capacity. For exact capacity, you must
-     * specify a positive value. </p> <p>Conditional: If you specify
+     * specify a positive value.</p> <p>Conditional: If you specify
      * <code>SimpleScaling</code> for the policy type, you must specify this parameter.
      * (Not used with any other policy type.) </p>
      */
@@ -405,7 +405,7 @@ namespace Model
      * specified in the <code>AdjustmentType</code> parameter (either an absolute
      * number or a percentage). A positive value adds to the current capacity and a
      * negative value subtracts from the current capacity. For exact capacity, you must
-     * specify a positive value. </p> <p>Conditional: If you specify
+     * specify a positive value.</p> <p>Conditional: If you specify
      * <code>SimpleScaling</code> for the policy type, you must specify this parameter.
      * (Not used with any other policy type.) </p>
      */
@@ -417,7 +417,7 @@ namespace Model
      * specified in the <code>AdjustmentType</code> parameter (either an absolute
      * number or a percentage). A positive value adds to the current capacity and a
      * negative value subtracts from the current capacity. For exact capacity, you must
-     * specify a positive value. </p> <p>Conditional: If you specify
+     * specify a positive value.</p> <p>Conditional: If you specify
      * <code>SimpleScaling</code> for the policy type, you must specify this parameter.
      * (Not used with any other policy type.) </p>
      */

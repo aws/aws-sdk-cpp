@@ -61,7 +61,9 @@ AutoScalingGroup::AutoScalingGroup() :
     m_terminationPoliciesHasBeenSet(false),
     m_newInstancesProtectedFromScaleIn(false),
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
-    m_serviceLinkedRoleARNHasBeenSet(false)
+    m_serviceLinkedRoleARNHasBeenSet(false),
+    m_maxInstanceLifetime(0),
+    m_maxInstanceLifetimeHasBeenSet(false)
 {
 }
 
@@ -96,7 +98,9 @@ AutoScalingGroup::AutoScalingGroup(const XmlNode& xmlNode) :
     m_terminationPoliciesHasBeenSet(false),
     m_newInstancesProtectedFromScaleIn(false),
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
-    m_serviceLinkedRoleARNHasBeenSet(false)
+    m_serviceLinkedRoleARNHasBeenSet(false),
+    m_maxInstanceLifetime(0),
+    m_maxInstanceLifetimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -305,6 +309,12 @@ AutoScalingGroup& AutoScalingGroup::operator =(const XmlNode& xmlNode)
       m_serviceLinkedRoleARN = Aws::Utils::Xml::DecodeEscapedXmlText(serviceLinkedRoleARNNode.GetText());
       m_serviceLinkedRoleARNHasBeenSet = true;
     }
+    XmlNode maxInstanceLifetimeNode = resultNode.FirstChild("MaxInstanceLifetime");
+    if(!maxInstanceLifetimeNode.IsNull())
+    {
+      m_maxInstanceLifetime = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxInstanceLifetimeNode.GetText()).c_str()).c_str());
+      m_maxInstanceLifetimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -481,6 +491,11 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".ServiceLinkedRoleARN=" << StringUtils::URLEncode(m_serviceLinkedRoleARN.c_str()) << "&";
   }
 
+  if(m_maxInstanceLifetimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaxInstanceLifetime=" << m_maxInstanceLifetime << "&";
+  }
+
 }
 
 void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -628,6 +643,10 @@ void AutoScalingGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_serviceLinkedRoleARNHasBeenSet)
   {
       oStream << location << ".ServiceLinkedRoleARN=" << StringUtils::URLEncode(m_serviceLinkedRoleARN.c_str()) << "&";
+  }
+  if(m_maxInstanceLifetimeHasBeenSet)
+  {
+      oStream << location << ".MaxInstanceLifetime=" << m_maxInstanceLifetime << "&";
   }
 }
 

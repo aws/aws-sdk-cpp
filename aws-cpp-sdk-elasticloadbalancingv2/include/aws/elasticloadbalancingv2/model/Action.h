@@ -22,6 +22,7 @@
 #include <aws/elasticloadbalancingv2/model/AuthenticateCognitoActionConfig.h>
 #include <aws/elasticloadbalancingv2/model/RedirectActionConfig.h>
 #include <aws/elasticloadbalancingv2/model/FixedResponseActionConfig.h>
+#include <aws/elasticloadbalancingv2/model/ForwardActionConfig.h>
 #include <utility>
 
 namespace Aws
@@ -87,49 +88,65 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p>
+     * <code>Type</code> is <code>forward</code> and you want to route to a single
+     * target group. To route to one or more target groups, use
+     * <code>ForwardConfig</code> instead.</p>
      */
     inline const Aws::String& GetTargetGroupArn() const{ return m_targetGroupArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p>
+     * <code>Type</code> is <code>forward</code> and you want to route to a single
+     * target group. To route to one or more target groups, use
+     * <code>ForwardConfig</code> instead.</p>
      */
     inline bool TargetGroupArnHasBeenSet() const { return m_targetGroupArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p>
+     * <code>Type</code> is <code>forward</code> and you want to route to a single
+     * target group. To route to one or more target groups, use
+     * <code>ForwardConfig</code> instead.</p>
      */
     inline void SetTargetGroupArn(const Aws::String& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p>
+     * <code>Type</code> is <code>forward</code> and you want to route to a single
+     * target group. To route to one or more target groups, use
+     * <code>ForwardConfig</code> instead.</p>
      */
     inline void SetTargetGroupArn(Aws::String&& value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p>
+     * <code>Type</code> is <code>forward</code> and you want to route to a single
+     * target group. To route to one or more target groups, use
+     * <code>ForwardConfig</code> instead.</p>
      */
     inline void SetTargetGroupArn(const char* value) { m_targetGroupArnHasBeenSet = true; m_targetGroupArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p>
+     * <code>Type</code> is <code>forward</code> and you want to route to a single
+     * target group. To route to one or more target groups, use
+     * <code>ForwardConfig</code> instead.</p>
      */
     inline Action& WithTargetGroupArn(const Aws::String& value) { SetTargetGroupArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p>
+     * <code>Type</code> is <code>forward</code> and you want to route to a single
+     * target group. To route to one or more target groups, use
+     * <code>ForwardConfig</code> instead.</p>
      */
     inline Action& WithTargetGroupArn(Aws::String&& value) { SetTargetGroupArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the target group. Specify only when
-     * <code>Type</code> is <code>forward</code>.</p>
+     * <code>Type</code> is <code>forward</code> and you want to route to a single
+     * target group. To route to one or more target groups, use
+     * <code>ForwardConfig</code> instead.</p>
      */
     inline Action& WithTargetGroupArn(const char* value) { SetTargetGroupArn(value); return *this;}
 
@@ -326,6 +343,67 @@ namespace Model
      */
     inline Action& WithFixedResponseConfig(FixedResponseActionConfig&& value) { SetFixedResponseConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information for creating an action that distributes requests among one or
+     * more target groups. For Network Load Balancers, you can specify a single target
+     * group. Specify only when <code>Type</code> is <code>forward</code>. If you
+     * specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can
+     * specify only one target group using <code>ForwardConfig</code> and it must be
+     * the same target group specified in <code>TargetGroupArn</code>.</p>
+     */
+    inline const ForwardActionConfig& GetForwardConfig() const{ return m_forwardConfig; }
+
+    /**
+     * <p>Information for creating an action that distributes requests among one or
+     * more target groups. For Network Load Balancers, you can specify a single target
+     * group. Specify only when <code>Type</code> is <code>forward</code>. If you
+     * specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can
+     * specify only one target group using <code>ForwardConfig</code> and it must be
+     * the same target group specified in <code>TargetGroupArn</code>.</p>
+     */
+    inline bool ForwardConfigHasBeenSet() const { return m_forwardConfigHasBeenSet; }
+
+    /**
+     * <p>Information for creating an action that distributes requests among one or
+     * more target groups. For Network Load Balancers, you can specify a single target
+     * group. Specify only when <code>Type</code> is <code>forward</code>. If you
+     * specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can
+     * specify only one target group using <code>ForwardConfig</code> and it must be
+     * the same target group specified in <code>TargetGroupArn</code>.</p>
+     */
+    inline void SetForwardConfig(const ForwardActionConfig& value) { m_forwardConfigHasBeenSet = true; m_forwardConfig = value; }
+
+    /**
+     * <p>Information for creating an action that distributes requests among one or
+     * more target groups. For Network Load Balancers, you can specify a single target
+     * group. Specify only when <code>Type</code> is <code>forward</code>. If you
+     * specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can
+     * specify only one target group using <code>ForwardConfig</code> and it must be
+     * the same target group specified in <code>TargetGroupArn</code>.</p>
+     */
+    inline void SetForwardConfig(ForwardActionConfig&& value) { m_forwardConfigHasBeenSet = true; m_forwardConfig = std::move(value); }
+
+    /**
+     * <p>Information for creating an action that distributes requests among one or
+     * more target groups. For Network Load Balancers, you can specify a single target
+     * group. Specify only when <code>Type</code> is <code>forward</code>. If you
+     * specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can
+     * specify only one target group using <code>ForwardConfig</code> and it must be
+     * the same target group specified in <code>TargetGroupArn</code>.</p>
+     */
+    inline Action& WithForwardConfig(const ForwardActionConfig& value) { SetForwardConfig(value); return *this;}
+
+    /**
+     * <p>Information for creating an action that distributes requests among one or
+     * more target groups. For Network Load Balancers, you can specify a single target
+     * group. Specify only when <code>Type</code> is <code>forward</code>. If you
+     * specify both <code>ForwardConfig</code> and <code>TargetGroupArn</code>, you can
+     * specify only one target group using <code>ForwardConfig</code> and it must be
+     * the same target group specified in <code>TargetGroupArn</code>.</p>
+     */
+    inline Action& WithForwardConfig(ForwardActionConfig&& value) { SetForwardConfig(std::move(value)); return *this;}
+
   private:
 
     ActionTypeEnum m_type;
@@ -348,6 +426,9 @@ namespace Model
 
     FixedResponseActionConfig m_fixedResponseConfig;
     bool m_fixedResponseConfigHasBeenSet;
+
+    ForwardActionConfig m_forwardConfig;
+    bool m_forwardConfigHasBeenSet;
   };
 
 } // namespace Model

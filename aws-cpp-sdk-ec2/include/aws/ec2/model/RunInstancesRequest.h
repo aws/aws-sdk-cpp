@@ -29,6 +29,7 @@
 #include <aws/ec2/model/CpuOptionsRequest.h>
 #include <aws/ec2/model/CapacityReservationSpecification.h>
 #include <aws/ec2/model/HibernationOptionsRequest.h>
+#include <aws/ec2/model/InstanceMetadataOptionsRequest.h>
 #include <aws/ec2/model/BlockDeviceMapping.h>
 #include <aws/ec2/model/InstanceIpv6Address.h>
 #include <aws/ec2/model/InstanceNetworkInterfaceSpecification.h>
@@ -2047,6 +2048,49 @@ namespace Model
      */
     inline RunInstancesRequest& AddLicenseSpecifications(LicenseConfigurationRequest&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The metadata options for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+     * Metadata and User Data</a>.</p>
+     */
+    inline const InstanceMetadataOptionsRequest& GetMetadataOptions() const{ return m_metadataOptions; }
+
+    /**
+     * <p>The metadata options for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+     * Metadata and User Data</a>.</p>
+     */
+    inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
+
+    /**
+     * <p>The metadata options for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+     * Metadata and User Data</a>.</p>
+     */
+    inline void SetMetadataOptions(const InstanceMetadataOptionsRequest& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
+
+    /**
+     * <p>The metadata options for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+     * Metadata and User Data</a>.</p>
+     */
+    inline void SetMetadataOptions(InstanceMetadataOptionsRequest&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
+
+    /**
+     * <p>The metadata options for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+     * Metadata and User Data</a>.</p>
+     */
+    inline RunInstancesRequest& WithMetadataOptions(const InstanceMetadataOptionsRequest& value) { SetMetadataOptions(value); return *this;}
+
+    /**
+     * <p>The metadata options for the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+     * Metadata and User Data</a>.</p>
+     */
+    inline RunInstancesRequest& WithMetadataOptions(InstanceMetadataOptionsRequest&& value) { SetMetadataOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<BlockDeviceMapping> m_blockDeviceMappings;
@@ -2153,6 +2197,9 @@ namespace Model
 
     Aws::Vector<LicenseConfigurationRequest> m_licenseSpecifications;
     bool m_licenseSpecificationsHasBeenSet;
+
+    InstanceMetadataOptionsRequest m_metadataOptions;
+    bool m_metadataOptionsHasBeenSet;
   };
 
 } // namespace Model

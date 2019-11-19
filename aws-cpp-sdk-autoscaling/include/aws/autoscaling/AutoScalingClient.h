@@ -429,7 +429,7 @@ namespace Model
         virtual void AttachInstancesAsync(const Model::AttachInstancesRequest& request, const AttachInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches one or more target groups to the specified Auto Scaling group. </p>
+         * <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
          * <p>To describe the target groups for an Auto Scaling group, use
          * <a>DescribeLoadBalancerTargetGroups</a>. To detach the target group from the
          * Auto Scaling group, use <a>DetachLoadBalancerTargetGroups</a>.</p> <p>With
@@ -445,7 +445,7 @@ namespace Model
         virtual Model::AttachLoadBalancerTargetGroupsOutcome AttachLoadBalancerTargetGroups(const Model::AttachLoadBalancerTargetGroupsRequest& request) const;
 
         /**
-         * <p>Attaches one or more target groups to the specified Auto Scaling group. </p>
+         * <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
          * <p>To describe the target groups for an Auto Scaling group, use
          * <a>DescribeLoadBalancerTargetGroups</a>. To detach the target group from the
          * Auto Scaling group, use <a>DetachLoadBalancerTargetGroups</a>.</p> <p>With
@@ -463,7 +463,7 @@ namespace Model
         virtual Model::AttachLoadBalancerTargetGroupsOutcomeCallable AttachLoadBalancerTargetGroupsCallable(const Model::AttachLoadBalancerTargetGroupsRequest& request) const;
 
         /**
-         * <p>Attaches one or more target groups to the specified Auto Scaling group. </p>
+         * <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
          * <p>To describe the target groups for an Auto Scaling group, use
          * <a>DescribeLoadBalancerTargetGroups</a>. To detach the target group from the
          * Auto Scaling group, use <a>DetachLoadBalancerTargetGroups</a>.</p> <p>With
@@ -1484,8 +1484,7 @@ namespace Model
         /**
          * <p>Describes the actions scheduled for your Auto Scaling group that haven't run
          * or that have not reached their end time. To describe the actions that have
-         * already run, use <a>DescribeScalingActivities</a>. </p><p><h3>See Also:</h3>  
-         * <a
+         * already run, use <a>DescribeScalingActivities</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">AWS
          * API Reference</a></p>
          */
@@ -1494,8 +1493,7 @@ namespace Model
         /**
          * <p>Describes the actions scheduled for your Auto Scaling group that haven't run
          * or that have not reached their end time. To describe the actions that have
-         * already run, use <a>DescribeScalingActivities</a>. </p><p><h3>See Also:</h3>  
-         * <a
+         * already run, use <a>DescribeScalingActivities</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">AWS
          * API Reference</a></p>
          *
@@ -1506,8 +1504,7 @@ namespace Model
         /**
          * <p>Describes the actions scheduled for your Auto Scaling group that haven't run
          * or that have not reached their end time. To describe the actions that have
-         * already run, use <a>DescribeScalingActivities</a>. </p><p><h3>See Also:</h3>  
-         * <a
+         * already run, use <a>DescribeScalingActivities</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeScheduledActions">AWS
          * API Reference</a></p>
          *
@@ -1790,8 +1787,14 @@ namespace Model
         virtual void EnableMetricsCollectionAsync(const Model::EnableMetricsCollectionRequest& request, const EnableMetricsCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Moves the specified instances into the standby state.</p> <p>For more
-         * information, see <a
+         * <p>Moves the specified instances into the standby state.</p> <p>If you choose to
+         * decrement the desired capacity of the Auto Scaling group, the instances can
+         * enter standby as long as the desired capacity of the Auto Scaling group after
+         * the instances are placed into standby is equal to or greater than the minimum
+         * capacity of the group.</p> <p>If you choose not to decrement the desired
+         * capacity of the Auto Scaling group, the Auto Scaling group launches new
+         * instances to replace the instances on standby.</p> <p>For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
          * Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1801,8 +1804,14 @@ namespace Model
         virtual Model::EnterStandbyOutcome EnterStandby(const Model::EnterStandbyRequest& request) const;
 
         /**
-         * <p>Moves the specified instances into the standby state.</p> <p>For more
-         * information, see <a
+         * <p>Moves the specified instances into the standby state.</p> <p>If you choose to
+         * decrement the desired capacity of the Auto Scaling group, the instances can
+         * enter standby as long as the desired capacity of the Auto Scaling group after
+         * the instances are placed into standby is equal to or greater than the minimum
+         * capacity of the group.</p> <p>If you choose not to decrement the desired
+         * capacity of the Auto Scaling group, the Auto Scaling group launches new
+         * instances to replace the instances on standby.</p> <p>For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
          * Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1814,8 +1823,14 @@ namespace Model
         virtual Model::EnterStandbyOutcomeCallable EnterStandbyCallable(const Model::EnterStandbyRequest& request) const;
 
         /**
-         * <p>Moves the specified instances into the standby state.</p> <p>For more
-         * information, see <a
+         * <p>Moves the specified instances into the standby state.</p> <p>If you choose to
+         * decrement the desired capacity of the Auto Scaling group, the instances can
+         * enter standby as long as the desired capacity of the Auto Scaling group after
+         * the instances are placed into standby is equal to or greater than the minimum
+         * capacity of the group.</p> <p>If you choose not to decrement the desired
+         * capacity of the Auto Scaling group, the Auto Scaling group launches new
+         * instances to replace the instances on standby.</p> <p>For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
          * Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1852,8 +1867,9 @@ namespace Model
         virtual void ExecutePolicyAsync(const Model::ExecutePolicyRequest& request, const ExecutePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Moves the specified instances out of the standby state.</p> <p>For more
-         * information, see <a
+         * <p>Moves the specified instances out of the standby state.</p> <p>After you put
+         * the instances back in service, the desired capacity is incremented.</p> <p>For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
          * Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1863,8 +1879,9 @@ namespace Model
         virtual Model::ExitStandbyOutcome ExitStandby(const Model::ExitStandbyRequest& request) const;
 
         /**
-         * <p>Moves the specified instances out of the standby state.</p> <p>For more
-         * information, see <a
+         * <p>Moves the specified instances out of the standby state.</p> <p>After you put
+         * the instances back in service, the desired capacity is incremented.</p> <p>For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
          * Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -1876,8 +1893,9 @@ namespace Model
         virtual Model::ExitStandbyOutcomeCallable ExitStandbyCallable(const Model::ExitStandbyRequest& request) const;
 
         /**
-         * <p>Moves the specified instances out of the standby state.</p> <p>For more
-         * information, see <a
+         * <p>Moves the specified instances out of the standby state.</p> <p>After you put
+         * the instances back in service, the desired capacity is incremented.</p> <p>For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily
          * Removing Instances from Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto
          * Scaling User Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2423,9 +2441,8 @@ namespace Model
          * update an Auto Scaling group, specify the name of the group and the parameter
          * that you want to change. Any parameters that you don't specify are not changed
          * by this update request. The new settings take effect on any scaling activities
-         * after this call returns. Scaling activities that are currently in progress
-         * aren't affected.</p> <p>If you associate a new launch configuration or template
-         * with an Auto Scaling group, all new instances will get the updated
+         * after this call returns. </p> <p>If you associate a new launch configuration or
+         * template with an Auto Scaling group, all new instances will get the updated
          * configuration. Existing instances continue to run with the configuration that
          * they were originally launched with. When you update a group to specify a mixed
          * instances policy instead of a launch configuration or template, existing
@@ -2464,9 +2481,8 @@ namespace Model
          * update an Auto Scaling group, specify the name of the group and the parameter
          * that you want to change. Any parameters that you don't specify are not changed
          * by this update request. The new settings take effect on any scaling activities
-         * after this call returns. Scaling activities that are currently in progress
-         * aren't affected.</p> <p>If you associate a new launch configuration or template
-         * with an Auto Scaling group, all new instances will get the updated
+         * after this call returns. </p> <p>If you associate a new launch configuration or
+         * template with an Auto Scaling group, all new instances will get the updated
          * configuration. Existing instances continue to run with the configuration that
          * they were originally launched with. When you update a group to specify a mixed
          * instances policy instead of a launch configuration or template, existing
@@ -2507,9 +2523,8 @@ namespace Model
          * update an Auto Scaling group, specify the name of the group and the parameter
          * that you want to change. Any parameters that you don't specify are not changed
          * by this update request. The new settings take effect on any scaling activities
-         * after this call returns. Scaling activities that are currently in progress
-         * aren't affected.</p> <p>If you associate a new launch configuration or template
-         * with an Auto Scaling group, all new instances will get the updated
+         * after this call returns. </p> <p>If you associate a new launch configuration or
+         * template with an Auto Scaling group, all new instances will get the updated
          * configuration. Existing instances continue to run with the configuration that
          * they were originally launched with. When you update a group to specify a mixed
          * instances policy instead of a launch configuration or template, existing

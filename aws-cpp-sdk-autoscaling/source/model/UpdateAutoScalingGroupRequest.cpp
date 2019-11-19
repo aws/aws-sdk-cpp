@@ -42,7 +42,9 @@ UpdateAutoScalingGroupRequest::UpdateAutoScalingGroupRequest() :
     m_terminationPoliciesHasBeenSet(false),
     m_newInstancesProtectedFromScaleIn(false),
     m_newInstancesProtectedFromScaleInHasBeenSet(false),
-    m_serviceLinkedRoleARNHasBeenSet(false)
+    m_serviceLinkedRoleARNHasBeenSet(false),
+    m_maxInstanceLifetime(0),
+    m_maxInstanceLifetimeHasBeenSet(false)
 {
 }
 
@@ -140,6 +142,11 @@ Aws::String UpdateAutoScalingGroupRequest::SerializePayload() const
   if(m_serviceLinkedRoleARNHasBeenSet)
   {
     ss << "ServiceLinkedRoleARN=" << StringUtils::URLEncode(m_serviceLinkedRoleARN.c_str()) << "&";
+  }
+
+  if(m_maxInstanceLifetimeHasBeenSet)
+  {
+    ss << "MaxInstanceLifetime=" << m_maxInstanceLifetime << "&";
   }
 
   ss << "Version=2011-01-01";

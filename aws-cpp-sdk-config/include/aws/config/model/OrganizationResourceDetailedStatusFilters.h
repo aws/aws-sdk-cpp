@@ -1,0 +1,266 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/config/ConfigService_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/config/model/OrganizationResourceDetailedStatus.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace ConfigService
+{
+namespace Model
+{
+
+  /**
+   * <p>Status filter object to filter results based on specific member account ID or
+   * status type for an organization conformance pack.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationResourceDetailedStatusFilters">AWS
+   * API Reference</a></p>
+   */
+  class AWS_CONFIGSERVICE_API OrganizationResourceDetailedStatusFilters
+  {
+  public:
+    OrganizationResourceDetailedStatusFilters();
+    OrganizationResourceDetailedStatusFilters(Aws::Utils::Json::JsonView jsonValue);
+    OrganizationResourceDetailedStatusFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The 12-digit account ID of the member account within an organization.</p>
+     */
+    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The 12-digit account ID of the member account within an organization.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The 12-digit account ID of the member account within an organization.</p>
+     */
+    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
+
+    /**
+     * <p>The 12-digit account ID of the member account within an organization.</p>
+     */
+    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
+
+    /**
+     * <p>The 12-digit account ID of the member account within an organization.</p>
+     */
+    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
+
+    /**
+     * <p>The 12-digit account ID of the member account within an organization.</p>
+     */
+    inline OrganizationResourceDetailedStatusFilters& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
+
+    /**
+     * <p>The 12-digit account ID of the member account within an organization.</p>
+     */
+    inline OrganizationResourceDetailedStatusFilters& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
+
+    /**
+     * <p>The 12-digit account ID of the member account within an organization.</p>
+     */
+    inline OrganizationResourceDetailedStatusFilters& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+
+
+    /**
+     * <p>Indicates deployment status for conformance pack in a member account. When
+     * master account calls <code>PutOrganizationConformancePack</code> action for the
+     * first time, conformance pack status is created in the member account. When
+     * master account calls <code>PutOrganizationConformancePack</code> action for the
+     * second time, conformance pack status is updated in the member account.
+     * Conformance pack status is deleted when the master account deletes
+     * <code>OrganizationConformancePack</code> and disables service access for
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> AWS Config sets
+     * the state of the conformance pack to:</p> <ul> <li> <p>
+     * <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the
+     * member account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when
+     * conformance pack is being created in the member account.</p> </li> <li> <p>
+     * <code>CREATE_FAILED</code> when conformance pack creation has failed in the
+     * member account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when conformance
+     * pack deletion has failed in the member account.</p> </li> <li> <p>
+     * <code>DELETE_IN_PROGRESS</code> when conformance pack is being deleted in the
+     * member account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when
+     * conformance pack has been deleted in the member account. </p> </li> <li> <p>
+     * <code>UPDATE_SUCCESSFUL</code> when conformance pack has been updated in the
+     * member account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when
+     * conformance pack is being updated in the member account.</p> </li> <li> <p>
+     * <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the
+     * member account.</p> </li> </ul>
+     */
+    inline const OrganizationResourceDetailedStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Indicates deployment status for conformance pack in a member account. When
+     * master account calls <code>PutOrganizationConformancePack</code> action for the
+     * first time, conformance pack status is created in the member account. When
+     * master account calls <code>PutOrganizationConformancePack</code> action for the
+     * second time, conformance pack status is updated in the member account.
+     * Conformance pack status is deleted when the master account deletes
+     * <code>OrganizationConformancePack</code> and disables service access for
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> AWS Config sets
+     * the state of the conformance pack to:</p> <ul> <li> <p>
+     * <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the
+     * member account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when
+     * conformance pack is being created in the member account.</p> </li> <li> <p>
+     * <code>CREATE_FAILED</code> when conformance pack creation has failed in the
+     * member account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when conformance
+     * pack deletion has failed in the member account.</p> </li> <li> <p>
+     * <code>DELETE_IN_PROGRESS</code> when conformance pack is being deleted in the
+     * member account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when
+     * conformance pack has been deleted in the member account. </p> </li> <li> <p>
+     * <code>UPDATE_SUCCESSFUL</code> when conformance pack has been updated in the
+     * member account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when
+     * conformance pack is being updated in the member account.</p> </li> <li> <p>
+     * <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the
+     * member account.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Indicates deployment status for conformance pack in a member account. When
+     * master account calls <code>PutOrganizationConformancePack</code> action for the
+     * first time, conformance pack status is created in the member account. When
+     * master account calls <code>PutOrganizationConformancePack</code> action for the
+     * second time, conformance pack status is updated in the member account.
+     * Conformance pack status is deleted when the master account deletes
+     * <code>OrganizationConformancePack</code> and disables service access for
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> AWS Config sets
+     * the state of the conformance pack to:</p> <ul> <li> <p>
+     * <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the
+     * member account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when
+     * conformance pack is being created in the member account.</p> </li> <li> <p>
+     * <code>CREATE_FAILED</code> when conformance pack creation has failed in the
+     * member account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when conformance
+     * pack deletion has failed in the member account.</p> </li> <li> <p>
+     * <code>DELETE_IN_PROGRESS</code> when conformance pack is being deleted in the
+     * member account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when
+     * conformance pack has been deleted in the member account. </p> </li> <li> <p>
+     * <code>UPDATE_SUCCESSFUL</code> when conformance pack has been updated in the
+     * member account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when
+     * conformance pack is being updated in the member account.</p> </li> <li> <p>
+     * <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the
+     * member account.</p> </li> </ul>
+     */
+    inline void SetStatus(const OrganizationResourceDetailedStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>Indicates deployment status for conformance pack in a member account. When
+     * master account calls <code>PutOrganizationConformancePack</code> action for the
+     * first time, conformance pack status is created in the member account. When
+     * master account calls <code>PutOrganizationConformancePack</code> action for the
+     * second time, conformance pack status is updated in the member account.
+     * Conformance pack status is deleted when the master account deletes
+     * <code>OrganizationConformancePack</code> and disables service access for
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> AWS Config sets
+     * the state of the conformance pack to:</p> <ul> <li> <p>
+     * <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the
+     * member account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when
+     * conformance pack is being created in the member account.</p> </li> <li> <p>
+     * <code>CREATE_FAILED</code> when conformance pack creation has failed in the
+     * member account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when conformance
+     * pack deletion has failed in the member account.</p> </li> <li> <p>
+     * <code>DELETE_IN_PROGRESS</code> when conformance pack is being deleted in the
+     * member account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when
+     * conformance pack has been deleted in the member account. </p> </li> <li> <p>
+     * <code>UPDATE_SUCCESSFUL</code> when conformance pack has been updated in the
+     * member account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when
+     * conformance pack is being updated in the member account.</p> </li> <li> <p>
+     * <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the
+     * member account.</p> </li> </ul>
+     */
+    inline void SetStatus(OrganizationResourceDetailedStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>Indicates deployment status for conformance pack in a member account. When
+     * master account calls <code>PutOrganizationConformancePack</code> action for the
+     * first time, conformance pack status is created in the member account. When
+     * master account calls <code>PutOrganizationConformancePack</code> action for the
+     * second time, conformance pack status is updated in the member account.
+     * Conformance pack status is deleted when the master account deletes
+     * <code>OrganizationConformancePack</code> and disables service access for
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> AWS Config sets
+     * the state of the conformance pack to:</p> <ul> <li> <p>
+     * <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the
+     * member account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when
+     * conformance pack is being created in the member account.</p> </li> <li> <p>
+     * <code>CREATE_FAILED</code> when conformance pack creation has failed in the
+     * member account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when conformance
+     * pack deletion has failed in the member account.</p> </li> <li> <p>
+     * <code>DELETE_IN_PROGRESS</code> when conformance pack is being deleted in the
+     * member account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when
+     * conformance pack has been deleted in the member account. </p> </li> <li> <p>
+     * <code>UPDATE_SUCCESSFUL</code> when conformance pack has been updated in the
+     * member account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when
+     * conformance pack is being updated in the member account.</p> </li> <li> <p>
+     * <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the
+     * member account.</p> </li> </ul>
+     */
+    inline OrganizationResourceDetailedStatusFilters& WithStatus(const OrganizationResourceDetailedStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>Indicates deployment status for conformance pack in a member account. When
+     * master account calls <code>PutOrganizationConformancePack</code> action for the
+     * first time, conformance pack status is created in the member account. When
+     * master account calls <code>PutOrganizationConformancePack</code> action for the
+     * second time, conformance pack status is updated in the member account.
+     * Conformance pack status is deleted when the master account deletes
+     * <code>OrganizationConformancePack</code> and disables service access for
+     * <code>config-multiaccountsetup.amazonaws.com</code>. </p> <p> AWS Config sets
+     * the state of the conformance pack to:</p> <ul> <li> <p>
+     * <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the
+     * member account. </p> </li> <li> <p> <code>CREATE_IN_PROGRESS</code> when
+     * conformance pack is being created in the member account.</p> </li> <li> <p>
+     * <code>CREATE_FAILED</code> when conformance pack creation has failed in the
+     * member account.</p> </li> <li> <p> <code>DELETE_FAILED</code> when conformance
+     * pack deletion has failed in the member account.</p> </li> <li> <p>
+     * <code>DELETE_IN_PROGRESS</code> when conformance pack is being deleted in the
+     * member account.</p> </li> <li> <p> <code>DELETE_SUCCESSFUL</code> when
+     * conformance pack has been deleted in the member account. </p> </li> <li> <p>
+     * <code>UPDATE_SUCCESSFUL</code> when conformance pack has been updated in the
+     * member account.</p> </li> <li> <p> <code>UPDATE_IN_PROGRESS</code> when
+     * conformance pack is being updated in the member account.</p> </li> <li> <p>
+     * <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the
+     * member account.</p> </li> </ul>
+     */
+    inline OrganizationResourceDetailedStatusFilters& WithStatus(OrganizationResourceDetailedStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+  private:
+
+    Aws::String m_accountId;
+    bool m_accountIdHasBeenSet;
+
+    OrganizationResourceDetailedStatus m_status;
+    bool m_statusHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace ConfigService
+} // namespace Aws

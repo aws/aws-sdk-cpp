@@ -78,12 +78,12 @@ namespace Model
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
      * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
-     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
-     * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
-     * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
-     * <p> <code>instance-state-code</code> - The state of the instance, as a 16-bit
+     * with the instance. Specified as an ARN. <code>image-id</code> - The ID of the
+     * image used to launch the instance.</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance.</p> </li> <li> <p> <code>instance-lifecycle</code> -
+     * Indicates whether this is a Spot Instance or a Scheduled Instance
+     * (<code>spot</code> | <code>scheduled</code>).</p> </li> <li> <p>
+     * <code>instance-state-code</code> - The state of the instance, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
      * ignored. The low byte is set based on the state represented. The valid values
      * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
@@ -102,8 +102,15 @@ namespace Model
      * launching multiple instances, this is the index for the instance in the launch
      * group (for example, 0, 1, 2, and so on). </p> </li> <li> <p>
      * <code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p> <code>monitoring-state</code> - Indicates whether detailed monitoring
-     * is enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <li> <p> <code>metadata-http-tokens</code> - The metadata request authorization
+     * state (<code>optional</code> | <code>required</code>)</p> </li> <li> <p>
+     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request
+     * put response hop limit (integer, possible values <code>1</code> to
+     * <code>64</code>)</p> </li> <li> <p> <code>metadata-http-endpoint</code> - Enable
+     * or disable metadata access on http endpoint (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -250,12 +257,12 @@ namespace Model
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
      * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
-     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
-     * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
-     * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
-     * <p> <code>instance-state-code</code> - The state of the instance, as a 16-bit
+     * with the instance. Specified as an ARN. <code>image-id</code> - The ID of the
+     * image used to launch the instance.</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance.</p> </li> <li> <p> <code>instance-lifecycle</code> -
+     * Indicates whether this is a Spot Instance or a Scheduled Instance
+     * (<code>spot</code> | <code>scheduled</code>).</p> </li> <li> <p>
+     * <code>instance-state-code</code> - The state of the instance, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
      * ignored. The low byte is set based on the state represented. The valid values
      * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
@@ -274,8 +281,15 @@ namespace Model
      * launching multiple instances, this is the index for the instance in the launch
      * group (for example, 0, 1, 2, and so on). </p> </li> <li> <p>
      * <code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p> <code>monitoring-state</code> - Indicates whether detailed monitoring
-     * is enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <li> <p> <code>metadata-http-tokens</code> - The metadata request authorization
+     * state (<code>optional</code> | <code>required</code>)</p> </li> <li> <p>
+     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request
+     * put response hop limit (integer, possible values <code>1</code> to
+     * <code>64</code>)</p> </li> <li> <p> <code>metadata-http-endpoint</code> - Enable
+     * or disable metadata access on http endpoint (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -422,12 +436,12 @@ namespace Model
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
      * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
-     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
-     * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
-     * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
-     * <p> <code>instance-state-code</code> - The state of the instance, as a 16-bit
+     * with the instance. Specified as an ARN. <code>image-id</code> - The ID of the
+     * image used to launch the instance.</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance.</p> </li> <li> <p> <code>instance-lifecycle</code> -
+     * Indicates whether this is a Spot Instance or a Scheduled Instance
+     * (<code>spot</code> | <code>scheduled</code>).</p> </li> <li> <p>
+     * <code>instance-state-code</code> - The state of the instance, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
      * ignored. The low byte is set based on the state represented. The valid values
      * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
@@ -446,8 +460,15 @@ namespace Model
      * launching multiple instances, this is the index for the instance in the launch
      * group (for example, 0, 1, 2, and so on). </p> </li> <li> <p>
      * <code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p> <code>monitoring-state</code> - Indicates whether detailed monitoring
-     * is enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <li> <p> <code>metadata-http-tokens</code> - The metadata request authorization
+     * state (<code>optional</code> | <code>required</code>)</p> </li> <li> <p>
+     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request
+     * put response hop limit (integer, possible values <code>1</code> to
+     * <code>64</code>)</p> </li> <li> <p> <code>metadata-http-endpoint</code> - Enable
+     * or disable metadata access on http endpoint (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -594,12 +615,12 @@ namespace Model
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
      * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
-     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
-     * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
-     * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
-     * <p> <code>instance-state-code</code> - The state of the instance, as a 16-bit
+     * with the instance. Specified as an ARN. <code>image-id</code> - The ID of the
+     * image used to launch the instance.</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance.</p> </li> <li> <p> <code>instance-lifecycle</code> -
+     * Indicates whether this is a Spot Instance or a Scheduled Instance
+     * (<code>spot</code> | <code>scheduled</code>).</p> </li> <li> <p>
+     * <code>instance-state-code</code> - The state of the instance, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
      * ignored. The low byte is set based on the state represented. The valid values
      * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
@@ -618,8 +639,15 @@ namespace Model
      * launching multiple instances, this is the index for the instance in the launch
      * group (for example, 0, 1, 2, and so on). </p> </li> <li> <p>
      * <code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p> <code>monitoring-state</code> - Indicates whether detailed monitoring
-     * is enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <li> <p> <code>metadata-http-tokens</code> - The metadata request authorization
+     * state (<code>optional</code> | <code>required</code>)</p> </li> <li> <p>
+     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request
+     * put response hop limit (integer, possible values <code>1</code> to
+     * <code>64</code>)</p> </li> <li> <p> <code>metadata-http-endpoint</code> - Enable
+     * or disable metadata access on http endpoint (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -766,12 +794,12 @@ namespace Model
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
      * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
-     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
-     * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
-     * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
-     * <p> <code>instance-state-code</code> - The state of the instance, as a 16-bit
+     * with the instance. Specified as an ARN. <code>image-id</code> - The ID of the
+     * image used to launch the instance.</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance.</p> </li> <li> <p> <code>instance-lifecycle</code> -
+     * Indicates whether this is a Spot Instance or a Scheduled Instance
+     * (<code>spot</code> | <code>scheduled</code>).</p> </li> <li> <p>
+     * <code>instance-state-code</code> - The state of the instance, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
      * ignored. The low byte is set based on the state represented. The valid values
      * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
@@ -790,8 +818,15 @@ namespace Model
      * launching multiple instances, this is the index for the instance in the launch
      * group (for example, 0, 1, 2, and so on). </p> </li> <li> <p>
      * <code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p> <code>monitoring-state</code> - Indicates whether detailed monitoring
-     * is enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <li> <p> <code>metadata-http-tokens</code> - The metadata request authorization
+     * state (<code>optional</code> | <code>required</code>)</p> </li> <li> <p>
+     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request
+     * put response hop limit (integer, possible values <code>1</code> to
+     * <code>64</code>)</p> </li> <li> <p> <code>metadata-http-endpoint</code> - Enable
+     * or disable metadata access on http endpoint (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -938,12 +973,12 @@ namespace Model
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
      * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
-     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
-     * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
-     * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
-     * <p> <code>instance-state-code</code> - The state of the instance, as a 16-bit
+     * with the instance. Specified as an ARN. <code>image-id</code> - The ID of the
+     * image used to launch the instance.</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance.</p> </li> <li> <p> <code>instance-lifecycle</code> -
+     * Indicates whether this is a Spot Instance or a Scheduled Instance
+     * (<code>spot</code> | <code>scheduled</code>).</p> </li> <li> <p>
+     * <code>instance-state-code</code> - The state of the instance, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
      * ignored. The low byte is set based on the state represented. The valid values
      * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
@@ -962,8 +997,15 @@ namespace Model
      * launching multiple instances, this is the index for the instance in the launch
      * group (for example, 0, 1, 2, and so on). </p> </li> <li> <p>
      * <code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p> <code>monitoring-state</code> - Indicates whether detailed monitoring
-     * is enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <li> <p> <code>metadata-http-tokens</code> - The metadata request authorization
+     * state (<code>optional</code> | <code>required</code>)</p> </li> <li> <p>
+     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request
+     * put response hop limit (integer, possible values <code>1</code> to
+     * <code>64</code>)</p> </li> <li> <p> <code>metadata-http-endpoint</code> - Enable
+     * or disable metadata access on http endpoint (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -1110,12 +1152,12 @@ namespace Model
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
      * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
-     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
-     * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
-     * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
-     * <p> <code>instance-state-code</code> - The state of the instance, as a 16-bit
+     * with the instance. Specified as an ARN. <code>image-id</code> - The ID of the
+     * image used to launch the instance.</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance.</p> </li> <li> <p> <code>instance-lifecycle</code> -
+     * Indicates whether this is a Spot Instance or a Scheduled Instance
+     * (<code>spot</code> | <code>scheduled</code>).</p> </li> <li> <p>
+     * <code>instance-state-code</code> - The state of the instance, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
      * ignored. The low byte is set based on the state represented. The valid values
      * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
@@ -1134,8 +1176,15 @@ namespace Model
      * launching multiple instances, this is the index for the instance in the launch
      * group (for example, 0, 1, 2, and so on). </p> </li> <li> <p>
      * <code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p> <code>monitoring-state</code> - Indicates whether detailed monitoring
-     * is enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <li> <p> <code>metadata-http-tokens</code> - The metadata request authorization
+     * state (<code>optional</code> | <code>required</code>)</p> </li> <li> <p>
+     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request
+     * put response hop limit (integer, possible values <code>1</code> to
+     * <code>64</code>)</p> </li> <li> <p> <code>metadata-http-endpoint</code> - Enable
+     * or disable metadata access on http endpoint (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4
@@ -1282,12 +1331,12 @@ namespace Model
      * running, if applicable.</p> </li> <li> <p> <code>hypervisor</code> - The
      * hypervisor type of the instance (<code>ovm</code> | <code>xen</code>).</p> </li>
      * <li> <p> <code>iam-instance-profile.arn</code> - The instance profile associated
-     * with the instance. Specified as an ARN.</p> </li> <li> <p> <code>image-id</code>
-     * - The ID of the image used to launch the instance.</p> </li> <li> <p>
-     * <code>instance-id</code> - The ID of the instance.</p> </li> <li> <p>
-     * <code>instance-lifecycle</code> - Indicates whether this is a Spot Instance or a
-     * Scheduled Instance (<code>spot</code> | <code>scheduled</code>).</p> </li> <li>
-     * <p> <code>instance-state-code</code> - The state of the instance, as a 16-bit
+     * with the instance. Specified as an ARN. <code>image-id</code> - The ID of the
+     * image used to launch the instance.</p> </li> <li> <p> <code>instance-id</code> -
+     * The ID of the instance.</p> </li> <li> <p> <code>instance-lifecycle</code> -
+     * Indicates whether this is a Spot Instance or a Scheduled Instance
+     * (<code>spot</code> | <code>scheduled</code>).</p> </li> <li> <p>
+     * <code>instance-state-code</code> - The state of the instance, as a 16-bit
      * unsigned integer. The high byte is used for internal purposes and should be
      * ignored. The low byte is set based on the state represented. The valid values
      * are: 0 (pending), 16 (running), 32 (shutting-down), 48 (terminated), 64
@@ -1306,8 +1355,15 @@ namespace Model
      * launching multiple instances, this is the index for the instance in the launch
      * group (for example, 0, 1, 2, and so on). </p> </li> <li> <p>
      * <code>launch-time</code> - The time when the instance was launched.</p> </li>
-     * <li> <p> <code>monitoring-state</code> - Indicates whether detailed monitoring
-     * is enabled (<code>disabled</code> | <code>enabled</code>).</p> </li> <li> <p>
+     * <li> <p> <code>metadata-http-tokens</code> - The metadata request authorization
+     * state (<code>optional</code> | <code>required</code>)</p> </li> <li> <p>
+     * <code>metadata-http-put-response-hop-limit</code> - The http metadata request
+     * put response hop limit (integer, possible values <code>1</code> to
+     * <code>64</code>)</p> </li> <li> <p> <code>metadata-http-endpoint</code> - Enable
+     * or disable metadata access on http endpoint (<code>enabled</code> |
+     * <code>disabled</code>)</p> </li> <li> <p> <code>monitoring-state</code> -
+     * Indicates whether detailed monitoring is enabled (<code>disabled</code> |
+     * <code>enabled</code>).</p> </li> <li> <p>
      * <code>network-interface.addresses.private-ip-address</code> - The private IPv4
      * address associated with the network interface.</p> </li> <li> <p>
      * <code>network-interface.addresses.primary</code> - Specifies whether the IPv4

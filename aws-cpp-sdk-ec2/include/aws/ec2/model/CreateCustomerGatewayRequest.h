@@ -204,6 +204,55 @@ namespace Model
 
 
     /**
+     * <p>A name for the customer gateway device.</p> <p>Length Constraints: Up to 255
+     * characters.</p>
+     */
+    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+
+    /**
+     * <p>A name for the customer gateway device.</p> <p>Length Constraints: Up to 255
+     * characters.</p>
+     */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
+
+    /**
+     * <p>A name for the customer gateway device.</p> <p>Length Constraints: Up to 255
+     * characters.</p>
+     */
+    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+
+    /**
+     * <p>A name for the customer gateway device.</p> <p>Length Constraints: Up to 255
+     * characters.</p>
+     */
+    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
+
+    /**
+     * <p>A name for the customer gateway device.</p> <p>Length Constraints: Up to 255
+     * characters.</p>
+     */
+    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
+
+    /**
+     * <p>A name for the customer gateway device.</p> <p>Length Constraints: Up to 255
+     * characters.</p>
+     */
+    inline CreateCustomerGatewayRequest& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
+
+    /**
+     * <p>A name for the customer gateway device.</p> <p>Length Constraints: Up to 255
+     * characters.</p>
+     */
+    inline CreateCustomerGatewayRequest& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
+
+    /**
+     * <p>A name for the customer gateway device.</p> <p>Length Constraints: Up to 255
+     * characters.</p>
+     */
+    inline CreateCustomerGatewayRequest& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -248,6 +297,9 @@ namespace Model
 
     GatewayType m_type;
     bool m_typeHasBeenSet;
+
+    Aws::String m_deviceName;
+    bool m_deviceNameHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

@@ -26,7 +26,7 @@ namespace Budgets
 {
 namespace BudgetsEndpoint
 {
-  
+
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {

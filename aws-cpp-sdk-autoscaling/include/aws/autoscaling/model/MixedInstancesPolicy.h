@@ -101,43 +101,43 @@ namespace Model
 
     /**
      * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified when creating a mixed instances policy, the default values are
-     * used.</p>
+     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
+     * uses a default value.</p>
      */
     inline const InstancesDistribution& GetInstancesDistribution() const{ return m_instancesDistribution; }
 
     /**
      * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified when creating a mixed instances policy, the default values are
-     * used.</p>
+     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
+     * uses a default value.</p>
      */
     inline bool InstancesDistributionHasBeenSet() const { return m_instancesDistributionHasBeenSet; }
 
     /**
      * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified when creating a mixed instances policy, the default values are
-     * used.</p>
+     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
+     * uses a default value.</p>
      */
     inline void SetInstancesDistribution(const InstancesDistribution& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = value; }
 
     /**
      * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified when creating a mixed instances policy, the default values are
-     * used.</p>
+     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
+     * uses a default value.</p>
      */
     inline void SetInstancesDistribution(InstancesDistribution&& value) { m_instancesDistributionHasBeenSet = true; m_instancesDistribution = std::move(value); }
 
     /**
      * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified when creating a mixed instances policy, the default values are
-     * used.</p>
+     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
+     * uses a default value.</p>
      */
     inline MixedInstancesPolicy& WithInstancesDistribution(const InstancesDistribution& value) { SetInstancesDistribution(value); return *this;}
 
     /**
      * <p>The instances distribution to use.</p> <p>If you leave this parameter
-     * unspecified when creating a mixed instances policy, the default values are
-     * used.</p>
+     * unspecified, the value for each parameter in <code>InstancesDistribution</code>
+     * uses a default value.</p>
      */
     inline MixedInstancesPolicy& WithInstancesDistribution(InstancesDistribution&& value) { SetInstancesDistribution(std::move(value)); return *this;}
 

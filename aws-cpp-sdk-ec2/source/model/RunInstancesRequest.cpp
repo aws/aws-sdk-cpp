@@ -63,7 +63,8 @@ RunInstancesRequest::RunInstancesRequest() :
     m_cpuOptionsHasBeenSet(false),
     m_capacityReservationSpecificationHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
-    m_licenseSpecificationsHasBeenSet(false)
+    m_licenseSpecificationsHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
 }
 
@@ -291,6 +292,11 @@ Aws::String RunInstancesRequest::SerializePayload() const
       item.OutputToStream(ss, "LicenseSpecification.", licenseSpecificationsCount, "");
       licenseSpecificationsCount++;
     }
+  }
+
+  if(m_metadataOptionsHasBeenSet)
+  {
+    m_metadataOptions.OutputToStream(ss, "MetadataOptions");
   }
 
   ss << "Version=2016-11-15";

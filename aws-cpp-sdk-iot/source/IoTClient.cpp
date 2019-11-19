@@ -43,6 +43,7 @@
 #include <aws/iot/model/CancelJobRequest.h>
 #include <aws/iot/model/CancelJobExecutionRequest.h>
 #include <aws/iot/model/ClearDefaultAuthorizerRequest.h>
+#include <aws/iot/model/ConfirmTopicRuleDestinationRequest.h>
 #include <aws/iot/model/CreateAuthorizerRequest.h>
 #include <aws/iot/model/CreateBillingGroupRequest.h>
 #include <aws/iot/model/CreateCertificateFromCsrRequest.h>
@@ -61,6 +62,7 @@
 #include <aws/iot/model/CreateThingGroupRequest.h>
 #include <aws/iot/model/CreateThingTypeRequest.h>
 #include <aws/iot/model/CreateTopicRuleRequest.h>
+#include <aws/iot/model/CreateTopicRuleDestinationRequest.h>
 #include <aws/iot/model/DeleteAccountAuditConfigurationRequest.h>
 #include <aws/iot/model/DeleteAuthorizerRequest.h>
 #include <aws/iot/model/DeleteBillingGroupRequest.h>
@@ -82,6 +84,7 @@
 #include <aws/iot/model/DeleteThingGroupRequest.h>
 #include <aws/iot/model/DeleteThingTypeRequest.h>
 #include <aws/iot/model/DeleteTopicRuleRequest.h>
+#include <aws/iot/model/DeleteTopicRuleDestinationRequest.h>
 #include <aws/iot/model/DeleteV2LoggingLevelRequest.h>
 #include <aws/iot/model/DeprecateThingTypeRequest.h>
 #include <aws/iot/model/DescribeAccountAuditConfigurationRequest.h>
@@ -124,6 +127,7 @@
 #include <aws/iot/model/GetRegistrationCodeRequest.h>
 #include <aws/iot/model/GetStatisticsRequest.h>
 #include <aws/iot/model/GetTopicRuleRequest.h>
+#include <aws/iot/model/GetTopicRuleDestinationRequest.h>
 #include <aws/iot/model/GetV2LoggingOptionsRequest.h>
 #include <aws/iot/model/ListActiveViolationsRequest.h>
 #include <aws/iot/model/ListAttachedPoliciesRequest.h>
@@ -163,6 +167,7 @@
 #include <aws/iot/model/ListThingsRequest.h>
 #include <aws/iot/model/ListThingsInBillingGroupRequest.h>
 #include <aws/iot/model/ListThingsInThingGroupRequest.h>
+#include <aws/iot/model/ListTopicRuleDestinationsRequest.h>
 #include <aws/iot/model/ListTopicRulesRequest.h>
 #include <aws/iot/model/ListV2LoggingLevelsRequest.h>
 #include <aws/iot/model/ListViolationEventsRequest.h>
@@ -205,6 +210,7 @@
 #include <aws/iot/model/UpdateThingRequest.h>
 #include <aws/iot/model/UpdateThingGroupRequest.h>
 #include <aws/iot/model/UpdateThingGroupsForThingRequest.h>
+#include <aws/iot/model/UpdateTopicRuleDestinationRequest.h>
 #include <aws/iot/model/ValidateSecurityProfileBehaviorsRequest.h>
 
 using namespace Aws;
@@ -816,6 +822,47 @@ void IoTClient::ClearDefaultAuthorizerAsync(const ClearDefaultAuthorizerRequest&
 void IoTClient::ClearDefaultAuthorizerAsyncHelper(const ClearDefaultAuthorizerRequest& request, const ClearDefaultAuthorizerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ClearDefaultAuthorizer(request), context);
+}
+
+ConfirmTopicRuleDestinationOutcome IoTClient::ConfirmTopicRuleDestination(const ConfirmTopicRuleDestinationRequest& request) const
+{
+  if (!request.ConfirmationTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ConfirmTopicRuleDestination", "Required field: ConfirmationToken, is not set");
+    return ConfirmTopicRuleDestinationOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfirmationToken]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/confirmdestination/";
+  ss << request.GetConfirmationToken();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ConfirmTopicRuleDestinationOutcome(ConfirmTopicRuleDestinationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ConfirmTopicRuleDestinationOutcome(outcome.GetError());
+  }
+}
+
+ConfirmTopicRuleDestinationOutcomeCallable IoTClient::ConfirmTopicRuleDestinationCallable(const ConfirmTopicRuleDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ConfirmTopicRuleDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ConfirmTopicRuleDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ConfirmTopicRuleDestinationAsync(const ConfirmTopicRuleDestinationRequest& request, const ConfirmTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ConfirmTopicRuleDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ConfirmTopicRuleDestinationAsyncHelper(const ConfirmTopicRuleDestinationRequest& request, const ConfirmTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ConfirmTopicRuleDestination(request), context);
 }
 
 CreateAuthorizerOutcome IoTClient::CreateAuthorizer(const CreateAuthorizerRequest& request) const
@@ -1543,6 +1590,41 @@ void IoTClient::CreateTopicRuleAsync(const CreateTopicRuleRequest& request, cons
 void IoTClient::CreateTopicRuleAsyncHelper(const CreateTopicRuleRequest& request, const CreateTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateTopicRule(request), context);
+}
+
+CreateTopicRuleDestinationOutcome IoTClient::CreateTopicRuleDestination(const CreateTopicRuleDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/destinations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateTopicRuleDestinationOutcome(CreateTopicRuleDestinationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateTopicRuleDestinationOutcome(outcome.GetError());
+  }
+}
+
+CreateTopicRuleDestinationOutcomeCallable IoTClient::CreateTopicRuleDestinationCallable(const CreateTopicRuleDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTopicRuleDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTopicRuleDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateTopicRuleDestinationAsync(const CreateTopicRuleDestinationRequest& request, const CreateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTopicRuleDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateTopicRuleDestinationAsyncHelper(const CreateTopicRuleDestinationRequest& request, const CreateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTopicRuleDestination(request), context);
 }
 
 DeleteAccountAuditConfigurationOutcome IoTClient::DeleteAccountAuditConfiguration(const DeleteAccountAuditConfigurationRequest& request) const
@@ -2413,6 +2495,47 @@ void IoTClient::DeleteTopicRuleAsync(const DeleteTopicRuleRequest& request, cons
 void IoTClient::DeleteTopicRuleAsyncHelper(const DeleteTopicRuleRequest& request, const DeleteTopicRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteTopicRule(request), context);
+}
+
+DeleteTopicRuleDestinationOutcome IoTClient::DeleteTopicRuleDestination(const DeleteTopicRuleDestinationRequest& request) const
+{
+  if (!request.ArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTopicRuleDestination", "Required field: Arn, is not set");
+    return DeleteTopicRuleDestinationOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/destinations/";
+  ss << request.GetArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteTopicRuleDestinationOutcome(DeleteTopicRuleDestinationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteTopicRuleDestinationOutcome(outcome.GetError());
+  }
+}
+
+DeleteTopicRuleDestinationOutcomeCallable IoTClient::DeleteTopicRuleDestinationCallable(const DeleteTopicRuleDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTopicRuleDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTopicRuleDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteTopicRuleDestinationAsync(const DeleteTopicRuleDestinationRequest& request, const DeleteTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTopicRuleDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteTopicRuleDestinationAsyncHelper(const DeleteTopicRuleDestinationRequest& request, const DeleteTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTopicRuleDestination(request), context);
 }
 
 DeleteV2LoggingLevelOutcome IoTClient::DeleteV2LoggingLevel(const DeleteV2LoggingLevelRequest& request) const
@@ -4105,6 +4228,47 @@ void IoTClient::GetTopicRuleAsyncHelper(const GetTopicRuleRequest& request, cons
   handler(this, request, GetTopicRule(request), context);
 }
 
+GetTopicRuleDestinationOutcome IoTClient::GetTopicRuleDestination(const GetTopicRuleDestinationRequest& request) const
+{
+  if (!request.ArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTopicRuleDestination", "Required field: Arn, is not set");
+    return GetTopicRuleDestinationOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Arn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/destinations/";
+  ss << request.GetArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetTopicRuleDestinationOutcome(GetTopicRuleDestinationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetTopicRuleDestinationOutcome(outcome.GetError());
+  }
+}
+
+GetTopicRuleDestinationOutcomeCallable IoTClient::GetTopicRuleDestinationCallable(const GetTopicRuleDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTopicRuleDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTopicRuleDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::GetTopicRuleDestinationAsync(const GetTopicRuleDestinationRequest& request, const GetTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTopicRuleDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::GetTopicRuleDestinationAsyncHelper(const GetTopicRuleDestinationRequest& request, const GetTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTopicRuleDestination(request), context);
+}
+
 GetV2LoggingOptionsOutcome IoTClient::GetV2LoggingOptions(const GetV2LoggingOptionsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -5599,6 +5763,41 @@ void IoTClient::ListThingsInThingGroupAsync(const ListThingsInThingGroupRequest&
 void IoTClient::ListThingsInThingGroupAsyncHelper(const ListThingsInThingGroupRequest& request, const ListThingsInThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListThingsInThingGroup(request), context);
+}
+
+ListTopicRuleDestinationsOutcome IoTClient::ListTopicRuleDestinations(const ListTopicRuleDestinationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/destinations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTopicRuleDestinationsOutcome(ListTopicRuleDestinationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTopicRuleDestinationsOutcome(outcome.GetError());
+  }
+}
+
+ListTopicRuleDestinationsOutcomeCallable IoTClient::ListTopicRuleDestinationsCallable(const ListTopicRuleDestinationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTopicRuleDestinationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTopicRuleDestinations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListTopicRuleDestinationsAsync(const ListTopicRuleDestinationsRequest& request, const ListTopicRuleDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTopicRuleDestinationsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListTopicRuleDestinationsAsyncHelper(const ListTopicRuleDestinationsRequest& request, const ListTopicRuleDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTopicRuleDestinations(request), context);
 }
 
 ListTopicRulesOutcome IoTClient::ListTopicRules(const ListTopicRulesRequest& request) const
@@ -7218,6 +7417,41 @@ void IoTClient::UpdateThingGroupsForThingAsync(const UpdateThingGroupsForThingRe
 void IoTClient::UpdateThingGroupsForThingAsyncHelper(const UpdateThingGroupsForThingRequest& request, const UpdateThingGroupsForThingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateThingGroupsForThing(request), context);
+}
+
+UpdateTopicRuleDestinationOutcome IoTClient::UpdateTopicRuleDestination(const UpdateTopicRuleDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/destinations";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateTopicRuleDestinationOutcome(UpdateTopicRuleDestinationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateTopicRuleDestinationOutcome(outcome.GetError());
+  }
+}
+
+UpdateTopicRuleDestinationOutcomeCallable IoTClient::UpdateTopicRuleDestinationCallable(const UpdateTopicRuleDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTopicRuleDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTopicRuleDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateTopicRuleDestinationAsync(const UpdateTopicRuleDestinationRequest& request, const UpdateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateTopicRuleDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateTopicRuleDestinationAsyncHelper(const UpdateTopicRuleDestinationRequest& request, const UpdateTopicRuleDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateTopicRuleDestination(request), context);
 }
 
 ValidateSecurityProfileBehaviorsOutcome IoTClient::ValidateSecurityProfileBehaviors(const ValidateSecurityProfileBehaviorsRequest& request) const

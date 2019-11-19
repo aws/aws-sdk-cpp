@@ -33,12 +33,12 @@ namespace Aws
         static const int CREATE_SUCCESSFUL_HASH = HashingUtils::HashString("CREATE_SUCCESSFUL");
         static const int CREATE_IN_PROGRESS_HASH = HashingUtils::HashString("CREATE_IN_PROGRESS");
         static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
-        static const int UPDATE_SUCCESSFUL_HASH = HashingUtils::HashString("UPDATE_SUCCESSFUL");
-        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
-        static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
         static const int DELETE_SUCCESSFUL_HASH = HashingUtils::HashString("DELETE_SUCCESSFUL");
         static const int DELETE_FAILED_HASH = HashingUtils::HashString("DELETE_FAILED");
         static const int DELETE_IN_PROGRESS_HASH = HashingUtils::HashString("DELETE_IN_PROGRESS");
+        static const int UPDATE_SUCCESSFUL_HASH = HashingUtils::HashString("UPDATE_SUCCESSFUL");
+        static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
+        static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 
 
         MemberAccountRuleStatus GetMemberAccountRuleStatusForName(const Aws::String& name)
@@ -56,18 +56,6 @@ namespace Aws
           {
             return MemberAccountRuleStatus::CREATE_FAILED;
           }
-          else if (hashCode == UPDATE_SUCCESSFUL_HASH)
-          {
-            return MemberAccountRuleStatus::UPDATE_SUCCESSFUL;
-          }
-          else if (hashCode == UPDATE_FAILED_HASH)
-          {
-            return MemberAccountRuleStatus::UPDATE_FAILED;
-          }
-          else if (hashCode == UPDATE_IN_PROGRESS_HASH)
-          {
-            return MemberAccountRuleStatus::UPDATE_IN_PROGRESS;
-          }
           else if (hashCode == DELETE_SUCCESSFUL_HASH)
           {
             return MemberAccountRuleStatus::DELETE_SUCCESSFUL;
@@ -79,6 +67,18 @@ namespace Aws
           else if (hashCode == DELETE_IN_PROGRESS_HASH)
           {
             return MemberAccountRuleStatus::DELETE_IN_PROGRESS;
+          }
+          else if (hashCode == UPDATE_SUCCESSFUL_HASH)
+          {
+            return MemberAccountRuleStatus::UPDATE_SUCCESSFUL;
+          }
+          else if (hashCode == UPDATE_IN_PROGRESS_HASH)
+          {
+            return MemberAccountRuleStatus::UPDATE_IN_PROGRESS;
+          }
+          else if (hashCode == UPDATE_FAILED_HASH)
+          {
+            return MemberAccountRuleStatus::UPDATE_FAILED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -100,18 +100,18 @@ namespace Aws
             return "CREATE_IN_PROGRESS";
           case MemberAccountRuleStatus::CREATE_FAILED:
             return "CREATE_FAILED";
-          case MemberAccountRuleStatus::UPDATE_SUCCESSFUL:
-            return "UPDATE_SUCCESSFUL";
-          case MemberAccountRuleStatus::UPDATE_FAILED:
-            return "UPDATE_FAILED";
-          case MemberAccountRuleStatus::UPDATE_IN_PROGRESS:
-            return "UPDATE_IN_PROGRESS";
           case MemberAccountRuleStatus::DELETE_SUCCESSFUL:
             return "DELETE_SUCCESSFUL";
           case MemberAccountRuleStatus::DELETE_FAILED:
             return "DELETE_FAILED";
           case MemberAccountRuleStatus::DELETE_IN_PROGRESS:
             return "DELETE_IN_PROGRESS";
+          case MemberAccountRuleStatus::UPDATE_SUCCESSFUL:
+            return "UPDATE_SUCCESSFUL";
+          case MemberAccountRuleStatus::UPDATE_IN_PROGRESS:
+            return "UPDATE_IN_PROGRESS";
+          case MemberAccountRuleStatus::UPDATE_FAILED:
+            return "UPDATE_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

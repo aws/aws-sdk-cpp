@@ -479,7 +479,7 @@ namespace Aws
      */
     enum class AWS_S3_API US_EAST_1_REGIONAL_ENDPOINT_OPTION
     {
-      NOT_SET = 0,
+      NOT_SET,
       LEGACY,   //stands for using global endpoint for us-east-1,
       REGIONAL //stands for using regional endpoint for us-east-1
     };

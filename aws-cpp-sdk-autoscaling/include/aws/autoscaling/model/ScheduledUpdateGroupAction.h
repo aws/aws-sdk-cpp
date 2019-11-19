@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>Describes a scheduled scaling action. Used in response to
-   * <a>DescribeScheduledActions</a>. </p><p><h3>See Also:</h3>   <a
+   * <a>DescribeScheduledActions</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/ScheduledUpdateGroupAction">AWS
    * API Reference</a></p>
    */
@@ -280,7 +280,7 @@ namespace Model
 
 
     /**
-     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format.</p>
      * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
@@ -288,7 +288,7 @@ namespace Model
     inline const Aws::String& GetRecurrence() const{ return m_recurrence; }
 
     /**
-     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format.</p>
      * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
@@ -296,7 +296,7 @@ namespace Model
     inline bool RecurrenceHasBeenSet() const { return m_recurrenceHasBeenSet; }
 
     /**
-     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format.</p>
      * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
@@ -304,7 +304,7 @@ namespace Model
     inline void SetRecurrence(const Aws::String& value) { m_recurrenceHasBeenSet = true; m_recurrence = value; }
 
     /**
-     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format.</p>
      * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
@@ -312,7 +312,7 @@ namespace Model
     inline void SetRecurrence(Aws::String&& value) { m_recurrenceHasBeenSet = true; m_recurrence = std::move(value); }
 
     /**
-     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format.</p>
      * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
@@ -320,7 +320,7 @@ namespace Model
     inline void SetRecurrence(const char* value) { m_recurrenceHasBeenSet = true; m_recurrence.assign(value); }
 
     /**
-     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format.</p>
      * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
@@ -328,7 +328,7 @@ namespace Model
     inline ScheduledUpdateGroupAction& WithRecurrence(const Aws::String& value) { SetRecurrence(value); return *this;}
 
     /**
-     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format.</p>
      * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>
@@ -336,7 +336,7 @@ namespace Model
     inline ScheduledUpdateGroupAction& WithRecurrence(Aws::String&& value) { SetRecurrence(std::move(value)); return *this;}
 
     /**
-     * <p>The recurring schedule for the action, in Unix cron syntax format. </p>
+     * <p>The recurring schedule for the action, in Unix cron syntax format.</p>
      * <p>When <code>StartTime</code> and <code>EndTime</code> are specified with
      * <code>Recurrence</code>, they form the boundaries of when the recurring action
      * starts and stops.</p>

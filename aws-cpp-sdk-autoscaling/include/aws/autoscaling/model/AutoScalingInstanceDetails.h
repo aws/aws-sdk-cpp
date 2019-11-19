@@ -93,6 +93,47 @@ namespace Model
 
 
     /**
+     * <p>The instance type of the EC2 instance.</p>
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type of the EC2 instance.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type of the EC2 instance.</p>
+     */
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The instance type of the EC2 instance.</p>
+     */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * <p>The instance type of the EC2 instance.</p>
+     */
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
+
+    /**
+     * <p>The instance type of the EC2 instance.</p>
+     */
+    inline AutoScalingInstanceDetails& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance type of the EC2 instance.</p>
+     */
+    inline AutoScalingInstanceDetails& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance type of the EC2 instance.</p>
+     */
+    inline AutoScalingInstanceDetails& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
+
+    /**
      * <p>The name of the Auto Scaling group for the instance.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
@@ -384,10 +425,62 @@ namespace Model
      */
     inline AutoScalingInstanceDetails& WithProtectedFromScaleIn(bool value) { SetProtectedFromScaleIn(value); return *this;}
 
+
+    /**
+     * <p>The number of capacity units contributed by the instance based on its
+     * instance type.</p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     */
+    inline const Aws::String& GetWeightedCapacity() const{ return m_weightedCapacity; }
+
+    /**
+     * <p>The number of capacity units contributed by the instance based on its
+     * instance type.</p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     */
+    inline bool WeightedCapacityHasBeenSet() const { return m_weightedCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of capacity units contributed by the instance based on its
+     * instance type.</p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     */
+    inline void SetWeightedCapacity(const Aws::String& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
+
+    /**
+     * <p>The number of capacity units contributed by the instance based on its
+     * instance type.</p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     */
+    inline void SetWeightedCapacity(Aws::String&& value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = std::move(value); }
+
+    /**
+     * <p>The number of capacity units contributed by the instance based on its
+     * instance type.</p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     */
+    inline void SetWeightedCapacity(const char* value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity.assign(value); }
+
+    /**
+     * <p>The number of capacity units contributed by the instance based on its
+     * instance type.</p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     */
+    inline AutoScalingInstanceDetails& WithWeightedCapacity(const Aws::String& value) { SetWeightedCapacity(value); return *this;}
+
+    /**
+     * <p>The number of capacity units contributed by the instance based on its
+     * instance type.</p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     */
+    inline AutoScalingInstanceDetails& WithWeightedCapacity(Aws::String&& value) { SetWeightedCapacity(std::move(value)); return *this;}
+
+    /**
+     * <p>The number of capacity units contributed by the instance based on its
+     * instance type.</p> <p>Valid Range: Minimum value of 1. Maximum value of 999.</p>
+     */
+    inline AutoScalingInstanceDetails& WithWeightedCapacity(const char* value) { SetWeightedCapacity(value); return *this;}
+
   private:
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
+
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
 
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet;
@@ -409,6 +502,9 @@ namespace Model
 
     bool m_protectedFromScaleIn;
     bool m_protectedFromScaleInHasBeenSet;
+
+    Aws::String m_weightedCapacity;
+    bool m_weightedCapacityHasBeenSet;
   };
 
 } // namespace Model

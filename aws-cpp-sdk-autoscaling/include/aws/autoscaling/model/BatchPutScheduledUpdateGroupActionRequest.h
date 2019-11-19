@@ -90,42 +90,42 @@ namespace Model
 
 
     /**
-     * <p>One or more scheduled actions. The maximum number allowed is 50. </p>
+     * <p>One or more scheduled actions. The maximum number allowed is 50.</p>
      */
     inline const Aws::Vector<ScheduledUpdateGroupActionRequest>& GetScheduledUpdateGroupActions() const{ return m_scheduledUpdateGroupActions; }
 
     /**
-     * <p>One or more scheduled actions. The maximum number allowed is 50. </p>
+     * <p>One or more scheduled actions. The maximum number allowed is 50.</p>
      */
     inline bool ScheduledUpdateGroupActionsHasBeenSet() const { return m_scheduledUpdateGroupActionsHasBeenSet; }
 
     /**
-     * <p>One or more scheduled actions. The maximum number allowed is 50. </p>
+     * <p>One or more scheduled actions. The maximum number allowed is 50.</p>
      */
     inline void SetScheduledUpdateGroupActions(const Aws::Vector<ScheduledUpdateGroupActionRequest>& value) { m_scheduledUpdateGroupActionsHasBeenSet = true; m_scheduledUpdateGroupActions = value; }
 
     /**
-     * <p>One or more scheduled actions. The maximum number allowed is 50. </p>
+     * <p>One or more scheduled actions. The maximum number allowed is 50.</p>
      */
     inline void SetScheduledUpdateGroupActions(Aws::Vector<ScheduledUpdateGroupActionRequest>&& value) { m_scheduledUpdateGroupActionsHasBeenSet = true; m_scheduledUpdateGroupActions = std::move(value); }
 
     /**
-     * <p>One or more scheduled actions. The maximum number allowed is 50. </p>
+     * <p>One or more scheduled actions. The maximum number allowed is 50.</p>
      */
     inline BatchPutScheduledUpdateGroupActionRequest& WithScheduledUpdateGroupActions(const Aws::Vector<ScheduledUpdateGroupActionRequest>& value) { SetScheduledUpdateGroupActions(value); return *this;}
 
     /**
-     * <p>One or more scheduled actions. The maximum number allowed is 50. </p>
+     * <p>One or more scheduled actions. The maximum number allowed is 50.</p>
      */
     inline BatchPutScheduledUpdateGroupActionRequest& WithScheduledUpdateGroupActions(Aws::Vector<ScheduledUpdateGroupActionRequest>&& value) { SetScheduledUpdateGroupActions(std::move(value)); return *this;}
 
     /**
-     * <p>One or more scheduled actions. The maximum number allowed is 50. </p>
+     * <p>One or more scheduled actions. The maximum number allowed is 50.</p>
      */
     inline BatchPutScheduledUpdateGroupActionRequest& AddScheduledUpdateGroupActions(const ScheduledUpdateGroupActionRequest& value) { m_scheduledUpdateGroupActionsHasBeenSet = true; m_scheduledUpdateGroupActions.push_back(value); return *this; }
 
     /**
-     * <p>One or more scheduled actions. The maximum number allowed is 50. </p>
+     * <p>One or more scheduled actions. The maximum number allowed is 50.</p>
      */
     inline BatchPutScheduledUpdateGroupActionRequest& AddScheduledUpdateGroupActions(ScheduledUpdateGroupActionRequest&& value) { m_scheduledUpdateGroupActionsHasBeenSet = true; m_scheduledUpdateGroupActions.push_back(std::move(value)); return *this; }
 

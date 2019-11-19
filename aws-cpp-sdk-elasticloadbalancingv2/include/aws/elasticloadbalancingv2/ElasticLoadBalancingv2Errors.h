@@ -90,6 +90,7 @@ enum class ElasticLoadBalancingv2Errors
   TOO_MANY_TAGS,
   TOO_MANY_TARGETS,
   TOO_MANY_TARGET_GROUPS,
+  TOO_MANY_UNIQUE_TARGET_GROUPS_PER_LOAD_BALANCER,
   UNSUPPORTED_PROTOCOL
 };
 namespace ElasticLoadBalancingv2ErrorMapper

@@ -40,7 +40,7 @@ namespace Model
    * <a>ListPolicies</a> operations. </p> <p>For more information about managed
    * policies, refer to <a
    * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
-   * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p><p><h3>See
+   * Policies and Inline Policies</a> in the <i>IAM User Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Policy">AWS API
    * Reference</a></p>
@@ -101,7 +101,7 @@ namespace Model
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
 
@@ -109,7 +109,7 @@ namespace Model
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
 
@@ -117,7 +117,7 @@ namespace Model
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
@@ -125,7 +125,7 @@ namespace Model
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
@@ -133,7 +133,7 @@ namespace Model
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
 
@@ -141,7 +141,7 @@ namespace Model
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline Policy& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
 
@@ -149,7 +149,7 @@ namespace Model
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline Policy& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
@@ -157,7 +157,7 @@ namespace Model
      * <p>The stable and unique string identifying the policy.</p> <p>For more
      * information about IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline Policy& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 
@@ -190,56 +190,56 @@ namespace Model
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline Policy& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline Policy& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The path to the policy.</p> <p>For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline Policy& WithPath(const char* value) { SetPath(value); return *this;}
 

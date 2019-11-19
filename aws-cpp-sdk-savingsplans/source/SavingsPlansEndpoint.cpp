@@ -26,7 +26,7 @@ namespace SavingsPlans
 {
 namespace SavingsPlansEndpoint
 {
-  
+
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {

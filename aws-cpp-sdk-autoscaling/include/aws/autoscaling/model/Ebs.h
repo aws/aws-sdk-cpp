@@ -51,7 +51,7 @@ namespace Model
 
 
     /**
-     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
      * optional if you specify a volume size. If you specify both
      * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
      * must be equal or greater than the size of the snapshot.</p>
@@ -59,7 +59,7 @@ namespace Model
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
 
     /**
-     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
      * optional if you specify a volume size. If you specify both
      * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
      * must be equal or greater than the size of the snapshot.</p>
@@ -67,7 +67,7 @@ namespace Model
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
-     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
      * optional if you specify a volume size. If you specify both
      * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
      * must be equal or greater than the size of the snapshot.</p>
@@ -75,7 +75,7 @@ namespace Model
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /**
-     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
      * optional if you specify a volume size. If you specify both
      * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
      * must be equal or greater than the size of the snapshot.</p>
@@ -83,7 +83,7 @@ namespace Model
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
 
     /**
-     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
      * optional if you specify a volume size. If you specify both
      * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
      * must be equal or greater than the size of the snapshot.</p>
@@ -91,7 +91,7 @@ namespace Model
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
 
     /**
-     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
      * optional if you specify a volume size. If you specify both
      * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
      * must be equal or greater than the size of the snapshot.</p>
@@ -99,7 +99,7 @@ namespace Model
     inline Ebs& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
 
     /**
-     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
      * optional if you specify a volume size. If you specify both
      * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
      * must be equal or greater than the size of the snapshot.</p>
@@ -107,7 +107,7 @@ namespace Model
     inline Ebs& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
 
     /**
-     * <p>The snapshot ID of the volume to use. </p> <p>Conditional: This parameter is
+     * <p>The snapshot ID of the volume to use.</p> <p>Conditional: This parameter is
      * optional if you specify a volume size. If you specify both
      * <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code>
      * must be equal or greater than the size of the snapshot.</p>
@@ -116,8 +116,8 @@ namespace Model
 
 
     /**
-     * <p>The volume size, in Gibibytes (GiB). </p> <p>This can be a number from
-     * 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
+     * <p>The volume size, in Gibibytes (GiB).</p> <p>This can be a number from 1-1,024
+     * for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
      * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
@@ -127,8 +127,8 @@ namespace Model
     inline int GetVolumeSize() const{ return m_volumeSize; }
 
     /**
-     * <p>The volume size, in Gibibytes (GiB). </p> <p>This can be a number from
-     * 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
+     * <p>The volume size, in Gibibytes (GiB).</p> <p>This can be a number from 1-1,024
+     * for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
      * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
@@ -138,8 +138,8 @@ namespace Model
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
 
     /**
-     * <p>The volume size, in Gibibytes (GiB). </p> <p>This can be a number from
-     * 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
+     * <p>The volume size, in Gibibytes (GiB).</p> <p>This can be a number from 1-1,024
+     * for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
      * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
@@ -149,8 +149,8 @@ namespace Model
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
-     * <p>The volume size, in Gibibytes (GiB). </p> <p>This can be a number from
-     * 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
+     * <p>The volume size, in Gibibytes (GiB).</p> <p>This can be a number from 1-1,024
+     * for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
      * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If
      * you specify a snapshot, the volume size must be equal to or larger than the
      * snapshot size.</p> <p>Default: If you create a volume from a snapshot and you
@@ -167,7 +167,7 @@ namespace Model
      * HDD. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
      */
     inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
@@ -179,7 +179,7 @@ namespace Model
      * HDD. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
@@ -191,7 +191,7 @@ namespace Model
      * HDD. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
      */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
@@ -203,7 +203,7 @@ namespace Model
      * HDD. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
      */
     inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
@@ -215,7 +215,7 @@ namespace Model
      * HDD. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
      */
     inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
@@ -227,7 +227,7 @@ namespace Model
      * HDD. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
      */
     inline Ebs& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
@@ -239,7 +239,7 @@ namespace Model
      * HDD. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
      */
     inline Ebs& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
@@ -251,7 +251,7 @@ namespace Model
      * HDD. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>Valid values: <code>standard</code> | <code>io1</code> |
+     * Instances</i>.</p> <p>Valid Values: <code>standard</code> | <code>io1</code> |
      * <code>gp2</code> | <code>st1</code> | <code>sc1</code> </p>
      */
     inline Ebs& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
@@ -345,7 +345,7 @@ namespace Model
      * you can specify a custom CMK when you create the snapshot. The ability to
      * encrypt a snapshot during copying also allows you to apply a new CMK to an
      * already-encrypted snapshot. Volumes restored from the resulting copy are only
-     * accessible using the new CMK. </p> <p>Enabling <a
+     * accessible using the new CMK.</p> <p>Enabling <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
      * by default</a> results in all EBS volumes being encrypted with the AWS managed
      * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
@@ -373,7 +373,7 @@ namespace Model
      * you can specify a custom CMK when you create the snapshot. The ability to
      * encrypt a snapshot during copying also allows you to apply a new CMK to an
      * already-encrypted snapshot. Volumes restored from the resulting copy are only
-     * accessible using the new CMK. </p> <p>Enabling <a
+     * accessible using the new CMK.</p> <p>Enabling <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
      * by default</a> results in all EBS volumes being encrypted with the AWS managed
      * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
@@ -401,7 +401,7 @@ namespace Model
      * you can specify a custom CMK when you create the snapshot. The ability to
      * encrypt a snapshot during copying also allows you to apply a new CMK to an
      * already-encrypted snapshot. Volumes restored from the resulting copy are only
-     * accessible using the new CMK. </p> <p>Enabling <a
+     * accessible using the new CMK.</p> <p>Enabling <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
      * by default</a> results in all EBS volumes being encrypted with the AWS managed
      * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>
@@ -429,7 +429,7 @@ namespace Model
      * you can specify a custom CMK when you create the snapshot. The ability to
      * encrypt a snapshot during copying also allows you to apply a new CMK to an
      * already-encrypted snapshot. Volumes restored from the resulting copy are only
-     * accessible using the new CMK. </p> <p>Enabling <a
+     * accessible using the new CMK.</p> <p>Enabling <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-by-default">encryption
      * by default</a> results in all EBS volumes being encrypted with the AWS managed
      * CMK or a customer managed CMK, whether or not the snapshot was encrypted.</p>

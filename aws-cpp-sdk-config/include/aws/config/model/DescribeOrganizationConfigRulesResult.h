@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Retuns a list <code>OrganizationConfigRule</code> objects.</p>
+     * <p>Returns a list of <code>OrganizationConfigRule</code> objects.</p>
      */
     inline const Aws::Vector<OrganizationConfigRule>& GetOrganizationConfigRules() const{ return m_organizationConfigRules; }
 
     /**
-     * <p>Retuns a list <code>OrganizationConfigRule</code> objects.</p>
+     * <p>Returns a list of <code>OrganizationConfigRule</code> objects.</p>
      */
     inline void SetOrganizationConfigRules(const Aws::Vector<OrganizationConfigRule>& value) { m_organizationConfigRules = value; }
 
     /**
-     * <p>Retuns a list <code>OrganizationConfigRule</code> objects.</p>
+     * <p>Returns a list of <code>OrganizationConfigRule</code> objects.</p>
      */
     inline void SetOrganizationConfigRules(Aws::Vector<OrganizationConfigRule>&& value) { m_organizationConfigRules = std::move(value); }
 
     /**
-     * <p>Retuns a list <code>OrganizationConfigRule</code> objects.</p>
+     * <p>Returns a list of <code>OrganizationConfigRule</code> objects.</p>
      */
     inline DescribeOrganizationConfigRulesResult& WithOrganizationConfigRules(const Aws::Vector<OrganizationConfigRule>& value) { SetOrganizationConfigRules(value); return *this;}
 
     /**
-     * <p>Retuns a list <code>OrganizationConfigRule</code> objects.</p>
+     * <p>Returns a list of <code>OrganizationConfigRule</code> objects.</p>
      */
     inline DescribeOrganizationConfigRulesResult& WithOrganizationConfigRules(Aws::Vector<OrganizationConfigRule>&& value) { SetOrganizationConfigRules(std::move(value)); return *this;}
 
     /**
-     * <p>Retuns a list <code>OrganizationConfigRule</code> objects.</p>
+     * <p>Returns a list of <code>OrganizationConfigRule</code> objects.</p>
      */
     inline DescribeOrganizationConfigRulesResult& AddOrganizationConfigRules(const OrganizationConfigRule& value) { m_organizationConfigRules.push_back(value); return *this; }
 
     /**
-     * <p>Retuns a list <code>OrganizationConfigRule</code> objects.</p>
+     * <p>Returns a list of <code>OrganizationConfigRule</code> objects.</p>
      */
     inline DescribeOrganizationConfigRulesResult& AddOrganizationConfigRules(OrganizationConfigRule&& value) { m_organizationConfigRules.push_back(std::move(value)); return *this; }
 

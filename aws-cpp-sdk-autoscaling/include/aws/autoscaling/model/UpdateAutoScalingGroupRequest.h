@@ -94,11 +94,6 @@ namespace Model
      * <p>The name of the launch configuration. If you specify
      * <code>LaunchConfigurationName</code> in your update request, you can't specify
      * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <important> <p>To update an Auto Scaling group with a launch configuration with
-     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
-     * disable the collection of group metrics. Otherwise, you get an error. If you
-     * have previously enabled the collection of group metrics, you can disable it
-     * using <a>DisableMetricsCollection</a>.</p> </important>
      */
     inline const Aws::String& GetLaunchConfigurationName() const{ return m_launchConfigurationName; }
 
@@ -106,11 +101,6 @@ namespace Model
      * <p>The name of the launch configuration. If you specify
      * <code>LaunchConfigurationName</code> in your update request, you can't specify
      * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <important> <p>To update an Auto Scaling group with a launch configuration with
-     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
-     * disable the collection of group metrics. Otherwise, you get an error. If you
-     * have previously enabled the collection of group metrics, you can disable it
-     * using <a>DisableMetricsCollection</a>.</p> </important>
      */
     inline bool LaunchConfigurationNameHasBeenSet() const { return m_launchConfigurationNameHasBeenSet; }
 
@@ -118,11 +108,6 @@ namespace Model
      * <p>The name of the launch configuration. If you specify
      * <code>LaunchConfigurationName</code> in your update request, you can't specify
      * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <important> <p>To update an Auto Scaling group with a launch configuration with
-     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
-     * disable the collection of group metrics. Otherwise, you get an error. If you
-     * have previously enabled the collection of group metrics, you can disable it
-     * using <a>DisableMetricsCollection</a>.</p> </important>
      */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
@@ -130,11 +115,6 @@ namespace Model
      * <p>The name of the launch configuration. If you specify
      * <code>LaunchConfigurationName</code> in your update request, you can't specify
      * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <important> <p>To update an Auto Scaling group with a launch configuration with
-     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
-     * disable the collection of group metrics. Otherwise, you get an error. If you
-     * have previously enabled the collection of group metrics, you can disable it
-     * using <a>DisableMetricsCollection</a>.</p> </important>
      */
     inline void SetLaunchConfigurationName(Aws::String&& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = std::move(value); }
 
@@ -142,11 +122,6 @@ namespace Model
      * <p>The name of the launch configuration. If you specify
      * <code>LaunchConfigurationName</code> in your update request, you can't specify
      * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <important> <p>To update an Auto Scaling group with a launch configuration with
-     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
-     * disable the collection of group metrics. Otherwise, you get an error. If you
-     * have previously enabled the collection of group metrics, you can disable it
-     * using <a>DisableMetricsCollection</a>.</p> </important>
      */
     inline void SetLaunchConfigurationName(const char* value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName.assign(value); }
 
@@ -154,11 +129,6 @@ namespace Model
      * <p>The name of the launch configuration. If you specify
      * <code>LaunchConfigurationName</code> in your update request, you can't specify
      * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <important> <p>To update an Auto Scaling group with a launch configuration with
-     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
-     * disable the collection of group metrics. Otherwise, you get an error. If you
-     * have previously enabled the collection of group metrics, you can disable it
-     * using <a>DisableMetricsCollection</a>.</p> </important>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchConfigurationName(const Aws::String& value) { SetLaunchConfigurationName(value); return *this;}
 
@@ -166,11 +136,6 @@ namespace Model
      * <p>The name of the launch configuration. If you specify
      * <code>LaunchConfigurationName</code> in your update request, you can't specify
      * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <important> <p>To update an Auto Scaling group with a launch configuration with
-     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
-     * disable the collection of group metrics. Otherwise, you get an error. If you
-     * have previously enabled the collection of group metrics, you can disable it
-     * using <a>DisableMetricsCollection</a>.</p> </important>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchConfigurationName(Aws::String&& value) { SetLaunchConfigurationName(std::move(value)); return *this;}
 
@@ -178,11 +143,6 @@ namespace Model
      * <p>The name of the launch configuration. If you specify
      * <code>LaunchConfigurationName</code> in your update request, you can't specify
      * <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.</p>
-     * <important> <p>To update an Auto Scaling group with a launch configuration with
-     * <code>InstanceMonitoring</code> set to <code>false</code>, you must first
-     * disable the collection of group metrics. Otherwise, you get an error. If you
-     * have previously enabled the collection of group metrics, you can disable it
-     * using <a>DisableMetricsCollection</a>.</p> </important>
      */
     inline UpdateAutoScalingGroupRequest& WithLaunchConfigurationName(const char* value) { SetLaunchConfigurationName(value); return *this;}
 
@@ -945,6 +905,31 @@ namespace Model
      */
     inline UpdateAutoScalingGroupRequest& WithServiceLinkedRoleARN(const char* value) { SetServiceLinkedRoleARN(value); return *this;}
 
+
+    /**
+     * <p>The maximum amount of time, in seconds, that an instance can be in
+     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     */
+    inline int GetMaxInstanceLifetime() const{ return m_maxInstanceLifetime; }
+
+    /**
+     * <p>The maximum amount of time, in seconds, that an instance can be in
+     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     */
+    inline bool MaxInstanceLifetimeHasBeenSet() const { return m_maxInstanceLifetimeHasBeenSet; }
+
+    /**
+     * <p>The maximum amount of time, in seconds, that an instance can be in
+     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     */
+    inline void SetMaxInstanceLifetime(int value) { m_maxInstanceLifetimeHasBeenSet = true; m_maxInstanceLifetime = value; }
+
+    /**
+     * <p>The maximum amount of time, in seconds, that an instance can be in
+     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     */
+    inline UpdateAutoScalingGroupRequest& WithMaxInstanceLifetime(int value) { SetMaxInstanceLifetime(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -994,6 +979,9 @@ namespace Model
 
     Aws::String m_serviceLinkedRoleARN;
     bool m_serviceLinkedRoleARNHasBeenSet;
+
+    int m_maxInstanceLifetime;
+    bool m_maxInstanceLifetimeHasBeenSet;
   };
 
 } // namespace Model

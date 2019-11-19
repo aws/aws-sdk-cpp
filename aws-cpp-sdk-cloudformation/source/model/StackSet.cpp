@@ -42,7 +42,8 @@ StackSet::StackSet() :
     m_tagsHasBeenSet(false),
     m_stackSetARNHasBeenSet(false),
     m_administrationRoleARNHasBeenSet(false),
-    m_executionRoleNameHasBeenSet(false)
+    m_executionRoleNameHasBeenSet(false),
+    m_stackSetDriftDetectionDetailsHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ StackSet::StackSet(const XmlNode& xmlNode) :
     m_tagsHasBeenSet(false),
     m_stackSetARNHasBeenSet(false),
     m_administrationRoleARNHasBeenSet(false),
-    m_executionRoleNameHasBeenSet(false)
+    m_executionRoleNameHasBeenSet(false),
+    m_stackSetDriftDetectionDetailsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -153,6 +155,12 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
       m_executionRoleName = Aws::Utils::Xml::DecodeEscapedXmlText(executionRoleNameNode.GetText());
       m_executionRoleNameHasBeenSet = true;
     }
+    XmlNode stackSetDriftDetectionDetailsNode = resultNode.FirstChild("StackSetDriftDetectionDetails");
+    if(!stackSetDriftDetectionDetailsNode.IsNull())
+    {
+      m_stackSetDriftDetectionDetails = stackSetDriftDetectionDetailsNode;
+      m_stackSetDriftDetectionDetailsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -231,6 +239,13 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       oStream << location << index << locationValue << ".ExecutionRoleName=" << StringUtils::URLEncode(m_executionRoleName.c_str()) << "&";
   }
 
+  if(m_stackSetDriftDetectionDetailsHasBeenSet)
+  {
+      Aws::StringStream stackSetDriftDetectionDetailsLocationAndMemberSs;
+      stackSetDriftDetectionDetailsLocationAndMemberSs << location << index << locationValue << ".StackSetDriftDetectionDetails";
+      m_stackSetDriftDetectionDetails.OutputToStream(oStream, stackSetDriftDetectionDetailsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -294,6 +309,12 @@ void StackSet::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_executionRoleNameHasBeenSet)
   {
       oStream << location << ".ExecutionRoleName=" << StringUtils::URLEncode(m_executionRoleName.c_str()) << "&";
+  }
+  if(m_stackSetDriftDetectionDetailsHasBeenSet)
+  {
+      Aws::String stackSetDriftDetectionDetailsLocationAndMember(location);
+      stackSetDriftDetectionDetailsLocationAndMember += ".StackSetDriftDetectionDetails";
+      m_stackSetDriftDetectionDetails.OutputToStream(oStream, stackSetDriftDetectionDetailsLocationAndMember.c_str());
   }
 }
 

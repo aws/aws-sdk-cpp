@@ -26,7 +26,7 @@ namespace WAF
 {
 namespace WAFEndpoint
 {
-  
+
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {

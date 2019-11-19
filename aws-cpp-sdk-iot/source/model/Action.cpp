@@ -44,7 +44,8 @@ Action::Action() :
     m_salesforceHasBeenSet(false),
     m_iotAnalyticsHasBeenSet(false),
     m_iotEventsHasBeenSet(false),
-    m_stepFunctionsHasBeenSet(false)
+    m_stepFunctionsHasBeenSet(false),
+    m_httpHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ Action::Action(JsonView jsonValue) :
     m_salesforceHasBeenSet(false),
     m_iotAnalyticsHasBeenSet(false),
     m_iotEventsHasBeenSet(false),
-    m_stepFunctionsHasBeenSet(false)
+    m_stepFunctionsHasBeenSet(false),
+    m_httpHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -183,6 +185,13 @@ Action& Action::operator =(JsonView jsonValue)
     m_stepFunctionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("http"))
+  {
+    m_http = jsonValue.GetObject("http");
+
+    m_httpHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -283,6 +292,12 @@ JsonValue Action::Jsonize() const
   if(m_stepFunctionsHasBeenSet)
   {
    payload.WithObject("stepFunctions", m_stepFunctions.Jsonize());
+
+  }
+
+  if(m_httpHasBeenSet)
+  {
+   payload.WithObject("http", m_http.Jsonize());
 
   }
 

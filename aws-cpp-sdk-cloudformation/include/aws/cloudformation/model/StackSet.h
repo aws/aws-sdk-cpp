@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudformation/model/StackSetStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudformation/model/StackSetDriftDetectionDetails.h>
 #include <aws/cloudformation/model/Parameter.h>
 #include <aws/cloudformation/model/Capability.h>
 #include <aws/cloudformation/model/Tag.h>
@@ -626,6 +627,55 @@ namespace Model
      */
     inline StackSet& WithExecutionRoleName(const char* value) { SetExecutionRoleName(value); return *this;}
 
+
+    /**
+     * <p>Detailed information about the drift status of the stack set.</p> <p>For
+     * stack sets, contains information about the last <i>completed</i> drift operation
+     * performed on the stack set. Information about drift operations currently in
+     * progress is not included.</p>
+     */
+    inline const StackSetDriftDetectionDetails& GetStackSetDriftDetectionDetails() const{ return m_stackSetDriftDetectionDetails; }
+
+    /**
+     * <p>Detailed information about the drift status of the stack set.</p> <p>For
+     * stack sets, contains information about the last <i>completed</i> drift operation
+     * performed on the stack set. Information about drift operations currently in
+     * progress is not included.</p>
+     */
+    inline bool StackSetDriftDetectionDetailsHasBeenSet() const { return m_stackSetDriftDetectionDetailsHasBeenSet; }
+
+    /**
+     * <p>Detailed information about the drift status of the stack set.</p> <p>For
+     * stack sets, contains information about the last <i>completed</i> drift operation
+     * performed on the stack set. Information about drift operations currently in
+     * progress is not included.</p>
+     */
+    inline void SetStackSetDriftDetectionDetails(const StackSetDriftDetectionDetails& value) { m_stackSetDriftDetectionDetailsHasBeenSet = true; m_stackSetDriftDetectionDetails = value; }
+
+    /**
+     * <p>Detailed information about the drift status of the stack set.</p> <p>For
+     * stack sets, contains information about the last <i>completed</i> drift operation
+     * performed on the stack set. Information about drift operations currently in
+     * progress is not included.</p>
+     */
+    inline void SetStackSetDriftDetectionDetails(StackSetDriftDetectionDetails&& value) { m_stackSetDriftDetectionDetailsHasBeenSet = true; m_stackSetDriftDetectionDetails = std::move(value); }
+
+    /**
+     * <p>Detailed information about the drift status of the stack set.</p> <p>For
+     * stack sets, contains information about the last <i>completed</i> drift operation
+     * performed on the stack set. Information about drift operations currently in
+     * progress is not included.</p>
+     */
+    inline StackSet& WithStackSetDriftDetectionDetails(const StackSetDriftDetectionDetails& value) { SetStackSetDriftDetectionDetails(value); return *this;}
+
+    /**
+     * <p>Detailed information about the drift status of the stack set.</p> <p>For
+     * stack sets, contains information about the last <i>completed</i> drift operation
+     * performed on the stack set. Information about drift operations currently in
+     * progress is not included.</p>
+     */
+    inline StackSet& WithStackSetDriftDetectionDetails(StackSetDriftDetectionDetails&& value) { SetStackSetDriftDetectionDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stackSetName;
@@ -660,6 +710,9 @@ namespace Model
 
     Aws::String m_executionRoleName;
     bool m_executionRoleNameHasBeenSet;
+
+    StackSetDriftDetectionDetails m_stackSetDriftDetectionDetails;
+    bool m_stackSetDriftDetectionDetailsHasBeenSet;
   };
 
 } // namespace Model

@@ -212,32 +212,32 @@ namespace Model
 
 
     /**
-     * <p>The mixed instances policy for the group. </p>
+     * <p>The mixed instances policy for the group.</p>
      */
     inline const MixedInstancesPolicy& GetMixedInstancesPolicy() const{ return m_mixedInstancesPolicy; }
 
     /**
-     * <p>The mixed instances policy for the group. </p>
+     * <p>The mixed instances policy for the group.</p>
      */
     inline bool MixedInstancesPolicyHasBeenSet() const { return m_mixedInstancesPolicyHasBeenSet; }
 
     /**
-     * <p>The mixed instances policy for the group. </p>
+     * <p>The mixed instances policy for the group.</p>
      */
     inline void SetMixedInstancesPolicy(const MixedInstancesPolicy& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = value; }
 
     /**
-     * <p>The mixed instances policy for the group. </p>
+     * <p>The mixed instances policy for the group.</p>
      */
     inline void SetMixedInstancesPolicy(MixedInstancesPolicy&& value) { m_mixedInstancesPolicyHasBeenSet = true; m_mixedInstancesPolicy = std::move(value); }
 
     /**
-     * <p>The mixed instances policy for the group. </p>
+     * <p>The mixed instances policy for the group.</p>
      */
     inline AutoScalingGroup& WithMixedInstancesPolicy(const MixedInstancesPolicy& value) { SetMixedInstancesPolicy(value); return *this;}
 
     /**
-     * <p>The mixed instances policy for the group. </p>
+     * <p>The mixed instances policy for the group.</p>
      */
     inline AutoScalingGroup& WithMixedInstancesPolicy(MixedInstancesPolicy&& value) { SetMixedInstancesPolicy(std::move(value)); return *this;}
 
@@ -1020,6 +1020,31 @@ namespace Model
      */
     inline AutoScalingGroup& WithServiceLinkedRoleARN(const char* value) { SetServiceLinkedRoleARN(value); return *this;}
 
+
+    /**
+     * <p>The maximum amount of time, in seconds, that an instance can be in
+     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     */
+    inline int GetMaxInstanceLifetime() const{ return m_maxInstanceLifetime; }
+
+    /**
+     * <p>The maximum amount of time, in seconds, that an instance can be in
+     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     */
+    inline bool MaxInstanceLifetimeHasBeenSet() const { return m_maxInstanceLifetimeHasBeenSet; }
+
+    /**
+     * <p>The maximum amount of time, in seconds, that an instance can be in
+     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     */
+    inline void SetMaxInstanceLifetime(int value) { m_maxInstanceLifetimeHasBeenSet = true; m_maxInstanceLifetime = value; }
+
+    /**
+     * <p>The maximum amount of time, in seconds, that an instance can be in
+     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     */
+    inline AutoScalingGroup& WithMaxInstanceLifetime(int value) { SetMaxInstanceLifetime(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -1096,6 +1121,9 @@ namespace Model
 
     Aws::String m_serviceLinkedRoleARN;
     bool m_serviceLinkedRoleARNHasBeenSet;
+
+    int m_maxInstanceLifetime;
+    bool m_maxInstanceLifetimeHasBeenSet;
   };
 
 } // namespace Model

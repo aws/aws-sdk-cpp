@@ -46,43 +46,43 @@ namespace Model
 
     /**
      * <p>The names of the scheduled actions that could not be deleted, including an
-     * error message. </p>
+     * error message.</p>
      */
     inline const Aws::Vector<FailedScheduledUpdateGroupActionRequest>& GetFailedScheduledActions() const{ return m_failedScheduledActions; }
 
     /**
      * <p>The names of the scheduled actions that could not be deleted, including an
-     * error message. </p>
+     * error message.</p>
      */
     inline void SetFailedScheduledActions(const Aws::Vector<FailedScheduledUpdateGroupActionRequest>& value) { m_failedScheduledActions = value; }
 
     /**
      * <p>The names of the scheduled actions that could not be deleted, including an
-     * error message. </p>
+     * error message.</p>
      */
     inline void SetFailedScheduledActions(Aws::Vector<FailedScheduledUpdateGroupActionRequest>&& value) { m_failedScheduledActions = std::move(value); }
 
     /**
      * <p>The names of the scheduled actions that could not be deleted, including an
-     * error message. </p>
+     * error message.</p>
      */
     inline BatchDeleteScheduledActionResult& WithFailedScheduledActions(const Aws::Vector<FailedScheduledUpdateGroupActionRequest>& value) { SetFailedScheduledActions(value); return *this;}
 
     /**
      * <p>The names of the scheduled actions that could not be deleted, including an
-     * error message. </p>
+     * error message.</p>
      */
     inline BatchDeleteScheduledActionResult& WithFailedScheduledActions(Aws::Vector<FailedScheduledUpdateGroupActionRequest>&& value) { SetFailedScheduledActions(std::move(value)); return *this;}
 
     /**
      * <p>The names of the scheduled actions that could not be deleted, including an
-     * error message. </p>
+     * error message.</p>
      */
     inline BatchDeleteScheduledActionResult& AddFailedScheduledActions(const FailedScheduledUpdateGroupActionRequest& value) { m_failedScheduledActions.push_back(value); return *this; }
 
     /**
      * <p>The names of the scheduled actions that could not be deleted, including an
-     * error message. </p>
+     * error message.</p>
      */
     inline BatchDeleteScheduledActionResult& AddFailedScheduledActions(FailedScheduledUpdateGroupActionRequest&& value) { m_failedScheduledActions.push_back(std::move(value)); return *this; }
 

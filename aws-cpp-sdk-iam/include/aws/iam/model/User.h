@@ -59,56 +59,56 @@ namespace Model
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
      * <p>The path to the user. For more information about paths, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& WithPath(const char* value) { SetPath(value); return *this;}
 
@@ -158,7 +158,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
@@ -166,7 +166,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
@@ -174,7 +174,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
@@ -182,7 +182,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
@@ -190,7 +190,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
@@ -198,7 +198,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
@@ -206,7 +206,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
@@ -214,7 +214,7 @@ namespace Model
      * <p>The stable and unique string identifying the user. For more information about
      * IDs, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide.</p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline User& WithUserId(const char* value) { SetUserId(value); return *this;}
 
@@ -223,7 +223,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the user. For more information
      * about ARNs and how to use ARNs in policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -231,7 +231,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the user. For more information
      * about ARNs and how to use ARNs in policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
@@ -239,7 +239,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the user. For more information
      * about ARNs and how to use ARNs in policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
@@ -247,7 +247,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the user. For more information
      * about ARNs and how to use ARNs in policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
@@ -255,7 +255,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the user. For more information
      * about ARNs and how to use ARNs in policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
@@ -263,7 +263,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the user. For more information
      * about ARNs and how to use ARNs in policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline User& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
@@ -271,7 +271,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the user. For more information
      * about ARNs and how to use ARNs in policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline User& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
@@ -279,7 +279,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the user. For more information
      * about ARNs and how to use ARNs in policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>Using IAM</i> guide. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
     inline User& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -327,14 +327,14 @@ namespace Model
      * AWS website. For a list of AWS websites that capture a user's last sign-in time,
      * see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
-     * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used more than
+     * Reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
      * field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:</p> <ul> <li> <p>The user never had a
      * password.</p> </li> <li> <p>A password exists but has not been used since IAM
      * started tracking this information on October 20, 2014.</p> </li> </ul> <p>A null
      * value does not mean that the user <i>never</i> had a password. Also, if the user
-     * does not currently have a password, but had one in the past, then this field
+     * does not currently have a password but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
      * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
@@ -346,14 +346,14 @@ namespace Model
      * AWS website. For a list of AWS websites that capture a user's last sign-in time,
      * see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
-     * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used more than
+     * Reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
      * field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:</p> <ul> <li> <p>The user never had a
      * password.</p> </li> <li> <p>A password exists but has not been used since IAM
      * started tracking this information on October 20, 2014.</p> </li> </ul> <p>A null
      * value does not mean that the user <i>never</i> had a password. Also, if the user
-     * does not currently have a password, but had one in the past, then this field
+     * does not currently have a password but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
      * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
@@ -365,14 +365,14 @@ namespace Model
      * AWS website. For a list of AWS websites that capture a user's last sign-in time,
      * see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
-     * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used more than
+     * Reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
      * field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:</p> <ul> <li> <p>The user never had a
      * password.</p> </li> <li> <p>A password exists but has not been used since IAM
      * started tracking this information on October 20, 2014.</p> </li> </ul> <p>A null
      * value does not mean that the user <i>never</i> had a password. Also, if the user
-     * does not currently have a password, but had one in the past, then this field
+     * does not currently have a password but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
      * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
@@ -384,14 +384,14 @@ namespace Model
      * AWS website. For a list of AWS websites that capture a user's last sign-in time,
      * see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
-     * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used more than
+     * Reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
      * field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:</p> <ul> <li> <p>The user never had a
      * password.</p> </li> <li> <p>A password exists but has not been used since IAM
      * started tracking this information on October 20, 2014.</p> </li> </ul> <p>A null
      * value does not mean that the user <i>never</i> had a password. Also, if the user
-     * does not currently have a password, but had one in the past, then this field
+     * does not currently have a password but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
      * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
@@ -403,14 +403,14 @@ namespace Model
      * AWS website. For a list of AWS websites that capture a user's last sign-in time,
      * see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
-     * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used more than
+     * Reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
      * field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:</p> <ul> <li> <p>The user never had a
      * password.</p> </li> <li> <p>A password exists but has not been used since IAM
      * started tracking this information on October 20, 2014.</p> </li> </ul> <p>A null
      * value does not mean that the user <i>never</i> had a password. Also, if the user
-     * does not currently have a password, but had one in the past, then this field
+     * does not currently have a password but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
      * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */
@@ -422,14 +422,14 @@ namespace Model
      * AWS website. For a list of AWS websites that capture a user's last sign-in time,
      * see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
-     * Reports</a> topic in the <i>Using IAM</i> guide. If a password is used more than
+     * Reports</a> topic in the <i>IAM User Guide</i>. If a password is used more than
      * once in a five-minute span, only the first use is returned in this field. If the
      * field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:</p> <ul> <li> <p>The user never had a
      * password.</p> </li> <li> <p>A password exists but has not been used since IAM
      * started tracking this information on October 20, 2014.</p> </li> </ul> <p>A null
      * value does not mean that the user <i>never</i> had a password. Also, if the user
-     * does not currently have a password, but had one in the past, then this field
+     * does not currently have a password but had one in the past, then this field
      * contains the date and time the most recent password was used.</p> <p>This value
      * is returned only in the <a>GetUser</a> and <a>ListUsers</a> operations. </p>
      */

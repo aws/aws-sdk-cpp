@@ -1472,6 +1472,31 @@ namespace Model
      */
     inline CreateAutoScalingGroupRequest& WithServiceLinkedRoleARN(const char* value) { SetServiceLinkedRoleARN(value); return *this;}
 
+
+    /**
+     * <p>The maximum amount of time, in seconds, that an instance can be in
+     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     */
+    inline int GetMaxInstanceLifetime() const{ return m_maxInstanceLifetime; }
+
+    /**
+     * <p>The maximum amount of time, in seconds, that an instance can be in
+     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     */
+    inline bool MaxInstanceLifetimeHasBeenSet() const { return m_maxInstanceLifetimeHasBeenSet; }
+
+    /**
+     * <p>The maximum amount of time, in seconds, that an instance can be in
+     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     */
+    inline void SetMaxInstanceLifetime(int value) { m_maxInstanceLifetimeHasBeenSet = true; m_maxInstanceLifetime = value; }
+
+    /**
+     * <p>The maximum amount of time, in seconds, that an instance can be in
+     * service.</p> <p>Valid Range: Minimum value of 604800.</p>
+     */
+    inline CreateAutoScalingGroupRequest& WithMaxInstanceLifetime(int value) { SetMaxInstanceLifetime(value); return *this;}
+
   private:
 
     Aws::String m_autoScalingGroupName;
@@ -1536,6 +1561,9 @@ namespace Model
 
     Aws::String m_serviceLinkedRoleARN;
     bool m_serviceLinkedRoleARNHasBeenSet;
+
+    int m_maxInstanceLifetime;
+    bool m_maxInstanceLifetimeHasBeenSet;
   };
 
 } // namespace Model

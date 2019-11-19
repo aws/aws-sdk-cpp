@@ -31,12 +31,14 @@ namespace Model
 {
 
 LaunchTemplateOverrides::LaunchTemplateOverrides() : 
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_weightedCapacityHasBeenSet(false)
 {
 }
 
 LaunchTemplateOverrides::LaunchTemplateOverrides(const XmlNode& xmlNode) : 
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_weightedCapacityHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,6 +55,12 @@ LaunchTemplateOverrides& LaunchTemplateOverrides::operator =(const XmlNode& xmlN
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
     }
+    XmlNode weightedCapacityNode = resultNode.FirstChild("WeightedCapacity");
+    if(!weightedCapacityNode.IsNull())
+    {
+      m_weightedCapacity = Aws::Utils::Xml::DecodeEscapedXmlText(weightedCapacityNode.GetText());
+      m_weightedCapacityHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -65,6 +73,11 @@ void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
 
+  if(m_weightedCapacityHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity.c_str()) << "&";
+  }
+
 }
 
 void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -72,6 +85,10 @@ void LaunchTemplateOverrides::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
+  }
+  if(m_weightedCapacityHasBeenSet)
+  {
+      oStream << location << ".WeightedCapacity=" << StringUtils::URLEncode(m_weightedCapacity.c_str()) << "&";
   }
 }
 

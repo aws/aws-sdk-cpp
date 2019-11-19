@@ -136,64 +136,64 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline LaunchConfiguration& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The ID of the Amazon Machine Image (AMI) to use to launch your EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * an AMI</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
@@ -259,7 +259,7 @@ namespace Model
 
     /**
      * <p>A list that contains the security groups to assign to the instances in the
-     * Auto Scaling group. </p> <p>For more information, see <a
+     * Auto Scaling group.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -268,7 +268,7 @@ namespace Model
 
     /**
      * <p>A list that contains the security groups to assign to the instances in the
-     * Auto Scaling group. </p> <p>For more information, see <a
+     * Auto Scaling group.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -277,7 +277,7 @@ namespace Model
 
     /**
      * <p>A list that contains the security groups to assign to the instances in the
-     * Auto Scaling group. </p> <p>For more information, see <a
+     * Auto Scaling group.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -286,7 +286,7 @@ namespace Model
 
     /**
      * <p>A list that contains the security groups to assign to the instances in the
-     * Auto Scaling group. </p> <p>For more information, see <a
+     * Auto Scaling group.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -295,7 +295,7 @@ namespace Model
 
     /**
      * <p>A list that contains the security groups to assign to the instances in the
-     * Auto Scaling group. </p> <p>For more information, see <a
+     * Auto Scaling group.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -304,7 +304,7 @@ namespace Model
 
     /**
      * <p>A list that contains the security groups to assign to the instances in the
-     * Auto Scaling group. </p> <p>For more information, see <a
+     * Auto Scaling group.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -313,7 +313,7 @@ namespace Model
 
     /**
      * <p>A list that contains the security groups to assign to the instances in the
-     * Auto Scaling group. </p> <p>For more information, see <a
+     * Auto Scaling group.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -322,7 +322,7 @@ namespace Model
 
     /**
      * <p>A list that contains the security groups to assign to the instances in the
-     * Auto Scaling group. </p> <p>For more information, see <a
+     * Auto Scaling group.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -331,7 +331,7 @@ namespace Model
 
     /**
      * <p>A list that contains the security groups to assign to the instances in the
-     * Auto Scaling group. </p> <p>For more information, see <a
+     * Auto Scaling group.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security
      * Groups for Your VPC</a> in the <i>Amazon Virtual Private Cloud User
      * Guide</i>.</p>
@@ -340,8 +340,8 @@ namespace Model
 
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * </p> <p>For more information, see <a
+     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     * to.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -351,8 +351,8 @@ namespace Model
     inline const Aws::String& GetClassicLinkVPCId() const{ return m_classicLinkVPCId; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * </p> <p>For more information, see <a
+     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     * to.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -362,8 +362,8 @@ namespace Model
     inline bool ClassicLinkVPCIdHasBeenSet() const { return m_classicLinkVPCIdHasBeenSet; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * </p> <p>For more information, see <a
+     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     * to.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -373,8 +373,8 @@ namespace Model
     inline void SetClassicLinkVPCId(const Aws::String& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = value; }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * </p> <p>For more information, see <a
+     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     * to.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -384,8 +384,8 @@ namespace Model
     inline void SetClassicLinkVPCId(Aws::String&& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = std::move(value); }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * </p> <p>For more information, see <a
+     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     * to.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -395,8 +395,8 @@ namespace Model
     inline void SetClassicLinkVPCId(const char* value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId.assign(value); }
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * </p> <p>For more information, see <a
+     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     * to.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -406,8 +406,8 @@ namespace Model
     inline LaunchConfiguration& WithClassicLinkVPCId(const Aws::String& value) { SetClassicLinkVPCId(value); return *this;}
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * </p> <p>For more information, see <a
+     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     * to.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -417,8 +417,8 @@ namespace Model
     inline LaunchConfiguration& WithClassicLinkVPCId(Aws::String&& value) { SetClassicLinkVPCId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
-     * </p> <p>For more information, see <a
+     * <p>The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances
+     * to.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -430,7 +430,7 @@ namespace Model
 
     /**
      * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. </p> <p>For more information, see <a
+     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -441,7 +441,7 @@ namespace Model
 
     /**
      * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. </p> <p>For more information, see <a
+     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -452,7 +452,7 @@ namespace Model
 
     /**
      * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. </p> <p>For more information, see <a
+     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -463,7 +463,7 @@ namespace Model
 
     /**
      * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. </p> <p>For more information, see <a
+     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -474,7 +474,7 @@ namespace Model
 
     /**
      * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. </p> <p>For more information, see <a
+     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -485,7 +485,7 @@ namespace Model
 
     /**
      * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. </p> <p>For more information, see <a
+     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -496,7 +496,7 @@ namespace Model
 
     /**
      * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. </p> <p>For more information, see <a
+     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -507,7 +507,7 @@ namespace Model
 
     /**
      * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. </p> <p>For more information, see <a
+     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -518,7 +518,7 @@ namespace Model
 
     /**
      * <p>The IDs of one or more security groups for the VPC specified in
-     * <code>ClassicLinkVPCId</code>. </p> <p>For more information, see <a
+     * <code>ClassicLinkVPCId</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-classiclink.html">ClassicLink</a>
      * in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
@@ -529,8 +529,8 @@ namespace Model
 
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The Base64-encoded user data to make available to the launched EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p>
@@ -538,8 +538,8 @@ namespace Model
     inline const Aws::String& GetUserData() const{ return m_userData; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The Base64-encoded user data to make available to the launched EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p>
@@ -547,8 +547,8 @@ namespace Model
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The Base64-encoded user data to make available to the launched EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p>
@@ -556,8 +556,8 @@ namespace Model
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The Base64-encoded user data to make available to the launched EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p>
@@ -565,8 +565,8 @@ namespace Model
     inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The Base64-encoded user data to make available to the launched EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p>
@@ -574,8 +574,8 @@ namespace Model
     inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The Base64-encoded user data to make available to the launched EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p>
@@ -583,8 +583,8 @@ namespace Model
     inline LaunchConfiguration& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The Base64-encoded user data to make available to the launched EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p>
@@ -592,8 +592,8 @@ namespace Model
     inline LaunchConfiguration& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
 
     /**
-     * <p>The Base64-encoded user data to make available to the launched EC2 instances.
-     * </p> <p>For more information, see <a
+     * <p>The Base64-encoded user data to make available to the launched EC2
+     * instances.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * Metadata and User Data</a> in the <i>Amazon EC2 User Guide for Linux
      * Instances</i>.</p>
@@ -815,61 +815,61 @@ namespace Model
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
-     * (<code>true</code>) or basic (<code>false</code>) monitoring. </p> <p>For more
+     * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline const InstanceMonitoring& GetInstanceMonitoring() const{ return m_instanceMonitoring; }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
-     * (<code>true</code>) or basic (<code>false</code>) monitoring. </p> <p>For more
+     * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline bool InstanceMonitoringHasBeenSet() const { return m_instanceMonitoringHasBeenSet; }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
-     * (<code>true</code>) or basic (<code>false</code>) monitoring. </p> <p>For more
+     * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline void SetInstanceMonitoring(const InstanceMonitoring& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = value; }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
-     * (<code>true</code>) or basic (<code>false</code>) monitoring. </p> <p>For more
+     * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline void SetInstanceMonitoring(InstanceMonitoring&& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = std::move(value); }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
-     * (<code>true</code>) or basic (<code>false</code>) monitoring. </p> <p>For more
+     * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline LaunchConfiguration& WithInstanceMonitoring(const InstanceMonitoring& value) { SetInstanceMonitoring(value); return *this;}
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
-     * (<code>true</code>) or basic (<code>false</code>) monitoring. </p> <p>For more
+     * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p>
+     * Guide</i>.</p>
      */
     inline LaunchConfiguration& WithInstanceMonitoring(InstanceMonitoring&& value) { SetInstanceMonitoring(std::move(value)); return *this;}
 
@@ -877,7 +877,7 @@ namespace Model
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. </p> <p>For more information, see <a
+     * current Spot price.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
@@ -887,7 +887,7 @@ namespace Model
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. </p> <p>For more information, see <a
+     * current Spot price.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
@@ -897,7 +897,7 @@ namespace Model
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. </p> <p>For more information, see <a
+     * current Spot price.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
@@ -907,7 +907,7 @@ namespace Model
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. </p> <p>For more information, see <a
+     * current Spot price.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
@@ -917,7 +917,7 @@ namespace Model
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. </p> <p>For more information, see <a
+     * current Spot price.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
@@ -927,7 +927,7 @@ namespace Model
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. </p> <p>For more information, see <a
+     * current Spot price.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
@@ -937,7 +937,7 @@ namespace Model
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. </p> <p>For more information, see <a
+     * current Spot price.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
@@ -947,7 +947,7 @@ namespace Model
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. </p> <p>For more information, see <a
+     * current Spot price.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
@@ -957,8 +957,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -967,8 +967,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -977,8 +977,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -987,8 +987,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -997,8 +997,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -1007,8 +1007,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -1017,8 +1017,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -1027,8 +1027,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -1069,7 +1069,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the launch configuration is optimized for EBS I/O
-     * (<code>true</code>) or not (<code>false</code>). </p> <p>For more information,
+     * (<code>true</code>) or not (<code>false</code>).</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
@@ -1079,7 +1079,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the launch configuration is optimized for EBS I/O
-     * (<code>true</code>) or not (<code>false</code>). </p> <p>For more information,
+     * (<code>true</code>) or not (<code>false</code>).</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
@@ -1089,7 +1089,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the launch configuration is optimized for EBS I/O
-     * (<code>true</code>) or not (<code>false</code>). </p> <p>For more information,
+     * (<code>true</code>) or not (<code>false</code>).</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
@@ -1099,7 +1099,7 @@ namespace Model
 
     /**
      * <p>Specifies whether the launch configuration is optimized for EBS I/O
-     * (<code>true</code>) or not (<code>false</code>). </p> <p>For more information,
+     * (<code>true</code>) or not (<code>false</code>).</p> <p>For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
@@ -1110,7 +1110,7 @@ namespace Model
 
     /**
      * <p>For Auto Scaling groups that are running in a VPC, specifies whether to
-     * assign a public IP address to the group's instances. </p> <p>For more
+     * assign a public IP address to the group's instances.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
@@ -1120,7 +1120,7 @@ namespace Model
 
     /**
      * <p>For Auto Scaling groups that are running in a VPC, specifies whether to
-     * assign a public IP address to the group's instances. </p> <p>For more
+     * assign a public IP address to the group's instances.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
@@ -1130,7 +1130,7 @@ namespace Model
 
     /**
      * <p>For Auto Scaling groups that are running in a VPC, specifies whether to
-     * assign a public IP address to the group's instances. </p> <p>For more
+     * assign a public IP address to the group's instances.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User
@@ -1140,7 +1140,7 @@ namespace Model
 
     /**
      * <p>For Auto Scaling groups that are running in a VPC, specifies whether to
-     * assign a public IP address to the group's instances. </p> <p>For more
+     * assign a public IP address to the group's instances.</p> <p>For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
      * Auto Scaling Instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User

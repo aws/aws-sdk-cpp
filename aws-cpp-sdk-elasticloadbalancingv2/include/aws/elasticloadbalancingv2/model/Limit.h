@@ -57,7 +57,10 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <li> <p>target-groups-per-action-on-application-load-balancer</p> </li> <li>
+     * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
+     * <p>target-groups-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -70,7 +73,10 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <li> <p>target-groups-per-action-on-application-load-balancer</p> </li> <li>
+     * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
+     * <p>target-groups-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -83,7 +89,10 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <li> <p>target-groups-per-action-on-application-load-balancer</p> </li> <li>
+     * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
+     * <p>target-groups-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -96,7 +105,10 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <li> <p>target-groups-per-action-on-application-load-balancer</p> </li> <li>
+     * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
+     * <p>target-groups-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -109,7 +121,10 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <li> <p>target-groups-per-action-on-application-load-balancer</p> </li> <li>
+     * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
+     * <p>target-groups-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -122,7 +137,10 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <li> <p>target-groups-per-action-on-application-load-balancer</p> </li> <li>
+     * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
+     * <p>target-groups-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -135,7 +153,10 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <li> <p>target-groups-per-action-on-application-load-balancer</p> </li> <li>
+     * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
+     * <p>target-groups-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */
@@ -148,7 +169,10 @@ namespace Model
      * <p>listeners-per-network-load-balancer</p> </li> <li>
      * <p>network-load-balancers</p> </li> <li>
      * <p>rules-per-application-load-balancer</p> </li> <li> <p>target-groups</p> </li>
-     * <li> <p>targets-per-application-load-balancer</p> </li> <li>
+     * <li> <p>target-groups-per-action-on-application-load-balancer</p> </li> <li>
+     * <p>target-groups-per-action-on-network-load-balancer</p> </li> <li>
+     * <p>target-groups-per-application-load-balancer</p> </li> <li>
+     * <p>targets-per-application-load-balancer</p> </li> <li>
      * <p>targets-per-availability-zone-per-network-load-balancer</p> </li> <li>
      * <p>targets-per-network-load-balancer</p> </li> </ul>
      */

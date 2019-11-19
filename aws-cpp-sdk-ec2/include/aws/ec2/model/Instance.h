@@ -34,6 +34,7 @@
 #include <aws/ec2/model/CpuOptions.h>
 #include <aws/ec2/model/CapacityReservationSpecificationResponse.h>
 #include <aws/ec2/model/HibernationOptions.h>
+#include <aws/ec2/model/InstanceMetadataOptionsResponse.h>
 #include <aws/ec2/model/ProductCode.h>
 #include <aws/ec2/model/InstanceBlockDeviceMapping.h>
 #include <aws/ec2/model/ElasticGpuAssociation.h>
@@ -1212,42 +1213,42 @@ namespace Model
 
 
     /**
-     * <p> The elastic inference accelerator associated with the instance. </p>
+     * <p> The elastic inference accelerator associated with the instance.</p>
      */
     inline const Aws::Vector<ElasticInferenceAcceleratorAssociation>& GetElasticInferenceAcceleratorAssociations() const{ return m_elasticInferenceAcceleratorAssociations; }
 
     /**
-     * <p> The elastic inference accelerator associated with the instance. </p>
+     * <p> The elastic inference accelerator associated with the instance.</p>
      */
     inline bool ElasticInferenceAcceleratorAssociationsHasBeenSet() const { return m_elasticInferenceAcceleratorAssociationsHasBeenSet; }
 
     /**
-     * <p> The elastic inference accelerator associated with the instance. </p>
+     * <p> The elastic inference accelerator associated with the instance.</p>
      */
     inline void SetElasticInferenceAcceleratorAssociations(const Aws::Vector<ElasticInferenceAcceleratorAssociation>& value) { m_elasticInferenceAcceleratorAssociationsHasBeenSet = true; m_elasticInferenceAcceleratorAssociations = value; }
 
     /**
-     * <p> The elastic inference accelerator associated with the instance. </p>
+     * <p> The elastic inference accelerator associated with the instance.</p>
      */
     inline void SetElasticInferenceAcceleratorAssociations(Aws::Vector<ElasticInferenceAcceleratorAssociation>&& value) { m_elasticInferenceAcceleratorAssociationsHasBeenSet = true; m_elasticInferenceAcceleratorAssociations = std::move(value); }
 
     /**
-     * <p> The elastic inference accelerator associated with the instance. </p>
+     * <p> The elastic inference accelerator associated with the instance.</p>
      */
     inline Instance& WithElasticInferenceAcceleratorAssociations(const Aws::Vector<ElasticInferenceAcceleratorAssociation>& value) { SetElasticInferenceAcceleratorAssociations(value); return *this;}
 
     /**
-     * <p> The elastic inference accelerator associated with the instance. </p>
+     * <p> The elastic inference accelerator associated with the instance.</p>
      */
     inline Instance& WithElasticInferenceAcceleratorAssociations(Aws::Vector<ElasticInferenceAcceleratorAssociation>&& value) { SetElasticInferenceAcceleratorAssociations(std::move(value)); return *this;}
 
     /**
-     * <p> The elastic inference accelerator associated with the instance. </p>
+     * <p> The elastic inference accelerator associated with the instance.</p>
      */
     inline Instance& AddElasticInferenceAcceleratorAssociations(const ElasticInferenceAcceleratorAssociation& value) { m_elasticInferenceAcceleratorAssociationsHasBeenSet = true; m_elasticInferenceAcceleratorAssociations.push_back(value); return *this; }
 
     /**
-     * <p> The elastic inference accelerator associated with the instance. </p>
+     * <p> The elastic inference accelerator associated with the instance.</p>
      */
     inline Instance& AddElasticInferenceAcceleratorAssociations(ElasticInferenceAcceleratorAssociation&& value) { m_elasticInferenceAcceleratorAssociationsHasBeenSet = true; m_elasticInferenceAcceleratorAssociations.push_back(std::move(value)); return *this; }
 
@@ -1832,6 +1833,37 @@ namespace Model
      */
     inline Instance& AddLicenses(LicenseConfiguration&& value) { m_licensesHasBeenSet = true; m_licenses.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The metadata options for the instance.</p>
+     */
+    inline const InstanceMetadataOptionsResponse& GetMetadataOptions() const{ return m_metadataOptions; }
+
+    /**
+     * <p>The metadata options for the instance.</p>
+     */
+    inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
+
+    /**
+     * <p>The metadata options for the instance.</p>
+     */
+    inline void SetMetadataOptions(const InstanceMetadataOptionsResponse& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
+
+    /**
+     * <p>The metadata options for the instance.</p>
+     */
+    inline void SetMetadataOptions(InstanceMetadataOptionsResponse&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
+
+    /**
+     * <p>The metadata options for the instance.</p>
+     */
+    inline Instance& WithMetadataOptions(const InstanceMetadataOptionsResponse& value) { SetMetadataOptions(value); return *this;}
+
+    /**
+     * <p>The metadata options for the instance.</p>
+     */
+    inline Instance& WithMetadataOptions(InstanceMetadataOptionsResponse&& value) { SetMetadataOptions(std::move(value)); return *this;}
+
   private:
 
     int m_amiLaunchIndex;
@@ -1968,6 +2000,9 @@ namespace Model
 
     Aws::Vector<LicenseConfiguration> m_licenses;
     bool m_licensesHasBeenSet;
+
+    InstanceMetadataOptionsResponse m_metadataOptions;
+    bool m_metadataOptionsHasBeenSet;
   };
 
 } // namespace Model

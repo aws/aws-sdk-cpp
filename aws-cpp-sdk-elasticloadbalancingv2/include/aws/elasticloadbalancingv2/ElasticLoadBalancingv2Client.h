@@ -1259,24 +1259,30 @@ namespace Model
         virtual void DescribeTargetHealthAsync(const Model::DescribeTargetHealthRequest& request, const DescribeTargetHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the specified properties of the specified listener.</p> <p>Any
-         * properties that you do not specify retain their current values. However,
-         * changing the protocol from HTTPS to HTTP, or from TLS to TCP, removes the
-         * security policy and default certificate properties. If you change the protocol
-         * from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and
-         * default certificate properties.</p><p><h3>See Also:</h3>   <a
+         * <p>Replaces the specified properties of the specified listener. Any properties
+         * that you do not specify remain unchanged.</p> <p>Changing the protocol from
+         * HTTPS to HTTP, or from TLS to TCP, removes the security policy and default
+         * certificate properties. If you change the protocol from HTTP to HTTPS, or from
+         * TCP to TLS, you must add the security policy and default certificate
+         * properties.</p> <p>To add an item to a list, remove an item from a list, or
+         * update an item in a list, you must provide the entire list. For example, to add
+         * an action, specify a list with the current actions plus the new
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyListenerOutcome ModifyListener(const Model::ModifyListenerRequest& request) const;
 
         /**
-         * <p>Modifies the specified properties of the specified listener.</p> <p>Any
-         * properties that you do not specify retain their current values. However,
-         * changing the protocol from HTTPS to HTTP, or from TLS to TCP, removes the
-         * security policy and default certificate properties. If you change the protocol
-         * from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and
-         * default certificate properties.</p><p><h3>See Also:</h3>   <a
+         * <p>Replaces the specified properties of the specified listener. Any properties
+         * that you do not specify remain unchanged.</p> <p>Changing the protocol from
+         * HTTPS to HTTP, or from TLS to TCP, removes the security policy and default
+         * certificate properties. If you change the protocol from HTTP to HTTPS, or from
+         * TCP to TLS, you must add the security policy and default certificate
+         * properties.</p> <p>To add an item to a list, remove an item from a list, or
+         * update an item in a list, you must provide the entire list. For example, to add
+         * an action, specify a list with the current actions plus the new
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">AWS
          * API Reference</a></p>
          *
@@ -1285,12 +1291,15 @@ namespace Model
         virtual Model::ModifyListenerOutcomeCallable ModifyListenerCallable(const Model::ModifyListenerRequest& request) const;
 
         /**
-         * <p>Modifies the specified properties of the specified listener.</p> <p>Any
-         * properties that you do not specify retain their current values. However,
-         * changing the protocol from HTTPS to HTTP, or from TLS to TCP, removes the
-         * security policy and default certificate properties. If you change the protocol
-         * from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and
-         * default certificate properties.</p><p><h3>See Also:</h3>   <a
+         * <p>Replaces the specified properties of the specified listener. Any properties
+         * that you do not specify remain unchanged.</p> <p>Changing the protocol from
+         * HTTPS to HTTP, or from TLS to TCP, removes the security policy and default
+         * certificate properties. If you change the protocol from HTTP to HTTPS, or from
+         * TCP to TLS, you must add the security policy and default certificate
+         * properties.</p> <p>To add an item to a list, remove an item from a list, or
+         * update an item in a list, you must provide the entire list. For example, to add
+         * an action, specify a list with the current actions plus the new
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyListener">AWS
          * API Reference</a></p>
          *
@@ -1333,18 +1342,24 @@ namespace Model
         virtual void ModifyLoadBalancerAttributesAsync(const Model::ModifyLoadBalancerAttributesRequest& request, const ModifyLoadBalancerAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the specified rule.</p> <p>Any existing properties that you do not
-         * modify retain their current values.</p> <p>To modify the actions for the default
-         * rule, use <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Replaces the specified properties of the specified rule. Any properties that
+         * you do not specify are unchanged.</p> <p>To add an item to a list, remove an
+         * item from a list, or update an item in a list, you must provide the entire list.
+         * For example, to add an action, specify a list with the current actions plus the
+         * new action.</p> <p>To modify the actions for the default rule, use
+         * <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">AWS
          * API Reference</a></p>
          */
         virtual Model::ModifyRuleOutcome ModifyRule(const Model::ModifyRuleRequest& request) const;
 
         /**
-         * <p>Modifies the specified rule.</p> <p>Any existing properties that you do not
-         * modify retain their current values.</p> <p>To modify the actions for the default
-         * rule, use <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Replaces the specified properties of the specified rule. Any properties that
+         * you do not specify are unchanged.</p> <p>To add an item to a list, remove an
+         * item from a list, or update an item in a list, you must provide the entire list.
+         * For example, to add an action, specify a list with the current actions plus the
+         * new action.</p> <p>To modify the actions for the default rule, use
+         * <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">AWS
          * API Reference</a></p>
          *
@@ -1353,9 +1368,12 @@ namespace Model
         virtual Model::ModifyRuleOutcomeCallable ModifyRuleCallable(const Model::ModifyRuleRequest& request) const;
 
         /**
-         * <p>Modifies the specified rule.</p> <p>Any existing properties that you do not
-         * modify retain their current values.</p> <p>To modify the actions for the default
-         * rule, use <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Replaces the specified properties of the specified rule. Any properties that
+         * you do not specify are unchanged.</p> <p>To add an item to a list, remove an
+         * item from a list, or update an item in a list, you must provide the entire list.
+         * For example, to add an action, specify a list with the current actions plus the
+         * new action.</p> <p>To modify the actions for the default rule, use
+         * <a>ModifyListener</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule">AWS
          * API Reference</a></p>
          *

@@ -27,7 +27,9 @@ namespace Model
   {
     NOT_SET,
     WINDOWS_CONTAINER,
-    LINUX_CONTAINER
+    LINUX_CONTAINER,
+    LINUX_GPU_CONTAINER,
+    ARM_CONTAINER
   };
 
 namespace EnvironmentTypeMapper

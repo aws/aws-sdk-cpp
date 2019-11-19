@@ -41,17 +41,17 @@ namespace Model
 
 
     /**
-     * <p>The number of things that match the query.</p>
+     * <p>The approximate count of unique values that match the query.</p>
      */
     inline int GetCardinality() const{ return m_cardinality; }
 
     /**
-     * <p>The number of things that match the query.</p>
+     * <p>The approximate count of unique values that match the query.</p>
      */
     inline void SetCardinality(int value) { m_cardinality = value; }
 
     /**
-     * <p>The number of things that match the query.</p>
+     * <p>The approximate count of unique values that match the query.</p>
      */
     inline GetCardinalityResult& WithCardinality(int value) { SetCardinality(value); return *this;}
 

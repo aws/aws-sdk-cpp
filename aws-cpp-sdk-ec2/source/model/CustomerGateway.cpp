@@ -37,6 +37,7 @@ CustomerGateway::CustomerGateway() :
     m_certificateArnHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_deviceNameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -48,6 +49,7 @@ CustomerGateway::CustomerGateway(const XmlNode& xmlNode) :
     m_certificateArnHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_deviceNameHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -94,6 +96,12 @@ CustomerGateway& CustomerGateway::operator =(const XmlNode& xmlNode)
     {
       m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
       m_typeHasBeenSet = true;
+    }
+    XmlNode deviceNameNode = resultNode.FirstChild("deviceName");
+    if(!deviceNameNode.IsNull())
+    {
+      m_deviceName = Aws::Utils::Xml::DecodeEscapedXmlText(deviceNameNode.GetText());
+      m_deviceNameHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -144,6 +152,11 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
   }
 
+  if(m_deviceNameHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -182,6 +195,10 @@ void CustomerGateway::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_typeHasBeenSet)
   {
       oStream << location << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
+  }
+  if(m_deviceNameHasBeenSet)
+  {
+      oStream << location << ".DeviceName=" << StringUtils::URLEncode(m_deviceName.c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

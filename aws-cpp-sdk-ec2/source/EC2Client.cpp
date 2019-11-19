@@ -320,6 +320,7 @@
 #include <aws/ec2/model/ModifyInstanceCapacityReservationAttributesRequest.h>
 #include <aws/ec2/model/ModifyInstanceCreditSpecificationRequest.h>
 #include <aws/ec2/model/ModifyInstanceEventStartTimeRequest.h>
+#include <aws/ec2/model/ModifyInstanceMetadataOptionsRequest.h>
 #include <aws/ec2/model/ModifyInstancePlacementRequest.h>
 #include <aws/ec2/model/ModifyLaunchTemplateRequest.h>
 #include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
@@ -10611,6 +10612,41 @@ void EC2Client::ModifyInstanceEventStartTimeAsync(const ModifyInstanceEventStart
 void EC2Client::ModifyInstanceEventStartTimeAsyncHelper(const ModifyInstanceEventStartTimeRequest& request, const ModifyInstanceEventStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ModifyInstanceEventStartTime(request), context);
+}
+
+ModifyInstanceMetadataOptionsOutcome EC2Client::ModifyInstanceMetadataOptions(const ModifyInstanceMetadataOptionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyInstanceMetadataOptionsOutcome(ModifyInstanceMetadataOptionsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyInstanceMetadataOptionsOutcome(outcome.GetError());
+  }
+}
+
+ModifyInstanceMetadataOptionsOutcomeCallable EC2Client::ModifyInstanceMetadataOptionsCallable(const ModifyInstanceMetadataOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyInstanceMetadataOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyInstanceMetadataOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::ModifyInstanceMetadataOptionsAsync(const ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyInstanceMetadataOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::ModifyInstanceMetadataOptionsAsyncHelper(const ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyInstanceMetadataOptions(request), context);
 }
 
 ModifyInstancePlacementOutcome EC2Client::ModifyInstancePlacement(const ModifyInstancePlacementRequest& request) const

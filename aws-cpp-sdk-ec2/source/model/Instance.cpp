@@ -86,7 +86,8 @@ Instance::Instance() :
     m_capacityReservationIdHasBeenSet(false),
     m_capacityReservationSpecificationHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
-    m_licensesHasBeenSet(false)
+    m_licensesHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
 }
 
@@ -146,7 +147,8 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_capacityReservationIdHasBeenSet(false),
     m_capacityReservationSpecificationHasBeenSet(false),
     m_hibernationOptionsHasBeenSet(false),
-    m_licensesHasBeenSet(false)
+    m_licensesHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -475,6 +477,12 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
 
       m_licensesHasBeenSet = true;
     }
+    XmlNode metadataOptionsNode = resultNode.FirstChild("metadataOptions");
+    if(!metadataOptionsNode.IsNull())
+    {
+      m_metadataOptions = metadataOptionsNode;
+      m_metadataOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -771,6 +779,13 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       }
   }
 
+  if(m_metadataOptionsHasBeenSet)
+  {
+      Aws::StringStream metadataOptionsLocationAndMemberSs;
+      metadataOptionsLocationAndMemberSs << location << index << locationValue << ".MetadataOptions";
+      m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1018,6 +1033,12 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
         licensesSs << location <<  ".LicenseSet." << licensesIdx++;
         item.OutputToStream(oStream, licensesSs.str().c_str());
       }
+  }
+  if(m_metadataOptionsHasBeenSet)
+  {
+      Aws::String metadataOptionsLocationAndMember(location);
+      metadataOptionsLocationAndMember += ".MetadataOptions";
+      m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMember.c_str());
   }
 }
 

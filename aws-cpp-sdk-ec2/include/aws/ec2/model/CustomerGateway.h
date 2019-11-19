@@ -330,6 +330,47 @@ namespace Model
 
 
     /**
+     * <p>The name of customer gateway device.</p>
+     */
+    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+
+    /**
+     * <p>The name of customer gateway device.</p>
+     */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
+
+    /**
+     * <p>The name of customer gateway device.</p>
+     */
+    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
+
+    /**
+     * <p>The name of customer gateway device.</p>
+     */
+    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
+
+    /**
+     * <p>The name of customer gateway device.</p>
+     */
+    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
+
+    /**
+     * <p>The name of customer gateway device.</p>
+     */
+    inline CustomerGateway& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
+
+    /**
+     * <p>The name of customer gateway device.</p>
+     */
+    inline CustomerGateway& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of customer gateway device.</p>
+     */
+    inline CustomerGateway& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+
+
+    /**
      * <p>Any tags assigned to the customer gateway.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -388,6 +429,9 @@ namespace Model
 
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
+    Aws::String m_deviceName;
+    bool m_deviceNameHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

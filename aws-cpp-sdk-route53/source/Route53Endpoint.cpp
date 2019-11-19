@@ -26,7 +26,7 @@ namespace Route53
 {
 namespace Route53Endpoint
 {
-  
+
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {

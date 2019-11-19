@@ -35,7 +35,10 @@ StackSetSummary::StackSetSummary() :
     m_stackSetIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_status(StackSetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_driftStatus(StackDriftStatus::NOT_SET),
+    m_driftStatusHasBeenSet(false),
+    m_lastDriftCheckTimestampHasBeenSet(false)
 {
 }
 
@@ -44,7 +47,10 @@ StackSetSummary::StackSetSummary(const XmlNode& xmlNode) :
     m_stackSetIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_status(StackSetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_driftStatus(StackDriftStatus::NOT_SET),
+    m_driftStatusHasBeenSet(false),
+    m_lastDriftCheckTimestampHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +85,18 @@ StackSetSummary& StackSetSummary::operator =(const XmlNode& xmlNode)
       m_status = StackSetStatusMapper::GetStackSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
       m_statusHasBeenSet = true;
     }
+    XmlNode driftStatusNode = resultNode.FirstChild("DriftStatus");
+    if(!driftStatusNode.IsNull())
+    {
+      m_driftStatus = StackDriftStatusMapper::GetStackDriftStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(driftStatusNode.GetText()).c_str()).c_str());
+      m_driftStatusHasBeenSet = true;
+    }
+    XmlNode lastDriftCheckTimestampNode = resultNode.FirstChild("LastDriftCheckTimestamp");
+    if(!lastDriftCheckTimestampNode.IsNull())
+    {
+      m_lastDriftCheckTimestamp = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastDriftCheckTimestampNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_lastDriftCheckTimestampHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -106,6 +124,16 @@ void StackSetSummary::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".Status=" << StackSetStatusMapper::GetNameForStackSetStatus(m_status) << "&";
   }
 
+  if(m_driftStatusHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DriftStatus=" << StackDriftStatusMapper::GetNameForStackDriftStatus(m_driftStatus) << "&";
+  }
+
+  if(m_lastDriftCheckTimestampHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void StackSetSummary::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -125,6 +153,14 @@ void StackSetSummary::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_statusHasBeenSet)
   {
       oStream << location << ".Status=" << StackSetStatusMapper::GetNameForStackSetStatus(m_status) << "&";
+  }
+  if(m_driftStatusHasBeenSet)
+  {
+      oStream << location << ".DriftStatus=" << StackDriftStatusMapper::GetNameForStackDriftStatus(m_driftStatus) << "&";
+  }
+  if(m_lastDriftCheckTimestampHasBeenSet)
+  {
+      oStream << location << ".LastDriftCheckTimestamp=" << StringUtils::URLEncode(m_lastDriftCheckTimestamp.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

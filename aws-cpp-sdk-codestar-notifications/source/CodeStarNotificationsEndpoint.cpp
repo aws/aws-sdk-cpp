@@ -28,12 +28,12 @@ namespace CodeStarNotificationsEndpoint
 {
   static const int CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
   static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString("cn-northwest-1");
-  
+
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack)
   {
     auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
-    
+
     Aws::StringStream ss;
     ss << "codestar-notifications" << ".";
 
@@ -43,12 +43,12 @@ namespace CodeStarNotificationsEndpoint
     }
 
     ss << regionName << ".amazonaws.com";
-    
+
     if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
     {
-      ss << ".cn"; 
+      ss << ".cn";
     }
-    
+
     return ss.str();
   }
 

@@ -269,6 +269,7 @@
 #include <aws/ec2/model/ModifyInstanceCapacityReservationAttributesResponse.h>
 #include <aws/ec2/model/ModifyInstanceCreditSpecificationResponse.h>
 #include <aws/ec2/model/ModifyInstanceEventStartTimeResponse.h>
+#include <aws/ec2/model/ModifyInstanceMetadataOptionsResponse.h>
 #include <aws/ec2/model/ModifyInstancePlacementResponse.h>
 #include <aws/ec2/model/ModifyLaunchTemplateResponse.h>
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
@@ -656,6 +657,7 @@ namespace Model
         class ModifyInstanceCapacityReservationAttributesRequest;
         class ModifyInstanceCreditSpecificationRequest;
         class ModifyInstanceEventStartTimeRequest;
+        class ModifyInstanceMetadataOptionsRequest;
         class ModifyInstancePlacementRequest;
         class ModifyLaunchTemplateRequest;
         class ModifyNetworkInterfaceAttributeRequest;
@@ -1016,6 +1018,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ModifyInstanceCapacityReservationAttributesResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstanceCapacityReservationAttributesOutcome;
         typedef Aws::Utils::Outcome<ModifyInstanceCreditSpecificationResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstanceCreditSpecificationOutcome;
         typedef Aws::Utils::Outcome<ModifyInstanceEventStartTimeResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstanceEventStartTimeOutcome;
+        typedef Aws::Utils::Outcome<ModifyInstanceMetadataOptionsResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstanceMetadataOptionsOutcome;
         typedef Aws::Utils::Outcome<ModifyInstancePlacementResponse, Aws::Client::AWSError<EC2Errors>> ModifyInstancePlacementOutcome;
         typedef Aws::Utils::Outcome<ModifyLaunchTemplateResponse, Aws::Client::AWSError<EC2Errors>> ModifyLaunchTemplateOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> ModifyNetworkInterfaceAttributeOutcome;
@@ -1376,6 +1379,7 @@ namespace Model
         typedef std::future<ModifyInstanceCapacityReservationAttributesOutcome> ModifyInstanceCapacityReservationAttributesOutcomeCallable;
         typedef std::future<ModifyInstanceCreditSpecificationOutcome> ModifyInstanceCreditSpecificationOutcomeCallable;
         typedef std::future<ModifyInstanceEventStartTimeOutcome> ModifyInstanceEventStartTimeOutcomeCallable;
+        typedef std::future<ModifyInstanceMetadataOptionsOutcome> ModifyInstanceMetadataOptionsOutcomeCallable;
         typedef std::future<ModifyInstancePlacementOutcome> ModifyInstancePlacementOutcomeCallable;
         typedef std::future<ModifyLaunchTemplateOutcome> ModifyLaunchTemplateOutcomeCallable;
         typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
@@ -1739,6 +1743,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceCapacityReservationAttributesRequest&, const Model::ModifyInstanceCapacityReservationAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceCapacityReservationAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceCreditSpecificationRequest&, const Model::ModifyInstanceCreditSpecificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceCreditSpecificationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstanceEventStartTimeRequest&, const Model::ModifyInstanceEventStartTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceEventStartTimeResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyInstanceMetadataOptionsRequest&, const Model::ModifyInstanceMetadataOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstanceMetadataOptionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyInstancePlacementRequest&, const Model::ModifyInstancePlacementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyInstancePlacementResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyLaunchTemplateRequest&, const Model::ModifyLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyLaunchTemplateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyNetworkInterfaceAttributeRequest&, const Model::ModifyNetworkInterfaceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyNetworkInterfaceAttributeResponseReceivedHandler;
@@ -3741,12 +3746,10 @@ namespace Model
          * </note> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
-         * <important> <p>You cannot create more than one customer gateway with the same
-         * VPN type, IP address, and BGP ASN parameter values. If you run an identical
-         * request more than one time, the first request creates the customer gateway, and
-         * subsequent requests return information about the existing customer gateway. The
-         * subsequent requests do not create new customer gateway resources.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <important> <p>To create more than one customer gateway with the same VPN type,
+         * IP address, and BGP ASN, specify a unique device name for each customer gateway.
+         * Identical requests return information about the existing customer gateway and do
+         * not create new customer gateways.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          */
@@ -3768,12 +3771,10 @@ namespace Model
          * </note> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
-         * <important> <p>You cannot create more than one customer gateway with the same
-         * VPN type, IP address, and BGP ASN parameter values. If you run an identical
-         * request more than one time, the first request creates the customer gateway, and
-         * subsequent requests return information about the existing customer gateway. The
-         * subsequent requests do not create new customer gateway resources.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <important> <p>To create more than one customer gateway with the same VPN type,
+         * IP address, and BGP ASN, specify a unique device name for each customer gateway.
+         * Identical requests return information about the existing customer gateway and do
+         * not create new customer gateways.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          *
@@ -3797,12 +3798,10 @@ namespace Model
          * </note> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html">AWS
          * Site-to-Site VPN</a> in the <i>AWS Site-to-Site VPN User Guide</i>.</p>
-         * <important> <p>You cannot create more than one customer gateway with the same
-         * VPN type, IP address, and BGP ASN parameter values. If you run an identical
-         * request more than one time, the first request creates the customer gateway, and
-         * subsequent requests return information about the existing customer gateway. The
-         * subsequent requests do not create new customer gateway resources.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <important> <p>To create more than one customer gateway with the same VPN type,
+         * IP address, and BGP ASN, specify a unique device name for each customer gateway.
+         * Identical requests return information about the existing customer gateway and do
+         * not create new customer gateways.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateCustomerGateway">AWS
          * API Reference</a></p>
          *
@@ -14165,6 +14164,55 @@ namespace Model
         virtual void ModifyInstanceEventStartTimeAsync(const Model::ModifyInstanceEventStartTimeRequest& request, const ModifyInstanceEventStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modify the instance metadata parameters on a running or stopped instance.
+         * When you modify the parameters on a stopped instance, they are applied when the
+         * instance is started. When you modify the parameters on a running instance, the
+         * API responds with a state of “pending”. After the parameter modifications are
+         * successfully applied to the instance, the state of the modifications changes
+         * from “pending” to “applied” in subsequent describe-instances API calls. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+         * Metadata and User Data</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyInstanceMetadataOptionsOutcome ModifyInstanceMetadataOptions(const Model::ModifyInstanceMetadataOptionsRequest& request) const;
+
+        /**
+         * <p>Modify the instance metadata parameters on a running or stopped instance.
+         * When you modify the parameters on a stopped instance, they are applied when the
+         * instance is started. When you modify the parameters on a running instance, the
+         * API responds with a state of “pending”. After the parameter modifications are
+         * successfully applied to the instance, the state of the modifications changes
+         * from “pending” to “applied” in subsequent describe-instances API calls. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+         * Metadata and User Data</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyInstanceMetadataOptionsOutcomeCallable ModifyInstanceMetadataOptionsCallable(const Model::ModifyInstanceMetadataOptionsRequest& request) const;
+
+        /**
+         * <p>Modify the instance metadata parameters on a running or stopped instance.
+         * When you modify the parameters on a stopped instance, they are applied when the
+         * instance is started. When you modify the parameters on a running instance, the
+         * API responds with a state of “pending”. After the parameter modifications are
+         * successfully applied to the instance, the state of the modifications changes
+         * from “pending” to “applied” in subsequent describe-instances API calls. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
+         * Metadata and User Data</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceMetadataOptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyInstanceMetadataOptionsAsync(const Model::ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the placement attributes for a specified instance. You can do the
          * following:</p> <ul> <li> <p>Modify the affinity between an instance and a <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
@@ -17932,6 +17980,7 @@ namespace Model
         void ModifyInstanceCapacityReservationAttributesAsyncHelper(const Model::ModifyInstanceCapacityReservationAttributesRequest& request, const ModifyInstanceCapacityReservationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceCreditSpecificationAsyncHelper(const Model::ModifyInstanceCreditSpecificationRequest& request, const ModifyInstanceCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstanceEventStartTimeAsyncHelper(const Model::ModifyInstanceEventStartTimeRequest& request, const ModifyInstanceEventStartTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyInstanceMetadataOptionsAsyncHelper(const Model::ModifyInstanceMetadataOptionsRequest& request, const ModifyInstanceMetadataOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyInstancePlacementAsyncHelper(const Model::ModifyInstancePlacementRequest& request, const ModifyInstancePlacementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyLaunchTemplateAsyncHelper(const Model::ModifyLaunchTemplateRequest& request, const ModifyLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyNetworkInterfaceAttributeAsyncHelper(const Model::ModifyNetworkInterfaceAttributeRequest& request, const ModifyNetworkInterfaceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -55,32 +55,116 @@ namespace Model
 
 
     /**
-     * <p>The type of build environment to use for related builds.</p>
+     * <p>The type of build environment to use for related builds.</p> <ul> <li> <p>The
+     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
+     * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
+     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
+     * type <code>build.general1.2xlarge</code> is available only in regions US East
+     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
+     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
+     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
+     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
+     * China (Ningxia).</p> </li> </ul>
      */
     inline const EnvironmentType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of build environment to use for related builds.</p>
+     * <p>The type of build environment to use for related builds.</p> <ul> <li> <p>The
+     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
+     * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
+     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
+     * type <code>build.general1.2xlarge</code> is available only in regions US East
+     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
+     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
+     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
+     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
+     * China (Ningxia).</p> </li> </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of build environment to use for related builds.</p>
+     * <p>The type of build environment to use for related builds.</p> <ul> <li> <p>The
+     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
+     * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
+     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
+     * type <code>build.general1.2xlarge</code> is available only in regions US East
+     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
+     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
+     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
+     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
+     * China (Ningxia).</p> </li> </ul>
      */
     inline void SetType(const EnvironmentType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of build environment to use for related builds.</p>
+     * <p>The type of build environment to use for related builds.</p> <ul> <li> <p>The
+     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
+     * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
+     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
+     * type <code>build.general1.2xlarge</code> is available only in regions US East
+     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
+     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
+     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
+     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
+     * China (Ningxia).</p> </li> </ul>
      */
     inline void SetType(EnvironmentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of build environment to use for related builds.</p>
+     * <p>The type of build environment to use for related builds.</p> <ul> <li> <p>The
+     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
+     * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
+     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
+     * type <code>build.general1.2xlarge</code> is available only in regions US East
+     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
+     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
+     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
+     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
+     * China (Ningxia).</p> </li> </ul>
      */
     inline ProjectEnvironment& WithType(const EnvironmentType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of build environment to use for related builds.</p>
+     * <p>The type of build environment to use for related builds.</p> <ul> <li> <p>The
+     * environment type <code>ARM_CONTAINER</code> is available only in regions US East
+     * (N. Virginia), US East (Ohio), US West (Oregon), EU (Ireland), Asia Pacific
+     * (Mumbai), Asia Pacific (Tokyo), Asia Pacific (Sydney), and EU (Frankfurt).</p>
+     * </li> <li> <p>The environment type <code>LINUX_CONTAINER</code> with compute
+     * type <code>build.general1.2xlarge</code> is available only in regions US East
+     * (N. Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
+     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), China (Beijing), and
+     * China (Ningxia).</p> </li> <li> <p>The environment type
+     * <code>LINUX_GPU_CONTAINER</code> is available only in regions US East (N.
+     * Virginia), US East (N. Virginia), US West (Oregon), Canada (Central), EU
+     * (Ireland), EU (London), EU (Frankfurt), Asia Pacific (Tokyo), Asia Pacific
+     * (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney) , China (Beijing), and
+     * China (Ningxia).</p> </li> </ul>
      */
     inline ProjectEnvironment& WithType(EnvironmentType&& value) { SetType(std::move(value)); return *this;}
 
@@ -195,8 +279,19 @@ namespace Model
      * values include:</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
-     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
-     * memory and 8 vCPUs for builds.</p> </li> </ul> <p> For more information, see <a
+     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB
+     * memory and 8 vCPUs for builds, depending on your environment type.</p> </li>
+     * <li> <p> <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs,
+     * and 824 GB of SSD storage for builds. This compute type supports Docker images
+     * up to 100 GB uncompressed.</p> </li> </ul> <p> If you use
+     * <code>BUILD_GENERAL1_LARGE</code>: </p> <ul> <li> <p> For environment type
+     * <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for
+     * builds. </p> </li> <li> <p> For environment type
+     * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
+     * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
+     * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
+     * ARM-based processors for builds.</p> </li> </ul> <p> For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
@@ -207,8 +302,19 @@ namespace Model
      * values include:</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
-     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
-     * memory and 8 vCPUs for builds.</p> </li> </ul> <p> For more information, see <a
+     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB
+     * memory and 8 vCPUs for builds, depending on your environment type.</p> </li>
+     * <li> <p> <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs,
+     * and 824 GB of SSD storage for builds. This compute type supports Docker images
+     * up to 100 GB uncompressed.</p> </li> </ul> <p> If you use
+     * <code>BUILD_GENERAL1_LARGE</code>: </p> <ul> <li> <p> For environment type
+     * <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for
+     * builds. </p> </li> <li> <p> For environment type
+     * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
+     * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
+     * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
+     * ARM-based processors for builds.</p> </li> </ul> <p> For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
@@ -219,8 +325,19 @@ namespace Model
      * values include:</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
-     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
-     * memory and 8 vCPUs for builds.</p> </li> </ul> <p> For more information, see <a
+     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB
+     * memory and 8 vCPUs for builds, depending on your environment type.</p> </li>
+     * <li> <p> <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs,
+     * and 824 GB of SSD storage for builds. This compute type supports Docker images
+     * up to 100 GB uncompressed.</p> </li> </ul> <p> If you use
+     * <code>BUILD_GENERAL1_LARGE</code>: </p> <ul> <li> <p> For environment type
+     * <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for
+     * builds. </p> </li> <li> <p> For environment type
+     * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
+     * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
+     * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
+     * ARM-based processors for builds.</p> </li> </ul> <p> For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
@@ -231,8 +348,19 @@ namespace Model
      * values include:</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
-     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
-     * memory and 8 vCPUs for builds.</p> </li> </ul> <p> For more information, see <a
+     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB
+     * memory and 8 vCPUs for builds, depending on your environment type.</p> </li>
+     * <li> <p> <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs,
+     * and 824 GB of SSD storage for builds. This compute type supports Docker images
+     * up to 100 GB uncompressed.</p> </li> </ul> <p> If you use
+     * <code>BUILD_GENERAL1_LARGE</code>: </p> <ul> <li> <p> For environment type
+     * <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for
+     * builds. </p> </li> <li> <p> For environment type
+     * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
+     * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
+     * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
+     * ARM-based processors for builds.</p> </li> </ul> <p> For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
@@ -243,8 +371,19 @@ namespace Model
      * values include:</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
-     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
-     * memory and 8 vCPUs for builds.</p> </li> </ul> <p> For more information, see <a
+     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB
+     * memory and 8 vCPUs for builds, depending on your environment type.</p> </li>
+     * <li> <p> <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs,
+     * and 824 GB of SSD storage for builds. This compute type supports Docker images
+     * up to 100 GB uncompressed.</p> </li> </ul> <p> If you use
+     * <code>BUILD_GENERAL1_LARGE</code>: </p> <ul> <li> <p> For environment type
+     * <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for
+     * builds. </p> </li> <li> <p> For environment type
+     * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
+     * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
+     * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
+     * ARM-based processors for builds.</p> </li> </ul> <p> For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */
@@ -255,8 +394,19 @@ namespace Model
      * values include:</p> <ul> <li> <p> <code>BUILD_GENERAL1_SMALL</code>: Use up to 3
      * GB memory and 2 vCPUs for builds.</p> </li> <li> <p>
      * <code>BUILD_GENERAL1_MEDIUM</code>: Use up to 7 GB memory and 4 vCPUs for
-     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 15 GB
-     * memory and 8 vCPUs for builds.</p> </li> </ul> <p> For more information, see <a
+     * builds.</p> </li> <li> <p> <code>BUILD_GENERAL1_LARGE</code>: Use up to 16 GB
+     * memory and 8 vCPUs for builds, depending on your environment type.</p> </li>
+     * <li> <p> <code>BUILD_GENERAL1_2XLARGE</code>: Use up to 145 GB memory, 72 vCPUs,
+     * and 824 GB of SSD storage for builds. This compute type supports Docker images
+     * up to 100 GB uncompressed.</p> </li> </ul> <p> If you use
+     * <code>BUILD_GENERAL1_LARGE</code>: </p> <ul> <li> <p> For environment type
+     * <code>LINUX_CONTAINER</code>, you can use up to 15 GB memory and 8 vCPUs for
+     * builds. </p> </li> <li> <p> For environment type
+     * <code>LINUX_GPU_CONTAINER</code>, you can use up to 255 GB memory, 32 vCPUs, and
+     * 4 NVIDIA Tesla V100 GPUs for builds.</p> </li> <li> <p> For environment type
+     * <code>ARM_CONTAINER</code>, you can use up to 16 GB memory and 8 vCPUs on
+     * ARM-based processors for builds.</p> </li> </ul> <p> For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * Environment Compute Types</a> in the <i>AWS CodeBuild User Guide.</i> </p>
      */

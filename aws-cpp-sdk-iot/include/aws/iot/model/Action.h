@@ -31,6 +31,7 @@
 #include <aws/iot/model/IotAnalyticsAction.h>
 #include <aws/iot/model/IotEventsAction.h>
 #include <aws/iot/model/StepFunctionsAction.h>
+#include <aws/iot/model/HttpAction.h>
 #include <utility>
 
 namespace Aws
@@ -569,6 +570,37 @@ namespace Model
      */
     inline Action& WithStepFunctions(StepFunctionsAction&& value) { SetStepFunctions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Send data to an HTTPS endpoint.</p>
+     */
+    inline const HttpAction& GetHttp() const{ return m_http; }
+
+    /**
+     * <p>Send data to an HTTPS endpoint.</p>
+     */
+    inline bool HttpHasBeenSet() const { return m_httpHasBeenSet; }
+
+    /**
+     * <p>Send data to an HTTPS endpoint.</p>
+     */
+    inline void SetHttp(const HttpAction& value) { m_httpHasBeenSet = true; m_http = value; }
+
+    /**
+     * <p>Send data to an HTTPS endpoint.</p>
+     */
+    inline void SetHttp(HttpAction&& value) { m_httpHasBeenSet = true; m_http = std::move(value); }
+
+    /**
+     * <p>Send data to an HTTPS endpoint.</p>
+     */
+    inline Action& WithHttp(const HttpAction& value) { SetHttp(value); return *this;}
+
+    /**
+     * <p>Send data to an HTTPS endpoint.</p>
+     */
+    inline Action& WithHttp(HttpAction&& value) { SetHttp(std::move(value)); return *this;}
+
   private:
 
     DynamoDBAction m_dynamoDB;
@@ -618,6 +650,9 @@ namespace Model
 
     StepFunctionsAction m_stepFunctions;
     bool m_stepFunctionsHasBeenSet;
+
+    HttpAction m_http;
+    bool m_httpHasBeenSet;
   };
 
 } // namespace Model

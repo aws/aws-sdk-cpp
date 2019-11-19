@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     CREATE,
     UPDATE,
-    DELETE_
+    DELETE_,
+    DETECT_DRIFT
   };
 
 namespace StackSetOperationActionMapper

@@ -21,6 +21,7 @@
 #include <aws/cloudformation/model/StackSetOperationStatus.h>
 #include <aws/cloudformation/model/StackSetOperationPreferences.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/cloudformation/model/StackSetDriftDetectionDetails.h>
 #include <utility>
 
 namespace Aws
@@ -613,6 +614,73 @@ namespace Model
      */
     inline StackSetOperation& WithEndTimestamp(Aws::Utils::DateTime&& value) { SetEndTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Detailed information about the drift status of the stack set. This includes
+     * information about drift operations currently being performed on the stack
+     * set.</p> <p>this information will only be present for stack set operations whose
+     * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+     * Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.</p>
+     */
+    inline const StackSetDriftDetectionDetails& GetStackSetDriftDetectionDetails() const{ return m_stackSetDriftDetectionDetails; }
+
+    /**
+     * <p>Detailed information about the drift status of the stack set. This includes
+     * information about drift operations currently being performed on the stack
+     * set.</p> <p>this information will only be present for stack set operations whose
+     * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+     * Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.</p>
+     */
+    inline bool StackSetDriftDetectionDetailsHasBeenSet() const { return m_stackSetDriftDetectionDetailsHasBeenSet; }
+
+    /**
+     * <p>Detailed information about the drift status of the stack set. This includes
+     * information about drift operations currently being performed on the stack
+     * set.</p> <p>this information will only be present for stack set operations whose
+     * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+     * Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.</p>
+     */
+    inline void SetStackSetDriftDetectionDetails(const StackSetDriftDetectionDetails& value) { m_stackSetDriftDetectionDetailsHasBeenSet = true; m_stackSetDriftDetectionDetails = value; }
+
+    /**
+     * <p>Detailed information about the drift status of the stack set. This includes
+     * information about drift operations currently being performed on the stack
+     * set.</p> <p>this information will only be present for stack set operations whose
+     * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+     * Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.</p>
+     */
+    inline void SetStackSetDriftDetectionDetails(StackSetDriftDetectionDetails&& value) { m_stackSetDriftDetectionDetailsHasBeenSet = true; m_stackSetDriftDetectionDetails = std::move(value); }
+
+    /**
+     * <p>Detailed information about the drift status of the stack set. This includes
+     * information about drift operations currently being performed on the stack
+     * set.</p> <p>this information will only be present for stack set operations whose
+     * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+     * Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.</p>
+     */
+    inline StackSetOperation& WithStackSetDriftDetectionDetails(const StackSetDriftDetectionDetails& value) { SetStackSetDriftDetectionDetails(value); return *this;}
+
+    /**
+     * <p>Detailed information about the drift status of the stack set. This includes
+     * information about drift operations currently being performed on the stack
+     * set.</p> <p>this information will only be present for stack set operations whose
+     * <code>Action</code> type is <code>DETECT_DRIFT</code>.</p> <p>For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">Detecting
+     * Unmanaged Changes in Stack Sets</a> in the AWS CloudFormation User Guide.</p>
+     */
+    inline StackSetOperation& WithStackSetDriftDetectionDetails(StackSetDriftDetectionDetails&& value) { SetStackSetDriftDetectionDetails(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_operationId;
@@ -644,6 +712,9 @@ namespace Model
 
     Aws::Utils::DateTime m_endTimestamp;
     bool m_endTimestampHasBeenSet;
+
+    StackSetDriftDetectionDetails m_stackSetDriftDetectionDetails;
+    bool m_stackSetDriftDetectionDetailsHasBeenSet;
   };
 
 } // namespace Model

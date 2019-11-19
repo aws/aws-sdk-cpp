@@ -229,37 +229,37 @@ namespace Model
 
     /**
      * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time. </p>
+     * does not perform the action after this time.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time. </p>
+     * does not perform the action after this time.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time. </p>
+     * does not perform the action after this time.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time. </p>
+     * does not perform the action after this time.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time. </p>
+     * does not perform the action after this time.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>The date and time for the recurring schedule to end. Amazon EC2 Auto Scaling
-     * does not perform the action after this time. </p>
+     * does not perform the action after this time.</p>
      */
     inline PutScheduledUpdateGroupActionRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

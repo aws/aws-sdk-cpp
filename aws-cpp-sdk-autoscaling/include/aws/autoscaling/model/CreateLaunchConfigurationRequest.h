@@ -371,7 +371,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances. </p>
+     * EC2-Classic instances.</p>
      */
     inline const Aws::String& GetClassicLinkVPCId() const{ return m_classicLinkVPCId; }
 
@@ -383,7 +383,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances. </p>
+     * EC2-Classic instances.</p>
      */
     inline bool ClassicLinkVPCIdHasBeenSet() const { return m_classicLinkVPCIdHasBeenSet; }
 
@@ -395,7 +395,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances. </p>
+     * EC2-Classic instances.</p>
      */
     inline void SetClassicLinkVPCId(const Aws::String& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = value; }
 
@@ -407,7 +407,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances. </p>
+     * EC2-Classic instances.</p>
      */
     inline void SetClassicLinkVPCId(Aws::String&& value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId = std::move(value); }
 
@@ -419,7 +419,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances. </p>
+     * EC2-Classic instances.</p>
      */
     inline void SetClassicLinkVPCId(const char* value) { m_classicLinkVPCIdHasBeenSet = true; m_classicLinkVPCId.assign(value); }
 
@@ -431,7 +431,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances. </p>
+     * EC2-Classic instances.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCId(const Aws::String& value) { SetClassicLinkVPCId(value); return *this;}
 
@@ -443,7 +443,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances. </p>
+     * EC2-Classic instances.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCId(Aws::String&& value) { SetClassicLinkVPCId(std::move(value)); return *this;}
 
@@ -455,7 +455,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>This parameter can only be used if you are launching
-     * EC2-Classic instances. </p>
+     * EC2-Classic instances.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCId(const char* value) { SetClassicLinkVPCId(value); return *this;}
 
@@ -468,7 +468,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter. </p>
+     * you must specify this parameter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassicLinkVPCSecurityGroups() const{ return m_classicLinkVPCSecurityGroups; }
 
@@ -480,7 +480,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter. </p>
+     * you must specify this parameter.</p>
      */
     inline bool ClassicLinkVPCSecurityGroupsHasBeenSet() const { return m_classicLinkVPCSecurityGroupsHasBeenSet; }
 
@@ -492,7 +492,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter. </p>
+     * you must specify this parameter.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = value; }
 
@@ -504,7 +504,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter. </p>
+     * you must specify this parameter.</p>
      */
     inline void SetClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups = std::move(value); }
 
@@ -516,7 +516,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter. </p>
+     * you must specify this parameter.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCSecurityGroups(const Aws::Vector<Aws::String>& value) { SetClassicLinkVPCSecurityGroups(value); return *this;}
 
@@ -528,7 +528,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter. </p>
+     * you must specify this parameter.</p>
      */
     inline CreateLaunchConfigurationRequest& WithClassicLinkVPCSecurityGroups(Aws::Vector<Aws::String>&& value) { SetClassicLinkVPCSecurityGroups(std::move(value)); return *this;}
 
@@ -540,7 +540,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter. </p>
+     * you must specify this parameter.</p>
      */
     inline CreateLaunchConfigurationRequest& AddClassicLinkVPCSecurityGroups(const Aws::String& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
@@ -552,7 +552,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter. </p>
+     * you must specify this parameter.</p>
      */
     inline CreateLaunchConfigurationRequest& AddClassicLinkVPCSecurityGroups(Aws::String&& value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(std::move(value)); return *this; }
 
@@ -564,7 +564,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-ClassicLink">Linking
      * EC2-Classic Instances to a VPC</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>If you specify the <code>ClassicLinkVPCId</code> parameter,
-     * you must specify this parameter. </p>
+     * you must specify this parameter.</p>
      */
     inline CreateLaunchConfigurationRequest& AddClassicLinkVPCSecurityGroups(const char* value) { m_classicLinkVPCSecurityGroupsHasBeenSet = true; m_classicLinkVPCSecurityGroups.push_back(value); return *this; }
 
@@ -977,79 +977,79 @@ namespace Model
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
-     * (<code>true</code>) or basic (<code>false</code>) monitoring. </p> <p>The
-     * default value is <code>true</code> (enabled). </p> <important> <p>When detailed
+     * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
+     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> </important>
+     * Guide</i>.</p> </important>
      */
     inline const InstanceMonitoring& GetInstanceMonitoring() const{ return m_instanceMonitoring; }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
-     * (<code>true</code>) or basic (<code>false</code>) monitoring. </p> <p>The
-     * default value is <code>true</code> (enabled). </p> <important> <p>When detailed
+     * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
+     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> </important>
+     * Guide</i>.</p> </important>
      */
     inline bool InstanceMonitoringHasBeenSet() const { return m_instanceMonitoringHasBeenSet; }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
-     * (<code>true</code>) or basic (<code>false</code>) monitoring. </p> <p>The
-     * default value is <code>true</code> (enabled). </p> <important> <p>When detailed
+     * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
+     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> </important>
+     * Guide</i>.</p> </important>
      */
     inline void SetInstanceMonitoring(const InstanceMonitoring& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = value; }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
-     * (<code>true</code>) or basic (<code>false</code>) monitoring. </p> <p>The
-     * default value is <code>true</code> (enabled). </p> <important> <p>When detailed
+     * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
+     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> </important>
+     * Guide</i>.</p> </important>
      */
     inline void SetInstanceMonitoring(InstanceMonitoring&& value) { m_instanceMonitoringHasBeenSet = true; m_instanceMonitoring = std::move(value); }
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
-     * (<code>true</code>) or basic (<code>false</code>) monitoring. </p> <p>The
-     * default value is <code>true</code> (enabled). </p> <important> <p>When detailed
+     * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
+     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> </important>
+     * Guide</i>.</p> </important>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceMonitoring(const InstanceMonitoring& value) { SetInstanceMonitoring(value); return *this;}
 
     /**
      * <p>Controls whether instances in this group are launched with detailed
-     * (<code>true</code>) or basic (<code>false</code>) monitoring. </p> <p>The
-     * default value is <code>true</code> (enabled). </p> <important> <p>When detailed
+     * (<code>true</code>) or basic (<code>false</code>) monitoring.</p> <p>The default
+     * value is <code>true</code> (enabled).</p> <important> <p>When detailed
      * monitoring is enabled, Amazon CloudWatch generates metrics every minute and your
      * account is charged a fee. When you disable detailed monitoring, CloudWatch
      * generates metrics every 5 minutes. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/latest/userguide/as-instance-monitoring.html#enable-as-instance-metrics">Configure
      * Monitoring for Auto Scaling Instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>. </p> </important>
+     * Guide</i>.</p> </important>
      */
     inline CreateLaunchConfigurationRequest& WithInstanceMonitoring(InstanceMonitoring&& value) { SetInstanceMonitoring(std::move(value)); return *this;}
 
@@ -1057,128 +1057,112 @@ namespace Model
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. For more information, see <a
+     * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <p>If a Spot price is set, then the Auto Scaling group will
-     * only launch instances when the Spot price has been met, regardless of the
-     * setting in the Auto Scaling group's <code>DesiredCapacity</code>. </p> <note>
-     * <p>When you change your Spot price by creating a new launch configuration,
-     * running instances will continue to run as long as the Spot price for those
-     * running instances is higher than the current Spot market price. </p> </note>
+     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * new launch configuration, running instances will continue to run as long as the
+     * maximum price for those running instances is higher than the current Spot
+     * price.</p> </note>
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
 
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. For more information, see <a
+     * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <p>If a Spot price is set, then the Auto Scaling group will
-     * only launch instances when the Spot price has been met, regardless of the
-     * setting in the Auto Scaling group's <code>DesiredCapacity</code>. </p> <note>
-     * <p>When you change your Spot price by creating a new launch configuration,
-     * running instances will continue to run as long as the Spot price for those
-     * running instances is higher than the current Spot market price. </p> </note>
+     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * new launch configuration, running instances will continue to run as long as the
+     * maximum price for those running instances is higher than the current Spot
+     * price.</p> </note>
      */
     inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
 
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. For more information, see <a
+     * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <p>If a Spot price is set, then the Auto Scaling group will
-     * only launch instances when the Spot price has been met, regardless of the
-     * setting in the Auto Scaling group's <code>DesiredCapacity</code>. </p> <note>
-     * <p>When you change your Spot price by creating a new launch configuration,
-     * running instances will continue to run as long as the Spot price for those
-     * running instances is higher than the current Spot market price. </p> </note>
+     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * new launch configuration, running instances will continue to run as long as the
+     * maximum price for those running instances is higher than the current Spot
+     * price.</p> </note>
      */
     inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
 
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. For more information, see <a
+     * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <p>If a Spot price is set, then the Auto Scaling group will
-     * only launch instances when the Spot price has been met, regardless of the
-     * setting in the Auto Scaling group's <code>DesiredCapacity</code>. </p> <note>
-     * <p>When you change your Spot price by creating a new launch configuration,
-     * running instances will continue to run as long as the Spot price for those
-     * running instances is higher than the current Spot market price. </p> </note>
+     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * new launch configuration, running instances will continue to run as long as the
+     * maximum price for those running instances is higher than the current Spot
+     * price.</p> </note>
      */
     inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
 
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. For more information, see <a
+     * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <p>If a Spot price is set, then the Auto Scaling group will
-     * only launch instances when the Spot price has been met, regardless of the
-     * setting in the Auto Scaling group's <code>DesiredCapacity</code>. </p> <note>
-     * <p>When you change your Spot price by creating a new launch configuration,
-     * running instances will continue to run as long as the Spot price for those
-     * running instances is higher than the current Spot market price. </p> </note>
+     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * new launch configuration, running instances will continue to run as long as the
+     * maximum price for those running instances is higher than the current Spot
+     * price.</p> </note>
      */
     inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
 
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. For more information, see <a
+     * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <p>If a Spot price is set, then the Auto Scaling group will
-     * only launch instances when the Spot price has been met, regardless of the
-     * setting in the Auto Scaling group's <code>DesiredCapacity</code>. </p> <note>
-     * <p>When you change your Spot price by creating a new launch configuration,
-     * running instances will continue to run as long as the Spot price for those
-     * running instances is higher than the current Spot market price. </p> </note>
+     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * new launch configuration, running instances will continue to run as long as the
+     * maximum price for those running instances is higher than the current Spot
+     * price.</p> </note>
      */
     inline CreateLaunchConfigurationRequest& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
 
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. For more information, see <a
+     * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <p>If a Spot price is set, then the Auto Scaling group will
-     * only launch instances when the Spot price has been met, regardless of the
-     * setting in the Auto Scaling group's <code>DesiredCapacity</code>. </p> <note>
-     * <p>When you change your Spot price by creating a new launch configuration,
-     * running instances will continue to run as long as the Spot price for those
-     * running instances is higher than the current Spot market price. </p> </note>
+     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * new launch configuration, running instances will continue to run as long as the
+     * maximum price for those running instances is higher than the current Spot
+     * price.</p> </note>
      */
     inline CreateLaunchConfigurationRequest& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
 
     /**
      * <p>The maximum hourly price to be paid for any Spot Instance launched to fulfill
      * the request. Spot Instances are launched when the price you specify exceeds the
-     * current Spot market price. For more information, see <a
+     * current Spot price. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-launch-spot-instances.html">Launching
      * Spot Instances in Your Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling
-     * User Guide</i>.</p> <p>If a Spot price is set, then the Auto Scaling group will
-     * only launch instances when the Spot price has been met, regardless of the
-     * setting in the Auto Scaling group's <code>DesiredCapacity</code>. </p> <note>
-     * <p>When you change your Spot price by creating a new launch configuration,
-     * running instances will continue to run as long as the Spot price for those
-     * running instances is higher than the current Spot market price. </p> </note>
+     * User Guide</i>.</p> <note> <p>When you change your maximum price by creating a
+     * new launch configuration, running instances will continue to run as long as the
+     * maximum price for those running instances is higher than the current Spot
+     * price.</p> </note>
      */
     inline CreateLaunchConfigurationRequest& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
 
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -1187,8 +1171,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -1197,8 +1181,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -1207,8 +1191,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -1217,8 +1201,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -1227,8 +1211,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -1237,8 +1221,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -1247,8 +1231,8 @@ namespace Model
 
     /**
      * <p>The name or the Amazon Resource Name (ARN) of the instance profile associated
-     * with the IAM role for the instance. The instance profile contains the IAM role.
-     * </p> <p>For more information, see <a
+     * with the IAM role for the instance. The instance profile contains the IAM
+     * role.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/us-iam-role.html">IAM
      * Role for Applications That Run on Amazon EC2 Instances</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
@@ -1266,7 +1250,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>The default value is <code>false</code>. </p>
+     * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
 
@@ -1280,7 +1264,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>The default value is <code>false</code>. </p>
+     * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
      */
     inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
 
@@ -1294,7 +1278,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>The default value is <code>false</code>. </p>
+     * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
      */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
@@ -1308,7 +1292,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
      * EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux
-     * Instances</i>.</p> <p>The default value is <code>false</code>. </p>
+     * Instances</i>.</p> <p>The default value is <code>false</code>.</p>
      */
     inline CreateLaunchConfigurationRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
 
@@ -1393,7 +1377,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
      * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline const Aws::String& GetPlacementTenancy() const{ return m_placementTenancy; }
 
@@ -1408,7 +1392,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
      * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline bool PlacementTenancyHasBeenSet() const { return m_placementTenancyHasBeenSet; }
 
@@ -1423,7 +1407,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
      * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline void SetPlacementTenancy(const Aws::String& value) { m_placementTenancyHasBeenSet = true; m_placementTenancy = value; }
 
@@ -1438,7 +1422,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
      * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline void SetPlacementTenancy(Aws::String&& value) { m_placementTenancyHasBeenSet = true; m_placementTenancy = std::move(value); }
 
@@ -1453,7 +1437,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
      * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline void SetPlacementTenancy(const char* value) { m_placementTenancyHasBeenSet = true; m_placementTenancy.assign(value); }
 
@@ -1468,7 +1452,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
      * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline CreateLaunchConfigurationRequest& WithPlacementTenancy(const Aws::String& value) { SetPlacementTenancy(value); return *this;}
 
@@ -1483,7 +1467,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
      * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline CreateLaunchConfigurationRequest& WithPlacementTenancy(Aws::String&& value) { SetPlacementTenancy(std::move(value)); return *this;}
 
@@ -1498,7 +1482,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html#as-vpc-tenancy">Instance
      * Placement Tenancy</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
-     * <p>Valid values: <code>default</code> | <code>dedicated</code> </p>
+     * <p>Valid Values: <code>default</code> | <code>dedicated</code> </p>
      */
     inline CreateLaunchConfigurationRequest& WithPlacementTenancy(const char* value) { SetPlacementTenancy(value); return *this;}
 
