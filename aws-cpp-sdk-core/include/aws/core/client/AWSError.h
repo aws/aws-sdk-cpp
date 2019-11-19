@@ -46,13 +46,12 @@ namespace Aws
              * Initializes AWSError object with errorType and retryable flag. ExceptionName and message are empty.
              */
             AWSError(ERROR_TYPE errorType, bool isRetryable) :
-                m_errorType(errorType), m_responseCode(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE),
-                m_isRetryable(isRetryable) {}
+                m_errorType(errorType), m_isRetryable(isRetryable) {}
 
             //by policy we enforce all clients to contain a CoreErrors alignment for their Errors.
             AWSError(const AWSError<CoreErrors>& rhs) :
-                m_errorType(static_cast<ERROR_TYPE>(rhs.GetErrorType())), m_exceptionName(rhs.GetExceptionName()), 
-                m_message(rhs.GetMessage()), m_responseHeaders(rhs.GetResponseHeaders()), 
+                m_errorType(static_cast<ERROR_TYPE>(rhs.GetErrorType())), m_exceptionName(rhs.GetExceptionName()),
+                m_message(rhs.GetMessage()), m_responseHeaders(rhs.GetResponseHeaders()),
                 m_responseCode(rhs.GetResponseCode()), m_isRetryable(rhs.ShouldRetry())
             {}
 

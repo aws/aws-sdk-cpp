@@ -32,26 +32,26 @@ namespace Aws
 {
     namespace Http
     {
-        extern AWS_CORE_API const char* DATE_HEADER;
-        extern AWS_CORE_API const char* AWS_DATE_HEADER;
-        extern AWS_CORE_API const char* AWS_SECURITY_TOKEN;
-        extern AWS_CORE_API const char* ACCEPT_HEADER;
-        extern AWS_CORE_API const char* ACCEPT_CHAR_SET_HEADER;
-        extern AWS_CORE_API const char* ACCEPT_ENCODING_HEADER;
-        extern AWS_CORE_API const char* AUTHORIZATION_HEADER;
-        extern AWS_CORE_API const char* AWS_AUTHORIZATION_HEADER;
-        extern AWS_CORE_API const char* COOKIE_HEADER;
-        extern AWS_CORE_API const char* CONTENT_LENGTH_HEADER;
-        extern AWS_CORE_API const char* CONTENT_TYPE_HEADER;
-        extern AWS_CORE_API const char* TRANSFER_ENCODING_HEADER;
-        extern AWS_CORE_API const char* USER_AGENT_HEADER;
-        extern AWS_CORE_API const char* VIA_HEADER;
-        extern AWS_CORE_API const char* HOST_HEADER;
-        extern AWS_CORE_API const char* AMZ_TARGET_HEADER;
-        extern AWS_CORE_API const char* X_AMZ_EXPIRES_HEADER;
-        extern AWS_CORE_API const char* CONTENT_MD5_HEADER;
-        extern AWS_CORE_API const char* API_VERSION_HEADER;
-        extern AWS_CORE_API const char* CHUNKED_VALUE;
+        extern AWS_CORE_API const char DATE_HEADER[];
+        extern AWS_CORE_API const char AWS_DATE_HEADER[];
+        extern AWS_CORE_API const char AWS_SECURITY_TOKEN[];
+        extern AWS_CORE_API const char ACCEPT_HEADER[];
+        extern AWS_CORE_API const char ACCEPT_CHAR_SET_HEADER[];
+        extern AWS_CORE_API const char ACCEPT_ENCODING_HEADER[];
+        extern AWS_CORE_API const char AUTHORIZATION_HEADER[];
+        extern AWS_CORE_API const char AWS_AUTHORIZATION_HEADER[];
+        extern AWS_CORE_API const char COOKIE_HEADER[];
+        extern AWS_CORE_API const char CONTENT_LENGTH_HEADER[];
+        extern AWS_CORE_API const char CONTENT_TYPE_HEADER[];
+        extern AWS_CORE_API const char TRANSFER_ENCODING_HEADER[];
+        extern AWS_CORE_API const char USER_AGENT_HEADER[];
+        extern AWS_CORE_API const char VIA_HEADER[];
+        extern AWS_CORE_API const char HOST_HEADER[];
+        extern AWS_CORE_API const char AMZ_TARGET_HEADER[];
+        extern AWS_CORE_API const char X_AMZ_EXPIRES_HEADER[];
+        extern AWS_CORE_API const char CONTENT_MD5_HEADER[];
+        extern AWS_CORE_API const char API_VERSION_HEADER[];
+        extern AWS_CORE_API const char CHUNKED_VALUE[];
 
         class HttpRequest;
         class HttpResponse;
@@ -141,7 +141,7 @@ namespace Aws
             const URI& GetUri() const { return m_uri; }
             /**
              * Converts the URI into a string and returns it. If includeQueryString is set to true, the query string
-             * will be included in the returned value. 
+             * will be included in the returned value.
              */
             inline Aws::String GetURIString(bool includeQueryString = true) const
             {
@@ -183,7 +183,7 @@ namespace Aws
                 m_uri.AddQueryStringParameter(key, value);
             }
 
-            inline bool HasDate() const 
+            inline bool HasDate() const
             {
                 return HasHeader(DATE_HEADER);
             }

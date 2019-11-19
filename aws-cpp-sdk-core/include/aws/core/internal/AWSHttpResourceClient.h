@@ -21,14 +21,17 @@
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/AWSErrorMarshaller.h>
 #include <aws/core/auth/AWSCredentials.h>
+#include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/DateTime.h>
 #include <memory>
-
+#include <mutex>
 namespace Aws
 {
     namespace Http
     {
         class HttpClient;
+        class HttpRequest;
+        enum class HttpResponseCode;
     } // namespace Http
 
     namespace Internal
@@ -63,6 +66,23 @@ namespace Aws
              * @return The response from the HTTP endpoint as a string.
              */
             virtual Aws::String GetResource(const char* endpoint, const char* resourcePath, const char* authToken) const;
+
+            /**
+             * Connects to an HTTP endpoint to read the specified resource and returns the text contents.
+             * The resource URI = endpoint + resourcePath (e.g:http://domain/path/to/res)
+             * @param endpoint The HTTP resource to connect to.
+             * @param resourcePath A path appended to the endpoint to form the final URI.
+             * @param authToken An optional authorization token that will be passed as the value of the HTTP
+             * header 'Authorization'.
+             * @return The response from the HTTP endpoint as a string, together with the http response code.
+             */
+            virtual AmazonWebServiceResult<Aws::String> GetResourceWithAWSWebServiceResult(const char *endpoint, const char *resourcePath, const char *authToken) const;
+            /**
+             * Above Function: Aws::String GetResource(const char* endpoint, const char* resourcePath, const char* authToken) const;
+             * is limited to HTTP GET method and caller can't add wanted HTTP headers as well.
+             * This overload gives caller the flexibility to manipulate the request, as well returns the HttpResponseCode of the last attempt.
+             */
+            virtual AmazonWebServiceResult<Aws::String> GetResourceWithAWSWebServiceResult(const std::shared_ptr<Http::HttpRequest> &httpRequest) const;
 
             /**
              * Set an error marshaller so as to marshall error type from http response body if any.
@@ -114,6 +134,12 @@ namespace Aws
             virtual Aws::String GetDefaultCredentials() const;
 
             /**
+             * Connects to the Amazon EC2 Instance Metadata Service to retrieve the
+             * credential information (if any) in a more secure way.
+             */
+            virtual Aws::String GetDefaultCredentialsSecurely() const;
+
+            /**
              * connects to the Amazon EC2 Instance metadata Service to retrieve the region
              * the current EC2 instance is running in.
              */
@@ -121,6 +147,9 @@ namespace Aws
 
         private:
             Aws::String m_endpoint;
+            mutable std::recursive_mutex m_tokenMutex;
+            mutable Aws::String m_token;
+            mutable bool m_tokenRequired;
         };
 
         /**

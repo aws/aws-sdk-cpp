@@ -122,30 +122,40 @@ AWS_CORE_API AWSError<CoreErrors> CoreErrorsMapper::GetErrorForHttpResponseCode(
 {
     // best effort attempt to map HTTP response codes to CoreErrors
     bool retryable = IsRetryableHttpResponseCode(code);
-    switch(code)
+    AWSError<CoreErrors> error;
+    switch (code)
     {
         case HttpResponseCode::UNAUTHORIZED:
         case HttpResponseCode::FORBIDDEN:
-            return AWSError<CoreErrors>(CoreErrors::ACCESS_DENIED, retryable);
+            error =  AWSError<CoreErrors>(CoreErrors::ACCESS_DENIED, retryable);
+            break;
         case HttpResponseCode::NOT_FOUND:
-            return AWSError<CoreErrors>(CoreErrors::RESOURCE_NOT_FOUND, retryable);
+            error = AWSError<CoreErrors>(CoreErrors::RESOURCE_NOT_FOUND, retryable);
+            break;
         case HttpResponseCode::TOO_MANY_REQUESTS:
-            return AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, retryable);
+            error = AWSError<CoreErrors>(CoreErrors::SLOW_DOWN, retryable);
+            break;
         case HttpResponseCode::INTERNAL_SERVER_ERROR:
-            return AWSError<CoreErrors>(CoreErrors::INTERNAL_FAILURE, retryable);
+            error = AWSError<CoreErrors>(CoreErrors::INTERNAL_FAILURE, retryable);
+            break;
         case HttpResponseCode::BANDWIDTH_LIMIT_EXCEEDED:
-            return AWSError<CoreErrors>(CoreErrors::THROTTLING, retryable);
+            error = AWSError<CoreErrors>(CoreErrors::THROTTLING, retryable);
+            break;
         case HttpResponseCode::SERVICE_UNAVAILABLE:
-            return AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, retryable);
+            error = AWSError<CoreErrors>(CoreErrors::SERVICE_UNAVAILABLE, retryable);
+            break;
         case HttpResponseCode::REQUEST_TIMEOUT:
         case HttpResponseCode::AUTHENTICATION_TIMEOUT:
         case HttpResponseCode::LOGIN_TIMEOUT:
         case HttpResponseCode::GATEWAY_TIMEOUT:
         case HttpResponseCode::NETWORK_READ_TIMEOUT:
         case HttpResponseCode::NETWORK_CONNECT_TIMEOUT:
-            return AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, retryable);
+            error = AWSError<CoreErrors>(CoreErrors::REQUEST_TIMEOUT, retryable);
+            break;
         default:
             int codeValue = static_cast<int>(code);
-            return AWSError<CoreErrors>(CoreErrors::UNKNOWN, codeValue >= 500 && codeValue < 600);
+            error = AWSError<CoreErrors>(CoreErrors::UNKNOWN, codeValue >= 500 && codeValue < 600);
     }
+    error.SetResponseCode(code);
+    return error;
 }

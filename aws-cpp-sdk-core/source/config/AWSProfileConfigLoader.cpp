@@ -335,7 +335,7 @@ namespace Aws
 
         bool EC2InstanceProfileConfigLoader::LoadInternal()
         {
-            auto credentialsStr = m_ec2metadataClient->GetDefaultCredentials();
+            auto credentialsStr = m_ec2metadataClient->GetDefaultCredentialsSecurely();
             if(credentialsStr.empty()) return false;
 
             Json::JsonValue credentialsDoc(credentialsStr);

@@ -25,9 +25,10 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
-
+#include <mutex>
 #include <sstream>
 
+using namespace Aws;
 using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 using namespace Aws::Utils::Xml;
@@ -37,7 +38,10 @@ using namespace Aws::Internal;
 
 static const char EC2_SECURITY_CREDENTIALS_RESOURCE[] = "/latest/meta-data/iam/security-credentials";
 static const char EC2_REGION_RESOURCE[] = "/latest/meta-data/placement/availability-zone";
-
+static const char EC2_IMDS_TOKEN_RESOURCE[] = "/latest/api/token";
+static const char EC2_IMDS_TOKEN_TTL_DEFAULT_VALUE[] = "21600";
+static const char EC2_IMDS_TOKEN_TTL_HEADER[] = "x-aws-ec2-metadata-token-ttl-seconds";
+static const char EC2_IMDS_TOKEN_HEADER[] = "x-aws-ec2-metadata-token";
 static const char RESOURCE_CLIENT_CONFIGURATION_ALLOCATION_TAG[] = "AWSHttpResourceClient";
 static const char EC2_METADATA_CLIENT_LOG_TAG[] = "EC2MetadataClient";
 static const char ECS_CREDENTIALS_CLIENT_LOG_TAG[] = "ECSCredentialsClient";
@@ -86,7 +90,7 @@ AWSHttpResourceClient::AWSHttpResourceClient(const Aws::Client::ClientConfigurat
 : m_logtag(logtag), m_retryStrategy(clientConfiguration.retryStrategy), m_httpClient(nullptr)
 {
     AWS_LOGSTREAM_INFO(m_logtag.c_str(),
-                       "Creating AWSHttpResourceClient with max connections"
+                       "Creating AWSHttpResourceClient with max connections "
                         << clientConfiguration.maxConnections
                         << " and scheme "
                         << SchemeMapper::ToString(clientConfiguration.scheme));
@@ -105,35 +109,45 @@ AWSHttpResourceClient::~AWSHttpResourceClient()
 
 Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char* resource, const char* authToken) const
 {
+    return GetResourceWithAWSWebServiceResult(endpoint, resource, authToken).GetPayload();
+}
+
+AmazonWebServiceResult<Aws::String> AWSHttpResourceClient::GetResourceWithAWSWebServiceResult(const char *endpoint, const char *resource, const char *authToken) const
+{
     Aws::StringStream ss;
     ss << endpoint << resource;
-    AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Retrieving credentials from " << ss.str().c_str());
+    std::shared_ptr<HttpRequest> request(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
+                                                           Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+
+    request->SetUserAgent(ComputeUserAgentString());
+
+    if (authToken)
+    {
+        request->SetHeaderValue(Aws::Http::AWS_AUTHORIZATION_HEADER, authToken);
+    }
+
+    return GetResourceWithAWSWebServiceResult(request);
+}
+
+AmazonWebServiceResult<Aws::String> AWSHttpResourceClient::GetResourceWithAWSWebServiceResult(const std::shared_ptr<HttpRequest> &httpRequest) const
+{
+    AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Retrieving credentials from " << httpRequest->GetURIString());
 
     for (long retries = 0;; retries++)
     {
-        std::shared_ptr<HttpRequest> request(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
-                    Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
-
-        request->SetUserAgent(ComputeUserAgentString());
-
-        if (authToken)
-        {
-            request->SetHeaderValue(Aws::Http::AWS_AUTHORIZATION_HEADER, authToken);
-        }
-
-        std::shared_ptr<HttpResponse> response(m_httpClient->MakeRequest(request));
+        std::shared_ptr<HttpResponse> response(m_httpClient->MakeRequest(httpRequest));
 
         if (response && response->GetResponseCode() == HttpResponseCode::OK)
         {
             Aws::IStreamBufIterator eos;
-            return Aws::String(Aws::IStreamBufIterator(response->GetResponseBody()), eos);
+            return {Aws::String(Aws::IStreamBufIterator(response->GetResponseBody()), eos), response ? response->GetHeaders() : HeaderValueCollection(), HttpResponseCode::OK};
         }
 
         const Aws::Client::AWSError<Aws::Client::CoreErrors> error = [this, &response]() {
             if (!response || response->GetResponseBody().tellp() < 1)
             {
                 AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to retrieve credentials failed");
-                return AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, true);  // Retryable
+                return AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, true); // Retryable
             }
             else if (m_errorMarshaller)
             {
@@ -144,15 +158,15 @@ Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char*
                 const auto responseCode = response->GetResponseCode();
 
                 AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to retrieve credentials failed with error code "
-                                    << static_cast<int>(responseCode));
+                                                          << static_cast<int>(responseCode));
                 return CoreErrorsMapper::GetErrorForHttpResponseCode(responseCode);
             }
-        } ();
+        }();
 
         if (!m_retryStrategy->ShouldRetry(error, retries))
         {
-            AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Can not retrive resource " << resource);
-            return {};
+            AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Can not retrive resource from " << httpRequest->GetURIString());
+            return {{}, response ? response->GetHeaders() : HeaderValueCollection(), error.GetResponseCode()};
         }
         auto sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(error, retries);
         AWS_LOGSTREAM_WARN(m_logtag.c_str(), "Request failed, now waiting " << sleepMillis << " ms before attempting again.");
@@ -161,12 +175,12 @@ Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char*
 }
 
 EC2MetadataClient::EC2MetadataClient(const char* endpoint)
-    : AWSHttpResourceClient(EC2_METADATA_CLIENT_LOG_TAG), m_endpoint(endpoint)
+    : AWSHttpResourceClient(EC2_METADATA_CLIENT_LOG_TAG), m_endpoint(endpoint), m_tokenRequired(true)
 {
 }
 
-EC2MetadataClient::EC2MetadataClient(const Aws::Client::ClientConfiguration& clientConfiguration, const char* endpoint)
-    : AWSHttpResourceClient(clientConfiguration, EC2_METADATA_CLIENT_LOG_TAG), m_endpoint(endpoint)
+EC2MetadataClient::EC2MetadataClient(const Aws::Client::ClientConfiguration &clientConfiguration, const char *endpoint)
+    : AWSHttpResourceClient(clientConfiguration, EC2_METADATA_CLIENT_LOG_TAG), m_endpoint(endpoint), m_tokenRequired(true)
 {
 }
 
@@ -182,37 +196,125 @@ Aws::String EC2MetadataClient::GetResource(const char* resourcePath) const
 
 Aws::String EC2MetadataClient::GetDefaultCredentials() const
 {
-    AWS_LOGSTREAM_TRACE(m_logtag.c_str(),
-            "Getting default credentials for ec2 instance");
-    Aws::String credentialsString = GetResource(EC2_SECURITY_CREDENTIALS_RESOURCE);
+    std::unique_lock<std::recursive_mutex> locker(m_tokenMutex);
+    if (m_tokenRequired)
+    {
+        return GetDefaultCredentialsSecurely();
+    }
 
-    if (credentialsString.empty()) return {};
+    AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Getting default credentials for ec2 instance");
+    auto result = GetResourceWithAWSWebServiceResult(m_endpoint.c_str(), EC2_SECURITY_CREDENTIALS_RESOURCE, nullptr);
+    Aws::String credentialsString = result.GetPayload();
+    auto httpResponseCode = result.GetResponseCode();
+
+    // Note, if service is insane, it might return 404 for our initial secure call,
+    // then when we fall back to insecure call, it might return 401 ask for secure call,
+    // Then, SDK might get into a recursive loop call situation between secure and insecure call.
+    if (httpResponseCode == Http::HttpResponseCode::UNAUTHORIZED)
+    {
+        m_tokenRequired = true;
+        return {};
+    }
+    locker.unlock();
 
     Aws::String trimmedCredentialsString = StringUtils::Trim(credentialsString.c_str());
+    if (trimmedCredentialsString.empty()) return {};
+
     Aws::Vector<Aws::String> securityCredentials = StringUtils::Split(trimmedCredentialsString, '\n');
 
-    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(),
-            "Calling EC2MetadataService resource, " << EC2_SECURITY_CREDENTIALS_RESOURCE
-            << " returned credential string " << trimmedCredentialsString);
+    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), "Calling EC2MetadataService resource, " << EC2_SECURITY_CREDENTIALS_RESOURCE
+                                            << " returned credential string " << trimmedCredentialsString);
 
     if (securityCredentials.size() == 0)
     {
-        AWS_LOGSTREAM_WARN(m_logtag.c_str(),
-                "Initial call to ec2Metadataservice to get credentials failed");
+        AWS_LOGSTREAM_WARN(m_logtag.c_str(), "Initial call to ec2Metadataservice to get credentials failed");
         return {};
     }
 
     Aws::StringStream ss;
     ss << EC2_SECURITY_CREDENTIALS_RESOURCE << "/" << securityCredentials[0];
-    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(),
-            "Calling EC2MetadataService resource " << ss.str());
+    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), "Calling EC2MetadataService resource " << ss.str());
     return GetResource(ss.str().c_str());
+}
+
+Aws::String EC2MetadataClient::GetDefaultCredentialsSecurely() const
+{
+    std::unique_lock<std::recursive_mutex> locker(m_tokenMutex);
+    if (!m_tokenRequired)
+    {
+        return GetDefaultCredentials();
+    }
+
+    Aws::StringStream ss;
+    ss << m_endpoint << EC2_IMDS_TOKEN_RESOURCE;
+    std::shared_ptr<HttpRequest> tokenRequest(CreateHttpRequest(ss.str(), HttpMethod::HTTP_PUT,
+                                                           Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+    tokenRequest->SetHeaderValue(EC2_IMDS_TOKEN_TTL_HEADER, EC2_IMDS_TOKEN_TTL_DEFAULT_VALUE);
+    auto userAgentString = ComputeUserAgentString();
+    tokenRequest->SetUserAgent(userAgentString);
+    AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Calling EC2MetadataService to get token");
+    auto result = GetResourceWithAWSWebServiceResult(tokenRequest);
+    Aws::String tokenString = result.GetPayload();
+    Aws::String trimmedTokenString = StringUtils::Trim(tokenString.c_str());
+
+    if (result.GetResponseCode() == HttpResponseCode::BAD_REQUEST)
+    {
+        return {};
+    }
+    else if (result.GetResponseCode() != HttpResponseCode::OK || trimmedTokenString.empty())
+    {
+        m_tokenRequired = false;
+        AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Calling EC2MetadataService to get token failed, falling back to less secure way.");
+        return GetDefaultCredentials();
+    }
+    m_token = trimmedTokenString;
+    locker.unlock();
+    ss.str("");
+    ss << m_endpoint << EC2_SECURITY_CREDENTIALS_RESOURCE;
+    std::shared_ptr<HttpRequest> profileRequest(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
+                                                           Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+    profileRequest->SetHeaderValue(EC2_IMDS_TOKEN_HEADER, trimmedTokenString);
+    profileRequest->SetUserAgent(userAgentString);
+    Aws::String profileString = GetResourceWithAWSWebServiceResult(profileRequest).GetPayload();
+
+    Aws::String trimmedProfileString = StringUtils::Trim(profileString.c_str());
+    Aws::Vector<Aws::String> securityCredentials = StringUtils::Split(trimmedProfileString, '\n');
+
+    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), "Calling EC2MetadataService resource, " << EC2_SECURITY_CREDENTIALS_RESOURCE
+                                            << " with token returned profile string " << trimmedProfileString);
+    if (securityCredentials.size() == 0)
+    {
+        AWS_LOGSTREAM_WARN(m_logtag.c_str(), "Calling EC2Metadataservice to get profiles failed");
+        return {};
+    }
+
+    ss.str("");
+    ss << m_endpoint << EC2_SECURITY_CREDENTIALS_RESOURCE << "/" << securityCredentials[0];
+    std::shared_ptr<HttpRequest> credentialsRequest(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
+                                                                  Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+    credentialsRequest->SetHeaderValue(EC2_IMDS_TOKEN_HEADER, trimmedTokenString);
+    credentialsRequest->SetUserAgent(userAgentString);
+    AWS_LOGSTREAM_DEBUG(m_logtag.c_str(), "Calling EC2MetadataService resource " << ss.str() << " with token.");
+    return GetResourceWithAWSWebServiceResult(credentialsRequest).GetPayload();
 }
 
 Aws::String EC2MetadataClient::GetCurrentRegion() const
 {
     AWS_LOGSTREAM_TRACE(m_logtag.c_str(), "Getting current region for ec2 instance");
-    Aws::String azString = GetResource(EC2_REGION_RESOURCE);
+
+    Aws::StringStream ss;
+    ss << m_endpoint << EC2_REGION_RESOURCE;
+    std::shared_ptr<HttpRequest> regionRequest(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
+                                                                      Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+    {
+        std::lock_guard<std::recursive_mutex> locker(m_tokenMutex);
+        if (m_tokenRequired)
+        {
+            regionRequest->SetHeaderValue(EC2_IMDS_TOKEN_HEADER, m_token);
+        }
+    }
+    regionRequest->SetUserAgent(ComputeUserAgentString());
+    Aws::String azString = GetResourceWithAWSWebServiceResult(regionRequest).GetPayload();
 
     if (azString.empty())
     {
