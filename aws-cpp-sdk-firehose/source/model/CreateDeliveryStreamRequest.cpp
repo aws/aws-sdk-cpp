@@ -27,6 +27,7 @@ CreateDeliveryStreamRequest::CreateDeliveryStreamRequest() :
     m_deliveryStreamType(DeliveryStreamType::NOT_SET),
     m_deliveryStreamTypeHasBeenSet(false),
     m_kinesisStreamSourceConfigurationHasBeenSet(false),
+    m_deliveryStreamEncryptionConfigurationInputHasBeenSet(false),
     m_extendedS3DestinationConfigurationHasBeenSet(false),
     m_redshiftDestinationConfigurationHasBeenSet(false),
     m_elasticsearchDestinationConfigurationHasBeenSet(false),
@@ -53,6 +54,12 @@ Aws::String CreateDeliveryStreamRequest::SerializePayload() const
   if(m_kinesisStreamSourceConfigurationHasBeenSet)
   {
    payload.WithObject("KinesisStreamSourceConfiguration", m_kinesisStreamSourceConfiguration.Jsonize());
+
+  }
+
+  if(m_deliveryStreamEncryptionConfigurationInputHasBeenSet)
+  {
+   payload.WithObject("DeliveryStreamEncryptionConfigurationInput", m_deliveryStreamEncryptionConfigurationInput.Jsonize());
 
   }
 

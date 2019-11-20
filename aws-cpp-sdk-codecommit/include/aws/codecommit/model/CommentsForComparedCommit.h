@@ -93,196 +93,196 @@ namespace Model
 
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'before' of the
+     * <p>The full commit ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline const Aws::String& GetBeforeCommitId() const{ return m_beforeCommitId; }
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'before' of the
+     * <p>The full commit ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline bool BeforeCommitIdHasBeenSet() const { return m_beforeCommitIdHasBeenSet; }
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'before' of the
+     * <p>The full commit ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline void SetBeforeCommitId(const Aws::String& value) { m_beforeCommitIdHasBeenSet = true; m_beforeCommitId = value; }
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'before' of the
+     * <p>The full commit ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline void SetBeforeCommitId(Aws::String&& value) { m_beforeCommitIdHasBeenSet = true; m_beforeCommitId = std::move(value); }
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'before' of the
+     * <p>The full commit ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline void SetBeforeCommitId(const char* value) { m_beforeCommitIdHasBeenSet = true; m_beforeCommitId.assign(value); }
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'before' of the
+     * <p>The full commit ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline CommentsForComparedCommit& WithBeforeCommitId(const Aws::String& value) { SetBeforeCommitId(value); return *this;}
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'before' of the
+     * <p>The full commit ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline CommentsForComparedCommit& WithBeforeCommitId(Aws::String&& value) { SetBeforeCommitId(std::move(value)); return *this;}
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'before' of the
+     * <p>The full commit ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline CommentsForComparedCommit& WithBeforeCommitId(const char* value) { SetBeforeCommitId(value); return *this;}
 
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'after' of the
+     * <p>The full commit ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline const Aws::String& GetAfterCommitId() const{ return m_afterCommitId; }
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'after' of the
+     * <p>The full commit ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline bool AfterCommitIdHasBeenSet() const { return m_afterCommitIdHasBeenSet; }
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'after' of the
+     * <p>The full commit ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline void SetAfterCommitId(const Aws::String& value) { m_afterCommitIdHasBeenSet = true; m_afterCommitId = value; }
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'after' of the
+     * <p>The full commit ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline void SetAfterCommitId(Aws::String&& value) { m_afterCommitIdHasBeenSet = true; m_afterCommitId = std::move(value); }
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'after' of the
+     * <p>The full commit ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline void SetAfterCommitId(const char* value) { m_afterCommitIdHasBeenSet = true; m_afterCommitId.assign(value); }
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'after' of the
+     * <p>The full commit ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline CommentsForComparedCommit& WithAfterCommitId(const Aws::String& value) { SetAfterCommitId(value); return *this;}
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'after' of the
+     * <p>The full commit ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline CommentsForComparedCommit& WithAfterCommitId(Aws::String&& value) { SetAfterCommitId(std::move(value)); return *this;}
 
     /**
-     * <p>The full commit ID of the commit used to establish the 'after' of the
+     * <p>The full commit ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline CommentsForComparedCommit& WithAfterCommitId(const char* value) { SetAfterCommitId(value); return *this;}
 
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'before' of the
+     * <p>The full blob ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline const Aws::String& GetBeforeBlobId() const{ return m_beforeBlobId; }
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'before' of the
+     * <p>The full blob ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline bool BeforeBlobIdHasBeenSet() const { return m_beforeBlobIdHasBeenSet; }
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'before' of the
+     * <p>The full blob ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline void SetBeforeBlobId(const Aws::String& value) { m_beforeBlobIdHasBeenSet = true; m_beforeBlobId = value; }
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'before' of the
+     * <p>The full blob ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline void SetBeforeBlobId(Aws::String&& value) { m_beforeBlobIdHasBeenSet = true; m_beforeBlobId = std::move(value); }
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'before' of the
+     * <p>The full blob ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline void SetBeforeBlobId(const char* value) { m_beforeBlobIdHasBeenSet = true; m_beforeBlobId.assign(value); }
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'before' of the
+     * <p>The full blob ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline CommentsForComparedCommit& WithBeforeBlobId(const Aws::String& value) { SetBeforeBlobId(value); return *this;}
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'before' of the
+     * <p>The full blob ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline CommentsForComparedCommit& WithBeforeBlobId(Aws::String&& value) { SetBeforeBlobId(std::move(value)); return *this;}
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'before' of the
+     * <p>The full blob ID of the commit used to establish the before of the
      * comparison.</p>
      */
     inline CommentsForComparedCommit& WithBeforeBlobId(const char* value) { SetBeforeBlobId(value); return *this;}
 
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'after' of the
+     * <p>The full blob ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline const Aws::String& GetAfterBlobId() const{ return m_afterBlobId; }
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'after' of the
+     * <p>The full blob ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline bool AfterBlobIdHasBeenSet() const { return m_afterBlobIdHasBeenSet; }
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'after' of the
+     * <p>The full blob ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline void SetAfterBlobId(const Aws::String& value) { m_afterBlobIdHasBeenSet = true; m_afterBlobId = value; }
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'after' of the
+     * <p>The full blob ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline void SetAfterBlobId(Aws::String&& value) { m_afterBlobIdHasBeenSet = true; m_afterBlobId = std::move(value); }
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'after' of the
+     * <p>The full blob ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline void SetAfterBlobId(const char* value) { m_afterBlobIdHasBeenSet = true; m_afterBlobId.assign(value); }
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'after' of the
+     * <p>The full blob ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline CommentsForComparedCommit& WithAfterBlobId(const Aws::String& value) { SetAfterBlobId(value); return *this;}
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'after' of the
+     * <p>The full blob ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline CommentsForComparedCommit& WithAfterBlobId(Aws::String&& value) { SetAfterBlobId(std::move(value)); return *this;}
 
     /**
-     * <p>The full blob ID of the commit used to establish the 'after' of the
+     * <p>The full blob ID of the commit used to establish the after of the
      * comparison.</p>
      */
     inline CommentsForComparedCommit& WithAfterBlobId(const char* value) { SetAfterBlobId(value); return *this;}
@@ -291,42 +291,42 @@ namespace Model
     /**
      * <p>Location information about the comment on the comparison, including the file
      * name, line number, and whether the version of the file where the comment was
-     * made is 'BEFORE' or 'AFTER'.</p>
+     * made is BEFORE or AFTER.</p>
      */
     inline const Location& GetLocation() const{ return m_location; }
 
     /**
      * <p>Location information about the comment on the comparison, including the file
      * name, line number, and whether the version of the file where the comment was
-     * made is 'BEFORE' or 'AFTER'.</p>
+     * made is BEFORE or AFTER.</p>
      */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>Location information about the comment on the comparison, including the file
      * name, line number, and whether the version of the file where the comment was
-     * made is 'BEFORE' or 'AFTER'.</p>
+     * made is BEFORE or AFTER.</p>
      */
     inline void SetLocation(const Location& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
      * <p>Location information about the comment on the comparison, including the file
      * name, line number, and whether the version of the file where the comment was
-     * made is 'BEFORE' or 'AFTER'.</p>
+     * made is BEFORE or AFTER.</p>
      */
     inline void SetLocation(Location&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
 
     /**
      * <p>Location information about the comment on the comparison, including the file
      * name, line number, and whether the version of the file where the comment was
-     * made is 'BEFORE' or 'AFTER'.</p>
+     * made is BEFORE or AFTER.</p>
      */
     inline CommentsForComparedCommit& WithLocation(const Location& value) { SetLocation(value); return *this;}
 
     /**
      * <p>Location information about the comment on the comparison, including the file
      * name, line number, and whether the version of the file where the comment was
-     * made is 'BEFORE' or 'AFTER'.</p>
+     * made is BEFORE or AFTER.</p>
      */
     inline CommentsForComparedCommit& WithLocation(Location&& value) { SetLocation(std::move(value)); return *this;}
 

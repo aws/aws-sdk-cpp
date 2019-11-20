@@ -55,6 +55,7 @@
 #include <aws/storagegateway/model/DeleteTapeRequest.h>
 #include <aws/storagegateway/model/DeleteTapeArchiveRequest.h>
 #include <aws/storagegateway/model/DeleteVolumeRequest.h>
+#include <aws/storagegateway/model/DescribeAvailabilityMonitorTestRequest.h>
 #include <aws/storagegateway/model/DescribeBandwidthRateLimitRequest.h>
 #include <aws/storagegateway/model/DescribeCacheRequest.h>
 #include <aws/storagegateway/model/DescribeCachediSCSIVolumesRequest.h>
@@ -92,6 +93,7 @@
 #include <aws/storagegateway/model/SetLocalConsolePasswordRequest.h>
 #include <aws/storagegateway/model/SetSMBGuestPasswordRequest.h>
 #include <aws/storagegateway/model/ShutdownGatewayRequest.h>
+#include <aws/storagegateway/model/StartAvailabilityMonitorTestRequest.h>
 #include <aws/storagegateway/model/StartGatewayRequest.h>
 #include <aws/storagegateway/model/UpdateBandwidthRateLimitRequest.h>
 #include <aws/storagegateway/model/UpdateChapCredentialsRequest.h>
@@ -1049,6 +1051,41 @@ void StorageGatewayClient::DeleteVolumeAsync(const DeleteVolumeRequest& request,
 void StorageGatewayClient::DeleteVolumeAsyncHelper(const DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteVolume(request), context);
+}
+
+DescribeAvailabilityMonitorTestOutcome StorageGatewayClient::DescribeAvailabilityMonitorTest(const DescribeAvailabilityMonitorTestRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeAvailabilityMonitorTestOutcome(DescribeAvailabilityMonitorTestResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeAvailabilityMonitorTestOutcome(outcome.GetError());
+  }
+}
+
+DescribeAvailabilityMonitorTestOutcomeCallable StorageGatewayClient::DescribeAvailabilityMonitorTestCallable(const DescribeAvailabilityMonitorTestRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeAvailabilityMonitorTestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeAvailabilityMonitorTest(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::DescribeAvailabilityMonitorTestAsync(const DescribeAvailabilityMonitorTestRequest& request, const DescribeAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeAvailabilityMonitorTestAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::DescribeAvailabilityMonitorTestAsyncHelper(const DescribeAvailabilityMonitorTestRequest& request, const DescribeAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeAvailabilityMonitorTest(request), context);
 }
 
 DescribeBandwidthRateLimitOutcome StorageGatewayClient::DescribeBandwidthRateLimit(const DescribeBandwidthRateLimitRequest& request) const
@@ -2344,6 +2381,41 @@ void StorageGatewayClient::ShutdownGatewayAsync(const ShutdownGatewayRequest& re
 void StorageGatewayClient::ShutdownGatewayAsyncHelper(const ShutdownGatewayRequest& request, const ShutdownGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ShutdownGateway(request), context);
+}
+
+StartAvailabilityMonitorTestOutcome StorageGatewayClient::StartAvailabilityMonitorTest(const StartAvailabilityMonitorTestRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartAvailabilityMonitorTestOutcome(StartAvailabilityMonitorTestResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartAvailabilityMonitorTestOutcome(outcome.GetError());
+  }
+}
+
+StartAvailabilityMonitorTestOutcomeCallable StorageGatewayClient::StartAvailabilityMonitorTestCallable(const StartAvailabilityMonitorTestRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartAvailabilityMonitorTestOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartAvailabilityMonitorTest(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void StorageGatewayClient::StartAvailabilityMonitorTestAsync(const StartAvailabilityMonitorTestRequest& request, const StartAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartAvailabilityMonitorTestAsyncHelper( request, handler, context ); } );
+}
+
+void StorageGatewayClient::StartAvailabilityMonitorTestAsyncHelper(const StartAvailabilityMonitorTestRequest& request, const StartAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartAvailabilityMonitorTest(request), context);
 }
 
 StartGatewayOutcome StorageGatewayClient::StartGateway(const StartGatewayRequest& request) const

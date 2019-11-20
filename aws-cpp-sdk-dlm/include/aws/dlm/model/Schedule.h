@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dlm/model/CreateRule.h>
 #include <aws/dlm/model/RetainRule.h>
+#include <aws/dlm/model/FastRestoreRule.h>
 #include <aws/dlm/model/Tag.h>
 #include <utility>
 
@@ -300,6 +301,37 @@ namespace Model
      */
     inline Schedule& WithRetainRule(RetainRule&& value) { SetRetainRule(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enable fast snapshot restore.</p>
+     */
+    inline const FastRestoreRule& GetFastRestoreRule() const{ return m_fastRestoreRule; }
+
+    /**
+     * <p>Enable fast snapshot restore.</p>
+     */
+    inline bool FastRestoreRuleHasBeenSet() const { return m_fastRestoreRuleHasBeenSet; }
+
+    /**
+     * <p>Enable fast snapshot restore.</p>
+     */
+    inline void SetFastRestoreRule(const FastRestoreRule& value) { m_fastRestoreRuleHasBeenSet = true; m_fastRestoreRule = value; }
+
+    /**
+     * <p>Enable fast snapshot restore.</p>
+     */
+    inline void SetFastRestoreRule(FastRestoreRule&& value) { m_fastRestoreRuleHasBeenSet = true; m_fastRestoreRule = std::move(value); }
+
+    /**
+     * <p>Enable fast snapshot restore.</p>
+     */
+    inline Schedule& WithFastRestoreRule(const FastRestoreRule& value) { SetFastRestoreRule(value); return *this;}
+
+    /**
+     * <p>Enable fast snapshot restore.</p>
+     */
+    inline Schedule& WithFastRestoreRule(FastRestoreRule&& value) { SetFastRestoreRule(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -319,6 +351,9 @@ namespace Model
 
     RetainRule m_retainRule;
     bool m_retainRuleHasBeenSet;
+
+    FastRestoreRule m_fastRestoreRule;
+    bool m_fastRestoreRuleHasBeenSet;
   };
 
 } // namespace Model

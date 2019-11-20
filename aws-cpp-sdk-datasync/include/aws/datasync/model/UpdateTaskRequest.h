@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/Options.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datasync/model/TaskSchedule.h>
 #include <aws/datasync/model/FilterRule.h>
 #include <utility>
 
@@ -184,6 +185,61 @@ namespace Model
 
 
     /**
+     * <p>Specifies a schedule used to periodically transfer files from a source to a
+     * destination location. You can configure your task to execute hourly, daily,
+     * weekly or on specific days of the week. You control when in the day or hour you
+     * want the task to execute. The time you specify is UTC time. For more
+     * information, see <a>task-scheduling</a>.</p>
+     */
+    inline const TaskSchedule& GetSchedule() const{ return m_schedule; }
+
+    /**
+     * <p>Specifies a schedule used to periodically transfer files from a source to a
+     * destination location. You can configure your task to execute hourly, daily,
+     * weekly or on specific days of the week. You control when in the day or hour you
+     * want the task to execute. The time you specify is UTC time. For more
+     * information, see <a>task-scheduling</a>.</p>
+     */
+    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
+
+    /**
+     * <p>Specifies a schedule used to periodically transfer files from a source to a
+     * destination location. You can configure your task to execute hourly, daily,
+     * weekly or on specific days of the week. You control when in the day or hour you
+     * want the task to execute. The time you specify is UTC time. For more
+     * information, see <a>task-scheduling</a>.</p>
+     */
+    inline void SetSchedule(const TaskSchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
+
+    /**
+     * <p>Specifies a schedule used to periodically transfer files from a source to a
+     * destination location. You can configure your task to execute hourly, daily,
+     * weekly or on specific days of the week. You control when in the day or hour you
+     * want the task to execute. The time you specify is UTC time. For more
+     * information, see <a>task-scheduling</a>.</p>
+     */
+    inline void SetSchedule(TaskSchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
+
+    /**
+     * <p>Specifies a schedule used to periodically transfer files from a source to a
+     * destination location. You can configure your task to execute hourly, daily,
+     * weekly or on specific days of the week. You control when in the day or hour you
+     * want the task to execute. The time you specify is UTC time. For more
+     * information, see <a>task-scheduling</a>.</p>
+     */
+    inline UpdateTaskRequest& WithSchedule(const TaskSchedule& value) { SetSchedule(value); return *this;}
+
+    /**
+     * <p>Specifies a schedule used to periodically transfer files from a source to a
+     * destination location. You can configure your task to execute hourly, daily,
+     * weekly or on specific days of the week. You control when in the day or hour you
+     * want the task to execute. The time you specify is UTC time. For more
+     * information, see <a>task-scheduling</a>.</p>
+     */
+    inline UpdateTaskRequest& WithSchedule(TaskSchedule&& value) { SetSchedule(std::move(value)); return *this;}
+
+
+    /**
      * <p>The name of the task to update.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -282,6 +338,9 @@ namespace Model
 
     Aws::Vector<FilterRule> m_excludes;
     bool m_excludesHasBeenSet;
+
+    TaskSchedule m_schedule;
+    bool m_scheduleHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

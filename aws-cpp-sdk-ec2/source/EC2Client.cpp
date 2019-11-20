@@ -183,6 +183,7 @@
 #include <aws/ec2/model/DescribeElasticGpusRequest.h>
 #include <aws/ec2/model/DescribeExportImageTasksRequest.h>
 #include <aws/ec2/model/DescribeExportTasksRequest.h>
+#include <aws/ec2/model/DescribeFastSnapshotRestoresRequest.h>
 #include <aws/ec2/model/DescribeFleetHistoryRequest.h>
 #include <aws/ec2/model/DescribeFleetInstancesRequest.h>
 #include <aws/ec2/model/DescribeFleetsRequest.h>
@@ -268,6 +269,7 @@
 #include <aws/ec2/model/DetachVolumeRequest.h>
 #include <aws/ec2/model/DetachVpnGatewayRequest.h>
 #include <aws/ec2/model/DisableEbsEncryptionByDefaultRequest.h>
+#include <aws/ec2/model/DisableFastSnapshotRestoresRequest.h>
 #include <aws/ec2/model/DisableTransitGatewayRouteTablePropagationRequest.h>
 #include <aws/ec2/model/DisableVgwRoutePropagationRequest.h>
 #include <aws/ec2/model/DisableVpcClassicLinkRequest.h>
@@ -280,6 +282,7 @@
 #include <aws/ec2/model/DisassociateTransitGatewayRouteTableRequest.h>
 #include <aws/ec2/model/DisassociateVpcCidrBlockRequest.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultRequest.h>
+#include <aws/ec2/model/EnableFastSnapshotRestoresRequest.h>
 #include <aws/ec2/model/EnableTransitGatewayRouteTablePropagationRequest.h>
 #include <aws/ec2/model/EnableVgwRoutePropagationRequest.h>
 #include <aws/ec2/model/EnableVolumeIORequest.h>
@@ -5819,6 +5822,41 @@ void EC2Client::DescribeExportTasksAsyncHelper(const DescribeExportTasksRequest&
   handler(this, request, DescribeExportTasks(request), context);
 }
 
+DescribeFastSnapshotRestoresOutcome EC2Client::DescribeFastSnapshotRestores(const DescribeFastSnapshotRestoresRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeFastSnapshotRestoresOutcome(DescribeFastSnapshotRestoresResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeFastSnapshotRestoresOutcome(outcome.GetError());
+  }
+}
+
+DescribeFastSnapshotRestoresOutcomeCallable EC2Client::DescribeFastSnapshotRestoresCallable(const DescribeFastSnapshotRestoresRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFastSnapshotRestoresOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFastSnapshotRestores(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeFastSnapshotRestoresAsync(const DescribeFastSnapshotRestoresRequest& request, const DescribeFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFastSnapshotRestoresAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeFastSnapshotRestoresAsyncHelper(const DescribeFastSnapshotRestoresRequest& request, const DescribeFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFastSnapshotRestores(request), context);
+}
+
 DescribeFleetHistoryOutcome EC2Client::DescribeFleetHistory(const DescribeFleetHistoryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -8794,6 +8832,41 @@ void EC2Client::DisableEbsEncryptionByDefaultAsyncHelper(const DisableEbsEncrypt
   handler(this, request, DisableEbsEncryptionByDefault(request), context);
 }
 
+DisableFastSnapshotRestoresOutcome EC2Client::DisableFastSnapshotRestores(const DisableFastSnapshotRestoresRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DisableFastSnapshotRestoresOutcome(DisableFastSnapshotRestoresResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DisableFastSnapshotRestoresOutcome(outcome.GetError());
+  }
+}
+
+DisableFastSnapshotRestoresOutcomeCallable EC2Client::DisableFastSnapshotRestoresCallable(const DisableFastSnapshotRestoresRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisableFastSnapshotRestoresOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisableFastSnapshotRestores(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DisableFastSnapshotRestoresAsync(const DisableFastSnapshotRestoresRequest& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisableFastSnapshotRestoresAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DisableFastSnapshotRestoresAsyncHelper(const DisableFastSnapshotRestoresRequest& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisableFastSnapshotRestores(request), context);
+}
+
 DisableTransitGatewayRouteTablePropagationOutcome EC2Client::DisableTransitGatewayRouteTablePropagation(const DisableTransitGatewayRouteTablePropagationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -9212,6 +9285,41 @@ void EC2Client::EnableEbsEncryptionByDefaultAsync(const EnableEbsEncryptionByDef
 void EC2Client::EnableEbsEncryptionByDefaultAsyncHelper(const EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, EnableEbsEncryptionByDefault(request), context);
+}
+
+EnableFastSnapshotRestoresOutcome EC2Client::EnableFastSnapshotRestores(const EnableFastSnapshotRestoresRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return EnableFastSnapshotRestoresOutcome(EnableFastSnapshotRestoresResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return EnableFastSnapshotRestoresOutcome(outcome.GetError());
+  }
+}
+
+EnableFastSnapshotRestoresOutcomeCallable EC2Client::EnableFastSnapshotRestoresCallable(const EnableFastSnapshotRestoresRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EnableFastSnapshotRestoresOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EnableFastSnapshotRestores(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::EnableFastSnapshotRestoresAsync(const EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EnableFastSnapshotRestoresAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::EnableFastSnapshotRestoresAsyncHelper(const EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EnableFastSnapshotRestores(request), context);
 }
 
 EnableTransitGatewayRouteTablePropagationOutcome EC2Client::EnableTransitGatewayRouteTablePropagation(const EnableTransitGatewayRouteTablePropagationRequest& request) const

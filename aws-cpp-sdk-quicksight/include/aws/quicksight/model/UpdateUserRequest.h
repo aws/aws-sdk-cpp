@@ -219,7 +219,7 @@ namespace Model
      * <p>The Amazon QuickSight role of the user. The user role can be one of the
      * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
-     * create data sources, data sets, analyses, and dashboards.</p> </li> <li> <p>
+     * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
      * QuickSight settings.</p> </li> </ul>
      */
@@ -229,7 +229,7 @@ namespace Model
      * <p>The Amazon QuickSight role of the user. The user role can be one of the
      * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
-     * create data sources, data sets, analyses, and dashboards.</p> </li> <li> <p>
+     * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
      * QuickSight settings.</p> </li> </ul>
      */
@@ -239,7 +239,7 @@ namespace Model
      * <p>The Amazon QuickSight role of the user. The user role can be one of the
      * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
-     * create data sources, data sets, analyses, and dashboards.</p> </li> <li> <p>
+     * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
      * QuickSight settings.</p> </li> </ul>
      */
@@ -249,7 +249,7 @@ namespace Model
      * <p>The Amazon QuickSight role of the user. The user role can be one of the
      * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
-     * create data sources, data sets, analyses, and dashboards.</p> </li> <li> <p>
+     * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
      * QuickSight settings.</p> </li> </ul>
      */
@@ -259,7 +259,7 @@ namespace Model
      * <p>The Amazon QuickSight role of the user. The user role can be one of the
      * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
-     * create data sources, data sets, analyses, and dashboards.</p> </li> <li> <p>
+     * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
      * QuickSight settings.</p> </li> </ul>
      */
@@ -269,7 +269,7 @@ namespace Model
      * <p>The Amazon QuickSight role of the user. The user role can be one of the
      * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
-     * create data sources, data sets, analyses, and dashboards.</p> </li> <li> <p>
+     * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
      * QuickSight settings.</p> </li> </ul>
      */

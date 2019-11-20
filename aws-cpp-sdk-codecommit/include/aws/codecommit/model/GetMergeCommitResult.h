@@ -166,50 +166,50 @@ namespace Model
 
     /**
      * <p>The commit ID for the merge commit created when the source branch was merged
-     * into the destination branch. If the fast-forward merge strategy was used, no
-     * merge commit exists.</p>
+     * into the destination branch. If the fast-forward merge strategy was used, there
+     * is no merge commit.</p>
      */
     inline const Aws::String& GetMergedCommitId() const{ return m_mergedCommitId; }
 
     /**
      * <p>The commit ID for the merge commit created when the source branch was merged
-     * into the destination branch. If the fast-forward merge strategy was used, no
-     * merge commit exists.</p>
+     * into the destination branch. If the fast-forward merge strategy was used, there
+     * is no merge commit.</p>
      */
     inline void SetMergedCommitId(const Aws::String& value) { m_mergedCommitId = value; }
 
     /**
      * <p>The commit ID for the merge commit created when the source branch was merged
-     * into the destination branch. If the fast-forward merge strategy was used, no
-     * merge commit exists.</p>
+     * into the destination branch. If the fast-forward merge strategy was used, there
+     * is no merge commit.</p>
      */
     inline void SetMergedCommitId(Aws::String&& value) { m_mergedCommitId = std::move(value); }
 
     /**
      * <p>The commit ID for the merge commit created when the source branch was merged
-     * into the destination branch. If the fast-forward merge strategy was used, no
-     * merge commit exists.</p>
+     * into the destination branch. If the fast-forward merge strategy was used, there
+     * is no merge commit.</p>
      */
     inline void SetMergedCommitId(const char* value) { m_mergedCommitId.assign(value); }
 
     /**
      * <p>The commit ID for the merge commit created when the source branch was merged
-     * into the destination branch. If the fast-forward merge strategy was used, no
-     * merge commit exists.</p>
+     * into the destination branch. If the fast-forward merge strategy was used, there
+     * is no merge commit.</p>
      */
     inline GetMergeCommitResult& WithMergedCommitId(const Aws::String& value) { SetMergedCommitId(value); return *this;}
 
     /**
      * <p>The commit ID for the merge commit created when the source branch was merged
-     * into the destination branch. If the fast-forward merge strategy was used, no
-     * merge commit exists.</p>
+     * into the destination branch. If the fast-forward merge strategy was used, there
+     * is no merge commit.</p>
      */
     inline GetMergeCommitResult& WithMergedCommitId(Aws::String&& value) { SetMergedCommitId(std::move(value)); return *this;}
 
     /**
      * <p>The commit ID for the merge commit created when the source branch was merged
-     * into the destination branch. If the fast-forward merge strategy was used, no
-     * merge commit exists.</p>
+     * into the destination branch. If the fast-forward merge strategy was used, there
+     * is no merge commit.</p>
      */
     inline GetMergeCommitResult& WithMergedCommitId(const char* value) { SetMergedCommitId(value); return *this;}
 

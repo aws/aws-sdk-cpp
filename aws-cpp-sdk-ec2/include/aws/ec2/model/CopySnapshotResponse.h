@@ -37,11 +37,6 @@ namespace EC2
 {
 namespace Model
 {
-  /**
-   * <p>Contains the output of CopySnapshot.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CopySnapshotResult">AWS
-   * API Reference</a></p>
-   */
   class AWS_EC2_API CopySnapshotResponse
   {
   public:
@@ -86,25 +81,39 @@ namespace Model
     inline CopySnapshotResponse& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
 
 
-    
+    /**
+     * <p>Any tags applied to the new snapshot.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p>Any tags applied to the new snapshot.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
-    
+    /**
+     * <p>Any tags applied to the new snapshot.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
-    
+    /**
+     * <p>Any tags applied to the new snapshot.</p>
+     */
     inline CopySnapshotResponse& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p>Any tags applied to the new snapshot.</p>
+     */
     inline CopySnapshotResponse& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Any tags applied to the new snapshot.</p>
+     */
     inline CopySnapshotResponse& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Any tags applied to the new snapshot.</p>
+     */
     inline CopySnapshotResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
 

@@ -24,6 +24,7 @@
 #include <aws/chime/model/AssociatePhoneNumberWithUserResult.h>
 #include <aws/chime/model/AssociatePhoneNumbersWithVoiceConnectorResult.h>
 #include <aws/chime/model/AssociatePhoneNumbersWithVoiceConnectorGroupResult.h>
+#include <aws/chime/model/BatchCreateAttendeeResult.h>
 #include <aws/chime/model/BatchCreateRoomMembershipResult.h>
 #include <aws/chime/model/BatchDeletePhoneNumberResult.h>
 #include <aws/chime/model/BatchSuspendUserResult.h>
@@ -31,7 +32,9 @@
 #include <aws/chime/model/BatchUpdatePhoneNumberResult.h>
 #include <aws/chime/model/BatchUpdateUserResult.h>
 #include <aws/chime/model/CreateAccountResult.h>
+#include <aws/chime/model/CreateAttendeeResult.h>
 #include <aws/chime/model/CreateBotResult.h>
+#include <aws/chime/model/CreateMeetingResult.h>
 #include <aws/chime/model/CreatePhoneNumberOrderResult.h>
 #include <aws/chime/model/CreateRoomResult.h>
 #include <aws/chime/model/CreateRoomMembershipResult.h>
@@ -43,9 +46,11 @@
 #include <aws/chime/model/DisassociatePhoneNumbersFromVoiceConnectorGroupResult.h>
 #include <aws/chime/model/GetAccountResult.h>
 #include <aws/chime/model/GetAccountSettingsResult.h>
+#include <aws/chime/model/GetAttendeeResult.h>
 #include <aws/chime/model/GetBotResult.h>
 #include <aws/chime/model/GetEventsConfigurationResult.h>
 #include <aws/chime/model/GetGlobalSettingsResult.h>
+#include <aws/chime/model/GetMeetingResult.h>
 #include <aws/chime/model/GetPhoneNumberResult.h>
 #include <aws/chime/model/GetPhoneNumberOrderResult.h>
 #include <aws/chime/model/GetPhoneNumberSettingsResult.h>
@@ -61,7 +66,9 @@
 #include <aws/chime/model/GetVoiceConnectorTerminationHealthResult.h>
 #include <aws/chime/model/InviteUsersResult.h>
 #include <aws/chime/model/ListAccountsResult.h>
+#include <aws/chime/model/ListAttendeesResult.h>
 #include <aws/chime/model/ListBotsResult.h>
+#include <aws/chime/model/ListMeetingsResult.h>
 #include <aws/chime/model/ListPhoneNumberOrdersResult.h>
 #include <aws/chime/model/ListPhoneNumbersResult.h>
 #include <aws/chime/model/ListRoomMembershipsResult.h>
@@ -132,6 +139,7 @@ namespace Model
         class AssociatePhoneNumberWithUserRequest;
         class AssociatePhoneNumbersWithVoiceConnectorRequest;
         class AssociatePhoneNumbersWithVoiceConnectorGroupRequest;
+        class BatchCreateAttendeeRequest;
         class BatchCreateRoomMembershipRequest;
         class BatchDeletePhoneNumberRequest;
         class BatchSuspendUserRequest;
@@ -139,14 +147,18 @@ namespace Model
         class BatchUpdatePhoneNumberRequest;
         class BatchUpdateUserRequest;
         class CreateAccountRequest;
+        class CreateAttendeeRequest;
         class CreateBotRequest;
+        class CreateMeetingRequest;
         class CreatePhoneNumberOrderRequest;
         class CreateRoomRequest;
         class CreateRoomMembershipRequest;
         class CreateVoiceConnectorRequest;
         class CreateVoiceConnectorGroupRequest;
         class DeleteAccountRequest;
+        class DeleteAttendeeRequest;
         class DeleteEventsConfigurationRequest;
+        class DeleteMeetingRequest;
         class DeletePhoneNumberRequest;
         class DeleteRoomRequest;
         class DeleteRoomMembershipRequest;
@@ -161,8 +173,10 @@ namespace Model
         class DisassociatePhoneNumbersFromVoiceConnectorGroupRequest;
         class GetAccountRequest;
         class GetAccountSettingsRequest;
+        class GetAttendeeRequest;
         class GetBotRequest;
         class GetEventsConfigurationRequest;
+        class GetMeetingRequest;
         class GetPhoneNumberRequest;
         class GetPhoneNumberOrderRequest;
         class GetRoomRequest;
@@ -177,7 +191,9 @@ namespace Model
         class GetVoiceConnectorTerminationHealthRequest;
         class InviteUsersRequest;
         class ListAccountsRequest;
+        class ListAttendeesRequest;
         class ListBotsRequest;
+        class ListMeetingsRequest;
         class ListPhoneNumberOrdersRequest;
         class ListPhoneNumbersRequest;
         class ListRoomMembershipsRequest;
@@ -213,6 +229,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociatePhoneNumberWithUserResult, Aws::Client::AWSError<ChimeErrors>> AssociatePhoneNumberWithUserOutcome;
         typedef Aws::Utils::Outcome<AssociatePhoneNumbersWithVoiceConnectorResult, Aws::Client::AWSError<ChimeErrors>> AssociatePhoneNumbersWithVoiceConnectorOutcome;
         typedef Aws::Utils::Outcome<AssociatePhoneNumbersWithVoiceConnectorGroupResult, Aws::Client::AWSError<ChimeErrors>> AssociatePhoneNumbersWithVoiceConnectorGroupOutcome;
+        typedef Aws::Utils::Outcome<BatchCreateAttendeeResult, Aws::Client::AWSError<ChimeErrors>> BatchCreateAttendeeOutcome;
         typedef Aws::Utils::Outcome<BatchCreateRoomMembershipResult, Aws::Client::AWSError<ChimeErrors>> BatchCreateRoomMembershipOutcome;
         typedef Aws::Utils::Outcome<BatchDeletePhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> BatchDeletePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<BatchSuspendUserResult, Aws::Client::AWSError<ChimeErrors>> BatchSuspendUserOutcome;
@@ -220,14 +237,18 @@ namespace Model
         typedef Aws::Utils::Outcome<BatchUpdatePhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> BatchUpdatePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<BatchUpdateUserResult, Aws::Client::AWSError<ChimeErrors>> BatchUpdateUserOutcome;
         typedef Aws::Utils::Outcome<CreateAccountResult, Aws::Client::AWSError<ChimeErrors>> CreateAccountOutcome;
+        typedef Aws::Utils::Outcome<CreateAttendeeResult, Aws::Client::AWSError<ChimeErrors>> CreateAttendeeOutcome;
         typedef Aws::Utils::Outcome<CreateBotResult, Aws::Client::AWSError<ChimeErrors>> CreateBotOutcome;
+        typedef Aws::Utils::Outcome<CreateMeetingResult, Aws::Client::AWSError<ChimeErrors>> CreateMeetingOutcome;
         typedef Aws::Utils::Outcome<CreatePhoneNumberOrderResult, Aws::Client::AWSError<ChimeErrors>> CreatePhoneNumberOrderOutcome;
         typedef Aws::Utils::Outcome<CreateRoomResult, Aws::Client::AWSError<ChimeErrors>> CreateRoomOutcome;
         typedef Aws::Utils::Outcome<CreateRoomMembershipResult, Aws::Client::AWSError<ChimeErrors>> CreateRoomMembershipOutcome;
         typedef Aws::Utils::Outcome<CreateVoiceConnectorResult, Aws::Client::AWSError<ChimeErrors>> CreateVoiceConnectorOutcome;
         typedef Aws::Utils::Outcome<CreateVoiceConnectorGroupResult, Aws::Client::AWSError<ChimeErrors>> CreateVoiceConnectorGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteAccountResult, Aws::Client::AWSError<ChimeErrors>> DeleteAccountOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteAttendeeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteEventsConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteMeetingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeletePhoneNumberOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteRoomOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ChimeErrors>> DeleteRoomMembershipOutcome;
@@ -242,9 +263,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociatePhoneNumbersFromVoiceConnectorGroupResult, Aws::Client::AWSError<ChimeErrors>> DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome;
         typedef Aws::Utils::Outcome<GetAccountResult, Aws::Client::AWSError<ChimeErrors>> GetAccountOutcome;
         typedef Aws::Utils::Outcome<GetAccountSettingsResult, Aws::Client::AWSError<ChimeErrors>> GetAccountSettingsOutcome;
+        typedef Aws::Utils::Outcome<GetAttendeeResult, Aws::Client::AWSError<ChimeErrors>> GetAttendeeOutcome;
         typedef Aws::Utils::Outcome<GetBotResult, Aws::Client::AWSError<ChimeErrors>> GetBotOutcome;
         typedef Aws::Utils::Outcome<GetEventsConfigurationResult, Aws::Client::AWSError<ChimeErrors>> GetEventsConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetGlobalSettingsResult, Aws::Client::AWSError<ChimeErrors>> GetGlobalSettingsOutcome;
+        typedef Aws::Utils::Outcome<GetMeetingResult, Aws::Client::AWSError<ChimeErrors>> GetMeetingOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberResult, Aws::Client::AWSError<ChimeErrors>> GetPhoneNumberOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberOrderResult, Aws::Client::AWSError<ChimeErrors>> GetPhoneNumberOrderOutcome;
         typedef Aws::Utils::Outcome<GetPhoneNumberSettingsResult, Aws::Client::AWSError<ChimeErrors>> GetPhoneNumberSettingsOutcome;
@@ -260,7 +283,9 @@ namespace Model
         typedef Aws::Utils::Outcome<GetVoiceConnectorTerminationHealthResult, Aws::Client::AWSError<ChimeErrors>> GetVoiceConnectorTerminationHealthOutcome;
         typedef Aws::Utils::Outcome<InviteUsersResult, Aws::Client::AWSError<ChimeErrors>> InviteUsersOutcome;
         typedef Aws::Utils::Outcome<ListAccountsResult, Aws::Client::AWSError<ChimeErrors>> ListAccountsOutcome;
+        typedef Aws::Utils::Outcome<ListAttendeesResult, Aws::Client::AWSError<ChimeErrors>> ListAttendeesOutcome;
         typedef Aws::Utils::Outcome<ListBotsResult, Aws::Client::AWSError<ChimeErrors>> ListBotsOutcome;
+        typedef Aws::Utils::Outcome<ListMeetingsResult, Aws::Client::AWSError<ChimeErrors>> ListMeetingsOutcome;
         typedef Aws::Utils::Outcome<ListPhoneNumberOrdersResult, Aws::Client::AWSError<ChimeErrors>> ListPhoneNumberOrdersOutcome;
         typedef Aws::Utils::Outcome<ListPhoneNumbersResult, Aws::Client::AWSError<ChimeErrors>> ListPhoneNumbersOutcome;
         typedef Aws::Utils::Outcome<ListRoomMembershipsResult, Aws::Client::AWSError<ChimeErrors>> ListRoomMembershipsOutcome;
@@ -296,6 +321,7 @@ namespace Model
         typedef std::future<AssociatePhoneNumberWithUserOutcome> AssociatePhoneNumberWithUserOutcomeCallable;
         typedef std::future<AssociatePhoneNumbersWithVoiceConnectorOutcome> AssociatePhoneNumbersWithVoiceConnectorOutcomeCallable;
         typedef std::future<AssociatePhoneNumbersWithVoiceConnectorGroupOutcome> AssociatePhoneNumbersWithVoiceConnectorGroupOutcomeCallable;
+        typedef std::future<BatchCreateAttendeeOutcome> BatchCreateAttendeeOutcomeCallable;
         typedef std::future<BatchCreateRoomMembershipOutcome> BatchCreateRoomMembershipOutcomeCallable;
         typedef std::future<BatchDeletePhoneNumberOutcome> BatchDeletePhoneNumberOutcomeCallable;
         typedef std::future<BatchSuspendUserOutcome> BatchSuspendUserOutcomeCallable;
@@ -303,14 +329,18 @@ namespace Model
         typedef std::future<BatchUpdatePhoneNumberOutcome> BatchUpdatePhoneNumberOutcomeCallable;
         typedef std::future<BatchUpdateUserOutcome> BatchUpdateUserOutcomeCallable;
         typedef std::future<CreateAccountOutcome> CreateAccountOutcomeCallable;
+        typedef std::future<CreateAttendeeOutcome> CreateAttendeeOutcomeCallable;
         typedef std::future<CreateBotOutcome> CreateBotOutcomeCallable;
+        typedef std::future<CreateMeetingOutcome> CreateMeetingOutcomeCallable;
         typedef std::future<CreatePhoneNumberOrderOutcome> CreatePhoneNumberOrderOutcomeCallable;
         typedef std::future<CreateRoomOutcome> CreateRoomOutcomeCallable;
         typedef std::future<CreateRoomMembershipOutcome> CreateRoomMembershipOutcomeCallable;
         typedef std::future<CreateVoiceConnectorOutcome> CreateVoiceConnectorOutcomeCallable;
         typedef std::future<CreateVoiceConnectorGroupOutcome> CreateVoiceConnectorGroupOutcomeCallable;
         typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
+        typedef std::future<DeleteAttendeeOutcome> DeleteAttendeeOutcomeCallable;
         typedef std::future<DeleteEventsConfigurationOutcome> DeleteEventsConfigurationOutcomeCallable;
+        typedef std::future<DeleteMeetingOutcome> DeleteMeetingOutcomeCallable;
         typedef std::future<DeletePhoneNumberOutcome> DeletePhoneNumberOutcomeCallable;
         typedef std::future<DeleteRoomOutcome> DeleteRoomOutcomeCallable;
         typedef std::future<DeleteRoomMembershipOutcome> DeleteRoomMembershipOutcomeCallable;
@@ -325,9 +355,11 @@ namespace Model
         typedef std::future<DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome> DisassociatePhoneNumbersFromVoiceConnectorGroupOutcomeCallable;
         typedef std::future<GetAccountOutcome> GetAccountOutcomeCallable;
         typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
+        typedef std::future<GetAttendeeOutcome> GetAttendeeOutcomeCallable;
         typedef std::future<GetBotOutcome> GetBotOutcomeCallable;
         typedef std::future<GetEventsConfigurationOutcome> GetEventsConfigurationOutcomeCallable;
         typedef std::future<GetGlobalSettingsOutcome> GetGlobalSettingsOutcomeCallable;
+        typedef std::future<GetMeetingOutcome> GetMeetingOutcomeCallable;
         typedef std::future<GetPhoneNumberOutcome> GetPhoneNumberOutcomeCallable;
         typedef std::future<GetPhoneNumberOrderOutcome> GetPhoneNumberOrderOutcomeCallable;
         typedef std::future<GetPhoneNumberSettingsOutcome> GetPhoneNumberSettingsOutcomeCallable;
@@ -343,7 +375,9 @@ namespace Model
         typedef std::future<GetVoiceConnectorTerminationHealthOutcome> GetVoiceConnectorTerminationHealthOutcomeCallable;
         typedef std::future<InviteUsersOutcome> InviteUsersOutcomeCallable;
         typedef std::future<ListAccountsOutcome> ListAccountsOutcomeCallable;
+        typedef std::future<ListAttendeesOutcome> ListAttendeesOutcomeCallable;
         typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
+        typedef std::future<ListMeetingsOutcome> ListMeetingsOutcomeCallable;
         typedef std::future<ListPhoneNumberOrdersOutcome> ListPhoneNumberOrdersOutcomeCallable;
         typedef std::future<ListPhoneNumbersOutcome> ListPhoneNumbersOutcomeCallable;
         typedef std::future<ListRoomMembershipsOutcome> ListRoomMembershipsOutcomeCallable;
@@ -382,6 +416,7 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::AssociatePhoneNumberWithUserRequest&, const Model::AssociatePhoneNumberWithUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePhoneNumberWithUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::AssociatePhoneNumbersWithVoiceConnectorRequest&, const Model::AssociatePhoneNumbersWithVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePhoneNumbersWithVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::AssociatePhoneNumbersWithVoiceConnectorGroupRequest&, const Model::AssociatePhoneNumbersWithVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePhoneNumbersWithVoiceConnectorGroupResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::BatchCreateAttendeeRequest&, const Model::BatchCreateAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateAttendeeResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::BatchCreateRoomMembershipRequest&, const Model::BatchCreateRoomMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchCreateRoomMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::BatchDeletePhoneNumberRequest&, const Model::BatchDeletePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeletePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::BatchSuspendUserRequest&, const Model::BatchSuspendUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchSuspendUserResponseReceivedHandler;
@@ -389,14 +424,18 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::BatchUpdatePhoneNumberRequest&, const Model::BatchUpdatePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdatePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::BatchUpdateUserRequest&, const Model::BatchUpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateUserResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateAccountRequest&, const Model::CreateAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccountResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateAttendeeRequest&, const Model::CreateAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAttendeeResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateBotRequest&, const Model::CreateBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBotResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::CreateMeetingRequest&, const Model::CreateMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreatePhoneNumberOrderRequest&, const Model::CreatePhoneNumberOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePhoneNumberOrderResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateRoomRequest&, const Model::CreateRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoomResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateRoomMembershipRequest&, const Model::CreateRoomMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRoomMembershipResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateVoiceConnectorRequest&, const Model::CreateVoiceConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVoiceConnectorResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::CreateVoiceConnectorGroupRequest&, const Model::CreateVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVoiceConnectorGroupResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteAccountRequest&, const Model::DeleteAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteAttendeeRequest&, const Model::DeleteAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAttendeeResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteEventsConfigurationRequest&, const Model::DeleteEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventsConfigurationResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::DeleteMeetingRequest&, const Model::DeleteMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeletePhoneNumberRequest&, const Model::DeletePhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteRoomRequest&, const Model::DeleteRoomOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoomResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::DeleteRoomMembershipRequest&, const Model::DeleteRoomMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRoomMembershipResponseReceivedHandler;
@@ -411,9 +450,11 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::DisassociatePhoneNumbersFromVoiceConnectorGroupRequest&, const Model::DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociatePhoneNumbersFromVoiceConnectorGroupResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetAccountRequest&, const Model::GetAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetAttendeeRequest&, const Model::GetAttendeeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAttendeeResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetBotRequest&, const Model::GetBotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBotResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetEventsConfigurationRequest&, const Model::GetEventsConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventsConfigurationResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetGlobalSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGlobalSettingsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::GetMeetingRequest&, const Model::GetMeetingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMeetingResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberRequest&, const Model::GetPhoneNumberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberOrderRequest&, const Model::GetPhoneNumberOrderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberOrderResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::GetPhoneNumberSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPhoneNumberSettingsResponseReceivedHandler;
@@ -429,7 +470,9 @@ namespace Model
     typedef std::function<void(const ChimeClient*, const Model::GetVoiceConnectorTerminationHealthRequest&, const Model::GetVoiceConnectorTerminationHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceConnectorTerminationHealthResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::InviteUsersRequest&, const Model::InviteUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InviteUsersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListAccountsRequest&, const Model::ListAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListAttendeesRequest&, const Model::ListAttendeesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAttendeesResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListBotsRequest&, const Model::ListBotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBotsResponseReceivedHandler;
+    typedef std::function<void(const ChimeClient*, const Model::ListMeetingsRequest&, const Model::ListMeetingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMeetingsResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListPhoneNumberOrdersRequest&, const Model::ListPhoneNumberOrdersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumberOrdersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListPhoneNumbersRequest&, const Model::ListPhoneNumbersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPhoneNumbersResponseReceivedHandler;
     typedef std::function<void(const ChimeClient*, const Model::ListRoomMembershipsRequest&, const Model::ListRoomMembershipsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRoomMembershipsResponseReceivedHandler;
@@ -464,16 +507,20 @@ namespace Model
 
   /**
    * <p>The Amazon Chime API (application programming interface) is designed for
-   * administrators to use to perform key tasks, such as creating and managing Amazon
-   * Chime accounts and users. This guide provides detailed information about the
-   * Amazon Chime API, including operations, types, inputs and outputs, and error
-   * codes.</p> <p>You can use an AWS SDK, the AWS Command Line Interface (AWS CLI),
-   * or the REST API to make API calls. We recommend using an AWS SDK or the AWS CLI.
-   * Each API operation includes links to information about using it with a
-   * language-specific AWS SDK or the AWS CLI.</p> <dl> <dt>Using an AWS SDK</dt>
-   * <dd> <p>You don't need to write code to calculate a signature for request
-   * authentication. The SDK clients authenticate your requests by using access keys
-   * that you provide. For more information about AWS SDKs, see the <a
+   * developers to perform key tasks, such as creating and managing Amazon Chime
+   * accounts, users, and Voice Connectors. This guide provides detailed information
+   * about the Amazon Chime API, including operations, types, inputs and outputs, and
+   * error codes. It also includes some server-side API actions to use with the
+   * Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a
+   * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+   * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p> <p>You can
+   * use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to
+   * make API calls. We recommend using an AWS SDK or the AWS CLI. Each API operation
+   * includes links to information about using it with a language-specific AWS SDK or
+   * the AWS CLI.</p> <dl> <dt>Using an AWS SDK</dt> <dd> <p>You don't need to write
+   * code to calculate a signature for request authentication. The SDK clients
+   * authenticate your requests by using access keys that you provide. For more
+   * information about AWS SDKs, see the <a
    * href="http://aws.amazon.com/developer/">AWS Developer Center</a>.</p> </dd>
    * <dt>Using the AWS CLI</dt> <dd> <p>Use your access keys with the AWS CLI to make
    * API calls. For information about setting up the AWS CLI, see <a
@@ -492,8 +539,8 @@ namespace Model
    * <code>https://service.chime.aws.amazon.com</code>.</p> </dd> </dl>
    * <p>Administrative permissions are controlled using AWS Identity and Access
    * Management (IAM). For more information, see <a
-   * href="https://docs.aws.amazon.com/chime/latest/ag/control-access.html">Control
-   * Access to the Amazon Chime Console</a> in the <i>Amazon Chime Administration
+   * href="https://docs.aws.amazon.com/chime/latest/ag/security-iam.html">Identity
+   * and Access Management for Amazon Chime</a> in the <i>Amazon Chime Administration
    * Guide</i>.</p>
    */
   class AWS_CHIME_API ChimeClient : public Aws::Client::AWSJsonClient
@@ -608,6 +655,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociatePhoneNumbersWithVoiceConnectorGroupAsync(const Model::AssociatePhoneNumbersWithVoiceConnectorGroupRequest& request, const AssociatePhoneNumbersWithVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For
+         * more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateAttendee">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchCreateAttendeeOutcome BatchCreateAttendee(const Model::BatchCreateAttendeeRequest& request) const;
+
+        /**
+         * <p>Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For
+         * more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateAttendee">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchCreateAttendeeOutcomeCallable BatchCreateAttendeeCallable(const Model::BatchCreateAttendeeRequest& request) const;
+
+        /**
+         * <p>Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For
+         * more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateAttendee">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchCreateAttendeeAsync(const Model::BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Adds up to 50 members to a chat room. Members can be either users or bots.
@@ -911,6 +995,43 @@ namespace Model
         virtual void CreateAccountAsync(const Model::CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a new attendee for an active Amazon Chime SDK meeting. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAttendee">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAttendeeOutcome CreateAttendee(const Model::CreateAttendeeRequest& request) const;
+
+        /**
+         * <p>Creates a new attendee for an active Amazon Chime SDK meeting. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAttendee">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAttendeeOutcomeCallable CreateAttendeeCallable(const Model::CreateAttendeeRequest& request) const;
+
+        /**
+         * <p>Creates a new attendee for an active Amazon Chime SDK meeting. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAttendee">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAttendeeAsync(const Model::CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a bot for an Amazon Chime Enterprise account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateBot">AWS API
@@ -937,6 +1058,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateBotAsync(const Model::CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no
+         * initial attendees. For more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeeting">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMeetingOutcome CreateMeeting(const Model::CreateMeetingRequest& request) const;
+
+        /**
+         * <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no
+         * initial attendees. For more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeeting">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateMeetingOutcomeCallable CreateMeetingCallable(const Model::CreateMeetingRequest& request) const;
+
+        /**
+         * <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no
+         * initial attendees. For more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeeting">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateMeetingAsync(const Model::CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an order for phone numbers to be provisioned. Choose from Amazon
@@ -1167,6 +1325,49 @@ namespace Model
         virtual void DeleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
+         * their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon
+         * Chime SDK meeting is deleted. For more information about the Amazon Chime SDK,
+         * see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAttendeeOutcome DeleteAttendee(const Model::DeleteAttendeeRequest& request) const;
+
+        /**
+         * <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
+         * their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon
+         * Chime SDK meeting is deleted. For more information about the Amazon Chime SDK,
+         * see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAttendeeOutcomeCallable DeleteAttendeeCallable(const Model::DeleteAttendeeRequest& request) const;
+
+        /**
+         * <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes
+         * their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon
+         * Chime SDK meeting is deleted. For more information about the Amazon Chime SDK,
+         * see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAttendeeAsync(const Model::DeleteAttendeeRequest& request, const DeleteAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the events configuration that allows a bot to receive outgoing
          * events.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteEventsConfiguration">AWS
@@ -1193,6 +1394,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteEventsConfigurationAsync(const Model::DeleteEventsConfigurationRequest& request, const DeleteEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted,
+         * its attendees are also deleted and clients can no longer join it. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMeeting">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMeetingOutcome DeleteMeeting(const Model::DeleteMeetingRequest& request) const;
+
+        /**
+         * <p>Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted,
+         * its attendees are also deleted and clients can no longer join it. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMeeting">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMeetingOutcomeCallable DeleteMeetingCallable(const Model::DeleteMeetingRequest& request) const;
+
+        /**
+         * <p>Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted,
+         * its attendees are also deleted and clients can no longer join it. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMeeting">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMeetingAsync(const Model::DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Moves the specified phone number into the <b>Deletion queue</b>. A phone
@@ -1605,6 +1846,43 @@ namespace Model
         virtual void GetAccountSettingsAsync(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets the Amazon Chime SDK attendee details for a specified meeting ID and
+         * attendee ID. For more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAttendee">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAttendeeOutcome GetAttendee(const Model::GetAttendeeRequest& request) const;
+
+        /**
+         * <p>Gets the Amazon Chime SDK attendee details for a specified meeting ID and
+         * attendee ID. For more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAttendee">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAttendeeOutcomeCallable GetAttendeeCallable(const Model::GetAttendeeRequest& request) const;
+
+        /**
+         * <p>Gets the Amazon Chime SDK attendee details for a specified meeting ID and
+         * attendee ID. For more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAttendee">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAttendeeAsync(const Model::GetAttendeeRequest& request, const GetAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieves details for the specified bot, such as bot email address, bot type,
          * status, and display name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetBot">AWS API
@@ -1693,6 +1971,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetGlobalSettingsAsync(const GetGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        /**
+         * <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For
+         * more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMeeting">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetMeetingOutcome GetMeeting(const Model::GetMeetingRequest& request) const;
+
+        /**
+         * <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For
+         * more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMeeting">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetMeetingOutcomeCallable GetMeetingCallable(const Model::GetMeetingRequest& request) const;
+
+        /**
+         * <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For
+         * more information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMeeting">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetMeetingAsync(const Model::GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
         /**
          * <p>Retrieves details for the specified phone number ID, such as associations,
          * capabilities, and product type.</p><p><h3>See Also:</h3>   <a
@@ -2146,6 +2461,43 @@ namespace Model
         virtual void ListAccountsAsync(const Model::ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the attendees for the specified Amazon Chime SDK meeting. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAttendeesOutcome ListAttendees(const Model::ListAttendeesRequest& request) const;
+
+        /**
+         * <p>Lists the attendees for the specified Amazon Chime SDK meeting. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAttendeesOutcomeCallable ListAttendeesCallable(const Model::ListAttendeesRequest& request) const;
+
+        /**
+         * <p>Lists the attendees for the specified Amazon Chime SDK meeting. For more
+         * information about the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAttendeesAsync(const Model::ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the bots associated with the administrator's Amazon Chime Enterprise
          * account ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListBots">AWS API
@@ -2172,6 +2524,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListBotsAsync(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists up to 100 active Amazon Chime SDK meetings. For more information about
+         * the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMeetingsOutcome ListMeetings(const Model::ListMeetingsRequest& request) const;
+
+        /**
+         * <p>Lists up to 100 active Amazon Chime SDK meetings. For more information about
+         * the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMeetingsOutcomeCallable ListMeetingsCallable(const Model::ListMeetingsRequest& request) const;
+
+        /**
+         * <p>Lists up to 100 active Amazon Chime SDK meetings. For more information about
+         * the Amazon Chime SDK, see <a
+         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
+         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMeetingsAsync(const Model::ListMeetingsRequest& request, const ListMeetingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the phone number orders for the administrator's Amazon Chime
@@ -3114,6 +3503,7 @@ namespace Model
         void AssociatePhoneNumberWithUserAsyncHelper(const Model::AssociatePhoneNumberWithUserRequest& request, const AssociatePhoneNumberWithUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociatePhoneNumbersWithVoiceConnectorAsyncHelper(const Model::AssociatePhoneNumbersWithVoiceConnectorRequest& request, const AssociatePhoneNumbersWithVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociatePhoneNumbersWithVoiceConnectorGroupAsyncHelper(const Model::AssociatePhoneNumbersWithVoiceConnectorGroupRequest& request, const AssociatePhoneNumbersWithVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchCreateAttendeeAsyncHelper(const Model::BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchCreateRoomMembershipAsyncHelper(const Model::BatchCreateRoomMembershipRequest& request, const BatchCreateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchDeletePhoneNumberAsyncHelper(const Model::BatchDeletePhoneNumberRequest& request, const BatchDeletePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchSuspendUserAsyncHelper(const Model::BatchSuspendUserRequest& request, const BatchSuspendUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3121,14 +3511,18 @@ namespace Model
         void BatchUpdatePhoneNumberAsyncHelper(const Model::BatchUpdatePhoneNumberRequest& request, const BatchUpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchUpdateUserAsyncHelper(const Model::BatchUpdateUserRequest& request, const BatchUpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAccountAsyncHelper(const Model::CreateAccountRequest& request, const CreateAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAttendeeAsyncHelper(const Model::CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBotAsyncHelper(const Model::CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateMeetingAsyncHelper(const Model::CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePhoneNumberOrderAsyncHelper(const Model::CreatePhoneNumberOrderRequest& request, const CreatePhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRoomAsyncHelper(const Model::CreateRoomRequest& request, const CreateRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRoomMembershipAsyncHelper(const Model::CreateRoomMembershipRequest& request, const CreateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVoiceConnectorAsyncHelper(const Model::CreateVoiceConnectorRequest& request, const CreateVoiceConnectorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVoiceConnectorGroupAsyncHelper(const Model::CreateVoiceConnectorGroupRequest& request, const CreateVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccountAsyncHelper(const Model::DeleteAccountRequest& request, const DeleteAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAttendeeAsyncHelper(const Model::DeleteAttendeeRequest& request, const DeleteAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEventsConfigurationAsyncHelper(const Model::DeleteEventsConfigurationRequest& request, const DeleteEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteMeetingAsyncHelper(const Model::DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePhoneNumberAsyncHelper(const Model::DeletePhoneNumberRequest& request, const DeletePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRoomAsyncHelper(const Model::DeleteRoomRequest& request, const DeleteRoomResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRoomMembershipAsyncHelper(const Model::DeleteRoomMembershipRequest& request, const DeleteRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3143,9 +3537,11 @@ namespace Model
         void DisassociatePhoneNumbersFromVoiceConnectorGroupAsyncHelper(const Model::DisassociatePhoneNumbersFromVoiceConnectorGroupRequest& request, const DisassociatePhoneNumbersFromVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountAsyncHelper(const Model::GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountSettingsAsyncHelper(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAttendeeAsyncHelper(const Model::GetAttendeeRequest& request, const GetAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBotAsyncHelper(const Model::GetBotRequest& request, const GetBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventsConfigurationAsyncHelper(const Model::GetEventsConfigurationRequest& request, const GetEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGlobalSettingsAsyncHelper(const GetGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetMeetingAsyncHelper(const Model::GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberAsyncHelper(const Model::GetPhoneNumberRequest& request, const GetPhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberOrderAsyncHelper(const Model::GetPhoneNumberOrderRequest& request, const GetPhoneNumberOrderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPhoneNumberSettingsAsyncHelper(const GetPhoneNumberSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3161,7 +3557,9 @@ namespace Model
         void GetVoiceConnectorTerminationHealthAsyncHelper(const Model::GetVoiceConnectorTerminationHealthRequest& request, const GetVoiceConnectorTerminationHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InviteUsersAsyncHelper(const Model::InviteUsersRequest& request, const InviteUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccountsAsyncHelper(const Model::ListAccountsRequest& request, const ListAccountsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAttendeesAsyncHelper(const Model::ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBotsAsyncHelper(const Model::ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMeetingsAsyncHelper(const Model::ListMeetingsRequest& request, const ListMeetingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPhoneNumberOrdersAsyncHelper(const Model::ListPhoneNumberOrdersRequest& request, const ListPhoneNumberOrdersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPhoneNumbersAsyncHelper(const Model::ListPhoneNumbersRequest& request, const ListPhoneNumbersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListRoomMembershipsAsyncHelper(const Model::ListRoomMembershipsRequest& request, const ListRoomMembershipsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

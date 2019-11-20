@@ -18,6 +18,7 @@
 #include <aws/cloudtrail/CloudTrailRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/cloudtrail/model/EventCategory.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/cloudtrail/model/LookupAttribute.h>
 #include <utility>
@@ -186,6 +187,55 @@ namespace Model
 
 
     /**
+     * <p>Specifies the event category. If you do not specify an event category, events
+     * of the category are not returned in the response. For example, if you do not
+     * specify <code>insight</code> as the value of <code>EventCategory</code>, no
+     * Insights events are returned.</p>
+     */
+    inline const EventCategory& GetEventCategory() const{ return m_eventCategory; }
+
+    /**
+     * <p>Specifies the event category. If you do not specify an event category, events
+     * of the category are not returned in the response. For example, if you do not
+     * specify <code>insight</code> as the value of <code>EventCategory</code>, no
+     * Insights events are returned.</p>
+     */
+    inline bool EventCategoryHasBeenSet() const { return m_eventCategoryHasBeenSet; }
+
+    /**
+     * <p>Specifies the event category. If you do not specify an event category, events
+     * of the category are not returned in the response. For example, if you do not
+     * specify <code>insight</code> as the value of <code>EventCategory</code>, no
+     * Insights events are returned.</p>
+     */
+    inline void SetEventCategory(const EventCategory& value) { m_eventCategoryHasBeenSet = true; m_eventCategory = value; }
+
+    /**
+     * <p>Specifies the event category. If you do not specify an event category, events
+     * of the category are not returned in the response. For example, if you do not
+     * specify <code>insight</code> as the value of <code>EventCategory</code>, no
+     * Insights events are returned.</p>
+     */
+    inline void SetEventCategory(EventCategory&& value) { m_eventCategoryHasBeenSet = true; m_eventCategory = std::move(value); }
+
+    /**
+     * <p>Specifies the event category. If you do not specify an event category, events
+     * of the category are not returned in the response. For example, if you do not
+     * specify <code>insight</code> as the value of <code>EventCategory</code>, no
+     * Insights events are returned.</p>
+     */
+    inline LookupEventsRequest& WithEventCategory(const EventCategory& value) { SetEventCategory(value); return *this;}
+
+    /**
+     * <p>Specifies the event category. If you do not specify an event category, events
+     * of the category are not returned in the response. For example, if you do not
+     * specify <code>insight</code> as the value of <code>EventCategory</code>, no
+     * Insights events are returned.</p>
+     */
+    inline LookupEventsRequest& WithEventCategory(EventCategory&& value) { SetEventCategory(std::move(value)); return *this;}
+
+
+    /**
      * <p>The number of events to return. Possible values are 1 through 50. The default
      * is 50.</p>
      */
@@ -292,6 +342,9 @@ namespace Model
 
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
+    EventCategory m_eventCategory;
+    bool m_eventCategoryHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

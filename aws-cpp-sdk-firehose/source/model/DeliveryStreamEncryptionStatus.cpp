@@ -32,8 +32,10 @@ namespace Aws
 
         static const int ENABLED_HASH = HashingUtils::HashString("ENABLED");
         static const int ENABLING_HASH = HashingUtils::HashString("ENABLING");
+        static const int ENABLING_FAILED_HASH = HashingUtils::HashString("ENABLING_FAILED");
         static const int DISABLED_HASH = HashingUtils::HashString("DISABLED");
         static const int DISABLING_HASH = HashingUtils::HashString("DISABLING");
+        static const int DISABLING_FAILED_HASH = HashingUtils::HashString("DISABLING_FAILED");
 
 
         DeliveryStreamEncryptionStatus GetDeliveryStreamEncryptionStatusForName(const Aws::String& name)
@@ -47,6 +49,10 @@ namespace Aws
           {
             return DeliveryStreamEncryptionStatus::ENABLING;
           }
+          else if (hashCode == ENABLING_FAILED_HASH)
+          {
+            return DeliveryStreamEncryptionStatus::ENABLING_FAILED;
+          }
           else if (hashCode == DISABLED_HASH)
           {
             return DeliveryStreamEncryptionStatus::DISABLED;
@@ -54,6 +60,10 @@ namespace Aws
           else if (hashCode == DISABLING_HASH)
           {
             return DeliveryStreamEncryptionStatus::DISABLING;
+          }
+          else if (hashCode == DISABLING_FAILED_HASH)
+          {
+            return DeliveryStreamEncryptionStatus::DISABLING_FAILED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -73,10 +83,14 @@ namespace Aws
             return "ENABLED";
           case DeliveryStreamEncryptionStatus::ENABLING:
             return "ENABLING";
+          case DeliveryStreamEncryptionStatus::ENABLING_FAILED:
+            return "ENABLING_FAILED";
           case DeliveryStreamEncryptionStatus::DISABLED:
             return "DISABLED";
           case DeliveryStreamEncryptionStatus::DISABLING:
             return "DISABLING";
+          case DeliveryStreamEncryptionStatus::DISABLING_FAILED:
+            return "DISABLING_FAILED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -30,20 +30,30 @@
 #include <aws/codecommit/CodeCommitClient.h>
 #include <aws/codecommit/CodeCommitEndpoint.h>
 #include <aws/codecommit/CodeCommitErrorMarshaller.h>
+#include <aws/codecommit/model/AssociateApprovalRuleTemplateWithRepositoryRequest.h>
+#include <aws/codecommit/model/BatchAssociateApprovalRuleTemplateWithRepositoriesRequest.h>
 #include <aws/codecommit/model/BatchDescribeMergeConflictsRequest.h>
+#include <aws/codecommit/model/BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest.h>
 #include <aws/codecommit/model/BatchGetCommitsRequest.h>
 #include <aws/codecommit/model/BatchGetRepositoriesRequest.h>
+#include <aws/codecommit/model/CreateApprovalRuleTemplateRequest.h>
 #include <aws/codecommit/model/CreateBranchRequest.h>
 #include <aws/codecommit/model/CreateCommitRequest.h>
 #include <aws/codecommit/model/CreatePullRequestRequest.h>
+#include <aws/codecommit/model/CreatePullRequestApprovalRuleRequest.h>
 #include <aws/codecommit/model/CreateRepositoryRequest.h>
 #include <aws/codecommit/model/CreateUnreferencedMergeCommitRequest.h>
+#include <aws/codecommit/model/DeleteApprovalRuleTemplateRequest.h>
 #include <aws/codecommit/model/DeleteBranchRequest.h>
 #include <aws/codecommit/model/DeleteCommentContentRequest.h>
 #include <aws/codecommit/model/DeleteFileRequest.h>
+#include <aws/codecommit/model/DeletePullRequestApprovalRuleRequest.h>
 #include <aws/codecommit/model/DeleteRepositoryRequest.h>
 #include <aws/codecommit/model/DescribeMergeConflictsRequest.h>
 #include <aws/codecommit/model/DescribePullRequestEventsRequest.h>
+#include <aws/codecommit/model/DisassociateApprovalRuleTemplateFromRepositoryRequest.h>
+#include <aws/codecommit/model/EvaluatePullRequestApprovalRulesRequest.h>
+#include <aws/codecommit/model/GetApprovalRuleTemplateRequest.h>
 #include <aws/codecommit/model/GetBlobRequest.h>
 #include <aws/codecommit/model/GetBranchRequest.h>
 #include <aws/codecommit/model/GetCommentRequest.h>
@@ -57,11 +67,16 @@
 #include <aws/codecommit/model/GetMergeConflictsRequest.h>
 #include <aws/codecommit/model/GetMergeOptionsRequest.h>
 #include <aws/codecommit/model/GetPullRequestRequest.h>
+#include <aws/codecommit/model/GetPullRequestApprovalStatesRequest.h>
+#include <aws/codecommit/model/GetPullRequestOverrideStateRequest.h>
 #include <aws/codecommit/model/GetRepositoryRequest.h>
 #include <aws/codecommit/model/GetRepositoryTriggersRequest.h>
+#include <aws/codecommit/model/ListApprovalRuleTemplatesRequest.h>
+#include <aws/codecommit/model/ListAssociatedApprovalRuleTemplatesForRepositoryRequest.h>
 #include <aws/codecommit/model/ListBranchesRequest.h>
 #include <aws/codecommit/model/ListPullRequestsRequest.h>
 #include <aws/codecommit/model/ListRepositoriesRequest.h>
+#include <aws/codecommit/model/ListRepositoriesForApprovalRuleTemplateRequest.h>
 #include <aws/codecommit/model/ListTagsForResourceRequest.h>
 #include <aws/codecommit/model/MergeBranchesByFastForwardRequest.h>
 #include <aws/codecommit/model/MergeBranchesBySquashRequest.h>
@@ -69,6 +84,7 @@
 #include <aws/codecommit/model/MergePullRequestByFastForwardRequest.h>
 #include <aws/codecommit/model/MergePullRequestBySquashRequest.h>
 #include <aws/codecommit/model/MergePullRequestByThreeWayRequest.h>
+#include <aws/codecommit/model/OverridePullRequestApprovalRulesRequest.h>
 #include <aws/codecommit/model/PostCommentForComparedCommitRequest.h>
 #include <aws/codecommit/model/PostCommentForPullRequestRequest.h>
 #include <aws/codecommit/model/PostCommentReplyRequest.h>
@@ -77,8 +93,13 @@
 #include <aws/codecommit/model/TagResourceRequest.h>
 #include <aws/codecommit/model/TestRepositoryTriggersRequest.h>
 #include <aws/codecommit/model/UntagResourceRequest.h>
+#include <aws/codecommit/model/UpdateApprovalRuleTemplateContentRequest.h>
+#include <aws/codecommit/model/UpdateApprovalRuleTemplateDescriptionRequest.h>
+#include <aws/codecommit/model/UpdateApprovalRuleTemplateNameRequest.h>
 #include <aws/codecommit/model/UpdateCommentRequest.h>
 #include <aws/codecommit/model/UpdateDefaultBranchRequest.h>
+#include <aws/codecommit/model/UpdatePullRequestApprovalRuleContentRequest.h>
+#include <aws/codecommit/model/UpdatePullRequestApprovalStateRequest.h>
 #include <aws/codecommit/model/UpdatePullRequestDescriptionRequest.h>
 #include <aws/codecommit/model/UpdatePullRequestStatusRequest.h>
 #include <aws/codecommit/model/UpdatePullRequestTitleRequest.h>
@@ -157,6 +178,76 @@ void CodeCommitClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+AssociateApprovalRuleTemplateWithRepositoryOutcome CodeCommitClient::AssociateApprovalRuleTemplateWithRepository(const AssociateApprovalRuleTemplateWithRepositoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateApprovalRuleTemplateWithRepositoryOutcome(NoResult());
+  }
+  else
+  {
+    return AssociateApprovalRuleTemplateWithRepositoryOutcome(outcome.GetError());
+  }
+}
+
+AssociateApprovalRuleTemplateWithRepositoryOutcomeCallable CodeCommitClient::AssociateApprovalRuleTemplateWithRepositoryCallable(const AssociateApprovalRuleTemplateWithRepositoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateApprovalRuleTemplateWithRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateApprovalRuleTemplateWithRepository(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::AssociateApprovalRuleTemplateWithRepositoryAsync(const AssociateApprovalRuleTemplateWithRepositoryRequest& request, const AssociateApprovalRuleTemplateWithRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateApprovalRuleTemplateWithRepositoryAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::AssociateApprovalRuleTemplateWithRepositoryAsyncHelper(const AssociateApprovalRuleTemplateWithRepositoryRequest& request, const AssociateApprovalRuleTemplateWithRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateApprovalRuleTemplateWithRepository(request), context);
+}
+
+BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome CodeCommitClient::BatchAssociateApprovalRuleTemplateWithRepositories(const BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome(BatchAssociateApprovalRuleTemplateWithRepositoriesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome(outcome.GetError());
+  }
+}
+
+BatchAssociateApprovalRuleTemplateWithRepositoriesOutcomeCallable CodeCommitClient::BatchAssociateApprovalRuleTemplateWithRepositoriesCallable(const BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchAssociateApprovalRuleTemplateWithRepositoriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchAssociateApprovalRuleTemplateWithRepositories(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::BatchAssociateApprovalRuleTemplateWithRepositoriesAsync(const BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& request, const BatchAssociateApprovalRuleTemplateWithRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchAssociateApprovalRuleTemplateWithRepositoriesAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::BatchAssociateApprovalRuleTemplateWithRepositoriesAsyncHelper(const BatchAssociateApprovalRuleTemplateWithRepositoriesRequest& request, const BatchAssociateApprovalRuleTemplateWithRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchAssociateApprovalRuleTemplateWithRepositories(request), context);
+}
+
 BatchDescribeMergeConflictsOutcome CodeCommitClient::BatchDescribeMergeConflicts(const BatchDescribeMergeConflictsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -190,6 +281,41 @@ void CodeCommitClient::BatchDescribeMergeConflictsAsync(const BatchDescribeMerge
 void CodeCommitClient::BatchDescribeMergeConflictsAsyncHelper(const BatchDescribeMergeConflictsRequest& request, const BatchDescribeMergeConflictsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchDescribeMergeConflicts(request), context);
+}
+
+BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome CodeCommitClient::BatchDisassociateApprovalRuleTemplateFromRepositories(const BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome(BatchDisassociateApprovalRuleTemplateFromRepositoriesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome(outcome.GetError());
+  }
+}
+
+BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcomeCallable CodeCommitClient::BatchDisassociateApprovalRuleTemplateFromRepositoriesCallable(const BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchDisassociateApprovalRuleTemplateFromRepositoriesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchDisassociateApprovalRuleTemplateFromRepositories(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::BatchDisassociateApprovalRuleTemplateFromRepositoriesAsync(const BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest& request, const BatchDisassociateApprovalRuleTemplateFromRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchDisassociateApprovalRuleTemplateFromRepositoriesAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::BatchDisassociateApprovalRuleTemplateFromRepositoriesAsyncHelper(const BatchDisassociateApprovalRuleTemplateFromRepositoriesRequest& request, const BatchDisassociateApprovalRuleTemplateFromRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchDisassociateApprovalRuleTemplateFromRepositories(request), context);
 }
 
 BatchGetCommitsOutcome CodeCommitClient::BatchGetCommits(const BatchGetCommitsRequest& request) const
@@ -260,6 +386,41 @@ void CodeCommitClient::BatchGetRepositoriesAsync(const BatchGetRepositoriesReque
 void CodeCommitClient::BatchGetRepositoriesAsyncHelper(const BatchGetRepositoriesRequest& request, const BatchGetRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, BatchGetRepositories(request), context);
+}
+
+CreateApprovalRuleTemplateOutcome CodeCommitClient::CreateApprovalRuleTemplate(const CreateApprovalRuleTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateApprovalRuleTemplateOutcome(CreateApprovalRuleTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateApprovalRuleTemplateOutcome(outcome.GetError());
+  }
+}
+
+CreateApprovalRuleTemplateOutcomeCallable CodeCommitClient::CreateApprovalRuleTemplateCallable(const CreateApprovalRuleTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateApprovalRuleTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateApprovalRuleTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::CreateApprovalRuleTemplateAsync(const CreateApprovalRuleTemplateRequest& request, const CreateApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateApprovalRuleTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::CreateApprovalRuleTemplateAsyncHelper(const CreateApprovalRuleTemplateRequest& request, const CreateApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateApprovalRuleTemplate(request), context);
 }
 
 CreateBranchOutcome CodeCommitClient::CreateBranch(const CreateBranchRequest& request) const
@@ -367,6 +528,41 @@ void CodeCommitClient::CreatePullRequestAsyncHelper(const CreatePullRequestReque
   handler(this, request, CreatePullRequest(request), context);
 }
 
+CreatePullRequestApprovalRuleOutcome CodeCommitClient::CreatePullRequestApprovalRule(const CreatePullRequestApprovalRuleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreatePullRequestApprovalRuleOutcome(CreatePullRequestApprovalRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreatePullRequestApprovalRuleOutcome(outcome.GetError());
+  }
+}
+
+CreatePullRequestApprovalRuleOutcomeCallable CodeCommitClient::CreatePullRequestApprovalRuleCallable(const CreatePullRequestApprovalRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreatePullRequestApprovalRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreatePullRequestApprovalRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::CreatePullRequestApprovalRuleAsync(const CreatePullRequestApprovalRuleRequest& request, const CreatePullRequestApprovalRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreatePullRequestApprovalRuleAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::CreatePullRequestApprovalRuleAsyncHelper(const CreatePullRequestApprovalRuleRequest& request, const CreatePullRequestApprovalRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreatePullRequestApprovalRule(request), context);
+}
+
 CreateRepositoryOutcome CodeCommitClient::CreateRepository(const CreateRepositoryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -435,6 +631,41 @@ void CodeCommitClient::CreateUnreferencedMergeCommitAsync(const CreateUnreferenc
 void CodeCommitClient::CreateUnreferencedMergeCommitAsyncHelper(const CreateUnreferencedMergeCommitRequest& request, const CreateUnreferencedMergeCommitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateUnreferencedMergeCommit(request), context);
+}
+
+DeleteApprovalRuleTemplateOutcome CodeCommitClient::DeleteApprovalRuleTemplate(const DeleteApprovalRuleTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteApprovalRuleTemplateOutcome(DeleteApprovalRuleTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteApprovalRuleTemplateOutcome(outcome.GetError());
+  }
+}
+
+DeleteApprovalRuleTemplateOutcomeCallable CodeCommitClient::DeleteApprovalRuleTemplateCallable(const DeleteApprovalRuleTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApprovalRuleTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApprovalRuleTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::DeleteApprovalRuleTemplateAsync(const DeleteApprovalRuleTemplateRequest& request, const DeleteApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteApprovalRuleTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::DeleteApprovalRuleTemplateAsyncHelper(const DeleteApprovalRuleTemplateRequest& request, const DeleteApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteApprovalRuleTemplate(request), context);
 }
 
 DeleteBranchOutcome CodeCommitClient::DeleteBranch(const DeleteBranchRequest& request) const
@@ -542,6 +773,41 @@ void CodeCommitClient::DeleteFileAsyncHelper(const DeleteFileRequest& request, c
   handler(this, request, DeleteFile(request), context);
 }
 
+DeletePullRequestApprovalRuleOutcome CodeCommitClient::DeletePullRequestApprovalRule(const DeletePullRequestApprovalRuleRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeletePullRequestApprovalRuleOutcome(DeletePullRequestApprovalRuleResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeletePullRequestApprovalRuleOutcome(outcome.GetError());
+  }
+}
+
+DeletePullRequestApprovalRuleOutcomeCallable CodeCommitClient::DeletePullRequestApprovalRuleCallable(const DeletePullRequestApprovalRuleRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeletePullRequestApprovalRuleOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeletePullRequestApprovalRule(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::DeletePullRequestApprovalRuleAsync(const DeletePullRequestApprovalRuleRequest& request, const DeletePullRequestApprovalRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeletePullRequestApprovalRuleAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::DeletePullRequestApprovalRuleAsyncHelper(const DeletePullRequestApprovalRuleRequest& request, const DeletePullRequestApprovalRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeletePullRequestApprovalRule(request), context);
+}
+
 DeleteRepositoryOutcome CodeCommitClient::DeleteRepository(const DeleteRepositoryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -645,6 +911,111 @@ void CodeCommitClient::DescribePullRequestEventsAsync(const DescribePullRequestE
 void CodeCommitClient::DescribePullRequestEventsAsyncHelper(const DescribePullRequestEventsRequest& request, const DescribePullRequestEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribePullRequestEvents(request), context);
+}
+
+DisassociateApprovalRuleTemplateFromRepositoryOutcome CodeCommitClient::DisassociateApprovalRuleTemplateFromRepository(const DisassociateApprovalRuleTemplateFromRepositoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateApprovalRuleTemplateFromRepositoryOutcome(NoResult());
+  }
+  else
+  {
+    return DisassociateApprovalRuleTemplateFromRepositoryOutcome(outcome.GetError());
+  }
+}
+
+DisassociateApprovalRuleTemplateFromRepositoryOutcomeCallable CodeCommitClient::DisassociateApprovalRuleTemplateFromRepositoryCallable(const DisassociateApprovalRuleTemplateFromRepositoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateApprovalRuleTemplateFromRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateApprovalRuleTemplateFromRepository(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::DisassociateApprovalRuleTemplateFromRepositoryAsync(const DisassociateApprovalRuleTemplateFromRepositoryRequest& request, const DisassociateApprovalRuleTemplateFromRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateApprovalRuleTemplateFromRepositoryAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::DisassociateApprovalRuleTemplateFromRepositoryAsyncHelper(const DisassociateApprovalRuleTemplateFromRepositoryRequest& request, const DisassociateApprovalRuleTemplateFromRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateApprovalRuleTemplateFromRepository(request), context);
+}
+
+EvaluatePullRequestApprovalRulesOutcome CodeCommitClient::EvaluatePullRequestApprovalRules(const EvaluatePullRequestApprovalRulesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return EvaluatePullRequestApprovalRulesOutcome(EvaluatePullRequestApprovalRulesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return EvaluatePullRequestApprovalRulesOutcome(outcome.GetError());
+  }
+}
+
+EvaluatePullRequestApprovalRulesOutcomeCallable CodeCommitClient::EvaluatePullRequestApprovalRulesCallable(const EvaluatePullRequestApprovalRulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< EvaluatePullRequestApprovalRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->EvaluatePullRequestApprovalRules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::EvaluatePullRequestApprovalRulesAsync(const EvaluatePullRequestApprovalRulesRequest& request, const EvaluatePullRequestApprovalRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->EvaluatePullRequestApprovalRulesAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::EvaluatePullRequestApprovalRulesAsyncHelper(const EvaluatePullRequestApprovalRulesRequest& request, const EvaluatePullRequestApprovalRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, EvaluatePullRequestApprovalRules(request), context);
+}
+
+GetApprovalRuleTemplateOutcome CodeCommitClient::GetApprovalRuleTemplate(const GetApprovalRuleTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetApprovalRuleTemplateOutcome(GetApprovalRuleTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetApprovalRuleTemplateOutcome(outcome.GetError());
+  }
+}
+
+GetApprovalRuleTemplateOutcomeCallable CodeCommitClient::GetApprovalRuleTemplateCallable(const GetApprovalRuleTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetApprovalRuleTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetApprovalRuleTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetApprovalRuleTemplateAsync(const GetApprovalRuleTemplateRequest& request, const GetApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetApprovalRuleTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetApprovalRuleTemplateAsyncHelper(const GetApprovalRuleTemplateRequest& request, const GetApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetApprovalRuleTemplate(request), context);
 }
 
 GetBlobOutcome CodeCommitClient::GetBlob(const GetBlobRequest& request) const
@@ -1102,6 +1473,76 @@ void CodeCommitClient::GetPullRequestAsyncHelper(const GetPullRequestRequest& re
   handler(this, request, GetPullRequest(request), context);
 }
 
+GetPullRequestApprovalStatesOutcome CodeCommitClient::GetPullRequestApprovalStates(const GetPullRequestApprovalStatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetPullRequestApprovalStatesOutcome(GetPullRequestApprovalStatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetPullRequestApprovalStatesOutcome(outcome.GetError());
+  }
+}
+
+GetPullRequestApprovalStatesOutcomeCallable CodeCommitClient::GetPullRequestApprovalStatesCallable(const GetPullRequestApprovalStatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPullRequestApprovalStatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPullRequestApprovalStates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetPullRequestApprovalStatesAsync(const GetPullRequestApprovalStatesRequest& request, const GetPullRequestApprovalStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPullRequestApprovalStatesAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetPullRequestApprovalStatesAsyncHelper(const GetPullRequestApprovalStatesRequest& request, const GetPullRequestApprovalStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPullRequestApprovalStates(request), context);
+}
+
+GetPullRequestOverrideStateOutcome CodeCommitClient::GetPullRequestOverrideState(const GetPullRequestOverrideStateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetPullRequestOverrideStateOutcome(GetPullRequestOverrideStateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetPullRequestOverrideStateOutcome(outcome.GetError());
+  }
+}
+
+GetPullRequestOverrideStateOutcomeCallable CodeCommitClient::GetPullRequestOverrideStateCallable(const GetPullRequestOverrideStateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPullRequestOverrideStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPullRequestOverrideState(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::GetPullRequestOverrideStateAsync(const GetPullRequestOverrideStateRequest& request, const GetPullRequestOverrideStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPullRequestOverrideStateAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::GetPullRequestOverrideStateAsyncHelper(const GetPullRequestOverrideStateRequest& request, const GetPullRequestOverrideStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPullRequestOverrideState(request), context);
+}
+
 GetRepositoryOutcome CodeCommitClient::GetRepository(const GetRepositoryRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1170,6 +1611,76 @@ void CodeCommitClient::GetRepositoryTriggersAsync(const GetRepositoryTriggersReq
 void CodeCommitClient::GetRepositoryTriggersAsyncHelper(const GetRepositoryTriggersRequest& request, const GetRepositoryTriggersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetRepositoryTriggers(request), context);
+}
+
+ListApprovalRuleTemplatesOutcome CodeCommitClient::ListApprovalRuleTemplates(const ListApprovalRuleTemplatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListApprovalRuleTemplatesOutcome(ListApprovalRuleTemplatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListApprovalRuleTemplatesOutcome(outcome.GetError());
+  }
+}
+
+ListApprovalRuleTemplatesOutcomeCallable CodeCommitClient::ListApprovalRuleTemplatesCallable(const ListApprovalRuleTemplatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListApprovalRuleTemplatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApprovalRuleTemplates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::ListApprovalRuleTemplatesAsync(const ListApprovalRuleTemplatesRequest& request, const ListApprovalRuleTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListApprovalRuleTemplatesAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::ListApprovalRuleTemplatesAsyncHelper(const ListApprovalRuleTemplatesRequest& request, const ListApprovalRuleTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListApprovalRuleTemplates(request), context);
+}
+
+ListAssociatedApprovalRuleTemplatesForRepositoryOutcome CodeCommitClient::ListAssociatedApprovalRuleTemplatesForRepository(const ListAssociatedApprovalRuleTemplatesForRepositoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListAssociatedApprovalRuleTemplatesForRepositoryOutcome(ListAssociatedApprovalRuleTemplatesForRepositoryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListAssociatedApprovalRuleTemplatesForRepositoryOutcome(outcome.GetError());
+  }
+}
+
+ListAssociatedApprovalRuleTemplatesForRepositoryOutcomeCallable CodeCommitClient::ListAssociatedApprovalRuleTemplatesForRepositoryCallable(const ListAssociatedApprovalRuleTemplatesForRepositoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAssociatedApprovalRuleTemplatesForRepositoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAssociatedApprovalRuleTemplatesForRepository(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::ListAssociatedApprovalRuleTemplatesForRepositoryAsync(const ListAssociatedApprovalRuleTemplatesForRepositoryRequest& request, const ListAssociatedApprovalRuleTemplatesForRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAssociatedApprovalRuleTemplatesForRepositoryAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::ListAssociatedApprovalRuleTemplatesForRepositoryAsyncHelper(const ListAssociatedApprovalRuleTemplatesForRepositoryRequest& request, const ListAssociatedApprovalRuleTemplatesForRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAssociatedApprovalRuleTemplatesForRepository(request), context);
 }
 
 ListBranchesOutcome CodeCommitClient::ListBranches(const ListBranchesRequest& request) const
@@ -1275,6 +1786,41 @@ void CodeCommitClient::ListRepositoriesAsync(const ListRepositoriesRequest& requ
 void CodeCommitClient::ListRepositoriesAsyncHelper(const ListRepositoriesRequest& request, const ListRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListRepositories(request), context);
+}
+
+ListRepositoriesForApprovalRuleTemplateOutcome CodeCommitClient::ListRepositoriesForApprovalRuleTemplate(const ListRepositoriesForApprovalRuleTemplateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListRepositoriesForApprovalRuleTemplateOutcome(ListRepositoriesForApprovalRuleTemplateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListRepositoriesForApprovalRuleTemplateOutcome(outcome.GetError());
+  }
+}
+
+ListRepositoriesForApprovalRuleTemplateOutcomeCallable CodeCommitClient::ListRepositoriesForApprovalRuleTemplateCallable(const ListRepositoriesForApprovalRuleTemplateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListRepositoriesForApprovalRuleTemplateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListRepositoriesForApprovalRuleTemplate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::ListRepositoriesForApprovalRuleTemplateAsync(const ListRepositoriesForApprovalRuleTemplateRequest& request, const ListRepositoriesForApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListRepositoriesForApprovalRuleTemplateAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::ListRepositoriesForApprovalRuleTemplateAsyncHelper(const ListRepositoriesForApprovalRuleTemplateRequest& request, const ListRepositoriesForApprovalRuleTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListRepositoriesForApprovalRuleTemplate(request), context);
 }
 
 ListTagsForResourceOutcome CodeCommitClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -1520,6 +2066,41 @@ void CodeCommitClient::MergePullRequestByThreeWayAsync(const MergePullRequestByT
 void CodeCommitClient::MergePullRequestByThreeWayAsyncHelper(const MergePullRequestByThreeWayRequest& request, const MergePullRequestByThreeWayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, MergePullRequestByThreeWay(request), context);
+}
+
+OverridePullRequestApprovalRulesOutcome CodeCommitClient::OverridePullRequestApprovalRules(const OverridePullRequestApprovalRulesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return OverridePullRequestApprovalRulesOutcome(NoResult());
+  }
+  else
+  {
+    return OverridePullRequestApprovalRulesOutcome(outcome.GetError());
+  }
+}
+
+OverridePullRequestApprovalRulesOutcomeCallable CodeCommitClient::OverridePullRequestApprovalRulesCallable(const OverridePullRequestApprovalRulesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< OverridePullRequestApprovalRulesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->OverridePullRequestApprovalRules(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::OverridePullRequestApprovalRulesAsync(const OverridePullRequestApprovalRulesRequest& request, const OverridePullRequestApprovalRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->OverridePullRequestApprovalRulesAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::OverridePullRequestApprovalRulesAsyncHelper(const OverridePullRequestApprovalRulesRequest& request, const OverridePullRequestApprovalRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, OverridePullRequestApprovalRules(request), context);
 }
 
 PostCommentForComparedCommitOutcome CodeCommitClient::PostCommentForComparedCommit(const PostCommentForComparedCommitRequest& request) const
@@ -1802,6 +2383,111 @@ void CodeCommitClient::UntagResourceAsyncHelper(const UntagResourceRequest& requ
   handler(this, request, UntagResource(request), context);
 }
 
+UpdateApprovalRuleTemplateContentOutcome CodeCommitClient::UpdateApprovalRuleTemplateContent(const UpdateApprovalRuleTemplateContentRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateApprovalRuleTemplateContentOutcome(UpdateApprovalRuleTemplateContentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateApprovalRuleTemplateContentOutcome(outcome.GetError());
+  }
+}
+
+UpdateApprovalRuleTemplateContentOutcomeCallable CodeCommitClient::UpdateApprovalRuleTemplateContentCallable(const UpdateApprovalRuleTemplateContentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApprovalRuleTemplateContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApprovalRuleTemplateContent(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::UpdateApprovalRuleTemplateContentAsync(const UpdateApprovalRuleTemplateContentRequest& request, const UpdateApprovalRuleTemplateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApprovalRuleTemplateContentAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::UpdateApprovalRuleTemplateContentAsyncHelper(const UpdateApprovalRuleTemplateContentRequest& request, const UpdateApprovalRuleTemplateContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApprovalRuleTemplateContent(request), context);
+}
+
+UpdateApprovalRuleTemplateDescriptionOutcome CodeCommitClient::UpdateApprovalRuleTemplateDescription(const UpdateApprovalRuleTemplateDescriptionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateApprovalRuleTemplateDescriptionOutcome(UpdateApprovalRuleTemplateDescriptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateApprovalRuleTemplateDescriptionOutcome(outcome.GetError());
+  }
+}
+
+UpdateApprovalRuleTemplateDescriptionOutcomeCallable CodeCommitClient::UpdateApprovalRuleTemplateDescriptionCallable(const UpdateApprovalRuleTemplateDescriptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApprovalRuleTemplateDescriptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApprovalRuleTemplateDescription(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::UpdateApprovalRuleTemplateDescriptionAsync(const UpdateApprovalRuleTemplateDescriptionRequest& request, const UpdateApprovalRuleTemplateDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApprovalRuleTemplateDescriptionAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::UpdateApprovalRuleTemplateDescriptionAsyncHelper(const UpdateApprovalRuleTemplateDescriptionRequest& request, const UpdateApprovalRuleTemplateDescriptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApprovalRuleTemplateDescription(request), context);
+}
+
+UpdateApprovalRuleTemplateNameOutcome CodeCommitClient::UpdateApprovalRuleTemplateName(const UpdateApprovalRuleTemplateNameRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateApprovalRuleTemplateNameOutcome(UpdateApprovalRuleTemplateNameResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateApprovalRuleTemplateNameOutcome(outcome.GetError());
+  }
+}
+
+UpdateApprovalRuleTemplateNameOutcomeCallable CodeCommitClient::UpdateApprovalRuleTemplateNameCallable(const UpdateApprovalRuleTemplateNameRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateApprovalRuleTemplateNameOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateApprovalRuleTemplateName(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::UpdateApprovalRuleTemplateNameAsync(const UpdateApprovalRuleTemplateNameRequest& request, const UpdateApprovalRuleTemplateNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateApprovalRuleTemplateNameAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::UpdateApprovalRuleTemplateNameAsyncHelper(const UpdateApprovalRuleTemplateNameRequest& request, const UpdateApprovalRuleTemplateNameResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateApprovalRuleTemplateName(request), context);
+}
+
 UpdateCommentOutcome CodeCommitClient::UpdateComment(const UpdateCommentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1870,6 +2556,76 @@ void CodeCommitClient::UpdateDefaultBranchAsync(const UpdateDefaultBranchRequest
 void CodeCommitClient::UpdateDefaultBranchAsyncHelper(const UpdateDefaultBranchRequest& request, const UpdateDefaultBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDefaultBranch(request), context);
+}
+
+UpdatePullRequestApprovalRuleContentOutcome CodeCommitClient::UpdatePullRequestApprovalRuleContent(const UpdatePullRequestApprovalRuleContentRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdatePullRequestApprovalRuleContentOutcome(UpdatePullRequestApprovalRuleContentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdatePullRequestApprovalRuleContentOutcome(outcome.GetError());
+  }
+}
+
+UpdatePullRequestApprovalRuleContentOutcomeCallable CodeCommitClient::UpdatePullRequestApprovalRuleContentCallable(const UpdatePullRequestApprovalRuleContentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePullRequestApprovalRuleContentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePullRequestApprovalRuleContent(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::UpdatePullRequestApprovalRuleContentAsync(const UpdatePullRequestApprovalRuleContentRequest& request, const UpdatePullRequestApprovalRuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePullRequestApprovalRuleContentAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::UpdatePullRequestApprovalRuleContentAsyncHelper(const UpdatePullRequestApprovalRuleContentRequest& request, const UpdatePullRequestApprovalRuleContentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePullRequestApprovalRuleContent(request), context);
+}
+
+UpdatePullRequestApprovalStateOutcome CodeCommitClient::UpdatePullRequestApprovalState(const UpdatePullRequestApprovalStateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdatePullRequestApprovalStateOutcome(NoResult());
+  }
+  else
+  {
+    return UpdatePullRequestApprovalStateOutcome(outcome.GetError());
+  }
+}
+
+UpdatePullRequestApprovalStateOutcomeCallable CodeCommitClient::UpdatePullRequestApprovalStateCallable(const UpdatePullRequestApprovalStateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdatePullRequestApprovalStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdatePullRequestApprovalState(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeCommitClient::UpdatePullRequestApprovalStateAsync(const UpdatePullRequestApprovalStateRequest& request, const UpdatePullRequestApprovalStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdatePullRequestApprovalStateAsyncHelper( request, handler, context ); } );
+}
+
+void CodeCommitClient::UpdatePullRequestApprovalStateAsyncHelper(const UpdatePullRequestApprovalStateRequest& request, const UpdatePullRequestApprovalStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdatePullRequestApprovalState(request), context);
 }
 
 UpdatePullRequestDescriptionOutcome CodeCommitClient::UpdatePullRequestDescription(const UpdatePullRequestDescriptionRequest& request) const

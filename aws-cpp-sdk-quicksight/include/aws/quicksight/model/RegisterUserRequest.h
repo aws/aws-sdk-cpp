@@ -141,62 +141,80 @@ namespace Model
 
 
     /**
-     * <p>The Amazon QuickSight role of the user. The user role can be one of the
+     * <p>The Amazon QuickSight role for the user. The user role can be one of the
      * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
-     * create data sources, data sets, analyses, and dashboards.</p> </li> <li> <p>
+     * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-     * QuickSight settings.</p> </li> </ul>
+     * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
+     * role isn't currently available for use.</p> </li> <li> <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
+     * </li> </ul>
      */
     inline const UserRole& GetUserRole() const{ return m_userRole; }
 
     /**
-     * <p>The Amazon QuickSight role of the user. The user role can be one of the
+     * <p>The Amazon QuickSight role for the user. The user role can be one of the
      * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
-     * create data sources, data sets, analyses, and dashboards.</p> </li> <li> <p>
+     * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-     * QuickSight settings.</p> </li> </ul>
+     * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
+     * role isn't currently available for use.</p> </li> <li> <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
+     * </li> </ul>
      */
     inline bool UserRoleHasBeenSet() const { return m_userRoleHasBeenSet; }
 
     /**
-     * <p>The Amazon QuickSight role of the user. The user role can be one of the
+     * <p>The Amazon QuickSight role for the user. The user role can be one of the
      * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
-     * create data sources, data sets, analyses, and dashboards.</p> </li> <li> <p>
+     * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-     * QuickSight settings.</p> </li> </ul>
+     * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
+     * role isn't currently available for use.</p> </li> <li> <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
+     * </li> </ul>
      */
     inline void SetUserRole(const UserRole& value) { m_userRoleHasBeenSet = true; m_userRole = value; }
 
     /**
-     * <p>The Amazon QuickSight role of the user. The user role can be one of the
+     * <p>The Amazon QuickSight role for the user. The user role can be one of the
      * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
-     * create data sources, data sets, analyses, and dashboards.</p> </li> <li> <p>
+     * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-     * QuickSight settings.</p> </li> </ul>
+     * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
+     * role isn't currently available for use.</p> </li> <li> <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
+     * </li> </ul>
      */
     inline void SetUserRole(UserRole&& value) { m_userRoleHasBeenSet = true; m_userRole = std::move(value); }
 
     /**
-     * <p>The Amazon QuickSight role of the user. The user role can be one of the
+     * <p>The Amazon QuickSight role for the user. The user role can be one of the
      * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
-     * create data sources, data sets, analyses, and dashboards.</p> </li> <li> <p>
+     * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-     * QuickSight settings.</p> </li> </ul>
+     * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
+     * role isn't currently available for use.</p> </li> <li> <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
+     * </li> </ul>
      */
     inline RegisterUserRequest& WithUserRole(const UserRole& value) { SetUserRole(value); return *this;}
 
     /**
-     * <p>The Amazon QuickSight role of the user. The user role can be one of the
+     * <p>The Amazon QuickSight role for the user. The user role can be one of the
      * following:</p> <ul> <li> <p> <code>READER</code>: A user who has read-only
      * access to dashboards.</p> </li> <li> <p> <code>AUTHOR</code>: A user who can
-     * create data sources, data sets, analyses, and dashboards.</p> </li> <li> <p>
+     * create data sources, datasets, analyses, and dashboards.</p> </li> <li> <p>
      * <code>ADMIN</code>: A user who is an author, who can also manage Amazon
-     * QuickSight settings.</p> </li> </ul>
+     * QuickSight settings.</p> </li> <li> <p> <code>RESTRICTED_READER</code>: This
+     * role isn't currently available for use.</p> </li> <li> <p>
+     * <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.</p>
+     * </li> </ul>
      */
     inline RegisterUserRequest& WithUserRole(UserRole&& value) { SetUserRole(std::move(value)); return *this;}
 
@@ -257,7 +275,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline const Aws::String& GetSessionName() const{ return m_sessionName; }
@@ -269,7 +287,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline bool SessionNameHasBeenSet() const { return m_sessionNameHasBeenSet; }
@@ -281,7 +299,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline void SetSessionName(const Aws::String& value) { m_sessionNameHasBeenSet = true; m_sessionName = value; }
@@ -293,7 +311,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline void SetSessionName(Aws::String&& value) { m_sessionNameHasBeenSet = true; m_sessionName = std::move(value); }
@@ -305,7 +323,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline void SetSessionName(const char* value) { m_sessionNameHasBeenSet = true; m_sessionName.assign(value); }
@@ -317,7 +335,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline RegisterUserRequest& WithSessionName(const Aws::String& value) { SetSessionName(value); return *this;}
@@ -329,7 +347,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline RegisterUserRequest& WithSessionName(Aws::String&& value) { SetSessionName(std::move(value)); return *this;}
@@ -341,7 +359,7 @@ namespace Model
      * QuickSight user. You can register multiple users using the same IAM role if each
      * user has a different session name. For more information on assuming IAM roles,
      * see <a
-     * href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
+     * href="https://docs.aws.example.com/cli/latest/reference/sts/assume-role.html">
      * <code>assume-role</code> </a> in the <i>AWS CLI Reference.</i> </p>
      */
     inline RegisterUserRequest& WithSessionName(const char* value) { SetSessionName(value); return *this;}

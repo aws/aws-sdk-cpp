@@ -88,49 +88,57 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline void SetMigrationTaskName(const Aws::String& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = value; }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline void SetMigrationTaskName(Aws::String&& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = std::move(value); }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline void SetMigrationTaskName(const char* value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName.assign(value); }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline PutResourceAttributesRequest& WithMigrationTaskName(const Aws::String& value) { SetMigrationTaskName(value); return *this;}
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline PutResourceAttributesRequest& WithMigrationTaskName(Aws::String&& value) { SetMigrationTaskName(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline PutResourceAttributesRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
 
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
-     * to map the task to a resource in the Application Discovery Service (ADS)'s
+     * to map the task to a resource in the Application Discovery Service
      * repository.</p> <note> <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
@@ -141,7 +149,7 @@ namespace Model
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
      * and "VM" fields will not be used for matching the migration task to a server in
-     * Application Discovery Service (ADS)'s repository. See the <a
+     * Application Discovery Service repository. See the <a
      * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a>
      * section below for a use case of specifying "VM" related values.</p> </li> <li>
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
@@ -153,7 +161,7 @@ namespace Model
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
-     * to map the task to a resource in the Application Discovery Service (ADS)'s
+     * to map the task to a resource in the Application Discovery Service
      * repository.</p> <note> <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
@@ -164,7 +172,7 @@ namespace Model
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
      * and "VM" fields will not be used for matching the migration task to a server in
-     * Application Discovery Service (ADS)'s repository. See the <a
+     * Application Discovery Service repository. See the <a
      * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a>
      * section below for a use case of specifying "VM" related values.</p> </li> <li>
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
@@ -176,7 +184,7 @@ namespace Model
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
-     * to map the task to a resource in the Application Discovery Service (ADS)'s
+     * to map the task to a resource in the Application Discovery Service
      * repository.</p> <note> <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
@@ -187,7 +195,7 @@ namespace Model
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
      * and "VM" fields will not be used for matching the migration task to a server in
-     * Application Discovery Service (ADS)'s repository. See the <a
+     * Application Discovery Service repository. See the <a
      * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a>
      * section below for a use case of specifying "VM" related values.</p> </li> <li>
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
@@ -199,7 +207,7 @@ namespace Model
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
-     * to map the task to a resource in the Application Discovery Service (ADS)'s
+     * to map the task to a resource in the Application Discovery Service
      * repository.</p> <note> <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
@@ -210,7 +218,7 @@ namespace Model
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
      * and "VM" fields will not be used for matching the migration task to a server in
-     * Application Discovery Service (ADS)'s repository. See the <a
+     * Application Discovery Service repository. See the <a
      * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a>
      * section below for a use case of specifying "VM" related values.</p> </li> <li>
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
@@ -222,7 +230,7 @@ namespace Model
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
-     * to map the task to a resource in the Application Discovery Service (ADS)'s
+     * to map the task to a resource in the Application Discovery Service
      * repository.</p> <note> <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
@@ -233,7 +241,7 @@ namespace Model
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
      * and "VM" fields will not be used for matching the migration task to a server in
-     * Application Discovery Service (ADS)'s repository. See the <a
+     * Application Discovery Service repository. See the <a
      * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a>
      * section below for a use case of specifying "VM" related values.</p> </li> <li>
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
@@ -245,7 +253,7 @@ namespace Model
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
-     * to map the task to a resource in the Application Discovery Service (ADS)'s
+     * to map the task to a resource in the Application Discovery Service
      * repository.</p> <note> <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
@@ -256,7 +264,7 @@ namespace Model
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
      * and "VM" fields will not be used for matching the migration task to a server in
-     * Application Discovery Service (ADS)'s repository. See the <a
+     * Application Discovery Service repository. See the <a
      * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a>
      * section below for a use case of specifying "VM" related values.</p> </li> <li>
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
@@ -268,7 +276,7 @@ namespace Model
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
-     * to map the task to a resource in the Application Discovery Service (ADS)'s
+     * to map the task to a resource in the Application Discovery Service
      * repository.</p> <note> <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
@@ -279,7 +287,7 @@ namespace Model
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
      * and "VM" fields will not be used for matching the migration task to a server in
-     * Application Discovery Service (ADS)'s repository. See the <a
+     * Application Discovery Service repository. See the <a
      * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a>
      * section below for a use case of specifying "VM" related values.</p> </li> <li>
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you
@@ -291,7 +299,7 @@ namespace Model
 
     /**
      * <p>Information about the resource that is being migrated. This data will be used
-     * to map the task to a resource in the Application Discovery Service (ADS)'s
+     * to map the task to a resource in the Application Discovery Service
      * repository.</p> <note> <p>Takes the object array of
      * <code>ResourceAttribute</code> where the <code>Type</code> field is reserved for
      * the following values: <code>IPV4_ADDRESS | IPV6_ADDRESS | MAC_ADDRESS | FQDN |
@@ -302,7 +310,7 @@ namespace Model
      * <code>VM_MANAGER_ID</code>, as a minimum, is always set. If
      * <code>VM_MANAGER_ID</code> is not set, then all "VM" fields will be discarded
      * and "VM" fields will not be used for matching the migration task to a server in
-     * Application Discovery Service (ADS)'s repository. See the <a
+     * Application Discovery Service repository. See the <a
      * href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#API_PutResourceAttributes_Examples">Example</a>
      * section below for a use case of specifying "VM" related values.</p> </li> <li>
      * <p> If a server you are trying to match has multiple IP or MAC addresses, you

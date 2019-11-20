@@ -91,42 +91,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the branch that the pull request will be merged into.</p>
+     * <p>The name of the branch that the pull request is merged into.</p>
      */
     inline const Aws::String& GetDestinationReference() const{ return m_destinationReference; }
 
     /**
-     * <p>The name of the branch that the pull request will be merged into.</p>
+     * <p>The name of the branch that the pull request is merged into.</p>
      */
     inline bool DestinationReferenceHasBeenSet() const { return m_destinationReferenceHasBeenSet; }
 
     /**
-     * <p>The name of the branch that the pull request will be merged into.</p>
+     * <p>The name of the branch that the pull request is merged into.</p>
      */
     inline void SetDestinationReference(const Aws::String& value) { m_destinationReferenceHasBeenSet = true; m_destinationReference = value; }
 
     /**
-     * <p>The name of the branch that the pull request will be merged into.</p>
+     * <p>The name of the branch that the pull request is merged into.</p>
      */
     inline void SetDestinationReference(Aws::String&& value) { m_destinationReferenceHasBeenSet = true; m_destinationReference = std::move(value); }
 
     /**
-     * <p>The name of the branch that the pull request will be merged into.</p>
+     * <p>The name of the branch that the pull request is merged into.</p>
      */
     inline void SetDestinationReference(const char* value) { m_destinationReferenceHasBeenSet = true; m_destinationReference.assign(value); }
 
     /**
-     * <p>The name of the branch that the pull request will be merged into.</p>
+     * <p>The name of the branch that the pull request is merged into.</p>
      */
     inline PullRequestMergedStateChangedEventMetadata& WithDestinationReference(const Aws::String& value) { SetDestinationReference(value); return *this;}
 
     /**
-     * <p>The name of the branch that the pull request will be merged into.</p>
+     * <p>The name of the branch that the pull request is merged into.</p>
      */
     inline PullRequestMergedStateChangedEventMetadata& WithDestinationReference(Aws::String&& value) { SetDestinationReference(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the branch that the pull request will be merged into.</p>
+     * <p>The name of the branch that the pull request is merged into.</p>
      */
     inline PullRequestMergedStateChangedEventMetadata& WithDestinationReference(const char* value) { SetDestinationReference(value); return *this;}
 

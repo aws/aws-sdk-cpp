@@ -228,13 +228,14 @@ namespace Model
 
 
     /**
-     * <p>The lifecycle status of the file system:</p> <ul> <li> <p>
-     * <code>AVAILABLE</code> indicates that the file system is reachable and available
-     * for use.</p> </li> <li> <p> <code>CREATING</code> indicates that Amazon FSx is
-     * in the process of creating the new file system.</p> </li> <li> <p>
-     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting
-     * the file system.</p> </li> <li> <p> <code>FAILED</code> indicates that Amazon
-     * FSx was not able to create the file system.</p> </li> <li> <p>
+     * <p>The lifecycle status of the file system, following are the possible values
+     * and what they mean:</p> <ul> <li> <p> <code>AVAILABLE</code> - The file system
+     * is in a healthy state, and is reachable and available for use.</p> </li> <li>
+     * <p> <code>CREATING</code> - Amazon FSx is creating the new file system.</p>
+     * </li> <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file
+     * system.</p> </li> <li> <p> <code>FAILED</code> - An existing file system has
+     * experienced an unrecoverable failure. When creating a new file system, Amazon
+     * FSx was unable to create the file system.</p> </li> <li> <p>
      * <code>MISCONFIGURED</code> indicates that the file system is in a failed but
      * recoverable state.</p> </li> <li> <p> <code>UPDATING</code> indicates that the
      * file system is undergoing a customer initiated update.</p> </li> </ul>
@@ -242,13 +243,14 @@ namespace Model
     inline const FileSystemLifecycle& GetLifecycle() const{ return m_lifecycle; }
 
     /**
-     * <p>The lifecycle status of the file system:</p> <ul> <li> <p>
-     * <code>AVAILABLE</code> indicates that the file system is reachable and available
-     * for use.</p> </li> <li> <p> <code>CREATING</code> indicates that Amazon FSx is
-     * in the process of creating the new file system.</p> </li> <li> <p>
-     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting
-     * the file system.</p> </li> <li> <p> <code>FAILED</code> indicates that Amazon
-     * FSx was not able to create the file system.</p> </li> <li> <p>
+     * <p>The lifecycle status of the file system, following are the possible values
+     * and what they mean:</p> <ul> <li> <p> <code>AVAILABLE</code> - The file system
+     * is in a healthy state, and is reachable and available for use.</p> </li> <li>
+     * <p> <code>CREATING</code> - Amazon FSx is creating the new file system.</p>
+     * </li> <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file
+     * system.</p> </li> <li> <p> <code>FAILED</code> - An existing file system has
+     * experienced an unrecoverable failure. When creating a new file system, Amazon
+     * FSx was unable to create the file system.</p> </li> <li> <p>
      * <code>MISCONFIGURED</code> indicates that the file system is in a failed but
      * recoverable state.</p> </li> <li> <p> <code>UPDATING</code> indicates that the
      * file system is undergoing a customer initiated update.</p> </li> </ul>
@@ -256,13 +258,14 @@ namespace Model
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
     /**
-     * <p>The lifecycle status of the file system:</p> <ul> <li> <p>
-     * <code>AVAILABLE</code> indicates that the file system is reachable and available
-     * for use.</p> </li> <li> <p> <code>CREATING</code> indicates that Amazon FSx is
-     * in the process of creating the new file system.</p> </li> <li> <p>
-     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting
-     * the file system.</p> </li> <li> <p> <code>FAILED</code> indicates that Amazon
-     * FSx was not able to create the file system.</p> </li> <li> <p>
+     * <p>The lifecycle status of the file system, following are the possible values
+     * and what they mean:</p> <ul> <li> <p> <code>AVAILABLE</code> - The file system
+     * is in a healthy state, and is reachable and available for use.</p> </li> <li>
+     * <p> <code>CREATING</code> - Amazon FSx is creating the new file system.</p>
+     * </li> <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file
+     * system.</p> </li> <li> <p> <code>FAILED</code> - An existing file system has
+     * experienced an unrecoverable failure. When creating a new file system, Amazon
+     * FSx was unable to create the file system.</p> </li> <li> <p>
      * <code>MISCONFIGURED</code> indicates that the file system is in a failed but
      * recoverable state.</p> </li> <li> <p> <code>UPDATING</code> indicates that the
      * file system is undergoing a customer initiated update.</p> </li> </ul>
@@ -270,13 +273,14 @@ namespace Model
     inline void SetLifecycle(const FileSystemLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
     /**
-     * <p>The lifecycle status of the file system:</p> <ul> <li> <p>
-     * <code>AVAILABLE</code> indicates that the file system is reachable and available
-     * for use.</p> </li> <li> <p> <code>CREATING</code> indicates that Amazon FSx is
-     * in the process of creating the new file system.</p> </li> <li> <p>
-     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting
-     * the file system.</p> </li> <li> <p> <code>FAILED</code> indicates that Amazon
-     * FSx was not able to create the file system.</p> </li> <li> <p>
+     * <p>The lifecycle status of the file system, following are the possible values
+     * and what they mean:</p> <ul> <li> <p> <code>AVAILABLE</code> - The file system
+     * is in a healthy state, and is reachable and available for use.</p> </li> <li>
+     * <p> <code>CREATING</code> - Amazon FSx is creating the new file system.</p>
+     * </li> <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file
+     * system.</p> </li> <li> <p> <code>FAILED</code> - An existing file system has
+     * experienced an unrecoverable failure. When creating a new file system, Amazon
+     * FSx was unable to create the file system.</p> </li> <li> <p>
      * <code>MISCONFIGURED</code> indicates that the file system is in a failed but
      * recoverable state.</p> </li> <li> <p> <code>UPDATING</code> indicates that the
      * file system is undergoing a customer initiated update.</p> </li> </ul>
@@ -284,13 +288,14 @@ namespace Model
     inline void SetLifecycle(FileSystemLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
     /**
-     * <p>The lifecycle status of the file system:</p> <ul> <li> <p>
-     * <code>AVAILABLE</code> indicates that the file system is reachable and available
-     * for use.</p> </li> <li> <p> <code>CREATING</code> indicates that Amazon FSx is
-     * in the process of creating the new file system.</p> </li> <li> <p>
-     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting
-     * the file system.</p> </li> <li> <p> <code>FAILED</code> indicates that Amazon
-     * FSx was not able to create the file system.</p> </li> <li> <p>
+     * <p>The lifecycle status of the file system, following are the possible values
+     * and what they mean:</p> <ul> <li> <p> <code>AVAILABLE</code> - The file system
+     * is in a healthy state, and is reachable and available for use.</p> </li> <li>
+     * <p> <code>CREATING</code> - Amazon FSx is creating the new file system.</p>
+     * </li> <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file
+     * system.</p> </li> <li> <p> <code>FAILED</code> - An existing file system has
+     * experienced an unrecoverable failure. When creating a new file system, Amazon
+     * FSx was unable to create the file system.</p> </li> <li> <p>
      * <code>MISCONFIGURED</code> indicates that the file system is in a failed but
      * recoverable state.</p> </li> <li> <p> <code>UPDATING</code> indicates that the
      * file system is undergoing a customer initiated update.</p> </li> </ul>
@@ -298,13 +303,14 @@ namespace Model
     inline FileSystem& WithLifecycle(const FileSystemLifecycle& value) { SetLifecycle(value); return *this;}
 
     /**
-     * <p>The lifecycle status of the file system:</p> <ul> <li> <p>
-     * <code>AVAILABLE</code> indicates that the file system is reachable and available
-     * for use.</p> </li> <li> <p> <code>CREATING</code> indicates that Amazon FSx is
-     * in the process of creating the new file system.</p> </li> <li> <p>
-     * <code>DELETING</code> indicates that Amazon FSx is in the process of deleting
-     * the file system.</p> </li> <li> <p> <code>FAILED</code> indicates that Amazon
-     * FSx was not able to create the file system.</p> </li> <li> <p>
+     * <p>The lifecycle status of the file system, following are the possible values
+     * and what they mean:</p> <ul> <li> <p> <code>AVAILABLE</code> - The file system
+     * is in a healthy state, and is reachable and available for use.</p> </li> <li>
+     * <p> <code>CREATING</code> - Amazon FSx is creating the new file system.</p>
+     * </li> <li> <p> <code>DELETING</code> - Amazon FSx is deleting an existing file
+     * system.</p> </li> <li> <p> <code>FAILED</code> - An existing file system has
+     * experienced an unrecoverable failure. When creating a new file system, Amazon
+     * FSx was unable to create the file system.</p> </li> <li> <p>
      * <code>MISCONFIGURED</code> indicates that the file system is in a failed but
      * recoverable state.</p> </li> <li> <p> <code>UPDATING</code> indicates that the
      * file system is undergoing a customer initiated update.</p> </li> </ul>

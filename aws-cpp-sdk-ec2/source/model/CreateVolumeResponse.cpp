@@ -32,7 +32,8 @@ CreateVolumeResponse::CreateVolumeResponse() :
     m_size(0),
     m_state(VolumeState::NOT_SET),
     m_iops(0),
-    m_volumeType(VolumeType::NOT_SET)
+    m_volumeType(VolumeType::NOT_SET),
+    m_fastRestored(false)
 {
 }
 
@@ -41,7 +42,8 @@ CreateVolumeResponse::CreateVolumeResponse(const Aws::AmazonWebServiceResult<Xml
     m_size(0),
     m_state(VolumeState::NOT_SET),
     m_iops(0),
-    m_volumeType(VolumeType::NOT_SET)
+    m_volumeType(VolumeType::NOT_SET),
+    m_fastRestored(false)
 {
   *this = result;
 }
@@ -129,6 +131,11 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
     if(!volumeTypeNode.IsNull())
     {
       m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeTypeNode.GetText()).c_str()).c_str());
+    }
+    XmlNode fastRestoredNode = resultNode.FirstChild("fastRestored");
+    if(!fastRestoredNode.IsNull())
+    {
+      m_fastRestored = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fastRestoredNode.GetText()).c_str()).c_str());
     }
   }
 

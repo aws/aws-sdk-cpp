@@ -219,6 +219,68 @@ namespace Model
      */
     inline Settings& WithChannelIdentification(bool value) { SetChannelIdentification(value); return *this;}
 
+
+    /**
+     * <p>Determines whether the transcription contains alternative transcriptions. If
+     * you set the <code>ShowAlternatives</code> field to true, you must also set the
+     * maximum number of alternatives to return in the <code>MaxAlternatives</code>
+     * field.</p>
+     */
+    inline bool GetShowAlternatives() const{ return m_showAlternatives; }
+
+    /**
+     * <p>Determines whether the transcription contains alternative transcriptions. If
+     * you set the <code>ShowAlternatives</code> field to true, you must also set the
+     * maximum number of alternatives to return in the <code>MaxAlternatives</code>
+     * field.</p>
+     */
+    inline bool ShowAlternativesHasBeenSet() const { return m_showAlternativesHasBeenSet; }
+
+    /**
+     * <p>Determines whether the transcription contains alternative transcriptions. If
+     * you set the <code>ShowAlternatives</code> field to true, you must also set the
+     * maximum number of alternatives to return in the <code>MaxAlternatives</code>
+     * field.</p>
+     */
+    inline void SetShowAlternatives(bool value) { m_showAlternativesHasBeenSet = true; m_showAlternatives = value; }
+
+    /**
+     * <p>Determines whether the transcription contains alternative transcriptions. If
+     * you set the <code>ShowAlternatives</code> field to true, you must also set the
+     * maximum number of alternatives to return in the <code>MaxAlternatives</code>
+     * field.</p>
+     */
+    inline Settings& WithShowAlternatives(bool value) { SetShowAlternatives(value); return *this;}
+
+
+    /**
+     * <p>The number of alternative transcriptions that the service should return. If
+     * you specify the <code>MaxAlternatives</code> field, you must set the
+     * <code>ShowAlternatives</code> field to true.</p>
+     */
+    inline int GetMaxAlternatives() const{ return m_maxAlternatives; }
+
+    /**
+     * <p>The number of alternative transcriptions that the service should return. If
+     * you specify the <code>MaxAlternatives</code> field, you must set the
+     * <code>ShowAlternatives</code> field to true.</p>
+     */
+    inline bool MaxAlternativesHasBeenSet() const { return m_maxAlternativesHasBeenSet; }
+
+    /**
+     * <p>The number of alternative transcriptions that the service should return. If
+     * you specify the <code>MaxAlternatives</code> field, you must set the
+     * <code>ShowAlternatives</code> field to true.</p>
+     */
+    inline void SetMaxAlternatives(int value) { m_maxAlternativesHasBeenSet = true; m_maxAlternatives = value; }
+
+    /**
+     * <p>The number of alternative transcriptions that the service should return. If
+     * you specify the <code>MaxAlternatives</code> field, you must set the
+     * <code>ShowAlternatives</code> field to true.</p>
+     */
+    inline Settings& WithMaxAlternatives(int value) { SetMaxAlternatives(value); return *this;}
+
   private:
 
     Aws::String m_vocabularyName;
@@ -232,6 +294,12 @@ namespace Model
 
     bool m_channelIdentification;
     bool m_channelIdentificationHasBeenSet;
+
+    bool m_showAlternatives;
+    bool m_showAlternativesHasBeenSet;
+
+    int m_maxAlternatives;
+    bool m_maxAlternativesHasBeenSet;
   };
 
 } // namespace Model

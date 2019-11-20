@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeSMBSettingsResult::DescribeSMBSettingsResult() : 
+    m_activeDirectoryStatus(ActiveDirectoryStatus::NOT_SET),
     m_sMBGuestPasswordSet(false),
     m_sMBSecurityStrategy(SMBSecurityStrategy::NOT_SET)
 {
 }
 
 DescribeSMBSettingsResult::DescribeSMBSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_activeDirectoryStatus(ActiveDirectoryStatus::NOT_SET),
     m_sMBGuestPasswordSet(false),
     m_sMBSecurityStrategy(SMBSecurityStrategy::NOT_SET)
 {
@@ -51,6 +53,12 @@ DescribeSMBSettingsResult& DescribeSMBSettingsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
+
+  }
+
+  if(jsonValue.ValueExists("ActiveDirectoryStatus"))
+  {
+    m_activeDirectoryStatus = ActiveDirectoryStatusMapper::GetActiveDirectoryStatusForName(jsonValue.GetString("ActiveDirectoryStatus"));
 
   }
 

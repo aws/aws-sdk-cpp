@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteDeliveryStreamRequest::DeleteDeliveryStreamRequest() : 
-    m_deliveryStreamNameHasBeenSet(false)
+    m_deliveryStreamNameHasBeenSet(false),
+    m_allowForceDelete(false),
+    m_allowForceDeleteHasBeenSet(false)
 {
 }
 
@@ -34,6 +36,12 @@ Aws::String DeleteDeliveryStreamRequest::SerializePayload() const
   if(m_deliveryStreamNameHasBeenSet)
   {
    payload.WithString("DeliveryStreamName", m_deliveryStreamName);
+
+  }
+
+  if(m_allowForceDeleteHasBeenSet)
+  {
+   payload.WithBool("AllowForceDelete", m_allowForceDelete);
 
   }
 

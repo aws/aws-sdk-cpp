@@ -86,42 +86,50 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline void SetMigrationTaskName(const Aws::String& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = value; }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline void SetMigrationTaskName(Aws::String&& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = std::move(value); }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline void SetMigrationTaskName(const char* value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName.assign(value); }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline ListCreatedArtifactsRequest& WithMigrationTaskName(const Aws::String& value) { SetMigrationTaskName(value); return *this;}
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline ListCreatedArtifactsRequest& WithMigrationTaskName(Aws::String&& value) { SetMigrationTaskName(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline ListCreatedArtifactsRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
 

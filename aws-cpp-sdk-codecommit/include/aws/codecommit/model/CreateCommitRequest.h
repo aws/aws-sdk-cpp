@@ -49,181 +49,181 @@ namespace Model
 
 
     /**
-     * <p>The name of the repository where you will create the commit.</p>
+     * <p>The name of the repository where you create the commit.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
 
     /**
-     * <p>The name of the repository where you will create the commit.</p>
+     * <p>The name of the repository where you create the commit.</p>
      */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
 
     /**
-     * <p>The name of the repository where you will create the commit.</p>
+     * <p>The name of the repository where you create the commit.</p>
      */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
-     * <p>The name of the repository where you will create the commit.</p>
+     * <p>The name of the repository where you create the commit.</p>
      */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
 
     /**
-     * <p>The name of the repository where you will create the commit.</p>
+     * <p>The name of the repository where you create the commit.</p>
      */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
 
     /**
-     * <p>The name of the repository where you will create the commit.</p>
+     * <p>The name of the repository where you create the commit.</p>
      */
     inline CreateCommitRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
 
     /**
-     * <p>The name of the repository where you will create the commit.</p>
+     * <p>The name of the repository where you create the commit.</p>
      */
     inline CreateCommitRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the repository where you will create the commit.</p>
+     * <p>The name of the repository where you create the commit.</p>
      */
     inline CreateCommitRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
 
 
     /**
-     * <p>The name of the branch where you will create the commit.</p>
+     * <p>The name of the branch where you create the commit.</p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
 
     /**
-     * <p>The name of the branch where you will create the commit.</p>
+     * <p>The name of the branch where you create the commit.</p>
      */
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
 
     /**
-     * <p>The name of the branch where you will create the commit.</p>
+     * <p>The name of the branch where you create the commit.</p>
      */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
 
     /**
-     * <p>The name of the branch where you will create the commit.</p>
+     * <p>The name of the branch where you create the commit.</p>
      */
     inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
 
     /**
-     * <p>The name of the branch where you will create the commit.</p>
+     * <p>The name of the branch where you create the commit.</p>
      */
     inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
 
     /**
-     * <p>The name of the branch where you will create the commit.</p>
+     * <p>The name of the branch where you create the commit.</p>
      */
     inline CreateCommitRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
 
     /**
-     * <p>The name of the branch where you will create the commit.</p>
+     * <p>The name of the branch where you create the commit.</p>
      */
     inline CreateCommitRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the branch where you will create the commit.</p>
+     * <p>The name of the branch where you create the commit.</p>
      */
     inline CreateCommitRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
 
 
     /**
-     * <p>The ID of the commit that is the parent of the commit you will create. If
-     * this is an empty repository, this is not required.</p>
+     * <p>The ID of the commit that is the parent of the commit you create. Not
+     * required if this is an empty repository.</p>
      */
     inline const Aws::String& GetParentCommitId() const{ return m_parentCommitId; }
 
     /**
-     * <p>The ID of the commit that is the parent of the commit you will create. If
-     * this is an empty repository, this is not required.</p>
+     * <p>The ID of the commit that is the parent of the commit you create. Not
+     * required if this is an empty repository.</p>
      */
     inline bool ParentCommitIdHasBeenSet() const { return m_parentCommitIdHasBeenSet; }
 
     /**
-     * <p>The ID of the commit that is the parent of the commit you will create. If
-     * this is an empty repository, this is not required.</p>
+     * <p>The ID of the commit that is the parent of the commit you create. Not
+     * required if this is an empty repository.</p>
      */
     inline void SetParentCommitId(const Aws::String& value) { m_parentCommitIdHasBeenSet = true; m_parentCommitId = value; }
 
     /**
-     * <p>The ID of the commit that is the parent of the commit you will create. If
-     * this is an empty repository, this is not required.</p>
+     * <p>The ID of the commit that is the parent of the commit you create. Not
+     * required if this is an empty repository.</p>
      */
     inline void SetParentCommitId(Aws::String&& value) { m_parentCommitIdHasBeenSet = true; m_parentCommitId = std::move(value); }
 
     /**
-     * <p>The ID of the commit that is the parent of the commit you will create. If
-     * this is an empty repository, this is not required.</p>
+     * <p>The ID of the commit that is the parent of the commit you create. Not
+     * required if this is an empty repository.</p>
      */
     inline void SetParentCommitId(const char* value) { m_parentCommitIdHasBeenSet = true; m_parentCommitId.assign(value); }
 
     /**
-     * <p>The ID of the commit that is the parent of the commit you will create. If
-     * this is an empty repository, this is not required.</p>
+     * <p>The ID of the commit that is the parent of the commit you create. Not
+     * required if this is an empty repository.</p>
      */
     inline CreateCommitRequest& WithParentCommitId(const Aws::String& value) { SetParentCommitId(value); return *this;}
 
     /**
-     * <p>The ID of the commit that is the parent of the commit you will create. If
-     * this is an empty repository, this is not required.</p>
+     * <p>The ID of the commit that is the parent of the commit you create. Not
+     * required if this is an empty repository.</p>
      */
     inline CreateCommitRequest& WithParentCommitId(Aws::String&& value) { SetParentCommitId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the commit that is the parent of the commit you will create. If
-     * this is an empty repository, this is not required.</p>
+     * <p>The ID of the commit that is the parent of the commit you create. Not
+     * required if this is an empty repository.</p>
      */
     inline CreateCommitRequest& WithParentCommitId(const char* value) { SetParentCommitId(value); return *this;}
 
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline const Aws::String& GetAuthorName() const{ return m_authorName; }
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline bool AuthorNameHasBeenSet() const { return m_authorNameHasBeenSet; }
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline void SetAuthorName(const Aws::String& value) { m_authorNameHasBeenSet = true; m_authorName = value; }
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline void SetAuthorName(Aws::String&& value) { m_authorNameHasBeenSet = true; m_authorName = std::move(value); }
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline void SetAuthorName(const char* value) { m_authorNameHasBeenSet = true; m_authorName.assign(value); }
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline CreateCommitRequest& WithAuthorName(const Aws::String& value) { SetAuthorName(value); return *this;}
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline CreateCommitRequest& WithAuthorName(Aws::String&& value) { SetAuthorName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline CreateCommitRequest& WithAuthorName(const char* value) { SetAuthorName(value); return *this;}
 
@@ -270,87 +270,79 @@ namespace Model
 
 
     /**
-     * <p>The commit message you want to include as part of creating the commit. Commit
-     * messages are limited to 256 KB. If no message is specified, a default message
-     * will be used.</p>
+     * <p>The commit message you want to include in the commit. Commit messages are
+     * limited to 256 KB. If no message is specified, a default message is used.</p>
      */
     inline const Aws::String& GetCommitMessage() const{ return m_commitMessage; }
 
     /**
-     * <p>The commit message you want to include as part of creating the commit. Commit
-     * messages are limited to 256 KB. If no message is specified, a default message
-     * will be used.</p>
+     * <p>The commit message you want to include in the commit. Commit messages are
+     * limited to 256 KB. If no message is specified, a default message is used.</p>
      */
     inline bool CommitMessageHasBeenSet() const { return m_commitMessageHasBeenSet; }
 
     /**
-     * <p>The commit message you want to include as part of creating the commit. Commit
-     * messages are limited to 256 KB. If no message is specified, a default message
-     * will be used.</p>
+     * <p>The commit message you want to include in the commit. Commit messages are
+     * limited to 256 KB. If no message is specified, a default message is used.</p>
      */
     inline void SetCommitMessage(const Aws::String& value) { m_commitMessageHasBeenSet = true; m_commitMessage = value; }
 
     /**
-     * <p>The commit message you want to include as part of creating the commit. Commit
-     * messages are limited to 256 KB. If no message is specified, a default message
-     * will be used.</p>
+     * <p>The commit message you want to include in the commit. Commit messages are
+     * limited to 256 KB. If no message is specified, a default message is used.</p>
      */
     inline void SetCommitMessage(Aws::String&& value) { m_commitMessageHasBeenSet = true; m_commitMessage = std::move(value); }
 
     /**
-     * <p>The commit message you want to include as part of creating the commit. Commit
-     * messages are limited to 256 KB. If no message is specified, a default message
-     * will be used.</p>
+     * <p>The commit message you want to include in the commit. Commit messages are
+     * limited to 256 KB. If no message is specified, a default message is used.</p>
      */
     inline void SetCommitMessage(const char* value) { m_commitMessageHasBeenSet = true; m_commitMessage.assign(value); }
 
     /**
-     * <p>The commit message you want to include as part of creating the commit. Commit
-     * messages are limited to 256 KB. If no message is specified, a default message
-     * will be used.</p>
+     * <p>The commit message you want to include in the commit. Commit messages are
+     * limited to 256 KB. If no message is specified, a default message is used.</p>
      */
     inline CreateCommitRequest& WithCommitMessage(const Aws::String& value) { SetCommitMessage(value); return *this;}
 
     /**
-     * <p>The commit message you want to include as part of creating the commit. Commit
-     * messages are limited to 256 KB. If no message is specified, a default message
-     * will be used.</p>
+     * <p>The commit message you want to include in the commit. Commit messages are
+     * limited to 256 KB. If no message is specified, a default message is used.</p>
      */
     inline CreateCommitRequest& WithCommitMessage(Aws::String&& value) { SetCommitMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The commit message you want to include as part of creating the commit. Commit
-     * messages are limited to 256 KB. If no message is specified, a default message
-     * will be used.</p>
+     * <p>The commit message you want to include in the commit. Commit messages are
+     * limited to 256 KB. If no message is specified, a default message is used.</p>
      */
     inline CreateCommitRequest& WithCommitMessage(const char* value) { SetCommitMessage(value); return *this;}
 
 
     /**
      * <p>If the commit contains deletions, whether to keep a folder or folder
-     * structure if the changes leave the folders empty. If this is specified as true,
-     * a .gitkeep file will be created for empty folders. The default is false.</p>
+     * structure if the changes leave the folders empty. If true, a ..gitkeep file is
+     * created for empty folders. The default is false.</p>
      */
     inline bool GetKeepEmptyFolders() const{ return m_keepEmptyFolders; }
 
     /**
      * <p>If the commit contains deletions, whether to keep a folder or folder
-     * structure if the changes leave the folders empty. If this is specified as true,
-     * a .gitkeep file will be created for empty folders. The default is false.</p>
+     * structure if the changes leave the folders empty. If true, a ..gitkeep file is
+     * created for empty folders. The default is false.</p>
      */
     inline bool KeepEmptyFoldersHasBeenSet() const { return m_keepEmptyFoldersHasBeenSet; }
 
     /**
      * <p>If the commit contains deletions, whether to keep a folder or folder
-     * structure if the changes leave the folders empty. If this is specified as true,
-     * a .gitkeep file will be created for empty folders. The default is false.</p>
+     * structure if the changes leave the folders empty. If true, a ..gitkeep file is
+     * created for empty folders. The default is false.</p>
      */
     inline void SetKeepEmptyFolders(bool value) { m_keepEmptyFoldersHasBeenSet = true; m_keepEmptyFolders = value; }
 
     /**
      * <p>If the commit contains deletions, whether to keep a folder or folder
-     * structure if the changes leave the folders empty. If this is specified as true,
-     * a .gitkeep file will be created for empty folders. The default is false.</p>
+     * structure if the changes leave the folders empty. If true, a ..gitkeep file is
+     * created for empty folders. The default is false.</p>
      */
     inline CreateCommitRequest& WithKeepEmptyFolders(bool value) { SetKeepEmptyFolders(value); return *this;}
 
@@ -397,49 +389,49 @@ namespace Model
 
 
     /**
-     * <p>The files to delete in this commit. These files will still exist in prior
+     * <p>The files to delete in this commit. These files still exist in earlier
      * commits.</p>
      */
     inline const Aws::Vector<DeleteFileEntry>& GetDeleteFiles() const{ return m_deleteFiles; }
 
     /**
-     * <p>The files to delete in this commit. These files will still exist in prior
+     * <p>The files to delete in this commit. These files still exist in earlier
      * commits.</p>
      */
     inline bool DeleteFilesHasBeenSet() const { return m_deleteFilesHasBeenSet; }
 
     /**
-     * <p>The files to delete in this commit. These files will still exist in prior
+     * <p>The files to delete in this commit. These files still exist in earlier
      * commits.</p>
      */
     inline void SetDeleteFiles(const Aws::Vector<DeleteFileEntry>& value) { m_deleteFilesHasBeenSet = true; m_deleteFiles = value; }
 
     /**
-     * <p>The files to delete in this commit. These files will still exist in prior
+     * <p>The files to delete in this commit. These files still exist in earlier
      * commits.</p>
      */
     inline void SetDeleteFiles(Aws::Vector<DeleteFileEntry>&& value) { m_deleteFilesHasBeenSet = true; m_deleteFiles = std::move(value); }
 
     /**
-     * <p>The files to delete in this commit. These files will still exist in prior
+     * <p>The files to delete in this commit. These files still exist in earlier
      * commits.</p>
      */
     inline CreateCommitRequest& WithDeleteFiles(const Aws::Vector<DeleteFileEntry>& value) { SetDeleteFiles(value); return *this;}
 
     /**
-     * <p>The files to delete in this commit. These files will still exist in prior
+     * <p>The files to delete in this commit. These files still exist in earlier
      * commits.</p>
      */
     inline CreateCommitRequest& WithDeleteFiles(Aws::Vector<DeleteFileEntry>&& value) { SetDeleteFiles(std::move(value)); return *this;}
 
     /**
-     * <p>The files to delete in this commit. These files will still exist in prior
+     * <p>The files to delete in this commit. These files still exist in earlier
      * commits.</p>
      */
     inline CreateCommitRequest& AddDeleteFiles(const DeleteFileEntry& value) { m_deleteFilesHasBeenSet = true; m_deleteFiles.push_back(value); return *this; }
 
     /**
-     * <p>The files to delete in this commit. These files will still exist in prior
+     * <p>The files to delete in this commit. These files still exist in earlier
      * commits.</p>
      */
     inline CreateCommitRequest& AddDeleteFiles(DeleteFileEntry&& value) { m_deleteFilesHasBeenSet = true; m_deleteFiles.push_back(std::move(value)); return *this; }

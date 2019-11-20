@@ -26,6 +26,8 @@ LookupEventsRequest::LookupEventsRequest() :
     m_lookupAttributesHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_eventCategory(EventCategory::NOT_SET),
+    m_eventCategoryHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -55,6 +57,11 @@ Aws::String LookupEventsRequest::SerializePayload() const
   if(m_endTimeHasBeenSet)
   {
    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if(m_eventCategoryHasBeenSet)
+  {
+   payload.WithString("EventCategory", EventCategoryMapper::GetNameForEventCategory(m_eventCategory));
   }
 
   if(m_maxResultsHasBeenSet)

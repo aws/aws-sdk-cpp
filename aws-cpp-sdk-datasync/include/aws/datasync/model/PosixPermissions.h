@@ -27,7 +27,6 @@ namespace Model
   {
     NOT_SET,
     NONE,
-    BEST_EFFORT,
     PRESERVE
   };
 

@@ -24,17 +24,18 @@ using namespace Aws::Utils;
 
 StartTaskRequest::StartTaskRequest() : 
     m_clusterHasBeenSet(false),
-    m_taskDefinitionHasBeenSet(false),
-    m_overridesHasBeenSet(false),
     m_containerInstancesHasBeenSet(false),
-    m_startedByHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_enableECSManagedTags(false),
     m_enableECSManagedTagsHasBeenSet(false),
+    m_groupHasBeenSet(false),
+    m_networkConfigurationHasBeenSet(false),
+    m_overridesHasBeenSet(false),
     m_propagateTags(PropagateTags::NOT_SET),
-    m_propagateTagsHasBeenSet(false)
+    m_propagateTagsHasBeenSet(false),
+    m_referenceIdHasBeenSet(false),
+    m_startedByHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_taskDefinitionHasBeenSet(false)
 {
 }
 
@@ -45,18 +46,6 @@ Aws::String StartTaskRequest::SerializePayload() const
   if(m_clusterHasBeenSet)
   {
    payload.WithString("cluster", m_cluster);
-
-  }
-
-  if(m_taskDefinitionHasBeenSet)
-  {
-   payload.WithString("taskDefinition", m_taskDefinition);
-
-  }
-
-  if(m_overridesHasBeenSet)
-  {
-   payload.WithObject("overrides", m_overrides.Jsonize());
 
   }
 
@@ -71,9 +60,9 @@ Aws::String StartTaskRequest::SerializePayload() const
 
   }
 
-  if(m_startedByHasBeenSet)
+  if(m_enableECSManagedTagsHasBeenSet)
   {
-   payload.WithString("startedBy", m_startedBy);
+   payload.WithBool("enableECSManagedTags", m_enableECSManagedTags);
 
   }
 
@@ -89,6 +78,29 @@ Aws::String StartTaskRequest::SerializePayload() const
 
   }
 
+  if(m_overridesHasBeenSet)
+  {
+   payload.WithObject("overrides", m_overrides.Jsonize());
+
+  }
+
+  if(m_propagateTagsHasBeenSet)
+  {
+   payload.WithString("propagateTags", PropagateTagsMapper::GetNameForPropagateTags(m_propagateTags));
+  }
+
+  if(m_referenceIdHasBeenSet)
+  {
+   payload.WithString("referenceId", m_referenceId);
+
+  }
+
+  if(m_startedByHasBeenSet)
+  {
+   payload.WithString("startedBy", m_startedBy);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Array<JsonValue> tagsJsonList(m_tags.size());
@@ -100,15 +112,10 @@ Aws::String StartTaskRequest::SerializePayload() const
 
   }
 
-  if(m_enableECSManagedTagsHasBeenSet)
+  if(m_taskDefinitionHasBeenSet)
   {
-   payload.WithBool("enableECSManagedTags", m_enableECSManagedTags);
+   payload.WithString("taskDefinition", m_taskDefinition);
 
-  }
-
-  if(m_propagateTagsHasBeenSet)
-  {
-   payload.WithString("propagateTags", PropagateTagsMapper::GetNameForPropagateTags(m_propagateTags));
   }
 
   return payload.View().WriteReadable();

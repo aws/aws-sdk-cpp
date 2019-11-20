@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The full SHA of the commit that contains this file change.</p>
+     * <p>The full SHA ID of the commit that contains this file change.</p>
      */
     inline const Aws::String& GetCommitId() const{ return m_commitId; }
 
     /**
-     * <p>The full SHA of the commit that contains this file change.</p>
+     * <p>The full SHA ID of the commit that contains this file change.</p>
      */
     inline void SetCommitId(const Aws::String& value) { m_commitId = value; }
 
     /**
-     * <p>The full SHA of the commit that contains this file change.</p>
+     * <p>The full SHA ID of the commit that contains this file change.</p>
      */
     inline void SetCommitId(Aws::String&& value) { m_commitId = std::move(value); }
 
     /**
-     * <p>The full SHA of the commit that contains this file change.</p>
+     * <p>The full SHA ID of the commit that contains this file change.</p>
      */
     inline void SetCommitId(const char* value) { m_commitId.assign(value); }
 
     /**
-     * <p>The full SHA of the commit that contains this file change.</p>
+     * <p>The full SHA ID of the commit that contains this file change.</p>
      */
     inline PutFileResult& WithCommitId(const Aws::String& value) { SetCommitId(value); return *this;}
 
     /**
-     * <p>The full SHA of the commit that contains this file change.</p>
+     * <p>The full SHA ID of the commit that contains this file change.</p>
      */
     inline PutFileResult& WithCommitId(Aws::String&& value) { SetCommitId(std::move(value)); return *this;}
 
     /**
-     * <p>The full SHA of the commit that contains this file change.</p>
+     * <p>The full SHA ID of the commit that contains this file change.</p>
      */
     inline PutFileResult& WithCommitId(const char* value) { SetCommitId(value); return *this;}
 

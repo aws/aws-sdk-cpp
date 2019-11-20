@@ -26,6 +26,7 @@ UpdateTaskRequest::UpdateTaskRequest() :
     m_taskArnHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_excludesHasBeenSet(false),
+    m_scheduleHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_cloudWatchLogGroupArnHasBeenSet(false)
 {
@@ -55,6 +56,12 @@ Aws::String UpdateTaskRequest::SerializePayload() const
      excludesJsonList[excludesIndex].AsObject(m_excludes[excludesIndex].Jsonize());
    }
    payload.WithArray("Excludes", std::move(excludesJsonList));
+
+  }
+
+  if(m_scheduleHasBeenSet)
+  {
+   payload.WithObject("Schedule", m_schedule.Jsonize());
 
   }
 

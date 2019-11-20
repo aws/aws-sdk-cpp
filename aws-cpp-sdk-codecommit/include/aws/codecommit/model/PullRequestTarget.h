@@ -148,50 +148,50 @@ namespace Model
 
 
     /**
-     * <p>The branch of the repository where the pull request changes will be merged
-     * into. Also known as the destination branch. </p>
+     * <p>The branch of the repository where the pull request changes are merged. Also
+     * known as the destination branch. </p>
      */
     inline const Aws::String& GetDestinationReference() const{ return m_destinationReference; }
 
     /**
-     * <p>The branch of the repository where the pull request changes will be merged
-     * into. Also known as the destination branch. </p>
+     * <p>The branch of the repository where the pull request changes are merged. Also
+     * known as the destination branch. </p>
      */
     inline bool DestinationReferenceHasBeenSet() const { return m_destinationReferenceHasBeenSet; }
 
     /**
-     * <p>The branch of the repository where the pull request changes will be merged
-     * into. Also known as the destination branch. </p>
+     * <p>The branch of the repository where the pull request changes are merged. Also
+     * known as the destination branch. </p>
      */
     inline void SetDestinationReference(const Aws::String& value) { m_destinationReferenceHasBeenSet = true; m_destinationReference = value; }
 
     /**
-     * <p>The branch of the repository where the pull request changes will be merged
-     * into. Also known as the destination branch. </p>
+     * <p>The branch of the repository where the pull request changes are merged. Also
+     * known as the destination branch. </p>
      */
     inline void SetDestinationReference(Aws::String&& value) { m_destinationReferenceHasBeenSet = true; m_destinationReference = std::move(value); }
 
     /**
-     * <p>The branch of the repository where the pull request changes will be merged
-     * into. Also known as the destination branch. </p>
+     * <p>The branch of the repository where the pull request changes are merged. Also
+     * known as the destination branch. </p>
      */
     inline void SetDestinationReference(const char* value) { m_destinationReferenceHasBeenSet = true; m_destinationReference.assign(value); }
 
     /**
-     * <p>The branch of the repository where the pull request changes will be merged
-     * into. Also known as the destination branch. </p>
+     * <p>The branch of the repository where the pull request changes are merged. Also
+     * known as the destination branch. </p>
      */
     inline PullRequestTarget& WithDestinationReference(const Aws::String& value) { SetDestinationReference(value); return *this;}
 
     /**
-     * <p>The branch of the repository where the pull request changes will be merged
-     * into. Also known as the destination branch. </p>
+     * <p>The branch of the repository where the pull request changes are merged. Also
+     * known as the destination branch. </p>
      */
     inline PullRequestTarget& WithDestinationReference(Aws::String&& value) { SetDestinationReference(std::move(value)); return *this;}
 
     /**
-     * <p>The branch of the repository where the pull request changes will be merged
-     * into. Also known as the destination branch. </p>
+     * <p>The branch of the repository where the pull request changes are merged. Also
+     * known as the destination branch. </p>
      */
     inline PullRequestTarget& WithDestinationReference(const char* value) { SetDestinationReference(value); return *this;}
 
@@ -248,56 +248,56 @@ namespace Model
     /**
      * <p>The full commit ID of the tip of the source branch used to create the pull
      * request. If the pull request branch is updated by a push while the pull request
-     * is open, the commit ID will change to reflect the new tip of the branch.</p>
+     * is open, the commit ID changes to reflect the new tip of the branch.</p>
      */
     inline const Aws::String& GetSourceCommit() const{ return m_sourceCommit; }
 
     /**
      * <p>The full commit ID of the tip of the source branch used to create the pull
      * request. If the pull request branch is updated by a push while the pull request
-     * is open, the commit ID will change to reflect the new tip of the branch.</p>
+     * is open, the commit ID changes to reflect the new tip of the branch.</p>
      */
     inline bool SourceCommitHasBeenSet() const { return m_sourceCommitHasBeenSet; }
 
     /**
      * <p>The full commit ID of the tip of the source branch used to create the pull
      * request. If the pull request branch is updated by a push while the pull request
-     * is open, the commit ID will change to reflect the new tip of the branch.</p>
+     * is open, the commit ID changes to reflect the new tip of the branch.</p>
      */
     inline void SetSourceCommit(const Aws::String& value) { m_sourceCommitHasBeenSet = true; m_sourceCommit = value; }
 
     /**
      * <p>The full commit ID of the tip of the source branch used to create the pull
      * request. If the pull request branch is updated by a push while the pull request
-     * is open, the commit ID will change to reflect the new tip of the branch.</p>
+     * is open, the commit ID changes to reflect the new tip of the branch.</p>
      */
     inline void SetSourceCommit(Aws::String&& value) { m_sourceCommitHasBeenSet = true; m_sourceCommit = std::move(value); }
 
     /**
      * <p>The full commit ID of the tip of the source branch used to create the pull
      * request. If the pull request branch is updated by a push while the pull request
-     * is open, the commit ID will change to reflect the new tip of the branch.</p>
+     * is open, the commit ID changes to reflect the new tip of the branch.</p>
      */
     inline void SetSourceCommit(const char* value) { m_sourceCommitHasBeenSet = true; m_sourceCommit.assign(value); }
 
     /**
      * <p>The full commit ID of the tip of the source branch used to create the pull
      * request. If the pull request branch is updated by a push while the pull request
-     * is open, the commit ID will change to reflect the new tip of the branch.</p>
+     * is open, the commit ID changes to reflect the new tip of the branch.</p>
      */
     inline PullRequestTarget& WithSourceCommit(const Aws::String& value) { SetSourceCommit(value); return *this;}
 
     /**
      * <p>The full commit ID of the tip of the source branch used to create the pull
      * request. If the pull request branch is updated by a push while the pull request
-     * is open, the commit ID will change to reflect the new tip of the branch.</p>
+     * is open, the commit ID changes to reflect the new tip of the branch.</p>
      */
     inline PullRequestTarget& WithSourceCommit(Aws::String&& value) { SetSourceCommit(std::move(value)); return *this;}
 
     /**
      * <p>The full commit ID of the tip of the source branch used to create the pull
      * request. If the pull request branch is updated by a push while the pull request
-     * is open, the commit ID will change to reflect the new tip of the branch.</p>
+     * is open, the commit ID changes to reflect the new tip of the branch.</p>
      */
     inline PullRequestTarget& WithSourceCommit(const char* value) { SetSourceCommit(value); return *this;}
 

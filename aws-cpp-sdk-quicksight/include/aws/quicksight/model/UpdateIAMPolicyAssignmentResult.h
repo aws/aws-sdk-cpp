@@ -1,0 +1,335 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/quicksight/model/AssignmentStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace QuickSight
+{
+namespace Model
+{
+  class AWS_QUICKSIGHT_API UpdateIAMPolicyAssignmentResult
+  {
+  public:
+    UpdateIAMPolicyAssignmentResult();
+    UpdateIAMPolicyAssignmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    UpdateIAMPolicyAssignmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The name of the assignment. </p>
+     */
+    inline const Aws::String& GetAssignmentName() const{ return m_assignmentName; }
+
+    /**
+     * <p>The name of the assignment. </p>
+     */
+    inline void SetAssignmentName(const Aws::String& value) { m_assignmentName = value; }
+
+    /**
+     * <p>The name of the assignment. </p>
+     */
+    inline void SetAssignmentName(Aws::String&& value) { m_assignmentName = std::move(value); }
+
+    /**
+     * <p>The name of the assignment. </p>
+     */
+    inline void SetAssignmentName(const char* value) { m_assignmentName.assign(value); }
+
+    /**
+     * <p>The name of the assignment. </p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithAssignmentName(const Aws::String& value) { SetAssignmentName(value); return *this;}
+
+    /**
+     * <p>The name of the assignment. </p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithAssignmentName(Aws::String&& value) { SetAssignmentName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the assignment. </p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithAssignmentName(const char* value) { SetAssignmentName(value); return *this;}
+
+
+    /**
+     * <p>The ID of the assignment.</p>
+     */
+    inline const Aws::String& GetAssignmentId() const{ return m_assignmentId; }
+
+    /**
+     * <p>The ID of the assignment.</p>
+     */
+    inline void SetAssignmentId(const Aws::String& value) { m_assignmentId = value; }
+
+    /**
+     * <p>The ID of the assignment.</p>
+     */
+    inline void SetAssignmentId(Aws::String&& value) { m_assignmentId = std::move(value); }
+
+    /**
+     * <p>The ID of the assignment.</p>
+     */
+    inline void SetAssignmentId(const char* value) { m_assignmentId.assign(value); }
+
+    /**
+     * <p>The ID of the assignment.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithAssignmentId(const Aws::String& value) { SetAssignmentId(value); return *this;}
+
+    /**
+     * <p>The ID of the assignment.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithAssignmentId(Aws::String&& value) { SetAssignmentId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the assignment.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithAssignmentId(const char* value) { SetAssignmentId(value); return *this;}
+
+
+    /**
+     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
+     * this request.</p>
+     */
+    inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+
+    /**
+     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
+     * this request.</p>
+     */
+    inline void SetPolicyArn(const Aws::String& value) { m_policyArn = value; }
+
+    /**
+     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
+     * this request.</p>
+     */
+    inline void SetPolicyArn(Aws::String&& value) { m_policyArn = std::move(value); }
+
+    /**
+     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
+     * this request.</p>
+     */
+    inline void SetPolicyArn(const char* value) { m_policyArn.assign(value); }
+
+    /**
+     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
+     * this request.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
+
+    /**
+     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
+     * this request.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
+     * this request.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+
+
+    /**
+     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetIdentities() const{ return m_identities; }
+
+    /**
+     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     */
+    inline void SetIdentities(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_identities = value; }
+
+    /**
+     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     */
+    inline void SetIdentities(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_identities = std::move(value); }
+
+    /**
+     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithIdentities(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetIdentities(value); return *this;}
+
+    /**
+     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithIdentities(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetIdentities(std::move(value)); return *this;}
+
+    /**
+     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& AddIdentities(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_identities.emplace(key, value); return *this; }
+
+    /**
+     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& AddIdentities(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_identities.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& AddIdentities(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_identities.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& AddIdentities(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_identities.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& AddIdentities(const char* key, Aws::Vector<Aws::String>&& value) { m_identities.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& AddIdentities(const char* key, const Aws::Vector<Aws::String>& value) { m_identities.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>The status of the assignment:</p> <ul> <li> <p>ENABLED - Anything specified
+     * in this assignment is used while creating the data source.</p> </li> <li>
+     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
+     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * creating the data source.</p> </li> </ul>
+     */
+    inline const AssignmentStatus& GetAssignmentStatus() const{ return m_assignmentStatus; }
+
+    /**
+     * <p>The status of the assignment:</p> <ul> <li> <p>ENABLED - Anything specified
+     * in this assignment is used while creating the data source.</p> </li> <li>
+     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
+     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * creating the data source.</p> </li> </ul>
+     */
+    inline void SetAssignmentStatus(const AssignmentStatus& value) { m_assignmentStatus = value; }
+
+    /**
+     * <p>The status of the assignment:</p> <ul> <li> <p>ENABLED - Anything specified
+     * in this assignment is used while creating the data source.</p> </li> <li>
+     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
+     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * creating the data source.</p> </li> </ul>
+     */
+    inline void SetAssignmentStatus(AssignmentStatus&& value) { m_assignmentStatus = std::move(value); }
+
+    /**
+     * <p>The status of the assignment:</p> <ul> <li> <p>ENABLED - Anything specified
+     * in this assignment is used while creating the data source.</p> </li> <li>
+     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
+     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * creating the data source.</p> </li> </ul>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithAssignmentStatus(const AssignmentStatus& value) { SetAssignmentStatus(value); return *this;}
+
+    /**
+     * <p>The status of the assignment:</p> <ul> <li> <p>ENABLED - Anything specified
+     * in this assignment is used while creating the data source.</p> </li> <li>
+     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
+     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * creating the data source.</p> </li> </ul>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithAssignmentStatus(AssignmentStatus&& value) { SetAssignmentStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+
+    /**
+     * <p>The http status of the request.</p>
+     */
+    inline int GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The http status of the request.</p>
+     */
+    inline void SetStatus(int value) { m_status = value; }
+
+    /**
+     * <p>The http status of the request.</p>
+     */
+    inline UpdateIAMPolicyAssignmentResult& WithStatus(int value) { SetStatus(value); return *this;}
+
+  private:
+
+    Aws::String m_assignmentName;
+
+    Aws::String m_assignmentId;
+
+    Aws::String m_policyArn;
+
+    Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_identities;
+
+    AssignmentStatus m_assignmentStatus;
+
+    Aws::String m_requestId;
+
+    int m_status;
+  };
+
+} // namespace Model
+} // namespace QuickSight
+} // namespace Aws

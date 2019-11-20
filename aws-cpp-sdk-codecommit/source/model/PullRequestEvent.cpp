@@ -37,7 +37,10 @@ PullRequestEvent::PullRequestEvent() :
     m_pullRequestCreatedEventMetadataHasBeenSet(false),
     m_pullRequestStatusChangedEventMetadataHasBeenSet(false),
     m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet(false),
-    m_pullRequestMergedStateChangedEventMetadataHasBeenSet(false)
+    m_pullRequestMergedStateChangedEventMetadataHasBeenSet(false),
+    m_approvalRuleEventMetadataHasBeenSet(false),
+    m_approvalStateChangedEventMetadataHasBeenSet(false),
+    m_approvalRuleOverriddenEventMetadataHasBeenSet(false)
 {
 }
 
@@ -50,7 +53,10 @@ PullRequestEvent::PullRequestEvent(JsonView jsonValue) :
     m_pullRequestCreatedEventMetadataHasBeenSet(false),
     m_pullRequestStatusChangedEventMetadataHasBeenSet(false),
     m_pullRequestSourceReferenceUpdatedEventMetadataHasBeenSet(false),
-    m_pullRequestMergedStateChangedEventMetadataHasBeenSet(false)
+    m_pullRequestMergedStateChangedEventMetadataHasBeenSet(false),
+    m_approvalRuleEventMetadataHasBeenSet(false),
+    m_approvalStateChangedEventMetadataHasBeenSet(false),
+    m_approvalRuleOverriddenEventMetadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +119,27 @@ PullRequestEvent& PullRequestEvent::operator =(JsonView jsonValue)
     m_pullRequestMergedStateChangedEventMetadataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("approvalRuleEventMetadata"))
+  {
+    m_approvalRuleEventMetadata = jsonValue.GetObject("approvalRuleEventMetadata");
+
+    m_approvalRuleEventMetadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("approvalStateChangedEventMetadata"))
+  {
+    m_approvalStateChangedEventMetadata = jsonValue.GetObject("approvalStateChangedEventMetadata");
+
+    m_approvalStateChangedEventMetadataHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("approvalRuleOverriddenEventMetadata"))
+  {
+    m_approvalRuleOverriddenEventMetadata = jsonValue.GetObject("approvalRuleOverriddenEventMetadata");
+
+    m_approvalRuleOverriddenEventMetadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +190,24 @@ JsonValue PullRequestEvent::Jsonize() const
   if(m_pullRequestMergedStateChangedEventMetadataHasBeenSet)
   {
    payload.WithObject("pullRequestMergedStateChangedEventMetadata", m_pullRequestMergedStateChangedEventMetadata.Jsonize());
+
+  }
+
+  if(m_approvalRuleEventMetadataHasBeenSet)
+  {
+   payload.WithObject("approvalRuleEventMetadata", m_approvalRuleEventMetadata.Jsonize());
+
+  }
+
+  if(m_approvalStateChangedEventMetadataHasBeenSet)
+  {
+   payload.WithObject("approvalStateChangedEventMetadata", m_approvalStateChangedEventMetadata.Jsonize());
+
+  }
+
+  if(m_approvalRuleOverriddenEventMetadataHasBeenSet)
+  {
+   payload.WithObject("approvalRuleOverriddenEventMetadata", m_approvalRuleOverriddenEventMetadata.Jsonize());
 
   }
 

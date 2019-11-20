@@ -86,42 +86,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier given to the MigrationTask.</p>
+     * <p>The identifier given to the MigrationTask. <i>Do not store personal data in
+     * this field.</i> </p>
      */
     inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
 
     /**
-     * <p>The identifier given to the MigrationTask.</p>
+     * <p>The identifier given to the MigrationTask. <i>Do not store personal data in
+     * this field.</i> </p>
      */
     inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
 
     /**
-     * <p>The identifier given to the MigrationTask.</p>
+     * <p>The identifier given to the MigrationTask. <i>Do not store personal data in
+     * this field.</i> </p>
      */
     inline void SetMigrationTaskName(const Aws::String& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = value; }
 
     /**
-     * <p>The identifier given to the MigrationTask.</p>
+     * <p>The identifier given to the MigrationTask. <i>Do not store personal data in
+     * this field.</i> </p>
      */
     inline void SetMigrationTaskName(Aws::String&& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = std::move(value); }
 
     /**
-     * <p>The identifier given to the MigrationTask.</p>
+     * <p>The identifier given to the MigrationTask. <i>Do not store personal data in
+     * this field.</i> </p>
      */
     inline void SetMigrationTaskName(const char* value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName.assign(value); }
 
     /**
-     * <p>The identifier given to the MigrationTask.</p>
+     * <p>The identifier given to the MigrationTask. <i>Do not store personal data in
+     * this field.</i> </p>
      */
     inline DescribeMigrationTaskRequest& WithMigrationTaskName(const Aws::String& value) { SetMigrationTaskName(value); return *this;}
 
     /**
-     * <p>The identifier given to the MigrationTask.</p>
+     * <p>The identifier given to the MigrationTask. <i>Do not store personal data in
+     * this field.</i> </p>
      */
     inline DescribeMigrationTaskRequest& WithMigrationTaskName(Aws::String&& value) { SetMigrationTaskName(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier given to the MigrationTask.</p>
+     * <p>The identifier given to the MigrationTask. <i>Do not store personal data in
+     * this field.</i> </p>
      */
     inline DescribeMigrationTaskRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
 

@@ -88,159 +88,159 @@ namespace Model
 
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'before'
+     * <p>In the directionality you established, the full commit ID of the before
      * commit.</p>
      */
     inline const Aws::String& GetBeforeCommitId() const{ return m_beforeCommitId; }
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'before'
+     * <p>In the directionality you established, the full commit ID of the before
      * commit.</p>
      */
     inline void SetBeforeCommitId(const Aws::String& value) { m_beforeCommitId = value; }
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'before'
+     * <p>In the directionality you established, the full commit ID of the before
      * commit.</p>
      */
     inline void SetBeforeCommitId(Aws::String&& value) { m_beforeCommitId = std::move(value); }
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'before'
+     * <p>In the directionality you established, the full commit ID of the before
      * commit.</p>
      */
     inline void SetBeforeCommitId(const char* value) { m_beforeCommitId.assign(value); }
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'before'
+     * <p>In the directionality you established, the full commit ID of the before
      * commit.</p>
      */
     inline PostCommentForComparedCommitResult& WithBeforeCommitId(const Aws::String& value) { SetBeforeCommitId(value); return *this;}
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'before'
+     * <p>In the directionality you established, the full commit ID of the before
      * commit.</p>
      */
     inline PostCommentForComparedCommitResult& WithBeforeCommitId(Aws::String&& value) { SetBeforeCommitId(std::move(value)); return *this;}
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'before'
+     * <p>In the directionality you established, the full commit ID of the before
      * commit.</p>
      */
     inline PostCommentForComparedCommitResult& WithBeforeCommitId(const char* value) { SetBeforeCommitId(value); return *this;}
 
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'after'
+     * <p>In the directionality you established, the full commit ID of the after
      * commit.</p>
      */
     inline const Aws::String& GetAfterCommitId() const{ return m_afterCommitId; }
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'after'
+     * <p>In the directionality you established, the full commit ID of the after
      * commit.</p>
      */
     inline void SetAfterCommitId(const Aws::String& value) { m_afterCommitId = value; }
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'after'
+     * <p>In the directionality you established, the full commit ID of the after
      * commit.</p>
      */
     inline void SetAfterCommitId(Aws::String&& value) { m_afterCommitId = std::move(value); }
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'after'
+     * <p>In the directionality you established, the full commit ID of the after
      * commit.</p>
      */
     inline void SetAfterCommitId(const char* value) { m_afterCommitId.assign(value); }
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'after'
+     * <p>In the directionality you established, the full commit ID of the after
      * commit.</p>
      */
     inline PostCommentForComparedCommitResult& WithAfterCommitId(const Aws::String& value) { SetAfterCommitId(value); return *this;}
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'after'
+     * <p>In the directionality you established, the full commit ID of the after
      * commit.</p>
      */
     inline PostCommentForComparedCommitResult& WithAfterCommitId(Aws::String&& value) { SetAfterCommitId(std::move(value)); return *this;}
 
     /**
-     * <p>In the directionality you established, the full commit ID of the 'after'
+     * <p>In the directionality you established, the full commit ID of the after
      * commit.</p>
      */
     inline PostCommentForComparedCommitResult& WithAfterCommitId(const char* value) { SetAfterCommitId(value); return *this;}
 
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'before' blob.</p>
+     * <p>In the directionality you established, the blob ID of the before blob.</p>
      */
     inline const Aws::String& GetBeforeBlobId() const{ return m_beforeBlobId; }
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'before' blob.</p>
+     * <p>In the directionality you established, the blob ID of the before blob.</p>
      */
     inline void SetBeforeBlobId(const Aws::String& value) { m_beforeBlobId = value; }
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'before' blob.</p>
+     * <p>In the directionality you established, the blob ID of the before blob.</p>
      */
     inline void SetBeforeBlobId(Aws::String&& value) { m_beforeBlobId = std::move(value); }
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'before' blob.</p>
+     * <p>In the directionality you established, the blob ID of the before blob.</p>
      */
     inline void SetBeforeBlobId(const char* value) { m_beforeBlobId.assign(value); }
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'before' blob.</p>
+     * <p>In the directionality you established, the blob ID of the before blob.</p>
      */
     inline PostCommentForComparedCommitResult& WithBeforeBlobId(const Aws::String& value) { SetBeforeBlobId(value); return *this;}
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'before' blob.</p>
+     * <p>In the directionality you established, the blob ID of the before blob.</p>
      */
     inline PostCommentForComparedCommitResult& WithBeforeBlobId(Aws::String&& value) { SetBeforeBlobId(std::move(value)); return *this;}
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'before' blob.</p>
+     * <p>In the directionality you established, the blob ID of the before blob.</p>
      */
     inline PostCommentForComparedCommitResult& WithBeforeBlobId(const char* value) { SetBeforeBlobId(value); return *this;}
 
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'after' blob.</p>
+     * <p>In the directionality you established, the blob ID of the after blob.</p>
      */
     inline const Aws::String& GetAfterBlobId() const{ return m_afterBlobId; }
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'after' blob.</p>
+     * <p>In the directionality you established, the blob ID of the after blob.</p>
      */
     inline void SetAfterBlobId(const Aws::String& value) { m_afterBlobId = value; }
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'after' blob.</p>
+     * <p>In the directionality you established, the blob ID of the after blob.</p>
      */
     inline void SetAfterBlobId(Aws::String&& value) { m_afterBlobId = std::move(value); }
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'after' blob.</p>
+     * <p>In the directionality you established, the blob ID of the after blob.</p>
      */
     inline void SetAfterBlobId(const char* value) { m_afterBlobId.assign(value); }
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'after' blob.</p>
+     * <p>In the directionality you established, the blob ID of the after blob.</p>
      */
     inline PostCommentForComparedCommitResult& WithAfterBlobId(const Aws::String& value) { SetAfterBlobId(value); return *this;}
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'after' blob.</p>
+     * <p>In the directionality you established, the blob ID of the after blob.</p>
      */
     inline PostCommentForComparedCommitResult& WithAfterBlobId(Aws::String&& value) { SetAfterBlobId(std::move(value)); return *this;}
 
     /**
-     * <p>In the directionality you established, the blob ID of the 'after' blob.</p>
+     * <p>In the directionality you established, the blob ID of the after blob.</p>
      */
     inline PostCommentForComparedCommitResult& WithAfterBlobId(const char* value) { SetAfterBlobId(value); return *this;}
 

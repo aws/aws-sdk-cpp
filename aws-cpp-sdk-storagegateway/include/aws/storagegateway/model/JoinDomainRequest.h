@@ -268,50 +268,99 @@ namespace Model
 
 
     /**
+     * <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation
+     * must complete. The default is 20 seconds.</p>
+     */
+    inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
+
+    /**
+     * <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation
+     * must complete. The default is 20 seconds.</p>
+     */
+    inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
+
+    /**
+     * <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation
+     * must complete. The default is 20 seconds.</p>
+     */
+    inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
+
+    /**
+     * <p>Specifies the time in seconds, in which the <code>JoinDomain</code> operation
+     * must complete. The default is 20 seconds.</p>
+     */
+    inline JoinDomainRequest& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
+
+
+    /**
      * <p>Sets the user name of user who has permission to add the gateway to the
-     * Active Directory domain.</p>
+     * Active Directory domain. The domain user account should be enabled to join
+     * computers to the domain. For example, you can use the domain administrator
+     * account or an account with delegated permissions to join computers to the
+     * domain.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
      * <p>Sets the user name of user who has permission to add the gateway to the
-     * Active Directory domain.</p>
+     * Active Directory domain. The domain user account should be enabled to join
+     * computers to the domain. For example, you can use the domain administrator
+     * account or an account with delegated permissions to join computers to the
+     * domain.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>Sets the user name of user who has permission to add the gateway to the
-     * Active Directory domain.</p>
+     * Active Directory domain. The domain user account should be enabled to join
+     * computers to the domain. For example, you can use the domain administrator
+     * account or an account with delegated permissions to join computers to the
+     * domain.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
      * <p>Sets the user name of user who has permission to add the gateway to the
-     * Active Directory domain.</p>
+     * Active Directory domain. The domain user account should be enabled to join
+     * computers to the domain. For example, you can use the domain administrator
+     * account or an account with delegated permissions to join computers to the
+     * domain.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
      * <p>Sets the user name of user who has permission to add the gateway to the
-     * Active Directory domain.</p>
+     * Active Directory domain. The domain user account should be enabled to join
+     * computers to the domain. For example, you can use the domain administrator
+     * account or an account with delegated permissions to join computers to the
+     * domain.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
      * <p>Sets the user name of user who has permission to add the gateway to the
-     * Active Directory domain.</p>
+     * Active Directory domain. The domain user account should be enabled to join
+     * computers to the domain. For example, you can use the domain administrator
+     * account or an account with delegated permissions to join computers to the
+     * domain.</p>
      */
     inline JoinDomainRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
      * <p>Sets the user name of user who has permission to add the gateway to the
-     * Active Directory domain.</p>
+     * Active Directory domain. The domain user account should be enabled to join
+     * computers to the domain. For example, you can use the domain administrator
+     * account or an account with delegated permissions to join computers to the
+     * domain.</p>
      */
     inline JoinDomainRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
      * <p>Sets the user name of user who has permission to add the gateway to the
-     * Active Directory domain.</p>
+     * Active Directory domain. The domain user account should be enabled to join
+     * computers to the domain. For example, you can use the domain administrator
+     * account or an account with delegated permissions to join computers to the
+     * domain.</p>
      */
     inline JoinDomainRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 
@@ -377,6 +426,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_domainControllers;
     bool m_domainControllersHasBeenSet;
+
+    int m_timeoutInSeconds;
+    bool m_timeoutInSecondsHasBeenSet;
 
     Aws::String m_userName;
     bool m_userNameHasBeenSet;

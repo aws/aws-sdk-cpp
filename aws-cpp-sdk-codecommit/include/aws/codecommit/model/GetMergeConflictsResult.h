@@ -187,43 +187,43 @@ namespace Model
 
     /**
      * <p>A list of metadata for any conflicting files. If the specified merge strategy
-     * is FAST_FORWARD_MERGE, this list will always be empty.</p>
+     * is FAST_FORWARD_MERGE, this list is always empty.</p>
      */
     inline const Aws::Vector<ConflictMetadata>& GetConflictMetadataList() const{ return m_conflictMetadataList; }
 
     /**
      * <p>A list of metadata for any conflicting files. If the specified merge strategy
-     * is FAST_FORWARD_MERGE, this list will always be empty.</p>
+     * is FAST_FORWARD_MERGE, this list is always empty.</p>
      */
     inline void SetConflictMetadataList(const Aws::Vector<ConflictMetadata>& value) { m_conflictMetadataList = value; }
 
     /**
      * <p>A list of metadata for any conflicting files. If the specified merge strategy
-     * is FAST_FORWARD_MERGE, this list will always be empty.</p>
+     * is FAST_FORWARD_MERGE, this list is always empty.</p>
      */
     inline void SetConflictMetadataList(Aws::Vector<ConflictMetadata>&& value) { m_conflictMetadataList = std::move(value); }
 
     /**
      * <p>A list of metadata for any conflicting files. If the specified merge strategy
-     * is FAST_FORWARD_MERGE, this list will always be empty.</p>
+     * is FAST_FORWARD_MERGE, this list is always empty.</p>
      */
     inline GetMergeConflictsResult& WithConflictMetadataList(const Aws::Vector<ConflictMetadata>& value) { SetConflictMetadataList(value); return *this;}
 
     /**
      * <p>A list of metadata for any conflicting files. If the specified merge strategy
-     * is FAST_FORWARD_MERGE, this list will always be empty.</p>
+     * is FAST_FORWARD_MERGE, this list is always empty.</p>
      */
     inline GetMergeConflictsResult& WithConflictMetadataList(Aws::Vector<ConflictMetadata>&& value) { SetConflictMetadataList(std::move(value)); return *this;}
 
     /**
      * <p>A list of metadata for any conflicting files. If the specified merge strategy
-     * is FAST_FORWARD_MERGE, this list will always be empty.</p>
+     * is FAST_FORWARD_MERGE, this list is always empty.</p>
      */
     inline GetMergeConflictsResult& AddConflictMetadataList(const ConflictMetadata& value) { m_conflictMetadataList.push_back(value); return *this; }
 
     /**
      * <p>A list of metadata for any conflicting files. If the specified merge strategy
-     * is FAST_FORWARD_MERGE, this list will always be empty.</p>
+     * is FAST_FORWARD_MERGE, this list is always empty.</p>
      */
     inline GetMergeConflictsResult& AddConflictMetadataList(ConflictMetadata&& value) { m_conflictMetadataList.push_back(std::move(value)); return *this; }
 

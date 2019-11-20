@@ -196,55 +196,55 @@ namespace Model
 
     /**
      * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
-     * is used, which will return a not mergeable result if the same file has
-     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
-     * considered not mergeable if the same file in both branches has differences on
-     * the same line.</p>
+     * is used, which returns a not-mergeable result if the same file has differences
+     * in both branches. If LINE_LEVEL is specified, a conflict is considered not
+     * mergeable if the same file in both branches has differences on the same
+     * line.</p>
      */
     inline const ConflictDetailLevelTypeEnum& GetConflictDetailLevel() const{ return m_conflictDetailLevel; }
 
     /**
      * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
-     * is used, which will return a not mergeable result if the same file has
-     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
-     * considered not mergeable if the same file in both branches has differences on
-     * the same line.</p>
+     * is used, which returns a not-mergeable result if the same file has differences
+     * in both branches. If LINE_LEVEL is specified, a conflict is considered not
+     * mergeable if the same file in both branches has differences on the same
+     * line.</p>
      */
     inline bool ConflictDetailLevelHasBeenSet() const { return m_conflictDetailLevelHasBeenSet; }
 
     /**
      * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
-     * is used, which will return a not mergeable result if the same file has
-     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
-     * considered not mergeable if the same file in both branches has differences on
-     * the same line.</p>
+     * is used, which returns a not-mergeable result if the same file has differences
+     * in both branches. If LINE_LEVEL is specified, a conflict is considered not
+     * mergeable if the same file in both branches has differences on the same
+     * line.</p>
      */
     inline void SetConflictDetailLevel(const ConflictDetailLevelTypeEnum& value) { m_conflictDetailLevelHasBeenSet = true; m_conflictDetailLevel = value; }
 
     /**
      * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
-     * is used, which will return a not mergeable result if the same file has
-     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
-     * considered not mergeable if the same file in both branches has differences on
-     * the same line.</p>
+     * is used, which returns a not-mergeable result if the same file has differences
+     * in both branches. If LINE_LEVEL is specified, a conflict is considered not
+     * mergeable if the same file in both branches has differences on the same
+     * line.</p>
      */
     inline void SetConflictDetailLevel(ConflictDetailLevelTypeEnum&& value) { m_conflictDetailLevelHasBeenSet = true; m_conflictDetailLevel = std::move(value); }
 
     /**
      * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
-     * is used, which will return a not mergeable result if the same file has
-     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
-     * considered not mergeable if the same file in both branches has differences on
-     * the same line.</p>
+     * is used, which returns a not-mergeable result if the same file has differences
+     * in both branches. If LINE_LEVEL is specified, a conflict is considered not
+     * mergeable if the same file in both branches has differences on the same
+     * line.</p>
      */
     inline MergePullRequestBySquashRequest& WithConflictDetailLevel(const ConflictDetailLevelTypeEnum& value) { SetConflictDetailLevel(value); return *this;}
 
     /**
      * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
-     * is used, which will return a not mergeable result if the same file has
-     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
-     * considered not mergeable if the same file in both branches has differences on
-     * the same line.</p>
+     * is used, which returns a not-mergeable result if the same file has differences
+     * in both branches. If LINE_LEVEL is specified, a conflict is considered not
+     * mergeable if the same file in both branches has differences on the same
+     * line.</p>
      */
     inline MergePullRequestBySquashRequest& WithConflictDetailLevel(ConflictDetailLevelTypeEnum&& value) { SetConflictDetailLevel(std::move(value)); return *this;}
 
@@ -252,48 +252,48 @@ namespace Model
     /**
      * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
      * automatically merging two versions of a file. The default is NONE, which
-     * requires any conflicts to be resolved manually before the merge operation will
-     * be successful.</p>
+     * requires any conflicts to be resolved manually before the merge operation is
+     * successful.</p>
      */
     inline const ConflictResolutionStrategyTypeEnum& GetConflictResolutionStrategy() const{ return m_conflictResolutionStrategy; }
 
     /**
      * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
      * automatically merging two versions of a file. The default is NONE, which
-     * requires any conflicts to be resolved manually before the merge operation will
-     * be successful.</p>
+     * requires any conflicts to be resolved manually before the merge operation is
+     * successful.</p>
      */
     inline bool ConflictResolutionStrategyHasBeenSet() const { return m_conflictResolutionStrategyHasBeenSet; }
 
     /**
      * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
      * automatically merging two versions of a file. The default is NONE, which
-     * requires any conflicts to be resolved manually before the merge operation will
-     * be successful.</p>
+     * requires any conflicts to be resolved manually before the merge operation is
+     * successful.</p>
      */
     inline void SetConflictResolutionStrategy(const ConflictResolutionStrategyTypeEnum& value) { m_conflictResolutionStrategyHasBeenSet = true; m_conflictResolutionStrategy = value; }
 
     /**
      * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
      * automatically merging two versions of a file. The default is NONE, which
-     * requires any conflicts to be resolved manually before the merge operation will
-     * be successful.</p>
+     * requires any conflicts to be resolved manually before the merge operation is
+     * successful.</p>
      */
     inline void SetConflictResolutionStrategy(ConflictResolutionStrategyTypeEnum&& value) { m_conflictResolutionStrategyHasBeenSet = true; m_conflictResolutionStrategy = std::move(value); }
 
     /**
      * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
      * automatically merging two versions of a file. The default is NONE, which
-     * requires any conflicts to be resolved manually before the merge operation will
-     * be successful.</p>
+     * requires any conflicts to be resolved manually before the merge operation is
+     * successful.</p>
      */
     inline MergePullRequestBySquashRequest& WithConflictResolutionStrategy(const ConflictResolutionStrategyTypeEnum& value) { SetConflictResolutionStrategy(value); return *this;}
 
     /**
      * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
      * automatically merging two versions of a file. The default is NONE, which
-     * requires any conflicts to be resolved manually before the merge operation will
-     * be successful.</p>
+     * requires any conflicts to be resolved manually before the merge operation is
+     * successful.</p>
      */
     inline MergePullRequestBySquashRequest& WithConflictResolutionStrategy(ConflictResolutionStrategyTypeEnum&& value) { SetConflictResolutionStrategy(std::move(value)); return *this;}
 
@@ -340,165 +340,165 @@ namespace Model
 
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline const Aws::String& GetAuthorName() const{ return m_authorName; }
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline bool AuthorNameHasBeenSet() const { return m_authorNameHasBeenSet; }
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline void SetAuthorName(const Aws::String& value) { m_authorNameHasBeenSet = true; m_authorName = value; }
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline void SetAuthorName(Aws::String&& value) { m_authorNameHasBeenSet = true; m_authorName = std::move(value); }
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline void SetAuthorName(const char* value) { m_authorNameHasBeenSet = true; m_authorName.assign(value); }
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline MergePullRequestBySquashRequest& WithAuthorName(const Aws::String& value) { SetAuthorName(value); return *this;}
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline MergePullRequestBySquashRequest& WithAuthorName(Aws::String&& value) { SetAuthorName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the author who created the commit. This information will be used
-     * as both the author and committer for the commit.</p>
+     * <p>The name of the author who created the commit. This information is used as
+     * both the author and committer for the commit.</p>
      */
     inline MergePullRequestBySquashRequest& WithAuthorName(const char* value) { SetAuthorName(value); return *this;}
 
 
     /**
-     * <p>The email address of the person merging the branches. This information will
-     * be used in the commit information for the merge.</p>
+     * <p>The email address of the person merging the branches. This information is
+     * used in the commit information for the merge.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
 
     /**
-     * <p>The email address of the person merging the branches. This information will
-     * be used in the commit information for the merge.</p>
+     * <p>The email address of the person merging the branches. This information is
+     * used in the commit information for the merge.</p>
      */
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
-     * <p>The email address of the person merging the branches. This information will
-     * be used in the commit information for the merge.</p>
+     * <p>The email address of the person merging the branches. This information is
+     * used in the commit information for the merge.</p>
      */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
 
     /**
-     * <p>The email address of the person merging the branches. This information will
-     * be used in the commit information for the merge.</p>
+     * <p>The email address of the person merging the branches. This information is
+     * used in the commit information for the merge.</p>
      */
     inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
 
     /**
-     * <p>The email address of the person merging the branches. This information will
-     * be used in the commit information for the merge.</p>
+     * <p>The email address of the person merging the branches. This information is
+     * used in the commit information for the merge.</p>
      */
     inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
 
     /**
-     * <p>The email address of the person merging the branches. This information will
-     * be used in the commit information for the merge.</p>
+     * <p>The email address of the person merging the branches. This information is
+     * used in the commit information for the merge.</p>
      */
     inline MergePullRequestBySquashRequest& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
 
     /**
-     * <p>The email address of the person merging the branches. This information will
-     * be used in the commit information for the merge.</p>
+     * <p>The email address of the person merging the branches. This information is
+     * used in the commit information for the merge.</p>
      */
     inline MergePullRequestBySquashRequest& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
 
     /**
-     * <p>The email address of the person merging the branches. This information will
-     * be used in the commit information for the merge.</p>
+     * <p>The email address of the person merging the branches. This information is
+     * used in the commit information for the merge.</p>
      */
     inline MergePullRequestBySquashRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
 
 
     /**
      * <p>If the commit contains deletions, whether to keep a folder or folder
-     * structure if the changes leave the folders empty. If this is specified as true,
-     * a .gitkeep file will be created for empty folders. The default is false.</p>
+     * structure if the changes leave the folders empty. If true, a .gitkeep file is
+     * created for empty folders. The default is false.</p>
      */
     inline bool GetKeepEmptyFolders() const{ return m_keepEmptyFolders; }
 
     /**
      * <p>If the commit contains deletions, whether to keep a folder or folder
-     * structure if the changes leave the folders empty. If this is specified as true,
-     * a .gitkeep file will be created for empty folders. The default is false.</p>
+     * structure if the changes leave the folders empty. If true, a .gitkeep file is
+     * created for empty folders. The default is false.</p>
      */
     inline bool KeepEmptyFoldersHasBeenSet() const { return m_keepEmptyFoldersHasBeenSet; }
 
     /**
      * <p>If the commit contains deletions, whether to keep a folder or folder
-     * structure if the changes leave the folders empty. If this is specified as true,
-     * a .gitkeep file will be created for empty folders. The default is false.</p>
+     * structure if the changes leave the folders empty. If true, a .gitkeep file is
+     * created for empty folders. The default is false.</p>
      */
     inline void SetKeepEmptyFolders(bool value) { m_keepEmptyFoldersHasBeenSet = true; m_keepEmptyFolders = value; }
 
     /**
      * <p>If the commit contains deletions, whether to keep a folder or folder
-     * structure if the changes leave the folders empty. If this is specified as true,
-     * a .gitkeep file will be created for empty folders. The default is false.</p>
+     * structure if the changes leave the folders empty. If true, a .gitkeep file is
+     * created for empty folders. The default is false.</p>
      */
     inline MergePullRequestBySquashRequest& WithKeepEmptyFolders(bool value) { SetKeepEmptyFolders(value); return *this;}
 
 
     /**
-     * <p>A list of inputs to use when resolving conflicts during a merge if AUTOMERGE
-     * is chosen as the conflict resolution strategy.</p>
+     * <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use
+     * when resolving conflicts during a merge.</p>
      */
     inline const ConflictResolution& GetConflictResolution() const{ return m_conflictResolution; }
 
     /**
-     * <p>A list of inputs to use when resolving conflicts during a merge if AUTOMERGE
-     * is chosen as the conflict resolution strategy.</p>
+     * <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use
+     * when resolving conflicts during a merge.</p>
      */
     inline bool ConflictResolutionHasBeenSet() const { return m_conflictResolutionHasBeenSet; }
 
     /**
-     * <p>A list of inputs to use when resolving conflicts during a merge if AUTOMERGE
-     * is chosen as the conflict resolution strategy.</p>
+     * <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use
+     * when resolving conflicts during a merge.</p>
      */
     inline void SetConflictResolution(const ConflictResolution& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = value; }
 
     /**
-     * <p>A list of inputs to use when resolving conflicts during a merge if AUTOMERGE
-     * is chosen as the conflict resolution strategy.</p>
+     * <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use
+     * when resolving conflicts during a merge.</p>
      */
     inline void SetConflictResolution(ConflictResolution&& value) { m_conflictResolutionHasBeenSet = true; m_conflictResolution = std::move(value); }
 
     /**
-     * <p>A list of inputs to use when resolving conflicts during a merge if AUTOMERGE
-     * is chosen as the conflict resolution strategy.</p>
+     * <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use
+     * when resolving conflicts during a merge.</p>
      */
     inline MergePullRequestBySquashRequest& WithConflictResolution(const ConflictResolution& value) { SetConflictResolution(value); return *this;}
 
     /**
-     * <p>A list of inputs to use when resolving conflicts during a merge if AUTOMERGE
-     * is chosen as the conflict resolution strategy.</p>
+     * <p>If AUTOMERGE is the conflict resolution strategy, a list of inputs to use
+     * when resolving conflicts during a merge.</p>
      */
     inline MergePullRequestBySquashRequest& WithConflictResolution(ConflictResolution&& value) { SetConflictResolution(std::move(value)); return *this;}
 

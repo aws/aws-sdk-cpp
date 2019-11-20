@@ -27,6 +27,7 @@
 #include <aws/ecs/model/Attribute.h>
 #include <aws/ecs/model/TaskDefinitionPlacementConstraint.h>
 #include <aws/ecs/model/Compatibility.h>
+#include <aws/ecs/model/InferenceAccelerator.h>
 #include <utility>
 
 namespace Aws
@@ -1330,6 +1331,47 @@ namespace Model
 
 
     /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline const Aws::Vector<InferenceAccelerator>& GetInferenceAccelerators() const{ return m_inferenceAccelerators; }
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline bool InferenceAcceleratorsHasBeenSet() const { return m_inferenceAcceleratorsHasBeenSet; }
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline void SetInferenceAccelerators(const Aws::Vector<InferenceAccelerator>& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators = value; }
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline void SetInferenceAccelerators(Aws::Vector<InferenceAccelerator>&& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators = std::move(value); }
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline TaskDefinition& WithInferenceAccelerators(const Aws::Vector<InferenceAccelerator>& value) { SetInferenceAccelerators(value); return *this;}
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline TaskDefinition& WithInferenceAccelerators(Aws::Vector<InferenceAccelerator>&& value) { SetInferenceAccelerators(std::move(value)); return *this;}
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline TaskDefinition& AddInferenceAccelerators(const InferenceAccelerator& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators.push_back(value); return *this; }
+
+    /**
+     * <p>The Elastic Inference accelerator associated with the task.</p>
+     */
+    inline TaskDefinition& AddInferenceAccelerators(InferenceAccelerator&& value) { m_inferenceAcceleratorsHasBeenSet = true; m_inferenceAccelerators.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The process namespace to use for the containers in the task. The valid values
      * are <code>host</code> or <code>task</code>. If <code>host</code> is specified,
      * then all containers within the tasks that specified the <code>host</code> PID
@@ -1755,6 +1797,9 @@ namespace Model
 
     Aws::String m_memory;
     bool m_memoryHasBeenSet;
+
+    Aws::Vector<InferenceAccelerator> m_inferenceAccelerators;
+    bool m_inferenceAcceleratorsHasBeenSet;
 
     PidMode m_pidMode;
     bool m_pidModeHasBeenSet;

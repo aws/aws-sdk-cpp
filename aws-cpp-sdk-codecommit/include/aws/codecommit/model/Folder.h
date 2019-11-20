@@ -98,42 +98,42 @@ namespace Model
 
 
     /**
-     * <p>The fully-qualified path of the folder in the repository.</p>
+     * <p>The fully qualified path of the folder in the repository.</p>
      */
     inline const Aws::String& GetAbsolutePath() const{ return m_absolutePath; }
 
     /**
-     * <p>The fully-qualified path of the folder in the repository.</p>
+     * <p>The fully qualified path of the folder in the repository.</p>
      */
     inline bool AbsolutePathHasBeenSet() const { return m_absolutePathHasBeenSet; }
 
     /**
-     * <p>The fully-qualified path of the folder in the repository.</p>
+     * <p>The fully qualified path of the folder in the repository.</p>
      */
     inline void SetAbsolutePath(const Aws::String& value) { m_absolutePathHasBeenSet = true; m_absolutePath = value; }
 
     /**
-     * <p>The fully-qualified path of the folder in the repository.</p>
+     * <p>The fully qualified path of the folder in the repository.</p>
      */
     inline void SetAbsolutePath(Aws::String&& value) { m_absolutePathHasBeenSet = true; m_absolutePath = std::move(value); }
 
     /**
-     * <p>The fully-qualified path of the folder in the repository.</p>
+     * <p>The fully qualified path of the folder in the repository.</p>
      */
     inline void SetAbsolutePath(const char* value) { m_absolutePathHasBeenSet = true; m_absolutePath.assign(value); }
 
     /**
-     * <p>The fully-qualified path of the folder in the repository.</p>
+     * <p>The fully qualified path of the folder in the repository.</p>
      */
     inline Folder& WithAbsolutePath(const Aws::String& value) { SetAbsolutePath(value); return *this;}
 
     /**
-     * <p>The fully-qualified path of the folder in the repository.</p>
+     * <p>The fully qualified path of the folder in the repository.</p>
      */
     inline Folder& WithAbsolutePath(Aws::String&& value) { SetAbsolutePath(std::move(value)); return *this;}
 
     /**
-     * <p>The fully-qualified path of the folder in the repository.</p>
+     * <p>The fully qualified path of the folder in the repository.</p>
      */
     inline Folder& WithAbsolutePath(const char* value) { SetAbsolutePath(value); return *this;}
 

@@ -86,42 +86,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the MigrationTask.</p>
+     * <p>The name of the MigrationTask. <i>Do not store personal data in this
+     * field.</i> </p>
      */
     inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
 
     /**
-     * <p>The name of the MigrationTask.</p>
+     * <p>The name of the MigrationTask. <i>Do not store personal data in this
+     * field.</i> </p>
      */
     inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
 
     /**
-     * <p>The name of the MigrationTask.</p>
+     * <p>The name of the MigrationTask. <i>Do not store personal data in this
+     * field.</i> </p>
      */
     inline void SetMigrationTaskName(const Aws::String& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = value; }
 
     /**
-     * <p>The name of the MigrationTask.</p>
+     * <p>The name of the MigrationTask. <i>Do not store personal data in this
+     * field.</i> </p>
      */
     inline void SetMigrationTaskName(Aws::String&& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = std::move(value); }
 
     /**
-     * <p>The name of the MigrationTask.</p>
+     * <p>The name of the MigrationTask. <i>Do not store personal data in this
+     * field.</i> </p>
      */
     inline void SetMigrationTaskName(const char* value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName.assign(value); }
 
     /**
-     * <p>The name of the MigrationTask.</p>
+     * <p>The name of the MigrationTask. <i>Do not store personal data in this
+     * field.</i> </p>
      */
     inline ListDiscoveredResourcesRequest& WithMigrationTaskName(const Aws::String& value) { SetMigrationTaskName(value); return *this;}
 
     /**
-     * <p>The name of the MigrationTask.</p>
+     * <p>The name of the MigrationTask. <i>Do not store personal data in this
+     * field.</i> </p>
      */
     inline ListDiscoveredResourcesRequest& WithMigrationTaskName(Aws::String&& value) { SetMigrationTaskName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the MigrationTask.</p>
+     * <p>The name of the MigrationTask. <i>Do not store personal data in this
+     * field.</i> </p>
      */
     inline ListDiscoveredResourcesRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
 

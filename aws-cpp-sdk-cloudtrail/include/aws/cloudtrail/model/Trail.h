@@ -629,6 +629,31 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether a trail has insight types specified in an
+     * <code>InsightSelector</code> list.</p>
+     */
+    inline bool GetHasInsightSelectors() const{ return m_hasInsightSelectors; }
+
+    /**
+     * <p>Specifies whether a trail has insight types specified in an
+     * <code>InsightSelector</code> list.</p>
+     */
+    inline bool HasInsightSelectorsHasBeenSet() const { return m_hasInsightSelectorsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether a trail has insight types specified in an
+     * <code>InsightSelector</code> list.</p>
+     */
+    inline void SetHasInsightSelectors(bool value) { m_hasInsightSelectorsHasBeenSet = true; m_hasInsightSelectors = value; }
+
+    /**
+     * <p>Specifies whether a trail has insight types specified in an
+     * <code>InsightSelector</code> list.</p>
+     */
+    inline Trail& WithHasInsightSelectors(bool value) { SetHasInsightSelectors(value); return *this;}
+
+
+    /**
      * <p>Specifies whether the trail is an organization trail.</p>
      */
     inline bool GetIsOrganizationTrail() const{ return m_isOrganizationTrail; }
@@ -688,6 +713,9 @@ namespace Model
 
     bool m_hasCustomEventSelectors;
     bool m_hasCustomEventSelectorsHasBeenSet;
+
+    bool m_hasInsightSelectors;
+    bool m_hasInsightSelectorsHasBeenSet;
 
     bool m_isOrganizationTrail;
     bool m_isOrganizationTrailHasBeenSet;

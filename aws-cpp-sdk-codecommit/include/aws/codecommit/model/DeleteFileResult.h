@@ -165,44 +165,44 @@ namespace Model
 
 
     /**
-     * <p>The fully-qualified path to the file that will be deleted, including the full
-     * name and extension of that file.</p>
+     * <p>The fully qualified path to the file to be deleted, including the full name
+     * and extension of that file.</p>
      */
     inline const Aws::String& GetFilePath() const{ return m_filePath; }
 
     /**
-     * <p>The fully-qualified path to the file that will be deleted, including the full
-     * name and extension of that file.</p>
+     * <p>The fully qualified path to the file to be deleted, including the full name
+     * and extension of that file.</p>
      */
     inline void SetFilePath(const Aws::String& value) { m_filePath = value; }
 
     /**
-     * <p>The fully-qualified path to the file that will be deleted, including the full
-     * name and extension of that file.</p>
+     * <p>The fully qualified path to the file to be deleted, including the full name
+     * and extension of that file.</p>
      */
     inline void SetFilePath(Aws::String&& value) { m_filePath = std::move(value); }
 
     /**
-     * <p>The fully-qualified path to the file that will be deleted, including the full
-     * name and extension of that file.</p>
+     * <p>The fully qualified path to the file to be deleted, including the full name
+     * and extension of that file.</p>
      */
     inline void SetFilePath(const char* value) { m_filePath.assign(value); }
 
     /**
-     * <p>The fully-qualified path to the file that will be deleted, including the full
-     * name and extension of that file.</p>
+     * <p>The fully qualified path to the file to be deleted, including the full name
+     * and extension of that file.</p>
      */
     inline DeleteFileResult& WithFilePath(const Aws::String& value) { SetFilePath(value); return *this;}
 
     /**
-     * <p>The fully-qualified path to the file that will be deleted, including the full
-     * name and extension of that file.</p>
+     * <p>The fully qualified path to the file to be deleted, including the full name
+     * and extension of that file.</p>
      */
     inline DeleteFileResult& WithFilePath(Aws::String&& value) { SetFilePath(std::move(value)); return *this;}
 
     /**
-     * <p>The fully-qualified path to the file that will be deleted, including the full
-     * name and extension of that file.</p>
+     * <p>The fully qualified path to the file to be deleted, including the full name
+     * and extension of that file.</p>
      */
     inline DeleteFileResult& WithFilePath(const char* value) { SetFilePath(value); return *this;}
 

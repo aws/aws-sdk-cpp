@@ -55,15 +55,16 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <p>To transfer all the data in the folder you specified, DataSync
-     * needs to have permissions to mount the SMB share, as well as to access all the
-     * data in that share. To ensure this, either ensure that the user/password
-     * specified belongs to the user who can mount the share, and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access, or use credentials of a member of the Backup Operators group
-     * to mount the share. Doing either enables the agent to access the data. For the
-     * agent to access directories, you must additionally enable all execute
-     * access.</p>
+     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * all the data in the folder you specified, DataSync needs to have permissions to
+     * mount the SMB share, as well as to access all the data in that share. To ensure
+     * this, either ensure that the user/password specified belongs to the user who can
+     * mount the share, and who has the appropriate permissions for all of the files
+     * and directories that you want DataSync to access, or use credentials of a member
+     * of the Backup Operators group to mount the share. Doing either enables the agent
+     * to access the data. For the agent to access directories, you must additionally
+     * enable all execute access.</p>
      */
     inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
 
@@ -72,15 +73,16 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <p>To transfer all the data in the folder you specified, DataSync
-     * needs to have permissions to mount the SMB share, as well as to access all the
-     * data in that share. To ensure this, either ensure that the user/password
-     * specified belongs to the user who can mount the share, and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access, or use credentials of a member of the Backup Operators group
-     * to mount the share. Doing either enables the agent to access the data. For the
-     * agent to access directories, you must additionally enable all execute
-     * access.</p>
+     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * all the data in the folder you specified, DataSync needs to have permissions to
+     * mount the SMB share, as well as to access all the data in that share. To ensure
+     * this, either ensure that the user/password specified belongs to the user who can
+     * mount the share, and who has the appropriate permissions for all of the files
+     * and directories that you want DataSync to access, or use credentials of a member
+     * of the Backup Operators group to mount the share. Doing either enables the agent
+     * to access the data. For the agent to access directories, you must additionally
+     * enable all execute access.</p>
      */
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
 
@@ -89,15 +91,16 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <p>To transfer all the data in the folder you specified, DataSync
-     * needs to have permissions to mount the SMB share, as well as to access all the
-     * data in that share. To ensure this, either ensure that the user/password
-     * specified belongs to the user who can mount the share, and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access, or use credentials of a member of the Backup Operators group
-     * to mount the share. Doing either enables the agent to access the data. For the
-     * agent to access directories, you must additionally enable all execute
-     * access.</p>
+     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * all the data in the folder you specified, DataSync needs to have permissions to
+     * mount the SMB share, as well as to access all the data in that share. To ensure
+     * this, either ensure that the user/password specified belongs to the user who can
+     * mount the share, and who has the appropriate permissions for all of the files
+     * and directories that you want DataSync to access, or use credentials of a member
+     * of the Backup Operators group to mount the share. Doing either enables the agent
+     * to access the data. For the agent to access directories, you must additionally
+     * enable all execute access.</p>
      */
     inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
 
@@ -106,15 +109,16 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <p>To transfer all the data in the folder you specified, DataSync
-     * needs to have permissions to mount the SMB share, as well as to access all the
-     * data in that share. To ensure this, either ensure that the user/password
-     * specified belongs to the user who can mount the share, and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access, or use credentials of a member of the Backup Operators group
-     * to mount the share. Doing either enables the agent to access the data. For the
-     * agent to access directories, you must additionally enable all execute
-     * access.</p>
+     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * all the data in the folder you specified, DataSync needs to have permissions to
+     * mount the SMB share, as well as to access all the data in that share. To ensure
+     * this, either ensure that the user/password specified belongs to the user who can
+     * mount the share, and who has the appropriate permissions for all of the files
+     * and directories that you want DataSync to access, or use credentials of a member
+     * of the Backup Operators group to mount the share. Doing either enables the agent
+     * to access the data. For the agent to access directories, you must additionally
+     * enable all execute access.</p>
      */
     inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
 
@@ -123,15 +127,16 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <p>To transfer all the data in the folder you specified, DataSync
-     * needs to have permissions to mount the SMB share, as well as to access all the
-     * data in that share. To ensure this, either ensure that the user/password
-     * specified belongs to the user who can mount the share, and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access, or use credentials of a member of the Backup Operators group
-     * to mount the share. Doing either enables the agent to access the data. For the
-     * agent to access directories, you must additionally enable all execute
-     * access.</p>
+     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * all the data in the folder you specified, DataSync needs to have permissions to
+     * mount the SMB share, as well as to access all the data in that share. To ensure
+     * this, either ensure that the user/password specified belongs to the user who can
+     * mount the share, and who has the appropriate permissions for all of the files
+     * and directories that you want DataSync to access, or use credentials of a member
+     * of the Backup Operators group to mount the share. Doing either enables the agent
+     * to access the data. For the agent to access directories, you must additionally
+     * enable all execute access.</p>
      */
     inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
 
@@ -140,15 +145,16 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <p>To transfer all the data in the folder you specified, DataSync
-     * needs to have permissions to mount the SMB share, as well as to access all the
-     * data in that share. To ensure this, either ensure that the user/password
-     * specified belongs to the user who can mount the share, and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access, or use credentials of a member of the Backup Operators group
-     * to mount the share. Doing either enables the agent to access the data. For the
-     * agent to access directories, you must additionally enable all execute
-     * access.</p>
+     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * all the data in the folder you specified, DataSync needs to have permissions to
+     * mount the SMB share, as well as to access all the data in that share. To ensure
+     * this, either ensure that the user/password specified belongs to the user who can
+     * mount the share, and who has the appropriate permissions for all of the files
+     * and directories that you want DataSync to access, or use credentials of a member
+     * of the Backup Operators group to mount the share. Doing either enables the agent
+     * to access the data. For the agent to access directories, you must additionally
+     * enable all execute access.</p>
      */
     inline CreateLocationSmbRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
 
@@ -157,15 +163,16 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <p>To transfer all the data in the folder you specified, DataSync
-     * needs to have permissions to mount the SMB share, as well as to access all the
-     * data in that share. To ensure this, either ensure that the user/password
-     * specified belongs to the user who can mount the share, and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access, or use credentials of a member of the Backup Operators group
-     * to mount the share. Doing either enables the agent to access the data. For the
-     * agent to access directories, you must additionally enable all execute
-     * access.</p>
+     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * all the data in the folder you specified, DataSync needs to have permissions to
+     * mount the SMB share, as well as to access all the data in that share. To ensure
+     * this, either ensure that the user/password specified belongs to the user who can
+     * mount the share, and who has the appropriate permissions for all of the files
+     * and directories that you want DataSync to access, or use credentials of a member
+     * of the Backup Operators group to mount the share. Doing either enables the agent
+     * to access the data. For the agent to access directories, you must additionally
+     * enable all execute access.</p>
      */
     inline CreateLocationSmbRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
 
@@ -174,15 +181,16 @@ namespace Model
      * SMB source location or write data to the SMB destination. The SMB path should be
      * a path that's exported by the SMB server, or a subdirectory of that path. The
      * path should be such that it can be mounted by other SMB clients in your
-     * network.</p> <p>To transfer all the data in the folder you specified, DataSync
-     * needs to have permissions to mount the SMB share, as well as to access all the
-     * data in that share. To ensure this, either ensure that the user/password
-     * specified belongs to the user who can mount the share, and who has the
-     * appropriate permissions for all of the files and directories that you want
-     * DataSync to access, or use credentials of a member of the Backup Operators group
-     * to mount the share. Doing either enables the agent to access the data. For the
-     * agent to access directories, you must additionally enable all execute
-     * access.</p>
+     * network.</p> <note> <p> <code>Subdirectory</code> must be specified with forward
+     * slashes. For example <code>/path/to/folder</code>.</p> </note> <p>To transfer
+     * all the data in the folder you specified, DataSync needs to have permissions to
+     * mount the SMB share, as well as to access all the data in that share. To ensure
+     * this, either ensure that the user/password specified belongs to the user who can
+     * mount the share, and who has the appropriate permissions for all of the files
+     * and directories that you want DataSync to access, or use credentials of a member
+     * of the Backup Operators group to mount the share. Doing either enables the agent
+     * to access the data. For the agent to access directories, you must additionally
+     * enable all execute access.</p>
      */
     inline CreateLocationSmbRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
 

@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartDeliveryStreamEncryptionRequest::StartDeliveryStreamEncryptionRequest() : 
-    m_deliveryStreamNameHasBeenSet(false)
+    m_deliveryStreamNameHasBeenSet(false),
+    m_deliveryStreamEncryptionConfigurationInputHasBeenSet(false)
 {
 }
 
@@ -34,6 +35,12 @@ Aws::String StartDeliveryStreamEncryptionRequest::SerializePayload() const
   if(m_deliveryStreamNameHasBeenSet)
   {
    payload.WithString("DeliveryStreamName", m_deliveryStreamName);
+
+  }
+
+  if(m_deliveryStreamEncryptionConfigurationInputHasBeenSet)
+  {
+   payload.WithObject("DeliveryStreamEncryptionConfigurationInput", m_deliveryStreamEncryptionConfigurationInput.Jsonize());
 
   }
 

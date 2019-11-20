@@ -29,6 +29,7 @@ namespace QuickSightErrorMapper
 {
 
 static const int RESOURCE_EXISTS_HASH = HashingUtils::HashString("ResourceExistsException");
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
 static const int UNSUPPORTED_USER_EDITION_HASH = HashingUtils::HashString("UnsupportedUserEditionException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int QUICK_SIGHT_USER_NOT_FOUND_HASH = HashingUtils::HashString("QuickSightUserNotFoundException");
@@ -38,6 +39,7 @@ static const int PRECONDITION_NOT_MET_HASH = HashingUtils::HashString("Precondit
 static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int DOMAIN_NOT_WHITELISTED_HASH = HashingUtils::HashString("DomainNotWhitelistedException");
+static const int CONCURRENT_UPDATING_HASH = HashingUtils::HashString("ConcurrentUpdatingException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -47,6 +49,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == RESOURCE_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::RESOURCE_EXISTS), false);
+  }
+  else if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::CONFLICT), false);
   }
   else if (hashCode == UNSUPPORTED_USER_EDITION_HASH)
   {
@@ -83,6 +89,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DOMAIN_NOT_WHITELISTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::DOMAIN_NOT_WHITELISTED), false);
+  }
+  else if (hashCode == CONCURRENT_UPDATING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(QuickSightErrors::CONCURRENT_UPDATING), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

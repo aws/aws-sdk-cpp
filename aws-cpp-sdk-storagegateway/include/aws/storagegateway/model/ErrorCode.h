@@ -57,6 +57,7 @@ namespace Model
     LocalStorageLimitExceeded,
     LunAlreadyAllocated,
     LunInvalid,
+    JoinDomainInProgress,
     MaximumContentLengthExceeded,
     MaximumTapeCartridgeCountExceeded,
     MaximumVolumeCountExceeded,

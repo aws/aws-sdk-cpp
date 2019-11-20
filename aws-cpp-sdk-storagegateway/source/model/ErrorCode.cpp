@@ -61,6 +61,7 @@ namespace Aws
         static const int LocalStorageLimitExceeded_HASH = HashingUtils::HashString("LocalStorageLimitExceeded");
         static const int LunAlreadyAllocated_HASH = HashingUtils::HashString("LunAlreadyAllocated ");
         static const int LunInvalid_HASH = HashingUtils::HashString("LunInvalid");
+        static const int JoinDomainInProgress_HASH = HashingUtils::HashString("JoinDomainInProgress");
         static const int MaximumContentLengthExceeded_HASH = HashingUtils::HashString("MaximumContentLengthExceeded");
         static const int MaximumTapeCartridgeCountExceeded_HASH = HashingUtils::HashString("MaximumTapeCartridgeCountExceeded");
         static const int MaximumVolumeCountExceeded_HASH = HashingUtils::HashString("MaximumVolumeCountExceeded");
@@ -219,6 +220,10 @@ namespace Aws
           else if (hashCode == LunInvalid_HASH)
           {
             return ErrorCode::LunInvalid;
+          }
+          else if (hashCode == JoinDomainInProgress_HASH)
+          {
+            return ErrorCode::JoinDomainInProgress;
           }
           else if (hashCode == MaximumContentLengthExceeded_HASH)
           {
@@ -416,6 +421,8 @@ namespace Aws
             return "LunAlreadyAllocated ";
           case ErrorCode::LunInvalid:
             return "LunInvalid";
+          case ErrorCode::JoinDomainInProgress:
+            return "JoinDomainInProgress";
           case ErrorCode::MaximumContentLengthExceeded:
             return "MaximumContentLengthExceeded";
           case ErrorCode::MaximumTapeCartridgeCountExceeded:

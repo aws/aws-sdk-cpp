@@ -58,6 +58,7 @@ enum class ApplicationDiscoveryServiceErrors
 
   AUTHORIZATION_ERROR= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT_ERROR,
+  HOME_REGION_NOT_SET,
   INVALID_PARAMETER,
   OPERATION_NOT_PERMITTED,
   RESOURCE_IN_USE,

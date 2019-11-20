@@ -28,10 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ResetSnapshotAttribute.</p><p><h3>See Also:</h3> 
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ResetSnapshotAttributeRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API ResetSnapshotAttributeRequest : public EC2Request
   {

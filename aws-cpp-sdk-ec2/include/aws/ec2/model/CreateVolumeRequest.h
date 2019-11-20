@@ -30,9 +30,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreateVolume.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolumeRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API CreateVolumeRequest : public EC2Request
   {

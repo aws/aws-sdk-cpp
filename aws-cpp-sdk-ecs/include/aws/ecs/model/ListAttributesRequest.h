@@ -216,10 +216,10 @@ namespace Model
 
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListAttributes</code> request where <code>maxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code>
+     * request indicating that more results are available to fulfill the request and
+     * further calls will be needed. If <code>maxResults</code> was provided, it is
+     * possible the number of results to be fewer than <code>maxResults</code>.</p>
      * <note> <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
@@ -227,10 +227,10 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListAttributes</code> request where <code>maxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code>
+     * request indicating that more results are available to fulfill the request and
+     * further calls will be needed. If <code>maxResults</code> was provided, it is
+     * possible the number of results to be fewer than <code>maxResults</code>.</p>
      * <note> <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
@@ -238,10 +238,10 @@ namespace Model
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListAttributes</code> request where <code>maxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code>
+     * request indicating that more results are available to fulfill the request and
+     * further calls will be needed. If <code>maxResults</code> was provided, it is
+     * possible the number of results to be fewer than <code>maxResults</code>.</p>
      * <note> <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
@@ -249,10 +249,10 @@ namespace Model
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListAttributes</code> request where <code>maxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code>
+     * request indicating that more results are available to fulfill the request and
+     * further calls will be needed. If <code>maxResults</code> was provided, it is
+     * possible the number of results to be fewer than <code>maxResults</code>.</p>
      * <note> <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
@@ -260,10 +260,10 @@ namespace Model
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListAttributes</code> request where <code>maxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code>
+     * request indicating that more results are available to fulfill the request and
+     * further calls will be needed. If <code>maxResults</code> was provided, it is
+     * possible the number of results to be fewer than <code>maxResults</code>.</p>
      * <note> <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
@@ -271,10 +271,10 @@ namespace Model
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListAttributes</code> request where <code>maxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code>
+     * request indicating that more results are available to fulfill the request and
+     * further calls will be needed. If <code>maxResults</code> was provided, it is
+     * possible the number of results to be fewer than <code>maxResults</code>.</p>
      * <note> <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
@@ -282,10 +282,10 @@ namespace Model
     inline ListAttributesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListAttributes</code> request where <code>maxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code>
+     * request indicating that more results are available to fulfill the request and
+     * further calls will be needed. If <code>maxResults</code> was provided, it is
+     * possible the number of results to be fewer than <code>maxResults</code>.</p>
      * <note> <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>
@@ -293,10 +293,10 @@ namespace Model
     inline ListAttributesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>ListAttributes</code> request where <code>maxResults</code> was used and
-     * the results exceeded the value of that parameter. Pagination continues from the
-     * end of the previous results that returned the <code>nextToken</code> value.</p>
+     * <p>The <code>nextToken</code> value returned from a <code>ListAttributes</code>
+     * request indicating that more results are available to fulfill the request and
+     * further calls will be needed. If <code>maxResults</code> was provided, it is
+     * possible the number of results to be fewer than <code>maxResults</code>.</p>
      * <note> <p>This token should be treated as an opaque identifier that is only used
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> </note>

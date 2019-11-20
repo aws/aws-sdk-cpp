@@ -32,6 +32,7 @@ namespace Aws
 
         static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
         static const int PRIVATE_LINK_HASH = HashingUtils::HashString("PRIVATE_LINK");
+        static const int FIPS_HASH = HashingUtils::HashString("FIPS");
 
 
         EndpointType GetEndpointTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == PRIVATE_LINK_HASH)
           {
             return EndpointType::PRIVATE_LINK;
+          }
+          else if (hashCode == FIPS_HASH)
+          {
+            return EndpointType::FIPS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "PUBLIC";
           case EndpointType::PRIVATE_LINK:
             return "PRIVATE_LINK";
+          case EndpointType::FIPS:
+            return "FIPS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -50,37 +50,72 @@ namespace Model
 
 
     /**
-     * <p>The list of trail objects.</p>
+     * <p>The list of trail objects. Trail objects with string values are only returned
+     * if values for the objects exist in a trail's configuration. For example,
+     * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
+     * results if a trail is configured to send SNS notifications. Similarly,
+     * <code>KMSKeyId</code> only appears in results if a trail's log files are
+     * encrypted with AWS KMS-managed keys.</p>
      */
     inline const Aws::Vector<Trail>& GetTrailList() const{ return m_trailList; }
 
     /**
-     * <p>The list of trail objects.</p>
+     * <p>The list of trail objects. Trail objects with string values are only returned
+     * if values for the objects exist in a trail's configuration. For example,
+     * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
+     * results if a trail is configured to send SNS notifications. Similarly,
+     * <code>KMSKeyId</code> only appears in results if a trail's log files are
+     * encrypted with AWS KMS-managed keys.</p>
      */
     inline void SetTrailList(const Aws::Vector<Trail>& value) { m_trailList = value; }
 
     /**
-     * <p>The list of trail objects.</p>
+     * <p>The list of trail objects. Trail objects with string values are only returned
+     * if values for the objects exist in a trail's configuration. For example,
+     * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
+     * results if a trail is configured to send SNS notifications. Similarly,
+     * <code>KMSKeyId</code> only appears in results if a trail's log files are
+     * encrypted with AWS KMS-managed keys.</p>
      */
     inline void SetTrailList(Aws::Vector<Trail>&& value) { m_trailList = std::move(value); }
 
     /**
-     * <p>The list of trail objects.</p>
+     * <p>The list of trail objects. Trail objects with string values are only returned
+     * if values for the objects exist in a trail's configuration. For example,
+     * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
+     * results if a trail is configured to send SNS notifications. Similarly,
+     * <code>KMSKeyId</code> only appears in results if a trail's log files are
+     * encrypted with AWS KMS-managed keys.</p>
      */
     inline DescribeTrailsResult& WithTrailList(const Aws::Vector<Trail>& value) { SetTrailList(value); return *this;}
 
     /**
-     * <p>The list of trail objects.</p>
+     * <p>The list of trail objects. Trail objects with string values are only returned
+     * if values for the objects exist in a trail's configuration. For example,
+     * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
+     * results if a trail is configured to send SNS notifications. Similarly,
+     * <code>KMSKeyId</code> only appears in results if a trail's log files are
+     * encrypted with AWS KMS-managed keys.</p>
      */
     inline DescribeTrailsResult& WithTrailList(Aws::Vector<Trail>&& value) { SetTrailList(std::move(value)); return *this;}
 
     /**
-     * <p>The list of trail objects.</p>
+     * <p>The list of trail objects. Trail objects with string values are only returned
+     * if values for the objects exist in a trail's configuration. For example,
+     * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
+     * results if a trail is configured to send SNS notifications. Similarly,
+     * <code>KMSKeyId</code> only appears in results if a trail's log files are
+     * encrypted with AWS KMS-managed keys.</p>
      */
     inline DescribeTrailsResult& AddTrailList(const Trail& value) { m_trailList.push_back(value); return *this; }
 
     /**
-     * <p>The list of trail objects.</p>
+     * <p>The list of trail objects. Trail objects with string values are only returned
+     * if values for the objects exist in a trail's configuration. For example,
+     * <code>SNSTopicName</code> and <code>SNSTopicARN</code> are only returned in
+     * results if a trail is configured to send SNS notifications. Similarly,
+     * <code>KMSKeyId</code> only appears in results if a trail's log files are
+     * encrypted with AWS KMS-managed keys.</p>
      */
     inline DescribeTrailsResult& AddTrailList(Trail&& value) { m_trailList.push_back(std::move(value)); return *this; }
 

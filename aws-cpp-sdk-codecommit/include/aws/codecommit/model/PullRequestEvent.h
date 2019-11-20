@@ -22,6 +22,9 @@
 #include <aws/codecommit/model/PullRequestStatusChangedEventMetadata.h>
 #include <aws/codecommit/model/PullRequestSourceReferenceUpdatedEventMetadata.h>
 #include <aws/codecommit/model/PullRequestMergedStateChangedEventMetadata.h>
+#include <aws/codecommit/model/ApprovalRuleEventMetadata.h>
+#include <aws/codecommit/model/ApprovalStateChangedEventMetadata.h>
+#include <aws/codecommit/model/ApprovalRuleOverriddenEventMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -126,101 +129,101 @@ namespace Model
 
 
     /**
-     * <p>The type of the pull request event, for example a status change event
+     * <p>The type of the pull request event (for example, a status change event
      * (PULL_REQUEST_STATUS_CHANGED) or update event
-     * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).</p>
+     * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
      */
     inline const PullRequestEventType& GetPullRequestEventType() const{ return m_pullRequestEventType; }
 
     /**
-     * <p>The type of the pull request event, for example a status change event
+     * <p>The type of the pull request event (for example, a status change event
      * (PULL_REQUEST_STATUS_CHANGED) or update event
-     * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).</p>
+     * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
      */
     inline bool PullRequestEventTypeHasBeenSet() const { return m_pullRequestEventTypeHasBeenSet; }
 
     /**
-     * <p>The type of the pull request event, for example a status change event
+     * <p>The type of the pull request event (for example, a status change event
      * (PULL_REQUEST_STATUS_CHANGED) or update event
-     * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).</p>
+     * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
      */
     inline void SetPullRequestEventType(const PullRequestEventType& value) { m_pullRequestEventTypeHasBeenSet = true; m_pullRequestEventType = value; }
 
     /**
-     * <p>The type of the pull request event, for example a status change event
+     * <p>The type of the pull request event (for example, a status change event
      * (PULL_REQUEST_STATUS_CHANGED) or update event
-     * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).</p>
+     * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
      */
     inline void SetPullRequestEventType(PullRequestEventType&& value) { m_pullRequestEventTypeHasBeenSet = true; m_pullRequestEventType = std::move(value); }
 
     /**
-     * <p>The type of the pull request event, for example a status change event
+     * <p>The type of the pull request event (for example, a status change event
      * (PULL_REQUEST_STATUS_CHANGED) or update event
-     * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).</p>
+     * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
      */
     inline PullRequestEvent& WithPullRequestEventType(const PullRequestEventType& value) { SetPullRequestEventType(value); return *this;}
 
     /**
-     * <p>The type of the pull request event, for example a status change event
+     * <p>The type of the pull request event (for example, a status change event
      * (PULL_REQUEST_STATUS_CHANGED) or update event
-     * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED).</p>
+     * (PULL_REQUEST_SOURCE_REFERENCE_UPDATED)).</p>
      */
     inline PullRequestEvent& WithPullRequestEventType(PullRequestEventType&& value) { SetPullRequestEventType(std::move(value)); return *this;}
 
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the
-     * event. Examples include updating the pull request with additional commits or
-     * changing the status of a pull request.</p>
+     * event. Examples include updating the pull request with more commits or changing
+     * the status of a pull request.</p>
      */
     inline const Aws::String& GetActorArn() const{ return m_actorArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the
-     * event. Examples include updating the pull request with additional commits or
-     * changing the status of a pull request.</p>
+     * event. Examples include updating the pull request with more commits or changing
+     * the status of a pull request.</p>
      */
     inline bool ActorArnHasBeenSet() const { return m_actorArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the
-     * event. Examples include updating the pull request with additional commits or
-     * changing the status of a pull request.</p>
+     * event. Examples include updating the pull request with more commits or changing
+     * the status of a pull request.</p>
      */
     inline void SetActorArn(const Aws::String& value) { m_actorArnHasBeenSet = true; m_actorArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the
-     * event. Examples include updating the pull request with additional commits or
-     * changing the status of a pull request.</p>
+     * event. Examples include updating the pull request with more commits or changing
+     * the status of a pull request.</p>
      */
     inline void SetActorArn(Aws::String&& value) { m_actorArnHasBeenSet = true; m_actorArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the
-     * event. Examples include updating the pull request with additional commits or
-     * changing the status of a pull request.</p>
+     * event. Examples include updating the pull request with more commits or changing
+     * the status of a pull request.</p>
      */
     inline void SetActorArn(const char* value) { m_actorArnHasBeenSet = true; m_actorArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the
-     * event. Examples include updating the pull request with additional commits or
-     * changing the status of a pull request.</p>
+     * event. Examples include updating the pull request with more commits or changing
+     * the status of a pull request.</p>
      */
     inline PullRequestEvent& WithActorArn(const Aws::String& value) { SetActorArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the
-     * event. Examples include updating the pull request with additional commits or
-     * changing the status of a pull request.</p>
+     * event. Examples include updating the pull request with more commits or changing
+     * the status of a pull request.</p>
      */
     inline PullRequestEvent& WithActorArn(Aws::String&& value) { SetActorArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user whose actions resulted in the
-     * event. Examples include updating the pull request with additional commits or
-     * changing the status of a pull request.</p>
+     * event. Examples include updating the pull request with more commits or changing
+     * the status of a pull request.</p>
      */
     inline PullRequestEvent& WithActorArn(const char* value) { SetActorArn(value); return *this;}
 
@@ -360,6 +363,99 @@ namespace Model
      */
     inline PullRequestEvent& WithPullRequestMergedStateChangedEventMetadata(PullRequestMergedStateChangedEventMetadata&& value) { SetPullRequestMergedStateChangedEventMetadata(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about a pull request event.</p>
+     */
+    inline const ApprovalRuleEventMetadata& GetApprovalRuleEventMetadata() const{ return m_approvalRuleEventMetadata; }
+
+    /**
+     * <p>Information about a pull request event.</p>
+     */
+    inline bool ApprovalRuleEventMetadataHasBeenSet() const { return m_approvalRuleEventMetadataHasBeenSet; }
+
+    /**
+     * <p>Information about a pull request event.</p>
+     */
+    inline void SetApprovalRuleEventMetadata(const ApprovalRuleEventMetadata& value) { m_approvalRuleEventMetadataHasBeenSet = true; m_approvalRuleEventMetadata = value; }
+
+    /**
+     * <p>Information about a pull request event.</p>
+     */
+    inline void SetApprovalRuleEventMetadata(ApprovalRuleEventMetadata&& value) { m_approvalRuleEventMetadataHasBeenSet = true; m_approvalRuleEventMetadata = std::move(value); }
+
+    /**
+     * <p>Information about a pull request event.</p>
+     */
+    inline PullRequestEvent& WithApprovalRuleEventMetadata(const ApprovalRuleEventMetadata& value) { SetApprovalRuleEventMetadata(value); return *this;}
+
+    /**
+     * <p>Information about a pull request event.</p>
+     */
+    inline PullRequestEvent& WithApprovalRuleEventMetadata(ApprovalRuleEventMetadata&& value) { SetApprovalRuleEventMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about an approval state change for a pull request.</p>
+     */
+    inline const ApprovalStateChangedEventMetadata& GetApprovalStateChangedEventMetadata() const{ return m_approvalStateChangedEventMetadata; }
+
+    /**
+     * <p>Information about an approval state change for a pull request.</p>
+     */
+    inline bool ApprovalStateChangedEventMetadataHasBeenSet() const { return m_approvalStateChangedEventMetadataHasBeenSet; }
+
+    /**
+     * <p>Information about an approval state change for a pull request.</p>
+     */
+    inline void SetApprovalStateChangedEventMetadata(const ApprovalStateChangedEventMetadata& value) { m_approvalStateChangedEventMetadataHasBeenSet = true; m_approvalStateChangedEventMetadata = value; }
+
+    /**
+     * <p>Information about an approval state change for a pull request.</p>
+     */
+    inline void SetApprovalStateChangedEventMetadata(ApprovalStateChangedEventMetadata&& value) { m_approvalStateChangedEventMetadataHasBeenSet = true; m_approvalStateChangedEventMetadata = std::move(value); }
+
+    /**
+     * <p>Information about an approval state change for a pull request.</p>
+     */
+    inline PullRequestEvent& WithApprovalStateChangedEventMetadata(const ApprovalStateChangedEventMetadata& value) { SetApprovalStateChangedEventMetadata(value); return *this;}
+
+    /**
+     * <p>Information about an approval state change for a pull request.</p>
+     */
+    inline PullRequestEvent& WithApprovalStateChangedEventMetadata(ApprovalStateChangedEventMetadata&& value) { SetApprovalStateChangedEventMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Information about an approval rule override event for a pull request.</p>
+     */
+    inline const ApprovalRuleOverriddenEventMetadata& GetApprovalRuleOverriddenEventMetadata() const{ return m_approvalRuleOverriddenEventMetadata; }
+
+    /**
+     * <p>Information about an approval rule override event for a pull request.</p>
+     */
+    inline bool ApprovalRuleOverriddenEventMetadataHasBeenSet() const { return m_approvalRuleOverriddenEventMetadataHasBeenSet; }
+
+    /**
+     * <p>Information about an approval rule override event for a pull request.</p>
+     */
+    inline void SetApprovalRuleOverriddenEventMetadata(const ApprovalRuleOverriddenEventMetadata& value) { m_approvalRuleOverriddenEventMetadataHasBeenSet = true; m_approvalRuleOverriddenEventMetadata = value; }
+
+    /**
+     * <p>Information about an approval rule override event for a pull request.</p>
+     */
+    inline void SetApprovalRuleOverriddenEventMetadata(ApprovalRuleOverriddenEventMetadata&& value) { m_approvalRuleOverriddenEventMetadataHasBeenSet = true; m_approvalRuleOverriddenEventMetadata = std::move(value); }
+
+    /**
+     * <p>Information about an approval rule override event for a pull request.</p>
+     */
+    inline PullRequestEvent& WithApprovalRuleOverriddenEventMetadata(const ApprovalRuleOverriddenEventMetadata& value) { SetApprovalRuleOverriddenEventMetadata(value); return *this;}
+
+    /**
+     * <p>Information about an approval rule override event for a pull request.</p>
+     */
+    inline PullRequestEvent& WithApprovalRuleOverriddenEventMetadata(ApprovalRuleOverriddenEventMetadata&& value) { SetApprovalRuleOverriddenEventMetadata(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pullRequestId;
@@ -385,6 +481,15 @@ namespace Model
 
     PullRequestMergedStateChangedEventMetadata m_pullRequestMergedStateChangedEventMetadata;
     bool m_pullRequestMergedStateChangedEventMetadataHasBeenSet;
+
+    ApprovalRuleEventMetadata m_approvalRuleEventMetadata;
+    bool m_approvalRuleEventMetadataHasBeenSet;
+
+    ApprovalStateChangedEventMetadata m_approvalStateChangedEventMetadata;
+    bool m_approvalStateChangedEventMetadataHasBeenSet;
+
+    ApprovalRuleOverriddenEventMetadata m_approvalRuleOverriddenEventMetadata;
+    bool m_approvalRuleOverriddenEventMetadataHasBeenSet;
   };
 
 } // namespace Model

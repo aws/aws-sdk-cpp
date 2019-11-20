@@ -33,6 +33,8 @@ namespace Aws
         static const int USER_HASH = HashingUtils::HashString("USER");
         static const int GROUP_HASH = HashingUtils::HashString("GROUP");
         static const int NAMESPACE_HASH = HashingUtils::HashString("NAMESPACE");
+        static const int ACCOUNT_SETTINGS_HASH = HashingUtils::HashString("ACCOUNT_SETTINGS");
+        static const int IAMPOLICY_ASSIGNMENT_HASH = HashingUtils::HashString("IAMPOLICY_ASSIGNMENT");
         static const int DATA_SOURCE_HASH = HashingUtils::HashString("DATA_SOURCE");
         static const int DATA_SET_HASH = HashingUtils::HashString("DATA_SET");
         static const int VPC_CONNECTION_HASH = HashingUtils::HashString("VPC_CONNECTION");
@@ -53,6 +55,14 @@ namespace Aws
           else if (hashCode == NAMESPACE_HASH)
           {
             return ExceptionResourceType::NAMESPACE;
+          }
+          else if (hashCode == ACCOUNT_SETTINGS_HASH)
+          {
+            return ExceptionResourceType::ACCOUNT_SETTINGS;
+          }
+          else if (hashCode == IAMPOLICY_ASSIGNMENT_HASH)
+          {
+            return ExceptionResourceType::IAMPOLICY_ASSIGNMENT;
           }
           else if (hashCode == DATA_SOURCE_HASH)
           {
@@ -90,6 +100,10 @@ namespace Aws
             return "GROUP";
           case ExceptionResourceType::NAMESPACE:
             return "NAMESPACE";
+          case ExceptionResourceType::ACCOUNT_SETTINGS:
+            return "ACCOUNT_SETTINGS";
+          case ExceptionResourceType::IAMPOLICY_ASSIGNMENT:
+            return "IAMPOLICY_ASSIGNMENT";
           case ExceptionResourceType::DATA_SOURCE:
             return "DATA_SOURCE";
           case ExceptionResourceType::DATA_SET:

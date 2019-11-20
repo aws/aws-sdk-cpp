@@ -51,6 +51,7 @@ static const int INVALID_TIME_RANGE_HASH = HashingUtils::HashString("InvalidTime
 static const int INVALID_EVENT_SELECTORS_HASH = HashingUtils::HashString("InvalidEventSelectorsException");
 static const int INSUFFICIENT_ENCRYPTION_POLICY_HASH = HashingUtils::HashString("InsufficientEncryptionPolicyException");
 static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
+static const int INVALID_INSIGHT_SELECTORS_HASH = HashingUtils::HashString("InvalidInsightSelectorsException");
 static const int TRAIL_NOT_PROVIDED_HASH = HashingUtils::HashString("TrailNotProvidedException");
 static const int INSUFFICIENT_S3_BUCKET_POLICY_HASH = HashingUtils::HashString("InsufficientS3BucketPolicyException");
 static const int ORGANIZATION_NOT_IN_ALL_FEATURES_MODE_HASH = HashingUtils::HashString("OrganizationNotInAllFeaturesModeException");
@@ -61,6 +62,8 @@ static const int INVALID_CLOUD_WATCH_LOGS_LOG_GROUP_ARN_HASH = HashingUtils::Has
 static const int RESOURCE_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("ResourceTypeNotSupportedException");
 static const int S3_BUCKET_DOES_NOT_EXIST_HASH = HashingUtils::HashString("S3BucketDoesNotExistException");
 static const int KMS_HASH = HashingUtils::HashString("KmsException");
+static const int INSIGHT_NOT_ENABLED_HASH = HashingUtils::HashString("InsightNotEnabledException");
+static const int INVALID_EVENT_CATEGORY_HASH = HashingUtils::HashString("InvalidEventCategoryException");
 static const int CLOUD_TRAIL_A_R_N_INVALID_HASH = HashingUtils::HashString("CloudTrailARNInvalidException");
 static const int KMS_KEY_DISABLED_HASH = HashingUtils::HashString("KmsKeyDisabledException");
 static const int INVALID_S3_BUCKET_NAME_HASH = HashingUtils::HashString("InvalidS3BucketNameException");
@@ -163,6 +166,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::OPERATION_NOT_PERMITTED), false);
   }
+  else if (hashCode == INVALID_INSIGHT_SELECTORS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_INSIGHT_SELECTORS), false);
+  }
   else if (hashCode == TRAIL_NOT_PROVIDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::TRAIL_NOT_PROVIDED), false);
@@ -202,6 +209,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == KMS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::KMS), false);
+  }
+  else if (hashCode == INSIGHT_NOT_ENABLED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INSIGHT_NOT_ENABLED), false);
+  }
+  else if (hashCode == INVALID_EVENT_CATEGORY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudTrailErrors::INVALID_EVENT_CATEGORY), false);
   }
   else if (hashCode == CLOUD_TRAIL_A_R_N_INVALID_HASH)
   {

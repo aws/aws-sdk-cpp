@@ -34,8 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>A file that will be deleted as part of a commit.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>A file that is deleted as part of a commit.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DeleteFileEntry">AWS
    * API Reference</a></p>
    */
@@ -49,50 +48,42 @@ namespace Model
 
 
     /**
-     * <p>The full path of the file that will be deleted, including the name of the
-     * file.</p>
+     * <p>The full path of the file to be deleted, including the name of the file.</p>
      */
     inline const Aws::String& GetFilePath() const{ return m_filePath; }
 
     /**
-     * <p>The full path of the file that will be deleted, including the name of the
-     * file.</p>
+     * <p>The full path of the file to be deleted, including the name of the file.</p>
      */
     inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
 
     /**
-     * <p>The full path of the file that will be deleted, including the name of the
-     * file.</p>
+     * <p>The full path of the file to be deleted, including the name of the file.</p>
      */
     inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
 
     /**
-     * <p>The full path of the file that will be deleted, including the name of the
-     * file.</p>
+     * <p>The full path of the file to be deleted, including the name of the file.</p>
      */
     inline void SetFilePath(Aws::String&& value) { m_filePathHasBeenSet = true; m_filePath = std::move(value); }
 
     /**
-     * <p>The full path of the file that will be deleted, including the name of the
-     * file.</p>
+     * <p>The full path of the file to be deleted, including the name of the file.</p>
      */
     inline void SetFilePath(const char* value) { m_filePathHasBeenSet = true; m_filePath.assign(value); }
 
     /**
-     * <p>The full path of the file that will be deleted, including the name of the
-     * file.</p>
+     * <p>The full path of the file to be deleted, including the name of the file.</p>
      */
     inline DeleteFileEntry& WithFilePath(const Aws::String& value) { SetFilePath(value); return *this;}
 
     /**
-     * <p>The full path of the file that will be deleted, including the name of the
-     * file.</p>
+     * <p>The full path of the file to be deleted, including the name of the file.</p>
      */
     inline DeleteFileEntry& WithFilePath(Aws::String&& value) { SetFilePath(std::move(value)); return *this;}
 
     /**
-     * <p>The full path of the file that will be deleted, including the name of the
-     * file.</p>
+     * <p>The full path of the file to be deleted, including the name of the file.</p>
      */
     inline DeleteFileEntry& WithFilePath(const char* value) { SetFilePath(value); return *this;}
 

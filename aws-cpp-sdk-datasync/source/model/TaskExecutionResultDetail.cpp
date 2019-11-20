@@ -33,6 +33,8 @@ TaskExecutionResultDetail::TaskExecutionResultDetail() :
     m_prepareDurationHasBeenSet(false),
     m_prepareStatus(PhaseStatus::NOT_SET),
     m_prepareStatusHasBeenSet(false),
+    m_totalDuration(0),
+    m_totalDurationHasBeenSet(false),
     m_transferDuration(0),
     m_transferDurationHasBeenSet(false),
     m_transferStatus(PhaseStatus::NOT_SET),
@@ -51,6 +53,8 @@ TaskExecutionResultDetail::TaskExecutionResultDetail(JsonView jsonValue) :
     m_prepareDurationHasBeenSet(false),
     m_prepareStatus(PhaseStatus::NOT_SET),
     m_prepareStatusHasBeenSet(false),
+    m_totalDuration(0),
+    m_totalDurationHasBeenSet(false),
     m_transferDuration(0),
     m_transferDurationHasBeenSet(false),
     m_transferStatus(PhaseStatus::NOT_SET),
@@ -79,6 +83,13 @@ TaskExecutionResultDetail& TaskExecutionResultDetail::operator =(JsonView jsonVa
     m_prepareStatus = PhaseStatusMapper::GetPhaseStatusForName(jsonValue.GetString("PrepareStatus"));
 
     m_prepareStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TotalDuration"))
+  {
+    m_totalDuration = jsonValue.GetInt64("TotalDuration");
+
+    m_totalDurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TransferDuration"))
@@ -139,6 +150,12 @@ JsonValue TaskExecutionResultDetail::Jsonize() const
   if(m_prepareStatusHasBeenSet)
   {
    payload.WithString("PrepareStatus", PhaseStatusMapper::GetNameForPhaseStatus(m_prepareStatus));
+  }
+
+  if(m_totalDurationHasBeenSet)
+  {
+   payload.WithInt64("TotalDuration", m_totalDuration);
+
   }
 
   if(m_transferDurationHasBeenSet)

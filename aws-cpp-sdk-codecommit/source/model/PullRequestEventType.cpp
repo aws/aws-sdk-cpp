@@ -34,6 +34,11 @@ namespace Aws
         static const int PULL_REQUEST_STATUS_CHANGED_HASH = HashingUtils::HashString("PULL_REQUEST_STATUS_CHANGED");
         static const int PULL_REQUEST_SOURCE_REFERENCE_UPDATED_HASH = HashingUtils::HashString("PULL_REQUEST_SOURCE_REFERENCE_UPDATED");
         static const int PULL_REQUEST_MERGE_STATE_CHANGED_HASH = HashingUtils::HashString("PULL_REQUEST_MERGE_STATE_CHANGED");
+        static const int PULL_REQUEST_APPROVAL_RULE_CREATED_HASH = HashingUtils::HashString("PULL_REQUEST_APPROVAL_RULE_CREATED");
+        static const int PULL_REQUEST_APPROVAL_RULE_UPDATED_HASH = HashingUtils::HashString("PULL_REQUEST_APPROVAL_RULE_UPDATED");
+        static const int PULL_REQUEST_APPROVAL_RULE_DELETED_HASH = HashingUtils::HashString("PULL_REQUEST_APPROVAL_RULE_DELETED");
+        static const int PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN_HASH = HashingUtils::HashString("PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN");
+        static const int PULL_REQUEST_APPROVAL_STATE_CHANGED_HASH = HashingUtils::HashString("PULL_REQUEST_APPROVAL_STATE_CHANGED");
 
 
         PullRequestEventType GetPullRequestEventTypeForName(const Aws::String& name)
@@ -54,6 +59,26 @@ namespace Aws
           else if (hashCode == PULL_REQUEST_MERGE_STATE_CHANGED_HASH)
           {
             return PullRequestEventType::PULL_REQUEST_MERGE_STATE_CHANGED;
+          }
+          else if (hashCode == PULL_REQUEST_APPROVAL_RULE_CREATED_HASH)
+          {
+            return PullRequestEventType::PULL_REQUEST_APPROVAL_RULE_CREATED;
+          }
+          else if (hashCode == PULL_REQUEST_APPROVAL_RULE_UPDATED_HASH)
+          {
+            return PullRequestEventType::PULL_REQUEST_APPROVAL_RULE_UPDATED;
+          }
+          else if (hashCode == PULL_REQUEST_APPROVAL_RULE_DELETED_HASH)
+          {
+            return PullRequestEventType::PULL_REQUEST_APPROVAL_RULE_DELETED;
+          }
+          else if (hashCode == PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN_HASH)
+          {
+            return PullRequestEventType::PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN;
+          }
+          else if (hashCode == PULL_REQUEST_APPROVAL_STATE_CHANGED_HASH)
+          {
+            return PullRequestEventType::PULL_REQUEST_APPROVAL_STATE_CHANGED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +102,16 @@ namespace Aws
             return "PULL_REQUEST_SOURCE_REFERENCE_UPDATED";
           case PullRequestEventType::PULL_REQUEST_MERGE_STATE_CHANGED:
             return "PULL_REQUEST_MERGE_STATE_CHANGED";
+          case PullRequestEventType::PULL_REQUEST_APPROVAL_RULE_CREATED:
+            return "PULL_REQUEST_APPROVAL_RULE_CREATED";
+          case PullRequestEventType::PULL_REQUEST_APPROVAL_RULE_UPDATED:
+            return "PULL_REQUEST_APPROVAL_RULE_UPDATED";
+          case PullRequestEventType::PULL_REQUEST_APPROVAL_RULE_DELETED:
+            return "PULL_REQUEST_APPROVAL_RULE_DELETED";
+          case PullRequestEventType::PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN:
+            return "PULL_REQUEST_APPROVAL_RULE_OVERRIDDEN";
+          case PullRequestEventType::PULL_REQUEST_APPROVAL_STATE_CHANGED:
+            return "PULL_REQUEST_APPROVAL_STATE_CHANGED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

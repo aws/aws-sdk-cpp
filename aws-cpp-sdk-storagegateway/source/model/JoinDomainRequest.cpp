@@ -27,6 +27,8 @@ JoinDomainRequest::JoinDomainRequest() :
     m_domainNameHasBeenSet(false),
     m_organizationalUnitHasBeenSet(false),
     m_domainControllersHasBeenSet(false),
+    m_timeoutInSeconds(0),
+    m_timeoutInSecondsHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_passwordHasBeenSet(false)
 {
@@ -62,6 +64,12 @@ Aws::String JoinDomainRequest::SerializePayload() const
      domainControllersJsonList[domainControllersIndex].AsString(m_domainControllers[domainControllersIndex]);
    }
    payload.WithArray("DomainControllers", std::move(domainControllersJsonList));
+
+  }
+
+  if(m_timeoutInSecondsHasBeenSet)
+  {
+   payload.WithInteger("TimeoutInSeconds", m_timeoutInSeconds);
 
   }
 

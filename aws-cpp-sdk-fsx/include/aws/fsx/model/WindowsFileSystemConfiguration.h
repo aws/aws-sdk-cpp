@@ -17,6 +17,7 @@
 #include <aws/fsx/FSx_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/fsx/model/SelfManagedActiveDirectoryAttributes.h>
+#include <aws/fsx/model/WindowsDeploymentType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/fsx/model/FileSystemMaintenanceOperation.h>
 #include <utility>
@@ -117,6 +118,334 @@ namespace Model
 
     
     inline WindowsFileSystemConfiguration& WithSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryAttributes&& value) { SetSelfManagedActiveDirectoryConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies the file system deployment type, valid values are the
+     * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Specifies a high
+     * availability file system that is configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability.</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured
+     * for single AZ redundancy.</p> </li> </ul>
+     */
+    inline const WindowsDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
+
+    /**
+     * <p>Specifies the file system deployment type, valid values are the
+     * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Specifies a high
+     * availability file system that is configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability.</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured
+     * for single AZ redundancy.</p> </li> </ul>
+     */
+    inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the file system deployment type, valid values are the
+     * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Specifies a high
+     * availability file system that is configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability.</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured
+     * for single AZ redundancy.</p> </li> </ul>
+     */
+    inline void SetDeploymentType(const WindowsDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+
+    /**
+     * <p>Specifies the file system deployment type, valid values are the
+     * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Specifies a high
+     * availability file system that is configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability.</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured
+     * for single AZ redundancy.</p> </li> </ul>
+     */
+    inline void SetDeploymentType(WindowsDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
+
+    /**
+     * <p>Specifies the file system deployment type, valid values are the
+     * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Specifies a high
+     * availability file system that is configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability.</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured
+     * for single AZ redundancy.</p> </li> </ul>
+     */
+    inline WindowsFileSystemConfiguration& WithDeploymentType(const WindowsDeploymentType& value) { SetDeploymentType(value); return *this;}
+
+    /**
+     * <p>Specifies the file system deployment type, valid values are the
+     * following:</p> <ul> <li> <p> <code>MULTI_AZ_1</code> - Specifies a high
+     * availability file system that is configured for Multi-AZ redundancy to tolerate
+     * temporary Availability Zone (AZ) unavailability.</p> </li> <li> <p>
+     * <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured
+     * for single AZ redundancy.</p> </li> </ul>
+     */
+    inline WindowsFileSystemConfiguration& WithDeploymentType(WindowsDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, use this endpoint when
+     * performing administrative tasks on the file system using Amazon FSx Remote
+     * PowerShell.</p> <p>For <code>SINGLE_AZ_1</code> deployment types, this is the
+     * DNS name of the file system.</p> <p>This endpoint is temporarily unavailable
+     * when the file system is undergoing maintenance.</p>
+     */
+    inline const Aws::String& GetRemoteAdministrationEndpoint() const{ return m_remoteAdministrationEndpoint; }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, use this endpoint when
+     * performing administrative tasks on the file system using Amazon FSx Remote
+     * PowerShell.</p> <p>For <code>SINGLE_AZ_1</code> deployment types, this is the
+     * DNS name of the file system.</p> <p>This endpoint is temporarily unavailable
+     * when the file system is undergoing maintenance.</p>
+     */
+    inline bool RemoteAdministrationEndpointHasBeenSet() const { return m_remoteAdministrationEndpointHasBeenSet; }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, use this endpoint when
+     * performing administrative tasks on the file system using Amazon FSx Remote
+     * PowerShell.</p> <p>For <code>SINGLE_AZ_1</code> deployment types, this is the
+     * DNS name of the file system.</p> <p>This endpoint is temporarily unavailable
+     * when the file system is undergoing maintenance.</p>
+     */
+    inline void SetRemoteAdministrationEndpoint(const Aws::String& value) { m_remoteAdministrationEndpointHasBeenSet = true; m_remoteAdministrationEndpoint = value; }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, use this endpoint when
+     * performing administrative tasks on the file system using Amazon FSx Remote
+     * PowerShell.</p> <p>For <code>SINGLE_AZ_1</code> deployment types, this is the
+     * DNS name of the file system.</p> <p>This endpoint is temporarily unavailable
+     * when the file system is undergoing maintenance.</p>
+     */
+    inline void SetRemoteAdministrationEndpoint(Aws::String&& value) { m_remoteAdministrationEndpointHasBeenSet = true; m_remoteAdministrationEndpoint = std::move(value); }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, use this endpoint when
+     * performing administrative tasks on the file system using Amazon FSx Remote
+     * PowerShell.</p> <p>For <code>SINGLE_AZ_1</code> deployment types, this is the
+     * DNS name of the file system.</p> <p>This endpoint is temporarily unavailable
+     * when the file system is undergoing maintenance.</p>
+     */
+    inline void SetRemoteAdministrationEndpoint(const char* value) { m_remoteAdministrationEndpointHasBeenSet = true; m_remoteAdministrationEndpoint.assign(value); }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, use this endpoint when
+     * performing administrative tasks on the file system using Amazon FSx Remote
+     * PowerShell.</p> <p>For <code>SINGLE_AZ_1</code> deployment types, this is the
+     * DNS name of the file system.</p> <p>This endpoint is temporarily unavailable
+     * when the file system is undergoing maintenance.</p>
+     */
+    inline WindowsFileSystemConfiguration& WithRemoteAdministrationEndpoint(const Aws::String& value) { SetRemoteAdministrationEndpoint(value); return *this;}
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, use this endpoint when
+     * performing administrative tasks on the file system using Amazon FSx Remote
+     * PowerShell.</p> <p>For <code>SINGLE_AZ_1</code> deployment types, this is the
+     * DNS name of the file system.</p> <p>This endpoint is temporarily unavailable
+     * when the file system is undergoing maintenance.</p>
+     */
+    inline WindowsFileSystemConfiguration& WithRemoteAdministrationEndpoint(Aws::String&& value) { SetRemoteAdministrationEndpoint(std::move(value)); return *this;}
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, use this endpoint when
+     * performing administrative tasks on the file system using Amazon FSx Remote
+     * PowerShell.</p> <p>For <code>SINGLE_AZ_1</code> deployment types, this is the
+     * DNS name of the file system.</p> <p>This endpoint is temporarily unavailable
+     * when the file system is undergoing maintenance.</p>
+     */
+    inline WindowsFileSystemConfiguration& WithRemoteAdministrationEndpoint(const char* value) { SetRemoteAdministrationEndpoint(value); return *this;}
+
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the
+     * subnet where the preferred file server is located. Must be one of the two subnet
+     * IDs specified in <code>SubnetIds</code> property. Amazon FSx serves traffic from
+     * this subnet except in the event of a failover to the secondary file server.</p>
+     * <p>For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that
+     * for <code>SubnetIDs</code>.</p>
+     */
+    inline const Aws::String& GetPreferredSubnetId() const{ return m_preferredSubnetId; }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the
+     * subnet where the preferred file server is located. Must be one of the two subnet
+     * IDs specified in <code>SubnetIds</code> property. Amazon FSx serves traffic from
+     * this subnet except in the event of a failover to the secondary file server.</p>
+     * <p>For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that
+     * for <code>SubnetIDs</code>.</p>
+     */
+    inline bool PreferredSubnetIdHasBeenSet() const { return m_preferredSubnetIdHasBeenSet; }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the
+     * subnet where the preferred file server is located. Must be one of the two subnet
+     * IDs specified in <code>SubnetIds</code> property. Amazon FSx serves traffic from
+     * this subnet except in the event of a failover to the secondary file server.</p>
+     * <p>For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that
+     * for <code>SubnetIDs</code>.</p>
+     */
+    inline void SetPreferredSubnetId(const Aws::String& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = value; }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the
+     * subnet where the preferred file server is located. Must be one of the two subnet
+     * IDs specified in <code>SubnetIds</code> property. Amazon FSx serves traffic from
+     * this subnet except in the event of a failover to the secondary file server.</p>
+     * <p>For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that
+     * for <code>SubnetIDs</code>.</p>
+     */
+    inline void SetPreferredSubnetId(Aws::String&& value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId = std::move(value); }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the
+     * subnet where the preferred file server is located. Must be one of the two subnet
+     * IDs specified in <code>SubnetIds</code> property. Amazon FSx serves traffic from
+     * this subnet except in the event of a failover to the secondary file server.</p>
+     * <p>For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that
+     * for <code>SubnetIDs</code>.</p>
+     */
+    inline void SetPreferredSubnetId(const char* value) { m_preferredSubnetIdHasBeenSet = true; m_preferredSubnetId.assign(value); }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the
+     * subnet where the preferred file server is located. Must be one of the two subnet
+     * IDs specified in <code>SubnetIds</code> property. Amazon FSx serves traffic from
+     * this subnet except in the event of a failover to the secondary file server.</p>
+     * <p>For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that
+     * for <code>SubnetIDs</code>.</p>
+     */
+    inline WindowsFileSystemConfiguration& WithPreferredSubnetId(const Aws::String& value) { SetPreferredSubnetId(value); return *this;}
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the
+     * subnet where the preferred file server is located. Must be one of the two subnet
+     * IDs specified in <code>SubnetIds</code> property. Amazon FSx serves traffic from
+     * this subnet except in the event of a failover to the secondary file server.</p>
+     * <p>For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that
+     * for <code>SubnetIDs</code>.</p>
+     */
+    inline WindowsFileSystemConfiguration& WithPreferredSubnetId(Aws::String&& value) { SetPreferredSubnetId(std::move(value)); return *this;}
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the
+     * subnet where the preferred file server is located. Must be one of the two subnet
+     * IDs specified in <code>SubnetIds</code> property. Amazon FSx serves traffic from
+     * this subnet except in the event of a failover to the secondary file server.</p>
+     * <p>For <code>SINGLE_AZ_1</code> deployment types, this value is the same as that
+     * for <code>SubnetIDs</code>.</p>
+     */
+    inline WindowsFileSystemConfiguration& WithPreferredSubnetId(const char* value) { SetPreferredSubnetId(value); return *this;}
+
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary,
+     * or preferred, file server.</p> <p>Use this IP address when mounting the file
+     * system on Linux SMB clients or Windows SMB clients that are not joined to a
+     * Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and
+     * <code>MULTI_AZ_1</code> deployment types. This IP address is temporarily
+     * unavailable when the file system is undergoing maintenance. For Linux and
+     * Windows SMB clients that are joined to an Active Directory, use the file
+     * system's DNSName instead. For more information and instruction on mapping and
+     * mounting file shares, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.</p>
+     */
+    inline const Aws::String& GetPreferredFileServerIp() const{ return m_preferredFileServerIp; }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary,
+     * or preferred, file server.</p> <p>Use this IP address when mounting the file
+     * system on Linux SMB clients or Windows SMB clients that are not joined to a
+     * Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and
+     * <code>MULTI_AZ_1</code> deployment types. This IP address is temporarily
+     * unavailable when the file system is undergoing maintenance. For Linux and
+     * Windows SMB clients that are joined to an Active Directory, use the file
+     * system's DNSName instead. For more information and instruction on mapping and
+     * mounting file shares, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.</p>
+     */
+    inline bool PreferredFileServerIpHasBeenSet() const { return m_preferredFileServerIpHasBeenSet; }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary,
+     * or preferred, file server.</p> <p>Use this IP address when mounting the file
+     * system on Linux SMB clients or Windows SMB clients that are not joined to a
+     * Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and
+     * <code>MULTI_AZ_1</code> deployment types. This IP address is temporarily
+     * unavailable when the file system is undergoing maintenance. For Linux and
+     * Windows SMB clients that are joined to an Active Directory, use the file
+     * system's DNSName instead. For more information and instruction on mapping and
+     * mounting file shares, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.</p>
+     */
+    inline void SetPreferredFileServerIp(const Aws::String& value) { m_preferredFileServerIpHasBeenSet = true; m_preferredFileServerIp = value; }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary,
+     * or preferred, file server.</p> <p>Use this IP address when mounting the file
+     * system on Linux SMB clients or Windows SMB clients that are not joined to a
+     * Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and
+     * <code>MULTI_AZ_1</code> deployment types. This IP address is temporarily
+     * unavailable when the file system is undergoing maintenance. For Linux and
+     * Windows SMB clients that are joined to an Active Directory, use the file
+     * system's DNSName instead. For more information and instruction on mapping and
+     * mounting file shares, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.</p>
+     */
+    inline void SetPreferredFileServerIp(Aws::String&& value) { m_preferredFileServerIpHasBeenSet = true; m_preferredFileServerIp = std::move(value); }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary,
+     * or preferred, file server.</p> <p>Use this IP address when mounting the file
+     * system on Linux SMB clients or Windows SMB clients that are not joined to a
+     * Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and
+     * <code>MULTI_AZ_1</code> deployment types. This IP address is temporarily
+     * unavailable when the file system is undergoing maintenance. For Linux and
+     * Windows SMB clients that are joined to an Active Directory, use the file
+     * system's DNSName instead. For more information and instruction on mapping and
+     * mounting file shares, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.</p>
+     */
+    inline void SetPreferredFileServerIp(const char* value) { m_preferredFileServerIpHasBeenSet = true; m_preferredFileServerIp.assign(value); }
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary,
+     * or preferred, file server.</p> <p>Use this IP address when mounting the file
+     * system on Linux SMB clients or Windows SMB clients that are not joined to a
+     * Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and
+     * <code>MULTI_AZ_1</code> deployment types. This IP address is temporarily
+     * unavailable when the file system is undergoing maintenance. For Linux and
+     * Windows SMB clients that are joined to an Active Directory, use the file
+     * system's DNSName instead. For more information and instruction on mapping and
+     * mounting file shares, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.</p>
+     */
+    inline WindowsFileSystemConfiguration& WithPreferredFileServerIp(const Aws::String& value) { SetPreferredFileServerIp(value); return *this;}
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary,
+     * or preferred, file server.</p> <p>Use this IP address when mounting the file
+     * system on Linux SMB clients or Windows SMB clients that are not joined to a
+     * Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and
+     * <code>MULTI_AZ_1</code> deployment types. This IP address is temporarily
+     * unavailable when the file system is undergoing maintenance. For Linux and
+     * Windows SMB clients that are joined to an Active Directory, use the file
+     * system's DNSName instead. For more information and instruction on mapping and
+     * mounting file shares, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.</p>
+     */
+    inline WindowsFileSystemConfiguration& WithPreferredFileServerIp(Aws::String&& value) { SetPreferredFileServerIp(std::move(value)); return *this;}
+
+    /**
+     * <p>For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary,
+     * or preferred, file server.</p> <p>Use this IP address when mounting the file
+     * system on Linux SMB clients or Windows SMB clients that are not joined to a
+     * Microsoft Active Directory. Applicable for both <code>SINGLE_AZ_1</code> and
+     * <code>MULTI_AZ_1</code> deployment types. This IP address is temporarily
+     * unavailable when the file system is undergoing maintenance. For Linux and
+     * Windows SMB clients that are joined to an Active Directory, use the file
+     * system's DNSName instead. For more information and instruction on mapping and
+     * mounting file shares, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html">https://docs.aws.amazon.com/fsx/latest/WindowsGuide/accessing-file-shares.html</a>.</p>
+     */
+    inline WindowsFileSystemConfiguration& WithPreferredFileServerIp(const char* value) { SetPreferredFileServerIp(value); return *this;}
 
 
     /**
@@ -339,6 +668,18 @@ namespace Model
 
     SelfManagedActiveDirectoryAttributes m_selfManagedActiveDirectoryConfiguration;
     bool m_selfManagedActiveDirectoryConfigurationHasBeenSet;
+
+    WindowsDeploymentType m_deploymentType;
+    bool m_deploymentTypeHasBeenSet;
+
+    Aws::String m_remoteAdministrationEndpoint;
+    bool m_remoteAdministrationEndpointHasBeenSet;
+
+    Aws::String m_preferredSubnetId;
+    bool m_preferredSubnetIdHasBeenSet;
+
+    Aws::String m_preferredFileServerIp;
+    bool m_preferredFileServerIpHasBeenSet;
 
     int m_throughputCapacity;
     bool m_throughputCapacityHasBeenSet;

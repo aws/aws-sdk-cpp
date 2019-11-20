@@ -168,129 +168,122 @@ namespace Model
 
     /**
      * <p>The full commit ID of the commit in the destination branch where the pull
-     * request will be merged.</p>
+     * request is merged.</p>
      */
     inline const Aws::String& GetAfterCommitId() const{ return m_afterCommitId; }
 
     /**
      * <p>The full commit ID of the commit in the destination branch where the pull
-     * request will be merged.</p>
+     * request is merged.</p>
      */
     inline void SetAfterCommitId(const Aws::String& value) { m_afterCommitId = value; }
 
     /**
      * <p>The full commit ID of the commit in the destination branch where the pull
-     * request will be merged.</p>
+     * request is merged.</p>
      */
     inline void SetAfterCommitId(Aws::String&& value) { m_afterCommitId = std::move(value); }
 
     /**
      * <p>The full commit ID of the commit in the destination branch where the pull
-     * request will be merged.</p>
+     * request is merged.</p>
      */
     inline void SetAfterCommitId(const char* value) { m_afterCommitId.assign(value); }
 
     /**
      * <p>The full commit ID of the commit in the destination branch where the pull
-     * request will be merged.</p>
+     * request is merged.</p>
      */
     inline PostCommentForPullRequestResult& WithAfterCommitId(const Aws::String& value) { SetAfterCommitId(value); return *this;}
 
     /**
      * <p>The full commit ID of the commit in the destination branch where the pull
-     * request will be merged.</p>
+     * request is merged.</p>
      */
     inline PostCommentForPullRequestResult& WithAfterCommitId(Aws::String&& value) { SetAfterCommitId(std::move(value)); return *this;}
 
     /**
      * <p>The full commit ID of the commit in the destination branch where the pull
-     * request will be merged.</p>
+     * request is merged.</p>
      */
     inline PostCommentForPullRequestResult& WithAfterCommitId(const char* value) { SetAfterCommitId(value); return *this;}
 
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'before'
+     * <p>In the directionality of the pull request, the blob ID of the before
      * blob.</p>
      */
     inline const Aws::String& GetBeforeBlobId() const{ return m_beforeBlobId; }
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'before'
+     * <p>In the directionality of the pull request, the blob ID of the before
      * blob.</p>
      */
     inline void SetBeforeBlobId(const Aws::String& value) { m_beforeBlobId = value; }
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'before'
+     * <p>In the directionality of the pull request, the blob ID of the before
      * blob.</p>
      */
     inline void SetBeforeBlobId(Aws::String&& value) { m_beforeBlobId = std::move(value); }
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'before'
+     * <p>In the directionality of the pull request, the blob ID of the before
      * blob.</p>
      */
     inline void SetBeforeBlobId(const char* value) { m_beforeBlobId.assign(value); }
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'before'
+     * <p>In the directionality of the pull request, the blob ID of the before
      * blob.</p>
      */
     inline PostCommentForPullRequestResult& WithBeforeBlobId(const Aws::String& value) { SetBeforeBlobId(value); return *this;}
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'before'
+     * <p>In the directionality of the pull request, the blob ID of the before
      * blob.</p>
      */
     inline PostCommentForPullRequestResult& WithBeforeBlobId(Aws::String&& value) { SetBeforeBlobId(std::move(value)); return *this;}
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'before'
+     * <p>In the directionality of the pull request, the blob ID of the before
      * blob.</p>
      */
     inline PostCommentForPullRequestResult& WithBeforeBlobId(const char* value) { SetBeforeBlobId(value); return *this;}
 
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'after'
-     * blob.</p>
+     * <p>In the directionality of the pull request, the blob ID of the after blob.</p>
      */
     inline const Aws::String& GetAfterBlobId() const{ return m_afterBlobId; }
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'after'
-     * blob.</p>
+     * <p>In the directionality of the pull request, the blob ID of the after blob.</p>
      */
     inline void SetAfterBlobId(const Aws::String& value) { m_afterBlobId = value; }
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'after'
-     * blob.</p>
+     * <p>In the directionality of the pull request, the blob ID of the after blob.</p>
      */
     inline void SetAfterBlobId(Aws::String&& value) { m_afterBlobId = std::move(value); }
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'after'
-     * blob.</p>
+     * <p>In the directionality of the pull request, the blob ID of the after blob.</p>
      */
     inline void SetAfterBlobId(const char* value) { m_afterBlobId.assign(value); }
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'after'
-     * blob.</p>
+     * <p>In the directionality of the pull request, the blob ID of the after blob.</p>
      */
     inline PostCommentForPullRequestResult& WithAfterBlobId(const Aws::String& value) { SetAfterBlobId(value); return *this;}
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'after'
-     * blob.</p>
+     * <p>In the directionality of the pull request, the blob ID of the after blob.</p>
      */
     inline PostCommentForPullRequestResult& WithAfterBlobId(Aws::String&& value) { SetAfterBlobId(std::move(value)); return *this;}
 
     /**
-     * <p>In the directionality of the pull request, the blob ID of the 'after'
-     * blob.</p>
+     * <p>In the directionality of the pull request, the blob ID of the after blob.</p>
      */
     inline PostCommentForPullRequestResult& WithAfterBlobId(const char* value) { SetAfterBlobId(value); return *this;}
 

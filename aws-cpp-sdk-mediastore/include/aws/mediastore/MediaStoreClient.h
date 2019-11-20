@@ -786,8 +786,8 @@ namespace Model
          * one or more tags to add to each container. You can add up to 50 tags to each
          * container. For more information about tagging, including naming and usage
          * conventions, see <a
-         * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources
-         * in MediaStore</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging
+         * Resources in MediaStore</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/TagResource">AWS
          * API Reference</a></p>
          */
@@ -800,8 +800,8 @@ namespace Model
          * one or more tags to add to each container. You can add up to 50 tags to each
          * container. For more information about tagging, including naming and usage
          * conventions, see <a
-         * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources
-         * in MediaStore</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging
+         * Resources in MediaStore</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/TagResource">AWS
          * API Reference</a></p>
          *
@@ -816,8 +816,8 @@ namespace Model
          * one or more tags to add to each container. You can add up to 50 tags to each
          * container. For more information about tagging, including naming and usage
          * conventions, see <a
-         * href="https://aws.amazon.com/documentation/mediastore/tagging">Tagging Resources
-         * in MediaStore</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging
+         * Resources in MediaStore</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/TagResource">AWS
          * API Reference</a></p>
          *

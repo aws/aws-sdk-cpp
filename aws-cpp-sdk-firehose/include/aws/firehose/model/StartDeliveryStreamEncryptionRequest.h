@@ -17,6 +17,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/firehose/FirehoseRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/firehose/model/DeliveryStreamEncryptionConfigurationInput.h>
 #include <utility>
 
 namespace Aws
@@ -92,10 +93,50 @@ namespace Model
      */
     inline StartDeliveryStreamEncryptionRequest& WithDeliveryStreamName(const char* value) { SetDeliveryStreamName(value); return *this;}
 
+
+    /**
+     * <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed
+     * for Server-Side Encryption (SSE).</p>
+     */
+    inline const DeliveryStreamEncryptionConfigurationInput& GetDeliveryStreamEncryptionConfigurationInput() const{ return m_deliveryStreamEncryptionConfigurationInput; }
+
+    /**
+     * <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed
+     * for Server-Side Encryption (SSE).</p>
+     */
+    inline bool DeliveryStreamEncryptionConfigurationInputHasBeenSet() const { return m_deliveryStreamEncryptionConfigurationInputHasBeenSet; }
+
+    /**
+     * <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed
+     * for Server-Side Encryption (SSE).</p>
+     */
+    inline void SetDeliveryStreamEncryptionConfigurationInput(const DeliveryStreamEncryptionConfigurationInput& value) { m_deliveryStreamEncryptionConfigurationInputHasBeenSet = true; m_deliveryStreamEncryptionConfigurationInput = value; }
+
+    /**
+     * <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed
+     * for Server-Side Encryption (SSE).</p>
+     */
+    inline void SetDeliveryStreamEncryptionConfigurationInput(DeliveryStreamEncryptionConfigurationInput&& value) { m_deliveryStreamEncryptionConfigurationInputHasBeenSet = true; m_deliveryStreamEncryptionConfigurationInput = std::move(value); }
+
+    /**
+     * <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed
+     * for Server-Side Encryption (SSE).</p>
+     */
+    inline StartDeliveryStreamEncryptionRequest& WithDeliveryStreamEncryptionConfigurationInput(const DeliveryStreamEncryptionConfigurationInput& value) { SetDeliveryStreamEncryptionConfigurationInput(value); return *this;}
+
+    /**
+     * <p>Used to specify the type and Amazon Resource Name (ARN) of the KMS key needed
+     * for Server-Side Encryption (SSE).</p>
+     */
+    inline StartDeliveryStreamEncryptionRequest& WithDeliveryStreamEncryptionConfigurationInput(DeliveryStreamEncryptionConfigurationInput&& value) { SetDeliveryStreamEncryptionConfigurationInput(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deliveryStreamName;
     bool m_deliveryStreamNameHasBeenSet;
+
+    DeliveryStreamEncryptionConfigurationInput m_deliveryStreamEncryptionConfigurationInput;
+    bool m_deliveryStreamEncryptionConfigurationInputHasBeenSet;
   };
 
 } // namespace Model

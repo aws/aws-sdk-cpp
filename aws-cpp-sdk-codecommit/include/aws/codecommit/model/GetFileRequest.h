@@ -86,122 +86,122 @@ namespace Model
 
 
     /**
-     * <p>The fully-quaified reference that identifies the commit that contains the
-     * file. For example, you could specify a full commit ID, a tag, a branch name, or
-     * a reference such as refs/heads/master. If none is provided, then the head commit
-     * will be used.</p>
+     * <p>The fully quaified reference that identifies the commit that contains the
+     * file. For example, you can specify a full commit ID, a tag, a branch name, or a
+     * reference such as refs/heads/master. If none is provided, the head commit is
+     * used.</p>
      */
     inline const Aws::String& GetCommitSpecifier() const{ return m_commitSpecifier; }
 
     /**
-     * <p>The fully-quaified reference that identifies the commit that contains the
-     * file. For example, you could specify a full commit ID, a tag, a branch name, or
-     * a reference such as refs/heads/master. If none is provided, then the head commit
-     * will be used.</p>
+     * <p>The fully quaified reference that identifies the commit that contains the
+     * file. For example, you can specify a full commit ID, a tag, a branch name, or a
+     * reference such as refs/heads/master. If none is provided, the head commit is
+     * used.</p>
      */
     inline bool CommitSpecifierHasBeenSet() const { return m_commitSpecifierHasBeenSet; }
 
     /**
-     * <p>The fully-quaified reference that identifies the commit that contains the
-     * file. For example, you could specify a full commit ID, a tag, a branch name, or
-     * a reference such as refs/heads/master. If none is provided, then the head commit
-     * will be used.</p>
+     * <p>The fully quaified reference that identifies the commit that contains the
+     * file. For example, you can specify a full commit ID, a tag, a branch name, or a
+     * reference such as refs/heads/master. If none is provided, the head commit is
+     * used.</p>
      */
     inline void SetCommitSpecifier(const Aws::String& value) { m_commitSpecifierHasBeenSet = true; m_commitSpecifier = value; }
 
     /**
-     * <p>The fully-quaified reference that identifies the commit that contains the
-     * file. For example, you could specify a full commit ID, a tag, a branch name, or
-     * a reference such as refs/heads/master. If none is provided, then the head commit
-     * will be used.</p>
+     * <p>The fully quaified reference that identifies the commit that contains the
+     * file. For example, you can specify a full commit ID, a tag, a branch name, or a
+     * reference such as refs/heads/master. If none is provided, the head commit is
+     * used.</p>
      */
     inline void SetCommitSpecifier(Aws::String&& value) { m_commitSpecifierHasBeenSet = true; m_commitSpecifier = std::move(value); }
 
     /**
-     * <p>The fully-quaified reference that identifies the commit that contains the
-     * file. For example, you could specify a full commit ID, a tag, a branch name, or
-     * a reference such as refs/heads/master. If none is provided, then the head commit
-     * will be used.</p>
+     * <p>The fully quaified reference that identifies the commit that contains the
+     * file. For example, you can specify a full commit ID, a tag, a branch name, or a
+     * reference such as refs/heads/master. If none is provided, the head commit is
+     * used.</p>
      */
     inline void SetCommitSpecifier(const char* value) { m_commitSpecifierHasBeenSet = true; m_commitSpecifier.assign(value); }
 
     /**
-     * <p>The fully-quaified reference that identifies the commit that contains the
-     * file. For example, you could specify a full commit ID, a tag, a branch name, or
-     * a reference such as refs/heads/master. If none is provided, then the head commit
-     * will be used.</p>
+     * <p>The fully quaified reference that identifies the commit that contains the
+     * file. For example, you can specify a full commit ID, a tag, a branch name, or a
+     * reference such as refs/heads/master. If none is provided, the head commit is
+     * used.</p>
      */
     inline GetFileRequest& WithCommitSpecifier(const Aws::String& value) { SetCommitSpecifier(value); return *this;}
 
     /**
-     * <p>The fully-quaified reference that identifies the commit that contains the
-     * file. For example, you could specify a full commit ID, a tag, a branch name, or
-     * a reference such as refs/heads/master. If none is provided, then the head commit
-     * will be used.</p>
+     * <p>The fully quaified reference that identifies the commit that contains the
+     * file. For example, you can specify a full commit ID, a tag, a branch name, or a
+     * reference such as refs/heads/master. If none is provided, the head commit is
+     * used.</p>
      */
     inline GetFileRequest& WithCommitSpecifier(Aws::String&& value) { SetCommitSpecifier(std::move(value)); return *this;}
 
     /**
-     * <p>The fully-quaified reference that identifies the commit that contains the
-     * file. For example, you could specify a full commit ID, a tag, a branch name, or
-     * a reference such as refs/heads/master. If none is provided, then the head commit
-     * will be used.</p>
+     * <p>The fully quaified reference that identifies the commit that contains the
+     * file. For example, you can specify a full commit ID, a tag, a branch name, or a
+     * reference such as refs/heads/master. If none is provided, the head commit is
+     * used.</p>
      */
     inline GetFileRequest& WithCommitSpecifier(const char* value) { SetCommitSpecifier(value); return *this;}
 
 
     /**
-     * <p>The fully-qualified path to the file, including the full name and extension
-     * of the file. For example, /examples/file.md is the fully-qualified path to a
+     * <p>The fully qualified path to the file, including the full name and extension
+     * of the file. For example, /examples/file.md is the fully qualified path to a
      * file named file.md in a folder named examples.</p>
      */
     inline const Aws::String& GetFilePath() const{ return m_filePath; }
 
     /**
-     * <p>The fully-qualified path to the file, including the full name and extension
-     * of the file. For example, /examples/file.md is the fully-qualified path to a
+     * <p>The fully qualified path to the file, including the full name and extension
+     * of the file. For example, /examples/file.md is the fully qualified path to a
      * file named file.md in a folder named examples.</p>
      */
     inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
 
     /**
-     * <p>The fully-qualified path to the file, including the full name and extension
-     * of the file. For example, /examples/file.md is the fully-qualified path to a
+     * <p>The fully qualified path to the file, including the full name and extension
+     * of the file. For example, /examples/file.md is the fully qualified path to a
      * file named file.md in a folder named examples.</p>
      */
     inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
 
     /**
-     * <p>The fully-qualified path to the file, including the full name and extension
-     * of the file. For example, /examples/file.md is the fully-qualified path to a
+     * <p>The fully qualified path to the file, including the full name and extension
+     * of the file. For example, /examples/file.md is the fully qualified path to a
      * file named file.md in a folder named examples.</p>
      */
     inline void SetFilePath(Aws::String&& value) { m_filePathHasBeenSet = true; m_filePath = std::move(value); }
 
     /**
-     * <p>The fully-qualified path to the file, including the full name and extension
-     * of the file. For example, /examples/file.md is the fully-qualified path to a
+     * <p>The fully qualified path to the file, including the full name and extension
+     * of the file. For example, /examples/file.md is the fully qualified path to a
      * file named file.md in a folder named examples.</p>
      */
     inline void SetFilePath(const char* value) { m_filePathHasBeenSet = true; m_filePath.assign(value); }
 
     /**
-     * <p>The fully-qualified path to the file, including the full name and extension
-     * of the file. For example, /examples/file.md is the fully-qualified path to a
+     * <p>The fully qualified path to the file, including the full name and extension
+     * of the file. For example, /examples/file.md is the fully qualified path to a
      * file named file.md in a folder named examples.</p>
      */
     inline GetFileRequest& WithFilePath(const Aws::String& value) { SetFilePath(value); return *this;}
 
     /**
-     * <p>The fully-qualified path to the file, including the full name and extension
-     * of the file. For example, /examples/file.md is the fully-qualified path to a
+     * <p>The fully qualified path to the file, including the full name and extension
+     * of the file. For example, /examples/file.md is the fully qualified path to a
      * file named file.md in a folder named examples.</p>
      */
     inline GetFileRequest& WithFilePath(Aws::String&& value) { SetFilePath(std::move(value)); return *this;}
 
     /**
-     * <p>The fully-qualified path to the file, including the full name and extension
-     * of the file. For example, /examples/file.md is the fully-qualified path to a
+     * <p>The fully qualified path to the file, including the full name and extension
+     * of the file. For example, /examples/file.md is the fully qualified path to a
      * file named file.md in a folder named examples.</p>
      */
     inline GetFileRequest& WithFilePath(const char* value) { SetFilePath(value); return *this;}

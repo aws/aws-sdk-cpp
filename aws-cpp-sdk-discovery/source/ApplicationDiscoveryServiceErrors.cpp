@@ -33,6 +33,7 @@ static const int CONFLICT_ERROR_HASH = HashingUtils::HashString("ConflictErrorEx
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int AUTHORIZATION_ERROR_HASH = HashingUtils::HashString("AuthorizationErrorException");
+static const int HOME_REGION_NOT_SET_HASH = HashingUtils::HashString("HomeRegionNotSetException");
 static const int SERVER_INTERNAL_ERROR_HASH = HashingUtils::HashString("ServerInternalErrorException");
 
 
@@ -59,6 +60,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == AUTHORIZATION_ERROR_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationDiscoveryServiceErrors::AUTHORIZATION_ERROR), false);
+  }
+  else if (hashCode == HOME_REGION_NOT_SET_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ApplicationDiscoveryServiceErrors::HOME_REGION_NOT_SET), false);
   }
   else if (hashCode == SERVER_INTERNAL_ERROR_HASH)
   {

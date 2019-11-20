@@ -18,6 +18,7 @@
 #include <aws/AWSMigrationHub/MigrationHubRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/AWSMigrationHub/model/ApplicationStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -46,50 +47,50 @@ namespace Model
 
 
     /**
-     * <p>The configurationId in ADS that uniquely identifies the grouped
-     * application.</p>
+     * <p>The configurationId in Application Discovery Service that uniquely identifies
+     * the grouped application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
 
     /**
-     * <p>The configurationId in ADS that uniquely identifies the grouped
-     * application.</p>
+     * <p>The configurationId in Application Discovery Service that uniquely identifies
+     * the grouped application.</p>
      */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
-     * <p>The configurationId in ADS that uniquely identifies the grouped
-     * application.</p>
+     * <p>The configurationId in Application Discovery Service that uniquely identifies
+     * the grouped application.</p>
      */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
-     * <p>The configurationId in ADS that uniquely identifies the grouped
-     * application.</p>
+     * <p>The configurationId in Application Discovery Service that uniquely identifies
+     * the grouped application.</p>
      */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
 
     /**
-     * <p>The configurationId in ADS that uniquely identifies the grouped
-     * application.</p>
+     * <p>The configurationId in Application Discovery Service that uniquely identifies
+     * the grouped application.</p>
      */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
 
     /**
-     * <p>The configurationId in ADS that uniquely identifies the grouped
-     * application.</p>
+     * <p>The configurationId in Application Discovery Service that uniquely identifies
+     * the grouped application.</p>
      */
     inline NotifyApplicationStateRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
 
     /**
-     * <p>The configurationId in ADS that uniquely identifies the grouped
-     * application.</p>
+     * <p>The configurationId in Application Discovery Service that uniquely identifies
+     * the grouped application.</p>
      */
     inline NotifyApplicationStateRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
 
     /**
-     * <p>The configurationId in ADS that uniquely identifies the grouped
-     * application.</p>
+     * <p>The configurationId in Application Discovery Service that uniquely identifies
+     * the grouped application.</p>
      */
     inline NotifyApplicationStateRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
 
@@ -126,6 +127,37 @@ namespace Model
 
 
     /**
+     * <p>The timestamp when the application state changed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
+
+    /**
+     * <p>The timestamp when the application state changed.</p>
+     */
+    inline bool UpdateDateTimeHasBeenSet() const { return m_updateDateTimeHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the application state changed.</p>
+     */
+    inline void SetUpdateDateTime(const Aws::Utils::DateTime& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = value; }
+
+    /**
+     * <p>The timestamp when the application state changed.</p>
+     */
+    inline void SetUpdateDateTime(Aws::Utils::DateTime&& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = std::move(value); }
+
+    /**
+     * <p>The timestamp when the application state changed.</p>
+     */
+    inline NotifyApplicationStateRequest& WithUpdateDateTime(const Aws::Utils::DateTime& value) { SetUpdateDateTime(value); return *this;}
+
+    /**
+     * <p>The timestamp when the application state changed.</p>
+     */
+    inline NotifyApplicationStateRequest& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>Optional boolean flag to indicate whether any effect should take place. Used
      * to test if the caller has permission to make the call.</p>
      */
@@ -156,6 +188,9 @@ namespace Model
 
     ApplicationStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::Utils::DateTime m_updateDateTime;
+    bool m_updateDateTimeHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

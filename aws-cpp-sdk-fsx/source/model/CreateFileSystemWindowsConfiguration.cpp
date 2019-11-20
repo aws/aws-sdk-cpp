@@ -31,6 +31,9 @@ namespace Model
 CreateFileSystemWindowsConfiguration::CreateFileSystemWindowsConfiguration() : 
     m_activeDirectoryIdHasBeenSet(false),
     m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
+    m_deploymentType(WindowsDeploymentType::NOT_SET),
+    m_deploymentTypeHasBeenSet(false),
+    m_preferredSubnetIdHasBeenSet(false),
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
@@ -45,6 +48,9 @@ CreateFileSystemWindowsConfiguration::CreateFileSystemWindowsConfiguration() :
 CreateFileSystemWindowsConfiguration::CreateFileSystemWindowsConfiguration(JsonView jsonValue) : 
     m_activeDirectoryIdHasBeenSet(false),
     m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
+    m_deploymentType(WindowsDeploymentType::NOT_SET),
+    m_deploymentTypeHasBeenSet(false),
+    m_preferredSubnetIdHasBeenSet(false),
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
     m_weeklyMaintenanceStartTimeHasBeenSet(false),
@@ -71,6 +77,20 @@ CreateFileSystemWindowsConfiguration& CreateFileSystemWindowsConfiguration::oper
     m_selfManagedActiveDirectoryConfiguration = jsonValue.GetObject("SelfManagedActiveDirectoryConfiguration");
 
     m_selfManagedActiveDirectoryConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeploymentType"))
+  {
+    m_deploymentType = WindowsDeploymentTypeMapper::GetWindowsDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
+
+    m_deploymentTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreferredSubnetId"))
+  {
+    m_preferredSubnetId = jsonValue.GetString("PreferredSubnetId");
+
+    m_preferredSubnetIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ThroughputCapacity"))
@@ -124,6 +144,17 @@ JsonValue CreateFileSystemWindowsConfiguration::Jsonize() const
   if(m_selfManagedActiveDirectoryConfigurationHasBeenSet)
   {
    payload.WithObject("SelfManagedActiveDirectoryConfiguration", m_selfManagedActiveDirectoryConfiguration.Jsonize());
+
+  }
+
+  if(m_deploymentTypeHasBeenSet)
+  {
+   payload.WithString("DeploymentType", WindowsDeploymentTypeMapper::GetNameForWindowsDeploymentType(m_deploymentType));
+  }
+
+  if(m_preferredSubnetIdHasBeenSet)
+  {
+   payload.WithString("PreferredSubnetId", m_preferredSubnetId);
 
   }
 

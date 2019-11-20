@@ -117,7 +117,7 @@ namespace Model
      * <p>The compression code to use over data blocks. The possible values are
      * <code>UNCOMPRESSED</code>, <code>SNAPPY</code>, and <code>GZIP</code>, with the
      * default being <code>SNAPPY</code>. Use <code>SNAPPY</code> for higher
-     * decompression speed. Use <code>GZIP</code> if the compression ration is more
+     * decompression speed. Use <code>GZIP</code> if the compression ratio is more
      * important than speed.</p>
      */
     inline const ParquetCompression& GetCompression() const{ return m_compression; }
@@ -126,7 +126,7 @@ namespace Model
      * <p>The compression code to use over data blocks. The possible values are
      * <code>UNCOMPRESSED</code>, <code>SNAPPY</code>, and <code>GZIP</code>, with the
      * default being <code>SNAPPY</code>. Use <code>SNAPPY</code> for higher
-     * decompression speed. Use <code>GZIP</code> if the compression ration is more
+     * decompression speed. Use <code>GZIP</code> if the compression ratio is more
      * important than speed.</p>
      */
     inline bool CompressionHasBeenSet() const { return m_compressionHasBeenSet; }
@@ -135,7 +135,7 @@ namespace Model
      * <p>The compression code to use over data blocks. The possible values are
      * <code>UNCOMPRESSED</code>, <code>SNAPPY</code>, and <code>GZIP</code>, with the
      * default being <code>SNAPPY</code>. Use <code>SNAPPY</code> for higher
-     * decompression speed. Use <code>GZIP</code> if the compression ration is more
+     * decompression speed. Use <code>GZIP</code> if the compression ratio is more
      * important than speed.</p>
      */
     inline void SetCompression(const ParquetCompression& value) { m_compressionHasBeenSet = true; m_compression = value; }
@@ -144,7 +144,7 @@ namespace Model
      * <p>The compression code to use over data blocks. The possible values are
      * <code>UNCOMPRESSED</code>, <code>SNAPPY</code>, and <code>GZIP</code>, with the
      * default being <code>SNAPPY</code>. Use <code>SNAPPY</code> for higher
-     * decompression speed. Use <code>GZIP</code> if the compression ration is more
+     * decompression speed. Use <code>GZIP</code> if the compression ratio is more
      * important than speed.</p>
      */
     inline void SetCompression(ParquetCompression&& value) { m_compressionHasBeenSet = true; m_compression = std::move(value); }
@@ -153,7 +153,7 @@ namespace Model
      * <p>The compression code to use over data blocks. The possible values are
      * <code>UNCOMPRESSED</code>, <code>SNAPPY</code>, and <code>GZIP</code>, with the
      * default being <code>SNAPPY</code>. Use <code>SNAPPY</code> for higher
-     * decompression speed. Use <code>GZIP</code> if the compression ration is more
+     * decompression speed. Use <code>GZIP</code> if the compression ratio is more
      * important than speed.</p>
      */
     inline ParquetSerDe& WithCompression(const ParquetCompression& value) { SetCompression(value); return *this;}
@@ -162,7 +162,7 @@ namespace Model
      * <p>The compression code to use over data blocks. The possible values are
      * <code>UNCOMPRESSED</code>, <code>SNAPPY</code>, and <code>GZIP</code>, with the
      * default being <code>SNAPPY</code>. Use <code>SNAPPY</code> for higher
-     * decompression speed. Use <code>GZIP</code> if the compression ration is more
+     * decompression speed. Use <code>GZIP</code> if the compression ratio is more
      * important than speed.</p>
      */
     inline ParquetSerDe& WithCompression(ParquetCompression&& value) { SetCompression(std::move(value)); return *this;}

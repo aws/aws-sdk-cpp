@@ -17,6 +17,7 @@
 #include <aws/firehose/Firehose_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/firehose/model/DeliveryStreamStatus.h>
+#include <aws/firehose/model/FailureDescription.h>
 #include <aws/firehose/model/DeliveryStreamEncryptionConfiguration.h>
 #include <aws/firehose/model/DeliveryStreamType.h>
 #include <aws/core/utils/DateTime.h>
@@ -161,34 +162,95 @@ namespace Model
 
 
     /**
-     * <p>The status of the delivery stream.</p>
+     * <p>The status of the delivery stream. If the status of a delivery stream is
+     * <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke
+     * <code>CreateDeliveryStream</code> again on it. However, you can invoke the
+     * <a>DeleteDeliveryStream</a> operation to delete it.</p>
      */
     inline const DeliveryStreamStatus& GetDeliveryStreamStatus() const{ return m_deliveryStreamStatus; }
 
     /**
-     * <p>The status of the delivery stream.</p>
+     * <p>The status of the delivery stream. If the status of a delivery stream is
+     * <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke
+     * <code>CreateDeliveryStream</code> again on it. However, you can invoke the
+     * <a>DeleteDeliveryStream</a> operation to delete it.</p>
      */
     inline bool DeliveryStreamStatusHasBeenSet() const { return m_deliveryStreamStatusHasBeenSet; }
 
     /**
-     * <p>The status of the delivery stream.</p>
+     * <p>The status of the delivery stream. If the status of a delivery stream is
+     * <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke
+     * <code>CreateDeliveryStream</code> again on it. However, you can invoke the
+     * <a>DeleteDeliveryStream</a> operation to delete it.</p>
      */
     inline void SetDeliveryStreamStatus(const DeliveryStreamStatus& value) { m_deliveryStreamStatusHasBeenSet = true; m_deliveryStreamStatus = value; }
 
     /**
-     * <p>The status of the delivery stream.</p>
+     * <p>The status of the delivery stream. If the status of a delivery stream is
+     * <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke
+     * <code>CreateDeliveryStream</code> again on it. However, you can invoke the
+     * <a>DeleteDeliveryStream</a> operation to delete it.</p>
      */
     inline void SetDeliveryStreamStatus(DeliveryStreamStatus&& value) { m_deliveryStreamStatusHasBeenSet = true; m_deliveryStreamStatus = std::move(value); }
 
     /**
-     * <p>The status of the delivery stream.</p>
+     * <p>The status of the delivery stream. If the status of a delivery stream is
+     * <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke
+     * <code>CreateDeliveryStream</code> again on it. However, you can invoke the
+     * <a>DeleteDeliveryStream</a> operation to delete it.</p>
      */
     inline DeliveryStreamDescription& WithDeliveryStreamStatus(const DeliveryStreamStatus& value) { SetDeliveryStreamStatus(value); return *this;}
 
     /**
-     * <p>The status of the delivery stream.</p>
+     * <p>The status of the delivery stream. If the status of a delivery stream is
+     * <code>CREATING_FAILED</code>, this status doesn't change, and you can't invoke
+     * <code>CreateDeliveryStream</code> again on it. However, you can invoke the
+     * <a>DeleteDeliveryStream</a> operation to delete it.</p>
      */
     inline DeliveryStreamDescription& WithDeliveryStreamStatus(DeliveryStreamStatus&& value) { SetDeliveryStreamStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides details in case one of the following operations fails due to an
+     * error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>,
+     * <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>.</p>
+     */
+    inline const FailureDescription& GetFailureDescription() const{ return m_failureDescription; }
+
+    /**
+     * <p>Provides details in case one of the following operations fails due to an
+     * error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>,
+     * <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>.</p>
+     */
+    inline bool FailureDescriptionHasBeenSet() const { return m_failureDescriptionHasBeenSet; }
+
+    /**
+     * <p>Provides details in case one of the following operations fails due to an
+     * error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>,
+     * <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>.</p>
+     */
+    inline void SetFailureDescription(const FailureDescription& value) { m_failureDescriptionHasBeenSet = true; m_failureDescription = value; }
+
+    /**
+     * <p>Provides details in case one of the following operations fails due to an
+     * error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>,
+     * <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>.</p>
+     */
+    inline void SetFailureDescription(FailureDescription&& value) { m_failureDescriptionHasBeenSet = true; m_failureDescription = std::move(value); }
+
+    /**
+     * <p>Provides details in case one of the following operations fails due to an
+     * error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>,
+     * <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>.</p>
+     */
+    inline DeliveryStreamDescription& WithFailureDescription(const FailureDescription& value) { SetFailureDescription(value); return *this;}
+
+    /**
+     * <p>Provides details in case one of the following operations fails due to an
+     * error related to KMS: <a>CreateDeliveryStream</a>, <a>DeleteDeliveryStream</a>,
+     * <a>StartDeliveryStreamEncryption</a>, <a>StopDeliveryStreamEncryption</a>.</p>
+     */
+    inline DeliveryStreamDescription& WithFailureDescription(FailureDescription&& value) { SetFailureDescription(std::move(value)); return *this;}
 
 
     /**
@@ -518,6 +580,9 @@ namespace Model
 
     DeliveryStreamStatus m_deliveryStreamStatus;
     bool m_deliveryStreamStatusHasBeenSet;
+
+    FailureDescription m_failureDescription;
+    bool m_failureDescriptionHasBeenSet;
 
     DeliveryStreamEncryptionConfiguration m_deliveryStreamEncryptionConfiguration;
     bool m_deliveryStreamEncryptionConfigurationHasBeenSet;

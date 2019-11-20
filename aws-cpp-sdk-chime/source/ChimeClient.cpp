@@ -33,6 +33,7 @@
 #include <aws/chime/model/AssociatePhoneNumberWithUserRequest.h>
 #include <aws/chime/model/AssociatePhoneNumbersWithVoiceConnectorRequest.h>
 #include <aws/chime/model/AssociatePhoneNumbersWithVoiceConnectorGroupRequest.h>
+#include <aws/chime/model/BatchCreateAttendeeRequest.h>
 #include <aws/chime/model/BatchCreateRoomMembershipRequest.h>
 #include <aws/chime/model/BatchDeletePhoneNumberRequest.h>
 #include <aws/chime/model/BatchSuspendUserRequest.h>
@@ -40,14 +41,18 @@
 #include <aws/chime/model/BatchUpdatePhoneNumberRequest.h>
 #include <aws/chime/model/BatchUpdateUserRequest.h>
 #include <aws/chime/model/CreateAccountRequest.h>
+#include <aws/chime/model/CreateAttendeeRequest.h>
 #include <aws/chime/model/CreateBotRequest.h>
+#include <aws/chime/model/CreateMeetingRequest.h>
 #include <aws/chime/model/CreatePhoneNumberOrderRequest.h>
 #include <aws/chime/model/CreateRoomRequest.h>
 #include <aws/chime/model/CreateRoomMembershipRequest.h>
 #include <aws/chime/model/CreateVoiceConnectorRequest.h>
 #include <aws/chime/model/CreateVoiceConnectorGroupRequest.h>
 #include <aws/chime/model/DeleteAccountRequest.h>
+#include <aws/chime/model/DeleteAttendeeRequest.h>
 #include <aws/chime/model/DeleteEventsConfigurationRequest.h>
+#include <aws/chime/model/DeleteMeetingRequest.h>
 #include <aws/chime/model/DeletePhoneNumberRequest.h>
 #include <aws/chime/model/DeleteRoomRequest.h>
 #include <aws/chime/model/DeleteRoomMembershipRequest.h>
@@ -62,8 +67,10 @@
 #include <aws/chime/model/DisassociatePhoneNumbersFromVoiceConnectorGroupRequest.h>
 #include <aws/chime/model/GetAccountRequest.h>
 #include <aws/chime/model/GetAccountSettingsRequest.h>
+#include <aws/chime/model/GetAttendeeRequest.h>
 #include <aws/chime/model/GetBotRequest.h>
 #include <aws/chime/model/GetEventsConfigurationRequest.h>
+#include <aws/chime/model/GetMeetingRequest.h>
 #include <aws/chime/model/GetPhoneNumberRequest.h>
 #include <aws/chime/model/GetPhoneNumberOrderRequest.h>
 #include <aws/chime/model/GetRoomRequest.h>
@@ -78,7 +85,9 @@
 #include <aws/chime/model/GetVoiceConnectorTerminationHealthRequest.h>
 #include <aws/chime/model/InviteUsersRequest.h>
 #include <aws/chime/model/ListAccountsRequest.h>
+#include <aws/chime/model/ListAttendeesRequest.h>
 #include <aws/chime/model/ListBotsRequest.h>
+#include <aws/chime/model/ListMeetingsRequest.h>
 #include <aws/chime/model/ListPhoneNumberOrdersRequest.h>
 #include <aws/chime/model/ListPhoneNumbersRequest.h>
 #include <aws/chime/model/ListRoomMembershipsRequest.h>
@@ -317,6 +326,50 @@ void ChimeClient::AssociatePhoneNumbersWithVoiceConnectorGroupAsync(const Associ
 void ChimeClient::AssociatePhoneNumbersWithVoiceConnectorGroupAsyncHelper(const AssociatePhoneNumbersWithVoiceConnectorGroupRequest& request, const AssociatePhoneNumbersWithVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociatePhoneNumbersWithVoiceConnectorGroup(request), context);
+}
+
+BatchCreateAttendeeOutcome ChimeClient::BatchCreateAttendee(const BatchCreateAttendeeRequest& request) const
+{
+  if (!request.MeetingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("BatchCreateAttendee", "Required field: MeetingId, is not set");
+    return BatchCreateAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/meetings/";
+  ss << request.GetMeetingId();
+  ss << "/attendees";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?operation=batch-create");
+  uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return BatchCreateAttendeeOutcome(BatchCreateAttendeeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return BatchCreateAttendeeOutcome(outcome.GetError());
+  }
+}
+
+BatchCreateAttendeeOutcomeCallable ChimeClient::BatchCreateAttendeeCallable(const BatchCreateAttendeeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< BatchCreateAttendeeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchCreateAttendee(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::BatchCreateAttendeeAsync(const BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->BatchCreateAttendeeAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::BatchCreateAttendeeAsyncHelper(const BatchCreateAttendeeRequest& request, const BatchCreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, BatchCreateAttendee(request), context);
 }
 
 BatchCreateRoomMembershipOutcome ChimeClient::BatchCreateRoomMembership(const BatchCreateRoomMembershipRequest& request) const
@@ -609,6 +662,48 @@ void ChimeClient::CreateAccountAsyncHelper(const CreateAccountRequest& request, 
   handler(this, request, CreateAccount(request), context);
 }
 
+CreateAttendeeOutcome ChimeClient::CreateAttendee(const CreateAttendeeRequest& request) const
+{
+  if (!request.MeetingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAttendee", "Required field: MeetingId, is not set");
+    return CreateAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/meetings/";
+  ss << request.GetMeetingId();
+  ss << "/attendees";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateAttendeeOutcome(CreateAttendeeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateAttendeeOutcome(outcome.GetError());
+  }
+}
+
+CreateAttendeeOutcomeCallable ChimeClient::CreateAttendeeCallable(const CreateAttendeeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateAttendeeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateAttendee(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::CreateAttendeeAsync(const CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateAttendeeAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::CreateAttendeeAsyncHelper(const CreateAttendeeRequest& request, const CreateAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateAttendee(request), context);
+}
+
 CreateBotOutcome ChimeClient::CreateBot(const CreateBotRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -649,6 +744,41 @@ void ChimeClient::CreateBotAsync(const CreateBotRequest& request, const CreateBo
 void ChimeClient::CreateBotAsyncHelper(const CreateBotRequest& request, const CreateBotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateBot(request), context);
+}
+
+CreateMeetingOutcome ChimeClient::CreateMeeting(const CreateMeetingRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/meetings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateMeetingOutcome(CreateMeetingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateMeetingOutcome(outcome.GetError());
+  }
+}
+
+CreateMeetingOutcomeCallable ChimeClient::CreateMeetingCallable(const CreateMeetingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateMeetingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateMeeting(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::CreateMeetingAsync(const CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateMeetingAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::CreateMeetingAsyncHelper(const CreateMeetingRequest& request, const CreateMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateMeeting(request), context);
 }
 
 CreatePhoneNumberOrderOutcome ChimeClient::CreatePhoneNumberOrder(const CreatePhoneNumberOrderRequest& request) const
@@ -888,6 +1018,54 @@ void ChimeClient::DeleteAccountAsyncHelper(const DeleteAccountRequest& request, 
   handler(this, request, DeleteAccount(request), context);
 }
 
+DeleteAttendeeOutcome ChimeClient::DeleteAttendee(const DeleteAttendeeRequest& request) const
+{
+  if (!request.MeetingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAttendee", "Required field: MeetingId, is not set");
+    return DeleteAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
+  }
+  if (!request.AttendeeIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAttendee", "Required field: AttendeeId, is not set");
+    return DeleteAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/meetings/";
+  ss << request.GetMeetingId();
+  ss << "/attendees/";
+  ss << request.GetAttendeeId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteAttendeeOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteAttendeeOutcome(outcome.GetError());
+  }
+}
+
+DeleteAttendeeOutcomeCallable ChimeClient::DeleteAttendeeCallable(const DeleteAttendeeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteAttendeeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteAttendee(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteAttendeeAsync(const DeleteAttendeeRequest& request, const DeleteAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteAttendeeAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteAttendeeAsyncHelper(const DeleteAttendeeRequest& request, const DeleteAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteAttendee(request), context);
+}
+
 DeleteEventsConfigurationOutcome ChimeClient::DeleteEventsConfiguration(const DeleteEventsConfigurationRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -935,6 +1113,47 @@ void ChimeClient::DeleteEventsConfigurationAsync(const DeleteEventsConfiguration
 void ChimeClient::DeleteEventsConfigurationAsyncHelper(const DeleteEventsConfigurationRequest& request, const DeleteEventsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEventsConfiguration(request), context);
+}
+
+DeleteMeetingOutcome ChimeClient::DeleteMeeting(const DeleteMeetingRequest& request) const
+{
+  if (!request.MeetingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMeeting", "Required field: MeetingId, is not set");
+    return DeleteMeetingOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/meetings/";
+  ss << request.GetMeetingId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteMeetingOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteMeetingOutcome(outcome.GetError());
+  }
+}
+
+DeleteMeetingOutcomeCallable ChimeClient::DeleteMeetingCallable(const DeleteMeetingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteMeetingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteMeeting(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DeleteMeetingAsync(const DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteMeetingAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DeleteMeetingAsyncHelper(const DeleteMeetingRequest& request, const DeleteMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteMeeting(request), context);
 }
 
 DeletePhoneNumberOutcome ChimeClient::DeletePhoneNumber(const DeletePhoneNumberRequest& request) const
@@ -1552,6 +1771,54 @@ void ChimeClient::GetAccountSettingsAsyncHelper(const GetAccountSettingsRequest&
   handler(this, request, GetAccountSettings(request), context);
 }
 
+GetAttendeeOutcome ChimeClient::GetAttendee(const GetAttendeeRequest& request) const
+{
+  if (!request.MeetingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAttendee", "Required field: MeetingId, is not set");
+    return GetAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
+  }
+  if (!request.AttendeeIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAttendee", "Required field: AttendeeId, is not set");
+    return GetAttendeeOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttendeeId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/meetings/";
+  ss << request.GetMeetingId();
+  ss << "/attendees/";
+  ss << request.GetAttendeeId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetAttendeeOutcome(GetAttendeeResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAttendeeOutcome(outcome.GetError());
+  }
+}
+
+GetAttendeeOutcomeCallable ChimeClient::GetAttendeeCallable(const GetAttendeeRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAttendeeOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAttendee(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::GetAttendeeAsync(const GetAttendeeRequest& request, const GetAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAttendeeAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::GetAttendeeAsyncHelper(const GetAttendeeRequest& request, const GetAttendeeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAttendee(request), context);
+}
+
 GetBotOutcome ChimeClient::GetBot(const GetBotRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -1680,6 +1947,47 @@ void ChimeClient::GetGlobalSettingsAsync(const GetGlobalSettingsResponseReceived
 void ChimeClient::GetGlobalSettingsAsyncHelper(const GetGlobalSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, GetGlobalSettings(), context);
+}
+
+GetMeetingOutcome ChimeClient::GetMeeting(const GetMeetingRequest& request) const
+{
+  if (!request.MeetingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetMeeting", "Required field: MeetingId, is not set");
+    return GetMeetingOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/meetings/";
+  ss << request.GetMeetingId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetMeetingOutcome(GetMeetingResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetMeetingOutcome(outcome.GetError());
+  }
+}
+
+GetMeetingOutcomeCallable ChimeClient::GetMeetingCallable(const GetMeetingRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetMeetingOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetMeeting(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::GetMeetingAsync(const GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetMeetingAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::GetMeetingAsyncHelper(const GetMeetingRequest& request, const GetMeetingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetMeeting(request), context);
 }
 
 GetPhoneNumberOutcome ChimeClient::GetPhoneNumber(const GetPhoneNumberRequest& request) const
@@ -2313,6 +2621,48 @@ void ChimeClient::ListAccountsAsyncHelper(const ListAccountsRequest& request, co
   handler(this, request, ListAccounts(request), context);
 }
 
+ListAttendeesOutcome ChimeClient::ListAttendees(const ListAttendeesRequest& request) const
+{
+  if (!request.MeetingIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAttendees", "Required field: MeetingId, is not set");
+    return ListAttendeesOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MeetingId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/meetings/";
+  ss << request.GetMeetingId();
+  ss << "/attendees";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListAttendeesOutcome(ListAttendeesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListAttendeesOutcome(outcome.GetError());
+  }
+}
+
+ListAttendeesOutcomeCallable ChimeClient::ListAttendeesCallable(const ListAttendeesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListAttendeesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListAttendees(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListAttendeesAsync(const ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListAttendeesAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListAttendeesAsyncHelper(const ListAttendeesRequest& request, const ListAttendeesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListAttendees(request), context);
+}
+
 ListBotsOutcome ChimeClient::ListBots(const ListBotsRequest& request) const
 {
   if (!request.AccountIdHasBeenSet())
@@ -2353,6 +2703,41 @@ void ChimeClient::ListBotsAsync(const ListBotsRequest& request, const ListBotsRe
 void ChimeClient::ListBotsAsyncHelper(const ListBotsRequest& request, const ListBotsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListBots(request), context);
+}
+
+ListMeetingsOutcome ChimeClient::ListMeetings(const ListMeetingsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/meetings";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListMeetingsOutcome(ListMeetingsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListMeetingsOutcome(outcome.GetError());
+  }
+}
+
+ListMeetingsOutcomeCallable ChimeClient::ListMeetingsCallable(const ListMeetingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListMeetingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListMeetings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::ListMeetingsAsync(const ListMeetingsRequest& request, const ListMeetingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListMeetingsAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::ListMeetingsAsyncHelper(const ListMeetingsRequest& request, const ListMeetingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListMeetings(request), context);
 }
 
 ListPhoneNumberOrdersOutcome ChimeClient::ListPhoneNumberOrders(const ListPhoneNumberOrdersRequest& request) const

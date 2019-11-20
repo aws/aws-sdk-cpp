@@ -124,43 +124,43 @@ namespace Model
 
 
     /**
-     * <p>The fully qualified path to the specified file. This returns the name and
+     * <p>The fully qualified path to the specified file. Returns the name and
      * extension of the file.</p>
      */
     inline const Aws::String& GetFilePath() const{ return m_filePath; }
 
     /**
-     * <p>The fully qualified path to the specified file. This returns the name and
+     * <p>The fully qualified path to the specified file. Returns the name and
      * extension of the file.</p>
      */
     inline void SetFilePath(const Aws::String& value) { m_filePath = value; }
 
     /**
-     * <p>The fully qualified path to the specified file. This returns the name and
+     * <p>The fully qualified path to the specified file. Returns the name and
      * extension of the file.</p>
      */
     inline void SetFilePath(Aws::String&& value) { m_filePath = std::move(value); }
 
     /**
-     * <p>The fully qualified path to the specified file. This returns the name and
+     * <p>The fully qualified path to the specified file. Returns the name and
      * extension of the file.</p>
      */
     inline void SetFilePath(const char* value) { m_filePath.assign(value); }
 
     /**
-     * <p>The fully qualified path to the specified file. This returns the name and
+     * <p>The fully qualified path to the specified file. Returns the name and
      * extension of the file.</p>
      */
     inline GetFileResult& WithFilePath(const Aws::String& value) { SetFilePath(value); return *this;}
 
     /**
-     * <p>The fully qualified path to the specified file. This returns the name and
+     * <p>The fully qualified path to the specified file. Returns the name and
      * extension of the file.</p>
      */
     inline GetFileResult& WithFilePath(Aws::String&& value) { SetFilePath(std::move(value)); return *this;}
 
     /**
-     * <p>The fully qualified path to the specified file. This returns the name and
+     * <p>The fully qualified path to the specified file. Returns the name and
      * extension of the file.</p>
      */
     inline GetFileResult& WithFilePath(const char* value) { SetFilePath(value); return *this;}
@@ -170,8 +170,8 @@ namespace Model
      * <p>The extrapolated file mode permissions of the blob. Valid values include
      * strings such as EXECUTABLE and not numeric values.</p> <note> <p>The file mode
      * permissions returned by this API are not the standard file mode permission
-     * values, such as 100644, but rather extrapolated values. See below for a full
-     * list of supported return values.</p> </note>
+     * values, such as 100644, but rather extrapolated values. See the supported return
+     * values.</p> </note>
      */
     inline const FileModeTypeEnum& GetFileMode() const{ return m_fileMode; }
 
@@ -179,8 +179,8 @@ namespace Model
      * <p>The extrapolated file mode permissions of the blob. Valid values include
      * strings such as EXECUTABLE and not numeric values.</p> <note> <p>The file mode
      * permissions returned by this API are not the standard file mode permission
-     * values, such as 100644, but rather extrapolated values. See below for a full
-     * list of supported return values.</p> </note>
+     * values, such as 100644, but rather extrapolated values. See the supported return
+     * values.</p> </note>
      */
     inline void SetFileMode(const FileModeTypeEnum& value) { m_fileMode = value; }
 
@@ -188,8 +188,8 @@ namespace Model
      * <p>The extrapolated file mode permissions of the blob. Valid values include
      * strings such as EXECUTABLE and not numeric values.</p> <note> <p>The file mode
      * permissions returned by this API are not the standard file mode permission
-     * values, such as 100644, but rather extrapolated values. See below for a full
-     * list of supported return values.</p> </note>
+     * values, such as 100644, but rather extrapolated values. See the supported return
+     * values.</p> </note>
      */
     inline void SetFileMode(FileModeTypeEnum&& value) { m_fileMode = std::move(value); }
 
@@ -197,8 +197,8 @@ namespace Model
      * <p>The extrapolated file mode permissions of the blob. Valid values include
      * strings such as EXECUTABLE and not numeric values.</p> <note> <p>The file mode
      * permissions returned by this API are not the standard file mode permission
-     * values, such as 100644, but rather extrapolated values. See below for a full
-     * list of supported return values.</p> </note>
+     * values, such as 100644, but rather extrapolated values. See the supported return
+     * values.</p> </note>
      */
     inline GetFileResult& WithFileMode(const FileModeTypeEnum& value) { SetFileMode(value); return *this;}
 
@@ -206,8 +206,8 @@ namespace Model
      * <p>The extrapolated file mode permissions of the blob. Valid values include
      * strings such as EXECUTABLE and not numeric values.</p> <note> <p>The file mode
      * permissions returned by this API are not the standard file mode permission
-     * values, such as 100644, but rather extrapolated values. See below for a full
-     * list of supported return values.</p> </note>
+     * values, such as 100644, but rather extrapolated values. See the supported return
+     * values.</p> </note>
      */
     inline GetFileResult& WithFileMode(FileModeTypeEnum&& value) { SetFileMode(std::move(value)); return *this;}
 

@@ -57,6 +57,7 @@ enum class MigrationHubErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   DRY_RUN_OPERATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  HOME_REGION_NOT_SET,
   INVALID_INPUT,
   POLICY_ERROR,
   UNAUTHORIZED_OPERATION

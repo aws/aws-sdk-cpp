@@ -46,6 +46,7 @@
 #include <aws/storagegateway/model/DeleteTapeResult.h>
 #include <aws/storagegateway/model/DeleteTapeArchiveResult.h>
 #include <aws/storagegateway/model/DeleteVolumeResult.h>
+#include <aws/storagegateway/model/DescribeAvailabilityMonitorTestResult.h>
 #include <aws/storagegateway/model/DescribeBandwidthRateLimitResult.h>
 #include <aws/storagegateway/model/DescribeCacheResult.h>
 #include <aws/storagegateway/model/DescribeCachediSCSIVolumesResult.h>
@@ -83,6 +84,7 @@
 #include <aws/storagegateway/model/SetLocalConsolePasswordResult.h>
 #include <aws/storagegateway/model/SetSMBGuestPasswordResult.h>
 #include <aws/storagegateway/model/ShutdownGatewayResult.h>
+#include <aws/storagegateway/model/StartAvailabilityMonitorTestResult.h>
 #include <aws/storagegateway/model/StartGatewayResult.h>
 #include <aws/storagegateway/model/UpdateBandwidthRateLimitResult.h>
 #include <aws/storagegateway/model/UpdateChapCredentialsResult.h>
@@ -158,6 +160,7 @@ namespace Model
         class DeleteTapeRequest;
         class DeleteTapeArchiveRequest;
         class DeleteVolumeRequest;
+        class DescribeAvailabilityMonitorTestRequest;
         class DescribeBandwidthRateLimitRequest;
         class DescribeCacheRequest;
         class DescribeCachediSCSIVolumesRequest;
@@ -195,6 +198,7 @@ namespace Model
         class SetLocalConsolePasswordRequest;
         class SetSMBGuestPasswordRequest;
         class ShutdownGatewayRequest;
+        class StartAvailabilityMonitorTestRequest;
         class StartGatewayRequest;
         class UpdateBandwidthRateLimitRequest;
         class UpdateChapCredentialsRequest;
@@ -232,6 +236,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteTapeResult, Aws::Client::AWSError<StorageGatewayErrors>> DeleteTapeOutcome;
         typedef Aws::Utils::Outcome<DeleteTapeArchiveResult, Aws::Client::AWSError<StorageGatewayErrors>> DeleteTapeArchiveOutcome;
         typedef Aws::Utils::Outcome<DeleteVolumeResult, Aws::Client::AWSError<StorageGatewayErrors>> DeleteVolumeOutcome;
+        typedef Aws::Utils::Outcome<DescribeAvailabilityMonitorTestResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeAvailabilityMonitorTestOutcome;
         typedef Aws::Utils::Outcome<DescribeBandwidthRateLimitResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeBandwidthRateLimitOutcome;
         typedef Aws::Utils::Outcome<DescribeCacheResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeCacheOutcome;
         typedef Aws::Utils::Outcome<DescribeCachediSCSIVolumesResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeCachediSCSIVolumesOutcome;
@@ -269,6 +274,7 @@ namespace Model
         typedef Aws::Utils::Outcome<SetLocalConsolePasswordResult, Aws::Client::AWSError<StorageGatewayErrors>> SetLocalConsolePasswordOutcome;
         typedef Aws::Utils::Outcome<SetSMBGuestPasswordResult, Aws::Client::AWSError<StorageGatewayErrors>> SetSMBGuestPasswordOutcome;
         typedef Aws::Utils::Outcome<ShutdownGatewayResult, Aws::Client::AWSError<StorageGatewayErrors>> ShutdownGatewayOutcome;
+        typedef Aws::Utils::Outcome<StartAvailabilityMonitorTestResult, Aws::Client::AWSError<StorageGatewayErrors>> StartAvailabilityMonitorTestOutcome;
         typedef Aws::Utils::Outcome<StartGatewayResult, Aws::Client::AWSError<StorageGatewayErrors>> StartGatewayOutcome;
         typedef Aws::Utils::Outcome<UpdateBandwidthRateLimitResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateBandwidthRateLimitOutcome;
         typedef Aws::Utils::Outcome<UpdateChapCredentialsResult, Aws::Client::AWSError<StorageGatewayErrors>> UpdateChapCredentialsOutcome;
@@ -306,6 +312,7 @@ namespace Model
         typedef std::future<DeleteTapeOutcome> DeleteTapeOutcomeCallable;
         typedef std::future<DeleteTapeArchiveOutcome> DeleteTapeArchiveOutcomeCallable;
         typedef std::future<DeleteVolumeOutcome> DeleteVolumeOutcomeCallable;
+        typedef std::future<DescribeAvailabilityMonitorTestOutcome> DescribeAvailabilityMonitorTestOutcomeCallable;
         typedef std::future<DescribeBandwidthRateLimitOutcome> DescribeBandwidthRateLimitOutcomeCallable;
         typedef std::future<DescribeCacheOutcome> DescribeCacheOutcomeCallable;
         typedef std::future<DescribeCachediSCSIVolumesOutcome> DescribeCachediSCSIVolumesOutcomeCallable;
@@ -343,6 +350,7 @@ namespace Model
         typedef std::future<SetLocalConsolePasswordOutcome> SetLocalConsolePasswordOutcomeCallable;
         typedef std::future<SetSMBGuestPasswordOutcome> SetSMBGuestPasswordOutcomeCallable;
         typedef std::future<ShutdownGatewayOutcome> ShutdownGatewayOutcomeCallable;
+        typedef std::future<StartAvailabilityMonitorTestOutcome> StartAvailabilityMonitorTestOutcomeCallable;
         typedef std::future<StartGatewayOutcome> StartGatewayOutcomeCallable;
         typedef std::future<UpdateBandwidthRateLimitOutcome> UpdateBandwidthRateLimitOutcomeCallable;
         typedef std::future<UpdateChapCredentialsOutcome> UpdateChapCredentialsOutcomeCallable;
@@ -383,6 +391,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteTapeRequest&, const Model::DeleteTapeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTapeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteTapeArchiveRequest&, const Model::DeleteTapeArchiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTapeArchiveResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DeleteVolumeRequest&, const Model::DeleteVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVolumeResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::DescribeAvailabilityMonitorTestRequest&, const Model::DescribeAvailabilityMonitorTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAvailabilityMonitorTestResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeBandwidthRateLimitRequest&, const Model::DescribeBandwidthRateLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBandwidthRateLimitResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeCacheRequest&, const Model::DescribeCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCacheResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeCachediSCSIVolumesRequest&, const Model::DescribeCachediSCSIVolumesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCachediSCSIVolumesResponseReceivedHandler;
@@ -420,6 +429,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::SetLocalConsolePasswordRequest&, const Model::SetLocalConsolePasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetLocalConsolePasswordResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::SetSMBGuestPasswordRequest&, const Model::SetSMBGuestPasswordOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SetSMBGuestPasswordResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ShutdownGatewayRequest&, const Model::ShutdownGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ShutdownGatewayResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::StartAvailabilityMonitorTestRequest&, const Model::StartAvailabilityMonitorTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartAvailabilityMonitorTestResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::StartGatewayRequest&, const Model::StartGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartGatewayResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateBandwidthRateLimitRequest&, const Model::UpdateBandwidthRateLimitOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateBandwidthRateLimitResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::UpdateChapCredentialsRequest&, const Model::UpdateChapCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChapCredentialsResponseReceivedHandler;
@@ -1342,7 +1352,8 @@ namespace Model
          * upload and download bandwidth rate limit, or you can delete both. If you delete
          * only one of the limits, the other limit remains unchanged. To specify which
          * gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your
-         * request.</p><p><h3>See Also:</h3>   <a
+         * request. This operation is supported for the stored volume, cached volume and
+         * tape gateway types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">AWS
          * API Reference</a></p>
          */
@@ -1353,7 +1364,8 @@ namespace Model
          * upload and download bandwidth rate limit, or you can delete both. If you delete
          * only one of the limits, the other limit remains unchanged. To specify which
          * gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your
-         * request.</p><p><h3>See Also:</h3>   <a
+         * request. This operation is supported for the stored volume, cached volume and
+         * tape gateway types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">AWS
          * API Reference</a></p>
          *
@@ -1366,7 +1378,8 @@ namespace Model
          * upload and download bandwidth rate limit, or you can delete both. If you delete
          * only one of the limits, the other limit remains unchanged. To specify which
          * gateway to work with, use the Amazon Resource Name (ARN) of the gateway in your
-         * request.</p><p><h3>See Also:</h3>   <a
+         * request. This operation is supported for the stored volume, cached volume and
+         * tape gateway types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteBandwidthRateLimit">AWS
          * API Reference</a></p>
          *
@@ -1376,7 +1389,8 @@ namespace Model
 
         /**
          * <p>Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a
-         * specified iSCSI target and initiator pair.</p><p><h3>See Also:</h3>   <a
+         * specified iSCSI target and initiator pair. This operation is supported in volume
+         * and tape gateway types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials">AWS
          * API Reference</a></p>
          */
@@ -1384,7 +1398,8 @@ namespace Model
 
         /**
          * <p>Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a
-         * specified iSCSI target and initiator pair.</p><p><h3>See Also:</h3>   <a
+         * specified iSCSI target and initiator pair. This operation is supported in volume
+         * and tape gateway types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials">AWS
          * API Reference</a></p>
          *
@@ -1394,7 +1409,8 @@ namespace Model
 
         /**
          * <p>Deletes Challenge-Handshake Authentication Protocol (CHAP) credentials for a
-         * specified iSCSI target and initiator pair.</p><p><h3>See Also:</h3>   <a
+         * specified iSCSI target and initiator pair. This operation is supported in volume
+         * and tape gateway types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteChapCredentials">AWS
          * API Reference</a></p>
          *
@@ -1670,12 +1686,47 @@ namespace Model
         virtual void DeleteVolumeAsync(const Model::DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about the most recent High Availability monitoring test
+         * that was performed on the host in a cluster. If a test isn't performed, the
+         * status and start time in the response would be null.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeAvailabilityMonitorTest">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAvailabilityMonitorTestOutcome DescribeAvailabilityMonitorTest(const Model::DescribeAvailabilityMonitorTestRequest& request) const;
+
+        /**
+         * <p>Returns information about the most recent High Availability monitoring test
+         * that was performed on the host in a cluster. If a test isn't performed, the
+         * status and start time in the response would be null.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeAvailabilityMonitorTest">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAvailabilityMonitorTestOutcomeCallable DescribeAvailabilityMonitorTestCallable(const Model::DescribeAvailabilityMonitorTestRequest& request) const;
+
+        /**
+         * <p>Returns information about the most recent High Availability monitoring test
+         * that was performed on the host in a cluster. If a test isn't performed, the
+         * status and start time in the response would be null.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeAvailabilityMonitorTest">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAvailabilityMonitorTestAsync(const Model::DescribeAvailabilityMonitorTestRequest& request, const DescribeAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the bandwidth rate limits of a gateway. By default, these limits are
-         * not set, which means no bandwidth rate limiting is in effect.</p> <p>This
-         * operation only returns a value for a bandwidth rate limit only if the limit is
-         * set. If no limits are set for the gateway, then this operation returns only the
-         * gateway ARN in the response body. To specify which gateway to describe, use the
-         * Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
+         * not set, which means no bandwidth rate limiting is in effect. This operation is
+         * supported for the stored volume, cached volume and tape gateway types.'</p>
+         * <p>This operation only returns a value for a bandwidth rate limit only if the
+         * limit is set. If no limits are set for the gateway, then this operation returns
+         * only the gateway ARN in the response body. To specify which gateway to describe,
+         * use the Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">AWS
          * API Reference</a></p>
@@ -1684,11 +1735,12 @@ namespace Model
 
         /**
          * <p>Returns the bandwidth rate limits of a gateway. By default, these limits are
-         * not set, which means no bandwidth rate limiting is in effect.</p> <p>This
-         * operation only returns a value for a bandwidth rate limit only if the limit is
-         * set. If no limits are set for the gateway, then this operation returns only the
-         * gateway ARN in the response body. To specify which gateway to describe, use the
-         * Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
+         * not set, which means no bandwidth rate limiting is in effect. This operation is
+         * supported for the stored volume, cached volume and tape gateway types.'</p>
+         * <p>This operation only returns a value for a bandwidth rate limit only if the
+         * limit is set. If no limits are set for the gateway, then this operation returns
+         * only the gateway ARN in the response body. To specify which gateway to describe,
+         * use the Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">AWS
          * API Reference</a></p>
@@ -1699,11 +1751,12 @@ namespace Model
 
         /**
          * <p>Returns the bandwidth rate limits of a gateway. By default, these limits are
-         * not set, which means no bandwidth rate limiting is in effect.</p> <p>This
-         * operation only returns a value for a bandwidth rate limit only if the limit is
-         * set. If no limits are set for the gateway, then this operation returns only the
-         * gateway ARN in the response body. To specify which gateway to describe, use the
-         * Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
+         * not set, which means no bandwidth rate limiting is in effect. This operation is
+         * supported for the stored volume, cached volume and tape gateway types.'</p>
+         * <p>This operation only returns a value for a bandwidth rate limit only if the
+         * limit is set. If no limits are set for the gateway, then this operation returns
+         * only the gateway ARN in the response body. To specify which gateway to describe,
+         * use the Amazon Resource Name (ARN) of the gateway in your request.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimit">AWS
          * API Reference</a></p>
@@ -1786,7 +1839,8 @@ namespace Model
         /**
          * <p>Returns an array of Challenge-Handshake Authentication Protocol (CHAP)
          * credentials information for a specified iSCSI target, one for each
-         * target-initiator pair.</p><p><h3>See Also:</h3>   <a
+         * target-initiator pair. This operation is supported in the volume and tape
+         * gateway types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">AWS
          * API Reference</a></p>
          */
@@ -1795,7 +1849,8 @@ namespace Model
         /**
          * <p>Returns an array of Challenge-Handshake Authentication Protocol (CHAP)
          * credentials information for a specified iSCSI target, one for each
-         * target-initiator pair.</p><p><h3>See Also:</h3>   <a
+         * target-initiator pair. This operation is supported in the volume and tape
+         * gateway types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">AWS
          * API Reference</a></p>
          *
@@ -1806,7 +1861,8 @@ namespace Model
         /**
          * <p>Returns an array of Challenge-Handshake Authentication Protocol (CHAP)
          * credentials information for a specified iSCSI target, one for each
-         * target-initiator pair.</p><p><h3>See Also:</h3>   <a
+         * target-initiator pair. This operation is supported in the volume and tape
+         * gateway types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeChapCredentials">AWS
          * API Reference</a></p>
          *
@@ -2276,8 +2332,8 @@ namespace Model
          * from the specified gateway. Detaching and attaching a volume enables you to
          * recover your data from one gateway to a different gateway without creating a
          * snapshot. It also makes it easier to move your volumes from an on-premises
-         * gateway to a gateway hosted on an Amazon EC2 instance.</p><p><h3>See Also:</h3> 
-         * <a
+         * gateway to a gateway hosted on an Amazon EC2 instance. This operation is only
+         * supported in the volume gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume">AWS
          * API Reference</a></p>
          */
@@ -2288,8 +2344,8 @@ namespace Model
          * from the specified gateway. Detaching and attaching a volume enables you to
          * recover your data from one gateway to a different gateway without creating a
          * snapshot. It also makes it easier to move your volumes from an on-premises
-         * gateway to a gateway hosted on an Amazon EC2 instance.</p><p><h3>See Also:</h3> 
-         * <a
+         * gateway to a gateway hosted on an Amazon EC2 instance. This operation is only
+         * supported in the volume gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume">AWS
          * API Reference</a></p>
          *
@@ -2302,8 +2358,8 @@ namespace Model
          * from the specified gateway. Detaching and attaching a volume enables you to
          * recover your data from one gateway to a different gateway without creating a
          * snapshot. It also makes it easier to move your volumes from an on-premises
-         * gateway to a gateway hosted on an Amazon EC2 instance.</p><p><h3>See Also:</h3> 
-         * <a
+         * gateway to a gateway hosted on an Amazon EC2 instance. This operation is only
+         * supported in the volume gateway type.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume">AWS
          * API Reference</a></p>
          *
@@ -2510,8 +2566,7 @@ namespace Model
 
         /**
          * <p>Lists the tags that have been added to the specified resource. This operation
-         * is only supported in the cached volume, stored volume and tape gateway
-         * type.</p><p><h3>See Also:</h3>   <a
+         * is supported in storage gateways of all types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -2519,8 +2574,7 @@ namespace Model
 
         /**
          * <p>Lists the tags that have been added to the specified resource. This operation
-         * is only supported in the cached volume, stored volume and tape gateway
-         * type.</p><p><h3>See Also:</h3>   <a
+         * is supported in storage gateways of all types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -2530,8 +2584,7 @@ namespace Model
 
         /**
          * <p>Lists the tags that have been added to the specified resource. This operation
-         * is only supported in the cached volume, stored volume and tape gateway
-         * type.</p><p><h3>See Also:</h3>   <a
+         * is supported in storage gateways of all types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -2798,7 +2851,17 @@ namespace Model
          * You should use the refresh-complete notification to determine that the operation
          * has completed before you check for new files on the gateway file share. You can
          * subscribe to be notified through an CloudWatch event when your
-         * <code>RefreshCache</code> operation completes. </p><p><h3>See Also:</h3>   <a
+         * <code>RefreshCache</code> operation completes. </p> <p>Throttle limit: This API
+         * is asynchronous so the gateway will accept no more than two refreshes at any
+         * time. We recommend using the refresh-complete CloudWatch event notification
+         * before issuing additional requests. For more information, see <a
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+         * Notified About File Operations</a>.</p> <p>If you invoke the RefreshCache API
+         * when two requests are already being processed, any new request will cause an
+         * <code>InvalidGatewayRequestException</code> error because too many requests were
+         * sent to the server.</p> <p>For more information, see
+         * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification".</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">AWS
          * API Reference</a></p>
          */
@@ -2818,7 +2881,17 @@ namespace Model
          * You should use the refresh-complete notification to determine that the operation
          * has completed before you check for new files on the gateway file share. You can
          * subscribe to be notified through an CloudWatch event when your
-         * <code>RefreshCache</code> operation completes. </p><p><h3>See Also:</h3>   <a
+         * <code>RefreshCache</code> operation completes. </p> <p>Throttle limit: This API
+         * is asynchronous so the gateway will accept no more than two refreshes at any
+         * time. We recommend using the refresh-complete CloudWatch event notification
+         * before issuing additional requests. For more information, see <a
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+         * Notified About File Operations</a>.</p> <p>If you invoke the RefreshCache API
+         * when two requests are already being processed, any new request will cause an
+         * <code>InvalidGatewayRequestException</code> error because too many requests were
+         * sent to the server.</p> <p>For more information, see
+         * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification".</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">AWS
          * API Reference</a></p>
          *
@@ -2840,7 +2913,17 @@ namespace Model
          * You should use the refresh-complete notification to determine that the operation
          * has completed before you check for new files on the gateway file share. You can
          * subscribe to be notified through an CloudWatch event when your
-         * <code>RefreshCache</code> operation completes. </p><p><h3>See Also:</h3>   <a
+         * <code>RefreshCache</code> operation completes. </p> <p>Throttle limit: This API
+         * is asynchronous so the gateway will accept no more than two refreshes at any
+         * time. We recommend using the refresh-complete CloudWatch event notification
+         * before issuing additional requests. For more information, see <a
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
+         * Notified About File Operations</a>.</p> <p>If you invoke the RefreshCache API
+         * when two requests are already being processed, any new request will cause an
+         * <code>InvalidGatewayRequestException</code> error because too many requests were
+         * sent to the server.</p> <p>For more information, see
+         * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification".</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache">AWS
          * API Reference</a></p>
          *
@@ -2849,18 +2932,16 @@ namespace Model
         virtual void RefreshCacheAsync(const Model::RefreshCacheRequest& request, const RefreshCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags from the specified resource. This operation is only
-         * supported in the cached volume, stored volume and tape gateway
-         * types.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more tags from the specified resource. This operation is
+         * supported in storage gateways of all types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">AWS
          * API Reference</a></p>
          */
         virtual Model::RemoveTagsFromResourceOutcome RemoveTagsFromResource(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified resource. This operation is only
-         * supported in the cached volume, stored volume and tape gateway
-         * types.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more tags from the specified resource. This operation is
+         * supported in storage gateways of all types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">AWS
          * API Reference</a></p>
          *
@@ -2869,9 +2950,8 @@ namespace Model
         virtual Model::RemoveTagsFromResourceOutcomeCallable RemoveTagsFromResourceCallable(const Model::RemoveTagsFromResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from the specified resource. This operation is only
-         * supported in the cached volume, stored volume and tape gateway
-         * types.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes one or more tags from the specified resource. This operation is
+         * supported in storage gateways of all types.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RemoveTagsFromResource">AWS
          * API Reference</a></p>
          *
@@ -3171,6 +3251,49 @@ namespace Model
         virtual void ShutdownGatewayAsync(const Model::ShutdownGatewayRequest& request, const ShutdownGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Start a test that verifies that the specified gateway is configured for High
+         * Availability monitoring in your host environment. This request only initiates
+         * the test and that a successful response only indicates that the test was
+         * started. It doesn't indicate that the test passed. For the status of the test,
+         * invoke the <code>DescribeAvailabilityMonitorTest</code> API. </p> <note>
+         * <p>Starting this test will cause your gateway to go offline for a brief
+         * period.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartAvailabilityMonitorTest">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartAvailabilityMonitorTestOutcome StartAvailabilityMonitorTest(const Model::StartAvailabilityMonitorTestRequest& request) const;
+
+        /**
+         * <p>Start a test that verifies that the specified gateway is configured for High
+         * Availability monitoring in your host environment. This request only initiates
+         * the test and that a successful response only indicates that the test was
+         * started. It doesn't indicate that the test passed. For the status of the test,
+         * invoke the <code>DescribeAvailabilityMonitorTest</code> API. </p> <note>
+         * <p>Starting this test will cause your gateway to go offline for a brief
+         * period.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartAvailabilityMonitorTest">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartAvailabilityMonitorTestOutcomeCallable StartAvailabilityMonitorTestCallable(const Model::StartAvailabilityMonitorTestRequest& request) const;
+
+        /**
+         * <p>Start a test that verifies that the specified gateway is configured for High
+         * Availability monitoring in your host environment. This request only initiates
+         * the test and that a successful response only indicates that the test was
+         * started. It doesn't indicate that the test passed. For the status of the test,
+         * invoke the <code>DescribeAvailabilityMonitorTest</code> API. </p> <note>
+         * <p>Starting this test will cause your gateway to go offline for a brief
+         * period.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/StartAvailabilityMonitorTest">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartAvailabilityMonitorTestAsync(const Model::StartAvailabilityMonitorTestRequest& request, const StartAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts a gateway that you previously shut down (see <a>ShutdownGateway</a>).
          * After the gateway starts, you can then make other API calls, your applications
          * can read from or write to the gateway's storage volumes and you will be able to
@@ -3225,12 +3348,13 @@ namespace Model
         /**
          * <p>Updates the bandwidth rate limits of a gateway. You can update both the
          * upload and download bandwidth rate limit or specify only one of the two. If you
-         * don't set a bandwidth rate limit, the existing rate limit remains.</p> <p>By
-         * default, a gateway's bandwidth rate limits are not set. If you don't set any
-         * limit, the gateway does not have any limitations on its bandwidth usage and
-         * could potentially use the maximum available bandwidth.</p> <p>To specify which
-         * gateway to update, use the Amazon Resource Name (ARN) of the gateway in your
-         * request.</p><p><h3>See Also:</h3>   <a
+         * don't set a bandwidth rate limit, the existing rate limit remains. This
+         * operation is supported for the stored volume, cached volume and tape gateway
+         * types.'</p> <p>By default, a gateway's bandwidth rate limits are not set. If you
+         * don't set any limit, the gateway does not have any limitations on its bandwidth
+         * usage and could potentially use the maximum available bandwidth.</p> <p>To
+         * specify which gateway to update, use the Amazon Resource Name (ARN) of the
+         * gateway in your request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">AWS
          * API Reference</a></p>
          */
@@ -3239,12 +3363,13 @@ namespace Model
         /**
          * <p>Updates the bandwidth rate limits of a gateway. You can update both the
          * upload and download bandwidth rate limit or specify only one of the two. If you
-         * don't set a bandwidth rate limit, the existing rate limit remains.</p> <p>By
-         * default, a gateway's bandwidth rate limits are not set. If you don't set any
-         * limit, the gateway does not have any limitations on its bandwidth usage and
-         * could potentially use the maximum available bandwidth.</p> <p>To specify which
-         * gateway to update, use the Amazon Resource Name (ARN) of the gateway in your
-         * request.</p><p><h3>See Also:</h3>   <a
+         * don't set a bandwidth rate limit, the existing rate limit remains. This
+         * operation is supported for the stored volume, cached volume and tape gateway
+         * types.'</p> <p>By default, a gateway's bandwidth rate limits are not set. If you
+         * don't set any limit, the gateway does not have any limitations on its bandwidth
+         * usage and could potentially use the maximum available bandwidth.</p> <p>To
+         * specify which gateway to update, use the Amazon Resource Name (ARN) of the
+         * gateway in your request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">AWS
          * API Reference</a></p>
          *
@@ -3255,12 +3380,13 @@ namespace Model
         /**
          * <p>Updates the bandwidth rate limits of a gateway. You can update both the
          * upload and download bandwidth rate limit or specify only one of the two. If you
-         * don't set a bandwidth rate limit, the existing rate limit remains.</p> <p>By
-         * default, a gateway's bandwidth rate limits are not set. If you don't set any
-         * limit, the gateway does not have any limitations on its bandwidth usage and
-         * could potentially use the maximum available bandwidth.</p> <p>To specify which
-         * gateway to update, use the Amazon Resource Name (ARN) of the gateway in your
-         * request.</p><p><h3>See Also:</h3>   <a
+         * don't set a bandwidth rate limit, the existing rate limit remains. This
+         * operation is supported for the stored volume, cached volume and tape gateway
+         * types.'</p> <p>By default, a gateway's bandwidth rate limits are not set. If you
+         * don't set any limit, the gateway does not have any limitations on its bandwidth
+         * usage and could potentially use the maximum available bandwidth.</p> <p>To
+         * specify which gateway to update, use the Amazon Resource Name (ARN) of the
+         * gateway in your request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimit">AWS
          * API Reference</a></p>
          *
@@ -3271,10 +3397,11 @@ namespace Model
         /**
          * <p>Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials
          * for a specified iSCSI target. By default, a gateway does not have CHAP enabled;
-         * however, for added security, you might use it.</p> <important> <p>When you
-         * update CHAP credentials, all existing connections on the target are closed and
-         * initiators must reconnect with the new credentials.</p> </important><p><h3>See
-         * Also:</h3>   <a
+         * however, for added security, you might use it. This operation is supported in
+         * the volume and tape gateway types.</p> <important> <p>When you update CHAP
+         * credentials, all existing connections on the target are closed and initiators
+         * must reconnect with the new credentials.</p> </important><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">AWS
          * API Reference</a></p>
          */
@@ -3283,10 +3410,11 @@ namespace Model
         /**
          * <p>Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials
          * for a specified iSCSI target. By default, a gateway does not have CHAP enabled;
-         * however, for added security, you might use it.</p> <important> <p>When you
-         * update CHAP credentials, all existing connections on the target are closed and
-         * initiators must reconnect with the new credentials.</p> </important><p><h3>See
-         * Also:</h3>   <a
+         * however, for added security, you might use it. This operation is supported in
+         * the volume and tape gateway types.</p> <important> <p>When you update CHAP
+         * credentials, all existing connections on the target are closed and initiators
+         * must reconnect with the new credentials.</p> </important><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">AWS
          * API Reference</a></p>
          *
@@ -3297,10 +3425,11 @@ namespace Model
         /**
          * <p>Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials
          * for a specified iSCSI target. By default, a gateway does not have CHAP enabled;
-         * however, for added security, you might use it.</p> <important> <p>When you
-         * update CHAP credentials, all existing connections on the target are closed and
-         * initiators must reconnect with the new credentials.</p> </important><p><h3>See
-         * Also:</h3>   <a
+         * however, for added security, you might use it. This operation is supported in
+         * the volume and tape gateway types.</p> <important> <p>When you update CHAP
+         * credentials, all existing connections on the target are closed and initiators
+         * must reconnect with the new credentials.</p> </important><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateChapCredentials">AWS
          * API Reference</a></p>
          *
@@ -3699,6 +3828,7 @@ namespace Model
         void DeleteTapeAsyncHelper(const Model::DeleteTapeRequest& request, const DeleteTapeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTapeArchiveAsyncHelper(const Model::DeleteTapeArchiveRequest& request, const DeleteTapeArchiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVolumeAsyncHelper(const Model::DeleteVolumeRequest& request, const DeleteVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAvailabilityMonitorTestAsyncHelper(const Model::DescribeAvailabilityMonitorTestRequest& request, const DescribeAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBandwidthRateLimitAsyncHelper(const Model::DescribeBandwidthRateLimitRequest& request, const DescribeBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCacheAsyncHelper(const Model::DescribeCacheRequest& request, const DescribeCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCachediSCSIVolumesAsyncHelper(const Model::DescribeCachediSCSIVolumesRequest& request, const DescribeCachediSCSIVolumesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3736,6 +3866,7 @@ namespace Model
         void SetLocalConsolePasswordAsyncHelper(const Model::SetLocalConsolePasswordRequest& request, const SetLocalConsolePasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SetSMBGuestPasswordAsyncHelper(const Model::SetSMBGuestPasswordRequest& request, const SetSMBGuestPasswordResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ShutdownGatewayAsyncHelper(const Model::ShutdownGatewayRequest& request, const ShutdownGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartAvailabilityMonitorTestAsyncHelper(const Model::StartAvailabilityMonitorTestRequest& request, const StartAvailabilityMonitorTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartGatewayAsyncHelper(const Model::StartGatewayRequest& request, const StartGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateBandwidthRateLimitAsyncHelper(const Model::UpdateBandwidthRateLimitRequest& request, const UpdateBandwidthRateLimitResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateChapCredentialsAsyncHelper(const Model::UpdateChapCredentialsRequest& request, const UpdateChapCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -1,0 +1,88 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/codecommit/CodeCommit_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/codecommit/model/Approval.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace CodeCommit
+{
+namespace Model
+{
+  class AWS_CODECOMMIT_API GetPullRequestApprovalStatesResult
+  {
+  public:
+    GetPullRequestApprovalStatesResult();
+    GetPullRequestApprovalStatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetPullRequestApprovalStatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>Information about users who have approved the pull request.</p>
+     */
+    inline const Aws::Vector<Approval>& GetApprovals() const{ return m_approvals; }
+
+    /**
+     * <p>Information about users who have approved the pull request.</p>
+     */
+    inline void SetApprovals(const Aws::Vector<Approval>& value) { m_approvals = value; }
+
+    /**
+     * <p>Information about users who have approved the pull request.</p>
+     */
+    inline void SetApprovals(Aws::Vector<Approval>&& value) { m_approvals = std::move(value); }
+
+    /**
+     * <p>Information about users who have approved the pull request.</p>
+     */
+    inline GetPullRequestApprovalStatesResult& WithApprovals(const Aws::Vector<Approval>& value) { SetApprovals(value); return *this;}
+
+    /**
+     * <p>Information about users who have approved the pull request.</p>
+     */
+    inline GetPullRequestApprovalStatesResult& WithApprovals(Aws::Vector<Approval>&& value) { SetApprovals(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about users who have approved the pull request.</p>
+     */
+    inline GetPullRequestApprovalStatesResult& AddApprovals(const Approval& value) { m_approvals.push_back(value); return *this; }
+
+    /**
+     * <p>Information about users who have approved the pull request.</p>
+     */
+    inline GetPullRequestApprovalStatesResult& AddApprovals(Approval&& value) { m_approvals.push_back(std::move(value)); return *this; }
+
+  private:
+
+    Aws::Vector<Approval> m_approvals;
+  };
+
+} // namespace Model
+} // namespace CodeCommit
+} // namespace Aws

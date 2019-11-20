@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about errors in a BatchDescribeMergeConflicts
+   * <p>Returns information about errors in a BatchDescribeMergeConflicts
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflictsError">AWS
    * API Reference</a></p>

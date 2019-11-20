@@ -26,6 +26,7 @@
 #include <aws/cloudtrail/model/DeleteTrailResult.h>
 #include <aws/cloudtrail/model/DescribeTrailsResult.h>
 #include <aws/cloudtrail/model/GetEventSelectorsResult.h>
+#include <aws/cloudtrail/model/GetInsightSelectorsResult.h>
 #include <aws/cloudtrail/model/GetTrailResult.h>
 #include <aws/cloudtrail/model/GetTrailStatusResult.h>
 #include <aws/cloudtrail/model/ListPublicKeysResult.h>
@@ -33,6 +34,7 @@
 #include <aws/cloudtrail/model/ListTrailsResult.h>
 #include <aws/cloudtrail/model/LookupEventsResult.h>
 #include <aws/cloudtrail/model/PutEventSelectorsResult.h>
+#include <aws/cloudtrail/model/PutInsightSelectorsResult.h>
 #include <aws/cloudtrail/model/RemoveTagsResult.h>
 #include <aws/cloudtrail/model/StartLoggingResult.h>
 #include <aws/cloudtrail/model/StopLoggingResult.h>
@@ -81,6 +83,7 @@ namespace Model
         class DeleteTrailRequest;
         class DescribeTrailsRequest;
         class GetEventSelectorsRequest;
+        class GetInsightSelectorsRequest;
         class GetTrailRequest;
         class GetTrailStatusRequest;
         class ListPublicKeysRequest;
@@ -88,6 +91,7 @@ namespace Model
         class ListTrailsRequest;
         class LookupEventsRequest;
         class PutEventSelectorsRequest;
+        class PutInsightSelectorsRequest;
         class RemoveTagsRequest;
         class StartLoggingRequest;
         class StopLoggingRequest;
@@ -98,6 +102,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteTrailResult, Aws::Client::AWSError<CloudTrailErrors>> DeleteTrailOutcome;
         typedef Aws::Utils::Outcome<DescribeTrailsResult, Aws::Client::AWSError<CloudTrailErrors>> DescribeTrailsOutcome;
         typedef Aws::Utils::Outcome<GetEventSelectorsResult, Aws::Client::AWSError<CloudTrailErrors>> GetEventSelectorsOutcome;
+        typedef Aws::Utils::Outcome<GetInsightSelectorsResult, Aws::Client::AWSError<CloudTrailErrors>> GetInsightSelectorsOutcome;
         typedef Aws::Utils::Outcome<GetTrailResult, Aws::Client::AWSError<CloudTrailErrors>> GetTrailOutcome;
         typedef Aws::Utils::Outcome<GetTrailStatusResult, Aws::Client::AWSError<CloudTrailErrors>> GetTrailStatusOutcome;
         typedef Aws::Utils::Outcome<ListPublicKeysResult, Aws::Client::AWSError<CloudTrailErrors>> ListPublicKeysOutcome;
@@ -105,6 +110,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTrailsResult, Aws::Client::AWSError<CloudTrailErrors>> ListTrailsOutcome;
         typedef Aws::Utils::Outcome<LookupEventsResult, Aws::Client::AWSError<CloudTrailErrors>> LookupEventsOutcome;
         typedef Aws::Utils::Outcome<PutEventSelectorsResult, Aws::Client::AWSError<CloudTrailErrors>> PutEventSelectorsOutcome;
+        typedef Aws::Utils::Outcome<PutInsightSelectorsResult, Aws::Client::AWSError<CloudTrailErrors>> PutInsightSelectorsOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsResult, Aws::Client::AWSError<CloudTrailErrors>> RemoveTagsOutcome;
         typedef Aws::Utils::Outcome<StartLoggingResult, Aws::Client::AWSError<CloudTrailErrors>> StartLoggingOutcome;
         typedef Aws::Utils::Outcome<StopLoggingResult, Aws::Client::AWSError<CloudTrailErrors>> StopLoggingOutcome;
@@ -115,6 +121,7 @@ namespace Model
         typedef std::future<DeleteTrailOutcome> DeleteTrailOutcomeCallable;
         typedef std::future<DescribeTrailsOutcome> DescribeTrailsOutcomeCallable;
         typedef std::future<GetEventSelectorsOutcome> GetEventSelectorsOutcomeCallable;
+        typedef std::future<GetInsightSelectorsOutcome> GetInsightSelectorsOutcomeCallable;
         typedef std::future<GetTrailOutcome> GetTrailOutcomeCallable;
         typedef std::future<GetTrailStatusOutcome> GetTrailStatusOutcomeCallable;
         typedef std::future<ListPublicKeysOutcome> ListPublicKeysOutcomeCallable;
@@ -122,6 +129,7 @@ namespace Model
         typedef std::future<ListTrailsOutcome> ListTrailsOutcomeCallable;
         typedef std::future<LookupEventsOutcome> LookupEventsOutcomeCallable;
         typedef std::future<PutEventSelectorsOutcome> PutEventSelectorsOutcomeCallable;
+        typedef std::future<PutInsightSelectorsOutcome> PutInsightSelectorsOutcomeCallable;
         typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
         typedef std::future<StartLoggingOutcome> StartLoggingOutcomeCallable;
         typedef std::future<StopLoggingOutcome> StopLoggingOutcomeCallable;
@@ -135,6 +143,7 @@ namespace Model
     typedef std::function<void(const CloudTrailClient*, const Model::DeleteTrailRequest&, const Model::DeleteTrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrailResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::DescribeTrailsRequest&, const Model::DescribeTrailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrailsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::GetEventSelectorsRequest&, const Model::GetEventSelectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventSelectorsResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::GetInsightSelectorsRequest&, const Model::GetInsightSelectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightSelectorsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::GetTrailRequest&, const Model::GetTrailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrailResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::GetTrailStatusRequest&, const Model::GetTrailStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTrailStatusResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::ListPublicKeysRequest&, const Model::ListPublicKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPublicKeysResponseReceivedHandler;
@@ -142,6 +151,7 @@ namespace Model
     typedef std::function<void(const CloudTrailClient*, const Model::ListTrailsRequest&, const Model::ListTrailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrailsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::LookupEventsRequest&, const Model::LookupEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LookupEventsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::PutEventSelectorsRequest&, const Model::PutEventSelectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventSelectorsResponseReceivedHandler;
+    typedef std::function<void(const CloudTrailClient*, const Model::PutInsightSelectorsRequest&, const Model::PutInsightSelectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutInsightSelectorsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::RemoveTagsRequest&, const Model::RemoveTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StartLoggingRequest&, const Model::StartLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLoggingResponseReceivedHandler;
     typedef std::function<void(const CloudTrailClient*, const Model::StopLoggingRequest&, const Model::StopLoggingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopLoggingResponseReceivedHandler;
@@ -385,6 +395,55 @@ namespace Model
         virtual void GetEventSelectorsAsync(const Model::GetEventSelectorsRequest& request, const GetEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the settings for the Insights event selectors that you configured
+         * for your trail. <code>GetInsightSelectors</code> shows if CloudTrail Insights
+         * event logging is enabled on the trail, and if it is, which insight types are
+         * enabled. If you run <code>GetInsightSelectors</code> on a trail that does not
+         * have Insights events enabled, the operation throws the exception
+         * <code>InsightNotEnabledException</code> </p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
+         * CloudTrail Insights Events for Trails </a> in the <i>AWS CloudTrail User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetInsightSelectorsOutcome GetInsightSelectors(const Model::GetInsightSelectorsRequest& request) const;
+
+        /**
+         * <p>Describes the settings for the Insights event selectors that you configured
+         * for your trail. <code>GetInsightSelectors</code> shows if CloudTrail Insights
+         * event logging is enabled on the trail, and if it is, which insight types are
+         * enabled. If you run <code>GetInsightSelectors</code> on a trail that does not
+         * have Insights events enabled, the operation throws the exception
+         * <code>InsightNotEnabledException</code> </p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
+         * CloudTrail Insights Events for Trails </a> in the <i>AWS CloudTrail User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetInsightSelectorsOutcomeCallable GetInsightSelectorsCallable(const Model::GetInsightSelectorsRequest& request) const;
+
+        /**
+         * <p>Describes the settings for the Insights event selectors that you configured
+         * for your trail. <code>GetInsightSelectors</code> shows if CloudTrail Insights
+         * event logging is enabled on the trail, and if it is, which insight types are
+         * enabled. If you run <code>GetInsightSelectors</code> on a trail that does not
+         * have Insights events enabled, the operation throws the exception
+         * <code>InsightNotEnabledException</code> </p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
+         * CloudTrail Insights Events for Trails </a> in the <i>AWS CloudTrail User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetInsightSelectorsAsync(const Model::GetInsightSelectorsRequest& request, const GetInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns settings information for a specified trail.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetTrail">AWS
@@ -548,18 +607,21 @@ namespace Model
         /**
          * <p>Looks up <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management
-         * events</a> captured by CloudTrail. You can look up events that occurred in a
-         * region within the last 90 days. Lookup supports the following attributes:</p>
-         * <ul> <li> <p>AWS access key</p> </li> <li> <p>Event ID</p> </li> <li> <p>Event
-         * name</p> </li> <li> <p>Event source</p> </li> <li> <p>Read only</p> </li> <li>
-         * <p>Resource name</p> </li> <li> <p>Resource type</p> </li> <li> <p>User name</p>
-         * </li> </ul> <p>All attributes are optional. The default number of results
-         * returned is 50, with a maximum of 50 possible. The response includes a token
-         * that you can use to get the next page of results.</p> <important> <p>The rate of
-         * lookup requests is limited to one per second per account. If this limit is
-         * exceeded, a throttling error occurs.</p> <p>Events that occurred during the
-         * selected time range will not be available for lookup if CloudTrail logging was
-         * not enabled when the events occurred.</p> </important><p><h3>See Also:</h3>   <a
+         * events</a> or <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail
+         * Insights events</a> that are captured by CloudTrail. You can look up events that
+         * occurred in a region within the last 90 days. Lookup supports the following
+         * attributes for management events:</p> <ul> <li> <p>AWS access key</p> </li> <li>
+         * <p>Event ID</p> </li> <li> <p>Event name</p> </li> <li> <p>Event source</p>
+         * </li> <li> <p>Read only</p> </li> <li> <p>Resource name</p> </li> <li>
+         * <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul> <p>Lookup supports
+         * the following attributes for Insights events:</p> <ul> <li> <p>Event ID</p>
+         * </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> </ul> <p>All
+         * attributes are optional. The default number of results returned is 50, with a
+         * maximum of 50 possible. The response includes a token that you can use to get
+         * the next page of results.</p> <important> <p>The rate of lookup requests is
+         * limited to two per second per account. If this limit is exceeded, a throttling
+         * error occurs.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          */
@@ -568,18 +630,21 @@ namespace Model
         /**
          * <p>Looks up <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management
-         * events</a> captured by CloudTrail. You can look up events that occurred in a
-         * region within the last 90 days. Lookup supports the following attributes:</p>
-         * <ul> <li> <p>AWS access key</p> </li> <li> <p>Event ID</p> </li> <li> <p>Event
-         * name</p> </li> <li> <p>Event source</p> </li> <li> <p>Read only</p> </li> <li>
-         * <p>Resource name</p> </li> <li> <p>Resource type</p> </li> <li> <p>User name</p>
-         * </li> </ul> <p>All attributes are optional. The default number of results
-         * returned is 50, with a maximum of 50 possible. The response includes a token
-         * that you can use to get the next page of results.</p> <important> <p>The rate of
-         * lookup requests is limited to one per second per account. If this limit is
-         * exceeded, a throttling error occurs.</p> <p>Events that occurred during the
-         * selected time range will not be available for lookup if CloudTrail logging was
-         * not enabled when the events occurred.</p> </important><p><h3>See Also:</h3>   <a
+         * events</a> or <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail
+         * Insights events</a> that are captured by CloudTrail. You can look up events that
+         * occurred in a region within the last 90 days. Lookup supports the following
+         * attributes for management events:</p> <ul> <li> <p>AWS access key</p> </li> <li>
+         * <p>Event ID</p> </li> <li> <p>Event name</p> </li> <li> <p>Event source</p>
+         * </li> <li> <p>Read only</p> </li> <li> <p>Resource name</p> </li> <li>
+         * <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul> <p>Lookup supports
+         * the following attributes for Insights events:</p> <ul> <li> <p>Event ID</p>
+         * </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> </ul> <p>All
+         * attributes are optional. The default number of results returned is 50, with a
+         * maximum of 50 possible. The response includes a token that you can use to get
+         * the next page of results.</p> <important> <p>The rate of lookup requests is
+         * limited to two per second per account. If this limit is exceeded, a throttling
+         * error occurs.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          *
@@ -590,18 +655,21 @@ namespace Model
         /**
          * <p>Looks up <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management
-         * events</a> captured by CloudTrail. You can look up events that occurred in a
-         * region within the last 90 days. Lookup supports the following attributes:</p>
-         * <ul> <li> <p>AWS access key</p> </li> <li> <p>Event ID</p> </li> <li> <p>Event
-         * name</p> </li> <li> <p>Event source</p> </li> <li> <p>Read only</p> </li> <li>
-         * <p>Resource name</p> </li> <li> <p>Resource type</p> </li> <li> <p>User name</p>
-         * </li> </ul> <p>All attributes are optional. The default number of results
-         * returned is 50, with a maximum of 50 possible. The response includes a token
-         * that you can use to get the next page of results.</p> <important> <p>The rate of
-         * lookup requests is limited to one per second per account. If this limit is
-         * exceeded, a throttling error occurs.</p> <p>Events that occurred during the
-         * selected time range will not be available for lookup if CloudTrail logging was
-         * not enabled when the events occurred.</p> </important><p><h3>See Also:</h3>   <a
+         * events</a> or <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail
+         * Insights events</a> that are captured by CloudTrail. You can look up events that
+         * occurred in a region within the last 90 days. Lookup supports the following
+         * attributes for management events:</p> <ul> <li> <p>AWS access key</p> </li> <li>
+         * <p>Event ID</p> </li> <li> <p>Event name</p> </li> <li> <p>Event source</p>
+         * </li> <li> <p>Read only</p> </li> <li> <p>Resource name</p> </li> <li>
+         * <p>Resource type</p> </li> <li> <p>User name</p> </li> </ul> <p>Lookup supports
+         * the following attributes for Insights events:</p> <ul> <li> <p>Event ID</p>
+         * </li> <li> <p>Event name</p> </li> <li> <p>Event source</p> </li> </ul> <p>All
+         * attributes are optional. The default number of results returned is 50, with a
+         * maximum of 50 possible. The response includes a token that you can use to get
+         * the next page of results.</p> <important> <p>The rate of lookup requests is
+         * limited to two per second per account. If this limit is exceeded, a throttling
+         * error occurs.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/LookupEvents">AWS
          * API Reference</a></p>
          *
@@ -702,6 +770,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutEventSelectorsAsync(const Model::PutEventSelectorsRequest& request, const PutEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lets you enable Insights event logging by specifying the Insights selectors
+         * that you want to enable on an existing trail. You also use
+         * <code>PutInsightSelectors</code> to turn off Insights event logging, by passing
+         * an empty list of insight types. In this release, only
+         * <code>ApiCallRateInsight</code> is supported as an Insights
+         * selector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutInsightSelectorsOutcome PutInsightSelectors(const Model::PutInsightSelectorsRequest& request) const;
+
+        /**
+         * <p>Lets you enable Insights event logging by specifying the Insights selectors
+         * that you want to enable on an existing trail. You also use
+         * <code>PutInsightSelectors</code> to turn off Insights event logging, by passing
+         * an empty list of insight types. In this release, only
+         * <code>ApiCallRateInsight</code> is supported as an Insights
+         * selector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutInsightSelectorsOutcomeCallable PutInsightSelectorsCallable(const Model::PutInsightSelectorsRequest& request) const;
+
+        /**
+         * <p>Lets you enable Insights event logging by specifying the Insights selectors
+         * that you want to enable on an existing trail. You also use
+         * <code>PutInsightSelectors</code> to turn off Insights event logging, by passing
+         * an empty list of insight types. In this release, only
+         * <code>ApiCallRateInsight</code> is supported as an Insights
+         * selector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutInsightSelectorsAsync(const Model::PutInsightSelectorsRequest& request, const PutInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes the specified tags from a trail.</p><p><h3>See Also:</h3>   <a
@@ -863,6 +971,7 @@ namespace Model
         void DeleteTrailAsyncHelper(const Model::DeleteTrailRequest& request, const DeleteTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTrailsAsyncHelper(const Model::DescribeTrailsRequest& request, const DescribeTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventSelectorsAsyncHelper(const Model::GetEventSelectorsRequest& request, const GetEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetInsightSelectorsAsyncHelper(const Model::GetInsightSelectorsRequest& request, const GetInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTrailAsyncHelper(const Model::GetTrailRequest& request, const GetTrailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTrailStatusAsyncHelper(const Model::GetTrailStatusRequest& request, const GetTrailStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPublicKeysAsyncHelper(const Model::ListPublicKeysRequest& request, const ListPublicKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -870,6 +979,7 @@ namespace Model
         void ListTrailsAsyncHelper(const Model::ListTrailsRequest& request, const ListTrailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void LookupEventsAsyncHelper(const Model::LookupEventsRequest& request, const LookupEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEventSelectorsAsyncHelper(const Model::PutEventSelectorsRequest& request, const PutEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutInsightSelectorsAsyncHelper(const Model::PutInsightSelectorsRequest& request, const PutInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsAsyncHelper(const Model::RemoveTagsRequest& request, const RemoveTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartLoggingAsyncHelper(const Model::StartLoggingRequest& request, const StartLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopLoggingAsyncHelper(const Model::StopLoggingRequest& request, const StopLoggingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -47,6 +47,7 @@ TaskDefinition::TaskDefinition() :
     m_requiresCompatibilitiesHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
+    m_inferenceAcceleratorsHasBeenSet(false),
     m_pidMode(PidMode::NOT_SET),
     m_pidModeHasBeenSet(false),
     m_ipcMode(IpcMode::NOT_SET),
@@ -74,6 +75,7 @@ TaskDefinition::TaskDefinition(JsonView jsonValue) :
     m_requiresCompatibilitiesHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_memoryHasBeenSet(false),
+    m_inferenceAcceleratorsHasBeenSet(false),
     m_pidMode(PidMode::NOT_SET),
     m_pidModeHasBeenSet(false),
     m_ipcMode(IpcMode::NOT_SET),
@@ -206,6 +208,16 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     m_memory = jsonValue.GetString("memory");
 
     m_memoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("inferenceAccelerators"))
+  {
+    Array<JsonView> inferenceAcceleratorsJsonList = jsonValue.GetArray("inferenceAccelerators");
+    for(unsigned inferenceAcceleratorsIndex = 0; inferenceAcceleratorsIndex < inferenceAcceleratorsJsonList.GetLength(); ++inferenceAcceleratorsIndex)
+    {
+      m_inferenceAccelerators.push_back(inferenceAcceleratorsJsonList[inferenceAcceleratorsIndex].AsObject());
+    }
+    m_inferenceAcceleratorsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("pidMode"))
@@ -351,6 +363,17 @@ JsonValue TaskDefinition::Jsonize() const
   if(m_memoryHasBeenSet)
   {
    payload.WithString("memory", m_memory);
+
+  }
+
+  if(m_inferenceAcceleratorsHasBeenSet)
+  {
+   Array<JsonValue> inferenceAcceleratorsJsonList(m_inferenceAccelerators.size());
+   for(unsigned inferenceAcceleratorsIndex = 0; inferenceAcceleratorsIndex < inferenceAcceleratorsJsonList.GetLength(); ++inferenceAcceleratorsIndex)
+   {
+     inferenceAcceleratorsJsonList[inferenceAcceleratorsIndex].AsObject(m_inferenceAccelerators[inferenceAcceleratorsIndex].Jsonize());
+   }
+   payload.WithArray("inferenceAccelerators", std::move(inferenceAcceleratorsJsonList));
 
   }
 

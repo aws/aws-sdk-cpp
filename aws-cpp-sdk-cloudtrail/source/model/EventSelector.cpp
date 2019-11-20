@@ -33,7 +33,8 @@ EventSelector::EventSelector() :
     m_readWriteTypeHasBeenSet(false),
     m_includeManagementEvents(false),
     m_includeManagementEventsHasBeenSet(false),
-    m_dataResourcesHasBeenSet(false)
+    m_dataResourcesHasBeenSet(false),
+    m_excludeManagementEventSourcesHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ EventSelector::EventSelector(JsonView jsonValue) :
     m_readWriteTypeHasBeenSet(false),
     m_includeManagementEvents(false),
     m_includeManagementEventsHasBeenSet(false),
-    m_dataResourcesHasBeenSet(false)
+    m_dataResourcesHasBeenSet(false),
+    m_excludeManagementEventSourcesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,6 +75,16 @@ EventSelector& EventSelector::operator =(JsonView jsonValue)
     m_dataResourcesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExcludeManagementEventSources"))
+  {
+    Array<JsonView> excludeManagementEventSourcesJsonList = jsonValue.GetArray("ExcludeManagementEventSources");
+    for(unsigned excludeManagementEventSourcesIndex = 0; excludeManagementEventSourcesIndex < excludeManagementEventSourcesJsonList.GetLength(); ++excludeManagementEventSourcesIndex)
+    {
+      m_excludeManagementEventSources.push_back(excludeManagementEventSourcesJsonList[excludeManagementEventSourcesIndex].AsString());
+    }
+    m_excludeManagementEventSourcesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -99,6 +111,17 @@ JsonValue EventSelector::Jsonize() const
      dataResourcesJsonList[dataResourcesIndex].AsObject(m_dataResources[dataResourcesIndex].Jsonize());
    }
    payload.WithArray("DataResources", std::move(dataResourcesJsonList));
+
+  }
+
+  if(m_excludeManagementEventSourcesHasBeenSet)
+  {
+   Array<JsonValue> excludeManagementEventSourcesJsonList(m_excludeManagementEventSources.size());
+   for(unsigned excludeManagementEventSourcesIndex = 0; excludeManagementEventSourcesIndex < excludeManagementEventSourcesJsonList.GetLength(); ++excludeManagementEventSourcesIndex)
+   {
+     excludeManagementEventSourcesJsonList[excludeManagementEventSourcesIndex].AsString(m_excludeManagementEventSources[excludeManagementEventSourcesIndex]);
+   }
+   payload.WithArray("ExcludeManagementEventSources", std::move(excludeManagementEventSourcesJsonList));
 
   }
 

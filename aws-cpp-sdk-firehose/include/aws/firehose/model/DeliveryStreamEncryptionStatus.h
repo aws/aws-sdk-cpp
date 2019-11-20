@@ -28,8 +28,10 @@ namespace Model
     NOT_SET,
     ENABLED,
     ENABLING,
+    ENABLING_FAILED,
     DISABLED,
-    DISABLING
+    DISABLING,
+    DISABLING_FAILED
   };
 
 namespace DeliveryStreamEncryptionStatusMapper

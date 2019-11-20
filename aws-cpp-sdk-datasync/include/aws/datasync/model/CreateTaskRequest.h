@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/datasync/model/Options.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datasync/model/TaskSchedule.h>
 #include <aws/datasync/model/FilterRule.h>
 #include <aws/datasync/model/TagListEntry.h>
 #include <utility>
@@ -396,6 +397,49 @@ namespace Model
 
 
     /**
+     * <p>Specifies a schedule used to periodically transfer files from a source to a
+     * destination location. The schedule should be specified in UTC time. For more
+     * information, see <a>task-scheduling</a>.</p>
+     */
+    inline const TaskSchedule& GetSchedule() const{ return m_schedule; }
+
+    /**
+     * <p>Specifies a schedule used to periodically transfer files from a source to a
+     * destination location. The schedule should be specified in UTC time. For more
+     * information, see <a>task-scheduling</a>.</p>
+     */
+    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
+
+    /**
+     * <p>Specifies a schedule used to periodically transfer files from a source to a
+     * destination location. The schedule should be specified in UTC time. For more
+     * information, see <a>task-scheduling</a>.</p>
+     */
+    inline void SetSchedule(const TaskSchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
+
+    /**
+     * <p>Specifies a schedule used to periodically transfer files from a source to a
+     * destination location. The schedule should be specified in UTC time. For more
+     * information, see <a>task-scheduling</a>.</p>
+     */
+    inline void SetSchedule(TaskSchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
+
+    /**
+     * <p>Specifies a schedule used to periodically transfer files from a source to a
+     * destination location. The schedule should be specified in UTC time. For more
+     * information, see <a>task-scheduling</a>.</p>
+     */
+    inline CreateTaskRequest& WithSchedule(const TaskSchedule& value) { SetSchedule(value); return *this;}
+
+    /**
+     * <p>Specifies a schedule used to periodically transfer files from a source to a
+     * destination location. The schedule should be specified in UTC time. For more
+     * information, see <a>task-scheduling</a>.</p>
+     */
+    inline CreateTaskRequest& WithSchedule(TaskSchedule&& value) { SetSchedule(std::move(value)); return *this;}
+
+
+    /**
      * <p>The key-value pair that represents the tag that you want to add to the
      * resource. The value can be an empty string. </p>
      */
@@ -462,6 +506,9 @@ namespace Model
 
     Aws::Vector<FilterRule> m_excludes;
     bool m_excludesHasBeenSet;
+
+    TaskSchedule m_schedule;
+    bool m_scheduleHasBeenSet;
 
     Aws::Vector<TagListEntry> m_tags;
     bool m_tagsHasBeenSet;

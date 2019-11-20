@@ -31,7 +31,9 @@ namespace Aws
       {
 
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+        static const int CREATING_FAILED_HASH = HashingUtils::HashString("CREATING_FAILED");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+        static const int DELETING_FAILED_HASH = HashingUtils::HashString("DELETING_FAILED");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
 
 
@@ -42,9 +44,17 @@ namespace Aws
           {
             return DeliveryStreamStatus::CREATING;
           }
+          else if (hashCode == CREATING_FAILED_HASH)
+          {
+            return DeliveryStreamStatus::CREATING_FAILED;
+          }
           else if (hashCode == DELETING_HASH)
           {
             return DeliveryStreamStatus::DELETING;
+          }
+          else if (hashCode == DELETING_FAILED_HASH)
+          {
+            return DeliveryStreamStatus::DELETING_FAILED;
           }
           else if (hashCode == ACTIVE_HASH)
           {
@@ -66,8 +76,12 @@ namespace Aws
           {
           case DeliveryStreamStatus::CREATING:
             return "CREATING";
+          case DeliveryStreamStatus::CREATING_FAILED:
+            return "CREATING_FAILED";
           case DeliveryStreamStatus::DELETING:
             return "DELETING";
+          case DeliveryStreamStatus::DELETING_FAILED:
+            return "DELETING_FAILED";
           case DeliveryStreamStatus::ACTIVE:
             return "ACTIVE";
           default:

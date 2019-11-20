@@ -89,42 +89,42 @@ namespace Model
 
 
     /**
-     * <p>Additional message information about the trigger that did not run.</p>
+     * <p>Message information about the trigger that did not run.</p>
      */
     inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
 
     /**
-     * <p>Additional message information about the trigger that did not run.</p>
+     * <p>Message information about the trigger that did not run.</p>
      */
     inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
 
     /**
-     * <p>Additional message information about the trigger that did not run.</p>
+     * <p>Message information about the trigger that did not run.</p>
      */
     inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
 
     /**
-     * <p>Additional message information about the trigger that did not run.</p>
+     * <p>Message information about the trigger that did not run.</p>
      */
     inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
 
     /**
-     * <p>Additional message information about the trigger that did not run.</p>
+     * <p>Message information about the trigger that did not run.</p>
      */
     inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
 
     /**
-     * <p>Additional message information about the trigger that did not run.</p>
+     * <p>Message information about the trigger that did not run.</p>
      */
     inline RepositoryTriggerExecutionFailure& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
 
     /**
-     * <p>Additional message information about the trigger that did not run.</p>
+     * <p>Message information about the trigger that did not run.</p>
      */
     inline RepositoryTriggerExecutionFailure& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Additional message information about the trigger that did not run.</p>
+     * <p>Message information about the trigger that did not run.</p>
      */
     inline RepositoryTriggerExecutionFailure& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
 

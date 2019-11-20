@@ -80,25 +80,67 @@ namespace Model
     inline ListTrailsResult& AddTrails(TrailInfo&& value) { m_trails.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>The token to use to get the next page of results after a previous API call.
+     * If the token does not appear, there are no more results to return. The token
+     * must be passed in with the same parameters as the previous call. For example, if
+     * the original call specified an AttributeKey of 'Username' with a value of
+     * 'root', the call with NextToken should include those same parameters.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    
+    /**
+     * <p>The token to use to get the next page of results after a previous API call.
+     * If the token does not appear, there are no more results to return. The token
+     * must be passed in with the same parameters as the previous call. For example, if
+     * the original call specified an AttributeKey of 'Username' with a value of
+     * 'root', the call with NextToken should include those same parameters.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    
+    /**
+     * <p>The token to use to get the next page of results after a previous API call.
+     * If the token does not appear, there are no more results to return. The token
+     * must be passed in with the same parameters as the previous call. For example, if
+     * the original call specified an AttributeKey of 'Username' with a value of
+     * 'root', the call with NextToken should include those same parameters.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
-    
+    /**
+     * <p>The token to use to get the next page of results after a previous API call.
+     * If the token does not appear, there are no more results to return. The token
+     * must be passed in with the same parameters as the previous call. For example, if
+     * the original call specified an AttributeKey of 'Username' with a value of
+     * 'root', the call with NextToken should include those same parameters.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    
+    /**
+     * <p>The token to use to get the next page of results after a previous API call.
+     * If the token does not appear, there are no more results to return. The token
+     * must be passed in with the same parameters as the previous call. For example, if
+     * the original call specified an AttributeKey of 'Username' with a value of
+     * 'root', the call with NextToken should include those same parameters.</p>
+     */
     inline ListTrailsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>The token to use to get the next page of results after a previous API call.
+     * If the token does not appear, there are no more results to return. The token
+     * must be passed in with the same parameters as the previous call. For example, if
+     * the original call specified an AttributeKey of 'Username' with a value of
+     * 'root', the call with NextToken should include those same parameters.</p>
+     */
     inline ListTrailsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The token to use to get the next page of results after a previous API call.
+     * If the token does not appear, there are no more results to return. The token
+     * must be passed in with the same parameters as the previous call. For example, if
+     * the original call specified an AttributeKey of 'Username' with a value of
+     * 'root', the call with NextToken should include those same parameters.</p>
+     */
     inline ListTrailsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

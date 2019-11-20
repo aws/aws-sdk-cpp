@@ -456,7 +456,7 @@ namespace Model
 
         /**
          * <p>Defines a file system on an Server Message Block (SMB) server that can be
-         * read from or written to</p><p><h3>See Also:</h3>   <a
+         * read from or written to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          */
@@ -464,7 +464,7 @@ namespace Model
 
         /**
          * <p>Defines a file system on an Server Message Block (SMB) server that can be
-         * read from or written to</p><p><h3>See Also:</h3>   <a
+         * read from or written to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          *
@@ -474,7 +474,7 @@ namespace Model
 
         /**
          * <p>Defines a file system on an Server Message Block (SMB) server that can be
-         * read from or written to</p><p><h3>See Also:</h3>   <a
+         * read from or written to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb">AWS
          * API Reference</a></p>
          *

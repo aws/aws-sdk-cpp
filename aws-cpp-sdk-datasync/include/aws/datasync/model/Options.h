@@ -686,55 +686,55 @@ namespace Model
 
     /**
      * <p>A value that determines whether tasks should be queued before executing the
-     * tasks. If set to <code>Enabled</code>, the tasks will queued. The default is
-     * <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you
+     * tasks. If set to <code>ENABLED</code>, the tasks will be queued. The default is
+     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks you
      * can enable the tasks to run in series. For more information see
-     * <a>task-queue</a>.</p>
+     * <a>queue-task-execution</a>.</p>
      */
     inline const TaskQueueing& GetTaskQueueing() const{ return m_taskQueueing; }
 
     /**
      * <p>A value that determines whether tasks should be queued before executing the
-     * tasks. If set to <code>Enabled</code>, the tasks will queued. The default is
-     * <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you
+     * tasks. If set to <code>ENABLED</code>, the tasks will be queued. The default is
+     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks you
      * can enable the tasks to run in series. For more information see
-     * <a>task-queue</a>.</p>
+     * <a>queue-task-execution</a>.</p>
      */
     inline bool TaskQueueingHasBeenSet() const { return m_taskQueueingHasBeenSet; }
 
     /**
      * <p>A value that determines whether tasks should be queued before executing the
-     * tasks. If set to <code>Enabled</code>, the tasks will queued. The default is
-     * <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you
+     * tasks. If set to <code>ENABLED</code>, the tasks will be queued. The default is
+     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks you
      * can enable the tasks to run in series. For more information see
-     * <a>task-queue</a>.</p>
+     * <a>queue-task-execution</a>.</p>
      */
     inline void SetTaskQueueing(const TaskQueueing& value) { m_taskQueueingHasBeenSet = true; m_taskQueueing = value; }
 
     /**
      * <p>A value that determines whether tasks should be queued before executing the
-     * tasks. If set to <code>Enabled</code>, the tasks will queued. The default is
-     * <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you
+     * tasks. If set to <code>ENABLED</code>, the tasks will be queued. The default is
+     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks you
      * can enable the tasks to run in series. For more information see
-     * <a>task-queue</a>.</p>
+     * <a>queue-task-execution</a>.</p>
      */
     inline void SetTaskQueueing(TaskQueueing&& value) { m_taskQueueingHasBeenSet = true; m_taskQueueing = std::move(value); }
 
     /**
      * <p>A value that determines whether tasks should be queued before executing the
-     * tasks. If set to <code>Enabled</code>, the tasks will queued. The default is
-     * <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you
+     * tasks. If set to <code>ENABLED</code>, the tasks will be queued. The default is
+     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks you
      * can enable the tasks to run in series. For more information see
-     * <a>task-queue</a>.</p>
+     * <a>queue-task-execution</a>.</p>
      */
     inline Options& WithTaskQueueing(const TaskQueueing& value) { SetTaskQueueing(value); return *this;}
 
     /**
      * <p>A value that determines whether tasks should be queued before executing the
-     * tasks. If set to <code>Enabled</code>, the tasks will queued. The default is
-     * <code>Enabled</code>.</p> <p>If you use the same agent to run multiple tasks you
+     * tasks. If set to <code>ENABLED</code>, the tasks will be queued. The default is
+     * <code>ENABLED</code>.</p> <p>If you use the same agent to run multiple tasks you
      * can enable the tasks to run in series. For more information see
-     * <a>task-queue</a>.</p>
+     * <a>queue-task-execution</a>.</p>
      */
     inline Options& WithTaskQueueing(TaskQueueing&& value) { SetTaskQueueing(std::move(value)); return *this;}
 

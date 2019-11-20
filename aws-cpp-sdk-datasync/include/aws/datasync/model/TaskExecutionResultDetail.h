@@ -107,6 +107,31 @@ namespace Model
 
 
     /**
+     * <p>The total time in milliseconds that AWS DataSync took to transfer the file
+     * from the source to the destination location.</p>
+     */
+    inline long long GetTotalDuration() const{ return m_totalDuration; }
+
+    /**
+     * <p>The total time in milliseconds that AWS DataSync took to transfer the file
+     * from the source to the destination location.</p>
+     */
+    inline bool TotalDurationHasBeenSet() const { return m_totalDurationHasBeenSet; }
+
+    /**
+     * <p>The total time in milliseconds that AWS DataSync took to transfer the file
+     * from the source to the destination location.</p>
+     */
+    inline void SetTotalDuration(long long value) { m_totalDurationHasBeenSet = true; m_totalDuration = value; }
+
+    /**
+     * <p>The total time in milliseconds that AWS DataSync took to transfer the file
+     * from the source to the destination location.</p>
+     */
+    inline TaskExecutionResultDetail& WithTotalDuration(long long value) { SetTotalDuration(value); return *this;}
+
+
+    /**
      * <p>The total time in milliseconds that AWS DataSync spent in the TRANSFERRING
      * phase.</p>
      */
@@ -322,6 +347,9 @@ namespace Model
 
     PhaseStatus m_prepareStatus;
     bool m_prepareStatusHasBeenSet;
+
+    long long m_totalDuration;
+    bool m_totalDurationHasBeenSet;
 
     long long m_transferDuration;
     bool m_transferDurationHasBeenSet;

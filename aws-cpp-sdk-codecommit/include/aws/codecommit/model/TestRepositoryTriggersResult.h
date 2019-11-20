@@ -100,44 +100,44 @@ namespace Model
 
 
     /**
-     * <p>The list of triggers that were not able to be tested. This list provides the
-     * names of the triggers that could not be tested, separated by commas.</p>
+     * <p>The list of triggers that were not tested. This list provides the names of
+     * the triggers that could not be tested, separated by commas.</p>
      */
     inline const Aws::Vector<RepositoryTriggerExecutionFailure>& GetFailedExecutions() const{ return m_failedExecutions; }
 
     /**
-     * <p>The list of triggers that were not able to be tested. This list provides the
-     * names of the triggers that could not be tested, separated by commas.</p>
+     * <p>The list of triggers that were not tested. This list provides the names of
+     * the triggers that could not be tested, separated by commas.</p>
      */
     inline void SetFailedExecutions(const Aws::Vector<RepositoryTriggerExecutionFailure>& value) { m_failedExecutions = value; }
 
     /**
-     * <p>The list of triggers that were not able to be tested. This list provides the
-     * names of the triggers that could not be tested, separated by commas.</p>
+     * <p>The list of triggers that were not tested. This list provides the names of
+     * the triggers that could not be tested, separated by commas.</p>
      */
     inline void SetFailedExecutions(Aws::Vector<RepositoryTriggerExecutionFailure>&& value) { m_failedExecutions = std::move(value); }
 
     /**
-     * <p>The list of triggers that were not able to be tested. This list provides the
-     * names of the triggers that could not be tested, separated by commas.</p>
+     * <p>The list of triggers that were not tested. This list provides the names of
+     * the triggers that could not be tested, separated by commas.</p>
      */
     inline TestRepositoryTriggersResult& WithFailedExecutions(const Aws::Vector<RepositoryTriggerExecutionFailure>& value) { SetFailedExecutions(value); return *this;}
 
     /**
-     * <p>The list of triggers that were not able to be tested. This list provides the
-     * names of the triggers that could not be tested, separated by commas.</p>
+     * <p>The list of triggers that were not tested. This list provides the names of
+     * the triggers that could not be tested, separated by commas.</p>
      */
     inline TestRepositoryTriggersResult& WithFailedExecutions(Aws::Vector<RepositoryTriggerExecutionFailure>&& value) { SetFailedExecutions(std::move(value)); return *this;}
 
     /**
-     * <p>The list of triggers that were not able to be tested. This list provides the
-     * names of the triggers that could not be tested, separated by commas.</p>
+     * <p>The list of triggers that were not tested. This list provides the names of
+     * the triggers that could not be tested, separated by commas.</p>
      */
     inline TestRepositoryTriggersResult& AddFailedExecutions(const RepositoryTriggerExecutionFailure& value) { m_failedExecutions.push_back(value); return *this; }
 
     /**
-     * <p>The list of triggers that were not able to be tested. This list provides the
-     * names of the triggers that could not be tested, separated by commas.</p>
+     * <p>The list of triggers that were not tested. This list provides the names of
+     * the triggers that could not be tested, separated by commas.</p>
      */
     inline TestRepositoryTriggersResult& AddFailedExecutions(RepositoryTriggerExecutionFailure&& value) { m_failedExecutions.push_back(std::move(value)); return *this; }
 

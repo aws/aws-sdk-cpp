@@ -97,42 +97,42 @@ namespace Model
     /**
      * <p>The status of the pull request. The only valid operations are to update the
      * status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to
-     * <code>CLOSED</code> or from from <code>CLOSED</code> to <code>CLOSED</code>.</p>
+     * <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
      */
     inline const PullRequestStatusEnum& GetPullRequestStatus() const{ return m_pullRequestStatus; }
 
     /**
      * <p>The status of the pull request. The only valid operations are to update the
      * status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to
-     * <code>CLOSED</code> or from from <code>CLOSED</code> to <code>CLOSED</code>.</p>
+     * <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
      */
     inline bool PullRequestStatusHasBeenSet() const { return m_pullRequestStatusHasBeenSet; }
 
     /**
      * <p>The status of the pull request. The only valid operations are to update the
      * status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to
-     * <code>CLOSED</code> or from from <code>CLOSED</code> to <code>CLOSED</code>.</p>
+     * <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
      */
     inline void SetPullRequestStatus(const PullRequestStatusEnum& value) { m_pullRequestStatusHasBeenSet = true; m_pullRequestStatus = value; }
 
     /**
      * <p>The status of the pull request. The only valid operations are to update the
      * status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to
-     * <code>CLOSED</code> or from from <code>CLOSED</code> to <code>CLOSED</code>.</p>
+     * <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
      */
     inline void SetPullRequestStatus(PullRequestStatusEnum&& value) { m_pullRequestStatusHasBeenSet = true; m_pullRequestStatus = std::move(value); }
 
     /**
      * <p>The status of the pull request. The only valid operations are to update the
      * status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to
-     * <code>CLOSED</code> or from from <code>CLOSED</code> to <code>CLOSED</code>.</p>
+     * <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
      */
     inline UpdatePullRequestStatusRequest& WithPullRequestStatus(const PullRequestStatusEnum& value) { SetPullRequestStatus(value); return *this;}
 
     /**
      * <p>The status of the pull request. The only valid operations are to update the
      * status from <code>OPEN</code> to <code>OPEN</code>, <code>OPEN</code> to
-     * <code>CLOSED</code> or from from <code>CLOSED</code> to <code>CLOSED</code>.</p>
+     * <code>CLOSED</code> or from <code>CLOSED</code> to <code>CLOSED</code>.</p>
      */
     inline UpdatePullRequestStatusRequest& WithPullRequestStatus(PullRequestStatusEnum&& value) { SetPullRequestStatus(std::move(value)); return *this;}
 

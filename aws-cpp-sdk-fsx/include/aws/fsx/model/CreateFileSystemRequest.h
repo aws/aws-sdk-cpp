@@ -144,96 +144,141 @@ namespace Model
 
     /**
      * <p>The storage capacity of the file system being created.</p> <p>For Windows
-     * file systems, the storage capacity has a minimum of 300 GiB, and a maximum of
-     * 65,536 GiB.</p> <p>For Lustre file systems, the storage capacity has a minimum
-     * of 3,600 GiB. Storage capacity is provisioned in increments of 3,600 GiB.</p>
+     * file systems, valid values are 32 GiB - 65,536 GiB.</p> <p>For Lustre file
+     * systems, valid values are 1,200, 2,400, 3,600, then continuing in increments of
+     * 3600 GiB.</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
      * <p>The storage capacity of the file system being created.</p> <p>For Windows
-     * file systems, the storage capacity has a minimum of 300 GiB, and a maximum of
-     * 65,536 GiB.</p> <p>For Lustre file systems, the storage capacity has a minimum
-     * of 3,600 GiB. Storage capacity is provisioned in increments of 3,600 GiB.</p>
+     * file systems, valid values are 32 GiB - 65,536 GiB.</p> <p>For Lustre file
+     * systems, valid values are 1,200, 2,400, 3,600, then continuing in increments of
+     * 3600 GiB.</p>
      */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
 
     /**
      * <p>The storage capacity of the file system being created.</p> <p>For Windows
-     * file systems, the storage capacity has a minimum of 300 GiB, and a maximum of
-     * 65,536 GiB.</p> <p>For Lustre file systems, the storage capacity has a minimum
-     * of 3,600 GiB. Storage capacity is provisioned in increments of 3,600 GiB.</p>
+     * file systems, valid values are 32 GiB - 65,536 GiB.</p> <p>For Lustre file
+     * systems, valid values are 1,200, 2,400, 3,600, then continuing in increments of
+     * 3600 GiB.</p>
      */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
 
     /**
      * <p>The storage capacity of the file system being created.</p> <p>For Windows
-     * file systems, the storage capacity has a minimum of 300 GiB, and a maximum of
-     * 65,536 GiB.</p> <p>For Lustre file systems, the storage capacity has a minimum
-     * of 3,600 GiB. Storage capacity is provisioned in increments of 3,600 GiB.</p>
+     * file systems, valid values are 32 GiB - 65,536 GiB.</p> <p>For Lustre file
+     * systems, valid values are 1,200, 2,400, 3,600, then continuing in increments of
+     * 3600 GiB.</p>
      */
     inline CreateFileSystemRequest& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 
 
     /**
-     * <p>The IDs of the subnets that the file system will be accessible from. File
-     * systems support only one subnet. The file server is also launched in that
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the standy
+     * file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p> <p>For
+     * Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file
+     * systems, provide exactly one subnet ID. The file server is launched in that
      * subnet's Availability Zone.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>The IDs of the subnets that the file system will be accessible from. File
-     * systems support only one subnet. The file server is also launched in that
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the standy
+     * file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p> <p>For
+     * Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file
+     * systems, provide exactly one subnet ID. The file server is launched in that
      * subnet's Availability Zone.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>The IDs of the subnets that the file system will be accessible from. File
-     * systems support only one subnet. The file server is also launched in that
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the standy
+     * file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p> <p>For
+     * Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file
+     * systems, provide exactly one subnet ID. The file server is launched in that
      * subnet's Availability Zone.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>The IDs of the subnets that the file system will be accessible from. File
-     * systems support only one subnet. The file server is also launched in that
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the standy
+     * file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p> <p>For
+     * Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file
+     * systems, provide exactly one subnet ID. The file server is launched in that
      * subnet's Availability Zone.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>The IDs of the subnets that the file system will be accessible from. File
-     * systems support only one subnet. The file server is also launched in that
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the standy
+     * file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p> <p>For
+     * Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file
+     * systems, provide exactly one subnet ID. The file server is launched in that
      * subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>The IDs of the subnets that the file system will be accessible from. File
-     * systems support only one subnet. The file server is also launched in that
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the standy
+     * file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p> <p>For
+     * Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file
+     * systems, provide exactly one subnet ID. The file server is launched in that
      * subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the subnets that the file system will be accessible from. File
-     * systems support only one subnet. The file server is also launched in that
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the standy
+     * file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p> <p>For
+     * Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file
+     * systems, provide exactly one subnet ID. The file server is launched in that
      * subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the subnets that the file system will be accessible from. File
-     * systems support only one subnet. The file server is also launched in that
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the standy
+     * file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p> <p>For
+     * Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file
+     * systems, provide exactly one subnet ID. The file server is launched in that
      * subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of the subnets that the file system will be accessible from. File
-     * systems support only one subnet. The file server is also launched in that
+     * <p>Specifies the IDs of the subnets that the file system will be accessible
+     * from. For Windows <code>MULTI_AZ_1</code> file system deployment types, provide
+     * exactly two subnet IDs, one for the preferred file server and one for the standy
+     * file server. You specify one of these subnets as the preferred subnet using the
+     * <code>WindowsConfiguration &gt; PreferredSubnetID</code> property.</p> <p>For
+     * Windows <code>SINGLE_AZ_1</code> file system deployment types and Lustre file
+     * systems, provide exactly one subnet ID. The file server is launched in that
      * subnet's Availability Zone.</p>
      */
     inline CreateFileSystemRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }

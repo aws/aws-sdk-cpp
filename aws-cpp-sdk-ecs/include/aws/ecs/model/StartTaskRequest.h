@@ -17,9 +17,9 @@
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/ECSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/ecs/model/TaskOverride.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
+#include <aws/ecs/model/TaskOverride.h>
 #include <aws/ecs/model/PropagateTags.h>
 #include <aws/ecs/model/Tag.h>
 #include <utility>
@@ -107,68 +107,196 @@ namespace Model
 
 
     /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * <p>The container instance IDs or full ARN entries for the container instances on
+     * which you would like to place your task. You can specify up to 10 container
+     * instances.</p>
      */
-    inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
+    inline const Aws::Vector<Aws::String>& GetContainerInstances() const{ return m_containerInstances; }
 
     /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * <p>The container instance IDs or full ARN entries for the container instances on
+     * which you would like to place your task. You can specify up to 10 container
+     * instances.</p>
      */
-    inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
+    inline bool ContainerInstancesHasBeenSet() const { return m_containerInstancesHasBeenSet; }
 
     /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * <p>The container instance IDs or full ARN entries for the container instances on
+     * which you would like to place your task. You can specify up to 10 container
+     * instances.</p>
      */
-    inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
+    inline void SetContainerInstances(const Aws::Vector<Aws::String>& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
 
     /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * <p>The container instance IDs or full ARN entries for the container instances on
+     * which you would like to place your task. You can specify up to 10 container
+     * instances.</p>
      */
-    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
+    inline void SetContainerInstances(Aws::Vector<Aws::String>&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = std::move(value); }
 
     /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * <p>The container instance IDs or full ARN entries for the container instances on
+     * which you would like to place your task. You can specify up to 10 container
+     * instances.</p>
      */
-    inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
+    inline StartTaskRequest& WithContainerInstances(const Aws::Vector<Aws::String>& value) { SetContainerInstances(value); return *this;}
 
     /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * <p>The container instance IDs or full ARN entries for the container instances on
+     * which you would like to place your task. You can specify up to 10 container
+     * instances.</p>
      */
-    inline StartTaskRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
+    inline StartTaskRequest& WithContainerInstances(Aws::Vector<Aws::String>&& value) { SetContainerInstances(std::move(value)); return *this;}
 
     /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * <p>The container instance IDs or full ARN entries for the container instances on
+     * which you would like to place your task. You can specify up to 10 container
+     * instances.</p>
      */
-    inline StartTaskRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
+    inline StartTaskRequest& AddContainerInstances(const Aws::String& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
 
     /**
-     * <p>The <code>family</code> and <code>revision</code>
-     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
-     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
-     * is used.</p>
+     * <p>The container instance IDs or full ARN entries for the container instances on
+     * which you would like to place your task. You can specify up to 10 container
+     * instances.</p>
      */
-    inline StartTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
+    inline StartTaskRequest& AddContainerInstances(Aws::String&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The container instance IDs or full ARN entries for the container instances on
+     * which you would like to place your task. You can specify up to 10 container
+     * instances.</p>
+     */
+    inline StartTaskRequest& AddContainerInstances(const char* value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
+
+
+    /**
+     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
+
+    /**
+     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
+
+    /**
+     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline StartTaskRequest& WithEnableECSManagedTags(bool value) { SetEnableECSManagedTags(value); return *this;}
+
+
+    /**
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
+     */
+    inline const Aws::String& GetGroup() const{ return m_group; }
+
+    /**
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
+     */
+    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
+
+    /**
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
+     */
+    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
+
+    /**
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
+     */
+    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
+
+    /**
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
+     */
+    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
+
+    /**
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
+     */
+    inline StartTaskRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
+
+    /**
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
+     */
+    inline StartTaskRequest& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the task group to associate with the task. The default value is
+     * the family name of the task definition (for example, family:my-family-name).</p>
+     */
+    inline StartTaskRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
+
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own elastic network interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own elastic network interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own elastic network interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own elastic network interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own elastic network interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline StartTaskRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own elastic network interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
+    inline StartTaskRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -251,67 +379,81 @@ namespace Model
 
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
-     * instances.</p>
+     * <p>Specifies whether to propagate the tags from the task definition or the
+     * service to the task. If no value is specified, the tags are not propagated.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetContainerInstances() const{ return m_containerInstances; }
+    inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
-     * instances.</p>
+     * <p>Specifies whether to propagate the tags from the task definition or the
+     * service to the task. If no value is specified, the tags are not propagated.</p>
      */
-    inline bool ContainerInstancesHasBeenSet() const { return m_containerInstancesHasBeenSet; }
+    inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
-     * instances.</p>
+     * <p>Specifies whether to propagate the tags from the task definition or the
+     * service to the task. If no value is specified, the tags are not propagated.</p>
      */
-    inline void SetContainerInstances(const Aws::Vector<Aws::String>& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
+    inline void SetPropagateTags(const PropagateTags& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
-     * instances.</p>
+     * <p>Specifies whether to propagate the tags from the task definition or the
+     * service to the task. If no value is specified, the tags are not propagated.</p>
      */
-    inline void SetContainerInstances(Aws::Vector<Aws::String>&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = std::move(value); }
+    inline void SetPropagateTags(PropagateTags&& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = std::move(value); }
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
-     * instances.</p>
+     * <p>Specifies whether to propagate the tags from the task definition or the
+     * service to the task. If no value is specified, the tags are not propagated.</p>
      */
-    inline StartTaskRequest& WithContainerInstances(const Aws::Vector<Aws::String>& value) { SetContainerInstances(value); return *this;}
+    inline StartTaskRequest& WithPropagateTags(const PropagateTags& value) { SetPropagateTags(value); return *this;}
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
-     * instances.</p>
+     * <p>Specifies whether to propagate the tags from the task definition or the
+     * service to the task. If no value is specified, the tags are not propagated.</p>
      */
-    inline StartTaskRequest& WithContainerInstances(Aws::Vector<Aws::String>&& value) { SetContainerInstances(std::move(value)); return *this;}
+    inline StartTaskRequest& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
+
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
-     * instances.</p>
+     * <p>The reference ID to use for the task.</p>
      */
-    inline StartTaskRequest& AddContainerInstances(const Aws::String& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
+    inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
-     * instances.</p>
+     * <p>The reference ID to use for the task.</p>
      */
-    inline StartTaskRequest& AddContainerInstances(Aws::String&& value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(std::move(value)); return *this; }
+    inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
 
     /**
-     * <p>The container instance IDs or full ARN entries for the container instances on
-     * which you would like to place your task. You can specify up to 10 container
-     * instances.</p>
+     * <p>The reference ID to use for the task.</p>
      */
-    inline StartTaskRequest& AddContainerInstances(const char* value) { m_containerInstancesHasBeenSet = true; m_containerInstances.push_back(value); return *this; }
+    inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
+
+    /**
+     * <p>The reference ID to use for the task.</p>
+     */
+    inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
+
+    /**
+     * <p>The reference ID to use for the task.</p>
+     */
+    inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
+
+    /**
+     * <p>The reference ID to use for the task.</p>
+     */
+    inline StartTaskRequest& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
+
+    /**
+     * <p>The reference ID to use for the task.</p>
+     */
+    inline StartTaskRequest& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
+
+    /**
+     * <p>The reference ID to use for the task.</p>
+     */
+    inline StartTaskRequest& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
 
 
     /**
@@ -417,98 +559,6 @@ namespace Model
      * starts it.</p>
      */
     inline StartTaskRequest& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
-
-
-    /**
-     * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
-     */
-    inline const Aws::String& GetGroup() const{ return m_group; }
-
-    /**
-     * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
-     */
-    inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-
-    /**
-     * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
-     */
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-
-    /**
-     * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
-     */
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-
-    /**
-     * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
-     */
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-
-    /**
-     * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
-     */
-    inline StartTaskRequest& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
-     */
-    inline StartTaskRequest& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the task group to associate with the task. The default value is
-     * the family name of the task definition (for example, family:my-family-name).</p>
-     */
-    inline StartTaskRequest& WithGroup(const char* value) { SetGroup(value); return *this;}
-
-
-    /**
-     * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own elastic network interface by using the <code>awsvpc</code> networking
-     * mode.</p>
-     */
-    inline const NetworkConfiguration& GetNetworkConfiguration() const{ return m_networkConfiguration; }
-
-    /**
-     * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own elastic network interface by using the <code>awsvpc</code> networking
-     * mode.</p>
-     */
-    inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
-
-    /**
-     * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own elastic network interface by using the <code>awsvpc</code> networking
-     * mode.</p>
-     */
-    inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
-
-    /**
-     * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own elastic network interface by using the <code>awsvpc</code> networking
-     * mode.</p>
-     */
-    inline void SetNetworkConfiguration(NetworkConfiguration&& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = std::move(value); }
-
-    /**
-     * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own elastic network interface by using the <code>awsvpc</code> networking
-     * mode.</p>
-     */
-    inline StartTaskRequest& WithNetworkConfiguration(const NetworkConfiguration& value) { SetNetworkConfiguration(value); return *this;}
-
-    /**
-     * <p>The VPC subnet and security group configuration for tasks that receive their
-     * own elastic network interface by using the <code>awsvpc</code> networking
-     * mode.</p>
-     */
-    inline StartTaskRequest& WithNetworkConfiguration(NetworkConfiguration&& value) { SetNetworkConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -673,94 +723,79 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
-    inline bool GetEnableECSManagedTags() const{ return m_enableECSManagedTags; }
+    inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
-    inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
+    inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
-    inline void SetEnableECSManagedTags(bool value) { m_enableECSManagedTagsHasBeenSet = true; m_enableECSManagedTags = value; }
+    inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
-     * <p>Specifies whether to enable Amazon ECS managed tags for the task. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
-     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p>
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
-    inline StartTaskRequest& WithEnableECSManagedTags(bool value) { SetEnableECSManagedTags(value); return *this;}
-
+    inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
-    inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
+    inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
-    inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
+    inline StartTaskRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
-    inline void SetPropagateTags(const PropagateTags& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
+    inline StartTaskRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full ARN of the task definition to start. If a
+     * <code>revision</code> is not specified, the latest <code>ACTIVE</code> revision
+     * is used.</p>
      */
-    inline void SetPropagateTags(PropagateTags&& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = std::move(value); }
-
-    /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
-     */
-    inline StartTaskRequest& WithPropagateTags(const PropagateTags& value) { SetPropagateTags(value); return *this;}
-
-    /**
-     * <p>Specifies whether to propagate the tags from the task definition or the
-     * service to the task. If no value is specified, the tags are not propagated.</p>
-     */
-    inline StartTaskRequest& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
+    inline StartTaskRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
   private:
 
     Aws::String m_cluster;
     bool m_clusterHasBeenSet;
 
-    Aws::String m_taskDefinition;
-    bool m_taskDefinitionHasBeenSet;
-
-    TaskOverride m_overrides;
-    bool m_overridesHasBeenSet;
-
     Aws::Vector<Aws::String> m_containerInstances;
     bool m_containerInstancesHasBeenSet;
 
-    Aws::String m_startedBy;
-    bool m_startedByHasBeenSet;
+    bool m_enableECSManagedTags;
+    bool m_enableECSManagedTagsHasBeenSet;
 
     Aws::String m_group;
     bool m_groupHasBeenSet;
@@ -768,14 +803,23 @@ namespace Model
     NetworkConfiguration m_networkConfiguration;
     bool m_networkConfigurationHasBeenSet;
 
-    Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
-
-    bool m_enableECSManagedTags;
-    bool m_enableECSManagedTagsHasBeenSet;
+    TaskOverride m_overrides;
+    bool m_overridesHasBeenSet;
 
     PropagateTags m_propagateTags;
     bool m_propagateTagsHasBeenSet;
+
+    Aws::String m_referenceId;
+    bool m_referenceIdHasBeenSet;
+
+    Aws::String m_startedBy;
+    bool m_startedByHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+
+    Aws::String m_taskDefinition;
+    bool m_taskDefinitionHasBeenSet;
   };
 
 } // namespace Model

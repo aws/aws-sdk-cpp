@@ -1,0 +1,146 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/codecommit/CodeCommit_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace CodeCommit
+{
+namespace Model
+{
+  class AWS_CODECOMMIT_API ListRepositoriesForApprovalRuleTemplateResult
+  {
+  public:
+    ListRepositoriesForApprovalRuleTemplateResult();
+    ListRepositoriesForApprovalRuleTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    ListRepositoriesForApprovalRuleTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>A list of repository names that are associated with the specified approval
+     * rule template.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRepositoryNames() const{ return m_repositoryNames; }
+
+    /**
+     * <p>A list of repository names that are associated with the specified approval
+     * rule template.</p>
+     */
+    inline void SetRepositoryNames(const Aws::Vector<Aws::String>& value) { m_repositoryNames = value; }
+
+    /**
+     * <p>A list of repository names that are associated with the specified approval
+     * rule template.</p>
+     */
+    inline void SetRepositoryNames(Aws::Vector<Aws::String>&& value) { m_repositoryNames = std::move(value); }
+
+    /**
+     * <p>A list of repository names that are associated with the specified approval
+     * rule template.</p>
+     */
+    inline ListRepositoriesForApprovalRuleTemplateResult& WithRepositoryNames(const Aws::Vector<Aws::String>& value) { SetRepositoryNames(value); return *this;}
+
+    /**
+     * <p>A list of repository names that are associated with the specified approval
+     * rule template.</p>
+     */
+    inline ListRepositoriesForApprovalRuleTemplateResult& WithRepositoryNames(Aws::Vector<Aws::String>&& value) { SetRepositoryNames(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of repository names that are associated with the specified approval
+     * rule template.</p>
+     */
+    inline ListRepositoriesForApprovalRuleTemplateResult& AddRepositoryNames(const Aws::String& value) { m_repositoryNames.push_back(value); return *this; }
+
+    /**
+     * <p>A list of repository names that are associated with the specified approval
+     * rule template.</p>
+     */
+    inline ListRepositoriesForApprovalRuleTemplateResult& AddRepositoryNames(Aws::String&& value) { m_repositoryNames.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of repository names that are associated with the specified approval
+     * rule template.</p>
+     */
+    inline ListRepositoriesForApprovalRuleTemplateResult& AddRepositoryNames(const char* value) { m_repositoryNames.push_back(value); return *this; }
+
+
+    /**
+     * <p>An enumeration token that allows the operation to batch the next results of
+     * the operation.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An enumeration token that allows the operation to batch the next results of
+     * the operation.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>An enumeration token that allows the operation to batch the next results of
+     * the operation.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>An enumeration token that allows the operation to batch the next results of
+     * the operation.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>An enumeration token that allows the operation to batch the next results of
+     * the operation.</p>
+     */
+    inline ListRepositoriesForApprovalRuleTemplateResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>An enumeration token that allows the operation to batch the next results of
+     * the operation.</p>
+     */
+    inline ListRepositoriesForApprovalRuleTemplateResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>An enumeration token that allows the operation to batch the next results of
+     * the operation.</p>
+     */
+    inline ListRepositoriesForApprovalRuleTemplateResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+  private:
+
+    Aws::Vector<Aws::String> m_repositoryNames;
+
+    Aws::String m_nextToken;
+  };
+
+} // namespace Model
+} // namespace CodeCommit
+} // namespace Aws

@@ -94,42 +94,50 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline void SetMigrationTaskName(const Aws::String& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = value; }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline void SetMigrationTaskName(Aws::String&& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = std::move(value); }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline void SetMigrationTaskName(const char* value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName.assign(value); }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline MigrationTask& WithMigrationTaskName(const Aws::String& value) { SetMigrationTaskName(value); return *this;}
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline MigrationTask& WithMigrationTaskName(Aws::String&& value) { SetMigrationTaskName(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline MigrationTask& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
 
@@ -197,42 +205,58 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Information about the resource that is being migrated. This data will be used
+     * to map the task to a resource in the Application Discovery Service
+     * repository.</p>
      */
     inline const Aws::Vector<ResourceAttribute>& GetResourceAttributeList() const{ return m_resourceAttributeList; }
 
     /**
-     * <p/>
+     * <p>Information about the resource that is being migrated. This data will be used
+     * to map the task to a resource in the Application Discovery Service
+     * repository.</p>
      */
     inline bool ResourceAttributeListHasBeenSet() const { return m_resourceAttributeListHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Information about the resource that is being migrated. This data will be used
+     * to map the task to a resource in the Application Discovery Service
+     * repository.</p>
      */
     inline void SetResourceAttributeList(const Aws::Vector<ResourceAttribute>& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList = value; }
 
     /**
-     * <p/>
+     * <p>Information about the resource that is being migrated. This data will be used
+     * to map the task to a resource in the Application Discovery Service
+     * repository.</p>
      */
     inline void SetResourceAttributeList(Aws::Vector<ResourceAttribute>&& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Information about the resource that is being migrated. This data will be used
+     * to map the task to a resource in the Application Discovery Service
+     * repository.</p>
      */
     inline MigrationTask& WithResourceAttributeList(const Aws::Vector<ResourceAttribute>& value) { SetResourceAttributeList(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Information about the resource that is being migrated. This data will be used
+     * to map the task to a resource in the Application Discovery Service
+     * repository.</p>
      */
     inline MigrationTask& WithResourceAttributeList(Aws::Vector<ResourceAttribute>&& value) { SetResourceAttributeList(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Information about the resource that is being migrated. This data will be used
+     * to map the task to a resource in the Application Discovery Service
+     * repository.</p>
      */
     inline MigrationTask& AddResourceAttributeList(const ResourceAttribute& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Information about the resource that is being migrated. This data will be used
+     * to map the task to a resource in the Application Discovery Service
+     * repository.</p>
      */
     inline MigrationTask& AddResourceAttributeList(ResourceAttribute&& value) { m_resourceAttributeListHasBeenSet = true; m_resourceAttributeList.push_back(std::move(value)); return *this; }
 

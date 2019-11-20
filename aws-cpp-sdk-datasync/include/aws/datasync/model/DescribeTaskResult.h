@@ -19,6 +19,7 @@
 #include <aws/datasync/model/TaskStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/datasync/model/Options.h>
+#include <aws/datasync/model/TaskSchedule.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/datasync/model/FilterRule.h>
 #include <utility>
@@ -539,6 +540,37 @@ namespace Model
 
 
     /**
+     * <p>The schedule used to periodically transfer files from a source to a
+     * destination location.</p>
+     */
+    inline const TaskSchedule& GetSchedule() const{ return m_schedule; }
+
+    /**
+     * <p>The schedule used to periodically transfer files from a source to a
+     * destination location.</p>
+     */
+    inline void SetSchedule(const TaskSchedule& value) { m_schedule = value; }
+
+    /**
+     * <p>The schedule used to periodically transfer files from a source to a
+     * destination location.</p>
+     */
+    inline void SetSchedule(TaskSchedule&& value) { m_schedule = std::move(value); }
+
+    /**
+     * <p>The schedule used to periodically transfer files from a source to a
+     * destination location.</p>
+     */
+    inline DescribeTaskResult& WithSchedule(const TaskSchedule& value) { SetSchedule(value); return *this;}
+
+    /**
+     * <p>The schedule used to periodically transfer files from a source to a
+     * destination location.</p>
+     */
+    inline DescribeTaskResult& WithSchedule(TaskSchedule&& value) { SetSchedule(std::move(value)); return *this;}
+
+
+    /**
      * <p>Errors that AWS DataSync encountered during execution of the task. You can
      * use this error code to help troubleshoot issues.</p>
      */
@@ -672,6 +704,8 @@ namespace Model
     Options m_options;
 
     Aws::Vector<FilterRule> m_excludes;
+
+    TaskSchedule m_schedule;
 
     Aws::String m_errorCode;
 

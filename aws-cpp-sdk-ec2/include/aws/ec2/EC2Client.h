@@ -144,6 +144,7 @@
 #include <aws/ec2/model/DescribeElasticGpusResponse.h>
 #include <aws/ec2/model/DescribeExportImageTasksResponse.h>
 #include <aws/ec2/model/DescribeExportTasksResponse.h>
+#include <aws/ec2/model/DescribeFastSnapshotRestoresResponse.h>
 #include <aws/ec2/model/DescribeFleetHistoryResponse.h>
 #include <aws/ec2/model/DescribeFleetInstancesResponse.h>
 #include <aws/ec2/model/DescribeFleetsResponse.h>
@@ -226,6 +227,7 @@
 #include <aws/ec2/model/DetachClassicLinkVpcResponse.h>
 #include <aws/ec2/model/DetachVolumeResponse.h>
 #include <aws/ec2/model/DisableEbsEncryptionByDefaultResponse.h>
+#include <aws/ec2/model/DisableFastSnapshotRestoresResponse.h>
 #include <aws/ec2/model/DisableTransitGatewayRouteTablePropagationResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/DisableVpcClassicLinkDnsSupportResponse.h>
@@ -235,6 +237,7 @@
 #include <aws/ec2/model/DisassociateTransitGatewayRouteTableResponse.h>
 #include <aws/ec2/model/DisassociateVpcCidrBlockResponse.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultResponse.h>
+#include <aws/ec2/model/EnableFastSnapshotRestoresResponse.h>
 #include <aws/ec2/model/EnableTransitGatewayRouteTablePropagationResponse.h>
 #include <aws/ec2/model/EnableVpcClassicLinkResponse.h>
 #include <aws/ec2/model/EnableVpcClassicLinkDnsSupportResponse.h>
@@ -520,6 +523,7 @@ namespace Model
         class DescribeElasticGpusRequest;
         class DescribeExportImageTasksRequest;
         class DescribeExportTasksRequest;
+        class DescribeFastSnapshotRestoresRequest;
         class DescribeFleetHistoryRequest;
         class DescribeFleetInstancesRequest;
         class DescribeFleetsRequest;
@@ -605,6 +609,7 @@ namespace Model
         class DetachVolumeRequest;
         class DetachVpnGatewayRequest;
         class DisableEbsEncryptionByDefaultRequest;
+        class DisableFastSnapshotRestoresRequest;
         class DisableTransitGatewayRouteTablePropagationRequest;
         class DisableVgwRoutePropagationRequest;
         class DisableVpcClassicLinkRequest;
@@ -617,6 +622,7 @@ namespace Model
         class DisassociateTransitGatewayRouteTableRequest;
         class DisassociateVpcCidrBlockRequest;
         class EnableEbsEncryptionByDefaultRequest;
+        class EnableFastSnapshotRestoresRequest;
         class EnableTransitGatewayRouteTablePropagationRequest;
         class EnableVgwRoutePropagationRequest;
         class EnableVolumeIORequest;
@@ -881,6 +887,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeElasticGpusResponse, Aws::Client::AWSError<EC2Errors>> DescribeElasticGpusOutcome;
         typedef Aws::Utils::Outcome<DescribeExportImageTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeExportImageTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeExportTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeExportTasksOutcome;
+        typedef Aws::Utils::Outcome<DescribeFastSnapshotRestoresResponse, Aws::Client::AWSError<EC2Errors>> DescribeFastSnapshotRestoresOutcome;
         typedef Aws::Utils::Outcome<DescribeFleetHistoryResponse, Aws::Client::AWSError<EC2Errors>> DescribeFleetHistoryOutcome;
         typedef Aws::Utils::Outcome<DescribeFleetInstancesResponse, Aws::Client::AWSError<EC2Errors>> DescribeFleetInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeFleetsResponse, Aws::Client::AWSError<EC2Errors>> DescribeFleetsOutcome;
@@ -966,6 +973,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DetachVolumeResponse, Aws::Client::AWSError<EC2Errors>> DetachVolumeOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DetachVpnGatewayOutcome;
         typedef Aws::Utils::Outcome<DisableEbsEncryptionByDefaultResponse, Aws::Client::AWSError<EC2Errors>> DisableEbsEncryptionByDefaultOutcome;
+        typedef Aws::Utils::Outcome<DisableFastSnapshotRestoresResponse, Aws::Client::AWSError<EC2Errors>> DisableFastSnapshotRestoresOutcome;
         typedef Aws::Utils::Outcome<DisableTransitGatewayRouteTablePropagationResponse, Aws::Client::AWSError<EC2Errors>> DisableTransitGatewayRouteTablePropagationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DisableVgwRoutePropagationOutcome;
         typedef Aws::Utils::Outcome<DisableVpcClassicLinkResponse, Aws::Client::AWSError<EC2Errors>> DisableVpcClassicLinkOutcome;
@@ -978,6 +986,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateTransitGatewayRouteTableResponse, Aws::Client::AWSError<EC2Errors>> DisassociateTransitGatewayRouteTableOutcome;
         typedef Aws::Utils::Outcome<DisassociateVpcCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> DisassociateVpcCidrBlockOutcome;
         typedef Aws::Utils::Outcome<EnableEbsEncryptionByDefaultResponse, Aws::Client::AWSError<EC2Errors>> EnableEbsEncryptionByDefaultOutcome;
+        typedef Aws::Utils::Outcome<EnableFastSnapshotRestoresResponse, Aws::Client::AWSError<EC2Errors>> EnableFastSnapshotRestoresOutcome;
         typedef Aws::Utils::Outcome<EnableTransitGatewayRouteTablePropagationResponse, Aws::Client::AWSError<EC2Errors>> EnableTransitGatewayRouteTablePropagationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> EnableVgwRoutePropagationOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> EnableVolumeIOOutcome;
@@ -1242,6 +1251,7 @@ namespace Model
         typedef std::future<DescribeElasticGpusOutcome> DescribeElasticGpusOutcomeCallable;
         typedef std::future<DescribeExportImageTasksOutcome> DescribeExportImageTasksOutcomeCallable;
         typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
+        typedef std::future<DescribeFastSnapshotRestoresOutcome> DescribeFastSnapshotRestoresOutcomeCallable;
         typedef std::future<DescribeFleetHistoryOutcome> DescribeFleetHistoryOutcomeCallable;
         typedef std::future<DescribeFleetInstancesOutcome> DescribeFleetInstancesOutcomeCallable;
         typedef std::future<DescribeFleetsOutcome> DescribeFleetsOutcomeCallable;
@@ -1327,6 +1337,7 @@ namespace Model
         typedef std::future<DetachVolumeOutcome> DetachVolumeOutcomeCallable;
         typedef std::future<DetachVpnGatewayOutcome> DetachVpnGatewayOutcomeCallable;
         typedef std::future<DisableEbsEncryptionByDefaultOutcome> DisableEbsEncryptionByDefaultOutcomeCallable;
+        typedef std::future<DisableFastSnapshotRestoresOutcome> DisableFastSnapshotRestoresOutcomeCallable;
         typedef std::future<DisableTransitGatewayRouteTablePropagationOutcome> DisableTransitGatewayRouteTablePropagationOutcomeCallable;
         typedef std::future<DisableVgwRoutePropagationOutcome> DisableVgwRoutePropagationOutcomeCallable;
         typedef std::future<DisableVpcClassicLinkOutcome> DisableVpcClassicLinkOutcomeCallable;
@@ -1339,6 +1350,7 @@ namespace Model
         typedef std::future<DisassociateTransitGatewayRouteTableOutcome> DisassociateTransitGatewayRouteTableOutcomeCallable;
         typedef std::future<DisassociateVpcCidrBlockOutcome> DisassociateVpcCidrBlockOutcomeCallable;
         typedef std::future<EnableEbsEncryptionByDefaultOutcome> EnableEbsEncryptionByDefaultOutcomeCallable;
+        typedef std::future<EnableFastSnapshotRestoresOutcome> EnableFastSnapshotRestoresOutcomeCallable;
         typedef std::future<EnableTransitGatewayRouteTablePropagationOutcome> EnableTransitGatewayRouteTablePropagationOutcomeCallable;
         typedef std::future<EnableVgwRoutePropagationOutcome> EnableVgwRoutePropagationOutcomeCallable;
         typedef std::future<EnableVolumeIOOutcome> EnableVolumeIOOutcomeCallable;
@@ -1606,6 +1618,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeElasticGpusRequest&, const Model::DescribeElasticGpusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeElasticGpusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeExportImageTasksRequest&, const Model::DescribeExportImageTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportImageTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeFastSnapshotRestoresRequest&, const Model::DescribeFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFastSnapshotRestoresResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFleetHistoryRequest&, const Model::DescribeFleetHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetHistoryResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFleetInstancesRequest&, const Model::DescribeFleetInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeFleetsRequest&, const Model::DescribeFleetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFleetsResponseReceivedHandler;
@@ -1691,6 +1704,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DetachVolumeRequest&, const Model::DetachVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachVolumeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DetachVpnGatewayRequest&, const Model::DetachVpnGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachVpnGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableEbsEncryptionByDefaultRequest&, const Model::DisableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableEbsEncryptionByDefaultResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisableFastSnapshotRestoresRequest&, const Model::DisableFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableFastSnapshotRestoresResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableTransitGatewayRouteTablePropagationRequest&, const Model::DisableTransitGatewayRouteTablePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableTransitGatewayRouteTablePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableVgwRoutePropagationRequest&, const Model::DisableVgwRoutePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableVgwRoutePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisableVpcClassicLinkRequest&, const Model::DisableVpcClassicLinkOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableVpcClassicLinkResponseReceivedHandler;
@@ -1703,6 +1717,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DisassociateTransitGatewayRouteTableRequest&, const Model::DisassociateTransitGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTransitGatewayRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateVpcCidrBlockRequest&, const Model::DisassociateVpcCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVpcCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableEbsEncryptionByDefaultRequest&, const Model::EnableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableEbsEncryptionByDefaultResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::EnableFastSnapshotRestoresRequest&, const Model::EnableFastSnapshotRestoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableFastSnapshotRestoresResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableTransitGatewayRouteTablePropagationRequest&, const Model::EnableTransitGatewayRouteTablePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableTransitGatewayRouteTablePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableVgwRoutePropagationRequest&, const Model::EnableVgwRoutePropagationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVgwRoutePropagationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableVolumeIORequest&, const Model::EnableVolumeIOOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableVolumeIOResponseReceivedHandler;
@@ -8474,6 +8489,34 @@ namespace Model
         virtual void DescribeExportTasksAsync(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the state of fast snapshot restores for your
+         * snapshots.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFastSnapshotRestoresOutcome DescribeFastSnapshotRestores(const Model::DescribeFastSnapshotRestoresRequest& request) const;
+
+        /**
+         * <p>Describes the state of fast snapshot restores for your
+         * snapshots.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFastSnapshotRestoresOutcomeCallable DescribeFastSnapshotRestoresCallable(const Model::DescribeFastSnapshotRestoresRequest& request) const;
+
+        /**
+         * <p>Describes the state of fast snapshot restores for your
+         * snapshots.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFastSnapshotRestores">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFastSnapshotRestoresAsync(const Model::DescribeFastSnapshotRestoresRequest& request, const DescribeFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the events for the specified EC2 Fleet during the specified
          * time.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">AWS
@@ -11970,6 +12013,34 @@ namespace Model
         virtual void DisableEbsEncryptionByDefaultAsync(const Model::DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disables fast snapshot restores for the specified snapshots in the specified
+         * Availability Zones.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisableFastSnapshotRestoresOutcome DisableFastSnapshotRestores(const Model::DisableFastSnapshotRestoresRequest& request) const;
+
+        /**
+         * <p>Disables fast snapshot restores for the specified snapshots in the specified
+         * Availability Zones.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisableFastSnapshotRestoresOutcomeCallable DisableFastSnapshotRestoresCallable(const Model::DisableFastSnapshotRestoresRequest& request) const;
+
+        /**
+         * <p>Disables fast snapshot restores for the specified snapshots in the specified
+         * Availability Zones.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableFastSnapshotRestores">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisableFastSnapshotRestoresAsync(const Model::DisableFastSnapshotRestoresRequest& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disables the specified resource attachment from propagating routes to the
          * specified propagation route table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableTransitGatewayRouteTablePropagation">AWS
@@ -12421,6 +12492,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void EnableEbsEncryptionByDefaultAsync(const Model::EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Enables fast snapshot restores for the specified snapshots in the specified
+         * Availability Zones.</p> <p>You get the full benefit of fast snapshot restores
+         * after they enter the <code>enabled</code> state. To get the current state of
+         * fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>. To disable fast
+         * snapshot restores, use <a>DisableFastSnapshotRestores</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::EnableFastSnapshotRestoresOutcome EnableFastSnapshotRestores(const Model::EnableFastSnapshotRestoresRequest& request) const;
+
+        /**
+         * <p>Enables fast snapshot restores for the specified snapshots in the specified
+         * Availability Zones.</p> <p>You get the full benefit of fast snapshot restores
+         * after they enter the <code>enabled</code> state. To get the current state of
+         * fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>. To disable fast
+         * snapshot restores, use <a>DisableFastSnapshotRestores</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::EnableFastSnapshotRestoresOutcomeCallable EnableFastSnapshotRestoresCallable(const Model::EnableFastSnapshotRestoresRequest& request) const;
+
+        /**
+         * <p>Enables fast snapshot restores for the specified snapshots in the specified
+         * Availability Zones.</p> <p>You get the full benefit of fast snapshot restores
+         * after they enter the <code>enabled</code> state. To get the current state of
+         * fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>. To disable fast
+         * snapshot restores, use <a>DisableFastSnapshotRestores</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableFastSnapshotRestores">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void EnableFastSnapshotRestoresAsync(const Model::EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the specified attachment to propagate routes to the specified
@@ -17843,6 +17954,7 @@ namespace Model
         void DescribeElasticGpusAsyncHelper(const Model::DescribeElasticGpusRequest& request, const DescribeElasticGpusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExportImageTasksAsyncHelper(const Model::DescribeExportImageTasksRequest& request, const DescribeExportImageTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExportTasksAsyncHelper(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFastSnapshotRestoresAsyncHelper(const Model::DescribeFastSnapshotRestoresRequest& request, const DescribeFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFleetHistoryAsyncHelper(const Model::DescribeFleetHistoryRequest& request, const DescribeFleetHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFleetInstancesAsyncHelper(const Model::DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFleetsAsyncHelper(const Model::DescribeFleetsRequest& request, const DescribeFleetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -17928,6 +18040,7 @@ namespace Model
         void DetachVolumeAsyncHelper(const Model::DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetachVpnGatewayAsyncHelper(const Model::DetachVpnGatewayRequest& request, const DetachVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableEbsEncryptionByDefaultAsyncHelper(const Model::DisableEbsEncryptionByDefaultRequest& request, const DisableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisableFastSnapshotRestoresAsyncHelper(const Model::DisableFastSnapshotRestoresRequest& request, const DisableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableTransitGatewayRouteTablePropagationAsyncHelper(const Model::DisableTransitGatewayRouteTablePropagationRequest& request, const DisableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableVgwRoutePropagationAsyncHelper(const Model::DisableVgwRoutePropagationRequest& request, const DisableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableVpcClassicLinkAsyncHelper(const Model::DisableVpcClassicLinkRequest& request, const DisableVpcClassicLinkResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -17940,6 +18053,7 @@ namespace Model
         void DisassociateTransitGatewayRouteTableAsyncHelper(const Model::DisassociateTransitGatewayRouteTableRequest& request, const DisassociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateVpcCidrBlockAsyncHelper(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableEbsEncryptionByDefaultAsyncHelper(const Model::EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void EnableFastSnapshotRestoresAsyncHelper(const Model::EnableFastSnapshotRestoresRequest& request, const EnableFastSnapshotRestoresResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableTransitGatewayRouteTablePropagationAsyncHelper(const Model::EnableTransitGatewayRouteTablePropagationRequest& request, const EnableTransitGatewayRouteTablePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableVgwRoutePropagationAsyncHelper(const Model::EnableVgwRoutePropagationRequest& request, const EnableVgwRoutePropagationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableVolumeIOAsyncHelper(const Model::EnableVolumeIORequest& request, const EnableVolumeIOResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

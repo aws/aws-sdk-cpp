@@ -35,6 +35,7 @@
 #include <aws/cloudtrail/model/DeleteTrailRequest.h>
 #include <aws/cloudtrail/model/DescribeTrailsRequest.h>
 #include <aws/cloudtrail/model/GetEventSelectorsRequest.h>
+#include <aws/cloudtrail/model/GetInsightSelectorsRequest.h>
 #include <aws/cloudtrail/model/GetTrailRequest.h>
 #include <aws/cloudtrail/model/GetTrailStatusRequest.h>
 #include <aws/cloudtrail/model/ListPublicKeysRequest.h>
@@ -42,6 +43,7 @@
 #include <aws/cloudtrail/model/ListTrailsRequest.h>
 #include <aws/cloudtrail/model/LookupEventsRequest.h>
 #include <aws/cloudtrail/model/PutEventSelectorsRequest.h>
+#include <aws/cloudtrail/model/PutInsightSelectorsRequest.h>
 #include <aws/cloudtrail/model/RemoveTagsRequest.h>
 #include <aws/cloudtrail/model/StartLoggingRequest.h>
 #include <aws/cloudtrail/model/StopLoggingRequest.h>
@@ -294,6 +296,41 @@ void CloudTrailClient::GetEventSelectorsAsyncHelper(const GetEventSelectorsReque
   handler(this, request, GetEventSelectors(request), context);
 }
 
+GetInsightSelectorsOutcome CloudTrailClient::GetInsightSelectors(const GetInsightSelectorsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetInsightSelectorsOutcome(GetInsightSelectorsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetInsightSelectorsOutcome(outcome.GetError());
+  }
+}
+
+GetInsightSelectorsOutcomeCallable CloudTrailClient::GetInsightSelectorsCallable(const GetInsightSelectorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetInsightSelectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetInsightSelectors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::GetInsightSelectorsAsync(const GetInsightSelectorsRequest& request, const GetInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetInsightSelectorsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudTrailClient::GetInsightSelectorsAsyncHelper(const GetInsightSelectorsRequest& request, const GetInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetInsightSelectors(request), context);
+}
+
 GetTrailOutcome CloudTrailClient::GetTrail(const GetTrailRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -537,6 +574,41 @@ void CloudTrailClient::PutEventSelectorsAsync(const PutEventSelectorsRequest& re
 void CloudTrailClient::PutEventSelectorsAsyncHelper(const PutEventSelectorsRequest& request, const PutEventSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutEventSelectors(request), context);
+}
+
+PutInsightSelectorsOutcome CloudTrailClient::PutInsightSelectors(const PutInsightSelectorsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutInsightSelectorsOutcome(PutInsightSelectorsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutInsightSelectorsOutcome(outcome.GetError());
+  }
+}
+
+PutInsightSelectorsOutcomeCallable CloudTrailClient::PutInsightSelectorsCallable(const PutInsightSelectorsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutInsightSelectorsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutInsightSelectors(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CloudTrailClient::PutInsightSelectorsAsync(const PutInsightSelectorsRequest& request, const PutInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutInsightSelectorsAsyncHelper( request, handler, context ); } );
+}
+
+void CloudTrailClient::PutInsightSelectorsAsyncHelper(const PutInsightSelectorsRequest& request, const PutInsightSelectorsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutInsightSelectors(request), context);
 }
 
 RemoveTagsOutcome CloudTrailClient::RemoveTags(const RemoveTagsRequest& request) const

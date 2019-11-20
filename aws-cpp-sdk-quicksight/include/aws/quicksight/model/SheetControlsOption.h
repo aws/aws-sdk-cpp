@@ -1,0 +1,88 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/DashboardUIState.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace QuickSight
+{
+namespace Model
+{
+
+  /**
+   * <p>Sheet controls option.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SheetControlsOption">AWS
+   * API Reference</a></p>
+   */
+  class AWS_QUICKSIGHT_API SheetControlsOption
+  {
+  public:
+    SheetControlsOption();
+    SheetControlsOption(Aws::Utils::Json::JsonView jsonValue);
+    SheetControlsOption& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Visibility state.</p>
+     */
+    inline const DashboardUIState& GetVisibilityState() const{ return m_visibilityState; }
+
+    /**
+     * <p>Visibility state.</p>
+     */
+    inline bool VisibilityStateHasBeenSet() const { return m_visibilityStateHasBeenSet; }
+
+    /**
+     * <p>Visibility state.</p>
+     */
+    inline void SetVisibilityState(const DashboardUIState& value) { m_visibilityStateHasBeenSet = true; m_visibilityState = value; }
+
+    /**
+     * <p>Visibility state.</p>
+     */
+    inline void SetVisibilityState(DashboardUIState&& value) { m_visibilityStateHasBeenSet = true; m_visibilityState = std::move(value); }
+
+    /**
+     * <p>Visibility state.</p>
+     */
+    inline SheetControlsOption& WithVisibilityState(const DashboardUIState& value) { SetVisibilityState(value); return *this;}
+
+    /**
+     * <p>Visibility state.</p>
+     */
+    inline SheetControlsOption& WithVisibilityState(DashboardUIState&& value) { SetVisibilityState(std::move(value)); return *this;}
+
+  private:
+
+    DashboardUIState m_visibilityState;
+    bool m_visibilityStateHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace QuickSight
+} // namespace Aws

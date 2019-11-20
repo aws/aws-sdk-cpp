@@ -115,6 +115,12 @@ DescribeTaskResult& DescribeTaskResult::operator =(const Aws::AmazonWebServiceRe
     }
   }
 
+  if(jsonValue.ValueExists("Schedule"))
+  {
+    m_schedule = jsonValue.GetObject("Schedule");
+
+  }
+
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");

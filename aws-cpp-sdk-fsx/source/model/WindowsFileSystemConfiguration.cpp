@@ -31,6 +31,11 @@ namespace Model
 WindowsFileSystemConfiguration::WindowsFileSystemConfiguration() : 
     m_activeDirectoryIdHasBeenSet(false),
     m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
+    m_deploymentType(WindowsDeploymentType::NOT_SET),
+    m_deploymentTypeHasBeenSet(false),
+    m_remoteAdministrationEndpointHasBeenSet(false),
+    m_preferredSubnetIdHasBeenSet(false),
+    m_preferredFileServerIpHasBeenSet(false),
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
     m_maintenanceOperationsInProgressHasBeenSet(false),
@@ -46,6 +51,11 @@ WindowsFileSystemConfiguration::WindowsFileSystemConfiguration() :
 WindowsFileSystemConfiguration::WindowsFileSystemConfiguration(JsonView jsonValue) : 
     m_activeDirectoryIdHasBeenSet(false),
     m_selfManagedActiveDirectoryConfigurationHasBeenSet(false),
+    m_deploymentType(WindowsDeploymentType::NOT_SET),
+    m_deploymentTypeHasBeenSet(false),
+    m_remoteAdministrationEndpointHasBeenSet(false),
+    m_preferredSubnetIdHasBeenSet(false),
+    m_preferredFileServerIpHasBeenSet(false),
     m_throughputCapacity(0),
     m_throughputCapacityHasBeenSet(false),
     m_maintenanceOperationsInProgressHasBeenSet(false),
@@ -73,6 +83,34 @@ WindowsFileSystemConfiguration& WindowsFileSystemConfiguration::operator =(JsonV
     m_selfManagedActiveDirectoryConfiguration = jsonValue.GetObject("SelfManagedActiveDirectoryConfiguration");
 
     m_selfManagedActiveDirectoryConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeploymentType"))
+  {
+    m_deploymentType = WindowsDeploymentTypeMapper::GetWindowsDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
+
+    m_deploymentTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RemoteAdministrationEndpoint"))
+  {
+    m_remoteAdministrationEndpoint = jsonValue.GetString("RemoteAdministrationEndpoint");
+
+    m_remoteAdministrationEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreferredSubnetId"))
+  {
+    m_preferredSubnetId = jsonValue.GetString("PreferredSubnetId");
+
+    m_preferredSubnetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PreferredFileServerIp"))
+  {
+    m_preferredFileServerIp = jsonValue.GetString("PreferredFileServerIp");
+
+    m_preferredFileServerIpHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ThroughputCapacity"))
@@ -136,6 +174,29 @@ JsonValue WindowsFileSystemConfiguration::Jsonize() const
   if(m_selfManagedActiveDirectoryConfigurationHasBeenSet)
   {
    payload.WithObject("SelfManagedActiveDirectoryConfiguration", m_selfManagedActiveDirectoryConfiguration.Jsonize());
+
+  }
+
+  if(m_deploymentTypeHasBeenSet)
+  {
+   payload.WithString("DeploymentType", WindowsDeploymentTypeMapper::GetNameForWindowsDeploymentType(m_deploymentType));
+  }
+
+  if(m_remoteAdministrationEndpointHasBeenSet)
+  {
+   payload.WithString("RemoteAdministrationEndpoint", m_remoteAdministrationEndpoint);
+
+  }
+
+  if(m_preferredSubnetIdHasBeenSet)
+  {
+   payload.WithString("PreferredSubnetId", m_preferredSubnetId);
+
+  }
+
+  if(m_preferredFileServerIpHasBeenSet)
+  {
+   payload.WithString("PreferredFileServerIp", m_preferredFileServerIp);
 
   }
 

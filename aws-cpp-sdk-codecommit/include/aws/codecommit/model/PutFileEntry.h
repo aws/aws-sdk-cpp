@@ -37,8 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about a file that will be added or updated as part of a
-   * commit.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a file added or updated as part of a commit.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFileEntry">AWS
    * API Reference</a></p>
    */

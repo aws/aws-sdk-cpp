@@ -38,7 +38,9 @@ PullRequest::PullRequest() :
     m_pullRequestStatusHasBeenSet(false),
     m_authorArnHasBeenSet(false),
     m_pullRequestTargetsHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
+    m_clientRequestTokenHasBeenSet(false),
+    m_revisionIdHasBeenSet(false),
+    m_approvalRulesHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ PullRequest::PullRequest(JsonView jsonValue) :
     m_pullRequestStatusHasBeenSet(false),
     m_authorArnHasBeenSet(false),
     m_pullRequestTargetsHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
+    m_clientRequestTokenHasBeenSet(false),
+    m_revisionIdHasBeenSet(false),
+    m_approvalRulesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +129,23 @@ PullRequest& PullRequest::operator =(JsonView jsonValue)
     m_clientRequestTokenHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("revisionId"))
+  {
+    m_revisionId = jsonValue.GetString("revisionId");
+
+    m_revisionIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("approvalRules"))
+  {
+    Array<JsonView> approvalRulesJsonList = jsonValue.GetArray("approvalRules");
+    for(unsigned approvalRulesIndex = 0; approvalRulesIndex < approvalRulesJsonList.GetLength(); ++approvalRulesIndex)
+    {
+      m_approvalRules.push_back(approvalRulesJsonList[approvalRulesIndex].AsObject());
+    }
+    m_approvalRulesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -185,6 +206,23 @@ JsonValue PullRequest::Jsonize() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("clientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_revisionIdHasBeenSet)
+  {
+   payload.WithString("revisionId", m_revisionId);
+
+  }
+
+  if(m_approvalRulesHasBeenSet)
+  {
+   Array<JsonValue> approvalRulesJsonList(m_approvalRules.size());
+   for(unsigned approvalRulesIndex = 0; approvalRulesIndex < approvalRulesJsonList.GetLength(); ++approvalRulesIndex)
+   {
+     approvalRulesJsonList[approvalRulesIndex].AsObject(m_approvalRules[approvalRulesIndex].Jsonize());
+   }
+   payload.WithArray("approvalRules", std::move(approvalRulesJsonList));
 
   }
 

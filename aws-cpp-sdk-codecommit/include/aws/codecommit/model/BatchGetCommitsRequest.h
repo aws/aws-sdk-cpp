@@ -47,64 +47,64 @@ namespace Model
 
     /**
      * <p>The full commit IDs of the commits to get information about.</p> <note>
-     * <p>You must supply the full SHAs of each commit. You cannot use shortened
-     * SHAs.</p> </note>
+     * <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA
+     * IDs.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetCommitIds() const{ return m_commitIds; }
 
     /**
      * <p>The full commit IDs of the commits to get information about.</p> <note>
-     * <p>You must supply the full SHAs of each commit. You cannot use shortened
-     * SHAs.</p> </note>
+     * <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA
+     * IDs.</p> </note>
      */
     inline bool CommitIdsHasBeenSet() const { return m_commitIdsHasBeenSet; }
 
     /**
      * <p>The full commit IDs of the commits to get information about.</p> <note>
-     * <p>You must supply the full SHAs of each commit. You cannot use shortened
-     * SHAs.</p> </note>
+     * <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA
+     * IDs.</p> </note>
      */
     inline void SetCommitIds(const Aws::Vector<Aws::String>& value) { m_commitIdsHasBeenSet = true; m_commitIds = value; }
 
     /**
      * <p>The full commit IDs of the commits to get information about.</p> <note>
-     * <p>You must supply the full SHAs of each commit. You cannot use shortened
-     * SHAs.</p> </note>
+     * <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA
+     * IDs.</p> </note>
      */
     inline void SetCommitIds(Aws::Vector<Aws::String>&& value) { m_commitIdsHasBeenSet = true; m_commitIds = std::move(value); }
 
     /**
      * <p>The full commit IDs of the commits to get information about.</p> <note>
-     * <p>You must supply the full SHAs of each commit. You cannot use shortened
-     * SHAs.</p> </note>
+     * <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA
+     * IDs.</p> </note>
      */
     inline BatchGetCommitsRequest& WithCommitIds(const Aws::Vector<Aws::String>& value) { SetCommitIds(value); return *this;}
 
     /**
      * <p>The full commit IDs of the commits to get information about.</p> <note>
-     * <p>You must supply the full SHAs of each commit. You cannot use shortened
-     * SHAs.</p> </note>
+     * <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA
+     * IDs.</p> </note>
      */
     inline BatchGetCommitsRequest& WithCommitIds(Aws::Vector<Aws::String>&& value) { SetCommitIds(std::move(value)); return *this;}
 
     /**
      * <p>The full commit IDs of the commits to get information about.</p> <note>
-     * <p>You must supply the full SHAs of each commit. You cannot use shortened
-     * SHAs.</p> </note>
+     * <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA
+     * IDs.</p> </note>
      */
     inline BatchGetCommitsRequest& AddCommitIds(const Aws::String& value) { m_commitIdsHasBeenSet = true; m_commitIds.push_back(value); return *this; }
 
     /**
      * <p>The full commit IDs of the commits to get information about.</p> <note>
-     * <p>You must supply the full SHAs of each commit. You cannot use shortened
-     * SHAs.</p> </note>
+     * <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA
+     * IDs.</p> </note>
      */
     inline BatchGetCommitsRequest& AddCommitIds(Aws::String&& value) { m_commitIdsHasBeenSet = true; m_commitIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The full commit IDs of the commits to get information about.</p> <note>
-     * <p>You must supply the full SHAs of each commit. You cannot use shortened
-     * SHAs.</p> </note>
+     * <p>You must supply the full SHA IDs of each commit. You cannot use shortened SHA
+     * IDs.</p> </note>
      */
     inline BatchGetCommitsRequest& AddCommitIds(const char* value) { m_commitIdsHasBeenSet = true; m_commitIds.push_back(value); return *this; }
 

@@ -102,42 +102,50 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline void SetMigrationTaskName(const Aws::String& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = value; }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline void SetMigrationTaskName(Aws::String&& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = std::move(value); }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline void SetMigrationTaskName(const char* value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName.assign(value); }
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline MigrationTaskSummary& WithMigrationTaskName(const Aws::String& value) { SetMigrationTaskName(value); return *this;}
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline MigrationTaskSummary& WithMigrationTaskName(Aws::String&& value) { SetMigrationTaskName(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier that references the migration task.</p>
+     * <p>Unique identifier that references the migration task. <i>Do not store
+     * personal data in this field.</i> </p>
      */
     inline MigrationTaskSummary& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
 
@@ -174,22 +182,22 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Indication of the percentage completion of the task.</p>
      */
     inline int GetProgressPercent() const{ return m_progressPercent; }
 
     /**
-     * <p/>
+     * <p>Indication of the percentage completion of the task.</p>
      */
     inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Indication of the percentage completion of the task.</p>
      */
     inline void SetProgressPercent(int value) { m_progressPercentHasBeenSet = true; m_progressPercent = value; }
 
     /**
-     * <p/>
+     * <p>Indication of the percentage completion of the task.</p>
      */
     inline MigrationTaskSummary& WithProgressPercent(int value) { SetProgressPercent(value); return *this;}
 

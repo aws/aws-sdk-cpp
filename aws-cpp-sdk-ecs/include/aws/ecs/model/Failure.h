@@ -128,6 +128,47 @@ namespace Model
      */
     inline Failure& WithReason(const char* value) { SetReason(value); return *this;}
 
+
+    /**
+     * <p>The details of the failure.</p>
+     */
+    inline const Aws::String& GetDetail() const{ return m_detail; }
+
+    /**
+     * <p>The details of the failure.</p>
+     */
+    inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
+
+    /**
+     * <p>The details of the failure.</p>
+     */
+    inline void SetDetail(const Aws::String& value) { m_detailHasBeenSet = true; m_detail = value; }
+
+    /**
+     * <p>The details of the failure.</p>
+     */
+    inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
+
+    /**
+     * <p>The details of the failure.</p>
+     */
+    inline void SetDetail(const char* value) { m_detailHasBeenSet = true; m_detail.assign(value); }
+
+    /**
+     * <p>The details of the failure.</p>
+     */
+    inline Failure& WithDetail(const Aws::String& value) { SetDetail(value); return *this;}
+
+    /**
+     * <p>The details of the failure.</p>
+     */
+    inline Failure& WithDetail(Aws::String&& value) { SetDetail(std::move(value)); return *this;}
+
+    /**
+     * <p>The details of the failure.</p>
+     */
+    inline Failure& WithDetail(const char* value) { SetDetail(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -135,6 +176,9 @@ namespace Model
 
     Aws::String m_reason;
     bool m_reasonHasBeenSet;
+
+    Aws::String m_detail;
+    bool m_detailHasBeenSet;
   };
 
 } // namespace Model

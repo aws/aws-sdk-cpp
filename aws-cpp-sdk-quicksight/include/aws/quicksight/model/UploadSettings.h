@@ -1,0 +1,216 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/FileFormat.h>
+#include <aws/quicksight/model/TextQualifier.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace QuickSight
+{
+namespace Model
+{
+
+  /**
+   * <p>Information on source file(s) format.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UploadSettings">AWS
+   * API Reference</a></p>
+   */
+  class AWS_QUICKSIGHT_API UploadSettings
+  {
+  public:
+    UploadSettings();
+    UploadSettings(Aws::Utils::Json::JsonView jsonValue);
+    UploadSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>File format.</p>
+     */
+    inline const FileFormat& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>File format.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>File format.</p>
+     */
+    inline void SetFormat(const FileFormat& value) { m_formatHasBeenSet = true; m_format = value; }
+
+    /**
+     * <p>File format.</p>
+     */
+    inline void SetFormat(FileFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
+
+    /**
+     * <p>File format.</p>
+     */
+    inline UploadSettings& WithFormat(const FileFormat& value) { SetFormat(value); return *this;}
+
+    /**
+     * <p>File format.</p>
+     */
+    inline UploadSettings& WithFormat(FileFormat&& value) { SetFormat(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A row number to start reading data from.</p>
+     */
+    inline int GetStartFromRow() const{ return m_startFromRow; }
+
+    /**
+     * <p>A row number to start reading data from.</p>
+     */
+    inline bool StartFromRowHasBeenSet() const { return m_startFromRowHasBeenSet; }
+
+    /**
+     * <p>A row number to start reading data from.</p>
+     */
+    inline void SetStartFromRow(int value) { m_startFromRowHasBeenSet = true; m_startFromRow = value; }
+
+    /**
+     * <p>A row number to start reading data from.</p>
+     */
+    inline UploadSettings& WithStartFromRow(int value) { SetStartFromRow(value); return *this;}
+
+
+    /**
+     * <p>Whether or not the file(s) has a header row.</p>
+     */
+    inline bool GetContainsHeader() const{ return m_containsHeader; }
+
+    /**
+     * <p>Whether or not the file(s) has a header row.</p>
+     */
+    inline bool ContainsHeaderHasBeenSet() const { return m_containsHeaderHasBeenSet; }
+
+    /**
+     * <p>Whether or not the file(s) has a header row.</p>
+     */
+    inline void SetContainsHeader(bool value) { m_containsHeaderHasBeenSet = true; m_containsHeader = value; }
+
+    /**
+     * <p>Whether or not the file(s) has a header row.</p>
+     */
+    inline UploadSettings& WithContainsHeader(bool value) { SetContainsHeader(value); return *this;}
+
+
+    /**
+     * <p>Text qualifier.</p>
+     */
+    inline const TextQualifier& GetTextQualifier() const{ return m_textQualifier; }
+
+    /**
+     * <p>Text qualifier.</p>
+     */
+    inline bool TextQualifierHasBeenSet() const { return m_textQualifierHasBeenSet; }
+
+    /**
+     * <p>Text qualifier.</p>
+     */
+    inline void SetTextQualifier(const TextQualifier& value) { m_textQualifierHasBeenSet = true; m_textQualifier = value; }
+
+    /**
+     * <p>Text qualifier.</p>
+     */
+    inline void SetTextQualifier(TextQualifier&& value) { m_textQualifierHasBeenSet = true; m_textQualifier = std::move(value); }
+
+    /**
+     * <p>Text qualifier.</p>
+     */
+    inline UploadSettings& WithTextQualifier(const TextQualifier& value) { SetTextQualifier(value); return *this;}
+
+    /**
+     * <p>Text qualifier.</p>
+     */
+    inline UploadSettings& WithTextQualifier(TextQualifier&& value) { SetTextQualifier(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The delimiter between values in the file.</p>
+     */
+    inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
+
+    /**
+     * <p>The delimiter between values in the file.</p>
+     */
+    inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
+
+    /**
+     * <p>The delimiter between values in the file.</p>
+     */
+    inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
+
+    /**
+     * <p>The delimiter between values in the file.</p>
+     */
+    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
+
+    /**
+     * <p>The delimiter between values in the file.</p>
+     */
+    inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
+
+    /**
+     * <p>The delimiter between values in the file.</p>
+     */
+    inline UploadSettings& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
+
+    /**
+     * <p>The delimiter between values in the file.</p>
+     */
+    inline UploadSettings& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
+
+    /**
+     * <p>The delimiter between values in the file.</p>
+     */
+    inline UploadSettings& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
+
+  private:
+
+    FileFormat m_format;
+    bool m_formatHasBeenSet;
+
+    int m_startFromRow;
+    bool m_startFromRowHasBeenSet;
+
+    bool m_containsHeader;
+    bool m_containsHeaderHasBeenSet;
+
+    TextQualifier m_textQualifier;
+    bool m_textQualifierHasBeenSet;
+
+    Aws::String m_delimiter;
+    bool m_delimiterHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace QuickSight
+} // namespace Aws

@@ -30,13 +30,15 @@ namespace Model
 
 Failure::Failure() : 
     m_arnHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_detailHasBeenSet(false)
 {
 }
 
 Failure::Failure(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
-    m_reasonHasBeenSet(false)
+    m_reasonHasBeenSet(false),
+    m_detailHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +59,13 @@ Failure& Failure::operator =(JsonView jsonValue)
     m_reasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("detail"))
+  {
+    m_detail = jsonValue.GetString("detail");
+
+    m_detailHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +82,12 @@ JsonValue Failure::Jsonize() const
   if(m_reasonHasBeenSet)
   {
    payload.WithString("reason", m_reason);
+
+  }
+
+  if(m_detailHasBeenSet)
+  {
+   payload.WithString("detail", m_detail);
 
   }
 

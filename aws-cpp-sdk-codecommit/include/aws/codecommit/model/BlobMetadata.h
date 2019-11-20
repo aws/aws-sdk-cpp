@@ -90,42 +90,42 @@ namespace Model
 
 
     /**
-     * <p>The path to the blob and any associated file name, if any.</p>
+     * <p>The path to the blob and associated file name, if any.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
     /**
-     * <p>The path to the blob and any associated file name, if any.</p>
+     * <p>The path to the blob and associated file name, if any.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
-     * <p>The path to the blob and any associated file name, if any.</p>
+     * <p>The path to the blob and associated file name, if any.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
-     * <p>The path to the blob and any associated file name, if any.</p>
+     * <p>The path to the blob and associated file name, if any.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
     /**
-     * <p>The path to the blob and any associated file name, if any.</p>
+     * <p>The path to the blob and associated file name, if any.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
     /**
-     * <p>The path to the blob and any associated file name, if any.</p>
+     * <p>The path to the blob and associated file name, if any.</p>
      */
     inline BlobMetadata& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
     /**
-     * <p>The path to the blob and any associated file name, if any.</p>
+     * <p>The path to the blob and associated file name, if any.</p>
      */
     inline BlobMetadata& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
     /**
-     * <p>The path to the blob and any associated file name, if any.</p>
+     * <p>The path to the blob and associated file name, if any.</p>
      */
     inline BlobMetadata& WithPath(const char* value) { SetPath(value); return *this;}
 

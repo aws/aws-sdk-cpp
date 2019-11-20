@@ -56,7 +56,9 @@ enum class QuickSightErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  DOMAIN_NOT_WHITELISTED= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_UPDATING= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT,
+  DOMAIN_NOT_WHITELISTED,
   IDENTITY_TYPE_NOT_SUPPORTED,
   INVALID_NEXT_TOKEN,
   LIMIT_EXCEEDED,

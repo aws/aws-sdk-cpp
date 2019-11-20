@@ -1,0 +1,219 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace QuickSight
+{
+namespace Model
+{
+  class AWS_QUICKSIGHT_API DeleteTemplateAliasResult
+  {
+  public:
+    DeleteTemplateAliasResult();
+    DeleteTemplateAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DeleteTemplateAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The http status of the request.</p>
+     */
+    inline int GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The http status of the request.</p>
+     */
+    inline void SetStatus(int value) { m_status = value; }
+
+    /**
+     * <p>The http status of the request.</p>
+     */
+    inline DeleteTemplateAliasResult& WithStatus(int value) { SetStatus(value); return *this;}
+
+
+    /**
+     * <p>An ID for the template.</p>
+     */
+    inline const Aws::String& GetTemplateId() const{ return m_templateId; }
+
+    /**
+     * <p>An ID for the template.</p>
+     */
+    inline void SetTemplateId(const Aws::String& value) { m_templateId = value; }
+
+    /**
+     * <p>An ID for the template.</p>
+     */
+    inline void SetTemplateId(Aws::String&& value) { m_templateId = std::move(value); }
+
+    /**
+     * <p>An ID for the template.</p>
+     */
+    inline void SetTemplateId(const char* value) { m_templateId.assign(value); }
+
+    /**
+     * <p>An ID for the template.</p>
+     */
+    inline DeleteTemplateAliasResult& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
+
+    /**
+     * <p>An ID for the template.</p>
+     */
+    inline DeleteTemplateAliasResult& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
+
+    /**
+     * <p>An ID for the template.</p>
+     */
+    inline DeleteTemplateAliasResult& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+
+
+    /**
+     * <p>The name of the alias.</p>
+     */
+    inline const Aws::String& GetAliasName() const{ return m_aliasName; }
+
+    /**
+     * <p>The name of the alias.</p>
+     */
+    inline void SetAliasName(const Aws::String& value) { m_aliasName = value; }
+
+    /**
+     * <p>The name of the alias.</p>
+     */
+    inline void SetAliasName(Aws::String&& value) { m_aliasName = std::move(value); }
+
+    /**
+     * <p>The name of the alias.</p>
+     */
+    inline void SetAliasName(const char* value) { m_aliasName.assign(value); }
+
+    /**
+     * <p>The name of the alias.</p>
+     */
+    inline DeleteTemplateAliasResult& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
+
+    /**
+     * <p>The name of the alias.</p>
+     */
+    inline DeleteTemplateAliasResult& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the alias.</p>
+     */
+    inline DeleteTemplateAliasResult& WithAliasName(const char* value) { SetAliasName(value); return *this;}
+
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline DeleteTemplateAliasResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline DeleteTemplateAliasResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the resource.</p>
+     */
+    inline DeleteTemplateAliasResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline DeleteTemplateAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline DeleteTemplateAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS request ID for this operation.</p>
+     */
+    inline DeleteTemplateAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+  private:
+
+    int m_status;
+
+    Aws::String m_templateId;
+
+    Aws::String m_aliasName;
+
+    Aws::String m_arn;
+
+    Aws::String m_requestId;
+  };
+
+} // namespace Model
+} // namespace QuickSight
+} // namespace Aws

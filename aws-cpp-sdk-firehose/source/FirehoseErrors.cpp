@@ -28,6 +28,7 @@ namespace Firehose
 namespace FirehoseErrorMapper
 {
 
+static const int INVALID_K_M_S_RESOURCE_HASH = HashingUtils::HashString("InvalidKMSResourceException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
@@ -38,7 +39,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == LIMIT_EXCEEDED_HASH)
+  if (hashCode == INVALID_K_M_S_RESOURCE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FirehoseErrors::INVALID_K_M_S_RESOURCE), false);
+  }
+  else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FirehoseErrors::LIMIT_EXCEEDED), false);
   }

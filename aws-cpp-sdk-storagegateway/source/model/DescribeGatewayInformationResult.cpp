@@ -26,11 +26,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeGatewayInformationResult::DescribeGatewayInformationResult()
+DescribeGatewayInformationResult::DescribeGatewayInformationResult() : 
+    m_hostEnvironment(HostEnvironment::NOT_SET)
 {
 }
 
-DescribeGatewayInformationResult::DescribeGatewayInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DescribeGatewayInformationResult::DescribeGatewayInformationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_hostEnvironment(HostEnvironment::NOT_SET)
 {
   *this = result;
 }
@@ -125,6 +127,12 @@ DescribeGatewayInformationResult& DescribeGatewayInformationResult::operator =(c
   if(jsonValue.ValueExists("CloudWatchLogGroupARN"))
   {
     m_cloudWatchLogGroupARN = jsonValue.GetString("CloudWatchLogGroupARN");
+
+  }
+
+  if(jsonValue.ValueExists("HostEnvironment"))
+  {
+    m_hostEnvironment = HostEnvironmentMapper::GetHostEnvironmentForName(jsonValue.GetString("HostEnvironment"));
 
   }
 

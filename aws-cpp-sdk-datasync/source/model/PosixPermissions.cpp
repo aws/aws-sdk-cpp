@@ -31,7 +31,6 @@ namespace Aws
       {
 
         static const int NONE_HASH = HashingUtils::HashString("NONE");
-        static const int BEST_EFFORT_HASH = HashingUtils::HashString("BEST_EFFORT");
         static const int PRESERVE_HASH = HashingUtils::HashString("PRESERVE");
 
 
@@ -41,10 +40,6 @@ namespace Aws
           if (hashCode == NONE_HASH)
           {
             return PosixPermissions::NONE;
-          }
-          else if (hashCode == BEST_EFFORT_HASH)
-          {
-            return PosixPermissions::BEST_EFFORT;
           }
           else if (hashCode == PRESERVE_HASH)
           {
@@ -66,8 +61,6 @@ namespace Aws
           {
           case PosixPermissions::NONE:
             return "NONE";
-          case PosixPermissions::BEST_EFFORT:
-            return "BEST_EFFORT";
           case PosixPermissions::PRESERVE:
             return "PRESERVE";
           default:

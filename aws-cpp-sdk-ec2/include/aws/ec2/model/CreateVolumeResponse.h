@@ -467,6 +467,22 @@ namespace Model
     inline CreateVolumeResponse& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Indicates whether the volume was created using fast snapshot restore.</p>
+     */
+    inline bool GetFastRestored() const{ return m_fastRestored; }
+
+    /**
+     * <p>Indicates whether the volume was created using fast snapshot restore.</p>
+     */
+    inline void SetFastRestored(bool value) { m_fastRestored = value; }
+
+    /**
+     * <p>Indicates whether the volume was created using fast snapshot restore.</p>
+     */
+    inline CreateVolumeResponse& WithFastRestored(bool value) { SetFastRestored(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -507,6 +523,8 @@ namespace Model
     Aws::Vector<Tag> m_tags;
 
     VolumeType m_volumeType;
+
+    bool m_fastRestored;
 
     ResponseMetadata m_responseMetadata;
   };

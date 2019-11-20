@@ -35,7 +35,11 @@ Settings::Settings() :
     m_maxSpeakerLabels(0),
     m_maxSpeakerLabelsHasBeenSet(false),
     m_channelIdentification(false),
-    m_channelIdentificationHasBeenSet(false)
+    m_channelIdentificationHasBeenSet(false),
+    m_showAlternatives(false),
+    m_showAlternativesHasBeenSet(false),
+    m_maxAlternatives(0),
+    m_maxAlternativesHasBeenSet(false)
 {
 }
 
@@ -46,7 +50,11 @@ Settings::Settings(JsonView jsonValue) :
     m_maxSpeakerLabels(0),
     m_maxSpeakerLabelsHasBeenSet(false),
     m_channelIdentification(false),
-    m_channelIdentificationHasBeenSet(false)
+    m_channelIdentificationHasBeenSet(false),
+    m_showAlternatives(false),
+    m_showAlternativesHasBeenSet(false),
+    m_maxAlternatives(0),
+    m_maxAlternativesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -81,6 +89,20 @@ Settings& Settings::operator =(JsonView jsonValue)
     m_channelIdentificationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ShowAlternatives"))
+  {
+    m_showAlternatives = jsonValue.GetBool("ShowAlternatives");
+
+    m_showAlternativesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxAlternatives"))
+  {
+    m_maxAlternatives = jsonValue.GetInteger("MaxAlternatives");
+
+    m_maxAlternativesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +131,18 @@ JsonValue Settings::Jsonize() const
   if(m_channelIdentificationHasBeenSet)
   {
    payload.WithBool("ChannelIdentification", m_channelIdentification);
+
+  }
+
+  if(m_showAlternativesHasBeenSet)
+  {
+   payload.WithBool("ShowAlternatives", m_showAlternatives);
+
+  }
+
+  if(m_maxAlternativesHasBeenSet)
+  {
+   payload.WithInteger("MaxAlternatives", m_maxAlternatives);
 
   }
 

@@ -46,6 +46,8 @@ Trail::Trail() :
     m_kmsKeyIdHasBeenSet(false),
     m_hasCustomEventSelectors(false),
     m_hasCustomEventSelectorsHasBeenSet(false),
+    m_hasInsightSelectors(false),
+    m_hasInsightSelectorsHasBeenSet(false),
     m_isOrganizationTrail(false),
     m_isOrganizationTrailHasBeenSet(false)
 {
@@ -69,6 +71,8 @@ Trail::Trail(JsonView jsonValue) :
     m_kmsKeyIdHasBeenSet(false),
     m_hasCustomEventSelectors(false),
     m_hasCustomEventSelectorsHasBeenSet(false),
+    m_hasInsightSelectors(false),
+    m_hasInsightSelectorsHasBeenSet(false),
     m_isOrganizationTrail(false),
     m_isOrganizationTrailHasBeenSet(false)
 {
@@ -168,6 +172,13 @@ Trail& Trail::operator =(JsonView jsonValue)
     m_hasCustomEventSelectorsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HasInsightSelectors"))
+  {
+    m_hasInsightSelectors = jsonValue.GetBool("HasInsightSelectors");
+
+    m_hasInsightSelectorsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("IsOrganizationTrail"))
   {
     m_isOrganizationTrail = jsonValue.GetBool("IsOrganizationTrail");
@@ -257,6 +268,12 @@ JsonValue Trail::Jsonize() const
   if(m_hasCustomEventSelectorsHasBeenSet)
   {
    payload.WithBool("HasCustomEventSelectors", m_hasCustomEventSelectors);
+
+  }
+
+  if(m_hasInsightSelectorsHasBeenSet)
+  {
+   payload.WithBool("HasInsightSelectors", m_hasInsightSelectors);
 
   }
 

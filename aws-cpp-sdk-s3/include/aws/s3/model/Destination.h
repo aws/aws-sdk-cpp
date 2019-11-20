@@ -19,6 +19,8 @@
 #include <aws/s3/model/StorageClass.h>
 #include <aws/s3/model/AccessControlTranslation.h>
 #include <aws/s3/model/EncryptionConfiguration.h>
+#include <aws/s3/model/ReplicationTime.h>
+#include <aws/s3/model/Metrics.h>
 #include <utility>
 
 namespace Aws
@@ -361,6 +363,98 @@ namespace Model
      */
     inline Destination& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p> A container specifying the time when all objects and operations on objects
+     * are replicated. Must be specified together with a <code>Metrics</code> block.
+     * </p>
+     */
+    inline const ReplicationTime& GetReplicationTime() const{ return m_replicationTime; }
+
+    /**
+     * <p> A container specifying the time when all objects and operations on objects
+     * are replicated. Must be specified together with a <code>Metrics</code> block.
+     * </p>
+     */
+    inline bool ReplicationTimeHasBeenSet() const { return m_replicationTimeHasBeenSet; }
+
+    /**
+     * <p> A container specifying the time when all objects and operations on objects
+     * are replicated. Must be specified together with a <code>Metrics</code> block.
+     * </p>
+     */
+    inline void SetReplicationTime(const ReplicationTime& value) { m_replicationTimeHasBeenSet = true; m_replicationTime = value; }
+
+    /**
+     * <p> A container specifying the time when all objects and operations on objects
+     * are replicated. Must be specified together with a <code>Metrics</code> block.
+     * </p>
+     */
+    inline void SetReplicationTime(ReplicationTime&& value) { m_replicationTimeHasBeenSet = true; m_replicationTime = std::move(value); }
+
+    /**
+     * <p> A container specifying the time when all objects and operations on objects
+     * are replicated. Must be specified together with a <code>Metrics</code> block.
+     * </p>
+     */
+    inline Destination& WithReplicationTime(const ReplicationTime& value) { SetReplicationTime(value); return *this;}
+
+    /**
+     * <p> A container specifying the time when all objects and operations on objects
+     * are replicated. Must be specified together with a <code>Metrics</code> block.
+     * </p>
+     */
+    inline Destination& WithReplicationTime(ReplicationTime&& value) { SetReplicationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p> A container specifying replication metrics-related information, including
+     * whether emitting metrics and Amazon S3 events for replication are enabled. In
+     * addition, contains configurations related to specific metrics or events. Must be
+     * specified together with a <code>ReplicationTime</code> block. </p>
+     */
+    inline const Metrics& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * <p> A container specifying replication metrics-related information, including
+     * whether emitting metrics and Amazon S3 events for replication are enabled. In
+     * addition, contains configurations related to specific metrics or events. Must be
+     * specified together with a <code>ReplicationTime</code> block. </p>
+     */
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
+
+    /**
+     * <p> A container specifying replication metrics-related information, including
+     * whether emitting metrics and Amazon S3 events for replication are enabled. In
+     * addition, contains configurations related to specific metrics or events. Must be
+     * specified together with a <code>ReplicationTime</code> block. </p>
+     */
+    inline void SetMetrics(const Metrics& value) { m_metricsHasBeenSet = true; m_metrics = value; }
+
+    /**
+     * <p> A container specifying replication metrics-related information, including
+     * whether emitting metrics and Amazon S3 events for replication are enabled. In
+     * addition, contains configurations related to specific metrics or events. Must be
+     * specified together with a <code>ReplicationTime</code> block. </p>
+     */
+    inline void SetMetrics(Metrics&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
+
+    /**
+     * <p> A container specifying replication metrics-related information, including
+     * whether emitting metrics and Amazon S3 events for replication are enabled. In
+     * addition, contains configurations related to specific metrics or events. Must be
+     * specified together with a <code>ReplicationTime</code> block. </p>
+     */
+    inline Destination& WithMetrics(const Metrics& value) { SetMetrics(value); return *this;}
+
+    /**
+     * <p> A container specifying replication metrics-related information, including
+     * whether emitting metrics and Amazon S3 events for replication are enabled. In
+     * addition, contains configurations related to specific metrics or events. Must be
+     * specified together with a <code>ReplicationTime</code> block. </p>
+     */
+    inline Destination& WithMetrics(Metrics&& value) { SetMetrics(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_bucket;
@@ -377,6 +471,12 @@ namespace Model
 
     EncryptionConfiguration m_encryptionConfiguration;
     bool m_encryptionConfigurationHasBeenSet;
+
+    ReplicationTime m_replicationTime;
+    bool m_replicationTimeHasBeenSet;
+
+    Metrics m_metrics;
+    bool m_metricsHasBeenSet;
   };
 
 } // namespace Model

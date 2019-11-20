@@ -48,6 +48,8 @@ Volume::Volume() :
     m_tagsHasBeenSet(false),
     m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
+    m_fastRestored(false),
+    m_fastRestoredHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
 }
@@ -70,6 +72,8 @@ Volume::Volume(const XmlNode& xmlNode) :
     m_tagsHasBeenSet(false),
     m_volumeType(VolumeType::NOT_SET),
     m_volumeTypeHasBeenSet(false),
+    m_fastRestored(false),
+    m_fastRestoredHasBeenSet(false),
     m_responseMetadataHasBeenSet(false)
 {
   *this = xmlNode;
@@ -165,6 +169,12 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
       m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeTypeNode.GetText()).c_str()).c_str());
       m_volumeTypeHasBeenSet = true;
     }
+    XmlNode fastRestoredNode = resultNode.FirstChild("fastRestored");
+    if(!fastRestoredNode.IsNull())
+    {
+      m_fastRestored = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(fastRestoredNode.GetText()).c_str()).c_str());
+      m_fastRestoredHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -244,6 +254,11 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
   }
 
+  if(m_fastRestoredHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".FastRestored=" << std::boolalpha << m_fastRestored << "&";
+  }
+
   if(m_responseMetadataHasBeenSet)
   {
       Aws::StringStream responseMetadataLocationAndMemberSs;
@@ -314,6 +329,10 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_volumeTypeHasBeenSet)
   {
       oStream << location << ".VolumeType=" << VolumeTypeMapper::GetNameForVolumeType(m_volumeType) << "&";
+  }
+  if(m_fastRestoredHasBeenSet)
+  {
+      oStream << location << ".FastRestored=" << std::boolalpha << m_fastRestored << "&";
   }
   if(m_responseMetadataHasBeenSet)
   {

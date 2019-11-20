@@ -548,6 +548,27 @@ namespace Model
     inline Volume& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Indicates whether the volume was created using fast snapshot restore.</p>
+     */
+    inline bool GetFastRestored() const{ return m_fastRestored; }
+
+    /**
+     * <p>Indicates whether the volume was created using fast snapshot restore.</p>
+     */
+    inline bool FastRestoredHasBeenSet() const { return m_fastRestoredHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the volume was created using fast snapshot restore.</p>
+     */
+    inline void SetFastRestored(bool value) { m_fastRestoredHasBeenSet = true; m_fastRestored = value; }
+
+    /**
+     * <p>Indicates whether the volume was created using fast snapshot restore.</p>
+     */
+    inline Volume& WithFastRestored(bool value) { SetFastRestored(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -603,6 +624,9 @@ namespace Model
 
     VolumeType m_volumeType;
     bool m_volumeTypeHasBeenSet;
+
+    bool m_fastRestored;
+    bool m_fastRestoredHasBeenSet;
 
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet;

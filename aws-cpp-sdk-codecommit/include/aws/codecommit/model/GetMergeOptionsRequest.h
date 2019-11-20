@@ -97,153 +97,153 @@ namespace Model
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline const Aws::String& GetSourceCommitSpecifier() const{ return m_sourceCommitSpecifier; }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline bool SourceCommitSpecifierHasBeenSet() const { return m_sourceCommitSpecifierHasBeenSet; }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline void SetSourceCommitSpecifier(const Aws::String& value) { m_sourceCommitSpecifierHasBeenSet = true; m_sourceCommitSpecifier = value; }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline void SetSourceCommitSpecifier(Aws::String&& value) { m_sourceCommitSpecifierHasBeenSet = true; m_sourceCommitSpecifier = std::move(value); }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline void SetSourceCommitSpecifier(const char* value) { m_sourceCommitSpecifierHasBeenSet = true; m_sourceCommitSpecifier.assign(value); }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline GetMergeOptionsRequest& WithSourceCommitSpecifier(const Aws::String& value) { SetSourceCommitSpecifier(value); return *this;}
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline GetMergeOptionsRequest& WithSourceCommitSpecifier(Aws::String&& value) { SetSourceCommitSpecifier(std::move(value)); return *this;}
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline GetMergeOptionsRequest& WithSourceCommitSpecifier(const char* value) { SetSourceCommitSpecifier(value); return *this;}
 
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline const Aws::String& GetDestinationCommitSpecifier() const{ return m_destinationCommitSpecifier; }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline bool DestinationCommitSpecifierHasBeenSet() const { return m_destinationCommitSpecifierHasBeenSet; }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline void SetDestinationCommitSpecifier(const Aws::String& value) { m_destinationCommitSpecifierHasBeenSet = true; m_destinationCommitSpecifier = value; }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline void SetDestinationCommitSpecifier(Aws::String&& value) { m_destinationCommitSpecifierHasBeenSet = true; m_destinationCommitSpecifier = std::move(value); }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline void SetDestinationCommitSpecifier(const char* value) { m_destinationCommitSpecifierHasBeenSet = true; m_destinationCommitSpecifier.assign(value); }
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline GetMergeOptionsRequest& WithDestinationCommitSpecifier(const Aws::String& value) { SetDestinationCommitSpecifier(value); return *this;}
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline GetMergeOptionsRequest& WithDestinationCommitSpecifier(Aws::String&& value) { SetDestinationCommitSpecifier(std::move(value)); return *this;}
 
     /**
      * <p>The branch, tag, HEAD, or other fully qualified reference used to identify a
-     * commit. For example, a branch name or a full commit ID.</p>
+     * commit (for example, a branch name or a full commit ID).</p>
      */
     inline GetMergeOptionsRequest& WithDestinationCommitSpecifier(const char* value) { SetDestinationCommitSpecifier(value); return *this;}
 
 
     /**
      * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
-     * is used, which will return a not mergeable result if the same file has
-     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
-     * considered not mergeable if the same file in both branches has differences on
-     * the same line.</p>
+     * is used, which returns a not-mergeable result if the same file has differences
+     * in both branches. If LINE_LEVEL is specified, a conflict is considered not
+     * mergeable if the same file in both branches has differences on the same
+     * line.</p>
      */
     inline const ConflictDetailLevelTypeEnum& GetConflictDetailLevel() const{ return m_conflictDetailLevel; }
 
     /**
      * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
-     * is used, which will return a not mergeable result if the same file has
-     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
-     * considered not mergeable if the same file in both branches has differences on
-     * the same line.</p>
+     * is used, which returns a not-mergeable result if the same file has differences
+     * in both branches. If LINE_LEVEL is specified, a conflict is considered not
+     * mergeable if the same file in both branches has differences on the same
+     * line.</p>
      */
     inline bool ConflictDetailLevelHasBeenSet() const { return m_conflictDetailLevelHasBeenSet; }
 
     /**
      * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
-     * is used, which will return a not mergeable result if the same file has
-     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
-     * considered not mergeable if the same file in both branches has differences on
-     * the same line.</p>
+     * is used, which returns a not-mergeable result if the same file has differences
+     * in both branches. If LINE_LEVEL is specified, a conflict is considered not
+     * mergeable if the same file in both branches has differences on the same
+     * line.</p>
      */
     inline void SetConflictDetailLevel(const ConflictDetailLevelTypeEnum& value) { m_conflictDetailLevelHasBeenSet = true; m_conflictDetailLevel = value; }
 
     /**
      * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
-     * is used, which will return a not mergeable result if the same file has
-     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
-     * considered not mergeable if the same file in both branches has differences on
-     * the same line.</p>
+     * is used, which returns a not-mergeable result if the same file has differences
+     * in both branches. If LINE_LEVEL is specified, a conflict is considered not
+     * mergeable if the same file in both branches has differences on the same
+     * line.</p>
      */
     inline void SetConflictDetailLevel(ConflictDetailLevelTypeEnum&& value) { m_conflictDetailLevelHasBeenSet = true; m_conflictDetailLevel = std::move(value); }
 
     /**
      * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
-     * is used, which will return a not mergeable result if the same file has
-     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
-     * considered not mergeable if the same file in both branches has differences on
-     * the same line.</p>
+     * is used, which returns a not-mergeable result if the same file has differences
+     * in both branches. If LINE_LEVEL is specified, a conflict is considered not
+     * mergeable if the same file in both branches has differences on the same
+     * line.</p>
      */
     inline GetMergeOptionsRequest& WithConflictDetailLevel(const ConflictDetailLevelTypeEnum& value) { SetConflictDetailLevel(value); return *this;}
 
     /**
      * <p>The level of conflict detail to use. If unspecified, the default FILE_LEVEL
-     * is used, which will return a not mergeable result if the same file has
-     * differences in both branches. If LINE_LEVEL is specified, a conflict will be
-     * considered not mergeable if the same file in both branches has differences on
-     * the same line.</p>
+     * is used, which returns a not-mergeable result if the same file has differences
+     * in both branches. If LINE_LEVEL is specified, a conflict is considered not
+     * mergeable if the same file in both branches has differences on the same
+     * line.</p>
      */
     inline GetMergeOptionsRequest& WithConflictDetailLevel(ConflictDetailLevelTypeEnum&& value) { SetConflictDetailLevel(std::move(value)); return *this;}
 
@@ -251,48 +251,48 @@ namespace Model
     /**
      * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
      * automatically merging two versions of a file. The default is NONE, which
-     * requires any conflicts to be resolved manually before the merge operation will
-     * be successful.</p>
+     * requires any conflicts to be resolved manually before the merge operation is
+     * successful.</p>
      */
     inline const ConflictResolutionStrategyTypeEnum& GetConflictResolutionStrategy() const{ return m_conflictResolutionStrategy; }
 
     /**
      * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
      * automatically merging two versions of a file. The default is NONE, which
-     * requires any conflicts to be resolved manually before the merge operation will
-     * be successful.</p>
+     * requires any conflicts to be resolved manually before the merge operation is
+     * successful.</p>
      */
     inline bool ConflictResolutionStrategyHasBeenSet() const { return m_conflictResolutionStrategyHasBeenSet; }
 
     /**
      * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
      * automatically merging two versions of a file. The default is NONE, which
-     * requires any conflicts to be resolved manually before the merge operation will
-     * be successful.</p>
+     * requires any conflicts to be resolved manually before the merge operation is
+     * successful.</p>
      */
     inline void SetConflictResolutionStrategy(const ConflictResolutionStrategyTypeEnum& value) { m_conflictResolutionStrategyHasBeenSet = true; m_conflictResolutionStrategy = value; }
 
     /**
      * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
      * automatically merging two versions of a file. The default is NONE, which
-     * requires any conflicts to be resolved manually before the merge operation will
-     * be successful.</p>
+     * requires any conflicts to be resolved manually before the merge operation is
+     * successful.</p>
      */
     inline void SetConflictResolutionStrategy(ConflictResolutionStrategyTypeEnum&& value) { m_conflictResolutionStrategyHasBeenSet = true; m_conflictResolutionStrategy = std::move(value); }
 
     /**
      * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
      * automatically merging two versions of a file. The default is NONE, which
-     * requires any conflicts to be resolved manually before the merge operation will
-     * be successful.</p>
+     * requires any conflicts to be resolved manually before the merge operation is
+     * successful.</p>
      */
     inline GetMergeOptionsRequest& WithConflictResolutionStrategy(const ConflictResolutionStrategyTypeEnum& value) { SetConflictResolutionStrategy(value); return *this;}
 
     /**
      * <p>Specifies which branch to use when resolving conflicts, or whether to attempt
      * automatically merging two versions of a file. The default is NONE, which
-     * requires any conflicts to be resolved manually before the merge operation will
-     * be successful.</p>
+     * requires any conflicts to be resolved manually before the merge operation is
+     * successful.</p>
      */
     inline GetMergeOptionsRequest& WithConflictResolutionStrategy(ConflictResolutionStrategyTypeEnum&& value) { SetConflictResolutionStrategy(std::move(value)); return *this;}
 
