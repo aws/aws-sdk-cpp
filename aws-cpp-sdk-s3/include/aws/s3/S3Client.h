@@ -477,7 +477,7 @@ namespace Aws
     /**
      * <p/>
      */
-    enum class AWS_S3_API US_EAST_1_REGIONAL_ENDPOINT_OPTION
+    enum class US_EAST_1_REGIONAL_ENDPOINT_OPTION
     {
       NOT_SET,
       LEGACY,   //stands for using global endpoint for us-east-1,
