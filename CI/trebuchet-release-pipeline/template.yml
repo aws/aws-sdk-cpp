@@ -463,8 +463,7 @@ Resources:
       Role: !GetAtt HandleTrebuchetReleaseNotificationFunctionRole.Arn
       Runtime: python3.6
       ReservedConcurrentExecutions: 1
-      Timeout: 10
-      Code:
+      Timeout: 300
       Code:
         S3Bucket: !Ref TrebuchetReleaseS3BucketName
         S3Key: !FindInMap [ScriptLocations, Lambda, HandleTrebuchetReleaseNotificationFunction]
