@@ -37,7 +37,9 @@ Resolver::Resolver() :
     m_responseMappingTemplateHasBeenSet(false),
     m_kind(ResolverKind::NOT_SET),
     m_kindHasBeenSet(false),
-    m_pipelineConfigHasBeenSet(false)
+    m_pipelineConfigHasBeenSet(false),
+    m_syncConfigHasBeenSet(false),
+    m_cachingConfigHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ Resolver::Resolver(JsonView jsonValue) :
     m_responseMappingTemplateHasBeenSet(false),
     m_kind(ResolverKind::NOT_SET),
     m_kindHasBeenSet(false),
-    m_pipelineConfigHasBeenSet(false)
+    m_pipelineConfigHasBeenSet(false),
+    m_syncConfigHasBeenSet(false),
+    m_cachingConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,6 +117,20 @@ Resolver& Resolver::operator =(JsonView jsonValue)
     m_pipelineConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("syncConfig"))
+  {
+    m_syncConfig = jsonValue.GetObject("syncConfig");
+
+    m_syncConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cachingConfig"))
+  {
+    m_cachingConfig = jsonValue.GetObject("cachingConfig");
+
+    m_cachingConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -164,6 +182,18 @@ JsonValue Resolver::Jsonize() const
   if(m_pipelineConfigHasBeenSet)
   {
    payload.WithObject("pipelineConfig", m_pipelineConfig.Jsonize());
+
+  }
+
+  if(m_syncConfigHasBeenSet)
+  {
+   payload.WithObject("syncConfig", m_syncConfig.Jsonize());
+
+  }
+
+  if(m_cachingConfigHasBeenSet)
+  {
+   payload.WithObject("cachingConfig", m_cachingConfig.Jsonize());
 
   }
 

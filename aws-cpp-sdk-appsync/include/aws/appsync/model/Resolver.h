@@ -18,6 +18,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appsync/model/ResolverKind.h>
 #include <aws/appsync/model/PipelineConfig.h>
+#include <aws/appsync/model/SyncConfig.h>
+#include <aws/appsync/model/CachingConfig.h>
 #include <utility>
 
 namespace Aws
@@ -392,6 +394,74 @@ namespace Model
      */
     inline Resolver& WithPipelineConfig(PipelineConfig&& value) { SetPipelineConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
+     * datasource.</p>
+     */
+    inline const SyncConfig& GetSyncConfig() const{ return m_syncConfig; }
+
+    /**
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
+     * datasource.</p>
+     */
+    inline bool SyncConfigHasBeenSet() const { return m_syncConfigHasBeenSet; }
+
+    /**
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
+     * datasource.</p>
+     */
+    inline void SetSyncConfig(const SyncConfig& value) { m_syncConfigHasBeenSet = true; m_syncConfig = value; }
+
+    /**
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
+     * datasource.</p>
+     */
+    inline void SetSyncConfig(SyncConfig&& value) { m_syncConfigHasBeenSet = true; m_syncConfig = std::move(value); }
+
+    /**
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
+     * datasource.</p>
+     */
+    inline Resolver& WithSyncConfig(const SyncConfig& value) { SetSyncConfig(value); return *this;}
+
+    /**
+     * <p>The <code>SyncConfig</code> for a resolver attached to a versioned
+     * datasource.</p>
+     */
+    inline Resolver& WithSyncConfig(SyncConfig&& value) { SetSyncConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The caching configuration for the resolver.</p>
+     */
+    inline const CachingConfig& GetCachingConfig() const{ return m_cachingConfig; }
+
+    /**
+     * <p>The caching configuration for the resolver.</p>
+     */
+    inline bool CachingConfigHasBeenSet() const { return m_cachingConfigHasBeenSet; }
+
+    /**
+     * <p>The caching configuration for the resolver.</p>
+     */
+    inline void SetCachingConfig(const CachingConfig& value) { m_cachingConfigHasBeenSet = true; m_cachingConfig = value; }
+
+    /**
+     * <p>The caching configuration for the resolver.</p>
+     */
+    inline void SetCachingConfig(CachingConfig&& value) { m_cachingConfigHasBeenSet = true; m_cachingConfig = std::move(value); }
+
+    /**
+     * <p>The caching configuration for the resolver.</p>
+     */
+    inline Resolver& WithCachingConfig(const CachingConfig& value) { SetCachingConfig(value); return *this;}
+
+    /**
+     * <p>The caching configuration for the resolver.</p>
+     */
+    inline Resolver& WithCachingConfig(CachingConfig&& value) { SetCachingConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_typeName;
@@ -417,6 +487,12 @@ namespace Model
 
     PipelineConfig m_pipelineConfig;
     bool m_pipelineConfigHasBeenSet;
+
+    SyncConfig m_syncConfig;
+    bool m_syncConfigHasBeenSet;
+
+    CachingConfig m_cachingConfig;
+    bool m_cachingConfigHasBeenSet;
   };
 
 } // namespace Model

@@ -89,57 +89,57 @@ namespace Model
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300,000 bytes).</p> <note> <p>You must have
-     * access to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
+     * to read Amazon S3 bucket.</p> </note>
      */
     inline const Aws::String& GetTemplateS3Uri() const{ return m_templateS3Uri; }
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300,000 bytes).</p> <note> <p>You must have
-     * access to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
+     * to read Amazon S3 bucket.</p> </note>
      */
     inline bool TemplateS3UriHasBeenSet() const { return m_templateS3UriHasBeenSet; }
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300,000 bytes).</p> <note> <p>You must have
-     * access to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
+     * to read Amazon S3 bucket.</p> </note>
      */
     inline void SetTemplateS3Uri(const Aws::String& value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri = value; }
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300,000 bytes).</p> <note> <p>You must have
-     * access to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
+     * to read Amazon S3 bucket.</p> </note>
      */
     inline void SetTemplateS3Uri(Aws::String&& value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri = std::move(value); }
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300,000 bytes).</p> <note> <p>You must have
-     * access to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
+     * to read Amazon S3 bucket.</p> </note>
      */
     inline void SetTemplateS3Uri(const char* value) { m_templateS3UriHasBeenSet = true; m_templateS3Uri.assign(value); }
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300,000 bytes).</p> <note> <p>You must have
-     * access to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
+     * to read Amazon S3 bucket.</p> </note>
      */
     inline PutOrganizationConformancePackRequest& WithTemplateS3Uri(const Aws::String& value) { SetTemplateS3Uri(value); return *this;}
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300,000 bytes).</p> <note> <p>You must have
-     * access to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
+     * to read Amazon S3 bucket.</p> </note>
      */
     inline PutOrganizationConformancePackRequest& WithTemplateS3Uri(Aws::String&& value) { SetTemplateS3Uri(std::move(value)); return *this;}
 
     /**
      * <p>Location of file containing the template body. The uri must point to the
-     * conformance pack template (max size: 300,000 bytes).</p> <note> <p>You must have
-     * access to read Amazon S3 bucket.</p> </note>
+     * conformance pack template (max size: 300 KB).</p> <note> <p>You must have access
+     * to read Amazon S3 bucket.</p> </note>
      */
     inline PutOrganizationConformancePackRequest& WithTemplateS3Uri(const char* value) { SetTemplateS3Uri(value); return *this;}
 
@@ -204,56 +204,88 @@ namespace Model
     /**
      * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
      * results. AWS Config stores intermediate files while processing conformance pack
-     * template.</p>
+     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
+     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
+     * for cross account bucket access</a>.</p>
      */
     inline const Aws::String& GetDeliveryS3Bucket() const{ return m_deliveryS3Bucket; }
 
     /**
      * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
      * results. AWS Config stores intermediate files while processing conformance pack
-     * template.</p>
+     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
+     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
+     * for cross account bucket access</a>.</p>
      */
     inline bool DeliveryS3BucketHasBeenSet() const { return m_deliveryS3BucketHasBeenSet; }
 
     /**
      * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
      * results. AWS Config stores intermediate files while processing conformance pack
-     * template.</p>
+     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
+     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
+     * for cross account bucket access</a>.</p>
      */
     inline void SetDeliveryS3Bucket(const Aws::String& value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket = value; }
 
     /**
      * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
      * results. AWS Config stores intermediate files while processing conformance pack
-     * template.</p>
+     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
+     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
+     * for cross account bucket access</a>.</p>
      */
     inline void SetDeliveryS3Bucket(Aws::String&& value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket = std::move(value); }
 
     /**
      * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
      * results. AWS Config stores intermediate files while processing conformance pack
-     * template.</p>
+     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
+     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
+     * for cross account bucket access</a>.</p>
      */
     inline void SetDeliveryS3Bucket(const char* value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket.assign(value); }
 
     /**
      * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
      * results. AWS Config stores intermediate files while processing conformance pack
-     * template.</p>
+     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
+     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
+     * for cross account bucket access</a>.</p>
      */
     inline PutOrganizationConformancePackRequest& WithDeliveryS3Bucket(const Aws::String& value) { SetDeliveryS3Bucket(value); return *this;}
 
     /**
      * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
      * results. AWS Config stores intermediate files while processing conformance pack
-     * template.</p>
+     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
+     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
+     * for cross account bucket access</a>.</p>
      */
     inline PutOrganizationConformancePackRequest& WithDeliveryS3Bucket(Aws::String&& value) { SetDeliveryS3Bucket(std::move(value)); return *this;}
 
     /**
      * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
      * results. AWS Config stores intermediate files while processing conformance pack
-     * template.</p>
+     * template. </p> <p>The delivery bucket name should start with awsconfigconforms.
+     * For example: "Resource": "arn:aws:s3:::your_bucket_name/ *". For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html">Permissions
+     * for cross account bucket access</a>.</p>
      */
     inline PutOrganizationConformancePackRequest& WithDeliveryS3Bucket(const char* value) { SetDeliveryS3Bucket(value); return *this;}
 

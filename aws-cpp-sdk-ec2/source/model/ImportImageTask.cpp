@@ -44,7 +44,8 @@ ImportImageTask::ImportImageTask() :
     m_progressHasBeenSet(false),
     m_snapshotDetailsHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+    m_statusMessageHasBeenSet(false),
+    m_licenseSpecificationsHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ ImportImageTask::ImportImageTask(const XmlNode& xmlNode) :
     m_progressHasBeenSet(false),
     m_snapshotDetailsHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
+    m_statusMessageHasBeenSet(false),
+    m_licenseSpecificationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -157,6 +159,18 @@ ImportImageTask& ImportImageTask::operator =(const XmlNode& xmlNode)
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
     }
+    XmlNode licenseSpecificationsNode = resultNode.FirstChild("licenseSpecifications");
+    if(!licenseSpecificationsNode.IsNull())
+    {
+      XmlNode licenseSpecificationsMember = licenseSpecificationsNode.FirstChild("item");
+      while(!licenseSpecificationsMember.IsNull())
+      {
+        m_licenseSpecifications.push_back(licenseSpecificationsMember);
+        licenseSpecificationsMember = licenseSpecificationsMember.NextNode("item");
+      }
+
+      m_licenseSpecificationsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -235,6 +249,17 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
 
+  if(m_licenseSpecificationsHasBeenSet)
+  {
+      unsigned licenseSpecificationsIdx = 1;
+      for(auto& item : m_licenseSpecifications)
+      {
+        Aws::StringStream licenseSpecificationsSs;
+        licenseSpecificationsSs << location << index << locationValue << ".LicenseSpecifications." << licenseSpecificationsIdx++;
+        item.OutputToStream(oStream, licenseSpecificationsSs.str().c_str());
+      }
+  }
+
 }
 
 void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -296,6 +321,16 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
+  }
+  if(m_licenseSpecificationsHasBeenSet)
+  {
+      unsigned licenseSpecificationsIdx = 1;
+      for(auto& item : m_licenseSpecifications)
+      {
+        Aws::StringStream licenseSpecificationsSs;
+        licenseSpecificationsSs << location <<  ".LicenseSpecifications." << licenseSpecificationsIdx++;
+        item.OutputToStream(oStream, licenseSpecificationsSs.str().c_str());
+      }
   }
 }
 

@@ -30,7 +30,8 @@ CreateBotVersionResult::CreateBotVersionResult() :
     m_status(Status::NOT_SET),
     m_idleSessionTTLInSeconds(0),
     m_locale(Locale::NOT_SET),
-    m_childDirected(false)
+    m_childDirected(false),
+    m_detectSentiment(false)
 {
 }
 
@@ -38,7 +39,8 @@ CreateBotVersionResult::CreateBotVersionResult(const Aws::AmazonWebServiceResult
     m_status(Status::NOT_SET),
     m_idleSessionTTLInSeconds(0),
     m_locale(Locale::NOT_SET),
-    m_childDirected(false)
+    m_childDirected(false),
+    m_detectSentiment(false)
 {
   *this = result;
 }
@@ -136,6 +138,12 @@ CreateBotVersionResult& CreateBotVersionResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("childDirected"))
   {
     m_childDirected = jsonValue.GetBool("childDirected");
+
+  }
+
+  if(jsonValue.ValueExists("detectSentiment"))
+  {
+    m_detectSentiment = jsonValue.GetBool("detectSentiment");
 
   }
 

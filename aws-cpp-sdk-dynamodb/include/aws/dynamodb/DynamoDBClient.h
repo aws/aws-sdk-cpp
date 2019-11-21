@@ -36,6 +36,7 @@
 #include <aws/dynamodb/model/DescribeGlobalTableSettingsResult.h>
 #include <aws/dynamodb/model/DescribeLimitsResult.h>
 #include <aws/dynamodb/model/DescribeTableResult.h>
+#include <aws/dynamodb/model/DescribeTableReplicaAutoScalingResult.h>
 #include <aws/dynamodb/model/DescribeTimeToLiveResult.h>
 #include <aws/dynamodb/model/GetItemResult.h>
 #include <aws/dynamodb/model/ListBackupsResult.h>
@@ -54,6 +55,7 @@
 #include <aws/dynamodb/model/UpdateGlobalTableSettingsResult.h>
 #include <aws/dynamodb/model/UpdateItemResult.h>
 #include <aws/dynamodb/model/UpdateTableResult.h>
+#include <aws/dynamodb/model/UpdateTableReplicaAutoScalingResult.h>
 #include <aws/dynamodb/model/UpdateTimeToLiveResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -111,6 +113,7 @@ namespace Model
         class DescribeGlobalTableSettingsRequest;
         class DescribeLimitsRequest;
         class DescribeTableRequest;
+        class DescribeTableReplicaAutoScalingRequest;
         class DescribeTimeToLiveRequest;
         class GetItemRequest;
         class ListBackupsRequest;
@@ -131,6 +134,7 @@ namespace Model
         class UpdateGlobalTableSettingsRequest;
         class UpdateItemRequest;
         class UpdateTableRequest;
+        class UpdateTableReplicaAutoScalingRequest;
         class UpdateTimeToLiveRequest;
 
         typedef Aws::Utils::Outcome<BatchGetItemResult, Aws::Client::AWSError<DynamoDBErrors>> BatchGetItemOutcome;
@@ -148,6 +152,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeGlobalTableSettingsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeGlobalTableSettingsOutcome;
         typedef Aws::Utils::Outcome<DescribeLimitsResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeLimitsOutcome;
         typedef Aws::Utils::Outcome<DescribeTableResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTableOutcome;
+        typedef Aws::Utils::Outcome<DescribeTableReplicaAutoScalingResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTableReplicaAutoScalingOutcome;
         typedef Aws::Utils::Outcome<DescribeTimeToLiveResult, Aws::Client::AWSError<DynamoDBErrors>> DescribeTimeToLiveOutcome;
         typedef Aws::Utils::Outcome<GetItemResult, Aws::Client::AWSError<DynamoDBErrors>> GetItemOutcome;
         typedef Aws::Utils::Outcome<ListBackupsResult, Aws::Client::AWSError<DynamoDBErrors>> ListBackupsOutcome;
@@ -168,6 +173,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateGlobalTableSettingsResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateGlobalTableSettingsOutcome;
         typedef Aws::Utils::Outcome<UpdateItemResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateItemOutcome;
         typedef Aws::Utils::Outcome<UpdateTableResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTableOutcome;
+        typedef Aws::Utils::Outcome<UpdateTableReplicaAutoScalingResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTableReplicaAutoScalingOutcome;
         typedef Aws::Utils::Outcome<UpdateTimeToLiveResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateTimeToLiveOutcome;
 
         typedef std::future<BatchGetItemOutcome> BatchGetItemOutcomeCallable;
@@ -185,6 +191,7 @@ namespace Model
         typedef std::future<DescribeGlobalTableSettingsOutcome> DescribeGlobalTableSettingsOutcomeCallable;
         typedef std::future<DescribeLimitsOutcome> DescribeLimitsOutcomeCallable;
         typedef std::future<DescribeTableOutcome> DescribeTableOutcomeCallable;
+        typedef std::future<DescribeTableReplicaAutoScalingOutcome> DescribeTableReplicaAutoScalingOutcomeCallable;
         typedef std::future<DescribeTimeToLiveOutcome> DescribeTimeToLiveOutcomeCallable;
         typedef std::future<GetItemOutcome> GetItemOutcomeCallable;
         typedef std::future<ListBackupsOutcome> ListBackupsOutcomeCallable;
@@ -205,6 +212,7 @@ namespace Model
         typedef std::future<UpdateGlobalTableSettingsOutcome> UpdateGlobalTableSettingsOutcomeCallable;
         typedef std::future<UpdateItemOutcome> UpdateItemOutcomeCallable;
         typedef std::future<UpdateTableOutcome> UpdateTableOutcomeCallable;
+        typedef std::future<UpdateTableReplicaAutoScalingOutcome> UpdateTableReplicaAutoScalingOutcomeCallable;
         typedef std::future<UpdateTimeToLiveOutcome> UpdateTimeToLiveOutcomeCallable;
 } // namespace Model
 
@@ -225,6 +233,7 @@ namespace Model
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeGlobalTableSettingsRequest&, const Model::DescribeGlobalTableSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalTableSettingsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeLimitsRequest&, const Model::DescribeLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLimitsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTableRequest&, const Model::DescribeTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::DescribeTableReplicaAutoScalingRequest&, const Model::DescribeTableReplicaAutoScalingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTableReplicaAutoScalingResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::DescribeTimeToLiveRequest&, const Model::DescribeTimeToLiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTimeToLiveResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::GetItemRequest&, const Model::GetItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ListBackupsRequest&, const Model::ListBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackupsResponseReceivedHandler;
@@ -245,6 +254,7 @@ namespace Model
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateGlobalTableSettingsRequest&, const Model::UpdateGlobalTableSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalTableSettingsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateItemRequest&, const Model::UpdateItemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateItemResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateTableRequest&, const Model::UpdateTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::UpdateTableReplicaAutoScalingRequest&, const Model::UpdateTableReplicaAutoScalingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTableReplicaAutoScalingResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateTimeToLiveRequest&, const Model::UpdateTimeToLiveOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTimeToLiveResponseReceivedHandler;
 
   /**
@@ -723,25 +733,27 @@ namespace Model
         /**
          * <p>Creates a global table from an existing table. A global table creates a
          * replication relationship between two or more DynamoDB tables with the same table
-         * name in the provided Regions. </p> <p>If you want to add a new replica table to
-         * a global table, each of the following conditions must be true:</p> <ul> <li>
-         * <p>The table must have the same primary key as all of the other replicas.</p>
-         * </li> <li> <p>The table must have the same name as all of the other
-         * replicas.</p> </li> <li> <p>The table must have DynamoDB Streams enabled, with
-         * the stream containing both the new and the old images of the item.</p> </li>
-         * <li> <p>None of the replica tables in the global table can contain any data.</p>
-         * </li> </ul> <p> If global secondary indexes are specified, then the following
-         * conditions must also be met: </p> <ul> <li> <p> The global secondary indexes
-         * must have the same name. </p> </li> <li> <p> The global secondary indexes must
-         * have the same hash key and sort key (if present). </p> </li> </ul> <important>
-         * <p> Write capacity settings should be set consistently across your replica
-         * tables and secondary indexes. DynamoDB strongly recommends enabling auto scaling
-         * to manage the write capacity settings for all of your global tables replicas and
-         * indexes. </p> <p> If you prefer to manage write capacity settings manually, you
-         * should provision equal replicated write capacity units to your replica tables.
-         * You should also provision equal replicated write capacity units to matching
-         * secondary indexes across your global table. </p> </important><p><h3>See
-         * Also:</h3>   <a
+         * name in the provided Regions. </p> <note> <p>This method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29</a> of global tables.</p> </note> <p>If you want to add a new replica
+         * table to a global table, each of the following conditions must be true:</p> <ul>
+         * <li> <p>The table must have the same primary key as all of the other
+         * replicas.</p> </li> <li> <p>The table must have the same name as all of the
+         * other replicas.</p> </li> <li> <p>The table must have DynamoDB Streams enabled,
+         * with the stream containing both the new and the old images of the item.</p>
+         * </li> <li> <p>None of the replica tables in the global table can contain any
+         * data.</p> </li> </ul> <p> If global secondary indexes are specified, then the
+         * following conditions must also be met: </p> <ul> <li> <p> The global secondary
+         * indexes must have the same name. </p> </li> <li> <p> The global secondary
+         * indexes must have the same hash key and sort key (if present). </p> </li> </ul>
+         * <important> <p> Write capacity settings should be set consistently across your
+         * replica tables and secondary indexes. DynamoDB strongly recommends enabling auto
+         * scaling to manage the write capacity settings for all of your global tables
+         * replicas and indexes. </p> <p> If you prefer to manage write capacity settings
+         * manually, you should provision equal replicated write capacity units to your
+         * replica tables. You should also provision equal replicated write capacity units
+         * to matching secondary indexes across your global table. </p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>
          */
@@ -750,25 +762,27 @@ namespace Model
         /**
          * <p>Creates a global table from an existing table. A global table creates a
          * replication relationship between two or more DynamoDB tables with the same table
-         * name in the provided Regions. </p> <p>If you want to add a new replica table to
-         * a global table, each of the following conditions must be true:</p> <ul> <li>
-         * <p>The table must have the same primary key as all of the other replicas.</p>
-         * </li> <li> <p>The table must have the same name as all of the other
-         * replicas.</p> </li> <li> <p>The table must have DynamoDB Streams enabled, with
-         * the stream containing both the new and the old images of the item.</p> </li>
-         * <li> <p>None of the replica tables in the global table can contain any data.</p>
-         * </li> </ul> <p> If global secondary indexes are specified, then the following
-         * conditions must also be met: </p> <ul> <li> <p> The global secondary indexes
-         * must have the same name. </p> </li> <li> <p> The global secondary indexes must
-         * have the same hash key and sort key (if present). </p> </li> </ul> <important>
-         * <p> Write capacity settings should be set consistently across your replica
-         * tables and secondary indexes. DynamoDB strongly recommends enabling auto scaling
-         * to manage the write capacity settings for all of your global tables replicas and
-         * indexes. </p> <p> If you prefer to manage write capacity settings manually, you
-         * should provision equal replicated write capacity units to your replica tables.
-         * You should also provision equal replicated write capacity units to matching
-         * secondary indexes across your global table. </p> </important><p><h3>See
-         * Also:</h3>   <a
+         * name in the provided Regions. </p> <note> <p>This method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29</a> of global tables.</p> </note> <p>If you want to add a new replica
+         * table to a global table, each of the following conditions must be true:</p> <ul>
+         * <li> <p>The table must have the same primary key as all of the other
+         * replicas.</p> </li> <li> <p>The table must have the same name as all of the
+         * other replicas.</p> </li> <li> <p>The table must have DynamoDB Streams enabled,
+         * with the stream containing both the new and the old images of the item.</p>
+         * </li> <li> <p>None of the replica tables in the global table can contain any
+         * data.</p> </li> </ul> <p> If global secondary indexes are specified, then the
+         * following conditions must also be met: </p> <ul> <li> <p> The global secondary
+         * indexes must have the same name. </p> </li> <li> <p> The global secondary
+         * indexes must have the same hash key and sort key (if present). </p> </li> </ul>
+         * <important> <p> Write capacity settings should be set consistently across your
+         * replica tables and secondary indexes. DynamoDB strongly recommends enabling auto
+         * scaling to manage the write capacity settings for all of your global tables
+         * replicas and indexes. </p> <p> If you prefer to manage write capacity settings
+         * manually, you should provision equal replicated write capacity units to your
+         * replica tables. You should also provision equal replicated write capacity units
+         * to matching secondary indexes across your global table. </p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -779,25 +793,27 @@ namespace Model
         /**
          * <p>Creates a global table from an existing table. A global table creates a
          * replication relationship between two or more DynamoDB tables with the same table
-         * name in the provided Regions. </p> <p>If you want to add a new replica table to
-         * a global table, each of the following conditions must be true:</p> <ul> <li>
-         * <p>The table must have the same primary key as all of the other replicas.</p>
-         * </li> <li> <p>The table must have the same name as all of the other
-         * replicas.</p> </li> <li> <p>The table must have DynamoDB Streams enabled, with
-         * the stream containing both the new and the old images of the item.</p> </li>
-         * <li> <p>None of the replica tables in the global table can contain any data.</p>
-         * </li> </ul> <p> If global secondary indexes are specified, then the following
-         * conditions must also be met: </p> <ul> <li> <p> The global secondary indexes
-         * must have the same name. </p> </li> <li> <p> The global secondary indexes must
-         * have the same hash key and sort key (if present). </p> </li> </ul> <important>
-         * <p> Write capacity settings should be set consistently across your replica
-         * tables and secondary indexes. DynamoDB strongly recommends enabling auto scaling
-         * to manage the write capacity settings for all of your global tables replicas and
-         * indexes. </p> <p> If you prefer to manage write capacity settings manually, you
-         * should provision equal replicated write capacity units to your replica tables.
-         * You should also provision equal replicated write capacity units to matching
-         * secondary indexes across your global table. </p> </important><p><h3>See
-         * Also:</h3>   <a
+         * name in the provided Regions. </p> <note> <p>This method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29</a> of global tables.</p> </note> <p>If you want to add a new replica
+         * table to a global table, each of the following conditions must be true:</p> <ul>
+         * <li> <p>The table must have the same primary key as all of the other
+         * replicas.</p> </li> <li> <p>The table must have the same name as all of the
+         * other replicas.</p> </li> <li> <p>The table must have DynamoDB Streams enabled,
+         * with the stream containing both the new and the old images of the item.</p>
+         * </li> <li> <p>None of the replica tables in the global table can contain any
+         * data.</p> </li> </ul> <p> If global secondary indexes are specified, then the
+         * following conditions must also be met: </p> <ul> <li> <p> The global secondary
+         * indexes must have the same name. </p> </li> <li> <p> The global secondary
+         * indexes must have the same hash key and sort key (if present). </p> </li> </ul>
+         * <important> <p> Write capacity settings should be set consistently across your
+         * replica tables and secondary indexes. DynamoDB strongly recommends enabling auto
+         * scaling to manage the write capacity settings for all of your global tables
+         * replicas and indexes. </p> <p> If you prefer to manage write capacity settings
+         * manually, you should provision equal replicated write capacity units to your
+         * replica tables. You should also provision equal replicated write capacity units
+         * to matching secondary indexes across your global table. </p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -1140,16 +1156,20 @@ namespace Model
         virtual void DescribeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about the specified global table.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about the specified global table.</p> <note> <p>This
+         * method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeGlobalTableOutcome DescribeGlobalTable(const Model::DescribeGlobalTableRequest& request) const;
 
         /**
-         * <p>Returns information about the specified global table.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about the specified global table.</p> <note> <p>This
+         * method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -1158,8 +1178,10 @@ namespace Model
         virtual Model::DescribeGlobalTableOutcomeCallable DescribeGlobalTableCallable(const Model::DescribeGlobalTableRequest& request) const;
 
         /**
-         * <p>Returns information about the specified global table.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns information about the specified global table.</p> <note> <p>This
+         * method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTable">AWS
          * API Reference</a></p>
          *
@@ -1168,16 +1190,20 @@ namespace Model
         virtual void DescribeGlobalTableAsync(const Model::DescribeGlobalTableRequest& request, const DescribeGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes Region-specific settings for a global table.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes Region-specific settings for a global table.</p> <note> <p>This
+         * method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeGlobalTableSettingsOutcome DescribeGlobalTableSettings(const Model::DescribeGlobalTableSettingsRequest& request) const;
 
         /**
-         * <p>Describes Region-specific settings for a global table.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes Region-specific settings for a global table.</p> <note> <p>This
+         * method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">AWS
          * API Reference</a></p>
          *
@@ -1186,8 +1212,10 @@ namespace Model
         virtual Model::DescribeGlobalTableSettingsOutcomeCallable DescribeGlobalTableSettingsCallable(const Model::DescribeGlobalTableSettingsRequest& request) const;
 
         /**
-         * <p>Describes Region-specific settings for a global table.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes Region-specific settings for a global table.</p> <note> <p>This
+         * method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeGlobalTableSettings">AWS
          * API Reference</a></p>
          *
@@ -1390,6 +1418,40 @@ namespace Model
         virtual void DescribeTableAsync(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes auto scaling settings across replicas of the global table at
+         * once.</p> <note> <p>This method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTableReplicaAutoScalingOutcome DescribeTableReplicaAutoScaling(const Model::DescribeTableReplicaAutoScalingRequest& request) const;
+
+        /**
+         * <p>Describes auto scaling settings across replicas of the global table at
+         * once.</p> <note> <p>This method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTableReplicaAutoScalingOutcomeCallable DescribeTableReplicaAutoScalingCallable(const Model::DescribeTableReplicaAutoScalingRequest& request) const;
+
+        /**
+         * <p>Describes auto scaling settings across replicas of the global table at
+         * once.</p> <note> <p>This method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTableReplicaAutoScalingAsync(const Model::DescribeTableReplicaAutoScalingRequest& request, const DescribeTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gives a description of the Time to Live (TTL) status on the specified table.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">AWS
@@ -1510,16 +1572,20 @@ namespace Model
         virtual void ListBackupsAsync(const Model::ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all global tables that have a replica in the specified
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all global tables that have a replica in the specified Region.</p>
+         * <note> <p>This method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
          * API Reference</a></p>
          */
         virtual Model::ListGlobalTablesOutcome ListGlobalTables(const Model::ListGlobalTablesRequest& request) const;
 
         /**
-         * <p>Lists all global tables that have a replica in the specified
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all global tables that have a replica in the specified Region.</p>
+         * <note> <p>This method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
          * API Reference</a></p>
          *
@@ -1528,8 +1594,10 @@ namespace Model
         virtual Model::ListGlobalTablesOutcomeCallable ListGlobalTablesCallable(const Model::ListGlobalTablesRequest& request) const;
 
         /**
-         * <p>Lists all global tables that have a replica in the specified
-         * Region.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists all global tables that have a replica in the specified Region.</p>
+         * <note> <p>This method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V1.html">Version
+         * 2017.11.29</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListGlobalTables">AWS
          * API Reference</a></p>
          *
@@ -2676,6 +2744,40 @@ namespace Model
         virtual void UpdateTableAsync(const Model::UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates auto scaling settings on your global tables at once.</p> <note>
+         * <p>This method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTableReplicaAutoScalingOutcome UpdateTableReplicaAutoScaling(const Model::UpdateTableReplicaAutoScalingRequest& request) const;
+
+        /**
+         * <p>Updates auto scaling settings on your global tables at once.</p> <note>
+         * <p>This method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTableReplicaAutoScalingOutcomeCallable UpdateTableReplicaAutoScalingCallable(const Model::UpdateTableReplicaAutoScalingRequest& request) const;
+
+        /**
+         * <p>Updates auto scaling settings on your global tables at once.</p> <note>
+         * <p>This method only applies to <a
+         * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+         * 2019.11.21</a> of global tables.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTableReplicaAutoScalingAsync(const Model::UpdateTableReplicaAutoScalingRequest& request, const UpdateTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>The <code>UpdateTimeToLive</code> method enables or disables Time to Live
          * (TTL) for the specified table. A successful <code>UpdateTimeToLive</code> call
          * returns the current <code>TimeToLiveSpecification</code>. It can take up to one
@@ -2782,6 +2884,7 @@ namespace Model
         void DescribeGlobalTableSettingsAsyncHelper(const Model::DescribeGlobalTableSettingsRequest& request, const DescribeGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLimitsAsyncHelper(const Model::DescribeLimitsRequest& request, const DescribeLimitsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTableAsyncHelper(const Model::DescribeTableRequest& request, const DescribeTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTableReplicaAutoScalingAsyncHelper(const Model::DescribeTableReplicaAutoScalingRequest& request, const DescribeTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTimeToLiveAsyncHelper(const Model::DescribeTimeToLiveRequest& request, const DescribeTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetItemAsyncHelper(const Model::GetItemRequest& request, const GetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBackupsAsyncHelper(const Model::ListBackupsRequest& request, const ListBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2802,6 +2905,7 @@ namespace Model
         void UpdateGlobalTableSettingsAsyncHelper(const Model::UpdateGlobalTableSettingsRequest& request, const UpdateGlobalTableSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateItemAsyncHelper(const Model::UpdateItemRequest& request, const UpdateItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTableAsyncHelper(const Model::UpdateTableRequest& request, const UpdateTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTableReplicaAutoScalingAsyncHelper(const Model::UpdateTableReplicaAutoScalingRequest& request, const UpdateTableReplicaAutoScalingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTimeToLiveAsyncHelper(const Model::UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

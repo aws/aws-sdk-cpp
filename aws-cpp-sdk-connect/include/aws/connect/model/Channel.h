@@ -26,7 +26,8 @@ namespace Model
   enum class Channel
   {
     NOT_SET,
-    VOICE
+    VOICE,
+    CHAT
   };
 
 namespace ChannelMapper

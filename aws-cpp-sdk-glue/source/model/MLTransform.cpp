@@ -43,6 +43,7 @@ MLTransform::MLTransform() :
     m_labelCountHasBeenSet(false),
     m_schemaHasBeenSet(false),
     m_roleHasBeenSet(false),
+    m_glueVersionHasBeenSet(false),
     m_maxCapacity(0.0),
     m_maxCapacityHasBeenSet(false),
     m_workerType(WorkerType::NOT_SET),
@@ -71,6 +72,7 @@ MLTransform::MLTransform(JsonView jsonValue) :
     m_labelCountHasBeenSet(false),
     m_schemaHasBeenSet(false),
     m_roleHasBeenSet(false),
+    m_glueVersionHasBeenSet(false),
     m_maxCapacity(0.0),
     m_maxCapacityHasBeenSet(false),
     m_workerType(WorkerType::NOT_SET),
@@ -175,6 +177,13 @@ MLTransform& MLTransform::operator =(JsonView jsonValue)
     m_role = jsonValue.GetString("Role");
 
     m_roleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GlueVersion"))
+  {
+    m_glueVersion = jsonValue.GetString("GlueVersion");
+
+    m_glueVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MaxCapacity"))
@@ -295,6 +304,12 @@ JsonValue MLTransform::Jsonize() const
   if(m_roleHasBeenSet)
   {
    payload.WithString("Role", m_role);
+
+  }
+
+  if(m_glueVersionHasBeenSet)
+  {
+   payload.WithString("GlueVersion", m_glueVersion);
 
   }
 

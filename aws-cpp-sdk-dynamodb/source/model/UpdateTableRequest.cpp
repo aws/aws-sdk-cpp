@@ -30,7 +30,8 @@ UpdateTableRequest::UpdateTableRequest() :
     m_provisionedThroughputHasBeenSet(false),
     m_globalSecondaryIndexUpdatesHasBeenSet(false),
     m_streamSpecificationHasBeenSet(false),
-    m_sSESpecificationHasBeenSet(false)
+    m_sSESpecificationHasBeenSet(false),
+    m_replicaUpdatesHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,17 @@ Aws::String UpdateTableRequest::SerializePayload() const
   if(m_sSESpecificationHasBeenSet)
   {
    payload.WithObject("SSESpecification", m_sSESpecification.Jsonize());
+
+  }
+
+  if(m_replicaUpdatesHasBeenSet)
+  {
+   Array<JsonValue> replicaUpdatesJsonList(m_replicaUpdates.size());
+   for(unsigned replicaUpdatesIndex = 0; replicaUpdatesIndex < replicaUpdatesJsonList.GetLength(); ++replicaUpdatesIndex)
+   {
+     replicaUpdatesJsonList[replicaUpdatesIndex].AsObject(m_replicaUpdates[replicaUpdatesIndex].Jsonize());
+   }
+   payload.WithArray("ReplicaUpdates", std::move(replicaUpdatesJsonList));
 
   }
 

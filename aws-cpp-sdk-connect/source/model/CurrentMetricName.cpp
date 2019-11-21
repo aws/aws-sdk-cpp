@@ -40,6 +40,9 @@ namespace Aws
         static const int CONTACTS_IN_QUEUE_HASH = HashingUtils::HashString("CONTACTS_IN_QUEUE");
         static const int OLDEST_CONTACT_AGE_HASH = HashingUtils::HashString("OLDEST_CONTACT_AGE");
         static const int CONTACTS_SCHEDULED_HASH = HashingUtils::HashString("CONTACTS_SCHEDULED");
+        static const int AGENTS_ON_CONTACT_HASH = HashingUtils::HashString("AGENTS_ON_CONTACT");
+        static const int SLOTS_ACTIVE_HASH = HashingUtils::HashString("SLOTS_ACTIVE");
+        static const int SLOTS_AVAILABLE_HASH = HashingUtils::HashString("SLOTS_AVAILABLE");
 
 
         CurrentMetricName GetCurrentMetricNameForName(const Aws::String& name)
@@ -85,6 +88,18 @@ namespace Aws
           {
             return CurrentMetricName::CONTACTS_SCHEDULED;
           }
+          else if (hashCode == AGENTS_ON_CONTACT_HASH)
+          {
+            return CurrentMetricName::AGENTS_ON_CONTACT;
+          }
+          else if (hashCode == SLOTS_ACTIVE_HASH)
+          {
+            return CurrentMetricName::SLOTS_ACTIVE;
+          }
+          else if (hashCode == SLOTS_AVAILABLE_HASH)
+          {
+            return CurrentMetricName::SLOTS_AVAILABLE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -119,6 +134,12 @@ namespace Aws
             return "OLDEST_CONTACT_AGE";
           case CurrentMetricName::CONTACTS_SCHEDULED:
             return "CONTACTS_SCHEDULED";
+          case CurrentMetricName::AGENTS_ON_CONTACT:
+            return "AGENTS_ON_CONTACT";
+          case CurrentMetricName::SLOTS_ACTIVE:
+            return "SLOTS_ACTIVE";
+          case CurrentMetricName::SLOTS_AVAILABLE:
+            return "SLOTS_AVAILABLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

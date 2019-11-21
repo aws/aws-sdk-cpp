@@ -28,6 +28,7 @@ CreateMLTransformRequest::CreateMLTransformRequest() :
     m_inputRecordTablesHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_roleHasBeenSet(false),
+    m_glueVersionHasBeenSet(false),
     m_maxCapacity(0.0),
     m_maxCapacityHasBeenSet(false),
     m_workerType(WorkerType::NOT_SET),
@@ -77,6 +78,12 @@ Aws::String CreateMLTransformRequest::SerializePayload() const
   if(m_roleHasBeenSet)
   {
    payload.WithString("Role", m_role);
+
+  }
+
+  if(m_glueVersionHasBeenSet)
+  {
+   payload.WithString("GlueVersion", m_glueVersion);
 
   }
 

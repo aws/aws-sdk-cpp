@@ -130,6 +130,12 @@ GetMLTransformResult& GetMLTransformResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("GlueVersion"))
+  {
+    m_glueVersion = jsonValue.GetString("GlueVersion");
+
+  }
+
   if(jsonValue.ValueExists("MaxCapacity"))
   {
     m_maxCapacity = jsonValue.GetDouble("MaxCapacity");

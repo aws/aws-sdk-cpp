@@ -183,6 +183,87 @@ namespace Model
 
 
     /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline TransformFilterCriteria& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline TransformFilterCriteria& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline TransformFilterCriteria& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
+
+
+    /**
      * <p>The time and date before which the transforms were created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedBefore() const{ return m_createdBefore; }
@@ -388,6 +469,9 @@ namespace Model
 
     TransformStatusType m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_glueVersion;
+    bool m_glueVersionHasBeenSet;
 
     Aws::Utils::DateTime m_createdBefore;
     bool m_createdBeforeHasBeenSet;

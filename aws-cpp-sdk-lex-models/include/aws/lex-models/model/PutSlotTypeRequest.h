@@ -464,16 +464,36 @@ namespace Model
     inline PutSlotTypeRequest& WithValueSelectionStrategy(SlotValueSelectionStrategy&& value) { SetValueSelectionStrategy(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>When set to <code>true</code> a new numbered version of the slot type is
+     * created. This is the same as calling the <code>CreateSlotTypeVersion</code>
+     * operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.</p>
+     */
     inline bool GetCreateVersion() const{ return m_createVersion; }
 
-    
+    /**
+     * <p>When set to <code>true</code> a new numbered version of the slot type is
+     * created. This is the same as calling the <code>CreateSlotTypeVersion</code>
+     * operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.</p>
+     */
     inline bool CreateVersionHasBeenSet() const { return m_createVersionHasBeenSet; }
 
-    
+    /**
+     * <p>When set to <code>true</code> a new numbered version of the slot type is
+     * created. This is the same as calling the <code>CreateSlotTypeVersion</code>
+     * operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.</p>
+     */
     inline void SetCreateVersion(bool value) { m_createVersionHasBeenSet = true; m_createVersion = value; }
 
-    
+    /**
+     * <p>When set to <code>true</code> a new numbered version of the slot type is
+     * created. This is the same as calling the <code>CreateSlotTypeVersion</code>
+     * operation. If you do not specify <code>createVersion</code>, the default is
+     * <code>false</code>.</p>
+     */
     inline PutSlotTypeRequest& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
 
   private:

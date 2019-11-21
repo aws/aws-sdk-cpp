@@ -183,47 +183,65 @@ namespace Model
 
 
     /**
-     * <p>Filters the results by resource IDs.</p>
+     * <p>Filters the results by resource IDs.</p> <note> <p>This is valid only when
+     * you provide resource type. If there is no resource type, you will see an
+     * error.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
 
     /**
-     * <p>Filters the results by resource IDs.</p>
+     * <p>Filters the results by resource IDs.</p> <note> <p>This is valid only when
+     * you provide resource type. If there is no resource type, you will see an
+     * error.</p> </note>
      */
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
 
     /**
-     * <p>Filters the results by resource IDs.</p>
+     * <p>Filters the results by resource IDs.</p> <note> <p>This is valid only when
+     * you provide resource type. If there is no resource type, you will see an
+     * error.</p> </note>
      */
     inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
 
     /**
-     * <p>Filters the results by resource IDs.</p>
+     * <p>Filters the results by resource IDs.</p> <note> <p>This is valid only when
+     * you provide resource type. If there is no resource type, you will see an
+     * error.</p> </note>
      */
     inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
 
     /**
-     * <p>Filters the results by resource IDs.</p>
+     * <p>Filters the results by resource IDs.</p> <note> <p>This is valid only when
+     * you provide resource type. If there is no resource type, you will see an
+     * error.</p> </note>
      */
     inline ConformancePackEvaluationFilters& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
 
     /**
-     * <p>Filters the results by resource IDs.</p>
+     * <p>Filters the results by resource IDs.</p> <note> <p>This is valid only when
+     * you provide resource type. If there is no resource type, you will see an
+     * error.</p> </note>
      */
     inline ConformancePackEvaluationFilters& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the results by resource IDs.</p>
+     * <p>Filters the results by resource IDs.</p> <note> <p>This is valid only when
+     * you provide resource type. If there is no resource type, you will see an
+     * error.</p> </note>
      */
     inline ConformancePackEvaluationFilters& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
     /**
-     * <p>Filters the results by resource IDs.</p>
+     * <p>Filters the results by resource IDs.</p> <note> <p>This is valid only when
+     * you provide resource type. If there is no resource type, you will see an
+     * error.</p> </note>
      */
     inline ConformancePackEvaluationFilters& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Filters the results by resource IDs.</p>
+     * <p>Filters the results by resource IDs.</p> <note> <p>This is valid only when
+     * you provide resource type. If there is no resource type, you will see an
+     * error.</p> </note>
      */
     inline ConformancePackEvaluationFilters& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 

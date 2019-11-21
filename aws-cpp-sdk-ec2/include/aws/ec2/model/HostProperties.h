@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes properties of a Dedicated Host.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the properties of a Dedicated Host.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/HostProperties">AWS
    * API Reference</a></p>
    */
@@ -71,52 +71,109 @@ namespace Model
 
 
     /**
-     * <p>The instance type size that the Dedicated Host supports (for example,
-     * <code>m3.medium</code>).</p>
+     * <p>The instance type supported by the Dedicated Host. For example,
+     * <code>m5.large</code>. If the host supports multiple instance types, no
+     * <b>instanceType</b> is returned.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type size that the Dedicated Host supports (for example,
-     * <code>m3.medium</code>).</p>
+     * <p>The instance type supported by the Dedicated Host. For example,
+     * <code>m5.large</code>. If the host supports multiple instance types, no
+     * <b>instanceType</b> is returned.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type size that the Dedicated Host supports (for example,
-     * <code>m3.medium</code>).</p>
+     * <p>The instance type supported by the Dedicated Host. For example,
+     * <code>m5.large</code>. If the host supports multiple instance types, no
+     * <b>instanceType</b> is returned.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type size that the Dedicated Host supports (for example,
-     * <code>m3.medium</code>).</p>
+     * <p>The instance type supported by the Dedicated Host. For example,
+     * <code>m5.large</code>. If the host supports multiple instance types, no
+     * <b>instanceType</b> is returned.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type size that the Dedicated Host supports (for example,
-     * <code>m3.medium</code>).</p>
+     * <p>The instance type supported by the Dedicated Host. For example,
+     * <code>m5.large</code>. If the host supports multiple instance types, no
+     * <b>instanceType</b> is returned.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type size that the Dedicated Host supports (for example,
-     * <code>m3.medium</code>).</p>
+     * <p>The instance type supported by the Dedicated Host. For example,
+     * <code>m5.large</code>. If the host supports multiple instance types, no
+     * <b>instanceType</b> is returned.</p>
      */
     inline HostProperties& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type size that the Dedicated Host supports (for example,
-     * <code>m3.medium</code>).</p>
+     * <p>The instance type supported by the Dedicated Host. For example,
+     * <code>m5.large</code>. If the host supports multiple instance types, no
+     * <b>instanceType</b> is returned.</p>
      */
     inline HostProperties& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type size that the Dedicated Host supports (for example,
-     * <code>m3.medium</code>).</p>
+     * <p>The instance type supported by the Dedicated Host. For example,
+     * <code>m5.large</code>. If the host supports multiple instance types, no
+     * <b>instanceType</b> is returned.</p>
      */
     inline HostProperties& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
+
+    /**
+     * <p>The instance family supported by the Dedicated Host. For example,
+     * <code>m5</code>.</p>
+     */
+    inline const Aws::String& GetInstanceFamily() const{ return m_instanceFamily; }
+
+    /**
+     * <p>The instance family supported by the Dedicated Host. For example,
+     * <code>m5</code>.</p>
+     */
+    inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }
+
+    /**
+     * <p>The instance family supported by the Dedicated Host. For example,
+     * <code>m5</code>.</p>
+     */
+    inline void SetInstanceFamily(const Aws::String& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
+
+    /**
+     * <p>The instance family supported by the Dedicated Host. For example,
+     * <code>m5</code>.</p>
+     */
+    inline void SetInstanceFamily(Aws::String&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::move(value); }
+
+    /**
+     * <p>The instance family supported by the Dedicated Host. For example,
+     * <code>m5</code>.</p>
+     */
+    inline void SetInstanceFamily(const char* value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily.assign(value); }
+
+    /**
+     * <p>The instance family supported by the Dedicated Host. For example,
+     * <code>m5</code>.</p>
+     */
+    inline HostProperties& WithInstanceFamily(const Aws::String& value) { SetInstanceFamily(value); return *this;}
+
+    /**
+     * <p>The instance family supported by the Dedicated Host. For example,
+     * <code>m5</code>.</p>
+     */
+    inline HostProperties& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance family supported by the Dedicated Host. For example,
+     * <code>m5</code>.</p>
+     */
+    inline HostProperties& WithInstanceFamily(const char* value) { SetInstanceFamily(value); return *this;}
 
 
     /**
@@ -141,22 +198,22 @@ namespace Model
 
 
     /**
-     * <p>The number of vCPUs on the Dedicated Host.</p>
+     * <p>The total number of vCPUs on the Dedicated Host.</p>
      */
     inline int GetTotalVCpus() const{ return m_totalVCpus; }
 
     /**
-     * <p>The number of vCPUs on the Dedicated Host.</p>
+     * <p>The total number of vCPUs on the Dedicated Host.</p>
      */
     inline bool TotalVCpusHasBeenSet() const { return m_totalVCpusHasBeenSet; }
 
     /**
-     * <p>The number of vCPUs on the Dedicated Host.</p>
+     * <p>The total number of vCPUs on the Dedicated Host.</p>
      */
     inline void SetTotalVCpus(int value) { m_totalVCpusHasBeenSet = true; m_totalVCpus = value; }
 
     /**
-     * <p>The number of vCPUs on the Dedicated Host.</p>
+     * <p>The total number of vCPUs on the Dedicated Host.</p>
      */
     inline HostProperties& WithTotalVCpus(int value) { SetTotalVCpus(value); return *this;}
 
@@ -167,6 +224,9 @@ namespace Model
 
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
+    Aws::String m_instanceFamily;
+    bool m_instanceFamilyHasBeenSet;
 
     int m_sockets;
     bool m_socketsHasBeenSet;

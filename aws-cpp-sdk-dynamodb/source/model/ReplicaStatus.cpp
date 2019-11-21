@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
+        static const int CREATION_FAILED_HASH = HashingUtils::HashString("CREATION_FAILED");
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
@@ -42,6 +43,10 @@ namespace Aws
           if (hashCode == CREATING_HASH)
           {
             return ReplicaStatus::CREATING;
+          }
+          else if (hashCode == CREATION_FAILED_HASH)
+          {
+            return ReplicaStatus::CREATION_FAILED;
           }
           else if (hashCode == UPDATING_HASH)
           {
@@ -71,6 +76,8 @@ namespace Aws
           {
           case ReplicaStatus::CREATING:
             return "CREATING";
+          case ReplicaStatus::CREATION_FAILED:
+            return "CREATION_FAILED";
           case ReplicaStatus::UPDATING:
             return "UPDATING";
           case ReplicaStatus::DELETING:

@@ -328,13 +328,25 @@ namespace Model
     inline PutSlotTypeResult& WithValueSelectionStrategy(SlotValueSelectionStrategy&& value) { SetValueSelectionStrategy(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p> <code>True</code> if a new version of the slot type was created. If the
+     * <code>createVersion</code> field was not specified in the request, the
+     * <code>createVersion</code> field is set to false in the response.</p>
+     */
     inline bool GetCreateVersion() const{ return m_createVersion; }
 
-    
+    /**
+     * <p> <code>True</code> if a new version of the slot type was created. If the
+     * <code>createVersion</code> field was not specified in the request, the
+     * <code>createVersion</code> field is set to false in the response.</p>
+     */
     inline void SetCreateVersion(bool value) { m_createVersion = value; }
 
-    
+    /**
+     * <p> <code>True</code> if a new version of the slot type was created. If the
+     * <code>createVersion</code> field was not specified in the request, the
+     * <code>createVersion</code> field is set to false in the response.</p>
+     */
     inline PutSlotTypeResult& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
 
   private:

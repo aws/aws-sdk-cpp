@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the instance type that the Dedicated Host
-   * supports.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the number of instances that can be launched onto the
+   * Dedicated Host.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceCapacity">AWS
    * API Reference</a></p>
    */
@@ -51,92 +51,92 @@ namespace Model
 
 
     /**
-     * <p>The number of instances that can still be launched onto the Dedicated
-     * Host.</p>
+     * <p>The number of instances that can be launched onto the Dedicated Host based on
+     * the host's available capacity.</p>
      */
     inline int GetAvailableCapacity() const{ return m_availableCapacity; }
 
     /**
-     * <p>The number of instances that can still be launched onto the Dedicated
-     * Host.</p>
+     * <p>The number of instances that can be launched onto the Dedicated Host based on
+     * the host's available capacity.</p>
      */
     inline bool AvailableCapacityHasBeenSet() const { return m_availableCapacityHasBeenSet; }
 
     /**
-     * <p>The number of instances that can still be launched onto the Dedicated
-     * Host.</p>
+     * <p>The number of instances that can be launched onto the Dedicated Host based on
+     * the host's available capacity.</p>
      */
     inline void SetAvailableCapacity(int value) { m_availableCapacityHasBeenSet = true; m_availableCapacity = value; }
 
     /**
-     * <p>The number of instances that can still be launched onto the Dedicated
-     * Host.</p>
+     * <p>The number of instances that can be launched onto the Dedicated Host based on
+     * the host's available capacity.</p>
      */
     inline InstanceCapacity& WithAvailableCapacity(int value) { SetAvailableCapacity(value); return *this;}
 
 
     /**
-     * <p>The instance type size supported by the Dedicated Host.</p>
+     * <p>The instance type supported by the Dedicated Host.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type size supported by the Dedicated Host.</p>
+     * <p>The instance type supported by the Dedicated Host.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type size supported by the Dedicated Host.</p>
+     * <p>The instance type supported by the Dedicated Host.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type size supported by the Dedicated Host.</p>
+     * <p>The instance type supported by the Dedicated Host.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type size supported by the Dedicated Host.</p>
+     * <p>The instance type supported by the Dedicated Host.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type size supported by the Dedicated Host.</p>
+     * <p>The instance type supported by the Dedicated Host.</p>
      */
     inline InstanceCapacity& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type size supported by the Dedicated Host.</p>
+     * <p>The instance type supported by the Dedicated Host.</p>
      */
     inline InstanceCapacity& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type size supported by the Dedicated Host.</p>
+     * <p>The instance type supported by the Dedicated Host.</p>
      */
     inline InstanceCapacity& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
 
     /**
-     * <p>The total number of instances that can be launched onto the Dedicated
-     * Host.</p>
+     * <p>The total number of instances that can be launched onto the Dedicated Host if
+     * there are no instances running on it.</p>
      */
     inline int GetTotalCapacity() const{ return m_totalCapacity; }
 
     /**
-     * <p>The total number of instances that can be launched onto the Dedicated
-     * Host.</p>
+     * <p>The total number of instances that can be launched onto the Dedicated Host if
+     * there are no instances running on it.</p>
      */
     inline bool TotalCapacityHasBeenSet() const { return m_totalCapacityHasBeenSet; }
 
     /**
-     * <p>The total number of instances that can be launched onto the Dedicated
-     * Host.</p>
+     * <p>The total number of instances that can be launched onto the Dedicated Host if
+     * there are no instances running on it.</p>
      */
     inline void SetTotalCapacity(int value) { m_totalCapacityHasBeenSet = true; m_totalCapacity = value; }
 
     /**
-     * <p>The total number of instances that can be launched onto the Dedicated
-     * Host.</p>
+     * <p>The total number of instances that can be launched onto the Dedicated Host if
+     * there are no instances running on it.</p>
      */
     inline InstanceCapacity& WithTotalCapacity(int value) { SetTotalCapacity(value); return *this;}
 

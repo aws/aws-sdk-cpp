@@ -134,6 +134,7 @@ namespace Model
         class DeletePendingAggregationRequestRequest;
         class DeleteRemediationConfigurationRequest;
         class DeleteRemediationExceptionsRequest;
+        class DeleteResourceConfigRequest;
         class DeleteRetentionConfigurationRequest;
         class DeliverConfigSnapshotRequest;
         class DescribeAggregateComplianceByConfigRulesRequest;
@@ -187,6 +188,7 @@ namespace Model
         class PutOrganizationConformancePackRequest;
         class PutRemediationConfigurationsRequest;
         class PutRemediationExceptionsRequest;
+        class PutResourceConfigRequest;
         class PutRetentionConfigurationRequest;
         class SelectResourceConfigRequest;
         class StartConfigRulesEvaluationRequest;
@@ -210,6 +212,7 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeletePendingAggregationRequestOutcome;
         typedef Aws::Utils::Outcome<DeleteRemediationConfigurationResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteRemediationConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeleteRemediationExceptionsResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteRemediationExceptionsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteResourceConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> DeleteRetentionConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeliverConfigSnapshotResult, Aws::Client::AWSError<ConfigServiceErrors>> DeliverConfigSnapshotOutcome;
         typedef Aws::Utils::Outcome<DescribeAggregateComplianceByConfigRulesResult, Aws::Client::AWSError<ConfigServiceErrors>> DescribeAggregateComplianceByConfigRulesOutcome;
@@ -264,6 +267,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutOrganizationConformancePackResult, Aws::Client::AWSError<ConfigServiceErrors>> PutOrganizationConformancePackOutcome;
         typedef Aws::Utils::Outcome<PutRemediationConfigurationsResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRemediationConfigurationsOutcome;
         typedef Aws::Utils::Outcome<PutRemediationExceptionsResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRemediationExceptionsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<ConfigServiceErrors>> PutResourceConfigOutcome;
         typedef Aws::Utils::Outcome<PutRetentionConfigurationResult, Aws::Client::AWSError<ConfigServiceErrors>> PutRetentionConfigurationOutcome;
         typedef Aws::Utils::Outcome<SelectResourceConfigResult, Aws::Client::AWSError<ConfigServiceErrors>> SelectResourceConfigOutcome;
         typedef Aws::Utils::Outcome<StartConfigRulesEvaluationResult, Aws::Client::AWSError<ConfigServiceErrors>> StartConfigRulesEvaluationOutcome;
@@ -287,6 +291,7 @@ namespace Model
         typedef std::future<DeletePendingAggregationRequestOutcome> DeletePendingAggregationRequestOutcomeCallable;
         typedef std::future<DeleteRemediationConfigurationOutcome> DeleteRemediationConfigurationOutcomeCallable;
         typedef std::future<DeleteRemediationExceptionsOutcome> DeleteRemediationExceptionsOutcomeCallable;
+        typedef std::future<DeleteResourceConfigOutcome> DeleteResourceConfigOutcomeCallable;
         typedef std::future<DeleteRetentionConfigurationOutcome> DeleteRetentionConfigurationOutcomeCallable;
         typedef std::future<DeliverConfigSnapshotOutcome> DeliverConfigSnapshotOutcomeCallable;
         typedef std::future<DescribeAggregateComplianceByConfigRulesOutcome> DescribeAggregateComplianceByConfigRulesOutcomeCallable;
@@ -341,6 +346,7 @@ namespace Model
         typedef std::future<PutOrganizationConformancePackOutcome> PutOrganizationConformancePackOutcomeCallable;
         typedef std::future<PutRemediationConfigurationsOutcome> PutRemediationConfigurationsOutcomeCallable;
         typedef std::future<PutRemediationExceptionsOutcome> PutRemediationExceptionsOutcomeCallable;
+        typedef std::future<PutResourceConfigOutcome> PutResourceConfigOutcomeCallable;
         typedef std::future<PutRetentionConfigurationOutcome> PutRetentionConfigurationOutcomeCallable;
         typedef std::future<SelectResourceConfigOutcome> SelectResourceConfigOutcomeCallable;
         typedef std::future<StartConfigRulesEvaluationOutcome> StartConfigRulesEvaluationOutcomeCallable;
@@ -367,6 +373,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::DeletePendingAggregationRequestRequest&, const Model::DeletePendingAggregationRequestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePendingAggregationRequestResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRemediationConfigurationRequest&, const Model::DeleteRemediationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRemediationConfigurationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRemediationExceptionsRequest&, const Model::DeleteRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRemediationExceptionsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::DeleteResourceConfigRequest&, const Model::DeleteResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeleteRetentionConfigurationRequest&, const Model::DeleteRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRetentionConfigurationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DeliverConfigSnapshotRequest&, const Model::DeliverConfigSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeliverConfigSnapshotResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::DescribeAggregateComplianceByConfigRulesRequest&, const Model::DescribeAggregateComplianceByConfigRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateComplianceByConfigRulesResponseReceivedHandler;
@@ -421,6 +428,7 @@ namespace Model
     typedef std::function<void(const ConfigServiceClient*, const Model::PutOrganizationConformancePackRequest&, const Model::PutOrganizationConformancePackOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutOrganizationConformancePackResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRemediationConfigurationsRequest&, const Model::PutRemediationConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRemediationConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRemediationExceptionsRequest&, const Model::PutRemediationExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRemediationExceptionsResponseReceivedHandler;
+    typedef std::function<void(const ConfigServiceClient*, const Model::PutResourceConfigRequest&, const Model::PutResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::PutRetentionConfigurationRequest&, const Model::PutRetentionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutRetentionConfigurationResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::SelectResourceConfigRequest&, const Model::SelectResourceConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SelectResourceConfigResponseReceivedHandler;
     typedef std::function<void(const ConfigServiceClient*, const Model::StartConfigRulesEvaluationRequest&, const Model::StartConfigRulesEvaluationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartConfigRulesEvaluationResponseReceivedHandler;
@@ -718,22 +726,24 @@ namespace Model
         virtual void DeleteConfigurationRecorderAsync(const Model::DeleteConfigurationRecorderRequest& request, const DeleteConfigurationRecorderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified conformance pack and all the AWS Config rules and all
-         * evaluation results within that conformance pack.</p> <p>AWS Config sets the
-         * conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion is
-         * complete. You cannot update a conformance pack while it is in this
-         * state.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified conformance pack and all the AWS Config rules,
+         * remediation actions, and all evaluation results within that conformance
+         * pack.</p> <p>AWS Config sets the conformance pack to
+         * <code>DELETE_IN_PROGRESS</code> until the deletion is complete. You cannot
+         * update a conformance pack while it is in this state.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConformancePack">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteConformancePackOutcome DeleteConformancePack(const Model::DeleteConformancePackRequest& request) const;
 
         /**
-         * <p>Deletes the specified conformance pack and all the AWS Config rules and all
-         * evaluation results within that conformance pack.</p> <p>AWS Config sets the
-         * conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion is
-         * complete. You cannot update a conformance pack while it is in this
-         * state.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified conformance pack and all the AWS Config rules,
+         * remediation actions, and all evaluation results within that conformance
+         * pack.</p> <p>AWS Config sets the conformance pack to
+         * <code>DELETE_IN_PROGRESS</code> until the deletion is complete. You cannot
+         * update a conformance pack while it is in this state.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConformancePack">AWS
          * API Reference</a></p>
          *
@@ -742,11 +752,12 @@ namespace Model
         virtual Model::DeleteConformancePackOutcomeCallable DeleteConformancePackCallable(const Model::DeleteConformancePackRequest& request) const;
 
         /**
-         * <p>Deletes the specified conformance pack and all the AWS Config rules and all
-         * evaluation results within that conformance pack.</p> <p>AWS Config sets the
-         * conformance pack to <code>DELETE_IN_PROGRESS</code> until the deletion is
-         * complete. You cannot update a conformance pack while it is in this
-         * state.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified conformance pack and all the AWS Config rules,
+         * remediation actions, and all evaluation results within that conformance
+         * pack.</p> <p>AWS Config sets the conformance pack to
+         * <code>DELETE_IN_PROGRESS</code> until the deletion is complete. You cannot
+         * update a conformance pack while it is in this state.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConformancePack">AWS
          * API Reference</a></p>
          *
@@ -976,6 +987,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRemediationExceptionsAsync(const Model::DeleteRemediationExceptionsRequest& request, const DeleteRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Records the configuration state for a custom resource that has been deleted.
+         * This API records a new ConfigurationItem with a ResourceDeleted status. You can
+         * retrieve the ConfigurationItems recorded for this resource in your AWS Config
+         * History. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteResourceConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourceConfigOutcome DeleteResourceConfig(const Model::DeleteResourceConfigRequest& request) const;
+
+        /**
+         * <p>Records the configuration state for a custom resource that has been deleted.
+         * This API records a new ConfigurationItem with a ResourceDeleted status. You can
+         * retrieve the ConfigurationItems recorded for this resource in your AWS Config
+         * History. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourceConfigOutcomeCallable DeleteResourceConfigCallable(const Model::DeleteResourceConfigRequest& request) const;
+
+        /**
+         * <p>Records the configuration state for a custom resource that has been deleted.
+         * This API records a new ConfigurationItem with a ResourceDeleted status. You can
+         * retrieve the ConfigurationItems recorded for this resource in your AWS Config
+         * History. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourceConfigAsync(const Model::DeleteResourceConfigRequest& request, const DeleteResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the retention configuration.</p><p><h3>See Also:</h3>   <a
@@ -1473,20 +1518,16 @@ namespace Model
         virtual void DescribeConfigurationRecordersAsync(const Model::DescribeConfigurationRecordersRequest& request, const DescribeConfigurationRecordersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns compliance information for each rule in that conformance pack.</p>
-         * <note> <p>You must provide exact rule names otherwise AWS Config cannot return
-         * evaluation results due to insufficient data.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns compliance details for each rule in that conformance pack.</p> <note>
+         * <p>You must provide exact rule names.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackCompliance">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeConformancePackComplianceOutcome DescribeConformancePackCompliance(const Model::DescribeConformancePackComplianceRequest& request) const;
 
         /**
-         * <p>Returns compliance information for each rule in that conformance pack.</p>
-         * <note> <p>You must provide exact rule names otherwise AWS Config cannot return
-         * evaluation results due to insufficient data.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns compliance details for each rule in that conformance pack.</p> <note>
+         * <p>You must provide exact rule names.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackCompliance">AWS
          * API Reference</a></p>
          *
@@ -1495,10 +1536,8 @@ namespace Model
         virtual Model::DescribeConformancePackComplianceOutcomeCallable DescribeConformancePackComplianceCallable(const Model::DescribeConformancePackComplianceRequest& request) const;
 
         /**
-         * <p>Returns compliance information for each rule in that conformance pack.</p>
-         * <note> <p>You must provide exact rule names otherwise AWS Config cannot return
-         * evaluation results due to insufficient data.</p> </note><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns compliance details for each rule in that conformance pack.</p> <note>
+         * <p>You must provide exact rule names.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackCompliance">AWS
          * API Reference</a></p>
          *
@@ -1507,16 +1546,18 @@ namespace Model
         virtual void DescribeConformancePackComplianceAsync(const Model::DescribeConformancePackComplianceRequest& request, const DescribeConformancePackComplianceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provides one or more conformance packs deployment status.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides one or more conformance packs deployment status.</p> <note> <p>If
+         * there are no conformance packs then you will see an empty result.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeConformancePackStatusOutcome DescribeConformancePackStatus(const Model::DescribeConformancePackStatusRequest& request) const;
 
         /**
-         * <p>Provides one or more conformance packs deployment status.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides one or more conformance packs deployment status.</p> <note> <p>If
+         * there are no conformance packs then you will see an empty result.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus">AWS
          * API Reference</a></p>
          *
@@ -1525,8 +1566,9 @@ namespace Model
         virtual Model::DescribeConformancePackStatusOutcomeCallable DescribeConformancePackStatusCallable(const Model::DescribeConformancePackStatusRequest& request) const;
 
         /**
-         * <p>Provides one or more conformance packs deployment status.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Provides one or more conformance packs deployment status.</p> <note> <p>If
+         * there are no conformance packs then you will see an empty result.</p>
+         * </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus">AWS
          * API Reference</a></p>
          *
@@ -1770,11 +1812,11 @@ namespace Model
 
         /**
          * <p>Returns a list of organization conformance packs.</p> <note> <p>When you
-         * specify the limit and the next token, you receive a paginated response. Limit
-         * and next token are not applicable if you specify organization conformance packs
-         * names. They are only applicable, when you request all the organization
-         * conformance packs. Only a master account can call this API.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * specify the limit and the next token, you receive a paginated response. </p>
+         * <p>Limit and next token are not applicable if you specify organization
+         * conformance packs names. They are only applicable, when you request all the
+         * organization conformance packs. </p> <p>Only a master account can call this
+         * API.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">AWS
          * API Reference</a></p>
          */
@@ -1782,11 +1824,11 @@ namespace Model
 
         /**
          * <p>Returns a list of organization conformance packs.</p> <note> <p>When you
-         * specify the limit and the next token, you receive a paginated response. Limit
-         * and next token are not applicable if you specify organization conformance packs
-         * names. They are only applicable, when you request all the organization
-         * conformance packs. Only a master account can call this API.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * specify the limit and the next token, you receive a paginated response. </p>
+         * <p>Limit and next token are not applicable if you specify organization
+         * conformance packs names. They are only applicable, when you request all the
+         * organization conformance packs. </p> <p>Only a master account can call this
+         * API.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">AWS
          * API Reference</a></p>
          *
@@ -1796,11 +1838,11 @@ namespace Model
 
         /**
          * <p>Returns a list of organization conformance packs.</p> <note> <p>When you
-         * specify the limit and the next token, you receive a paginated response. Limit
-         * and next token are not applicable if you specify organization conformance packs
-         * names. They are only applicable, when you request all the organization
-         * conformance packs. Only a master account can call this API.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * specify the limit and the next token, you receive a paginated response. </p>
+         * <p>Limit and next token are not applicable if you specify organization
+         * conformance packs names. They are only applicable, when you request all the
+         * organization conformance packs. </p> <p>Only a master account can call this
+         * API.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks">AWS
          * API Reference</a></p>
          *
@@ -2287,19 +2329,31 @@ namespace Model
         virtual void GetConformancePackComplianceDetailsAsync(const Model::GetConformancePackComplianceDetailsRequest& request, const GetConformancePackComplianceDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Returns compliance details for the conformance pack based on the cumulative
+         * compliance results of all the rules in that conformance pack.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConformancePackComplianceSummary">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetConformancePackComplianceSummaryOutcome GetConformancePackComplianceSummary(const Model::GetConformancePackComplianceSummaryRequest& request) const;
 
         /**
-         * 
+         * <p>Returns compliance details for the conformance pack based on the cumulative
+         * compliance results of all the rules in that conformance pack.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConformancePackComplianceSummary">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::GetConformancePackComplianceSummaryOutcomeCallable GetConformancePackComplianceSummaryCallable(const Model::GetConformancePackComplianceSummaryRequest& request) const;
 
         /**
-         * 
+         * <p>Returns compliance details for the conformance pack based on the cumulative
+         * compliance results of all the rules in that conformance pack.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConformancePackComplianceSummary">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2891,8 +2945,8 @@ namespace Model
 
         /**
          * <p>Creates or updates a conformance pack. A conformance pack is a collection of
-         * AWS Config rules that can be easily deployed in an account and a region.</p>
-         * <p>This API creates a service linked role
+         * AWS Config rules that can be easily deployed in an account and a region and
+         * across AWS Organization.</p> <p>This API creates a service linked role
          * <code>AWSServiceRoleForConfigConforms</code> in your account. The service linked
          * role is created only when the role does not exist in your account. AWS Config
          * verifies the existence of role with <code>GetRole</code> action.</p> <note>
@@ -2907,8 +2961,8 @@ namespace Model
 
         /**
          * <p>Creates or updates a conformance pack. A conformance pack is a collection of
-         * AWS Config rules that can be easily deployed in an account and a region.</p>
-         * <p>This API creates a service linked role
+         * AWS Config rules that can be easily deployed in an account and a region and
+         * across AWS Organization.</p> <p>This API creates a service linked role
          * <code>AWSServiceRoleForConfigConforms</code> in your account. The service linked
          * role is created only when the role does not exist in your account. AWS Config
          * verifies the existence of role with <code>GetRole</code> action.</p> <note>
@@ -2925,8 +2979,8 @@ namespace Model
 
         /**
          * <p>Creates or updates a conformance pack. A conformance pack is a collection of
-         * AWS Config rules that can be easily deployed in an account and a region.</p>
-         * <p>This API creates a service linked role
+         * AWS Config rules that can be easily deployed in an account and a region and
+         * across AWS Organization.</p> <p>This API creates a service linked role
          * <code>AWSServiceRoleForConfigConforms</code> in your account. The service linked
          * role is created only when the role does not exist in your account. AWS Config
          * verifies the existence of role with <code>GetRole</code> action.</p> <note>
@@ -3108,17 +3162,21 @@ namespace Model
 
         /**
          * <p>Deploys conformance packs across member accounts in an AWS Organization.</p>
-         * <p>This API enables organization service access through the
+         * <p>This API enables organization service access for
+         * <code>config-multiaccountsetup.amazonaws.com</code> through the
          * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-         * AWSServiceRoleForConfigMultiAccountSetup in the master account of your
-         * organization. The service linked role is created only when the role does not
-         * exist in the master account. AWS Config verifies the existence of role with
-         * GetRole action. </p> <note> <p>The SPN is
-         * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>You must specify
-         * either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
-         * parameter, but not both. If you provide both AWS Config uses the
-         * <code>TemplateS3Uri</code> parameter and ignores the <code>TemplateBody</code>
-         * parameter.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
+         * your organization. The service linked role is created only when the role does
+         * not exist in the master account. AWS Config verifies the existence of role with
+         * GetRole action.</p> <note> <p>You must specify either the
+         * <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not
+         * both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
+         * parameter and ignores the <code>TemplateBody</code> parameter.</p> <p>AWS Config
+         * sets the state of a conformance pack to CREATE_IN_PROGRESS and
+         * UPDATE_IN_PROGRESS until the confomance pack is created or updated. You cannot
+         * update a conformance pack while it is in this state.</p> <p>You can create 6
+         * conformance packs with 25 AWS Config rules in each pack.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">AWS
          * API Reference</a></p>
          */
@@ -3126,17 +3184,21 @@ namespace Model
 
         /**
          * <p>Deploys conformance packs across member accounts in an AWS Organization.</p>
-         * <p>This API enables organization service access through the
+         * <p>This API enables organization service access for
+         * <code>config-multiaccountsetup.amazonaws.com</code> through the
          * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-         * AWSServiceRoleForConfigMultiAccountSetup in the master account of your
-         * organization. The service linked role is created only when the role does not
-         * exist in the master account. AWS Config verifies the existence of role with
-         * GetRole action. </p> <note> <p>The SPN is
-         * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>You must specify
-         * either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
-         * parameter, but not both. If you provide both AWS Config uses the
-         * <code>TemplateS3Uri</code> parameter and ignores the <code>TemplateBody</code>
-         * parameter.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
+         * your organization. The service linked role is created only when the role does
+         * not exist in the master account. AWS Config verifies the existence of role with
+         * GetRole action.</p> <note> <p>You must specify either the
+         * <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not
+         * both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
+         * parameter and ignores the <code>TemplateBody</code> parameter.</p> <p>AWS Config
+         * sets the state of a conformance pack to CREATE_IN_PROGRESS and
+         * UPDATE_IN_PROGRESS until the confomance pack is created or updated. You cannot
+         * update a conformance pack while it is in this state.</p> <p>You can create 6
+         * conformance packs with 25 AWS Config rules in each pack.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">AWS
          * API Reference</a></p>
          *
@@ -3146,17 +3208,21 @@ namespace Model
 
         /**
          * <p>Deploys conformance packs across member accounts in an AWS Organization.</p>
-         * <p>This API enables organization service access through the
+         * <p>This API enables organization service access for
+         * <code>config-multiaccountsetup.amazonaws.com</code> through the
          * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-         * AWSServiceRoleForConfigMultiAccountSetup in the master account of your
-         * organization. The service linked role is created only when the role does not
-         * exist in the master account. AWS Config verifies the existence of role with
-         * GetRole action. </p> <note> <p>The SPN is
-         * <code>config-multiaccountsetup.amazonaws.com</code>.</p> <p>You must specify
-         * either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code>
-         * parameter, but not both. If you provide both AWS Config uses the
-         * <code>TemplateS3Uri</code> parameter and ignores the <code>TemplateBody</code>
-         * parameter.</p> </note><p><h3>See Also:</h3>   <a
+         * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of
+         * your organization. The service linked role is created only when the role does
+         * not exist in the master account. AWS Config verifies the existence of role with
+         * GetRole action.</p> <note> <p>You must specify either the
+         * <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not
+         * both. If you provide both AWS Config uses the <code>TemplateS3Uri</code>
+         * parameter and ignores the <code>TemplateBody</code> parameter.</p> <p>AWS Config
+         * sets the state of a conformance pack to CREATE_IN_PROGRESS and
+         * UPDATE_IN_PROGRESS until the confomance pack is created or updated. You cannot
+         * update a conformance pack while it is in this state.</p> <p>You can create 6
+         * conformance packs with 25 AWS Config rules in each pack.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">AWS
          * API Reference</a></p>
          *
@@ -3237,6 +3303,58 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutRemediationExceptionsAsync(const Model::PutRemediationExceptionsRequest& request, const PutRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Records the configuration state for the resource provided in the request. The
+         * configuration state of a resource is represented in AWS Config as Configuration
+         * Items. Once this API records the configuration item, you can retrieve the list
+         * of configuration items for the custom resource type using existing AWS Config
+         * APIs. </p> <note> <p>The custom resource type must be registered with AWS
+         * CloudFormation. This API accepts the configuration item registered with AWS
+         * CloudFormation.</p> <p>When you call this API, AWS Config only stores
+         * configuration state of the resource provided in the request. This API does not
+         * change or remediate the configuration of the resource. </p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutResourceConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourceConfigOutcome PutResourceConfig(const Model::PutResourceConfigRequest& request) const;
+
+        /**
+         * <p>Records the configuration state for the resource provided in the request. The
+         * configuration state of a resource is represented in AWS Config as Configuration
+         * Items. Once this API records the configuration item, you can retrieve the list
+         * of configuration items for the custom resource type using existing AWS Config
+         * APIs. </p> <note> <p>The custom resource type must be registered with AWS
+         * CloudFormation. This API accepts the configuration item registered with AWS
+         * CloudFormation.</p> <p>When you call this API, AWS Config only stores
+         * configuration state of the resource provided in the request. This API does not
+         * change or remediate the configuration of the resource. </p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutResourceConfigOutcomeCallable PutResourceConfigCallable(const Model::PutResourceConfigRequest& request) const;
+
+        /**
+         * <p>Records the configuration state for the resource provided in the request. The
+         * configuration state of a resource is represented in AWS Config as Configuration
+         * Items. Once this API records the configuration item, you can retrieve the list
+         * of configuration items for the custom resource type using existing AWS Config
+         * APIs. </p> <note> <p>The custom resource type must be registered with AWS
+         * CloudFormation. This API accepts the configuration item registered with AWS
+         * CloudFormation.</p> <p>When you call this API, AWS Config only stores
+         * configuration state of the resource provided in the request. This API does not
+         * change or remediate the configuration of the resource. </p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutResourceConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutResourceConfigAsync(const Model::PutResourceConfigRequest& request, const PutResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates and updates the retention configuration with details about retention
@@ -3594,6 +3712,7 @@ namespace Model
         void DeletePendingAggregationRequestAsyncHelper(const Model::DeletePendingAggregationRequestRequest& request, const DeletePendingAggregationRequestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRemediationConfigurationAsyncHelper(const Model::DeleteRemediationConfigurationRequest& request, const DeleteRemediationConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRemediationExceptionsAsyncHelper(const Model::DeleteRemediationExceptionsRequest& request, const DeleteRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteResourceConfigAsyncHelper(const Model::DeleteResourceConfigRequest& request, const DeleteResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRetentionConfigurationAsyncHelper(const Model::DeleteRetentionConfigurationRequest& request, const DeleteRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeliverConfigSnapshotAsyncHelper(const Model::DeliverConfigSnapshotRequest& request, const DeliverConfigSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAggregateComplianceByConfigRulesAsyncHelper(const Model::DescribeAggregateComplianceByConfigRulesRequest& request, const DescribeAggregateComplianceByConfigRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3648,6 +3767,7 @@ namespace Model
         void PutOrganizationConformancePackAsyncHelper(const Model::PutOrganizationConformancePackRequest& request, const PutOrganizationConformancePackResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRemediationConfigurationsAsyncHelper(const Model::PutRemediationConfigurationsRequest& request, const PutRemediationConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRemediationExceptionsAsyncHelper(const Model::PutRemediationExceptionsRequest& request, const PutRemediationExceptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutResourceConfigAsyncHelper(const Model::PutResourceConfigRequest& request, const PutResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutRetentionConfigurationAsyncHelper(const Model::PutRetentionConfigurationRequest& request, const PutRetentionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SelectResourceConfigAsyncHelper(const Model::SelectResourceConfigRequest& request, const SelectResourceConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartConfigRulesEvaluationAsyncHelper(const Model::StartConfigRulesEvaluationRequest& request, const StartConfigRulesEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

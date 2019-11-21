@@ -17,6 +17,7 @@
 #include <aws/lex/LexRuntimeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/lex/model/SentimentResponse.h>
 #include <aws/lex/model/MessageFormatType.h>
 #include <aws/lex/model/DialogState.h>
 #include <aws/lex/model/ResponseCard.h>
@@ -457,6 +458,42 @@ namespace Model
 
 
     /**
+     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
+     * to send utterances to Amazon Comprehend for sentiment analysis, this field
+     * contains the result of the analysis.</p>
+     */
+    inline const SentimentResponse& GetSentimentResponse() const{ return m_sentimentResponse; }
+
+    /**
+     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
+     * to send utterances to Amazon Comprehend for sentiment analysis, this field
+     * contains the result of the analysis.</p>
+     */
+    inline void SetSentimentResponse(const SentimentResponse& value) { m_sentimentResponse = value; }
+
+    /**
+     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
+     * to send utterances to Amazon Comprehend for sentiment analysis, this field
+     * contains the result of the analysis.</p>
+     */
+    inline void SetSentimentResponse(SentimentResponse&& value) { m_sentimentResponse = std::move(value); }
+
+    /**
+     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
+     * to send utterances to Amazon Comprehend for sentiment analysis, this field
+     * contains the result of the analysis.</p>
+     */
+    inline PostTextResult& WithSentimentResponse(const SentimentResponse& value) { SetSentimentResponse(value); return *this;}
+
+    /**
+     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
+     * to send utterances to Amazon Comprehend for sentiment analysis, this field
+     * contains the result of the analysis.</p>
+     */
+    inline PostTextResult& WithSentimentResponse(SentimentResponse&& value) { SetSentimentResponse(std::move(value)); return *this;}
+
+
+    /**
      * <p>The format of the response message. One of the following values:</p> <ul>
      * <li> <p> <code>PlainText</code> - The message contains plain UTF-8 text.</p>
      * </li> <li> <p> <code>CustomPayload</code> - The message is a custom format
@@ -765,6 +802,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_sessionAttributes;
 
     Aws::String m_message;
+
+    SentimentResponse m_sentimentResponse;
 
     MessageFormatType m_messageFormat;
 

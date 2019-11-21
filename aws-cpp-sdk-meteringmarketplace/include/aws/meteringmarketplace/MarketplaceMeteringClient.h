@@ -93,19 +93,19 @@ namespace Model
    * Marketplace sellers can use this API to submit usage data for custom usage
    * dimensions.</p> <p> <b>Submitting Metering Records</b> </p> <ul> <li> <p>
    * <i>MeterUsage</i>- Submits the metering record for a Marketplace product.
-   * MeterUsage is called from an EC2 instance.</p> </li> <li> <p>
-   * <i>BatchMeterUsage</i>- Submits the metering record for a set of customers.
-   * BatchMeterUsage is called from a software-as-a-service (SaaS) application.</p>
-   * </li> </ul> <p> <b>Accepting New Customers</b> </p> <ul> <li> <p>
-   * <i>ResolveCustomer</i>- Called by a SaaS application during the registration
-   * process. When a buyer visits your website during the registration process, the
-   * buyer submits a Registration Token through the browser. The Registration Token
-   * is resolved through this API to obtain a CustomerIdentifier and Product
-   * Code.</p> </li> </ul> <p> <b>Entitlement and Metering for Paid Container
-   * Products</b> </p> <ul> <li> <p> Paid container software products sold through
-   * AWS Marketplace must integrate with the AWS Marketplace Metering Service and
-   * call the RegisterUsage operation for software entitlement and metering. Free and
-   * BYOL products for Amazon ECS or Amazon EKS aren't required to call
+   * MeterUsage is called from an EC2 instance or a container running on EKS or
+   * ECS.</p> </li> <li> <p> <i>BatchMeterUsage</i>- Submits the metering record for
+   * a set of customers. BatchMeterUsage is called from a software-as-a-service
+   * (SaaS) application.</p> </li> </ul> <p> <b>Accepting New Customers</b> </p> <ul>
+   * <li> <p> <i>ResolveCustomer</i>- Called by a SaaS application during the
+   * registration process. When a buyer visits your website during the registration
+   * process, the buyer submits a Registration Token through the browser. The
+   * Registration Token is resolved through this API to obtain a CustomerIdentifier
+   * and Product Code.</p> </li> </ul> <p> <b>Entitlement and Metering for Paid
+   * Container Products</b> </p> <ul> <li> <p> Paid container software products sold
+   * through AWS Marketplace must integrate with the AWS Marketplace Metering Service
+   * and call the RegisterUsage operation for software entitlement and metering. Free
+   * and BYOL products for Amazon ECS or Amazon EKS aren't required to call
    * RegisterUsage, but you can do so if you want to receive usage data in your
    * seller reports. For more information on using the RegisterUsage operation, see
    * <a
@@ -196,8 +196,8 @@ namespace Model
         /**
          * <p>API to emit metering records. For identical requests, the API is idempotent.
          * It simply returns the metering record ID.</p> <p>MeterUsage is authenticated on
-         * the buyer's AWS account, generally when running from an EC2 instance on the AWS
-         * Marketplace.</p><p><h3>See Also:</h3>   <a
+         * the buyer's AWS account using credentials from the EC2 instance, ECS task, or
+         * EKS pod.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">AWS
          * API Reference</a></p>
          */
@@ -206,8 +206,8 @@ namespace Model
         /**
          * <p>API to emit metering records. For identical requests, the API is idempotent.
          * It simply returns the metering record ID.</p> <p>MeterUsage is authenticated on
-         * the buyer's AWS account, generally when running from an EC2 instance on the AWS
-         * Marketplace.</p><p><h3>See Also:</h3>   <a
+         * the buyer's AWS account using credentials from the EC2 instance, ECS task, or
+         * EKS pod.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">AWS
          * API Reference</a></p>
          *
@@ -218,8 +218,8 @@ namespace Model
         /**
          * <p>API to emit metering records. For identical requests, the API is idempotent.
          * It simply returns the metering record ID.</p> <p>MeterUsage is authenticated on
-         * the buyer's AWS account, generally when running from an EC2 instance on the AWS
-         * Marketplace.</p><p><h3>See Also:</h3>   <a
+         * the buyer's AWS account using credentials from the EC2 instance, ECS task, or
+         * EKS pod.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/MeterUsage">AWS
          * API Reference</a></p>
          *

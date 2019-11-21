@@ -46,7 +46,11 @@ Host::Host() :
     m_releaseTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_hostRecovery(HostRecovery::NOT_SET),
-    m_hostRecoveryHasBeenSet(false)
+    m_hostRecoveryHasBeenSet(false),
+    m_allowsMultipleInstanceTypes(AllowsMultipleInstanceTypes::NOT_SET),
+    m_allowsMultipleInstanceTypesHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_availabilityZoneIdHasBeenSet(false)
 {
 }
 
@@ -66,7 +70,11 @@ Host::Host(const XmlNode& xmlNode) :
     m_releaseTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_hostRecovery(HostRecovery::NOT_SET),
-    m_hostRecoveryHasBeenSet(false)
+    m_hostRecoveryHasBeenSet(false),
+    m_allowsMultipleInstanceTypes(AllowsMultipleInstanceTypes::NOT_SET),
+    m_allowsMultipleInstanceTypesHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
+    m_availabilityZoneIdHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -167,6 +175,24 @@ Host& Host::operator =(const XmlNode& xmlNode)
       m_hostRecovery = HostRecoveryMapper::GetHostRecoveryForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hostRecoveryNode.GetText()).c_str()).c_str());
       m_hostRecoveryHasBeenSet = true;
     }
+    XmlNode allowsMultipleInstanceTypesNode = resultNode.FirstChild("allowsMultipleInstanceTypes");
+    if(!allowsMultipleInstanceTypesNode.IsNull())
+    {
+      m_allowsMultipleInstanceTypes = AllowsMultipleInstanceTypesMapper::GetAllowsMultipleInstanceTypesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allowsMultipleInstanceTypesNode.GetText()).c_str()).c_str());
+      m_allowsMultipleInstanceTypesHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
+      m_ownerIdHasBeenSet = true;
+    }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if(!availabilityZoneIdNode.IsNull())
+    {
+      m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
+      m_availabilityZoneIdHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -255,6 +281,21 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".HostRecovery=" << HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery) << "&";
   }
 
+  if(m_allowsMultipleInstanceTypesHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AllowsMultipleInstanceTypes=" << AllowsMultipleInstanceTypesMapper::GetNameForAllowsMultipleInstanceTypes(m_allowsMultipleInstanceTypes) << "&";
+  }
+
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+
 }
 
 void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -326,6 +367,18 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_hostRecoveryHasBeenSet)
   {
       oStream << location << ".HostRecovery=" << HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery) << "&";
+  }
+  if(m_allowsMultipleInstanceTypesHasBeenSet)
+  {
+      oStream << location << ".AllowsMultipleInstanceTypes=" << AllowsMultipleInstanceTypesMapper::GetNameForAllowsMultipleInstanceTypes(m_allowsMultipleInstanceTypes) << "&";
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 }
 

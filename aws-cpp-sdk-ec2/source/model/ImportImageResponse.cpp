@@ -121,6 +121,17 @@ ImportImageResponse& ImportImageResponse::operator =(const Aws::AmazonWebService
     {
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
     }
+    XmlNode licenseSpecificationsNode = resultNode.FirstChild("licenseSpecifications");
+    if(!licenseSpecificationsNode.IsNull())
+    {
+      XmlNode licenseSpecificationsMember = licenseSpecificationsNode.FirstChild("item");
+      while(!licenseSpecificationsMember.IsNull())
+      {
+        m_licenseSpecifications.push_back(licenseSpecificationsMember);
+        licenseSpecificationsMember = licenseSpecificationsMember.NextNode("item");
+      }
+
+    }
   }
 
   if (!rootNode.IsNull()) {

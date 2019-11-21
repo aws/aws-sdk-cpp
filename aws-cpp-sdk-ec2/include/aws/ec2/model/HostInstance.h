@@ -50,93 +50,134 @@ namespace Model
 
 
     /**
-     * <p>the IDs of instances that are running on the Dedicated Host.</p>
+     * <p>The ID of instance that is running on the Dedicated Host.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>the IDs of instances that are running on the Dedicated Host.</p>
+     * <p>The ID of instance that is running on the Dedicated Host.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>the IDs of instances that are running on the Dedicated Host.</p>
+     * <p>The ID of instance that is running on the Dedicated Host.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>the IDs of instances that are running on the Dedicated Host.</p>
+     * <p>The ID of instance that is running on the Dedicated Host.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>the IDs of instances that are running on the Dedicated Host.</p>
+     * <p>The ID of instance that is running on the Dedicated Host.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>the IDs of instances that are running on the Dedicated Host.</p>
+     * <p>The ID of instance that is running on the Dedicated Host.</p>
      */
     inline HostInstance& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>the IDs of instances that are running on the Dedicated Host.</p>
+     * <p>The ID of instance that is running on the Dedicated Host.</p>
      */
     inline HostInstance& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>the IDs of instances that are running on the Dedicated Host.</p>
+     * <p>The ID of instance that is running on the Dedicated Host.</p>
      */
     inline HostInstance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>The instance type size (for example, <code>m3.medium</code>) of the running
+     * <p>The instance type (for example, <code>m3.medium</code>) of the running
      * instance.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type size (for example, <code>m3.medium</code>) of the running
+     * <p>The instance type (for example, <code>m3.medium</code>) of the running
      * instance.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type size (for example, <code>m3.medium</code>) of the running
+     * <p>The instance type (for example, <code>m3.medium</code>) of the running
      * instance.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type size (for example, <code>m3.medium</code>) of the running
+     * <p>The instance type (for example, <code>m3.medium</code>) of the running
      * instance.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type size (for example, <code>m3.medium</code>) of the running
+     * <p>The instance type (for example, <code>m3.medium</code>) of the running
      * instance.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The instance type size (for example, <code>m3.medium</code>) of the running
+     * <p>The instance type (for example, <code>m3.medium</code>) of the running
      * instance.</p>
      */
     inline HostInstance& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type size (for example, <code>m3.medium</code>) of the running
+     * <p>The instance type (for example, <code>m3.medium</code>) of the running
      * instance.</p>
      */
     inline HostInstance& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type size (for example, <code>m3.medium</code>) of the running
+     * <p>The instance type (for example, <code>m3.medium</code>) of the running
      * instance.</p>
      */
     inline HostInstance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
+
+    /**
+     * <p>The ID of the AWS account that owns the instance.</p>
+     */
+    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The ID of the AWS account that owns the instance.</p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS account that owns the instance.</p>
+     */
+    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+
+    /**
+     * <p>The ID of the AWS account that owns the instance.</p>
+     */
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
+
+    /**
+     * <p>The ID of the AWS account that owns the instance.</p>
+     */
+    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
+
+    /**
+     * <p>The ID of the AWS account that owns the instance.</p>
+     */
+    inline HostInstance& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+
+    /**
+     * <p>The ID of the AWS account that owns the instance.</p>
+     */
+    inline HostInstance& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the AWS account that owns the instance.</p>
+     */
+    inline HostInstance& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
   private:
 
@@ -145,6 +186,9 @@ namespace Model
 
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet;
   };
 
 } // namespace Model

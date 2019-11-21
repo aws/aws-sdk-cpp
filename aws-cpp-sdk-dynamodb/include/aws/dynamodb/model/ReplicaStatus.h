@@ -27,6 +27,7 @@ namespace Model
   {
     NOT_SET,
     CREATING,
+    CREATION_FAILED,
     UPDATING,
     DELETING,
     ACTIVE

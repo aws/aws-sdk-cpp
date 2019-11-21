@@ -227,47 +227,62 @@ namespace Model
 
 
     /**
-     * <p>The status of the bot. If the bot is ready to run, the status is
-     * <code>READY</code>. If there was a problem with building the bot, the status is
-     * <code>FAILED</code> and the <code>failureReason</code> explains why the bot did
-     * not build. If the bot was saved but not built, the status is <code>NOT
-     * BUILT</code>.</p>
+     * <p>The status of the bot. </p> <p>When the status is <code>BUILDING</code>
+     * Amazon Lex is building the bot for testing and use.</p> <p>If the status of the
+     * bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact
+     * utterances specified in the bot's intents. When the bot is ready for full
+     * testing or to run, the status is <code>READY</code>.</p> <p>If there was a
+     * problem with building the bot, the status is <code>FAILED</code> and the
+     * <code>failureReason</code> field explains why the bot did not build.</p> <p>If
+     * the bot was saved but not built, the status is <code>NOT_BUILT</code>.</p>
      */
     inline const Status& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the bot. If the bot is ready to run, the status is
-     * <code>READY</code>. If there was a problem with building the bot, the status is
-     * <code>FAILED</code> and the <code>failureReason</code> explains why the bot did
-     * not build. If the bot was saved but not built, the status is <code>NOT
-     * BUILT</code>.</p>
+     * <p>The status of the bot. </p> <p>When the status is <code>BUILDING</code>
+     * Amazon Lex is building the bot for testing and use.</p> <p>If the status of the
+     * bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact
+     * utterances specified in the bot's intents. When the bot is ready for full
+     * testing or to run, the status is <code>READY</code>.</p> <p>If there was a
+     * problem with building the bot, the status is <code>FAILED</code> and the
+     * <code>failureReason</code> field explains why the bot did not build.</p> <p>If
+     * the bot was saved but not built, the status is <code>NOT_BUILT</code>.</p>
      */
     inline void SetStatus(const Status& value) { m_status = value; }
 
     /**
-     * <p>The status of the bot. If the bot is ready to run, the status is
-     * <code>READY</code>. If there was a problem with building the bot, the status is
-     * <code>FAILED</code> and the <code>failureReason</code> explains why the bot did
-     * not build. If the bot was saved but not built, the status is <code>NOT
-     * BUILT</code>.</p>
+     * <p>The status of the bot. </p> <p>When the status is <code>BUILDING</code>
+     * Amazon Lex is building the bot for testing and use.</p> <p>If the status of the
+     * bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact
+     * utterances specified in the bot's intents. When the bot is ready for full
+     * testing or to run, the status is <code>READY</code>.</p> <p>If there was a
+     * problem with building the bot, the status is <code>FAILED</code> and the
+     * <code>failureReason</code> field explains why the bot did not build.</p> <p>If
+     * the bot was saved but not built, the status is <code>NOT_BUILT</code>.</p>
      */
     inline void SetStatus(Status&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The status of the bot. If the bot is ready to run, the status is
-     * <code>READY</code>. If there was a problem with building the bot, the status is
-     * <code>FAILED</code> and the <code>failureReason</code> explains why the bot did
-     * not build. If the bot was saved but not built, the status is <code>NOT
-     * BUILT</code>.</p>
+     * <p>The status of the bot. </p> <p>When the status is <code>BUILDING</code>
+     * Amazon Lex is building the bot for testing and use.</p> <p>If the status of the
+     * bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact
+     * utterances specified in the bot's intents. When the bot is ready for full
+     * testing or to run, the status is <code>READY</code>.</p> <p>If there was a
+     * problem with building the bot, the status is <code>FAILED</code> and the
+     * <code>failureReason</code> field explains why the bot did not build.</p> <p>If
+     * the bot was saved but not built, the status is <code>NOT_BUILT</code>.</p>
      */
     inline GetBotResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the bot. If the bot is ready to run, the status is
-     * <code>READY</code>. If there was a problem with building the bot, the status is
-     * <code>FAILED</code> and the <code>failureReason</code> explains why the bot did
-     * not build. If the bot was saved but not built, the status is <code>NOT
-     * BUILT</code>.</p>
+     * <p>The status of the bot. </p> <p>When the status is <code>BUILDING</code>
+     * Amazon Lex is building the bot for testing and use.</p> <p>If the status of the
+     * bot is <code>READY_BASIC_TESTING</code>, you can test the bot using the exact
+     * utterances specified in the bot's intents. When the bot is ready for full
+     * testing or to run, the status is <code>READY</code>.</p> <p>If there was a
+     * problem with building the bot, the status is <code>FAILED</code> and the
+     * <code>failureReason</code> field explains why the bot did not build.</p> <p>If
+     * the bot was saved but not built, the status is <code>NOT_BUILT</code>.</p>
      */
     inline GetBotResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -627,6 +642,25 @@ namespace Model
      */
     inline GetBotResult& WithChildDirected(bool value) { SetChildDirected(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether user utterances should be sent to Amazon Comprehend for
+     * sentiment analysis.</p>
+     */
+    inline bool GetDetectSentiment() const{ return m_detectSentiment; }
+
+    /**
+     * <p>Indicates whether user utterances should be sent to Amazon Comprehend for
+     * sentiment analysis.</p>
+     */
+    inline void SetDetectSentiment(bool value) { m_detectSentiment = value; }
+
+    /**
+     * <p>Indicates whether user utterances should be sent to Amazon Comprehend for
+     * sentiment analysis.</p>
+     */
+    inline GetBotResult& WithDetectSentiment(bool value) { SetDetectSentiment(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -658,6 +692,8 @@ namespace Model
     Locale m_locale;
 
     bool m_childDirected;
+
+    bool m_detectSentiment;
   };
 
 } // namespace Model

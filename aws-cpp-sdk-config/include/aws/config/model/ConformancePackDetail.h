@@ -38,8 +38,8 @@ namespace Model
 
   /**
    * <p>Returns details of a conformance pack. A conformance pack is a collection of
-   * AWS Config rules that can be easily deployed in an account and a
-   * region.</p><p><h3>See Also:</h3>   <a
+   * AWS Config rules and remediation actions that can be easily deployed in an
+   * account and a region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ConformancePackDetail">AWS
    * API Reference</a></p>
    */
@@ -176,91 +176,99 @@ namespace Model
 
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results and conformance pack template that is used to create a pack.</p>
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline const Aws::String& GetDeliveryS3Bucket() const{ return m_deliveryS3Bucket; }
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results and conformance pack template that is used to create a pack.</p>
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline bool DeliveryS3BucketHasBeenSet() const { return m_deliveryS3BucketHasBeenSet; }
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results and conformance pack template that is used to create a pack.</p>
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline void SetDeliveryS3Bucket(const Aws::String& value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket = value; }
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results and conformance pack template that is used to create a pack.</p>
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline void SetDeliveryS3Bucket(Aws::String&& value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket = std::move(value); }
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results and conformance pack template that is used to create a pack.</p>
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline void SetDeliveryS3Bucket(const char* value) { m_deliveryS3BucketHasBeenSet = true; m_deliveryS3Bucket.assign(value); }
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results and conformance pack template that is used to create a pack.</p>
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline ConformancePackDetail& WithDeliveryS3Bucket(const Aws::String& value) { SetDeliveryS3Bucket(value); return *this;}
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results and conformance pack template that is used to create a pack.</p>
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline ConformancePackDetail& WithDeliveryS3Bucket(Aws::String&& value) { SetDeliveryS3Bucket(std::move(value)); return *this;}
 
     /**
-     * <p>Location of an Amazon S3 bucket where AWS Config can deliver evaluation
-     * results and conformance pack template that is used to create a pack.</p>
+     * <p>Conformance pack template that is used to create a pack. The delivery bucket
+     * name should start with awsconfigconforms. For example: "Resource":
+     * "arn:aws:s3:::your_bucket_name/ *".</p>
      */
     inline ConformancePackDetail& WithDeliveryS3Bucket(const char* value) { SetDeliveryS3Bucket(value); return *this;}
 
 
     /**
-     * <p>Any folder structure you want to add to an Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetDeliveryS3KeyPrefix() const{ return m_deliveryS3KeyPrefix; }
 
     /**
-     * <p>Any folder structure you want to add to an Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline bool DeliveryS3KeyPrefixHasBeenSet() const { return m_deliveryS3KeyPrefixHasBeenSet; }
 
     /**
-     * <p>Any folder structure you want to add to an Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline void SetDeliveryS3KeyPrefix(const Aws::String& value) { m_deliveryS3KeyPrefixHasBeenSet = true; m_deliveryS3KeyPrefix = value; }
 
     /**
-     * <p>Any folder structure you want to add to an Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline void SetDeliveryS3KeyPrefix(Aws::String&& value) { m_deliveryS3KeyPrefixHasBeenSet = true; m_deliveryS3KeyPrefix = std::move(value); }
 
     /**
-     * <p>Any folder structure you want to add to an Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline void SetDeliveryS3KeyPrefix(const char* value) { m_deliveryS3KeyPrefixHasBeenSet = true; m_deliveryS3KeyPrefix.assign(value); }
 
     /**
-     * <p>Any folder structure you want to add to an Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline ConformancePackDetail& WithDeliveryS3KeyPrefix(const Aws::String& value) { SetDeliveryS3KeyPrefix(value); return *this;}
 
     /**
-     * <p>Any folder structure you want to add to an Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline ConformancePackDetail& WithDeliveryS3KeyPrefix(Aws::String&& value) { SetDeliveryS3KeyPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>Any folder structure you want to add to an Amazon S3 bucket.</p>
+     * <p>The prefix for the Amazon S3 bucket.</p>
      */
     inline ConformancePackDetail& WithDeliveryS3KeyPrefix(const char* value) { SetDeliveryS3KeyPrefix(value); return *this;}
 
@@ -337,28 +345,44 @@ namespace Model
     inline ConformancePackDetail& WithLastUpdateRequestedTime(Aws::Utils::DateTime&& value) { SetLastUpdateRequestedTime(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>AWS service that created the conformance pack.</p>
+     */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
 
-    
+    /**
+     * <p>AWS service that created the conformance pack.</p>
+     */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
-    
+    /**
+     * <p>AWS service that created the conformance pack.</p>
+     */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
-    
+    /**
+     * <p>AWS service that created the conformance pack.</p>
+     */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
 
-    
+    /**
+     * <p>AWS service that created the conformance pack.</p>
+     */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
 
-    
+    /**
+     * <p>AWS service that created the conformance pack.</p>
+     */
     inline ConformancePackDetail& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
 
-    
+    /**
+     * <p>AWS service that created the conformance pack.</p>
+     */
     inline ConformancePackDetail& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>AWS service that created the conformance pack.</p>
+     */
     inline ConformancePackDetail& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
 
   private:

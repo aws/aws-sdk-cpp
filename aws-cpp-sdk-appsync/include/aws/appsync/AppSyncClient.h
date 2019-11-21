@@ -21,18 +21,22 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/appsync/model/CreateApiCacheResult.h>
 #include <aws/appsync/model/CreateApiKeyResult.h>
 #include <aws/appsync/model/CreateDataSourceResult.h>
 #include <aws/appsync/model/CreateFunctionResult.h>
 #include <aws/appsync/model/CreateGraphqlApiResult.h>
 #include <aws/appsync/model/CreateResolverResult.h>
 #include <aws/appsync/model/CreateTypeResult.h>
+#include <aws/appsync/model/DeleteApiCacheResult.h>
 #include <aws/appsync/model/DeleteApiKeyResult.h>
 #include <aws/appsync/model/DeleteDataSourceResult.h>
 #include <aws/appsync/model/DeleteFunctionResult.h>
 #include <aws/appsync/model/DeleteGraphqlApiResult.h>
 #include <aws/appsync/model/DeleteResolverResult.h>
 #include <aws/appsync/model/DeleteTypeResult.h>
+#include <aws/appsync/model/FlushApiCacheResult.h>
+#include <aws/appsync/model/GetApiCacheResult.h>
 #include <aws/appsync/model/GetDataSourceResult.h>
 #include <aws/appsync/model/GetFunctionResult.h>
 #include <aws/appsync/model/GetGraphqlApiResult.h>
@@ -51,6 +55,7 @@
 #include <aws/appsync/model/StartSchemaCreationResult.h>
 #include <aws/appsync/model/TagResourceResult.h>
 #include <aws/appsync/model/UntagResourceResult.h>
+#include <aws/appsync/model/UpdateApiCacheResult.h>
 #include <aws/appsync/model/UpdateApiKeyResult.h>
 #include <aws/appsync/model/UpdateDataSourceResult.h>
 #include <aws/appsync/model/UpdateFunctionResult.h>
@@ -96,18 +101,22 @@ namespace AppSync
 
 namespace Model
 {
+        class CreateApiCacheRequest;
         class CreateApiKeyRequest;
         class CreateDataSourceRequest;
         class CreateFunctionRequest;
         class CreateGraphqlApiRequest;
         class CreateResolverRequest;
         class CreateTypeRequest;
+        class DeleteApiCacheRequest;
         class DeleteApiKeyRequest;
         class DeleteDataSourceRequest;
         class DeleteFunctionRequest;
         class DeleteGraphqlApiRequest;
         class DeleteResolverRequest;
         class DeleteTypeRequest;
+        class FlushApiCacheRequest;
+        class GetApiCacheRequest;
         class GetDataSourceRequest;
         class GetFunctionRequest;
         class GetGraphqlApiRequest;
@@ -126,6 +135,7 @@ namespace Model
         class StartSchemaCreationRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
+        class UpdateApiCacheRequest;
         class UpdateApiKeyRequest;
         class UpdateDataSourceRequest;
         class UpdateFunctionRequest;
@@ -133,18 +143,22 @@ namespace Model
         class UpdateResolverRequest;
         class UpdateTypeRequest;
 
+        typedef Aws::Utils::Outcome<CreateApiCacheResult, Aws::Client::AWSError<AppSyncErrors>> CreateApiCacheOutcome;
         typedef Aws::Utils::Outcome<CreateApiKeyResult, Aws::Client::AWSError<AppSyncErrors>> CreateApiKeyOutcome;
         typedef Aws::Utils::Outcome<CreateDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> CreateDataSourceOutcome;
         typedef Aws::Utils::Outcome<CreateFunctionResult, Aws::Client::AWSError<AppSyncErrors>> CreateFunctionOutcome;
         typedef Aws::Utils::Outcome<CreateGraphqlApiResult, Aws::Client::AWSError<AppSyncErrors>> CreateGraphqlApiOutcome;
         typedef Aws::Utils::Outcome<CreateResolverResult, Aws::Client::AWSError<AppSyncErrors>> CreateResolverOutcome;
         typedef Aws::Utils::Outcome<CreateTypeResult, Aws::Client::AWSError<AppSyncErrors>> CreateTypeOutcome;
+        typedef Aws::Utils::Outcome<DeleteApiCacheResult, Aws::Client::AWSError<AppSyncErrors>> DeleteApiCacheOutcome;
         typedef Aws::Utils::Outcome<DeleteApiKeyResult, Aws::Client::AWSError<AppSyncErrors>> DeleteApiKeyOutcome;
         typedef Aws::Utils::Outcome<DeleteDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> DeleteDataSourceOutcome;
         typedef Aws::Utils::Outcome<DeleteFunctionResult, Aws::Client::AWSError<AppSyncErrors>> DeleteFunctionOutcome;
         typedef Aws::Utils::Outcome<DeleteGraphqlApiResult, Aws::Client::AWSError<AppSyncErrors>> DeleteGraphqlApiOutcome;
         typedef Aws::Utils::Outcome<DeleteResolverResult, Aws::Client::AWSError<AppSyncErrors>> DeleteResolverOutcome;
         typedef Aws::Utils::Outcome<DeleteTypeResult, Aws::Client::AWSError<AppSyncErrors>> DeleteTypeOutcome;
+        typedef Aws::Utils::Outcome<FlushApiCacheResult, Aws::Client::AWSError<AppSyncErrors>> FlushApiCacheOutcome;
+        typedef Aws::Utils::Outcome<GetApiCacheResult, Aws::Client::AWSError<AppSyncErrors>> GetApiCacheOutcome;
         typedef Aws::Utils::Outcome<GetDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> GetDataSourceOutcome;
         typedef Aws::Utils::Outcome<GetFunctionResult, Aws::Client::AWSError<AppSyncErrors>> GetFunctionOutcome;
         typedef Aws::Utils::Outcome<GetGraphqlApiResult, Aws::Client::AWSError<AppSyncErrors>> GetGraphqlApiOutcome;
@@ -163,6 +177,7 @@ namespace Model
         typedef Aws::Utils::Outcome<StartSchemaCreationResult, Aws::Client::AWSError<AppSyncErrors>> StartSchemaCreationOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<AppSyncErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<AppSyncErrors>> UntagResourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateApiCacheResult, Aws::Client::AWSError<AppSyncErrors>> UpdateApiCacheOutcome;
         typedef Aws::Utils::Outcome<UpdateApiKeyResult, Aws::Client::AWSError<AppSyncErrors>> UpdateApiKeyOutcome;
         typedef Aws::Utils::Outcome<UpdateDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> UpdateDataSourceOutcome;
         typedef Aws::Utils::Outcome<UpdateFunctionResult, Aws::Client::AWSError<AppSyncErrors>> UpdateFunctionOutcome;
@@ -170,18 +185,22 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateResolverResult, Aws::Client::AWSError<AppSyncErrors>> UpdateResolverOutcome;
         typedef Aws::Utils::Outcome<UpdateTypeResult, Aws::Client::AWSError<AppSyncErrors>> UpdateTypeOutcome;
 
+        typedef std::future<CreateApiCacheOutcome> CreateApiCacheOutcomeCallable;
         typedef std::future<CreateApiKeyOutcome> CreateApiKeyOutcomeCallable;
         typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
         typedef std::future<CreateFunctionOutcome> CreateFunctionOutcomeCallable;
         typedef std::future<CreateGraphqlApiOutcome> CreateGraphqlApiOutcomeCallable;
         typedef std::future<CreateResolverOutcome> CreateResolverOutcomeCallable;
         typedef std::future<CreateTypeOutcome> CreateTypeOutcomeCallable;
+        typedef std::future<DeleteApiCacheOutcome> DeleteApiCacheOutcomeCallable;
         typedef std::future<DeleteApiKeyOutcome> DeleteApiKeyOutcomeCallable;
         typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
         typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
         typedef std::future<DeleteGraphqlApiOutcome> DeleteGraphqlApiOutcomeCallable;
         typedef std::future<DeleteResolverOutcome> DeleteResolverOutcomeCallable;
         typedef std::future<DeleteTypeOutcome> DeleteTypeOutcomeCallable;
+        typedef std::future<FlushApiCacheOutcome> FlushApiCacheOutcomeCallable;
+        typedef std::future<GetApiCacheOutcome> GetApiCacheOutcomeCallable;
         typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
         typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
         typedef std::future<GetGraphqlApiOutcome> GetGraphqlApiOutcomeCallable;
@@ -200,6 +219,7 @@ namespace Model
         typedef std::future<StartSchemaCreationOutcome> StartSchemaCreationOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+        typedef std::future<UpdateApiCacheOutcome> UpdateApiCacheOutcomeCallable;
         typedef std::future<UpdateApiKeyOutcome> UpdateApiKeyOutcomeCallable;
         typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
         typedef std::future<UpdateFunctionOutcome> UpdateFunctionOutcomeCallable;
@@ -210,18 +230,22 @@ namespace Model
 
   class AppSyncClient;
 
+    typedef std::function<void(const AppSyncClient*, const Model::CreateApiCacheRequest&, const Model::CreateApiCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApiCacheResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateApiKeyRequest&, const Model::CreateApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApiKeyResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateFunctionRequest&, const Model::CreateFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFunctionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateGraphqlApiRequest&, const Model::CreateGraphqlApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGraphqlApiResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateResolverRequest&, const Model::CreateResolverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResolverResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateTypeRequest&, const Model::CreateTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTypeResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::DeleteApiCacheRequest&, const Model::DeleteApiCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApiCacheResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteApiKeyRequest&, const Model::DeleteApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApiKeyResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteFunctionRequest&, const Model::DeleteFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteGraphqlApiRequest&, const Model::DeleteGraphqlApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGraphqlApiResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteResolverRequest&, const Model::DeleteResolverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResolverResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteTypeRequest&, const Model::DeleteTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTypeResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::FlushApiCacheRequest&, const Model::FlushApiCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FlushApiCacheResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::GetApiCacheRequest&, const Model::GetApiCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApiCacheResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetDataSourceRequest&, const Model::GetDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetFunctionRequest&, const Model::GetFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetGraphqlApiRequest&, const Model::GetGraphqlApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGraphqlApiResponseReceivedHandler;
@@ -240,6 +264,7 @@ namespace Model
     typedef std::function<void(const AppSyncClient*, const Model::StartSchemaCreationRequest&, const Model::StartSchemaCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSchemaCreationResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::UpdateApiCacheRequest&, const Model::UpdateApiCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApiCacheResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateApiKeyRequest&, const Model::UpdateApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApiKeyResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateFunctionRequest&, const Model::UpdateFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionResponseReceivedHandler;
@@ -279,6 +304,31 @@ namespace Model
 
         inline virtual const char* GetServiceClientName() const override { return "AppSync"; }
 
+
+        /**
+         * <p>Creates a cache for the GraphQL API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateApiCacheOutcome CreateApiCache(const Model::CreateApiCacheRequest& request) const;
+
+        /**
+         * <p>Creates a cache for the GraphQL API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCache">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateApiCacheOutcomeCallable CreateApiCacheCallable(const Model::CreateApiCacheRequest& request) const;
+
+        /**
+         * <p>Creates a cache for the GraphQL API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCache">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateApiCacheAsync(const Model::CreateApiCacheRequest& request, const CreateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a unique key that you can distribute to clients who are executing
@@ -446,6 +496,31 @@ namespace Model
         virtual void CreateTypeAsync(const Model::CreateTypeRequest& request, const CreateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an <code>ApiCache</code> object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteApiCacheOutcome DeleteApiCache(const Model::DeleteApiCacheRequest& request) const;
+
+        /**
+         * <p>Deletes an <code>ApiCache</code> object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiCache">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteApiCacheOutcomeCallable DeleteApiCacheCallable(const Model::DeleteApiCacheRequest& request) const;
+
+        /**
+         * <p>Deletes an <code>ApiCache</code> object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiCache">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteApiCacheAsync(const Model::DeleteApiCacheRequest& request, const DeleteApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an API key.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteApiKey">AWS
          * API Reference</a></p>
@@ -594,6 +669,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteTypeAsync(const Model::DeleteTypeRequest& request, const DeleteTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Flushes an <code>ApiCache</code> object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FlushApiCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::FlushApiCacheOutcome FlushApiCache(const Model::FlushApiCacheRequest& request) const;
+
+        /**
+         * <p>Flushes an <code>ApiCache</code> object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FlushApiCache">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::FlushApiCacheOutcomeCallable FlushApiCacheCallable(const Model::FlushApiCacheRequest& request) const;
+
+        /**
+         * <p>Flushes an <code>ApiCache</code> object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/FlushApiCache">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void FlushApiCacheAsync(const Model::FlushApiCacheRequest& request, const FlushApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves an <code>ApiCache</code> object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetApiCacheOutcome GetApiCache(const Model::GetApiCacheRequest& request) const;
+
+        /**
+         * <p>Retrieves an <code>ApiCache</code> object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiCache">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetApiCacheOutcomeCallable GetApiCacheCallable(const Model::GetApiCacheRequest& request) const;
+
+        /**
+         * <p>Retrieves an <code>ApiCache</code> object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetApiCache">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetApiCacheAsync(const Model::GetApiCacheRequest& request, const GetApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a <code>DataSource</code> object.</p><p><h3>See Also:</h3>   <a
@@ -1070,6 +1195,31 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the cache for the GraphQL API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiCache">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateApiCacheOutcome UpdateApiCache(const Model::UpdateApiCacheRequest& request) const;
+
+        /**
+         * <p>Updates the cache for the GraphQL API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiCache">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateApiCacheOutcomeCallable UpdateApiCacheCallable(const Model::UpdateApiCacheRequest& request) const;
+
+        /**
+         * <p>Updates the cache for the GraphQL API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiCache">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateApiCacheAsync(const Model::UpdateApiCacheRequest& request, const UpdateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an API key.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateApiKey">AWS
          * API Reference</a></p>
@@ -1223,18 +1373,22 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CreateApiCacheAsyncHelper(const Model::CreateApiCacheRequest& request, const CreateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApiKeyAsyncHelper(const Model::CreateApiKeyRequest& request, const CreateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataSourceAsyncHelper(const Model::CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFunctionAsyncHelper(const Model::CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGraphqlApiAsyncHelper(const Model::CreateGraphqlApiRequest& request, const CreateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateResolverAsyncHelper(const Model::CreateResolverRequest& request, const CreateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTypeAsyncHelper(const Model::CreateTypeRequest& request, const CreateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteApiCacheAsyncHelper(const Model::DeleteApiCacheRequest& request, const DeleteApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApiKeyAsyncHelper(const Model::DeleteApiKeyRequest& request, const DeleteApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDataSourceAsyncHelper(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFunctionAsyncHelper(const Model::DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGraphqlApiAsyncHelper(const Model::DeleteGraphqlApiRequest& request, const DeleteGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteResolverAsyncHelper(const Model::DeleteResolverRequest& request, const DeleteResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTypeAsyncHelper(const Model::DeleteTypeRequest& request, const DeleteTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void FlushApiCacheAsyncHelper(const Model::FlushApiCacheRequest& request, const FlushApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetApiCacheAsyncHelper(const Model::GetApiCacheRequest& request, const GetApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDataSourceAsyncHelper(const Model::GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFunctionAsyncHelper(const Model::GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGraphqlApiAsyncHelper(const Model::GetGraphqlApiRequest& request, const GetGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1253,6 +1407,7 @@ namespace Model
         void StartSchemaCreationAsyncHelper(const Model::StartSchemaCreationRequest& request, const StartSchemaCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateApiCacheAsyncHelper(const Model::UpdateApiCacheRequest& request, const UpdateApiCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApiKeyAsyncHelper(const Model::UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDataSourceAsyncHelper(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFunctionAsyncHelper(const Model::UpdateFunctionRequest& request, const UpdateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

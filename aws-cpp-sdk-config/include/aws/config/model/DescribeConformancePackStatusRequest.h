@@ -92,22 +92,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of conformance packs returned on each page.</p>
+     * <p>The maximum number of conformance packs status returned on each page.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>The maximum number of conformance packs returned on each page.</p>
+     * <p>The maximum number of conformance packs status returned on each page.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>The maximum number of conformance packs returned on each page.</p>
+     * <p>The maximum number of conformance packs status returned on each page.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>The maximum number of conformance packs returned on each page.</p>
+     * <p>The maximum number of conformance packs status returned on each page.</p>
      */
     inline DescribeConformancePackStatusRequest& WithLimit(int value) { SetLimit(value); return *this;}
 

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/SnapshotDetail.h>
+#include <aws/ec2/model/ImportImageLicenseConfigurationResponse.h>
 #include <utility>
 
 namespace Aws
@@ -587,6 +588,55 @@ namespace Model
      */
     inline ImportImageTask& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
+
+    /**
+     * <p>The ARNs of the license configurations associated to the import image
+     * task.</p>
+     */
+    inline const Aws::Vector<ImportImageLicenseConfigurationResponse>& GetLicenseSpecifications() const{ return m_licenseSpecifications; }
+
+    /**
+     * <p>The ARNs of the license configurations associated to the import image
+     * task.</p>
+     */
+    inline bool LicenseSpecificationsHasBeenSet() const { return m_licenseSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The ARNs of the license configurations associated to the import image
+     * task.</p>
+     */
+    inline void SetLicenseSpecifications(const Aws::Vector<ImportImageLicenseConfigurationResponse>& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = value; }
+
+    /**
+     * <p>The ARNs of the license configurations associated to the import image
+     * task.</p>
+     */
+    inline void SetLicenseSpecifications(Aws::Vector<ImportImageLicenseConfigurationResponse>&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = std::move(value); }
+
+    /**
+     * <p>The ARNs of the license configurations associated to the import image
+     * task.</p>
+     */
+    inline ImportImageTask& WithLicenseSpecifications(const Aws::Vector<ImportImageLicenseConfigurationResponse>& value) { SetLicenseSpecifications(value); return *this;}
+
+    /**
+     * <p>The ARNs of the license configurations associated to the import image
+     * task.</p>
+     */
+    inline ImportImageTask& WithLicenseSpecifications(Aws::Vector<ImportImageLicenseConfigurationResponse>&& value) { SetLicenseSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARNs of the license configurations associated to the import image
+     * task.</p>
+     */
+    inline ImportImageTask& AddLicenseSpecifications(const ImportImageLicenseConfigurationResponse& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The ARNs of the license configurations associated to the import image
+     * task.</p>
+     */
+    inline ImportImageTask& AddLicenseSpecifications(ImportImageLicenseConfigurationResponse&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_architecture;
@@ -627,6 +677,9 @@ namespace Model
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
+    Aws::Vector<ImportImageLicenseConfigurationResponse> m_licenseSpecifications;
+    bool m_licenseSpecificationsHasBeenSet;
   };
 
 } // namespace Model

@@ -48,6 +48,8 @@ TableDescription::TableDescription() :
     m_streamSpecificationHasBeenSet(false),
     m_latestStreamLabelHasBeenSet(false),
     m_latestStreamArnHasBeenSet(false),
+    m_globalTableVersionHasBeenSet(false),
+    m_replicasHasBeenSet(false),
     m_restoreSummaryHasBeenSet(false),
     m_sSEDescriptionHasBeenSet(false)
 {
@@ -73,6 +75,8 @@ TableDescription::TableDescription(JsonView jsonValue) :
     m_streamSpecificationHasBeenSet(false),
     m_latestStreamLabelHasBeenSet(false),
     m_latestStreamArnHasBeenSet(false),
+    m_globalTableVersionHasBeenSet(false),
+    m_replicasHasBeenSet(false),
     m_restoreSummaryHasBeenSet(false),
     m_sSEDescriptionHasBeenSet(false)
 {
@@ -203,6 +207,23 @@ TableDescription& TableDescription::operator =(JsonView jsonValue)
     m_latestStreamArn = jsonValue.GetString("LatestStreamArn");
 
     m_latestStreamArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GlobalTableVersion"))
+  {
+    m_globalTableVersion = jsonValue.GetString("GlobalTableVersion");
+
+    m_globalTableVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Replicas"))
+  {
+    Array<JsonView> replicasJsonList = jsonValue.GetArray("Replicas");
+    for(unsigned replicasIndex = 0; replicasIndex < replicasJsonList.GetLength(); ++replicasIndex)
+    {
+      m_replicas.push_back(replicasJsonList[replicasIndex].AsObject());
+    }
+    m_replicasHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RestoreSummary"))
@@ -337,6 +358,23 @@ JsonValue TableDescription::Jsonize() const
   if(m_latestStreamArnHasBeenSet)
   {
    payload.WithString("LatestStreamArn", m_latestStreamArn);
+
+  }
+
+  if(m_globalTableVersionHasBeenSet)
+  {
+   payload.WithString("GlobalTableVersion", m_globalTableVersion);
+
+  }
+
+  if(m_replicasHasBeenSet)
+  {
+   Array<JsonValue> replicasJsonList(m_replicas.size());
+   for(unsigned replicasIndex = 0; replicasIndex < replicasJsonList.GetLength(); ++replicasIndex)
+   {
+     replicasJsonList[replicasIndex].AsObject(m_replicas[replicasIndex].Jsonize());
+   }
+   payload.WithArray("Replicas", std::move(replicasJsonList));
 
   }
 

@@ -37,6 +37,7 @@ PostContentResult::PostContentResult(PostContentResult&& toMove) :
     m_intentName(std::move(toMove.m_intentName)),
     m_slots(std::move(toMove.m_slots)),
     m_sessionAttributes(std::move(toMove.m_sessionAttributes)),
+    m_sentimentResponse(std::move(toMove.m_sentimentResponse)),
     m_message(std::move(toMove.m_message)),
     m_messageFormat(toMove.m_messageFormat),
     m_dialogState(toMove.m_dialogState),
@@ -57,6 +58,7 @@ PostContentResult& PostContentResult::operator=(PostContentResult&& toMove)
    m_intentName = std::move(toMove.m_intentName);
    m_slots = std::move(toMove.m_slots);
    m_sessionAttributes = std::move(toMove.m_sessionAttributes);
+   m_sentimentResponse = std::move(toMove.m_sentimentResponse);
    m_message = std::move(toMove.m_message);
    m_messageFormat = toMove.m_messageFormat;
    m_dialogState = toMove.m_dialogState;
@@ -101,6 +103,12 @@ PostContentResult& PostContentResult::operator =(Aws::AmazonWebServiceResult<Res
   if(sessionAttributesIter != headers.end())
   {
     m_sessionAttributes = sessionAttributesIter->second;
+  }
+
+  const auto& sentimentResponseIter = headers.find("x-amz-lex-sentiment");
+  if(sentimentResponseIter != headers.end())
+  {
+    m_sentimentResponse = sentimentResponseIter->second;
   }
 
   const auto& messageIter = headers.find("x-amz-lex-message");

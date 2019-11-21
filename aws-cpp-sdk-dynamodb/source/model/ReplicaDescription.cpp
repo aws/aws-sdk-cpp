@@ -29,12 +29,26 @@ namespace Model
 {
 
 ReplicaDescription::ReplicaDescription() : 
-    m_regionNameHasBeenSet(false)
+    m_regionNameHasBeenSet(false),
+    m_replicaStatus(ReplicaStatus::NOT_SET),
+    m_replicaStatusHasBeenSet(false),
+    m_replicaStatusDescriptionHasBeenSet(false),
+    m_replicaStatusPercentProgressHasBeenSet(false),
+    m_kMSMasterKeyIdHasBeenSet(false),
+    m_provisionedThroughputOverrideHasBeenSet(false),
+    m_globalSecondaryIndexesHasBeenSet(false)
 {
 }
 
 ReplicaDescription::ReplicaDescription(JsonView jsonValue) : 
-    m_regionNameHasBeenSet(false)
+    m_regionNameHasBeenSet(false),
+    m_replicaStatus(ReplicaStatus::NOT_SET),
+    m_replicaStatusHasBeenSet(false),
+    m_replicaStatusDescriptionHasBeenSet(false),
+    m_replicaStatusPercentProgressHasBeenSet(false),
+    m_kMSMasterKeyIdHasBeenSet(false),
+    m_provisionedThroughputOverrideHasBeenSet(false),
+    m_globalSecondaryIndexesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +62,51 @@ ReplicaDescription& ReplicaDescription::operator =(JsonView jsonValue)
     m_regionNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ReplicaStatus"))
+  {
+    m_replicaStatus = ReplicaStatusMapper::GetReplicaStatusForName(jsonValue.GetString("ReplicaStatus"));
+
+    m_replicaStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReplicaStatusDescription"))
+  {
+    m_replicaStatusDescription = jsonValue.GetString("ReplicaStatusDescription");
+
+    m_replicaStatusDescriptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReplicaStatusPercentProgress"))
+  {
+    m_replicaStatusPercentProgress = jsonValue.GetString("ReplicaStatusPercentProgress");
+
+    m_replicaStatusPercentProgressHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("KMSMasterKeyId"))
+  {
+    m_kMSMasterKeyId = jsonValue.GetString("KMSMasterKeyId");
+
+    m_kMSMasterKeyIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProvisionedThroughputOverride"))
+  {
+    m_provisionedThroughputOverride = jsonValue.GetObject("ProvisionedThroughputOverride");
+
+    m_provisionedThroughputOverrideHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GlobalSecondaryIndexes"))
+  {
+    Array<JsonView> globalSecondaryIndexesJsonList = jsonValue.GetArray("GlobalSecondaryIndexes");
+    for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
+    {
+      m_globalSecondaryIndexes.push_back(globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject());
+    }
+    m_globalSecondaryIndexesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +117,46 @@ JsonValue ReplicaDescription::Jsonize() const
   if(m_regionNameHasBeenSet)
   {
    payload.WithString("RegionName", m_regionName);
+
+  }
+
+  if(m_replicaStatusHasBeenSet)
+  {
+   payload.WithString("ReplicaStatus", ReplicaStatusMapper::GetNameForReplicaStatus(m_replicaStatus));
+  }
+
+  if(m_replicaStatusDescriptionHasBeenSet)
+  {
+   payload.WithString("ReplicaStatusDescription", m_replicaStatusDescription);
+
+  }
+
+  if(m_replicaStatusPercentProgressHasBeenSet)
+  {
+   payload.WithString("ReplicaStatusPercentProgress", m_replicaStatusPercentProgress);
+
+  }
+
+  if(m_kMSMasterKeyIdHasBeenSet)
+  {
+   payload.WithString("KMSMasterKeyId", m_kMSMasterKeyId);
+
+  }
+
+  if(m_provisionedThroughputOverrideHasBeenSet)
+  {
+   payload.WithObject("ProvisionedThroughputOverride", m_provisionedThroughputOverride.Jsonize());
+
+  }
+
+  if(m_globalSecondaryIndexesHasBeenSet)
+  {
+   Array<JsonValue> globalSecondaryIndexesJsonList(m_globalSecondaryIndexes.size());
+   for(unsigned globalSecondaryIndexesIndex = 0; globalSecondaryIndexesIndex < globalSecondaryIndexesJsonList.GetLength(); ++globalSecondaryIndexesIndex)
+   {
+     globalSecondaryIndexesJsonList[globalSecondaryIndexesIndex].AsObject(m_globalSecondaryIndexes[globalSecondaryIndexesIndex].Jsonize());
+   }
+   payload.WithArray("GlobalSecondaryIndexes", std::move(globalSecondaryIndexesJsonList));
 
   }
 

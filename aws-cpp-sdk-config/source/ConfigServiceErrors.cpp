@@ -62,6 +62,7 @@ static const int NO_SUCH_CONFIG_RULE_IN_CONFORMANCE_PACK_HASH = HashingUtils::Ha
 static const int NO_SUCH_CONFIG_RULE_HASH = HashingUtils::HashString("NoSuchConfigRuleException");
 static const int MAX_NUMBER_OF_ORGANIZATION_CONFORMANCE_PACKS_EXCEEDED_HASH = HashingUtils::HashString("MaxNumberOfOrganizationConformancePacksExceededException");
 static const int NO_SUCH_RETENTION_CONFIGURATION_HASH = HashingUtils::HashString("NoSuchRetentionConfigurationException");
+static const int MAX_ACTIVE_RESOURCES_EXCEEDED_HASH = HashingUtils::HashString("MaxActiveResourcesExceededException");
 static const int INVALID_EXPRESSION_HASH = HashingUtils::HashString("InvalidExpressionException");
 static const int NO_AVAILABLE_ORGANIZATION_HASH = HashingUtils::HashString("NoAvailableOrganizationException");
 static const int INVALID_S_N_S_TOPIC_A_R_N_HASH = HashingUtils::HashString("InvalidSNSTopicARNException");
@@ -216,6 +217,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == NO_SUCH_RETENTION_CONFIGURATION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::NO_SUCH_RETENTION_CONFIGURATION), false);
+  }
+  else if (hashCode == MAX_ACTIVE_RESOURCES_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ConfigServiceErrors::MAX_ACTIVE_RESOURCES_EXCEEDED), false);
   }
   else if (hashCode == INVALID_EXPRESSION_HASH)
   {

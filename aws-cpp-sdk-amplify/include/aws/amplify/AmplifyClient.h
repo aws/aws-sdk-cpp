@@ -22,11 +22,13 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/amplify/model/CreateAppResult.h>
+#include <aws/amplify/model/CreateBackendEnvironmentResult.h>
 #include <aws/amplify/model/CreateBranchResult.h>
 #include <aws/amplify/model/CreateDeploymentResult.h>
 #include <aws/amplify/model/CreateDomainAssociationResult.h>
 #include <aws/amplify/model/CreateWebhookResult.h>
 #include <aws/amplify/model/DeleteAppResult.h>
+#include <aws/amplify/model/DeleteBackendEnvironmentResult.h>
 #include <aws/amplify/model/DeleteBranchResult.h>
 #include <aws/amplify/model/DeleteDomainAssociationResult.h>
 #include <aws/amplify/model/DeleteJobResult.h>
@@ -34,12 +36,14 @@
 #include <aws/amplify/model/GenerateAccessLogsResult.h>
 #include <aws/amplify/model/GetAppResult.h>
 #include <aws/amplify/model/GetArtifactUrlResult.h>
+#include <aws/amplify/model/GetBackendEnvironmentResult.h>
 #include <aws/amplify/model/GetBranchResult.h>
 #include <aws/amplify/model/GetDomainAssociationResult.h>
 #include <aws/amplify/model/GetJobResult.h>
 #include <aws/amplify/model/GetWebhookResult.h>
 #include <aws/amplify/model/ListAppsResult.h>
 #include <aws/amplify/model/ListArtifactsResult.h>
+#include <aws/amplify/model/ListBackendEnvironmentsResult.h>
 #include <aws/amplify/model/ListBranchesResult.h>
 #include <aws/amplify/model/ListDomainAssociationsResult.h>
 #include <aws/amplify/model/ListJobsResult.h>
@@ -94,11 +98,13 @@ namespace Amplify
 namespace Model
 {
         class CreateAppRequest;
+        class CreateBackendEnvironmentRequest;
         class CreateBranchRequest;
         class CreateDeploymentRequest;
         class CreateDomainAssociationRequest;
         class CreateWebhookRequest;
         class DeleteAppRequest;
+        class DeleteBackendEnvironmentRequest;
         class DeleteBranchRequest;
         class DeleteDomainAssociationRequest;
         class DeleteJobRequest;
@@ -106,12 +112,14 @@ namespace Model
         class GenerateAccessLogsRequest;
         class GetAppRequest;
         class GetArtifactUrlRequest;
+        class GetBackendEnvironmentRequest;
         class GetBranchRequest;
         class GetDomainAssociationRequest;
         class GetJobRequest;
         class GetWebhookRequest;
         class ListAppsRequest;
         class ListArtifactsRequest;
+        class ListBackendEnvironmentsRequest;
         class ListBranchesRequest;
         class ListDomainAssociationsRequest;
         class ListJobsRequest;
@@ -128,11 +136,13 @@ namespace Model
         class UpdateWebhookRequest;
 
         typedef Aws::Utils::Outcome<CreateAppResult, Aws::Client::AWSError<AmplifyErrors>> CreateAppOutcome;
+        typedef Aws::Utils::Outcome<CreateBackendEnvironmentResult, Aws::Client::AWSError<AmplifyErrors>> CreateBackendEnvironmentOutcome;
         typedef Aws::Utils::Outcome<CreateBranchResult, Aws::Client::AWSError<AmplifyErrors>> CreateBranchOutcome;
         typedef Aws::Utils::Outcome<CreateDeploymentResult, Aws::Client::AWSError<AmplifyErrors>> CreateDeploymentOutcome;
         typedef Aws::Utils::Outcome<CreateDomainAssociationResult, Aws::Client::AWSError<AmplifyErrors>> CreateDomainAssociationOutcome;
         typedef Aws::Utils::Outcome<CreateWebhookResult, Aws::Client::AWSError<AmplifyErrors>> CreateWebhookOutcome;
         typedef Aws::Utils::Outcome<DeleteAppResult, Aws::Client::AWSError<AmplifyErrors>> DeleteAppOutcome;
+        typedef Aws::Utils::Outcome<DeleteBackendEnvironmentResult, Aws::Client::AWSError<AmplifyErrors>> DeleteBackendEnvironmentOutcome;
         typedef Aws::Utils::Outcome<DeleteBranchResult, Aws::Client::AWSError<AmplifyErrors>> DeleteBranchOutcome;
         typedef Aws::Utils::Outcome<DeleteDomainAssociationResult, Aws::Client::AWSError<AmplifyErrors>> DeleteDomainAssociationOutcome;
         typedef Aws::Utils::Outcome<DeleteJobResult, Aws::Client::AWSError<AmplifyErrors>> DeleteJobOutcome;
@@ -140,12 +150,14 @@ namespace Model
         typedef Aws::Utils::Outcome<GenerateAccessLogsResult, Aws::Client::AWSError<AmplifyErrors>> GenerateAccessLogsOutcome;
         typedef Aws::Utils::Outcome<GetAppResult, Aws::Client::AWSError<AmplifyErrors>> GetAppOutcome;
         typedef Aws::Utils::Outcome<GetArtifactUrlResult, Aws::Client::AWSError<AmplifyErrors>> GetArtifactUrlOutcome;
+        typedef Aws::Utils::Outcome<GetBackendEnvironmentResult, Aws::Client::AWSError<AmplifyErrors>> GetBackendEnvironmentOutcome;
         typedef Aws::Utils::Outcome<GetBranchResult, Aws::Client::AWSError<AmplifyErrors>> GetBranchOutcome;
         typedef Aws::Utils::Outcome<GetDomainAssociationResult, Aws::Client::AWSError<AmplifyErrors>> GetDomainAssociationOutcome;
         typedef Aws::Utils::Outcome<GetJobResult, Aws::Client::AWSError<AmplifyErrors>> GetJobOutcome;
         typedef Aws::Utils::Outcome<GetWebhookResult, Aws::Client::AWSError<AmplifyErrors>> GetWebhookOutcome;
         typedef Aws::Utils::Outcome<ListAppsResult, Aws::Client::AWSError<AmplifyErrors>> ListAppsOutcome;
         typedef Aws::Utils::Outcome<ListArtifactsResult, Aws::Client::AWSError<AmplifyErrors>> ListArtifactsOutcome;
+        typedef Aws::Utils::Outcome<ListBackendEnvironmentsResult, Aws::Client::AWSError<AmplifyErrors>> ListBackendEnvironmentsOutcome;
         typedef Aws::Utils::Outcome<ListBranchesResult, Aws::Client::AWSError<AmplifyErrors>> ListBranchesOutcome;
         typedef Aws::Utils::Outcome<ListDomainAssociationsResult, Aws::Client::AWSError<AmplifyErrors>> ListDomainAssociationsOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<AmplifyErrors>> ListJobsOutcome;
@@ -162,11 +174,13 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateWebhookResult, Aws::Client::AWSError<AmplifyErrors>> UpdateWebhookOutcome;
 
         typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
+        typedef std::future<CreateBackendEnvironmentOutcome> CreateBackendEnvironmentOutcomeCallable;
         typedef std::future<CreateBranchOutcome> CreateBranchOutcomeCallable;
         typedef std::future<CreateDeploymentOutcome> CreateDeploymentOutcomeCallable;
         typedef std::future<CreateDomainAssociationOutcome> CreateDomainAssociationOutcomeCallable;
         typedef std::future<CreateWebhookOutcome> CreateWebhookOutcomeCallable;
         typedef std::future<DeleteAppOutcome> DeleteAppOutcomeCallable;
+        typedef std::future<DeleteBackendEnvironmentOutcome> DeleteBackendEnvironmentOutcomeCallable;
         typedef std::future<DeleteBranchOutcome> DeleteBranchOutcomeCallable;
         typedef std::future<DeleteDomainAssociationOutcome> DeleteDomainAssociationOutcomeCallable;
         typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
@@ -174,12 +188,14 @@ namespace Model
         typedef std::future<GenerateAccessLogsOutcome> GenerateAccessLogsOutcomeCallable;
         typedef std::future<GetAppOutcome> GetAppOutcomeCallable;
         typedef std::future<GetArtifactUrlOutcome> GetArtifactUrlOutcomeCallable;
+        typedef std::future<GetBackendEnvironmentOutcome> GetBackendEnvironmentOutcomeCallable;
         typedef std::future<GetBranchOutcome> GetBranchOutcomeCallable;
         typedef std::future<GetDomainAssociationOutcome> GetDomainAssociationOutcomeCallable;
         typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
         typedef std::future<GetWebhookOutcome> GetWebhookOutcomeCallable;
         typedef std::future<ListAppsOutcome> ListAppsOutcomeCallable;
         typedef std::future<ListArtifactsOutcome> ListArtifactsOutcomeCallable;
+        typedef std::future<ListBackendEnvironmentsOutcome> ListBackendEnvironmentsOutcomeCallable;
         typedef std::future<ListBranchesOutcome> ListBranchesOutcomeCallable;
         typedef std::future<ListDomainAssociationsOutcome> ListDomainAssociationsOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
@@ -199,11 +215,13 @@ namespace Model
   class AmplifyClient;
 
     typedef std::function<void(const AmplifyClient*, const Model::CreateAppRequest&, const Model::CreateAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppResponseReceivedHandler;
+    typedef std::function<void(const AmplifyClient*, const Model::CreateBackendEnvironmentRequest&, const Model::CreateBackendEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackendEnvironmentResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::CreateBranchRequest&, const Model::CreateBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBranchResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::CreateDeploymentRequest&, const Model::CreateDeploymentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDeploymentResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::CreateDomainAssociationRequest&, const Model::CreateDomainAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainAssociationResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::CreateWebhookRequest&, const Model::CreateWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebhookResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::DeleteAppRequest&, const Model::DeleteAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppResponseReceivedHandler;
+    typedef std::function<void(const AmplifyClient*, const Model::DeleteBackendEnvironmentRequest&, const Model::DeleteBackendEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackendEnvironmentResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::DeleteBranchRequest&, const Model::DeleteBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBranchResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::DeleteDomainAssociationRequest&, const Model::DeleteDomainAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainAssociationResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::DeleteJobRequest&, const Model::DeleteJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobResponseReceivedHandler;
@@ -211,12 +229,14 @@ namespace Model
     typedef std::function<void(const AmplifyClient*, const Model::GenerateAccessLogsRequest&, const Model::GenerateAccessLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateAccessLogsResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::GetAppRequest&, const Model::GetAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAppResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::GetArtifactUrlRequest&, const Model::GetArtifactUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetArtifactUrlResponseReceivedHandler;
+    typedef std::function<void(const AmplifyClient*, const Model::GetBackendEnvironmentRequest&, const Model::GetBackendEnvironmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBackendEnvironmentResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::GetBranchRequest&, const Model::GetBranchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBranchResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::GetDomainAssociationRequest&, const Model::GetDomainAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainAssociationResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::GetJobRequest&, const Model::GetJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::GetWebhookRequest&, const Model::GetWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWebhookResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::ListAppsRequest&, const Model::ListAppsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppsResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::ListArtifactsRequest&, const Model::ListArtifactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListArtifactsResponseReceivedHandler;
+    typedef std::function<void(const AmplifyClient*, const Model::ListBackendEnvironmentsRequest&, const Model::ListBackendEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBackendEnvironmentsResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::ListBranchesRequest&, const Model::ListBranchesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBranchesResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::ListDomainAssociationsRequest&, const Model::ListDomainAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainAssociationsResponseReceivedHandler;
     typedef std::function<void(const AmplifyClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
@@ -289,6 +309,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAppAsync(const Model::CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates a new backend environment for an Amplify App. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateBackendEnvironmentOutcome CreateBackendEnvironment(const Model::CreateBackendEnvironmentRequest& request) const;
+
+        /**
+         * <p> Creates a new backend environment for an Amplify App. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateBackendEnvironmentOutcomeCallable CreateBackendEnvironmentCallable(const Model::CreateBackendEnvironmentRequest& request) const;
+
+        /**
+         * <p> Creates a new backend environment for an Amplify App. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateBackendEnvironmentAsync(const Model::CreateBackendEnvironmentRequest& request, const CreateBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Creates a new Branch for an Amplify App. </p><p><h3>See Also:</h3>   <a
@@ -417,6 +465,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteAppAsync(const Model::DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Delete backend environment for an Amplify App. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBackendEnvironmentOutcome DeleteBackendEnvironment(const Model::DeleteBackendEnvironmentRequest& request) const;
+
+        /**
+         * <p> Delete backend environment for an Amplify App. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteBackendEnvironmentOutcomeCallable DeleteBackendEnvironmentCallable(const Model::DeleteBackendEnvironmentRequest& request) const;
+
+        /**
+         * <p> Delete backend environment for an Amplify App. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/DeleteBackendEnvironment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteBackendEnvironmentAsync(const Model::DeleteBackendEnvironmentRequest& request, const DeleteBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes a branch for an Amplify App. </p><p><h3>See Also:</h3>   <a
@@ -603,6 +679,34 @@ namespace Model
         virtual void GetArtifactUrlAsync(const Model::GetArtifactUrlRequest& request, const GetArtifactUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Retrieves a backend environment for an Amplify App. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetBackendEnvironmentOutcome GetBackendEnvironment(const Model::GetBackendEnvironmentRequest& request) const;
+
+        /**
+         * <p> Retrieves a backend environment for an Amplify App. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetBackendEnvironmentOutcomeCallable GetBackendEnvironmentCallable(const Model::GetBackendEnvironmentRequest& request) const;
+
+        /**
+         * <p> Retrieves a backend environment for an Amplify App. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBackendEnvironment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetBackendEnvironmentAsync(const Model::GetBackendEnvironmentRequest& request, const GetBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Retrieves a branch for an Amplify App. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetBranch">AWS
          * API Reference</a></p>
@@ -760,6 +864,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListArtifactsAsync(const Model::ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Lists backend environments for an Amplify App. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBackendEnvironmentsOutcome ListBackendEnvironments(const Model::ListBackendEnvironmentsRequest& request) const;
+
+        /**
+         * <p> Lists backend environments for an Amplify App. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListBackendEnvironmentsOutcomeCallable ListBackendEnvironmentsCallable(const Model::ListBackendEnvironmentsRequest& request) const;
+
+        /**
+         * <p> Lists backend environments for an Amplify App. </p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListBackendEnvironments">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListBackendEnvironmentsAsync(const Model::ListBackendEnvironmentsRequest& request, const ListBackendEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Lists branches for an Amplify App. </p><p><h3>See Also:</h3>   <a
@@ -1125,11 +1257,13 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CreateAppAsyncHelper(const Model::CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateBackendEnvironmentAsyncHelper(const Model::CreateBackendEnvironmentRequest& request, const CreateBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBranchAsyncHelper(const Model::CreateBranchRequest& request, const CreateBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDeploymentAsyncHelper(const Model::CreateDeploymentRequest& request, const CreateDeploymentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDomainAssociationAsyncHelper(const Model::CreateDomainAssociationRequest& request, const CreateDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWebhookAsyncHelper(const Model::CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAppAsyncHelper(const Model::DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteBackendEnvironmentAsyncHelper(const Model::DeleteBackendEnvironmentRequest& request, const DeleteBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBranchAsyncHelper(const Model::DeleteBranchRequest& request, const DeleteBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDomainAssociationAsyncHelper(const Model::DeleteDomainAssociationRequest& request, const DeleteDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteJobAsyncHelper(const Model::DeleteJobRequest& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1137,12 +1271,14 @@ namespace Model
         void GenerateAccessLogsAsyncHelper(const Model::GenerateAccessLogsRequest& request, const GenerateAccessLogsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAppAsyncHelper(const Model::GetAppRequest& request, const GetAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetArtifactUrlAsyncHelper(const Model::GetArtifactUrlRequest& request, const GetArtifactUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetBackendEnvironmentAsyncHelper(const Model::GetBackendEnvironmentRequest& request, const GetBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBranchAsyncHelper(const Model::GetBranchRequest& request, const GetBranchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainAssociationAsyncHelper(const Model::GetDomainAssociationRequest& request, const GetDomainAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobAsyncHelper(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetWebhookAsyncHelper(const Model::GetWebhookRequest& request, const GetWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAppsAsyncHelper(const Model::ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListArtifactsAsyncHelper(const Model::ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListBackendEnvironmentsAsyncHelper(const Model::ListBackendEnvironmentsRequest& request, const ListBackendEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBranchesAsyncHelper(const Model::ListBranchesRequest& request, const ListBranchesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDomainAssociationsAsyncHelper(const Model::ListDomainAssociationsRequest& request, const ListDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

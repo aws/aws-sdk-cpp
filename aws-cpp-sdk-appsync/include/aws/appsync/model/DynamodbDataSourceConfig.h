@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appsync/model/DeltaSyncConfig.h>
 #include <utility>
 
 namespace Aws
@@ -150,6 +151,62 @@ namespace Model
      */
     inline DynamodbDataSourceConfig& WithUseCallerCredentials(bool value) { SetUseCallerCredentials(value); return *this;}
 
+
+    /**
+     * <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
+     */
+    inline const DeltaSyncConfig& GetDeltaSyncConfig() const{ return m_deltaSyncConfig; }
+
+    /**
+     * <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
+     */
+    inline bool DeltaSyncConfigHasBeenSet() const { return m_deltaSyncConfigHasBeenSet; }
+
+    /**
+     * <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
+     */
+    inline void SetDeltaSyncConfig(const DeltaSyncConfig& value) { m_deltaSyncConfigHasBeenSet = true; m_deltaSyncConfig = value; }
+
+    /**
+     * <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
+     */
+    inline void SetDeltaSyncConfig(DeltaSyncConfig&& value) { m_deltaSyncConfigHasBeenSet = true; m_deltaSyncConfig = std::move(value); }
+
+    /**
+     * <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
+     */
+    inline DynamodbDataSourceConfig& WithDeltaSyncConfig(const DeltaSyncConfig& value) { SetDeltaSyncConfig(value); return *this;}
+
+    /**
+     * <p>The <code>DeltaSyncConfig</code> for a versioned datasource.</p>
+     */
+    inline DynamodbDataSourceConfig& WithDeltaSyncConfig(DeltaSyncConfig&& value) { SetDeltaSyncConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Set to TRUE to use Conflict Detection and Resolution with this data
+     * source.</p>
+     */
+    inline bool GetVersioned() const{ return m_versioned; }
+
+    /**
+     * <p>Set to TRUE to use Conflict Detection and Resolution with this data
+     * source.</p>
+     */
+    inline bool VersionedHasBeenSet() const { return m_versionedHasBeenSet; }
+
+    /**
+     * <p>Set to TRUE to use Conflict Detection and Resolution with this data
+     * source.</p>
+     */
+    inline void SetVersioned(bool value) { m_versionedHasBeenSet = true; m_versioned = value; }
+
+    /**
+     * <p>Set to TRUE to use Conflict Detection and Resolution with this data
+     * source.</p>
+     */
+    inline DynamodbDataSourceConfig& WithVersioned(bool value) { SetVersioned(value); return *this;}
+
   private:
 
     Aws::String m_tableName;
@@ -160,6 +217,12 @@ namespace Model
 
     bool m_useCallerCredentials;
     bool m_useCallerCredentialsHasBeenSet;
+
+    DeltaSyncConfig m_deltaSyncConfig;
+    bool m_deltaSyncConfigHasBeenSet;
+
+    bool m_versioned;
+    bool m_versionedHasBeenSet;
   };
 
 } // namespace Model

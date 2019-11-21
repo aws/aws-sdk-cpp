@@ -34,6 +34,7 @@ TransformFilterCriteria::TransformFilterCriteria() :
     m_transformTypeHasBeenSet(false),
     m_status(TransformStatusType::NOT_SET),
     m_statusHasBeenSet(false),
+    m_glueVersionHasBeenSet(false),
     m_createdBeforeHasBeenSet(false),
     m_createdAfterHasBeenSet(false),
     m_lastModifiedBeforeHasBeenSet(false),
@@ -48,6 +49,7 @@ TransformFilterCriteria::TransformFilterCriteria(JsonView jsonValue) :
     m_transformTypeHasBeenSet(false),
     m_status(TransformStatusType::NOT_SET),
     m_statusHasBeenSet(false),
+    m_glueVersionHasBeenSet(false),
     m_createdBeforeHasBeenSet(false),
     m_createdAfterHasBeenSet(false),
     m_lastModifiedBeforeHasBeenSet(false),
@@ -78,6 +80,13 @@ TransformFilterCriteria& TransformFilterCriteria::operator =(JsonView jsonValue)
     m_status = TransformStatusTypeMapper::GetTransformStatusTypeForName(jsonValue.GetString("Status"));
 
     m_statusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("GlueVersion"))
+  {
+    m_glueVersion = jsonValue.GetString("GlueVersion");
+
+    m_glueVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedBefore"))
@@ -139,6 +148,12 @@ JsonValue TransformFilterCriteria::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("Status", TransformStatusTypeMapper::GetNameForTransformStatusType(m_status));
+  }
+
+  if(m_glueVersionHasBeenSet)
+  {
+   payload.WithString("GlueVersion", m_glueVersion);
+
   }
 
   if(m_createdBeforeHasBeenSet)

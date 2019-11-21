@@ -31,7 +31,8 @@ PutBotResult::PutBotResult() :
     m_idleSessionTTLInSeconds(0),
     m_locale(Locale::NOT_SET),
     m_childDirected(false),
-    m_createVersion(false)
+    m_createVersion(false),
+    m_detectSentiment(false)
 {
 }
 
@@ -40,7 +41,8 @@ PutBotResult::PutBotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
     m_idleSessionTTLInSeconds(0),
     m_locale(Locale::NOT_SET),
     m_childDirected(false),
-    m_createVersion(false)
+    m_createVersion(false),
+    m_detectSentiment(false)
 {
   *this = result;
 }
@@ -144,6 +146,12 @@ PutBotResult& PutBotResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
   if(jsonValue.ValueExists("createVersion"))
   {
     m_createVersion = jsonValue.GetBool("createVersion");
+
+  }
+
+  if(jsonValue.ValueExists("detectSentiment"))
+  {
+    m_detectSentiment = jsonValue.GetBool("detectSentiment");
 
   }
 

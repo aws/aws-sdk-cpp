@@ -229,60 +229,75 @@ namespace Model
     /**
      * <p> When you send a request to create a bot with <code>processBehavior</code>
      * set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response
-     * element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets
-     * <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot,
-     * Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns
-     * the reason for the failure in the <code>failureReason</code> response element.
-     * </p> <p>When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon
-     * Lex sets the status code to <code>NOT BUILT</code>.</p>
+     * element to <code>BUILDING</code>.</p> <p>In the <code>READY_BASIC_TESTING</code>
+     * state you can test the bot with user inputs that exactly match the utterances
+     * configured for the bot's intents and values in the slot types.</p> <p>If Amazon
+     * Lex can't build the bot, Amazon Lex sets <code>status</code> to
+     * <code>FAILED</code>. Amazon Lex returns the reason for the failure in the
+     * <code>failureReason</code> response element. </p> <p>When you set
+     * <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status
+     * code to <code>NOT BUILT</code>.</p> <p>When the bot is in the <code>READY</code>
+     * state you can test and publish the bot.</p>
      */
     inline const Status& GetStatus() const{ return m_status; }
 
     /**
      * <p> When you send a request to create a bot with <code>processBehavior</code>
      * set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response
-     * element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets
-     * <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot,
-     * Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns
-     * the reason for the failure in the <code>failureReason</code> response element.
-     * </p> <p>When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon
-     * Lex sets the status code to <code>NOT BUILT</code>.</p>
+     * element to <code>BUILDING</code>.</p> <p>In the <code>READY_BASIC_TESTING</code>
+     * state you can test the bot with user inputs that exactly match the utterances
+     * configured for the bot's intents and values in the slot types.</p> <p>If Amazon
+     * Lex can't build the bot, Amazon Lex sets <code>status</code> to
+     * <code>FAILED</code>. Amazon Lex returns the reason for the failure in the
+     * <code>failureReason</code> response element. </p> <p>When you set
+     * <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status
+     * code to <code>NOT BUILT</code>.</p> <p>When the bot is in the <code>READY</code>
+     * state you can test and publish the bot.</p>
      */
     inline void SetStatus(const Status& value) { m_status = value; }
 
     /**
      * <p> When you send a request to create a bot with <code>processBehavior</code>
      * set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response
-     * element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets
-     * <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot,
-     * Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns
-     * the reason for the failure in the <code>failureReason</code> response element.
-     * </p> <p>When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon
-     * Lex sets the status code to <code>NOT BUILT</code>.</p>
+     * element to <code>BUILDING</code>.</p> <p>In the <code>READY_BASIC_TESTING</code>
+     * state you can test the bot with user inputs that exactly match the utterances
+     * configured for the bot's intents and values in the slot types.</p> <p>If Amazon
+     * Lex can't build the bot, Amazon Lex sets <code>status</code> to
+     * <code>FAILED</code>. Amazon Lex returns the reason for the failure in the
+     * <code>failureReason</code> response element. </p> <p>When you set
+     * <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status
+     * code to <code>NOT BUILT</code>.</p> <p>When the bot is in the <code>READY</code>
+     * state you can test and publish the bot.</p>
      */
     inline void SetStatus(Status&& value) { m_status = std::move(value); }
 
     /**
      * <p> When you send a request to create a bot with <code>processBehavior</code>
      * set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response
-     * element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets
-     * <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot,
-     * Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns
-     * the reason for the failure in the <code>failureReason</code> response element.
-     * </p> <p>When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon
-     * Lex sets the status code to <code>NOT BUILT</code>.</p>
+     * element to <code>BUILDING</code>.</p> <p>In the <code>READY_BASIC_TESTING</code>
+     * state you can test the bot with user inputs that exactly match the utterances
+     * configured for the bot's intents and values in the slot types.</p> <p>If Amazon
+     * Lex can't build the bot, Amazon Lex sets <code>status</code> to
+     * <code>FAILED</code>. Amazon Lex returns the reason for the failure in the
+     * <code>failureReason</code> response element. </p> <p>When you set
+     * <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status
+     * code to <code>NOT BUILT</code>.</p> <p>When the bot is in the <code>READY</code>
+     * state you can test and publish the bot.</p>
      */
     inline PutBotResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
 
     /**
      * <p> When you send a request to create a bot with <code>processBehavior</code>
      * set to <code>BUILD</code>, Amazon Lex sets the <code>status</code> response
-     * element to <code>BUILDING</code>. After Amazon Lex builds the bot, it sets
-     * <code>status</code> to <code>READY</code>. If Amazon Lex can't build the bot,
-     * Amazon Lex sets <code>status</code> to <code>FAILED</code>. Amazon Lex returns
-     * the reason for the failure in the <code>failureReason</code> response element.
-     * </p> <p>When you set <code>processBehavior</code>to <code>SAVE</code>, Amazon
-     * Lex sets the status code to <code>NOT BUILT</code>.</p>
+     * element to <code>BUILDING</code>.</p> <p>In the <code>READY_BASIC_TESTING</code>
+     * state you can test the bot with user inputs that exactly match the utterances
+     * configured for the bot's intents and values in the slot types.</p> <p>If Amazon
+     * Lex can't build the bot, Amazon Lex sets <code>status</code> to
+     * <code>FAILED</code>. Amazon Lex returns the reason for the failure in the
+     * <code>failureReason</code> response element. </p> <p>When you set
+     * <code>processBehavior</code> to <code>SAVE</code>, Amazon Lex sets the status
+     * code to <code>NOT BUILT</code>.</p> <p>When the bot is in the <code>READY</code>
+     * state you can test and publish the bot.</p>
      */
     inline PutBotResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -636,14 +651,51 @@ namespace Model
     inline PutBotResult& WithChildDirected(bool value) { SetChildDirected(value); return *this;}
 
 
-    
+    /**
+     * <p> <code>True</code> if a new version of the bot was created. If the
+     * <code>createVersion</code> field was not specified in the request, the
+     * <code>createVersion</code> field is set to false in the response.</p>
+     */
     inline bool GetCreateVersion() const{ return m_createVersion; }
 
-    
+    /**
+     * <p> <code>True</code> if a new version of the bot was created. If the
+     * <code>createVersion</code> field was not specified in the request, the
+     * <code>createVersion</code> field is set to false in the response.</p>
+     */
     inline void SetCreateVersion(bool value) { m_createVersion = value; }
 
-    
+    /**
+     * <p> <code>True</code> if a new version of the bot was created. If the
+     * <code>createVersion</code> field was not specified in the request, the
+     * <code>createVersion</code> field is set to false in the response.</p>
+     */
     inline PutBotResult& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
+
+
+    /**
+     * <p> <code>true</code> if the bot is configured to send user utterances to Amazon
+     * Comprehend for sentiment analysis. If the <code>detectSentiment</code> field was
+     * not specified in the request, the <code>detectSentiment</code> field is
+     * <code>false</code> in the response.</p>
+     */
+    inline bool GetDetectSentiment() const{ return m_detectSentiment; }
+
+    /**
+     * <p> <code>true</code> if the bot is configured to send user utterances to Amazon
+     * Comprehend for sentiment analysis. If the <code>detectSentiment</code> field was
+     * not specified in the request, the <code>detectSentiment</code> field is
+     * <code>false</code> in the response.</p>
+     */
+    inline void SetDetectSentiment(bool value) { m_detectSentiment = value; }
+
+    /**
+     * <p> <code>true</code> if the bot is configured to send user utterances to Amazon
+     * Comprehend for sentiment analysis. If the <code>detectSentiment</code> field was
+     * not specified in the request, the <code>detectSentiment</code> field is
+     * <code>false</code> in the response.</p>
+     */
+    inline PutBotResult& WithDetectSentiment(bool value) { SetDetectSentiment(value); return *this;}
 
   private:
 
@@ -678,6 +730,8 @@ namespace Model
     bool m_childDirected;
 
     bool m_createVersion;
+
+    bool m_detectSentiment;
   };
 
 } // namespace Model

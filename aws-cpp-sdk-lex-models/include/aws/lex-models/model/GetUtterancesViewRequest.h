@@ -147,43 +147,43 @@ namespace Model
 
 
     /**
-     * <p>To return utterances that were recognized and handled,
-     * use<code>Detected</code>. To return utterances that were not recognized, use
+     * <p>To return utterances that were recognized and handled, use
+     * <code>Detected</code>. To return utterances that were not recognized, use
      * <code>Missed</code>.</p>
      */
     inline const StatusType& GetStatusType() const{ return m_statusType; }
 
     /**
-     * <p>To return utterances that were recognized and handled,
-     * use<code>Detected</code>. To return utterances that were not recognized, use
+     * <p>To return utterances that were recognized and handled, use
+     * <code>Detected</code>. To return utterances that were not recognized, use
      * <code>Missed</code>.</p>
      */
     inline bool StatusTypeHasBeenSet() const { return m_statusTypeHasBeenSet; }
 
     /**
-     * <p>To return utterances that were recognized and handled,
-     * use<code>Detected</code>. To return utterances that were not recognized, use
+     * <p>To return utterances that were recognized and handled, use
+     * <code>Detected</code>. To return utterances that were not recognized, use
      * <code>Missed</code>.</p>
      */
     inline void SetStatusType(const StatusType& value) { m_statusTypeHasBeenSet = true; m_statusType = value; }
 
     /**
-     * <p>To return utterances that were recognized and handled,
-     * use<code>Detected</code>. To return utterances that were not recognized, use
+     * <p>To return utterances that were recognized and handled, use
+     * <code>Detected</code>. To return utterances that were not recognized, use
      * <code>Missed</code>.</p>
      */
     inline void SetStatusType(StatusType&& value) { m_statusTypeHasBeenSet = true; m_statusType = std::move(value); }
 
     /**
-     * <p>To return utterances that were recognized and handled,
-     * use<code>Detected</code>. To return utterances that were not recognized, use
+     * <p>To return utterances that were recognized and handled, use
+     * <code>Detected</code>. To return utterances that were not recognized, use
      * <code>Missed</code>.</p>
      */
     inline GetUtterancesViewRequest& WithStatusType(const StatusType& value) { SetStatusType(value); return *this;}
 
     /**
-     * <p>To return utterances that were recognized and handled,
-     * use<code>Detected</code>. To return utterances that were not recognized, use
+     * <p>To return utterances that were recognized and handled, use
+     * <code>Detected</code>. To return utterances that were not recognized, use
      * <code>Missed</code>.</p>
      */
     inline GetUtterancesViewRequest& WithStatusType(StatusType&& value) { SetStatusType(std::move(value)); return *this;}

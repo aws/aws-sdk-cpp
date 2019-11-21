@@ -34,6 +34,7 @@ HostProperties::HostProperties() :
     m_cores(0),
     m_coresHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_instanceFamilyHasBeenSet(false),
     m_sockets(0),
     m_socketsHasBeenSet(false),
     m_totalVCpus(0),
@@ -45,6 +46,7 @@ HostProperties::HostProperties(const XmlNode& xmlNode) :
     m_cores(0),
     m_coresHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
+    m_instanceFamilyHasBeenSet(false),
     m_sockets(0),
     m_socketsHasBeenSet(false),
     m_totalVCpus(0),
@@ -70,6 +72,12 @@ HostProperties& HostProperties::operator =(const XmlNode& xmlNode)
     {
       m_instanceType = Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText());
       m_instanceTypeHasBeenSet = true;
+    }
+    XmlNode instanceFamilyNode = resultNode.FirstChild("instanceFamily");
+    if(!instanceFamilyNode.IsNull())
+    {
+      m_instanceFamily = Aws::Utils::Xml::DecodeEscapedXmlText(instanceFamilyNode.GetText());
+      m_instanceFamilyHasBeenSet = true;
     }
     XmlNode socketsNode = resultNode.FirstChild("sockets");
     if(!socketsNode.IsNull())
@@ -100,6 +108,11 @@ void HostProperties::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
   }
 
+  if(m_instanceFamilyHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".InstanceFamily=" << StringUtils::URLEncode(m_instanceFamily.c_str()) << "&";
+  }
+
   if(m_socketsHasBeenSet)
   {
       oStream << location << index << locationValue << ".Sockets=" << m_sockets << "&";
@@ -121,6 +134,10 @@ void HostProperties::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_instanceTypeHasBeenSet)
   {
       oStream << location << ".InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
+  }
+  if(m_instanceFamilyHasBeenSet)
+  {
+      oStream << location << ".InstanceFamily=" << StringUtils::URLEncode(m_instanceFamily.c_str()) << "&";
   }
   if(m_socketsHasBeenSet)
   {

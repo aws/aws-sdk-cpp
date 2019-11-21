@@ -280,49 +280,49 @@ namespace Model
 
     /**
      * <p>An error code that is returned when organization conformance pack creation or
-     * deletion has failed in the member account. </p>
+     * deletion has failed in a member account. </p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
 
     /**
      * <p>An error code that is returned when organization conformance pack creation or
-     * deletion has failed in the member account. </p>
+     * deletion has failed in a member account. </p>
      */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>An error code that is returned when organization conformance pack creation or
-     * deletion has failed in the member account. </p>
+     * deletion has failed in a member account. </p>
      */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
      * <p>An error code that is returned when organization conformance pack creation or
-     * deletion has failed in the member account. </p>
+     * deletion has failed in a member account. </p>
      */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
 
     /**
      * <p>An error code that is returned when organization conformance pack creation or
-     * deletion has failed in the member account. </p>
+     * deletion has failed in a member account. </p>
      */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
 
     /**
      * <p>An error code that is returned when organization conformance pack creation or
-     * deletion has failed in the member account. </p>
+     * deletion has failed in a member account. </p>
      */
     inline OrganizationConformancePackStatus& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
 
     /**
      * <p>An error code that is returned when organization conformance pack creation or
-     * deletion has failed in the member account. </p>
+     * deletion has failed in a member account. </p>
      */
     inline OrganizationConformancePackStatus& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
 
     /**
      * <p>An error code that is returned when organization conformance pack creation or
-     * deletion has failed in the member account. </p>
+     * deletion has failed in a member account. </p>
      */
     inline OrganizationConformancePackStatus& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
 

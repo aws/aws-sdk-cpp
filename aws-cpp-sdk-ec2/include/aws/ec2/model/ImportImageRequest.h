@@ -20,6 +20,7 @@
 #include <aws/ec2/model/ClientData.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ImageDiskContainer.h>
+#include <aws/ec2/model/ImportImageLicenseConfigurationRequest.h>
 #include <utility>
 
 namespace Aws
@@ -786,6 +787,47 @@ namespace Model
      */
     inline ImportImageRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
+
+    /**
+     * <p>The ARNs of the license configurations.</p>
+     */
+    inline const Aws::Vector<ImportImageLicenseConfigurationRequest>& GetLicenseSpecifications() const{ return m_licenseSpecifications; }
+
+    /**
+     * <p>The ARNs of the license configurations.</p>
+     */
+    inline bool LicenseSpecificationsHasBeenSet() const { return m_licenseSpecificationsHasBeenSet; }
+
+    /**
+     * <p>The ARNs of the license configurations.</p>
+     */
+    inline void SetLicenseSpecifications(const Aws::Vector<ImportImageLicenseConfigurationRequest>& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = value; }
+
+    /**
+     * <p>The ARNs of the license configurations.</p>
+     */
+    inline void SetLicenseSpecifications(Aws::Vector<ImportImageLicenseConfigurationRequest>&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = std::move(value); }
+
+    /**
+     * <p>The ARNs of the license configurations.</p>
+     */
+    inline ImportImageRequest& WithLicenseSpecifications(const Aws::Vector<ImportImageLicenseConfigurationRequest>& value) { SetLicenseSpecifications(value); return *this;}
+
+    /**
+     * <p>The ARNs of the license configurations.</p>
+     */
+    inline ImportImageRequest& WithLicenseSpecifications(Aws::Vector<ImportImageLicenseConfigurationRequest>&& value) { SetLicenseSpecifications(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARNs of the license configurations.</p>
+     */
+    inline ImportImageRequest& AddLicenseSpecifications(const ImportImageLicenseConfigurationRequest& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(value); return *this; }
+
+    /**
+     * <p>The ARNs of the license configurations.</p>
+     */
+    inline ImportImageRequest& AddLicenseSpecifications(ImportImageLicenseConfigurationRequest&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_architecture;
@@ -823,6 +865,9 @@ namespace Model
 
     Aws::String m_roleName;
     bool m_roleNameHasBeenSet;
+
+    Aws::Vector<ImportImageLicenseConfigurationRequest> m_licenseSpecifications;
+    bool m_licenseSpecificationsHasBeenSet;
   };
 
 } // namespace Model

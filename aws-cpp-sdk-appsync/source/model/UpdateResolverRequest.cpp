@@ -31,7 +31,9 @@ UpdateResolverRequest::UpdateResolverRequest() :
     m_responseMappingTemplateHasBeenSet(false),
     m_kind(ResolverKind::NOT_SET),
     m_kindHasBeenSet(false),
-    m_pipelineConfigHasBeenSet(false)
+    m_pipelineConfigHasBeenSet(false),
+    m_syncConfigHasBeenSet(false),
+    m_cachingConfigHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,18 @@ Aws::String UpdateResolverRequest::SerializePayload() const
   if(m_pipelineConfigHasBeenSet)
   {
    payload.WithObject("pipelineConfig", m_pipelineConfig.Jsonize());
+
+  }
+
+  if(m_syncConfigHasBeenSet)
+  {
+   payload.WithObject("syncConfig", m_syncConfig.Jsonize());
+
+  }
+
+  if(m_cachingConfigHasBeenSet)
+  {
+   payload.WithObject("cachingConfig", m_cachingConfig.Jsonize());
 
   }
 

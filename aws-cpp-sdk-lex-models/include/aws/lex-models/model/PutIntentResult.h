@@ -579,13 +579,25 @@ namespace Model
     inline PutIntentResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
 
-    
+    /**
+     * <p> <code>True</code> if a new version of the intent was created. If the
+     * <code>createVersion</code> field was not specified in the request, the
+     * <code>createVersion</code> field is set to false in the response.</p>
+     */
     inline bool GetCreateVersion() const{ return m_createVersion; }
 
-    
+    /**
+     * <p> <code>True</code> if a new version of the intent was created. If the
+     * <code>createVersion</code> field was not specified in the request, the
+     * <code>createVersion</code> field is set to false in the response.</p>
+     */
     inline void SetCreateVersion(bool value) { m_createVersion = value; }
 
-    
+    /**
+     * <p> <code>True</code> if a new version of the intent was created. If the
+     * <code>createVersion</code> field was not specified in the request, the
+     * <code>createVersion</code> field is set to false in the response.</p>
+     */
     inline PutIntentResult& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
 
   private:

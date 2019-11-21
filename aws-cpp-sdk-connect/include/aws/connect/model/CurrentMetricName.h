@@ -35,7 +35,10 @@ namespace Model
     AGENTS_STAFFED,
     CONTACTS_IN_QUEUE,
     OLDEST_CONTACT_AGE,
-    CONTACTS_SCHEDULED
+    CONTACTS_SCHEDULED,
+    AGENTS_ON_CONTACT,
+    SLOTS_ACTIVE,
+    SLOTS_AVAILABLE
   };
 
 namespace CurrentMetricNameMapper

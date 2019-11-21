@@ -439,6 +439,11 @@ namespace Model
         /**
          * <p>Deletes all versions of the bot, including the <code>$LATEST</code> version.
          * To delete a specific version of the bot, use the <a>DeleteBotVersion</a>
+         * operation. The <code>DeleteBot</code> operation doesn't immediately remove the
+         * bot schema. Instead, it is marked for deletion and removed later.</p> <p>Amazon
+         * Lex stores utterances indefinitely for improving the ability of your bot to
+         * respond to user inputs. These utterances are not removed when the bot is
+         * deleted. To remove the utterances, use the <a>DeleteUtterances</a>
          * operation.</p> <p>If a bot has an alias, you can't delete it. Instead, the
          * <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code>
          * exception that includes a reference to the alias that refers to the bot. To
@@ -454,6 +459,11 @@ namespace Model
         /**
          * <p>Deletes all versions of the bot, including the <code>$LATEST</code> version.
          * To delete a specific version of the bot, use the <a>DeleteBotVersion</a>
+         * operation. The <code>DeleteBot</code> operation doesn't immediately remove the
+         * bot schema. Instead, it is marked for deletion and removed later.</p> <p>Amazon
+         * Lex stores utterances indefinitely for improving the ability of your bot to
+         * respond to user inputs. These utterances are not removed when the bot is
+         * deleted. To remove the utterances, use the <a>DeleteUtterances</a>
          * operation.</p> <p>If a bot has an alias, you can't delete it. Instead, the
          * <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code>
          * exception that includes a reference to the alias that refers to the bot. To
@@ -471,6 +481,11 @@ namespace Model
         /**
          * <p>Deletes all versions of the bot, including the <code>$LATEST</code> version.
          * To delete a specific version of the bot, use the <a>DeleteBotVersion</a>
+         * operation. The <code>DeleteBot</code> operation doesn't immediately remove the
+         * bot schema. Instead, it is marked for deletion and removed later.</p> <p>Amazon
+         * Lex stores utterances indefinitely for improving the ability of your bot to
+         * respond to user inputs. These utterances are not removed when the bot is
+         * deleted. To remove the utterances, use the <a>DeleteUtterances</a>
          * operation.</p> <p>If a bot has an alias, you can't delete it. Instead, the
          * <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code>
          * exception that includes a reference to the alias that refers to the bot. To
@@ -794,9 +809,13 @@ namespace Model
          * send to your bot. Utterances are stored for 15 days for use with the
          * <a>GetUtterancesView</a> operation, and then stored indefinitely for use in
          * improving the ability of your bot to respond to user input.</p> <p>Use the
-         * <code>DeleteStoredUtterances</code> operation to manually delete stored
-         * utterances for a specific user.</p> <p>This operation requires permissions for
-         * the <code>lex:DeleteUtterances</code> action.</p><p><h3>See Also:</h3>   <a
+         * <code>DeleteUtterances</code> operation to manually delete stored utterances for
+         * a specific user. When you use the <code>DeleteUtterances</code> operation,
+         * utterances stored for improving your bot's ability to respond to user input are
+         * deleted immediately. Utterances stored for use with the
+         * <code>GetUtterancesView</code> operation are deleted after 15 days.</p> <p>This
+         * operation requires permissions for the <code>lex:DeleteUtterances</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">AWS
          * API Reference</a></p>
          */
@@ -807,9 +826,13 @@ namespace Model
          * send to your bot. Utterances are stored for 15 days for use with the
          * <a>GetUtterancesView</a> operation, and then stored indefinitely for use in
          * improving the ability of your bot to respond to user input.</p> <p>Use the
-         * <code>DeleteStoredUtterances</code> operation to manually delete stored
-         * utterances for a specific user.</p> <p>This operation requires permissions for
-         * the <code>lex:DeleteUtterances</code> action.</p><p><h3>See Also:</h3>   <a
+         * <code>DeleteUtterances</code> operation to manually delete stored utterances for
+         * a specific user. When you use the <code>DeleteUtterances</code> operation,
+         * utterances stored for improving your bot's ability to respond to user input are
+         * deleted immediately. Utterances stored for use with the
+         * <code>GetUtterancesView</code> operation are deleted after 15 days.</p> <p>This
+         * operation requires permissions for the <code>lex:DeleteUtterances</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">AWS
          * API Reference</a></p>
          *
@@ -822,9 +845,13 @@ namespace Model
          * send to your bot. Utterances are stored for 15 days for use with the
          * <a>GetUtterancesView</a> operation, and then stored indefinitely for use in
          * improving the ability of your bot to respond to user input.</p> <p>Use the
-         * <code>DeleteStoredUtterances</code> operation to manually delete stored
-         * utterances for a specific user.</p> <p>This operation requires permissions for
-         * the <code>lex:DeleteUtterances</code> action.</p><p><h3>See Also:</h3>   <a
+         * <code>DeleteUtterances</code> operation to manually delete stored utterances for
+         * a specific user. When you use the <code>DeleteUtterances</code> operation,
+         * utterances stored for improving your bot's ability to respond to user input are
+         * deleted immediately. Utterances stored for use with the
+         * <code>GetUtterancesView</code> operation are deleted after 15 days.</p> <p>This
+         * operation requires permissions for the <code>lex:DeleteUtterances</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteUtterances">AWS
          * API Reference</a></p>
          *
@@ -1506,11 +1533,14 @@ namespace Model
          * to the <code>OrderFlowers</code> intent so that your bot recognizes that
          * utterance.</p> <p>After you publish a new version of a bot, you can get
          * information about the old version and the new so that you can compare the
-         * performance across the two versions. </p> <note> <p>Utterance statistics are
-         * generated once a day. Data is available for the last 15 days. You can request
-         * information for up to 5 versions in each request. The response contains
-         * information about a maximum of 100 utterances for each version.</p> </note>
-         * <p>This operation requires permissions for the
+         * performance across the two versions. </p> <p>Utterance statistics are generated
+         * once a day. Data is available for the last 15 days. You can request information
+         * for up to 5 versions of your bot in each request. Amazon Lex returns the most
+         * frequent utterances received by the bot in the last 15 days. The response
+         * contains information about a maximum of 100 utterances for each version.</p>
+         * <p>If you set <code>childDirected</code> field to true when you created your
+         * bot, or if you opted out of participating in improving Amazon Lex, utterances
+         * are not available.</p> <p>This operation requires permissions for the
          * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
@@ -1528,11 +1558,14 @@ namespace Model
          * to the <code>OrderFlowers</code> intent so that your bot recognizes that
          * utterance.</p> <p>After you publish a new version of a bot, you can get
          * information about the old version and the new so that you can compare the
-         * performance across the two versions. </p> <note> <p>Utterance statistics are
-         * generated once a day. Data is available for the last 15 days. You can request
-         * information for up to 5 versions in each request. The response contains
-         * information about a maximum of 100 utterances for each version.</p> </note>
-         * <p>This operation requires permissions for the
+         * performance across the two versions. </p> <p>Utterance statistics are generated
+         * once a day. Data is available for the last 15 days. You can request information
+         * for up to 5 versions of your bot in each request. Amazon Lex returns the most
+         * frequent utterances received by the bot in the last 15 days. The response
+         * contains information about a maximum of 100 utterances for each version.</p>
+         * <p>If you set <code>childDirected</code> field to true when you created your
+         * bot, or if you opted out of participating in improving Amazon Lex, utterances
+         * are not available.</p> <p>This operation requires permissions for the
          * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
@@ -1552,11 +1585,14 @@ namespace Model
          * to the <code>OrderFlowers</code> intent so that your bot recognizes that
          * utterance.</p> <p>After you publish a new version of a bot, you can get
          * information about the old version and the new so that you can compare the
-         * performance across the two versions. </p> <note> <p>Utterance statistics are
-         * generated once a day. Data is available for the last 15 days. You can request
-         * information for up to 5 versions in each request. The response contains
-         * information about a maximum of 100 utterances for each version.</p> </note>
-         * <p>This operation requires permissions for the
+         * performance across the two versions. </p> <p>Utterance statistics are generated
+         * once a day. Data is available for the last 15 days. You can request information
+         * for up to 5 versions of your bot in each request. Amazon Lex returns the most
+         * frequent utterances received by the bot in the last 15 days. The response
+         * contains information about a maximum of 100 utterances for each version.</p>
+         * <p>If you set <code>childDirected</code> field to true when you created your
+         * bot, or if you opted out of participating in improving Amazon Lex, utterances
+         * are not available.</p> <p>This operation requires permissions for the
          * <code>lex:GetUtterancesView</code> action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/GetUtterancesView">AWS
          * API Reference</a></p>
@@ -1581,7 +1617,7 @@ namespace Model
          * you don't specify values for required fields, Amazon Lex throws an
          * exception.</p> <p>This operation requires permissions for the
          * <code>lex:PutBot</code> action. For more information, see
-         * <a>auth-and-access-control</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>security-iam</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBot">AWS
          * API Reference</a></p>
          */
@@ -1603,7 +1639,7 @@ namespace Model
          * you don't specify values for required fields, Amazon Lex throws an
          * exception.</p> <p>This operation requires permissions for the
          * <code>lex:PutBot</code> action. For more information, see
-         * <a>auth-and-access-control</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>security-iam</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBot">AWS
          * API Reference</a></p>
          *
@@ -1627,7 +1663,7 @@ namespace Model
          * you don't specify values for required fields, Amazon Lex throws an
          * exception.</p> <p>This operation requires permissions for the
          * <code>lex:PutBot</code> action. For more information, see
-         * <a>auth-and-access-control</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>security-iam</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/PutBot">AWS
          * API Reference</a></p>
          *

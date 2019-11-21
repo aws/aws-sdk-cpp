@@ -34,7 +34,8 @@ ImportImageRequest::ImportImageRequest() :
     m_kmsKeyIdHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
     m_platformHasBeenSet(false),
-    m_roleNameHasBeenSet(false)
+    m_roleNameHasBeenSet(false),
+    m_licenseSpecificationsHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ Aws::String ImportImageRequest::SerializePayload() const
   if(m_roleNameHasBeenSet)
   {
     ss << "RoleName=" << StringUtils::URLEncode(m_roleName.c_str()) << "&";
+  }
+
+  if(m_licenseSpecificationsHasBeenSet)
+  {
+    unsigned licenseSpecificationsCount = 1;
+    for(auto& item : m_licenseSpecifications)
+    {
+      item.OutputToStream(ss, "LicenseSpecifications.", licenseSpecificationsCount, "");
+      licenseSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

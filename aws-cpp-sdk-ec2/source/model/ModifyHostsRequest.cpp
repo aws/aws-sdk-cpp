@@ -25,7 +25,9 @@ ModifyHostsRequest::ModifyHostsRequest() :
     m_autoPlacementHasBeenSet(false),
     m_hostIdsHasBeenSet(false),
     m_hostRecovery(HostRecovery::NOT_SET),
-    m_hostRecoveryHasBeenSet(false)
+    m_hostRecoveryHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_instanceFamilyHasBeenSet(false)
 {
 }
 
@@ -52,6 +54,16 @@ Aws::String ModifyHostsRequest::SerializePayload() const
   if(m_hostRecoveryHasBeenSet)
   {
     ss << "HostRecovery=" << HostRecoveryMapper::GetNameForHostRecovery(m_hostRecovery) << "&";
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+    ss << "InstanceType=" << StringUtils::URLEncode(m_instanceType.c_str()) << "&";
+  }
+
+  if(m_instanceFamilyHasBeenSet)
+  {
+    ss << "InstanceFamily=" << StringUtils::URLEncode(m_instanceFamily.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

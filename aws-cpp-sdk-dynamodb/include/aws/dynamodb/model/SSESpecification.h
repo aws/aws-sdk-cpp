@@ -136,7 +136,7 @@ namespace Model
 
 
     /**
-     * <p>The KMS customer master key (CMK) that should be used for the AWS KMS
+     * <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS
      * encryption. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
      * name, or alias ARN. Note that you should only provide this parameter if the key
      * is different from the default DynamoDB customer master key
@@ -145,7 +145,7 @@ namespace Model
     inline const Aws::String& GetKMSMasterKeyId() const{ return m_kMSMasterKeyId; }
 
     /**
-     * <p>The KMS customer master key (CMK) that should be used for the AWS KMS
+     * <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS
      * encryption. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
      * name, or alias ARN. Note that you should only provide this parameter if the key
      * is different from the default DynamoDB customer master key
@@ -154,7 +154,7 @@ namespace Model
     inline bool KMSMasterKeyIdHasBeenSet() const { return m_kMSMasterKeyIdHasBeenSet; }
 
     /**
-     * <p>The KMS customer master key (CMK) that should be used for the AWS KMS
+     * <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS
      * encryption. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
      * name, or alias ARN. Note that you should only provide this parameter if the key
      * is different from the default DynamoDB customer master key
@@ -163,7 +163,7 @@ namespace Model
     inline void SetKMSMasterKeyId(const Aws::String& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = value; }
 
     /**
-     * <p>The KMS customer master key (CMK) that should be used for the AWS KMS
+     * <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS
      * encryption. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
      * name, or alias ARN. Note that you should only provide this parameter if the key
      * is different from the default DynamoDB customer master key
@@ -172,7 +172,7 @@ namespace Model
     inline void SetKMSMasterKeyId(Aws::String&& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = std::move(value); }
 
     /**
-     * <p>The KMS customer master key (CMK) that should be used for the AWS KMS
+     * <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS
      * encryption. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
      * name, or alias ARN. Note that you should only provide this parameter if the key
      * is different from the default DynamoDB customer master key
@@ -181,7 +181,7 @@ namespace Model
     inline void SetKMSMasterKeyId(const char* value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId.assign(value); }
 
     /**
-     * <p>The KMS customer master key (CMK) that should be used for the AWS KMS
+     * <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS
      * encryption. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
      * name, or alias ARN. Note that you should only provide this parameter if the key
      * is different from the default DynamoDB customer master key
@@ -190,7 +190,7 @@ namespace Model
     inline SSESpecification& WithKMSMasterKeyId(const Aws::String& value) { SetKMSMasterKeyId(value); return *this;}
 
     /**
-     * <p>The KMS customer master key (CMK) that should be used for the AWS KMS
+     * <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS
      * encryption. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
      * name, or alias ARN. Note that you should only provide this parameter if the key
      * is different from the default DynamoDB customer master key
@@ -199,7 +199,7 @@ namespace Model
     inline SSESpecification& WithKMSMasterKeyId(Aws::String&& value) { SetKMSMasterKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS customer master key (CMK) that should be used for the AWS KMS
+     * <p>The AWS KMS customer master key (CMK) that should be used for the AWS KMS
      * encryption. To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
      * name, or alias ARN. Note that you should only provide this parameter if the key
      * is different from the default DynamoDB customer master key

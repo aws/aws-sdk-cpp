@@ -613,6 +613,25 @@ namespace Model
      */
     inline CreateBotVersionResult& WithChildDirected(bool value) { SetChildDirected(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether utterances entered by the user should be sent to Amazon
+     * Comprehend for sentiment analysis.</p>
+     */
+    inline bool GetDetectSentiment() const{ return m_detectSentiment; }
+
+    /**
+     * <p>Indicates whether utterances entered by the user should be sent to Amazon
+     * Comprehend for sentiment analysis.</p>
+     */
+    inline void SetDetectSentiment(bool value) { m_detectSentiment = value; }
+
+    /**
+     * <p>Indicates whether utterances entered by the user should be sent to Amazon
+     * Comprehend for sentiment analysis.</p>
+     */
+    inline CreateBotVersionResult& WithDetectSentiment(bool value) { SetDetectSentiment(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -644,6 +663,8 @@ namespace Model
     Locale m_locale;
 
     bool m_childDirected;
+
+    bool m_detectSentiment;
   };
 
 } // namespace Model

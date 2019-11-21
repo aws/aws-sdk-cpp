@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int VOICE_HASH = HashingUtils::HashString("VOICE");
+        static const int CHAT_HASH = HashingUtils::HashString("CHAT");
 
 
         Channel GetChannelForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == VOICE_HASH)
           {
             return Channel::VOICE;
+          }
+          else if (hashCode == CHAT_HASH)
+          {
+            return Channel::CHAT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case Channel::VOICE:
             return "VOICE";
+          case Channel::CHAT:
+            return "CHAT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

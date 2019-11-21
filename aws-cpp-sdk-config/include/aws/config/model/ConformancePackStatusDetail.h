@@ -180,7 +180,7 @@ namespace Model
      * account.</p> </li> <li> <p>CREATE_FAILED when a conformance pack creation failed
      * in your account.</p> </li> <li> <p>DELETE_IN_PROGRESS when a conformance pack
      * deletion is in progress. </p> </li> <li> <p>DELETE_FAILED when a conformance
-     * pack deletion failed from your account.</p> </li> </ul>
+     * pack deletion failed in your account.</p> </li> </ul>
      */
     inline const ConformancePackState& GetConformancePackState() const{ return m_conformancePackState; }
 
@@ -192,7 +192,7 @@ namespace Model
      * account.</p> </li> <li> <p>CREATE_FAILED when a conformance pack creation failed
      * in your account.</p> </li> <li> <p>DELETE_IN_PROGRESS when a conformance pack
      * deletion is in progress. </p> </li> <li> <p>DELETE_FAILED when a conformance
-     * pack deletion failed from your account.</p> </li> </ul>
+     * pack deletion failed in your account.</p> </li> </ul>
      */
     inline bool ConformancePackStateHasBeenSet() const { return m_conformancePackStateHasBeenSet; }
 
@@ -204,7 +204,7 @@ namespace Model
      * account.</p> </li> <li> <p>CREATE_FAILED when a conformance pack creation failed
      * in your account.</p> </li> <li> <p>DELETE_IN_PROGRESS when a conformance pack
      * deletion is in progress. </p> </li> <li> <p>DELETE_FAILED when a conformance
-     * pack deletion failed from your account.</p> </li> </ul>
+     * pack deletion failed in your account.</p> </li> </ul>
      */
     inline void SetConformancePackState(const ConformancePackState& value) { m_conformancePackStateHasBeenSet = true; m_conformancePackState = value; }
 
@@ -216,7 +216,7 @@ namespace Model
      * account.</p> </li> <li> <p>CREATE_FAILED when a conformance pack creation failed
      * in your account.</p> </li> <li> <p>DELETE_IN_PROGRESS when a conformance pack
      * deletion is in progress. </p> </li> <li> <p>DELETE_FAILED when a conformance
-     * pack deletion failed from your account.</p> </li> </ul>
+     * pack deletion failed in your account.</p> </li> </ul>
      */
     inline void SetConformancePackState(ConformancePackState&& value) { m_conformancePackStateHasBeenSet = true; m_conformancePackState = std::move(value); }
 
@@ -228,7 +228,7 @@ namespace Model
      * account.</p> </li> <li> <p>CREATE_FAILED when a conformance pack creation failed
      * in your account.</p> </li> <li> <p>DELETE_IN_PROGRESS when a conformance pack
      * deletion is in progress. </p> </li> <li> <p>DELETE_FAILED when a conformance
-     * pack deletion failed from your account.</p> </li> </ul>
+     * pack deletion failed in your account.</p> </li> </ul>
      */
     inline ConformancePackStatusDetail& WithConformancePackState(const ConformancePackState& value) { SetConformancePackState(value); return *this;}
 
@@ -240,7 +240,7 @@ namespace Model
      * account.</p> </li> <li> <p>CREATE_FAILED when a conformance pack creation failed
      * in your account.</p> </li> <li> <p>DELETE_IN_PROGRESS when a conformance pack
      * deletion is in progress. </p> </li> <li> <p>DELETE_FAILED when a conformance
-     * pack deletion failed from your account.</p> </li> </ul>
+     * pack deletion failed in your account.</p> </li> </ul>
      */
     inline ConformancePackStatusDetail& WithConformancePackState(ConformancePackState&& value) { SetConformancePackState(std::move(value)); return *this;}
 

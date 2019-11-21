@@ -72,6 +72,12 @@ PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
+  if(jsonValue.ValueExists("sentimentResponse"))
+  {
+    m_sentimentResponse = jsonValue.GetObject("sentimentResponse");
+
+  }
+
   if(jsonValue.ValueExists("messageFormat"))
   {
     m_messageFormat = MessageFormatTypeMapper::GetMessageFormatTypeForName(jsonValue.GetString("messageFormat"));

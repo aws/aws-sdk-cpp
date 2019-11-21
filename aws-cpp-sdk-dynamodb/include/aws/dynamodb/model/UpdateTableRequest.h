@@ -24,6 +24,7 @@
 #include <aws/dynamodb/model/SSESpecification.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexUpdate.h>
+#include <aws/dynamodb/model/ReplicationGroupUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -487,6 +488,71 @@ namespace Model
      */
     inline UpdateTableRequest& WithSSESpecification(SSESpecification&& value) { SetSSESpecification(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of replica update actions (create, delete, or update) for the
+     * table.</p> <note> <p>This property only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.</p> </note>
+     */
+    inline const Aws::Vector<ReplicationGroupUpdate>& GetReplicaUpdates() const{ return m_replicaUpdates; }
+
+    /**
+     * <p>A list of replica update actions (create, delete, or update) for the
+     * table.</p> <note> <p>This property only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.</p> </note>
+     */
+    inline bool ReplicaUpdatesHasBeenSet() const { return m_replicaUpdatesHasBeenSet; }
+
+    /**
+     * <p>A list of replica update actions (create, delete, or update) for the
+     * table.</p> <note> <p>This property only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.</p> </note>
+     */
+    inline void SetReplicaUpdates(const Aws::Vector<ReplicationGroupUpdate>& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = value; }
+
+    /**
+     * <p>A list of replica update actions (create, delete, or update) for the
+     * table.</p> <note> <p>This property only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.</p> </note>
+     */
+    inline void SetReplicaUpdates(Aws::Vector<ReplicationGroupUpdate>&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates = std::move(value); }
+
+    /**
+     * <p>A list of replica update actions (create, delete, or update) for the
+     * table.</p> <note> <p>This property only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.</p> </note>
+     */
+    inline UpdateTableRequest& WithReplicaUpdates(const Aws::Vector<ReplicationGroupUpdate>& value) { SetReplicaUpdates(value); return *this;}
+
+    /**
+     * <p>A list of replica update actions (create, delete, or update) for the
+     * table.</p> <note> <p>This property only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.</p> </note>
+     */
+    inline UpdateTableRequest& WithReplicaUpdates(Aws::Vector<ReplicationGroupUpdate>&& value) { SetReplicaUpdates(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of replica update actions (create, delete, or update) for the
+     * table.</p> <note> <p>This property only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.</p> </note>
+     */
+    inline UpdateTableRequest& AddReplicaUpdates(const ReplicationGroupUpdate& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.push_back(value); return *this; }
+
+    /**
+     * <p>A list of replica update actions (create, delete, or update) for the
+     * table.</p> <note> <p>This property only applies to <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+     * 2019.11.21</a> of global tables.</p> </note>
+     */
+    inline UpdateTableRequest& AddReplicaUpdates(ReplicationGroupUpdate&& value) { m_replicaUpdatesHasBeenSet = true; m_replicaUpdates.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -509,6 +575,9 @@ namespace Model
 
     SSESpecification m_sSESpecification;
     bool m_sSESpecificationHasBeenSet;
+
+    Aws::Vector<ReplicationGroupUpdate> m_replicaUpdates;
+    bool m_replicaUpdatesHasBeenSet;
   };
 
 } // namespace Model

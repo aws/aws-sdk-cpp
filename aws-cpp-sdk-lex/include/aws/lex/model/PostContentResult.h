@@ -285,6 +285,56 @@ namespace Model
 
 
     /**
+     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
+     * to send utterances to Amazon Comprehend for sentiment analysis, this field
+     * contains the result of the analysis.</p>
+     */
+    inline const Aws::String& GetSentimentResponse() const{ return m_sentimentResponse; }
+
+    /**
+     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
+     * to send utterances to Amazon Comprehend for sentiment analysis, this field
+     * contains the result of the analysis.</p>
+     */
+    inline void SetSentimentResponse(const Aws::String& value) { m_sentimentResponse = value; }
+
+    /**
+     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
+     * to send utterances to Amazon Comprehend for sentiment analysis, this field
+     * contains the result of the analysis.</p>
+     */
+    inline void SetSentimentResponse(Aws::String&& value) { m_sentimentResponse = std::move(value); }
+
+    /**
+     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
+     * to send utterances to Amazon Comprehend for sentiment analysis, this field
+     * contains the result of the analysis.</p>
+     */
+    inline void SetSentimentResponse(const char* value) { m_sentimentResponse.assign(value); }
+
+    /**
+     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
+     * to send utterances to Amazon Comprehend for sentiment analysis, this field
+     * contains the result of the analysis.</p>
+     */
+    inline PostContentResult& WithSentimentResponse(const Aws::String& value) { SetSentimentResponse(value); return *this;}
+
+    /**
+     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
+     * to send utterances to Amazon Comprehend for sentiment analysis, this field
+     * contains the result of the analysis.</p>
+     */
+    inline PostContentResult& WithSentimentResponse(Aws::String&& value) { SetSentimentResponse(std::move(value)); return *this;}
+
+    /**
+     * <p>The sentiment expressed in and utterance.</p> <p>When the bot is configured
+     * to send utterances to Amazon Comprehend for sentiment analysis, this field
+     * contains the result of the analysis.</p>
+     */
+    inline PostContentResult& WithSentimentResponse(const char* value) { SetSentimentResponse(value); return *this;}
+
+
+    /**
      * <p>The message to convey to the user. The message can come from the bot's
      * configuration or from a Lambda function.</p> <p>If the intent is not configured
      * with a Lambda function, or if the Lambda function returned <code>Delegate</code>
@@ -764,6 +814,8 @@ namespace Model
     Aws::String m_slots;
 
     Aws::String m_sessionAttributes;
+
+    Aws::String m_sentimentResponse;
 
     Aws::String m_message;
 

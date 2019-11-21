@@ -522,67 +522,196 @@ namespace Model
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. This role needs permission to your Amazon Simple Storage Service
-     * (Amazon S3) sources, targets, temporary directory, scripts, and any libraries
-     * used by the task run for this transform.</p>
+     * permissions. The required permissions include both AWS Glue service role
+     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
+     * to allow access to resources in AWS Glue. See <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
+     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
+     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
+     * targets, temporary directory, scripts, and any libraries used by the task run
+     * for this transform.</p> </li> </ul>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. This role needs permission to your Amazon Simple Storage Service
-     * (Amazon S3) sources, targets, temporary directory, scripts, and any libraries
-     * used by the task run for this transform.</p>
+     * permissions. The required permissions include both AWS Glue service role
+     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
+     * to allow access to resources in AWS Glue. See <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
+     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
+     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
+     * targets, temporary directory, scripts, and any libraries used by the task run
+     * for this transform.</p> </li> </ul>
      */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. This role needs permission to your Amazon Simple Storage Service
-     * (Amazon S3) sources, targets, temporary directory, scripts, and any libraries
-     * used by the task run for this transform.</p>
+     * permissions. The required permissions include both AWS Glue service role
+     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
+     * to allow access to resources in AWS Glue. See <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
+     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
+     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
+     * targets, temporary directory, scripts, and any libraries used by the task run
+     * for this transform.</p> </li> </ul>
      */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. This role needs permission to your Amazon Simple Storage Service
-     * (Amazon S3) sources, targets, temporary directory, scripts, and any libraries
-     * used by the task run for this transform.</p>
+     * permissions. The required permissions include both AWS Glue service role
+     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
+     * to allow access to resources in AWS Glue. See <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
+     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
+     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
+     * targets, temporary directory, scripts, and any libraries used by the task run
+     * for this transform.</p> </li> </ul>
      */
     inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. This role needs permission to your Amazon Simple Storage Service
-     * (Amazon S3) sources, targets, temporary directory, scripts, and any libraries
-     * used by the task run for this transform.</p>
+     * permissions. The required permissions include both AWS Glue service role
+     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
+     * to allow access to resources in AWS Glue. See <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
+     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
+     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
+     * targets, temporary directory, scripts, and any libraries used by the task run
+     * for this transform.</p> </li> </ul>
      */
     inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. This role needs permission to your Amazon Simple Storage Service
-     * (Amazon S3) sources, targets, temporary directory, scripts, and any libraries
-     * used by the task run for this transform.</p>
+     * permissions. The required permissions include both AWS Glue service role
+     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
+     * to allow access to resources in AWS Glue. See <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
+     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
+     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
+     * targets, temporary directory, scripts, and any libraries used by the task run
+     * for this transform.</p> </li> </ul>
      */
     inline MLTransform& WithRole(const Aws::String& value) { SetRole(value); return *this;}
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. This role needs permission to your Amazon Simple Storage Service
-     * (Amazon S3) sources, targets, temporary directory, scripts, and any libraries
-     * used by the task run for this transform.</p>
+     * permissions. The required permissions include both AWS Glue service role
+     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
+     * to allow access to resources in AWS Glue. See <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
+     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
+     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
+     * targets, temporary directory, scripts, and any libraries used by the task run
+     * for this transform.</p> </li> </ul>
      */
     inline MLTransform& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
 
     /**
      * <p>The name or Amazon Resource Name (ARN) of the IAM role with the required
-     * permissions. This role needs permission to your Amazon Simple Storage Service
-     * (Amazon S3) sources, targets, temporary directory, scripts, and any libraries
-     * used by the task run for this transform.</p>
+     * permissions. The required permissions include both AWS Glue service role
+     * permissions to AWS Glue resources, and Amazon S3 permissions required by the
+     * transform. </p> <ul> <li> <p>This role needs AWS Glue service role permissions
+     * to allow access to resources in AWS Glue. See <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/attach-policy-iam-user.html">Attach
+     * a Policy to IAM Users That Access AWS Glue</a>.</p> </li> <li> <p>This role
+     * needs permission to your Amazon Simple Storage Service (Amazon S3) sources,
+     * targets, temporary directory, scripts, and any libraries used by the task run
+     * for this transform.</p> </li> </ul>
      */
     inline MLTransform& WithRole(const char* value) { SetRole(value); return *this;}
+
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline MLTransform& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline MLTransform& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>This value determines which version of AWS Glue this machine learning
+     * transform is compatible with. Glue 1.0 is recommended for most customers. If the
+     * value is not set, the Glue compatibility defaults to Glue 0.9. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/release-notes.html#release-notes-versions">AWS
+     * Glue Versions</a> in the developer guide.</p>
+     */
+    inline MLTransform& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
 
 
     /**
@@ -590,10 +719,18 @@ namespace Model
      * task runs for this transform. You can allocate from 2 to 100 DPUs; the default
      * is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
      * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
-     * <p>When the <code>WorkerType</code> field is set to a value other than
-     * <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically
-     * and becomes read-only.</p>
+     * href="http://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p> <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with
+     * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
+     * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
+     * <code>MaxCapacity</code> cannot be set.</p> </li> <li> <p>If
+     * <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or
+     * <code>WorkerType</code> can be set.</p> </li> <li> <p>If <code>WorkerType</code>
+     * is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+     * </li> <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must
+     * both be at least 1.</p> </li> </ul> <p>When the <code>WorkerType</code> field is
+     * set to a value other than <code>Standard</code>, the <code>MaxCapacity</code>
+     * field is set automatically and becomes read-only.</p>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
 
@@ -602,10 +739,18 @@ namespace Model
      * task runs for this transform. You can allocate from 2 to 100 DPUs; the default
      * is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
      * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
-     * <p>When the <code>WorkerType</code> field is set to a value other than
-     * <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically
-     * and becomes read-only.</p>
+     * href="http://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p> <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with
+     * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
+     * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
+     * <code>MaxCapacity</code> cannot be set.</p> </li> <li> <p>If
+     * <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or
+     * <code>WorkerType</code> can be set.</p> </li> <li> <p>If <code>WorkerType</code>
+     * is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+     * </li> <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must
+     * both be at least 1.</p> </li> </ul> <p>When the <code>WorkerType</code> field is
+     * set to a value other than <code>Standard</code>, the <code>MaxCapacity</code>
+     * field is set automatically and becomes read-only.</p>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
@@ -614,10 +759,18 @@ namespace Model
      * task runs for this transform. You can allocate from 2 to 100 DPUs; the default
      * is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
      * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
-     * <p>When the <code>WorkerType</code> field is set to a value other than
-     * <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically
-     * and becomes read-only.</p>
+     * href="http://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p> <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with
+     * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
+     * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
+     * <code>MaxCapacity</code> cannot be set.</p> </li> <li> <p>If
+     * <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or
+     * <code>WorkerType</code> can be set.</p> </li> <li> <p>If <code>WorkerType</code>
+     * is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+     * </li> <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must
+     * both be at least 1.</p> </li> </ul> <p>When the <code>WorkerType</code> field is
+     * set to a value other than <code>Standard</code>, the <code>MaxCapacity</code>
+     * field is set automatically and becomes read-only.</p>
      */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
@@ -626,10 +779,18 @@ namespace Model
      * task runs for this transform. You can allocate from 2 to 100 DPUs; the default
      * is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs
      * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p>
-     * <p>When the <code>WorkerType</code> field is set to a value other than
-     * <code>Standard</code>, the <code>MaxCapacity</code> field is set automatically
-     * and becomes read-only.</p>
+     * href="http://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>. </p> <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with
+     * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
+     * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
+     * <code>MaxCapacity</code> cannot be set.</p> </li> <li> <p>If
+     * <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or
+     * <code>WorkerType</code> can be set.</p> </li> <li> <p>If <code>WorkerType</code>
+     * is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+     * </li> <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must
+     * both be at least 1.</p> </li> </ul> <p>When the <code>WorkerType</code> field is
+     * set to a value other than <code>Standard</code>, the <code>MaxCapacity</code>
+     * field is set automatically and becomes read-only.</p>
      */
     inline MLTransform& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
 
@@ -642,7 +803,16 @@ namespace Model
      * <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and
      * a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
      * <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and
-     * a 128GB disk, and 1 executor per worker.</p> </li> </ul>
+     * a 128GB disk, and 1 executor per worker.</p> </li> </ul> <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with
+     * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
+     * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
+     * <code>MaxCapacity</code> cannot be set.</p> </li> <li> <p>If
+     * <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or
+     * <code>WorkerType</code> can be set.</p> </li> <li> <p>If <code>WorkerType</code>
+     * is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+     * </li> <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must
+     * both be at least 1.</p> </li> </ul>
      */
     inline const WorkerType& GetWorkerType() const{ return m_workerType; }
 
@@ -654,7 +824,16 @@ namespace Model
      * <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and
      * a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
      * <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and
-     * a 128GB disk, and 1 executor per worker.</p> </li> </ul>
+     * a 128GB disk, and 1 executor per worker.</p> </li> </ul> <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with
+     * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
+     * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
+     * <code>MaxCapacity</code> cannot be set.</p> </li> <li> <p>If
+     * <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or
+     * <code>WorkerType</code> can be set.</p> </li> <li> <p>If <code>WorkerType</code>
+     * is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+     * </li> <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must
+     * both be at least 1.</p> </li> </ul>
      */
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
 
@@ -666,7 +845,16 @@ namespace Model
      * <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and
      * a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
      * <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and
-     * a 128GB disk, and 1 executor per worker.</p> </li> </ul>
+     * a 128GB disk, and 1 executor per worker.</p> </li> </ul> <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with
+     * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
+     * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
+     * <code>MaxCapacity</code> cannot be set.</p> </li> <li> <p>If
+     * <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or
+     * <code>WorkerType</code> can be set.</p> </li> <li> <p>If <code>WorkerType</code>
+     * is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+     * </li> <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must
+     * both be at least 1.</p> </li> </ul>
      */
     inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
 
@@ -678,7 +866,16 @@ namespace Model
      * <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and
      * a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
      * <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and
-     * a 128GB disk, and 1 executor per worker.</p> </li> </ul>
+     * a 128GB disk, and 1 executor per worker.</p> </li> </ul> <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with
+     * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
+     * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
+     * <code>MaxCapacity</code> cannot be set.</p> </li> <li> <p>If
+     * <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or
+     * <code>WorkerType</code> can be set.</p> </li> <li> <p>If <code>WorkerType</code>
+     * is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+     * </li> <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must
+     * both be at least 1.</p> </li> </ul>
      */
     inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
 
@@ -690,7 +887,16 @@ namespace Model
      * <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and
      * a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
      * <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and
-     * a 128GB disk, and 1 executor per worker.</p> </li> </ul>
+     * a 128GB disk, and 1 executor per worker.</p> </li> </ul> <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with
+     * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
+     * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
+     * <code>MaxCapacity</code> cannot be set.</p> </li> <li> <p>If
+     * <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or
+     * <code>WorkerType</code> can be set.</p> </li> <li> <p>If <code>WorkerType</code>
+     * is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+     * </li> <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must
+     * both be at least 1.</p> </li> </ul>
      */
     inline MLTransform& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
 
@@ -702,32 +908,45 @@ namespace Model
      * <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory and
      * a 64GB disk, and 1 executor per worker.</p> </li> <li> <p>For the
      * <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory and
-     * a 128GB disk, and 1 executor per worker.</p> </li> </ul>
+     * a 128GB disk, and 1 executor per worker.</p> </li> </ul> <p>
+     * <code>MaxCapacity</code> is a mutually exclusive option with
+     * <code>NumberOfWorkers</code> and <code>WorkerType</code>.</p> <ul> <li> <p>If
+     * either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then
+     * <code>MaxCapacity</code> cannot be set.</p> </li> <li> <p>If
+     * <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or
+     * <code>WorkerType</code> can be set.</p> </li> <li> <p>If <code>WorkerType</code>
+     * is set, then <code>NumberOfWorkers</code> is required (and vice versa).</p>
+     * </li> <li> <p> <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must
+     * both be at least 1.</p> </li> </ul>
      */
     inline MLTransform& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
 
 
     /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a task of the transform runs.</p>
+     * when a task of the transform runs.</p> <p>If <code>WorkerType</code> is set,
+     * then <code>NumberOfWorkers</code> is required (and vice versa).</p>
      */
     inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
 
     /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a task of the transform runs.</p>
+     * when a task of the transform runs.</p> <p>If <code>WorkerType</code> is set,
+     * then <code>NumberOfWorkers</code> is required (and vice versa).</p>
      */
     inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
 
     /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a task of the transform runs.</p>
+     * when a task of the transform runs.</p> <p>If <code>WorkerType</code> is set,
+     * then <code>NumberOfWorkers</code> is required (and vice versa).</p>
      */
     inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
 
     /**
      * <p>The number of workers of a defined <code>workerType</code> that are allocated
-     * when a task of the transform runs.</p>
+     * when a task of the transform runs.</p> <p>If <code>WorkerType</code> is set,
+     * then <code>NumberOfWorkers</code> is required (and vice versa).</p>
      */
     inline MLTransform& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
 
@@ -814,6 +1033,9 @@ namespace Model
 
     Aws::String m_role;
     bool m_roleHasBeenSet;
+
+    Aws::String m_glueVersion;
+    bool m_glueVersionHasBeenSet;
 
     double m_maxCapacity;
     bool m_maxCapacityHasBeenSet;

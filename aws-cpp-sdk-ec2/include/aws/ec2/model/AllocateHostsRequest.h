@@ -218,60 +218,165 @@ namespace Model
 
 
     /**
-     * <p>Specifies the instance type for which to configure your Dedicated Hosts. When
-     * you specify the instance type, that is the only instance type that you can
-     * launch onto that host.</p>
+     * <p>Specifies the instance type to be supported by the Dedicated Hosts. If you
+     * specify an instance type, the Dedicated Hosts support instances of the specified
+     * instance type only.</p> <p>If you want the Dedicated Hosts to support multiple
+     * instance types in a specific instance family, omit this parameter and specify
+     * <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>Specifies the instance type for which to configure your Dedicated Hosts. When
-     * you specify the instance type, that is the only instance type that you can
-     * launch onto that host.</p>
+     * <p>Specifies the instance type to be supported by the Dedicated Hosts. If you
+     * specify an instance type, the Dedicated Hosts support instances of the specified
+     * instance type only.</p> <p>If you want the Dedicated Hosts to support multiple
+     * instance types in a specific instance family, omit this parameter and specify
+     * <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the instance type for which to configure your Dedicated Hosts. When
-     * you specify the instance type, that is the only instance type that you can
-     * launch onto that host.</p>
+     * <p>Specifies the instance type to be supported by the Dedicated Hosts. If you
+     * specify an instance type, the Dedicated Hosts support instances of the specified
+     * instance type only.</p> <p>If you want the Dedicated Hosts to support multiple
+     * instance types in a specific instance family, omit this parameter and specify
+     * <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>Specifies the instance type for which to configure your Dedicated Hosts. When
-     * you specify the instance type, that is the only instance type that you can
-     * launch onto that host.</p>
+     * <p>Specifies the instance type to be supported by the Dedicated Hosts. If you
+     * specify an instance type, the Dedicated Hosts support instances of the specified
+     * instance type only.</p> <p>If you want the Dedicated Hosts to support multiple
+     * instance types in a specific instance family, omit this parameter and specify
+     * <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>Specifies the instance type for which to configure your Dedicated Hosts. When
-     * you specify the instance type, that is the only instance type that you can
-     * launch onto that host.</p>
+     * <p>Specifies the instance type to be supported by the Dedicated Hosts. If you
+     * specify an instance type, the Dedicated Hosts support instances of the specified
+     * instance type only.</p> <p>If you want the Dedicated Hosts to support multiple
+     * instance types in a specific instance family, omit this parameter and specify
+     * <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>Specifies the instance type for which to configure your Dedicated Hosts. When
-     * you specify the instance type, that is the only instance type that you can
-     * launch onto that host.</p>
+     * <p>Specifies the instance type to be supported by the Dedicated Hosts. If you
+     * specify an instance type, the Dedicated Hosts support instances of the specified
+     * instance type only.</p> <p>If you want the Dedicated Hosts to support multiple
+     * instance types in a specific instance family, omit this parameter and specify
+     * <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.</p>
      */
     inline AllocateHostsRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>Specifies the instance type for which to configure your Dedicated Hosts. When
-     * you specify the instance type, that is the only instance type that you can
-     * launch onto that host.</p>
+     * <p>Specifies the instance type to be supported by the Dedicated Hosts. If you
+     * specify an instance type, the Dedicated Hosts support instances of the specified
+     * instance type only.</p> <p>If you want the Dedicated Hosts to support multiple
+     * instance types in a specific instance family, omit this parameter and specify
+     * <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.</p>
      */
     inline AllocateHostsRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the instance type for which to configure your Dedicated Hosts. When
-     * you specify the instance type, that is the only instance type that you can
-     * launch onto that host.</p>
+     * <p>Specifies the instance type to be supported by the Dedicated Hosts. If you
+     * specify an instance type, the Dedicated Hosts support instances of the specified
+     * instance type only.</p> <p>If you want the Dedicated Hosts to support multiple
+     * instance types in a specific instance family, omit this parameter and specify
+     * <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
+     * <b>InstanceFamily</b> in the same request.</p>
      */
     inline AllocateHostsRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
+
+    /**
+     * <p>Specifies the instance family to be supported by the Dedicated Hosts. If you
+     * specify an instance family, the Dedicated Hosts support multiple instance types
+     * within that instance family.</p> <p>If you want the Dedicated Hosts to support a
+     * specific instance type only, omit this parameter and specify <b>InstanceType</b>
+     * instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the
+     * same request.</p>
+     */
+    inline const Aws::String& GetInstanceFamily() const{ return m_instanceFamily; }
+
+    /**
+     * <p>Specifies the instance family to be supported by the Dedicated Hosts. If you
+     * specify an instance family, the Dedicated Hosts support multiple instance types
+     * within that instance family.</p> <p>If you want the Dedicated Hosts to support a
+     * specific instance type only, omit this parameter and specify <b>InstanceType</b>
+     * instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the
+     * same request.</p>
+     */
+    inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }
+
+    /**
+     * <p>Specifies the instance family to be supported by the Dedicated Hosts. If you
+     * specify an instance family, the Dedicated Hosts support multiple instance types
+     * within that instance family.</p> <p>If you want the Dedicated Hosts to support a
+     * specific instance type only, omit this parameter and specify <b>InstanceType</b>
+     * instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the
+     * same request.</p>
+     */
+    inline void SetInstanceFamily(const Aws::String& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
+
+    /**
+     * <p>Specifies the instance family to be supported by the Dedicated Hosts. If you
+     * specify an instance family, the Dedicated Hosts support multiple instance types
+     * within that instance family.</p> <p>If you want the Dedicated Hosts to support a
+     * specific instance type only, omit this parameter and specify <b>InstanceType</b>
+     * instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the
+     * same request.</p>
+     */
+    inline void SetInstanceFamily(Aws::String&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::move(value); }
+
+    /**
+     * <p>Specifies the instance family to be supported by the Dedicated Hosts. If you
+     * specify an instance family, the Dedicated Hosts support multiple instance types
+     * within that instance family.</p> <p>If you want the Dedicated Hosts to support a
+     * specific instance type only, omit this parameter and specify <b>InstanceType</b>
+     * instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the
+     * same request.</p>
+     */
+    inline void SetInstanceFamily(const char* value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily.assign(value); }
+
+    /**
+     * <p>Specifies the instance family to be supported by the Dedicated Hosts. If you
+     * specify an instance family, the Dedicated Hosts support multiple instance types
+     * within that instance family.</p> <p>If you want the Dedicated Hosts to support a
+     * specific instance type only, omit this parameter and specify <b>InstanceType</b>
+     * instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the
+     * same request.</p>
+     */
+    inline AllocateHostsRequest& WithInstanceFamily(const Aws::String& value) { SetInstanceFamily(value); return *this;}
+
+    /**
+     * <p>Specifies the instance family to be supported by the Dedicated Hosts. If you
+     * specify an instance family, the Dedicated Hosts support multiple instance types
+     * within that instance family.</p> <p>If you want the Dedicated Hosts to support a
+     * specific instance type only, omit this parameter and specify <b>InstanceType</b>
+     * instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the
+     * same request.</p>
+     */
+    inline AllocateHostsRequest& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the instance family to be supported by the Dedicated Hosts. If you
+     * specify an instance family, the Dedicated Hosts support multiple instance types
+     * within that instance family.</p> <p>If you want the Dedicated Hosts to support a
+     * specific instance type only, omit this parameter and specify <b>InstanceType</b>
+     * instead. You cannot specify <b>InstanceFamily</b> and <b>InstanceType</b> in the
+     * same request.</p>
+     */
+    inline AllocateHostsRequest& WithInstanceFamily(const char* value) { SetInstanceFamily(value); return *this;}
 
 
     /**
@@ -407,6 +512,9 @@ namespace Model
 
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet;
+
+    Aws::String m_instanceFamily;
+    bool m_instanceFamilyHasBeenSet;
 
     int m_quantity;
     bool m_quantityHasBeenSet;

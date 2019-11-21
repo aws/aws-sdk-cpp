@@ -643,7 +643,11 @@ namespace Model
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
-     * configuration was not initiated by any event.</p>
+     * configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
+     * the resource.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRelatedEvents() const{ return m_relatedEvents; }
 
@@ -653,7 +657,11 @@ namespace Model
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
-     * configuration was not initiated by any event.</p>
+     * configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
+     * the resource.</p>
      */
     inline bool RelatedEventsHasBeenSet() const { return m_relatedEventsHasBeenSet; }
 
@@ -663,7 +671,11 @@ namespace Model
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
-     * configuration was not initiated by any event.</p>
+     * configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
+     * the resource.</p>
      */
     inline void SetRelatedEvents(const Aws::Vector<Aws::String>& value) { m_relatedEventsHasBeenSet = true; m_relatedEvents = value; }
 
@@ -673,7 +685,11 @@ namespace Model
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
-     * configuration was not initiated by any event.</p>
+     * configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
+     * the resource.</p>
      */
     inline void SetRelatedEvents(Aws::Vector<Aws::String>&& value) { m_relatedEventsHasBeenSet = true; m_relatedEvents = std::move(value); }
 
@@ -683,7 +699,11 @@ namespace Model
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
-     * configuration was not initiated by any event.</p>
+     * configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
+     * the resource.</p>
      */
     inline ConfigurationItem& WithRelatedEvents(const Aws::Vector<Aws::String>& value) { SetRelatedEvents(value); return *this;}
 
@@ -693,7 +713,11 @@ namespace Model
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
-     * configuration was not initiated by any event.</p>
+     * configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
+     * the resource.</p>
      */
     inline ConfigurationItem& WithRelatedEvents(Aws::Vector<Aws::String>&& value) { SetRelatedEvents(std::move(value)); return *this;}
 
@@ -703,7 +727,11 @@ namespace Model
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
-     * configuration was not initiated by any event.</p>
+     * configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
+     * the resource.</p>
      */
     inline ConfigurationItem& AddRelatedEvents(const Aws::String& value) { m_relatedEventsHasBeenSet = true; m_relatedEvents.push_back(value); return *this; }
 
@@ -713,7 +741,11 @@ namespace Model
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
-     * configuration was not initiated by any event.</p>
+     * configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
+     * the resource.</p>
      */
     inline ConfigurationItem& AddRelatedEvents(Aws::String&& value) { m_relatedEventsHasBeenSet = true; m_relatedEvents.push_back(std::move(value)); return *this; }
 
@@ -723,7 +755,11 @@ namespace Model
      * log. For more information about CloudTrail, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">What
      * Is AWS CloudTrail</a>.</p> <p>An empty field indicates that the current
-     * configuration was not initiated by any event.</p>
+     * configuration was not initiated by any event. As of Version 1.3, the
+     * relatedEvents field is empty. You can access the <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_LookupEvents.html">LookupEvents
+     * API</a> in the <i>AWS CloudTrail API Reference</i> to retrieve the events for
+     * the resource.</p>
      */
     inline ConfigurationItem& AddRelatedEvents(const char* value) { m_relatedEventsHasBeenSet = true; m_relatedEvents.push_back(value); return *this; }
 

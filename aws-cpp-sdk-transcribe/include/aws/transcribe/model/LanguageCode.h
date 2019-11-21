@@ -49,7 +49,14 @@ namespace Model
     en_IE,
     en_AB,
     en_WL,
-    pt_PT
+    pt_PT,
+    te_IN,
+    tr_TR,
+    de_CH,
+    he_IL,
+    ms_MY,
+    ja_JP,
+    ar_AE
   };
 
 namespace LanguageCodeMapper

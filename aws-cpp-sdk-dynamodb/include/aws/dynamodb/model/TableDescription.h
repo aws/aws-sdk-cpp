@@ -28,6 +28,7 @@
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndexDescription.h>
 #include <aws/dynamodb/model/GlobalSecondaryIndexDescription.h>
+#include <aws/dynamodb/model/ReplicaDescription.h>
 #include <utility>
 
 namespace Aws
@@ -1470,6 +1471,104 @@ namespace Model
 
 
     /**
+     * <p>Represents the version of <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
+     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     */
+    inline const Aws::String& GetGlobalTableVersion() const{ return m_globalTableVersion; }
+
+    /**
+     * <p>Represents the version of <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
+     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     */
+    inline bool GlobalTableVersionHasBeenSet() const { return m_globalTableVersionHasBeenSet; }
+
+    /**
+     * <p>Represents the version of <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
+     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     */
+    inline void SetGlobalTableVersion(const Aws::String& value) { m_globalTableVersionHasBeenSet = true; m_globalTableVersion = value; }
+
+    /**
+     * <p>Represents the version of <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
+     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     */
+    inline void SetGlobalTableVersion(Aws::String&& value) { m_globalTableVersionHasBeenSet = true; m_globalTableVersion = std::move(value); }
+
+    /**
+     * <p>Represents the version of <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
+     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     */
+    inline void SetGlobalTableVersion(const char* value) { m_globalTableVersionHasBeenSet = true; m_globalTableVersion.assign(value); }
+
+    /**
+     * <p>Represents the version of <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
+     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     */
+    inline TableDescription& WithGlobalTableVersion(const Aws::String& value) { SetGlobalTableVersion(value); return *this;}
+
+    /**
+     * <p>Represents the version of <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
+     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     */
+    inline TableDescription& WithGlobalTableVersion(Aws::String&& value) { SetGlobalTableVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Represents the version of <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GlobalTables.html">global
+     * tables</a> in use, if the table is replicated across AWS Regions.</p>
+     */
+    inline TableDescription& WithGlobalTableVersion(const char* value) { SetGlobalTableVersion(value); return *this;}
+
+
+    /**
+     * <p>Represents replicas of the table.</p>
+     */
+    inline const Aws::Vector<ReplicaDescription>& GetReplicas() const{ return m_replicas; }
+
+    /**
+     * <p>Represents replicas of the table.</p>
+     */
+    inline bool ReplicasHasBeenSet() const { return m_replicasHasBeenSet; }
+
+    /**
+     * <p>Represents replicas of the table.</p>
+     */
+    inline void SetReplicas(const Aws::Vector<ReplicaDescription>& value) { m_replicasHasBeenSet = true; m_replicas = value; }
+
+    /**
+     * <p>Represents replicas of the table.</p>
+     */
+    inline void SetReplicas(Aws::Vector<ReplicaDescription>&& value) { m_replicasHasBeenSet = true; m_replicas = std::move(value); }
+
+    /**
+     * <p>Represents replicas of the table.</p>
+     */
+    inline TableDescription& WithReplicas(const Aws::Vector<ReplicaDescription>& value) { SetReplicas(value); return *this;}
+
+    /**
+     * <p>Represents replicas of the table.</p>
+     */
+    inline TableDescription& WithReplicas(Aws::Vector<ReplicaDescription>&& value) { SetReplicas(std::move(value)); return *this;}
+
+    /**
+     * <p>Represents replicas of the table.</p>
+     */
+    inline TableDescription& AddReplicas(const ReplicaDescription& value) { m_replicasHasBeenSet = true; m_replicas.push_back(value); return *this; }
+
+    /**
+     * <p>Represents replicas of the table.</p>
+     */
+    inline TableDescription& AddReplicas(ReplicaDescription&& value) { m_replicasHasBeenSet = true; m_replicas.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Contains details for the restore.</p>
      */
     inline const RestoreSummary& GetRestoreSummary() const{ return m_restoreSummary; }
@@ -1585,6 +1684,12 @@ namespace Model
 
     Aws::String m_latestStreamArn;
     bool m_latestStreamArnHasBeenSet;
+
+    Aws::String m_globalTableVersion;
+    bool m_globalTableVersionHasBeenSet;
+
+    Aws::Vector<ReplicaDescription> m_replicas;
+    bool m_replicasHasBeenSet;
 
     RestoreSummary m_restoreSummary;
     bool m_restoreSummaryHasBeenSet;

@@ -51,78 +51,78 @@ namespace Model
 
 
     /**
-     * <p>Filters the results by AWS Config rule name.</p>
+     * <p>Name of the config rule.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
 
     /**
-     * <p>Filters the results by AWS Config rule name.</p>
+     * <p>Name of the config rule.</p>
      */
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
 
     /**
-     * <p>Filters the results by AWS Config rule name.</p>
+     * <p>Name of the config rule.</p>
      */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
-     * <p>Filters the results by AWS Config rule name.</p>
+     * <p>Name of the config rule.</p>
      */
     inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
 
     /**
-     * <p>Filters the results by AWS Config rule name.</p>
+     * <p>Name of the config rule.</p>
      */
     inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
 
     /**
-     * <p>Filters the results by AWS Config rule name.</p>
+     * <p>Name of the config rule.</p>
      */
     inline ConformancePackRuleCompliance& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
 
     /**
-     * <p>Filters the results by AWS Config rule name.</p>
+     * <p>Name of the config rule.</p>
      */
     inline ConformancePackRuleCompliance& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the results by AWS Config rule name.</p>
+     * <p>Name of the config rule.</p>
      */
     inline ConformancePackRuleCompliance& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
 
 
     /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
+     * <p>Compliance of the AWS Config rule</p> <p>The allowed values are
      * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
     inline const ConformancePackComplianceType& GetComplianceType() const{ return m_complianceType; }
 
     /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
+     * <p>Compliance of the AWS Config rule</p> <p>The allowed values are
      * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
+     * <p>Compliance of the AWS Config rule</p> <p>The allowed values are
      * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetComplianceType(const ConformancePackComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
+     * <p>Compliance of the AWS Config rule</p> <p>The allowed values are
      * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
     inline void SetComplianceType(ConformancePackComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
+     * <p>Compliance of the AWS Config rule</p> <p>The allowed values are
      * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
     inline ConformancePackRuleCompliance& WithComplianceType(const ConformancePackComplianceType& value) { SetComplianceType(value); return *this;}
 
     /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
+     * <p>Compliance of the AWS Config rule</p> <p>The allowed values are
      * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
      */
     inline ConformancePackRuleCompliance& WithComplianceType(ConformancePackComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}

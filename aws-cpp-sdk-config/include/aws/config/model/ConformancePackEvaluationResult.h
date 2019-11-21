@@ -54,38 +54,38 @@ namespace Model
 
 
     /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
+     * <code>NON_COMPLIANT</code>. </p>
      */
     inline const ConformancePackComplianceType& GetComplianceType() const{ return m_complianceType; }
 
     /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
+     * <code>NON_COMPLIANT</code>. </p>
      */
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
+     * <code>NON_COMPLIANT</code>. </p>
      */
     inline void SetComplianceType(const ConformancePackComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
 
     /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
+     * <code>NON_COMPLIANT</code>. </p>
      */
     inline void SetComplianceType(ConformancePackComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
 
     /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
+     * <code>NON_COMPLIANT</code>. </p>
      */
     inline ConformancePackEvaluationResult& WithComplianceType(const ConformancePackComplianceType& value) { SetComplianceType(value); return *this;}
 
     /**
-     * <p>Filters the results by compliance.</p> <p>The allowed values are
-     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.</p>
+     * <p>The compliance type. The allowed values are <code>COMPLIANT</code> and
+     * <code>NON_COMPLIANT</code>. </p>
      */
     inline ConformancePackEvaluationResult& WithComplianceType(ConformancePackComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
 

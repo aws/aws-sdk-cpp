@@ -31,11 +31,13 @@
 #include <aws/amplify/AmplifyEndpoint.h>
 #include <aws/amplify/AmplifyErrorMarshaller.h>
 #include <aws/amplify/model/CreateAppRequest.h>
+#include <aws/amplify/model/CreateBackendEnvironmentRequest.h>
 #include <aws/amplify/model/CreateBranchRequest.h>
 #include <aws/amplify/model/CreateDeploymentRequest.h>
 #include <aws/amplify/model/CreateDomainAssociationRequest.h>
 #include <aws/amplify/model/CreateWebhookRequest.h>
 #include <aws/amplify/model/DeleteAppRequest.h>
+#include <aws/amplify/model/DeleteBackendEnvironmentRequest.h>
 #include <aws/amplify/model/DeleteBranchRequest.h>
 #include <aws/amplify/model/DeleteDomainAssociationRequest.h>
 #include <aws/amplify/model/DeleteJobRequest.h>
@@ -43,12 +45,14 @@
 #include <aws/amplify/model/GenerateAccessLogsRequest.h>
 #include <aws/amplify/model/GetAppRequest.h>
 #include <aws/amplify/model/GetArtifactUrlRequest.h>
+#include <aws/amplify/model/GetBackendEnvironmentRequest.h>
 #include <aws/amplify/model/GetBranchRequest.h>
 #include <aws/amplify/model/GetDomainAssociationRequest.h>
 #include <aws/amplify/model/GetJobRequest.h>
 #include <aws/amplify/model/GetWebhookRequest.h>
 #include <aws/amplify/model/ListAppsRequest.h>
 #include <aws/amplify/model/ListArtifactsRequest.h>
+#include <aws/amplify/model/ListBackendEnvironmentsRequest.h>
 #include <aws/amplify/model/ListBranchesRequest.h>
 #include <aws/amplify/model/ListDomainAssociationsRequest.h>
 #include <aws/amplify/model/ListJobsRequest.h>
@@ -169,6 +173,48 @@ void AmplifyClient::CreateAppAsync(const CreateAppRequest& request, const Create
 void AmplifyClient::CreateAppAsyncHelper(const CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateApp(request), context);
+}
+
+CreateBackendEnvironmentOutcome AmplifyClient::CreateBackendEnvironment(const CreateBackendEnvironmentRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateBackendEnvironment", "Required field: AppId, is not set");
+    return CreateBackendEnvironmentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/apps/";
+  ss << request.GetAppId();
+  ss << "/backendenvironments";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateBackendEnvironmentOutcome(CreateBackendEnvironmentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateBackendEnvironmentOutcome(outcome.GetError());
+  }
+}
+
+CreateBackendEnvironmentOutcomeCallable AmplifyClient::CreateBackendEnvironmentCallable(const CreateBackendEnvironmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBackendEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBackendEnvironment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::CreateBackendEnvironmentAsync(const CreateBackendEnvironmentRequest& request, const CreateBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBackendEnvironmentAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::CreateBackendEnvironmentAsyncHelper(const CreateBackendEnvironmentRequest& request, const CreateBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBackendEnvironment(request), context);
 }
 
 CreateBranchOutcome AmplifyClient::CreateBranch(const CreateBranchRequest& request) const
@@ -385,6 +431,54 @@ void AmplifyClient::DeleteAppAsync(const DeleteAppRequest& request, const Delete
 void AmplifyClient::DeleteAppAsyncHelper(const DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteApp(request), context);
+}
+
+DeleteBackendEnvironmentOutcome AmplifyClient::DeleteBackendEnvironment(const DeleteBackendEnvironmentRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBackendEnvironment", "Required field: AppId, is not set");
+    return DeleteBackendEnvironmentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBackendEnvironment", "Required field: EnvironmentName, is not set");
+    return DeleteBackendEnvironmentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/apps/";
+  ss << request.GetAppId();
+  ss << "/backendenvironments/";
+  ss << request.GetEnvironmentName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBackendEnvironmentOutcome(DeleteBackendEnvironmentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteBackendEnvironmentOutcome(outcome.GetError());
+  }
+}
+
+DeleteBackendEnvironmentOutcomeCallable AmplifyClient::DeleteBackendEnvironmentCallable(const DeleteBackendEnvironmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBackendEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBackendEnvironment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::DeleteBackendEnvironmentAsync(const DeleteBackendEnvironmentRequest& request, const DeleteBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBackendEnvironmentAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::DeleteBackendEnvironmentAsyncHelper(const DeleteBackendEnvironmentRequest& request, const DeleteBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBackendEnvironment(request), context);
 }
 
 DeleteBranchOutcome AmplifyClient::DeleteBranch(const DeleteBranchRequest& request) const
@@ -703,6 +797,54 @@ void AmplifyClient::GetArtifactUrlAsyncHelper(const GetArtifactUrlRequest& reque
   handler(this, request, GetArtifactUrl(request), context);
 }
 
+GetBackendEnvironmentOutcome AmplifyClient::GetBackendEnvironment(const GetBackendEnvironmentRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBackendEnvironment", "Required field: AppId, is not set");
+    return GetBackendEnvironmentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  if (!request.EnvironmentNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBackendEnvironment", "Required field: EnvironmentName, is not set");
+    return GetBackendEnvironmentOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EnvironmentName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/apps/";
+  ss << request.GetAppId();
+  ss << "/backendenvironments/";
+  ss << request.GetEnvironmentName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetBackendEnvironmentOutcome(GetBackendEnvironmentResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBackendEnvironmentOutcome(outcome.GetError());
+  }
+}
+
+GetBackendEnvironmentOutcomeCallable AmplifyClient::GetBackendEnvironmentCallable(const GetBackendEnvironmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBackendEnvironmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBackendEnvironment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::GetBackendEnvironmentAsync(const GetBackendEnvironmentRequest& request, const GetBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBackendEnvironmentAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::GetBackendEnvironmentAsyncHelper(const GetBackendEnvironmentRequest& request, const GetBackendEnvironmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBackendEnvironment(request), context);
+}
+
 GetBranchOutcome AmplifyClient::GetBranch(const GetBranchRequest& request) const
 {
   if (!request.AppIdHasBeenSet())
@@ -984,6 +1126,48 @@ void AmplifyClient::ListArtifactsAsync(const ListArtifactsRequest& request, cons
 void AmplifyClient::ListArtifactsAsyncHelper(const ListArtifactsRequest& request, const ListArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListArtifacts(request), context);
+}
+
+ListBackendEnvironmentsOutcome AmplifyClient::ListBackendEnvironments(const ListBackendEnvironmentsRequest& request) const
+{
+  if (!request.AppIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBackendEnvironments", "Required field: AppId, is not set");
+    return ListBackendEnvironmentsOutcome(Aws::Client::AWSError<AmplifyErrors>(AmplifyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AppId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/apps/";
+  ss << request.GetAppId();
+  ss << "/backendenvironments";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListBackendEnvironmentsOutcome(ListBackendEnvironmentsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListBackendEnvironmentsOutcome(outcome.GetError());
+  }
+}
+
+ListBackendEnvironmentsOutcomeCallable AmplifyClient::ListBackendEnvironmentsCallable(const ListBackendEnvironmentsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBackendEnvironmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBackendEnvironments(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void AmplifyClient::ListBackendEnvironmentsAsync(const ListBackendEnvironmentsRequest& request, const ListBackendEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBackendEnvironmentsAsyncHelper( request, handler, context ); } );
+}
+
+void AmplifyClient::ListBackendEnvironmentsAsyncHelper(const ListBackendEnvironmentsRequest& request, const ListBackendEnvironmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBackendEnvironments(request), context);
 }
 
 ListBranchesOutcome AmplifyClient::ListBranches(const ListBranchesRequest& request) const

@@ -54,6 +54,13 @@ namespace Aws
         static const int en_AB_HASH = HashingUtils::HashString("en-AB");
         static const int en_WL_HASH = HashingUtils::HashString("en-WL");
         static const int pt_PT_HASH = HashingUtils::HashString("pt-PT");
+        static const int te_IN_HASH = HashingUtils::HashString("te-IN");
+        static const int tr_TR_HASH = HashingUtils::HashString("tr-TR");
+        static const int de_CH_HASH = HashingUtils::HashString("de-CH");
+        static const int he_IL_HASH = HashingUtils::HashString("he-IL");
+        static const int ms_MY_HASH = HashingUtils::HashString("ms-MY");
+        static const int ja_JP_HASH = HashingUtils::HashString("ja-JP");
+        static const int ar_AE_HASH = HashingUtils::HashString("ar-AE");
 
 
         LanguageCode GetLanguageCodeForName(const Aws::String& name)
@@ -155,6 +162,34 @@ namespace Aws
           {
             return LanguageCode::pt_PT;
           }
+          else if (hashCode == te_IN_HASH)
+          {
+            return LanguageCode::te_IN;
+          }
+          else if (hashCode == tr_TR_HASH)
+          {
+            return LanguageCode::tr_TR;
+          }
+          else if (hashCode == de_CH_HASH)
+          {
+            return LanguageCode::de_CH;
+          }
+          else if (hashCode == he_IL_HASH)
+          {
+            return LanguageCode::he_IL;
+          }
+          else if (hashCode == ms_MY_HASH)
+          {
+            return LanguageCode::ms_MY;
+          }
+          else if (hashCode == ja_JP_HASH)
+          {
+            return LanguageCode::ja_JP;
+          }
+          else if (hashCode == ar_AE_HASH)
+          {
+            return LanguageCode::ar_AE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -217,6 +252,20 @@ namespace Aws
             return "en-WL";
           case LanguageCode::pt_PT:
             return "pt-PT";
+          case LanguageCode::te_IN:
+            return "te-IN";
+          case LanguageCode::tr_TR:
+            return "tr-TR";
+          case LanguageCode::de_CH:
+            return "de-CH";
+          case LanguageCode::he_IL:
+            return "he-IL";
+          case LanguageCode::ms_MY:
+            return "ms-MY";
+          case LanguageCode::ja_JP:
+            return "ja-JP";
+          case LanguageCode::ar_AE:
+            return "ar-AE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
