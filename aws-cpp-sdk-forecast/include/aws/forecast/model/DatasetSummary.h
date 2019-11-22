@@ -39,7 +39,7 @@ namespace Model
   /**
    * <p>Provides a summary of the dataset properties used in the <a>ListDatasets</a>
    * operation. To get the complete set of properties, call the
-   * <a>DescribeDataset</a> operation, and provide the listed
+   * <a>DescribeDataset</a> operation, and provide the
    * <code>DatasetArn</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DatasetSummary">AWS
    * API Reference</a></p>
@@ -229,56 +229,62 @@ namespace Model
 
 
     /**
-     * <p>When the dataset is created, <code>LastModificationTime</code> is the same as
-     * <code>CreationTime</code>. After a <a>CreateDatasetImportJob</a> operation is
-     * called, <code>LastModificationTime</code> is when the import job finished or
-     * failed. While data is being imported to the dataset,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
+     * <code>CreationTime</code>. While data is being imported to the dataset,
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a> operation
+     * has finished, <code>LastModificationTime</code> is when the import job completed
+     * or failed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
 
     /**
-     * <p>When the dataset is created, <code>LastModificationTime</code> is the same as
-     * <code>CreationTime</code>. After a <a>CreateDatasetImportJob</a> operation is
-     * called, <code>LastModificationTime</code> is when the import job finished or
-     * failed. While data is being imported to the dataset,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
+     * <code>CreationTime</code>. While data is being imported to the dataset,
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a> operation
+     * has finished, <code>LastModificationTime</code> is when the import job completed
+     * or failed.</p>
      */
     inline bool LastModificationTimeHasBeenSet() const { return m_lastModificationTimeHasBeenSet; }
 
     /**
-     * <p>When the dataset is created, <code>LastModificationTime</code> is the same as
-     * <code>CreationTime</code>. After a <a>CreateDatasetImportJob</a> operation is
-     * called, <code>LastModificationTime</code> is when the import job finished or
-     * failed. While data is being imported to the dataset,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
+     * <code>CreationTime</code>. While data is being imported to the dataset,
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a> operation
+     * has finished, <code>LastModificationTime</code> is when the import job completed
+     * or failed.</p>
      */
     inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = value; }
 
     /**
-     * <p>When the dataset is created, <code>LastModificationTime</code> is the same as
-     * <code>CreationTime</code>. After a <a>CreateDatasetImportJob</a> operation is
-     * called, <code>LastModificationTime</code> is when the import job finished or
-     * failed. While data is being imported to the dataset,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
+     * <code>CreationTime</code>. While data is being imported to the dataset,
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a> operation
+     * has finished, <code>LastModificationTime</code> is when the import job completed
+     * or failed.</p>
      */
     inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::move(value); }
 
     /**
-     * <p>When the dataset is created, <code>LastModificationTime</code> is the same as
-     * <code>CreationTime</code>. After a <a>CreateDatasetImportJob</a> operation is
-     * called, <code>LastModificationTime</code> is when the import job finished or
-     * failed. While data is being imported to the dataset,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
+     * <code>CreationTime</code>. While data is being imported to the dataset,
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a> operation
+     * has finished, <code>LastModificationTime</code> is when the import job completed
+     * or failed.</p>
      */
     inline DatasetSummary& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
 
     /**
-     * <p>When the dataset is created, <code>LastModificationTime</code> is the same as
-     * <code>CreationTime</code>. After a <a>CreateDatasetImportJob</a> operation is
-     * called, <code>LastModificationTime</code> is when the import job finished or
-     * failed. While data is being imported to the dataset,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
+     * <code>CreationTime</code>. While data is being imported to the dataset,
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasets</code> call. After a <a>CreateDatasetImportJob</a> operation
+     * has finished, <code>LastModificationTime</code> is when the import job completed
+     * or failed.</p>
      */
     inline DatasetSummary& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 

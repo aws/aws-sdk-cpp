@@ -38,7 +38,7 @@ namespace Model
   /**
    * <p>Provides a summary of the dataset import job properties used in the
    * <a>ListDatasetImportJobs</a> operation. To get the complete set of properties,
-   * call the <a>DescribeDatasetImportJob</a> operation, and provide the listed
+   * call the <a>DescribeDatasetImportJob</a> operation, and provide the
    * <code>DatasetImportJobArn</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DatasetImportJobSummary">AWS
    * API Reference</a></p>
@@ -135,32 +135,56 @@ namespace Model
 
 
     /**
-     * <p>The location of the Amazon S3 bucket that contains the training data.</p>
+     * <p>The location of the training data to import and an AWS Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the data. The
+     * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>DataSource</code> includes an AWS Key Management Service (KMS)
+     * key.</p>
      */
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
 
     /**
-     * <p>The location of the Amazon S3 bucket that contains the training data.</p>
+     * <p>The location of the training data to import and an AWS Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the data. The
+     * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>DataSource</code> includes an AWS Key Management Service (KMS)
+     * key.</p>
      */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
 
     /**
-     * <p>The location of the Amazon S3 bucket that contains the training data.</p>
+     * <p>The location of the training data to import and an AWS Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the data. The
+     * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>DataSource</code> includes an AWS Key Management Service (KMS)
+     * key.</p>
      */
     inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
 
     /**
-     * <p>The location of the Amazon S3 bucket that contains the training data.</p>
+     * <p>The location of the training data to import and an AWS Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the data. The
+     * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>DataSource</code> includes an AWS Key Management Service (KMS)
+     * key.</p>
      */
     inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
 
     /**
-     * <p>The location of the Amazon S3 bucket that contains the training data.</p>
+     * <p>The location of the training data to import and an AWS Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the data. The
+     * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>DataSource</code> includes an AWS Key Management Service (KMS)
+     * key.</p>
      */
     inline DatasetImportJobSummary& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
 
     /**
-     * <p>The location of the Amazon S3 bucket that contains the training data.</p>
+     * <p>The location of the training data to import and an AWS Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the data. The
+     * training data must be stored in an Amazon S3 bucket.</p> <p>If encryption is
+     * used, <code>DataSource</code> includes an AWS Key Management Service (KMS)
+     * key.</p>
      */
     inline DatasetImportJobSummary& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
 
@@ -335,56 +359,62 @@ namespace Model
 
 
     /**
-     * <p>Dependent on the status as follows:</p> <ul> <li> <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code> </p> </li> <li>
-     * <p> <code>CREATE_IN_PROGRESS</code> - the current timestamp</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or
-     * failed</p> </li> </ul>
+     * <p>The last time that the dataset was modified. The time depends on the status
+     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
+     * time as <code>CreationTime</code>.</p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+     * failed.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
 
     /**
-     * <p>Dependent on the status as follows:</p> <ul> <li> <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code> </p> </li> <li>
-     * <p> <code>CREATE_IN_PROGRESS</code> - the current timestamp</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or
-     * failed</p> </li> </ul>
+     * <p>The last time that the dataset was modified. The time depends on the status
+     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
+     * time as <code>CreationTime</code>.</p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+     * failed.</p> </li> </ul>
      */
     inline bool LastModificationTimeHasBeenSet() const { return m_lastModificationTimeHasBeenSet; }
 
     /**
-     * <p>Dependent on the status as follows:</p> <ul> <li> <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code> </p> </li> <li>
-     * <p> <code>CREATE_IN_PROGRESS</code> - the current timestamp</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or
-     * failed</p> </li> </ul>
+     * <p>The last time that the dataset was modified. The time depends on the status
+     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
+     * time as <code>CreationTime</code>.</p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+     * failed.</p> </li> </ul>
      */
     inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = value; }
 
     /**
-     * <p>Dependent on the status as follows:</p> <ul> <li> <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code> </p> </li> <li>
-     * <p> <code>CREATE_IN_PROGRESS</code> - the current timestamp</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or
-     * failed</p> </li> </ul>
+     * <p>The last time that the dataset was modified. The time depends on the status
+     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
+     * time as <code>CreationTime</code>.</p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+     * failed.</p> </li> </ul>
      */
     inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::move(value); }
 
     /**
-     * <p>Dependent on the status as follows:</p> <ul> <li> <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code> </p> </li> <li>
-     * <p> <code>CREATE_IN_PROGRESS</code> - the current timestamp</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or
-     * failed</p> </li> </ul>
+     * <p>The last time that the dataset was modified. The time depends on the status
+     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
+     * time as <code>CreationTime</code>.</p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+     * failed.</p> </li> </ul>
      */
     inline DatasetImportJobSummary& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
 
     /**
-     * <p>Dependent on the status as follows:</p> <ul> <li> <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code> </p> </li> <li>
-     * <p> <code>CREATE_IN_PROGRESS</code> - the current timestamp</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or
-     * failed</p> </li> </ul>
+     * <p>The last time that the dataset was modified. The time depends on the status
+     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
+     * time as <code>CreationTime</code>.</p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+     * failed.</p> </li> </ul>
      */
     inline DatasetImportJobSummary& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 

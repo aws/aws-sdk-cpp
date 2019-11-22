@@ -36,12 +36,14 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about a method that featurizes (transforms) a dataset
+   * <p>Provides information about the method that featurizes (transforms) a dataset
    * field. The method is part of the <code>FeaturizationPipeline</code> of the
-   * <a>Featurization</a> object. If <code>FeaturizationMethodParameters</code> isn't
-   * specified, Amazon Forecast uses default parameters.</p> <p>For example:</p> <p>
-   * <code>{</code> </p> <p> <code>"FeaturizationMethodName": "filling",</code> </p>
-   * <p> <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill":
+   * <a>Featurization</a> object. If you don't specify
+   * <code>FeaturizationMethodParameters</code>, Amazon Forecast uses default
+   * parameters.</p> <p>The following is an example of how you specify a
+   * <code>FeaturizationMethod</code> object.</p> <p> <code>{</code> </p> <p>
+   * <code>"FeaturizationMethodName": "filling",</code> </p> <p>
+   * <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill":
    * "nan"}</code> </p> <p> <code>}</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/FeaturizationMethod">AWS
    * API Reference</a></p>
@@ -56,195 +58,195 @@ namespace Model
 
 
     /**
-     * <p>The name of the method. In this release, "filling" is the only supported
+     * <p>The name of the method. The "filling" method is the only supported
      * method.</p>
      */
     inline const FeaturizationMethodName& GetFeaturizationMethodName() const{ return m_featurizationMethodName; }
 
     /**
-     * <p>The name of the method. In this release, "filling" is the only supported
+     * <p>The name of the method. The "filling" method is the only supported
      * method.</p>
      */
     inline bool FeaturizationMethodNameHasBeenSet() const { return m_featurizationMethodNameHasBeenSet; }
 
     /**
-     * <p>The name of the method. In this release, "filling" is the only supported
+     * <p>The name of the method. The "filling" method is the only supported
      * method.</p>
      */
     inline void SetFeaturizationMethodName(const FeaturizationMethodName& value) { m_featurizationMethodNameHasBeenSet = true; m_featurizationMethodName = value; }
 
     /**
-     * <p>The name of the method. In this release, "filling" is the only supported
+     * <p>The name of the method. The "filling" method is the only supported
      * method.</p>
      */
     inline void SetFeaturizationMethodName(FeaturizationMethodName&& value) { m_featurizationMethodNameHasBeenSet = true; m_featurizationMethodName = std::move(value); }
 
     /**
-     * <p>The name of the method. In this release, "filling" is the only supported
+     * <p>The name of the method. The "filling" method is the only supported
      * method.</p>
      */
     inline FeaturizationMethod& WithFeaturizationMethodName(const FeaturizationMethodName& value) { SetFeaturizationMethodName(value); return *this;}
 
     /**
-     * <p>The name of the method. In this release, "filling" is the only supported
+     * <p>The name of the method. The "filling" method is the only supported
      * method.</p>
      */
     inline FeaturizationMethod& WithFeaturizationMethodName(FeaturizationMethodName&& value) { SetFeaturizationMethodName(std::move(value)); return *this;}
 
 
     /**
-     * <p>The method parameters (key-value pairs). Specify these to override the
-     * default values. The following list shows the parameters and their valid values.
-     * Bold signifies the default value.</p> <ul> <li> <p> <code>aggregation</code>:
-     * <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-     * <code>max</code> </p> </li> <li> <p> <code>frontfill</code>: <b>none</b> </p>
-     * </li> <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a
-     * number)</p> </li> <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>
-     * </p> </li> </ul>
+     * <p>The method parameters (key-value pairs). Specify these parameters to override
+     * the default values. The following list shows the parameters and their valid
+     * values. Bold signifies the default value.</p> <ul> <li> <p>
+     * <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>,
+     * <code>min</code>, <code>max</code> </p> </li> <li> <p> <code>frontfill</code>:
+     * <b>none</b> </p> </li> <li> <p> <code>middlefill</code>: <b>zero</b>,
+     * <code>nan</code> (not a number)</p> </li> <li> <p> <code>backfill</code>:
+     * <b>zero</b>, <code>nan</code> </p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetFeaturizationMethodParameters() const{ return m_featurizationMethodParameters; }
 
     /**
-     * <p>The method parameters (key-value pairs). Specify these to override the
-     * default values. The following list shows the parameters and their valid values.
-     * Bold signifies the default value.</p> <ul> <li> <p> <code>aggregation</code>:
-     * <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-     * <code>max</code> </p> </li> <li> <p> <code>frontfill</code>: <b>none</b> </p>
-     * </li> <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a
-     * number)</p> </li> <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>
-     * </p> </li> </ul>
+     * <p>The method parameters (key-value pairs). Specify these parameters to override
+     * the default values. The following list shows the parameters and their valid
+     * values. Bold signifies the default value.</p> <ul> <li> <p>
+     * <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>,
+     * <code>min</code>, <code>max</code> </p> </li> <li> <p> <code>frontfill</code>:
+     * <b>none</b> </p> </li> <li> <p> <code>middlefill</code>: <b>zero</b>,
+     * <code>nan</code> (not a number)</p> </li> <li> <p> <code>backfill</code>:
+     * <b>zero</b>, <code>nan</code> </p> </li> </ul>
      */
     inline bool FeaturizationMethodParametersHasBeenSet() const { return m_featurizationMethodParametersHasBeenSet; }
 
     /**
-     * <p>The method parameters (key-value pairs). Specify these to override the
-     * default values. The following list shows the parameters and their valid values.
-     * Bold signifies the default value.</p> <ul> <li> <p> <code>aggregation</code>:
-     * <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-     * <code>max</code> </p> </li> <li> <p> <code>frontfill</code>: <b>none</b> </p>
-     * </li> <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a
-     * number)</p> </li> <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>
-     * </p> </li> </ul>
+     * <p>The method parameters (key-value pairs). Specify these parameters to override
+     * the default values. The following list shows the parameters and their valid
+     * values. Bold signifies the default value.</p> <ul> <li> <p>
+     * <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>,
+     * <code>min</code>, <code>max</code> </p> </li> <li> <p> <code>frontfill</code>:
+     * <b>none</b> </p> </li> <li> <p> <code>middlefill</code>: <b>zero</b>,
+     * <code>nan</code> (not a number)</p> </li> <li> <p> <code>backfill</code>:
+     * <b>zero</b>, <code>nan</code> </p> </li> </ul>
      */
     inline void SetFeaturizationMethodParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters = value; }
 
     /**
-     * <p>The method parameters (key-value pairs). Specify these to override the
-     * default values. The following list shows the parameters and their valid values.
-     * Bold signifies the default value.</p> <ul> <li> <p> <code>aggregation</code>:
-     * <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-     * <code>max</code> </p> </li> <li> <p> <code>frontfill</code>: <b>none</b> </p>
-     * </li> <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a
-     * number)</p> </li> <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>
-     * </p> </li> </ul>
+     * <p>The method parameters (key-value pairs). Specify these parameters to override
+     * the default values. The following list shows the parameters and their valid
+     * values. Bold signifies the default value.</p> <ul> <li> <p>
+     * <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>,
+     * <code>min</code>, <code>max</code> </p> </li> <li> <p> <code>frontfill</code>:
+     * <b>none</b> </p> </li> <li> <p> <code>middlefill</code>: <b>zero</b>,
+     * <code>nan</code> (not a number)</p> </li> <li> <p> <code>backfill</code>:
+     * <b>zero</b>, <code>nan</code> </p> </li> </ul>
      */
     inline void SetFeaturizationMethodParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters = std::move(value); }
 
     /**
-     * <p>The method parameters (key-value pairs). Specify these to override the
-     * default values. The following list shows the parameters and their valid values.
-     * Bold signifies the default value.</p> <ul> <li> <p> <code>aggregation</code>:
-     * <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-     * <code>max</code> </p> </li> <li> <p> <code>frontfill</code>: <b>none</b> </p>
-     * </li> <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a
-     * number)</p> </li> <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>
-     * </p> </li> </ul>
+     * <p>The method parameters (key-value pairs). Specify these parameters to override
+     * the default values. The following list shows the parameters and their valid
+     * values. Bold signifies the default value.</p> <ul> <li> <p>
+     * <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>,
+     * <code>min</code>, <code>max</code> </p> </li> <li> <p> <code>frontfill</code>:
+     * <b>none</b> </p> </li> <li> <p> <code>middlefill</code>: <b>zero</b>,
+     * <code>nan</code> (not a number)</p> </li> <li> <p> <code>backfill</code>:
+     * <b>zero</b>, <code>nan</code> </p> </li> </ul>
      */
     inline FeaturizationMethod& WithFeaturizationMethodParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetFeaturizationMethodParameters(value); return *this;}
 
     /**
-     * <p>The method parameters (key-value pairs). Specify these to override the
-     * default values. The following list shows the parameters and their valid values.
-     * Bold signifies the default value.</p> <ul> <li> <p> <code>aggregation</code>:
-     * <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-     * <code>max</code> </p> </li> <li> <p> <code>frontfill</code>: <b>none</b> </p>
-     * </li> <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a
-     * number)</p> </li> <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>
-     * </p> </li> </ul>
+     * <p>The method parameters (key-value pairs). Specify these parameters to override
+     * the default values. The following list shows the parameters and their valid
+     * values. Bold signifies the default value.</p> <ul> <li> <p>
+     * <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>,
+     * <code>min</code>, <code>max</code> </p> </li> <li> <p> <code>frontfill</code>:
+     * <b>none</b> </p> </li> <li> <p> <code>middlefill</code>: <b>zero</b>,
+     * <code>nan</code> (not a number)</p> </li> <li> <p> <code>backfill</code>:
+     * <b>zero</b>, <code>nan</code> </p> </li> </ul>
      */
     inline FeaturizationMethod& WithFeaturizationMethodParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetFeaturizationMethodParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The method parameters (key-value pairs). Specify these to override the
-     * default values. The following list shows the parameters and their valid values.
-     * Bold signifies the default value.</p> <ul> <li> <p> <code>aggregation</code>:
-     * <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-     * <code>max</code> </p> </li> <li> <p> <code>frontfill</code>: <b>none</b> </p>
-     * </li> <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a
-     * number)</p> </li> <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>
-     * </p> </li> </ul>
+     * <p>The method parameters (key-value pairs). Specify these parameters to override
+     * the default values. The following list shows the parameters and their valid
+     * values. Bold signifies the default value.</p> <ul> <li> <p>
+     * <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>,
+     * <code>min</code>, <code>max</code> </p> </li> <li> <p> <code>frontfill</code>:
+     * <b>none</b> </p> </li> <li> <p> <code>middlefill</code>: <b>zero</b>,
+     * <code>nan</code> (not a number)</p> </li> <li> <p> <code>backfill</code>:
+     * <b>zero</b>, <code>nan</code> </p> </li> </ul>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(const Aws::String& key, const Aws::String& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The method parameters (key-value pairs). Specify these to override the
-     * default values. The following list shows the parameters and their valid values.
-     * Bold signifies the default value.</p> <ul> <li> <p> <code>aggregation</code>:
-     * <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-     * <code>max</code> </p> </li> <li> <p> <code>frontfill</code>: <b>none</b> </p>
-     * </li> <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a
-     * number)</p> </li> <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>
-     * </p> </li> </ul>
+     * <p>The method parameters (key-value pairs). Specify these parameters to override
+     * the default values. The following list shows the parameters and their valid
+     * values. Bold signifies the default value.</p> <ul> <li> <p>
+     * <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>,
+     * <code>min</code>, <code>max</code> </p> </li> <li> <p> <code>frontfill</code>:
+     * <b>none</b> </p> </li> <li> <p> <code>middlefill</code>: <b>zero</b>,
+     * <code>nan</code> (not a number)</p> </li> <li> <p> <code>backfill</code>:
+     * <b>zero</b>, <code>nan</code> </p> </li> </ul>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(Aws::String&& key, const Aws::String& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The method parameters (key-value pairs). Specify these to override the
-     * default values. The following list shows the parameters and their valid values.
-     * Bold signifies the default value.</p> <ul> <li> <p> <code>aggregation</code>:
-     * <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-     * <code>max</code> </p> </li> <li> <p> <code>frontfill</code>: <b>none</b> </p>
-     * </li> <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a
-     * number)</p> </li> <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>
-     * </p> </li> </ul>
+     * <p>The method parameters (key-value pairs). Specify these parameters to override
+     * the default values. The following list shows the parameters and their valid
+     * values. Bold signifies the default value.</p> <ul> <li> <p>
+     * <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>,
+     * <code>min</code>, <code>max</code> </p> </li> <li> <p> <code>frontfill</code>:
+     * <b>none</b> </p> </li> <li> <p> <code>middlefill</code>: <b>zero</b>,
+     * <code>nan</code> (not a number)</p> </li> <li> <p> <code>backfill</code>:
+     * <b>zero</b>, <code>nan</code> </p> </li> </ul>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(const Aws::String& key, Aws::String&& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The method parameters (key-value pairs). Specify these to override the
-     * default values. The following list shows the parameters and their valid values.
-     * Bold signifies the default value.</p> <ul> <li> <p> <code>aggregation</code>:
-     * <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-     * <code>max</code> </p> </li> <li> <p> <code>frontfill</code>: <b>none</b> </p>
-     * </li> <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a
-     * number)</p> </li> <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>
-     * </p> </li> </ul>
+     * <p>The method parameters (key-value pairs). Specify these parameters to override
+     * the default values. The following list shows the parameters and their valid
+     * values. Bold signifies the default value.</p> <ul> <li> <p>
+     * <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>,
+     * <code>min</code>, <code>max</code> </p> </li> <li> <p> <code>frontfill</code>:
+     * <b>none</b> </p> </li> <li> <p> <code>middlefill</code>: <b>zero</b>,
+     * <code>nan</code> (not a number)</p> </li> <li> <p> <code>backfill</code>:
+     * <b>zero</b>, <code>nan</code> </p> </li> </ul>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(Aws::String&& key, Aws::String&& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The method parameters (key-value pairs). Specify these to override the
-     * default values. The following list shows the parameters and their valid values.
-     * Bold signifies the default value.</p> <ul> <li> <p> <code>aggregation</code>:
-     * <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-     * <code>max</code> </p> </li> <li> <p> <code>frontfill</code>: <b>none</b> </p>
-     * </li> <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a
-     * number)</p> </li> <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>
-     * </p> </li> </ul>
+     * <p>The method parameters (key-value pairs). Specify these parameters to override
+     * the default values. The following list shows the parameters and their valid
+     * values. Bold signifies the default value.</p> <ul> <li> <p>
+     * <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>,
+     * <code>min</code>, <code>max</code> </p> </li> <li> <p> <code>frontfill</code>:
+     * <b>none</b> </p> </li> <li> <p> <code>middlefill</code>: <b>zero</b>,
+     * <code>nan</code> (not a number)</p> </li> <li> <p> <code>backfill</code>:
+     * <b>zero</b>, <code>nan</code> </p> </li> </ul>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(const char* key, Aws::String&& value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The method parameters (key-value pairs). Specify these to override the
-     * default values. The following list shows the parameters and their valid values.
-     * Bold signifies the default value.</p> <ul> <li> <p> <code>aggregation</code>:
-     * <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-     * <code>max</code> </p> </li> <li> <p> <code>frontfill</code>: <b>none</b> </p>
-     * </li> <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a
-     * number)</p> </li> <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>
-     * </p> </li> </ul>
+     * <p>The method parameters (key-value pairs). Specify these parameters to override
+     * the default values. The following list shows the parameters and their valid
+     * values. Bold signifies the default value.</p> <ul> <li> <p>
+     * <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>,
+     * <code>min</code>, <code>max</code> </p> </li> <li> <p> <code>frontfill</code>:
+     * <b>none</b> </p> </li> <li> <p> <code>middlefill</code>: <b>zero</b>,
+     * <code>nan</code> (not a number)</p> </li> <li> <p> <code>backfill</code>:
+     * <b>zero</b>, <code>nan</code> </p> </li> </ul>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(Aws::String&& key, const char* value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The method parameters (key-value pairs). Specify these to override the
-     * default values. The following list shows the parameters and their valid values.
-     * Bold signifies the default value.</p> <ul> <li> <p> <code>aggregation</code>:
-     * <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-     * <code>max</code> </p> </li> <li> <p> <code>frontfill</code>: <b>none</b> </p>
-     * </li> <li> <p> <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a
-     * number)</p> </li> <li> <p> <code>backfill</code>: <b>zero</b>, <code>nan</code>
-     * </p> </li> </ul>
+     * <p>The method parameters (key-value pairs). Specify these parameters to override
+     * the default values. The following list shows the parameters and their valid
+     * values. Bold signifies the default value.</p> <ul> <li> <p>
+     * <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>,
+     * <code>min</code>, <code>max</code> </p> </li> <li> <p> <code>frontfill</code>:
+     * <b>none</b> </p> </li> <li> <p> <code>middlefill</code>: <b>zero</b>,
+     * <code>nan</code> (not a number)</p> </li> <li> <p> <code>backfill</code>:
+     * <b>zero</b>, <code>nan</code> </p> </li> </ul>
      */
     inline FeaturizationMethod& AddFeaturizationMethodParameters(const char* key, const char* value) { m_featurizationMethodParametersHasBeenSet = true; m_featurizationMethodParameters.emplace(key, value); return *this; }
 

@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides a summary of the predictor properties used in the
+   * <p>Provides a summary of the predictor properties that are used in the
    * <a>ListPredictors</a> operation. To get the complete set of properties, call the
    * <a>DescribePredictor</a> operation, and provide the listed
    * <code>PredictorArn</code>.</p><p><h3>See Also:</h3>   <a
@@ -190,7 +190,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -202,7 +202,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -214,7 +214,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -226,7 +226,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -238,7 +238,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
@@ -250,7 +250,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline PredictorSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -262,7 +262,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline PredictorSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -274,7 +274,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline PredictorSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
 

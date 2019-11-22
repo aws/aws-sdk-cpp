@@ -34,9 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>The destination of an exported forecast and credentials to access the
-   * location. This object is submitted in the <a>CreateForecastExportJob</a>
-   * request.</p><p><h3>See Also:</h3>   <a
+   * <p>The destination for an exported forecast, an AWS Identity and Access
+   * Management (IAM) role that allows Amazon Forecast to access the location and,
+   * optionally, an AWS Key Management Service (KMS) key. This object is submitted in
+   * the <a>CreateForecastExportJob</a> request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DataDestination">AWS
    * API Reference</a></p>
    */

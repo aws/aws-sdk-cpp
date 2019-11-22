@@ -26,7 +26,9 @@ CompareFacesRequest::CompareFacesRequest() :
     m_sourceImageHasBeenSet(false),
     m_targetImageHasBeenSet(false),
     m_similarityThreshold(0.0),
-    m_similarityThresholdHasBeenSet(false)
+    m_similarityThresholdHasBeenSet(false),
+    m_qualityFilter(QualityFilter::NOT_SET),
+    m_qualityFilterHasBeenSet(false)
 {
 }
 
@@ -50,6 +52,11 @@ Aws::String CompareFacesRequest::SerializePayload() const
   {
    payload.WithDouble("SimilarityThreshold", m_similarityThreshold);
 
+  }
+
+  if(m_qualityFilterHasBeenSet)
+  {
+   payload.WithString("QualityFilter", QualityFilterMapper::GetNameForQualityFilter(m_qualityFilter));
   }
 
   return payload.View().WriteReadable();

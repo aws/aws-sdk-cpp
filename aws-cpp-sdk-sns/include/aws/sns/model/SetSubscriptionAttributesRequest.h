@@ -101,7 +101,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
 
@@ -116,7 +122,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
@@ -131,7 +143,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
@@ -146,7 +164,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
 
@@ -161,7 +185,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
 
@@ -176,7 +206,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline SetSubscriptionAttributesRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
 
@@ -191,7 +227,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline SetSubscriptionAttributesRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
 
@@ -206,7 +248,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline SetSubscriptionAttributesRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
 

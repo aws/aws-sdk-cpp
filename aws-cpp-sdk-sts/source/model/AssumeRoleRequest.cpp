@@ -27,6 +27,8 @@ AssumeRoleRequest::AssumeRoleRequest() :
     m_policyHasBeenSet(false),
     m_durationSeconds(0),
     m_durationSecondsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_transitiveTagKeysHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
     m_tokenCodeHasBeenSet(false)
@@ -65,6 +67,27 @@ Aws::String AssumeRoleRequest::SerializePayload() const
   if(m_durationSecondsHasBeenSet)
   {
     ss << "DurationSeconds=" << m_durationSeconds << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
+  }
+
+  if(m_transitiveTagKeysHasBeenSet)
+  {
+    unsigned transitiveTagKeysCount = 1;
+    for(auto& item : m_transitiveTagKeys)
+    {
+      ss << "TransitiveTagKeys.member." << transitiveTagKeysCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      transitiveTagKeysCount++;
+    }
   }
 
   if(m_externalIdHasBeenSet)

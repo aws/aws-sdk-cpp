@@ -87,55 +87,55 @@ namespace Model
 
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) of the datasets to add to the
+     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
      * dataset group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDatasetArns() const{ return m_datasetArns; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) of the datasets to add to the
+     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
      * dataset group.</p>
      */
     inline bool DatasetArnsHasBeenSet() const { return m_datasetArnsHasBeenSet; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) of the datasets to add to the
+     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
      * dataset group.</p>
      */
     inline void SetDatasetArns(const Aws::Vector<Aws::String>& value) { m_datasetArnsHasBeenSet = true; m_datasetArns = value; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) of the datasets to add to the
+     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
      * dataset group.</p>
      */
     inline void SetDatasetArns(Aws::Vector<Aws::String>&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns = std::move(value); }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) of the datasets to add to the
+     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
      * dataset group.</p>
      */
     inline UpdateDatasetGroupRequest& WithDatasetArns(const Aws::Vector<Aws::String>& value) { SetDatasetArns(value); return *this;}
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) of the datasets to add to the
+     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
      * dataset group.</p>
      */
     inline UpdateDatasetGroupRequest& WithDatasetArns(Aws::Vector<Aws::String>&& value) { SetDatasetArns(std::move(value)); return *this;}
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) of the datasets to add to the
+     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
      * dataset group.</p>
      */
     inline UpdateDatasetGroupRequest& AddDatasetArns(const Aws::String& value) { m_datasetArnsHasBeenSet = true; m_datasetArns.push_back(value); return *this; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) of the datasets to add to the
+     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
      * dataset group.</p>
      */
     inline UpdateDatasetGroupRequest& AddDatasetArns(Aws::String&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) of the datasets to add to the
+     * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
      * dataset group.</p>
      */
     inline UpdateDatasetGroupRequest& AddDatasetArns(const char* value) { m_datasetArnsHasBeenSet = true; m_datasetArns.push_back(value); return *this; }

@@ -81,6 +81,42 @@ namespace Model
 
 
     /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline void SetCreatedAt(const Aws::String& value) { m_createdAt = value; }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline void SetCreatedAt(Aws::String&& value) { m_createdAt = std::move(value); }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline void SetCreatedAt(const char* value) { m_createdAt.assign(value); }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline CreateAssetResult& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline CreateAssetResult& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline CreateAssetResult& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
+
+    /**
      * The list of egress endpoints available for the Asset.
      */
     inline const Aws::Vector<EgressEndpoint>& GetEgressEndpoints() const{ return m_egressEndpoints; }
@@ -298,6 +334,8 @@ namespace Model
   private:
 
     Aws::String m_arn;
+
+    Aws::String m_createdAt;
 
     Aws::Vector<EgressEndpoint> m_egressEndpoints;
 

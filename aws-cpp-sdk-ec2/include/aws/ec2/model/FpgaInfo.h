@@ -1,0 +1,125 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/FpgaDeviceInfo.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Xml
+{
+  class XmlNode;
+} // namespace Xml
+} // namespace Utils
+namespace EC2
+{
+namespace Model
+{
+
+  /**
+   * <p>Describes the FPGAs for the instance type.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/FpgaInfo">AWS API
+   * Reference</a></p>
+   */
+  class AWS_EC2_API FpgaInfo
+  {
+  public:
+    FpgaInfo();
+    FpgaInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
+    FpgaInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+
+    /**
+     * <p>Describes the FPGAs for the instance type.</p>
+     */
+    inline const Aws::Vector<FpgaDeviceInfo>& GetFpgas() const{ return m_fpgas; }
+
+    /**
+     * <p>Describes the FPGAs for the instance type.</p>
+     */
+    inline bool FpgasHasBeenSet() const { return m_fpgasHasBeenSet; }
+
+    /**
+     * <p>Describes the FPGAs for the instance type.</p>
+     */
+    inline void SetFpgas(const Aws::Vector<FpgaDeviceInfo>& value) { m_fpgasHasBeenSet = true; m_fpgas = value; }
+
+    /**
+     * <p>Describes the FPGAs for the instance type.</p>
+     */
+    inline void SetFpgas(Aws::Vector<FpgaDeviceInfo>&& value) { m_fpgasHasBeenSet = true; m_fpgas = std::move(value); }
+
+    /**
+     * <p>Describes the FPGAs for the instance type.</p>
+     */
+    inline FpgaInfo& WithFpgas(const Aws::Vector<FpgaDeviceInfo>& value) { SetFpgas(value); return *this;}
+
+    /**
+     * <p>Describes the FPGAs for the instance type.</p>
+     */
+    inline FpgaInfo& WithFpgas(Aws::Vector<FpgaDeviceInfo>&& value) { SetFpgas(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the FPGAs for the instance type.</p>
+     */
+    inline FpgaInfo& AddFpgas(const FpgaDeviceInfo& value) { m_fpgasHasBeenSet = true; m_fpgas.push_back(value); return *this; }
+
+    /**
+     * <p>Describes the FPGAs for the instance type.</p>
+     */
+    inline FpgaInfo& AddFpgas(FpgaDeviceInfo&& value) { m_fpgasHasBeenSet = true; m_fpgas.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The total memory of all FPGA accelerators for the instance type.</p>
+     */
+    inline int GetTotalFpgaMemoryInMiB() const{ return m_totalFpgaMemoryInMiB; }
+
+    /**
+     * <p>The total memory of all FPGA accelerators for the instance type.</p>
+     */
+    inline bool TotalFpgaMemoryInMiBHasBeenSet() const { return m_totalFpgaMemoryInMiBHasBeenSet; }
+
+    /**
+     * <p>The total memory of all FPGA accelerators for the instance type.</p>
+     */
+    inline void SetTotalFpgaMemoryInMiB(int value) { m_totalFpgaMemoryInMiBHasBeenSet = true; m_totalFpgaMemoryInMiB = value; }
+
+    /**
+     * <p>The total memory of all FPGA accelerators for the instance type.</p>
+     */
+    inline FpgaInfo& WithTotalFpgaMemoryInMiB(int value) { SetTotalFpgaMemoryInMiB(value); return *this;}
+
+  private:
+
+    Aws::Vector<FpgaDeviceInfo> m_fpgas;
+    bool m_fpgasHasBeenSet;
+
+    int m_totalFpgaMemoryInMiB;
+    bool m_totalFpgaMemoryInMiBHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace EC2
+} // namespace Aws

@@ -242,6 +242,55 @@ namespace Model
      */
     inline ClusterSummary& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
 
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     */
+    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     */
+    inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     */
+    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     */
+    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     */
+    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     */
+    inline ClusterSummary& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     */
+    inline ClusterSummary& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Outpost where the cluster is launched.
+     * </p>
+     */
+    inline ClusterSummary& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -258,6 +307,9 @@ namespace Model
 
     Aws::String m_clusterArn;
     bool m_clusterArnHasBeenSet;
+
+    Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet;
   };
 
 } // namespace Model

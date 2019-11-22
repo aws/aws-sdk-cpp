@@ -384,42 +384,58 @@ namespace Model
 
 
     /**
-     * <p>The list of tags to add to a new topic.</p>
+     * <p>The list of tags to add to a new topic.</p> <note> <p>To be able to tag a
+     * topic on creation, you must have the <code>sns:CreateTopic</code> and
+     * <code>sns:TagResource</code> permissions.</p> </note>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The list of tags to add to a new topic.</p>
+     * <p>The list of tags to add to a new topic.</p> <note> <p>To be able to tag a
+     * topic on creation, you must have the <code>sns:CreateTopic</code> and
+     * <code>sns:TagResource</code> permissions.</p> </note>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The list of tags to add to a new topic.</p>
+     * <p>The list of tags to add to a new topic.</p> <note> <p>To be able to tag a
+     * topic on creation, you must have the <code>sns:CreateTopic</code> and
+     * <code>sns:TagResource</code> permissions.</p> </note>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The list of tags to add to a new topic.</p>
+     * <p>The list of tags to add to a new topic.</p> <note> <p>To be able to tag a
+     * topic on creation, you must have the <code>sns:CreateTopic</code> and
+     * <code>sns:TagResource</code> permissions.</p> </note>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The list of tags to add to a new topic.</p>
+     * <p>The list of tags to add to a new topic.</p> <note> <p>To be able to tag a
+     * topic on creation, you must have the <code>sns:CreateTopic</code> and
+     * <code>sns:TagResource</code> permissions.</p> </note>
      */
     inline CreateTopicRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The list of tags to add to a new topic.</p>
+     * <p>The list of tags to add to a new topic.</p> <note> <p>To be able to tag a
+     * topic on creation, you must have the <code>sns:CreateTopic</code> and
+     * <code>sns:TagResource</code> permissions.</p> </note>
      */
     inline CreateTopicRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The list of tags to add to a new topic.</p>
+     * <p>The list of tags to add to a new topic.</p> <note> <p>To be able to tag a
+     * topic on creation, you must have the <code>sns:CreateTopic</code> and
+     * <code>sns:TagResource</code> permissions.</p> </note>
      */
     inline CreateTopicRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The list of tags to add to a new topic.</p>
+     * <p>The list of tags to add to a new topic.</p> <note> <p>To be able to tag a
+     * topic on creation, you must have the <code>sns:CreateTopic</code> and
+     * <code>sns:TagResource</code> permissions.</p> </note>
      */
     inline CreateTopicRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

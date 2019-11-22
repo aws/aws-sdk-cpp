@@ -35,11 +35,11 @@ namespace Model
 
   /**
    * <p>Describes a supplementary feature of a dataset group. This object is part of
-   * the <a>InputDataConfig</a> object.</p> <p>For this release, the only supported
-   * feature is a holiday calendar. If the calendar is used, all data should belong
-   * to the same country as the calendar. For the calendar data, see <a
-   * href="http://jollyday.sourceforge.net/data.html">http://jollyday.sourceforge.net/data.html</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * the <a>InputDataConfig</a> object.</p> <p>The only supported feature is a
+   * holiday calendar. If you use the calendar, all data in the datasets should
+   * belong to the same country as the calendar. For the holiday calendar data, see
+   * the <a href="http://jollyday.sourceforge.net/data.html">Jollyday</a> web
+   * site.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/SupplementaryFeature">AWS
    * API Reference</a></p>
    */

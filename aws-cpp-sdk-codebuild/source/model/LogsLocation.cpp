@@ -33,6 +33,8 @@ LogsLocation::LogsLocation() :
     m_streamNameHasBeenSet(false),
     m_deepLinkHasBeenSet(false),
     m_s3DeepLinkHasBeenSet(false),
+    m_cloudWatchLogsArnHasBeenSet(false),
+    m_s3LogsArnHasBeenSet(false),
     m_cloudWatchLogsHasBeenSet(false),
     m_s3LogsHasBeenSet(false)
 {
@@ -43,6 +45,8 @@ LogsLocation::LogsLocation(JsonView jsonValue) :
     m_streamNameHasBeenSet(false),
     m_deepLinkHasBeenSet(false),
     m_s3DeepLinkHasBeenSet(false),
+    m_cloudWatchLogsArnHasBeenSet(false),
+    m_s3LogsArnHasBeenSet(false),
     m_cloudWatchLogsHasBeenSet(false),
     m_s3LogsHasBeenSet(false)
 {
@@ -77,6 +81,20 @@ LogsLocation& LogsLocation::operator =(JsonView jsonValue)
     m_s3DeepLink = jsonValue.GetString("s3DeepLink");
 
     m_s3DeepLinkHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cloudWatchLogsArn"))
+  {
+    m_cloudWatchLogsArn = jsonValue.GetString("cloudWatchLogsArn");
+
+    m_cloudWatchLogsArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("s3LogsArn"))
+  {
+    m_s3LogsArn = jsonValue.GetString("s3LogsArn");
+
+    m_s3LogsArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("cloudWatchLogs"))
@@ -121,6 +139,18 @@ JsonValue LogsLocation::Jsonize() const
   if(m_s3DeepLinkHasBeenSet)
   {
    payload.WithString("s3DeepLink", m_s3DeepLink);
+
+  }
+
+  if(m_cloudWatchLogsArnHasBeenSet)
+  {
+   payload.WithString("cloudWatchLogsArn", m_cloudWatchLogsArn);
+
+  }
+
+  if(m_s3LogsArnHasBeenSet)
+  {
+   payload.WithString("s3LogsArn", m_s3LogsArn);
 
   }
 

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -44,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The same forecast ARN as given in the request.</p>
+     * <p>The forecast ARN as specified in the request.</p>
      */
     inline const Aws::String& GetForecastArn() const{ return m_forecastArn; }
 
     /**
-     * <p>The same forecast ARN as given in the request.</p>
+     * <p>The forecast ARN as specified in the request.</p>
      */
     inline void SetForecastArn(const Aws::String& value) { m_forecastArn = value; }
 
     /**
-     * <p>The same forecast ARN as given in the request.</p>
+     * <p>The forecast ARN as specified in the request.</p>
      */
     inline void SetForecastArn(Aws::String&& value) { m_forecastArn = std::move(value); }
 
     /**
-     * <p>The same forecast ARN as given in the request.</p>
+     * <p>The forecast ARN as specified in the request.</p>
      */
     inline void SetForecastArn(const char* value) { m_forecastArn.assign(value); }
 
     /**
-     * <p>The same forecast ARN as given in the request.</p>
+     * <p>The forecast ARN as specified in the request.</p>
      */
     inline DescribeForecastResult& WithForecastArn(const Aws::String& value) { SetForecastArn(value); return *this;}
 
     /**
-     * <p>The same forecast ARN as given in the request.</p>
+     * <p>The forecast ARN as specified in the request.</p>
      */
     inline DescribeForecastResult& WithForecastArn(Aws::String&& value) { SetForecastArn(std::move(value)); return *this;}
 
     /**
-     * <p>The same forecast ARN as given in the request.</p>
+     * <p>The forecast ARN as specified in the request.</p>
      */
     inline DescribeForecastResult& WithForecastArn(const char* value) { SetForecastArn(value); return *this;}
 
@@ -113,6 +114,47 @@ namespace Model
      * <p>The name of the forecast.</p>
      */
     inline DescribeForecastResult& WithForecastName(const char* value) { SetForecastName(value); return *this;}
+
+
+    /**
+     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetForecastTypes() const{ return m_forecastTypes; }
+
+    /**
+     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     */
+    inline void SetForecastTypes(const Aws::Vector<Aws::String>& value) { m_forecastTypes = value; }
+
+    /**
+     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     */
+    inline void SetForecastTypes(Aws::Vector<Aws::String>&& value) { m_forecastTypes = std::move(value); }
+
+    /**
+     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     */
+    inline DescribeForecastResult& WithForecastTypes(const Aws::Vector<Aws::String>& value) { SetForecastTypes(value); return *this;}
+
+    /**
+     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     */
+    inline DescribeForecastResult& WithForecastTypes(Aws::Vector<Aws::String>&& value) { SetForecastTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     */
+    inline DescribeForecastResult& AddForecastTypes(const Aws::String& value) { m_forecastTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     */
+    inline DescribeForecastResult& AddForecastTypes(Aws::String&& value) { m_forecastTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The quantiles at which proababilistic forecasts were generated.</p>
+     */
+    inline DescribeForecastResult& AddForecastTypes(const char* value) { m_forecastTypes.push_back(value); return *this; }
 
 
     /**
@@ -384,6 +426,8 @@ namespace Model
     Aws::String m_forecastArn;
 
     Aws::String m_forecastName;
+
+    Aws::Vector<Aws::String> m_forecastTypes;
 
     Aws::String m_predictorArn;
 

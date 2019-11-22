@@ -66,9 +66,14 @@ namespace Model
      * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
      * delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
-     * <p> <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic ARN that the subscription is associated
-     * with.</p> </li> </ul>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
+     * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
+     * that the subscription is associated with.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
@@ -89,9 +94,14 @@ namespace Model
      * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
      * delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
-     * <p> <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic ARN that the subscription is associated
-     * with.</p> </li> </ul>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
+     * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
+     * that the subscription is associated with.</p> </li> </ul>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributes = value; }
 
@@ -112,9 +122,14 @@ namespace Model
      * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
      * delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
-     * <p> <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic ARN that the subscription is associated
-     * with.</p> </li> </ul>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
+     * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
+     * that the subscription is associated with.</p> </li> </ul>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributes = std::move(value); }
 
@@ -135,9 +150,14 @@ namespace Model
      * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
      * delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
-     * <p> <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic ARN that the subscription is associated
-     * with.</p> </li> </ul>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
+     * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
+     * that the subscription is associated with.</p> </li> </ul>
      */
     inline GetSubscriptionAttributesResult& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
@@ -158,9 +178,14 @@ namespace Model
      * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
      * delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
-     * <p> <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic ARN that the subscription is associated
-     * with.</p> </li> </ul>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
+     * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
+     * that the subscription is associated with.</p> </li> </ul>
      */
     inline GetSubscriptionAttributesResult& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -181,9 +206,14 @@ namespace Model
      * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
      * delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
-     * <p> <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic ARN that the subscription is associated
-     * with.</p> </li> </ul>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
+     * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
+     * that the subscription is associated with.</p> </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributes.emplace(key, value); return *this; }
 
@@ -204,9 +234,14 @@ namespace Model
      * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
      * delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
-     * <p> <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic ARN that the subscription is associated
-     * with.</p> </li> </ul>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
+     * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
+     * that the subscription is associated with.</p> </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -227,9 +262,14 @@ namespace Model
      * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
      * delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
-     * <p> <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic ARN that the subscription is associated
-     * with.</p> </li> </ul>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
+     * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
+     * that the subscription is associated with.</p> </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -250,9 +290,14 @@ namespace Model
      * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
      * delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
-     * <p> <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic ARN that the subscription is associated
-     * with.</p> </li> </ul>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
+     * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
+     * that the subscription is associated with.</p> </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -273,9 +318,14 @@ namespace Model
      * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
      * delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
-     * <p> <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic ARN that the subscription is associated
-     * with.</p> </li> </ul>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
+     * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
+     * that the subscription is associated with.</p> </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(const char* key, Aws::String&& value) { m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -296,9 +346,14 @@ namespace Model
      * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
      * delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
-     * <p> <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic ARN that the subscription is associated
-     * with.</p> </li> </ul>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
+     * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
+     * that the subscription is associated with.</p> </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(Aws::String&& key, const char* value) { m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -319,9 +374,14 @@ namespace Model
      * <li> <p> <code>RawMessageDelivery</code> – <code>true</code> if raw message
      * delivery is enabled for the subscription. Raw messages are free of JSON
      * formatting and can be sent to HTTP/S and Amazon SQS endpoints.</p> </li> <li>
-     * <p> <code>SubscriptionArn</code> – The subscription's ARN.</p> </li> <li> <p>
-     * <code>TopicArn</code> – The topic ARN that the subscription is associated
-     * with.</p> </li> </ul>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> <li> <p> <code>SubscriptionArn</code> – The
+     * subscription's ARN.</p> </li> <li> <p> <code>TopicArn</code> – The topic ARN
+     * that the subscription is associated with.</p> </li> </ul>
      */
     inline GetSubscriptionAttributesResult& AddAttributes(const char* key, const char* value) { m_attributes.emplace(key, value); return *this; }
 

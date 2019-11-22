@@ -64,8 +64,11 @@ namespace Model
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters. </p>
-     * </note>
+     * maximum length for the fully qualified parameter name is 1011 characters,
+     * including the full length of the parameter ARN. For example, the following fully
+     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
+     * </p> </note>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -85,8 +88,11 @@ namespace Model
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters. </p>
-     * </note>
+     * maximum length for the fully qualified parameter name is 1011 characters,
+     * including the full length of the parameter ARN. For example, the following fully
+     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
+     * </p> </note>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -106,8 +112,11 @@ namespace Model
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters. </p>
-     * </note>
+     * maximum length for the fully qualified parameter name is 1011 characters,
+     * including the full length of the parameter ARN. For example, the following fully
+     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
+     * </p> </note>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -127,8 +136,11 @@ namespace Model
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters. </p>
-     * </note>
+     * maximum length for the fully qualified parameter name is 1011 characters,
+     * including the full length of the parameter ARN. For example, the following fully
+     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
+     * </p> </note>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -148,8 +160,11 @@ namespace Model
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters. </p>
-     * </note>
+     * maximum length for the fully qualified parameter name is 1011 characters,
+     * including the full length of the parameter ARN. For example, the following fully
+     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
+     * </p> </note>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -169,8 +184,11 @@ namespace Model
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters. </p>
-     * </note>
+     * maximum length for the fully qualified parameter name is 1011 characters,
+     * including the full length of the parameter ARN. For example, the following fully
+     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
+     * </p> </note>
      */
     inline PutParameterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -190,8 +208,11 @@ namespace Model
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters. </p>
-     * </note>
+     * maximum length for the fully qualified parameter name is 1011 characters,
+     * including the full length of the parameter ARN. For example, the following fully
+     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
+     * </p> </note>
      */
     inline PutParameterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -211,8 +232,11 @@ namespace Model
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters. </p>
-     * </note>
+     * maximum length for the fully qualified parameter name is 1011 characters,
+     * including the full length of the parameter ARN. For example, the following fully
+     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
+     * </p> </note>
      */
     inline PutParameterRequest& WithName(const char* value) { SetName(value); return *this;}
 

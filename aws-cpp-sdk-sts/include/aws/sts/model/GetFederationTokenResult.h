@@ -134,23 +134,26 @@ namespace Model
 
 
     /**
-     * <p>A percentage value indicating the size of the policy in packed form. The
-     * service rejects policies for which the packed size is greater than 100 percent
-     * of the allowed value.</p>
+     * <p>A percentage value that indicates the packed size of the session policies and
+     * session tags combined passed in the request. The request fails if the packed
+     * size is greater than 100 percent, which means the policies and tags exceeded the
+     * allowed space.</p>
      */
     inline int GetPackedPolicySize() const{ return m_packedPolicySize; }
 
     /**
-     * <p>A percentage value indicating the size of the policy in packed form. The
-     * service rejects policies for which the packed size is greater than 100 percent
-     * of the allowed value.</p>
+     * <p>A percentage value that indicates the packed size of the session policies and
+     * session tags combined passed in the request. The request fails if the packed
+     * size is greater than 100 percent, which means the policies and tags exceeded the
+     * allowed space.</p>
      */
     inline void SetPackedPolicySize(int value) { m_packedPolicySize = value; }
 
     /**
-     * <p>A percentage value indicating the size of the policy in packed form. The
-     * service rejects policies for which the packed size is greater than 100 percent
-     * of the allowed value.</p>
+     * <p>A percentage value that indicates the packed size of the session policies and
+     * session tags combined passed in the request. The request fails if the packed
+     * size is greater than 100 percent, which means the policies and tags exceeded the
+     * allowed space.</p>
      */
     inline GetFederationTokenResult& WithPackedPolicySize(int value) { SetPackedPolicySize(value); return *this;}
 

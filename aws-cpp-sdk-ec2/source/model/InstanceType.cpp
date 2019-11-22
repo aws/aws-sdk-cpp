@@ -170,7 +170,10 @@ namespace Aws
         static const int c5d_2xlarge_HASH = HashingUtils::HashString("c5d.2xlarge");
         static const int c5d_4xlarge_HASH = HashingUtils::HashString("c5d.4xlarge");
         static const int c5d_9xlarge_HASH = HashingUtils::HashString("c5d.9xlarge");
+        static const int c5d_12xlarge_HASH = HashingUtils::HashString("c5d.12xlarge");
         static const int c5d_18xlarge_HASH = HashingUtils::HashString("c5d.18xlarge");
+        static const int c5d_24xlarge_HASH = HashingUtils::HashString("c5d.24xlarge");
+        static const int c5d_metal_HASH = HashingUtils::HashString("c5d.metal");
         static const int c5n_large_HASH = HashingUtils::HashString("c5n.large");
         static const int c5n_xlarge_HASH = HashingUtils::HashString("c5n.xlarge");
         static const int c5n_2xlarge_HASH = HashingUtils::HashString("c5n.2xlarge");
@@ -1006,9 +1009,24 @@ namespace Aws
             enumValue = InstanceType::c5d_9xlarge;
             return true;
           }
+          else if (hashCode == c5d_12xlarge_HASH)
+          {
+            enumValue = InstanceType::c5d_12xlarge;
+            return true;
+          }
           else if (hashCode == c5d_18xlarge_HASH)
           {
             enumValue = InstanceType::c5d_18xlarge;
+            return true;
+          }
+          else if (hashCode == c5d_24xlarge_HASH)
+          {
+            enumValue = InstanceType::c5d_24xlarge;
+            return true;
+          }
+          else if (hashCode == c5d_metal_HASH)
+          {
+            enumValue = InstanceType::c5d_metal;
             return true;
           }
           else if (hashCode == c5n_large_HASH)
@@ -1511,7 +1529,11 @@ namespace Aws
             enumValue = InstanceType::m5n_large;
             return true;
           }
-          else if (hashCode == m5n_xlarge_HASH)
+          return false;
+        }
+        static bool GetEnumForNameHelper2(int hashCode, InstanceType& enumValue)
+        {
+          if (hashCode == m5n_xlarge_HASH)
           {
             enumValue = InstanceType::m5n_xlarge;
             return true;
@@ -1526,11 +1548,7 @@ namespace Aws
             enumValue = InstanceType::m5n_4xlarge;
             return true;
           }
-          return false;
-        }
-        static bool GetEnumForNameHelper2(int hashCode, InstanceType& enumValue)
-        {
-          if (hashCode == m5n_8xlarge_HASH)
+          else if (hashCode == m5n_8xlarge_HASH)
           {
             enumValue = InstanceType::m5n_8xlarge;
             return true;
@@ -2065,8 +2083,17 @@ namespace Aws
           case InstanceType::c5d_9xlarge:
             value = "c5d.9xlarge";
             return true;
+          case InstanceType::c5d_12xlarge:
+            value = "c5d.12xlarge";
+            return true;
           case InstanceType::c5d_18xlarge:
             value = "c5d.18xlarge";
+            return true;
+          case InstanceType::c5d_24xlarge:
+            value = "c5d.24xlarge";
+            return true;
+          case InstanceType::c5d_metal:
+            value = "c5d.metal";
             return true;
           case InstanceType::c5n_large:
             value = "c5n.large";
@@ -2368,6 +2395,14 @@ namespace Aws
           case InstanceType::m5n_large:
             value = "m5n.large";
             return true;
+          default:
+            return false;
+          }
+        }
+        static bool GetNameForEnumHelper2(InstanceType enumValue, Aws::String& value)
+        {
+          switch(enumValue)
+          {
           case InstanceType::m5n_xlarge:
             value = "m5n.xlarge";
             return true;
@@ -2377,14 +2412,6 @@ namespace Aws
           case InstanceType::m5n_4xlarge:
             value = "m5n.4xlarge";
             return true;
-          default:
-            return false;
-          }
-        }
-        static bool GetNameForEnumHelper2(InstanceType enumValue, Aws::String& value)
-        {
-          switch(enumValue)
-          {
           case InstanceType::m5n_8xlarge:
             value = "m5n.8xlarge";
             return true;

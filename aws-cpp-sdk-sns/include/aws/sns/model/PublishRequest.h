@@ -231,12 +231,9 @@ namespace Model
 
 
     /**
-     * <p>The message you want to send.</p> <important> <p>The <code>Message</code>
-     * parameter is always a string. If you set <code>MessageStructure</code> to
-     * <code>json</code>, you must string-encode the <code>Message</code>
-     * parameter.</p> </important> <p>If you are publishing to a topic and you want to
-     * send the same message to all transport protocols, include the text of the
-     * message as a String value. If you want to send different messages for each
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
      * transport protocol, set the value of the <code>MessageStructure</code> parameter
      * to <code>json</code> and use a JSON object for the <code>Message</code>
      * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
@@ -266,12 +263,9 @@ namespace Model
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>The message you want to send.</p> <important> <p>The <code>Message</code>
-     * parameter is always a string. If you set <code>MessageStructure</code> to
-     * <code>json</code>, you must string-encode the <code>Message</code>
-     * parameter.</p> </important> <p>If you are publishing to a topic and you want to
-     * send the same message to all transport protocols, include the text of the
-     * message as a String value. If you want to send different messages for each
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
      * transport protocol, set the value of the <code>MessageStructure</code> parameter
      * to <code>json</code> and use a JSON object for the <code>Message</code>
      * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
@@ -301,12 +295,9 @@ namespace Model
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>The message you want to send.</p> <important> <p>The <code>Message</code>
-     * parameter is always a string. If you set <code>MessageStructure</code> to
-     * <code>json</code>, you must string-encode the <code>Message</code>
-     * parameter.</p> </important> <p>If you are publishing to a topic and you want to
-     * send the same message to all transport protocols, include the text of the
-     * message as a String value. If you want to send different messages for each
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
      * transport protocol, set the value of the <code>MessageStructure</code> parameter
      * to <code>json</code> and use a JSON object for the <code>Message</code>
      * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
@@ -336,12 +327,9 @@ namespace Model
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>The message you want to send.</p> <important> <p>The <code>Message</code>
-     * parameter is always a string. If you set <code>MessageStructure</code> to
-     * <code>json</code>, you must string-encode the <code>Message</code>
-     * parameter.</p> </important> <p>If you are publishing to a topic and you want to
-     * send the same message to all transport protocols, include the text of the
-     * message as a String value. If you want to send different messages for each
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
      * transport protocol, set the value of the <code>MessageStructure</code> parameter
      * to <code>json</code> and use a JSON object for the <code>Message</code>
      * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
@@ -371,12 +359,9 @@ namespace Model
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>The message you want to send.</p> <important> <p>The <code>Message</code>
-     * parameter is always a string. If you set <code>MessageStructure</code> to
-     * <code>json</code>, you must string-encode the <code>Message</code>
-     * parameter.</p> </important> <p>If you are publishing to a topic and you want to
-     * send the same message to all transport protocols, include the text of the
-     * message as a String value. If you want to send different messages for each
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
      * transport protocol, set the value of the <code>MessageStructure</code> parameter
      * to <code>json</code> and use a JSON object for the <code>Message</code>
      * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
@@ -406,12 +391,9 @@ namespace Model
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>The message you want to send.</p> <important> <p>The <code>Message</code>
-     * parameter is always a string. If you set <code>MessageStructure</code> to
-     * <code>json</code>, you must string-encode the <code>Message</code>
-     * parameter.</p> </important> <p>If you are publishing to a topic and you want to
-     * send the same message to all transport protocols, include the text of the
-     * message as a String value. If you want to send different messages for each
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
      * transport protocol, set the value of the <code>MessageStructure</code> parameter
      * to <code>json</code> and use a JSON object for the <code>Message</code>
      * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
@@ -441,12 +423,9 @@ namespace Model
     inline PublishRequest& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>The message you want to send.</p> <important> <p>The <code>Message</code>
-     * parameter is always a string. If you set <code>MessageStructure</code> to
-     * <code>json</code>, you must string-encode the <code>Message</code>
-     * parameter.</p> </important> <p>If you are publishing to a topic and you want to
-     * send the same message to all transport protocols, include the text of the
-     * message as a String value. If you want to send different messages for each
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
      * transport protocol, set the value of the <code>MessageStructure</code> parameter
      * to <code>json</code> and use a JSON object for the <code>Message</code>
      * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
@@ -476,12 +455,9 @@ namespace Model
     inline PublishRequest& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The message you want to send.</p> <important> <p>The <code>Message</code>
-     * parameter is always a string. If you set <code>MessageStructure</code> to
-     * <code>json</code>, you must string-encode the <code>Message</code>
-     * parameter.</p> </important> <p>If you are publishing to a topic and you want to
-     * send the same message to all transport protocols, include the text of the
-     * message as a String value. If you want to send different messages for each
+     * <p>The message you want to send.</p> <p>If you are publishing to a topic and you
+     * want to send the same message to all transport protocols, include the text of
+     * the message as a String value. If you want to send different messages for each
      * transport protocol, set the value of the <code>MessageStructure</code> parameter
      * to <code>json</code> and use a JSON object for the <code>Message</code>
      * parameter. </p> <p/> <p>Constraints:</p> <ul> <li> <p>With the exception of SMS,
@@ -601,12 +577,8 @@ namespace Model
      * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
      * at least a top-level JSON key of "default" with a value that is a string.</p>
      * </li> </ul> <p>You can define other top-level keys that define the message you
-     * want to send to a specific transport protocol (e.g., "http").</p> <p>For
-     * information about sending different messages for each protocol using the AWS
-     * Management Console, go to <a
-     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
-     * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
+     * want to send to a specific transport protocol (e.g., "http").</p> <p>Valid
+     * value: <code>json</code> </p>
      */
     inline const Aws::String& GetMessageStructure() const{ return m_messageStructure; }
 
@@ -619,12 +591,8 @@ namespace Model
      * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
      * at least a top-level JSON key of "default" with a value that is a string.</p>
      * </li> </ul> <p>You can define other top-level keys that define the message you
-     * want to send to a specific transport protocol (e.g., "http").</p> <p>For
-     * information about sending different messages for each protocol using the AWS
-     * Management Console, go to <a
-     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
-     * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
+     * want to send to a specific transport protocol (e.g., "http").</p> <p>Valid
+     * value: <code>json</code> </p>
      */
     inline bool MessageStructureHasBeenSet() const { return m_messageStructureHasBeenSet; }
 
@@ -637,12 +605,8 @@ namespace Model
      * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
      * at least a top-level JSON key of "default" with a value that is a string.</p>
      * </li> </ul> <p>You can define other top-level keys that define the message you
-     * want to send to a specific transport protocol (e.g., "http").</p> <p>For
-     * information about sending different messages for each protocol using the AWS
-     * Management Console, go to <a
-     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
-     * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
+     * want to send to a specific transport protocol (e.g., "http").</p> <p>Valid
+     * value: <code>json</code> </p>
      */
     inline void SetMessageStructure(const Aws::String& value) { m_messageStructureHasBeenSet = true; m_messageStructure = value; }
 
@@ -655,12 +619,8 @@ namespace Model
      * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
      * at least a top-level JSON key of "default" with a value that is a string.</p>
      * </li> </ul> <p>You can define other top-level keys that define the message you
-     * want to send to a specific transport protocol (e.g., "http").</p> <p>For
-     * information about sending different messages for each protocol using the AWS
-     * Management Console, go to <a
-     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
-     * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
+     * want to send to a specific transport protocol (e.g., "http").</p> <p>Valid
+     * value: <code>json</code> </p>
      */
     inline void SetMessageStructure(Aws::String&& value) { m_messageStructureHasBeenSet = true; m_messageStructure = std::move(value); }
 
@@ -673,12 +633,8 @@ namespace Model
      * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
      * at least a top-level JSON key of "default" with a value that is a string.</p>
      * </li> </ul> <p>You can define other top-level keys that define the message you
-     * want to send to a specific transport protocol (e.g., "http").</p> <p>For
-     * information about sending different messages for each protocol using the AWS
-     * Management Console, go to <a
-     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
-     * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
+     * want to send to a specific transport protocol (e.g., "http").</p> <p>Valid
+     * value: <code>json</code> </p>
      */
     inline void SetMessageStructure(const char* value) { m_messageStructureHasBeenSet = true; m_messageStructure.assign(value); }
 
@@ -691,12 +647,8 @@ namespace Model
      * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
      * at least a top-level JSON key of "default" with a value that is a string.</p>
      * </li> </ul> <p>You can define other top-level keys that define the message you
-     * want to send to a specific transport protocol (e.g., "http").</p> <p>For
-     * information about sending different messages for each protocol using the AWS
-     * Management Console, go to <a
-     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
-     * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
+     * want to send to a specific transport protocol (e.g., "http").</p> <p>Valid
+     * value: <code>json</code> </p>
      */
     inline PublishRequest& WithMessageStructure(const Aws::String& value) { SetMessageStructure(value); return *this;}
 
@@ -709,12 +661,8 @@ namespace Model
      * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
      * at least a top-level JSON key of "default" with a value that is a string.</p>
      * </li> </ul> <p>You can define other top-level keys that define the message you
-     * want to send to a specific transport protocol (e.g., "http").</p> <p>For
-     * information about sending different messages for each protocol using the AWS
-     * Management Console, go to <a
-     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
-     * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
+     * want to send to a specific transport protocol (e.g., "http").</p> <p>Valid
+     * value: <code>json</code> </p>
      */
     inline PublishRequest& WithMessageStructure(Aws::String&& value) { SetMessageStructure(std::move(value)); return *this;}
 
@@ -727,12 +675,8 @@ namespace Model
      * <ul> <li> <p>be a syntactically valid JSON object; and</p> </li> <li> <p>contain
      * at least a top-level JSON key of "default" with a value that is a string.</p>
      * </li> </ul> <p>You can define other top-level keys that define the message you
-     * want to send to a specific transport protocol (e.g., "http").</p> <p>For
-     * information about sending different messages for each protocol using the AWS
-     * Management Console, go to <a
-     * href="https://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol">Create
-     * Different Messages for Each Protocol</a> in the <i>Amazon Simple Notification
-     * Service Getting Started Guide</i>. </p> <p>Valid value: <code>json</code> </p>
+     * want to send to a specific transport protocol (e.g., "http").</p> <p>Valid
+     * value: <code>json</code> </p>
      */
     inline PublishRequest& WithMessageStructure(const char* value) { SetMessageStructure(value); return *this;}
 

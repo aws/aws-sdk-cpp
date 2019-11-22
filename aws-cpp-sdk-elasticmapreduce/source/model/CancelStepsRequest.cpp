@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 CancelStepsRequest::CancelStepsRequest() : 
     m_clusterIdHasBeenSet(false),
-    m_stepIdsHasBeenSet(false)
+    m_stepIdsHasBeenSet(false),
+    m_stepCancellationOption(StepCancellationOption::NOT_SET),
+    m_stepCancellationOptionHasBeenSet(false)
 {
 }
 
@@ -47,6 +49,11 @@ Aws::String CancelStepsRequest::SerializePayload() const
    }
    payload.WithArray("StepIds", std::move(stepIdsJsonList));
 
+  }
+
+  if(m_stepCancellationOptionHasBeenSet)
+  {
+   payload.WithString("StepCancellationOption", StepCancellationOptionMapper::GetNameForStepCancellationOption(m_stepCancellationOption));
   }
 
   return payload.View().WriteReadable();

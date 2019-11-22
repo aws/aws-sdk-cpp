@@ -27,7 +27,10 @@ namespace Model
   {
     NOT_SET,
     NONE,
-    AUTO
+    AUTO,
+    LOW,
+    MEDIUM,
+    HIGH
   };
 
 namespace QualityFilterMapper

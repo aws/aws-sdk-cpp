@@ -94,7 +94,7 @@ namespace Model
 
     /**
      * <p>If there are more than 100 items in the list, only the first 100 items are
-     * returned, along with a unique string called a <i>next token</i>. To get the next
+     * returned, along with a unique string called a <i>nextToken</i>. To get the next
      * batch of items in the list, call this operation again, adding the next token to
      * the call.</p>
      */
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>If there are more than 100 items in the list, only the first 100 items are
-     * returned, along with a unique string called a <i>next token</i>. To get the next
+     * returned, along with a unique string called a <i>nextToken</i>. To get the next
      * batch of items in the list, call this operation again, adding the next token to
      * the call.</p>
      */
@@ -110,7 +110,7 @@ namespace Model
 
     /**
      * <p>If there are more than 100 items in the list, only the first 100 items are
-     * returned, along with a unique string called a <i>next token</i>. To get the next
+     * returned, along with a unique string called a <i>nextToken</i>. To get the next
      * batch of items in the list, call this operation again, adding the next token to
      * the call.</p>
      */
@@ -118,7 +118,7 @@ namespace Model
 
     /**
      * <p>If there are more than 100 items in the list, only the first 100 items are
-     * returned, along with a unique string called a <i>next token</i>. To get the next
+     * returned, along with a unique string called a <i>nextToken</i>. To get the next
      * batch of items in the list, call this operation again, adding the next token to
      * the call.</p>
      */
@@ -126,7 +126,7 @@ namespace Model
 
     /**
      * <p>If there are more than 100 items in the list, only the first 100 items are
-     * returned, along with a unique string called a <i>next token</i>. To get the next
+     * returned, along with a unique string called a <i>nextToken</i>. To get the next
      * batch of items in the list, call this operation again, adding the next token to
      * the call.</p>
      */
@@ -134,7 +134,7 @@ namespace Model
 
     /**
      * <p>If there are more than 100 items in the list, only the first 100 items are
-     * returned, along with a unique string called a <i>next token</i>. To get the next
+     * returned, along with a unique string called a <i>nextToken</i>. To get the next
      * batch of items in the list, call this operation again, adding the next token to
      * the call.</p>
      */
@@ -142,7 +142,7 @@ namespace Model
 
     /**
      * <p>If there are more than 100 items in the list, only the first 100 items are
-     * returned, along with a unique string called a <i>next token</i>. To get the next
+     * returned, along with a unique string called a <i>nextToken</i>. To get the next
      * batch of items in the list, call this operation again, adding the next token to
      * the call.</p>
      */

@@ -92,6 +92,28 @@ namespace Model
 
 
     /**
+     * <p>The number of instances with patches installed that have not been rebooted
+     * after the patch installation. The status of these instances is
+     * NON_COMPLIANT.</p>
+     */
+    inline int GetInstancesWithInstalledPendingRebootPatches() const{ return m_instancesWithInstalledPendingRebootPatches; }
+
+    /**
+     * <p>The number of instances with patches installed that have not been rebooted
+     * after the patch installation. The status of these instances is
+     * NON_COMPLIANT.</p>
+     */
+    inline void SetInstancesWithInstalledPendingRebootPatches(int value) { m_instancesWithInstalledPendingRebootPatches = value; }
+
+    /**
+     * <p>The number of instances with patches installed that have not been rebooted
+     * after the patch installation. The status of these instances is
+     * NON_COMPLIANT.</p>
+     */
+    inline DescribePatchGroupStateResult& WithInstancesWithInstalledPendingRebootPatches(int value) { SetInstancesWithInstalledPendingRebootPatches(value); return *this;}
+
+
+    /**
      * <p>The number of instances with patches installed that are specified in a
      * RejectedPatches list. Patches with a status of <i>INSTALLED_REJECTED</i> were
      * typically installed before they were added to a RejectedPatches list.</p> <note>
@@ -201,6 +223,8 @@ namespace Model
     int m_instancesWithInstalledPatches;
 
     int m_instancesWithInstalledOtherPatches;
+
+    int m_instancesWithInstalledPendingRebootPatches;
 
     int m_instancesWithInstalledRejectedPatches;
 

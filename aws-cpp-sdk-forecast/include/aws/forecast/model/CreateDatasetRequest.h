@@ -90,68 +90,86 @@ namespace Model
 
 
     /**
-     * <p>The domain associated with the dataset. The <code>Domain</code> and
-     * <code>DatasetType</code> that you choose determine the fields that must be
-     * present in the training data that you import to the dataset. For example, if you
-     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your
-     * data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+     * <p>The domain associated with the dataset. When you add a dataset to a dataset
+     * group, this value and the value specified for the <code>Domain</code> parameter
+     * of the <a>CreateDatasetGroup</a> operation must match.</p> <p>The
+     * <code>Domain</code> and <code>DatasetType</code> that you choose determine the
+     * fields that must be present in the training data that you import to the dataset.
+     * For example, if you choose the <code>RETAIL</code> domain and
+     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast
+     * requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code>
+     * fields to be present in your data. For more information, see
+     * <a>howitworks-datasets-groups</a>.</p>
      */
     inline const Domain& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The domain associated with the dataset. The <code>Domain</code> and
-     * <code>DatasetType</code> that you choose determine the fields that must be
-     * present in the training data that you import to the dataset. For example, if you
-     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your
-     * data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+     * <p>The domain associated with the dataset. When you add a dataset to a dataset
+     * group, this value and the value specified for the <code>Domain</code> parameter
+     * of the <a>CreateDatasetGroup</a> operation must match.</p> <p>The
+     * <code>Domain</code> and <code>DatasetType</code> that you choose determine the
+     * fields that must be present in the training data that you import to the dataset.
+     * For example, if you choose the <code>RETAIL</code> domain and
+     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast
+     * requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code>
+     * fields to be present in your data. For more information, see
+     * <a>howitworks-datasets-groups</a>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The domain associated with the dataset. The <code>Domain</code> and
-     * <code>DatasetType</code> that you choose determine the fields that must be
-     * present in the training data that you import to the dataset. For example, if you
-     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your
-     * data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+     * <p>The domain associated with the dataset. When you add a dataset to a dataset
+     * group, this value and the value specified for the <code>Domain</code> parameter
+     * of the <a>CreateDatasetGroup</a> operation must match.</p> <p>The
+     * <code>Domain</code> and <code>DatasetType</code> that you choose determine the
+     * fields that must be present in the training data that you import to the dataset.
+     * For example, if you choose the <code>RETAIL</code> domain and
+     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast
+     * requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code>
+     * fields to be present in your data. For more information, see
+     * <a>howitworks-datasets-groups</a>.</p>
      */
     inline void SetDomain(const Domain& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The domain associated with the dataset. The <code>Domain</code> and
-     * <code>DatasetType</code> that you choose determine the fields that must be
-     * present in the training data that you import to the dataset. For example, if you
-     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your
-     * data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+     * <p>The domain associated with the dataset. When you add a dataset to a dataset
+     * group, this value and the value specified for the <code>Domain</code> parameter
+     * of the <a>CreateDatasetGroup</a> operation must match.</p> <p>The
+     * <code>Domain</code> and <code>DatasetType</code> that you choose determine the
+     * fields that must be present in the training data that you import to the dataset.
+     * For example, if you choose the <code>RETAIL</code> domain and
+     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast
+     * requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code>
+     * fields to be present in your data. For more information, see
+     * <a>howitworks-datasets-groups</a>.</p>
      */
     inline void SetDomain(Domain&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The domain associated with the dataset. The <code>Domain</code> and
-     * <code>DatasetType</code> that you choose determine the fields that must be
-     * present in the training data that you import to the dataset. For example, if you
-     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your
-     * data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+     * <p>The domain associated with the dataset. When you add a dataset to a dataset
+     * group, this value and the value specified for the <code>Domain</code> parameter
+     * of the <a>CreateDatasetGroup</a> operation must match.</p> <p>The
+     * <code>Domain</code> and <code>DatasetType</code> that you choose determine the
+     * fields that must be present in the training data that you import to the dataset.
+     * For example, if you choose the <code>RETAIL</code> domain and
+     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast
+     * requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code>
+     * fields to be present in your data. For more information, see
+     * <a>howitworks-datasets-groups</a>.</p>
      */
     inline CreateDatasetRequest& WithDomain(const Domain& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The domain associated with the dataset. The <code>Domain</code> and
-     * <code>DatasetType</code> that you choose determine the fields that must be
-     * present in the training data that you import to the dataset. For example, if you
-     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your
-     * data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+     * <p>The domain associated with the dataset. When you add a dataset to a dataset
+     * group, this value and the value specified for the <code>Domain</code> parameter
+     * of the <a>CreateDatasetGroup</a> operation must match.</p> <p>The
+     * <code>Domain</code> and <code>DatasetType</code> that you choose determine the
+     * fields that must be present in the training data that you import to the dataset.
+     * For example, if you choose the <code>RETAIL</code> domain and
+     * <code>TARGET_TIME_SERIES</code> as the <code>DatasetType</code>, Amazon Forecast
+     * requires <code>item_id</code>, <code>timestamp</code>, and <code>demand</code>
+     * fields to be present in your data. For more information, see
+     * <a>howitworks-datasets-groups</a>.</p>
      */
     inline CreateDatasetRequest& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
 
@@ -188,66 +206,74 @@ namespace Model
 
 
     /**
-     * <p>The frequency of data collection.</p> <p>Valid intervals are Y (Year), M
-     * (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D"
-     * indicates every day and "15min" indicates every 15 minutes.</p>
+     * <p>The frequency of data collection. This parameter is required for
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
+     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
+     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
+     * every day and "15min" indicates every 15 minutes.</p>
      */
     inline const Aws::String& GetDataFrequency() const{ return m_dataFrequency; }
 
     /**
-     * <p>The frequency of data collection.</p> <p>Valid intervals are Y (Year), M
-     * (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D"
-     * indicates every day and "15min" indicates every 15 minutes.</p>
+     * <p>The frequency of data collection. This parameter is required for
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
+     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
+     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
+     * every day and "15min" indicates every 15 minutes.</p>
      */
     inline bool DataFrequencyHasBeenSet() const { return m_dataFrequencyHasBeenSet; }
 
     /**
-     * <p>The frequency of data collection.</p> <p>Valid intervals are Y (Year), M
-     * (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D"
-     * indicates every day and "15min" indicates every 15 minutes.</p>
+     * <p>The frequency of data collection. This parameter is required for
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
+     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
+     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
+     * every day and "15min" indicates every 15 minutes.</p>
      */
     inline void SetDataFrequency(const Aws::String& value) { m_dataFrequencyHasBeenSet = true; m_dataFrequency = value; }
 
     /**
-     * <p>The frequency of data collection.</p> <p>Valid intervals are Y (Year), M
-     * (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D"
-     * indicates every day and "15min" indicates every 15 minutes.</p>
+     * <p>The frequency of data collection. This parameter is required for
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
+     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
+     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
+     * every day and "15min" indicates every 15 minutes.</p>
      */
     inline void SetDataFrequency(Aws::String&& value) { m_dataFrequencyHasBeenSet = true; m_dataFrequency = std::move(value); }
 
     /**
-     * <p>The frequency of data collection.</p> <p>Valid intervals are Y (Year), M
-     * (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D"
-     * indicates every day and "15min" indicates every 15 minutes.</p>
+     * <p>The frequency of data collection. This parameter is required for
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
+     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
+     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
+     * every day and "15min" indicates every 15 minutes.</p>
      */
     inline void SetDataFrequency(const char* value) { m_dataFrequencyHasBeenSet = true; m_dataFrequency.assign(value); }
 
     /**
-     * <p>The frequency of data collection.</p> <p>Valid intervals are Y (Year), M
-     * (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D"
-     * indicates every day and "15min" indicates every 15 minutes.</p>
+     * <p>The frequency of data collection. This parameter is required for
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
+     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
+     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
+     * every day and "15min" indicates every 15 minutes.</p>
      */
     inline CreateDatasetRequest& WithDataFrequency(const Aws::String& value) { SetDataFrequency(value); return *this;}
 
     /**
-     * <p>The frequency of data collection.</p> <p>Valid intervals are Y (Year), M
-     * (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D"
-     * indicates every day and "15min" indicates every 15 minutes.</p>
+     * <p>The frequency of data collection. This parameter is required for
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
+     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
+     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
+     * every day and "15min" indicates every 15 minutes.</p>
      */
     inline CreateDatasetRequest& WithDataFrequency(Aws::String&& value) { SetDataFrequency(std::move(value)); return *this;}
 
     /**
-     * <p>The frequency of data collection.</p> <p>Valid intervals are Y (Year), M
-     * (Month), W (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes),
-     * 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For example, "D"
-     * indicates every day and "15min" indicates every 15 minutes.</p>
+     * <p>The frequency of data collection. This parameter is required for
+     * RELATED_TIME_SERIES datasets.</p> <p>Valid intervals are Y (Year), M (Month), W
+     * (Week), D (Day), H (Hour), 30min (30 minutes), 15min (15 minutes), 10min (10
+     * minutes), 5min (5 minutes), and 1min (1 minute). For example, "D" indicates
+     * every day and "15min" indicates every 15 minutes.</p>
      */
     inline CreateDatasetRequest& WithDataFrequency(const char* value) { SetDataFrequency(value); return *this;}
 

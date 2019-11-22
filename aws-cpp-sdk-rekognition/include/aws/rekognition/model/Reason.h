@@ -31,7 +31,8 @@ namespace Model
     LOW_BRIGHTNESS,
     LOW_SHARPNESS,
     LOW_CONFIDENCE,
-    SMALL_BOUNDING_BOX
+    SMALL_BOUNDING_BOX,
+    LOW_FACE_QUALITY
   };
 
 namespace ReasonMapper

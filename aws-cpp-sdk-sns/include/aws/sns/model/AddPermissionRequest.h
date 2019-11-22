@@ -195,55 +195,55 @@ namespace Model
 
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
-     * values: any Amazon SNS action name.</p>
+     * values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActionName() const{ return m_actionName; }
 
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
-     * values: any Amazon SNS action name.</p>
+     * values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
      */
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
 
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
-     * values: any Amazon SNS action name.</p>
+     * values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
      */
     inline void SetActionName(const Aws::Vector<Aws::String>& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
 
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
-     * values: any Amazon SNS action name.</p>
+     * values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
      */
     inline void SetActionName(Aws::Vector<Aws::String>&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
 
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
-     * values: any Amazon SNS action name.</p>
+     * values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
      */
     inline AddPermissionRequest& WithActionName(const Aws::Vector<Aws::String>& value) { SetActionName(value); return *this;}
 
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
-     * values: any Amazon SNS action name.</p>
+     * values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
      */
     inline AddPermissionRequest& WithActionName(Aws::Vector<Aws::String>&& value) { SetActionName(std::move(value)); return *this;}
 
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
-     * values: any Amazon SNS action name.</p>
+     * values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
      */
     inline AddPermissionRequest& AddActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName.push_back(value); return *this; }
 
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
-     * values: any Amazon SNS action name.</p>
+     * values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
      */
     inline AddPermissionRequest& AddActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The action you want to allow for the specified principal(s).</p> <p>Valid
-     * values: any Amazon SNS action name.</p>
+     * values: Any Amazon SNS action name, for example <code>Publish</code>.</p>
      */
     inline AddPermissionRequest& AddActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.push_back(value); return *this; }
 

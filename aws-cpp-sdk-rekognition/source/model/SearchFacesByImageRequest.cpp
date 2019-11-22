@@ -28,7 +28,9 @@ SearchFacesByImageRequest::SearchFacesByImageRequest() :
     m_maxFaces(0),
     m_maxFacesHasBeenSet(false),
     m_faceMatchThreshold(0.0),
-    m_faceMatchThresholdHasBeenSet(false)
+    m_faceMatchThresholdHasBeenSet(false),
+    m_qualityFilter(QualityFilter::NOT_SET),
+    m_qualityFilterHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,11 @@ Aws::String SearchFacesByImageRequest::SerializePayload() const
   {
    payload.WithDouble("FaceMatchThreshold", m_faceMatchThreshold);
 
+  }
+
+  if(m_qualityFilterHasBeenSet)
+  {
+   payload.WithString("QualityFilter", QualityFilterMapper::GetNameForQualityFilter(m_qualityFilter));
   }
 
   return payload.View().WriteReadable();

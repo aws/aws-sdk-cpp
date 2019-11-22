@@ -37,7 +37,7 @@ namespace Model
 
   /**
    * <p>The data used to train a predictor. The data includes a dataset group and any
-   * supplementary features. This object is specified in the <a>CreatePredictor</a>
+   * supplementary features. You specify this object in the <a>CreatePredictor</a>
    * request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/InputDataConfig">AWS
    * API Reference</a></p>
@@ -93,50 +93,50 @@ namespace Model
 
 
     /**
-     * <p>An array of supplementary features. For this release, the only supported
-     * feature is a holiday calendar.</p>
+     * <p>An array of supplementary features. The only supported feature is a holiday
+     * calendar.</p>
      */
     inline const Aws::Vector<SupplementaryFeature>& GetSupplementaryFeatures() const{ return m_supplementaryFeatures; }
 
     /**
-     * <p>An array of supplementary features. For this release, the only supported
-     * feature is a holiday calendar.</p>
+     * <p>An array of supplementary features. The only supported feature is a holiday
+     * calendar.</p>
      */
     inline bool SupplementaryFeaturesHasBeenSet() const { return m_supplementaryFeaturesHasBeenSet; }
 
     /**
-     * <p>An array of supplementary features. For this release, the only supported
-     * feature is a holiday calendar.</p>
+     * <p>An array of supplementary features. The only supported feature is a holiday
+     * calendar.</p>
      */
     inline void SetSupplementaryFeatures(const Aws::Vector<SupplementaryFeature>& value) { m_supplementaryFeaturesHasBeenSet = true; m_supplementaryFeatures = value; }
 
     /**
-     * <p>An array of supplementary features. For this release, the only supported
-     * feature is a holiday calendar.</p>
+     * <p>An array of supplementary features. The only supported feature is a holiday
+     * calendar.</p>
      */
     inline void SetSupplementaryFeatures(Aws::Vector<SupplementaryFeature>&& value) { m_supplementaryFeaturesHasBeenSet = true; m_supplementaryFeatures = std::move(value); }
 
     /**
-     * <p>An array of supplementary features. For this release, the only supported
-     * feature is a holiday calendar.</p>
+     * <p>An array of supplementary features. The only supported feature is a holiday
+     * calendar.</p>
      */
     inline InputDataConfig& WithSupplementaryFeatures(const Aws::Vector<SupplementaryFeature>& value) { SetSupplementaryFeatures(value); return *this;}
 
     /**
-     * <p>An array of supplementary features. For this release, the only supported
-     * feature is a holiday calendar.</p>
+     * <p>An array of supplementary features. The only supported feature is a holiday
+     * calendar.</p>
      */
     inline InputDataConfig& WithSupplementaryFeatures(Aws::Vector<SupplementaryFeature>&& value) { SetSupplementaryFeatures(std::move(value)); return *this;}
 
     /**
-     * <p>An array of supplementary features. For this release, the only supported
-     * feature is a holiday calendar.</p>
+     * <p>An array of supplementary features. The only supported feature is a holiday
+     * calendar.</p>
      */
     inline InputDataConfig& AddSupplementaryFeatures(const SupplementaryFeature& value) { m_supplementaryFeaturesHasBeenSet = true; m_supplementaryFeatures.push_back(value); return *this; }
 
     /**
-     * <p>An array of supplementary features. For this release, the only supported
-     * feature is a holiday calendar.</p>
+     * <p>An array of supplementary features. The only supported feature is a holiday
+     * calendar.</p>
      */
     inline InputDataConfig& AddSupplementaryFeatures(SupplementaryFeature&& value) { m_supplementaryFeaturesHasBeenSet = true; m_supplementaryFeatures.push_back(std::move(value)); return *this; }
 

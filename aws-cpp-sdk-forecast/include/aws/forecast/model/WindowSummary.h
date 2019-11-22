@@ -179,22 +179,34 @@ namespace Model
     inline WindowSummary& WithEvaluationType(EvaluationType&& value) { SetEvaluationType(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Provides metrics used to evaluate the performance of a predictor.</p>
+     */
     inline const Metrics& GetMetrics() const{ return m_metrics; }
 
-    
+    /**
+     * <p>Provides metrics used to evaluate the performance of a predictor.</p>
+     */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
-    
+    /**
+     * <p>Provides metrics used to evaluate the performance of a predictor.</p>
+     */
     inline void SetMetrics(const Metrics& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
-    
+    /**
+     * <p>Provides metrics used to evaluate the performance of a predictor.</p>
+     */
     inline void SetMetrics(Metrics&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
-    
+    /**
+     * <p>Provides metrics used to evaluate the performance of a predictor.</p>
+     */
     inline WindowSummary& WithMetrics(const Metrics& value) { SetMetrics(value); return *this;}
 
-    
+    /**
+     * <p>Provides metrics used to evaluate the performance of a predictor.</p>
+     */
     inline WindowSummary& WithMetrics(Metrics&& value) { SetMetrics(std::move(value)); return *this;}
 
   private:

@@ -101,7 +101,7 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
      * function.</p> </li> </ul>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
@@ -116,7 +116,7 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
      * function.</p> </li> </ul>
      */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
@@ -131,7 +131,7 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
      * function.</p> </li> </ul>
      */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
@@ -146,7 +146,7 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
      * function.</p> </li> </ul>
      */
     inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
@@ -161,7 +161,7 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
      * function.</p> </li> </ul>
      */
     inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
@@ -176,7 +176,7 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
      * function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
@@ -191,7 +191,7 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
      * function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
@@ -206,7 +206,7 @@ namespace Model
      * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
      * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
      * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
-     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * <code>lambda</code> – delivery of JSON-encoded message to an Amazon Lambda
      * function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithProtocol(const char* value) { SetProtocol(value); return *this;}
@@ -215,128 +215,136 @@ namespace Model
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
-     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
-     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
-     * <p>For the <code>email-json</code> protocol, the endpoint is an email
-     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
-     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
-     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
-     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
-     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
-     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
+     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
+     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
+     * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
+     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
-     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
-     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
-     * <p>For the <code>email-json</code> protocol, the endpoint is an email
-     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
-     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
-     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
-     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
-     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
-     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
+     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
+     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
+     * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
+     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
      */
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
-     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
-     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
-     * <p>For the <code>email-json</code> protocol, the endpoint is an email
-     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
-     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
-     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
-     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
-     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
-     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
+     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
+     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
+     * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
+     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
      */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
-     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
-     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
-     * <p>For the <code>email-json</code> protocol, the endpoint is an email
-     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
-     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
-     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
-     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
-     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
-     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
+     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
+     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
+     * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
+     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
      */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
-     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
-     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
-     * <p>For the <code>email-json</code> protocol, the endpoint is an email
-     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
-     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
-     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
-     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
-     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
-     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
+     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
+     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
+     * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
+     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
      */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
-     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
-     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
-     * <p>For the <code>email-json</code> protocol, the endpoint is an email
-     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
-     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
-     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
-     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
-     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
-     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
+     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
+     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
+     * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
+     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
-     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
-     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
-     * <p>For the <code>email-json</code> protocol, the endpoint is an email
-     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
-     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
-     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
-     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
-     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
-     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
+     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
+     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
+     * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
+     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
 
     /**
      * <p>The endpoint that you want to receive notifications. Endpoints vary by
      * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
-     * an URL beginning with "https://"</p> </li> <li> <p>For the <code>https</code>
-     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
-     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
-     * <p>For the <code>email-json</code> protocol, the endpoint is an email
-     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
-     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
-     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
-     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
-     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
-     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
+     * an URL beginning with <code>http://</code> </p> </li> <li> <p>For the
+     * <code>https</code> protocol, the endpoint is a URL beginning with
+     * <code>https://</code> </p> </li> <li> <p>For the <code>email</code> protocol,
+     * the endpoint is an email address</p> </li> <li> <p>For the
+     * <code>email-json</code> protocol, the endpoint is an email address</p> </li>
+     * <li> <p>For the <code>sms</code> protocol, the endpoint is a phone number of an
+     * SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code> protocol, the
+     * endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For the
+     * <code>application</code> protocol, the endpoint is the EndpointArn of a mobile
+     * app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol, the
+     * endpoint is the ARN of an Amazon Lambda function.</p> </li> </ul>
      */
     inline SubscribeRequest& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
 
@@ -352,7 +360,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
@@ -367,7 +381,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
@@ -382,7 +402,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
@@ -397,7 +423,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
@@ -412,7 +444,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline SubscribeRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
@@ -427,7 +465,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline SubscribeRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
@@ -442,7 +486,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
@@ -457,7 +507,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -472,7 +528,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -487,7 +549,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -502,7 +570,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
@@ -517,7 +591,13 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
@@ -532,60 +612,74 @@ namespace Model
      * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
      * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
      * endpoints. This eliminates the need for the endpoints to process JSON
-     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> <li>
+     * <p> <code>RedrivePolicy</code> – When specified, sends undeliverable messages to
+     * the specified Amazon SQS dead-letter queue. Messages that can't be delivered due
+     * to client errors (for example, when the subscribed endpoint is unreachable) or
+     * server errors (for example, when the service that powers the subscribed endpoint
+     * becomes unavailable) are held in the dead-letter queue for further analysis or
+     * reprocessing.</p> </li> </ul>
      */
     inline SubscribeRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
-     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
-     * you set this parameter to <code>false</code>, the response includes the ARN for
-     * confirmed subscriptions, but it includes an ARN value of "pending subscription"
-     * for subscriptions that are not yet confirmed. A subscription becomes confirmed
-     * when the subscriber calls the <code>ConfirmSubscription</code> action with a
-     * confirmation token.</p> <p>If you set this parameter to <code>true</code>, the
-     * response includes the ARN in all cases, even if the subscription is not yet
-     * confirmed.</p> <p>The default value is <code>false</code>.</p>
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
+     * <li> <p>If you have the subscription ARN returned, the response includes the ARN
+     * in all cases, even if the subscription is not yet confirmed.</p> </li> <li>
+     * <p>If you don't have the subscription ARN returned, in addition to the ARN for
+     * confirmed subscriptions, the response also includes the <code>pending
+     * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     * subscription becomes confirmed when the subscriber calls the
+     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
+     * </ul> <p>If you set this parameter to <code>true</code>, .</p> <p>The default
+     * value is <code>false</code>.</p>
      */
     inline bool GetReturnSubscriptionArn() const{ return m_returnSubscriptionArn; }
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
-     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
-     * you set this parameter to <code>false</code>, the response includes the ARN for
-     * confirmed subscriptions, but it includes an ARN value of "pending subscription"
-     * for subscriptions that are not yet confirmed. A subscription becomes confirmed
-     * when the subscriber calls the <code>ConfirmSubscription</code> action with a
-     * confirmation token.</p> <p>If you set this parameter to <code>true</code>, the
-     * response includes the ARN in all cases, even if the subscription is not yet
-     * confirmed.</p> <p>The default value is <code>false</code>.</p>
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
+     * <li> <p>If you have the subscription ARN returned, the response includes the ARN
+     * in all cases, even if the subscription is not yet confirmed.</p> </li> <li>
+     * <p>If you don't have the subscription ARN returned, in addition to the ARN for
+     * confirmed subscriptions, the response also includes the <code>pending
+     * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     * subscription becomes confirmed when the subscriber calls the
+     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
+     * </ul> <p>If you set this parameter to <code>true</code>, .</p> <p>The default
+     * value is <code>false</code>.</p>
      */
     inline bool ReturnSubscriptionArnHasBeenSet() const { return m_returnSubscriptionArnHasBeenSet; }
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
-     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
-     * you set this parameter to <code>false</code>, the response includes the ARN for
-     * confirmed subscriptions, but it includes an ARN value of "pending subscription"
-     * for subscriptions that are not yet confirmed. A subscription becomes confirmed
-     * when the subscriber calls the <code>ConfirmSubscription</code> action with a
-     * confirmation token.</p> <p>If you set this parameter to <code>true</code>, the
-     * response includes the ARN in all cases, even if the subscription is not yet
-     * confirmed.</p> <p>The default value is <code>false</code>.</p>
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
+     * <li> <p>If you have the subscription ARN returned, the response includes the ARN
+     * in all cases, even if the subscription is not yet confirmed.</p> </li> <li>
+     * <p>If you don't have the subscription ARN returned, in addition to the ARN for
+     * confirmed subscriptions, the response also includes the <code>pending
+     * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     * subscription becomes confirmed when the subscriber calls the
+     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
+     * </ul> <p>If you set this parameter to <code>true</code>, .</p> <p>The default
+     * value is <code>false</code>.</p>
      */
     inline void SetReturnSubscriptionArn(bool value) { m_returnSubscriptionArnHasBeenSet = true; m_returnSubscriptionArn = value; }
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes
-     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
-     * you set this parameter to <code>false</code>, the response includes the ARN for
-     * confirmed subscriptions, but it includes an ARN value of "pending subscription"
-     * for subscriptions that are not yet confirmed. A subscription becomes confirmed
-     * when the subscriber calls the <code>ConfirmSubscription</code> action with a
-     * confirmation token.</p> <p>If you set this parameter to <code>true</code>, the
-     * response includes the ARN in all cases, even if the subscription is not yet
-     * confirmed.</p> <p>The default value is <code>false</code>.</p>
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <ul>
+     * <li> <p>If you have the subscription ARN returned, the response includes the ARN
+     * in all cases, even if the subscription is not yet confirmed.</p> </li> <li>
+     * <p>If you don't have the subscription ARN returned, in addition to the ARN for
+     * confirmed subscriptions, the response also includes the <code>pending
+     * subscription</code> ARN value for subscriptions that aren't yet confirmed. A
+     * subscription becomes confirmed when the subscriber calls the
+     * <code>ConfirmSubscription</code> action with a confirmation token.</p> </li>
+     * </ul> <p>If you set this parameter to <code>true</code>, .</p> <p>The default
+     * value is <code>false</code>.</p>
      */
     inline SubscribeRequest& WithReturnSubscriptionArn(bool value) { SetReturnSubscriptionArn(value); return *this;}
 

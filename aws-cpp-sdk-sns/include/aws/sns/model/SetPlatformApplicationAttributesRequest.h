@@ -96,10 +96,10 @@ namespace Model
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
      * credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For
      * ADM, PlatformCredential is "client secret".</p> </li> <li> <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM,
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client
      * id".</p> </li> <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which
      * EndpointCreated event notifications should be sent.</p> </li> <li> <p>
@@ -123,10 +123,10 @@ namespace Model
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
      * credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For
      * ADM, PlatformCredential is "client secret".</p> </li> <li> <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM,
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client
      * id".</p> </li> <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which
      * EndpointCreated event notifications should be sent.</p> </li> <li> <p>
@@ -150,10 +150,10 @@ namespace Model
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
      * credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For
      * ADM, PlatformCredential is "client secret".</p> </li> <li> <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM,
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client
      * id".</p> </li> <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which
      * EndpointCreated event notifications should be sent.</p> </li> <li> <p>
@@ -177,10 +177,10 @@ namespace Model
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
      * credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For
      * ADM, PlatformCredential is "client secret".</p> </li> <li> <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM,
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client
      * id".</p> </li> <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which
      * EndpointCreated event notifications should be sent.</p> </li> <li> <p>
@@ -204,10 +204,10 @@ namespace Model
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
      * credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For
      * ADM, PlatformCredential is "client secret".</p> </li> <li> <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM,
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client
      * id".</p> </li> <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which
      * EndpointCreated event notifications should be sent.</p> </li> <li> <p>
@@ -231,10 +231,10 @@ namespace Model
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
      * credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For
      * ADM, PlatformCredential is "client secret".</p> </li> <li> <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM,
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client
      * id".</p> </li> <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which
      * EndpointCreated event notifications should be sent.</p> </li> <li> <p>
@@ -258,10 +258,10 @@ namespace Model
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
      * credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For
      * ADM, PlatformCredential is "client secret".</p> </li> <li> <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM,
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client
      * id".</p> </li> <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which
      * EndpointCreated event notifications should be sent.</p> </li> <li> <p>
@@ -285,10 +285,10 @@ namespace Model
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
      * credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For
      * ADM, PlatformCredential is "client secret".</p> </li> <li> <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM,
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client
      * id".</p> </li> <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which
      * EndpointCreated event notifications should be sent.</p> </li> <li> <p>
@@ -312,10 +312,10 @@ namespace Model
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
      * credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For
      * ADM, PlatformCredential is "client secret".</p> </li> <li> <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM,
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client
      * id".</p> </li> <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which
      * EndpointCreated event notifications should be sent.</p> </li> <li> <p>
@@ -339,10 +339,10 @@ namespace Model
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
      * credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For
      * ADM, PlatformCredential is "client secret".</p> </li> <li> <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM,
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client
      * id".</p> </li> <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which
      * EndpointCreated event notifications should be sent.</p> </li> <li> <p>
@@ -366,10 +366,10 @@ namespace Model
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
      * credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For
      * ADM, PlatformCredential is "client secret".</p> </li> <li> <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM,
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client
      * id".</p> </li> <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which
      * EndpointCreated event notifications should be sent.</p> </li> <li> <p>
@@ -393,10 +393,10 @@ namespace Model
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
      * credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For
      * ADM, PlatformCredential is "client secret".</p> </li> <li> <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM,
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client
      * id".</p> </li> <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which
      * EndpointCreated event notifications should be sent.</p> </li> <li> <p>
@@ -420,10 +420,10 @@ namespace Model
      * <p>A map of the platform application attributes. Attributes in this map include
      * the following:</p> <ul> <li> <p> <code>PlatformCredential</code> – The
      * credential received from the notification service. For APNS/APNS_SANDBOX,
-     * PlatformCredential is private key. For GCM, PlatformCredential is "API key". For
+     * PlatformCredential is private key. For FCM, PlatformCredential is "API key". For
      * ADM, PlatformCredential is "client secret".</p> </li> <li> <p>
      * <code>PlatformPrincipal</code> – The principal received from the notification
-     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For GCM,
+     * service. For APNS/APNS_SANDBOX, PlatformPrincipal is SSL certificate. For FCM,
      * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client
      * id".</p> </li> <li> <p> <code>EventEndpointCreated</code> – Topic ARN to which
      * EndpointCreated event notifications should be sent.</p> </li> <li> <p>

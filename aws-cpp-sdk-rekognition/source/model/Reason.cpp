@@ -36,6 +36,7 @@ namespace Aws
         static const int LOW_SHARPNESS_HASH = HashingUtils::HashString("LOW_SHARPNESS");
         static const int LOW_CONFIDENCE_HASH = HashingUtils::HashString("LOW_CONFIDENCE");
         static const int SMALL_BOUNDING_BOX_HASH = HashingUtils::HashString("SMALL_BOUNDING_BOX");
+        static const int LOW_FACE_QUALITY_HASH = HashingUtils::HashString("LOW_FACE_QUALITY");
 
 
         Reason GetReasonForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return Reason::SMALL_BOUNDING_BOX;
           }
+          else if (hashCode == LOW_FACE_QUALITY_HASH)
+          {
+            return Reason::LOW_FACE_QUALITY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "LOW_CONFIDENCE";
           case Reason::SMALL_BOUNDING_BOX:
             return "SMALL_BOUNDING_BOX";
+          case Reason::LOW_FACE_QUALITY:
+            return "LOW_FACE_QUALITY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

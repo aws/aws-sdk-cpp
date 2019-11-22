@@ -258,32 +258,32 @@ namespace Model
 
 
     /**
-     * <p>Gender of the face and the confidence level in the determination.</p>
+     * <p>The predicted gender of a detected face. </p>
      */
     inline const Gender& GetGender() const{ return m_gender; }
 
     /**
-     * <p>Gender of the face and the confidence level in the determination.</p>
+     * <p>The predicted gender of a detected face. </p>
      */
     inline bool GenderHasBeenSet() const { return m_genderHasBeenSet; }
 
     /**
-     * <p>Gender of the face and the confidence level in the determination.</p>
+     * <p>The predicted gender of a detected face. </p>
      */
     inline void SetGender(const Gender& value) { m_genderHasBeenSet = true; m_gender = value; }
 
     /**
-     * <p>Gender of the face and the confidence level in the determination.</p>
+     * <p>The predicted gender of a detected face. </p>
      */
     inline void SetGender(Gender&& value) { m_genderHasBeenSet = true; m_gender = std::move(value); }
 
     /**
-     * <p>Gender of the face and the confidence level in the determination.</p>
+     * <p>The predicted gender of a detected face. </p>
      */
     inline FaceDetail& WithGender(const Gender& value) { SetGender(value); return *this;}
 
     /**
-     * <p>Gender of the face and the confidence level in the determination.</p>
+     * <p>The predicted gender of a detected face. </p>
      */
     inline FaceDetail& WithGender(Gender&& value) { SetGender(std::move(value)); return *this;}
 

@@ -162,96 +162,113 @@ namespace Model
 
 
     /**
-     * <p>The format of timestamps in the dataset. Two formats are supported dependent
-     * on the <code>DataFrequency</code> specified when the dataset was created.</p>
-     * <ul> <li> <p>"yyyy-MM-dd"</p> <p>For data frequencies: Y, M, W, and D</p> </li>
-     * <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For data frequencies: H, 30min, 15min, and
-     * 1min; and optionally, for: Y, M, W, and D</p> </li> </ul>
+     * <p>The format of timestamps in the dataset. The format that you specify depends
+     * on the <code>DataFrequency</code> specified when the dataset was created. The
+     * following formats are supported</p> <ul> <li> <p>"yyyy-MM-dd"</p> <p>For the
+     * following data frequencies: Y, M, W, and D</p> </li> <li> <p>"yyyy-MM-dd
+     * HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min;
+     * and optionally, for: Y, M, W, and D</p> </li> </ul>
      */
     inline const Aws::String& GetTimestampFormat() const{ return m_timestampFormat; }
 
     /**
-     * <p>The format of timestamps in the dataset. Two formats are supported dependent
-     * on the <code>DataFrequency</code> specified when the dataset was created.</p>
-     * <ul> <li> <p>"yyyy-MM-dd"</p> <p>For data frequencies: Y, M, W, and D</p> </li>
-     * <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For data frequencies: H, 30min, 15min, and
-     * 1min; and optionally, for: Y, M, W, and D</p> </li> </ul>
+     * <p>The format of timestamps in the dataset. The format that you specify depends
+     * on the <code>DataFrequency</code> specified when the dataset was created. The
+     * following formats are supported</p> <ul> <li> <p>"yyyy-MM-dd"</p> <p>For the
+     * following data frequencies: Y, M, W, and D</p> </li> <li> <p>"yyyy-MM-dd
+     * HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min;
+     * and optionally, for: Y, M, W, and D</p> </li> </ul>
      */
     inline void SetTimestampFormat(const Aws::String& value) { m_timestampFormat = value; }
 
     /**
-     * <p>The format of timestamps in the dataset. Two formats are supported dependent
-     * on the <code>DataFrequency</code> specified when the dataset was created.</p>
-     * <ul> <li> <p>"yyyy-MM-dd"</p> <p>For data frequencies: Y, M, W, and D</p> </li>
-     * <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For data frequencies: H, 30min, 15min, and
-     * 1min; and optionally, for: Y, M, W, and D</p> </li> </ul>
+     * <p>The format of timestamps in the dataset. The format that you specify depends
+     * on the <code>DataFrequency</code> specified when the dataset was created. The
+     * following formats are supported</p> <ul> <li> <p>"yyyy-MM-dd"</p> <p>For the
+     * following data frequencies: Y, M, W, and D</p> </li> <li> <p>"yyyy-MM-dd
+     * HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min;
+     * and optionally, for: Y, M, W, and D</p> </li> </ul>
      */
     inline void SetTimestampFormat(Aws::String&& value) { m_timestampFormat = std::move(value); }
 
     /**
-     * <p>The format of timestamps in the dataset. Two formats are supported dependent
-     * on the <code>DataFrequency</code> specified when the dataset was created.</p>
-     * <ul> <li> <p>"yyyy-MM-dd"</p> <p>For data frequencies: Y, M, W, and D</p> </li>
-     * <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For data frequencies: H, 30min, 15min, and
-     * 1min; and optionally, for: Y, M, W, and D</p> </li> </ul>
+     * <p>The format of timestamps in the dataset. The format that you specify depends
+     * on the <code>DataFrequency</code> specified when the dataset was created. The
+     * following formats are supported</p> <ul> <li> <p>"yyyy-MM-dd"</p> <p>For the
+     * following data frequencies: Y, M, W, and D</p> </li> <li> <p>"yyyy-MM-dd
+     * HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min;
+     * and optionally, for: Y, M, W, and D</p> </li> </ul>
      */
     inline void SetTimestampFormat(const char* value) { m_timestampFormat.assign(value); }
 
     /**
-     * <p>The format of timestamps in the dataset. Two formats are supported dependent
-     * on the <code>DataFrequency</code> specified when the dataset was created.</p>
-     * <ul> <li> <p>"yyyy-MM-dd"</p> <p>For data frequencies: Y, M, W, and D</p> </li>
-     * <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For data frequencies: H, 30min, 15min, and
-     * 1min; and optionally, for: Y, M, W, and D</p> </li> </ul>
+     * <p>The format of timestamps in the dataset. The format that you specify depends
+     * on the <code>DataFrequency</code> specified when the dataset was created. The
+     * following formats are supported</p> <ul> <li> <p>"yyyy-MM-dd"</p> <p>For the
+     * following data frequencies: Y, M, W, and D</p> </li> <li> <p>"yyyy-MM-dd
+     * HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min;
+     * and optionally, for: Y, M, W, and D</p> </li> </ul>
      */
     inline DescribeDatasetImportJobResult& WithTimestampFormat(const Aws::String& value) { SetTimestampFormat(value); return *this;}
 
     /**
-     * <p>The format of timestamps in the dataset. Two formats are supported dependent
-     * on the <code>DataFrequency</code> specified when the dataset was created.</p>
-     * <ul> <li> <p>"yyyy-MM-dd"</p> <p>For data frequencies: Y, M, W, and D</p> </li>
-     * <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For data frequencies: H, 30min, 15min, and
-     * 1min; and optionally, for: Y, M, W, and D</p> </li> </ul>
+     * <p>The format of timestamps in the dataset. The format that you specify depends
+     * on the <code>DataFrequency</code> specified when the dataset was created. The
+     * following formats are supported</p> <ul> <li> <p>"yyyy-MM-dd"</p> <p>For the
+     * following data frequencies: Y, M, W, and D</p> </li> <li> <p>"yyyy-MM-dd
+     * HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min;
+     * and optionally, for: Y, M, W, and D</p> </li> </ul>
      */
     inline DescribeDatasetImportJobResult& WithTimestampFormat(Aws::String&& value) { SetTimestampFormat(std::move(value)); return *this;}
 
     /**
-     * <p>The format of timestamps in the dataset. Two formats are supported dependent
-     * on the <code>DataFrequency</code> specified when the dataset was created.</p>
-     * <ul> <li> <p>"yyyy-MM-dd"</p> <p>For data frequencies: Y, M, W, and D</p> </li>
-     * <li> <p>"yyyy-MM-dd HH:mm:ss"</p> <p>For data frequencies: H, 30min, 15min, and
-     * 1min; and optionally, for: Y, M, W, and D</p> </li> </ul>
+     * <p>The format of timestamps in the dataset. The format that you specify depends
+     * on the <code>DataFrequency</code> specified when the dataset was created. The
+     * following formats are supported</p> <ul> <li> <p>"yyyy-MM-dd"</p> <p>For the
+     * following data frequencies: Y, M, W, and D</p> </li> <li> <p>"yyyy-MM-dd
+     * HH:mm:ss"</p> <p>For the following data frequencies: H, 30min, 15min, and 1min;
+     * and optionally, for: Y, M, W, and D</p> </li> </ul>
      */
     inline DescribeDatasetImportJobResult& WithTimestampFormat(const char* value) { SetTimestampFormat(value); return *this;}
 
 
     /**
-     * <p>The location of the training data to import. The training data must be stored
-     * in an Amazon S3 bucket.</p>
+     * <p>The location of the training data to import and an AWS Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the data.</p>
+     * <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management
+     * Service (KMS) key.</p>
      */
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
 
     /**
-     * <p>The location of the training data to import. The training data must be stored
-     * in an Amazon S3 bucket.</p>
+     * <p>The location of the training data to import and an AWS Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the data.</p>
+     * <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management
+     * Service (KMS) key.</p>
      */
     inline void SetDataSource(const DataSource& value) { m_dataSource = value; }
 
     /**
-     * <p>The location of the training data to import. The training data must be stored
-     * in an Amazon S3 bucket.</p>
+     * <p>The location of the training data to import and an AWS Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the data.</p>
+     * <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management
+     * Service (KMS) key.</p>
      */
     inline void SetDataSource(DataSource&& value) { m_dataSource = std::move(value); }
 
     /**
-     * <p>The location of the training data to import. The training data must be stored
-     * in an Amazon S3 bucket.</p>
+     * <p>The location of the training data to import and an AWS Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the data.</p>
+     * <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management
+     * Service (KMS) key.</p>
      */
     inline DescribeDatasetImportJobResult& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
 
     /**
-     * <p>The location of the training data to import. The training data must be stored
-     * in an Amazon S3 bucket.</p>
+     * <p>The location of the training data to import and an AWS Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the data.</p>
+     * <p>If encryption is used, <code>DataSource</code> includes an AWS Key Management
+     * Service (KMS) key.</p>
      */
     inline DescribeDatasetImportJobResult& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
 
@@ -313,20 +330,20 @@ namespace Model
 
 
     /**
-     * <p>The size of the dataset in gigabytes (GB) after completion of the import
-     * job.</p>
+     * <p>The size of the dataset in gigabytes (GB) after the import job has
+     * finished.</p>
      */
     inline double GetDataSize() const{ return m_dataSize; }
 
     /**
-     * <p>The size of the dataset in gigabytes (GB) after completion of the import
-     * job.</p>
+     * <p>The size of the dataset in gigabytes (GB) after the import job has
+     * finished.</p>
      */
     inline void SetDataSize(double value) { m_dataSize = value; }
 
     /**
-     * <p>The size of the dataset in gigabytes (GB) after completion of the import
-     * job.</p>
+     * <p>The size of the dataset in gigabytes (GB) after the import job has
+     * finished.</p>
      */
     inline DescribeDatasetImportJobResult& WithDataSize(double value) { SetDataSize(value); return *this;}
 
@@ -479,47 +496,52 @@ namespace Model
 
 
     /**
-     * <p>Dependent on the status as follows:</p> <ul> <li> <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code> </p> </li> <li>
-     * <p> <code>CREATE_IN_PROGRESS</code> - the current timestamp</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or
-     * failed</p> </li> </ul>
+     * <p>The last time that the dataset was modified. The time depends on the status
+     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
+     * time as <code>CreationTime</code>.</p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+     * failed.</p> </li> </ul>
      */
     inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
 
     /**
-     * <p>Dependent on the status as follows:</p> <ul> <li> <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code> </p> </li> <li>
-     * <p> <code>CREATE_IN_PROGRESS</code> - the current timestamp</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or
-     * failed</p> </li> </ul>
+     * <p>The last time that the dataset was modified. The time depends on the status
+     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
+     * time as <code>CreationTime</code>.</p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+     * failed.</p> </li> </ul>
      */
     inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
 
     /**
-     * <p>Dependent on the status as follows:</p> <ul> <li> <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code> </p> </li> <li>
-     * <p> <code>CREATE_IN_PROGRESS</code> - the current timestamp</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or
-     * failed</p> </li> </ul>
+     * <p>The last time that the dataset was modified. The time depends on the status
+     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
+     * time as <code>CreationTime</code>.</p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+     * failed.</p> </li> </ul>
      */
     inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
 
     /**
-     * <p>Dependent on the status as follows:</p> <ul> <li> <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code> </p> </li> <li>
-     * <p> <code>CREATE_IN_PROGRESS</code> - the current timestamp</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or
-     * failed</p> </li> </ul>
+     * <p>The last time that the dataset was modified. The time depends on the status
+     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
+     * time as <code>CreationTime</code>.</p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+     * failed.</p> </li> </ul>
      */
     inline DescribeDatasetImportJobResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
 
     /**
-     * <p>Dependent on the status as follows:</p> <ul> <li> <p>
-     * <code>CREATE_PENDING</code> - same as <code>CreationTime</code> </p> </li> <li>
-     * <p> <code>CREATE_IN_PROGRESS</code> - the current timestamp</p> </li> <li> <p>
-     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - when the job finished or
-     * failed</p> </li> </ul>
+     * <p>The last time that the dataset was modified. The time depends on the status
+     * of the job, as follows:</p> <ul> <li> <p> <code>CREATE_PENDING</code> - The same
+     * time as <code>CreationTime</code>.</p> </li> <li> <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.</p> </li> <li> <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or
+     * failed.</p> </li> </ul>
      */
     inline DescribeDatasetImportJobResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 

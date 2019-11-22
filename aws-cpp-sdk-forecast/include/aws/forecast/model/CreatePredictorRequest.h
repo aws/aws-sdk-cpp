@@ -94,10 +94,10 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the algorithm to use for model training.
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
-     * class="title"> <b>Supported algorithms</b> </p> <ul> <li> <p>
+     * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p> <code>- supports
-     * hyperparameter optimization (HPO)</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
+     * hyperparameter optimization (HPO)</p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -107,10 +107,10 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the algorithm to use for model training.
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
-     * class="title"> <b>Supported algorithms</b> </p> <ul> <li> <p>
+     * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p> <code>- supports
-     * hyperparameter optimization (HPO)</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
+     * hyperparameter optimization (HPO)</p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -120,10 +120,10 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the algorithm to use for model training.
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
-     * class="title"> <b>Supported algorithms</b> </p> <ul> <li> <p>
+     * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p> <code>- supports
-     * hyperparameter optimization (HPO)</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
+     * hyperparameter optimization (HPO)</p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -133,10 +133,10 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the algorithm to use for model training.
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
-     * class="title"> <b>Supported algorithms</b> </p> <ul> <li> <p>
+     * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p> <code>- supports
-     * hyperparameter optimization (HPO)</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
+     * hyperparameter optimization (HPO)</p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -146,10 +146,10 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the algorithm to use for model training.
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
-     * class="title"> <b>Supported algorithms</b> </p> <ul> <li> <p>
+     * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p> <code>- supports
-     * hyperparameter optimization (HPO)</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
+     * hyperparameter optimization (HPO)</p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -159,10 +159,10 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the algorithm to use for model training.
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
-     * class="title"> <b>Supported algorithms</b> </p> <ul> <li> <p>
+     * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p> <code>- supports
-     * hyperparameter optimization (HPO)</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
+     * hyperparameter optimization (HPO)</p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -172,10 +172,10 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the algorithm to use for model training.
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
-     * class="title"> <b>Supported algorithms</b> </p> <ul> <li> <p>
+     * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p> <code>- supports
-     * hyperparameter optimization (HPO)</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
+     * hyperparameter optimization (HPO)</p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -185,10 +185,10 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the algorithm to use for model training.
      * Required if <code>PerformAutoML</code> is not set to <code>true</code>.</p> <p
-     * class="title"> <b>Supported algorithms</b> </p> <ul> <li> <p>
+     * class="title"> <b>Supported algorithms:</b> </p> <ul> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ARIMA</code> </p> </li> <li> <p>
-     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p> <code>- supports
-     * hyperparameter optimization (HPO)</code> </p> </li> <li> <p>
+     * <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> </p> <p>Supports
+     * hyperparameter optimization (HPO)</p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/ETS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
@@ -202,6 +202,8 @@ namespace Model
      * you configure a dataset for daily data collection (using the
      * <code>DataFrequency</code> parameter of the <a>CreateDataset</a> operation) and
      * set the forecast horizon to 10, the model returns predictions for 10 days.</p>
+     * <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
+     * TARGET_TIME_SERIES dataset length.</p>
      */
     inline int GetForecastHorizon() const{ return m_forecastHorizon; }
 
@@ -211,6 +213,8 @@ namespace Model
      * you configure a dataset for daily data collection (using the
      * <code>DataFrequency</code> parameter of the <a>CreateDataset</a> operation) and
      * set the forecast horizon to 10, the model returns predictions for 10 days.</p>
+     * <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
+     * TARGET_TIME_SERIES dataset length.</p>
      */
     inline bool ForecastHorizonHasBeenSet() const { return m_forecastHorizonHasBeenSet; }
 
@@ -220,6 +224,8 @@ namespace Model
      * you configure a dataset for daily data collection (using the
      * <code>DataFrequency</code> parameter of the <a>CreateDataset</a> operation) and
      * set the forecast horizon to 10, the model returns predictions for 10 days.</p>
+     * <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
+     * TARGET_TIME_SERIES dataset length.</p>
      */
     inline void SetForecastHorizon(int value) { m_forecastHorizonHasBeenSet = true; m_forecastHorizon = value; }
 
@@ -229,47 +235,53 @@ namespace Model
      * you configure a dataset for daily data collection (using the
      * <code>DataFrequency</code> parameter of the <a>CreateDataset</a> operation) and
      * set the forecast horizon to 10, the model returns predictions for 10 days.</p>
+     * <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
+     * TARGET_TIME_SERIES dataset length.</p>
      */
     inline CreatePredictorRequest& WithForecastHorizon(int value) { SetForecastHorizon(value); return *this;}
 
 
     /**
-     * <p>Whether to perform AutoML. The default value is <code>false</code>. In this
-     * case, you are required to specify an algorithm.</p> <p>If you want Amazon
-     * Forecast to evaluate the algorithms it provides and choose the best algorithm
-     * and configuration for your training dataset, set <code>PerformAutoML</code> to
-     * <code>true</code>. This is a good option if you aren't sure which algorithm is
-     * suitable for your application.</p>
+     * <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates
+     * the algorithms it provides and chooses the best algorithm and configuration for
+     * your training dataset.</p> <p>The default value is <code>false</code>. In this
+     * case, you are required to specify an algorithm.</p> <p>Set
+     * <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform
+     * AutoML. This is a good option if you aren't sure which algorithm is suitable for
+     * your training data. In this case, <code>PerformHPO</code> must be false.</p>
      */
     inline bool GetPerformAutoML() const{ return m_performAutoML; }
 
     /**
-     * <p>Whether to perform AutoML. The default value is <code>false</code>. In this
-     * case, you are required to specify an algorithm.</p> <p>If you want Amazon
-     * Forecast to evaluate the algorithms it provides and choose the best algorithm
-     * and configuration for your training dataset, set <code>PerformAutoML</code> to
-     * <code>true</code>. This is a good option if you aren't sure which algorithm is
-     * suitable for your application.</p>
+     * <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates
+     * the algorithms it provides and chooses the best algorithm and configuration for
+     * your training dataset.</p> <p>The default value is <code>false</code>. In this
+     * case, you are required to specify an algorithm.</p> <p>Set
+     * <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform
+     * AutoML. This is a good option if you aren't sure which algorithm is suitable for
+     * your training data. In this case, <code>PerformHPO</code> must be false.</p>
      */
     inline bool PerformAutoMLHasBeenSet() const { return m_performAutoMLHasBeenSet; }
 
     /**
-     * <p>Whether to perform AutoML. The default value is <code>false</code>. In this
-     * case, you are required to specify an algorithm.</p> <p>If you want Amazon
-     * Forecast to evaluate the algorithms it provides and choose the best algorithm
-     * and configuration for your training dataset, set <code>PerformAutoML</code> to
-     * <code>true</code>. This is a good option if you aren't sure which algorithm is
-     * suitable for your application.</p>
+     * <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates
+     * the algorithms it provides and chooses the best algorithm and configuration for
+     * your training dataset.</p> <p>The default value is <code>false</code>. In this
+     * case, you are required to specify an algorithm.</p> <p>Set
+     * <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform
+     * AutoML. This is a good option if you aren't sure which algorithm is suitable for
+     * your training data. In this case, <code>PerformHPO</code> must be false.</p>
      */
     inline void SetPerformAutoML(bool value) { m_performAutoMLHasBeenSet = true; m_performAutoML = value; }
 
     /**
-     * <p>Whether to perform AutoML. The default value is <code>false</code>. In this
-     * case, you are required to specify an algorithm.</p> <p>If you want Amazon
-     * Forecast to evaluate the algorithms it provides and choose the best algorithm
-     * and configuration for your training dataset, set <code>PerformAutoML</code> to
-     * <code>true</code>. This is a good option if you aren't sure which algorithm is
-     * suitable for your application.</p>
+     * <p>Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates
+     * the algorithms it provides and chooses the best algorithm and configuration for
+     * your training dataset.</p> <p>The default value is <code>false</code>. In this
+     * case, you are required to specify an algorithm.</p> <p>Set
+     * <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform
+     * AutoML. This is a good option if you aren't sure which algorithm is suitable for
+     * your training data. In this case, <code>PerformHPO</code> must be false.</p>
      */
     inline CreatePredictorRequest& WithPerformAutoML(bool value) { SetPerformAutoML(value); return *this;}
 
@@ -277,148 +289,152 @@ namespace Model
     /**
      * <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal
      * hyperparameter values for your training data. The process of performing HPO is
-     * known as a hyperparameter tuning job.</p> <p>The default value is
+     * known as running a hyperparameter tuning job.</p> <p>The default value is
      * <code>false</code>. In this case, Amazon Forecast uses default hyperparameter
      * values from the chosen algorithm.</p> <p>To override the default values, set
-     * <code>PerformHPO</code> to <code>true</code> and supply the
-     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an
-     * objective metric, the hyperparameters to optimize, and the valid range for each
-     * hyperparameter.</p> <p>The following algorithms support HPO:</p> <ul> <li>
-     * <p>DeepAR+</p> </li> </ul>
+     * <code>PerformHPO</code> to <code>true</code> and, optionally, supply the
+     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a metric
+     * to optimize, which hyperparameters participate in tuning, and the valid range
+     * for each tunable hyperparameter. In this case, you are required to specify an
+     * algorithm and <code>PerformAutoML</code> must be false.</p> <p>The following
+     * algorithm supports HPO:</p> <ul> <li> <p>DeepAR+</p> </li> </ul>
      */
     inline bool GetPerformHPO() const{ return m_performHPO; }
 
     /**
      * <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal
      * hyperparameter values for your training data. The process of performing HPO is
-     * known as a hyperparameter tuning job.</p> <p>The default value is
+     * known as running a hyperparameter tuning job.</p> <p>The default value is
      * <code>false</code>. In this case, Amazon Forecast uses default hyperparameter
      * values from the chosen algorithm.</p> <p>To override the default values, set
-     * <code>PerformHPO</code> to <code>true</code> and supply the
-     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an
-     * objective metric, the hyperparameters to optimize, and the valid range for each
-     * hyperparameter.</p> <p>The following algorithms support HPO:</p> <ul> <li>
-     * <p>DeepAR+</p> </li> </ul>
+     * <code>PerformHPO</code> to <code>true</code> and, optionally, supply the
+     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a metric
+     * to optimize, which hyperparameters participate in tuning, and the valid range
+     * for each tunable hyperparameter. In this case, you are required to specify an
+     * algorithm and <code>PerformAutoML</code> must be false.</p> <p>The following
+     * algorithm supports HPO:</p> <ul> <li> <p>DeepAR+</p> </li> </ul>
      */
     inline bool PerformHPOHasBeenSet() const { return m_performHPOHasBeenSet; }
 
     /**
      * <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal
      * hyperparameter values for your training data. The process of performing HPO is
-     * known as a hyperparameter tuning job.</p> <p>The default value is
+     * known as running a hyperparameter tuning job.</p> <p>The default value is
      * <code>false</code>. In this case, Amazon Forecast uses default hyperparameter
      * values from the chosen algorithm.</p> <p>To override the default values, set
-     * <code>PerformHPO</code> to <code>true</code> and supply the
-     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an
-     * objective metric, the hyperparameters to optimize, and the valid range for each
-     * hyperparameter.</p> <p>The following algorithms support HPO:</p> <ul> <li>
-     * <p>DeepAR+</p> </li> </ul>
+     * <code>PerformHPO</code> to <code>true</code> and, optionally, supply the
+     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a metric
+     * to optimize, which hyperparameters participate in tuning, and the valid range
+     * for each tunable hyperparameter. In this case, you are required to specify an
+     * algorithm and <code>PerformAutoML</code> must be false.</p> <p>The following
+     * algorithm supports HPO:</p> <ul> <li> <p>DeepAR+</p> </li> </ul>
      */
     inline void SetPerformHPO(bool value) { m_performHPOHasBeenSet = true; m_performHPO = value; }
 
     /**
      * <p>Whether to perform hyperparameter optimization (HPO). HPO finds optimal
      * hyperparameter values for your training data. The process of performing HPO is
-     * known as a hyperparameter tuning job.</p> <p>The default value is
+     * known as running a hyperparameter tuning job.</p> <p>The default value is
      * <code>false</code>. In this case, Amazon Forecast uses default hyperparameter
      * values from the chosen algorithm.</p> <p>To override the default values, set
-     * <code>PerformHPO</code> to <code>true</code> and supply the
-     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies an
-     * objective metric, the hyperparameters to optimize, and the valid range for each
-     * hyperparameter.</p> <p>The following algorithms support HPO:</p> <ul> <li>
-     * <p>DeepAR+</p> </li> </ul>
+     * <code>PerformHPO</code> to <code>true</code> and, optionally, supply the
+     * <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a metric
+     * to optimize, which hyperparameters participate in tuning, and the valid range
+     * for each tunable hyperparameter. In this case, you are required to specify an
+     * algorithm and <code>PerformAutoML</code> must be false.</p> <p>The following
+     * algorithm supports HPO:</p> <ul> <li> <p>DeepAR+</p> </li> </ul>
      */
     inline CreatePredictorRequest& WithPerformHPO(bool value) { SetPerformHPO(value); return *this;}
 
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The hyperparameters to override for model training. The hyperparameters that
+     * you can override are listed in the individual algorithms. For the list of
+     * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTrainingParameters() const{ return m_trainingParameters; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The hyperparameters to override for model training. The hyperparameters that
+     * you can override are listed in the individual algorithms. For the list of
+     * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline bool TrainingParametersHasBeenSet() const { return m_trainingParametersHasBeenSet; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The hyperparameters to override for model training. The hyperparameters that
+     * you can override are listed in the individual algorithms. For the list of
+     * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline void SetTrainingParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters = value; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The hyperparameters to override for model training. The hyperparameters that
+     * you can override are listed in the individual algorithms. For the list of
+     * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline void SetTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters = std::move(value); }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The hyperparameters to override for model training. The hyperparameters that
+     * you can override are listed in the individual algorithms. For the list of
+     * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline CreatePredictorRequest& WithTrainingParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetTrainingParameters(value); return *this;}
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The hyperparameters to override for model training. The hyperparameters that
+     * you can override are listed in the individual algorithms. For the list of
+     * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline CreatePredictorRequest& WithTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetTrainingParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The hyperparameters to override for model training. The hyperparameters that
+     * you can override are listed in the individual algorithms. For the list of
+     * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline CreatePredictorRequest& AddTrainingParameters(const Aws::String& key, const Aws::String& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The hyperparameters to override for model training. The hyperparameters that
+     * you can override are listed in the individual algorithms. For the list of
+     * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline CreatePredictorRequest& AddTrainingParameters(Aws::String&& key, const Aws::String& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The hyperparameters to override for model training. The hyperparameters that
+     * you can override are listed in the individual algorithms. For the list of
+     * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline CreatePredictorRequest& AddTrainingParameters(const Aws::String& key, Aws::String&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The hyperparameters to override for model training. The hyperparameters that
+     * you can override are listed in the individual algorithms. For the list of
+     * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline CreatePredictorRequest& AddTrainingParameters(Aws::String&& key, Aws::String&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The hyperparameters to override for model training. The hyperparameters that
+     * you can override are listed in the individual algorithms. For the list of
+     * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline CreatePredictorRequest& AddTrainingParameters(const char* key, Aws::String&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The hyperparameters to override for model training. The hyperparameters that
+     * you can override are listed in the individual algorithms. For the list of
+     * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline CreatePredictorRequest& AddTrainingParameters(Aws::String&& key, const char* value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The hyperparameters to override for model training. The hyperparameters that
+     * you can override are listed in the individual algorithms. For the list of
+     * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline CreatePredictorRequest& AddTrainingParameters(const char* key, const char* value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(key, value); return *this; }
 
@@ -476,7 +492,9 @@ namespace Model
      * <p>Provides hyperparameter override values for the algorithm. If you don't
      * provide this parameter, Amazon Forecast uses default values. The individual
      * algorithms specify which hyperparameters support hyperparameter optimization
-     * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p> <p>If
+     * you included the <code>HPOConfig</code> object, you must set
+     * <code>PerformHPO</code> to true.</p>
      */
     inline const HyperParameterTuningJobConfig& GetHPOConfig() const{ return m_hPOConfig; }
 
@@ -484,7 +502,9 @@ namespace Model
      * <p>Provides hyperparameter override values for the algorithm. If you don't
      * provide this parameter, Amazon Forecast uses default values. The individual
      * algorithms specify which hyperparameters support hyperparameter optimization
-     * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p> <p>If
+     * you included the <code>HPOConfig</code> object, you must set
+     * <code>PerformHPO</code> to true.</p>
      */
     inline bool HPOConfigHasBeenSet() const { return m_hPOConfigHasBeenSet; }
 
@@ -492,7 +512,9 @@ namespace Model
      * <p>Provides hyperparameter override values for the algorithm. If you don't
      * provide this parameter, Amazon Forecast uses default values. The individual
      * algorithms specify which hyperparameters support hyperparameter optimization
-     * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p> <p>If
+     * you included the <code>HPOConfig</code> object, you must set
+     * <code>PerformHPO</code> to true.</p>
      */
     inline void SetHPOConfig(const HyperParameterTuningJobConfig& value) { m_hPOConfigHasBeenSet = true; m_hPOConfig = value; }
 
@@ -500,7 +522,9 @@ namespace Model
      * <p>Provides hyperparameter override values for the algorithm. If you don't
      * provide this parameter, Amazon Forecast uses default values. The individual
      * algorithms specify which hyperparameters support hyperparameter optimization
-     * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p> <p>If
+     * you included the <code>HPOConfig</code> object, you must set
+     * <code>PerformHPO</code> to true.</p>
      */
     inline void SetHPOConfig(HyperParameterTuningJobConfig&& value) { m_hPOConfigHasBeenSet = true; m_hPOConfig = std::move(value); }
 
@@ -508,7 +532,9 @@ namespace Model
      * <p>Provides hyperparameter override values for the algorithm. If you don't
      * provide this parameter, Amazon Forecast uses default values. The individual
      * algorithms specify which hyperparameters support hyperparameter optimization
-     * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p> <p>If
+     * you included the <code>HPOConfig</code> object, you must set
+     * <code>PerformHPO</code> to true.</p>
      */
     inline CreatePredictorRequest& WithHPOConfig(const HyperParameterTuningJobConfig& value) { SetHPOConfig(value); return *this;}
 
@@ -516,7 +542,9 @@ namespace Model
      * <p>Provides hyperparameter override values for the algorithm. If you don't
      * provide this parameter, Amazon Forecast uses default values. The individual
      * algorithms specify which hyperparameters support hyperparameter optimization
-     * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
+     * (HPO). For more information, see <a>aws-forecast-choosing-recipes</a>.</p> <p>If
+     * you included the <code>HPOConfig</code> object, you must set
+     * <code>PerformHPO</code> to true.</p>
      */
     inline CreatePredictorRequest& WithHPOConfig(HyperParameterTuningJobConfig&& value) { SetHPOConfig(std::move(value)); return *this;}
 

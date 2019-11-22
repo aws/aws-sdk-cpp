@@ -1533,6 +1533,31 @@ namespace Model
      */
     inline RunJobFlowRequest& WithKerberosAttributes(KerberosAttributes&& value) { SetKerberosAttributes(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the number of steps that can be executed concurrently. The default
+     * value is <code>1</code>. The maximum value is <code>256</code>.</p>
+     */
+    inline int GetStepConcurrencyLevel() const{ return m_stepConcurrencyLevel; }
+
+    /**
+     * <p>Specifies the number of steps that can be executed concurrently. The default
+     * value is <code>1</code>. The maximum value is <code>256</code>.</p>
+     */
+    inline bool StepConcurrencyLevelHasBeenSet() const { return m_stepConcurrencyLevelHasBeenSet; }
+
+    /**
+     * <p>Specifies the number of steps that can be executed concurrently. The default
+     * value is <code>1</code>. The maximum value is <code>256</code>.</p>
+     */
+    inline void SetStepConcurrencyLevel(int value) { m_stepConcurrencyLevelHasBeenSet = true; m_stepConcurrencyLevel = value; }
+
+    /**
+     * <p>Specifies the number of steps that can be executed concurrently. The default
+     * value is <code>1</code>. The maximum value is <code>256</code>.</p>
+     */
+    inline RunJobFlowRequest& WithStepConcurrencyLevel(int value) { SetStepConcurrencyLevel(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1603,6 +1628,9 @@ namespace Model
 
     KerberosAttributes m_kerberosAttributes;
     bool m_kerberosAttributesHasBeenSet;
+
+    int m_stepConcurrencyLevel;
+    bool m_stepConcurrencyLevelHasBeenSet;
   };
 
 } // namespace Model

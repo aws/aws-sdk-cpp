@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>Provides a summary of the dataset group properties used in the
    * <a>ListDatasetGroups</a> operation. To get the complete set of properties, call
-   * the <a>DescribeDatasetGroup</a> operation, and provide the listed
+   * the <a>DescribeDatasetGroup</a> operation, and provide the
    * <code>DatasetGroupArn</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DatasetGroupSummary">AWS
    * API Reference</a></p>
@@ -134,32 +134,32 @@ namespace Model
 
 
     /**
-     * <p>When the datase group was created.</p>
+     * <p>When the dataset group was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>When the datase group was created.</p>
+     * <p>When the dataset group was created.</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>When the datase group was created.</p>
+     * <p>When the dataset group was created.</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>When the datase group was created.</p>
+     * <p>When the dataset group was created.</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>When the datase group was created.</p>
+     * <p>When the dataset group was created.</p>
      */
     inline DatasetGroupSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>When the datase group was created.</p>
+     * <p>When the dataset group was created.</p>
      */
     inline DatasetGroupSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
@@ -167,42 +167,48 @@ namespace Model
     /**
      * <p>When the dataset group was created or last updated from a call to the
      * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasetGroups</code> call.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
 
     /**
      * <p>When the dataset group was created or last updated from a call to the
      * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasetGroups</code> call.</p>
      */
     inline bool LastModificationTimeHasBeenSet() const { return m_lastModificationTimeHasBeenSet; }
 
     /**
      * <p>When the dataset group was created or last updated from a call to the
      * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasetGroups</code> call.</p>
      */
     inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = value; }
 
     /**
      * <p>When the dataset group was created or last updated from a call to the
      * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasetGroups</code> call.</p>
      */
     inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::move(value); }
 
     /**
      * <p>When the dataset group was created or last updated from a call to the
      * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasetGroups</code> call.</p>
      */
     inline DatasetGroupSummary& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
 
     /**
      * <p>When the dataset group was created or last updated from a call to the
      * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>ListDatasetGroups</code> call.</p>
      */
     inline DatasetGroupSummary& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 

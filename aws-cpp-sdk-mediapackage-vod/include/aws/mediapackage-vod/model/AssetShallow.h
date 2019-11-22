@@ -89,6 +89,47 @@ namespace Model
 
 
     /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline void SetCreatedAt(Aws::String&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline void SetCreatedAt(const char* value) { m_createdAtHasBeenSet = true; m_createdAt.assign(value); }
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline AssetShallow& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline AssetShallow& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+    /**
+     * The time the Asset was initially submitted for Ingest.
+     */
+    inline AssetShallow& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+
+
+    /**
      * The unique identifier for the Asset.
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -296,6 +337,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    Aws::String m_createdAt;
+    bool m_createdAtHasBeenSet;
 
     Aws::String m_id;
     bool m_idHasBeenSet;

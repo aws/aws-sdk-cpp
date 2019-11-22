@@ -164,6 +164,8 @@
 #include <aws/ec2/model/DescribeInstanceAttributeResponse.h>
 #include <aws/ec2/model/DescribeInstanceCreditSpecificationsResponse.h>
 #include <aws/ec2/model/DescribeInstanceStatusResponse.h>
+#include <aws/ec2/model/DescribeInstanceTypeOfferingsResponse.h>
+#include <aws/ec2/model/DescribeInstanceTypesResponse.h>
 #include <aws/ec2/model/DescribeInstancesResponse.h>
 #include <aws/ec2/model/DescribeInternetGatewaysResponse.h>
 #include <aws/ec2/model/DescribeKeyPairsResponse.h>
@@ -543,6 +545,8 @@ namespace Model
         class DescribeInstanceAttributeRequest;
         class DescribeInstanceCreditSpecificationsRequest;
         class DescribeInstanceStatusRequest;
+        class DescribeInstanceTypeOfferingsRequest;
+        class DescribeInstanceTypesRequest;
         class DescribeInstancesRequest;
         class DescribeInternetGatewaysRequest;
         class DescribeKeyPairsRequest;
@@ -907,6 +911,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeInstanceAttributeResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceAttributeOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceCreditSpecificationsResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceCreditSpecificationsOutcome;
         typedef Aws::Utils::Outcome<DescribeInstanceStatusResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceStatusOutcome;
+        typedef Aws::Utils::Outcome<DescribeInstanceTypeOfferingsResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceTypeOfferingsOutcome;
+        typedef Aws::Utils::Outcome<DescribeInstanceTypesResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceTypesOutcome;
         typedef Aws::Utils::Outcome<DescribeInstancesResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeInternetGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeInternetGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeKeyPairsResponse, Aws::Client::AWSError<EC2Errors>> DescribeKeyPairsOutcome;
@@ -1271,6 +1277,8 @@ namespace Model
         typedef std::future<DescribeInstanceAttributeOutcome> DescribeInstanceAttributeOutcomeCallable;
         typedef std::future<DescribeInstanceCreditSpecificationsOutcome> DescribeInstanceCreditSpecificationsOutcomeCallable;
         typedef std::future<DescribeInstanceStatusOutcome> DescribeInstanceStatusOutcomeCallable;
+        typedef std::future<DescribeInstanceTypeOfferingsOutcome> DescribeInstanceTypeOfferingsOutcomeCallable;
+        typedef std::future<DescribeInstanceTypesOutcome> DescribeInstanceTypesOutcomeCallable;
         typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
         typedef std::future<DescribeInternetGatewaysOutcome> DescribeInternetGatewaysOutcomeCallable;
         typedef std::future<DescribeKeyPairsOutcome> DescribeKeyPairsOutcomeCallable;
@@ -1638,6 +1646,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceAttributeRequest&, const Model::DescribeInstanceAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceAttributeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceCreditSpecificationsRequest&, const Model::DescribeInstanceCreditSpecificationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceCreditSpecificationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceStatusRequest&, const Model::DescribeInstanceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceStatusResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeInstanceTypeOfferingsRequest&, const Model::DescribeInstanceTypeOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypeOfferingsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeInstanceTypesRequest&, const Model::DescribeInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstancesRequest&, const Model::DescribeInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInternetGatewaysRequest&, const Model::DescribeInternetGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInternetGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeKeyPairsRequest&, const Model::DescribeKeyPairsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeKeyPairsResponseReceivedHandler;
@@ -8521,7 +8531,10 @@ namespace Model
 
         /**
          * <p>Describes the events for the specified EC2 Fleet during the specified
-         * time.</p><p><h3>See Also:</h3>   <a
+         * time.</p> <p>EC2 Fleet events are delayed by up to 30 seconds before they can be
+         * described. This ensures that you can query by the last evaluated time and not
+         * miss a recorded event. EC2 Fleet events are available for 48
+         * hours.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">AWS
          * API Reference</a></p>
          */
@@ -8529,7 +8542,10 @@ namespace Model
 
         /**
          * <p>Describes the events for the specified EC2 Fleet during the specified
-         * time.</p><p><h3>See Also:</h3>   <a
+         * time.</p> <p>EC2 Fleet events are delayed by up to 30 seconds before they can be
+         * described. This ensures that you can query by the last evaluated time and not
+         * miss a recorded event. EC2 Fleet events are available for 48
+         * hours.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">AWS
          * API Reference</a></p>
          *
@@ -8539,7 +8555,10 @@ namespace Model
 
         /**
          * <p>Describes the events for the specified EC2 Fleet during the specified
-         * time.</p><p><h3>See Also:</h3>   <a
+         * time.</p> <p>EC2 Fleet events are delayed by up to 30 seconds before they can be
+         * described. This ensures that you can query by the last evaluated time and not
+         * miss a recorded event. EC2 Fleet events are available for 48
+         * hours.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory">AWS
          * API Reference</a></p>
          *
@@ -9371,6 +9390,71 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeInstanceStatusAsync(const Model::DescribeInstanceStatusRequest& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of all instance types offered. The results can be filtered by
+         * location (Region or Availability Zone). If no location is specified, the
+         * instance types offered in the current Region are returned.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInstanceTypeOfferingsOutcome DescribeInstanceTypeOfferings(const Model::DescribeInstanceTypeOfferingsRequest& request) const;
+
+        /**
+         * <p>Returns a list of all instance types offered. The results can be filtered by
+         * location (Region or Availability Zone). If no location is specified, the
+         * instance types offered in the current Region are returned.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeInstanceTypeOfferingsOutcomeCallable DescribeInstanceTypeOfferingsCallable(const Model::DescribeInstanceTypeOfferingsRequest& request) const;
+
+        /**
+         * <p>Returns a list of all instance types offered. The results can be filtered by
+         * location (Region or Availability Zone). If no location is specified, the
+         * instance types offered in the current Region are returned.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypeOfferings">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeInstanceTypeOfferingsAsync(const Model::DescribeInstanceTypeOfferingsRequest& request, const DescribeInstanceTypeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of all instance types offered in your current AWS Region. The
+         * results can be filtered by the attributes of the instance types.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeInstanceTypesOutcome DescribeInstanceTypes(const Model::DescribeInstanceTypesRequest& request) const;
+
+        /**
+         * <p>Returns a list of all instance types offered in your current AWS Region. The
+         * results can be filtered by the attributes of the instance types.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeInstanceTypesOutcomeCallable DescribeInstanceTypesCallable(const Model::DescribeInstanceTypesRequest& request) const;
+
+        /**
+         * <p>Returns a list of all instance types offered in your current AWS Region. The
+         * results can be filtered by the attributes of the instance types.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeInstanceTypesAsync(const Model::DescribeInstanceTypesRequest& request, const DescribeInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified instances or all of AWS account's instances.</p>
@@ -17983,6 +18067,8 @@ namespace Model
         void DescribeInstanceAttributeAsyncHelper(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceCreditSpecificationsAsyncHelper(const Model::DescribeInstanceCreditSpecificationsRequest& request, const DescribeInstanceCreditSpecificationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstanceStatusAsyncHelper(const Model::DescribeInstanceStatusRequest& request, const DescribeInstanceStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeInstanceTypeOfferingsAsyncHelper(const Model::DescribeInstanceTypeOfferingsRequest& request, const DescribeInstanceTypeOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeInstanceTypesAsyncHelper(const Model::DescribeInstanceTypesRequest& request, const DescribeInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstancesAsyncHelper(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInternetGatewaysAsyncHelper(const Model::DescribeInternetGatewaysRequest& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeKeyPairsAsyncHelper(const Model::DescribeKeyPairsRequest& request, const DescribeKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

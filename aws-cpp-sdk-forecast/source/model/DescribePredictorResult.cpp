@@ -119,6 +119,12 @@ DescribePredictorResult& DescribePredictorResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("PredictorExecutionDetails"))
+  {
+    m_predictorExecutionDetails = jsonValue.GetObject("PredictorExecutionDetails");
+
+  }
+
   if(jsonValue.ValueExists("DatasetImportJobArns"))
   {
     Array<JsonView> datasetImportJobArnsJsonList = jsonValue.GetArray("DatasetImportJobArns");

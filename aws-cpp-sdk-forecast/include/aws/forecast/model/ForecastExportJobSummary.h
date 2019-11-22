@@ -135,121 +135,127 @@ namespace Model
 
 
     /**
-     * <p>The path to the S3 bucket where the forecast is stored.</p>
+     * <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the
+     * forecast is exported.</p>
      */
     inline const DataDestination& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>The path to the S3 bucket where the forecast is stored.</p>
+     * <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the
+     * forecast is exported.</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * <p>The path to the S3 bucket where the forecast is stored.</p>
+     * <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the
+     * forecast is exported.</p>
      */
     inline void SetDestination(const DataDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>The path to the S3 bucket where the forecast is stored.</p>
+     * <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the
+     * forecast is exported.</p>
      */
     inline void SetDestination(DataDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * <p>The path to the S3 bucket where the forecast is stored.</p>
+     * <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the
+     * forecast is exported.</p>
      */
     inline ForecastExportJobSummary& WithDestination(const DataDestination& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>The path to the S3 bucket where the forecast is stored.</p>
+     * <p>The path to the Amazon Simple Storage Service (Amazon S3) bucket where the
+     * forecast is exported.</p>
      */
     inline ForecastExportJobSummary& WithDestination(DataDestination&& value) { SetDestination(std::move(value)); return *this;}
 
 
     /**
-     * <p>The status of the forecast export job. One of the following states:</p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
-     * forecast in your Amazon S3 bucket.</p> </note>
+     * forecast in your S3 bucket.</p> </note>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the forecast export job. One of the following states:</p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
-     * forecast in your Amazon S3 bucket.</p> </note>
+     * forecast in your S3 bucket.</p> </note>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the forecast export job. One of the following states:</p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
-     * forecast in your Amazon S3 bucket.</p> </note>
+     * forecast in your S3 bucket.</p> </note>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the forecast export job. One of the following states:</p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
-     * forecast in your Amazon S3 bucket.</p> </note>
+     * forecast in your S3 bucket.</p> </note>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the forecast export job. One of the following states:</p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
-     * forecast in your Amazon S3 bucket.</p> </note>
+     * forecast in your S3 bucket.</p> </note>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the forecast export job. One of the following states:</p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
-     * forecast in your Amazon S3 bucket.</p> </note>
+     * forecast in your S3 bucket.</p> </note>
      */
     inline ForecastExportJobSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the forecast export job. One of the following states:</p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
-     * forecast in your Amazon S3 bucket.</p> </note>
+     * forecast in your S3 bucket.</p> </note>
      */
     inline ForecastExportJobSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the forecast export job. One of the following states:</p> <ul>
-     * <li> <p> <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
+     * <p>The status of the forecast export job. States include:</p> <ul> <li> <p>
+     * <code>ACTIVE</code> </p> </li> <li> <p> <code>CREATE_PENDING</code>,
      * <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code> </p> </li> <li> <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul> <note> <p>The <code>Status</code> of
      * the forecast export job must be <code>ACTIVE</code> before you can access the
-     * forecast in your Amazon S3 bucket.</p> </note>
+     * forecast in your S3 bucket.</p> </note>
      */
     inline ForecastExportJobSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
 

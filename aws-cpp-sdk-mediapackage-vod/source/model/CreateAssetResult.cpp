@@ -44,6 +44,12 @@ CreateAssetResult& CreateAssetResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+  }
+
   if(jsonValue.ValueExists("egressEndpoints"))
   {
     Array<JsonView> egressEndpointsJsonList = jsonValue.GetArray("egressEndpoints");

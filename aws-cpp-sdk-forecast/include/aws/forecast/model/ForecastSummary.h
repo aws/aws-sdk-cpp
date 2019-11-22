@@ -37,8 +37,8 @@ namespace Model
   /**
    * <p>Provides a summary of the forecast properties used in the
    * <a>ListForecasts</a> operation. To get the complete set of properties, call the
-   * <a>DescribeForecast</a> operation, and provide the listed
-   * <code>ForecastArn</code>.</p><p><h3>See Also:</h3>   <a
+   * <a>DescribeForecast</a> operation, and provide the <code>ForecastArn</code> that
+   * is listed in the summary.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ForecastSummary">AWS
    * API Reference</a></p>
    */

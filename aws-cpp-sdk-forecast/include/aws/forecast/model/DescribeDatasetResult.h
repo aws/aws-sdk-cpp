@@ -120,27 +120,27 @@ namespace Model
 
 
     /**
-     * <p>The dataset domain.</p>
+     * <p>The domain associated with the dataset.</p>
      */
     inline const Domain& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The dataset domain.</p>
+     * <p>The domain associated with the dataset.</p>
      */
     inline void SetDomain(const Domain& value) { m_domain = value; }
 
     /**
-     * <p>The dataset domain.</p>
+     * <p>The domain associated with the dataset.</p>
      */
     inline void SetDomain(Domain&& value) { m_domain = std::move(value); }
 
     /**
-     * <p>The dataset domain.</p>
+     * <p>The domain associated with the dataset.</p>
      */
     inline DescribeDatasetResult& WithDomain(const Domain& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The dataset domain.</p>
+     * <p>The domain associated with the dataset.</p>
      */
     inline DescribeDatasetResult& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
 
@@ -265,31 +265,31 @@ namespace Model
 
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
+     * <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
+     * <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfig = value; }
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
+     * <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfig = std::move(value); }
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
+     * <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline DescribeDatasetResult& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
 
     /**
-     * <p>An AWS Key Management Service (KMS) key and the AWS Identity and Access
+     * <p>The AWS Key Management Service (KMS) key and the AWS Identity and Access
      * Management (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
     inline DescribeDatasetResult& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
@@ -303,10 +303,10 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation. During this time,
-     * the status reflects the status of the dataset import job. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset
-     * is <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
+     * status of the dataset import job. For example, when the import job status is
+     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
      * </note>
      */
@@ -320,10 +320,10 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation. During this time,
-     * the status reflects the status of the dataset import job. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset
-     * is <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
+     * status of the dataset import job. For example, when the import job status is
+     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
      * </note>
      */
@@ -337,10 +337,10 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation. During this time,
-     * the status reflects the status of the dataset import job. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset
-     * is <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
+     * status of the dataset import job. For example, when the import job status is
+     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
      * </note>
      */
@@ -354,10 +354,10 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation. During this time,
-     * the status reflects the status of the dataset import job. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset
-     * is <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
+     * status of the dataset import job. For example, when the import job status is
+     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
      * </note>
      */
@@ -371,10 +371,10 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation. During this time,
-     * the status reflects the status of the dataset import job. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset
-     * is <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
+     * status of the dataset import job. For example, when the import job status is
+     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
      * </note>
      */
@@ -388,10 +388,10 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation. During this time,
-     * the status reflects the status of the dataset import job. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset
-     * is <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
+     * status of the dataset import job. For example, when the import job status is
+     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
      * </note>
      */
@@ -405,10 +405,10 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <p>The <code>UPDATE</code> states apply while data is imported to the dataset
-     * from a call to the <a>CreateDatasetImportJob</a> operation. During this time,
-     * the status reflects the status of the dataset import job. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset
-     * is <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
+     * from a call to the <a>CreateDatasetImportJob</a> operation and reflect the
+     * status of the dataset import job. For example, when the import job status is
+     * <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
+     * <code>UPDATE_IN_PROGRESS</code>.</p> <note> <p>The <code>Status</code> of the
      * dataset must be <code>ACTIVE</code> before you can import training data.</p>
      * </note>
      */
@@ -442,47 +442,52 @@ namespace Model
 
 
     /**
-     * <p>When the dataset is created, <code>LastModificationTime</code> is the same as
-     * <code>CreationTime</code>. After a <a>CreateDatasetImportJob</a> operation is
-     * called, <code>LastModificationTime</code> is when the import job finished or
-     * failed. While data is being imported to the dataset,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
+     * <code>CreationTime</code>. While data is being imported to the dataset,
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a>
+     * operation has finished, <code>LastModificationTime</code> is when the import job
+     * completed or failed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
 
     /**
-     * <p>When the dataset is created, <code>LastModificationTime</code> is the same as
-     * <code>CreationTime</code>. After a <a>CreateDatasetImportJob</a> operation is
-     * called, <code>LastModificationTime</code> is when the import job finished or
-     * failed. While data is being imported to the dataset,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
+     * <code>CreationTime</code>. While data is being imported to the dataset,
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a>
+     * operation has finished, <code>LastModificationTime</code> is when the import job
+     * completed or failed.</p>
      */
     inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
 
     /**
-     * <p>When the dataset is created, <code>LastModificationTime</code> is the same as
-     * <code>CreationTime</code>. After a <a>CreateDatasetImportJob</a> operation is
-     * called, <code>LastModificationTime</code> is when the import job finished or
-     * failed. While data is being imported to the dataset,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
+     * <code>CreationTime</code>. While data is being imported to the dataset,
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a>
+     * operation has finished, <code>LastModificationTime</code> is when the import job
+     * completed or failed.</p>
      */
     inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
 
     /**
-     * <p>When the dataset is created, <code>LastModificationTime</code> is the same as
-     * <code>CreationTime</code>. After a <a>CreateDatasetImportJob</a> operation is
-     * called, <code>LastModificationTime</code> is when the import job finished or
-     * failed. While data is being imported to the dataset,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
+     * <code>CreationTime</code>. While data is being imported to the dataset,
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a>
+     * operation has finished, <code>LastModificationTime</code> is when the import job
+     * completed or failed.</p>
      */
     inline DescribeDatasetResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
 
     /**
-     * <p>When the dataset is created, <code>LastModificationTime</code> is the same as
-     * <code>CreationTime</code>. After a <a>CreateDatasetImportJob</a> operation is
-     * called, <code>LastModificationTime</code> is when the import job finished or
-     * failed. While data is being imported to the dataset,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <p>When you create a dataset, <code>LastModificationTime</code> is the same as
+     * <code>CreationTime</code>. While data is being imported to the dataset,
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDataset</code> call. After a <a>CreateDatasetImportJob</a>
+     * operation has finished, <code>LastModificationTime</code> is when the import job
+     * completed or failed.</p>
      */
     inline DescribeDatasetResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 

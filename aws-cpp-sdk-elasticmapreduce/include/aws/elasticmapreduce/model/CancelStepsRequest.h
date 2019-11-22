@@ -18,6 +18,7 @@
 #include <aws/elasticmapreduce/EMRRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticmapreduce/model/StepCancellationOption.h>
 #include <utility>
 
 namespace Aws
@@ -152,6 +153,43 @@ namespace Model
      */
     inline CancelStepsRequest& AddStepIds(const char* value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>The option to choose for cancelling <code>RUNNING</code> steps. By default,
+     * the value is <code>SEND_INTERRUPT</code>.</p>
+     */
+    inline const StepCancellationOption& GetStepCancellationOption() const{ return m_stepCancellationOption; }
+
+    /**
+     * <p>The option to choose for cancelling <code>RUNNING</code> steps. By default,
+     * the value is <code>SEND_INTERRUPT</code>.</p>
+     */
+    inline bool StepCancellationOptionHasBeenSet() const { return m_stepCancellationOptionHasBeenSet; }
+
+    /**
+     * <p>The option to choose for cancelling <code>RUNNING</code> steps. By default,
+     * the value is <code>SEND_INTERRUPT</code>.</p>
+     */
+    inline void SetStepCancellationOption(const StepCancellationOption& value) { m_stepCancellationOptionHasBeenSet = true; m_stepCancellationOption = value; }
+
+    /**
+     * <p>The option to choose for cancelling <code>RUNNING</code> steps. By default,
+     * the value is <code>SEND_INTERRUPT</code>.</p>
+     */
+    inline void SetStepCancellationOption(StepCancellationOption&& value) { m_stepCancellationOptionHasBeenSet = true; m_stepCancellationOption = std::move(value); }
+
+    /**
+     * <p>The option to choose for cancelling <code>RUNNING</code> steps. By default,
+     * the value is <code>SEND_INTERRUPT</code>.</p>
+     */
+    inline CancelStepsRequest& WithStepCancellationOption(const StepCancellationOption& value) { SetStepCancellationOption(value); return *this;}
+
+    /**
+     * <p>The option to choose for cancelling <code>RUNNING</code> steps. By default,
+     * the value is <code>SEND_INTERRUPT</code>.</p>
+     */
+    inline CancelStepsRequest& WithStepCancellationOption(StepCancellationOption&& value) { SetStepCancellationOption(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clusterId;
@@ -159,6 +197,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_stepIds;
     bool m_stepIdsHasBeenSet;
+
+    StepCancellationOption m_stepCancellationOption;
+    bool m_stepCancellationOptionHasBeenSet;
   };
 
 } // namespace Model

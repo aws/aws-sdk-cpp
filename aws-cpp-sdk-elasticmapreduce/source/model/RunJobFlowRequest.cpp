@@ -49,7 +49,9 @@ RunJobFlowRequest::RunJobFlowRequest() :
     m_ebsRootVolumeSizeHasBeenSet(false),
     m_repoUpgradeOnBoot(RepoUpgradeOnBoot::NOT_SET),
     m_repoUpgradeOnBootHasBeenSet(false),
-    m_kerberosAttributesHasBeenSet(false)
+    m_kerberosAttributesHasBeenSet(false),
+    m_stepConcurrencyLevel(0),
+    m_stepConcurrencyLevelHasBeenSet(false)
 {
 }
 
@@ -225,6 +227,12 @@ Aws::String RunJobFlowRequest::SerializePayload() const
   if(m_kerberosAttributesHasBeenSet)
   {
    payload.WithObject("KerberosAttributes", m_kerberosAttributes.Jsonize());
+
+  }
+
+  if(m_stepConcurrencyLevelHasBeenSet)
+  {
+   payload.WithInteger("StepConcurrencyLevel", m_stepConcurrencyLevel);
 
   }
 

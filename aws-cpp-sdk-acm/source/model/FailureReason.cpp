@@ -40,6 +40,7 @@ namespace Aws
         static const int PCA_INVALID_ARN_HASH = HashingUtils::HashString("PCA_INVALID_ARN");
         static const int PCA_INVALID_STATE_HASH = HashingUtils::HashString("PCA_INVALID_STATE");
         static const int PCA_REQUEST_FAILED_HASH = HashingUtils::HashString("PCA_REQUEST_FAILED");
+        static const int PCA_NAME_CONSTRAINTS_VALIDATION_HASH = HashingUtils::HashString("PCA_NAME_CONSTRAINTS_VALIDATION");
         static const int PCA_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("PCA_RESOURCE_NOT_FOUND");
         static const int PCA_INVALID_ARGS_HASH = HashingUtils::HashString("PCA_INVALID_ARGS");
         static const int PCA_INVALID_DURATION_HASH = HashingUtils::HashString("PCA_INVALID_DURATION");
@@ -89,6 +90,10 @@ namespace Aws
           else if (hashCode == PCA_REQUEST_FAILED_HASH)
           {
             return FailureReason::PCA_REQUEST_FAILED;
+          }
+          else if (hashCode == PCA_NAME_CONSTRAINTS_VALIDATION_HASH)
+          {
+            return FailureReason::PCA_NAME_CONSTRAINTS_VALIDATION;
           }
           else if (hashCode == PCA_RESOURCE_NOT_FOUND_HASH)
           {
@@ -144,6 +149,8 @@ namespace Aws
             return "PCA_INVALID_STATE";
           case FailureReason::PCA_REQUEST_FAILED:
             return "PCA_REQUEST_FAILED";
+          case FailureReason::PCA_NAME_CONSTRAINTS_VALIDATION:
+            return "PCA_NAME_CONSTRAINTS_VALIDATION";
           case FailureReason::PCA_RESOURCE_NOT_FOUND:
             return "PCA_RESOURCE_NOT_FOUND";
           case FailureReason::PCA_INVALID_ARGS:

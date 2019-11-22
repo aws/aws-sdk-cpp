@@ -109,56 +109,56 @@ namespace Model
 
     /**
      * <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS
-     * (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google Cloud
+     * (Apple Push Notification Service), APNS_SANDBOX, and FCM (Firebase Cloud
      * Messaging).</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
      * <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS
-     * (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google Cloud
+     * (Apple Push Notification Service), APNS_SANDBOX, and FCM (Firebase Cloud
      * Messaging).</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS
-     * (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google Cloud
+     * (Apple Push Notification Service), APNS_SANDBOX, and FCM (Firebase Cloud
      * Messaging).</p>
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
      * <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS
-     * (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google Cloud
+     * (Apple Push Notification Service), APNS_SANDBOX, and FCM (Firebase Cloud
      * Messaging).</p>
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
      * <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS
-     * (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google Cloud
+     * (Apple Push Notification Service), APNS_SANDBOX, and FCM (Firebase Cloud
      * Messaging).</p>
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
      * <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS
-     * (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google Cloud
+     * (Apple Push Notification Service), APNS_SANDBOX, and FCM (Firebase Cloud
      * Messaging).</p>
      */
     inline CreatePlatformApplicationRequest& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
      * <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS
-     * (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google Cloud
+     * (Apple Push Notification Service), APNS_SANDBOX, and FCM (Firebase Cloud
      * Messaging).</p>
      */
     inline CreatePlatformApplicationRequest& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
      * <p>The following platforms are supported: ADM (Amazon Device Messaging), APNS
-     * (Apple Push Notification Service), APNS_SANDBOX, and GCM (Google Cloud
+     * (Apple Push Notification Service), APNS_SANDBOX, and FCM (Firebase Cloud
      * Messaging).</p>
      */
     inline CreatePlatformApplicationRequest& WithPlatform(const char* value) { SetPlatform(value); return *this;}

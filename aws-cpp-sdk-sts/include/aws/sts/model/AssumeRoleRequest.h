@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sts/model/PolicyDescriptorType.h>
+#include <aws/sts/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -215,22 +216,22 @@ namespace Model
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
      * policy ARNs. However, the plain text that you use for both inline and managed
-     * session policies shouldn't exceed 2048 characters. For more information about
-     * ARNs, see <a
+     * session policies can't exceed 2,048 characters. For more information about ARNs,
+     * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>The characters in this parameter count towards the 2048
-     * character session policy guideline. However, an AWS conversion compresses the
-     * session policies into a packed binary format that has a separate limit. This is
-     * the enforced limit. The <code>PackedPolicySize</code> response element indicates
-     * by percentage how close the policy is to the upper size limit.</p> </note>
-     * <p>Passing policies to this operation returns new temporary credentials. The
-     * resulting session's permissions are the intersection of the role's
-     * identity-based policy and the session policies. You can use the role's temporary
-     * credentials in subsequent AWS API calls to access resources in the account that
-     * owns the role. You cannot use session policies to grant more permissions than
-     * those allowed by the identity-based policy of the role that is being assumed.
-     * For more information, see <a
+     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * temporary credentials. The resulting session's permissions are the intersection
+     * of the role's identity-based policy and the session policies. You can use the
+     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * the account that owns the role. You cannot use session policies to grant more
+     * permissions than those allowed by the identity-based policy of the role that is
+     * being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -241,22 +242,22 @@ namespace Model
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
      * policy ARNs. However, the plain text that you use for both inline and managed
-     * session policies shouldn't exceed 2048 characters. For more information about
-     * ARNs, see <a
+     * session policies can't exceed 2,048 characters. For more information about ARNs,
+     * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>The characters in this parameter count towards the 2048
-     * character session policy guideline. However, an AWS conversion compresses the
-     * session policies into a packed binary format that has a separate limit. This is
-     * the enforced limit. The <code>PackedPolicySize</code> response element indicates
-     * by percentage how close the policy is to the upper size limit.</p> </note>
-     * <p>Passing policies to this operation returns new temporary credentials. The
-     * resulting session's permissions are the intersection of the role's
-     * identity-based policy and the session policies. You can use the role's temporary
-     * credentials in subsequent AWS API calls to access resources in the account that
-     * owns the role. You cannot use session policies to grant more permissions than
-     * those allowed by the identity-based policy of the role that is being assumed.
-     * For more information, see <a
+     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * temporary credentials. The resulting session's permissions are the intersection
+     * of the role's identity-based policy and the session policies. You can use the
+     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * the account that owns the role. You cannot use session policies to grant more
+     * permissions than those allowed by the identity-based policy of the role that is
+     * being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -267,22 +268,22 @@ namespace Model
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
      * policy ARNs. However, the plain text that you use for both inline and managed
-     * session policies shouldn't exceed 2048 characters. For more information about
-     * ARNs, see <a
+     * session policies can't exceed 2,048 characters. For more information about ARNs,
+     * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>The characters in this parameter count towards the 2048
-     * character session policy guideline. However, an AWS conversion compresses the
-     * session policies into a packed binary format that has a separate limit. This is
-     * the enforced limit. The <code>PackedPolicySize</code> response element indicates
-     * by percentage how close the policy is to the upper size limit.</p> </note>
-     * <p>Passing policies to this operation returns new temporary credentials. The
-     * resulting session's permissions are the intersection of the role's
-     * identity-based policy and the session policies. You can use the role's temporary
-     * credentials in subsequent AWS API calls to access resources in the account that
-     * owns the role. You cannot use session policies to grant more permissions than
-     * those allowed by the identity-based policy of the role that is being assumed.
-     * For more information, see <a
+     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * temporary credentials. The resulting session's permissions are the intersection
+     * of the role's identity-based policy and the session policies. You can use the
+     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * the account that owns the role. You cannot use session policies to grant more
+     * permissions than those allowed by the identity-based policy of the role that is
+     * being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -293,22 +294,22 @@ namespace Model
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
      * policy ARNs. However, the plain text that you use for both inline and managed
-     * session policies shouldn't exceed 2048 characters. For more information about
-     * ARNs, see <a
+     * session policies can't exceed 2,048 characters. For more information about ARNs,
+     * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>The characters in this parameter count towards the 2048
-     * character session policy guideline. However, an AWS conversion compresses the
-     * session policies into a packed binary format that has a separate limit. This is
-     * the enforced limit. The <code>PackedPolicySize</code> response element indicates
-     * by percentage how close the policy is to the upper size limit.</p> </note>
-     * <p>Passing policies to this operation returns new temporary credentials. The
-     * resulting session's permissions are the intersection of the role's
-     * identity-based policy and the session policies. You can use the role's temporary
-     * credentials in subsequent AWS API calls to access resources in the account that
-     * owns the role. You cannot use session policies to grant more permissions than
-     * those allowed by the identity-based policy of the role that is being assumed.
-     * For more information, see <a
+     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * temporary credentials. The resulting session's permissions are the intersection
+     * of the role's identity-based policy and the session policies. You can use the
+     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * the account that owns the role. You cannot use session policies to grant more
+     * permissions than those allowed by the identity-based policy of the role that is
+     * being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -319,22 +320,22 @@ namespace Model
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
      * policy ARNs. However, the plain text that you use for both inline and managed
-     * session policies shouldn't exceed 2048 characters. For more information about
-     * ARNs, see <a
+     * session policies can't exceed 2,048 characters. For more information about ARNs,
+     * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>The characters in this parameter count towards the 2048
-     * character session policy guideline. However, an AWS conversion compresses the
-     * session policies into a packed binary format that has a separate limit. This is
-     * the enforced limit. The <code>PackedPolicySize</code> response element indicates
-     * by percentage how close the policy is to the upper size limit.</p> </note>
-     * <p>Passing policies to this operation returns new temporary credentials. The
-     * resulting session's permissions are the intersection of the role's
-     * identity-based policy and the session policies. You can use the role's temporary
-     * credentials in subsequent AWS API calls to access resources in the account that
-     * owns the role. You cannot use session policies to grant more permissions than
-     * those allowed by the identity-based policy of the role that is being assumed.
-     * For more information, see <a
+     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * temporary credentials. The resulting session's permissions are the intersection
+     * of the role's identity-based policy and the session policies. You can use the
+     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * the account that owns the role. You cannot use session policies to grant more
+     * permissions than those allowed by the identity-based policy of the role that is
+     * being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -345,22 +346,22 @@ namespace Model
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
      * policy ARNs. However, the plain text that you use for both inline and managed
-     * session policies shouldn't exceed 2048 characters. For more information about
-     * ARNs, see <a
+     * session policies can't exceed 2,048 characters. For more information about ARNs,
+     * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>The characters in this parameter count towards the 2048
-     * character session policy guideline. However, an AWS conversion compresses the
-     * session policies into a packed binary format that has a separate limit. This is
-     * the enforced limit. The <code>PackedPolicySize</code> response element indicates
-     * by percentage how close the policy is to the upper size limit.</p> </note>
-     * <p>Passing policies to this operation returns new temporary credentials. The
-     * resulting session's permissions are the intersection of the role's
-     * identity-based policy and the session policies. You can use the role's temporary
-     * credentials in subsequent AWS API calls to access resources in the account that
-     * owns the role. You cannot use session policies to grant more permissions than
-     * those allowed by the identity-based policy of the role that is being assumed.
-     * For more information, see <a
+     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * temporary credentials. The resulting session's permissions are the intersection
+     * of the role's identity-based policy and the session policies. You can use the
+     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * the account that owns the role. You cannot use session policies to grant more
+     * permissions than those allowed by the identity-based policy of the role that is
+     * being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -371,22 +372,22 @@ namespace Model
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
      * policy ARNs. However, the plain text that you use for both inline and managed
-     * session policies shouldn't exceed 2048 characters. For more information about
-     * ARNs, see <a
+     * session policies can't exceed 2,048 characters. For more information about ARNs,
+     * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>The characters in this parameter count towards the 2048
-     * character session policy guideline. However, an AWS conversion compresses the
-     * session policies into a packed binary format that has a separate limit. This is
-     * the enforced limit. The <code>PackedPolicySize</code> response element indicates
-     * by percentage how close the policy is to the upper size limit.</p> </note>
-     * <p>Passing policies to this operation returns new temporary credentials. The
-     * resulting session's permissions are the intersection of the role's
-     * identity-based policy and the session policies. You can use the role's temporary
-     * credentials in subsequent AWS API calls to access resources in the account that
-     * owns the role. You cannot use session policies to grant more permissions than
-     * those allowed by the identity-based policy of the role that is being assumed.
-     * For more information, see <a
+     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * temporary credentials. The resulting session's permissions are the intersection
+     * of the role's identity-based policy and the session policies. You can use the
+     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * the account that owns the role. You cannot use session policies to grant more
+     * permissions than those allowed by the identity-based policy of the role that is
+     * being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -397,22 +398,22 @@ namespace Model
      * use as managed session policies. The policies must exist in the same account as
      * the role.</p> <p>This parameter is optional. You can provide up to 10 managed
      * policy ARNs. However, the plain text that you use for both inline and managed
-     * session policies shouldn't exceed 2048 characters. For more information about
-     * ARNs, see <a
+     * session policies can't exceed 2,048 characters. For more information about ARNs,
+     * see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General
-     * Reference.</p> <note> <p>The characters in this parameter count towards the 2048
-     * character session policy guideline. However, an AWS conversion compresses the
-     * session policies into a packed binary format that has a separate limit. This is
-     * the enforced limit. The <code>PackedPolicySize</code> response element indicates
-     * by percentage how close the policy is to the upper size limit.</p> </note>
-     * <p>Passing policies to this operation returns new temporary credentials. The
-     * resulting session's permissions are the intersection of the role's
-     * identity-based policy and the session policies. You can use the role's temporary
-     * credentials in subsequent AWS API calls to access resources in the account that
-     * owns the role. You cannot use session policies to grant more permissions than
-     * those allowed by the identity-based policy of the role that is being assumed.
-     * For more information, see <a
+     * Reference.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note> <p>Passing policies to this operation returns new
+     * temporary credentials. The resulting session's permissions are the intersection
+     * of the role's identity-based policy and the session policies. You can use the
+     * role's temporary credentials in subsequent AWS API calls to access resources in
+     * the account that owns the role. You cannot use session policies to grant more
+     * permissions than those allowed by the identity-based policy of the role that is
+     * being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p>
      */
@@ -430,16 +431,16 @@ namespace Model
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters.
-     * The JSON policy characters can be any ASCII character from the space character
-     * to the end of the valid character list (\u0020 through \u00FF). It can also
-     * include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>The characters in this parameter count towards the
-     * 2048 character session policy guideline. However, an AWS conversion compresses
-     * the session policies into a packed binary format that has a separate limit. This
-     * is the enforced limit. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policy is to the upper size limit.</p>
-     * </note>
+     * for both inline and managed session policies can't exceed 2,048 characters. The
+     * JSON policy characters can be any ASCII character from the space character to
+     * the end of the valid character list (\u0020 through \u00FF). It can also include
+     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
+     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -454,16 +455,16 @@ namespace Model
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters.
-     * The JSON policy characters can be any ASCII character from the space character
-     * to the end of the valid character list (\u0020 through \u00FF). It can also
-     * include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>The characters in this parameter count towards the
-     * 2048 character session policy guideline. However, an AWS conversion compresses
-     * the session policies into a packed binary format that has a separate limit. This
-     * is the enforced limit. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policy is to the upper size limit.</p>
-     * </note>
+     * for both inline and managed session policies can't exceed 2,048 characters. The
+     * JSON policy characters can be any ASCII character from the space character to
+     * the end of the valid character list (\u0020 through \u00FF). It can also include
+     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
+     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
@@ -478,16 +479,16 @@ namespace Model
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters.
-     * The JSON policy characters can be any ASCII character from the space character
-     * to the end of the valid character list (\u0020 through \u00FF). It can also
-     * include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>The characters in this parameter count towards the
-     * 2048 character session policy guideline. However, an AWS conversion compresses
-     * the session policies into a packed binary format that has a separate limit. This
-     * is the enforced limit. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policy is to the upper size limit.</p>
-     * </note>
+     * for both inline and managed session policies can't exceed 2,048 characters. The
+     * JSON policy characters can be any ASCII character from the space character to
+     * the end of the valid character list (\u0020 through \u00FF). It can also include
+     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
+     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -502,16 +503,16 @@ namespace Model
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters.
-     * The JSON policy characters can be any ASCII character from the space character
-     * to the end of the valid character list (\u0020 through \u00FF). It can also
-     * include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>The characters in this parameter count towards the
-     * 2048 character session policy guideline. However, an AWS conversion compresses
-     * the session policies into a packed binary format that has a separate limit. This
-     * is the enforced limit. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policy is to the upper size limit.</p>
-     * </note>
+     * for both inline and managed session policies can't exceed 2,048 characters. The
+     * JSON policy characters can be any ASCII character from the space character to
+     * the end of the valid character list (\u0020 through \u00FF). It can also include
+     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
+     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -526,16 +527,16 @@ namespace Model
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters.
-     * The JSON policy characters can be any ASCII character from the space character
-     * to the end of the valid character list (\u0020 through \u00FF). It can also
-     * include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>The characters in this parameter count towards the
-     * 2048 character session policy guideline. However, an AWS conversion compresses
-     * the session policies into a packed binary format that has a separate limit. This
-     * is the enforced limit. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policy is to the upper size limit.</p>
-     * </note>
+     * for both inline and managed session policies can't exceed 2,048 characters. The
+     * JSON policy characters can be any ASCII character from the space character to
+     * the end of the valid character list (\u0020 through \u00FF). It can also include
+     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
+     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -550,16 +551,16 @@ namespace Model
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters.
-     * The JSON policy characters can be any ASCII character from the space character
-     * to the end of the valid character list (\u0020 through \u00FF). It can also
-     * include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>The characters in this parameter count towards the
-     * 2048 character session policy guideline. However, an AWS conversion compresses
-     * the session policies into a packed binary format that has a separate limit. This
-     * is the enforced limit. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policy is to the upper size limit.</p>
-     * </note>
+     * for both inline and managed session policies can't exceed 2,048 characters. The
+     * JSON policy characters can be any ASCII character from the space character to
+     * the end of the valid character list (\u0020 through \u00FF). It can also include
+     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
+     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note>
      */
     inline AssumeRoleRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -574,16 +575,16 @@ namespace Model
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters.
-     * The JSON policy characters can be any ASCII character from the space character
-     * to the end of the valid character list (\u0020 through \u00FF). It can also
-     * include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>The characters in this parameter count towards the
-     * 2048 character session policy guideline. However, an AWS conversion compresses
-     * the session policies into a packed binary format that has a separate limit. This
-     * is the enforced limit. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policy is to the upper size limit.</p>
-     * </note>
+     * for both inline and managed session policies can't exceed 2,048 characters. The
+     * JSON policy characters can be any ASCII character from the space character to
+     * the end of the valid character list (\u0020 through \u00FF). It can also include
+     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
+     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note>
      */
     inline AssumeRoleRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -598,16 +599,16 @@ namespace Model
      * role that is being assumed. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
      * Policies</a> in the <i>IAM User Guide</i>.</p> <p>The plain text that you use
-     * for both inline and managed session policies shouldn't exceed 2048 characters.
-     * The JSON policy characters can be any ASCII character from the space character
-     * to the end of the valid character list (\u0020 through \u00FF). It can also
-     * include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
-     * characters.</p> <note> <p>The characters in this parameter count towards the
-     * 2048 character session policy guideline. However, an AWS conversion compresses
-     * the session policies into a packed binary format that has a separate limit. This
-     * is the enforced limit. The <code>PackedPolicySize</code> response element
-     * indicates by percentage how close the policy is to the upper size limit.</p>
-     * </note>
+     * for both inline and managed session policies can't exceed 2,048 characters. The
+     * JSON policy characters can be any ASCII character from the space character to
+     * the end of the valid character list (\u0020 through \u00FF). It can also include
+     * the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
+     * characters.</p> <note> <p>An AWS conversion compresses the passed session
+     * policies and session tags into a packed binary format that has a separate limit.
+     * Your request can fail for this limit even if your plain text meets the other
+     * requirements. The <code>PackedPolicySize</code> response element indicates by
+     * percentage how close the policies and tags for your request are to the upper
+     * size limit. </p> </note>
      */
     inline AssumeRoleRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 
@@ -699,6 +700,405 @@ namespace Model
      * the <i>IAM User Guide</i>.</p> </note>
      */
     inline AssumeRoleRequest& WithDurationSeconds(int value) { SetDurationSeconds(value); return *this;}
+
+
+    /**
+     * <p>A list of session tags that you want to pass. Each session tag consists of a
+     * key name and an associated value. For more information about session tags, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
+     * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
+     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
+     * these and additional limits, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plain text meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * <p>You can pass a session tag with the same key as a tag that is already
+     * attached to the role. When you do, session tags override a role tag with the
+     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
+     * preserved. This means that you cannot have separate <code>Department</code> and
+     * <code>department</code> tag keys. Assume that the role has the
+     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * <code>department</code>=<code>engineering</code> session tag.
+     * <code>Department</code> and <code>department</code> are not saved as separate
+     * tags, and the session tag passed in the request takes precedence over the role
+     * tag.</p> <p>Additionally, if you used temporary credentials to perform this
+     * operation, the new session inherits any transitive session tags from the calling
+     * session. If you pass a session tag with the same key as an inherited tag, the
+     * operation fails. To view the inherited tags for a session, see the AWS
+     * CloudTrail logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of session tags that you want to pass. Each session tag consists of a
+     * key name and an associated value. For more information about session tags, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
+     * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
+     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
+     * these and additional limits, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plain text meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * <p>You can pass a session tag with the same key as a tag that is already
+     * attached to the role. When you do, session tags override a role tag with the
+     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
+     * preserved. This means that you cannot have separate <code>Department</code> and
+     * <code>department</code> tag keys. Assume that the role has the
+     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * <code>department</code>=<code>engineering</code> session tag.
+     * <code>Department</code> and <code>department</code> are not saved as separate
+     * tags, and the session tag passed in the request takes precedence over the role
+     * tag.</p> <p>Additionally, if you used temporary credentials to perform this
+     * operation, the new session inherits any transitive session tags from the calling
+     * session. If you pass a session tag with the same key as an inherited tag, the
+     * operation fails. To view the inherited tags for a session, see the AWS
+     * CloudTrail logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of session tags that you want to pass. Each session tag consists of a
+     * key name and an associated value. For more information about session tags, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
+     * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
+     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
+     * these and additional limits, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plain text meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * <p>You can pass a session tag with the same key as a tag that is already
+     * attached to the role. When you do, session tags override a role tag with the
+     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
+     * preserved. This means that you cannot have separate <code>Department</code> and
+     * <code>department</code> tag keys. Assume that the role has the
+     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * <code>department</code>=<code>engineering</code> session tag.
+     * <code>Department</code> and <code>department</code> are not saved as separate
+     * tags, and the session tag passed in the request takes precedence over the role
+     * tag.</p> <p>Additionally, if you used temporary credentials to perform this
+     * operation, the new session inherits any transitive session tags from the calling
+     * session. If you pass a session tag with the same key as an inherited tag, the
+     * operation fails. To view the inherited tags for a session, see the AWS
+     * CloudTrail logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of session tags that you want to pass. Each session tag consists of a
+     * key name and an associated value. For more information about session tags, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
+     * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
+     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
+     * these and additional limits, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plain text meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * <p>You can pass a session tag with the same key as a tag that is already
+     * attached to the role. When you do, session tags override a role tag with the
+     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
+     * preserved. This means that you cannot have separate <code>Department</code> and
+     * <code>department</code> tag keys. Assume that the role has the
+     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * <code>department</code>=<code>engineering</code> session tag.
+     * <code>Department</code> and <code>department</code> are not saved as separate
+     * tags, and the session tag passed in the request takes precedence over the role
+     * tag.</p> <p>Additionally, if you used temporary credentials to perform this
+     * operation, the new session inherits any transitive session tags from the calling
+     * session. If you pass a session tag with the same key as an inherited tag, the
+     * operation fails. To view the inherited tags for a session, see the AWS
+     * CloudTrail logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of session tags that you want to pass. Each session tag consists of a
+     * key name and an associated value. For more information about session tags, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
+     * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
+     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
+     * these and additional limits, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plain text meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * <p>You can pass a session tag with the same key as a tag that is already
+     * attached to the role. When you do, session tags override a role tag with the
+     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
+     * preserved. This means that you cannot have separate <code>Department</code> and
+     * <code>department</code> tag keys. Assume that the role has the
+     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * <code>department</code>=<code>engineering</code> session tag.
+     * <code>Department</code> and <code>department</code> are not saved as separate
+     * tags, and the session tag passed in the request takes precedence over the role
+     * tag.</p> <p>Additionally, if you used temporary credentials to perform this
+     * operation, the new session inherits any transitive session tags from the calling
+     * session. If you pass a session tag with the same key as an inherited tag, the
+     * operation fails. To view the inherited tags for a session, see the AWS
+     * CloudTrail logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline AssumeRoleRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of session tags that you want to pass. Each session tag consists of a
+     * key name and an associated value. For more information about session tags, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
+     * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
+     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
+     * these and additional limits, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plain text meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * <p>You can pass a session tag with the same key as a tag that is already
+     * attached to the role. When you do, session tags override a role tag with the
+     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
+     * preserved. This means that you cannot have separate <code>Department</code> and
+     * <code>department</code> tag keys. Assume that the role has the
+     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * <code>department</code>=<code>engineering</code> session tag.
+     * <code>Department</code> and <code>department</code> are not saved as separate
+     * tags, and the session tag passed in the request takes precedence over the role
+     * tag.</p> <p>Additionally, if you used temporary credentials to perform this
+     * operation, the new session inherits any transitive session tags from the calling
+     * session. If you pass a session tag with the same key as an inherited tag, the
+     * operation fails. To view the inherited tags for a session, see the AWS
+     * CloudTrail logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline AssumeRoleRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of session tags that you want to pass. Each session tag consists of a
+     * key name and an associated value. For more information about session tags, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
+     * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
+     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
+     * these and additional limits, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plain text meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * <p>You can pass a session tag with the same key as a tag that is already
+     * attached to the role. When you do, session tags override a role tag with the
+     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
+     * preserved. This means that you cannot have separate <code>Department</code> and
+     * <code>department</code> tag keys. Assume that the role has the
+     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * <code>department</code>=<code>engineering</code> session tag.
+     * <code>Department</code> and <code>department</code> are not saved as separate
+     * tags, and the session tag passed in the request takes precedence over the role
+     * tag.</p> <p>Additionally, if you used temporary credentials to perform this
+     * operation, the new session inherits any transitive session tags from the calling
+     * session. If you pass a session tag with the same key as an inherited tag, the
+     * operation fails. To view the inherited tags for a session, see the AWS
+     * CloudTrail logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline AssumeRoleRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of session tags that you want to pass. Each session tag consists of a
+     * key name and an associated value. For more information about session tags, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging
+     * AWS STS Sessions</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is
+     * optional. You can pass up to 50 session tags. The plain text session tag keys
+     * can’t exceed 128 characters, and the values can’t exceed 256 characters. For
+     * these and additional limits, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
+     * and STS Character Limits</a> in the <i>IAM User Guide</i>.</p> <note> <p>An AWS
+     * conversion compresses the passed session policies and session tags into a packed
+     * binary format that has a separate limit. Your request can fail for this limit
+     * even if your plain text meets the other requirements. The
+     * <code>PackedPolicySize</code> response element indicates by percentage how close
+     * the policies and tags for your request are to the upper size limit. </p> </note>
+     * <p>You can pass a session tag with the same key as a tag that is already
+     * attached to the role. When you do, session tags override a role tag with the
+     * same key. </p> <p>Tag key–value pairs are not case sensitive, but case is
+     * preserved. This means that you cannot have separate <code>Department</code> and
+     * <code>department</code> tag keys. Assume that the role has the
+     * <code>Department</code>=<code>Marketing</code> tag and you pass the
+     * <code>department</code>=<code>engineering</code> session tag.
+     * <code>Department</code> and <code>department</code> are not saved as separate
+     * tags, and the session tag passed in the request takes precedence over the role
+     * tag.</p> <p>Additionally, if you used temporary credentials to perform this
+     * operation, the new session inherits any transitive session tags from the calling
+     * session. If you pass a session tag with the same key as an inherited tag, the
+     * operation fails. To view the inherited tags for a session, see the AWS
+     * CloudTrail logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing
+     * Session Tags in CloudTrail</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline AssumeRoleRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of keys for session tags that you want to set as transitive. If you
+     * set a tag key as transitive, the corresponding key and value passes to
+     * subsequent sessions in a role chain. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining
+     * Roles with Session Tags</a> in the <i>IAM User Guide</i>.</p> <p>This parameter
+     * is optional. When you set session tags as transitive, the session policy and
+     * session tags packed binary limit is not affected.</p> <p>If you choose not to
+     * specify a transitive tag key, then no tags are passed from this session to any
+     * subsequent sessions.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetTransitiveTagKeys() const{ return m_transitiveTagKeys; }
+
+    /**
+     * <p>A list of keys for session tags that you want to set as transitive. If you
+     * set a tag key as transitive, the corresponding key and value passes to
+     * subsequent sessions in a role chain. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining
+     * Roles with Session Tags</a> in the <i>IAM User Guide</i>.</p> <p>This parameter
+     * is optional. When you set session tags as transitive, the session policy and
+     * session tags packed binary limit is not affected.</p> <p>If you choose not to
+     * specify a transitive tag key, then no tags are passed from this session to any
+     * subsequent sessions.</p>
+     */
+    inline bool TransitiveTagKeysHasBeenSet() const { return m_transitiveTagKeysHasBeenSet; }
+
+    /**
+     * <p>A list of keys for session tags that you want to set as transitive. If you
+     * set a tag key as transitive, the corresponding key and value passes to
+     * subsequent sessions in a role chain. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining
+     * Roles with Session Tags</a> in the <i>IAM User Guide</i>.</p> <p>This parameter
+     * is optional. When you set session tags as transitive, the session policy and
+     * session tags packed binary limit is not affected.</p> <p>If you choose not to
+     * specify a transitive tag key, then no tags are passed from this session to any
+     * subsequent sessions.</p>
+     */
+    inline void SetTransitiveTagKeys(const Aws::Vector<Aws::String>& value) { m_transitiveTagKeysHasBeenSet = true; m_transitiveTagKeys = value; }
+
+    /**
+     * <p>A list of keys for session tags that you want to set as transitive. If you
+     * set a tag key as transitive, the corresponding key and value passes to
+     * subsequent sessions in a role chain. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining
+     * Roles with Session Tags</a> in the <i>IAM User Guide</i>.</p> <p>This parameter
+     * is optional. When you set session tags as transitive, the session policy and
+     * session tags packed binary limit is not affected.</p> <p>If you choose not to
+     * specify a transitive tag key, then no tags are passed from this session to any
+     * subsequent sessions.</p>
+     */
+    inline void SetTransitiveTagKeys(Aws::Vector<Aws::String>&& value) { m_transitiveTagKeysHasBeenSet = true; m_transitiveTagKeys = std::move(value); }
+
+    /**
+     * <p>A list of keys for session tags that you want to set as transitive. If you
+     * set a tag key as transitive, the corresponding key and value passes to
+     * subsequent sessions in a role chain. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining
+     * Roles with Session Tags</a> in the <i>IAM User Guide</i>.</p> <p>This parameter
+     * is optional. When you set session tags as transitive, the session policy and
+     * session tags packed binary limit is not affected.</p> <p>If you choose not to
+     * specify a transitive tag key, then no tags are passed from this session to any
+     * subsequent sessions.</p>
+     */
+    inline AssumeRoleRequest& WithTransitiveTagKeys(const Aws::Vector<Aws::String>& value) { SetTransitiveTagKeys(value); return *this;}
+
+    /**
+     * <p>A list of keys for session tags that you want to set as transitive. If you
+     * set a tag key as transitive, the corresponding key and value passes to
+     * subsequent sessions in a role chain. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining
+     * Roles with Session Tags</a> in the <i>IAM User Guide</i>.</p> <p>This parameter
+     * is optional. When you set session tags as transitive, the session policy and
+     * session tags packed binary limit is not affected.</p> <p>If you choose not to
+     * specify a transitive tag key, then no tags are passed from this session to any
+     * subsequent sessions.</p>
+     */
+    inline AssumeRoleRequest& WithTransitiveTagKeys(Aws::Vector<Aws::String>&& value) { SetTransitiveTagKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of keys for session tags that you want to set as transitive. If you
+     * set a tag key as transitive, the corresponding key and value passes to
+     * subsequent sessions in a role chain. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining
+     * Roles with Session Tags</a> in the <i>IAM User Guide</i>.</p> <p>This parameter
+     * is optional. When you set session tags as transitive, the session policy and
+     * session tags packed binary limit is not affected.</p> <p>If you choose not to
+     * specify a transitive tag key, then no tags are passed from this session to any
+     * subsequent sessions.</p>
+     */
+    inline AssumeRoleRequest& AddTransitiveTagKeys(const Aws::String& value) { m_transitiveTagKeysHasBeenSet = true; m_transitiveTagKeys.push_back(value); return *this; }
+
+    /**
+     * <p>A list of keys for session tags that you want to set as transitive. If you
+     * set a tag key as transitive, the corresponding key and value passes to
+     * subsequent sessions in a role chain. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining
+     * Roles with Session Tags</a> in the <i>IAM User Guide</i>.</p> <p>This parameter
+     * is optional. When you set session tags as transitive, the session policy and
+     * session tags packed binary limit is not affected.</p> <p>If you choose not to
+     * specify a transitive tag key, then no tags are passed from this session to any
+     * subsequent sessions.</p>
+     */
+    inline AssumeRoleRequest& AddTransitiveTagKeys(Aws::String&& value) { m_transitiveTagKeysHasBeenSet = true; m_transitiveTagKeys.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>A list of keys for session tags that you want to set as transitive. If you
+     * set a tag key as transitive, the corresponding key and value passes to
+     * subsequent sessions in a role chain. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html#id_session-tags_role-chaining">Chaining
+     * Roles with Session Tags</a> in the <i>IAM User Guide</i>.</p> <p>This parameter
+     * is optional. When you set session tags as transitive, the session policy and
+     * session tags packed binary limit is not affected.</p> <p>If you choose not to
+     * specify a transitive tag key, then no tags are passed from this session to any
+     * subsequent sessions.</p>
+     */
+    inline AssumeRoleRequest& AddTransitiveTagKeys(const char* value) { m_transitiveTagKeysHasBeenSet = true; m_transitiveTagKeys.push_back(value); return *this; }
 
 
     /**
@@ -1055,6 +1455,12 @@ namespace Model
 
     int m_durationSeconds;
     bool m_durationSecondsHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+
+    Aws::Vector<Aws::String> m_transitiveTagKeys;
+    bool m_transitiveTagKeysHasBeenSet;
 
     Aws::String m_externalId;
     bool m_externalIdHasBeenSet;

@@ -35,10 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>An attribute of a schema, which defines a field of a dataset. A schema
-   * attribute is required for every field in a dataset. The <a>Schema</a> object
-   * contains an array of <code>SchemaAttribute</code> objects.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An attribute of a schema, which defines a dataset field. A schema attribute
+   * is required for every field in a dataset. The <a>Schema</a> object contains an
+   * array of <code>SchemaAttribute</code> objects.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/SchemaAttribute">AWS
    * API Reference</a></p>
    */

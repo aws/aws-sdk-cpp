@@ -32,6 +32,7 @@ namespace Aws
 
         static const int INSTALLED_HASH = HashingUtils::HashString("INSTALLED");
         static const int INSTALLED_OTHER_HASH = HashingUtils::HashString("INSTALLED_OTHER");
+        static const int INSTALLED_PENDING_REBOOT_HASH = HashingUtils::HashString("INSTALLED_PENDING_REBOOT");
         static const int INSTALLED_REJECTED_HASH = HashingUtils::HashString("INSTALLED_REJECTED");
         static const int MISSING_HASH = HashingUtils::HashString("MISSING");
         static const int NOT_APPLICABLE_HASH = HashingUtils::HashString("NOT_APPLICABLE");
@@ -48,6 +49,10 @@ namespace Aws
           else if (hashCode == INSTALLED_OTHER_HASH)
           {
             return PatchComplianceDataState::INSTALLED_OTHER;
+          }
+          else if (hashCode == INSTALLED_PENDING_REBOOT_HASH)
+          {
+            return PatchComplianceDataState::INSTALLED_PENDING_REBOOT;
           }
           else if (hashCode == INSTALLED_REJECTED_HASH)
           {
@@ -83,6 +88,8 @@ namespace Aws
             return "INSTALLED";
           case PatchComplianceDataState::INSTALLED_OTHER:
             return "INSTALLED_OTHER";
+          case PatchComplianceDataState::INSTALLED_PENDING_REBOOT:
+            return "INSTALLED_PENDING_REBOOT";
           case PatchComplianceDataState::INSTALLED_REJECTED:
             return "INSTALLED_REJECTED";
           case PatchComplianceDataState::MISSING:

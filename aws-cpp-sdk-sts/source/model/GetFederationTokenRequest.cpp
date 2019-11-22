@@ -25,7 +25,8 @@ GetFederationTokenRequest::GetFederationTokenRequest() :
     m_policyHasBeenSet(false),
     m_policyArnsHasBeenSet(false),
     m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false)
+    m_durationSecondsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,16 @@ Aws::String GetFederationTokenRequest::SerializePayload() const
   if(m_durationSecondsHasBeenSet)
   {
     ss << "DurationSeconds=" << m_durationSeconds << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
   }
 
   ss << "Version=2011-06-15";

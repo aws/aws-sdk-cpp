@@ -76,25 +76,25 @@ namespace Model
 
 
     /**
-     * <p>The difference between the predicted value and actual value over the
+     * <p>The difference between the predicted value and the actual value over the
      * quantile, weighted (normalized) by dividing by the sum over all quantiles.</p>
      */
     inline double GetLossValue() const{ return m_lossValue; }
 
     /**
-     * <p>The difference between the predicted value and actual value over the
+     * <p>The difference between the predicted value and the actual value over the
      * quantile, weighted (normalized) by dividing by the sum over all quantiles.</p>
      */
     inline bool LossValueHasBeenSet() const { return m_lossValueHasBeenSet; }
 
     /**
-     * <p>The difference between the predicted value and actual value over the
+     * <p>The difference between the predicted value and the actual value over the
      * quantile, weighted (normalized) by dividing by the sum over all quantiles.</p>
      */
     inline void SetLossValue(double value) { m_lossValueHasBeenSet = true; m_lossValue = value; }
 
     /**
-     * <p>The difference between the predicted value and actual value over the
+     * <p>The difference between the predicted value and the actual value over the
      * quantile, weighted (normalized) by dividing by the sum over all quantiles.</p>
      */
     inline WeightedQuantileLoss& WithLossValue(double value) { SetLossValue(value); return *this;}

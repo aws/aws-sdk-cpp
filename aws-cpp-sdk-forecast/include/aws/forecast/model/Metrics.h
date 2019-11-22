@@ -35,9 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides metrics used to evaluate the performance of a predictor. This object
-   * is part of the <a>WindowSummary</a> object.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Metrics">AWS
+   * <p>Provides metrics that are used to evaluate the performance of a predictor.
+   * This object is part of the <a>WindowSummary</a> object.</p><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Metrics">AWS
    * API Reference</a></p>
    */
   class AWS_FORECASTSERVICE_API Metrics

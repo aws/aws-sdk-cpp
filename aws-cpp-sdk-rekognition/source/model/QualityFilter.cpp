@@ -32,6 +32,9 @@ namespace Aws
 
         static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int AUTO_HASH = HashingUtils::HashString("AUTO");
+        static const int LOW_HASH = HashingUtils::HashString("LOW");
+        static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
+        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
 
 
         QualityFilter GetQualityFilterForName(const Aws::String& name)
@@ -44,6 +47,18 @@ namespace Aws
           else if (hashCode == AUTO_HASH)
           {
             return QualityFilter::AUTO;
+          }
+          else if (hashCode == LOW_HASH)
+          {
+            return QualityFilter::LOW;
+          }
+          else if (hashCode == MEDIUM_HASH)
+          {
+            return QualityFilter::MEDIUM;
+          }
+          else if (hashCode == HIGH_HASH)
+          {
+            return QualityFilter::HIGH;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +78,12 @@ namespace Aws
             return "NONE";
           case QualityFilter::AUTO:
             return "AUTO";
+          case QualityFilter::LOW:
+            return "LOW";
+          case QualityFilter::MEDIUM:
+            return "MEDIUM";
+          case QualityFilter::HIGH:
+            return "HIGH";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

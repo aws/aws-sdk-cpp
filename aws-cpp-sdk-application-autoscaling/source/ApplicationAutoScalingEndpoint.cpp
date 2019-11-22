@@ -35,7 +35,7 @@ namespace ApplicationAutoScalingEndpoint
     auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
 
     Aws::StringStream ss;
-    ss << "autoscaling" << ".";
+    ss << "application-autoscaling" << ".";
 
     if(useDualStack)
     {

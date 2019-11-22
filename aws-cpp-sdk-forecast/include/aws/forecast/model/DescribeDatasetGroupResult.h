@@ -167,57 +167,27 @@ namespace Model
 
 
     /**
-     * <p>The domain associated with the dataset group. The <code>Domain</code> and
-     * <code>DatasetType</code> that you choose determine the fields that must be
-     * present in the training data that you import to the dataset. For example, if you
-     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your
-     * data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+     * <p>The domain associated with the dataset group.</p>
      */
     inline const Domain& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The domain associated with the dataset group. The <code>Domain</code> and
-     * <code>DatasetType</code> that you choose determine the fields that must be
-     * present in the training data that you import to the dataset. For example, if you
-     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your
-     * data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+     * <p>The domain associated with the dataset group.</p>
      */
     inline void SetDomain(const Domain& value) { m_domain = value; }
 
     /**
-     * <p>The domain associated with the dataset group. The <code>Domain</code> and
-     * <code>DatasetType</code> that you choose determine the fields that must be
-     * present in the training data that you import to the dataset. For example, if you
-     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your
-     * data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+     * <p>The domain associated with the dataset group.</p>
      */
     inline void SetDomain(Domain&& value) { m_domain = std::move(value); }
 
     /**
-     * <p>The domain associated with the dataset group. The <code>Domain</code> and
-     * <code>DatasetType</code> that you choose determine the fields that must be
-     * present in the training data that you import to the dataset. For example, if you
-     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your
-     * data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+     * <p>The domain associated with the dataset group.</p>
      */
     inline DescribeDatasetGroupResult& WithDomain(const Domain& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The domain associated with the dataset group. The <code>Domain</code> and
-     * <code>DatasetType</code> that you choose determine the fields that must be
-     * present in the training data that you import to the dataset. For example, if you
-     * choose the <code>RETAIL</code> domain and <code>TARGET_TIME_SERIES</code> as the
-     * <code>DatasetType</code>, Amazon Forecast requires <code>item_id</code>,
-     * <code>timestamp</code>, and <code>demand</code> fields to be present in your
-     * data. For more information, see <a>howitworks-datasets-groups</a>.</p>
+     * <p>The domain associated with the dataset group.</p>
      */
     inline DescribeDatasetGroupResult& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
 
@@ -229,10 +199,10 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a>
-     * operation is called.</p> <note> <p>The <code>Status</code> of the dataset group
-     * must be <code>ACTIVE</code> before creating a predictor using the dataset
-     * group.</p> </note>
+     * <p>The <code>UPDATE</code> states apply when you call the
+     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
+     * group to create a predictor.</p> </note>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -243,10 +213,10 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a>
-     * operation is called.</p> <note> <p>The <code>Status</code> of the dataset group
-     * must be <code>ACTIVE</code> before creating a predictor using the dataset
-     * group.</p> </note>
+     * <p>The <code>UPDATE</code> states apply when you call the
+     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
+     * group to create a predictor.</p> </note>
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
 
@@ -257,10 +227,10 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a>
-     * operation is called.</p> <note> <p>The <code>Status</code> of the dataset group
-     * must be <code>ACTIVE</code> before creating a predictor using the dataset
-     * group.</p> </note>
+     * <p>The <code>UPDATE</code> states apply when you call the
+     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
+     * group to create a predictor.</p> </note>
      */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
@@ -271,10 +241,10 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a>
-     * operation is called.</p> <note> <p>The <code>Status</code> of the dataset group
-     * must be <code>ACTIVE</code> before creating a predictor using the dataset
-     * group.</p> </note>
+     * <p>The <code>UPDATE</code> states apply when you call the
+     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
+     * group to create a predictor.</p> </note>
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
 
@@ -285,10 +255,10 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a>
-     * operation is called.</p> <note> <p>The <code>Status</code> of the dataset group
-     * must be <code>ACTIVE</code> before creating a predictor using the dataset
-     * group.</p> </note>
+     * <p>The <code>UPDATE</code> states apply when you call the
+     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
+     * group to create a predictor.</p> </note>
      */
     inline DescribeDatasetGroupResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -299,10 +269,10 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a>
-     * operation is called.</p> <note> <p>The <code>Status</code> of the dataset group
-     * must be <code>ACTIVE</code> before creating a predictor using the dataset
-     * group.</p> </note>
+     * <p>The <code>UPDATE</code> states apply when you call the
+     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
+     * group to create a predictor.</p> </note>
      */
     inline DescribeDatasetGroupResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -313,10 +283,10 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
-     * <p>The <code>UPDATE</code> states apply when the <a>UpdateDatasetGroup</a>
-     * operation is called.</p> <note> <p>The <code>Status</code> of the dataset group
-     * must be <code>ACTIVE</code> before creating a predictor using the dataset
-     * group.</p> </note>
+     * <p>The <code>UPDATE</code> states apply when you call the
+     * <a>UpdateDatasetGroup</a> operation.</p> <note> <p>The <code>Status</code> of
+     * the dataset group must be <code>ACTIVE</code> before you can use the dataset
+     * group to create a predictor.</p> </note>
      */
     inline DescribeDatasetGroupResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -350,35 +320,40 @@ namespace Model
     /**
      * <p>When the dataset group was created or last updated from a call to the
      * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDatasetGroup</code> call.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
 
     /**
      * <p>When the dataset group was created or last updated from a call to the
      * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDatasetGroup</code> call.</p>
      */
     inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
 
     /**
      * <p>When the dataset group was created or last updated from a call to the
      * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDatasetGroup</code> call.</p>
      */
     inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
 
     /**
      * <p>When the dataset group was created or last updated from a call to the
      * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDatasetGroup</code> call.</p>
      */
     inline DescribeDatasetGroupResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
 
     /**
      * <p>When the dataset group was created or last updated from a call to the
      * <a>UpdateDatasetGroup</a> operation. While the dataset group is being updated,
-     * <code>LastModificationTime</code> is the current query time.</p>
+     * <code>LastModificationTime</code> is the current time of the
+     * <code>DescribeDatasetGroup</code> call.</p>
      */
     inline DescribeDatasetGroupResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 

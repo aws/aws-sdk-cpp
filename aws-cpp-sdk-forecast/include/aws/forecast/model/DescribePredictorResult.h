@@ -22,6 +22,7 @@
 #include <aws/forecast/model/InputDataConfig.h>
 #include <aws/forecast/model/FeaturizationConfig.h>
 #include <aws/forecast/model/EncryptionConfig.h>
+#include <aws/forecast/model/PredictorExecutionDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -194,102 +195,117 @@ namespace Model
 
 
     /**
-     * <p>Whether the predictor is set to perform HPO.</p>
+     * <p>Whether the predictor is set to perform hyperparameter optimization
+     * (HPO).</p>
      */
     inline bool GetPerformHPO() const{ return m_performHPO; }
 
     /**
-     * <p>Whether the predictor is set to perform HPO.</p>
+     * <p>Whether the predictor is set to perform hyperparameter optimization
+     * (HPO).</p>
      */
     inline void SetPerformHPO(bool value) { m_performHPO = value; }
 
     /**
-     * <p>Whether the predictor is set to perform HPO.</p>
+     * <p>Whether the predictor is set to perform hyperparameter optimization
+     * (HPO).</p>
      */
     inline DescribePredictorResult& WithPerformHPO(bool value) { SetPerformHPO(value); return *this;}
 
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The default training parameters or overrides selected during model training.
+     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
+     * algorithms, the optimized values for the chosen hyperparameters are returned.
+     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTrainingParameters() const{ return m_trainingParameters; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The default training parameters or overrides selected during model training.
+     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
+     * algorithms, the optimized values for the chosen hyperparameters are returned.
+     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline void SetTrainingParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_trainingParameters = value; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The default training parameters or overrides selected during model training.
+     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
+     * algorithms, the optimized values for the chosen hyperparameters are returned.
+     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline void SetTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_trainingParameters = std::move(value); }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The default training parameters or overrides selected during model training.
+     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
+     * algorithms, the optimized values for the chosen hyperparameters are returned.
+     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& WithTrainingParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetTrainingParameters(value); return *this;}
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The default training parameters or overrides selected during model training.
+     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
+     * algorithms, the optimized values for the chosen hyperparameters are returned.
+     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& WithTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetTrainingParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The default training parameters or overrides selected during model training.
+     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
+     * algorithms, the optimized values for the chosen hyperparameters are returned.
+     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(const Aws::String& key, const Aws::String& value) { m_trainingParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The default training parameters or overrides selected during model training.
+     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
+     * algorithms, the optimized values for the chosen hyperparameters are returned.
+     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(Aws::String&& key, const Aws::String& value) { m_trainingParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The default training parameters or overrides selected during model training.
+     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
+     * algorithms, the optimized values for the chosen hyperparameters are returned.
+     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(const Aws::String& key, Aws::String&& value) { m_trainingParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The default training parameters or overrides selected during model training.
+     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
+     * algorithms, the optimized values for the chosen hyperparameters are returned.
+     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(Aws::String&& key, Aws::String&& value) { m_trainingParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The default training parameters or overrides selected during model training.
+     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
+     * algorithms, the optimized values for the chosen hyperparameters are returned.
+     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(const char* key, Aws::String&& value) { m_trainingParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The default training parameters or overrides selected during model training.
+     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
+     * algorithms, the optimized values for the chosen hyperparameters are returned.
+     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(Aws::String&& key, const char* value) { m_trainingParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The training parameters to override for model training. The parameters that
-     * you can override are listed in the individual algorithms in
-     * <a>aws-forecast-choosing-recipes</a>.</p>
+     * <p>The default training parameters or overrides selected during model training.
+     * If using the AutoML algorithm or if HPO is turned on while using the DeepAR+
+     * algorithms, the optimized values for the chosen hyperparameters are returned.
+     * For more information, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
     inline DescribePredictorResult& AddTrainingParameters(const char* key, const char* value) { m_trainingParameters.emplace(key, value); return *this; }
 
@@ -450,50 +466,86 @@ namespace Model
 
 
     /**
-     * <p>An array of ARNs of the dataset import jobs used to import training data for
-     * the predictor.</p>
+     * <p>Details on the the status and results of the backtests performed to evaluate
+     * the accuracy of the predictor. You specify the number of backtests to perform
+     * when you call the operation.</p>
+     */
+    inline const PredictorExecutionDetails& GetPredictorExecutionDetails() const{ return m_predictorExecutionDetails; }
+
+    /**
+     * <p>Details on the the status and results of the backtests performed to evaluate
+     * the accuracy of the predictor. You specify the number of backtests to perform
+     * when you call the operation.</p>
+     */
+    inline void SetPredictorExecutionDetails(const PredictorExecutionDetails& value) { m_predictorExecutionDetails = value; }
+
+    /**
+     * <p>Details on the the status and results of the backtests performed to evaluate
+     * the accuracy of the predictor. You specify the number of backtests to perform
+     * when you call the operation.</p>
+     */
+    inline void SetPredictorExecutionDetails(PredictorExecutionDetails&& value) { m_predictorExecutionDetails = std::move(value); }
+
+    /**
+     * <p>Details on the the status and results of the backtests performed to evaluate
+     * the accuracy of the predictor. You specify the number of backtests to perform
+     * when you call the operation.</p>
+     */
+    inline DescribePredictorResult& WithPredictorExecutionDetails(const PredictorExecutionDetails& value) { SetPredictorExecutionDetails(value); return *this;}
+
+    /**
+     * <p>Details on the the status and results of the backtests performed to evaluate
+     * the accuracy of the predictor. You specify the number of backtests to perform
+     * when you call the operation.</p>
+     */
+    inline DescribePredictorResult& WithPredictorExecutionDetails(PredictorExecutionDetails&& value) { SetPredictorExecutionDetails(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An array of the ARNs of the dataset import jobs used to import training data
+     * for the predictor.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDatasetImportJobArns() const{ return m_datasetImportJobArns; }
 
     /**
-     * <p>An array of ARNs of the dataset import jobs used to import training data for
-     * the predictor.</p>
+     * <p>An array of the ARNs of the dataset import jobs used to import training data
+     * for the predictor.</p>
      */
     inline void SetDatasetImportJobArns(const Aws::Vector<Aws::String>& value) { m_datasetImportJobArns = value; }
 
     /**
-     * <p>An array of ARNs of the dataset import jobs used to import training data for
-     * the predictor.</p>
+     * <p>An array of the ARNs of the dataset import jobs used to import training data
+     * for the predictor.</p>
      */
     inline void SetDatasetImportJobArns(Aws::Vector<Aws::String>&& value) { m_datasetImportJobArns = std::move(value); }
 
     /**
-     * <p>An array of ARNs of the dataset import jobs used to import training data for
-     * the predictor.</p>
+     * <p>An array of the ARNs of the dataset import jobs used to import training data
+     * for the predictor.</p>
      */
     inline DescribePredictorResult& WithDatasetImportJobArns(const Aws::Vector<Aws::String>& value) { SetDatasetImportJobArns(value); return *this;}
 
     /**
-     * <p>An array of ARNs of the dataset import jobs used to import training data for
-     * the predictor.</p>
+     * <p>An array of the ARNs of the dataset import jobs used to import training data
+     * for the predictor.</p>
      */
     inline DescribePredictorResult& WithDatasetImportJobArns(Aws::Vector<Aws::String>&& value) { SetDatasetImportJobArns(std::move(value)); return *this;}
 
     /**
-     * <p>An array of ARNs of the dataset import jobs used to import training data for
-     * the predictor.</p>
+     * <p>An array of the ARNs of the dataset import jobs used to import training data
+     * for the predictor.</p>
      */
     inline DescribePredictorResult& AddDatasetImportJobArns(const Aws::String& value) { m_datasetImportJobArns.push_back(value); return *this; }
 
     /**
-     * <p>An array of ARNs of the dataset import jobs used to import training data for
-     * the predictor.</p>
+     * <p>An array of the ARNs of the dataset import jobs used to import training data
+     * for the predictor.</p>
      */
     inline DescribePredictorResult& AddDatasetImportJobArns(Aws::String&& value) { m_datasetImportJobArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of ARNs of the dataset import jobs used to import training data for
-     * the predictor.</p>
+     * <p>An array of the ARNs of the dataset import jobs used to import training data
+     * for the predictor.</p>
      */
     inline DescribePredictorResult& AddDatasetImportJobArns(const char* value) { m_datasetImportJobArns.push_back(value); return *this; }
 
@@ -555,7 +607,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
@@ -567,7 +619,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
 
@@ -579,7 +631,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
 
@@ -591,7 +643,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline void SetStatus(const char* value) { m_status.assign(value); }
 
@@ -603,7 +655,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline DescribePredictorResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
@@ -615,7 +667,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline DescribePredictorResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -627,7 +679,7 @@ namespace Model
      * <code>DELETE_FAILED</code> </p> </li> <li> <p> <code>UPDATE_PENDING</code>,
      * <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code> </p> </li> </ul>
      * <note> <p>The <code>Status</code> of the predictor must be <code>ACTIVE</code>
-     * before using the predictor to create a forecast.</p> </note>
+     * before you can use the predictor to create a forecast.</p> </note>
      */
     inline DescribePredictorResult& WithStatus(const char* value) { SetStatus(value); return *this;}
 
@@ -695,47 +747,47 @@ namespace Model
 
 
     /**
-     * <p>Initially, the same as <code>CreationTime</code> (status is
-     * <code>CREATE_PENDING</code>). Updated when training starts (status changed to
-     * <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed
-     * to <code>ACTIVE</code>) or fails (status changed to
-     * <code>CREATE_FAILED</code>).</p>
+     * <p>Initially, the same as <code>CreationTime</code> (when the status is
+     * <code>CREATE_PENDING</code>). This value is updated when training starts (when
+     * the status changes to <code>CREATE_IN_PROGRESS</code>), and when training has
+     * completed (when the status changes to <code>ACTIVE</code>) or fails (when the
+     * status changes to <code>CREATE_FAILED</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
 
     /**
-     * <p>Initially, the same as <code>CreationTime</code> (status is
-     * <code>CREATE_PENDING</code>). Updated when training starts (status changed to
-     * <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed
-     * to <code>ACTIVE</code>) or fails (status changed to
-     * <code>CREATE_FAILED</code>).</p>
+     * <p>Initially, the same as <code>CreationTime</code> (when the status is
+     * <code>CREATE_PENDING</code>). This value is updated when training starts (when
+     * the status changes to <code>CREATE_IN_PROGRESS</code>), and when training has
+     * completed (when the status changes to <code>ACTIVE</code>) or fails (when the
+     * status changes to <code>CREATE_FAILED</code>).</p>
      */
     inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
 
     /**
-     * <p>Initially, the same as <code>CreationTime</code> (status is
-     * <code>CREATE_PENDING</code>). Updated when training starts (status changed to
-     * <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed
-     * to <code>ACTIVE</code>) or fails (status changed to
-     * <code>CREATE_FAILED</code>).</p>
+     * <p>Initially, the same as <code>CreationTime</code> (when the status is
+     * <code>CREATE_PENDING</code>). This value is updated when training starts (when
+     * the status changes to <code>CREATE_IN_PROGRESS</code>), and when training has
+     * completed (when the status changes to <code>ACTIVE</code>) or fails (when the
+     * status changes to <code>CREATE_FAILED</code>).</p>
      */
     inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
 
     /**
-     * <p>Initially, the same as <code>CreationTime</code> (status is
-     * <code>CREATE_PENDING</code>). Updated when training starts (status changed to
-     * <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed
-     * to <code>ACTIVE</code>) or fails (status changed to
-     * <code>CREATE_FAILED</code>).</p>
+     * <p>Initially, the same as <code>CreationTime</code> (when the status is
+     * <code>CREATE_PENDING</code>). This value is updated when training starts (when
+     * the status changes to <code>CREATE_IN_PROGRESS</code>), and when training has
+     * completed (when the status changes to <code>ACTIVE</code>) or fails (when the
+     * status changes to <code>CREATE_FAILED</code>).</p>
      */
     inline DescribePredictorResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
 
     /**
-     * <p>Initially, the same as <code>CreationTime</code> (status is
-     * <code>CREATE_PENDING</code>). Updated when training starts (status changed to
-     * <code>CREATE_IN_PROGRESS</code>), and when training is complete (status changed
-     * to <code>ACTIVE</code>) or fails (status changed to
-     * <code>CREATE_FAILED</code>).</p>
+     * <p>Initially, the same as <code>CreationTime</code> (when the status is
+     * <code>CREATE_PENDING</code>). This value is updated when training starts (when
+     * the status changes to <code>CREATE_IN_PROGRESS</code>), and when training has
+     * completed (when the status changes to <code>ACTIVE</code>) or fails (when the
+     * status changes to <code>CREATE_FAILED</code>).</p>
      */
     inline DescribePredictorResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 
@@ -764,6 +816,8 @@ namespace Model
     FeaturizationConfig m_featurizationConfig;
 
     EncryptionConfig m_encryptionConfig;
+
+    PredictorExecutionDetails m_predictorExecutionDetails;
 
     Aws::Vector<Aws::String> m_datasetImportJobArns;
 

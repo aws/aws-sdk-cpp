@@ -17,6 +17,7 @@
 #include <aws/forecast/ForecastService_EXPORTS.h>
 #include <aws/forecast/ForecastServiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -45,42 +46,42 @@ namespace Model
 
 
     /**
-     * <p>The name for the forecast.</p>
+     * <p>A name for the forecast.</p>
      */
     inline const Aws::String& GetForecastName() const{ return m_forecastName; }
 
     /**
-     * <p>The name for the forecast.</p>
+     * <p>A name for the forecast.</p>
      */
     inline bool ForecastNameHasBeenSet() const { return m_forecastNameHasBeenSet; }
 
     /**
-     * <p>The name for the forecast.</p>
+     * <p>A name for the forecast.</p>
      */
     inline void SetForecastName(const Aws::String& value) { m_forecastNameHasBeenSet = true; m_forecastName = value; }
 
     /**
-     * <p>The name for the forecast.</p>
+     * <p>A name for the forecast.</p>
      */
     inline void SetForecastName(Aws::String&& value) { m_forecastNameHasBeenSet = true; m_forecastName = std::move(value); }
 
     /**
-     * <p>The name for the forecast.</p>
+     * <p>A name for the forecast.</p>
      */
     inline void SetForecastName(const char* value) { m_forecastNameHasBeenSet = true; m_forecastName.assign(value); }
 
     /**
-     * <p>The name for the forecast.</p>
+     * <p>A name for the forecast.</p>
      */
     inline CreateForecastRequest& WithForecastName(const Aws::String& value) { SetForecastName(value); return *this;}
 
     /**
-     * <p>The name for the forecast.</p>
+     * <p>A name for the forecast.</p>
      */
     inline CreateForecastRequest& WithForecastName(Aws::String&& value) { SetForecastName(std::move(value)); return *this;}
 
     /**
-     * <p>The name for the forecast.</p>
+     * <p>A name for the forecast.</p>
      */
     inline CreateForecastRequest& WithForecastName(const char* value) { SetForecastName(value); return *this;}
 
@@ -133,6 +134,97 @@ namespace Model
      */
     inline CreateForecastRequest& WithPredictorArn(const char* value) { SetPredictorArn(value); return *this;}
 
+
+    /**
+     * <p>The quantiles at which probabilistic forecasts are generated. You can specify
+     * up to 5 quantiles per forecast. Accepted values include <code>0.01 to
+     * 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is
+     * different from the median (0.50) when the distribution is not symmetric (e.g.
+     * Beta, Negative Binomial). The default value is <code>["0.1", "0.5",
+     * "0.9"]</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetForecastTypes() const{ return m_forecastTypes; }
+
+    /**
+     * <p>The quantiles at which probabilistic forecasts are generated. You can specify
+     * up to 5 quantiles per forecast. Accepted values include <code>0.01 to
+     * 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is
+     * different from the median (0.50) when the distribution is not symmetric (e.g.
+     * Beta, Negative Binomial). The default value is <code>["0.1", "0.5",
+     * "0.9"]</code>.</p>
+     */
+    inline bool ForecastTypesHasBeenSet() const { return m_forecastTypesHasBeenSet; }
+
+    /**
+     * <p>The quantiles at which probabilistic forecasts are generated. You can specify
+     * up to 5 quantiles per forecast. Accepted values include <code>0.01 to
+     * 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is
+     * different from the median (0.50) when the distribution is not symmetric (e.g.
+     * Beta, Negative Binomial). The default value is <code>["0.1", "0.5",
+     * "0.9"]</code>.</p>
+     */
+    inline void SetForecastTypes(const Aws::Vector<Aws::String>& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = value; }
+
+    /**
+     * <p>The quantiles at which probabilistic forecasts are generated. You can specify
+     * up to 5 quantiles per forecast. Accepted values include <code>0.01 to
+     * 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is
+     * different from the median (0.50) when the distribution is not symmetric (e.g.
+     * Beta, Negative Binomial). The default value is <code>["0.1", "0.5",
+     * "0.9"]</code>.</p>
+     */
+    inline void SetForecastTypes(Aws::Vector<Aws::String>&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = std::move(value); }
+
+    /**
+     * <p>The quantiles at which probabilistic forecasts are generated. You can specify
+     * up to 5 quantiles per forecast. Accepted values include <code>0.01 to
+     * 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is
+     * different from the median (0.50) when the distribution is not symmetric (e.g.
+     * Beta, Negative Binomial). The default value is <code>["0.1", "0.5",
+     * "0.9"]</code>.</p>
+     */
+    inline CreateForecastRequest& WithForecastTypes(const Aws::Vector<Aws::String>& value) { SetForecastTypes(value); return *this;}
+
+    /**
+     * <p>The quantiles at which probabilistic forecasts are generated. You can specify
+     * up to 5 quantiles per forecast. Accepted values include <code>0.01 to
+     * 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is
+     * different from the median (0.50) when the distribution is not symmetric (e.g.
+     * Beta, Negative Binomial). The default value is <code>["0.1", "0.5",
+     * "0.9"]</code>.</p>
+     */
+    inline CreateForecastRequest& WithForecastTypes(Aws::Vector<Aws::String>&& value) { SetForecastTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The quantiles at which probabilistic forecasts are generated. You can specify
+     * up to 5 quantiles per forecast. Accepted values include <code>0.01 to
+     * 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is
+     * different from the median (0.50) when the distribution is not symmetric (e.g.
+     * Beta, Negative Binomial). The default value is <code>["0.1", "0.5",
+     * "0.9"]</code>.</p>
+     */
+    inline CreateForecastRequest& AddForecastTypes(const Aws::String& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The quantiles at which probabilistic forecasts are generated. You can specify
+     * up to 5 quantiles per forecast. Accepted values include <code>0.01 to
+     * 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is
+     * different from the median (0.50) when the distribution is not symmetric (e.g.
+     * Beta, Negative Binomial). The default value is <code>["0.1", "0.5",
+     * "0.9"]</code>.</p>
+     */
+    inline CreateForecastRequest& AddForecastTypes(Aws::String&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The quantiles at which probabilistic forecasts are generated. You can specify
+     * up to 5 quantiles per forecast. Accepted values include <code>0.01 to
+     * 0.99</code> (increments of .01 only) and <code>mean</code>. The mean forecast is
+     * different from the median (0.50) when the distribution is not symmetric (e.g.
+     * Beta, Negative Binomial). The default value is <code>["0.1", "0.5",
+     * "0.9"]</code>.</p>
+     */
+    inline CreateForecastRequest& AddForecastTypes(const char* value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(value); return *this; }
+
   private:
 
     Aws::String m_forecastName;
@@ -140,6 +232,9 @@ namespace Model
 
     Aws::String m_predictorArn;
     bool m_predictorArnHasBeenSet;
+
+    Aws::Vector<Aws::String> m_forecastTypes;
+    bool m_forecastTypesHasBeenSet;
   };
 
 } // namespace Model

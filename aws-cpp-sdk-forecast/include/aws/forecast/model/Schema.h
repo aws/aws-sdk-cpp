@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Defines the fields of a dataset. This object is specified in the
+   * <p>Defines the fields of a dataset. You specify this object in the
    * <a>CreateDataset</a> request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/Schema">AWS API
    * Reference</a></p>

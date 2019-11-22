@@ -35,7 +35,7 @@ namespace AutoScalingPlansEndpoint
     auto hash = Aws::Utils::HashingUtils::HashString(regionName.c_str());
 
     Aws::StringStream ss;
-    ss << "autoscaling" << ".";
+    ss << "autoscaling-plans" << ".";
 
     if(useDualStack)
     {

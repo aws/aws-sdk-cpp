@@ -215,6 +215,152 @@ namespace Model
 
 
     /**
+     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
+     * Defined by Amazon CloudWatch Logs</a>. </p>
+     */
+    inline const Aws::String& GetCloudWatchLogsArn() const{ return m_cloudWatchLogsArn; }
+
+    /**
+     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
+     * Defined by Amazon CloudWatch Logs</a>. </p>
+     */
+    inline bool CloudWatchLogsArnHasBeenSet() const { return m_cloudWatchLogsArnHasBeenSet; }
+
+    /**
+     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
+     * Defined by Amazon CloudWatch Logs</a>. </p>
+     */
+    inline void SetCloudWatchLogsArn(const Aws::String& value) { m_cloudWatchLogsArnHasBeenSet = true; m_cloudWatchLogsArn = value; }
+
+    /**
+     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
+     * Defined by Amazon CloudWatch Logs</a>. </p>
+     */
+    inline void SetCloudWatchLogsArn(Aws::String&& value) { m_cloudWatchLogsArnHasBeenSet = true; m_cloudWatchLogsArn = std::move(value); }
+
+    /**
+     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
+     * Defined by Amazon CloudWatch Logs</a>. </p>
+     */
+    inline void SetCloudWatchLogsArn(const char* value) { m_cloudWatchLogsArnHasBeenSet = true; m_cloudWatchLogsArn.assign(value); }
+
+    /**
+     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
+     * Defined by Amazon CloudWatch Logs</a>. </p>
+     */
+    inline LogsLocation& WithCloudWatchLogsArn(const Aws::String& value) { SetCloudWatchLogsArn(value); return *this;}
+
+    /**
+     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
+     * Defined by Amazon CloudWatch Logs</a>. </p>
+     */
+    inline LogsLocation& WithCloudWatchLogsArn(Aws::String&& value) { SetCloudWatchLogsArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The ARN of Amazon CloudWatch Logs for a build project. Its format is
+     * <code>arn:${Partition}:logs:${Region}:${Account}:log-group:${LogGroupName}:log-stream:${LogStreamName}</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazoncloudwatchlogs.html#amazoncloudwatchlogs-resources-for-iam-policies">Resources
+     * Defined by Amazon CloudWatch Logs</a>. </p>
+     */
+    inline LogsLocation& WithCloudWatchLogsArn(const char* value) { SetCloudWatchLogsArn(value); return *this;}
+
+
+    /**
+     * <p> The ARN of S3 logs for a build project. Its format is
+     * <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources
+     * Defined by Amazon S3</a>. </p>
+     */
+    inline const Aws::String& GetS3LogsArn() const{ return m_s3LogsArn; }
+
+    /**
+     * <p> The ARN of S3 logs for a build project. Its format is
+     * <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources
+     * Defined by Amazon S3</a>. </p>
+     */
+    inline bool S3LogsArnHasBeenSet() const { return m_s3LogsArnHasBeenSet; }
+
+    /**
+     * <p> The ARN of S3 logs for a build project. Its format is
+     * <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources
+     * Defined by Amazon S3</a>. </p>
+     */
+    inline void SetS3LogsArn(const Aws::String& value) { m_s3LogsArnHasBeenSet = true; m_s3LogsArn = value; }
+
+    /**
+     * <p> The ARN of S3 logs for a build project. Its format is
+     * <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources
+     * Defined by Amazon S3</a>. </p>
+     */
+    inline void SetS3LogsArn(Aws::String&& value) { m_s3LogsArnHasBeenSet = true; m_s3LogsArn = std::move(value); }
+
+    /**
+     * <p> The ARN of S3 logs for a build project. Its format is
+     * <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources
+     * Defined by Amazon S3</a>. </p>
+     */
+    inline void SetS3LogsArn(const char* value) { m_s3LogsArnHasBeenSet = true; m_s3LogsArn.assign(value); }
+
+    /**
+     * <p> The ARN of S3 logs for a build project. Its format is
+     * <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources
+     * Defined by Amazon S3</a>. </p>
+     */
+    inline LogsLocation& WithS3LogsArn(const Aws::String& value) { SetS3LogsArn(value); return *this;}
+
+    /**
+     * <p> The ARN of S3 logs for a build project. Its format is
+     * <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources
+     * Defined by Amazon S3</a>. </p>
+     */
+    inline LogsLocation& WithS3LogsArn(Aws::String&& value) { SetS3LogsArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The ARN of S3 logs for a build project. Its format is
+     * <code>arn:${Partition}:s3:::${BucketName}/${ObjectName}</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html#amazons3-resources-for-iam-policies">Resources
+     * Defined by Amazon S3</a>. </p>
+     */
+    inline LogsLocation& WithS3LogsArn(const char* value) { SetS3LogsArn(value); return *this;}
+
+
+    /**
      * <p> Information about Amazon CloudWatch Logs for a build project. </p>
      */
     inline const CloudWatchLogsConfig& GetCloudWatchLogs() const{ return m_cloudWatchLogs; }
@@ -288,6 +434,12 @@ namespace Model
 
     Aws::String m_s3DeepLink;
     bool m_s3DeepLinkHasBeenSet;
+
+    Aws::String m_cloudWatchLogsArn;
+    bool m_cloudWatchLogsArnHasBeenSet;
+
+    Aws::String m_s3LogsArn;
+    bool m_s3LogsArnHasBeenSet;
 
     CloudWatchLogsConfig m_cloudWatchLogs;
     bool m_cloudWatchLogsHasBeenSet;

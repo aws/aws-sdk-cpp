@@ -49,56 +49,56 @@ namespace Model
     /**
      * <p>The identifier of an access key.</p> <p>This parameter allows (through its
      * regex pattern) a string of characters that can consist of any upper- or
-     * lowercased letter or digit.</p>
+     * lowercase letter or digit.</p>
      */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
 
     /**
      * <p>The identifier of an access key.</p> <p>This parameter allows (through its
      * regex pattern) a string of characters that can consist of any upper- or
-     * lowercased letter or digit.</p>
+     * lowercase letter or digit.</p>
      */
     inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
 
     /**
      * <p>The identifier of an access key.</p> <p>This parameter allows (through its
      * regex pattern) a string of characters that can consist of any upper- or
-     * lowercased letter or digit.</p>
+     * lowercase letter or digit.</p>
      */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
      * <p>The identifier of an access key.</p> <p>This parameter allows (through its
      * regex pattern) a string of characters that can consist of any upper- or
-     * lowercased letter or digit.</p>
+     * lowercase letter or digit.</p>
      */
     inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
 
     /**
      * <p>The identifier of an access key.</p> <p>This parameter allows (through its
      * regex pattern) a string of characters that can consist of any upper- or
-     * lowercased letter or digit.</p>
+     * lowercase letter or digit.</p>
      */
     inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
 
     /**
      * <p>The identifier of an access key.</p> <p>This parameter allows (through its
      * regex pattern) a string of characters that can consist of any upper- or
-     * lowercased letter or digit.</p>
+     * lowercase letter or digit.</p>
      */
     inline GetAccessKeyInfoRequest& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
 
     /**
      * <p>The identifier of an access key.</p> <p>This parameter allows (through its
      * regex pattern) a string of characters that can consist of any upper- or
-     * lowercased letter or digit.</p>
+     * lowercase letter or digit.</p>
      */
     inline GetAccessKeyInfoRequest& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier of an access key.</p> <p>This parameter allows (through its
      * regex pattern) a string of characters that can consist of any upper- or
-     * lowercased letter or digit.</p>
+     * lowercase letter or digit.</p>
      */
     inline GetAccessKeyInfoRequest& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
 

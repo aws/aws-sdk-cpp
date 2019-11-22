@@ -183,21 +183,23 @@ namespace Model
    * and where to store the build output. A <i>build environment</i> is a
    * representation of operating system, programming language runtime, and tools that
    * AWS CodeBuild uses to run a build. You can add tags to build projects to help
-   * manage your resources and costs.</p> </li> <li> <p> <code>CreateProject</code>:
-   * Creates a build project.</p> </li> <li> <p> <code>CreateWebhook</code>: For an
-   * existing AWS CodeBuild build project that has its source code stored in a GitHub
-   * or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source
-   * code every time a code change is pushed to the repository.</p> </li> <li> <p>
-   * <code>DeleteProject</code>: Deletes a build project.</p> </li> <li> <p>
-   * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub
-   * Enterprise, or Bitbucket source credentials.</p> </li> <li> <p>
-   * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has
-   * its source code stored in a GitHub or Bitbucket repository, stops AWS CodeBuild
-   * from rebuilding the source code every time a code change is pushed to the
-   * repository.</p> </li> <li> <p> <code>ImportSourceCredentials</code>: Imports the
-   * source repository credentials for an AWS CodeBuild project that has its source
-   * code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.</p> </li>
-   * <li> <p> <code>InvalidateProjectCache</code>: Resets the cache for a
+   * manage your resources and costs.</p> </li> <li> <p>
+   * <code>BatchGetReportGroups</code>: Returns an array of report groups. </p> </li>
+   * <li> <p> <code>BatchGetReports</code>: Returns an array of reports. </p> </li>
+   * <li> <p> <code>CreateProject</code>: Creates a build project.</p> </li> <li> <p>
+   * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has
+   * its source code stored in a GitHub or Bitbucket repository, enables AWS
+   * CodeBuild to start rebuilding the source code every time a code change is pushed
+   * to the repository.</p> </li> <li> <p> <code>DeleteProject</code>: Deletes a
+   * build project.</p> </li> <li> <p> <code>DeleteSourceCredentials</code>: Deletes
+   * a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.</p> </li>
+   * <li> <p> <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project
+   * that has its source code stored in a GitHub or Bitbucket repository, stops AWS
+   * CodeBuild from rebuilding the source code every time a code change is pushed to
+   * the repository.</p> </li> <li> <p> <code>ImportSourceCredentials</code>: Imports
+   * the source repository credentials for an AWS CodeBuild project that has its
+   * source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.</p>
+   * </li> <li> <p> <code>InvalidateProjectCache</code>: Resets the cache for a
    * project.</p> </li> <li> <p> <code>ListBuilds</code>: Gets a list of build IDs,
    * with each build ID representing a single build.</p> </li> <li> <p>
    * <code>ListBuildsForProject</code>: Gets a list of build IDs for the specified
@@ -214,7 +216,11 @@ namespace Model
    * <code>StopBuild</code>: Attempts to stop running a build.</p> </li> <li> <p>
    * <code>UpdateProject</code>: Changes the settings of an existing build
    * project.</p> </li> <li> <p> <code>UpdateWebhook</code>: Changes the settings of
-   * an existing webhook.</p> </li> </ul>
+   * an existing webhook.</p> </li> <li> <p> <code>StartBuild</code>: Starts running
+   * a build.</p> </li> <li> <p> <code>StopBuild</code>: Attempts to stop running a
+   * build.</p> </li> <li> <p> <code>UpdateProject</code>: Changes the settings of an
+   * existing build project.</p> </li> <li> <p> <code>UpdateWebhook</code>: Changes
+   * the settings of an existing webhook.</p> </li> </ul>
    */
   class AWS_CODEBUILD_API CodeBuildClient : public Aws::Client::AWSJsonClient
   {
@@ -407,14 +413,16 @@ namespace Model
         virtual void CreateWebhookAsync(const Model::CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a build project.</p><p><h3>See Also:</h3>   <a
+         * <p> Deletes a build project. When you delete a project, its builds are not
+         * deleted. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
         /**
-         * <p>Deletes a build project.</p><p><h3>See Also:</h3>   <a
+         * <p> Deletes a build project. When you delete a project, its builds are not
+         * deleted. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">AWS
          * API Reference</a></p>
          *
@@ -423,7 +431,8 @@ namespace Model
         virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
 
         /**
-         * <p>Deletes a build project.</p><p><h3>See Also:</h3>   <a
+         * <p> Deletes a build project. When you delete a project, its builds are not
+         * deleted. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteProject">AWS
          * API Reference</a></p>
          *

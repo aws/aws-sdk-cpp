@@ -112,7 +112,7 @@ namespace Model
      * <a>AssumeRole</a> action. For more information about ARNs and how to use them in
      * policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in <i>Using IAM</i>. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
@@ -121,7 +121,7 @@ namespace Model
      * <a>AssumeRole</a> action. For more information about ARNs and how to use them in
      * policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in <i>Using IAM</i>. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
@@ -130,7 +130,7 @@ namespace Model
      * <a>AssumeRole</a> action. For more information about ARNs and how to use them in
      * policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in <i>Using IAM</i>. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
@@ -139,7 +139,7 @@ namespace Model
      * <a>AssumeRole</a> action. For more information about ARNs and how to use them in
      * policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in <i>Using IAM</i>. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
@@ -148,7 +148,7 @@ namespace Model
      * <a>AssumeRole</a> action. For more information about ARNs and how to use them in
      * policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in <i>Using IAM</i>. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
@@ -157,7 +157,7 @@ namespace Model
      * <a>AssumeRole</a> action. For more information about ARNs and how to use them in
      * policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in <i>Using IAM</i>. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumedRoleUser& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
@@ -166,7 +166,7 @@ namespace Model
      * <a>AssumeRole</a> action. For more information about ARNs and how to use them in
      * policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in <i>Using IAM</i>. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumedRoleUser& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
@@ -175,7 +175,7 @@ namespace Model
      * <a>AssumeRole</a> action. For more information about ARNs and how to use them in
      * policies, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-     * Identifiers</a> in <i>Using IAM</i>. </p>
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline AssumedRoleUser& WithArn(const char* value) { SetArn(value); return *this;}
 
