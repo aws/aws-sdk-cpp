@@ -44,7 +44,7 @@ public class CppShapeInformation {
        exportValue = CppViewHelper.computeExportValue(serviceModel.getMetadata().getClassNamePrefix());
        cppType = CppViewHelper.computeCppType(shape);
        headerIncludes = CppViewHelper.computeHeaderIncludes(serviceModel.getMetadata().getProjectName(), shape);
-       sourceIncludes = CppViewHelper.computeSourceIncludes(shape);
+       sourceIncludes = CppViewHelper.computeSourceIncludes(serviceModel.getMetadata().getProjectName(), shape);
        baseClass = CppViewHelper.computeBaseClass(serviceModel.getMetadata().getClassNamePrefix(), shape);
        requestContentType = CppViewHelper.computeRequestContentType(serviceModel.getMetadata());
    }

@@ -34,7 +34,7 @@
 #elseif($member.shape.timeStamp)
   ${spaces}payload.With${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}", m_${lowerCaseVarName}${CppViewHelper.computeJsonizeString($member.shape)});
 #else
-#if($member.shape.getName() == $shape.getName())
+#if($member.shape.getName() == $shape.getName() || $member.shape.isMutuallyReferencedWith($shape))
 #set($singleElementVector = '[0]')
 #else
 #set($singleElementVector = '')

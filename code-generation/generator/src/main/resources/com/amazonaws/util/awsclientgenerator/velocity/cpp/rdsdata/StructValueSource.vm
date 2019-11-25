@@ -8,7 +8,6 @@
 #foreach($header in $typeInfo.sourceIncludes)
 \#include $header
 #end
-\#include <aws/rds-data/model/Value.h>
 
 \#include <utility>
 

@@ -11,7 +11,7 @@
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($entry.key))
 #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($entry.key))
 #if($memberName == $shape.payload)##member is the whole payload (not wrapped)
-#set($memberIsWholePayload = true)  
+#set($memberIsWholePayload = true)
 #end
 #if(!$member.required && !$memberIsWholePayload)
   if(jsonValue.ValueExists("${memberName}"))
@@ -35,7 +35,7 @@
 #if($memberIsWholePayload)
   ${spaces}${memberVarName} = jsonValue;
 #else
-#if($member.shape.getName() == $shape.getName())
+#if($member.shape.getName() == $shape.getName() || $member.shape.isMutuallyReferencedWith($shape))
   ${spaces}${memberVarName}.resize(1);
   ${spaces}${memberVarName}[0] = jsonValue.Get${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}");
 #else

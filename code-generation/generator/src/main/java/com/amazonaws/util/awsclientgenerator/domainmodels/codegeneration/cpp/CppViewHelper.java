@@ -19,6 +19,7 @@ import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Metadat
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ShapeMember;
 import com.google.common.base.CaseFormat;
+import java.lang.RuntimeException;
 
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -196,6 +197,7 @@ public class CppViewHelper {
         Set<String> visited = new LinkedHashSet<>();
         Queue<Shape> toVisit = shape.getMembers().values().stream().map(ShapeMember::getShape).collect(Collectors.toCollection(() -> new LinkedList<>()));
         boolean includeUtilityHeader = false;
+        boolean includeAWSVectorHeader = false;
 
         while(!toVisit.isEmpty()) {
             Shape next = toVisit.remove();
@@ -216,13 +218,21 @@ public class CppViewHelper {
                 }
             }
             if(!next.isPrimitive()) {
-                headers.add(formatModelIncludeName(projectName, next));
+                if(next.isMutuallyReferencedWith(shape)) {
+                    includeAWSVectorHeader = true;
+                }
+                if(!next.isListMemberAndMutuallyReferencedWith(shape)) {
+                    headers.add(formatModelIncludeName(projectName, next));
+                }
                 includeUtilityHeader = true;
             }
         }
 
         if(includeUtilityHeader) {
             headers.add("<utility>");
+        }
+        if(includeAWSVectorHeader) {
+            headers.add("<aws/core/utils/memory/stl/AWSVector.h>");
         }
 
         headers.addAll(shape.getMembers().values().stream().filter(member -> member.isIdempotencyToken()).map(member -> "<aws/core/utils/UUID.h>").collect(Collectors.toList()));
@@ -254,8 +264,33 @@ public class CppViewHelper {
         }
     }
 
-    public static Set<String> computeSourceIncludes(Shape shape) {
+    public static Set<String> computeSourceIncludes(String projectName, Shape shape) {
         Set<String> headers = new LinkedHashSet<>();
+        Set<String> visited = new LinkedHashSet<>();
+        Queue<Shape> toVisit = shape.getMembers().values().stream().map(ShapeMember::getShape).collect(Collectors.toCollection(() -> new LinkedList<>()));
+
+        while(!toVisit.isEmpty()) {
+            Shape next = toVisit.remove();
+            visited.add(next.getName());
+            if(next.isMap()) {
+                if(!visited.contains(next.getMapKey().getShape().getName())) {
+                    toVisit.add(next.getMapKey().getShape());
+                }
+                if(!visited.contains(next.getMapValue().getShape().getName())) {
+                    toVisit.add(next.getMapValue().getShape());
+                }
+            }
+            if(next.isList())
+            {
+                if(!visited.contains(next.getListMember().getShape().getName()))
+                {
+                    toVisit.add(next.getListMember().getShape());
+                }
+            }
+            if(!next.isPrimitive() && next.isListMemberAndMutuallyReferencedWith(shape)) {
+                headers.add(formatModelIncludeName(projectName, next));
+            }
+        }
 
         for(Map.Entry<String, ShapeMember> entry : shape.getMembers().entrySet()) {
             Shape innerShape = entry.getValue().getShape();
