@@ -19,6 +19,7 @@
 #include <aws/ram/model/ResourceShareStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ram/model/ResourceShareFeatureSet.h>
 #include <aws/ram/model/Tag.h>
 #include <utility>
 
@@ -373,6 +374,97 @@ namespace Model
      */
     inline ResourceShare& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates how the resource share was created. Possible values include:</p>
+     * <ul> <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource
+     * share was created from an AWS Identity and Access Management (AWS IAM) policy
+     * attached to a resource. These resource shares are visible only to the AWS
+     * account that created it. They cannot be modified in AWS RAM.</p> </li> <li> <p>
+     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of
+     * being promoted. For more information, see
+     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
+     * <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM
+     * using the console or APIs. These resource shares are visible to all principals.
+     * They can be modified in AWS RAM.</p> </li> </ul>
+     */
+    inline const ResourceShareFeatureSet& GetFeatureSet() const{ return m_featureSet; }
+
+    /**
+     * <p>Indicates how the resource share was created. Possible values include:</p>
+     * <ul> <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource
+     * share was created from an AWS Identity and Access Management (AWS IAM) policy
+     * attached to a resource. These resource shares are visible only to the AWS
+     * account that created it. They cannot be modified in AWS RAM.</p> </li> <li> <p>
+     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of
+     * being promoted. For more information, see
+     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
+     * <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM
+     * using the console or APIs. These resource shares are visible to all principals.
+     * They can be modified in AWS RAM.</p> </li> </ul>
+     */
+    inline bool FeatureSetHasBeenSet() const { return m_featureSetHasBeenSet; }
+
+    /**
+     * <p>Indicates how the resource share was created. Possible values include:</p>
+     * <ul> <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource
+     * share was created from an AWS Identity and Access Management (AWS IAM) policy
+     * attached to a resource. These resource shares are visible only to the AWS
+     * account that created it. They cannot be modified in AWS RAM.</p> </li> <li> <p>
+     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of
+     * being promoted. For more information, see
+     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
+     * <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM
+     * using the console or APIs. These resource shares are visible to all principals.
+     * They can be modified in AWS RAM.</p> </li> </ul>
+     */
+    inline void SetFeatureSet(const ResourceShareFeatureSet& value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
+
+    /**
+     * <p>Indicates how the resource share was created. Possible values include:</p>
+     * <ul> <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource
+     * share was created from an AWS Identity and Access Management (AWS IAM) policy
+     * attached to a resource. These resource shares are visible only to the AWS
+     * account that created it. They cannot be modified in AWS RAM.</p> </li> <li> <p>
+     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of
+     * being promoted. For more information, see
+     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
+     * <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM
+     * using the console or APIs. These resource shares are visible to all principals.
+     * They can be modified in AWS RAM.</p> </li> </ul>
+     */
+    inline void SetFeatureSet(ResourceShareFeatureSet&& value) { m_featureSetHasBeenSet = true; m_featureSet = std::move(value); }
+
+    /**
+     * <p>Indicates how the resource share was created. Possible values include:</p>
+     * <ul> <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource
+     * share was created from an AWS Identity and Access Management (AWS IAM) policy
+     * attached to a resource. These resource shares are visible only to the AWS
+     * account that created it. They cannot be modified in AWS RAM.</p> </li> <li> <p>
+     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of
+     * being promoted. For more information, see
+     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
+     * <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM
+     * using the console or APIs. These resource shares are visible to all principals.
+     * They can be modified in AWS RAM.</p> </li> </ul>
+     */
+    inline ResourceShare& WithFeatureSet(const ResourceShareFeatureSet& value) { SetFeatureSet(value); return *this;}
+
+    /**
+     * <p>Indicates how the resource share was created. Possible values include:</p>
+     * <ul> <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource
+     * share was created from an AWS Identity and Access Management (AWS IAM) policy
+     * attached to a resource. These resource shares are visible only to the AWS
+     * account that created it. They cannot be modified in AWS RAM.</p> </li> <li> <p>
+     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of
+     * being promoted. For more information, see
+     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
+     * <code>STANDARD</code> - Indicates that the resource share was created in AWS RAM
+     * using the console or APIs. These resource shares are visible to all principals.
+     * They can be modified in AWS RAM.</p> </li> </ul>
+     */
+    inline ResourceShare& WithFeatureSet(ResourceShareFeatureSet&& value) { SetFeatureSet(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_resourceShareArn;
@@ -401,6 +493,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdatedTime;
     bool m_lastUpdatedTimeHasBeenSet;
+
+    ResourceShareFeatureSet m_featureSet;
+    bool m_featureSetHasBeenSet;
   };
 
 } // namespace Model

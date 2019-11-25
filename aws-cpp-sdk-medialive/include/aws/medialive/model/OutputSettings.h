@@ -20,6 +20,7 @@
 #include <aws/medialive/model/HlsOutputSettings.h>
 #include <aws/medialive/model/MediaPackageOutputSettings.h>
 #include <aws/medialive/model/MsSmoothOutputSettings.h>
+#include <aws/medialive/model/MultiplexOutputSettings.h>
 #include <aws/medialive/model/RtmpOutputSettings.h>
 #include <aws/medialive/model/UdpOutputSettings.h>
 #include <utility>
@@ -149,6 +150,25 @@ namespace Model
 
 
     
+    inline const MultiplexOutputSettings& GetMultiplexOutputSettings() const{ return m_multiplexOutputSettings; }
+
+    
+    inline bool MultiplexOutputSettingsHasBeenSet() const { return m_multiplexOutputSettingsHasBeenSet; }
+
+    
+    inline void SetMultiplexOutputSettings(const MultiplexOutputSettings& value) { m_multiplexOutputSettingsHasBeenSet = true; m_multiplexOutputSettings = value; }
+
+    
+    inline void SetMultiplexOutputSettings(MultiplexOutputSettings&& value) { m_multiplexOutputSettingsHasBeenSet = true; m_multiplexOutputSettings = std::move(value); }
+
+    
+    inline OutputSettings& WithMultiplexOutputSettings(const MultiplexOutputSettings& value) { SetMultiplexOutputSettings(value); return *this;}
+
+    
+    inline OutputSettings& WithMultiplexOutputSettings(MultiplexOutputSettings&& value) { SetMultiplexOutputSettings(std::move(value)); return *this;}
+
+
+    
     inline const RtmpOutputSettings& GetRtmpOutputSettings() const{ return m_rtmpOutputSettings; }
 
     
@@ -201,6 +221,9 @@ namespace Model
 
     MsSmoothOutputSettings m_msSmoothOutputSettings;
     bool m_msSmoothOutputSettingsHasBeenSet;
+
+    MultiplexOutputSettings m_multiplexOutputSettings;
+    bool m_multiplexOutputSettingsHasBeenSet;
 
     RtmpOutputSettings m_rtmpOutputSettings;
     bool m_rtmpOutputSettingsHasBeenSet;

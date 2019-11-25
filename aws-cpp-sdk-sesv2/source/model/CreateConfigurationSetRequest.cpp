@@ -28,7 +28,8 @@ CreateConfigurationSetRequest::CreateConfigurationSetRequest() :
     m_deliveryOptionsHasBeenSet(false),
     m_reputationOptionsHasBeenSet(false),
     m_sendingOptionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_suppressionOptionsHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,12 @@ Aws::String CreateConfigurationSetRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_suppressionOptionsHasBeenSet)
+  {
+   payload.WithObject("SuppressionOptions", m_suppressionOptions.Jsonize());
 
   }
 

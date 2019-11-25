@@ -17,6 +17,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kms/model/EncryptionAlgorithmSpec.h>
 #include <utility>
 
 namespace Aws
@@ -45,31 +46,31 @@ namespace Model
 
     /**
      * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
 
     /**
      * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlob = value; }
 
     /**
      * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = std::move(value); }
 
     /**
      * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline EncryptResult& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
 
     /**
      * <p>The encrypted plaintext. When you use the HTTP API or the AWS CLI, the value
-     * is Base64-encoded. Otherwise, it is not encoded.</p>
+     * is Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline EncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
 
@@ -109,11 +110,39 @@ namespace Model
      */
     inline EncryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
+    /**
+     * <p>The encryption algorithm that was used to encrypt the plaintext.</p>
+     */
+    inline const EncryptionAlgorithmSpec& GetEncryptionAlgorithm() const{ return m_encryptionAlgorithm; }
+
+    /**
+     * <p>The encryption algorithm that was used to encrypt the plaintext.</p>
+     */
+    inline void SetEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { m_encryptionAlgorithm = value; }
+
+    /**
+     * <p>The encryption algorithm that was used to encrypt the plaintext.</p>
+     */
+    inline void SetEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { m_encryptionAlgorithm = std::move(value); }
+
+    /**
+     * <p>The encryption algorithm that was used to encrypt the plaintext.</p>
+     */
+    inline EncryptResult& WithEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { SetEncryptionAlgorithm(value); return *this;}
+
+    /**
+     * <p>The encryption algorithm that was used to encrypt the plaintext.</p>
+     */
+    inline EncryptResult& WithEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { SetEncryptionAlgorithm(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::ByteBuffer m_ciphertextBlob;
 
     Aws::String m_keyId;
+
+    EncryptionAlgorithmSpec m_encryptionAlgorithm;
   };
 
 } // namespace Model

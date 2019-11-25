@@ -34,6 +34,7 @@ OutputSettings::OutputSettings() :
     m_hlsOutputSettingsHasBeenSet(false),
     m_mediaPackageOutputSettingsHasBeenSet(false),
     m_msSmoothOutputSettingsHasBeenSet(false),
+    m_multiplexOutputSettingsHasBeenSet(false),
     m_rtmpOutputSettingsHasBeenSet(false),
     m_udpOutputSettingsHasBeenSet(false)
 {
@@ -45,6 +46,7 @@ OutputSettings::OutputSettings(JsonView jsonValue) :
     m_hlsOutputSettingsHasBeenSet(false),
     m_mediaPackageOutputSettingsHasBeenSet(false),
     m_msSmoothOutputSettingsHasBeenSet(false),
+    m_multiplexOutputSettingsHasBeenSet(false),
     m_rtmpOutputSettingsHasBeenSet(false),
     m_udpOutputSettingsHasBeenSet(false)
 {
@@ -86,6 +88,13 @@ OutputSettings& OutputSettings::operator =(JsonView jsonValue)
     m_msSmoothOutputSettings = jsonValue.GetObject("msSmoothOutputSettings");
 
     m_msSmoothOutputSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("multiplexOutputSettings"))
+  {
+    m_multiplexOutputSettings = jsonValue.GetObject("multiplexOutputSettings");
+
+    m_multiplexOutputSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("rtmpOutputSettings"))
@@ -136,6 +145,12 @@ JsonValue OutputSettings::Jsonize() const
   if(m_msSmoothOutputSettingsHasBeenSet)
   {
    payload.WithObject("msSmoothOutputSettings", m_msSmoothOutputSettings.Jsonize());
+
+  }
+
+  if(m_multiplexOutputSettingsHasBeenSet)
+  {
+   payload.WithObject("multiplexOutputSettings", m_multiplexOutputSettings.Jsonize());
 
   }
 

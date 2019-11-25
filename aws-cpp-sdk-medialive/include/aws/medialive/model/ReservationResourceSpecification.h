@@ -211,32 +211,32 @@ namespace Model
 
 
     /**
-     * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline const ReservationResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline void SetResourceType(const ReservationResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline void SetResourceType(ReservationResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline ReservationResourceSpecification& WithResourceType(const ReservationResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * Resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline ReservationResourceSpecification& WithResourceType(ReservationResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

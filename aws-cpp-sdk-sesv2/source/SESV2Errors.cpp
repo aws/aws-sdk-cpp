@@ -38,6 +38,7 @@ static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyReque
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
 static const int ACCOUNT_SUSPENDED_HASH = HashingUtils::HashString("AccountSuspendedException");
+static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -83,6 +84,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ACCOUNT_SUSPENDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::ACCOUNT_SUSPENDED), false);
+  }
+  else if (hashCode == INVALID_NEXT_TOKEN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SESV2Errors::INVALID_NEXT_TOKEN), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

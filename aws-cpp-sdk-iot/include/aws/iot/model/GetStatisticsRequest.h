@@ -141,42 +141,42 @@ namespace Model
 
 
     /**
-     * <p>The aggregation field name. Currently not supported.</p>
+     * <p>The aggregation field name.</p>
      */
     inline const Aws::String& GetAggregationField() const{ return m_aggregationField; }
 
     /**
-     * <p>The aggregation field name. Currently not supported.</p>
+     * <p>The aggregation field name.</p>
      */
     inline bool AggregationFieldHasBeenSet() const { return m_aggregationFieldHasBeenSet; }
 
     /**
-     * <p>The aggregation field name. Currently not supported.</p>
+     * <p>The aggregation field name.</p>
      */
     inline void SetAggregationField(const Aws::String& value) { m_aggregationFieldHasBeenSet = true; m_aggregationField = value; }
 
     /**
-     * <p>The aggregation field name. Currently not supported.</p>
+     * <p>The aggregation field name.</p>
      */
     inline void SetAggregationField(Aws::String&& value) { m_aggregationFieldHasBeenSet = true; m_aggregationField = std::move(value); }
 
     /**
-     * <p>The aggregation field name. Currently not supported.</p>
+     * <p>The aggregation field name.</p>
      */
     inline void SetAggregationField(const char* value) { m_aggregationFieldHasBeenSet = true; m_aggregationField.assign(value); }
 
     /**
-     * <p>The aggregation field name. Currently not supported.</p>
+     * <p>The aggregation field name.</p>
      */
     inline GetStatisticsRequest& WithAggregationField(const Aws::String& value) { SetAggregationField(value); return *this;}
 
     /**
-     * <p>The aggregation field name. Currently not supported.</p>
+     * <p>The aggregation field name.</p>
      */
     inline GetStatisticsRequest& WithAggregationField(Aws::String&& value) { SetAggregationField(std::move(value)); return *this;}
 
     /**
-     * <p>The aggregation field name. Currently not supported.</p>
+     * <p>The aggregation field name.</p>
      */
     inline GetStatisticsRequest& WithAggregationField(const char* value) { SetAggregationField(value); return *this;}
 

@@ -20,6 +20,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kms/model/EncryptionAlgorithmSpec.h>
 #include <utility>
 
 namespace Aws
@@ -208,119 +209,197 @@ namespace Model
 
 
     /**
-     * <p>Name-value pair that specifies the encryption context to be used for
-     * authenticated encryption. If used here, the same value must be supplied to the
-     * <code>Decrypt</code> API or decryption will fail. For more information, see <a
+     * <p>Specifies the encryption context that will be used to encrypt the data. An
+     * encryption context is valid only for cryptographic operations with a symmetric
+     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context. </p> <p>An <i>encryption context</i> is a
+     * collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must
+     * specify the same (an exact case-sensitive match) encryption context to decrypt
+     * the data. An encryption context is optional when encrypting with a symmetric
+     * CMK, but it is highly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a>.</p>
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContext() const{ return m_encryptionContext; }
 
     /**
-     * <p>Name-value pair that specifies the encryption context to be used for
-     * authenticated encryption. If used here, the same value must be supplied to the
-     * <code>Decrypt</code> API or decryption will fail. For more information, see <a
+     * <p>Specifies the encryption context that will be used to encrypt the data. An
+     * encryption context is valid only for cryptographic operations with a symmetric
+     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context. </p> <p>An <i>encryption context</i> is a
+     * collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must
+     * specify the same (an exact case-sensitive match) encryption context to decrypt
+     * the data. An encryption context is optional when encrypting with a symmetric
+     * CMK, but it is highly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a>.</p>
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline bool EncryptionContextHasBeenSet() const { return m_encryptionContextHasBeenSet; }
 
     /**
-     * <p>Name-value pair that specifies the encryption context to be used for
-     * authenticated encryption. If used here, the same value must be supplied to the
-     * <code>Decrypt</code> API or decryption will fail. For more information, see <a
+     * <p>Specifies the encryption context that will be used to encrypt the data. An
+     * encryption context is valid only for cryptographic operations with a symmetric
+     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context. </p> <p>An <i>encryption context</i> is a
+     * collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must
+     * specify the same (an exact case-sensitive match) encryption context to decrypt
+     * the data. An encryption context is optional when encrypting with a symmetric
+     * CMK, but it is highly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a>.</p>
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
 
     /**
-     * <p>Name-value pair that specifies the encryption context to be used for
-     * authenticated encryption. If used here, the same value must be supplied to the
-     * <code>Decrypt</code> API or decryption will fail. For more information, see <a
+     * <p>Specifies the encryption context that will be used to encrypt the data. An
+     * encryption context is valid only for cryptographic operations with a symmetric
+     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context. </p> <p>An <i>encryption context</i> is a
+     * collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must
+     * specify the same (an exact case-sensitive match) encryption context to decrypt
+     * the data. An encryption context is optional when encrypting with a symmetric
+     * CMK, but it is highly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a>.</p>
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = std::move(value); }
 
     /**
-     * <p>Name-value pair that specifies the encryption context to be used for
-     * authenticated encryption. If used here, the same value must be supplied to the
-     * <code>Decrypt</code> API or decryption will fail. For more information, see <a
+     * <p>Specifies the encryption context that will be used to encrypt the data. An
+     * encryption context is valid only for cryptographic operations with a symmetric
+     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context. </p> <p>An <i>encryption context</i> is a
+     * collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must
+     * specify the same (an exact case-sensitive match) encryption context to decrypt
+     * the data. An encryption context is optional when encrypting with a symmetric
+     * CMK, but it is highly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a>.</p>
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& WithEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContext(value); return *this;}
 
     /**
-     * <p>Name-value pair that specifies the encryption context to be used for
-     * authenticated encryption. If used here, the same value must be supplied to the
-     * <code>Decrypt</code> API or decryption will fail. For more information, see <a
+     * <p>Specifies the encryption context that will be used to encrypt the data. An
+     * encryption context is valid only for cryptographic operations with a symmetric
+     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context. </p> <p>An <i>encryption context</i> is a
+     * collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must
+     * specify the same (an exact case-sensitive match) encryption context to decrypt
+     * the data. An encryption context is optional when encrypting with a symmetric
+     * CMK, but it is highly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a>.</p>
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& WithEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContext(std::move(value)); return *this;}
 
     /**
-     * <p>Name-value pair that specifies the encryption context to be used for
-     * authenticated encryption. If used here, the same value must be supplied to the
-     * <code>Decrypt</code> API or decryption will fail. For more information, see <a
+     * <p>Specifies the encryption context that will be used to encrypt the data. An
+     * encryption context is valid only for cryptographic operations with a symmetric
+     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context. </p> <p>An <i>encryption context</i> is a
+     * collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must
+     * specify the same (an exact case-sensitive match) encryption context to decrypt
+     * the data. An encryption context is optional when encrypting with a symmetric
+     * CMK, but it is highly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a>.</p>
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(const Aws::String& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
 
     /**
-     * <p>Name-value pair that specifies the encryption context to be used for
-     * authenticated encryption. If used here, the same value must be supplied to the
-     * <code>Decrypt</code> API or decryption will fail. For more information, see <a
+     * <p>Specifies the encryption context that will be used to encrypt the data. An
+     * encryption context is valid only for cryptographic operations with a symmetric
+     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context. </p> <p>An <i>encryption context</i> is a
+     * collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must
+     * specify the same (an exact case-sensitive match) encryption context to decrypt
+     * the data. An encryption context is optional when encrypting with a symmetric
+     * CMK, but it is highly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a>.</p>
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(Aws::String&& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Name-value pair that specifies the encryption context to be used for
-     * authenticated encryption. If used here, the same value must be supplied to the
-     * <code>Decrypt</code> API or decryption will fail. For more information, see <a
+     * <p>Specifies the encryption context that will be used to encrypt the data. An
+     * encryption context is valid only for cryptographic operations with a symmetric
+     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context. </p> <p>An <i>encryption context</i> is a
+     * collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must
+     * specify the same (an exact case-sensitive match) encryption context to decrypt
+     * the data. An encryption context is optional when encrypting with a symmetric
+     * CMK, but it is highly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a>.</p>
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(const Aws::String& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Name-value pair that specifies the encryption context to be used for
-     * authenticated encryption. If used here, the same value must be supplied to the
-     * <code>Decrypt</code> API or decryption will fail. For more information, see <a
+     * <p>Specifies the encryption context that will be used to encrypt the data. An
+     * encryption context is valid only for cryptographic operations with a symmetric
+     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context. </p> <p>An <i>encryption context</i> is a
+     * collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must
+     * specify the same (an exact case-sensitive match) encryption context to decrypt
+     * the data. An encryption context is optional when encrypting with a symmetric
+     * CMK, but it is highly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a>.</p>
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(Aws::String&& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Name-value pair that specifies the encryption context to be used for
-     * authenticated encryption. If used here, the same value must be supplied to the
-     * <code>Decrypt</code> API or decryption will fail. For more information, see <a
+     * <p>Specifies the encryption context that will be used to encrypt the data. An
+     * encryption context is valid only for cryptographic operations with a symmetric
+     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context. </p> <p>An <i>encryption context</i> is a
+     * collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must
+     * specify the same (an exact case-sensitive match) encryption context to decrypt
+     * the data. An encryption context is optional when encrypting with a symmetric
+     * CMK, but it is highly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a>.</p>
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(const char* key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Name-value pair that specifies the encryption context to be used for
-     * authenticated encryption. If used here, the same value must be supplied to the
-     * <code>Decrypt</code> API or decryption will fail. For more information, see <a
+     * <p>Specifies the encryption context that will be used to encrypt the data. An
+     * encryption context is valid only for cryptographic operations with a symmetric
+     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context. </p> <p>An <i>encryption context</i> is a
+     * collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must
+     * specify the same (an exact case-sensitive match) encryption context to decrypt
+     * the data. An encryption context is optional when encrypting with a symmetric
+     * CMK, but it is highly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a>.</p>
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(Aws::String&& key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Name-value pair that specifies the encryption context to be used for
-     * authenticated encryption. If used here, the same value must be supplied to the
-     * <code>Decrypt</code> API or decryption will fail. For more information, see <a
+     * <p>Specifies the encryption context that will be used to encrypt the data. An
+     * encryption context is valid only for cryptographic operations with a symmetric
+     * CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not
+     * support an encryption context. </p> <p>An <i>encryption context</i> is a
+     * collection of non-secret key-value pairs that represents additional
+     * authenticated data. When you use an encryption context to encrypt data, you must
+     * specify the same (an exact case-sensitive match) encryption context to decrypt
+     * the data. An encryption context is optional when encrypting with a symmetric
+     * CMK, but it is highly recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * Context</a>.</p>
+     * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline EncryptRequest& AddEncryptionContext(const char* key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
 
@@ -388,6 +467,61 @@ namespace Model
      */
     inline EncryptRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies the encryption algorithm that AWS KMS will use to encrypt the
+     * plaintext message. The algorithm must be compatible with the CMK that you
+     * specify.</p> <p>This parameter is required only for asymmetric CMKs. The default
+     * value, <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric CMKs.
+     * If you are using an asymmetric CMK, we recommend RSAES_OAEP_SHA_256.</p>
+     */
+    inline const EncryptionAlgorithmSpec& GetEncryptionAlgorithm() const{ return m_encryptionAlgorithm; }
+
+    /**
+     * <p>Specifies the encryption algorithm that AWS KMS will use to encrypt the
+     * plaintext message. The algorithm must be compatible with the CMK that you
+     * specify.</p> <p>This parameter is required only for asymmetric CMKs. The default
+     * value, <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric CMKs.
+     * If you are using an asymmetric CMK, we recommend RSAES_OAEP_SHA_256.</p>
+     */
+    inline bool EncryptionAlgorithmHasBeenSet() const { return m_encryptionAlgorithmHasBeenSet; }
+
+    /**
+     * <p>Specifies the encryption algorithm that AWS KMS will use to encrypt the
+     * plaintext message. The algorithm must be compatible with the CMK that you
+     * specify.</p> <p>This parameter is required only for asymmetric CMKs. The default
+     * value, <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric CMKs.
+     * If you are using an asymmetric CMK, we recommend RSAES_OAEP_SHA_256.</p>
+     */
+    inline void SetEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = value; }
+
+    /**
+     * <p>Specifies the encryption algorithm that AWS KMS will use to encrypt the
+     * plaintext message. The algorithm must be compatible with the CMK that you
+     * specify.</p> <p>This parameter is required only for asymmetric CMKs. The default
+     * value, <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric CMKs.
+     * If you are using an asymmetric CMK, we recommend RSAES_OAEP_SHA_256.</p>
+     */
+    inline void SetEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = std::move(value); }
+
+    /**
+     * <p>Specifies the encryption algorithm that AWS KMS will use to encrypt the
+     * plaintext message. The algorithm must be compatible with the CMK that you
+     * specify.</p> <p>This parameter is required only for asymmetric CMKs. The default
+     * value, <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric CMKs.
+     * If you are using an asymmetric CMK, we recommend RSAES_OAEP_SHA_256.</p>
+     */
+    inline EncryptRequest& WithEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { SetEncryptionAlgorithm(value); return *this;}
+
+    /**
+     * <p>Specifies the encryption algorithm that AWS KMS will use to encrypt the
+     * plaintext message. The algorithm must be compatible with the CMK that you
+     * specify.</p> <p>This parameter is required only for asymmetric CMKs. The default
+     * value, <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric CMKs.
+     * If you are using an asymmetric CMK, we recommend RSAES_OAEP_SHA_256.</p>
+     */
+    inline EncryptRequest& WithEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { SetEncryptionAlgorithm(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_keyId;
@@ -401,6 +535,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_grantTokens;
     bool m_grantTokensHasBeenSet;
+
+    EncryptionAlgorithmSpec m_encryptionAlgorithm;
+    bool m_encryptionAlgorithmHasBeenSet;
   };
 
 } // namespace Model

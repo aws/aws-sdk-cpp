@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     NodeType,
     NumberOfNodes,
-    EstimatedDiskUtilizationPercent
+    EstimatedDiskUtilizationPercent,
+    Mode
   };
 
 namespace NodeConfigurationOptionsFilterNameMapper

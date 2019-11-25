@@ -22,6 +22,7 @@
 #include <aws/sesv2/model/ReputationOptions.h>
 #include <aws/sesv2/model/SendingOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sesv2/model/SuppressionOptions.h>
 #include <aws/sesv2/model/Tag.h>
 #include <utility>
 
@@ -288,6 +289,25 @@ namespace Model
      */
     inline CreateConfigurationSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const SuppressionOptions& GetSuppressionOptions() const{ return m_suppressionOptions; }
+
+    
+    inline bool SuppressionOptionsHasBeenSet() const { return m_suppressionOptionsHasBeenSet; }
+
+    
+    inline void SetSuppressionOptions(const SuppressionOptions& value) { m_suppressionOptionsHasBeenSet = true; m_suppressionOptions = value; }
+
+    
+    inline void SetSuppressionOptions(SuppressionOptions&& value) { m_suppressionOptionsHasBeenSet = true; m_suppressionOptions = std::move(value); }
+
+    
+    inline CreateConfigurationSetRequest& WithSuppressionOptions(const SuppressionOptions& value) { SetSuppressionOptions(value); return *this;}
+
+    
+    inline CreateConfigurationSetRequest& WithSuppressionOptions(SuppressionOptions&& value) { SetSuppressionOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_configurationSetName;
@@ -307,6 +327,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    SuppressionOptions m_suppressionOptions;
+    bool m_suppressionOptionsHasBeenSet;
   };
 
 } // namespace Model

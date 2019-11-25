@@ -31,9 +31,18 @@ CreateEventSourceMappingRequest::CreateEventSourceMappingRequest() :
     m_batchSizeHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
     m_maximumBatchingWindowInSecondsHasBeenSet(false),
+    m_parallelizationFactor(0),
+    m_parallelizationFactorHasBeenSet(false),
     m_startingPosition(EventSourcePosition::NOT_SET),
     m_startingPositionHasBeenSet(false),
-    m_startingPositionTimestampHasBeenSet(false)
+    m_startingPositionTimestampHasBeenSet(false),
+    m_destinationConfigHasBeenSet(false),
+    m_maximumRecordAgeInSeconds(0),
+    m_maximumRecordAgeInSecondsHasBeenSet(false),
+    m_bisectBatchOnFunctionError(false),
+    m_bisectBatchOnFunctionErrorHasBeenSet(false),
+    m_maximumRetryAttempts(0),
+    m_maximumRetryAttemptsHasBeenSet(false)
 {
 }
 
@@ -71,6 +80,12 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
 
   }
 
+  if(m_parallelizationFactorHasBeenSet)
+  {
+   payload.WithInteger("ParallelizationFactor", m_parallelizationFactor);
+
+  }
+
   if(m_startingPositionHasBeenSet)
   {
    payload.WithString("StartingPosition", EventSourcePositionMapper::GetNameForEventSourcePosition(m_startingPosition));
@@ -79,6 +94,30 @@ Aws::String CreateEventSourceMappingRequest::SerializePayload() const
   if(m_startingPositionTimestampHasBeenSet)
   {
    payload.WithDouble("StartingPositionTimestamp", m_startingPositionTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_destinationConfigHasBeenSet)
+  {
+   payload.WithObject("DestinationConfig", m_destinationConfig.Jsonize());
+
+  }
+
+  if(m_maximumRecordAgeInSecondsHasBeenSet)
+  {
+   payload.WithInteger("MaximumRecordAgeInSeconds", m_maximumRecordAgeInSeconds);
+
+  }
+
+  if(m_bisectBatchOnFunctionErrorHasBeenSet)
+  {
+   payload.WithBool("BisectBatchOnFunctionError", m_bisectBatchOnFunctionError);
+
+  }
+
+  if(m_maximumRetryAttemptsHasBeenSet)
+  {
+   payload.WithInteger("MaximumRetryAttempts", m_maximumRetryAttempts);
+
   }
 
   return payload.View().WriteReadable();

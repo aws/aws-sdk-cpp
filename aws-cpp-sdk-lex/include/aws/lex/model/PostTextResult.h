@@ -793,6 +793,42 @@ namespace Model
      */
     inline PostTextResult& WithResponseCard(ResponseCard&& value) { SetResponseCard(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A unique identifier for the session.</p>
+     */
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+
+    /**
+     * <p>A unique identifier for the session.</p>
+     */
+    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
+
+    /**
+     * <p>A unique identifier for the session.</p>
+     */
+    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
+
+    /**
+     * <p>A unique identifier for the session.</p>
+     */
+    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
+
+    /**
+     * <p>A unique identifier for the session.</p>
+     */
+    inline PostTextResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+
+    /**
+     * <p>A unique identifier for the session.</p>
+     */
+    inline PostTextResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique identifier for the session.</p>
+     */
+    inline PostTextResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+
   private:
 
     Aws::String m_intentName;
@@ -812,6 +848,8 @@ namespace Model
     Aws::String m_slotToElicit;
 
     ResponseCard m_responseCard;
+
+    Aws::String m_sessionId;
   };
 
 } // namespace Model

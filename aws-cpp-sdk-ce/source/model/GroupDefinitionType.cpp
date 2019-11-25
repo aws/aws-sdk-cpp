@@ -32,6 +32,7 @@ namespace Aws
 
         static const int DIMENSION_HASH = HashingUtils::HashString("DIMENSION");
         static const int TAG_HASH = HashingUtils::HashString("TAG");
+        static const int COST_CATEGORY_HASH = HashingUtils::HashString("COST_CATEGORY");
 
 
         GroupDefinitionType GetGroupDefinitionTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == TAG_HASH)
           {
             return GroupDefinitionType::TAG;
+          }
+          else if (hashCode == COST_CATEGORY_HASH)
+          {
+            return GroupDefinitionType::COST_CATEGORY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "DIMENSION";
           case GroupDefinitionType::TAG:
             return "TAG";
+          case GroupDefinitionType::COST_CATEGORY:
+            return "COST_CATEGORY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

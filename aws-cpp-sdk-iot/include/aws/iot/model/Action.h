@@ -30,6 +30,7 @@
 #include <aws/iot/model/SalesforceAction.h>
 #include <aws/iot/model/IotAnalyticsAction.h>
 #include <aws/iot/model/IotEventsAction.h>
+#include <aws/iot/model/IotSiteWiseAction.h>
 #include <aws/iot/model/StepFunctionsAction.h>
 #include <aws/iot/model/HttpAction.h>
 #include <utility>
@@ -541,6 +542,43 @@ namespace Model
 
 
     /**
+     * <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise
+     * asset properties.</p>
+     */
+    inline const IotSiteWiseAction& GetIotSiteWise() const{ return m_iotSiteWise; }
+
+    /**
+     * <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise
+     * asset properties.</p>
+     */
+    inline bool IotSiteWiseHasBeenSet() const { return m_iotSiteWiseHasBeenSet; }
+
+    /**
+     * <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise
+     * asset properties.</p>
+     */
+    inline void SetIotSiteWise(const IotSiteWiseAction& value) { m_iotSiteWiseHasBeenSet = true; m_iotSiteWise = value; }
+
+    /**
+     * <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise
+     * asset properties.</p>
+     */
+    inline void SetIotSiteWise(IotSiteWiseAction&& value) { m_iotSiteWiseHasBeenSet = true; m_iotSiteWise = std::move(value); }
+
+    /**
+     * <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise
+     * asset properties.</p>
+     */
+    inline Action& WithIotSiteWise(const IotSiteWiseAction& value) { SetIotSiteWise(value); return *this;}
+
+    /**
+     * <p>Sends data from the MQTT message that triggered the rule to AWS IoT SiteWise
+     * asset properties.</p>
+     */
+    inline Action& WithIotSiteWise(IotSiteWiseAction&& value) { SetIotSiteWise(std::move(value)); return *this;}
+
+
+    /**
      * <p>Starts execution of a Step Functions state machine.</p>
      */
     inline const StepFunctionsAction& GetStepFunctions() const{ return m_stepFunctions; }
@@ -647,6 +685,9 @@ namespace Model
 
     IotEventsAction m_iotEvents;
     bool m_iotEventsHasBeenSet;
+
+    IotSiteWiseAction m_iotSiteWise;
+    bool m_iotSiteWiseHasBeenSet;
 
     StepFunctionsAction m_stepFunctions;
     bool m_stepFunctionsHasBeenSet;

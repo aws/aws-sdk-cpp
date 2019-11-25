@@ -40,7 +40,8 @@ CreateProfileRequest::CreateProfileRequest() :
     m_maxVolumeLimit(0),
     m_maxVolumeLimitHasBeenSet(false),
     m_pSTNEnabled(false),
-    m_pSTNEnabledHasBeenSet(false)
+    m_pSTNEnabledHasBeenSet(false),
+    m_meetingRoomConfigurationHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,12 @@ Aws::String CreateProfileRequest::SerializePayload() const
   if(m_pSTNEnabledHasBeenSet)
   {
    payload.WithBool("PSTNEnabled", m_pSTNEnabled);
+
+  }
+
+  if(m_meetingRoomConfigurationHasBeenSet)
+  {
+   payload.WithObject("MeetingRoomConfiguration", m_meetingRoomConfiguration.Jsonize());
 
   }
 

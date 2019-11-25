@@ -29,7 +29,8 @@ CreateResourceShareRequest::CreateResourceShareRequest() :
     m_tagsHasBeenSet(false),
     m_allowExternalPrincipals(false),
     m_allowExternalPrincipalsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_permissionArnsHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,17 @@ Aws::String CreateResourceShareRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_permissionArnsHasBeenSet)
+  {
+   Array<JsonValue> permissionArnsJsonList(m_permissionArns.size());
+   for(unsigned permissionArnsIndex = 0; permissionArnsIndex < permissionArnsJsonList.GetLength(); ++permissionArnsIndex)
+   {
+     permissionArnsJsonList[permissionArnsIndex].AsString(m_permissionArns[permissionArnsIndex]);
+   }
+   payload.WithArray("permissionArns", std::move(permissionArnsJsonList));
 
   }
 

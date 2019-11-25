@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/application-insights/model/Tier.h>
 #include <utility>
 
 namespace Aws
@@ -141,7 +142,7 @@ namespace Model
     /**
      * <p>The stack tier of the application component.</p>
      */
-    inline const Aws::String& GetTier() const{ return m_tier; }
+    inline const Tier& GetTier() const{ return m_tier; }
 
     /**
      * <p>The stack tier of the application component.</p>
@@ -151,32 +152,22 @@ namespace Model
     /**
      * <p>The stack tier of the application component.</p>
      */
-    inline void SetTier(const Aws::String& value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
      * <p>The stack tier of the application component.</p>
      */
-    inline void SetTier(Aws::String&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
+    inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
      * <p>The stack tier of the application component.</p>
      */
-    inline void SetTier(const char* value) { m_tierHasBeenSet = true; m_tier.assign(value); }
+    inline ApplicationComponent& WithTier(const Tier& value) { SetTier(value); return *this;}
 
     /**
      * <p>The stack tier of the application component.</p>
      */
-    inline ApplicationComponent& WithTier(const Aws::String& value) { SetTier(value); return *this;}
-
-    /**
-     * <p>The stack tier of the application component.</p>
-     */
-    inline ApplicationComponent& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
-
-    /**
-     * <p>The stack tier of the application component.</p>
-     */
-    inline ApplicationComponent& WithTier(const char* value) { SetTier(value); return *this;}
+    inline ApplicationComponent& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 
 
     /**
@@ -207,7 +198,7 @@ namespace Model
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
 
-    Aws::String m_tier;
+    Tier m_tier;
     bool m_tierHasBeenSet;
 
     bool m_monitor;

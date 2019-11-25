@@ -27,7 +27,9 @@ EncryptRequest::EncryptRequest() :
     m_keyIdHasBeenSet(false),
     m_plaintextHasBeenSet(false),
     m_encryptionContextHasBeenSet(false),
-    m_grantTokensHasBeenSet(false)
+    m_grantTokensHasBeenSet(false),
+    m_encryptionAlgorithm(EncryptionAlgorithmSpec::NOT_SET),
+    m_encryptionAlgorithmHasBeenSet(false)
 {
 }
 
@@ -66,6 +68,11 @@ Aws::String EncryptRequest::SerializePayload() const
    }
    payload.WithArray("GrantTokens", std::move(grantTokensJsonList));
 
+  }
+
+  if(m_encryptionAlgorithmHasBeenSet)
+  {
+   payload.WithString("EncryptionAlgorithm", EncryptionAlgorithmSpecMapper::GetNameForEncryptionAlgorithmSpec(m_encryptionAlgorithm));
   }
 
   return payload.View().WriteReadable();

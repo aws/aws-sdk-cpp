@@ -34,7 +34,8 @@ ApplicationConfigurationDescription::ApplicationConfigurationDescription() :
     m_runConfigurationDescriptionHasBeenSet(false),
     m_flinkApplicationConfigurationDescriptionHasBeenSet(false),
     m_environmentPropertyDescriptionsHasBeenSet(false),
-    m_applicationSnapshotConfigurationDescriptionHasBeenSet(false)
+    m_applicationSnapshotConfigurationDescriptionHasBeenSet(false),
+    m_vpcConfigurationDescriptionsHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ ApplicationConfigurationDescription::ApplicationConfigurationDescription(JsonVie
     m_runConfigurationDescriptionHasBeenSet(false),
     m_flinkApplicationConfigurationDescriptionHasBeenSet(false),
     m_environmentPropertyDescriptionsHasBeenSet(false),
-    m_applicationSnapshotConfigurationDescriptionHasBeenSet(false)
+    m_applicationSnapshotConfigurationDescriptionHasBeenSet(false),
+    m_vpcConfigurationDescriptionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +95,16 @@ ApplicationConfigurationDescription& ApplicationConfigurationDescription::operat
     m_applicationSnapshotConfigurationDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VpcConfigurationDescriptions"))
+  {
+    Array<JsonView> vpcConfigurationDescriptionsJsonList = jsonValue.GetArray("VpcConfigurationDescriptions");
+    for(unsigned vpcConfigurationDescriptionsIndex = 0; vpcConfigurationDescriptionsIndex < vpcConfigurationDescriptionsJsonList.GetLength(); ++vpcConfigurationDescriptionsIndex)
+    {
+      m_vpcConfigurationDescriptions.push_back(vpcConfigurationDescriptionsJsonList[vpcConfigurationDescriptionsIndex].AsObject());
+    }
+    m_vpcConfigurationDescriptionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +145,17 @@ JsonValue ApplicationConfigurationDescription::Jsonize() const
   if(m_applicationSnapshotConfigurationDescriptionHasBeenSet)
   {
    payload.WithObject("ApplicationSnapshotConfigurationDescription", m_applicationSnapshotConfigurationDescription.Jsonize());
+
+  }
+
+  if(m_vpcConfigurationDescriptionsHasBeenSet)
+  {
+   Array<JsonValue> vpcConfigurationDescriptionsJsonList(m_vpcConfigurationDescriptions.size());
+   for(unsigned vpcConfigurationDescriptionsIndex = 0; vpcConfigurationDescriptionsIndex < vpcConfigurationDescriptionsJsonList.GetLength(); ++vpcConfigurationDescriptionsIndex)
+   {
+     vpcConfigurationDescriptionsJsonList[vpcConfigurationDescriptionsIndex].AsObject(m_vpcConfigurationDescriptions[vpcConfigurationDescriptionsIndex].Jsonize());
+   }
+   payload.WithArray("VpcConfigurationDescriptions", std::move(vpcConfigurationDescriptionsJsonList));
 
   }
 

@@ -27,6 +27,8 @@ CreateKeyRequest::CreateKeyRequest() :
     m_descriptionHasBeenSet(false),
     m_keyUsage(KeyUsageType::NOT_SET),
     m_keyUsageHasBeenSet(false),
+    m_customerMasterKeySpec(CustomerMasterKeySpec::NOT_SET),
+    m_customerMasterKeySpecHasBeenSet(false),
     m_origin(OriginType::NOT_SET),
     m_originHasBeenSet(false),
     m_customKeyStoreIdHasBeenSet(false),
@@ -55,6 +57,11 @@ Aws::String CreateKeyRequest::SerializePayload() const
   if(m_keyUsageHasBeenSet)
   {
    payload.WithString("KeyUsage", KeyUsageTypeMapper::GetNameForKeyUsageType(m_keyUsage));
+  }
+
+  if(m_customerMasterKeySpecHasBeenSet)
+  {
+   payload.WithString("CustomerMasterKeySpec", CustomerMasterKeySpecMapper::GetNameForCustomerMasterKeySpec(m_customerMasterKeySpec));
   }
 
   if(m_originHasBeenSet)

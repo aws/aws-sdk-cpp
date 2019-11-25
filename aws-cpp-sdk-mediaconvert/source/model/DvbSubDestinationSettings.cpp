@@ -57,6 +57,8 @@ DvbSubDestinationSettings::DvbSubDestinationSettings() :
     m_shadowXOffsetHasBeenSet(false),
     m_shadowYOffset(0),
     m_shadowYOffsetHasBeenSet(false),
+    m_subtitlingType(DvbSubtitlingType::NOT_SET),
+    m_subtitlingTypeHasBeenSet(false),
     m_teletextSpacing(DvbSubtitleTeletextSpacing::NOT_SET),
     m_teletextSpacingHasBeenSet(false),
     m_xPosition(0),
@@ -95,6 +97,8 @@ DvbSubDestinationSettings::DvbSubDestinationSettings(JsonView jsonValue) :
     m_shadowXOffsetHasBeenSet(false),
     m_shadowYOffset(0),
     m_shadowYOffsetHasBeenSet(false),
+    m_subtitlingType(DvbSubtitlingType::NOT_SET),
+    m_subtitlingTypeHasBeenSet(false),
     m_teletextSpacing(DvbSubtitleTeletextSpacing::NOT_SET),
     m_teletextSpacingHasBeenSet(false),
     m_xPosition(0),
@@ -205,6 +209,13 @@ DvbSubDestinationSettings& DvbSubDestinationSettings::operator =(JsonView jsonVa
     m_shadowYOffsetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("subtitlingType"))
+  {
+    m_subtitlingType = DvbSubtitlingTypeMapper::GetDvbSubtitlingTypeForName(jsonValue.GetString("subtitlingType"));
+
+    m_subtitlingTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("teletextSpacing"))
   {
     m_teletextSpacing = DvbSubtitleTeletextSpacingMapper::GetDvbSubtitleTeletextSpacingForName(jsonValue.GetString("teletextSpacing"));
@@ -309,6 +320,11 @@ JsonValue DvbSubDestinationSettings::Jsonize() const
   {
    payload.WithInteger("shadowYOffset", m_shadowYOffset);
 
+  }
+
+  if(m_subtitlingTypeHasBeenSet)
+  {
+   payload.WithString("subtitlingType", DvbSubtitlingTypeMapper::GetNameForDvbSubtitlingType(m_subtitlingType));
   }
 
   if(m_teletextSpacingHasBeenSet)

@@ -436,11 +436,10 @@ namespace Model
      * of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
      * 60. High-resolution metrics are those metrics stored by a
      * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
-     * 1 second</code>.</p> <p>Use this field only when you are performing a
-     * <code>GetMetricData</code> operation, and only when you are specifying the
-     * <code>Expression</code> field. Do not use this field with a
-     * <code>PutMetricAlarm</code> operation or when you are specifying a
-     * <code>MetricStat</code> in a <code>GetMetricData</code> operation.</p> <p/>
+     * 1 second</code>.</p> <p>If you are performing a <code>GetMetricData</code>
+     * operation, use this field only if you are specifying an <code>Expression</code>.
+     * Do not use this field when you are specifying a <code>MetricStat</code> in a
+     * <code>GetMetricData</code> operation.</p>
      */
     inline int GetPeriod() const{ return m_period; }
 
@@ -451,11 +450,10 @@ namespace Model
      * of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
      * 60. High-resolution metrics are those metrics stored by a
      * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
-     * 1 second</code>.</p> <p>Use this field only when you are performing a
-     * <code>GetMetricData</code> operation, and only when you are specifying the
-     * <code>Expression</code> field. Do not use this field with a
-     * <code>PutMetricAlarm</code> operation or when you are specifying a
-     * <code>MetricStat</code> in a <code>GetMetricData</code> operation.</p> <p/>
+     * 1 second</code>.</p> <p>If you are performing a <code>GetMetricData</code>
+     * operation, use this field only if you are specifying an <code>Expression</code>.
+     * Do not use this field when you are specifying a <code>MetricStat</code> in a
+     * <code>GetMetricData</code> operation.</p>
      */
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
 
@@ -466,11 +464,10 @@ namespace Model
      * of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
      * 60. High-resolution metrics are those metrics stored by a
      * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
-     * 1 second</code>.</p> <p>Use this field only when you are performing a
-     * <code>GetMetricData</code> operation, and only when you are specifying the
-     * <code>Expression</code> field. Do not use this field with a
-     * <code>PutMetricAlarm</code> operation or when you are specifying a
-     * <code>MetricStat</code> in a <code>GetMetricData</code> operation.</p> <p/>
+     * 1 second</code>.</p> <p>If you are performing a <code>GetMetricData</code>
+     * operation, use this field only if you are specifying an <code>Expression</code>.
+     * Do not use this field when you are specifying a <code>MetricStat</code> in a
+     * <code>GetMetricData</code> operation.</p>
      */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
@@ -481,11 +478,10 @@ namespace Model
      * of less than one minute, the period can be 1, 5, 10, 30, 60, or any multiple of
      * 60. High-resolution metrics are those metrics stored by a
      * <code>PutMetricData</code> operation that includes a <code>StorageResolution of
-     * 1 second</code>.</p> <p>Use this field only when you are performing a
-     * <code>GetMetricData</code> operation, and only when you are specifying the
-     * <code>Expression</code> field. Do not use this field with a
-     * <code>PutMetricAlarm</code> operation or when you are specifying a
-     * <code>MetricStat</code> in a <code>GetMetricData</code> operation.</p> <p/>
+     * 1 second</code>.</p> <p>If you are performing a <code>GetMetricData</code>
+     * operation, use this field only if you are specifying an <code>Expression</code>.
+     * Do not use this field when you are specifying a <code>MetricStat</code> in a
+     * <code>GetMetricData</code> operation.</p>
      */
     inline MetricDataQuery& WithPeriod(int value) { SetPeriod(value); return *this;}
 

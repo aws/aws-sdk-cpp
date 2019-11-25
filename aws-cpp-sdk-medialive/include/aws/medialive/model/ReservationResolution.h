@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     SD,
     HD,
+    FHD,
     UHD
   };
 

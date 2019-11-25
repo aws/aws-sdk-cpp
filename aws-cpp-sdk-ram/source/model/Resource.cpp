@@ -32,6 +32,7 @@ Resource::Resource() :
     m_arnHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_resourceShareArnHasBeenSet(false),
+    m_resourceGroupArnHasBeenSet(false),
     m_status(ResourceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
@@ -44,6 +45,7 @@ Resource::Resource(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_resourceShareArnHasBeenSet(false),
+    m_resourceGroupArnHasBeenSet(false),
     m_status(ResourceStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
@@ -74,6 +76,13 @@ Resource& Resource::operator =(JsonView jsonValue)
     m_resourceShareArn = jsonValue.GetString("resourceShareArn");
 
     m_resourceShareArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceGroupArn"))
+  {
+    m_resourceGroupArn = jsonValue.GetString("resourceGroupArn");
+
+    m_resourceGroupArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -126,6 +135,12 @@ JsonValue Resource::Jsonize() const
   if(m_resourceShareArnHasBeenSet)
   {
    payload.WithString("resourceShareArn", m_resourceShareArn);
+
+  }
+
+  if(m_resourceGroupArnHasBeenSet)
+  {
+   payload.WithString("resourceGroupArn", m_resourceGroupArn);
 
   }
 

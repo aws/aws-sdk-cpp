@@ -35,8 +35,10 @@ namespace Model
 {
 
   /**
-   * <p>The VPC security groups and subnets that are attached to a Lambda
-   * function.</p><p><h3>See Also:</h3>   <a
+   * <p>The VPC security groups and subnets that are attached to a Lambda function.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
+   * Settings</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/VpcConfig">AWS
    * API Reference</a></p>
    */

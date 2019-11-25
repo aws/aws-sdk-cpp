@@ -89,6 +89,47 @@ namespace Model
 
 
     /**
+     * The fully qualified domain name for Assets in the PackagingGroup.
+     */
+    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * The fully qualified domain name for Assets in the PackagingGroup.
+     */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * The fully qualified domain name for Assets in the PackagingGroup.
+     */
+    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
+
+    /**
+     * The fully qualified domain name for Assets in the PackagingGroup.
+     */
+    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
+
+    /**
+     * The fully qualified domain name for Assets in the PackagingGroup.
+     */
+    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
+
+    /**
+     * The fully qualified domain name for Assets in the PackagingGroup.
+     */
+    inline PackagingGroup& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
+
+    /**
+     * The fully qualified domain name for Assets in the PackagingGroup.
+     */
+    inline PackagingGroup& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
+
+    /**
+     * The fully qualified domain name for Assets in the PackagingGroup.
+     */
+    inline PackagingGroup& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+
+
+    /**
      * The ID of the PackagingGroup.
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -132,6 +173,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    Aws::String m_domainName;
+    bool m_domainNameHasBeenSet;
 
     Aws::String m_id;
     bool m_idHasBeenSet;

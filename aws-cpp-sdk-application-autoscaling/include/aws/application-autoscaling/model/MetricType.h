@@ -36,7 +36,9 @@ namespace Model
     EC2SpotFleetRequestAverageNetworkOut,
     SageMakerVariantInvocationsPerInstance,
     ECSServiceAverageCPUUtilization,
-    ECSServiceAverageMemoryUtilization
+    ECSServiceAverageMemoryUtilization,
+    AppStreamAverageCapacityUtilization,
+    ComprehendInferenceUtilization
   };
 
 namespace MetricTypeMapper

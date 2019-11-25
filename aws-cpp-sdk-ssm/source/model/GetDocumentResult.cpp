@@ -92,6 +92,15 @@ GetDocumentResult& GetDocumentResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("Requires"))
+  {
+    Array<JsonView> requiresJsonList = jsonValue.GetArray("Requires");
+    for(unsigned requiresIndex = 0; requiresIndex < requiresJsonList.GetLength(); ++requiresIndex)
+    {
+      m_requires.push_back(requiresJsonList[requiresIndex].AsObject());
+    }
+  }
+
   if(jsonValue.ValueExists("AttachmentsContent"))
   {
     Array<JsonView> attachmentsContentJsonList = jsonValue.GetArray("AttachmentsContent");

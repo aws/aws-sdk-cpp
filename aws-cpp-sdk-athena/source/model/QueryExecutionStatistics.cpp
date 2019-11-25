@@ -33,7 +33,15 @@ QueryExecutionStatistics::QueryExecutionStatistics() :
     m_engineExecutionTimeInMillisHasBeenSet(false),
     m_dataScannedInBytes(0),
     m_dataScannedInBytesHasBeenSet(false),
-    m_dataManifestLocationHasBeenSet(false)
+    m_dataManifestLocationHasBeenSet(false),
+    m_totalExecutionTimeInMillis(0),
+    m_totalExecutionTimeInMillisHasBeenSet(false),
+    m_queryQueueTimeInMillis(0),
+    m_queryQueueTimeInMillisHasBeenSet(false),
+    m_queryPlanningTimeInMillis(0),
+    m_queryPlanningTimeInMillisHasBeenSet(false),
+    m_serviceProcessingTimeInMillis(0),
+    m_serviceProcessingTimeInMillisHasBeenSet(false)
 {
 }
 
@@ -42,7 +50,15 @@ QueryExecutionStatistics::QueryExecutionStatistics(JsonView jsonValue) :
     m_engineExecutionTimeInMillisHasBeenSet(false),
     m_dataScannedInBytes(0),
     m_dataScannedInBytesHasBeenSet(false),
-    m_dataManifestLocationHasBeenSet(false)
+    m_dataManifestLocationHasBeenSet(false),
+    m_totalExecutionTimeInMillis(0),
+    m_totalExecutionTimeInMillisHasBeenSet(false),
+    m_queryQueueTimeInMillis(0),
+    m_queryQueueTimeInMillisHasBeenSet(false),
+    m_queryPlanningTimeInMillis(0),
+    m_queryPlanningTimeInMillisHasBeenSet(false),
+    m_serviceProcessingTimeInMillis(0),
+    m_serviceProcessingTimeInMillisHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +86,34 @@ QueryExecutionStatistics& QueryExecutionStatistics::operator =(JsonView jsonValu
     m_dataManifestLocationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TotalExecutionTimeInMillis"))
+  {
+    m_totalExecutionTimeInMillis = jsonValue.GetInt64("TotalExecutionTimeInMillis");
+
+    m_totalExecutionTimeInMillisHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("QueryQueueTimeInMillis"))
+  {
+    m_queryQueueTimeInMillis = jsonValue.GetInt64("QueryQueueTimeInMillis");
+
+    m_queryQueueTimeInMillisHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("QueryPlanningTimeInMillis"))
+  {
+    m_queryPlanningTimeInMillis = jsonValue.GetInt64("QueryPlanningTimeInMillis");
+
+    m_queryPlanningTimeInMillisHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServiceProcessingTimeInMillis"))
+  {
+    m_serviceProcessingTimeInMillis = jsonValue.GetInt64("ServiceProcessingTimeInMillis");
+
+    m_serviceProcessingTimeInMillisHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -92,6 +136,30 @@ JsonValue QueryExecutionStatistics::Jsonize() const
   if(m_dataManifestLocationHasBeenSet)
   {
    payload.WithString("DataManifestLocation", m_dataManifestLocation);
+
+  }
+
+  if(m_totalExecutionTimeInMillisHasBeenSet)
+  {
+   payload.WithInt64("TotalExecutionTimeInMillis", m_totalExecutionTimeInMillis);
+
+  }
+
+  if(m_queryQueueTimeInMillisHasBeenSet)
+  {
+   payload.WithInt64("QueryQueueTimeInMillis", m_queryQueueTimeInMillis);
+
+  }
+
+  if(m_queryPlanningTimeInMillisHasBeenSet)
+  {
+   payload.WithInt64("QueryPlanningTimeInMillis", m_queryPlanningTimeInMillis);
+
+  }
+
+  if(m_serviceProcessingTimeInMillisHasBeenSet)
+  {
+   payload.WithInt64("ServiceProcessingTimeInMillis", m_serviceProcessingTimeInMillis);
 
   }
 

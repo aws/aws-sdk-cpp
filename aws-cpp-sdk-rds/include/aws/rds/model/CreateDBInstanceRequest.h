@@ -2120,8 +2120,10 @@ namespace Model
      * values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
-     * storage amount for the DB instance. </p>
+     * User Guide</i>. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
+     * DB instances, must be a multiple between .5 and 50 of the storage amount for the
+     * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
+     * the storage amount for the DB instance. </p>
      */
     inline int GetIops() const{ return m_iops; }
 
@@ -2131,8 +2133,10 @@ namespace Model
      * values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
-     * storage amount for the DB instance. </p>
+     * User Guide</i>. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
+     * DB instances, must be a multiple between .5 and 50 of the storage amount for the
+     * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
+     * the storage amount for the DB instance. </p>
      */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
 
@@ -2142,8 +2146,10 @@ namespace Model
      * values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
-     * storage amount for the DB instance. </p>
+     * User Guide</i>. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
+     * DB instances, must be a multiple between .5 and 50 of the storage amount for the
+     * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
+     * the storage amount for the DB instance. </p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
@@ -2153,8 +2159,10 @@ namespace Model
      * values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
-     * User Guide</i>. </p> <p>Constraints: Must be a multiple between 1 and 50 of the
-     * storage amount for the DB instance. </p>
+     * User Guide</i>. </p> <p>Constraints: For MariaDB, MySQL, Oracle, and PostgreSQL
+     * DB instances, must be a multiple between .5 and 50 of the storage amount for the
+     * DB instance. For SQL Server DB instances, must be a multiple between 1 and 50 of
+     * the storage amount for the DB instance. </p>
      */
     inline CreateDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
 

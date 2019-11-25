@@ -25,7 +25,9 @@ using namespace Aws::Utils;
 DeleteDocumentRequest::DeleteDocumentRequest() : 
     m_nameHasBeenSet(false),
     m_documentVersionHasBeenSet(false),
-    m_versionNameHasBeenSet(false)
+    m_versionNameHasBeenSet(false),
+    m_force(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -48,6 +50,12 @@ Aws::String DeleteDocumentRequest::SerializePayload() const
   if(m_versionNameHasBeenSet)
   {
    payload.WithString("VersionName", m_versionName);
+
+  }
+
+  if(m_forceHasBeenSet)
+  {
+   payload.WithBool("Force", m_force);
 
   }
 

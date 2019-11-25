@@ -47,79 +47,73 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the skill group for which to list enabled skills. Required.</p>
+     * <p>The ARN of the skill group for which to list enabled skills.</p>
      */
     inline const Aws::String& GetSkillGroupArn() const{ return m_skillGroupArn; }
 
     /**
-     * <p>The ARN of the skill group for which to list enabled skills. Required.</p>
+     * <p>The ARN of the skill group for which to list enabled skills.</p>
      */
     inline bool SkillGroupArnHasBeenSet() const { return m_skillGroupArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the skill group for which to list enabled skills. Required.</p>
+     * <p>The ARN of the skill group for which to list enabled skills.</p>
      */
     inline void SetSkillGroupArn(const Aws::String& value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn = value; }
 
     /**
-     * <p>The ARN of the skill group for which to list enabled skills. Required.</p>
+     * <p>The ARN of the skill group for which to list enabled skills.</p>
      */
     inline void SetSkillGroupArn(Aws::String&& value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn = std::move(value); }
 
     /**
-     * <p>The ARN of the skill group for which to list enabled skills. Required.</p>
+     * <p>The ARN of the skill group for which to list enabled skills.</p>
      */
     inline void SetSkillGroupArn(const char* value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn.assign(value); }
 
     /**
-     * <p>The ARN of the skill group for which to list enabled skills. Required.</p>
+     * <p>The ARN of the skill group for which to list enabled skills.</p>
      */
     inline ListSkillsRequest& WithSkillGroupArn(const Aws::String& value) { SetSkillGroupArn(value); return *this;}
 
     /**
-     * <p>The ARN of the skill group for which to list enabled skills. Required.</p>
+     * <p>The ARN of the skill group for which to list enabled skills.</p>
      */
     inline ListSkillsRequest& WithSkillGroupArn(Aws::String&& value) { SetSkillGroupArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the skill group for which to list enabled skills. Required.</p>
+     * <p>The ARN of the skill group for which to list enabled skills.</p>
      */
     inline ListSkillsRequest& WithSkillGroupArn(const char* value) { SetSkillGroupArn(value); return *this;}
 
 
     /**
-     * <p>Whether the skill is enabled under the user's account, or if it requires
-     * linking to be used.</p>
+     * <p>Whether the skill is enabled under the user's account.</p>
      */
     inline const EnablementTypeFilter& GetEnablementType() const{ return m_enablementType; }
 
     /**
-     * <p>Whether the skill is enabled under the user's account, or if it requires
-     * linking to be used.</p>
+     * <p>Whether the skill is enabled under the user's account.</p>
      */
     inline bool EnablementTypeHasBeenSet() const { return m_enablementTypeHasBeenSet; }
 
     /**
-     * <p>Whether the skill is enabled under the user's account, or if it requires
-     * linking to be used.</p>
+     * <p>Whether the skill is enabled under the user's account.</p>
      */
     inline void SetEnablementType(const EnablementTypeFilter& value) { m_enablementTypeHasBeenSet = true; m_enablementType = value; }
 
     /**
-     * <p>Whether the skill is enabled under the user's account, or if it requires
-     * linking to be used.</p>
+     * <p>Whether the skill is enabled under the user's account.</p>
      */
     inline void SetEnablementType(EnablementTypeFilter&& value) { m_enablementTypeHasBeenSet = true; m_enablementType = std::move(value); }
 
     /**
-     * <p>Whether the skill is enabled under the user's account, or if it requires
-     * linking to be used.</p>
+     * <p>Whether the skill is enabled under the user's account.</p>
      */
     inline ListSkillsRequest& WithEnablementType(const EnablementTypeFilter& value) { SetEnablementType(value); return *this;}
 
     /**
-     * <p>Whether the skill is enabled under the user's account, or if it requires
-     * linking to be used.</p>
+     * <p>Whether the skill is enabled under the user's account.</p>
      */
     inline ListSkillsRequest& WithEnablementType(EnablementTypeFilter&& value) { SetEnablementType(std::move(value)); return *this;}
 
@@ -159,7 +153,7 @@ namespace Model
      * <p>An optional token returned from a prior request. Use this token for
      * pagination of results from this action. If this parameter is specified, the
      * response includes only results beyond the token, up to the value specified by
-     * <code>MaxResults</code>. Required.</p>
+     * <code>MaxResults</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -167,7 +161,7 @@ namespace Model
      * <p>An optional token returned from a prior request. Use this token for
      * pagination of results from this action. If this parameter is specified, the
      * response includes only results beyond the token, up to the value specified by
-     * <code>MaxResults</code>. Required.</p>
+     * <code>MaxResults</code>.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -175,7 +169,7 @@ namespace Model
      * <p>An optional token returned from a prior request. Use this token for
      * pagination of results from this action. If this parameter is specified, the
      * response includes only results beyond the token, up to the value specified by
-     * <code>MaxResults</code>. Required.</p>
+     * <code>MaxResults</code>.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -183,7 +177,7 @@ namespace Model
      * <p>An optional token returned from a prior request. Use this token for
      * pagination of results from this action. If this parameter is specified, the
      * response includes only results beyond the token, up to the value specified by
-     * <code>MaxResults</code>. Required.</p>
+     * <code>MaxResults</code>.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -191,7 +185,7 @@ namespace Model
      * <p>An optional token returned from a prior request. Use this token for
      * pagination of results from this action. If this parameter is specified, the
      * response includes only results beyond the token, up to the value specified by
-     * <code>MaxResults</code>. Required.</p>
+     * <code>MaxResults</code>.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -199,7 +193,7 @@ namespace Model
      * <p>An optional token returned from a prior request. Use this token for
      * pagination of results from this action. If this parameter is specified, the
      * response includes only results beyond the token, up to the value specified by
-     * <code>MaxResults</code>. Required.</p>
+     * <code>MaxResults</code>.</p>
      */
     inline ListSkillsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -207,7 +201,7 @@ namespace Model
      * <p>An optional token returned from a prior request. Use this token for
      * pagination of results from this action. If this parameter is specified, the
      * response includes only results beyond the token, up to the value specified by
-     * <code>MaxResults</code>. Required.</p>
+     * <code>MaxResults</code>.</p>
      */
     inline ListSkillsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -215,7 +209,7 @@ namespace Model
      * <p>An optional token returned from a prior request. Use this token for
      * pagination of results from this action. If this parameter is specified, the
      * response includes only results beyond the token, up to the value specified by
-     * <code>MaxResults</code>. Required.</p>
+     * <code>MaxResults</code>.</p>
      */
     inline ListSkillsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -223,28 +217,28 @@ namespace Model
     /**
      * <p>The maximum number of results to include in the response. If more results
      * exist than the specified <code>MaxResults</code> value, a token is included in
-     * the response so that the remaining results can be retrieved. Required.</p>
+     * the response so that the remaining results can be retrieved.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of results to include in the response. If more results
      * exist than the specified <code>MaxResults</code> value, a token is included in
-     * the response so that the remaining results can be retrieved. Required.</p>
+     * the response so that the remaining results can be retrieved.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to include in the response. If more results
      * exist than the specified <code>MaxResults</code> value, a token is included in
-     * the response so that the remaining results can be retrieved. Required.</p>
+     * the response so that the remaining results can be retrieved.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to include in the response. If more results
      * exist than the specified <code>MaxResults</code> value, a token is included in
-     * the response so that the remaining results can be retrieved. Required.</p>
+     * the response so that the remaining results can be retrieved.</p>
      */
     inline ListSkillsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

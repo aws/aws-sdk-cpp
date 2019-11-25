@@ -41,6 +41,7 @@ namespace Aws
         static const int rds_cluster_ReadReplicaCount_HASH = HashingUtils::HashString("rds:cluster:ReadReplicaCount");
         static const int sagemaker_variant_DesiredInstanceCount_HASH = HashingUtils::HashString("sagemaker:variant:DesiredInstanceCount");
         static const int custom_resource_ResourceType_Property_HASH = HashingUtils::HashString("custom-resource:ResourceType:Property");
+        static const int comprehend_document_classifier_endpoint_DesiredInferenceUnits_HASH = HashingUtils::HashString("comprehend:document-classifier-endpoint:DesiredInferenceUnits");
 
 
         ScalableDimension GetScalableDimensionForName(const Aws::String& name)
@@ -90,6 +91,10 @@ namespace Aws
           {
             return ScalableDimension::custom_resource_ResourceType_Property;
           }
+          else if (hashCode == comprehend_document_classifier_endpoint_DesiredInferenceUnits_HASH)
+          {
+            return ScalableDimension::comprehend_document_classifier_endpoint_DesiredInferenceUnits;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -126,6 +131,8 @@ namespace Aws
             return "sagemaker:variant:DesiredInstanceCount";
           case ScalableDimension::custom_resource_ResourceType_Property:
             return "custom-resource:ResourceType:Property";
+          case ScalableDimension::comprehend_document_classifier_endpoint_DesiredInferenceUnits:
+            return "comprehend:document-classifier-endpoint:DesiredInferenceUnits";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

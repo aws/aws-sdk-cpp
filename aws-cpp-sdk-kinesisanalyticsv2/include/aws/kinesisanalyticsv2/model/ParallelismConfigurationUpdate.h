@@ -51,62 +51,108 @@ namespace Model
 
     /**
      * <p>Describes updates to whether the application uses the default parallelism for
-     * the Kinesis Data Analytics service, or if a custom parallelism is used.</p>
+     * the Kinesis Data Analytics service, or if a custom parallelism is used. You must
+     * set this property to <code>CUSTOM</code> in order to change your application's
+     * <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
+     * <code>ParallelismPerKPU</code> properties.</p>
      */
     inline const ConfigurationType& GetConfigurationTypeUpdate() const{ return m_configurationTypeUpdate; }
 
     /**
      * <p>Describes updates to whether the application uses the default parallelism for
-     * the Kinesis Data Analytics service, or if a custom parallelism is used.</p>
+     * the Kinesis Data Analytics service, or if a custom parallelism is used. You must
+     * set this property to <code>CUSTOM</code> in order to change your application's
+     * <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
+     * <code>ParallelismPerKPU</code> properties.</p>
      */
     inline bool ConfigurationTypeUpdateHasBeenSet() const { return m_configurationTypeUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to whether the application uses the default parallelism for
-     * the Kinesis Data Analytics service, or if a custom parallelism is used.</p>
+     * the Kinesis Data Analytics service, or if a custom parallelism is used. You must
+     * set this property to <code>CUSTOM</code> in order to change your application's
+     * <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
+     * <code>ParallelismPerKPU</code> properties.</p>
      */
     inline void SetConfigurationTypeUpdate(const ConfigurationType& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = value; }
 
     /**
      * <p>Describes updates to whether the application uses the default parallelism for
-     * the Kinesis Data Analytics service, or if a custom parallelism is used.</p>
+     * the Kinesis Data Analytics service, or if a custom parallelism is used. You must
+     * set this property to <code>CUSTOM</code> in order to change your application's
+     * <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
+     * <code>ParallelismPerKPU</code> properties.</p>
      */
     inline void SetConfigurationTypeUpdate(ConfigurationType&& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = std::move(value); }
 
     /**
      * <p>Describes updates to whether the application uses the default parallelism for
-     * the Kinesis Data Analytics service, or if a custom parallelism is used.</p>
+     * the Kinesis Data Analytics service, or if a custom parallelism is used. You must
+     * set this property to <code>CUSTOM</code> in order to change your application's
+     * <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
+     * <code>ParallelismPerKPU</code> properties.</p>
      */
     inline ParallelismConfigurationUpdate& WithConfigurationTypeUpdate(const ConfigurationType& value) { SetConfigurationTypeUpdate(value); return *this;}
 
     /**
      * <p>Describes updates to whether the application uses the default parallelism for
-     * the Kinesis Data Analytics service, or if a custom parallelism is used.</p>
+     * the Kinesis Data Analytics service, or if a custom parallelism is used. You must
+     * set this property to <code>CUSTOM</code> in order to change your application's
+     * <code>AutoScalingEnabled</code>, <code>Parallelism</code>, or
+     * <code>ParallelismPerKPU</code> properties.</p>
      */
     inline ParallelismConfigurationUpdate& WithConfigurationTypeUpdate(ConfigurationType&& value) { SetConfigurationTypeUpdate(std::move(value)); return *this;}
 
 
     /**
      * <p>Describes updates to the initial number of parallel tasks an application can
-     * perform.</p>
+     * perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data
+     * Analytics can increase the <code>CurrentParallelism</code> value in response to
+     * application load. The service can increase <code>CurrentParallelism</code> up to
+     * the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
+     * maximum KPUs for the application. The maximum KPUs for an application is 32 by
+     * default, and can be increased by requesting a limit increase. If application
+     * load is reduced, the service will reduce <code>CurrentParallelism</code> down to
+     * the <code>Parallelism</code> setting.</p>
      */
     inline int GetParallelismUpdate() const{ return m_parallelismUpdate; }
 
     /**
      * <p>Describes updates to the initial number of parallel tasks an application can
-     * perform.</p>
+     * perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data
+     * Analytics can increase the <code>CurrentParallelism</code> value in response to
+     * application load. The service can increase <code>CurrentParallelism</code> up to
+     * the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
+     * maximum KPUs for the application. The maximum KPUs for an application is 32 by
+     * default, and can be increased by requesting a limit increase. If application
+     * load is reduced, the service will reduce <code>CurrentParallelism</code> down to
+     * the <code>Parallelism</code> setting.</p>
      */
     inline bool ParallelismUpdateHasBeenSet() const { return m_parallelismUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to the initial number of parallel tasks an application can
-     * perform.</p>
+     * perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data
+     * Analytics can increase the <code>CurrentParallelism</code> value in response to
+     * application load. The service can increase <code>CurrentParallelism</code> up to
+     * the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
+     * maximum KPUs for the application. The maximum KPUs for an application is 32 by
+     * default, and can be increased by requesting a limit increase. If application
+     * load is reduced, the service will reduce <code>CurrentParallelism</code> down to
+     * the <code>Parallelism</code> setting.</p>
      */
     inline void SetParallelismUpdate(int value) { m_parallelismUpdateHasBeenSet = true; m_parallelismUpdate = value; }
 
     /**
      * <p>Describes updates to the initial number of parallel tasks an application can
-     * perform.</p>
+     * perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis Data
+     * Analytics can increase the <code>CurrentParallelism</code> value in response to
+     * application load. The service can increase <code>CurrentParallelism</code> up to
+     * the maximum parallelism, which is <code>ParalellismPerKPU</code> times the
+     * maximum KPUs for the application. The maximum KPUs for an application is 32 by
+     * default, and can be increased by requesting a limit increase. If application
+     * load is reduced, the service will reduce <code>CurrentParallelism</code> down to
+     * the <code>Parallelism</code> setting.</p>
      */
     inline ParallelismConfigurationUpdate& WithParallelismUpdate(int value) { SetParallelismUpdate(value); return *this;}
 

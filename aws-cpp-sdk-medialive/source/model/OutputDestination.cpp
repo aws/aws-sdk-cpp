@@ -31,6 +31,7 @@ namespace Model
 OutputDestination::OutputDestination() : 
     m_idHasBeenSet(false),
     m_mediaPackageSettingsHasBeenSet(false),
+    m_multiplexSettingsHasBeenSet(false),
     m_settingsHasBeenSet(false)
 {
 }
@@ -38,6 +39,7 @@ OutputDestination::OutputDestination() :
 OutputDestination::OutputDestination(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_mediaPackageSettingsHasBeenSet(false),
+    m_multiplexSettingsHasBeenSet(false),
     m_settingsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -60,6 +62,13 @@ OutputDestination& OutputDestination::operator =(JsonView jsonValue)
       m_mediaPackageSettings.push_back(mediaPackageSettingsJsonList[mediaPackageSettingsIndex].AsObject());
     }
     m_mediaPackageSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("multiplexSettings"))
+  {
+    m_multiplexSettings = jsonValue.GetObject("multiplexSettings");
+
+    m_multiplexSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("settings"))
@@ -93,6 +102,12 @@ JsonValue OutputDestination::Jsonize() const
      mediaPackageSettingsJsonList[mediaPackageSettingsIndex].AsObject(m_mediaPackageSettings[mediaPackageSettingsIndex].Jsonize());
    }
    payload.WithArray("mediaPackageSettings", std::move(mediaPackageSettingsJsonList));
+
+  }
+
+  if(m_multiplexSettingsHasBeenSet)
+  {
+   payload.WithObject("multiplexSettings", m_multiplexSettings.Jsonize());
 
   }
 

@@ -1,0 +1,175 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/wafv2/WAFV2_EXPORTS.h>
+#include <aws/wafv2/WAFV2Request.h>
+#include <aws/wafv2/model/Scope.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/wafv2/model/Rule.h>
+#include <utility>
+
+namespace Aws
+{
+namespace WAFV2
+{
+namespace Model
+{
+
+  /**
+   */
+  class AWS_WAFV2_API CheckCapacityRequest : public WAFV2Request
+  {
+  public:
+    CheckCapacityRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "CheckCapacity"; }
+
+    Aws::String SerializePayload() const override;
+
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * regional application. A regional application can be an Application Load Balancer
+     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
+     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
+     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
+     */
+    inline const Scope& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * regional application. A regional application can be an Application Load Balancer
+     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
+     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
+     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
+     */
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * regional application. A regional application can be an Application Load Balancer
+     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
+     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
+     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
+     */
+    inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
+
+    /**
+     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * regional application. A regional application can be an Application Load Balancer
+     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
+     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
+     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
+     */
+    inline void SetScope(Scope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
+
+    /**
+     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * regional application. A regional application can be an Application Load Balancer
+     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
+     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
+     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
+     */
+    inline CheckCapacityRequest& WithScope(const Scope& value) { SetScope(value); return *this;}
+
+    /**
+     * <p>Specifies whether this is for an AWS CloudFront distribution or for a
+     * regional application. A regional application can be an Application Load Balancer
+     * (ALB) or an API Gateway stage. </p> <p>To work with CloudFront, you must also
+     * specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI -
+     * Specify the region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
+     * the Region endpoint us-east-1. </p> </li> </ul>
+     */
+    inline CheckCapacityRequest& WithScope(Scope&& value) { SetScope(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
+     * ACL. </p>
+     */
+    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+
+    /**
+     * <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
+     * ACL. </p>
+     */
+    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
+
+    /**
+     * <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
+     * ACL. </p>
+     */
+    inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
+
+    /**
+     * <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
+     * ACL. </p>
+     */
+    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
+
+    /**
+     * <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
+     * ACL. </p>
+     */
+    inline CheckCapacityRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
+
+    /**
+     * <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
+     * ACL. </p>
+     */
+    inline CheckCapacityRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
+     * ACL. </p>
+     */
+    inline CheckCapacityRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
+     * ACL. </p>
+     */
+    inline CheckCapacityRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+
+  private:
+
+    Scope m_scope;
+    bool m_scopeHasBeenSet;
+
+    Aws::Vector<Rule> m_rules;
+    bool m_rulesHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace WAFV2
+} // namespace Aws

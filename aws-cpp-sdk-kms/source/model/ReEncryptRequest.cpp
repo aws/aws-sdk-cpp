@@ -26,8 +26,13 @@ using namespace Aws::Utils;
 ReEncryptRequest::ReEncryptRequest() : 
     m_ciphertextBlobHasBeenSet(false),
     m_sourceEncryptionContextHasBeenSet(false),
+    m_sourceKeyIdHasBeenSet(false),
     m_destinationKeyIdHasBeenSet(false),
     m_destinationEncryptionContextHasBeenSet(false),
+    m_sourceEncryptionAlgorithm(EncryptionAlgorithmSpec::NOT_SET),
+    m_sourceEncryptionAlgorithmHasBeenSet(false),
+    m_destinationEncryptionAlgorithm(EncryptionAlgorithmSpec::NOT_SET),
+    m_destinationEncryptionAlgorithmHasBeenSet(false),
     m_grantTokensHasBeenSet(false)
 {
 }
@@ -52,6 +57,12 @@ Aws::String ReEncryptRequest::SerializePayload() const
 
   }
 
+  if(m_sourceKeyIdHasBeenSet)
+  {
+   payload.WithString("SourceKeyId", m_sourceKeyId);
+
+  }
+
   if(m_destinationKeyIdHasBeenSet)
   {
    payload.WithString("DestinationKeyId", m_destinationKeyId);
@@ -67,6 +78,16 @@ Aws::String ReEncryptRequest::SerializePayload() const
    }
    payload.WithObject("DestinationEncryptionContext", std::move(destinationEncryptionContextJsonMap));
 
+  }
+
+  if(m_sourceEncryptionAlgorithmHasBeenSet)
+  {
+   payload.WithString("SourceEncryptionAlgorithm", EncryptionAlgorithmSpecMapper::GetNameForEncryptionAlgorithmSpec(m_sourceEncryptionAlgorithm));
+  }
+
+  if(m_destinationEncryptionAlgorithmHasBeenSet)
+  {
+   payload.WithString("DestinationEncryptionAlgorithm", EncryptionAlgorithmSpecMapper::GetNameForEncryptionAlgorithmSpec(m_destinationEncryptionAlgorithm));
   }
 
   if(m_grantTokensHasBeenSet)

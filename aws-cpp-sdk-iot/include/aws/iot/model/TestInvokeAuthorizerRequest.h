@@ -17,6 +17,9 @@
 #include <aws/iot/IoT_EXPORTS.h>
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/model/HttpContext.h>
+#include <aws/iot/model/MqttContext.h>
+#include <aws/iot/model/TlsContext.h>
 #include <utility>
 
 namespace Aws
@@ -172,6 +175,99 @@ namespace Model
      */
     inline TestInvokeAuthorizerRequest& WithTokenSignature(const char* value) { SetTokenSignature(value); return *this;}
 
+
+    /**
+     * <p>Specifies a test HTTP authorization request.</p>
+     */
+    inline const HttpContext& GetHttpContext() const{ return m_httpContext; }
+
+    /**
+     * <p>Specifies a test HTTP authorization request.</p>
+     */
+    inline bool HttpContextHasBeenSet() const { return m_httpContextHasBeenSet; }
+
+    /**
+     * <p>Specifies a test HTTP authorization request.</p>
+     */
+    inline void SetHttpContext(const HttpContext& value) { m_httpContextHasBeenSet = true; m_httpContext = value; }
+
+    /**
+     * <p>Specifies a test HTTP authorization request.</p>
+     */
+    inline void SetHttpContext(HttpContext&& value) { m_httpContextHasBeenSet = true; m_httpContext = std::move(value); }
+
+    /**
+     * <p>Specifies a test HTTP authorization request.</p>
+     */
+    inline TestInvokeAuthorizerRequest& WithHttpContext(const HttpContext& value) { SetHttpContext(value); return *this;}
+
+    /**
+     * <p>Specifies a test HTTP authorization request.</p>
+     */
+    inline TestInvokeAuthorizerRequest& WithHttpContext(HttpContext&& value) { SetHttpContext(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a test MQTT authorization request.&gt;</p>
+     */
+    inline const MqttContext& GetMqttContext() const{ return m_mqttContext; }
+
+    /**
+     * <p>Specifies a test MQTT authorization request.&gt;</p>
+     */
+    inline bool MqttContextHasBeenSet() const { return m_mqttContextHasBeenSet; }
+
+    /**
+     * <p>Specifies a test MQTT authorization request.&gt;</p>
+     */
+    inline void SetMqttContext(const MqttContext& value) { m_mqttContextHasBeenSet = true; m_mqttContext = value; }
+
+    /**
+     * <p>Specifies a test MQTT authorization request.&gt;</p>
+     */
+    inline void SetMqttContext(MqttContext&& value) { m_mqttContextHasBeenSet = true; m_mqttContext = std::move(value); }
+
+    /**
+     * <p>Specifies a test MQTT authorization request.&gt;</p>
+     */
+    inline TestInvokeAuthorizerRequest& WithMqttContext(const MqttContext& value) { SetMqttContext(value); return *this;}
+
+    /**
+     * <p>Specifies a test MQTT authorization request.&gt;</p>
+     */
+    inline TestInvokeAuthorizerRequest& WithMqttContext(MqttContext&& value) { SetMqttContext(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a test TLS authorization request.</p>
+     */
+    inline const TlsContext& GetTlsContext() const{ return m_tlsContext; }
+
+    /**
+     * <p>Specifies a test TLS authorization request.</p>
+     */
+    inline bool TlsContextHasBeenSet() const { return m_tlsContextHasBeenSet; }
+
+    /**
+     * <p>Specifies a test TLS authorization request.</p>
+     */
+    inline void SetTlsContext(const TlsContext& value) { m_tlsContextHasBeenSet = true; m_tlsContext = value; }
+
+    /**
+     * <p>Specifies a test TLS authorization request.</p>
+     */
+    inline void SetTlsContext(TlsContext&& value) { m_tlsContextHasBeenSet = true; m_tlsContext = std::move(value); }
+
+    /**
+     * <p>Specifies a test TLS authorization request.</p>
+     */
+    inline TestInvokeAuthorizerRequest& WithTlsContext(const TlsContext& value) { SetTlsContext(value); return *this;}
+
+    /**
+     * <p>Specifies a test TLS authorization request.</p>
+     */
+    inline TestInvokeAuthorizerRequest& WithTlsContext(TlsContext&& value) { SetTlsContext(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_authorizerName;
@@ -182,6 +278,15 @@ namespace Model
 
     Aws::String m_tokenSignature;
     bool m_tokenSignatureHasBeenSet;
+
+    HttpContext m_httpContext;
+    bool m_httpContextHasBeenSet;
+
+    MqttContext m_mqttContext;
+    bool m_mqttContextHasBeenSet;
+
+    TlsContext m_tlsContext;
+    bool m_tlsContextHasBeenSet;
   };
 
 } // namespace Model

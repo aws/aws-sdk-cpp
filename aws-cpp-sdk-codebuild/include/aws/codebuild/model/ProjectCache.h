@@ -192,7 +192,7 @@ namespace Model
      * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
      * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
      * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overriden if a source
+     * before it downloads its project sources. Cached items are overridden if a source
      * item has the same name. Directories are specified using cache paths in the
      * buildspec file. </p> </li> </ul> </li> </ul>
      */
@@ -221,7 +221,7 @@ namespace Model
      * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
      * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
      * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overriden if a source
+     * before it downloads its project sources. Cached items are overridden if a source
      * item has the same name. Directories are specified using cache paths in the
      * buildspec file. </p> </li> </ul> </li> </ul>
      */
@@ -250,7 +250,7 @@ namespace Model
      * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
      * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
      * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overriden if a source
+     * before it downloads its project sources. Cached items are overridden if a source
      * item has the same name. Directories are specified using cache paths in the
      * buildspec file. </p> </li> </ul> </li> </ul>
      */
@@ -279,7 +279,7 @@ namespace Model
      * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
      * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
      * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overriden if a source
+     * before it downloads its project sources. Cached items are overridden if a source
      * item has the same name. Directories are specified using cache paths in the
      * buildspec file. </p> </li> </ul> </li> </ul>
      */
@@ -308,7 +308,7 @@ namespace Model
      * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
      * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
      * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overriden if a source
+     * before it downloads its project sources. Cached items are overridden if a source
      * item has the same name. Directories are specified using cache paths in the
      * buildspec file. </p> </li> </ul> </li> </ul>
      */
@@ -337,7 +337,7 @@ namespace Model
      * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
      * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
      * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overriden if a source
+     * before it downloads its project sources. Cached items are overridden if a source
      * item has the same name. Directories are specified using cache paths in the
      * buildspec file. </p> </li> </ul> </li> </ul>
      */
@@ -366,7 +366,7 @@ namespace Model
      * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
      * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
      * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overriden if a source
+     * before it downloads its project sources. Cached items are overridden if a source
      * item has the same name. Directories are specified using cache paths in the
      * buildspec file. </p> </li> </ul> </li> </ul>
      */
@@ -395,7 +395,7 @@ namespace Model
      * <ul> <li> <p> Only directories can be specified for caching. You cannot specify
      * individual files. </p> </li> <li> <p> Symlinks are used to reference cached
      * directories. </p> </li> <li> <p> Cached directories are linked to your build
-     * before it downloads its project sources. Cached items are overriden if a source
+     * before it downloads its project sources. Cached items are overridden if a source
      * item has the same name. Directories are specified using cache paths in the
      * buildspec file. </p> </li> </ul> </li> </ul>
      */

@@ -30,13 +30,18 @@ namespace Aws
       namespace KeyUsageTypeMapper
       {
 
+        static const int SIGN_VERIFY_HASH = HashingUtils::HashString("SIGN_VERIFY");
         static const int ENCRYPT_DECRYPT_HASH = HashingUtils::HashString("ENCRYPT_DECRYPT");
 
 
         KeyUsageType GetKeyUsageTypeForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == ENCRYPT_DECRYPT_HASH)
+          if (hashCode == SIGN_VERIFY_HASH)
+          {
+            return KeyUsageType::SIGN_VERIFY;
+          }
+          else if (hashCode == ENCRYPT_DECRYPT_HASH)
           {
             return KeyUsageType::ENCRYPT_DECRYPT;
           }
@@ -54,6 +59,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case KeyUsageType::SIGN_VERIFY:
+            return "SIGN_VERIFY";
           case KeyUsageType::ENCRYPT_DECRYPT:
             return "ENCRYPT_DECRYPT";
           default:

@@ -30,6 +30,7 @@
 #include <aws/sesv2/model/DeleteConfigurationSetEventDestinationResult.h>
 #include <aws/sesv2/model/DeleteDedicatedIpPoolResult.h>
 #include <aws/sesv2/model/DeleteEmailIdentityResult.h>
+#include <aws/sesv2/model/DeleteSuppressedDestinationResult.h>
 #include <aws/sesv2/model/GetAccountResult.h>
 #include <aws/sesv2/model/GetBlacklistReportsResult.h>
 #include <aws/sesv2/model/GetConfigurationSetResult.h>
@@ -41,17 +42,21 @@
 #include <aws/sesv2/model/GetDomainDeliverabilityCampaignResult.h>
 #include <aws/sesv2/model/GetDomainStatisticsReportResult.h>
 #include <aws/sesv2/model/GetEmailIdentityResult.h>
+#include <aws/sesv2/model/GetSuppressedDestinationResult.h>
 #include <aws/sesv2/model/ListConfigurationSetsResult.h>
 #include <aws/sesv2/model/ListDedicatedIpPoolsResult.h>
 #include <aws/sesv2/model/ListDeliverabilityTestReportsResult.h>
 #include <aws/sesv2/model/ListDomainDeliverabilityCampaignsResult.h>
 #include <aws/sesv2/model/ListEmailIdentitiesResult.h>
+#include <aws/sesv2/model/ListSuppressedDestinationsResult.h>
 #include <aws/sesv2/model/ListTagsForResourceResult.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesResult.h>
 #include <aws/sesv2/model/PutAccountSendingAttributesResult.h>
+#include <aws/sesv2/model/PutAccountSuppressionAttributesResult.h>
 #include <aws/sesv2/model/PutConfigurationSetDeliveryOptionsResult.h>
 #include <aws/sesv2/model/PutConfigurationSetReputationOptionsResult.h>
 #include <aws/sesv2/model/PutConfigurationSetSendingOptionsResult.h>
+#include <aws/sesv2/model/PutConfigurationSetSuppressionOptionsResult.h>
 #include <aws/sesv2/model/PutConfigurationSetTrackingOptionsResult.h>
 #include <aws/sesv2/model/PutDedicatedIpInPoolResult.h>
 #include <aws/sesv2/model/PutDedicatedIpWarmupAttributesResult.h>
@@ -59,6 +64,7 @@
 #include <aws/sesv2/model/PutEmailIdentityDkimAttributesResult.h>
 #include <aws/sesv2/model/PutEmailIdentityFeedbackAttributesResult.h>
 #include <aws/sesv2/model/PutEmailIdentityMailFromAttributesResult.h>
+#include <aws/sesv2/model/PutSuppressedDestinationResult.h>
 #include <aws/sesv2/model/SendEmailResult.h>
 #include <aws/sesv2/model/TagResourceResult.h>
 #include <aws/sesv2/model/UntagResourceResult.h>
@@ -111,6 +117,7 @@ namespace Model
         class DeleteConfigurationSetEventDestinationRequest;
         class DeleteDedicatedIpPoolRequest;
         class DeleteEmailIdentityRequest;
+        class DeleteSuppressedDestinationRequest;
         class GetAccountRequest;
         class GetBlacklistReportsRequest;
         class GetConfigurationSetRequest;
@@ -122,17 +129,21 @@ namespace Model
         class GetDomainDeliverabilityCampaignRequest;
         class GetDomainStatisticsReportRequest;
         class GetEmailIdentityRequest;
+        class GetSuppressedDestinationRequest;
         class ListConfigurationSetsRequest;
         class ListDedicatedIpPoolsRequest;
         class ListDeliverabilityTestReportsRequest;
         class ListDomainDeliverabilityCampaignsRequest;
         class ListEmailIdentitiesRequest;
+        class ListSuppressedDestinationsRequest;
         class ListTagsForResourceRequest;
         class PutAccountDedicatedIpWarmupAttributesRequest;
         class PutAccountSendingAttributesRequest;
+        class PutAccountSuppressionAttributesRequest;
         class PutConfigurationSetDeliveryOptionsRequest;
         class PutConfigurationSetReputationOptionsRequest;
         class PutConfigurationSetSendingOptionsRequest;
+        class PutConfigurationSetSuppressionOptionsRequest;
         class PutConfigurationSetTrackingOptionsRequest;
         class PutDedicatedIpInPoolRequest;
         class PutDedicatedIpWarmupAttributesRequest;
@@ -140,6 +151,7 @@ namespace Model
         class PutEmailIdentityDkimAttributesRequest;
         class PutEmailIdentityFeedbackAttributesRequest;
         class PutEmailIdentityMailFromAttributesRequest;
+        class PutSuppressedDestinationRequest;
         class SendEmailRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
@@ -154,6 +166,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteConfigurationSetEventDestinationResult, Aws::Client::AWSError<SESV2Errors>> DeleteConfigurationSetEventDestinationOutcome;
         typedef Aws::Utils::Outcome<DeleteDedicatedIpPoolResult, Aws::Client::AWSError<SESV2Errors>> DeleteDedicatedIpPoolOutcome;
         typedef Aws::Utils::Outcome<DeleteEmailIdentityResult, Aws::Client::AWSError<SESV2Errors>> DeleteEmailIdentityOutcome;
+        typedef Aws::Utils::Outcome<DeleteSuppressedDestinationResult, Aws::Client::AWSError<SESV2Errors>> DeleteSuppressedDestinationOutcome;
         typedef Aws::Utils::Outcome<GetAccountResult, Aws::Client::AWSError<SESV2Errors>> GetAccountOutcome;
         typedef Aws::Utils::Outcome<GetBlacklistReportsResult, Aws::Client::AWSError<SESV2Errors>> GetBlacklistReportsOutcome;
         typedef Aws::Utils::Outcome<GetConfigurationSetResult, Aws::Client::AWSError<SESV2Errors>> GetConfigurationSetOutcome;
@@ -165,17 +178,21 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDomainDeliverabilityCampaignResult, Aws::Client::AWSError<SESV2Errors>> GetDomainDeliverabilityCampaignOutcome;
         typedef Aws::Utils::Outcome<GetDomainStatisticsReportResult, Aws::Client::AWSError<SESV2Errors>> GetDomainStatisticsReportOutcome;
         typedef Aws::Utils::Outcome<GetEmailIdentityResult, Aws::Client::AWSError<SESV2Errors>> GetEmailIdentityOutcome;
+        typedef Aws::Utils::Outcome<GetSuppressedDestinationResult, Aws::Client::AWSError<SESV2Errors>> GetSuppressedDestinationOutcome;
         typedef Aws::Utils::Outcome<ListConfigurationSetsResult, Aws::Client::AWSError<SESV2Errors>> ListConfigurationSetsOutcome;
         typedef Aws::Utils::Outcome<ListDedicatedIpPoolsResult, Aws::Client::AWSError<SESV2Errors>> ListDedicatedIpPoolsOutcome;
         typedef Aws::Utils::Outcome<ListDeliverabilityTestReportsResult, Aws::Client::AWSError<SESV2Errors>> ListDeliverabilityTestReportsOutcome;
         typedef Aws::Utils::Outcome<ListDomainDeliverabilityCampaignsResult, Aws::Client::AWSError<SESV2Errors>> ListDomainDeliverabilityCampaignsOutcome;
         typedef Aws::Utils::Outcome<ListEmailIdentitiesResult, Aws::Client::AWSError<SESV2Errors>> ListEmailIdentitiesOutcome;
+        typedef Aws::Utils::Outcome<ListSuppressedDestinationsResult, Aws::Client::AWSError<SESV2Errors>> ListSuppressedDestinationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<SESV2Errors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PutAccountDedicatedIpWarmupAttributesResult, Aws::Client::AWSError<SESV2Errors>> PutAccountDedicatedIpWarmupAttributesOutcome;
         typedef Aws::Utils::Outcome<PutAccountSendingAttributesResult, Aws::Client::AWSError<SESV2Errors>> PutAccountSendingAttributesOutcome;
+        typedef Aws::Utils::Outcome<PutAccountSuppressionAttributesResult, Aws::Client::AWSError<SESV2Errors>> PutAccountSuppressionAttributesOutcome;
         typedef Aws::Utils::Outcome<PutConfigurationSetDeliveryOptionsResult, Aws::Client::AWSError<SESV2Errors>> PutConfigurationSetDeliveryOptionsOutcome;
         typedef Aws::Utils::Outcome<PutConfigurationSetReputationOptionsResult, Aws::Client::AWSError<SESV2Errors>> PutConfigurationSetReputationOptionsOutcome;
         typedef Aws::Utils::Outcome<PutConfigurationSetSendingOptionsResult, Aws::Client::AWSError<SESV2Errors>> PutConfigurationSetSendingOptionsOutcome;
+        typedef Aws::Utils::Outcome<PutConfigurationSetSuppressionOptionsResult, Aws::Client::AWSError<SESV2Errors>> PutConfigurationSetSuppressionOptionsOutcome;
         typedef Aws::Utils::Outcome<PutConfigurationSetTrackingOptionsResult, Aws::Client::AWSError<SESV2Errors>> PutConfigurationSetTrackingOptionsOutcome;
         typedef Aws::Utils::Outcome<PutDedicatedIpInPoolResult, Aws::Client::AWSError<SESV2Errors>> PutDedicatedIpInPoolOutcome;
         typedef Aws::Utils::Outcome<PutDedicatedIpWarmupAttributesResult, Aws::Client::AWSError<SESV2Errors>> PutDedicatedIpWarmupAttributesOutcome;
@@ -183,6 +200,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutEmailIdentityDkimAttributesResult, Aws::Client::AWSError<SESV2Errors>> PutEmailIdentityDkimAttributesOutcome;
         typedef Aws::Utils::Outcome<PutEmailIdentityFeedbackAttributesResult, Aws::Client::AWSError<SESV2Errors>> PutEmailIdentityFeedbackAttributesOutcome;
         typedef Aws::Utils::Outcome<PutEmailIdentityMailFromAttributesResult, Aws::Client::AWSError<SESV2Errors>> PutEmailIdentityMailFromAttributesOutcome;
+        typedef Aws::Utils::Outcome<PutSuppressedDestinationResult, Aws::Client::AWSError<SESV2Errors>> PutSuppressedDestinationOutcome;
         typedef Aws::Utils::Outcome<SendEmailResult, Aws::Client::AWSError<SESV2Errors>> SendEmailOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<SESV2Errors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<SESV2Errors>> UntagResourceOutcome;
@@ -197,6 +215,7 @@ namespace Model
         typedef std::future<DeleteConfigurationSetEventDestinationOutcome> DeleteConfigurationSetEventDestinationOutcomeCallable;
         typedef std::future<DeleteDedicatedIpPoolOutcome> DeleteDedicatedIpPoolOutcomeCallable;
         typedef std::future<DeleteEmailIdentityOutcome> DeleteEmailIdentityOutcomeCallable;
+        typedef std::future<DeleteSuppressedDestinationOutcome> DeleteSuppressedDestinationOutcomeCallable;
         typedef std::future<GetAccountOutcome> GetAccountOutcomeCallable;
         typedef std::future<GetBlacklistReportsOutcome> GetBlacklistReportsOutcomeCallable;
         typedef std::future<GetConfigurationSetOutcome> GetConfigurationSetOutcomeCallable;
@@ -208,17 +227,21 @@ namespace Model
         typedef std::future<GetDomainDeliverabilityCampaignOutcome> GetDomainDeliverabilityCampaignOutcomeCallable;
         typedef std::future<GetDomainStatisticsReportOutcome> GetDomainStatisticsReportOutcomeCallable;
         typedef std::future<GetEmailIdentityOutcome> GetEmailIdentityOutcomeCallable;
+        typedef std::future<GetSuppressedDestinationOutcome> GetSuppressedDestinationOutcomeCallable;
         typedef std::future<ListConfigurationSetsOutcome> ListConfigurationSetsOutcomeCallable;
         typedef std::future<ListDedicatedIpPoolsOutcome> ListDedicatedIpPoolsOutcomeCallable;
         typedef std::future<ListDeliverabilityTestReportsOutcome> ListDeliverabilityTestReportsOutcomeCallable;
         typedef std::future<ListDomainDeliverabilityCampaignsOutcome> ListDomainDeliverabilityCampaignsOutcomeCallable;
         typedef std::future<ListEmailIdentitiesOutcome> ListEmailIdentitiesOutcomeCallable;
+        typedef std::future<ListSuppressedDestinationsOutcome> ListSuppressedDestinationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PutAccountDedicatedIpWarmupAttributesOutcome> PutAccountDedicatedIpWarmupAttributesOutcomeCallable;
         typedef std::future<PutAccountSendingAttributesOutcome> PutAccountSendingAttributesOutcomeCallable;
+        typedef std::future<PutAccountSuppressionAttributesOutcome> PutAccountSuppressionAttributesOutcomeCallable;
         typedef std::future<PutConfigurationSetDeliveryOptionsOutcome> PutConfigurationSetDeliveryOptionsOutcomeCallable;
         typedef std::future<PutConfigurationSetReputationOptionsOutcome> PutConfigurationSetReputationOptionsOutcomeCallable;
         typedef std::future<PutConfigurationSetSendingOptionsOutcome> PutConfigurationSetSendingOptionsOutcomeCallable;
+        typedef std::future<PutConfigurationSetSuppressionOptionsOutcome> PutConfigurationSetSuppressionOptionsOutcomeCallable;
         typedef std::future<PutConfigurationSetTrackingOptionsOutcome> PutConfigurationSetTrackingOptionsOutcomeCallable;
         typedef std::future<PutDedicatedIpInPoolOutcome> PutDedicatedIpInPoolOutcomeCallable;
         typedef std::future<PutDedicatedIpWarmupAttributesOutcome> PutDedicatedIpWarmupAttributesOutcomeCallable;
@@ -226,6 +249,7 @@ namespace Model
         typedef std::future<PutEmailIdentityDkimAttributesOutcome> PutEmailIdentityDkimAttributesOutcomeCallable;
         typedef std::future<PutEmailIdentityFeedbackAttributesOutcome> PutEmailIdentityFeedbackAttributesOutcomeCallable;
         typedef std::future<PutEmailIdentityMailFromAttributesOutcome> PutEmailIdentityMailFromAttributesOutcomeCallable;
+        typedef std::future<PutSuppressedDestinationOutcome> PutSuppressedDestinationOutcomeCallable;
         typedef std::future<SendEmailOutcome> SendEmailOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
@@ -243,6 +267,7 @@ namespace Model
     typedef std::function<void(const SESV2Client*, const Model::DeleteConfigurationSetEventDestinationRequest&, const Model::DeleteConfigurationSetEventDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConfigurationSetEventDestinationResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::DeleteDedicatedIpPoolRequest&, const Model::DeleteDedicatedIpPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDedicatedIpPoolResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::DeleteEmailIdentityRequest&, const Model::DeleteEmailIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEmailIdentityResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::DeleteSuppressedDestinationRequest&, const Model::DeleteSuppressedDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSuppressedDestinationResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetAccountRequest&, const Model::GetAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetBlacklistReportsRequest&, const Model::GetBlacklistReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetBlacklistReportsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetConfigurationSetRequest&, const Model::GetConfigurationSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationSetResponseReceivedHandler;
@@ -254,17 +279,21 @@ namespace Model
     typedef std::function<void(const SESV2Client*, const Model::GetDomainDeliverabilityCampaignRequest&, const Model::GetDomainDeliverabilityCampaignOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainDeliverabilityCampaignResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetDomainStatisticsReportRequest&, const Model::GetDomainStatisticsReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainStatisticsReportResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::GetEmailIdentityRequest&, const Model::GetEmailIdentityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEmailIdentityResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::GetSuppressedDestinationRequest&, const Model::GetSuppressedDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSuppressedDestinationResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListConfigurationSetsRequest&, const Model::ListConfigurationSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationSetsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListDedicatedIpPoolsRequest&, const Model::ListDedicatedIpPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDedicatedIpPoolsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListDeliverabilityTestReportsRequest&, const Model::ListDeliverabilityTestReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDeliverabilityTestReportsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListDomainDeliverabilityCampaignsRequest&, const Model::ListDomainDeliverabilityCampaignsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainDeliverabilityCampaignsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListEmailIdentitiesRequest&, const Model::ListEmailIdentitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEmailIdentitiesResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::ListSuppressedDestinationsRequest&, const Model::ListSuppressedDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSuppressedDestinationsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutAccountDedicatedIpWarmupAttributesRequest&, const Model::PutAccountDedicatedIpWarmupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutAccountSendingAttributesRequest&, const Model::PutAccountSendingAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSendingAttributesResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::PutAccountSuppressionAttributesRequest&, const Model::PutAccountSuppressionAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSuppressionAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetDeliveryOptionsRequest&, const Model::PutConfigurationSetDeliveryOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetDeliveryOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetReputationOptionsRequest&, const Model::PutConfigurationSetReputationOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetReputationOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetSendingOptionsRequest&, const Model::PutConfigurationSetSendingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetSendingOptionsResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetSuppressionOptionsRequest&, const Model::PutConfigurationSetSuppressionOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetSuppressionOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetTrackingOptionsRequest&, const Model::PutConfigurationSetTrackingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetTrackingOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutDedicatedIpInPoolRequest&, const Model::PutDedicatedIpInPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDedicatedIpInPoolResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutDedicatedIpWarmupAttributesRequest&, const Model::PutDedicatedIpWarmupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDedicatedIpWarmupAttributesResponseReceivedHandler;
@@ -272,6 +301,7 @@ namespace Model
     typedef std::function<void(const SESV2Client*, const Model::PutEmailIdentityDkimAttributesRequest&, const Model::PutEmailIdentityDkimAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityDkimAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutEmailIdentityFeedbackAttributesRequest&, const Model::PutEmailIdentityFeedbackAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityFeedbackAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutEmailIdentityMailFromAttributesRequest&, const Model::PutEmailIdentityMailFromAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityMailFromAttributesResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::PutSuppressedDestinationRequest&, const Model::PutSuppressedDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSuppressedDestinationResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::SendEmailRequest&, const Model::SendEmailOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendEmailResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
@@ -695,6 +725,34 @@ namespace Model
         virtual void DeleteEmailIdentityAsync(const Model::DeleteEmailIdentityRequest& request, const DeleteEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Used to delete a suppressed email destination from your suppression
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteSuppressedDestinationOutcome DeleteSuppressedDestination(const Model::DeleteSuppressedDestinationRequest& request) const;
+
+        /**
+         * <p>Used to delete a suppressed email destination from your suppression
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteSuppressedDestinationOutcomeCallable DeleteSuppressedDestinationCallable(const Model::DeleteSuppressedDestinationRequest& request) const;
+
+        /**
+         * <p>Used to delete a suppressed email destination from your suppression
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteSuppressedDestinationAsync(const Model::DeleteSuppressedDestinationRequest& request, const DeleteSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Obtain information about the email-sending status and capabilities of your
          * Amazon SES account in the current AWS Region.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetAccount">AWS
@@ -1066,6 +1124,34 @@ namespace Model
         virtual void GetEmailIdentityAsync(const Model::GetEmailIdentityRequest& request, const GetEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Used to fetch a single suppressed email destination from your suppression
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSuppressedDestinationOutcome GetSuppressedDestination(const Model::GetSuppressedDestinationRequest& request) const;
+
+        /**
+         * <p>Used to fetch a single suppressed email destination from your suppression
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetSuppressedDestinationOutcomeCallable GetSuppressedDestinationCallable(const Model::GetSuppressedDestinationRequest& request) const;
+
+        /**
+         * <p>Used to fetch a single suppressed email destination from your suppression
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetSuppressedDestinationAsync(const Model::GetSuppressedDestinationRequest& request, const GetSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>List all of the configuration sets associated with your account in the
          * current region.</p> <p> <i>Configuration sets</i> are groups of rules that you
          * can apply to the emails you send. You apply a configuration set to an email by
@@ -1239,6 +1325,34 @@ namespace Model
         virtual void ListEmailIdentitiesAsync(const Model::ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Used to fetch a list suppressed email destinations from your suppression
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSuppressedDestinationsOutcome ListSuppressedDestinations(const Model::ListSuppressedDestinationsRequest& request) const;
+
+        /**
+         * <p>Used to fetch a list suppressed email destinations from your suppression
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSuppressedDestinationsOutcomeCallable ListSuppressedDestinationsCallable(const Model::ListSuppressedDestinationsRequest& request) const;
+
+        /**
+         * <p>Used to fetch a list suppressed email destinations from your suppression
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSuppressedDestinationsAsync(const Model::ListSuppressedDestinationsRequest& request, const ListSuppressedDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Retrieve a list of the tags (keys and values) that are associated with a
          * specified resource. A <i>tag</i> is a label that you optionally define and
          * associate with a resource. Each tag consists of a required <i>tag key</i> and an
@@ -1335,6 +1449,34 @@ namespace Model
         virtual void PutAccountSendingAttributesAsync(const Model::PutAccountSendingAttributesRequest& request, const PutAccountSendingAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Change your account's suppression preferences for your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAccountSuppressionAttributesOutcome PutAccountSuppressionAttributes(const Model::PutAccountSuppressionAttributesRequest& request) const;
+
+        /**
+         * <p>Change your account's suppression preferences for your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAccountSuppressionAttributesOutcomeCallable PutAccountSuppressionAttributesCallable(const Model::PutAccountSuppressionAttributesRequest& request) const;
+
+        /**
+         * <p>Change your account's suppression preferences for your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAccountSuppressionAttributesAsync(const Model::PutAccountSuppressionAttributesRequest& request, const PutAccountSuppressionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Associate a configuration set with a dedicated IP pool. You can use dedicated
          * IP pools to create groups of dedicated IP addresses for sending specific types
          * of email.</p><p><h3>See Also:</h3>   <a
@@ -1423,6 +1565,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutConfigurationSetSendingOptionsAsync(const Model::PutConfigurationSetSendingOptionsRequest& request, const PutConfigurationSetSendingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Specify your account's suppression preferences for a configuration
+         * set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutConfigurationSetSuppressionOptionsOutcome PutConfigurationSetSuppressionOptions(const Model::PutConfigurationSetSuppressionOptionsRequest& request) const;
+
+        /**
+         * <p>Specify your account's suppression preferences for a configuration
+         * set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutConfigurationSetSuppressionOptionsOutcomeCallable PutConfigurationSetSuppressionOptionsCallable(const Model::PutConfigurationSetSuppressionOptionsRequest& request) const;
+
+        /**
+         * <p>Specify your account's suppression preferences for a configuration
+         * set.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutConfigurationSetSuppressionOptionsAsync(const Model::PutConfigurationSetSuppressionOptionsRequest& request, const PutConfigurationSetSuppressionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Specify a custom domain to use for open and click tracking elements in email
@@ -1675,6 +1845,34 @@ namespace Model
         virtual void PutEmailIdentityMailFromAttributesAsync(const Model::PutEmailIdentityMailFromAttributesRequest& request, const PutEmailIdentityMailFromAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Puts (overwrites) an email destination in your suppression
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutSuppressedDestinationOutcome PutSuppressedDestination(const Model::PutSuppressedDestinationRequest& request) const;
+
+        /**
+         * <p>Puts (overwrites) an email destination in your suppression
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutSuppressedDestinationOutcomeCallable PutSuppressedDestinationCallable(const Model::PutSuppressedDestinationRequest& request) const;
+
+        /**
+         * <p>Puts (overwrites) an email destination in your suppression
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutSuppressedDestinationAsync(const Model::PutSuppressedDestinationRequest& request, const PutSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Sends an email message. You can use the Amazon SES API v2 to send two types
          * of messages:</p> <ul> <li> <p> <b>Simple</b> – A standard email message. When
          * you create this type of message, you specify the sender, the recipient, and the
@@ -1853,6 +2051,7 @@ namespace Model
         void DeleteConfigurationSetEventDestinationAsyncHelper(const Model::DeleteConfigurationSetEventDestinationRequest& request, const DeleteConfigurationSetEventDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDedicatedIpPoolAsyncHelper(const Model::DeleteDedicatedIpPoolRequest& request, const DeleteDedicatedIpPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEmailIdentityAsyncHelper(const Model::DeleteEmailIdentityRequest& request, const DeleteEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteSuppressedDestinationAsyncHelper(const Model::DeleteSuppressedDestinationRequest& request, const DeleteSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountAsyncHelper(const Model::GetAccountRequest& request, const GetAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetBlacklistReportsAsyncHelper(const Model::GetBlacklistReportsRequest& request, const GetBlacklistReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConfigurationSetAsyncHelper(const Model::GetConfigurationSetRequest& request, const GetConfigurationSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1864,17 +2063,21 @@ namespace Model
         void GetDomainDeliverabilityCampaignAsyncHelper(const Model::GetDomainDeliverabilityCampaignRequest& request, const GetDomainDeliverabilityCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDomainStatisticsReportAsyncHelper(const Model::GetDomainStatisticsReportRequest& request, const GetDomainStatisticsReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEmailIdentityAsyncHelper(const Model::GetEmailIdentityRequest& request, const GetEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetSuppressedDestinationAsyncHelper(const Model::GetSuppressedDestinationRequest& request, const GetSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListConfigurationSetsAsyncHelper(const Model::ListConfigurationSetsRequest& request, const ListConfigurationSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDedicatedIpPoolsAsyncHelper(const Model::ListDedicatedIpPoolsRequest& request, const ListDedicatedIpPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDeliverabilityTestReportsAsyncHelper(const Model::ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDomainDeliverabilityCampaignsAsyncHelper(const Model::ListDomainDeliverabilityCampaignsRequest& request, const ListDomainDeliverabilityCampaignsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEmailIdentitiesAsyncHelper(const Model::ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSuppressedDestinationsAsyncHelper(const Model::ListSuppressedDestinationsRequest& request, const ListSuppressedDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccountDedicatedIpWarmupAttributesAsyncHelper(const Model::PutAccountDedicatedIpWarmupAttributesRequest& request, const PutAccountDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccountSendingAttributesAsyncHelper(const Model::PutAccountSendingAttributesRequest& request, const PutAccountSendingAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAccountSuppressionAttributesAsyncHelper(const Model::PutAccountSuppressionAttributesRequest& request, const PutAccountSuppressionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutConfigurationSetDeliveryOptionsAsyncHelper(const Model::PutConfigurationSetDeliveryOptionsRequest& request, const PutConfigurationSetDeliveryOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutConfigurationSetReputationOptionsAsyncHelper(const Model::PutConfigurationSetReputationOptionsRequest& request, const PutConfigurationSetReputationOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutConfigurationSetSendingOptionsAsyncHelper(const Model::PutConfigurationSetSendingOptionsRequest& request, const PutConfigurationSetSendingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutConfigurationSetSuppressionOptionsAsyncHelper(const Model::PutConfigurationSetSuppressionOptionsRequest& request, const PutConfigurationSetSuppressionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutConfigurationSetTrackingOptionsAsyncHelper(const Model::PutConfigurationSetTrackingOptionsRequest& request, const PutConfigurationSetTrackingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDedicatedIpInPoolAsyncHelper(const Model::PutDedicatedIpInPoolRequest& request, const PutDedicatedIpInPoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDedicatedIpWarmupAttributesAsyncHelper(const Model::PutDedicatedIpWarmupAttributesRequest& request, const PutDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1882,6 +2085,7 @@ namespace Model
         void PutEmailIdentityDkimAttributesAsyncHelper(const Model::PutEmailIdentityDkimAttributesRequest& request, const PutEmailIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEmailIdentityFeedbackAttributesAsyncHelper(const Model::PutEmailIdentityFeedbackAttributesRequest& request, const PutEmailIdentityFeedbackAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEmailIdentityMailFromAttributesAsyncHelper(const Model::PutEmailIdentityMailFromAttributesRequest& request, const PutEmailIdentityMailFromAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutSuppressedDestinationAsyncHelper(const Model::PutSuppressedDestinationRequest& request, const PutSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendEmailAsyncHelper(const Model::SendEmailRequest& request, const SendEmailResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

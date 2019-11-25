@@ -85,47 +85,47 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline DisassociateResourceShareRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline DisassociateResourceShareRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline DisassociateResourceShareRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline DisassociateResourceShareRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     * <p>The Amazon Resource Names (ARNs) of the resources.</p>
      */
     inline DisassociateResourceShareRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
 

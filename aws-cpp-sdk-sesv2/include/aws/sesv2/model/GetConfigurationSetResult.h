@@ -21,6 +21,7 @@
 #include <aws/sesv2/model/ReputationOptions.h>
 #include <aws/sesv2/model/SendingOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sesv2/model/SuppressionOptions.h>
 #include <aws/sesv2/model/Tag.h>
 #include <utility>
 
@@ -255,6 +256,37 @@ namespace Model
      */
     inline GetConfigurationSetResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>An object that contains information about your account's suppression
+     * preferences.</p>
+     */
+    inline const SuppressionOptions& GetSuppressionOptions() const{ return m_suppressionOptions; }
+
+    /**
+     * <p>An object that contains information about your account's suppression
+     * preferences.</p>
+     */
+    inline void SetSuppressionOptions(const SuppressionOptions& value) { m_suppressionOptions = value; }
+
+    /**
+     * <p>An object that contains information about your account's suppression
+     * preferences.</p>
+     */
+    inline void SetSuppressionOptions(SuppressionOptions&& value) { m_suppressionOptions = std::move(value); }
+
+    /**
+     * <p>An object that contains information about your account's suppression
+     * preferences.</p>
+     */
+    inline GetConfigurationSetResult& WithSuppressionOptions(const SuppressionOptions& value) { SetSuppressionOptions(value); return *this;}
+
+    /**
+     * <p>An object that contains information about your account's suppression
+     * preferences.</p>
+     */
+    inline GetConfigurationSetResult& WithSuppressionOptions(SuppressionOptions&& value) { SetSuppressionOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_configurationSetName;
@@ -268,6 +300,8 @@ namespace Model
     SendingOptions m_sendingOptions;
 
     Aws::Vector<Tag> m_tags;
+
+    SuppressionOptions m_suppressionOptions;
   };
 
 } // namespace Model

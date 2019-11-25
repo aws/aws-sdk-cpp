@@ -41,6 +41,8 @@ namespace Aws
         static const int SageMakerVariantInvocationsPerInstance_HASH = HashingUtils::HashString("SageMakerVariantInvocationsPerInstance");
         static const int ECSServiceAverageCPUUtilization_HASH = HashingUtils::HashString("ECSServiceAverageCPUUtilization");
         static const int ECSServiceAverageMemoryUtilization_HASH = HashingUtils::HashString("ECSServiceAverageMemoryUtilization");
+        static const int AppStreamAverageCapacityUtilization_HASH = HashingUtils::HashString("AppStreamAverageCapacityUtilization");
+        static const int ComprehendInferenceUtilization_HASH = HashingUtils::HashString("ComprehendInferenceUtilization");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
@@ -90,6 +92,14 @@ namespace Aws
           {
             return MetricType::ECSServiceAverageMemoryUtilization;
           }
+          else if (hashCode == AppStreamAverageCapacityUtilization_HASH)
+          {
+            return MetricType::AppStreamAverageCapacityUtilization;
+          }
+          else if (hashCode == ComprehendInferenceUtilization_HASH)
+          {
+            return MetricType::ComprehendInferenceUtilization;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -126,6 +136,10 @@ namespace Aws
             return "ECSServiceAverageCPUUtilization";
           case MetricType::ECSServiceAverageMemoryUtilization:
             return "ECSServiceAverageMemoryUtilization";
+          case MetricType::AppStreamAverageCapacityUtilization:
+            return "AppStreamAverageCapacityUtilization";
+          case MetricType::ComprehendInferenceUtilization:
+            return "ComprehendInferenceUtilization";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     INPUT,
     OUTPUT,
+    MULTIPLEX,
     CHANNEL
   };
 

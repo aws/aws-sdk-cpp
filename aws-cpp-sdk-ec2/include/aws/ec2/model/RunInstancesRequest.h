@@ -1789,80 +1789,80 @@ namespace Model
 
 
     /**
-     * <p>The credit option for CPU usage of the T2 or T3 instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
-     * launch, use <a
+     * <p>The credit option for CPU usage of the burstable performance instance. Valid
+     * values are <code>standard</code> and <code>unlimited</code>. To change this
+     * attribute after launch, use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
-     * <code>unlimited</code> (T3 instances)</p>
+     * <code>unlimited</code> (T3/T3a instances)</p>
      */
     inline const CreditSpecificationRequest& GetCreditSpecification() const{ return m_creditSpecification; }
 
     /**
-     * <p>The credit option for CPU usage of the T2 or T3 instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
-     * launch, use <a
+     * <p>The credit option for CPU usage of the burstable performance instance. Valid
+     * values are <code>standard</code> and <code>unlimited</code>. To change this
+     * attribute after launch, use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
-     * <code>unlimited</code> (T3 instances)</p>
+     * <code>unlimited</code> (T3/T3a instances)</p>
      */
     inline bool CreditSpecificationHasBeenSet() const { return m_creditSpecificationHasBeenSet; }
 
     /**
-     * <p>The credit option for CPU usage of the T2 or T3 instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
-     * launch, use <a
+     * <p>The credit option for CPU usage of the burstable performance instance. Valid
+     * values are <code>standard</code> and <code>unlimited</code>. To change this
+     * attribute after launch, use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
-     * <code>unlimited</code> (T3 instances)</p>
+     * <code>unlimited</code> (T3/T3a instances)</p>
      */
     inline void SetCreditSpecification(const CreditSpecificationRequest& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = value; }
 
     /**
-     * <p>The credit option for CPU usage of the T2 or T3 instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
-     * launch, use <a
+     * <p>The credit option for CPU usage of the burstable performance instance. Valid
+     * values are <code>standard</code> and <code>unlimited</code>. To change this
+     * attribute after launch, use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
-     * <code>unlimited</code> (T3 instances)</p>
+     * <code>unlimited</code> (T3/T3a instances)</p>
      */
     inline void SetCreditSpecification(CreditSpecificationRequest&& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = std::move(value); }
 
     /**
-     * <p>The credit option for CPU usage of the T2 or T3 instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
-     * launch, use <a
+     * <p>The credit option for CPU usage of the burstable performance instance. Valid
+     * values are <code>standard</code> and <code>unlimited</code>. To change this
+     * attribute after launch, use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
-     * <code>unlimited</code> (T3 instances)</p>
+     * <code>unlimited</code> (T3/T3a instances)</p>
      */
     inline RunInstancesRequest& WithCreditSpecification(const CreditSpecificationRequest& value) { SetCreditSpecification(value); return *this;}
 
     /**
-     * <p>The credit option for CPU usage of the T2 or T3 instance. Valid values are
-     * <code>standard</code> and <code>unlimited</code>. To change this attribute after
-     * launch, use <a
+     * <p>The credit option for CPU usage of the burstable performance instance. Valid
+     * values are <code>standard</code> and <code>unlimited</code>. To change this
+     * attribute after launch, use <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
      * ModifyInstanceCreditSpecification</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
      * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p> <p>Default: <code>standard</code> (T2 instances) or
-     * <code>unlimited</code> (T3 instances)</p>
+     * <code>unlimited</code> (T3/T3a instances)</p>
      */
     inline RunInstancesRequest& WithCreditSpecification(CreditSpecificationRequest&& value) { SetCreditSpecification(std::move(value)); return *this;}
 

@@ -33,6 +33,7 @@ namespace Aws
         static const int ubuntu_HASH = HashingUtils::HashString("ubuntu");
         static const int raspbian_HASH = HashingUtils::HashString("raspbian");
         static const int amazon_linux_HASH = HashingUtils::HashString("amazon_linux");
+        static const int openwrt_HASH = HashingUtils::HashString("openwrt");
 
 
         UpdateTargetsOperatingSystem GetUpdateTargetsOperatingSystemForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == amazon_linux_HASH)
           {
             return UpdateTargetsOperatingSystem::amazon_linux;
+          }
+          else if (hashCode == openwrt_HASH)
+          {
+            return UpdateTargetsOperatingSystem::openwrt;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "raspbian";
           case UpdateTargetsOperatingSystem::amazon_linux:
             return "amazon_linux";
+          case UpdateTargetsOperatingSystem::openwrt:
+            return "openwrt";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -17,6 +17,7 @@
 #include <aws/redshift/Redshift_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift/model/Mode.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +132,37 @@ namespace Model
      */
     inline NodeConfigurationOption& WithEstimatedDiskUtilizationPercent(double value) { SetEstimatedDiskUtilizationPercent(value); return *this;}
 
+
+    /**
+     * <p>The category of the node configuration recommendation.</p>
+     */
+    inline const Mode& GetMode() const{ return m_mode; }
+
+    /**
+     * <p>The category of the node configuration recommendation.</p>
+     */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * <p>The category of the node configuration recommendation.</p>
+     */
+    inline void SetMode(const Mode& value) { m_modeHasBeenSet = true; m_mode = value; }
+
+    /**
+     * <p>The category of the node configuration recommendation.</p>
+     */
+    inline void SetMode(Mode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+
+    /**
+     * <p>The category of the node configuration recommendation.</p>
+     */
+    inline NodeConfigurationOption& WithMode(const Mode& value) { SetMode(value); return *this;}
+
+    /**
+     * <p>The category of the node configuration recommendation.</p>
+     */
+    inline NodeConfigurationOption& WithMode(Mode&& value) { SetMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nodeType;
@@ -141,6 +173,9 @@ namespace Model
 
     double m_estimatedDiskUtilizationPercent;
     bool m_estimatedDiskUtilizationPercentHasBeenSet;
+
+    Mode m_mode;
+    bool m_modeHasBeenSet;
   };
 
 } // namespace Model

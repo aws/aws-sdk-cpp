@@ -32,9 +32,14 @@ namespace Model
     GenerateDataKeyWithoutPlaintext,
     ReEncryptFrom,
     ReEncryptTo,
+    Sign,
+    Verify,
+    GetPublicKey,
     CreateGrant,
     RetireGrant,
-    DescribeKey
+    DescribeKey,
+    GenerateDataKeyPair,
+    GenerateDataKeyPairWithoutPlaintext
   };
 
 namespace GrantOperationMapper

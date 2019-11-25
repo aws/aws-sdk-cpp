@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     ONE_DAY,
-    ONE_WEEK
+    ONE_WEEK,
+    THIRTY_DAYS
   };
 
 namespace BusinessReportIntervalMapper

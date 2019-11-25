@@ -22,6 +22,10 @@
 #include <aws/lambda/model/EnvironmentResponse.h>
 #include <aws/lambda/model/TracingConfigResponse.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lambda/model/State.h>
+#include <aws/lambda/model/StateReasonCode.h>
+#include <aws/lambda/model/LastUpdateStatus.h>
+#include <aws/lambda/model/LastUpdateStatusReasonCode.h>
 #include <aws/lambda/model/Layer.h>
 #include <utility>
 
@@ -591,49 +595,49 @@ namespace Model
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer-managed CMK.</p>
+     * key is only returned if you've configured a customer managed CMK.</p>
      */
     inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer-managed CMK.</p>
+     * key is only returned if you've configured a customer managed CMK.</p>
      */
     inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer-managed CMK.</p>
+     * key is only returned if you've configured a customer managed CMK.</p>
      */
     inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer-managed CMK.</p>
+     * key is only returned if you've configured a customer managed CMK.</p>
      */
     inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = std::move(value); }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer-managed CMK.</p>
+     * key is only returned if you've configured a customer managed CMK.</p>
      */
     inline void SetKMSKeyArn(const char* value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn.assign(value); }
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer-managed CMK.</p>
+     * key is only returned if you've configured a customer managed CMK.</p>
      */
     inline FunctionConfiguration& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer-managed CMK.</p>
+     * key is only returned if you've configured a customer managed CMK.</p>
      */
     inline FunctionConfiguration& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key that's used to encrypt the function's environment variables. This
-     * key is only returned if you've configured a customer-managed CMK.</p>
+     * key is only returned if you've configured a customer managed CMK.</p>
      */
     inline FunctionConfiguration& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
 
@@ -807,6 +811,224 @@ namespace Model
      */
     inline FunctionConfiguration& AddLayers(Layer&& value) { m_layersHasBeenSet = true; m_layers.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The current state of the function. When the state is <code>Inactive</code>,
+     * you can reactivate the function by invoking it.</p>
+     */
+    inline const State& GetState() const{ return m_state; }
+
+    /**
+     * <p>The current state of the function. When the state is <code>Inactive</code>,
+     * you can reactivate the function by invoking it.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The current state of the function. When the state is <code>Inactive</code>,
+     * you can reactivate the function by invoking it.</p>
+     */
+    inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
+
+    /**
+     * <p>The current state of the function. When the state is <code>Inactive</code>,
+     * you can reactivate the function by invoking it.</p>
+     */
+    inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
+
+    /**
+     * <p>The current state of the function. When the state is <code>Inactive</code>,
+     * you can reactivate the function by invoking it.</p>
+     */
+    inline FunctionConfiguration& WithState(const State& value) { SetState(value); return *this;}
+
+    /**
+     * <p>The current state of the function. When the state is <code>Inactive</code>,
+     * you can reactivate the function by invoking it.</p>
+     */
+    inline FunctionConfiguration& WithState(State&& value) { SetState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The reason for the function's current state.</p>
+     */
+    inline const Aws::String& GetStateReason() const{ return m_stateReason; }
+
+    /**
+     * <p>The reason for the function's current state.</p>
+     */
+    inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
+
+    /**
+     * <p>The reason for the function's current state.</p>
+     */
+    inline void SetStateReason(const Aws::String& value) { m_stateReasonHasBeenSet = true; m_stateReason = value; }
+
+    /**
+     * <p>The reason for the function's current state.</p>
+     */
+    inline void SetStateReason(Aws::String&& value) { m_stateReasonHasBeenSet = true; m_stateReason = std::move(value); }
+
+    /**
+     * <p>The reason for the function's current state.</p>
+     */
+    inline void SetStateReason(const char* value) { m_stateReasonHasBeenSet = true; m_stateReason.assign(value); }
+
+    /**
+     * <p>The reason for the function's current state.</p>
+     */
+    inline FunctionConfiguration& WithStateReason(const Aws::String& value) { SetStateReason(value); return *this;}
+
+    /**
+     * <p>The reason for the function's current state.</p>
+     */
+    inline FunctionConfiguration& WithStateReason(Aws::String&& value) { SetStateReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason for the function's current state.</p>
+     */
+    inline FunctionConfiguration& WithStateReason(const char* value) { SetStateReason(value); return *this;}
+
+
+    /**
+     * <p>The reason code for the function's current state. When the code is
+     * <code>Creating</code>, you can't invoke or modify the function.</p>
+     */
+    inline const StateReasonCode& GetStateReasonCode() const{ return m_stateReasonCode; }
+
+    /**
+     * <p>The reason code for the function's current state. When the code is
+     * <code>Creating</code>, you can't invoke or modify the function.</p>
+     */
+    inline bool StateReasonCodeHasBeenSet() const { return m_stateReasonCodeHasBeenSet; }
+
+    /**
+     * <p>The reason code for the function's current state. When the code is
+     * <code>Creating</code>, you can't invoke or modify the function.</p>
+     */
+    inline void SetStateReasonCode(const StateReasonCode& value) { m_stateReasonCodeHasBeenSet = true; m_stateReasonCode = value; }
+
+    /**
+     * <p>The reason code for the function's current state. When the code is
+     * <code>Creating</code>, you can't invoke or modify the function.</p>
+     */
+    inline void SetStateReasonCode(StateReasonCode&& value) { m_stateReasonCodeHasBeenSet = true; m_stateReasonCode = std::move(value); }
+
+    /**
+     * <p>The reason code for the function's current state. When the code is
+     * <code>Creating</code>, you can't invoke or modify the function.</p>
+     */
+    inline FunctionConfiguration& WithStateReasonCode(const StateReasonCode& value) { SetStateReasonCode(value); return *this;}
+
+    /**
+     * <p>The reason code for the function's current state. When the code is
+     * <code>Creating</code>, you can't invoke or modify the function.</p>
+     */
+    inline FunctionConfiguration& WithStateReasonCode(StateReasonCode&& value) { SetStateReasonCode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The status of the last update that was performed on the function.</p>
+     */
+    inline const LastUpdateStatus& GetLastUpdateStatus() const{ return m_lastUpdateStatus; }
+
+    /**
+     * <p>The status of the last update that was performed on the function.</p>
+     */
+    inline bool LastUpdateStatusHasBeenSet() const { return m_lastUpdateStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the last update that was performed on the function.</p>
+     */
+    inline void SetLastUpdateStatus(const LastUpdateStatus& value) { m_lastUpdateStatusHasBeenSet = true; m_lastUpdateStatus = value; }
+
+    /**
+     * <p>The status of the last update that was performed on the function.</p>
+     */
+    inline void SetLastUpdateStatus(LastUpdateStatus&& value) { m_lastUpdateStatusHasBeenSet = true; m_lastUpdateStatus = std::move(value); }
+
+    /**
+     * <p>The status of the last update that was performed on the function.</p>
+     */
+    inline FunctionConfiguration& WithLastUpdateStatus(const LastUpdateStatus& value) { SetLastUpdateStatus(value); return *this;}
+
+    /**
+     * <p>The status of the last update that was performed on the function.</p>
+     */
+    inline FunctionConfiguration& WithLastUpdateStatus(LastUpdateStatus&& value) { SetLastUpdateStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The reason for the last update that was performed on the function.</p>
+     */
+    inline const Aws::String& GetLastUpdateStatusReason() const{ return m_lastUpdateStatusReason; }
+
+    /**
+     * <p>The reason for the last update that was performed on the function.</p>
+     */
+    inline bool LastUpdateStatusReasonHasBeenSet() const { return m_lastUpdateStatusReasonHasBeenSet; }
+
+    /**
+     * <p>The reason for the last update that was performed on the function.</p>
+     */
+    inline void SetLastUpdateStatusReason(const Aws::String& value) { m_lastUpdateStatusReasonHasBeenSet = true; m_lastUpdateStatusReason = value; }
+
+    /**
+     * <p>The reason for the last update that was performed on the function.</p>
+     */
+    inline void SetLastUpdateStatusReason(Aws::String&& value) { m_lastUpdateStatusReasonHasBeenSet = true; m_lastUpdateStatusReason = std::move(value); }
+
+    /**
+     * <p>The reason for the last update that was performed on the function.</p>
+     */
+    inline void SetLastUpdateStatusReason(const char* value) { m_lastUpdateStatusReasonHasBeenSet = true; m_lastUpdateStatusReason.assign(value); }
+
+    /**
+     * <p>The reason for the last update that was performed on the function.</p>
+     */
+    inline FunctionConfiguration& WithLastUpdateStatusReason(const Aws::String& value) { SetLastUpdateStatusReason(value); return *this;}
+
+    /**
+     * <p>The reason for the last update that was performed on the function.</p>
+     */
+    inline FunctionConfiguration& WithLastUpdateStatusReason(Aws::String&& value) { SetLastUpdateStatusReason(std::move(value)); return *this;}
+
+    /**
+     * <p>The reason for the last update that was performed on the function.</p>
+     */
+    inline FunctionConfiguration& WithLastUpdateStatusReason(const char* value) { SetLastUpdateStatusReason(value); return *this;}
+
+
+    /**
+     * <p>The reason code for the last update that was performed on the function.</p>
+     */
+    inline const LastUpdateStatusReasonCode& GetLastUpdateStatusReasonCode() const{ return m_lastUpdateStatusReasonCode; }
+
+    /**
+     * <p>The reason code for the last update that was performed on the function.</p>
+     */
+    inline bool LastUpdateStatusReasonCodeHasBeenSet() const { return m_lastUpdateStatusReasonCodeHasBeenSet; }
+
+    /**
+     * <p>The reason code for the last update that was performed on the function.</p>
+     */
+    inline void SetLastUpdateStatusReasonCode(const LastUpdateStatusReasonCode& value) { m_lastUpdateStatusReasonCodeHasBeenSet = true; m_lastUpdateStatusReasonCode = value; }
+
+    /**
+     * <p>The reason code for the last update that was performed on the function.</p>
+     */
+    inline void SetLastUpdateStatusReasonCode(LastUpdateStatusReasonCode&& value) { m_lastUpdateStatusReasonCodeHasBeenSet = true; m_lastUpdateStatusReasonCode = std::move(value); }
+
+    /**
+     * <p>The reason code for the last update that was performed on the function.</p>
+     */
+    inline FunctionConfiguration& WithLastUpdateStatusReasonCode(const LastUpdateStatusReasonCode& value) { SetLastUpdateStatusReasonCode(value); return *this;}
+
+    /**
+     * <p>The reason code for the last update that was performed on the function.</p>
+     */
+    inline FunctionConfiguration& WithLastUpdateStatusReasonCode(LastUpdateStatusReasonCode&& value) { SetLastUpdateStatusReasonCode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_functionName;
@@ -868,6 +1090,24 @@ namespace Model
 
     Aws::Vector<Layer> m_layers;
     bool m_layersHasBeenSet;
+
+    State m_state;
+    bool m_stateHasBeenSet;
+
+    Aws::String m_stateReason;
+    bool m_stateReasonHasBeenSet;
+
+    StateReasonCode m_stateReasonCode;
+    bool m_stateReasonCodeHasBeenSet;
+
+    LastUpdateStatus m_lastUpdateStatus;
+    bool m_lastUpdateStatusHasBeenSet;
+
+    Aws::String m_lastUpdateStatusReason;
+    bool m_lastUpdateStatusReasonHasBeenSet;
+
+    LastUpdateStatusReasonCode m_lastUpdateStatusReasonCode;
+    bool m_lastUpdateStatusReasonCodeHasBeenSet;
   };
 
 } // namespace Model

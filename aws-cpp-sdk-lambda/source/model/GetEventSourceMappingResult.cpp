@@ -28,13 +28,21 @@ using namespace Aws;
 
 GetEventSourceMappingResult::GetEventSourceMappingResult() : 
     m_batchSize(0),
-    m_maximumBatchingWindowInSeconds(0)
+    m_maximumBatchingWindowInSeconds(0),
+    m_parallelizationFactor(0),
+    m_maximumRecordAgeInSeconds(0),
+    m_bisectBatchOnFunctionError(false),
+    m_maximumRetryAttempts(0)
 {
 }
 
 GetEventSourceMappingResult::GetEventSourceMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_batchSize(0),
-    m_maximumBatchingWindowInSeconds(0)
+    m_maximumBatchingWindowInSeconds(0),
+    m_parallelizationFactor(0),
+    m_maximumRecordAgeInSeconds(0),
+    m_bisectBatchOnFunctionError(false),
+    m_maximumRetryAttempts(0)
 {
   *this = result;
 }
@@ -57,6 +65,12 @@ GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const Aws::
   if(jsonValue.ValueExists("MaximumBatchingWindowInSeconds"))
   {
     m_maximumBatchingWindowInSeconds = jsonValue.GetInteger("MaximumBatchingWindowInSeconds");
+
+  }
+
+  if(jsonValue.ValueExists("ParallelizationFactor"))
+  {
+    m_parallelizationFactor = jsonValue.GetInteger("ParallelizationFactor");
 
   }
 
@@ -93,6 +107,30 @@ GetEventSourceMappingResult& GetEventSourceMappingResult::operator =(const Aws::
   if(jsonValue.ValueExists("StateTransitionReason"))
   {
     m_stateTransitionReason = jsonValue.GetString("StateTransitionReason");
+
+  }
+
+  if(jsonValue.ValueExists("DestinationConfig"))
+  {
+    m_destinationConfig = jsonValue.GetObject("DestinationConfig");
+
+  }
+
+  if(jsonValue.ValueExists("MaximumRecordAgeInSeconds"))
+  {
+    m_maximumRecordAgeInSeconds = jsonValue.GetInteger("MaximumRecordAgeInSeconds");
+
+  }
+
+  if(jsonValue.ValueExists("BisectBatchOnFunctionError"))
+  {
+    m_bisectBatchOnFunctionError = jsonValue.GetBool("BisectBatchOnFunctionError");
+
+  }
+
+  if(jsonValue.ValueExists("MaximumRetryAttempts"))
+  {
+    m_maximumRetryAttempts = jsonValue.GetInteger("MaximumRetryAttempts");
 
   }
 

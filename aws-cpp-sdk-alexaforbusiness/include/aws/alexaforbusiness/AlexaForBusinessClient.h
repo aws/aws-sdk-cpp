@@ -1935,16 +1935,20 @@ namespace Model
         virtual void GetSkillGroupAsync(const Model::GetSkillGroupRequest& request, const GetSkillGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the details of the schedules that a user configured.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the details of the schedules that a user configured. A download URL of
+         * the report associated with each schedule is returned every time this action is
+         * called. A new download URL is returned each time, and is valid for 24
+         * hours.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">AWS
          * API Reference</a></p>
          */
         virtual Model::ListBusinessReportSchedulesOutcome ListBusinessReportSchedules(const Model::ListBusinessReportSchedulesRequest& request) const;
 
         /**
-         * <p>Lists the details of the schedules that a user configured.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the details of the schedules that a user configured. A download URL of
+         * the report associated with each schedule is returned every time this action is
+         * called. A new download URL is returned each time, and is valid for 24
+         * hours.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">AWS
          * API Reference</a></p>
          *
@@ -1953,8 +1957,10 @@ namespace Model
         virtual Model::ListBusinessReportSchedulesOutcomeCallable ListBusinessReportSchedulesCallable(const Model::ListBusinessReportSchedulesRequest& request) const;
 
         /**
-         * <p>Lists the details of the schedules that a user configured.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Lists the details of the schedules that a user configured. A download URL of
+         * the report associated with each schedule is returned every time this action is
+         * called. A new download URL is returned each time, and is valid for 24
+         * hours.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">AWS
          * API Reference</a></p>
          *

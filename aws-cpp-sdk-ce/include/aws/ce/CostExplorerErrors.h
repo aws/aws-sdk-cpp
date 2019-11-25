@@ -61,6 +61,7 @@ enum class CostExplorerErrors
   INVALID_NEXT_TOKEN,
   LIMIT_EXCEEDED,
   REQUEST_CHANGED,
+  SERVICE_QUOTA_EXCEEDED,
   UNRESOLVABLE_USAGE_UNIT
 };
 namespace CostExplorerErrorMapper

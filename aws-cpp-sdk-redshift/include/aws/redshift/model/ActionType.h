@@ -26,7 +26,8 @@ namespace Model
   enum class ActionType
   {
     NOT_SET,
-    restore_cluster
+    restore_cluster,
+    recommend_node_config
   };
 
 namespace ActionTypeMapper

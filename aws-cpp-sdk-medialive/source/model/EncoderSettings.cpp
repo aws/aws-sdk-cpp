@@ -35,6 +35,7 @@ EncoderSettings::EncoderSettings() :
     m_blackoutSlateHasBeenSet(false),
     m_captionDescriptionsHasBeenSet(false),
     m_globalConfigurationHasBeenSet(false),
+    m_nielsenConfigurationHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
     m_videoDescriptionsHasBeenSet(false)
@@ -48,6 +49,7 @@ EncoderSettings::EncoderSettings(JsonView jsonValue) :
     m_blackoutSlateHasBeenSet(false),
     m_captionDescriptionsHasBeenSet(false),
     m_globalConfigurationHasBeenSet(false),
+    m_nielsenConfigurationHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
     m_videoDescriptionsHasBeenSet(false)
@@ -103,6 +105,13 @@ EncoderSettings& EncoderSettings::operator =(JsonView jsonValue)
     m_globalConfiguration = jsonValue.GetObject("globalConfiguration");
 
     m_globalConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("nielsenConfiguration"))
+  {
+    m_nielsenConfiguration = jsonValue.GetObject("nielsenConfiguration");
+
+    m_nielsenConfigurationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("outputGroups"))
@@ -182,6 +191,12 @@ JsonValue EncoderSettings::Jsonize() const
   if(m_globalConfigurationHasBeenSet)
   {
    payload.WithObject("globalConfiguration", m_globalConfiguration.Jsonize());
+
+  }
+
+  if(m_nielsenConfigurationHasBeenSet)
+  {
+   payload.WithObject("nielsenConfiguration", m_nielsenConfiguration.Jsonize());
 
   }
 

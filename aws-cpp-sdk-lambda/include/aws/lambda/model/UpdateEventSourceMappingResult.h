@@ -17,6 +17,7 @@
 #include <aws/lambda/Lambda_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lambda/model/DestinationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -101,14 +102,39 @@ namespace Model
     inline UpdateEventSourceMappingResult& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
 
-    
+    /**
+     * <p>The maximum amount of time to gather records before invoking the function, in
+     * seconds.</p>
+     */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
 
-    
+    /**
+     * <p>The maximum amount of time to gather records before invoking the function, in
+     * seconds.</p>
+     */
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSeconds = value; }
 
-    
+    /**
+     * <p>The maximum amount of time to gather records before invoking the function, in
+     * seconds.</p>
+     */
     inline UpdateEventSourceMappingResult& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
+
+
+    /**
+     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     */
+    inline int GetParallelizationFactor() const{ return m_parallelizationFactor; }
+
+    /**
+     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     */
+    inline void SetParallelizationFactor(int value) { m_parallelizationFactor = value; }
+
+    /**
+     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithParallelizationFactor(int value) { SetParallelizationFactor(value); return *this;}
 
 
     /**
@@ -184,27 +210,32 @@ namespace Model
 
 
     /**
-     * <p>The date that the event source mapping was last updated.</p>
+     * <p>The date that the event source mapping was last updated, or its state
+     * changed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
 
     /**
-     * <p>The date that the event source mapping was last updated.</p>
+     * <p>The date that the event source mapping was last updated, or its state
+     * changed.</p>
      */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModified = value; }
 
     /**
-     * <p>The date that the event source mapping was last updated.</p>
+     * <p>The date that the event source mapping was last updated, or its state
+     * changed.</p>
      */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModified = std::move(value); }
 
     /**
-     * <p>The date that the event source mapping was last updated.</p>
+     * <p>The date that the event source mapping was last updated, or its state
+     * changed.</p>
      */
     inline UpdateEventSourceMappingResult& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
 
     /**
-     * <p>The date that the event source mapping was last updated.</p>
+     * <p>The date that the event source mapping was last updated, or its state
+     * changed.</p>
      */
     inline UpdateEventSourceMappingResult& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
 
@@ -303,46 +334,134 @@ namespace Model
 
 
     /**
-     * <p>The cause of the last state change, either <code>User initiated</code> or
-     * <code>Lambda initiated</code>.</p>
+     * <p>Indicates whether the last change to the event source mapping was made by a
+     * user, or by the Lambda service.</p>
      */
     inline const Aws::String& GetStateTransitionReason() const{ return m_stateTransitionReason; }
 
     /**
-     * <p>The cause of the last state change, either <code>User initiated</code> or
-     * <code>Lambda initiated</code>.</p>
+     * <p>Indicates whether the last change to the event source mapping was made by a
+     * user, or by the Lambda service.</p>
      */
     inline void SetStateTransitionReason(const Aws::String& value) { m_stateTransitionReason = value; }
 
     /**
-     * <p>The cause of the last state change, either <code>User initiated</code> or
-     * <code>Lambda initiated</code>.</p>
+     * <p>Indicates whether the last change to the event source mapping was made by a
+     * user, or by the Lambda service.</p>
      */
     inline void SetStateTransitionReason(Aws::String&& value) { m_stateTransitionReason = std::move(value); }
 
     /**
-     * <p>The cause of the last state change, either <code>User initiated</code> or
-     * <code>Lambda initiated</code>.</p>
+     * <p>Indicates whether the last change to the event source mapping was made by a
+     * user, or by the Lambda service.</p>
      */
     inline void SetStateTransitionReason(const char* value) { m_stateTransitionReason.assign(value); }
 
     /**
-     * <p>The cause of the last state change, either <code>User initiated</code> or
-     * <code>Lambda initiated</code>.</p>
+     * <p>Indicates whether the last change to the event source mapping was made by a
+     * user, or by the Lambda service.</p>
      */
     inline UpdateEventSourceMappingResult& WithStateTransitionReason(const Aws::String& value) { SetStateTransitionReason(value); return *this;}
 
     /**
-     * <p>The cause of the last state change, either <code>User initiated</code> or
-     * <code>Lambda initiated</code>.</p>
+     * <p>Indicates whether the last change to the event source mapping was made by a
+     * user, or by the Lambda service.</p>
      */
     inline UpdateEventSourceMappingResult& WithStateTransitionReason(Aws::String&& value) { SetStateTransitionReason(std::move(value)); return *this;}
 
     /**
-     * <p>The cause of the last state change, either <code>User initiated</code> or
-     * <code>Lambda initiated</code>.</p>
+     * <p>Indicates whether the last change to the event source mapping was made by a
+     * user, or by the Lambda service.</p>
      */
     inline UpdateEventSourceMappingResult& WithStateTransitionReason(const char* value) { SetStateTransitionReason(value); return *this;}
+
+
+    /**
+     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
+     * records.</p>
+     */
+    inline const DestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
+
+    /**
+     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
+     * records.</p>
+     */
+    inline void SetDestinationConfig(const DestinationConfig& value) { m_destinationConfig = value; }
+
+    /**
+     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
+     * records.</p>
+     */
+    inline void SetDestinationConfig(DestinationConfig&& value) { m_destinationConfig = std::move(value); }
+
+    /**
+     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
+     * records.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithDestinationConfig(const DestinationConfig& value) { SetDestinationConfig(value); return *this;}
+
+    /**
+     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
+     * records.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithDestinationConfig(DestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
+     * processing.</p>
+     */
+    inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
+
+    /**
+     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
+     * processing.</p>
+     */
+    inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSeconds = value; }
+
+    /**
+     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
+     * processing.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
+
+
+    /**
+     * <p>(Streams) If the function returns an error, split the batch in two and
+     * retry.</p>
+     */
+    inline bool GetBisectBatchOnFunctionError() const{ return m_bisectBatchOnFunctionError; }
+
+    /**
+     * <p>(Streams) If the function returns an error, split the batch in two and
+     * retry.</p>
+     */
+    inline void SetBisectBatchOnFunctionError(bool value) { m_bisectBatchOnFunctionError = value; }
+
+    /**
+     * <p>(Streams) If the function returns an error, split the batch in two and
+     * retry.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithBisectBatchOnFunctionError(bool value) { SetBisectBatchOnFunctionError(value); return *this;}
+
+
+    /**
+     * <p>(Streams) The maximum number of times to retry when the function returns an
+     * error.</p>
+     */
+    inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
+
+    /**
+     * <p>(Streams) The maximum number of times to retry when the function returns an
+     * error.</p>
+     */
+    inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttempts = value; }
+
+    /**
+     * <p>(Streams) The maximum number of times to retry when the function returns an
+     * error.</p>
+     */
+    inline UpdateEventSourceMappingResult& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
 
   private:
 
@@ -351,6 +470,8 @@ namespace Model
     int m_batchSize;
 
     int m_maximumBatchingWindowInSeconds;
+
+    int m_parallelizationFactor;
 
     Aws::String m_eventSourceArn;
 
@@ -363,6 +484,14 @@ namespace Model
     Aws::String m_state;
 
     Aws::String m_stateTransitionReason;
+
+    DestinationConfig m_destinationConfig;
+
+    int m_maximumRecordAgeInSeconds;
+
+    bool m_bisectBatchOnFunctionError;
+
+    int m_maximumRetryAttempts;
   };
 
 } // namespace Model

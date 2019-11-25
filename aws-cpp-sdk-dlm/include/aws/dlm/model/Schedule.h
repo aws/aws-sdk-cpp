@@ -272,32 +272,32 @@ namespace Model
 
 
     /**
-     * <p>The retain rule.</p>
+     * <p>The retention rule.</p>
      */
     inline const RetainRule& GetRetainRule() const{ return m_retainRule; }
 
     /**
-     * <p>The retain rule.</p>
+     * <p>The retention rule.</p>
      */
     inline bool RetainRuleHasBeenSet() const { return m_retainRuleHasBeenSet; }
 
     /**
-     * <p>The retain rule.</p>
+     * <p>The retention rule.</p>
      */
     inline void SetRetainRule(const RetainRule& value) { m_retainRuleHasBeenSet = true; m_retainRule = value; }
 
     /**
-     * <p>The retain rule.</p>
+     * <p>The retention rule.</p>
      */
     inline void SetRetainRule(RetainRule&& value) { m_retainRuleHasBeenSet = true; m_retainRule = std::move(value); }
 
     /**
-     * <p>The retain rule.</p>
+     * <p>The retention rule.</p>
      */
     inline Schedule& WithRetainRule(const RetainRule& value) { SetRetainRule(value); return *this;}
 
     /**
-     * <p>The retain rule.</p>
+     * <p>The retention rule.</p>
      */
     inline Schedule& WithRetainRule(RetainRule&& value) { SetRetainRule(std::move(value)); return *this;}
 

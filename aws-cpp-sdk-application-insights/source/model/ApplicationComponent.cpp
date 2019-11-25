@@ -31,6 +31,7 @@ namespace Model
 ApplicationComponent::ApplicationComponent() : 
     m_componentNameHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
+    m_tier(Tier::NOT_SET),
     m_tierHasBeenSet(false),
     m_monitor(false),
     m_monitorHasBeenSet(false)
@@ -40,6 +41,7 @@ ApplicationComponent::ApplicationComponent() :
 ApplicationComponent::ApplicationComponent(JsonView jsonValue) : 
     m_componentNameHasBeenSet(false),
     m_resourceTypeHasBeenSet(false),
+    m_tier(Tier::NOT_SET),
     m_tierHasBeenSet(false),
     m_monitor(false),
     m_monitorHasBeenSet(false)
@@ -65,7 +67,7 @@ ApplicationComponent& ApplicationComponent::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("Tier"))
   {
-    m_tier = jsonValue.GetString("Tier");
+    m_tier = TierMapper::GetTierForName(jsonValue.GetString("Tier"));
 
     m_tierHasBeenSet = true;
   }
@@ -98,8 +100,7 @@ JsonValue ApplicationComponent::Jsonize() const
 
   if(m_tierHasBeenSet)
   {
-   payload.WithString("Tier", m_tier);
-
+   payload.WithString("Tier", TierMapper::GetNameForTier(m_tier));
   }
 
   if(m_monitorHasBeenSet)

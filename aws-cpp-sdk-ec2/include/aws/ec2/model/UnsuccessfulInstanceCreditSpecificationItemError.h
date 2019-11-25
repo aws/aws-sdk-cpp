@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the error for the T2 or T3 instance whose credit option for
-   * CPU usage was not modified.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the error for the burstable performance instance whose
+   * credit option for CPU usage was not modified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnsuccessfulInstanceCreditSpecificationItemError">AWS
    * API Reference</a></p>
    */

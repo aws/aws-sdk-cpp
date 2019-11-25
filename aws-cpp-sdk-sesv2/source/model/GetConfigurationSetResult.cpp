@@ -77,6 +77,12 @@ GetConfigurationSetResult& GetConfigurationSetResult::operator =(const Aws::Amaz
     }
   }
 
+  if(jsonValue.ValueExists("SuppressionOptions"))
+  {
+    m_suppressionOptions = jsonValue.GetObject("SuppressionOptions");
+
+  }
+
 
 
   return *this;

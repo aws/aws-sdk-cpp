@@ -805,6 +805,42 @@ namespace Model
      */
     inline void ReplaceBody(Aws::IOStream* body) { m_audioStream = Aws::Utils::Stream::ResponseStream(body); }
 
+
+    /**
+     * <p>The unique identifier for the session.</p>
+     */
+    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+
+    /**
+     * <p>The unique identifier for the session.</p>
+     */
+    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
+
+    /**
+     * <p>The unique identifier for the session.</p>
+     */
+    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
+
+    /**
+     * <p>The unique identifier for the session.</p>
+     */
+    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
+
+    /**
+     * <p>The unique identifier for the session.</p>
+     */
+    inline PostContentResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for the session.</p>
+     */
+    inline PostContentResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for the session.</p>
+     */
+    inline PostContentResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+
   private:
 
     Aws::String m_contentType;
@@ -828,6 +864,8 @@ namespace Model
     Aws::String m_inputTranscript;
 
   Aws::Utils::Stream::ResponseStream m_audioStream;
+
+    Aws::String m_sessionId;
   };
 
 } // namespace Model

@@ -21,6 +21,9 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ce/model/CreateCostCategoryDefinitionResult.h>
+#include <aws/ce/model/DeleteCostCategoryDefinitionResult.h>
+#include <aws/ce/model/DescribeCostCategoryDefinitionResult.h>
 #include <aws/ce/model/GetCostAndUsageResult.h>
 #include <aws/ce/model/GetCostAndUsageWithResourcesResult.h>
 #include <aws/ce/model/GetCostForecastResult.h>
@@ -35,6 +38,8 @@
 #include <aws/ce/model/GetSavingsPlansUtilizationDetailsResult.h>
 #include <aws/ce/model/GetTagsResult.h>
 #include <aws/ce/model/GetUsageForecastResult.h>
+#include <aws/ce/model/ListCostCategoryDefinitionsResult.h>
+#include <aws/ce/model/UpdateCostCategoryDefinitionResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -74,6 +79,9 @@ namespace CostExplorer
 
 namespace Model
 {
+        class CreateCostCategoryDefinitionRequest;
+        class DeleteCostCategoryDefinitionRequest;
+        class DescribeCostCategoryDefinitionRequest;
         class GetCostAndUsageRequest;
         class GetCostAndUsageWithResourcesRequest;
         class GetCostForecastRequest;
@@ -88,7 +96,12 @@ namespace Model
         class GetSavingsPlansUtilizationDetailsRequest;
         class GetTagsRequest;
         class GetUsageForecastRequest;
+        class ListCostCategoryDefinitionsRequest;
+        class UpdateCostCategoryDefinitionRequest;
 
+        typedef Aws::Utils::Outcome<CreateCostCategoryDefinitionResult, Aws::Client::AWSError<CostExplorerErrors>> CreateCostCategoryDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DeleteCostCategoryDefinitionResult, Aws::Client::AWSError<CostExplorerErrors>> DeleteCostCategoryDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DescribeCostCategoryDefinitionResult, Aws::Client::AWSError<CostExplorerErrors>> DescribeCostCategoryDefinitionOutcome;
         typedef Aws::Utils::Outcome<GetCostAndUsageResult, Aws::Client::AWSError<CostExplorerErrors>> GetCostAndUsageOutcome;
         typedef Aws::Utils::Outcome<GetCostAndUsageWithResourcesResult, Aws::Client::AWSError<CostExplorerErrors>> GetCostAndUsageWithResourcesOutcome;
         typedef Aws::Utils::Outcome<GetCostForecastResult, Aws::Client::AWSError<CostExplorerErrors>> GetCostForecastOutcome;
@@ -103,7 +116,12 @@ namespace Model
         typedef Aws::Utils::Outcome<GetSavingsPlansUtilizationDetailsResult, Aws::Client::AWSError<CostExplorerErrors>> GetSavingsPlansUtilizationDetailsOutcome;
         typedef Aws::Utils::Outcome<GetTagsResult, Aws::Client::AWSError<CostExplorerErrors>> GetTagsOutcome;
         typedef Aws::Utils::Outcome<GetUsageForecastResult, Aws::Client::AWSError<CostExplorerErrors>> GetUsageForecastOutcome;
+        typedef Aws::Utils::Outcome<ListCostCategoryDefinitionsResult, Aws::Client::AWSError<CostExplorerErrors>> ListCostCategoryDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<UpdateCostCategoryDefinitionResult, Aws::Client::AWSError<CostExplorerErrors>> UpdateCostCategoryDefinitionOutcome;
 
+        typedef std::future<CreateCostCategoryDefinitionOutcome> CreateCostCategoryDefinitionOutcomeCallable;
+        typedef std::future<DeleteCostCategoryDefinitionOutcome> DeleteCostCategoryDefinitionOutcomeCallable;
+        typedef std::future<DescribeCostCategoryDefinitionOutcome> DescribeCostCategoryDefinitionOutcomeCallable;
         typedef std::future<GetCostAndUsageOutcome> GetCostAndUsageOutcomeCallable;
         typedef std::future<GetCostAndUsageWithResourcesOutcome> GetCostAndUsageWithResourcesOutcomeCallable;
         typedef std::future<GetCostForecastOutcome> GetCostForecastOutcomeCallable;
@@ -118,10 +136,15 @@ namespace Model
         typedef std::future<GetSavingsPlansUtilizationDetailsOutcome> GetSavingsPlansUtilizationDetailsOutcomeCallable;
         typedef std::future<GetTagsOutcome> GetTagsOutcomeCallable;
         typedef std::future<GetUsageForecastOutcome> GetUsageForecastOutcomeCallable;
+        typedef std::future<ListCostCategoryDefinitionsOutcome> ListCostCategoryDefinitionsOutcomeCallable;
+        typedef std::future<UpdateCostCategoryDefinitionOutcome> UpdateCostCategoryDefinitionOutcomeCallable;
 } // namespace Model
 
   class CostExplorerClient;
 
+    typedef std::function<void(const CostExplorerClient*, const Model::CreateCostCategoryDefinitionRequest&, const Model::CreateCostCategoryDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCostCategoryDefinitionResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::DeleteCostCategoryDefinitionRequest&, const Model::DeleteCostCategoryDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCostCategoryDefinitionResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::DescribeCostCategoryDefinitionRequest&, const Model::DescribeCostCategoryDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCostCategoryDefinitionResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostAndUsageRequest&, const Model::GetCostAndUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostAndUsageResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostAndUsageWithResourcesRequest&, const Model::GetCostAndUsageWithResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostAndUsageWithResourcesResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostForecastRequest&, const Model::GetCostForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostForecastResponseReceivedHandler;
@@ -136,6 +159,8 @@ namespace Model
     typedef std::function<void(const CostExplorerClient*, const Model::GetSavingsPlansUtilizationDetailsRequest&, const Model::GetSavingsPlansUtilizationDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSavingsPlansUtilizationDetailsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetTagsRequest&, const Model::GetTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTagsResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetUsageForecastRequest&, const Model::GetUsageForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageForecastResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::ListCostCategoryDefinitionsRequest&, const Model::ListCostCategoryDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCostCategoryDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::UpdateCostCategoryDefinitionRequest&, const Model::UpdateCostCategoryDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCostCategoryDefinitionResponseReceivedHandler;
 
   /**
    * <p>The Cost Explorer API enables you to programmatically query your cost and
@@ -177,6 +202,144 @@ namespace Model
 
         inline virtual const char* GetServiceClientName() const override { return "Cost Explorer"; }
 
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Creates a new Cost Category with the
+         * requested name and rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateCostCategoryDefinitionOutcome CreateCostCategoryDefinition(const Model::CreateCostCategoryDefinitionRequest& request) const;
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Creates a new Cost Category with the
+         * requested name and rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateCostCategoryDefinitionOutcomeCallable CreateCostCategoryDefinitionCallable(const Model::CreateCostCategoryDefinitionRequest& request) const;
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Creates a new Cost Category with the
+         * requested name and rules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/CreateCostCategoryDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateCostCategoryDefinitionAsync(const Model::CreateCostCategoryDefinitionRequest& request, const CreateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Deletes a Cost Category. Expenses from this
+         * month going forward will no longer be categorized with this Cost
+         * Category.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteCostCategoryDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteCostCategoryDefinitionOutcome DeleteCostCategoryDefinition(const Model::DeleteCostCategoryDefinitionRequest& request) const;
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Deletes a Cost Category. Expenses from this
+         * month going forward will no longer be categorized with this Cost
+         * Category.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteCostCategoryDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteCostCategoryDefinitionOutcomeCallable DeleteCostCategoryDefinitionCallable(const Model::DeleteCostCategoryDefinitionRequest& request) const;
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Deletes a Cost Category. Expenses from this
+         * month going forward will no longer be categorized with this Cost
+         * Category.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DeleteCostCategoryDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteCostCategoryDefinitionAsync(const Model::DeleteCostCategoryDefinitionRequest& request, const DeleteCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN, rules, definition,
+         * and effective dates of a Cost Category that's defined in the account.</p> <p>You
+         * have the option to use <code>EffectiveOn</code> to return a Cost Category that
+         * is active on a specific date. If there is no <code>EffectiveOn</code> specified,
+         * you’ll see a Cost Category that is effective on the current date. If Cost
+         * Category is still effective, <code>EffectiveEnd</code> is omitted in the
+         * response. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCostCategoryDefinitionOutcome DescribeCostCategoryDefinition(const Model::DescribeCostCategoryDefinitionRequest& request) const;
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN, rules, definition,
+         * and effective dates of a Cost Category that's defined in the account.</p> <p>You
+         * have the option to use <code>EffectiveOn</code> to return a Cost Category that
+         * is active on a specific date. If there is no <code>EffectiveOn</code> specified,
+         * you’ll see a Cost Category that is effective on the current date. If Cost
+         * Category is still effective, <code>EffectiveEnd</code> is omitted in the
+         * response. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeCostCategoryDefinitionOutcomeCallable DescribeCostCategoryDefinitionCallable(const Model::DescribeCostCategoryDefinitionRequest& request) const;
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN, rules, definition,
+         * and effective dates of a Cost Category that's defined in the account.</p> <p>You
+         * have the option to use <code>EffectiveOn</code> to return a Cost Category that
+         * is active on a specific date. If there is no <code>EffectiveOn</code> specified,
+         * you’ll see a Cost Category that is effective on the current date. If Cost
+         * Category is still effective, <code>EffectiveEnd</code> is omitted in the
+         * response. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/DescribeCostCategoryDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeCostCategoryDefinitionAsync(const Model::DescribeCostCategoryDefinitionRequest& request, const DescribeCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves cost and usage metrics for your account. You can specify which cost
@@ -792,10 +955,114 @@ namespace Model
          */
         virtual void GetUsageForecastAsync(const Model::GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN and effective dates
+         * of all Cost Categories defined in the account. You have the option to use
+         * <code>EffectiveOn</code> to return a list of Cost Categories that were active on
+         * a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see
+         * Cost Categories that are effective on the current date. If Cost Category is
+         * still effective, <code>EffectiveEnd</code> is omitted in the response.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCostCategoryDefinitionsOutcome ListCostCategoryDefinitions(const Model::ListCostCategoryDefinitionsRequest& request) const;
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN and effective dates
+         * of all Cost Categories defined in the account. You have the option to use
+         * <code>EffectiveOn</code> to return a list of Cost Categories that were active on
+         * a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see
+         * Cost Categories that are effective on the current date. If Cost Category is
+         * still effective, <code>EffectiveEnd</code> is omitted in the response.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCostCategoryDefinitionsOutcomeCallable ListCostCategoryDefinitionsCallable(const Model::ListCostCategoryDefinitionsRequest& request) const;
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN and effective dates
+         * of all Cost Categories defined in the account. You have the option to use
+         * <code>EffectiveOn</code> to return a list of Cost Categories that were active on
+         * a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see
+         * Cost Categories that are effective on the current date. If Cost Category is
+         * still effective, <code>EffectiveEnd</code> is omitted in the response.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListCostCategoryDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCostCategoryDefinitionsAsync(const Model::ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Updates an existing Cost Category. Changes
+         * made to the Cost Category rules will be used to categorize the current month’s
+         * expenses and future expenses. This won’t change categorization for the previous
+         * months.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateCostCategoryDefinitionOutcome UpdateCostCategoryDefinition(const Model::UpdateCostCategoryDefinitionRequest& request) const;
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Updates an existing Cost Category. Changes
+         * made to the Cost Category rules will be used to categorize the current month’s
+         * expenses and future expenses. This won’t change categorization for the previous
+         * months.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateCostCategoryDefinitionOutcomeCallable UpdateCostCategoryDefinitionCallable(const Model::UpdateCostCategoryDefinitionRequest& request) const;
+
+        /**
+         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
+         * Cost Management and is subject to change. Your use of Cost Categories is subject
+         * to the Beta Service Participation terms of the <a
+         * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+         * 1.10).</b> </i> </p> </important> <p>Updates an existing Cost Category. Changes
+         * made to the Cost Category rules will be used to categorize the current month’s
+         * expenses and future expenses. This won’t change categorization for the previous
+         * months.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/UpdateCostCategoryDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateCostCategoryDefinitionAsync(const Model::UpdateCostCategoryDefinitionRequest& request, const UpdateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CreateCostCategoryDefinitionAsyncHelper(const Model::CreateCostCategoryDefinitionRequest& request, const CreateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteCostCategoryDefinitionAsyncHelper(const Model::DeleteCostCategoryDefinitionRequest& request, const DeleteCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeCostCategoryDefinitionAsyncHelper(const Model::DescribeCostCategoryDefinitionRequest& request, const DescribeCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCostAndUsageAsyncHelper(const Model::GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCostAndUsageWithResourcesAsyncHelper(const Model::GetCostAndUsageWithResourcesRequest& request, const GetCostAndUsageWithResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCostForecastAsyncHelper(const Model::GetCostForecastRequest& request, const GetCostForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -810,6 +1077,8 @@ namespace Model
         void GetSavingsPlansUtilizationDetailsAsyncHelper(const Model::GetSavingsPlansUtilizationDetailsRequest& request, const GetSavingsPlansUtilizationDetailsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTagsAsyncHelper(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUsageForecastAsyncHelper(const Model::GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCostCategoryDefinitionsAsyncHelper(const Model::ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateCostCategoryDefinitionAsyncHelper(const Model::UpdateCostCategoryDefinitionRequest& request, const UpdateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

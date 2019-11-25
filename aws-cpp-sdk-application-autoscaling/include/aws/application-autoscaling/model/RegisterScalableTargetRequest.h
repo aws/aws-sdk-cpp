@@ -117,21 +117,25 @@ namespace Model
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
-     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * unique identifier is the table name. Example: <code>table/my-table</code>.</p>
      * </li> <li> <p>DynamoDB global secondary index - The resource type is
-     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>index</code> and the unique identifier is the index name. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
      * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants - The resource type is
-     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code>
+     * and the unique identifier is the resource ID. Example:
      * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
      * provider. More information is available in our <a
      * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
-     * repository</a>.</p> </li> </ul>
+     * repository</a>.</p> </li> <li> <p>Amazon Comprehend document classification
+     * endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -150,21 +154,25 @@ namespace Model
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
-     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * unique identifier is the table name. Example: <code>table/my-table</code>.</p>
      * </li> <li> <p>DynamoDB global secondary index - The resource type is
-     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>index</code> and the unique identifier is the index name. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
      * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants - The resource type is
-     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code>
+     * and the unique identifier is the resource ID. Example:
      * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
      * provider. More information is available in our <a
      * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
-     * repository</a>.</p> </li> </ul>
+     * repository</a>.</p> </li> <li> <p>Amazon Comprehend document classification
+     * endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> </ul>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
@@ -183,21 +191,25 @@ namespace Model
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
-     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * unique identifier is the table name. Example: <code>table/my-table</code>.</p>
      * </li> <li> <p>DynamoDB global secondary index - The resource type is
-     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>index</code> and the unique identifier is the index name. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
      * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants - The resource type is
-     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code>
+     * and the unique identifier is the resource ID. Example:
      * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
      * provider. More information is available in our <a
      * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
-     * repository</a>.</p> </li> </ul>
+     * repository</a>.</p> </li> <li> <p>Amazon Comprehend document classification
+     * endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -216,21 +228,25 @@ namespace Model
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
-     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * unique identifier is the table name. Example: <code>table/my-table</code>.</p>
      * </li> <li> <p>DynamoDB global secondary index - The resource type is
-     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>index</code> and the unique identifier is the index name. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
      * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants - The resource type is
-     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code>
+     * and the unique identifier is the resource ID. Example:
      * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
      * provider. More information is available in our <a
      * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
-     * repository</a>.</p> </li> </ul>
+     * repository</a>.</p> </li> <li> <p>Amazon Comprehend document classification
+     * endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
@@ -249,21 +265,25 @@ namespace Model
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
-     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * unique identifier is the table name. Example: <code>table/my-table</code>.</p>
      * </li> <li> <p>DynamoDB global secondary index - The resource type is
-     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>index</code> and the unique identifier is the index name. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
      * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants - The resource type is
-     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code>
+     * and the unique identifier is the resource ID. Example:
      * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
      * provider. More information is available in our <a
      * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
-     * repository</a>.</p> </li> </ul>
+     * repository</a>.</p> </li> <li> <p>Amazon Comprehend document classification
+     * endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -282,21 +302,25 @@ namespace Model
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
-     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * unique identifier is the table name. Example: <code>table/my-table</code>.</p>
      * </li> <li> <p>DynamoDB global secondary index - The resource type is
-     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>index</code> and the unique identifier is the index name. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
      * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants - The resource type is
-     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code>
+     * and the unique identifier is the resource ID. Example:
      * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
      * provider. More information is available in our <a
      * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
-     * repository</a>.</p> </li> </ul>
+     * repository</a>.</p> </li> <li> <p>Amazon Comprehend document classification
+     * endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> </ul>
      */
     inline RegisterScalableTargetRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -315,21 +339,25 @@ namespace Model
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
-     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * unique identifier is the table name. Example: <code>table/my-table</code>.</p>
      * </li> <li> <p>DynamoDB global secondary index - The resource type is
-     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>index</code> and the unique identifier is the index name. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
      * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants - The resource type is
-     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code>
+     * and the unique identifier is the resource ID. Example:
      * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
      * provider. More information is available in our <a
      * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
-     * repository</a>.</p> </li> </ul>
+     * repository</a>.</p> </li> <li> <p>Amazon Comprehend document classification
+     * endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> </ul>
      */
     inline RegisterScalableTargetRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -348,21 +376,25 @@ namespace Model
      * <p>AppStream 2.0 fleet - The resource type is <code>fleet</code> and the unique
      * identifier is the fleet name. Example: <code>fleet/sample-fleet</code>.</p>
      * </li> <li> <p>DynamoDB table - The resource type is <code>table</code> and the
-     * unique identifier is the resource ID. Example: <code>table/my-table</code>.</p>
+     * unique identifier is the table name. Example: <code>table/my-table</code>.</p>
      * </li> <li> <p>DynamoDB global secondary index - The resource type is
-     * <code>index</code> and the unique identifier is the resource ID. Example:
+     * <code>index</code> and the unique identifier is the index name. Example:
      * <code>table/my-table/index/my-table-index</code>.</p> </li> <li> <p>Aurora DB
      * cluster - The resource type is <code>cluster</code> and the unique identifier is
      * the cluster name. Example: <code>cluster:my-db-cluster</code>.</p> </li> <li>
-     * <p>Amazon SageMaker endpoint variants - The resource type is
-     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <p>Amazon SageMaker endpoint variant - The resource type is <code>variant</code>
+     * and the unique identifier is the resource ID. Example:
      * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> <li>
      * <p>Custom resources are not supported with a resource type. This parameter must
      * specify the <code>OutputValue</code> from the CloudFormation template stack used
      * to access the resources. The unique identifier is defined by the service
      * provider. More information is available in our <a
      * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub
-     * repository</a>.</p> </li> </ul>
+     * repository</a>.</p> </li> <li> <p>Amazon Comprehend document classification
+     * endpoint - The resource type and unique identifier are specified using the
+     * endpoint ARN. Example:
+     * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
+     * </li> </ul>
      */
     inline RegisterScalableTargetRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -392,7 +424,10 @@ namespace Model
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
-     * a custom resource provided by your own application or service.</p> </li> </ul>
+     * a custom resource provided by your own application or service.</p> </li> <li>
+     * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
+     * The number of inference units for an Amazon Comprehend document classification
+     * endpoint.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -421,7 +456,10 @@ namespace Model
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
-     * a custom resource provided by your own application or service.</p> </li> </ul>
+     * a custom resource provided by your own application or service.</p> </li> <li>
+     * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
+     * The number of inference units for an Amazon Comprehend document classification
+     * endpoint.</p> </li> </ul>
      */
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
 
@@ -450,7 +488,10 @@ namespace Model
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
-     * a custom resource provided by your own application or service.</p> </li> </ul>
+     * a custom resource provided by your own application or service.</p> </li> <li>
+     * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
+     * The number of inference units for an Amazon Comprehend document classification
+     * endpoint.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -479,7 +520,10 @@ namespace Model
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
-     * a custom resource provided by your own application or service.</p> </li> </ul>
+     * a custom resource provided by your own application or service.</p> </li> <li>
+     * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
+     * The number of inference units for an Amazon Comprehend document classification
+     * endpoint.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
@@ -508,7 +552,10 @@ namespace Model
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
-     * a custom resource provided by your own application or service.</p> </li> </ul>
+     * a custom resource provided by your own application or service.</p> </li> <li>
+     * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
+     * The number of inference units for an Amazon Comprehend document classification
+     * endpoint.</p> </li> </ul>
      */
     inline RegisterScalableTargetRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -537,7 +584,10 @@ namespace Model
      * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2
      * instances for an Amazon SageMaker model endpoint variant.</p> </li> <li> <p>
      * <code>custom-resource:ResourceType:Property</code> - The scalable dimension for
-     * a custom resource provided by your own application or service.</p> </li> </ul>
+     * a custom resource provided by your own application or service.</p> </li> <li>
+     * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
+     * The number of inference units for an Amazon Comprehend document classification
+     * endpoint.</p> </li> </ul>
      */
     inline RegisterScalableTargetRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 
@@ -694,9 +744,8 @@ namespace Model
      * suspended.</p> </li> <li> <p>For <code>ScheduledScalingSuspended</code>, while a
      * suspension is in effect, all scaling activities that involve scheduled actions
      * are suspended. </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend
-     * and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
+     * and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline const SuspendedState& GetSuspendedState() const{ return m_suspendedState; }
 
@@ -713,9 +762,8 @@ namespace Model
      * suspended.</p> </li> <li> <p>For <code>ScheduledScalingSuspended</code>, while a
      * suspension is in effect, all scaling activities that involve scheduled actions
      * are suspended. </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend
-     * and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
+     * and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline bool SuspendedStateHasBeenSet() const { return m_suspendedStateHasBeenSet; }
 
@@ -732,9 +780,8 @@ namespace Model
      * suspended.</p> </li> <li> <p>For <code>ScheduledScalingSuspended</code>, while a
      * suspension is in effect, all scaling activities that involve scheduled actions
      * are suspended. </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend
-     * and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
+     * and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline void SetSuspendedState(const SuspendedState& value) { m_suspendedStateHasBeenSet = true; m_suspendedState = value; }
 
@@ -751,9 +798,8 @@ namespace Model
      * suspended.</p> </li> <li> <p>For <code>ScheduledScalingSuspended</code>, while a
      * suspension is in effect, all scaling activities that involve scheduled actions
      * are suspended. </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend
-     * and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
+     * and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline void SetSuspendedState(SuspendedState&& value) { m_suspendedStateHasBeenSet = true; m_suspendedState = std::move(value); }
 
@@ -770,9 +816,8 @@ namespace Model
      * suspended.</p> </li> <li> <p>For <code>ScheduledScalingSuspended</code>, while a
      * suspension is in effect, all scaling activities that involve scheduled actions
      * are suspended. </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend
-     * and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
+     * and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline RegisterScalableTargetRequest& WithSuspendedState(const SuspendedState& value) { SetSuspendedState(value); return *this;}
 
@@ -789,9 +834,8 @@ namespace Model
      * suspended.</p> </li> <li> <p>For <code>ScheduledScalingSuspended</code>, while a
      * suspension is in effect, all scaling activities that involve scheduled actions
      * are suspended. </p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspend
-     * and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User
-     * Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html">Suspending
+     * and Resuming Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>
      */
     inline RegisterScalableTargetRequest& WithSuspendedState(SuspendedState&& value) { SetSuspendedState(std::move(value)); return *this;}
 

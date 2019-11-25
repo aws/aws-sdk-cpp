@@ -29,7 +29,8 @@ namespace Model
     cluster,
     cluster_parameter_group,
     cluster_security_group,
-    cluster_snapshot
+    cluster_snapshot,
+    scheduled_action
   };
 
 namespace SourceTypeMapper

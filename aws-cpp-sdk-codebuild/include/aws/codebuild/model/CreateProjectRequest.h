@@ -210,16 +210,16 @@ namespace Model
     /**
      * <p> A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
-     * commit ID, pull request ID, branch name, or tag name that corresponds to the
-     * version of the source code you want to build. If a pull request ID is specified,
-     * it must use the format <code>pr/pull-request-ID</code> (for example
-     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
-     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
-     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
-     * corresponds to the version of the source code you want to build. If a branch
-     * name is specified, the branch's HEAD commit ID is used. If not specified, the
-     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a pull
+     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * that corresponds to the version of the source code you want to build. If a
+     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
      * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
      * is specified at the build level, then that version takes precedence over this
@@ -233,16 +233,16 @@ namespace Model
     /**
      * <p> A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
-     * commit ID, pull request ID, branch name, or tag name that corresponds to the
-     * version of the source code you want to build. If a pull request ID is specified,
-     * it must use the format <code>pr/pull-request-ID</code> (for example
-     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
-     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
-     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
-     * corresponds to the version of the source code you want to build. If a branch
-     * name is specified, the branch's HEAD commit ID is used. If not specified, the
-     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a pull
+     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * that corresponds to the version of the source code you want to build. If a
+     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
      * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
      * is specified at the build level, then that version takes precedence over this
@@ -256,16 +256,16 @@ namespace Model
     /**
      * <p> A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
-     * commit ID, pull request ID, branch name, or tag name that corresponds to the
-     * version of the source code you want to build. If a pull request ID is specified,
-     * it must use the format <code>pr/pull-request-ID</code> (for example
-     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
-     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
-     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
-     * corresponds to the version of the source code you want to build. If a branch
-     * name is specified, the branch's HEAD commit ID is used. If not specified, the
-     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a pull
+     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * that corresponds to the version of the source code you want to build. If a
+     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
      * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
      * is specified at the build level, then that version takes precedence over this
@@ -279,16 +279,16 @@ namespace Model
     /**
      * <p> A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
-     * commit ID, pull request ID, branch name, or tag name that corresponds to the
-     * version of the source code you want to build. If a pull request ID is specified,
-     * it must use the format <code>pr/pull-request-ID</code> (for example
-     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
-     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
-     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
-     * corresponds to the version of the source code you want to build. If a branch
-     * name is specified, the branch's HEAD commit ID is used. If not specified, the
-     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a pull
+     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * that corresponds to the version of the source code you want to build. If a
+     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
      * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
      * is specified at the build level, then that version takes precedence over this
@@ -302,16 +302,16 @@ namespace Model
     /**
      * <p> A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
-     * commit ID, pull request ID, branch name, or tag name that corresponds to the
-     * version of the source code you want to build. If a pull request ID is specified,
-     * it must use the format <code>pr/pull-request-ID</code> (for example
-     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
-     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
-     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
-     * corresponds to the version of the source code you want to build. If a branch
-     * name is specified, the branch's HEAD commit ID is used. If not specified, the
-     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a pull
+     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * that corresponds to the version of the source code you want to build. If a
+     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
      * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
      * is specified at the build level, then that version takes precedence over this
@@ -325,16 +325,16 @@ namespace Model
     /**
      * <p> A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
-     * commit ID, pull request ID, branch name, or tag name that corresponds to the
-     * version of the source code you want to build. If a pull request ID is specified,
-     * it must use the format <code>pr/pull-request-ID</code> (for example
-     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
-     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
-     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
-     * corresponds to the version of the source code you want to build. If a branch
-     * name is specified, the branch's HEAD commit ID is used. If not specified, the
-     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a pull
+     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * that corresponds to the version of the source code you want to build. If a
+     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
      * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
      * is specified at the build level, then that version takes precedence over this
@@ -348,16 +348,16 @@ namespace Model
     /**
      * <p> A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
-     * commit ID, pull request ID, branch name, or tag name that corresponds to the
-     * version of the source code you want to build. If a pull request ID is specified,
-     * it must use the format <code>pr/pull-request-ID</code> (for example
-     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
-     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
-     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
-     * corresponds to the version of the source code you want to build. If a branch
-     * name is specified, the branch's HEAD commit ID is used. If not specified, the
-     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a pull
+     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * that corresponds to the version of the source code you want to build. If a
+     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
      * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
      * is specified at the build level, then that version takes precedence over this
@@ -371,16 +371,16 @@ namespace Model
     /**
      * <p> A version of the build input to be built for this project. If not specified,
      * the latest version is used. If specified, it must be one of: </p> <ul> <li>
-     * <p>For AWS CodeCommit: the commit ID to use.</p> </li> <li> <p>For GitHub: the
-     * commit ID, pull request ID, branch name, or tag name that corresponds to the
-     * version of the source code you want to build. If a pull request ID is specified,
-     * it must use the format <code>pr/pull-request-ID</code> (for example
-     * <code>pr/25</code>). If a branch name is specified, the branch's HEAD commit ID
-     * is used. If not specified, the default branch's HEAD commit ID is used.</p>
-     * </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name that
-     * corresponds to the version of the source code you want to build. If a branch
-     * name is specified, the branch's HEAD commit ID is used. If not specified, the
-     * default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
+     * <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p> </li> <li>
+     * <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
+     * corresponds to the version of the source code you want to build. If a pull
+     * request ID is specified, it must use the format <code>pr/pull-request-ID</code>
+     * (for example <code>pr/25</code>). If a branch name is specified, the branch's
+     * HEAD commit ID is used. If not specified, the default branch's HEAD commit ID is
+     * used.</p> </li> <li> <p>For Bitbucket: the commit ID, branch name, or tag name
+     * that corresponds to the version of the source code you want to build. If a
+     * branch name is specified, the branch's HEAD commit ID is used. If not specified,
+     * the default branch's HEAD commit ID is used.</p> </li> <li> <p>For Amazon Simple
      * Storage Service (Amazon S3): the version ID of the object that represents the
      * build input ZIP file to use.</p> </li> </ul> <p> If <code>sourceVersion</code>
      * is specified at the build level, then that version takes precedence over this

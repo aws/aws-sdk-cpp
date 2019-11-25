@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeComponentConfigurationResult::DescribeComponentConfigurationResult() : 
-    m_monitor(false)
+    m_monitor(false),
+    m_tier(Tier::NOT_SET)
 {
 }
 
 DescribeComponentConfigurationResult::DescribeComponentConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_monitor(false)
+    m_monitor(false),
+    m_tier(Tier::NOT_SET)
 {
   *this = result;
 }
@@ -48,7 +50,7 @@ DescribeComponentConfigurationResult& DescribeComponentConfigurationResult::oper
 
   if(jsonValue.ValueExists("Tier"))
   {
-    m_tier = jsonValue.GetString("Tier");
+    m_tier = TierMapper::GetTierForName(jsonValue.GetString("Tier"));
 
   }
 

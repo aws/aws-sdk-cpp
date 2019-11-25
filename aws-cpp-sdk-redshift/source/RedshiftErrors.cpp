@@ -30,6 +30,7 @@ namespace RedshiftErrorMapper
 
 static const int TABLE_RESTORE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("TableRestoreNotFoundFault");
 static const int INVALID_S3_KEY_PREFIX_FAULT_HASH = HashingUtils::HashString("InvalidS3KeyPrefixFault");
+static const int SCHEDULED_ACTION_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ScheduledActionAlreadyExists");
 static const int SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionCategoryNotFound");
 static const int HSM_CLIENT_CERTIFICATE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("HsmClientCertificateNotFoundFault");
 static const int CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ClusterNotFound");
@@ -76,6 +77,7 @@ static const int HSM_CLIENT_CERTIFICATE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils
 static const int HSM_CONFIGURATION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("HsmConfigurationQuotaExceededFault");
 static const int SUBSCRIPTION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SubscriptionNotFound");
 static const int CLUSTER_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterSubnetGroupQuotaExceeded");
+static const int INVALID_SCHEDULED_ACTION_FAULT_HASH = HashingUtils::HashString("InvalidScheduledAction");
 static const int SNAPSHOT_COPY_ALREADY_DISABLED_FAULT_HASH = HashingUtils::HashString("SnapshotCopyAlreadyDisabledFault");
 static const int UNKNOWN_SNAPSHOT_COPY_REGION_FAULT_HASH = HashingUtils::HashString("UnknownSnapshotCopyRegionFault");
 static const int SNAPSHOT_SCHEDULE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("SnapshotScheduleNotFound");
@@ -87,11 +89,14 @@ static const int RESIZE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResizeN
 static const int INVALID_HSM_CONFIGURATION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidHsmConfigurationStateFault");
 static const int INVALID_RETENTION_PERIOD_FAULT_HASH = HashingUtils::HashString("InvalidRetentionPeriodFault");
 static const int HSM_CONFIGURATION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("HsmConfigurationNotFoundFault");
+static const int SCHEDULED_ACTION_TYPE_UNSUPPORTED_FAULT_HASH = HashingUtils::HashString("ScheduledActionTypeUnsupported");
 static const int CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ClusterQuotaExceeded");
 static const int CLUSTER_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterSnapshotAlreadyExists");
 static const int INSUFFICIENT_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientClusterCapacity");
 static const int SNAPSHOT_SCHEDULE_UPDATE_IN_PROGRESS_FAULT_HASH = HashingUtils::HashString("SnapshotScheduleUpdateInProgress");
 static const int EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EventSubscriptionQuotaExceeded");
+static const int SCHEDULED_ACTION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ScheduledActionQuotaExceeded");
+static const int SCHEDULED_ACTION_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ScheduledActionNotFound");
 static const int INVALID_CLUSTER_SUBNET_STATE_FAULT_HASH = HashingUtils::HashString("InvalidClusterSubnetStateFault");
 static const int INVALID_SUBSCRIPTION_STATE_FAULT_HASH = HashingUtils::HashString("InvalidSubscriptionStateFault");
 static const int CLUSTER_PARAMETER_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ClusterParameterGroupAlreadyExists");
@@ -140,6 +145,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_S3_KEY_PREFIX_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_S3_KEY_PREFIX_FAULT), false);
+  }
+  else if (hashCode == SCHEDULED_ACTION_ALREADY_EXISTS_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULED_ACTION_ALREADY_EXISTS_FAULT), false);
   }
   else if (hashCode == SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH)
   {
@@ -325,6 +334,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT), false);
   }
+  else if (hashCode == INVALID_SCHEDULED_ACTION_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::INVALID_SCHEDULED_ACTION_FAULT), false);
+  }
   else if (hashCode == SNAPSHOT_COPY_ALREADY_DISABLED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SNAPSHOT_COPY_ALREADY_DISABLED_FAULT), false);
@@ -369,6 +382,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::HSM_CONFIGURATION_NOT_FOUND_FAULT), false);
   }
+  else if (hashCode == SCHEDULED_ACTION_TYPE_UNSUPPORTED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULED_ACTION_TYPE_UNSUPPORTED_FAULT), false);
+  }
   else if (hashCode == CLUSTER_QUOTA_EXCEEDED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::CLUSTER_QUOTA_EXCEEDED_FAULT), false);
@@ -388,6 +405,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT), false);
+  }
+  else if (hashCode == SCHEDULED_ACTION_QUOTA_EXCEEDED_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULED_ACTION_QUOTA_EXCEEDED_FAULT), false);
+  }
+  else if (hashCode == SCHEDULED_ACTION_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RedshiftErrors::SCHEDULED_ACTION_NOT_FOUND_FAULT), false);
   }
   else if (hashCode == INVALID_CLUSTER_SUBNET_STATE_FAULT_HASH)
   {

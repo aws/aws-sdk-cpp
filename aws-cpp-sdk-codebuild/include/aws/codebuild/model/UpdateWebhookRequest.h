@@ -191,57 +191,57 @@ namespace Model
 
     /**
      * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
-     * if a webhook event can trigger a build. A filter group must pcontain at least
-     * one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+     * if a webhook event can trigger a build. A filter group must contain at least one
+     * <code>EVENT</code> <code>WebhookFilter</code>. </p>
      */
     inline const Aws::Vector<Aws::Vector<WebhookFilter>>& GetFilterGroups() const{ return m_filterGroups; }
 
     /**
      * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
-     * if a webhook event can trigger a build. A filter group must pcontain at least
-     * one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+     * if a webhook event can trigger a build. A filter group must contain at least one
+     * <code>EVENT</code> <code>WebhookFilter</code>. </p>
      */
     inline bool FilterGroupsHasBeenSet() const { return m_filterGroupsHasBeenSet; }
 
     /**
      * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
-     * if a webhook event can trigger a build. A filter group must pcontain at least
-     * one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+     * if a webhook event can trigger a build. A filter group must contain at least one
+     * <code>EVENT</code> <code>WebhookFilter</code>. </p>
      */
     inline void SetFilterGroups(const Aws::Vector<Aws::Vector<WebhookFilter>>& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = value; }
 
     /**
      * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
-     * if a webhook event can trigger a build. A filter group must pcontain at least
-     * one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+     * if a webhook event can trigger a build. A filter group must contain at least one
+     * <code>EVENT</code> <code>WebhookFilter</code>. </p>
      */
     inline void SetFilterGroups(Aws::Vector<Aws::Vector<WebhookFilter>>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = std::move(value); }
 
     /**
      * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
-     * if a webhook event can trigger a build. A filter group must pcontain at least
-     * one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+     * if a webhook event can trigger a build. A filter group must contain at least one
+     * <code>EVENT</code> <code>WebhookFilter</code>. </p>
      */
     inline UpdateWebhookRequest& WithFilterGroups(const Aws::Vector<Aws::Vector<WebhookFilter>>& value) { SetFilterGroups(value); return *this;}
 
     /**
      * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
-     * if a webhook event can trigger a build. A filter group must pcontain at least
-     * one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+     * if a webhook event can trigger a build. A filter group must contain at least one
+     * <code>EVENT</code> <code>WebhookFilter</code>. </p>
      */
     inline UpdateWebhookRequest& WithFilterGroups(Aws::Vector<Aws::Vector<WebhookFilter>>&& value) { SetFilterGroups(std::move(value)); return *this;}
 
     /**
      * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
-     * if a webhook event can trigger a build. A filter group must pcontain at least
-     * one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+     * if a webhook event can trigger a build. A filter group must contain at least one
+     * <code>EVENT</code> <code>WebhookFilter</code>. </p>
      */
     inline UpdateWebhookRequest& AddFilterGroups(const Aws::Vector<WebhookFilter>& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(value); return *this; }
 
     /**
      * <p> An array of arrays of <code>WebhookFilter</code> objects used to determine
-     * if a webhook event can trigger a build. A filter group must pcontain at least
-     * one <code>EVENT</code> <code>WebhookFilter</code>. </p>
+     * if a webhook event can trigger a build. A filter group must contain at least one
+     * <code>EVENT</code> <code>WebhookFilter</code>. </p>
      */
     inline UpdateWebhookRequest& AddFilterGroups(Aws::Vector<WebhookFilter>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(std::move(value)); return *this; }
 

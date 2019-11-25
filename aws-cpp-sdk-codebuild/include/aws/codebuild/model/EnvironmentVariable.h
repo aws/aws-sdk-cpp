@@ -167,7 +167,7 @@ namespace Model
      * <p>The type of environment variable. Valid values include:</p> <ul> <li> <p>
      * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
      * Systems Manager Parameter Store.</p> </li> <li> <p> <code>PLAINTEXT</code>: An
-     * environment variable in plaintext format.</p> </li> <li> <p>
+     * environment variable in plain text format.</p> </li> <li> <p>
      * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets
      * Manager.</p> </li> </ul>
      */
@@ -177,7 +177,7 @@ namespace Model
      * <p>The type of environment variable. Valid values include:</p> <ul> <li> <p>
      * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
      * Systems Manager Parameter Store.</p> </li> <li> <p> <code>PLAINTEXT</code>: An
-     * environment variable in plaintext format.</p> </li> <li> <p>
+     * environment variable in plain text format.</p> </li> <li> <p>
      * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets
      * Manager.</p> </li> </ul>
      */
@@ -187,7 +187,7 @@ namespace Model
      * <p>The type of environment variable. Valid values include:</p> <ul> <li> <p>
      * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
      * Systems Manager Parameter Store.</p> </li> <li> <p> <code>PLAINTEXT</code>: An
-     * environment variable in plaintext format.</p> </li> <li> <p>
+     * environment variable in plain text format.</p> </li> <li> <p>
      * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets
      * Manager.</p> </li> </ul>
      */
@@ -197,7 +197,7 @@ namespace Model
      * <p>The type of environment variable. Valid values include:</p> <ul> <li> <p>
      * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
      * Systems Manager Parameter Store.</p> </li> <li> <p> <code>PLAINTEXT</code>: An
-     * environment variable in plaintext format.</p> </li> <li> <p>
+     * environment variable in plain text format.</p> </li> <li> <p>
      * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets
      * Manager.</p> </li> </ul>
      */
@@ -207,7 +207,7 @@ namespace Model
      * <p>The type of environment variable. Valid values include:</p> <ul> <li> <p>
      * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
      * Systems Manager Parameter Store.</p> </li> <li> <p> <code>PLAINTEXT</code>: An
-     * environment variable in plaintext format.</p> </li> <li> <p>
+     * environment variable in plain text format.</p> </li> <li> <p>
      * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets
      * Manager.</p> </li> </ul>
      */
@@ -217,7 +217,7 @@ namespace Model
      * <p>The type of environment variable. Valid values include:</p> <ul> <li> <p>
      * <code>PARAMETER_STORE</code>: An environment variable stored in Amazon EC2
      * Systems Manager Parameter Store.</p> </li> <li> <p> <code>PLAINTEXT</code>: An
-     * environment variable in plaintext format.</p> </li> <li> <p>
+     * environment variable in plain text format.</p> </li> <li> <p>
      * <code>SECRETS_MANAGER</code>: An environment variable stored in AWS Secrets
      * Manager.</p> </li> </ul>
      */

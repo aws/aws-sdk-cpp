@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     DIMENSION,
-    TAG
+    TAG,
+    COST_CATEGORY
   };
 
 namespace GroupDefinitionTypeMapper

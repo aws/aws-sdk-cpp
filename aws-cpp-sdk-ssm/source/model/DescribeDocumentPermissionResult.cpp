@@ -47,6 +47,15 @@ DescribeDocumentPermissionResult& DescribeDocumentPermissionResult::operator =(c
     }
   }
 
+  if(jsonValue.ValueExists("AccountSharingInfoList"))
+  {
+    Array<JsonView> accountSharingInfoListJsonList = jsonValue.GetArray("AccountSharingInfoList");
+    for(unsigned accountSharingInfoListIndex = 0; accountSharingInfoListIndex < accountSharingInfoListJsonList.GetLength(); ++accountSharingInfoListIndex)
+    {
+      m_accountSharingInfoList.push_back(accountSharingInfoListJsonList[accountSharingInfoListIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

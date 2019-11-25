@@ -29,6 +29,7 @@ ListOfferingsRequest::ListOfferingsRequest() :
     m_channelClassHasBeenSet(false),
     m_channelConfigurationHasBeenSet(false),
     m_codecHasBeenSet(false),
+    m_durationHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_maximumBitrateHasBeenSet(false),
@@ -67,6 +68,13 @@ void ListOfferingsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_codec;
       uri.AddQueryStringParameter("codec", ss.str());
+      ss.str("");
+    }
+
+    if(m_durationHasBeenSet)
+    {
+      ss << m_duration;
+      uri.AddQueryStringParameter("duration", ss.str());
       ss.str("");
     }
 

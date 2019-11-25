@@ -174,6 +174,55 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the resource group. This value is returned only if the resource is
+     * a resource group.</p>
+     */
+    inline const Aws::String& GetResourceGroupArn() const{ return m_resourceGroupArn; }
+
+    /**
+     * <p>The ARN of the resource group. This value is returned only if the resource is
+     * a resource group.</p>
+     */
+    inline bool ResourceGroupArnHasBeenSet() const { return m_resourceGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the resource group. This value is returned only if the resource is
+     * a resource group.</p>
+     */
+    inline void SetResourceGroupArn(const Aws::String& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = value; }
+
+    /**
+     * <p>The ARN of the resource group. This value is returned only if the resource is
+     * a resource group.</p>
+     */
+    inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the resource group. This value is returned only if the resource is
+     * a resource group.</p>
+     */
+    inline void SetResourceGroupArn(const char* value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn.assign(value); }
+
+    /**
+     * <p>The ARN of the resource group. This value is returned only if the resource is
+     * a resource group.</p>
+     */
+    inline Resource& WithResourceGroupArn(const Aws::String& value) { SetResourceGroupArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the resource group. This value is returned only if the resource is
+     * a resource group.</p>
+     */
+    inline Resource& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the resource group. This value is returned only if the resource is
+     * a resource group.</p>
+     */
+    inline Resource& WithResourceGroupArn(const char* value) { SetResourceGroupArn(value); return *this;}
+
+
+    /**
      * <p>The status of the resource.</p>
      */
     inline const ResourceStatus& GetStatus() const{ return m_status; }
@@ -316,6 +365,9 @@ namespace Model
 
     Aws::String m_resourceShareArn;
     bool m_resourceShareArnHasBeenSet;
+
+    Aws::String m_resourceGroupArn;
+    bool m_resourceGroupArnHasBeenSet;
 
     ResourceStatus m_status;
     bool m_statusHasBeenSet;

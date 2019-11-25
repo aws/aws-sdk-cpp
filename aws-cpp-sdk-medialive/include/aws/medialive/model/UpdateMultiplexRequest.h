@@ -1,0 +1,175 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/MediaLiveRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/MultiplexSettings.h>
+#include <utility>
+
+namespace Aws
+{
+namespace MediaLive
+{
+namespace Model
+{
+
+  /**
+   * A request to update a multiplex.<p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplexRequest">AWS
+   * API Reference</a></p>
+   */
+  class AWS_MEDIALIVE_API UpdateMultiplexRequest : public MediaLiveRequest
+  {
+  public:
+    UpdateMultiplexRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "UpdateMultiplex"; }
+
+    Aws::String SerializePayload() const override;
+
+
+    /**
+     * ID of the multiplex to update.
+     */
+    inline const Aws::String& GetMultiplexId() const{ return m_multiplexId; }
+
+    /**
+     * ID of the multiplex to update.
+     */
+    inline bool MultiplexIdHasBeenSet() const { return m_multiplexIdHasBeenSet; }
+
+    /**
+     * ID of the multiplex to update.
+     */
+    inline void SetMultiplexId(const Aws::String& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = value; }
+
+    /**
+     * ID of the multiplex to update.
+     */
+    inline void SetMultiplexId(Aws::String&& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = std::move(value); }
+
+    /**
+     * ID of the multiplex to update.
+     */
+    inline void SetMultiplexId(const char* value) { m_multiplexIdHasBeenSet = true; m_multiplexId.assign(value); }
+
+    /**
+     * ID of the multiplex to update.
+     */
+    inline UpdateMultiplexRequest& WithMultiplexId(const Aws::String& value) { SetMultiplexId(value); return *this;}
+
+    /**
+     * ID of the multiplex to update.
+     */
+    inline UpdateMultiplexRequest& WithMultiplexId(Aws::String&& value) { SetMultiplexId(std::move(value)); return *this;}
+
+    /**
+     * ID of the multiplex to update.
+     */
+    inline UpdateMultiplexRequest& WithMultiplexId(const char* value) { SetMultiplexId(value); return *this;}
+
+
+    /**
+     * The new settings for a multiplex.
+     */
+    inline const MultiplexSettings& GetMultiplexSettings() const{ return m_multiplexSettings; }
+
+    /**
+     * The new settings for a multiplex.
+     */
+    inline bool MultiplexSettingsHasBeenSet() const { return m_multiplexSettingsHasBeenSet; }
+
+    /**
+     * The new settings for a multiplex.
+     */
+    inline void SetMultiplexSettings(const MultiplexSettings& value) { m_multiplexSettingsHasBeenSet = true; m_multiplexSettings = value; }
+
+    /**
+     * The new settings for a multiplex.
+     */
+    inline void SetMultiplexSettings(MultiplexSettings&& value) { m_multiplexSettingsHasBeenSet = true; m_multiplexSettings = std::move(value); }
+
+    /**
+     * The new settings for a multiplex.
+     */
+    inline UpdateMultiplexRequest& WithMultiplexSettings(const MultiplexSettings& value) { SetMultiplexSettings(value); return *this;}
+
+    /**
+     * The new settings for a multiplex.
+     */
+    inline UpdateMultiplexRequest& WithMultiplexSettings(MultiplexSettings&& value) { SetMultiplexSettings(std::move(value)); return *this;}
+
+
+    /**
+     * Name of the multiplex.
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * Name of the multiplex.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * Name of the multiplex.
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * Name of the multiplex.
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * Name of the multiplex.
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * Name of the multiplex.
+     */
+    inline UpdateMultiplexRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * Name of the multiplex.
+     */
+    inline UpdateMultiplexRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * Name of the multiplex.
+     */
+    inline UpdateMultiplexRequest& WithName(const char* value) { SetName(value); return *this;}
+
+  private:
+
+    Aws::String m_multiplexId;
+    bool m_multiplexIdHasBeenSet;
+
+    MultiplexSettings m_multiplexSettings;
+    bool m_multiplexSettingsHasBeenSet;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace MediaLive
+} // namespace Aws

@@ -33,7 +33,8 @@ ApplicationConfiguration::ApplicationConfiguration() :
     m_flinkApplicationConfigurationHasBeenSet(false),
     m_environmentPropertiesHasBeenSet(false),
     m_applicationCodeConfigurationHasBeenSet(false),
-    m_applicationSnapshotConfigurationHasBeenSet(false)
+    m_applicationSnapshotConfigurationHasBeenSet(false),
+    m_vpcConfigurationsHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ ApplicationConfiguration::ApplicationConfiguration(JsonView jsonValue) :
     m_flinkApplicationConfigurationHasBeenSet(false),
     m_environmentPropertiesHasBeenSet(false),
     m_applicationCodeConfigurationHasBeenSet(false),
-    m_applicationSnapshotConfigurationHasBeenSet(false)
+    m_applicationSnapshotConfigurationHasBeenSet(false),
+    m_vpcConfigurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +86,16 @@ ApplicationConfiguration& ApplicationConfiguration::operator =(JsonView jsonValu
     m_applicationSnapshotConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VpcConfigurations"))
+  {
+    Array<JsonView> vpcConfigurationsJsonList = jsonValue.GetArray("VpcConfigurations");
+    for(unsigned vpcConfigurationsIndex = 0; vpcConfigurationsIndex < vpcConfigurationsJsonList.GetLength(); ++vpcConfigurationsIndex)
+    {
+      m_vpcConfigurations.push_back(vpcConfigurationsJsonList[vpcConfigurationsIndex].AsObject());
+    }
+    m_vpcConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -118,6 +130,17 @@ JsonValue ApplicationConfiguration::Jsonize() const
   if(m_applicationSnapshotConfigurationHasBeenSet)
   {
    payload.WithObject("ApplicationSnapshotConfiguration", m_applicationSnapshotConfiguration.Jsonize());
+
+  }
+
+  if(m_vpcConfigurationsHasBeenSet)
+  {
+   Array<JsonValue> vpcConfigurationsJsonList(m_vpcConfigurations.size());
+   for(unsigned vpcConfigurationsIndex = 0; vpcConfigurationsIndex < vpcConfigurationsJsonList.GetLength(); ++vpcConfigurationsIndex)
+   {
+     vpcConfigurationsJsonList[vpcConfigurationsIndex].AsObject(m_vpcConfigurations[vpcConfigurationsIndex].Jsonize());
+   }
+   payload.WithArray("VpcConfigurations", std::move(vpcConfigurationsJsonList));
 
   }
 

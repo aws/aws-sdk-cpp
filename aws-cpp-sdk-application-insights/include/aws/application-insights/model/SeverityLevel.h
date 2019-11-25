@@ -26,9 +26,9 @@ namespace Model
   enum class SeverityLevel
   {
     NOT_SET,
-    LOW,
-    MEDIUM,
-    HIGH
+    Low,
+    Medium,
+    High
   };
 
 namespace SeverityLevelMapper

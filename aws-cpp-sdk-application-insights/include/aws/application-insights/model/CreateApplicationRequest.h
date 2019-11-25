@@ -17,6 +17,8 @@
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/application-insights/ApplicationInsightsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/application-insights/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -166,6 +168,63 @@ namespace Model
      */
     inline CreateApplicationRequest& WithOpsItemSNSTopicArn(const char* value) { SetOpsItemSNSTopicArn(value); return *this;}
 
+
+    /**
+     * <p>List of tags to add to the application. tag key (<code>Key</code>) and an
+     * associated tag value (<code>Value</code>). The maximum length of a tag key is
+     * 128 characters. The maximum length of a tag value is 256 characters.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>List of tags to add to the application. tag key (<code>Key</code>) and an
+     * associated tag value (<code>Value</code>). The maximum length of a tag key is
+     * 128 characters. The maximum length of a tag value is 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>List of tags to add to the application. tag key (<code>Key</code>) and an
+     * associated tag value (<code>Value</code>). The maximum length of a tag key is
+     * 128 characters. The maximum length of a tag value is 256 characters.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>List of tags to add to the application. tag key (<code>Key</code>) and an
+     * associated tag value (<code>Value</code>). The maximum length of a tag key is
+     * 128 characters. The maximum length of a tag value is 256 characters.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>List of tags to add to the application. tag key (<code>Key</code>) and an
+     * associated tag value (<code>Value</code>). The maximum length of a tag key is
+     * 128 characters. The maximum length of a tag value is 256 characters.</p>
+     */
+    inline CreateApplicationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>List of tags to add to the application. tag key (<code>Key</code>) and an
+     * associated tag value (<code>Value</code>). The maximum length of a tag key is
+     * 128 characters. The maximum length of a tag value is 256 characters.</p>
+     */
+    inline CreateApplicationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>List of tags to add to the application. tag key (<code>Key</code>) and an
+     * associated tag value (<code>Value</code>). The maximum length of a tag key is
+     * 128 characters. The maximum length of a tag value is 256 characters.</p>
+     */
+    inline CreateApplicationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>List of tags to add to the application. tag key (<code>Key</code>) and an
+     * associated tag value (<code>Value</code>). The maximum length of a tag key is
+     * 128 characters. The maximum length of a tag value is 256 characters.</p>
+     */
+    inline CreateApplicationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_resourceGroupName;
@@ -176,6 +235,9 @@ namespace Model
 
     Aws::String m_opsItemSNSTopicArn;
     bool m_opsItemSNSTopicArnHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

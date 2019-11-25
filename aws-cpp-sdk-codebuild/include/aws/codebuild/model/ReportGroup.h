@@ -1,0 +1,296 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/codebuild/CodeBuild_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/codebuild/model/ReportType.h>
+#include <aws/codebuild/model/ReportExportConfig.h>
+#include <aws/core/utils/DateTime.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace CodeBuild
+{
+namespace Model
+{
+
+  /**
+   * <p> A series of reports. Each report contains information about the results from
+   * running a series of test cases. You specify the test cases for a report group in
+   * the buildspec for a build project using one or more paths to the test case
+   * files. </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ReportGroup">AWS
+   * API Reference</a></p>
+   */
+  class AWS_CODEBUILD_API ReportGroup
+  {
+  public:
+    ReportGroup();
+    ReportGroup(Aws::Utils::Json::JsonView jsonValue);
+    ReportGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p> The ARN of a <code>ReportGroup</code>. </p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p> The ARN of a <code>ReportGroup</code>. </p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p> The ARN of a <code>ReportGroup</code>. </p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p> The ARN of a <code>ReportGroup</code>. </p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p> The ARN of a <code>ReportGroup</code>. </p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p> The ARN of a <code>ReportGroup</code>. </p>
+     */
+    inline ReportGroup& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p> The ARN of a <code>ReportGroup</code>. </p>
+     */
+    inline ReportGroup& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The ARN of a <code>ReportGroup</code>. </p>
+     */
+    inline ReportGroup& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p> The name of a <code>ReportGroup</code>. </p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p> The name of a <code>ReportGroup</code>. </p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p> The name of a <code>ReportGroup</code>. </p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p> The name of a <code>ReportGroup</code>. </p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p> The name of a <code>ReportGroup</code>. </p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p> The name of a <code>ReportGroup</code>. </p>
+     */
+    inline ReportGroup& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p> The name of a <code>ReportGroup</code>. </p>
+     */
+    inline ReportGroup& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p> The name of a <code>ReportGroup</code>. </p>
+     */
+    inline ReportGroup& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p> The type of the <code>ReportGroup</code>. The one valid value is
+     * <code>TEST</code>. </p>
+     */
+    inline const ReportType& GetType() const{ return m_type; }
+
+    /**
+     * <p> The type of the <code>ReportGroup</code>. The one valid value is
+     * <code>TEST</code>. </p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p> The type of the <code>ReportGroup</code>. The one valid value is
+     * <code>TEST</code>. </p>
+     */
+    inline void SetType(const ReportType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p> The type of the <code>ReportGroup</code>. The one valid value is
+     * <code>TEST</code>. </p>
+     */
+    inline void SetType(ReportType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p> The type of the <code>ReportGroup</code>. The one valid value is
+     * <code>TEST</code>. </p>
+     */
+    inline ReportGroup& WithType(const ReportType& value) { SetType(value); return *this;}
+
+    /**
+     * <p> The type of the <code>ReportGroup</code>. The one valid value is
+     * <code>TEST</code>. </p>
+     */
+    inline ReportGroup& WithType(ReportType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Information about the destination where the raw data of this
+     * <code>ReportGroup</code> is exported. </p>
+     */
+    inline const ReportExportConfig& GetExportConfig() const{ return m_exportConfig; }
+
+    /**
+     * <p> Information about the destination where the raw data of this
+     * <code>ReportGroup</code> is exported. </p>
+     */
+    inline bool ExportConfigHasBeenSet() const { return m_exportConfigHasBeenSet; }
+
+    /**
+     * <p> Information about the destination where the raw data of this
+     * <code>ReportGroup</code> is exported. </p>
+     */
+    inline void SetExportConfig(const ReportExportConfig& value) { m_exportConfigHasBeenSet = true; m_exportConfig = value; }
+
+    /**
+     * <p> Information about the destination where the raw data of this
+     * <code>ReportGroup</code> is exported. </p>
+     */
+    inline void SetExportConfig(ReportExportConfig&& value) { m_exportConfigHasBeenSet = true; m_exportConfig = std::move(value); }
+
+    /**
+     * <p> Information about the destination where the raw data of this
+     * <code>ReportGroup</code> is exported. </p>
+     */
+    inline ReportGroup& WithExportConfig(const ReportExportConfig& value) { SetExportConfig(value); return *this;}
+
+    /**
+     * <p> Information about the destination where the raw data of this
+     * <code>ReportGroup</code> is exported. </p>
+     */
+    inline ReportGroup& WithExportConfig(ReportExportConfig&& value) { SetExportConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The date and time this <code>ReportGroup</code> was created. </p>
+     */
+    inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+
+    /**
+     * <p> The date and time this <code>ReportGroup</code> was created. </p>
+     */
+    inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
+
+    /**
+     * <p> The date and time this <code>ReportGroup</code> was created. </p>
+     */
+    inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
+
+    /**
+     * <p> The date and time this <code>ReportGroup</code> was created. </p>
+     */
+    inline void SetCreated(Aws::Utils::DateTime&& value) { m_createdHasBeenSet = true; m_created = std::move(value); }
+
+    /**
+     * <p> The date and time this <code>ReportGroup</code> was created. </p>
+     */
+    inline ReportGroup& WithCreated(const Aws::Utils::DateTime& value) { SetCreated(value); return *this;}
+
+    /**
+     * <p> The date and time this <code>ReportGroup</code> was created. </p>
+     */
+    inline ReportGroup& WithCreated(Aws::Utils::DateTime&& value) { SetCreated(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The date and time this <code>ReportGroup</code> was last modified. </p>
+     */
+    inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
+
+    /**
+     * <p> The date and time this <code>ReportGroup</code> was last modified. </p>
+     */
+    inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
+
+    /**
+     * <p> The date and time this <code>ReportGroup</code> was last modified. </p>
+     */
+    inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
+
+    /**
+     * <p> The date and time this <code>ReportGroup</code> was last modified. </p>
+     */
+    inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
+
+    /**
+     * <p> The date and time this <code>ReportGroup</code> was last modified. </p>
+     */
+    inline ReportGroup& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
+
+    /**
+     * <p> The date and time this <code>ReportGroup</code> was last modified. </p>
+     */
+    inline ReportGroup& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
+
+  private:
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet;
+
+    ReportType m_type;
+    bool m_typeHasBeenSet;
+
+    ReportExportConfig m_exportConfig;
+    bool m_exportConfigHasBeenSet;
+
+    Aws::Utils::DateTime m_created;
+    bool m_createdHasBeenSet;
+
+    Aws::Utils::DateTime m_lastModified;
+    bool m_lastModifiedHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace CodeBuild
+} // namespace Aws

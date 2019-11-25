@@ -102,6 +102,12 @@ PostTextResult& PostTextResult::operator =(const Aws::AmazonWebServiceResult<Jso
 
   }
 
+  if(jsonValue.ValueExists("sessionId"))
+  {
+    m_sessionId = jsonValue.GetString("sessionId");
+
+  }
+
 
 
   return *this;

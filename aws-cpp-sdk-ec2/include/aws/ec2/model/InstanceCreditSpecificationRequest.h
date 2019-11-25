@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes the credit option for CPU usage of a T2 or T3
+   * <p>Describes the credit option for CPU usage of a burstable performance
    * instance.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/InstanceCreditSpecificationRequest">AWS
    * API Reference</a></p>

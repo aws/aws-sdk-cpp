@@ -24,6 +24,7 @@ using namespace Aws::Utils;
 
 CreateDocumentRequest::CreateDocumentRequest() : 
     m_contentHasBeenSet(false),
+    m_requiresHasBeenSet(false),
     m_attachmentsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionNameHasBeenSet(false),
@@ -43,6 +44,17 @@ Aws::String CreateDocumentRequest::SerializePayload() const
   if(m_contentHasBeenSet)
   {
    payload.WithString("Content", m_content);
+
+  }
+
+  if(m_requiresHasBeenSet)
+  {
+   Array<JsonValue> requiresJsonList(m_requires.size());
+   for(unsigned requiresIndex = 0; requiresIndex < requiresJsonList.GetLength(); ++requiresIndex)
+   {
+     requiresJsonList[requiresIndex].AsObject(m_requires[requiresIndex].Jsonize());
+   }
+   payload.WithArray("Requires", std::move(requiresJsonList));
 
   }
 

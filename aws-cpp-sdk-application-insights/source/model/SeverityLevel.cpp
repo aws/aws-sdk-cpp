@@ -30,25 +30,25 @@ namespace Aws
       namespace SeverityLevelMapper
       {
 
-        static const int LOW_HASH = HashingUtils::HashString("LOW");
-        static const int MEDIUM_HASH = HashingUtils::HashString("MEDIUM");
-        static const int HIGH_HASH = HashingUtils::HashString("HIGH");
+        static const int Low_HASH = HashingUtils::HashString("Low");
+        static const int Medium_HASH = HashingUtils::HashString("Medium");
+        static const int High_HASH = HashingUtils::HashString("High");
 
 
         SeverityLevel GetSeverityLevelForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == LOW_HASH)
+          if (hashCode == Low_HASH)
           {
-            return SeverityLevel::LOW;
+            return SeverityLevel::Low;
           }
-          else if (hashCode == MEDIUM_HASH)
+          else if (hashCode == Medium_HASH)
           {
-            return SeverityLevel::MEDIUM;
+            return SeverityLevel::Medium;
           }
-          else if (hashCode == HIGH_HASH)
+          else if (hashCode == High_HASH)
           {
-            return SeverityLevel::HIGH;
+            return SeverityLevel::High;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -64,12 +64,12 @@ namespace Aws
         {
           switch(enumValue)
           {
-          case SeverityLevel::LOW:
-            return "LOW";
-          case SeverityLevel::MEDIUM:
-            return "MEDIUM";
-          case SeverityLevel::HIGH:
-            return "HIGH";
+          case SeverityLevel::Low:
+            return "Low";
+          case SeverityLevel::Medium:
+            return "Medium";
+          case SeverityLevel::High:
+            return "High";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

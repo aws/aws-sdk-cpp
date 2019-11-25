@@ -52,72 +52,72 @@ namespace Model
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
      * metric. The name has to meet the following criteria:</p> <ul> <li> <p>It can
-     * only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li>
-     * </ul>
+     * only contain ASCII letters (a��z, A–Z), numbers (0–9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetDimensionName() const{ return m_dimensionName; }
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
      * metric. The name has to meet the following criteria:</p> <ul> <li> <p>It can
-     * only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li>
-     * </ul>
+     * only contain ASCII letters (a��z, A–Z), numbers (0–9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p>
+     * </li> </ul>
      */
     inline bool DimensionNameHasBeenSet() const { return m_dimensionNameHasBeenSet; }
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
      * metric. The name has to meet the following criteria:</p> <ul> <li> <p>It can
-     * only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li>
-     * </ul>
+     * only contain ASCII letters (a��z, A–Z), numbers (0–9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p>
+     * </li> </ul>
      */
     inline void SetDimensionName(const Aws::String& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = value; }
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
      * metric. The name has to meet the following criteria:</p> <ul> <li> <p>It can
-     * only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li>
-     * </ul>
+     * only contain ASCII letters (a��z, A–Z), numbers (0–9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p>
+     * </li> </ul>
      */
     inline void SetDimensionName(Aws::String&& value) { m_dimensionNameHasBeenSet = true; m_dimensionName = std::move(value); }
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
      * metric. The name has to meet the following criteria:</p> <ul> <li> <p>It can
-     * only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li>
-     * </ul>
+     * only contain ASCII letters (a��z, A–Z), numbers (0–9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p>
+     * </li> </ul>
      */
     inline void SetDimensionName(const char* value) { m_dimensionNameHasBeenSet = true; m_dimensionName.assign(value); }
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
      * metric. The name has to meet the following criteria:</p> <ul> <li> <p>It can
-     * only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li>
-     * </ul>
+     * only contain ASCII letters (a��z, A–Z), numbers (0–9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p>
+     * </li> </ul>
      */
     inline CloudWatchDimensionConfiguration& WithDimensionName(const Aws::String& value) { SetDimensionName(value); return *this;}
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
      * metric. The name has to meet the following criteria:</p> <ul> <li> <p>It can
-     * only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li>
-     * </ul>
+     * only contain ASCII letters (a��z, A–Z), numbers (0–9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p>
+     * </li> </ul>
      */
     inline CloudWatchDimensionConfiguration& WithDimensionName(Aws::String&& value) { SetDimensionName(std::move(value)); return *this;}
 
     /**
      * <p>The name of an Amazon CloudWatch dimension associated with an email sending
      * metric. The name has to meet the following criteria:</p> <ul> <li> <p>It can
-     * only contain ASCII letters (a–z, A–Z), numbers (0–9), underscores (_), or dashes
-     * (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p> </li>
-     * </ul>
+     * only contain ASCII letters (a��z, A–Z), numbers (0–9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>It can contain no more than 256 characters.</p>
+     * </li> </ul>
      */
     inline CloudWatchDimensionConfiguration& WithDimensionName(const char* value) { SetDimensionName(value); return *this;}
 

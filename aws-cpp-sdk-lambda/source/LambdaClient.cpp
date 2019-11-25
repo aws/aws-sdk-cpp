@@ -39,12 +39,14 @@
 #include <aws/lambda/model/DeleteEventSourceMappingRequest.h>
 #include <aws/lambda/model/DeleteFunctionRequest.h>
 #include <aws/lambda/model/DeleteFunctionConcurrencyRequest.h>
+#include <aws/lambda/model/DeleteFunctionEventInvokeConfigRequest.h>
 #include <aws/lambda/model/DeleteLayerVersionRequest.h>
 #include <aws/lambda/model/GetAccountSettingsRequest.h>
 #include <aws/lambda/model/GetAliasRequest.h>
 #include <aws/lambda/model/GetEventSourceMappingRequest.h>
 #include <aws/lambda/model/GetFunctionRequest.h>
 #include <aws/lambda/model/GetFunctionConfigurationRequest.h>
+#include <aws/lambda/model/GetFunctionEventInvokeConfigRequest.h>
 #include <aws/lambda/model/GetLayerVersionRequest.h>
 #include <aws/lambda/model/GetLayerVersionByArnRequest.h>
 #include <aws/lambda/model/GetLayerVersionPolicyRequest.h>
@@ -52,6 +54,7 @@
 #include <aws/lambda/model/InvokeRequest.h>
 #include <aws/lambda/model/ListAliasesRequest.h>
 #include <aws/lambda/model/ListEventSourceMappingsRequest.h>
+#include <aws/lambda/model/ListFunctionEventInvokeConfigsRequest.h>
 #include <aws/lambda/model/ListFunctionsRequest.h>
 #include <aws/lambda/model/ListLayerVersionsRequest.h>
 #include <aws/lambda/model/ListLayersRequest.h>
@@ -60,6 +63,7 @@
 #include <aws/lambda/model/PublishLayerVersionRequest.h>
 #include <aws/lambda/model/PublishVersionRequest.h>
 #include <aws/lambda/model/PutFunctionConcurrencyRequest.h>
+#include <aws/lambda/model/PutFunctionEventInvokeConfigRequest.h>
 #include <aws/lambda/model/RemoveLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/RemovePermissionRequest.h>
 #include <aws/lambda/model/TagResourceRequest.h>
@@ -68,6 +72,7 @@
 #include <aws/lambda/model/UpdateEventSourceMappingRequest.h>
 #include <aws/lambda/model/UpdateFunctionCodeRequest.h>
 #include <aws/lambda/model/UpdateFunctionConfigurationRequest.h>
+#include <aws/lambda/model/UpdateFunctionEventInvokeConfigRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -516,6 +521,48 @@ void LambdaClient::DeleteFunctionConcurrencyAsyncHelper(const DeleteFunctionConc
   handler(this, request, DeleteFunctionConcurrency(request), context);
 }
 
+DeleteFunctionEventInvokeConfigOutcome LambdaClient::DeleteFunctionEventInvokeConfig(const DeleteFunctionEventInvokeConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFunctionEventInvokeConfig", "Required field: FunctionName, is not set");
+    return DeleteFunctionEventInvokeConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2019-09-25/functions/";
+  ss << request.GetFunctionName();
+  ss << "/event-invoke-config";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteFunctionEventInvokeConfigOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteFunctionEventInvokeConfigOutcome(outcome.GetError());
+  }
+}
+
+DeleteFunctionEventInvokeConfigOutcomeCallable LambdaClient::DeleteFunctionEventInvokeConfigCallable(const DeleteFunctionEventInvokeConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFunctionEventInvokeConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFunctionEventInvokeConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::DeleteFunctionEventInvokeConfigAsync(const DeleteFunctionEventInvokeConfigRequest& request, const DeleteFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFunctionEventInvokeConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::DeleteFunctionEventInvokeConfigAsyncHelper(const DeleteFunctionEventInvokeConfigRequest& request, const DeleteFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFunctionEventInvokeConfig(request), context);
+}
+
 DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVersionRequest& request) const
 {
   if (!request.LayerNameHasBeenSet())
@@ -769,6 +816,48 @@ void LambdaClient::GetFunctionConfigurationAsync(const GetFunctionConfigurationR
 void LambdaClient::GetFunctionConfigurationAsyncHelper(const GetFunctionConfigurationRequest& request, const GetFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetFunctionConfiguration(request), context);
+}
+
+GetFunctionEventInvokeConfigOutcome LambdaClient::GetFunctionEventInvokeConfig(const GetFunctionEventInvokeConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFunctionEventInvokeConfig", "Required field: FunctionName, is not set");
+    return GetFunctionEventInvokeConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2019-09-25/functions/";
+  ss << request.GetFunctionName();
+  ss << "/event-invoke-config";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetFunctionEventInvokeConfigOutcome(GetFunctionEventInvokeConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetFunctionEventInvokeConfigOutcome(outcome.GetError());
+  }
+}
+
+GetFunctionEventInvokeConfigOutcomeCallable LambdaClient::GetFunctionEventInvokeConfigCallable(const GetFunctionEventInvokeConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFunctionEventInvokeConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFunctionEventInvokeConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::GetFunctionEventInvokeConfigAsync(const GetFunctionEventInvokeConfigRequest& request, const GetFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFunctionEventInvokeConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::GetFunctionEventInvokeConfigAsyncHelper(const GetFunctionEventInvokeConfigRequest& request, const GetFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFunctionEventInvokeConfig(request), context);
 }
 
 GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionRequest& request) const
@@ -1069,6 +1158,48 @@ void LambdaClient::ListEventSourceMappingsAsync(const ListEventSourceMappingsReq
 void LambdaClient::ListEventSourceMappingsAsyncHelper(const ListEventSourceMappingsRequest& request, const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListEventSourceMappings(request), context);
+}
+
+ListFunctionEventInvokeConfigsOutcome LambdaClient::ListFunctionEventInvokeConfigs(const ListFunctionEventInvokeConfigsRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFunctionEventInvokeConfigs", "Required field: FunctionName, is not set");
+    return ListFunctionEventInvokeConfigsOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2019-09-25/functions/";
+  ss << request.GetFunctionName();
+  ss << "/event-invoke-config/list";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListFunctionEventInvokeConfigsOutcome(ListFunctionEventInvokeConfigsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListFunctionEventInvokeConfigsOutcome(outcome.GetError());
+  }
+}
+
+ListFunctionEventInvokeConfigsOutcomeCallable LambdaClient::ListFunctionEventInvokeConfigsCallable(const ListFunctionEventInvokeConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFunctionEventInvokeConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFunctionEventInvokeConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::ListFunctionEventInvokeConfigsAsync(const ListFunctionEventInvokeConfigsRequest& request, const ListFunctionEventInvokeConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFunctionEventInvokeConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::ListFunctionEventInvokeConfigsAsyncHelper(const ListFunctionEventInvokeConfigsRequest& request, const ListFunctionEventInvokeConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFunctionEventInvokeConfigs(request), context);
 }
 
 ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& request) const
@@ -1390,6 +1521,48 @@ void LambdaClient::PutFunctionConcurrencyAsync(const PutFunctionConcurrencyReque
 void LambdaClient::PutFunctionConcurrencyAsyncHelper(const PutFunctionConcurrencyRequest& request, const PutFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutFunctionConcurrency(request), context);
+}
+
+PutFunctionEventInvokeConfigOutcome LambdaClient::PutFunctionEventInvokeConfig(const PutFunctionEventInvokeConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutFunctionEventInvokeConfig", "Required field: FunctionName, is not set");
+    return PutFunctionEventInvokeConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2019-09-25/functions/";
+  ss << request.GetFunctionName();
+  ss << "/event-invoke-config";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutFunctionEventInvokeConfigOutcome(PutFunctionEventInvokeConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutFunctionEventInvokeConfigOutcome(outcome.GetError());
+  }
+}
+
+PutFunctionEventInvokeConfigOutcomeCallable LambdaClient::PutFunctionEventInvokeConfigCallable(const PutFunctionEventInvokeConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutFunctionEventInvokeConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutFunctionEventInvokeConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::PutFunctionEventInvokeConfigAsync(const PutFunctionEventInvokeConfigRequest& request, const PutFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutFunctionEventInvokeConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::PutFunctionEventInvokeConfigAsyncHelper(const PutFunctionEventInvokeConfigRequest& request, const PutFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutFunctionEventInvokeConfig(request), context);
 }
 
 RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(const RemoveLayerVersionPermissionRequest& request) const
@@ -1753,5 +1926,47 @@ void LambdaClient::UpdateFunctionConfigurationAsync(const UpdateFunctionConfigur
 void LambdaClient::UpdateFunctionConfigurationAsyncHelper(const UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateFunctionConfiguration(request), context);
+}
+
+UpdateFunctionEventInvokeConfigOutcome LambdaClient::UpdateFunctionEventInvokeConfig(const UpdateFunctionEventInvokeConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFunctionEventInvokeConfig", "Required field: FunctionName, is not set");
+    return UpdateFunctionEventInvokeConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2019-09-25/functions/";
+  ss << request.GetFunctionName();
+  ss << "/event-invoke-config";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateFunctionEventInvokeConfigOutcome(UpdateFunctionEventInvokeConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateFunctionEventInvokeConfigOutcome(outcome.GetError());
+  }
+}
+
+UpdateFunctionEventInvokeConfigOutcomeCallable LambdaClient::UpdateFunctionEventInvokeConfigCallable(const UpdateFunctionEventInvokeConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateFunctionEventInvokeConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateFunctionEventInvokeConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::UpdateFunctionEventInvokeConfigAsync(const UpdateFunctionEventInvokeConfigRequest& request, const UpdateFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateFunctionEventInvokeConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::UpdateFunctionEventInvokeConfigAsyncHelper(const UpdateFunctionEventInvokeConfigRequest& request, const UpdateFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateFunctionEventInvokeConfig(request), context);
 }
 

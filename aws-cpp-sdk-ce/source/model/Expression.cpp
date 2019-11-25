@@ -33,7 +33,8 @@ Expression::Expression() :
     m_andHasBeenSet(false),
     m_notHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_costCategoriesHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Expression::Expression(JsonView jsonValue) :
     m_andHasBeenSet(false),
     m_notHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_costCategoriesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +93,13 @@ Expression& Expression::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CostCategories"))
+  {
+    m_costCategories = jsonValue.GetObject("CostCategories");
+
+    m_costCategoriesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -135,6 +144,12 @@ JsonValue Expression::Jsonize() const
   if(m_tagsHasBeenSet)
   {
    payload.WithObject("Tags", m_tags.Jsonize());
+
+  }
+
+  if(m_costCategoriesHasBeenSet)
+  {
+   payload.WithObject("CostCategories", m_costCategories.Jsonize());
 
   }
 

@@ -92,44 +92,101 @@ namespace Model
 
 
     /**
-     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>
+     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
+     * internal-facing load balancer.</p>
      */
     inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
 
     /**
-     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>
+     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
+     * internal-facing load balancer.</p>
      */
     inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
 
     /**
-     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>
+     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
+     * internal-facing load balancer.</p>
      */
     inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
     /**
-     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>
+     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
+     * internal-facing load balancer.</p>
      */
     inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
 
     /**
-     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>
+     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
+     * internal-facing load balancer.</p>
      */
     inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
 
     /**
-     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>
+     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
+     * internal-facing load balancer.</p>
      */
     inline LoadBalancerAddress& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
 
     /**
-     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>
+     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
+     * internal-facing load balancer.</p>
      */
     inline LoadBalancerAddress& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
 
     /**
-     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address.</p>
+     * <p>[Network Load Balancers] The allocation ID of the Elastic IP address for an
+     * internal-facing load balancer.</p>
      */
     inline LoadBalancerAddress& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+
+
+    /**
+     * <p>[Network Load Balancers] The private IPv4 address for an internal load
+     * balancer.</p>
+     */
+    inline const Aws::String& GetPrivateIPv4Address() const{ return m_privateIPv4Address; }
+
+    /**
+     * <p>[Network Load Balancers] The private IPv4 address for an internal load
+     * balancer.</p>
+     */
+    inline bool PrivateIPv4AddressHasBeenSet() const { return m_privateIPv4AddressHasBeenSet; }
+
+    /**
+     * <p>[Network Load Balancers] The private IPv4 address for an internal load
+     * balancer.</p>
+     */
+    inline void SetPrivateIPv4Address(const Aws::String& value) { m_privateIPv4AddressHasBeenSet = true; m_privateIPv4Address = value; }
+
+    /**
+     * <p>[Network Load Balancers] The private IPv4 address for an internal load
+     * balancer.</p>
+     */
+    inline void SetPrivateIPv4Address(Aws::String&& value) { m_privateIPv4AddressHasBeenSet = true; m_privateIPv4Address = std::move(value); }
+
+    /**
+     * <p>[Network Load Balancers] The private IPv4 address for an internal load
+     * balancer.</p>
+     */
+    inline void SetPrivateIPv4Address(const char* value) { m_privateIPv4AddressHasBeenSet = true; m_privateIPv4Address.assign(value); }
+
+    /**
+     * <p>[Network Load Balancers] The private IPv4 address for an internal load
+     * balancer.</p>
+     */
+    inline LoadBalancerAddress& WithPrivateIPv4Address(const Aws::String& value) { SetPrivateIPv4Address(value); return *this;}
+
+    /**
+     * <p>[Network Load Balancers] The private IPv4 address for an internal load
+     * balancer.</p>
+     */
+    inline LoadBalancerAddress& WithPrivateIPv4Address(Aws::String&& value) { SetPrivateIPv4Address(std::move(value)); return *this;}
+
+    /**
+     * <p>[Network Load Balancers] The private IPv4 address for an internal load
+     * balancer.</p>
+     */
+    inline LoadBalancerAddress& WithPrivateIPv4Address(const char* value) { SetPrivateIPv4Address(value); return *this;}
 
   private:
 
@@ -138,6 +195,9 @@ namespace Model
 
     Aws::String m_allocationId;
     bool m_allocationIdHasBeenSet;
+
+    Aws::String m_privateIPv4Address;
+    bool m_privateIPv4AddressHasBeenSet;
   };
 
 } // namespace Model

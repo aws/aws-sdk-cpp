@@ -17,6 +17,7 @@
 #include <aws/kms/KMS_EXPORTS.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kms/model/EncryptionAlgorithmSpec.h>
 #include <utility>
 
 namespace Aws
@@ -45,31 +46,31 @@ namespace Model
 
     /**
      * <p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is
-     * Base64-encoded. Otherwise, it is not encoded.</p>
+     * Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCiphertextBlob() const{ return m_ciphertextBlob; }
 
     /**
      * <p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is
-     * Base64-encoded. Otherwise, it is not encoded.</p>
+     * Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline void SetCiphertextBlob(const Aws::Utils::ByteBuffer& value) { m_ciphertextBlob = value; }
 
     /**
      * <p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is
-     * Base64-encoded. Otherwise, it is not encoded.</p>
+     * Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline void SetCiphertextBlob(Aws::Utils::ByteBuffer&& value) { m_ciphertextBlob = std::move(value); }
 
     /**
      * <p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is
-     * Base64-encoded. Otherwise, it is not encoded.</p>
+     * Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline ReEncryptResult& WithCiphertextBlob(const Aws::Utils::ByteBuffer& value) { SetCiphertextBlob(value); return *this;}
 
     /**
      * <p>The reencrypted data. When you use the HTTP API or the AWS CLI, the value is
-     * Base64-encoded. Otherwise, it is not encoded.</p>
+     * Base64-encoded. Otherwise, it is not Base64-encoded.</p>
      */
     inline ReEncryptResult& WithCiphertextBlob(Aws::Utils::ByteBuffer&& value) { SetCiphertextBlob(std::move(value)); return *this;}
 
@@ -145,6 +146,63 @@ namespace Model
      */
     inline ReEncryptResult& WithKeyId(const char* value) { SetKeyId(value); return *this;}
 
+
+    /**
+     * <p>The encryption algorithm that was used to decrypt the ciphertext before it
+     * was reencrypted.</p>
+     */
+    inline const EncryptionAlgorithmSpec& GetSourceEncryptionAlgorithm() const{ return m_sourceEncryptionAlgorithm; }
+
+    /**
+     * <p>The encryption algorithm that was used to decrypt the ciphertext before it
+     * was reencrypted.</p>
+     */
+    inline void SetSourceEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { m_sourceEncryptionAlgorithm = value; }
+
+    /**
+     * <p>The encryption algorithm that was used to decrypt the ciphertext before it
+     * was reencrypted.</p>
+     */
+    inline void SetSourceEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { m_sourceEncryptionAlgorithm = std::move(value); }
+
+    /**
+     * <p>The encryption algorithm that was used to decrypt the ciphertext before it
+     * was reencrypted.</p>
+     */
+    inline ReEncryptResult& WithSourceEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { SetSourceEncryptionAlgorithm(value); return *this;}
+
+    /**
+     * <p>The encryption algorithm that was used to decrypt the ciphertext before it
+     * was reencrypted.</p>
+     */
+    inline ReEncryptResult& WithSourceEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { SetSourceEncryptionAlgorithm(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The encryption algorithm that was used to reencrypt the data.</p>
+     */
+    inline const EncryptionAlgorithmSpec& GetDestinationEncryptionAlgorithm() const{ return m_destinationEncryptionAlgorithm; }
+
+    /**
+     * <p>The encryption algorithm that was used to reencrypt the data.</p>
+     */
+    inline void SetDestinationEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { m_destinationEncryptionAlgorithm = value; }
+
+    /**
+     * <p>The encryption algorithm that was used to reencrypt the data.</p>
+     */
+    inline void SetDestinationEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { m_destinationEncryptionAlgorithm = std::move(value); }
+
+    /**
+     * <p>The encryption algorithm that was used to reencrypt the data.</p>
+     */
+    inline ReEncryptResult& WithDestinationEncryptionAlgorithm(const EncryptionAlgorithmSpec& value) { SetDestinationEncryptionAlgorithm(value); return *this;}
+
+    /**
+     * <p>The encryption algorithm that was used to reencrypt the data.</p>
+     */
+    inline ReEncryptResult& WithDestinationEncryptionAlgorithm(EncryptionAlgorithmSpec&& value) { SetDestinationEncryptionAlgorithm(std::move(value)); return *this;}
+
   private:
 
     Aws::Utils::ByteBuffer m_ciphertextBlob;
@@ -152,6 +210,10 @@ namespace Model
     Aws::String m_sourceKeyId;
 
     Aws::String m_keyId;
+
+    EncryptionAlgorithmSpec m_sourceEncryptionAlgorithm;
+
+    EncryptionAlgorithmSpec m_destinationEncryptionAlgorithm;
   };
 
 } // namespace Model

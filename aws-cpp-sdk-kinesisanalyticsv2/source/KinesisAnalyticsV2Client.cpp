@@ -35,6 +35,7 @@
 #include <aws/kinesisanalyticsv2/model/AddApplicationInputProcessingConfigurationRequest.h>
 #include <aws/kinesisanalyticsv2/model/AddApplicationOutputRequest.h>
 #include <aws/kinesisanalyticsv2/model/AddApplicationReferenceDataSourceRequest.h>
+#include <aws/kinesisanalyticsv2/model/AddApplicationVpcConfigurationRequest.h>
 #include <aws/kinesisanalyticsv2/model/CreateApplicationRequest.h>
 #include <aws/kinesisanalyticsv2/model/CreateApplicationSnapshotRequest.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationRequest.h>
@@ -43,6 +44,7 @@
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationOutputRequest.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationReferenceDataSourceRequest.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationSnapshotRequest.h>
+#include <aws/kinesisanalyticsv2/model/DeleteApplicationVpcConfigurationRequest.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationRequest.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationSnapshotRequest.h>
 #include <aws/kinesisanalyticsv2/model/DiscoverInputSchemaRequest.h>
@@ -300,6 +302,41 @@ void KinesisAnalyticsV2Client::AddApplicationReferenceDataSourceAsync(const AddA
 void KinesisAnalyticsV2Client::AddApplicationReferenceDataSourceAsyncHelper(const AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AddApplicationReferenceDataSource(request), context);
+}
+
+AddApplicationVpcConfigurationOutcome KinesisAnalyticsV2Client::AddApplicationVpcConfiguration(const AddApplicationVpcConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AddApplicationVpcConfigurationOutcome(AddApplicationVpcConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AddApplicationVpcConfigurationOutcome(outcome.GetError());
+  }
+}
+
+AddApplicationVpcConfigurationOutcomeCallable KinesisAnalyticsV2Client::AddApplicationVpcConfigurationCallable(const AddApplicationVpcConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddApplicationVpcConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddApplicationVpcConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisAnalyticsV2Client::AddApplicationVpcConfigurationAsync(const AddApplicationVpcConfigurationRequest& request, const AddApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddApplicationVpcConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisAnalyticsV2Client::AddApplicationVpcConfigurationAsyncHelper(const AddApplicationVpcConfigurationRequest& request, const AddApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddApplicationVpcConfiguration(request), context);
 }
 
 CreateApplicationOutcome KinesisAnalyticsV2Client::CreateApplication(const CreateApplicationRequest& request) const
@@ -580,6 +617,41 @@ void KinesisAnalyticsV2Client::DeleteApplicationSnapshotAsync(const DeleteApplic
 void KinesisAnalyticsV2Client::DeleteApplicationSnapshotAsyncHelper(const DeleteApplicationSnapshotRequest& request, const DeleteApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteApplicationSnapshot(request), context);
+}
+
+DeleteApplicationVpcConfigurationOutcome KinesisAnalyticsV2Client::DeleteApplicationVpcConfiguration(const DeleteApplicationVpcConfigurationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteApplicationVpcConfigurationOutcome(DeleteApplicationVpcConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteApplicationVpcConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DeleteApplicationVpcConfigurationOutcomeCallable KinesisAnalyticsV2Client::DeleteApplicationVpcConfigurationCallable(const DeleteApplicationVpcConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteApplicationVpcConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteApplicationVpcConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisAnalyticsV2Client::DeleteApplicationVpcConfigurationAsync(const DeleteApplicationVpcConfigurationRequest& request, const DeleteApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteApplicationVpcConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisAnalyticsV2Client::DeleteApplicationVpcConfigurationAsyncHelper(const DeleteApplicationVpcConfigurationRequest& request, const DeleteApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteApplicationVpcConfiguration(request), context);
 }
 
 DescribeApplicationOutcome KinesisAnalyticsV2Client::DescribeApplication(const DescribeApplicationRequest& request) const

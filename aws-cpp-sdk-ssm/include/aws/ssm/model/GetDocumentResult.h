@@ -20,6 +20,7 @@
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/DocumentFormat.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/DocumentRequires.h>
 #include <aws/ssm/model/AttachmentContent.h>
 #include <utility>
 
@@ -351,6 +352,56 @@ namespace Model
 
 
     /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline const Aws::Vector<DocumentRequires>& GetRequires() const{ return m_requires; }
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline void SetRequires(const Aws::Vector<DocumentRequires>& value) { m_requires = value; }
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline void SetRequires(Aws::Vector<DocumentRequires>&& value) { m_requires = std::move(value); }
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline GetDocumentResult& WithRequires(const Aws::Vector<DocumentRequires>& value) { SetRequires(value); return *this;}
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline GetDocumentResult& WithRequires(Aws::Vector<DocumentRequires>&& value) { SetRequires(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline GetDocumentResult& AddRequires(const DocumentRequires& value) { m_requires.push_back(value); return *this; }
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline GetDocumentResult& AddRequires(DocumentRequires&& value) { m_requires.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>A description of the document attachments, including names, locations, sizes,
      * etc.</p>
      */
@@ -409,6 +460,8 @@ namespace Model
     DocumentType m_documentType;
 
     DocumentFormat m_documentFormat;
+
+    Aws::Vector<DocumentRequires> m_requires;
 
     Aws::Vector<AttachmentContent> m_attachmentsContent;
   };

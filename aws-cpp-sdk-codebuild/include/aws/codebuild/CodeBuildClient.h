@@ -24,21 +24,31 @@
 #include <aws/codebuild/model/BatchDeleteBuildsResult.h>
 #include <aws/codebuild/model/BatchGetBuildsResult.h>
 #include <aws/codebuild/model/BatchGetProjectsResult.h>
+#include <aws/codebuild/model/BatchGetReportGroupsResult.h>
+#include <aws/codebuild/model/BatchGetReportsResult.h>
 #include <aws/codebuild/model/CreateProjectResult.h>
+#include <aws/codebuild/model/CreateReportGroupResult.h>
 #include <aws/codebuild/model/CreateWebhookResult.h>
 #include <aws/codebuild/model/DeleteProjectResult.h>
+#include <aws/codebuild/model/DeleteReportResult.h>
+#include <aws/codebuild/model/DeleteReportGroupResult.h>
 #include <aws/codebuild/model/DeleteSourceCredentialsResult.h>
 #include <aws/codebuild/model/DeleteWebhookResult.h>
+#include <aws/codebuild/model/DescribeTestCasesResult.h>
 #include <aws/codebuild/model/ImportSourceCredentialsResult.h>
 #include <aws/codebuild/model/InvalidateProjectCacheResult.h>
 #include <aws/codebuild/model/ListBuildsResult.h>
 #include <aws/codebuild/model/ListBuildsForProjectResult.h>
 #include <aws/codebuild/model/ListCuratedEnvironmentImagesResult.h>
 #include <aws/codebuild/model/ListProjectsResult.h>
+#include <aws/codebuild/model/ListReportGroupsResult.h>
+#include <aws/codebuild/model/ListReportsResult.h>
+#include <aws/codebuild/model/ListReportsForReportGroupResult.h>
 #include <aws/codebuild/model/ListSourceCredentialsResult.h>
 #include <aws/codebuild/model/StartBuildResult.h>
 #include <aws/codebuild/model/StopBuildResult.h>
 #include <aws/codebuild/model/UpdateProjectResult.h>
+#include <aws/codebuild/model/UpdateReportGroupResult.h>
 #include <aws/codebuild/model/UpdateWebhookResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -82,61 +92,91 @@ namespace Model
         class BatchDeleteBuildsRequest;
         class BatchGetBuildsRequest;
         class BatchGetProjectsRequest;
+        class BatchGetReportGroupsRequest;
+        class BatchGetReportsRequest;
         class CreateProjectRequest;
+        class CreateReportGroupRequest;
         class CreateWebhookRequest;
         class DeleteProjectRequest;
+        class DeleteReportRequest;
+        class DeleteReportGroupRequest;
         class DeleteSourceCredentialsRequest;
         class DeleteWebhookRequest;
+        class DescribeTestCasesRequest;
         class ImportSourceCredentialsRequest;
         class InvalidateProjectCacheRequest;
         class ListBuildsRequest;
         class ListBuildsForProjectRequest;
         class ListCuratedEnvironmentImagesRequest;
         class ListProjectsRequest;
+        class ListReportGroupsRequest;
+        class ListReportsRequest;
+        class ListReportsForReportGroupRequest;
         class ListSourceCredentialsRequest;
         class StartBuildRequest;
         class StopBuildRequest;
         class UpdateProjectRequest;
+        class UpdateReportGroupRequest;
         class UpdateWebhookRequest;
 
         typedef Aws::Utils::Outcome<BatchDeleteBuildsResult, Aws::Client::AWSError<CodeBuildErrors>> BatchDeleteBuildsOutcome;
         typedef Aws::Utils::Outcome<BatchGetBuildsResult, Aws::Client::AWSError<CodeBuildErrors>> BatchGetBuildsOutcome;
         typedef Aws::Utils::Outcome<BatchGetProjectsResult, Aws::Client::AWSError<CodeBuildErrors>> BatchGetProjectsOutcome;
+        typedef Aws::Utils::Outcome<BatchGetReportGroupsResult, Aws::Client::AWSError<CodeBuildErrors>> BatchGetReportGroupsOutcome;
+        typedef Aws::Utils::Outcome<BatchGetReportsResult, Aws::Client::AWSError<CodeBuildErrors>> BatchGetReportsOutcome;
         typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<CodeBuildErrors>> CreateProjectOutcome;
+        typedef Aws::Utils::Outcome<CreateReportGroupResult, Aws::Client::AWSError<CodeBuildErrors>> CreateReportGroupOutcome;
         typedef Aws::Utils::Outcome<CreateWebhookResult, Aws::Client::AWSError<CodeBuildErrors>> CreateWebhookOutcome;
         typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteProjectOutcome;
+        typedef Aws::Utils::Outcome<DeleteReportResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteReportOutcome;
+        typedef Aws::Utils::Outcome<DeleteReportGroupResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteReportGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteSourceCredentialsResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteSourceCredentialsOutcome;
         typedef Aws::Utils::Outcome<DeleteWebhookResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteWebhookOutcome;
+        typedef Aws::Utils::Outcome<DescribeTestCasesResult, Aws::Client::AWSError<CodeBuildErrors>> DescribeTestCasesOutcome;
         typedef Aws::Utils::Outcome<ImportSourceCredentialsResult, Aws::Client::AWSError<CodeBuildErrors>> ImportSourceCredentialsOutcome;
         typedef Aws::Utils::Outcome<InvalidateProjectCacheResult, Aws::Client::AWSError<CodeBuildErrors>> InvalidateProjectCacheOutcome;
         typedef Aws::Utils::Outcome<ListBuildsResult, Aws::Client::AWSError<CodeBuildErrors>> ListBuildsOutcome;
         typedef Aws::Utils::Outcome<ListBuildsForProjectResult, Aws::Client::AWSError<CodeBuildErrors>> ListBuildsForProjectOutcome;
         typedef Aws::Utils::Outcome<ListCuratedEnvironmentImagesResult, Aws::Client::AWSError<CodeBuildErrors>> ListCuratedEnvironmentImagesOutcome;
         typedef Aws::Utils::Outcome<ListProjectsResult, Aws::Client::AWSError<CodeBuildErrors>> ListProjectsOutcome;
+        typedef Aws::Utils::Outcome<ListReportGroupsResult, Aws::Client::AWSError<CodeBuildErrors>> ListReportGroupsOutcome;
+        typedef Aws::Utils::Outcome<ListReportsResult, Aws::Client::AWSError<CodeBuildErrors>> ListReportsOutcome;
+        typedef Aws::Utils::Outcome<ListReportsForReportGroupResult, Aws::Client::AWSError<CodeBuildErrors>> ListReportsForReportGroupOutcome;
         typedef Aws::Utils::Outcome<ListSourceCredentialsResult, Aws::Client::AWSError<CodeBuildErrors>> ListSourceCredentialsOutcome;
         typedef Aws::Utils::Outcome<StartBuildResult, Aws::Client::AWSError<CodeBuildErrors>> StartBuildOutcome;
         typedef Aws::Utils::Outcome<StopBuildResult, Aws::Client::AWSError<CodeBuildErrors>> StopBuildOutcome;
         typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<CodeBuildErrors>> UpdateProjectOutcome;
+        typedef Aws::Utils::Outcome<UpdateReportGroupResult, Aws::Client::AWSError<CodeBuildErrors>> UpdateReportGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateWebhookResult, Aws::Client::AWSError<CodeBuildErrors>> UpdateWebhookOutcome;
 
         typedef std::future<BatchDeleteBuildsOutcome> BatchDeleteBuildsOutcomeCallable;
         typedef std::future<BatchGetBuildsOutcome> BatchGetBuildsOutcomeCallable;
         typedef std::future<BatchGetProjectsOutcome> BatchGetProjectsOutcomeCallable;
+        typedef std::future<BatchGetReportGroupsOutcome> BatchGetReportGroupsOutcomeCallable;
+        typedef std::future<BatchGetReportsOutcome> BatchGetReportsOutcomeCallable;
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
+        typedef std::future<CreateReportGroupOutcome> CreateReportGroupOutcomeCallable;
         typedef std::future<CreateWebhookOutcome> CreateWebhookOutcomeCallable;
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
+        typedef std::future<DeleteReportOutcome> DeleteReportOutcomeCallable;
+        typedef std::future<DeleteReportGroupOutcome> DeleteReportGroupOutcomeCallable;
         typedef std::future<DeleteSourceCredentialsOutcome> DeleteSourceCredentialsOutcomeCallable;
         typedef std::future<DeleteWebhookOutcome> DeleteWebhookOutcomeCallable;
+        typedef std::future<DescribeTestCasesOutcome> DescribeTestCasesOutcomeCallable;
         typedef std::future<ImportSourceCredentialsOutcome> ImportSourceCredentialsOutcomeCallable;
         typedef std::future<InvalidateProjectCacheOutcome> InvalidateProjectCacheOutcomeCallable;
         typedef std::future<ListBuildsOutcome> ListBuildsOutcomeCallable;
         typedef std::future<ListBuildsForProjectOutcome> ListBuildsForProjectOutcomeCallable;
         typedef std::future<ListCuratedEnvironmentImagesOutcome> ListCuratedEnvironmentImagesOutcomeCallable;
         typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
+        typedef std::future<ListReportGroupsOutcome> ListReportGroupsOutcomeCallable;
+        typedef std::future<ListReportsOutcome> ListReportsOutcomeCallable;
+        typedef std::future<ListReportsForReportGroupOutcome> ListReportsForReportGroupOutcomeCallable;
         typedef std::future<ListSourceCredentialsOutcome> ListSourceCredentialsOutcomeCallable;
         typedef std::future<StartBuildOutcome> StartBuildOutcomeCallable;
         typedef std::future<StopBuildOutcome> StopBuildOutcomeCallable;
         typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
+        typedef std::future<UpdateReportGroupOutcome> UpdateReportGroupOutcomeCallable;
         typedef std::future<UpdateWebhookOutcome> UpdateWebhookOutcomeCallable;
 } // namespace Model
 
@@ -145,21 +185,31 @@ namespace Model
     typedef std::function<void(const CodeBuildClient*, const Model::BatchDeleteBuildsRequest&, const Model::BatchDeleteBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteBuildsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetBuildsRequest&, const Model::BatchGetBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetBuildsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::BatchGetProjectsRequest&, const Model::BatchGetProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetProjectsResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::BatchGetReportGroupsRequest&, const Model::BatchGetReportGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetReportGroupsResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::BatchGetReportsRequest&, const Model::BatchGetReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetReportsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::CreateReportGroupRequest&, const Model::CreateReportGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReportGroupResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::CreateWebhookRequest&, const Model::CreateWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWebhookResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::DeleteReportRequest&, const Model::DeleteReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReportResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::DeleteReportGroupRequest&, const Model::DeleteReportGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReportGroupResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteSourceCredentialsRequest&, const Model::DeleteSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSourceCredentialsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteWebhookRequest&, const Model::DeleteWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebhookResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::DescribeTestCasesRequest&, const Model::DescribeTestCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTestCasesResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ImportSourceCredentialsRequest&, const Model::ImportSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportSourceCredentialsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::InvalidateProjectCacheRequest&, const Model::InvalidateProjectCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvalidateProjectCacheResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildsRequest&, const Model::ListBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildsForProjectRequest&, const Model::ListBuildsForProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsForProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListCuratedEnvironmentImagesRequest&, const Model::ListCuratedEnvironmentImagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCuratedEnvironmentImagesResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::ListReportGroupsRequest&, const Model::ListReportGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportGroupsResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::ListReportsRequest&, const Model::ListReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportsResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::ListReportsForReportGroupRequest&, const Model::ListReportsForReportGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportsForReportGroupResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListSourceCredentialsRequest&, const Model::ListSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSourceCredentialsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::StartBuildRequest&, const Model::StartBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBuildResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::StopBuildRequest&, const Model::StopBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBuildResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::UpdateReportGroupRequest&, const Model::UpdateReportGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReportGroupResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::UpdateWebhookRequest&, const Model::UpdateWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWebhookResponseReceivedHandler;
 
   /**
@@ -187,27 +237,38 @@ namespace Model
    * <code>BatchGetReportGroups</code>: Returns an array of report groups. </p> </li>
    * <li> <p> <code>BatchGetReports</code>: Returns an array of reports. </p> </li>
    * <li> <p> <code>CreateProject</code>: Creates a build project.</p> </li> <li> <p>
-   * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has
-   * its source code stored in a GitHub or Bitbucket repository, enables AWS
-   * CodeBuild to start rebuilding the source code every time a code change is pushed
-   * to the repository.</p> </li> <li> <p> <code>DeleteProject</code>: Deletes a
-   * build project.</p> </li> <li> <p> <code>DeleteSourceCredentials</code>: Deletes
-   * a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.</p> </li>
-   * <li> <p> <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project
-   * that has its source code stored in a GitHub or Bitbucket repository, stops AWS
-   * CodeBuild from rebuilding the source code every time a code change is pushed to
-   * the repository.</p> </li> <li> <p> <code>ImportSourceCredentials</code>: Imports
-   * the source repository credentials for an AWS CodeBuild project that has its
-   * source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.</p>
-   * </li> <li> <p> <code>InvalidateProjectCache</code>: Resets the cache for a
-   * project.</p> </li> <li> <p> <code>ListBuilds</code>: Gets a list of build IDs,
-   * with each build ID representing a single build.</p> </li> <li> <p>
+   * <code>CreateReportGroup</code>: Creates a report group. A report group contains
+   * a collection of reports. </p> </li> <li> <p> <code>CreateWebhook</code>: For an
+   * existing AWS CodeBuild build project that has its source code stored in a GitHub
+   * or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source
+   * code every time a code change is pushed to the repository.</p> </li> <li> <p>
+   * <code>DeleteProject</code>: Deletes a build project.</p> </li> <li> <p>
+   * <code>DeleteReport</code>: Deletes a report. </p> </li> <li> <p>
+   * <code>DeleteReportGroup</code>: Deletes a report group. </p> </li> <li> <p>
+   * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub
+   * Enterprise, or Bitbucket source credentials.</p> </li> <li> <p>
+   * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has
+   * its source code stored in a GitHub or Bitbucket repository, stops AWS CodeBuild
+   * from rebuilding the source code every time a code change is pushed to the
+   * repository.</p> </li> <li> <p> <code>DescribeTestCases</code>: Returns a list of
+   * details about test cases for a report. </p> </li> <li> <p>
+   * <code>ImportSourceCredentials</code>: Imports the source repository credentials
+   * for an AWS CodeBuild project that has its source code stored in a GitHub, GitHub
+   * Enterprise, or Bitbucket repository.</p> </li> <li> <p>
+   * <code>InvalidateProjectCache</code>: Resets the cache for a project.</p> </li>
+   * <li> <p> <code>ListBuilds</code>: Gets a list of build IDs, with each build ID
+   * representing a single build.</p> </li> <li> <p>
    * <code>ListBuildsForProject</code>: Gets a list of build IDs for the specified
    * build project, with each build ID representing a single build.</p> </li> <li>
    * <p> <code>ListCuratedEnvironmentImages</code>: Gets information about Docker
    * images that are managed by AWS CodeBuild.</p> </li> <li> <p>
    * <code>ListProjects</code>: Gets a list of build project names, with each build
    * project name representing a single build project.</p> </li> <li> <p>
+   * <code>ListReportGroups</code>: Gets a list ARNs for the report groups in the
+   * current AWS account. </p> </li> <li> <p> <code>ListReports</code>: Gets a list
+   * ARNs for the reports in the current AWS account. </p> </li> <li> <p>
+   * <code>ListReportsForReportGroup</code>: Returns a list of ARNs for the reports
+   * that belong to a <code>ReportGroup</code>. </p> </li> <li> <p>
    * <code>ListSourceCredentials</code>: Returns a list of
    * <code>SourceCredentialsInfo</code> objects. Each
    * <code>SourceCredentialsInfo</code> object includes the authentication type,
@@ -215,12 +276,9 @@ namespace Model
    * <li> <p> <code>StartBuild</code>: Starts running a build.</p> </li> <li> <p>
    * <code>StopBuild</code>: Attempts to stop running a build.</p> </li> <li> <p>
    * <code>UpdateProject</code>: Changes the settings of an existing build
-   * project.</p> </li> <li> <p> <code>UpdateWebhook</code>: Changes the settings of
-   * an existing webhook.</p> </li> <li> <p> <code>StartBuild</code>: Starts running
-   * a build.</p> </li> <li> <p> <code>StopBuild</code>: Attempts to stop running a
-   * build.</p> </li> <li> <p> <code>UpdateProject</code>: Changes the settings of an
-   * existing build project.</p> </li> <li> <p> <code>UpdateWebhook</code>: Changes
-   * the settings of an existing webhook.</p> </li> </ul>
+   * project.</p> </li> <li> <p> <code>UpdateReportGroup</code>: Changes a report
+   * group.</p> </li> <li> <p> <code>UpdateWebhook</code>: Changes the settings of an
+   * existing webhook.</p> </li> </ul>
    */
   class AWS_CODEBUILD_API CodeBuildClient : public Aws::Client::AWSJsonClient
   {
@@ -330,6 +388,56 @@ namespace Model
         virtual void BatchGetProjectsAsync(const Model::BatchGetProjectsRequest& request, const BatchGetProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Returns an array of report groups. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetReportGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetReportGroupsOutcome BatchGetReportGroups(const Model::BatchGetReportGroupsRequest& request) const;
+
+        /**
+         * <p> Returns an array of report groups. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetReportGroups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetReportGroupsOutcomeCallable BatchGetReportGroupsCallable(const Model::BatchGetReportGroupsRequest& request) const;
+
+        /**
+         * <p> Returns an array of report groups. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetReportGroups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetReportGroupsAsync(const Model::BatchGetReportGroupsRequest& request, const BatchGetReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns an array of reports. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetReports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetReportsOutcome BatchGetReports(const Model::BatchGetReportsRequest& request) const;
+
+        /**
+         * <p> Returns an array of reports. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetReports">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchGetReportsOutcomeCallable BatchGetReportsCallable(const Model::BatchGetReportsRequest& request) const;
+
+        /**
+         * <p> Returns an array of reports. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetReports">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchGetReportsAsync(const Model::BatchGetReportsRequest& request, const BatchGetReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a build project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateProject">AWS
          * API Reference</a></p>
@@ -353,6 +461,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Creates a report group. A report group contains a collection of reports.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateReportGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateReportGroupOutcome CreateReportGroup(const Model::CreateReportGroupRequest& request) const;
+
+        /**
+         * <p> Creates a report group. A report group contains a collection of reports.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateReportGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateReportGroupOutcomeCallable CreateReportGroupCallable(const Model::CreateReportGroupRequest& request) const;
+
+        /**
+         * <p> Creates a report group. A report group contains a collection of reports.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/CreateReportGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateReportGroupAsync(const Model::CreateReportGroupRequest& request, const CreateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>For an existing AWS CodeBuild build project that has its source code stored
@@ -441,6 +577,77 @@ namespace Model
         virtual void DeleteProjectAsync(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Deletes a report. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteReportOutcome DeleteReport(const Model::DeleteReportRequest& request) const;
+
+        /**
+         * <p> Deletes a report. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReport">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteReportOutcomeCallable DeleteReportCallable(const Model::DeleteReportRequest& request) const;
+
+        /**
+         * <p> Deletes a report. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReport">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteReportAsync(const Model::DeleteReportRequest& request, const DeleteReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a
+         * report group, you must delete its reports. Use <a
+         * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a>
+         * to get the reports in a report group. Use <a
+         * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a>
+         * to delete the reports. If you call <code>DeleteReportGroup</code> for a report
+         * group that contains one or more reports, an exception is thrown. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReportGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteReportGroupOutcome DeleteReportGroup(const Model::DeleteReportGroupRequest& request) const;
+
+        /**
+         * <p> <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a
+         * report group, you must delete its reports. Use <a
+         * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a>
+         * to get the reports in a report group. Use <a
+         * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a>
+         * to delete the reports. If you call <code>DeleteReportGroup</code> for a report
+         * group that contains one or more reports, an exception is thrown. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReportGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteReportGroupOutcomeCallable DeleteReportGroupCallable(const Model::DeleteReportGroupRequest& request) const;
+
+        /**
+         * <p> <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a
+         * report group, you must delete its reports. Use <a
+         * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html">ListReportsForReportGroup</a>
+         * to get the reports in a report group. Use <a
+         * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a>
+         * to delete the reports. If you call <code>DeleteReportGroup</code> for a report
+         * group that contains one or more reports, an exception is thrown. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteReportGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteReportGroupAsync(const Model::DeleteReportGroupRequest& request, const DeleteReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials">AWS
@@ -501,6 +708,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteWebhookAsync(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns a list of details about test cases for a report. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeTestCases">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTestCasesOutcome DescribeTestCases(const Model::DescribeTestCasesRequest& request) const;
+
+        /**
+         * <p> Returns a list of details about test cases for a report. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeTestCases">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTestCasesOutcomeCallable DescribeTestCasesCallable(const Model::DescribeTestCasesRequest& request) const;
+
+        /**
+         * <p> Returns a list of details about test cases for a report. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeTestCases">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTestCasesAsync(const Model::DescribeTestCasesRequest& request, const DescribeTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Imports the source repository credentials for an AWS CodeBuild project that
@@ -671,6 +906,90 @@ namespace Model
         virtual void ListProjectsAsync(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Gets a list ARNs for the report groups in the current AWS account.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReportGroupsOutcome ListReportGroups(const Model::ListReportGroupsRequest& request) const;
+
+        /**
+         * <p> Gets a list ARNs for the report groups in the current AWS account.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportGroups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListReportGroupsOutcomeCallable ListReportGroupsCallable(const Model::ListReportGroupsRequest& request) const;
+
+        /**
+         * <p> Gets a list ARNs for the report groups in the current AWS account.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportGroups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListReportGroupsAsync(const Model::ListReportGroupsRequest& request, const ListReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns a list of ARNs for the reports in the current AWS account.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReports">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReportsOutcome ListReports(const Model::ListReportsRequest& request) const;
+
+        /**
+         * <p> Returns a list of ARNs for the reports in the current AWS account.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReports">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListReportsOutcomeCallable ListReportsCallable(const Model::ListReportsRequest& request) const;
+
+        /**
+         * <p> Returns a list of ARNs for the reports in the current AWS account.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReports">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListReportsAsync(const Model::ListReportsRequest& request, const ListReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Returns a list of ARNs for the reports that belong to a
+         * <code>ReportGroup</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportsForReportGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReportsForReportGroupOutcome ListReportsForReportGroup(const Model::ListReportsForReportGroupRequest& request) const;
+
+        /**
+         * <p> Returns a list of ARNs for the reports that belong to a
+         * <code>ReportGroup</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportsForReportGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListReportsForReportGroupOutcomeCallable ListReportsForReportGroupCallable(const Model::ListReportsForReportGroupRequest& request) const;
+
+        /**
+         * <p> Returns a list of ARNs for the reports that belong to a
+         * <code>ReportGroup</code>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListReportsForReportGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListReportsForReportGroupAsync(const Model::ListReportsForReportGroupRequest& request, const ListReportsForReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Returns a list of <code>SourceCredentialsInfo</code> objects. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials">AWS
@@ -774,6 +1093,31 @@ namespace Model
         virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Updates a report group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateReportGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateReportGroupOutcome UpdateReportGroup(const Model::UpdateReportGroupRequest& request) const;
+
+        /**
+         * <p> Updates a report group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateReportGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateReportGroupOutcomeCallable UpdateReportGroupCallable(const Model::UpdateReportGroupRequest& request) const;
+
+        /**
+         * <p> Updates a report group. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateReportGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateReportGroupAsync(const Model::UpdateReportGroupRequest& request, const UpdateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Updates the webhook associated with an AWS CodeBuild build project. </p>
          * <note> <p> If you use Bitbucket for your repository, <code>rotateSecret</code>
          * is ignored. </p> </note><p><h3>See Also:</h3>   <a
@@ -811,21 +1155,31 @@ namespace Model
         void BatchDeleteBuildsAsyncHelper(const Model::BatchDeleteBuildsRequest& request, const BatchDeleteBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetBuildsAsyncHelper(const Model::BatchGetBuildsRequest& request, const BatchGetBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchGetProjectsAsyncHelper(const Model::BatchGetProjectsRequest& request, const BatchGetProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetReportGroupsAsyncHelper(const Model::BatchGetReportGroupsRequest& request, const BatchGetReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchGetReportsAsyncHelper(const Model::BatchGetReportsRequest& request, const BatchGetReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateReportGroupAsyncHelper(const Model::CreateReportGroupRequest& request, const CreateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWebhookAsyncHelper(const Model::CreateWebhookRequest& request, const CreateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteReportAsyncHelper(const Model::DeleteReportRequest& request, const DeleteReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteReportGroupAsyncHelper(const Model::DeleteReportGroupRequest& request, const DeleteReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSourceCredentialsAsyncHelper(const Model::DeleteSourceCredentialsRequest& request, const DeleteSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWebhookAsyncHelper(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTestCasesAsyncHelper(const Model::DescribeTestCasesRequest& request, const DescribeTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportSourceCredentialsAsyncHelper(const Model::ImportSourceCredentialsRequest& request, const ImportSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InvalidateProjectCacheAsyncHelper(const Model::InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuildsAsyncHelper(const Model::ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuildsForProjectAsyncHelper(const Model::ListBuildsForProjectRequest& request, const ListBuildsForProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCuratedEnvironmentImagesAsyncHelper(const Model::ListCuratedEnvironmentImagesRequest& request, const ListCuratedEnvironmentImagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProjectsAsyncHelper(const Model::ListProjectsRequest& request, const ListProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListReportGroupsAsyncHelper(const Model::ListReportGroupsRequest& request, const ListReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListReportsAsyncHelper(const Model::ListReportsRequest& request, const ListReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListReportsForReportGroupAsyncHelper(const Model::ListReportsForReportGroupRequest& request, const ListReportsForReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSourceCredentialsAsyncHelper(const Model::ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartBuildAsyncHelper(const Model::StartBuildRequest& request, const StartBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopBuildAsyncHelper(const Model::StopBuildRequest& request, const StopBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateReportGroupAsyncHelper(const Model::UpdateReportGroupRequest& request, const UpdateReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWebhookAsyncHelper(const Model::UpdateWebhookRequest& request, const UpdateWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

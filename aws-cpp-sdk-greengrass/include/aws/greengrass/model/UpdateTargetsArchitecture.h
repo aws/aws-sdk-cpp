@@ -29,8 +29,7 @@ namespace Model
     armv6l,
     armv7l,
     x86_64,
-    aarch64,
-    openwrt
+    aarch64
   };
 
 namespace UpdateTargetsArchitectureMapper

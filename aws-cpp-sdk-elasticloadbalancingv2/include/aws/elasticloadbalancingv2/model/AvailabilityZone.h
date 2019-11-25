@@ -136,56 +136,64 @@ namespace Model
     /**
      * <p>[Network Load Balancers] If you need static IP addresses for your load
      * balancer, you can specify one Elastic IP address per Availability Zone when you
-     * create the load balancer.</p>
+     * create an internal-facing load balancer. For internal load balancers, you can
+     * specify a private IP address from the IPv4 range of the subnet.</p>
      */
     inline const Aws::Vector<LoadBalancerAddress>& GetLoadBalancerAddresses() const{ return m_loadBalancerAddresses; }
 
     /**
      * <p>[Network Load Balancers] If you need static IP addresses for your load
      * balancer, you can specify one Elastic IP address per Availability Zone when you
-     * create the load balancer.</p>
+     * create an internal-facing load balancer. For internal load balancers, you can
+     * specify a private IP address from the IPv4 range of the subnet.</p>
      */
     inline bool LoadBalancerAddressesHasBeenSet() const { return m_loadBalancerAddressesHasBeenSet; }
 
     /**
      * <p>[Network Load Balancers] If you need static IP addresses for your load
      * balancer, you can specify one Elastic IP address per Availability Zone when you
-     * create the load balancer.</p>
+     * create an internal-facing load balancer. For internal load balancers, you can
+     * specify a private IP address from the IPv4 range of the subnet.</p>
      */
     inline void SetLoadBalancerAddresses(const Aws::Vector<LoadBalancerAddress>& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses = value; }
 
     /**
      * <p>[Network Load Balancers] If you need static IP addresses for your load
      * balancer, you can specify one Elastic IP address per Availability Zone when you
-     * create the load balancer.</p>
+     * create an internal-facing load balancer. For internal load balancers, you can
+     * specify a private IP address from the IPv4 range of the subnet.</p>
      */
     inline void SetLoadBalancerAddresses(Aws::Vector<LoadBalancerAddress>&& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses = std::move(value); }
 
     /**
      * <p>[Network Load Balancers] If you need static IP addresses for your load
      * balancer, you can specify one Elastic IP address per Availability Zone when you
-     * create the load balancer.</p>
+     * create an internal-facing load balancer. For internal load balancers, you can
+     * specify a private IP address from the IPv4 range of the subnet.</p>
      */
     inline AvailabilityZone& WithLoadBalancerAddresses(const Aws::Vector<LoadBalancerAddress>& value) { SetLoadBalancerAddresses(value); return *this;}
 
     /**
      * <p>[Network Load Balancers] If you need static IP addresses for your load
      * balancer, you can specify one Elastic IP address per Availability Zone when you
-     * create the load balancer.</p>
+     * create an internal-facing load balancer. For internal load balancers, you can
+     * specify a private IP address from the IPv4 range of the subnet.</p>
      */
     inline AvailabilityZone& WithLoadBalancerAddresses(Aws::Vector<LoadBalancerAddress>&& value) { SetLoadBalancerAddresses(std::move(value)); return *this;}
 
     /**
      * <p>[Network Load Balancers] If you need static IP addresses for your load
      * balancer, you can specify one Elastic IP address per Availability Zone when you
-     * create the load balancer.</p>
+     * create an internal-facing load balancer. For internal load balancers, you can
+     * specify a private IP address from the IPv4 range of the subnet.</p>
      */
     inline AvailabilityZone& AddLoadBalancerAddresses(const LoadBalancerAddress& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses.push_back(value); return *this; }
 
     /**
      * <p>[Network Load Balancers] If you need static IP addresses for your load
      * balancer, you can specify one Elastic IP address per Availability Zone when you
-     * create the load balancer.</p>
+     * create an internal-facing load balancer. For internal load balancers, you can
+     * specify a private IP address from the IPv4 range of the subnet.</p>
      */
     inline AvailabilityZone& AddLoadBalancerAddresses(LoadBalancerAddress&& value) { m_loadBalancerAddressesHasBeenSet = true; m_loadBalancerAddresses.push_back(std::move(value)); return *this; }
 

@@ -18,6 +18,7 @@
 #include <aws/kms/KMSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kms/model/KeyUsageType.h>
+#include <aws/kms/model/CustomerMasterKeySpec.h>
 #include <aws/kms/model/OriginType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kms/model/Tag.h>
@@ -315,159 +316,346 @@ namespace Model
 
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK. The only valid
-     * value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to
-     * encrypt and decrypt data.</p>
+     * <p>Determines the cryptographic operations for which you can use the CMK. The
+     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
+     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
+     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
+     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
+     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
+     * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+     * </li> </ul>
      */
     inline const KeyUsageType& GetKeyUsage() const{ return m_keyUsage; }
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK. The only valid
-     * value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to
-     * encrypt and decrypt data.</p>
+     * <p>Determines the cryptographic operations for which you can use the CMK. The
+     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
+     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
+     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
+     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
+     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
+     * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+     * </li> </ul>
      */
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK. The only valid
-     * value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to
-     * encrypt and decrypt data.</p>
+     * <p>Determines the cryptographic operations for which you can use the CMK. The
+     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
+     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
+     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
+     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
+     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
+     * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+     * </li> </ul>
      */
     inline void SetKeyUsage(const KeyUsageType& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK. The only valid
-     * value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to
-     * encrypt and decrypt data.</p>
+     * <p>Determines the cryptographic operations for which you can use the CMK. The
+     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
+     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
+     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
+     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
+     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
+     * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+     * </li> </ul>
      */
     inline void SetKeyUsage(KeyUsageType&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::move(value); }
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK. The only valid
-     * value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to
-     * encrypt and decrypt data.</p>
+     * <p>Determines the cryptographic operations for which you can use the CMK. The
+     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
+     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
+     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
+     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
+     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
+     * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+     * </li> </ul>
      */
     inline CreateKeyRequest& WithKeyUsage(const KeyUsageType& value) { SetKeyUsage(value); return *this;}
 
     /**
-     * <p>The cryptographic operations for which you can use the CMK. The only valid
-     * value is <code>ENCRYPT_DECRYPT</code>, which means you can use the CMK to
-     * encrypt and decrypt data.</p>
+     * <p>Determines the cryptographic operations for which you can use the CMK. The
+     * default value is <code>ENCRYPT_DECRYPT</code>. This parameter is required only
+     * for asymmetric CMKs. You can't change the <code>KeyUsage</code> value after the
+     * CMK is created.</p> <p>Select only one valid value.</p> <ul> <li> <p>For
+     * symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
+     * </li> <li> <p>For asymmetric CMKs with RSA key material, specify
+     * <code>ENCRYPT_DECRYPT</code> or <code>SIGN_VERIFY</code>.</p> </li> <li> <p>For
+     * asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+     * </li> </ul>
      */
     inline CreateKeyRequest& WithKeyUsage(KeyUsageType&& value) { SetKeyUsage(std::move(value)); return *this;}
 
 
     /**
+     * <p>Specifies the type of CMK to create. The <code>CustomerMasterKeySpec</code>
+     * determines whether the CMK contains a symmetric key or an asymmetric key pair.
+     * It also determines the encryption algorithms or signing algorithms that the CMK
+     * supports. You can't change the <code>CustomerMasterKeySpec</code> after the CMK
+     * is created. To further restrict the algorithms that can be used with the CMK,
+     * use its key policy or IAM policy.</p> <p>For help with choosing a key spec for
+     * your CMK, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#cmk-key-spec">Selecting
+     * a Customer Master Key Spec</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The default value, <code>SYMMETRIC_DEFAULT</code>, creates a
+     * CMK with a 256-bit symmetric key.</p> <p>AWS KMS supports the following key
+     * specs for CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
+     * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
+     * <li> <p> <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p>
+     * </li> </ul> </li> <li> <p>Asymmetric NIST-recommended elliptic curve key
+     * pairs</p> <ul> <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li>
+     * <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
+     * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
+     * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
+     * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
+     * cryptocurrencies.</p> </li> </ul> </li> </ul>
+     */
+    inline const CustomerMasterKeySpec& GetCustomerMasterKeySpec() const{ return m_customerMasterKeySpec; }
+
+    /**
+     * <p>Specifies the type of CMK to create. The <code>CustomerMasterKeySpec</code>
+     * determines whether the CMK contains a symmetric key or an asymmetric key pair.
+     * It also determines the encryption algorithms or signing algorithms that the CMK
+     * supports. You can't change the <code>CustomerMasterKeySpec</code> after the CMK
+     * is created. To further restrict the algorithms that can be used with the CMK,
+     * use its key policy or IAM policy.</p> <p>For help with choosing a key spec for
+     * your CMK, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#cmk-key-spec">Selecting
+     * a Customer Master Key Spec</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The default value, <code>SYMMETRIC_DEFAULT</code>, creates a
+     * CMK with a 256-bit symmetric key.</p> <p>AWS KMS supports the following key
+     * specs for CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
+     * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
+     * <li> <p> <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p>
+     * </li> </ul> </li> <li> <p>Asymmetric NIST-recommended elliptic curve key
+     * pairs</p> <ul> <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li>
+     * <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
+     * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
+     * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
+     * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
+     * cryptocurrencies.</p> </li> </ul> </li> </ul>
+     */
+    inline bool CustomerMasterKeySpecHasBeenSet() const { return m_customerMasterKeySpecHasBeenSet; }
+
+    /**
+     * <p>Specifies the type of CMK to create. The <code>CustomerMasterKeySpec</code>
+     * determines whether the CMK contains a symmetric key or an asymmetric key pair.
+     * It also determines the encryption algorithms or signing algorithms that the CMK
+     * supports. You can't change the <code>CustomerMasterKeySpec</code> after the CMK
+     * is created. To further restrict the algorithms that can be used with the CMK,
+     * use its key policy or IAM policy.</p> <p>For help with choosing a key spec for
+     * your CMK, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#cmk-key-spec">Selecting
+     * a Customer Master Key Spec</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The default value, <code>SYMMETRIC_DEFAULT</code>, creates a
+     * CMK with a 256-bit symmetric key.</p> <p>AWS KMS supports the following key
+     * specs for CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
+     * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
+     * <li> <p> <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p>
+     * </li> </ul> </li> <li> <p>Asymmetric NIST-recommended elliptic curve key
+     * pairs</p> <ul> <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li>
+     * <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
+     * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
+     * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
+     * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
+     * cryptocurrencies.</p> </li> </ul> </li> </ul>
+     */
+    inline void SetCustomerMasterKeySpec(const CustomerMasterKeySpec& value) { m_customerMasterKeySpecHasBeenSet = true; m_customerMasterKeySpec = value; }
+
+    /**
+     * <p>Specifies the type of CMK to create. The <code>CustomerMasterKeySpec</code>
+     * determines whether the CMK contains a symmetric key or an asymmetric key pair.
+     * It also determines the encryption algorithms or signing algorithms that the CMK
+     * supports. You can't change the <code>CustomerMasterKeySpec</code> after the CMK
+     * is created. To further restrict the algorithms that can be used with the CMK,
+     * use its key policy or IAM policy.</p> <p>For help with choosing a key spec for
+     * your CMK, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#cmk-key-spec">Selecting
+     * a Customer Master Key Spec</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The default value, <code>SYMMETRIC_DEFAULT</code>, creates a
+     * CMK with a 256-bit symmetric key.</p> <p>AWS KMS supports the following key
+     * specs for CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
+     * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
+     * <li> <p> <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p>
+     * </li> </ul> </li> <li> <p>Asymmetric NIST-recommended elliptic curve key
+     * pairs</p> <ul> <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li>
+     * <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
+     * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
+     * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
+     * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
+     * cryptocurrencies.</p> </li> </ul> </li> </ul>
+     */
+    inline void SetCustomerMasterKeySpec(CustomerMasterKeySpec&& value) { m_customerMasterKeySpecHasBeenSet = true; m_customerMasterKeySpec = std::move(value); }
+
+    /**
+     * <p>Specifies the type of CMK to create. The <code>CustomerMasterKeySpec</code>
+     * determines whether the CMK contains a symmetric key or an asymmetric key pair.
+     * It also determines the encryption algorithms or signing algorithms that the CMK
+     * supports. You can't change the <code>CustomerMasterKeySpec</code> after the CMK
+     * is created. To further restrict the algorithms that can be used with the CMK,
+     * use its key policy or IAM policy.</p> <p>For help with choosing a key spec for
+     * your CMK, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#cmk-key-spec">Selecting
+     * a Customer Master Key Spec</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The default value, <code>SYMMETRIC_DEFAULT</code>, creates a
+     * CMK with a 256-bit symmetric key.</p> <p>AWS KMS supports the following key
+     * specs for CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
+     * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
+     * <li> <p> <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p>
+     * </li> </ul> </li> <li> <p>Asymmetric NIST-recommended elliptic curve key
+     * pairs</p> <ul> <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li>
+     * <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
+     * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
+     * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
+     * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
+     * cryptocurrencies.</p> </li> </ul> </li> </ul>
+     */
+    inline CreateKeyRequest& WithCustomerMasterKeySpec(const CustomerMasterKeySpec& value) { SetCustomerMasterKeySpec(value); return *this;}
+
+    /**
+     * <p>Specifies the type of CMK to create. The <code>CustomerMasterKeySpec</code>
+     * determines whether the CMK contains a symmetric key or an asymmetric key pair.
+     * It also determines the encryption algorithms or signing algorithms that the CMK
+     * supports. You can't change the <code>CustomerMasterKeySpec</code> after the CMK
+     * is created. To further restrict the algorithms that can be used with the CMK,
+     * use its key policy or IAM policy.</p> <p>For help with choosing a key spec for
+     * your CMK, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#cmk-key-spec">Selecting
+     * a Customer Master Key Spec</a> in the <i>AWS Key Management Service Developer
+     * Guide</i>.</p> <p>The default value, <code>SYMMETRIC_DEFAULT</code>, creates a
+     * CMK with a 256-bit symmetric key.</p> <p>AWS KMS supports the following key
+     * specs for CMKs:</p> <ul> <li> <p>Symmetric key (default)</p> <ul> <li> <p>
+     * <code>SYMMETRIC_DEFAULT</code> (AES-256-GCM)</p> </li> </ul> </li> <li>
+     * <p>Asymmetric RSA key pairs</p> <ul> <li> <p> <code>RSA_2048</code> </p> </li>
+     * <li> <p> <code>RSA_3072</code> </p> </li> <li> <p> <code>RSA_4096</code> </p>
+     * </li> </ul> </li> <li> <p>Asymmetric NIST-recommended elliptic curve key
+     * pairs</p> <ul> <li> <p> <code>ECC_NIST_P256</code> (secp256r1)</p> </li> <li>
+     * <p> <code>ECC_NIST_P384</code> (secp384r1)</p> </li> <li> <p>
+     * <code>ECC_NIST_P521</code> (secp521r1)</p> </li> </ul> </li> <li> <p>Other
+     * asymmetric elliptic curve key pairs</p> <ul> <li> <p>
+     * <code>ECC_SECG_P256K1</code> (secp256k1), commonly used for
+     * cryptocurrencies.</p> </li> </ul> </li> </ul>
+     */
+    inline CreateKeyRequest& WithCustomerMasterKeySpec(CustomerMasterKeySpec&& value) { SetCustomerMasterKeySpec(std::move(value)); return *this;}
+
+
+    /**
      * <p>The source of the key material for the CMK. You cannot change the origin
-     * after you create the CMK.</p> <p>The default is <code>AWS_KMS</code>, which
-     * means AWS KMS creates the key material in its own key store.</p> <p>When the
-     * parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key
-     * material so that you can import key material from your existing key management
-     * infrastructure. For more information about importing key material into AWS KMS,
-     * see <a
+     * after you create the CMK. The default is <code>AWS_KMS</code>, which means AWS
+     * KMS creates the key material.</p> <p>When the parameter value is
+     * <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
+     * can import key material from your existing key management infrastructure. For
+     * more information about importing key material into AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the
-     * CMK in an AWS KMS <a
+     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>. This
+     * value is valid only for symmetric CMKs.</p> <p>When the parameter value is
+     * <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> and creates its key material in the associated AWS CloudHSM
      * cluster. You must also use the <code>CustomKeyStoreId</code> parameter to
-     * identify the custom key store.</p>
+     * identify the custom key store. This value is valid only for symmetric CMKs.</p>
      */
     inline const OriginType& GetOrigin() const{ return m_origin; }
 
     /**
      * <p>The source of the key material for the CMK. You cannot change the origin
-     * after you create the CMK.</p> <p>The default is <code>AWS_KMS</code>, which
-     * means AWS KMS creates the key material in its own key store.</p> <p>When the
-     * parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key
-     * material so that you can import key material from your existing key management
-     * infrastructure. For more information about importing key material into AWS KMS,
-     * see <a
+     * after you create the CMK. The default is <code>AWS_KMS</code>, which means AWS
+     * KMS creates the key material.</p> <p>When the parameter value is
+     * <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
+     * can import key material from your existing key management infrastructure. For
+     * more information about importing key material into AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the
-     * CMK in an AWS KMS <a
+     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>. This
+     * value is valid only for symmetric CMKs.</p> <p>When the parameter value is
+     * <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> and creates its key material in the associated AWS CloudHSM
      * cluster. You must also use the <code>CustomKeyStoreId</code> parameter to
-     * identify the custom key store.</p>
+     * identify the custom key store. This value is valid only for symmetric CMKs.</p>
      */
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
 
     /**
      * <p>The source of the key material for the CMK. You cannot change the origin
-     * after you create the CMK.</p> <p>The default is <code>AWS_KMS</code>, which
-     * means AWS KMS creates the key material in its own key store.</p> <p>When the
-     * parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key
-     * material so that you can import key material from your existing key management
-     * infrastructure. For more information about importing key material into AWS KMS,
-     * see <a
+     * after you create the CMK. The default is <code>AWS_KMS</code>, which means AWS
+     * KMS creates the key material.</p> <p>When the parameter value is
+     * <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
+     * can import key material from your existing key management infrastructure. For
+     * more information about importing key material into AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the
-     * CMK in an AWS KMS <a
+     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>. This
+     * value is valid only for symmetric CMKs.</p> <p>When the parameter value is
+     * <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> and creates its key material in the associated AWS CloudHSM
      * cluster. You must also use the <code>CustomKeyStoreId</code> parameter to
-     * identify the custom key store.</p>
+     * identify the custom key store. This value is valid only for symmetric CMKs.</p>
      */
     inline void SetOrigin(const OriginType& value) { m_originHasBeenSet = true; m_origin = value; }
 
     /**
      * <p>The source of the key material for the CMK. You cannot change the origin
-     * after you create the CMK.</p> <p>The default is <code>AWS_KMS</code>, which
-     * means AWS KMS creates the key material in its own key store.</p> <p>When the
-     * parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key
-     * material so that you can import key material from your existing key management
-     * infrastructure. For more information about importing key material into AWS KMS,
-     * see <a
+     * after you create the CMK. The default is <code>AWS_KMS</code>, which means AWS
+     * KMS creates the key material.</p> <p>When the parameter value is
+     * <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
+     * can import key material from your existing key management infrastructure. For
+     * more information about importing key material into AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the
-     * CMK in an AWS KMS <a
+     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>. This
+     * value is valid only for symmetric CMKs.</p> <p>When the parameter value is
+     * <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> and creates its key material in the associated AWS CloudHSM
      * cluster. You must also use the <code>CustomKeyStoreId</code> parameter to
-     * identify the custom key store.</p>
+     * identify the custom key store. This value is valid only for symmetric CMKs.</p>
      */
     inline void SetOrigin(OriginType&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
 
     /**
      * <p>The source of the key material for the CMK. You cannot change the origin
-     * after you create the CMK.</p> <p>The default is <code>AWS_KMS</code>, which
-     * means AWS KMS creates the key material in its own key store.</p> <p>When the
-     * parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key
-     * material so that you can import key material from your existing key management
-     * infrastructure. For more information about importing key material into AWS KMS,
-     * see <a
+     * after you create the CMK. The default is <code>AWS_KMS</code>, which means AWS
+     * KMS creates the key material.</p> <p>When the parameter value is
+     * <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
+     * can import key material from your existing key management infrastructure. For
+     * more information about importing key material into AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the
-     * CMK in an AWS KMS <a
+     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>. This
+     * value is valid only for symmetric CMKs.</p> <p>When the parameter value is
+     * <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> and creates its key material in the associated AWS CloudHSM
      * cluster. You must also use the <code>CustomKeyStoreId</code> parameter to
-     * identify the custom key store.</p>
+     * identify the custom key store. This value is valid only for symmetric CMKs.</p>
      */
     inline CreateKeyRequest& WithOrigin(const OriginType& value) { SetOrigin(value); return *this;}
 
     /**
      * <p>The source of the key material for the CMK. You cannot change the origin
-     * after you create the CMK.</p> <p>The default is <code>AWS_KMS</code>, which
-     * means AWS KMS creates the key material in its own key store.</p> <p>When the
-     * parameter value is <code>EXTERNAL</code>, AWS KMS creates a CMK without key
-     * material so that you can import key material from your existing key management
-     * infrastructure. For more information about importing key material into AWS KMS,
-     * see <a
+     * after you create the CMK. The default is <code>AWS_KMS</code>, which means AWS
+     * KMS creates the key material.</p> <p>When the parameter value is
+     * <code>EXTERNAL</code>, AWS KMS creates a CMK without key material so that you
+     * can import key material from your existing key management infrastructure. For
+     * more information about importing key material into AWS KMS, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-     * <p>When the parameter value is <code>AWS_CLOUDHSM</code>, AWS KMS creates the
-     * CMK in an AWS KMS <a
+     * Key Material</a> in the <i>AWS Key Management Service Developer Guide</i>. This
+     * value is valid only for symmetric CMKs.</p> <p>When the parameter value is
+     * <code>AWS_CLOUDHSM</code>, AWS KMS creates the CMK in an AWS KMS <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom
      * key store</a> and creates its key material in the associated AWS CloudHSM
      * cluster. You must also use the <code>CustomKeyStoreId</code> parameter to
-     * identify the custom key store.</p>
+     * identify the custom key store. This value is valid only for symmetric CMKs.</p>
      */
     inline CreateKeyRequest& WithOrigin(OriginType&& value) { SetOrigin(std::move(value)); return *this;}
 
@@ -479,10 +667,12 @@ namespace Model
      * create a CMK in a custom key store, you must also specify the
      * <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS
      * CloudHSM cluster that is associated with the custom key store must have at least
-     * two active HSMs, each in a different Availability Zone in the Region.</p> <p>To
-     * find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the AWS CloudHSM cluster.</p> <p>This operation is part of the <a
+     * two active HSMs, each in a different Availability Zone in the Region.</p>
+     * <p>This parameter is valid only for symmetric CMKs. You cannot create an
+     * asymmetric CMK in a custom key store.</p> <p>To find the ID of a custom key
+     * store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the AWS CloudHSM cluster.</p>
+     * <p>This operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in AWS KMS, which combines the convenience and
      * extensive integration of AWS KMS with the isolation and control of a
@@ -497,10 +687,12 @@ namespace Model
      * create a CMK in a custom key store, you must also specify the
      * <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS
      * CloudHSM cluster that is associated with the custom key store must have at least
-     * two active HSMs, each in a different Availability Zone in the Region.</p> <p>To
-     * find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the AWS CloudHSM cluster.</p> <p>This operation is part of the <a
+     * two active HSMs, each in a different Availability Zone in the Region.</p>
+     * <p>This parameter is valid only for symmetric CMKs. You cannot create an
+     * asymmetric CMK in a custom key store.</p> <p>To find the ID of a custom key
+     * store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the AWS CloudHSM cluster.</p>
+     * <p>This operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in AWS KMS, which combines the convenience and
      * extensive integration of AWS KMS with the isolation and control of a
@@ -515,10 +707,12 @@ namespace Model
      * create a CMK in a custom key store, you must also specify the
      * <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS
      * CloudHSM cluster that is associated with the custom key store must have at least
-     * two active HSMs, each in a different Availability Zone in the Region.</p> <p>To
-     * find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the AWS CloudHSM cluster.</p> <p>This operation is part of the <a
+     * two active HSMs, each in a different Availability Zone in the Region.</p>
+     * <p>This parameter is valid only for symmetric CMKs. You cannot create an
+     * asymmetric CMK in a custom key store.</p> <p>To find the ID of a custom key
+     * store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the AWS CloudHSM cluster.</p>
+     * <p>This operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in AWS KMS, which combines the convenience and
      * extensive integration of AWS KMS with the isolation and control of a
@@ -533,10 +727,12 @@ namespace Model
      * create a CMK in a custom key store, you must also specify the
      * <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS
      * CloudHSM cluster that is associated with the custom key store must have at least
-     * two active HSMs, each in a different Availability Zone in the Region.</p> <p>To
-     * find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the AWS CloudHSM cluster.</p> <p>This operation is part of the <a
+     * two active HSMs, each in a different Availability Zone in the Region.</p>
+     * <p>This parameter is valid only for symmetric CMKs. You cannot create an
+     * asymmetric CMK in a custom key store.</p> <p>To find the ID of a custom key
+     * store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the AWS CloudHSM cluster.</p>
+     * <p>This operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in AWS KMS, which combines the convenience and
      * extensive integration of AWS KMS with the isolation and control of a
@@ -551,10 +747,12 @@ namespace Model
      * create a CMK in a custom key store, you must also specify the
      * <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS
      * CloudHSM cluster that is associated with the custom key store must have at least
-     * two active HSMs, each in a different Availability Zone in the Region.</p> <p>To
-     * find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the AWS CloudHSM cluster.</p> <p>This operation is part of the <a
+     * two active HSMs, each in a different Availability Zone in the Region.</p>
+     * <p>This parameter is valid only for symmetric CMKs. You cannot create an
+     * asymmetric CMK in a custom key store.</p> <p>To find the ID of a custom key
+     * store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the AWS CloudHSM cluster.</p>
+     * <p>This operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in AWS KMS, which combines the convenience and
      * extensive integration of AWS KMS with the isolation and control of a
@@ -569,10 +767,12 @@ namespace Model
      * create a CMK in a custom key store, you must also specify the
      * <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS
      * CloudHSM cluster that is associated with the custom key store must have at least
-     * two active HSMs, each in a different Availability Zone in the Region.</p> <p>To
-     * find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the AWS CloudHSM cluster.</p> <p>This operation is part of the <a
+     * two active HSMs, each in a different Availability Zone in the Region.</p>
+     * <p>This parameter is valid only for symmetric CMKs. You cannot create an
+     * asymmetric CMK in a custom key store.</p> <p>To find the ID of a custom key
+     * store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the AWS CloudHSM cluster.</p>
+     * <p>This operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in AWS KMS, which combines the convenience and
      * extensive integration of AWS KMS with the isolation and control of a
@@ -587,10 +787,12 @@ namespace Model
      * create a CMK in a custom key store, you must also specify the
      * <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS
      * CloudHSM cluster that is associated with the custom key store must have at least
-     * two active HSMs, each in a different Availability Zone in the Region.</p> <p>To
-     * find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the AWS CloudHSM cluster.</p> <p>This operation is part of the <a
+     * two active HSMs, each in a different Availability Zone in the Region.</p>
+     * <p>This parameter is valid only for symmetric CMKs. You cannot create an
+     * asymmetric CMK in a custom key store.</p> <p>To find the ID of a custom key
+     * store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the AWS CloudHSM cluster.</p>
+     * <p>This operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in AWS KMS, which combines the convenience and
      * extensive integration of AWS KMS with the isolation and control of a
@@ -605,10 +807,12 @@ namespace Model
      * create a CMK in a custom key store, you must also specify the
      * <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS
      * CloudHSM cluster that is associated with the custom key store must have at least
-     * two active HSMs, each in a different Availability Zone in the Region.</p> <p>To
-     * find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a>
-     * operation.</p> <p>The response includes the custom key store ID and the ID of
-     * the AWS CloudHSM cluster.</p> <p>This operation is part of the <a
+     * two active HSMs, each in a different Availability Zone in the Region.</p>
+     * <p>This parameter is valid only for symmetric CMKs. You cannot create an
+     * asymmetric CMK in a custom key store.</p> <p>To find the ID of a custom key
+     * store, use the <a>DescribeCustomKeyStores</a> operation.</p> <p>The response
+     * includes the custom key store ID and the ID of the AWS CloudHSM cluster.</p>
+     * <p>This operation is part of the <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom
      * Key Store feature</a> feature in AWS KMS, which combines the convenience and
      * extensive integration of AWS KMS with the isolation and control of a
@@ -675,74 +879,98 @@ namespace Model
 
 
     /**
-     * <p>One or more tags. Each tag consists of a tag key and a tag value. Tag keys
-     * and tag values are both required, but tag values can be empty (null)
-     * strings.</p> <p>Use this parameter to tag the CMK when it is created.
-     * Alternately, you can omit this parameter and instead tag the CMK after it is
-     * created using <a>TagResource</a>.</p>
+     * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
+     * tag key and the tag value are required, but the tag value can be an empty (null)
+     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * allocation report with usage and costs aggregated by tags. For information about
+     * adding, changing, deleting and listing tags for CMKs, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
+     * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>One or more tags. Each tag consists of a tag key and a tag value. Tag keys
-     * and tag values are both required, but tag values can be empty (null)
-     * strings.</p> <p>Use this parameter to tag the CMK when it is created.
-     * Alternately, you can omit this parameter and instead tag the CMK after it is
-     * created using <a>TagResource</a>.</p>
+     * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
+     * tag key and the tag value are required, but the tag value can be an empty (null)
+     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * allocation report with usage and costs aggregated by tags. For information about
+     * adding, changing, deleting and listing tags for CMKs, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
+     * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>One or more tags. Each tag consists of a tag key and a tag value. Tag keys
-     * and tag values are both required, but tag values can be empty (null)
-     * strings.</p> <p>Use this parameter to tag the CMK when it is created.
-     * Alternately, you can omit this parameter and instead tag the CMK after it is
-     * created using <a>TagResource</a>.</p>
+     * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
+     * tag key and the tag value are required, but the tag value can be an empty (null)
+     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * allocation report with usage and costs aggregated by tags. For information about
+     * adding, changing, deleting and listing tags for CMKs, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
+     * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>One or more tags. Each tag consists of a tag key and a tag value. Tag keys
-     * and tag values are both required, but tag values can be empty (null)
-     * strings.</p> <p>Use this parameter to tag the CMK when it is created.
-     * Alternately, you can omit this parameter and instead tag the CMK after it is
-     * created using <a>TagResource</a>.</p>
+     * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
+     * tag key and the tag value are required, but the tag value can be an empty (null)
+     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * allocation report with usage and costs aggregated by tags. For information about
+     * adding, changing, deleting and listing tags for CMKs, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
+     * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>One or more tags. Each tag consists of a tag key and a tag value. Tag keys
-     * and tag values are both required, but tag values can be empty (null)
-     * strings.</p> <p>Use this parameter to tag the CMK when it is created.
-     * Alternately, you can omit this parameter and instead tag the CMK after it is
-     * created using <a>TagResource</a>.</p>
+     * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
+     * tag key and the tag value are required, but the tag value can be an empty (null)
+     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * allocation report with usage and costs aggregated by tags. For information about
+     * adding, changing, deleting and listing tags for CMKs, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
+     * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
      */
     inline CreateKeyRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>One or more tags. Each tag consists of a tag key and a tag value. Tag keys
-     * and tag values are both required, but tag values can be empty (null)
-     * strings.</p> <p>Use this parameter to tag the CMK when it is created.
-     * Alternately, you can omit this parameter and instead tag the CMK after it is
-     * created using <a>TagResource</a>.</p>
+     * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
+     * tag key and the tag value are required, but the tag value can be an empty (null)
+     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * allocation report with usage and costs aggregated by tags. For information about
+     * adding, changing, deleting and listing tags for CMKs, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
+     * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
      */
     inline CreateKeyRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>One or more tags. Each tag consists of a tag key and a tag value. Tag keys
-     * and tag values are both required, but tag values can be empty (null)
-     * strings.</p> <p>Use this parameter to tag the CMK when it is created.
-     * Alternately, you can omit this parameter and instead tag the CMK after it is
-     * created using <a>TagResource</a>.</p>
+     * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
+     * tag key and the tag value are required, but the tag value can be an empty (null)
+     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * allocation report with usage and costs aggregated by tags. For information about
+     * adding, changing, deleting and listing tags for CMKs, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
+     * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
      */
     inline CreateKeyRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>One or more tags. Each tag consists of a tag key and a tag value. Tag keys
-     * and tag values are both required, but tag values can be empty (null)
-     * strings.</p> <p>Use this parameter to tag the CMK when it is created.
-     * Alternately, you can omit this parameter and instead tag the CMK after it is
-     * created using <a>TagResource</a>.</p>
+     * <p>One or more tags. Each tag consists of a tag key and a tag value. Both the
+     * tag key and the tag value are required, but the tag value can be an empty (null)
+     * string.</p> <p>When you add tags to an AWS resource, AWS generates a cost
+     * allocation report with usage and costs aggregated by tags. For information about
+     * adding, changing, deleting and listing tags for CMKs, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging
+     * Keys</a>.</p> <p>Use this parameter to tag the CMK when it is created. To add
+     * tags to an existing CMK, use the <a>TagResource</a> operation.</p>
      */
     inline CreateKeyRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -756,6 +984,9 @@ namespace Model
 
     KeyUsageType m_keyUsage;
     bool m_keyUsageHasBeenSet;
+
+    CustomerMasterKeySpec m_customerMasterKeySpec;
+    bool m_customerMasterKeySpecHasBeenSet;
 
     OriginType m_origin;
     bool m_originHasBeenSet;

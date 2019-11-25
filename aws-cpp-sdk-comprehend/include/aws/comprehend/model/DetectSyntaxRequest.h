@@ -95,44 +95,44 @@ namespace Model
 
 
     /**
-     * <p>The language code of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish
-     * ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
+     * <p>The language code of the input documents. You can specify any of the
+     * following languages supported by Amazon Comprehend: German ("de"), English
+     * ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
      */
     inline const SyntaxLanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language code of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish
-     * ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
+     * <p>The language code of the input documents. You can specify any of the
+     * following languages supported by Amazon Comprehend: German ("de"), English
+     * ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language code of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish
-     * ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
+     * <p>The language code of the input documents. You can specify any of the
+     * following languages supported by Amazon Comprehend: German ("de"), English
+     * ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
      */
     inline void SetLanguageCode(const SyntaxLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language code of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish
-     * ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
+     * <p>The language code of the input documents. You can specify any of the
+     * following languages supported by Amazon Comprehend: German ("de"), English
+     * ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
      */
     inline void SetLanguageCode(SyntaxLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language code of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish
-     * ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
+     * <p>The language code of the input documents. You can specify any of the
+     * following languages supported by Amazon Comprehend: German ("de"), English
+     * ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
      */
     inline DetectSyntaxRequest& WithLanguageCode(const SyntaxLanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code of the input documents. You can specify any of the primary
-     * languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish
-     * ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
+     * <p>The language code of the input documents. You can specify any of the
+     * following languages supported by Amazon Comprehend: German ("de"), English
+     * ("en"), Spanish ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt").</p>
      */
     inline DetectSyntaxRequest& WithLanguageCode(SyntaxLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 

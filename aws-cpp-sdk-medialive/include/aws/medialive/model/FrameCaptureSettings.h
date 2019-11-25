@@ -46,26 +46,30 @@ namespace Model
 
 
     /**
-     * The frequency, in seconds, for capturing frames for inclusion in the output. 
-     * For example, "10" means capture a frame every 10 seconds.
+     * The frequency at which to capture frames for inclusion in the output. May be
+     * specified in either seconds or milliseconds, as specified by
+     * captureIntervalUnits.
      */
     inline int GetCaptureInterval() const{ return m_captureInterval; }
 
     /**
-     * The frequency, in seconds, for capturing frames for inclusion in the output. 
-     * For example, "10" means capture a frame every 10 seconds.
+     * The frequency at which to capture frames for inclusion in the output. May be
+     * specified in either seconds or milliseconds, as specified by
+     * captureIntervalUnits.
      */
     inline bool CaptureIntervalHasBeenSet() const { return m_captureIntervalHasBeenSet; }
 
     /**
-     * The frequency, in seconds, for capturing frames for inclusion in the output. 
-     * For example, "10" means capture a frame every 10 seconds.
+     * The frequency at which to capture frames for inclusion in the output. May be
+     * specified in either seconds or milliseconds, as specified by
+     * captureIntervalUnits.
      */
     inline void SetCaptureInterval(int value) { m_captureIntervalHasBeenSet = true; m_captureInterval = value; }
 
     /**
-     * The frequency, in seconds, for capturing frames for inclusion in the output. 
-     * For example, "10" means capture a frame every 10 seconds.
+     * The frequency at which to capture frames for inclusion in the output. May be
+     * specified in either seconds or milliseconds, as specified by
+     * captureIntervalUnits.
      */
     inline FrameCaptureSettings& WithCaptureInterval(int value) { SetCaptureInterval(value); return *this;}
 

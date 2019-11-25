@@ -37,7 +37,9 @@ AuthorizerDescription::AuthorizerDescription() :
     m_status(AuthorizerStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+    m_lastModifiedDateHasBeenSet(false),
+    m_signingDisabled(false),
+    m_signingDisabledHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ AuthorizerDescription::AuthorizerDescription(JsonView jsonValue) :
     m_status(AuthorizerStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
+    m_lastModifiedDateHasBeenSet(false),
+    m_signingDisabled(false),
+    m_signingDisabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +120,13 @@ AuthorizerDescription& AuthorizerDescription::operator =(JsonView jsonValue)
     m_lastModifiedDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("signingDisabled"))
+  {
+    m_signingDisabled = jsonValue.GetBool("signingDisabled");
+
+    m_signingDisabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -171,6 +182,12 @@ JsonValue AuthorizerDescription::Jsonize() const
   if(m_lastModifiedDateHasBeenSet)
   {
    payload.WithDouble("lastModifiedDate", m_lastModifiedDate.SecondsWithMSPrecision());
+  }
+
+  if(m_signingDisabledHasBeenSet)
+  {
+   payload.WithBool("signingDisabled", m_signingDisabled);
+
   }
 
   return payload;

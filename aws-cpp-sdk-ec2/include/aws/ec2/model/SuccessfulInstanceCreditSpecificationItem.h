@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the T2 or T3 instance whose credit option for CPU usage was
-   * successfully modified.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the burstable performance instance whose credit option for CPU
+   * usage was successfully modified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SuccessfulInstanceCreditSpecificationItem">AWS
    * API Reference</a></p>
    */

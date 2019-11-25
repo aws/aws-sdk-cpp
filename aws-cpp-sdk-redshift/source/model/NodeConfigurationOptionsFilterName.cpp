@@ -33,6 +33,7 @@ namespace Aws
         static const int NodeType_HASH = HashingUtils::HashString("NodeType");
         static const int NumberOfNodes_HASH = HashingUtils::HashString("NumberOfNodes");
         static const int EstimatedDiskUtilizationPercent_HASH = HashingUtils::HashString("EstimatedDiskUtilizationPercent");
+        static const int Mode_HASH = HashingUtils::HashString("Mode");
 
 
         NodeConfigurationOptionsFilterName GetNodeConfigurationOptionsFilterNameForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == EstimatedDiskUtilizationPercent_HASH)
           {
             return NodeConfigurationOptionsFilterName::EstimatedDiskUtilizationPercent;
+          }
+          else if (hashCode == Mode_HASH)
+          {
+            return NodeConfigurationOptionsFilterName::Mode;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "NumberOfNodes";
           case NodeConfigurationOptionsFilterName::EstimatedDiskUtilizationPercent:
             return "EstimatedDiskUtilizationPercent";
+          case NodeConfigurationOptionsFilterName::Mode:
+            return "Mode";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

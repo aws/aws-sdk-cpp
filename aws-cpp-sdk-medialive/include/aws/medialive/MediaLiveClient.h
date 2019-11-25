@@ -25,30 +25,42 @@
 #include <aws/medialive/model/CreateChannelResult.h>
 #include <aws/medialive/model/CreateInputResult.h>
 #include <aws/medialive/model/CreateInputSecurityGroupResult.h>
+#include <aws/medialive/model/CreateMultiplexResult.h>
+#include <aws/medialive/model/CreateMultiplexProgramResult.h>
 #include <aws/medialive/model/DeleteChannelResult.h>
 #include <aws/medialive/model/DeleteInputResult.h>
 #include <aws/medialive/model/DeleteInputSecurityGroupResult.h>
+#include <aws/medialive/model/DeleteMultiplexResult.h>
+#include <aws/medialive/model/DeleteMultiplexProgramResult.h>
 #include <aws/medialive/model/DeleteReservationResult.h>
 #include <aws/medialive/model/DeleteScheduleResult.h>
 #include <aws/medialive/model/DescribeChannelResult.h>
 #include <aws/medialive/model/DescribeInputResult.h>
 #include <aws/medialive/model/DescribeInputSecurityGroupResult.h>
+#include <aws/medialive/model/DescribeMultiplexResult.h>
+#include <aws/medialive/model/DescribeMultiplexProgramResult.h>
 #include <aws/medialive/model/DescribeOfferingResult.h>
 #include <aws/medialive/model/DescribeReservationResult.h>
 #include <aws/medialive/model/DescribeScheduleResult.h>
 #include <aws/medialive/model/ListChannelsResult.h>
 #include <aws/medialive/model/ListInputSecurityGroupsResult.h>
 #include <aws/medialive/model/ListInputsResult.h>
+#include <aws/medialive/model/ListMultiplexProgramsResult.h>
+#include <aws/medialive/model/ListMultiplexesResult.h>
 #include <aws/medialive/model/ListOfferingsResult.h>
 #include <aws/medialive/model/ListReservationsResult.h>
 #include <aws/medialive/model/ListTagsForResourceResult.h>
 #include <aws/medialive/model/PurchaseOfferingResult.h>
 #include <aws/medialive/model/StartChannelResult.h>
+#include <aws/medialive/model/StartMultiplexResult.h>
 #include <aws/medialive/model/StopChannelResult.h>
+#include <aws/medialive/model/StopMultiplexResult.h>
 #include <aws/medialive/model/UpdateChannelResult.h>
 #include <aws/medialive/model/UpdateChannelClassResult.h>
 #include <aws/medialive/model/UpdateInputResult.h>
 #include <aws/medialive/model/UpdateInputSecurityGroupResult.h>
+#include <aws/medialive/model/UpdateMultiplexResult.h>
+#include <aws/medialive/model/UpdateMultiplexProgramResult.h>
 #include <aws/medialive/model/UpdateReservationResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -94,96 +106,132 @@ namespace Model
         class CreateChannelRequest;
         class CreateInputRequest;
         class CreateInputSecurityGroupRequest;
+        class CreateMultiplexRequest;
+        class CreateMultiplexProgramRequest;
         class CreateTagsRequest;
         class DeleteChannelRequest;
         class DeleteInputRequest;
         class DeleteInputSecurityGroupRequest;
+        class DeleteMultiplexRequest;
+        class DeleteMultiplexProgramRequest;
         class DeleteReservationRequest;
         class DeleteScheduleRequest;
         class DeleteTagsRequest;
         class DescribeChannelRequest;
         class DescribeInputRequest;
         class DescribeInputSecurityGroupRequest;
+        class DescribeMultiplexRequest;
+        class DescribeMultiplexProgramRequest;
         class DescribeOfferingRequest;
         class DescribeReservationRequest;
         class DescribeScheduleRequest;
         class ListChannelsRequest;
         class ListInputSecurityGroupsRequest;
         class ListInputsRequest;
+        class ListMultiplexProgramsRequest;
+        class ListMultiplexesRequest;
         class ListOfferingsRequest;
         class ListReservationsRequest;
         class ListTagsForResourceRequest;
         class PurchaseOfferingRequest;
         class StartChannelRequest;
+        class StartMultiplexRequest;
         class StopChannelRequest;
+        class StopMultiplexRequest;
         class UpdateChannelRequest;
         class UpdateChannelClassRequest;
         class UpdateInputRequest;
         class UpdateInputSecurityGroupRequest;
+        class UpdateMultiplexRequest;
+        class UpdateMultiplexProgramRequest;
         class UpdateReservationRequest;
 
         typedef Aws::Utils::Outcome<BatchUpdateScheduleResult, Aws::Client::AWSError<MediaLiveErrors>> BatchUpdateScheduleOutcome;
         typedef Aws::Utils::Outcome<CreateChannelResult, Aws::Client::AWSError<MediaLiveErrors>> CreateChannelOutcome;
         typedef Aws::Utils::Outcome<CreateInputResult, Aws::Client::AWSError<MediaLiveErrors>> CreateInputOutcome;
         typedef Aws::Utils::Outcome<CreateInputSecurityGroupResult, Aws::Client::AWSError<MediaLiveErrors>> CreateInputSecurityGroupOutcome;
+        typedef Aws::Utils::Outcome<CreateMultiplexResult, Aws::Client::AWSError<MediaLiveErrors>> CreateMultiplexOutcome;
+        typedef Aws::Utils::Outcome<CreateMultiplexProgramResult, Aws::Client::AWSError<MediaLiveErrors>> CreateMultiplexProgramOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaLiveErrors>> CreateTagsOutcome;
         typedef Aws::Utils::Outcome<DeleteChannelResult, Aws::Client::AWSError<MediaLiveErrors>> DeleteChannelOutcome;
         typedef Aws::Utils::Outcome<DeleteInputResult, Aws::Client::AWSError<MediaLiveErrors>> DeleteInputOutcome;
         typedef Aws::Utils::Outcome<DeleteInputSecurityGroupResult, Aws::Client::AWSError<MediaLiveErrors>> DeleteInputSecurityGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteMultiplexResult, Aws::Client::AWSError<MediaLiveErrors>> DeleteMultiplexOutcome;
+        typedef Aws::Utils::Outcome<DeleteMultiplexProgramResult, Aws::Client::AWSError<MediaLiveErrors>> DeleteMultiplexProgramOutcome;
         typedef Aws::Utils::Outcome<DeleteReservationResult, Aws::Client::AWSError<MediaLiveErrors>> DeleteReservationOutcome;
         typedef Aws::Utils::Outcome<DeleteScheduleResult, Aws::Client::AWSError<MediaLiveErrors>> DeleteScheduleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<MediaLiveErrors>> DeleteTagsOutcome;
         typedef Aws::Utils::Outcome<DescribeChannelResult, Aws::Client::AWSError<MediaLiveErrors>> DescribeChannelOutcome;
         typedef Aws::Utils::Outcome<DescribeInputResult, Aws::Client::AWSError<MediaLiveErrors>> DescribeInputOutcome;
         typedef Aws::Utils::Outcome<DescribeInputSecurityGroupResult, Aws::Client::AWSError<MediaLiveErrors>> DescribeInputSecurityGroupOutcome;
+        typedef Aws::Utils::Outcome<DescribeMultiplexResult, Aws::Client::AWSError<MediaLiveErrors>> DescribeMultiplexOutcome;
+        typedef Aws::Utils::Outcome<DescribeMultiplexProgramResult, Aws::Client::AWSError<MediaLiveErrors>> DescribeMultiplexProgramOutcome;
         typedef Aws::Utils::Outcome<DescribeOfferingResult, Aws::Client::AWSError<MediaLiveErrors>> DescribeOfferingOutcome;
         typedef Aws::Utils::Outcome<DescribeReservationResult, Aws::Client::AWSError<MediaLiveErrors>> DescribeReservationOutcome;
         typedef Aws::Utils::Outcome<DescribeScheduleResult, Aws::Client::AWSError<MediaLiveErrors>> DescribeScheduleOutcome;
         typedef Aws::Utils::Outcome<ListChannelsResult, Aws::Client::AWSError<MediaLiveErrors>> ListChannelsOutcome;
         typedef Aws::Utils::Outcome<ListInputSecurityGroupsResult, Aws::Client::AWSError<MediaLiveErrors>> ListInputSecurityGroupsOutcome;
         typedef Aws::Utils::Outcome<ListInputsResult, Aws::Client::AWSError<MediaLiveErrors>> ListInputsOutcome;
+        typedef Aws::Utils::Outcome<ListMultiplexProgramsResult, Aws::Client::AWSError<MediaLiveErrors>> ListMultiplexProgramsOutcome;
+        typedef Aws::Utils::Outcome<ListMultiplexesResult, Aws::Client::AWSError<MediaLiveErrors>> ListMultiplexesOutcome;
         typedef Aws::Utils::Outcome<ListOfferingsResult, Aws::Client::AWSError<MediaLiveErrors>> ListOfferingsOutcome;
         typedef Aws::Utils::Outcome<ListReservationsResult, Aws::Client::AWSError<MediaLiveErrors>> ListReservationsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<MediaLiveErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<PurchaseOfferingResult, Aws::Client::AWSError<MediaLiveErrors>> PurchaseOfferingOutcome;
         typedef Aws::Utils::Outcome<StartChannelResult, Aws::Client::AWSError<MediaLiveErrors>> StartChannelOutcome;
+        typedef Aws::Utils::Outcome<StartMultiplexResult, Aws::Client::AWSError<MediaLiveErrors>> StartMultiplexOutcome;
         typedef Aws::Utils::Outcome<StopChannelResult, Aws::Client::AWSError<MediaLiveErrors>> StopChannelOutcome;
+        typedef Aws::Utils::Outcome<StopMultiplexResult, Aws::Client::AWSError<MediaLiveErrors>> StopMultiplexOutcome;
         typedef Aws::Utils::Outcome<UpdateChannelResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateChannelOutcome;
         typedef Aws::Utils::Outcome<UpdateChannelClassResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateChannelClassOutcome;
         typedef Aws::Utils::Outcome<UpdateInputResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateInputOutcome;
         typedef Aws::Utils::Outcome<UpdateInputSecurityGroupResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateInputSecurityGroupOutcome;
+        typedef Aws::Utils::Outcome<UpdateMultiplexResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateMultiplexOutcome;
+        typedef Aws::Utils::Outcome<UpdateMultiplexProgramResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateMultiplexProgramOutcome;
         typedef Aws::Utils::Outcome<UpdateReservationResult, Aws::Client::AWSError<MediaLiveErrors>> UpdateReservationOutcome;
 
         typedef std::future<BatchUpdateScheduleOutcome> BatchUpdateScheduleOutcomeCallable;
         typedef std::future<CreateChannelOutcome> CreateChannelOutcomeCallable;
         typedef std::future<CreateInputOutcome> CreateInputOutcomeCallable;
         typedef std::future<CreateInputSecurityGroupOutcome> CreateInputSecurityGroupOutcomeCallable;
+        typedef std::future<CreateMultiplexOutcome> CreateMultiplexOutcomeCallable;
+        typedef std::future<CreateMultiplexProgramOutcome> CreateMultiplexProgramOutcomeCallable;
         typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
         typedef std::future<DeleteChannelOutcome> DeleteChannelOutcomeCallable;
         typedef std::future<DeleteInputOutcome> DeleteInputOutcomeCallable;
         typedef std::future<DeleteInputSecurityGroupOutcome> DeleteInputSecurityGroupOutcomeCallable;
+        typedef std::future<DeleteMultiplexOutcome> DeleteMultiplexOutcomeCallable;
+        typedef std::future<DeleteMultiplexProgramOutcome> DeleteMultiplexProgramOutcomeCallable;
         typedef std::future<DeleteReservationOutcome> DeleteReservationOutcomeCallable;
         typedef std::future<DeleteScheduleOutcome> DeleteScheduleOutcomeCallable;
         typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
         typedef std::future<DescribeChannelOutcome> DescribeChannelOutcomeCallable;
         typedef std::future<DescribeInputOutcome> DescribeInputOutcomeCallable;
         typedef std::future<DescribeInputSecurityGroupOutcome> DescribeInputSecurityGroupOutcomeCallable;
+        typedef std::future<DescribeMultiplexOutcome> DescribeMultiplexOutcomeCallable;
+        typedef std::future<DescribeMultiplexProgramOutcome> DescribeMultiplexProgramOutcomeCallable;
         typedef std::future<DescribeOfferingOutcome> DescribeOfferingOutcomeCallable;
         typedef std::future<DescribeReservationOutcome> DescribeReservationOutcomeCallable;
         typedef std::future<DescribeScheduleOutcome> DescribeScheduleOutcomeCallable;
         typedef std::future<ListChannelsOutcome> ListChannelsOutcomeCallable;
         typedef std::future<ListInputSecurityGroupsOutcome> ListInputSecurityGroupsOutcomeCallable;
         typedef std::future<ListInputsOutcome> ListInputsOutcomeCallable;
+        typedef std::future<ListMultiplexProgramsOutcome> ListMultiplexProgramsOutcomeCallable;
+        typedef std::future<ListMultiplexesOutcome> ListMultiplexesOutcomeCallable;
         typedef std::future<ListOfferingsOutcome> ListOfferingsOutcomeCallable;
         typedef std::future<ListReservationsOutcome> ListReservationsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<PurchaseOfferingOutcome> PurchaseOfferingOutcomeCallable;
         typedef std::future<StartChannelOutcome> StartChannelOutcomeCallable;
+        typedef std::future<StartMultiplexOutcome> StartMultiplexOutcomeCallable;
         typedef std::future<StopChannelOutcome> StopChannelOutcomeCallable;
+        typedef std::future<StopMultiplexOutcome> StopMultiplexOutcomeCallable;
         typedef std::future<UpdateChannelOutcome> UpdateChannelOutcomeCallable;
         typedef std::future<UpdateChannelClassOutcome> UpdateChannelClassOutcomeCallable;
         typedef std::future<UpdateInputOutcome> UpdateInputOutcomeCallable;
         typedef std::future<UpdateInputSecurityGroupOutcome> UpdateInputSecurityGroupOutcomeCallable;
+        typedef std::future<UpdateMultiplexOutcome> UpdateMultiplexOutcomeCallable;
+        typedef std::future<UpdateMultiplexProgramOutcome> UpdateMultiplexProgramOutcomeCallable;
         typedef std::future<UpdateReservationOutcome> UpdateReservationOutcomeCallable;
 } // namespace Model
 
@@ -193,32 +241,44 @@ namespace Model
     typedef std::function<void(const MediaLiveClient*, const Model::CreateChannelRequest&, const Model::CreateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateChannelResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateInputRequest&, const Model::CreateInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInputResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateInputSecurityGroupRequest&, const Model::CreateInputSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateInputSecurityGroupResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::CreateMultiplexRequest&, const Model::CreateMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMultiplexResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::CreateMultiplexProgramRequest&, const Model::CreateMultiplexProgramOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMultiplexProgramResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteChannelRequest&, const Model::DeleteChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteChannelResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteInputRequest&, const Model::DeleteInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInputResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteInputSecurityGroupRequest&, const Model::DeleteInputSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteInputSecurityGroupResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::DeleteMultiplexRequest&, const Model::DeleteMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMultiplexResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::DeleteMultiplexProgramRequest&, const Model::DeleteMultiplexProgramOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMultiplexProgramResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteReservationRequest&, const Model::DeleteReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReservationResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteScheduleRequest&, const Model::DeleteScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteScheduleResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeChannelRequest&, const Model::DescribeChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeChannelResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeInputRequest&, const Model::DescribeInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInputResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeInputSecurityGroupRequest&, const Model::DescribeInputSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInputSecurityGroupResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::DescribeMultiplexRequest&, const Model::DescribeMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMultiplexResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::DescribeMultiplexProgramRequest&, const Model::DescribeMultiplexProgramOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMultiplexProgramResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeOfferingRequest&, const Model::DescribeOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOfferingResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeReservationRequest&, const Model::DescribeReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReservationResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::DescribeScheduleRequest&, const Model::DescribeScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeScheduleResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListChannelsRequest&, const Model::ListChannelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListChannelsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListInputSecurityGroupsRequest&, const Model::ListInputSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputSecurityGroupsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListInputsRequest&, const Model::ListInputsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListInputsResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::ListMultiplexProgramsRequest&, const Model::ListMultiplexProgramsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultiplexProgramsResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::ListMultiplexesRequest&, const Model::ListMultiplexesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultiplexesResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListOfferingsRequest&, const Model::ListOfferingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListOfferingsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListReservationsRequest&, const Model::ListReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReservationsResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::PurchaseOfferingRequest&, const Model::PurchaseOfferingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseOfferingResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StartChannelRequest&, const Model::StartChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartChannelResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::StartMultiplexRequest&, const Model::StartMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMultiplexResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::StopChannelRequest&, const Model::StopChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopChannelResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::StopMultiplexRequest&, const Model::StopMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMultiplexResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::UpdateChannelRequest&, const Model::UpdateChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::UpdateChannelClassRequest&, const Model::UpdateChannelClassOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateChannelClassResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::UpdateInputRequest&, const Model::UpdateInputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInputResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::UpdateInputSecurityGroupRequest&, const Model::UpdateInputSecurityGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInputSecurityGroupResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::UpdateMultiplexRequest&, const Model::UpdateMultiplexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMultiplexResponseReceivedHandler;
+    typedef std::function<void(const MediaLiveClient*, const Model::UpdateMultiplexProgramRequest&, const Model::UpdateMultiplexProgramOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMultiplexProgramResponseReceivedHandler;
     typedef std::function<void(const MediaLiveClient*, const Model::UpdateReservationRequest&, const Model::UpdateReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReservationResponseReceivedHandler;
 
   /**
@@ -354,6 +414,56 @@ namespace Model
         virtual void CreateInputSecurityGroupAsync(const Model::CreateInputSecurityGroupRequest& request, const CreateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Create a new multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMultiplexOutcome CreateMultiplex(const Model::CreateMultiplexRequest& request) const;
+
+        /**
+         * Create a new multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplex">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateMultiplexOutcomeCallable CreateMultiplexCallable(const Model::CreateMultiplexRequest& request) const;
+
+        /**
+         * Create a new multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplex">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateMultiplexAsync(const Model::CreateMultiplexRequest& request, const CreateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Create a new program in the multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplexProgram">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMultiplexProgramOutcome CreateMultiplexProgram(const Model::CreateMultiplexProgramRequest& request) const;
+
+        /**
+         * Create a new program in the multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplexProgram">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateMultiplexProgramOutcomeCallable CreateMultiplexProgramCallable(const Model::CreateMultiplexProgramRequest& request) const;
+
+        /**
+         * Create a new program in the multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateMultiplexProgram">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateMultiplexProgramAsync(const Model::CreateMultiplexProgramRequest& request, const CreateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Create tags for a resource<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateTags">AWS
          * API Reference</a></p>
@@ -455,6 +565,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteInputSecurityGroupAsync(const Model::DeleteInputSecurityGroupRequest& request, const DeleteInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Delete a multiplex. The multiplex must be idle.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMultiplexOutcome DeleteMultiplex(const Model::DeleteMultiplexRequest& request) const;
+
+        /**
+         * Delete a multiplex. The multiplex must be idle.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplex">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMultiplexOutcomeCallable DeleteMultiplexCallable(const Model::DeleteMultiplexRequest& request) const;
+
+        /**
+         * Delete a multiplex. The multiplex must be idle.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplex">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMultiplexAsync(const Model::DeleteMultiplexRequest& request, const DeleteMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Delete a program from a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplexProgram">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMultiplexProgramOutcome DeleteMultiplexProgram(const Model::DeleteMultiplexProgramRequest& request) const;
+
+        /**
+         * Delete a program from a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplexProgram">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMultiplexProgramOutcomeCallable DeleteMultiplexProgramCallable(const Model::DeleteMultiplexProgramRequest& request) const;
+
+        /**
+         * Delete a program from a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DeleteMultiplexProgram">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMultiplexProgramAsync(const Model::DeleteMultiplexProgramRequest& request, const DeleteMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Delete an expired reservation.<p><h3>See Also:</h3>   <a
@@ -605,6 +765,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeInputSecurityGroupAsync(const Model::DescribeInputSecurityGroupRequest& request, const DescribeInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Gets details about a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMultiplexOutcome DescribeMultiplex(const Model::DescribeMultiplexRequest& request) const;
+
+        /**
+         * Gets details about a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplex">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMultiplexOutcomeCallable DescribeMultiplexCallable(const Model::DescribeMultiplexRequest& request) const;
+
+        /**
+         * Gets details about a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplex">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMultiplexAsync(const Model::DescribeMultiplexRequest& request, const DescribeMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Get the details for a program in a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplexProgram">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMultiplexProgramOutcome DescribeMultiplexProgram(const Model::DescribeMultiplexProgramRequest& request) const;
+
+        /**
+         * Get the details for a program in a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplexProgram">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMultiplexProgramOutcomeCallable DescribeMultiplexProgramCallable(const Model::DescribeMultiplexProgramRequest& request) const;
+
+        /**
+         * Get the details for a program in a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeMultiplexProgram">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMultiplexProgramAsync(const Model::DescribeMultiplexProgramRequest& request, const DescribeMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Get details for an offering.<p><h3>See Also:</h3>   <a
@@ -760,6 +970,59 @@ namespace Model
         virtual void ListInputsAsync(const Model::ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * List the programs that currently exist for a specific multiplex.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexPrograms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMultiplexProgramsOutcome ListMultiplexPrograms(const Model::ListMultiplexProgramsRequest& request) const;
+
+        /**
+         * List the programs that currently exist for a specific multiplex.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexPrograms">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMultiplexProgramsOutcomeCallable ListMultiplexProgramsCallable(const Model::ListMultiplexProgramsRequest& request) const;
+
+        /**
+         * List the programs that currently exist for a specific multiplex.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexPrograms">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMultiplexProgramsAsync(const Model::ListMultiplexProgramsRequest& request, const ListMultiplexProgramsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Retrieve a list of the existing multiplexes.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMultiplexesOutcome ListMultiplexes(const Model::ListMultiplexesRequest& request) const;
+
+        /**
+         * Retrieve a list of the existing multiplexes.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMultiplexesOutcomeCallable ListMultiplexesCallable(const Model::ListMultiplexesRequest& request) const;
+
+        /**
+         * Retrieve a list of the existing multiplexes.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListMultiplexes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMultiplexesAsync(const Model::ListMultiplexesRequest& request, const ListMultiplexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * List offerings available for purchase.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListOfferings">AWS
          * API Reference</a></p>
@@ -888,6 +1151,34 @@ namespace Model
         virtual void StartChannelAsync(const Model::StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Start (run) the multiplex. Starting the multiplex does not start the channels.
+         * You must explicitly start each channel.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMultiplex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMultiplexOutcome StartMultiplex(const Model::StartMultiplexRequest& request) const;
+
+        /**
+         * Start (run) the multiplex. Starting the multiplex does not start the channels.
+         * You must explicitly start each channel.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMultiplex">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartMultiplexOutcomeCallable StartMultiplexCallable(const Model::StartMultiplexRequest& request) const;
+
+        /**
+         * Start (run) the multiplex. Starting the multiplex does not start the channels.
+         * You must explicitly start each channel.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StartMultiplex">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartMultiplexAsync(const Model::StartMultiplexRequest& request, const StartMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Stops a running channel<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopChannel">AWS
          * API Reference</a></p>
@@ -911,6 +1202,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopChannelAsync(const Model::StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Stops a running multiplex. If the multiplex isn't running, this action has no
+         * effect.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopMultiplex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopMultiplexOutcome StopMultiplex(const Model::StopMultiplexRequest& request) const;
+
+        /**
+         * Stops a running multiplex. If the multiplex isn't running, this action has no
+         * effect.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopMultiplex">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopMultiplexOutcomeCallable StopMultiplexCallable(const Model::StopMultiplexRequest& request) const;
+
+        /**
+         * Stops a running multiplex. If the multiplex isn't running, this action has no
+         * effect.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StopMultiplex">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopMultiplexAsync(const Model::StopMultiplexRequest& request, const StopMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Updates a channel.<p><h3>See Also:</h3>   <a
@@ -1013,6 +1332,56 @@ namespace Model
         virtual void UpdateInputSecurityGroupAsync(const Model::UpdateInputSecurityGroupRequest& request, const UpdateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * Updates a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplex">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMultiplexOutcome UpdateMultiplex(const Model::UpdateMultiplexRequest& request) const;
+
+        /**
+         * Updates a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplex">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMultiplexOutcomeCallable UpdateMultiplexCallable(const Model::UpdateMultiplexRequest& request) const;
+
+        /**
+         * Updates a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplex">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMultiplexAsync(const Model::UpdateMultiplexRequest& request, const UpdateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Update a program in a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplexProgram">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMultiplexProgramOutcome UpdateMultiplexProgram(const Model::UpdateMultiplexProgramRequest& request) const;
+
+        /**
+         * Update a program in a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplexProgram">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMultiplexProgramOutcomeCallable UpdateMultiplexProgramCallable(const Model::UpdateMultiplexProgramRequest& request) const;
+
+        /**
+         * Update a program in a multiplex.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateMultiplexProgram">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMultiplexProgramAsync(const Model::UpdateMultiplexProgramRequest& request, const UpdateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * Update reservation.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UpdateReservation">AWS
          * API Reference</a></p>
@@ -1045,32 +1414,44 @@ namespace Model
         void CreateChannelAsyncHelper(const Model::CreateChannelRequest& request, const CreateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInputAsyncHelper(const Model::CreateInputRequest& request, const CreateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInputSecurityGroupAsyncHelper(const Model::CreateInputSecurityGroupRequest& request, const CreateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateMultiplexAsyncHelper(const Model::CreateMultiplexRequest& request, const CreateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateMultiplexProgramAsyncHelper(const Model::CreateMultiplexProgramRequest& request, const CreateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTagsAsyncHelper(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteChannelAsyncHelper(const Model::DeleteChannelRequest& request, const DeleteChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInputAsyncHelper(const Model::DeleteInputRequest& request, const DeleteInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteInputSecurityGroupAsyncHelper(const Model::DeleteInputSecurityGroupRequest& request, const DeleteInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteMultiplexAsyncHelper(const Model::DeleteMultiplexRequest& request, const DeleteMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteMultiplexProgramAsyncHelper(const Model::DeleteMultiplexProgramRequest& request, const DeleteMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReservationAsyncHelper(const Model::DeleteReservationRequest& request, const DeleteReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteScheduleAsyncHelper(const Model::DeleteScheduleRequest& request, const DeleteScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeChannelAsyncHelper(const Model::DescribeChannelRequest& request, const DescribeChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInputAsyncHelper(const Model::DescribeInputRequest& request, const DescribeInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInputSecurityGroupAsyncHelper(const Model::DescribeInputSecurityGroupRequest& request, const DescribeInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeMultiplexAsyncHelper(const Model::DescribeMultiplexRequest& request, const DescribeMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeMultiplexProgramAsyncHelper(const Model::DescribeMultiplexProgramRequest& request, const DescribeMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeOfferingAsyncHelper(const Model::DescribeOfferingRequest& request, const DescribeOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeReservationAsyncHelper(const Model::DescribeReservationRequest& request, const DescribeReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeScheduleAsyncHelper(const Model::DescribeScheduleRequest& request, const DescribeScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListChannelsAsyncHelper(const Model::ListChannelsRequest& request, const ListChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInputSecurityGroupsAsyncHelper(const Model::ListInputSecurityGroupsRequest& request, const ListInputSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListInputsAsyncHelper(const Model::ListInputsRequest& request, const ListInputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMultiplexProgramsAsyncHelper(const Model::ListMultiplexProgramsRequest& request, const ListMultiplexProgramsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMultiplexesAsyncHelper(const Model::ListMultiplexesRequest& request, const ListMultiplexesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListOfferingsAsyncHelper(const Model::ListOfferingsRequest& request, const ListOfferingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListReservationsAsyncHelper(const Model::ListReservationsRequest& request, const ListReservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PurchaseOfferingAsyncHelper(const Model::PurchaseOfferingRequest& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartChannelAsyncHelper(const Model::StartChannelRequest& request, const StartChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartMultiplexAsyncHelper(const Model::StartMultiplexRequest& request, const StartMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopChannelAsyncHelper(const Model::StopChannelRequest& request, const StopChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopMultiplexAsyncHelper(const Model::StopMultiplexRequest& request, const StopMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateChannelAsyncHelper(const Model::UpdateChannelRequest& request, const UpdateChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateChannelClassAsyncHelper(const Model::UpdateChannelClassRequest& request, const UpdateChannelClassResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInputAsyncHelper(const Model::UpdateInputRequest& request, const UpdateInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInputSecurityGroupAsyncHelper(const Model::UpdateInputSecurityGroupRequest& request, const UpdateInputSecurityGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateMultiplexAsyncHelper(const Model::UpdateMultiplexRequest& request, const UpdateMultiplexResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateMultiplexProgramAsyncHelper(const Model::UpdateMultiplexProgramRequest& request, const UpdateMultiplexProgramResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateReservationAsyncHelper(const Model::UpdateReservationRequest& request, const UpdateReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

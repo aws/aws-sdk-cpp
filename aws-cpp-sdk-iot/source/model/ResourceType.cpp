@@ -36,6 +36,8 @@ namespace Aws
         static const int COGNITO_IDENTITY_POOL_HASH = HashingUtils::HashString("COGNITO_IDENTITY_POOL");
         static const int CLIENT_ID_HASH = HashingUtils::HashString("CLIENT_ID");
         static const int ACCOUNT_SETTINGS_HASH = HashingUtils::HashString("ACCOUNT_SETTINGS");
+        static const int ROLE_ALIAS_HASH = HashingUtils::HashString("ROLE_ALIAS");
+        static const int IAM_ROLE_HASH = HashingUtils::HashString("IAM_ROLE");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -65,6 +67,14 @@ namespace Aws
           {
             return ResourceType::ACCOUNT_SETTINGS;
           }
+          else if (hashCode == ROLE_ALIAS_HASH)
+          {
+            return ResourceType::ROLE_ALIAS;
+          }
+          else if (hashCode == IAM_ROLE_HASH)
+          {
+            return ResourceType::IAM_ROLE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +101,10 @@ namespace Aws
             return "CLIENT_ID";
           case ResourceType::ACCOUNT_SETTINGS:
             return "ACCOUNT_SETTINGS";
+          case ResourceType::ROLE_ALIAS:
+            return "ROLE_ALIAS";
+          case ResourceType::IAM_ROLE:
+            return "IAM_ROLE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

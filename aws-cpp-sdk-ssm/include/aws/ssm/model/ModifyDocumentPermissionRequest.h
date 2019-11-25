@@ -251,6 +251,55 @@ namespace Model
      */
     inline ModifyDocumentPermissionRequest& AddAccountIdsToRemove(const char* value) { m_accountIdsToRemoveHasBeenSet = true; m_accountIdsToRemove.push_back(value); return *this; }
 
+
+    /**
+     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * system choose the <code>Default</code> version to share.</p>
+     */
+    inline const Aws::String& GetSharedDocumentVersion() const{ return m_sharedDocumentVersion; }
+
+    /**
+     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * system choose the <code>Default</code> version to share.</p>
+     */
+    inline bool SharedDocumentVersionHasBeenSet() const { return m_sharedDocumentVersionHasBeenSet; }
+
+    /**
+     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * system choose the <code>Default</code> version to share.</p>
+     */
+    inline void SetSharedDocumentVersion(const Aws::String& value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion = value; }
+
+    /**
+     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * system choose the <code>Default</code> version to share.</p>
+     */
+    inline void SetSharedDocumentVersion(Aws::String&& value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion = std::move(value); }
+
+    /**
+     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * system choose the <code>Default</code> version to share.</p>
+     */
+    inline void SetSharedDocumentVersion(const char* value) { m_sharedDocumentVersionHasBeenSet = true; m_sharedDocumentVersion.assign(value); }
+
+    /**
+     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * system choose the <code>Default</code> version to share.</p>
+     */
+    inline ModifyDocumentPermissionRequest& WithSharedDocumentVersion(const Aws::String& value) { SetSharedDocumentVersion(value); return *this;}
+
+    /**
+     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * system choose the <code>Default</code> version to share.</p>
+     */
+    inline ModifyDocumentPermissionRequest& WithSharedDocumentVersion(Aws::String&& value) { SetSharedDocumentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>(Optional) The version of the document to share. If it's not specified, the
+     * system choose the <code>Default</code> version to share.</p>
+     */
+    inline ModifyDocumentPermissionRequest& WithSharedDocumentVersion(const char* value) { SetSharedDocumentVersion(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -264,6 +313,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_accountIdsToRemove;
     bool m_accountIdsToRemoveHasBeenSet;
+
+    Aws::String m_sharedDocumentVersion;
+    bool m_sharedDocumentVersionHasBeenSet;
   };
 
 } // namespace Model

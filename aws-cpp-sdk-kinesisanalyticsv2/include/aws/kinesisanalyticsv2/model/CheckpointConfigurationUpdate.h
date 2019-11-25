@@ -50,108 +50,198 @@ namespace Model
 
     /**
      * <p>Describes updates to whether the application uses the default checkpointing
-     * behavior of Kinesis Data Analytics.</p>
+     * behavior of Kinesis Data Analytics. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
+     * parameters. </p> <note> <p>If this value is set to <code>DEFAULT</code>, the
+     * application will use the following values, even if they are set to other values
+     * using APIs or application code:</p> <ul> <li> <p> <b>CheckpointingEnabled:</b>
+     * true</p> </li> <li> <p> <b>CheckpointInterval:</b> 60000</p> </li> <li> <p>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> </note>
      */
     inline const ConfigurationType& GetConfigurationTypeUpdate() const{ return m_configurationTypeUpdate; }
 
     /**
      * <p>Describes updates to whether the application uses the default checkpointing
-     * behavior of Kinesis Data Analytics.</p>
+     * behavior of Kinesis Data Analytics. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
+     * parameters. </p> <note> <p>If this value is set to <code>DEFAULT</code>, the
+     * application will use the following values, even if they are set to other values
+     * using APIs or application code:</p> <ul> <li> <p> <b>CheckpointingEnabled:</b>
+     * true</p> </li> <li> <p> <b>CheckpointInterval:</b> 60000</p> </li> <li> <p>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> </note>
      */
     inline bool ConfigurationTypeUpdateHasBeenSet() const { return m_configurationTypeUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to whether the application uses the default checkpointing
-     * behavior of Kinesis Data Analytics.</p>
+     * behavior of Kinesis Data Analytics. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
+     * parameters. </p> <note> <p>If this value is set to <code>DEFAULT</code>, the
+     * application will use the following values, even if they are set to other values
+     * using APIs or application code:</p> <ul> <li> <p> <b>CheckpointingEnabled:</b>
+     * true</p> </li> <li> <p> <b>CheckpointInterval:</b> 60000</p> </li> <li> <p>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> </note>
      */
     inline void SetConfigurationTypeUpdate(const ConfigurationType& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = value; }
 
     /**
      * <p>Describes updates to whether the application uses the default checkpointing
-     * behavior of Kinesis Data Analytics.</p>
+     * behavior of Kinesis Data Analytics. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
+     * parameters. </p> <note> <p>If this value is set to <code>DEFAULT</code>, the
+     * application will use the following values, even if they are set to other values
+     * using APIs or application code:</p> <ul> <li> <p> <b>CheckpointingEnabled:</b>
+     * true</p> </li> <li> <p> <b>CheckpointInterval:</b> 60000</p> </li> <li> <p>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> </note>
      */
     inline void SetConfigurationTypeUpdate(ConfigurationType&& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = std::move(value); }
 
     /**
      * <p>Describes updates to whether the application uses the default checkpointing
-     * behavior of Kinesis Data Analytics.</p>
+     * behavior of Kinesis Data Analytics. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
+     * parameters. </p> <note> <p>If this value is set to <code>DEFAULT</code>, the
+     * application will use the following values, even if they are set to other values
+     * using APIs or application code:</p> <ul> <li> <p> <b>CheckpointingEnabled:</b>
+     * true</p> </li> <li> <p> <b>CheckpointInterval:</b> 60000</p> </li> <li> <p>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> </note>
      */
     inline CheckpointConfigurationUpdate& WithConfigurationTypeUpdate(const ConfigurationType& value) { SetConfigurationTypeUpdate(value); return *this;}
 
     /**
      * <p>Describes updates to whether the application uses the default checkpointing
-     * behavior of Kinesis Data Analytics.</p>
+     * behavior of Kinesis Data Analytics. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
+     * <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code>
+     * parameters. </p> <note> <p>If this value is set to <code>DEFAULT</code>, the
+     * application will use the following values, even if they are set to other values
+     * using APIs or application code:</p> <ul> <li> <p> <b>CheckpointingEnabled:</b>
+     * true</p> </li> <li> <p> <b>CheckpointInterval:</b> 60000</p> </li> <li> <p>
+     * <b>MinPauseBetweenCheckpoints:</b> 5000</p> </li> </ul> </note>
      */
     inline CheckpointConfigurationUpdate& WithConfigurationTypeUpdate(ConfigurationType&& value) { SetConfigurationTypeUpdate(std::move(value)); return *this;}
 
 
     /**
      * <p>Describes updates to whether checkpointing is enabled for an application.</p>
+     * <note> <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
+     * <code>DEFAULT</code>, the application will use a
+     * <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value
+     * is set to another value using this API or in application code.</p> </note>
      */
     inline bool GetCheckpointingEnabledUpdate() const{ return m_checkpointingEnabledUpdate; }
 
     /**
      * <p>Describes updates to whether checkpointing is enabled for an application.</p>
+     * <note> <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
+     * <code>DEFAULT</code>, the application will use a
+     * <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value
+     * is set to another value using this API or in application code.</p> </note>
      */
     inline bool CheckpointingEnabledUpdateHasBeenSet() const { return m_checkpointingEnabledUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to whether checkpointing is enabled for an application.</p>
+     * <note> <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
+     * <code>DEFAULT</code>, the application will use a
+     * <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value
+     * is set to another value using this API or in application code.</p> </note>
      */
     inline void SetCheckpointingEnabledUpdate(bool value) { m_checkpointingEnabledUpdateHasBeenSet = true; m_checkpointingEnabledUpdate = value; }
 
     /**
      * <p>Describes updates to whether checkpointing is enabled for an application.</p>
+     * <note> <p>If <code>CheckpointConfiguration.ConfigurationType</code> is
+     * <code>DEFAULT</code>, the application will use a
+     * <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value
+     * is set to another value using this API or in application code.</p> </note>
      */
     inline CheckpointConfigurationUpdate& WithCheckpointingEnabledUpdate(bool value) { SetCheckpointingEnabledUpdate(value); return *this;}
 
 
     /**
      * <p>Describes updates to the interval in milliseconds between checkpoint
-     * operations.</p>
+     * operations.</p> <note> <p>If
+     * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+     * the application will use a <code>CheckpointInterval</code> vaue of 60000, even
+     * if this value is set to another value using this API or in application code.</p>
+     * </note>
      */
     inline long long GetCheckpointIntervalUpdate() const{ return m_checkpointIntervalUpdate; }
 
     /**
      * <p>Describes updates to the interval in milliseconds between checkpoint
-     * operations.</p>
+     * operations.</p> <note> <p>If
+     * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+     * the application will use a <code>CheckpointInterval</code> vaue of 60000, even
+     * if this value is set to another value using this API or in application code.</p>
+     * </note>
      */
     inline bool CheckpointIntervalUpdateHasBeenSet() const { return m_checkpointIntervalUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to the interval in milliseconds between checkpoint
-     * operations.</p>
+     * operations.</p> <note> <p>If
+     * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+     * the application will use a <code>CheckpointInterval</code> vaue of 60000, even
+     * if this value is set to another value using this API or in application code.</p>
+     * </note>
      */
     inline void SetCheckpointIntervalUpdate(long long value) { m_checkpointIntervalUpdateHasBeenSet = true; m_checkpointIntervalUpdate = value; }
 
     /**
      * <p>Describes updates to the interval in milliseconds between checkpoint
-     * operations.</p>
+     * operations.</p> <note> <p>If
+     * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+     * the application will use a <code>CheckpointInterval</code> vaue of 60000, even
+     * if this value is set to another value using this API or in application code.</p>
+     * </note>
      */
     inline CheckpointConfigurationUpdate& WithCheckpointIntervalUpdate(long long value) { SetCheckpointIntervalUpdate(value); return *this;}
 
 
     /**
      * <p>Describes updates to the minimum time in milliseconds after a checkpoint
-     * operation completes that a new checkpoint operation can start.</p>
+     * operation completes that a new checkpoint operation can start.</p> <note> <p>If
+     * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+     * the application will use a <code>MinPauseBetweenCheckpoints</code> value of
+     * 5000, even if this value is set using this API or in application code.</p>
+     * </note>
      */
     inline long long GetMinPauseBetweenCheckpointsUpdate() const{ return m_minPauseBetweenCheckpointsUpdate; }
 
     /**
      * <p>Describes updates to the minimum time in milliseconds after a checkpoint
-     * operation completes that a new checkpoint operation can start.</p>
+     * operation completes that a new checkpoint operation can start.</p> <note> <p>If
+     * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+     * the application will use a <code>MinPauseBetweenCheckpoints</code> value of
+     * 5000, even if this value is set using this API or in application code.</p>
+     * </note>
      */
     inline bool MinPauseBetweenCheckpointsUpdateHasBeenSet() const { return m_minPauseBetweenCheckpointsUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to the minimum time in milliseconds after a checkpoint
-     * operation completes that a new checkpoint operation can start.</p>
+     * operation completes that a new checkpoint operation can start.</p> <note> <p>If
+     * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+     * the application will use a <code>MinPauseBetweenCheckpoints</code> value of
+     * 5000, even if this value is set using this API or in application code.</p>
+     * </note>
      */
     inline void SetMinPauseBetweenCheckpointsUpdate(long long value) { m_minPauseBetweenCheckpointsUpdateHasBeenSet = true; m_minPauseBetweenCheckpointsUpdate = value; }
 
     /**
      * <p>Describes updates to the minimum time in milliseconds after a checkpoint
-     * operation completes that a new checkpoint operation can start.</p>
+     * operation completes that a new checkpoint operation can start.</p> <note> <p>If
+     * <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
+     * the application will use a <code>MinPauseBetweenCheckpoints</code> value of
+     * 5000, even if this value is set using this API or in application code.</p>
+     * </note>
      */
     inline CheckpointConfigurationUpdate& WithMinPauseBetweenCheckpointsUpdate(long long value) { SetMinPauseBetweenCheckpointsUpdate(value); return *this;}
 

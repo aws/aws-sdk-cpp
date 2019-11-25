@@ -32,6 +32,7 @@ namespace Aws
 
         static const int INPUT_HASH = HashingUtils::HashString("INPUT");
         static const int OUTPUT_HASH = HashingUtils::HashString("OUTPUT");
+        static const int MULTIPLEX_HASH = HashingUtils::HashString("MULTIPLEX");
         static const int CHANNEL_HASH = HashingUtils::HashString("CHANNEL");
 
 
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == OUTPUT_HASH)
           {
             return ReservationResourceType::OUTPUT;
+          }
+          else if (hashCode == MULTIPLEX_HASH)
+          {
+            return ReservationResourceType::MULTIPLEX;
           }
           else if (hashCode == CHANNEL_HASH)
           {
@@ -68,6 +73,8 @@ namespace Aws
             return "INPUT";
           case ReservationResourceType::OUTPUT:
             return "OUTPUT";
+          case ReservationResourceType::MULTIPLEX:
+            return "MULTIPLEX";
           case ReservationResourceType::CHANNEL:
             return "CHANNEL";
           default:

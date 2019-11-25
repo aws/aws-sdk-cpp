@@ -27,11 +27,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DecryptResult::DecryptResult()
+DecryptResult::DecryptResult() : 
+    m_encryptionAlgorithm(EncryptionAlgorithmSpec::NOT_SET)
 {
 }
 
-DecryptResult::DecryptResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+DecryptResult::DecryptResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_encryptionAlgorithm(EncryptionAlgorithmSpec::NOT_SET)
 {
   *this = result;
 }
@@ -48,6 +50,12 @@ DecryptResult& DecryptResult::operator =(const Aws::AmazonWebServiceResult<JsonV
   if(jsonValue.ValueExists("Plaintext"))
   {
     m_plaintext = HashingUtils::Base64Decode(jsonValue.GetString("Plaintext"));
+  }
+
+  if(jsonValue.ValueExists("EncryptionAlgorithm"))
+  {
+    m_encryptionAlgorithm = EncryptionAlgorithmSpecMapper::GetEncryptionAlgorithmSpecForName(jsonValue.GetString("EncryptionAlgorithm"));
+
   }
 
 

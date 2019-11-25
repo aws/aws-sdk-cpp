@@ -40,7 +40,8 @@ DocumentIdentifier::DocumentIdentifier() :
     m_documentFormat(DocumentFormat::NOT_SET),
     m_documentFormatHasBeenSet(false),
     m_targetTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requiresHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ DocumentIdentifier::DocumentIdentifier(JsonView jsonValue) :
     m_documentFormat(DocumentFormat::NOT_SET),
     m_documentFormatHasBeenSet(false),
     m_targetTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_requiresHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -139,6 +141,16 @@ DocumentIdentifier& DocumentIdentifier::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Requires"))
+  {
+    Array<JsonView> requiresJsonList = jsonValue.GetArray("Requires");
+    for(unsigned requiresIndex = 0; requiresIndex < requiresJsonList.GetLength(); ++requiresIndex)
+    {
+      m_requires.push_back(requiresJsonList[requiresIndex].AsObject());
+    }
+    m_requiresHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -211,6 +223,17 @@ JsonValue DocumentIdentifier::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_requiresHasBeenSet)
+  {
+   Array<JsonValue> requiresJsonList(m_requires.size());
+   for(unsigned requiresIndex = 0; requiresIndex < requiresJsonList.GetLength(); ++requiresIndex)
+   {
+     requiresJsonList[requiresIndex].AsObject(m_requires[requiresIndex].Jsonize());
+   }
+   payload.WithArray("Requires", std::move(requiresJsonList));
 
   }
 

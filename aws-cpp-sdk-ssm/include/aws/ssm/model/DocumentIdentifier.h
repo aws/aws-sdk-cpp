@@ -21,6 +21,7 @@
 #include <aws/ssm/model/DocumentFormat.h>
 #include <aws/ssm/model/PlatformType.h>
 #include <aws/ssm/model/Tag.h>
+#include <aws/ssm/model/DocumentRequires.h>
 #include <utility>
 
 namespace Aws
@@ -482,6 +483,63 @@ namespace Model
      */
     inline DocumentIdentifier& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline const Aws::Vector<DocumentRequires>& GetRequires() const{ return m_requires; }
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline bool RequiresHasBeenSet() const { return m_requiresHasBeenSet; }
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline void SetRequires(const Aws::Vector<DocumentRequires>& value) { m_requiresHasBeenSet = true; m_requires = value; }
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline void SetRequires(Aws::Vector<DocumentRequires>&& value) { m_requiresHasBeenSet = true; m_requires = std::move(value); }
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline DocumentIdentifier& WithRequires(const Aws::Vector<DocumentRequires>& value) { SetRequires(value); return *this;}
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline DocumentIdentifier& WithRequires(Aws::Vector<DocumentRequires>&& value) { SetRequires(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline DocumentIdentifier& AddRequires(const DocumentRequires& value) { m_requiresHasBeenSet = true; m_requires.push_back(value); return *this; }
+
+    /**
+     * <p>A list of SSM documents required by a document. For example, an
+     * <code>ApplicationConfiguration</code> document requires an
+     * <code>ApplicationConfigurationSchema</code> document.</p>
+     */
+    inline DocumentIdentifier& AddRequires(DocumentRequires&& value) { m_requiresHasBeenSet = true; m_requires.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -513,6 +571,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<DocumentRequires> m_requires;
+    bool m_requiresHasBeenSet;
   };
 
 } // namespace Model

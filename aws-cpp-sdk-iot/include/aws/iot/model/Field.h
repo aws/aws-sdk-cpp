@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>The field to aggregate.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the name and data type at a field.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/Field">AWS API
    * Reference</a></p>
    */
@@ -90,32 +90,32 @@ namespace Model
 
 
     /**
-     * <p>The data type of the field.</p>
+     * <p>The datatype of the field.</p>
      */
     inline const FieldType& GetType() const{ return m_type; }
 
     /**
-     * <p>The data type of the field.</p>
+     * <p>The datatype of the field.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The data type of the field.</p>
+     * <p>The datatype of the field.</p>
      */
     inline void SetType(const FieldType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The data type of the field.</p>
+     * <p>The datatype of the field.</p>
      */
     inline void SetType(FieldType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The data type of the field.</p>
+     * <p>The datatype of the field.</p>
      */
     inline Field& WithType(const FieldType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The data type of the field.</p>
+     * <p>The datatype of the field.</p>
      */
     inline Field& WithType(FieldType&& value) { SetType(std::move(value)); return *this;}
 

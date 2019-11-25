@@ -32,17 +32,23 @@
 #include <aws/ram/RAMErrorMarshaller.h>
 #include <aws/ram/model/AcceptResourceShareInvitationRequest.h>
 #include <aws/ram/model/AssociateResourceShareRequest.h>
+#include <aws/ram/model/AssociateResourceSharePermissionRequest.h>
 #include <aws/ram/model/CreateResourceShareRequest.h>
 #include <aws/ram/model/DeleteResourceShareRequest.h>
 #include <aws/ram/model/DisassociateResourceShareRequest.h>
+#include <aws/ram/model/DisassociateResourceSharePermissionRequest.h>
 #include <aws/ram/model/EnableSharingWithAwsOrganizationRequest.h>
+#include <aws/ram/model/GetPermissionRequest.h>
 #include <aws/ram/model/GetResourcePoliciesRequest.h>
 #include <aws/ram/model/GetResourceShareAssociationsRequest.h>
 #include <aws/ram/model/GetResourceShareInvitationsRequest.h>
 #include <aws/ram/model/GetResourceSharesRequest.h>
 #include <aws/ram/model/ListPendingInvitationResourcesRequest.h>
+#include <aws/ram/model/ListPermissionsRequest.h>
 #include <aws/ram/model/ListPrincipalsRequest.h>
+#include <aws/ram/model/ListResourceSharePermissionsRequest.h>
 #include <aws/ram/model/ListResourcesRequest.h>
+#include <aws/ram/model/PromoteResourceShareCreatedFromPolicyRequest.h>
 #include <aws/ram/model/RejectResourceShareInvitationRequest.h>
 #include <aws/ram/model/TagResourceRequest.h>
 #include <aws/ram/model/UntagResourceRequest.h>
@@ -190,6 +196,41 @@ void RAMClient::AssociateResourceShareAsyncHelper(const AssociateResourceShareRe
   handler(this, request, AssociateResourceShare(request), context);
 }
 
+AssociateResourceSharePermissionOutcome RAMClient::AssociateResourceSharePermission(const AssociateResourceSharePermissionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/associateresourcesharepermission";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateResourceSharePermissionOutcome(AssociateResourceSharePermissionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateResourceSharePermissionOutcome(outcome.GetError());
+  }
+}
+
+AssociateResourceSharePermissionOutcomeCallable RAMClient::AssociateResourceSharePermissionCallable(const AssociateResourceSharePermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateResourceSharePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateResourceSharePermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RAMClient::AssociateResourceSharePermissionAsync(const AssociateResourceSharePermissionRequest& request, const AssociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateResourceSharePermissionAsyncHelper( request, handler, context ); } );
+}
+
+void RAMClient::AssociateResourceSharePermissionAsyncHelper(const AssociateResourceSharePermissionRequest& request, const AssociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateResourceSharePermission(request), context);
+}
+
 CreateResourceShareOutcome RAMClient::CreateResourceShare(const CreateResourceShareRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -300,6 +341,41 @@ void RAMClient::DisassociateResourceShareAsyncHelper(const DisassociateResourceS
   handler(this, request, DisassociateResourceShare(request), context);
 }
 
+DisassociateResourceSharePermissionOutcome RAMClient::DisassociateResourceSharePermission(const DisassociateResourceSharePermissionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/disassociateresourcesharepermission";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateResourceSharePermissionOutcome(DisassociateResourceSharePermissionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateResourceSharePermissionOutcome(outcome.GetError());
+  }
+}
+
+DisassociateResourceSharePermissionOutcomeCallable RAMClient::DisassociateResourceSharePermissionCallable(const DisassociateResourceSharePermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateResourceSharePermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateResourceSharePermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RAMClient::DisassociateResourceSharePermissionAsync(const DisassociateResourceSharePermissionRequest& request, const DisassociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateResourceSharePermissionAsyncHelper( request, handler, context ); } );
+}
+
+void RAMClient::DisassociateResourceSharePermissionAsyncHelper(const DisassociateResourceSharePermissionRequest& request, const DisassociateResourceSharePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateResourceSharePermission(request), context);
+}
+
 EnableSharingWithAwsOrganizationOutcome RAMClient::EnableSharingWithAwsOrganization(const EnableSharingWithAwsOrganizationRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -333,6 +409,41 @@ void RAMClient::EnableSharingWithAwsOrganizationAsync(const EnableSharingWithAws
 void RAMClient::EnableSharingWithAwsOrganizationAsyncHelper(const EnableSharingWithAwsOrganizationRequest& request, const EnableSharingWithAwsOrganizationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, EnableSharingWithAwsOrganization(request), context);
+}
+
+GetPermissionOutcome RAMClient::GetPermission(const GetPermissionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/getpermission";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetPermissionOutcome(GetPermissionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetPermissionOutcome(outcome.GetError());
+  }
+}
+
+GetPermissionOutcomeCallable RAMClient::GetPermissionCallable(const GetPermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetPermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RAMClient::GetPermissionAsync(const GetPermissionRequest& request, const GetPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetPermissionAsyncHelper( request, handler, context ); } );
+}
+
+void RAMClient::GetPermissionAsyncHelper(const GetPermissionRequest& request, const GetPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetPermission(request), context);
 }
 
 GetResourcePoliciesOutcome RAMClient::GetResourcePolicies(const GetResourcePoliciesRequest& request) const
@@ -510,6 +621,41 @@ void RAMClient::ListPendingInvitationResourcesAsyncHelper(const ListPendingInvit
   handler(this, request, ListPendingInvitationResources(request), context);
 }
 
+ListPermissionsOutcome RAMClient::ListPermissions(const ListPermissionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/listpermissions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListPermissionsOutcome(ListPermissionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListPermissionsOutcome(outcome.GetError());
+  }
+}
+
+ListPermissionsOutcomeCallable RAMClient::ListPermissionsCallable(const ListPermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListPermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListPermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RAMClient::ListPermissionsAsync(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListPermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void RAMClient::ListPermissionsAsyncHelper(const ListPermissionsRequest& request, const ListPermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListPermissions(request), context);
+}
+
 ListPrincipalsOutcome RAMClient::ListPrincipals(const ListPrincipalsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -545,6 +691,41 @@ void RAMClient::ListPrincipalsAsyncHelper(const ListPrincipalsRequest& request, 
   handler(this, request, ListPrincipals(request), context);
 }
 
+ListResourceSharePermissionsOutcome RAMClient::ListResourceSharePermissions(const ListResourceSharePermissionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/listresourcesharepermissions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListResourceSharePermissionsOutcome(ListResourceSharePermissionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListResourceSharePermissionsOutcome(outcome.GetError());
+  }
+}
+
+ListResourceSharePermissionsOutcomeCallable RAMClient::ListResourceSharePermissionsCallable(const ListResourceSharePermissionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListResourceSharePermissionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListResourceSharePermissions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RAMClient::ListResourceSharePermissionsAsync(const ListResourceSharePermissionsRequest& request, const ListResourceSharePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListResourceSharePermissionsAsyncHelper( request, handler, context ); } );
+}
+
+void RAMClient::ListResourceSharePermissionsAsyncHelper(const ListResourceSharePermissionsRequest& request, const ListResourceSharePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListResourceSharePermissions(request), context);
+}
+
 ListResourcesOutcome RAMClient::ListResources(const ListResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -578,6 +759,46 @@ void RAMClient::ListResourcesAsync(const ListResourcesRequest& request, const Li
 void RAMClient::ListResourcesAsyncHelper(const ListResourcesRequest& request, const ListResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListResources(request), context);
+}
+
+PromoteResourceShareCreatedFromPolicyOutcome RAMClient::PromoteResourceShareCreatedFromPolicy(const PromoteResourceShareCreatedFromPolicyRequest& request) const
+{
+  if (!request.ResourceShareArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PromoteResourceShareCreatedFromPolicy", "Required field: ResourceShareArn, is not set");
+    return PromoteResourceShareCreatedFromPolicyOutcome(Aws::Client::AWSError<RAMErrors>(RAMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceShareArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/promoteresourcesharecreatedfrompolicy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PromoteResourceShareCreatedFromPolicyOutcome(PromoteResourceShareCreatedFromPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PromoteResourceShareCreatedFromPolicyOutcome(outcome.GetError());
+  }
+}
+
+PromoteResourceShareCreatedFromPolicyOutcomeCallable RAMClient::PromoteResourceShareCreatedFromPolicyCallable(const PromoteResourceShareCreatedFromPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PromoteResourceShareCreatedFromPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PromoteResourceShareCreatedFromPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RAMClient::PromoteResourceShareCreatedFromPolicyAsync(const PromoteResourceShareCreatedFromPolicyRequest& request, const PromoteResourceShareCreatedFromPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PromoteResourceShareCreatedFromPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void RAMClient::PromoteResourceShareCreatedFromPolicyAsyncHelper(const PromoteResourceShareCreatedFromPolicyRequest& request, const PromoteResourceShareCreatedFromPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PromoteResourceShareCreatedFromPolicy(request), context);
 }
 
 RejectResourceShareInvitationOutcome RAMClient::RejectResourceShareInvitation(const RejectResourceShareInvitationRequest& request) const

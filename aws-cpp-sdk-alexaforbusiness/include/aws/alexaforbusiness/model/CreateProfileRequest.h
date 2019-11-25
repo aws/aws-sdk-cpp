@@ -20,6 +20,7 @@
 #include <aws/alexaforbusiness/model/DistanceUnit.h>
 #include <aws/alexaforbusiness/model/TemperatureUnit.h>
 #include <aws/alexaforbusiness/model/WakeWord.h>
+#include <aws/alexaforbusiness/model/CreateMeetingRoomConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -265,42 +266,50 @@ namespace Model
 
 
     /**
-     * <p>The locale of the room profile.</p>
+     * <p>The locale of the room profile. (This is currently only available to a
+     * limited preview audience.)</p>
      */
     inline const Aws::String& GetLocale() const{ return m_locale; }
 
     /**
-     * <p>The locale of the room profile.</p>
+     * <p>The locale of the room profile. (This is currently only available to a
+     * limited preview audience.)</p>
      */
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
 
     /**
-     * <p>The locale of the room profile.</p>
+     * <p>The locale of the room profile. (This is currently only available to a
+     * limited preview audience.)</p>
      */
     inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
 
     /**
-     * <p>The locale of the room profile.</p>
+     * <p>The locale of the room profile. (This is currently only available to a
+     * limited preview audience.)</p>
      */
     inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
 
     /**
-     * <p>The locale of the room profile.</p>
+     * <p>The locale of the room profile. (This is currently only available to a
+     * limited preview audience.)</p>
      */
     inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
 
     /**
-     * <p>The locale of the room profile.</p>
+     * <p>The locale of the room profile. (This is currently only available to a
+     * limited preview audience.)</p>
      */
     inline CreateProfileRequest& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
 
     /**
-     * <p>The locale of the room profile.</p>
+     * <p>The locale of the room profile. (This is currently only available to a
+     * limited preview audience.)</p>
      */
     inline CreateProfileRequest& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
 
     /**
-     * <p>The locale of the room profile.</p>
+     * <p>The locale of the room profile. (This is currently only available to a
+     * limited preview audience.)</p>
      */
     inline CreateProfileRequest& WithLocale(const char* value) { SetLocale(value); return *this;}
 
@@ -408,6 +417,37 @@ namespace Model
      */
     inline CreateProfileRequest& WithPSTNEnabled(bool value) { SetPSTNEnabled(value); return *this;}
 
+
+    /**
+     * <p>The meeting room settings of a room profile.</p>
+     */
+    inline const CreateMeetingRoomConfiguration& GetMeetingRoomConfiguration() const{ return m_meetingRoomConfiguration; }
+
+    /**
+     * <p>The meeting room settings of a room profile.</p>
+     */
+    inline bool MeetingRoomConfigurationHasBeenSet() const { return m_meetingRoomConfigurationHasBeenSet; }
+
+    /**
+     * <p>The meeting room settings of a room profile.</p>
+     */
+    inline void SetMeetingRoomConfiguration(const CreateMeetingRoomConfiguration& value) { m_meetingRoomConfigurationHasBeenSet = true; m_meetingRoomConfiguration = value; }
+
+    /**
+     * <p>The meeting room settings of a room profile.</p>
+     */
+    inline void SetMeetingRoomConfiguration(CreateMeetingRoomConfiguration&& value) { m_meetingRoomConfigurationHasBeenSet = true; m_meetingRoomConfiguration = std::move(value); }
+
+    /**
+     * <p>The meeting room settings of a room profile.</p>
+     */
+    inline CreateProfileRequest& WithMeetingRoomConfiguration(const CreateMeetingRoomConfiguration& value) { SetMeetingRoomConfiguration(value); return *this;}
+
+    /**
+     * <p>The meeting room settings of a room profile.</p>
+     */
+    inline CreateProfileRequest& WithMeetingRoomConfiguration(CreateMeetingRoomConfiguration&& value) { SetMeetingRoomConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_profileName;
@@ -442,6 +482,9 @@ namespace Model
 
     bool m_pSTNEnabled;
     bool m_pSTNEnabledHasBeenSet;
+
+    CreateMeetingRoomConfiguration m_meetingRoomConfiguration;
+    bool m_meetingRoomConfigurationHasBeenSet;
   };
 
 } // namespace Model

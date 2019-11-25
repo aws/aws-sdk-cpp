@@ -26,6 +26,7 @@ namespace Model
   enum class KeyUsageType
   {
     NOT_SET,
+    SIGN_VERIFY,
     ENCRYPT_DECRYPT
   };
 

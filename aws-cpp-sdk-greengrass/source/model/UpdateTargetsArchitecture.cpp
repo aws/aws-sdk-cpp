@@ -34,7 +34,6 @@ namespace Aws
         static const int armv7l_HASH = HashingUtils::HashString("armv7l");
         static const int x86_64_HASH = HashingUtils::HashString("x86_64");
         static const int aarch64_HASH = HashingUtils::HashString("aarch64");
-        static const int openwrt_HASH = HashingUtils::HashString("openwrt");
 
 
         UpdateTargetsArchitecture GetUpdateTargetsArchitectureForName(const Aws::String& name)
@@ -55,10 +54,6 @@ namespace Aws
           else if (hashCode == aarch64_HASH)
           {
             return UpdateTargetsArchitecture::aarch64;
-          }
-          else if (hashCode == openwrt_HASH)
-          {
-            return UpdateTargetsArchitecture::openwrt;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -82,8 +77,6 @@ namespace Aws
             return "x86_64";
           case UpdateTargetsArchitecture::aarch64:
             return "aarch64";
-          case UpdateTargetsArchitecture::openwrt:
-            return "openwrt";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

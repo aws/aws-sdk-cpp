@@ -35,8 +35,7 @@ namespace Model
 {
 
   /**
-   * Output groups for this Live Event. Output groups contain information about where
-   * streams should be distributed.<p><h3>See Also:</h3>   <a
+   * Caption Description<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CaptionDescription">AWS
    * API Reference</a></p>
    */

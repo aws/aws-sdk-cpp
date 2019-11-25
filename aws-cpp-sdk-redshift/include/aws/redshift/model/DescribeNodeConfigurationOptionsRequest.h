@@ -50,40 +50,101 @@ namespace Model
   public:
 
     /**
-     * <p>The action type to evaluate for possible node configurations. Currently, it
-     * must be "restore-cluster".</p>
+     * <p>The action type to evaluate for possible node configurations. Specify
+     * "restore-cluster" to get configuration combinations based on an existing
+     * snapshot. Specify "recommend-node-config" to get configuration recommendations
+     * based on an existing cluster or snapshot. </p>
      */
     inline const ActionType& GetActionType() const{ return m_actionType; }
 
     /**
-     * <p>The action type to evaluate for possible node configurations. Currently, it
-     * must be "restore-cluster".</p>
+     * <p>The action type to evaluate for possible node configurations. Specify
+     * "restore-cluster" to get configuration combinations based on an existing
+     * snapshot. Specify "recommend-node-config" to get configuration recommendations
+     * based on an existing cluster or snapshot. </p>
      */
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
 
     /**
-     * <p>The action type to evaluate for possible node configurations. Currently, it
-     * must be "restore-cluster".</p>
+     * <p>The action type to evaluate for possible node configurations. Specify
+     * "restore-cluster" to get configuration combinations based on an existing
+     * snapshot. Specify "recommend-node-config" to get configuration recommendations
+     * based on an existing cluster or snapshot. </p>
      */
     inline void SetActionType(const ActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
 
     /**
-     * <p>The action type to evaluate for possible node configurations. Currently, it
-     * must be "restore-cluster".</p>
+     * <p>The action type to evaluate for possible node configurations. Specify
+     * "restore-cluster" to get configuration combinations based on an existing
+     * snapshot. Specify "recommend-node-config" to get configuration recommendations
+     * based on an existing cluster or snapshot. </p>
      */
     inline void SetActionType(ActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
 
     /**
-     * <p>The action type to evaluate for possible node configurations. Currently, it
-     * must be "restore-cluster".</p>
+     * <p>The action type to evaluate for possible node configurations. Specify
+     * "restore-cluster" to get configuration combinations based on an existing
+     * snapshot. Specify "recommend-node-config" to get configuration recommendations
+     * based on an existing cluster or snapshot. </p>
      */
     inline DescribeNodeConfigurationOptionsRequest& WithActionType(const ActionType& value) { SetActionType(value); return *this;}
 
     /**
-     * <p>The action type to evaluate for possible node configurations. Currently, it
-     * must be "restore-cluster".</p>
+     * <p>The action type to evaluate for possible node configurations. Specify
+     * "restore-cluster" to get configuration combinations based on an existing
+     * snapshot. Specify "recommend-node-config" to get configuration recommendations
+     * based on an existing cluster or snapshot. </p>
      */
     inline DescribeNodeConfigurationOptionsRequest& WithActionType(ActionType&& value) { SetActionType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The identifier of the cluster to evaluate for possible node
+     * configurations.</p>
+     */
+    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+
+    /**
+     * <p>The identifier of the cluster to evaluate for possible node
+     * configurations.</p>
+     */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the cluster to evaluate for possible node
+     * configurations.</p>
+     */
+    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
+
+    /**
+     * <p>The identifier of the cluster to evaluate for possible node
+     * configurations.</p>
+     */
+    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
+
+    /**
+     * <p>The identifier of the cluster to evaluate for possible node
+     * configurations.</p>
+     */
+    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
+
+    /**
+     * <p>The identifier of the cluster to evaluate for possible node
+     * configurations.</p>
+     */
+    inline DescribeNodeConfigurationOptionsRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
+
+    /**
+     * <p>The identifier of the cluster to evaluate for possible node
+     * configurations.</p>
+     */
+    inline DescribeNodeConfigurationOptionsRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the cluster to evaluate for possible node
+     * configurations.</p>
+     */
+    inline DescribeNodeConfigurationOptionsRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
 
 
     /**
@@ -350,6 +411,9 @@ namespace Model
 
     ActionType m_actionType;
     bool m_actionTypeHasBeenSet;
+
+    Aws::String m_clusterIdentifier;
+    bool m_clusterIdentifierHasBeenSet;
 
     Aws::String m_snapshotIdentifier;
     bool m_snapshotIdentifierHasBeenSet;

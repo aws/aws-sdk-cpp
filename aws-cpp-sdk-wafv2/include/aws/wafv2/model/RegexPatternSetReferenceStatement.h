@@ -1,0 +1,238 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/wafv2/WAFV2_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wafv2/model/FieldToMatch.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/wafv2/model/TextTransformation.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace WAFV2
+{
+namespace Model
+{
+
+  /**
+   * <note> <p>This is the latest version of <b>AWS WAF</b>, named AWS WAFV2,
+   * released in November, 2019. For information, including how to migrate your AWS
+   * WAF resources from the prior release, see the <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS
+   * WAF Developer Guide</a>. </p> </note> <p>A rule statement used to search web
+   * request components for matches with regular expressions. To use this, create a
+   * <a>RegexPatternSet</a> that specifies the expressions that you want to detect,
+   * then use the ARN of that set in this statement. A web request matches the
+   * pattern set rule statement if the request component matches any of the patterns
+   * in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.</p>
+   * <p>Each regex pattern set rule statement references a regex pattern set. You
+   * create and maintain the set independent of your rules. This allows you to use
+   * the single set in multiple rules. When you update the referenced set, AWS WAF
+   * automatically updates all rules that reference it.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RegexPatternSetReferenceStatement">AWS
+   * API Reference</a></p>
+   */
+  class AWS_WAFV2_API RegexPatternSetReferenceStatement
+  {
+  public:
+    RegexPatternSetReferenceStatement();
+    RegexPatternSetReferenceStatement(Aws::Utils::Json::JsonView jsonValue);
+    RegexPatternSetReferenceStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
+     * statement references.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
+     * statement references.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
+     * statement references.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
+     * statement references.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
+     * statement references.</p>
+     */
+    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
+     * statement references.</p>
+     */
+    inline RegexPatternSetReferenceStatement& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
+     * statement references.</p>
+     */
+    inline RegexPatternSetReferenceStatement& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this
+     * statement references.</p>
+     */
+    inline RegexPatternSetReferenceStatement& WithARN(const char* value) { SetARN(value); return *this;}
+
+
+    /**
+     * <p>The part of a web request that you want AWS WAF to inspect. For more
+     * information, see <a>FieldToMatch</a>. </p>
+     */
+    inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
+
+    /**
+     * <p>The part of a web request that you want AWS WAF to inspect. For more
+     * information, see <a>FieldToMatch</a>. </p>
+     */
+    inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
+
+    /**
+     * <p>The part of a web request that you want AWS WAF to inspect. For more
+     * information, see <a>FieldToMatch</a>. </p>
+     */
+    inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
+
+    /**
+     * <p>The part of a web request that you want AWS WAF to inspect. For more
+     * information, see <a>FieldToMatch</a>. </p>
+     */
+    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
+
+    /**
+     * <p>The part of a web request that you want AWS WAF to inspect. For more
+     * information, see <a>FieldToMatch</a>. </p>
+     */
+    inline RegexPatternSetReferenceStatement& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
+
+    /**
+     * <p>The part of a web request that you want AWS WAF to inspect. For more
+     * information, see <a>FieldToMatch</a>. </p>
+     */
+    inline RegexPatternSetReferenceStatement& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Text transformations eliminate some of the unusual formatting that attackers
+     * use in web requests in an effort to bypass detection. If you specify one or more
+     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * content identified by <code>FieldToMatch</code>, starting from the lowest
+     * priority setting, before inspecting the content for a match.</p>
+     */
+    inline const Aws::Vector<TextTransformation>& GetTextTransformations() const{ return m_textTransformations; }
+
+    /**
+     * <p>Text transformations eliminate some of the unusual formatting that attackers
+     * use in web requests in an effort to bypass detection. If you specify one or more
+     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * content identified by <code>FieldToMatch</code>, starting from the lowest
+     * priority setting, before inspecting the content for a match.</p>
+     */
+    inline bool TextTransformationsHasBeenSet() const { return m_textTransformationsHasBeenSet; }
+
+    /**
+     * <p>Text transformations eliminate some of the unusual formatting that attackers
+     * use in web requests in an effort to bypass detection. If you specify one or more
+     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * content identified by <code>FieldToMatch</code>, starting from the lowest
+     * priority setting, before inspecting the content for a match.</p>
+     */
+    inline void SetTextTransformations(const Aws::Vector<TextTransformation>& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = value; }
+
+    /**
+     * <p>Text transformations eliminate some of the unusual formatting that attackers
+     * use in web requests in an effort to bypass detection. If you specify one or more
+     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * content identified by <code>FieldToMatch</code>, starting from the lowest
+     * priority setting, before inspecting the content for a match.</p>
+     */
+    inline void SetTextTransformations(Aws::Vector<TextTransformation>&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::move(value); }
+
+    /**
+     * <p>Text transformations eliminate some of the unusual formatting that attackers
+     * use in web requests in an effort to bypass detection. If you specify one or more
+     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * content identified by <code>FieldToMatch</code>, starting from the lowest
+     * priority setting, before inspecting the content for a match.</p>
+     */
+    inline RegexPatternSetReferenceStatement& WithTextTransformations(const Aws::Vector<TextTransformation>& value) { SetTextTransformations(value); return *this;}
+
+    /**
+     * <p>Text transformations eliminate some of the unusual formatting that attackers
+     * use in web requests in an effort to bypass detection. If you specify one or more
+     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * content identified by <code>FieldToMatch</code>, starting from the lowest
+     * priority setting, before inspecting the content for a match.</p>
+     */
+    inline RegexPatternSetReferenceStatement& WithTextTransformations(Aws::Vector<TextTransformation>&& value) { SetTextTransformations(std::move(value)); return *this;}
+
+    /**
+     * <p>Text transformations eliminate some of the unusual formatting that attackers
+     * use in web requests in an effort to bypass detection. If you specify one or more
+     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * content identified by <code>FieldToMatch</code>, starting from the lowest
+     * priority setting, before inspecting the content for a match.</p>
+     */
+    inline RegexPatternSetReferenceStatement& AddTextTransformations(const TextTransformation& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(value); return *this; }
+
+    /**
+     * <p>Text transformations eliminate some of the unusual formatting that attackers
+     * use in web requests in an effort to bypass detection. If you specify one or more
+     * transformations in a rule statement, AWS WAF performs all transformations on the
+     * content identified by <code>FieldToMatch</code>, starting from the lowest
+     * priority setting, before inspecting the content for a match.</p>
+     */
+    inline RegexPatternSetReferenceStatement& AddTextTransformations(TextTransformation&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(std::move(value)); return *this; }
+
+  private:
+
+    Aws::String m_aRN;
+    bool m_aRNHasBeenSet;
+
+    FieldToMatch m_fieldToMatch;
+    bool m_fieldToMatchHasBeenSet;
+
+    Aws::Vector<TextTransformation> m_textTransformations;
+    bool m_textTransformationsHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace WAFV2
+} // namespace Aws

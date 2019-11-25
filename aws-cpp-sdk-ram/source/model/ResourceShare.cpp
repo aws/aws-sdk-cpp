@@ -39,7 +39,9 @@ ResourceShare::ResourceShare() :
     m_statusMessageHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_featureSet(ResourceShareFeatureSet::NOT_SET),
+    m_featureSetHasBeenSet(false)
 {
 }
 
@@ -54,7 +56,9 @@ ResourceShare::ResourceShare(JsonView jsonValue) :
     m_statusMessageHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
+    m_lastUpdatedTimeHasBeenSet(false),
+    m_featureSet(ResourceShareFeatureSet::NOT_SET),
+    m_featureSetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -127,6 +131,13 @@ ResourceShare& ResourceShare::operator =(JsonView jsonValue)
     m_lastUpdatedTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("featureSet"))
+  {
+    m_featureSet = ResourceShareFeatureSetMapper::GetResourceShareFeatureSetForName(jsonValue.GetString("featureSet"));
+
+    m_featureSetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -188,6 +199,11 @@ JsonValue ResourceShare::Jsonize() const
   if(m_lastUpdatedTimeHasBeenSet)
   {
    payload.WithDouble("lastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_featureSetHasBeenSet)
+  {
+   payload.WithString("featureSet", ResourceShareFeatureSetMapper::GetNameForResourceShareFeatureSet(m_featureSet));
   }
 
   return payload;

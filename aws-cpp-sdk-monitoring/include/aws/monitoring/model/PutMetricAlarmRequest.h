@@ -1259,36 +1259,36 @@ namespace Model
 
 
     /**
-     * <p>The number of datapoints that must be breaching to trigger the alarm. This is
-     * used only if you are setting an "M out of N" alarm. In that case, this value is
-     * the M. For more information, see <a
+     * <p>The number of data points that must be breaching to trigger the alarm. This
+     * is used only if you are setting an "M out of N" alarm. In that case, this value
+     * is the M. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
      * an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline int GetDatapointsToAlarm() const{ return m_datapointsToAlarm; }
 
     /**
-     * <p>The number of datapoints that must be breaching to trigger the alarm. This is
-     * used only if you are setting an "M out of N" alarm. In that case, this value is
-     * the M. For more information, see <a
+     * <p>The number of data points that must be breaching to trigger the alarm. This
+     * is used only if you are setting an "M out of N" alarm. In that case, this value
+     * is the M. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
      * an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline bool DatapointsToAlarmHasBeenSet() const { return m_datapointsToAlarmHasBeenSet; }
 
     /**
-     * <p>The number of datapoints that must be breaching to trigger the alarm. This is
-     * used only if you are setting an "M out of N" alarm. In that case, this value is
-     * the M. For more information, see <a
+     * <p>The number of data points that must be breaching to trigger the alarm. This
+     * is used only if you are setting an "M out of N" alarm. In that case, this value
+     * is the M. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
      * an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */
     inline void SetDatapointsToAlarm(int value) { m_datapointsToAlarmHasBeenSet = true; m_datapointsToAlarm = value; }
 
     /**
-     * <p>The number of datapoints that must be breaching to trigger the alarm. This is
-     * used only if you are setting an "M out of N" alarm. In that case, this value is
-     * the M. For more information, see <a
+     * <p>The number of data points that must be breaching to trigger the alarm. This
+     * is used only if you are setting an "M out of N" alarm. In that case, this value
+     * is the M. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating
      * an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
      */

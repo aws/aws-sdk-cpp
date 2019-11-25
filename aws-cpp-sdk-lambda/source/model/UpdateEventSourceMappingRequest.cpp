@@ -30,7 +30,16 @@ UpdateEventSourceMappingRequest::UpdateEventSourceMappingRequest() :
     m_batchSize(0),
     m_batchSizeHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false)
+    m_maximumBatchingWindowInSecondsHasBeenSet(false),
+    m_destinationConfigHasBeenSet(false),
+    m_maximumRecordAgeInSeconds(0),
+    m_maximumRecordAgeInSecondsHasBeenSet(false),
+    m_bisectBatchOnFunctionError(false),
+    m_bisectBatchOnFunctionErrorHasBeenSet(false),
+    m_maximumRetryAttempts(0),
+    m_maximumRetryAttemptsHasBeenSet(false),
+    m_parallelizationFactor(0),
+    m_parallelizationFactorHasBeenSet(false)
 {
 }
 
@@ -59,6 +68,36 @@ Aws::String UpdateEventSourceMappingRequest::SerializePayload() const
   if(m_maximumBatchingWindowInSecondsHasBeenSet)
   {
    payload.WithInteger("MaximumBatchingWindowInSeconds", m_maximumBatchingWindowInSeconds);
+
+  }
+
+  if(m_destinationConfigHasBeenSet)
+  {
+   payload.WithObject("DestinationConfig", m_destinationConfig.Jsonize());
+
+  }
+
+  if(m_maximumRecordAgeInSecondsHasBeenSet)
+  {
+   payload.WithInteger("MaximumRecordAgeInSeconds", m_maximumRecordAgeInSeconds);
+
+  }
+
+  if(m_bisectBatchOnFunctionErrorHasBeenSet)
+  {
+   payload.WithBool("BisectBatchOnFunctionError", m_bisectBatchOnFunctionError);
+
+  }
+
+  if(m_maximumRetryAttemptsHasBeenSet)
+  {
+   payload.WithInteger("MaximumRetryAttempts", m_maximumRetryAttempts);
+
+  }
+
+  if(m_parallelizationFactorHasBeenSet)
+  {
+   payload.WithInteger("ParallelizationFactor", m_parallelizationFactor);
 
   }
 

@@ -17,6 +17,7 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/AccountSharingInfo.h>
 #include <utility>
 
 namespace Aws
@@ -91,9 +92,54 @@ namespace Model
      */
     inline DescribeDocumentPermissionResult& AddAccountIds(const char* value) { m_accountIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>A list of of AWS accounts where the current document is shared and the
+     * version shared with each account.</p>
+     */
+    inline const Aws::Vector<AccountSharingInfo>& GetAccountSharingInfoList() const{ return m_accountSharingInfoList; }
+
+    /**
+     * <p>A list of of AWS accounts where the current document is shared and the
+     * version shared with each account.</p>
+     */
+    inline void SetAccountSharingInfoList(const Aws::Vector<AccountSharingInfo>& value) { m_accountSharingInfoList = value; }
+
+    /**
+     * <p>A list of of AWS accounts where the current document is shared and the
+     * version shared with each account.</p>
+     */
+    inline void SetAccountSharingInfoList(Aws::Vector<AccountSharingInfo>&& value) { m_accountSharingInfoList = std::move(value); }
+
+    /**
+     * <p>A list of of AWS accounts where the current document is shared and the
+     * version shared with each account.</p>
+     */
+    inline DescribeDocumentPermissionResult& WithAccountSharingInfoList(const Aws::Vector<AccountSharingInfo>& value) { SetAccountSharingInfoList(value); return *this;}
+
+    /**
+     * <p>A list of of AWS accounts where the current document is shared and the
+     * version shared with each account.</p>
+     */
+    inline DescribeDocumentPermissionResult& WithAccountSharingInfoList(Aws::Vector<AccountSharingInfo>&& value) { SetAccountSharingInfoList(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of of AWS accounts where the current document is shared and the
+     * version shared with each account.</p>
+     */
+    inline DescribeDocumentPermissionResult& AddAccountSharingInfoList(const AccountSharingInfo& value) { m_accountSharingInfoList.push_back(value); return *this; }
+
+    /**
+     * <p>A list of of AWS accounts where the current document is shared and the
+     * version shared with each account.</p>
+     */
+    inline DescribeDocumentPermissionResult& AddAccountSharingInfoList(AccountSharingInfo&& value) { m_accountSharingInfoList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_accountIds;
+
+    Aws::Vector<AccountSharingInfo> m_accountSharingInfoList;
   };
 
 } // namespace Model

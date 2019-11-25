@@ -385,6 +385,31 @@ namespace Model
      */
     inline AuthorizerDescription& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * request.</p>
+     */
+    inline bool GetSigningDisabled() const{ return m_signingDisabled; }
+
+    /**
+     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * request.</p>
+     */
+    inline bool SigningDisabledHasBeenSet() const { return m_signingDisabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * request.</p>
+     */
+    inline void SetSigningDisabled(bool value) { m_signingDisabledHasBeenSet = true; m_signingDisabled = value; }
+
+    /**
+     * <p>Specifies whether AWS IoT validates the token signature in an authorization
+     * request.</p>
+     */
+    inline AuthorizerDescription& WithSigningDisabled(bool value) { SetSigningDisabled(value); return *this;}
+
   private:
 
     Aws::String m_authorizerName;
@@ -410,6 +435,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastModifiedDate;
     bool m_lastModifiedDateHasBeenSet;
+
+    bool m_signingDisabled;
+    bool m_signingDisabledHasBeenSet;
   };
 
 } // namespace Model

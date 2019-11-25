@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     ubuntu,
     raspbian,
-    amazon_linux
+    amazon_linux,
+    openwrt
   };
 
 namespace UpdateTargetsOperatingSystemMapper

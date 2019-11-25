@@ -34,6 +34,7 @@ namespace Aws
         static const int Facebook_HASH = HashingUtils::HashString("Facebook");
         static const int Google_HASH = HashingUtils::HashString("Google");
         static const int LoginWithAmazon_HASH = HashingUtils::HashString("LoginWithAmazon");
+        static const int SignInWithApple_HASH = HashingUtils::HashString("SignInWithApple");
         static const int OIDC_HASH = HashingUtils::HashString("OIDC");
 
 
@@ -55,6 +56,10 @@ namespace Aws
           else if (hashCode == LoginWithAmazon_HASH)
           {
             return IdentityProviderTypeType::LoginWithAmazon;
+          }
+          else if (hashCode == SignInWithApple_HASH)
+          {
+            return IdentityProviderTypeType::SignInWithApple;
           }
           else if (hashCode == OIDC_HASH)
           {
@@ -82,6 +87,8 @@ namespace Aws
             return "Google";
           case IdentityProviderTypeType::LoginWithAmazon:
             return "LoginWithAmazon";
+          case IdentityProviderTypeType::SignInWithApple:
+            return "SignInWithApple";
           case IdentityProviderTypeType::OIDC:
             return "OIDC";
           default:

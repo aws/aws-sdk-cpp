@@ -867,22 +867,22 @@ namespace Model
 
 
     /**
-     * <p>The number of datapoints that must be breaching to trigger the alarm.</p>
+     * <p>The number of data points that must be breaching to trigger the alarm.</p>
      */
     inline int GetDatapointsToAlarm() const{ return m_datapointsToAlarm; }
 
     /**
-     * <p>The number of datapoints that must be breaching to trigger the alarm.</p>
+     * <p>The number of data points that must be breaching to trigger the alarm.</p>
      */
     inline bool DatapointsToAlarmHasBeenSet() const { return m_datapointsToAlarmHasBeenSet; }
 
     /**
-     * <p>The number of datapoints that must be breaching to trigger the alarm.</p>
+     * <p>The number of data points that must be breaching to trigger the alarm.</p>
      */
     inline void SetDatapointsToAlarm(int value) { m_datapointsToAlarmHasBeenSet = true; m_datapointsToAlarm = value; }
 
     /**
-     * <p>The number of datapoints that must be breaching to trigger the alarm.</p>
+     * <p>The number of data points that must be breaching to trigger the alarm.</p>
      */
     inline MetricAlarm& WithDatapointsToAlarm(int value) { SetDatapointsToAlarm(value); return *this;}
 

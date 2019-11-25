@@ -30,12 +30,14 @@ namespace Model
 
 SageMakerMachineLearningModelResourceData::SageMakerMachineLearningModelResourceData() : 
     m_destinationPathHasBeenSet(false),
+    m_ownerSettingHasBeenSet(false),
     m_sageMakerJobArnHasBeenSet(false)
 {
 }
 
 SageMakerMachineLearningModelResourceData::SageMakerMachineLearningModelResourceData(JsonView jsonValue) : 
     m_destinationPathHasBeenSet(false),
+    m_ownerSettingHasBeenSet(false),
     m_sageMakerJobArnHasBeenSet(false)
 {
   *this = jsonValue;
@@ -48,6 +50,13 @@ SageMakerMachineLearningModelResourceData& SageMakerMachineLearningModelResource
     m_destinationPath = jsonValue.GetString("DestinationPath");
 
     m_destinationPathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OwnerSetting"))
+  {
+    m_ownerSetting = jsonValue.GetObject("OwnerSetting");
+
+    m_ownerSettingHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("SageMakerJobArn"))
@@ -67,6 +76,12 @@ JsonValue SageMakerMachineLearningModelResourceData::Jsonize() const
   if(m_destinationPathHasBeenSet)
   {
    payload.WithString("DestinationPath", m_destinationPath);
+
+  }
+
+  if(m_ownerSettingHasBeenSet)
+  {
+   payload.WithObject("OwnerSetting", m_ownerSetting.Jsonize());
 
   }
 

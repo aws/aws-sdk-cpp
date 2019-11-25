@@ -72,6 +72,8 @@ M2tsSettings::M2tsSettings() :
     m_klv(M2tsKlv::NOT_SET),
     m_klvHasBeenSet(false),
     m_klvDataPidsHasBeenSet(false),
+    m_nielsenId3Behavior(M2tsNielsenId3Behavior::NOT_SET),
+    m_nielsenId3BehaviorHasBeenSet(false),
     m_nullPacketBitrate(0.0),
     m_nullPacketBitrateHasBeenSet(false),
     m_patInterval(0),
@@ -151,6 +153,8 @@ M2tsSettings::M2tsSettings(JsonView jsonValue) :
     m_klv(M2tsKlv::NOT_SET),
     m_klvHasBeenSet(false),
     m_klvDataPidsHasBeenSet(false),
+    m_nielsenId3Behavior(M2tsNielsenId3Behavior::NOT_SET),
+    m_nielsenId3BehaviorHasBeenSet(false),
     m_nullPacketBitrate(0.0),
     m_nullPacketBitrateHasBeenSet(false),
     m_patInterval(0),
@@ -376,6 +380,13 @@ M2tsSettings& M2tsSettings::operator =(JsonView jsonValue)
     m_klvDataPids = jsonValue.GetString("klvDataPids");
 
     m_klvDataPidsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("nielsenId3Behavior"))
+  {
+    m_nielsenId3Behavior = M2tsNielsenId3BehaviorMapper::GetM2tsNielsenId3BehaviorForName(jsonValue.GetString("nielsenId3Behavior"));
+
+    m_nielsenId3BehaviorHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("nullPacketBitrate"))
@@ -666,6 +677,11 @@ JsonValue M2tsSettings::Jsonize() const
   {
    payload.WithString("klvDataPids", m_klvDataPids);
 
+  }
+
+  if(m_nielsenId3BehaviorHasBeenSet)
+  {
+   payload.WithString("nielsenId3Behavior", M2tsNielsenId3BehaviorMapper::GetNameForM2tsNielsenId3Behavior(m_nielsenId3Behavior));
   }
 
   if(m_nullPacketBitrateHasBeenSet)

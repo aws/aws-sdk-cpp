@@ -25,7 +25,8 @@ CreateDBClusterEndpointRequest::CreateDBClusterEndpointRequest() :
     m_dBClusterEndpointIdentifierHasBeenSet(false),
     m_endpointTypeHasBeenSet(false),
     m_staticMembersHasBeenSet(false),
-    m_excludedMembersHasBeenSet(false)
+    m_excludedMembersHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,16 @@ Aws::String CreateDBClusterEndpointRequest::SerializePayload() const
       ss << "ExcludedMembers.member." << excludedMembersCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       excludedMembersCount++;
+    }
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
     }
   }
 

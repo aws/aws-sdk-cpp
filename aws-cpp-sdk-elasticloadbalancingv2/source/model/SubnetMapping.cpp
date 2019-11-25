@@ -32,13 +32,15 @@ namespace Model
 
 SubnetMapping::SubnetMapping() : 
     m_subnetIdHasBeenSet(false),
-    m_allocationIdHasBeenSet(false)
+    m_allocationIdHasBeenSet(false),
+    m_privateIPv4AddressHasBeenSet(false)
 {
 }
 
 SubnetMapping::SubnetMapping(const XmlNode& xmlNode) : 
     m_subnetIdHasBeenSet(false),
-    m_allocationIdHasBeenSet(false)
+    m_allocationIdHasBeenSet(false),
+    m_privateIPv4AddressHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -61,6 +63,12 @@ SubnetMapping& SubnetMapping::operator =(const XmlNode& xmlNode)
       m_allocationId = Aws::Utils::Xml::DecodeEscapedXmlText(allocationIdNode.GetText());
       m_allocationIdHasBeenSet = true;
     }
+    XmlNode privateIPv4AddressNode = resultNode.FirstChild("PrivateIPv4Address");
+    if(!privateIPv4AddressNode.IsNull())
+    {
+      m_privateIPv4Address = Aws::Utils::Xml::DecodeEscapedXmlText(privateIPv4AddressNode.GetText());
+      m_privateIPv4AddressHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -78,6 +86,11 @@ void SubnetMapping::OutputToStream(Aws::OStream& oStream, const char* location, 
       oStream << location << index << locationValue << ".AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
   }
 
+  if(m_privateIPv4AddressHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PrivateIPv4Address=" << StringUtils::URLEncode(m_privateIPv4Address.c_str()) << "&";
+  }
+
 }
 
 void SubnetMapping::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -89,6 +102,10 @@ void SubnetMapping::OutputToStream(Aws::OStream& oStream, const char* location) 
   if(m_allocationIdHasBeenSet)
   {
       oStream << location << ".AllocationId=" << StringUtils::URLEncode(m_allocationId.c_str()) << "&";
+  }
+  if(m_privateIPv4AddressHasBeenSet)
+  {
+      oStream << location << ".PrivateIPv4Address=" << StringUtils::URLEncode(m_privateIPv4Address.c_str()) << "&";
   }
 }
 

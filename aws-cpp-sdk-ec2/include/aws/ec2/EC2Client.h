@@ -250,6 +250,7 @@
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
 #include <aws/ec2/model/GetConsoleOutputResponse.h>
 #include <aws/ec2/model/GetConsoleScreenshotResponse.h>
+#include <aws/ec2/model/GetDefaultCreditSpecificationResponse.h>
 #include <aws/ec2/model/GetEbsDefaultKmsKeyIdResponse.h>
 #include <aws/ec2/model/GetEbsEncryptionByDefaultResponse.h>
 #include <aws/ec2/model/GetHostReservationPurchasePreviewResponse.h>
@@ -267,6 +268,7 @@
 #include <aws/ec2/model/ImportVolumeResponse.h>
 #include <aws/ec2/model/ModifyCapacityReservationResponse.h>
 #include <aws/ec2/model/ModifyClientVpnEndpointResponse.h>
+#include <aws/ec2/model/ModifyDefaultCreditSpecificationResponse.h>
 #include <aws/ec2/model/ModifyEbsDefaultKmsKeyIdResponse.h>
 #include <aws/ec2/model/ModifyFleetResponse.h>
 #include <aws/ec2/model/ModifyFpgaImageAttributeResponse.h>
@@ -639,6 +641,7 @@ namespace Model
         class GetCapacityReservationUsageRequest;
         class GetConsoleOutputRequest;
         class GetConsoleScreenshotRequest;
+        class GetDefaultCreditSpecificationRequest;
         class GetEbsDefaultKmsKeyIdRequest;
         class GetEbsEncryptionByDefaultRequest;
         class GetHostReservationPurchasePreviewRequest;
@@ -656,6 +659,7 @@ namespace Model
         class ImportVolumeRequest;
         class ModifyCapacityReservationRequest;
         class ModifyClientVpnEndpointRequest;
+        class ModifyDefaultCreditSpecificationRequest;
         class ModifyEbsDefaultKmsKeyIdRequest;
         class ModifyFleetRequest;
         class ModifyFpgaImageAttributeRequest;
@@ -1005,6 +1009,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetCapacityReservationUsageResponse, Aws::Client::AWSError<EC2Errors>> GetCapacityReservationUsageOutcome;
         typedef Aws::Utils::Outcome<GetConsoleOutputResponse, Aws::Client::AWSError<EC2Errors>> GetConsoleOutputOutcome;
         typedef Aws::Utils::Outcome<GetConsoleScreenshotResponse, Aws::Client::AWSError<EC2Errors>> GetConsoleScreenshotOutcome;
+        typedef Aws::Utils::Outcome<GetDefaultCreditSpecificationResponse, Aws::Client::AWSError<EC2Errors>> GetDefaultCreditSpecificationOutcome;
         typedef Aws::Utils::Outcome<GetEbsDefaultKmsKeyIdResponse, Aws::Client::AWSError<EC2Errors>> GetEbsDefaultKmsKeyIdOutcome;
         typedef Aws::Utils::Outcome<GetEbsEncryptionByDefaultResponse, Aws::Client::AWSError<EC2Errors>> GetEbsEncryptionByDefaultOutcome;
         typedef Aws::Utils::Outcome<GetHostReservationPurchasePreviewResponse, Aws::Client::AWSError<EC2Errors>> GetHostReservationPurchasePreviewOutcome;
@@ -1022,6 +1027,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ImportVolumeResponse, Aws::Client::AWSError<EC2Errors>> ImportVolumeOutcome;
         typedef Aws::Utils::Outcome<ModifyCapacityReservationResponse, Aws::Client::AWSError<EC2Errors>> ModifyCapacityReservationOutcome;
         typedef Aws::Utils::Outcome<ModifyClientVpnEndpointResponse, Aws::Client::AWSError<EC2Errors>> ModifyClientVpnEndpointOutcome;
+        typedef Aws::Utils::Outcome<ModifyDefaultCreditSpecificationResponse, Aws::Client::AWSError<EC2Errors>> ModifyDefaultCreditSpecificationOutcome;
         typedef Aws::Utils::Outcome<ModifyEbsDefaultKmsKeyIdResponse, Aws::Client::AWSError<EC2Errors>> ModifyEbsDefaultKmsKeyIdOutcome;
         typedef Aws::Utils::Outcome<ModifyFleetResponse, Aws::Client::AWSError<EC2Errors>> ModifyFleetOutcome;
         typedef Aws::Utils::Outcome<ModifyFpgaImageAttributeResponse, Aws::Client::AWSError<EC2Errors>> ModifyFpgaImageAttributeOutcome;
@@ -1371,6 +1377,7 @@ namespace Model
         typedef std::future<GetCapacityReservationUsageOutcome> GetCapacityReservationUsageOutcomeCallable;
         typedef std::future<GetConsoleOutputOutcome> GetConsoleOutputOutcomeCallable;
         typedef std::future<GetConsoleScreenshotOutcome> GetConsoleScreenshotOutcomeCallable;
+        typedef std::future<GetDefaultCreditSpecificationOutcome> GetDefaultCreditSpecificationOutcomeCallable;
         typedef std::future<GetEbsDefaultKmsKeyIdOutcome> GetEbsDefaultKmsKeyIdOutcomeCallable;
         typedef std::future<GetEbsEncryptionByDefaultOutcome> GetEbsEncryptionByDefaultOutcomeCallable;
         typedef std::future<GetHostReservationPurchasePreviewOutcome> GetHostReservationPurchasePreviewOutcomeCallable;
@@ -1388,6 +1395,7 @@ namespace Model
         typedef std::future<ImportVolumeOutcome> ImportVolumeOutcomeCallable;
         typedef std::future<ModifyCapacityReservationOutcome> ModifyCapacityReservationOutcomeCallable;
         typedef std::future<ModifyClientVpnEndpointOutcome> ModifyClientVpnEndpointOutcomeCallable;
+        typedef std::future<ModifyDefaultCreditSpecificationOutcome> ModifyDefaultCreditSpecificationOutcomeCallable;
         typedef std::future<ModifyEbsDefaultKmsKeyIdOutcome> ModifyEbsDefaultKmsKeyIdOutcomeCallable;
         typedef std::future<ModifyFleetOutcome> ModifyFleetOutcomeCallable;
         typedef std::future<ModifyFpgaImageAttributeOutcome> ModifyFpgaImageAttributeOutcomeCallable;
@@ -1740,6 +1748,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::GetCapacityReservationUsageRequest&, const Model::GetCapacityReservationUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCapacityReservationUsageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetConsoleOutputRequest&, const Model::GetConsoleOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsoleOutputResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetConsoleScreenshotRequest&, const Model::GetConsoleScreenshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsoleScreenshotResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetDefaultCreditSpecificationRequest&, const Model::GetDefaultCreditSpecificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDefaultCreditSpecificationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetEbsDefaultKmsKeyIdRequest&, const Model::GetEbsDefaultKmsKeyIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEbsDefaultKmsKeyIdResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetEbsEncryptionByDefaultRequest&, const Model::GetEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEbsEncryptionByDefaultResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetHostReservationPurchasePreviewRequest&, const Model::GetHostReservationPurchasePreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetHostReservationPurchasePreviewResponseReceivedHandler;
@@ -1757,6 +1766,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ImportVolumeRequest&, const Model::ImportVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportVolumeResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyCapacityReservationRequest&, const Model::ModifyCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyClientVpnEndpointRequest&, const Model::ModifyClientVpnEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClientVpnEndpointResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ModifyDefaultCreditSpecificationRequest&, const Model::ModifyDefaultCreditSpecificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDefaultCreditSpecificationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyEbsDefaultKmsKeyIdRequest&, const Model::ModifyEbsDefaultKmsKeyIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyEbsDefaultKmsKeyIdResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyFleetRequest&, const Model::ModifyFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyFleetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ModifyFpgaImageAttributeRequest&, const Model::ModifyFpgaImageAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyFpgaImageAttributeResponseReceivedHandler;
@@ -9222,23 +9232,23 @@ namespace Model
         virtual void DescribeInstanceAttributeAsync(const Model::DescribeInstanceAttributeRequest& request, const DescribeInstanceAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the credit option for CPU usage of the specified T2 or T3
-         * instances. The credit options are <code>standard</code> and
+         * <p>Describes the credit option for CPU usage of the specified burstable
+         * performance instances. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>If you do not specify an instance ID, Amazon EC2
-         * returns T2 and T3 instances with the <code>unlimited</code> credit option, as
-         * well as instances that were previously configured as T2 or T3 with the
-         * <code>unlimited</code> credit option. For example, if you resize a T2 instance,
-         * while it is configured as <code>unlimited</code>, to an M4 instance, Amazon EC2
-         * returns the M4 instance.</p> <p>If you specify one or more instance IDs, Amazon
-         * EC2 returns the credit option (<code>standard</code> or <code>unlimited</code>)
-         * of those instances. If you specify an instance ID that is not valid, such as an
-         * instance that is not a T2 or T3 instance, an error is returned.</p> <p>Recently
-         * terminated instances might appear in the returned results. This interval is
-         * usually less than one hour.</p> <p>If an Availability Zone is experiencing a
-         * service disruption and you specify instance IDs in the affected zone, or do not
-         * specify any instance IDs at all, the call fails. If you specify only instance
-         * IDs in an unaffected zone, the call works normally.</p> <p>For more information,
-         * see <a
+         * returns burstable performance instances with the <code>unlimited</code> credit
+         * option, as well as instances that were previously configured as T2, T3, and T3a
+         * with the <code>unlimited</code> credit option. For example, if you resize a T2
+         * instance, while it is configured as <code>unlimited</code>, to an M4 instance,
+         * Amazon EC2 returns the M4 instance.</p> <p>If you specify one or more instance
+         * IDs, Amazon EC2 returns the credit option (<code>standard</code> or
+         * <code>unlimited</code>) of those instances. If you specify an instance ID that
+         * is not valid, such as an instance that is not a burstable performance instance,
+         * an error is returned.</p> <p>Recently terminated instances might appear in the
+         * returned results. This interval is usually less than one hour.</p> <p>If an
+         * Availability Zone is experiencing a service disruption and you specify instance
+         * IDs in the affected zone, or do not specify any instance IDs at all, the call
+         * fails. If you specify only instance IDs in an unaffected zone, the call works
+         * normally.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
          * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -9248,23 +9258,23 @@ namespace Model
         virtual Model::DescribeInstanceCreditSpecificationsOutcome DescribeInstanceCreditSpecifications(const Model::DescribeInstanceCreditSpecificationsRequest& request) const;
 
         /**
-         * <p>Describes the credit option for CPU usage of the specified T2 or T3
-         * instances. The credit options are <code>standard</code> and
+         * <p>Describes the credit option for CPU usage of the specified burstable
+         * performance instances. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>If you do not specify an instance ID, Amazon EC2
-         * returns T2 and T3 instances with the <code>unlimited</code> credit option, as
-         * well as instances that were previously configured as T2 or T3 with the
-         * <code>unlimited</code> credit option. For example, if you resize a T2 instance,
-         * while it is configured as <code>unlimited</code>, to an M4 instance, Amazon EC2
-         * returns the M4 instance.</p> <p>If you specify one or more instance IDs, Amazon
-         * EC2 returns the credit option (<code>standard</code> or <code>unlimited</code>)
-         * of those instances. If you specify an instance ID that is not valid, such as an
-         * instance that is not a T2 or T3 instance, an error is returned.</p> <p>Recently
-         * terminated instances might appear in the returned results. This interval is
-         * usually less than one hour.</p> <p>If an Availability Zone is experiencing a
-         * service disruption and you specify instance IDs in the affected zone, or do not
-         * specify any instance IDs at all, the call fails. If you specify only instance
-         * IDs in an unaffected zone, the call works normally.</p> <p>For more information,
-         * see <a
+         * returns burstable performance instances with the <code>unlimited</code> credit
+         * option, as well as instances that were previously configured as T2, T3, and T3a
+         * with the <code>unlimited</code> credit option. For example, if you resize a T2
+         * instance, while it is configured as <code>unlimited</code>, to an M4 instance,
+         * Amazon EC2 returns the M4 instance.</p> <p>If you specify one or more instance
+         * IDs, Amazon EC2 returns the credit option (<code>standard</code> or
+         * <code>unlimited</code>) of those instances. If you specify an instance ID that
+         * is not valid, such as an instance that is not a burstable performance instance,
+         * an error is returned.</p> <p>Recently terminated instances might appear in the
+         * returned results. This interval is usually less than one hour.</p> <p>If an
+         * Availability Zone is experiencing a service disruption and you specify instance
+         * IDs in the affected zone, or do not specify any instance IDs at all, the call
+         * fails. If you specify only instance IDs in an unaffected zone, the call works
+         * normally.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
          * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -9276,23 +9286,23 @@ namespace Model
         virtual Model::DescribeInstanceCreditSpecificationsOutcomeCallable DescribeInstanceCreditSpecificationsCallable(const Model::DescribeInstanceCreditSpecificationsRequest& request) const;
 
         /**
-         * <p>Describes the credit option for CPU usage of the specified T2 or T3
-         * instances. The credit options are <code>standard</code> and
+         * <p>Describes the credit option for CPU usage of the specified burstable
+         * performance instances. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>If you do not specify an instance ID, Amazon EC2
-         * returns T2 and T3 instances with the <code>unlimited</code> credit option, as
-         * well as instances that were previously configured as T2 or T3 with the
-         * <code>unlimited</code> credit option. For example, if you resize a T2 instance,
-         * while it is configured as <code>unlimited</code>, to an M4 instance, Amazon EC2
-         * returns the M4 instance.</p> <p>If you specify one or more instance IDs, Amazon
-         * EC2 returns the credit option (<code>standard</code> or <code>unlimited</code>)
-         * of those instances. If you specify an instance ID that is not valid, such as an
-         * instance that is not a T2 or T3 instance, an error is returned.</p> <p>Recently
-         * terminated instances might appear in the returned results. This interval is
-         * usually less than one hour.</p> <p>If an Availability Zone is experiencing a
-         * service disruption and you specify instance IDs in the affected zone, or do not
-         * specify any instance IDs at all, the call fails. If you specify only instance
-         * IDs in an unaffected zone, the call works normally.</p> <p>For more information,
-         * see <a
+         * returns burstable performance instances with the <code>unlimited</code> credit
+         * option, as well as instances that were previously configured as T2, T3, and T3a
+         * with the <code>unlimited</code> credit option. For example, if you resize a T2
+         * instance, while it is configured as <code>unlimited</code>, to an M4 instance,
+         * Amazon EC2 returns the M4 instance.</p> <p>If you specify one or more instance
+         * IDs, Amazon EC2 returns the credit option (<code>standard</code> or
+         * <code>unlimited</code>) of those instances. If you specify an instance ID that
+         * is not valid, such as an instance that is not a burstable performance instance,
+         * an error is returned.</p> <p>Recently terminated instances might appear in the
+         * returned results. This interval is usually less than one hour.</p> <p>If an
+         * Availability Zone is experiencing a service disruption and you specify instance
+         * IDs in the affected zone, or do not specify any instance IDs at all, the call
+         * fails. If you specify only instance IDs in an unaffected zone, the call works
+         * normally.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
          * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -13071,6 +13081,43 @@ namespace Model
         virtual void GetConsoleScreenshotAsync(const Model::GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the default credit option for CPU usage of a burstable performance
+         * instance family.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDefaultCreditSpecificationOutcome GetDefaultCreditSpecification(const Model::GetDefaultCreditSpecificationRequest& request) const;
+
+        /**
+         * <p>Describes the default credit option for CPU usage of a burstable performance
+         * instance family.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetDefaultCreditSpecificationOutcomeCallable GetDefaultCreditSpecificationCallable(const Model::GetDefaultCreditSpecificationRequest& request) const;
+
+        /**
+         * <p>Describes the default credit option for CPU usage of a burstable performance
+         * instance family.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetDefaultCreditSpecification">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetDefaultCreditSpecificationAsync(const Model::GetDefaultCreditSpecificationRequest& request, const GetDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes the default customer master key (CMK) for EBS encryption by default
          * for your account in this Region. You can change the default CMK for encryption
          * by default using <a>ModifyEbsDefaultKmsKeyId</a> or
@@ -13724,6 +13771,73 @@ namespace Model
         virtual void ModifyClientVpnEndpointAsync(const Model::ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the default credit option for CPU usage of burstable performance
+         * instances. The default credit option is set at the account level per AWS Region,
+         * and is specified per instance family. All new burstable performance instances in
+         * the account launch using the default credit option.</p> <p>
+         * <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation,
+         * which works at an AWS Region level and modifies the credit option for each
+         * Availability Zone. All zones in a Region are updated within five minutes. But if
+         * instances are launched during this operation, they might not get the new credit
+         * option until the zone is updated. To verify whether the update has occurred, you
+         * can call <code>GetDefaultCreditSpecification</code> and check
+         * <code>DefaultCreditSpecification</code> for updates.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyDefaultCreditSpecificationOutcome ModifyDefaultCreditSpecification(const Model::ModifyDefaultCreditSpecificationRequest& request) const;
+
+        /**
+         * <p>Modifies the default credit option for CPU usage of burstable performance
+         * instances. The default credit option is set at the account level per AWS Region,
+         * and is specified per instance family. All new burstable performance instances in
+         * the account launch using the default credit option.</p> <p>
+         * <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation,
+         * which works at an AWS Region level and modifies the credit option for each
+         * Availability Zone. All zones in a Region are updated within five minutes. But if
+         * instances are launched during this operation, they might not get the new credit
+         * option until the zone is updated. To verify whether the update has occurred, you
+         * can call <code>GetDefaultCreditSpecification</code> and check
+         * <code>DefaultCreditSpecification</code> for updates.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyDefaultCreditSpecificationOutcomeCallable ModifyDefaultCreditSpecificationCallable(const Model::ModifyDefaultCreditSpecificationRequest& request) const;
+
+        /**
+         * <p>Modifies the default credit option for CPU usage of burstable performance
+         * instances. The default credit option is set at the account level per AWS Region,
+         * and is specified per instance family. All new burstable performance instances in
+         * the account launch using the default credit option.</p> <p>
+         * <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation,
+         * which works at an AWS Region level and modifies the credit option for each
+         * Availability Zone. All zones in a Region are updated within five minutes. But if
+         * instances are launched during this operation, they might not get the new credit
+         * option until the zone is updated. To verify whether the update has occurred, you
+         * can call <code>GetDefaultCreditSpecification</code> and check
+         * <code>DefaultCreditSpecification</code> for updates.</p> <p>For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
+         * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyDefaultCreditSpecification">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyDefaultCreditSpecificationAsync(const Model::ModifyDefaultCreditSpecificationRequest& request, const ModifyDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Changes the default customer master key (CMK) for EBS encryption by default
          * for your account in this Region.</p> <p>AWS creates a unique AWS managed CMK in
          * each Region for use with encryption by default. If you change the default CMK to
@@ -14300,8 +14414,8 @@ namespace Model
         virtual void ModifyInstanceCapacityReservationAttributesAsync(const Model::ModifyInstanceCapacityReservationAttributesRequest& request, const ModifyInstanceCapacityReservationAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the credit option for CPU usage on a running or stopped T2 or T3
-         * instance. The credit options are <code>standard</code> and
+         * <p>Modifies the credit option for CPU usage on a running or stopped burstable
+         * performance instance. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
          * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
@@ -14312,8 +14426,8 @@ namespace Model
         virtual Model::ModifyInstanceCreditSpecificationOutcome ModifyInstanceCreditSpecification(const Model::ModifyInstanceCreditSpecificationRequest& request) const;
 
         /**
-         * <p>Modifies the credit option for CPU usage on a running or stopped T2 or T3
-         * instance. The credit options are <code>standard</code> and
+         * <p>Modifies the credit option for CPU usage on a running or stopped burstable
+         * performance instance. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
          * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
@@ -14326,8 +14440,8 @@ namespace Model
         virtual Model::ModifyInstanceCreditSpecificationOutcomeCallable ModifyInstanceCreditSpecificationCallable(const Model::ModifyInstanceCreditSpecificationRequest& request) const;
 
         /**
-         * <p>Modifies the credit option for CPU usage on a running or stopped T2 or T3
-         * instance. The credit options are <code>standard</code> and
+         * <p>Modifies the credit option for CPU usage on a running or stopped burstable
+         * performance instance. The credit options are <code>standard</code> and
          * <code>unlimited</code>.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
          * Performance Instances</a> in the <i>Amazon Elastic Compute Cloud User
@@ -18161,6 +18275,7 @@ namespace Model
         void GetCapacityReservationUsageAsyncHelper(const Model::GetCapacityReservationUsageRequest& request, const GetCapacityReservationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConsoleOutputAsyncHelper(const Model::GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConsoleScreenshotAsyncHelper(const Model::GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetDefaultCreditSpecificationAsyncHelper(const Model::GetDefaultCreditSpecificationRequest& request, const GetDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEbsDefaultKmsKeyIdAsyncHelper(const Model::GetEbsDefaultKmsKeyIdRequest& request, const GetEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEbsEncryptionByDefaultAsyncHelper(const Model::GetEbsEncryptionByDefaultRequest& request, const GetEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetHostReservationPurchasePreviewAsyncHelper(const Model::GetHostReservationPurchasePreviewRequest& request, const GetHostReservationPurchasePreviewResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18178,6 +18293,7 @@ namespace Model
         void ImportVolumeAsyncHelper(const Model::ImportVolumeRequest& request, const ImportVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyCapacityReservationAsyncHelper(const Model::ModifyCapacityReservationRequest& request, const ModifyCapacityReservationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClientVpnEndpointAsyncHelper(const Model::ModifyClientVpnEndpointRequest& request, const ModifyClientVpnEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyDefaultCreditSpecificationAsyncHelper(const Model::ModifyDefaultCreditSpecificationRequest& request, const ModifyDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyEbsDefaultKmsKeyIdAsyncHelper(const Model::ModifyEbsDefaultKmsKeyIdRequest& request, const ModifyEbsDefaultKmsKeyIdResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyFleetAsyncHelper(const Model::ModifyFleetRequest& request, const ModifyFleetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyFpgaImageAttributeAsyncHelper(const Model::ModifyFpgaImageAttributeRequest& request, const ModifyFpgaImageAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -1663,20 +1663,22 @@ namespace Model
         virtual void SetSecurityGroupsAsync(const Model::SetSecurityGroupsRequest& request, const SetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Enables the Availability Zone for the specified public subnets for the
-         * specified Application Load Balancer. The specified subnets replace the
-         * previously enabled subnets.</p> <p>You can't change the subnets for a Network
-         * Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the Availability Zones for the specified public subnets for the
+         * specified load balancer. The specified subnets replace the previously enabled
+         * subnets.</p> <p>When you specify subnets for a Network Load Balancer, you must
+         * include all subnets that were enabled previously, with their existing
+         * configurations, plus any additional subnets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">AWS
          * API Reference</a></p>
          */
         virtual Model::SetSubnetsOutcome SetSubnets(const Model::SetSubnetsRequest& request) const;
 
         /**
-         * <p>Enables the Availability Zone for the specified public subnets for the
-         * specified Application Load Balancer. The specified subnets replace the
-         * previously enabled subnets.</p> <p>You can't change the subnets for a Network
-         * Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the Availability Zones for the specified public subnets for the
+         * specified load balancer. The specified subnets replace the previously enabled
+         * subnets.</p> <p>When you specify subnets for a Network Load Balancer, you must
+         * include all subnets that were enabled previously, with their existing
+         * configurations, plus any additional subnets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">AWS
          * API Reference</a></p>
          *
@@ -1685,10 +1687,11 @@ namespace Model
         virtual Model::SetSubnetsOutcomeCallable SetSubnetsCallable(const Model::SetSubnetsRequest& request) const;
 
         /**
-         * <p>Enables the Availability Zone for the specified public subnets for the
-         * specified Application Load Balancer. The specified subnets replace the
-         * previously enabled subnets.</p> <p>You can't change the subnets for a Network
-         * Load Balancer.</p><p><h3>See Also:</h3>   <a
+         * <p>Enables the Availability Zones for the specified public subnets for the
+         * specified load balancer. The specified subnets replace the previously enabled
+         * subnets.</p> <p>When you specify subnets for a Network Load Balancer, you must
+         * include all subnets that were enabled previously, with their existing
+         * configurations, plus any additional subnets.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/SetSubnets">AWS
          * API Reference</a></p>
          *

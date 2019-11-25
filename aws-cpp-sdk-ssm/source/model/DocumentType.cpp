@@ -35,6 +35,9 @@ namespace Aws
         static const int Automation_HASH = HashingUtils::HashString("Automation");
         static const int Session_HASH = HashingUtils::HashString("Session");
         static const int Package_HASH = HashingUtils::HashString("Package");
+        static const int ApplicationConfiguration_HASH = HashingUtils::HashString("ApplicationConfiguration");
+        static const int ApplicationConfigurationSchema_HASH = HashingUtils::HashString("ApplicationConfigurationSchema");
+        static const int DeploymentStrategy_HASH = HashingUtils::HashString("DeploymentStrategy");
 
 
         DocumentType GetDocumentTypeForName(const Aws::String& name)
@@ -60,6 +63,18 @@ namespace Aws
           {
             return DocumentType::Package;
           }
+          else if (hashCode == ApplicationConfiguration_HASH)
+          {
+            return DocumentType::ApplicationConfiguration;
+          }
+          else if (hashCode == ApplicationConfigurationSchema_HASH)
+          {
+            return DocumentType::ApplicationConfigurationSchema;
+          }
+          else if (hashCode == DeploymentStrategy_HASH)
+          {
+            return DocumentType::DeploymentStrategy;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +99,12 @@ namespace Aws
             return "Session";
           case DocumentType::Package:
             return "Package";
+          case DocumentType::ApplicationConfiguration:
+            return "ApplicationConfiguration";
+          case DocumentType::ApplicationConfigurationSchema:
+            return "ApplicationConfigurationSchema";
+          case DocumentType::DeploymentStrategy:
+            return "DeploymentStrategy";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

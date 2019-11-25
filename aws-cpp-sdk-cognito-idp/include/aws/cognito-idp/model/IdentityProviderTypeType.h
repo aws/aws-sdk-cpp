@@ -30,6 +30,7 @@ namespace Model
     Facebook,
     Google,
     LoginWithAmazon,
+    SignInWithApple,
     OIDC
   };
 

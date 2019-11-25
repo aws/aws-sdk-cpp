@@ -1,0 +1,92 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/wafv2/WAFV2_EXPORTS.h>
+#include <aws/wafv2/model/WebACLSummary.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace WAFV2
+{
+namespace Model
+{
+  class AWS_WAFV2_API CreateWebACLResult
+  {
+  public:
+    CreateWebACLResult();
+    CreateWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    CreateWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>High-level information about a <a>WebACL</a>, returned by operations like
+     * create and list. This provides information like the ID, that you can use to
+     * retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to
+     * operations like <a>AssociateWebACL</a>.</p>
+     */
+    inline const WebACLSummary& GetSummary() const{ return m_summary; }
+
+    /**
+     * <p>High-level information about a <a>WebACL</a>, returned by operations like
+     * create and list. This provides information like the ID, that you can use to
+     * retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to
+     * operations like <a>AssociateWebACL</a>.</p>
+     */
+    inline void SetSummary(const WebACLSummary& value) { m_summary = value; }
+
+    /**
+     * <p>High-level information about a <a>WebACL</a>, returned by operations like
+     * create and list. This provides information like the ID, that you can use to
+     * retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to
+     * operations like <a>AssociateWebACL</a>.</p>
+     */
+    inline void SetSummary(WebACLSummary&& value) { m_summary = std::move(value); }
+
+    /**
+     * <p>High-level information about a <a>WebACL</a>, returned by operations like
+     * create and list. This provides information like the ID, that you can use to
+     * retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to
+     * operations like <a>AssociateWebACL</a>.</p>
+     */
+    inline CreateWebACLResult& WithSummary(const WebACLSummary& value) { SetSummary(value); return *this;}
+
+    /**
+     * <p>High-level information about a <a>WebACL</a>, returned by operations like
+     * create and list. This provides information like the ID, that you can use to
+     * retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to
+     * operations like <a>AssociateWebACL</a>.</p>
+     */
+    inline CreateWebACLResult& WithSummary(WebACLSummary&& value) { SetSummary(std::move(value)); return *this;}
+
+  private:
+
+    WebACLSummary m_summary;
+  };
+
+} // namespace Model
+} // namespace WAFV2
+} // namespace Aws

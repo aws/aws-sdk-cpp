@@ -198,6 +198,47 @@ namespace Model
     inline ListOfferingsRequest& WithCodec(const char* value) { SetCodec(value); return *this;}
 
 
+    /**
+     * Filter by offering duration, e.g. '12'
+     */
+    inline const Aws::String& GetDuration() const{ return m_duration; }
+
+    /**
+     * Filter by offering duration, e.g. '12'
+     */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * Filter by offering duration, e.g. '12'
+     */
+    inline void SetDuration(const Aws::String& value) { m_durationHasBeenSet = true; m_duration = value; }
+
+    /**
+     * Filter by offering duration, e.g. '12'
+     */
+    inline void SetDuration(Aws::String&& value) { m_durationHasBeenSet = true; m_duration = std::move(value); }
+
+    /**
+     * Filter by offering duration, e.g. '12'
+     */
+    inline void SetDuration(const char* value) { m_durationHasBeenSet = true; m_duration.assign(value); }
+
+    /**
+     * Filter by offering duration, e.g. '12'
+     */
+    inline ListOfferingsRequest& WithDuration(const Aws::String& value) { SetDuration(value); return *this;}
+
+    /**
+     * Filter by offering duration, e.g. '12'
+     */
+    inline ListOfferingsRequest& WithDuration(Aws::String&& value) { SetDuration(std::move(value)); return *this;}
+
+    /**
+     * Filter by offering duration, e.g. '12'
+     */
+    inline ListOfferingsRequest& WithDuration(const char* value) { SetDuration(value); return *this;}
+
+
     
     inline int GetMaxResults() const{ return m_maxResults; }
 
@@ -327,83 +368,83 @@ namespace Model
 
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      */
     inline const Aws::String& GetResolution() const{ return m_resolution; }
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      */
     inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      */
     inline void SetResolution(const Aws::String& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      */
     inline void SetResolution(Aws::String&& value) { m_resolutionHasBeenSet = true; m_resolution = std::move(value); }
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      */
     inline void SetResolution(const char* value) { m_resolutionHasBeenSet = true; m_resolution.assign(value); }
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      */
     inline ListOfferingsRequest& WithResolution(const Aws::String& value) { SetResolution(value); return *this;}
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      */
     inline ListOfferingsRequest& WithResolution(Aws::String&& value) { SetResolution(std::move(value)); return *this;}
 
     /**
-     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     * Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
      */
     inline ListOfferingsRequest& WithResolution(const char* value) { SetResolution(value); return *this;}
 
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline ListOfferingsRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline ListOfferingsRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     * Filter by resource type, 'INPUT', 'OUTPUT', 'MULTIPLEX', or 'CHANNEL'
      */
     inline ListOfferingsRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -515,6 +556,9 @@ namespace Model
 
     Aws::String m_codec;
     bool m_codecHasBeenSet;
+
+    Aws::String m_duration;
+    bool m_durationHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

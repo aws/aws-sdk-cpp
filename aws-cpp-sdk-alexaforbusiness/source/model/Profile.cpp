@@ -48,7 +48,8 @@ Profile::Profile() :
     m_maxVolumeLimitHasBeenSet(false),
     m_pSTNEnabled(false),
     m_pSTNEnabledHasBeenSet(false),
-    m_addressBookArnHasBeenSet(false)
+    m_addressBookArnHasBeenSet(false),
+    m_meetingRoomConfigurationHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ Profile::Profile(JsonView jsonValue) :
     m_maxVolumeLimitHasBeenSet(false),
     m_pSTNEnabled(false),
     m_pSTNEnabledHasBeenSet(false),
-    m_addressBookArnHasBeenSet(false)
+    m_addressBookArnHasBeenSet(false),
+    m_meetingRoomConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -170,6 +172,13 @@ Profile& Profile::operator =(JsonView jsonValue)
     m_addressBookArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MeetingRoomConfiguration"))
+  {
+    m_meetingRoomConfiguration = jsonValue.GetObject("MeetingRoomConfiguration");
+
+    m_meetingRoomConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -249,6 +258,12 @@ JsonValue Profile::Jsonize() const
   if(m_addressBookArnHasBeenSet)
   {
    payload.WithString("AddressBookArn", m_addressBookArn);
+
+  }
+
+  if(m_meetingRoomConfigurationHasBeenSet)
+  {
+   payload.WithObject("MeetingRoomConfiguration", m_meetingRoomConfiguration.Jsonize());
 
   }
 

@@ -32,6 +32,7 @@
 #include <aws/lambda/model/GetEventSourceMappingResult.h>
 #include <aws/lambda/model/GetFunctionResult.h>
 #include <aws/lambda/model/GetFunctionConfigurationResult.h>
+#include <aws/lambda/model/GetFunctionEventInvokeConfigResult.h>
 #include <aws/lambda/model/GetLayerVersionResult.h>
 #include <aws/lambda/model/GetLayerVersionByArnResult.h>
 #include <aws/lambda/model/GetLayerVersionPolicyResult.h>
@@ -39,6 +40,7 @@
 #include <aws/lambda/model/InvokeResult.h>
 #include <aws/lambda/model/ListAliasesResult.h>
 #include <aws/lambda/model/ListEventSourceMappingsResult.h>
+#include <aws/lambda/model/ListFunctionEventInvokeConfigsResult.h>
 #include <aws/lambda/model/ListFunctionsResult.h>
 #include <aws/lambda/model/ListLayerVersionsResult.h>
 #include <aws/lambda/model/ListLayersResult.h>
@@ -47,10 +49,12 @@
 #include <aws/lambda/model/PublishLayerVersionResult.h>
 #include <aws/lambda/model/PublishVersionResult.h>
 #include <aws/lambda/model/PutFunctionConcurrencyResult.h>
+#include <aws/lambda/model/PutFunctionEventInvokeConfigResult.h>
 #include <aws/lambda/model/UpdateAliasResult.h>
 #include <aws/lambda/model/UpdateEventSourceMappingResult.h>
 #include <aws/lambda/model/UpdateFunctionCodeResult.h>
 #include <aws/lambda/model/UpdateFunctionConfigurationResult.h>
+#include <aws/lambda/model/UpdateFunctionEventInvokeConfigResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -100,12 +104,14 @@ namespace Model
         class DeleteEventSourceMappingRequest;
         class DeleteFunctionRequest;
         class DeleteFunctionConcurrencyRequest;
+        class DeleteFunctionEventInvokeConfigRequest;
         class DeleteLayerVersionRequest;
         class GetAccountSettingsRequest;
         class GetAliasRequest;
         class GetEventSourceMappingRequest;
         class GetFunctionRequest;
         class GetFunctionConfigurationRequest;
+        class GetFunctionEventInvokeConfigRequest;
         class GetLayerVersionRequest;
         class GetLayerVersionByArnRequest;
         class GetLayerVersionPolicyRequest;
@@ -113,6 +119,7 @@ namespace Model
         class InvokeRequest;
         class ListAliasesRequest;
         class ListEventSourceMappingsRequest;
+        class ListFunctionEventInvokeConfigsRequest;
         class ListFunctionsRequest;
         class ListLayerVersionsRequest;
         class ListLayersRequest;
@@ -121,6 +128,7 @@ namespace Model
         class PublishLayerVersionRequest;
         class PublishVersionRequest;
         class PutFunctionConcurrencyRequest;
+        class PutFunctionEventInvokeConfigRequest;
         class RemoveLayerVersionPermissionRequest;
         class RemovePermissionRequest;
         class TagResourceRequest;
@@ -129,6 +137,7 @@ namespace Model
         class UpdateEventSourceMappingRequest;
         class UpdateFunctionCodeRequest;
         class UpdateFunctionConfigurationRequest;
+        class UpdateFunctionEventInvokeConfigRequest;
 
         typedef Aws::Utils::Outcome<AddLayerVersionPermissionResult, Aws::Client::AWSError<LambdaErrors>> AddLayerVersionPermissionOutcome;
         typedef Aws::Utils::Outcome<AddPermissionResult, Aws::Client::AWSError<LambdaErrors>> AddPermissionOutcome;
@@ -139,12 +148,14 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteEventSourceMappingResult, Aws::Client::AWSError<LambdaErrors>> DeleteEventSourceMappingOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> DeleteFunctionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> DeleteFunctionConcurrencyOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> DeleteFunctionEventInvokeConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> DeleteLayerVersionOutcome;
         typedef Aws::Utils::Outcome<GetAccountSettingsResult, Aws::Client::AWSError<LambdaErrors>> GetAccountSettingsOutcome;
         typedef Aws::Utils::Outcome<GetAliasResult, Aws::Client::AWSError<LambdaErrors>> GetAliasOutcome;
         typedef Aws::Utils::Outcome<GetEventSourceMappingResult, Aws::Client::AWSError<LambdaErrors>> GetEventSourceMappingOutcome;
         typedef Aws::Utils::Outcome<GetFunctionResult, Aws::Client::AWSError<LambdaErrors>> GetFunctionOutcome;
         typedef Aws::Utils::Outcome<GetFunctionConfigurationResult, Aws::Client::AWSError<LambdaErrors>> GetFunctionConfigurationOutcome;
+        typedef Aws::Utils::Outcome<GetFunctionEventInvokeConfigResult, Aws::Client::AWSError<LambdaErrors>> GetFunctionEventInvokeConfigOutcome;
         typedef Aws::Utils::Outcome<GetLayerVersionResult, Aws::Client::AWSError<LambdaErrors>> GetLayerVersionOutcome;
         typedef Aws::Utils::Outcome<GetLayerVersionByArnResult, Aws::Client::AWSError<LambdaErrors>> GetLayerVersionByArnOutcome;
         typedef Aws::Utils::Outcome<GetLayerVersionPolicyResult, Aws::Client::AWSError<LambdaErrors>> GetLayerVersionPolicyOutcome;
@@ -152,6 +163,7 @@ namespace Model
         typedef Aws::Utils::Outcome<InvokeResult, Aws::Client::AWSError<LambdaErrors>> InvokeOutcome;
         typedef Aws::Utils::Outcome<ListAliasesResult, Aws::Client::AWSError<LambdaErrors>> ListAliasesOutcome;
         typedef Aws::Utils::Outcome<ListEventSourceMappingsResult, Aws::Client::AWSError<LambdaErrors>> ListEventSourceMappingsOutcome;
+        typedef Aws::Utils::Outcome<ListFunctionEventInvokeConfigsResult, Aws::Client::AWSError<LambdaErrors>> ListFunctionEventInvokeConfigsOutcome;
         typedef Aws::Utils::Outcome<ListFunctionsResult, Aws::Client::AWSError<LambdaErrors>> ListFunctionsOutcome;
         typedef Aws::Utils::Outcome<ListLayerVersionsResult, Aws::Client::AWSError<LambdaErrors>> ListLayerVersionsOutcome;
         typedef Aws::Utils::Outcome<ListLayersResult, Aws::Client::AWSError<LambdaErrors>> ListLayersOutcome;
@@ -160,6 +172,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PublishLayerVersionResult, Aws::Client::AWSError<LambdaErrors>> PublishLayerVersionOutcome;
         typedef Aws::Utils::Outcome<PublishVersionResult, Aws::Client::AWSError<LambdaErrors>> PublishVersionOutcome;
         typedef Aws::Utils::Outcome<PutFunctionConcurrencyResult, Aws::Client::AWSError<LambdaErrors>> PutFunctionConcurrencyOutcome;
+        typedef Aws::Utils::Outcome<PutFunctionEventInvokeConfigResult, Aws::Client::AWSError<LambdaErrors>> PutFunctionEventInvokeConfigOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> RemoveLayerVersionPermissionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> RemovePermissionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<LambdaErrors>> TagResourceOutcome;
@@ -168,6 +181,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateEventSourceMappingResult, Aws::Client::AWSError<LambdaErrors>> UpdateEventSourceMappingOutcome;
         typedef Aws::Utils::Outcome<UpdateFunctionCodeResult, Aws::Client::AWSError<LambdaErrors>> UpdateFunctionCodeOutcome;
         typedef Aws::Utils::Outcome<UpdateFunctionConfigurationResult, Aws::Client::AWSError<LambdaErrors>> UpdateFunctionConfigurationOutcome;
+        typedef Aws::Utils::Outcome<UpdateFunctionEventInvokeConfigResult, Aws::Client::AWSError<LambdaErrors>> UpdateFunctionEventInvokeConfigOutcome;
 
         typedef std::future<AddLayerVersionPermissionOutcome> AddLayerVersionPermissionOutcomeCallable;
         typedef std::future<AddPermissionOutcome> AddPermissionOutcomeCallable;
@@ -178,12 +192,14 @@ namespace Model
         typedef std::future<DeleteEventSourceMappingOutcome> DeleteEventSourceMappingOutcomeCallable;
         typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
         typedef std::future<DeleteFunctionConcurrencyOutcome> DeleteFunctionConcurrencyOutcomeCallable;
+        typedef std::future<DeleteFunctionEventInvokeConfigOutcome> DeleteFunctionEventInvokeConfigOutcomeCallable;
         typedef std::future<DeleteLayerVersionOutcome> DeleteLayerVersionOutcomeCallable;
         typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
         typedef std::future<GetAliasOutcome> GetAliasOutcomeCallable;
         typedef std::future<GetEventSourceMappingOutcome> GetEventSourceMappingOutcomeCallable;
         typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
         typedef std::future<GetFunctionConfigurationOutcome> GetFunctionConfigurationOutcomeCallable;
+        typedef std::future<GetFunctionEventInvokeConfigOutcome> GetFunctionEventInvokeConfigOutcomeCallable;
         typedef std::future<GetLayerVersionOutcome> GetLayerVersionOutcomeCallable;
         typedef std::future<GetLayerVersionByArnOutcome> GetLayerVersionByArnOutcomeCallable;
         typedef std::future<GetLayerVersionPolicyOutcome> GetLayerVersionPolicyOutcomeCallable;
@@ -191,6 +207,7 @@ namespace Model
         typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
         typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
         typedef std::future<ListEventSourceMappingsOutcome> ListEventSourceMappingsOutcomeCallable;
+        typedef std::future<ListFunctionEventInvokeConfigsOutcome> ListFunctionEventInvokeConfigsOutcomeCallable;
         typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
         typedef std::future<ListLayerVersionsOutcome> ListLayerVersionsOutcomeCallable;
         typedef std::future<ListLayersOutcome> ListLayersOutcomeCallable;
@@ -199,6 +216,7 @@ namespace Model
         typedef std::future<PublishLayerVersionOutcome> PublishLayerVersionOutcomeCallable;
         typedef std::future<PublishVersionOutcome> PublishVersionOutcomeCallable;
         typedef std::future<PutFunctionConcurrencyOutcome> PutFunctionConcurrencyOutcomeCallable;
+        typedef std::future<PutFunctionEventInvokeConfigOutcome> PutFunctionEventInvokeConfigOutcomeCallable;
         typedef std::future<RemoveLayerVersionPermissionOutcome> RemoveLayerVersionPermissionOutcomeCallable;
         typedef std::future<RemovePermissionOutcome> RemovePermissionOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -207,6 +225,7 @@ namespace Model
         typedef std::future<UpdateEventSourceMappingOutcome> UpdateEventSourceMappingOutcomeCallable;
         typedef std::future<UpdateFunctionCodeOutcome> UpdateFunctionCodeOutcomeCallable;
         typedef std::future<UpdateFunctionConfigurationOutcome> UpdateFunctionConfigurationOutcomeCallable;
+        typedef std::future<UpdateFunctionEventInvokeConfigOutcome> UpdateFunctionEventInvokeConfigOutcomeCallable;
 } // namespace Model
 
   class LambdaClient;
@@ -220,12 +239,14 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::DeleteEventSourceMappingRequest&, const Model::DeleteEventSourceMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEventSourceMappingResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteFunctionRequest&, const Model::DeleteFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteFunctionConcurrencyRequest&, const Model::DeleteFunctionConcurrencyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionConcurrencyResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::DeleteFunctionEventInvokeConfigRequest&, const Model::DeleteFunctionEventInvokeConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionEventInvokeConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::DeleteLayerVersionRequest&, const Model::DeleteLayerVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLayerVersionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetAliasRequest&, const Model::GetAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAliasResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetEventSourceMappingRequest&, const Model::GetEventSourceMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEventSourceMappingResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionRequest&, const Model::GetFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetFunctionConfigurationRequest&, const Model::GetFunctionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionConfigurationResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::GetFunctionEventInvokeConfigRequest&, const Model::GetFunctionEventInvokeConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionEventInvokeConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionRequest&, const Model::GetLayerVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionByArnRequest&, const Model::GetLayerVersionByArnOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionByArnResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetLayerVersionPolicyRequest&, const Model::GetLayerVersionPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLayerVersionPolicyResponseReceivedHandler;
@@ -233,6 +254,7 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::InvokeRequest&, Model::InvokeOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAliasesResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListEventSourceMappingsRequest&, const Model::ListEventSourceMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventSourceMappingsResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::ListFunctionEventInvokeConfigsRequest&, const Model::ListFunctionEventInvokeConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFunctionEventInvokeConfigsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListFunctionsRequest&, const Model::ListFunctionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFunctionsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListLayerVersionsRequest&, const Model::ListLayerVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLayerVersionsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListLayersRequest&, const Model::ListLayersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLayersResponseReceivedHandler;
@@ -241,6 +263,7 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::PublishLayerVersionRequest&, const Model::PublishLayerVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishLayerVersionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::PublishVersionRequest&, const Model::PublishVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PublishVersionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::PutFunctionConcurrencyRequest&, const Model::PutFunctionConcurrencyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFunctionConcurrencyResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::PutFunctionEventInvokeConfigRequest&, const Model::PutFunctionEventInvokeConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFunctionEventInvokeConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::RemoveLayerVersionPermissionRequest&, const Model::RemoveLayerVersionPermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveLayerVersionPermissionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::RemovePermissionRequest&, const Model::RemovePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemovePermissionResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -249,6 +272,7 @@ namespace Model
     typedef std::function<void(const LambdaClient*, const Model::UpdateEventSourceMappingRequest&, const Model::UpdateEventSourceMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEventSourceMappingResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::UpdateFunctionCodeRequest&, const Model::UpdateFunctionCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionCodeResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::UpdateFunctionConfigurationRequest&, const Model::UpdateFunctionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionConfigurationResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::UpdateFunctionEventInvokeConfigRequest&, const Model::UpdateFunctionEventInvokeConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionEventInvokeConfigResponseReceivedHandler;
 
   /**
    * <fullname>AWS Lambda</fullname> <p> <b>Overview</b> </p> <p>This is the <i>AWS
@@ -344,7 +368,7 @@ namespace Model
          * <code>SourceAccount</code>. If you grant permission to a service principal
          * without specifying the source, other accounts could potentially configure
          * resources in their account to invoke your Lambda function.</p> <p>This action
-         * adds a statement to a resource-based permission policy for the function. For
+         * adds a statement to a resource-based permissions policy for the function. For
          * more information about function policies, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
          * Function Policies</a>. </p><p><h3>See Also:</h3>   <a
@@ -366,7 +390,7 @@ namespace Model
          * <code>SourceAccount</code>. If you grant permission to a service principal
          * without specifying the source, other accounts could potentially configure
          * resources in their account to invoke your Lambda function.</p> <p>This action
-         * adds a statement to a resource-based permission policy for the function. For
+         * adds a statement to a resource-based permissions policy for the function. For
          * more information about function policies, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
          * Function Policies</a>. </p><p><h3>See Also:</h3>   <a
@@ -390,7 +414,7 @@ namespace Model
          * <code>SourceAccount</code>. If you grant permission to a service principal
          * without specifying the source, other accounts could potentially configure
          * resources in their account to invoke your Lambda function.</p> <p>This action
-         * adds a statement to a resource-based permission policy for the function. For
+         * adds a statement to a resource-based permissions policy for the function. For
          * more information about function policies, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda
          * Function Policies</a>. </p><p><h3>See Also:</h3>   <a
@@ -451,12 +475,20 @@ namespace Model
          * <p>Creates a mapping between an event source and an AWS Lambda function. Lambda
          * reads items from the event source and triggers the function.</p> <p>For details
          * about each event source type, see the following topics.</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS
+         * Lambda with Amazon DynamoDB</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
          * Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS
-         * Lambda with Amazon SQS</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS
-         * Lambda with Amazon DynamoDB</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Lambda with Amazon SQS</a> </p> </li> </ul> <p>The following error handling
+         * options are only available for stream sources (DynamoDB and Kinesis):</p> <ul>
+         * <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an
+         * error, split the batch in two and retry.</p> </li> <li> <p>
+         * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
+         * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
+         * Discard records older than the specified age.</p> </li> <li> <p>
+         * <code>MaximumRetryAttempts</code> - Discard records after the specified number
+         * of retries.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
          * API Reference</a></p>
          */
@@ -466,12 +498,20 @@ namespace Model
          * <p>Creates a mapping between an event source and an AWS Lambda function. Lambda
          * reads items from the event source and triggers the function.</p> <p>For details
          * about each event source type, see the following topics.</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS
+         * Lambda with Amazon DynamoDB</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
          * Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS
-         * Lambda with Amazon SQS</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS
-         * Lambda with Amazon DynamoDB</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Lambda with Amazon SQS</a> </p> </li> </ul> <p>The following error handling
+         * options are only available for stream sources (DynamoDB and Kinesis):</p> <ul>
+         * <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an
+         * error, split the batch in two and retry.</p> </li> <li> <p>
+         * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
+         * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
+         * Discard records older than the specified age.</p> </li> <li> <p>
+         * <code>MaximumRetryAttempts</code> - Discard records after the specified number
+         * of retries.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
          * API Reference</a></p>
          *
@@ -483,12 +523,20 @@ namespace Model
          * <p>Creates a mapping between an event source and an AWS Lambda function. Lambda
          * reads items from the event source and triggers the function.</p> <p>For details
          * about each event source type, see the following topics.</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS
+         * Lambda with Amazon DynamoDB</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS
          * Lambda with Amazon Kinesis</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS
-         * Lambda with Amazon SQS</a> </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS
-         * Lambda with Amazon DynamoDB</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Lambda with Amazon SQS</a> </p> </li> </ul> <p>The following error handling
+         * options are only available for stream sources (DynamoDB and Kinesis):</p> <ul>
+         * <li> <p> <code>BisectBatchOnFunctionError</code> - If the function returns an
+         * error, split the batch in two and retry.</p> </li> <li> <p>
+         * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
+         * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
+         * Discard records older than the specified age.</p> </li> <li> <p>
+         * <code>MaximumRetryAttempts</code> - Discard records after the specified number
+         * of retries.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
          * API Reference</a></p>
          *
@@ -503,26 +551,33 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
          * role</a>. The deployment package contains your function code. The execution role
          * grants the function permission to use AWS services, such as Amazon CloudWatch
-         * Logs for log streaming and AWS X-Ray for request tracing.</p> <p>A function has
-         * an unpublished version, and can have published versions and aliases. The
-         * unpublished version changes when you update your function's code and
-         * configuration. A published version is a snapshot of your function code and
-         * configuration that can't be changed. An alias is a named resource that maps to a
-         * version, and can be changed to map to a different version. Use the
-         * <code>Publish</code> parameter to create version <code>1</code> of your function
-         * from its initial configuration.</p> <p>The other parameters let you configure
-         * version-specific and function-level settings. You can modify version-specific
-         * settings later with <a>UpdateFunctionConfiguration</a>. Function-level settings
-         * apply to both the unpublished and published versions of the function, and
-         * include tags (<a>TagResource</a>) and per-function concurrency limits
-         * (<a>PutFunctionConcurrency</a>).</p> <p>If another account or an AWS service
-         * invokes your function, use <a>AddPermission</a> to grant permission by creating
-         * a resource-based IAM policy. You can grant permissions at the function level, on
-         * a version, or on an alias.</p> <p>To invoke your function directly, use
-         * <a>Invoke</a>. To invoke your function in response to events in other AWS
+         * Logs for log streaming and AWS X-Ray for request tracing.</p> <p>When you create
+         * a function, Lambda provisions an instance of the function and its supporting
+         * resources. If your function connects to a VPC, this process can take a minute or
+         * so. During this time, you can't invoke or modify the function. The
+         * <code>State</code>, <code>StateReason</code>, and <code>StateReasonCode</code>
+         * fields in the response from <a>GetFunctionConfiguration</a> indicate when the
+         * function is ready to invoke. For more information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
+         * States</a>.</p> <p>A function has an unpublished version, and can have published
+         * versions and aliases. The unpublished version changes when you update your
+         * function's code and configuration. A published version is a snapshot of your
+         * function code and configuration that can't be changed. An alias is a named
+         * resource that maps to a version, and can be changed to map to a different
+         * version. Use the <code>Publish</code> parameter to create version <code>1</code>
+         * of your function from its initial configuration.</p> <p>The other parameters let
+         * you configure version-specific and function-level settings. You can modify
+         * version-specific settings later with <a>UpdateFunctionConfiguration</a>.
+         * Function-level settings apply to both the unpublished and published versions of
+         * the function, and include tags (<a>TagResource</a>) and per-function concurrency
+         * limits (<a>PutFunctionConcurrency</a>).</p> <p>If another account or an AWS
+         * service invokes your function, use <a>AddPermission</a> to grant permission by
+         * creating a resource-based IAM policy. You can grant permissions at the function
+         * level, on a version, or on an alias.</p> <p>To invoke your function directly,
+         * use <a>Invoke</a>. To invoke your function in response to events in other AWS
          * services, create an event source mapping (<a>CreateEventSourceMapping</a>), or
          * configure a function trigger in the other service. For more information, see <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/invoking-lambda-functions.html">Invoking
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
          * Functions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
          * API Reference</a></p>
@@ -536,26 +591,33 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
          * role</a>. The deployment package contains your function code. The execution role
          * grants the function permission to use AWS services, such as Amazon CloudWatch
-         * Logs for log streaming and AWS X-Ray for request tracing.</p> <p>A function has
-         * an unpublished version, and can have published versions and aliases. The
-         * unpublished version changes when you update your function's code and
-         * configuration. A published version is a snapshot of your function code and
-         * configuration that can't be changed. An alias is a named resource that maps to a
-         * version, and can be changed to map to a different version. Use the
-         * <code>Publish</code> parameter to create version <code>1</code> of your function
-         * from its initial configuration.</p> <p>The other parameters let you configure
-         * version-specific and function-level settings. You can modify version-specific
-         * settings later with <a>UpdateFunctionConfiguration</a>. Function-level settings
-         * apply to both the unpublished and published versions of the function, and
-         * include tags (<a>TagResource</a>) and per-function concurrency limits
-         * (<a>PutFunctionConcurrency</a>).</p> <p>If another account or an AWS service
-         * invokes your function, use <a>AddPermission</a> to grant permission by creating
-         * a resource-based IAM policy. You can grant permissions at the function level, on
-         * a version, or on an alias.</p> <p>To invoke your function directly, use
-         * <a>Invoke</a>. To invoke your function in response to events in other AWS
+         * Logs for log streaming and AWS X-Ray for request tracing.</p> <p>When you create
+         * a function, Lambda provisions an instance of the function and its supporting
+         * resources. If your function connects to a VPC, this process can take a minute or
+         * so. During this time, you can't invoke or modify the function. The
+         * <code>State</code>, <code>StateReason</code>, and <code>StateReasonCode</code>
+         * fields in the response from <a>GetFunctionConfiguration</a> indicate when the
+         * function is ready to invoke. For more information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
+         * States</a>.</p> <p>A function has an unpublished version, and can have published
+         * versions and aliases. The unpublished version changes when you update your
+         * function's code and configuration. A published version is a snapshot of your
+         * function code and configuration that can't be changed. An alias is a named
+         * resource that maps to a version, and can be changed to map to a different
+         * version. Use the <code>Publish</code> parameter to create version <code>1</code>
+         * of your function from its initial configuration.</p> <p>The other parameters let
+         * you configure version-specific and function-level settings. You can modify
+         * version-specific settings later with <a>UpdateFunctionConfiguration</a>.
+         * Function-level settings apply to both the unpublished and published versions of
+         * the function, and include tags (<a>TagResource</a>) and per-function concurrency
+         * limits (<a>PutFunctionConcurrency</a>).</p> <p>If another account or an AWS
+         * service invokes your function, use <a>AddPermission</a> to grant permission by
+         * creating a resource-based IAM policy. You can grant permissions at the function
+         * level, on a version, or on an alias.</p> <p>To invoke your function directly,
+         * use <a>Invoke</a>. To invoke your function in response to events in other AWS
          * services, create an event source mapping (<a>CreateEventSourceMapping</a>), or
          * configure a function trigger in the other service. For more information, see <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/invoking-lambda-functions.html">Invoking
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
          * Functions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
          * API Reference</a></p>
@@ -571,26 +633,33 @@ namespace Model
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution
          * role</a>. The deployment package contains your function code. The execution role
          * grants the function permission to use AWS services, such as Amazon CloudWatch
-         * Logs for log streaming and AWS X-Ray for request tracing.</p> <p>A function has
-         * an unpublished version, and can have published versions and aliases. The
-         * unpublished version changes when you update your function's code and
-         * configuration. A published version is a snapshot of your function code and
-         * configuration that can't be changed. An alias is a named resource that maps to a
-         * version, and can be changed to map to a different version. Use the
-         * <code>Publish</code> parameter to create version <code>1</code> of your function
-         * from its initial configuration.</p> <p>The other parameters let you configure
-         * version-specific and function-level settings. You can modify version-specific
-         * settings later with <a>UpdateFunctionConfiguration</a>. Function-level settings
-         * apply to both the unpublished and published versions of the function, and
-         * include tags (<a>TagResource</a>) and per-function concurrency limits
-         * (<a>PutFunctionConcurrency</a>).</p> <p>If another account or an AWS service
-         * invokes your function, use <a>AddPermission</a> to grant permission by creating
-         * a resource-based IAM policy. You can grant permissions at the function level, on
-         * a version, or on an alias.</p> <p>To invoke your function directly, use
-         * <a>Invoke</a>. To invoke your function in response to events in other AWS
+         * Logs for log streaming and AWS X-Ray for request tracing.</p> <p>When you create
+         * a function, Lambda provisions an instance of the function and its supporting
+         * resources. If your function connects to a VPC, this process can take a minute or
+         * so. During this time, you can't invoke or modify the function. The
+         * <code>State</code>, <code>StateReason</code>, and <code>StateReasonCode</code>
+         * fields in the response from <a>GetFunctionConfiguration</a> indicate when the
+         * function is ready to invoke. For more information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
+         * States</a>.</p> <p>A function has an unpublished version, and can have published
+         * versions and aliases. The unpublished version changes when you update your
+         * function's code and configuration. A published version is a snapshot of your
+         * function code and configuration that can't be changed. An alias is a named
+         * resource that maps to a version, and can be changed to map to a different
+         * version. Use the <code>Publish</code> parameter to create version <code>1</code>
+         * of your function from its initial configuration.</p> <p>The other parameters let
+         * you configure version-specific and function-level settings. You can modify
+         * version-specific settings later with <a>UpdateFunctionConfiguration</a>.
+         * Function-level settings apply to both the unpublished and published versions of
+         * the function, and include tags (<a>TagResource</a>) and per-function concurrency
+         * limits (<a>PutFunctionConcurrency</a>).</p> <p>If another account or an AWS
+         * service invokes your function, use <a>AddPermission</a> to grant permission by
+         * creating a resource-based IAM policy. You can grant permissions at the function
+         * level, on a version, or on an alias.</p> <p>To invoke your function directly,
+         * use <a>Invoke</a>. To invoke your function in response to events in other AWS
          * services, create an event source mapping (<a>CreateEventSourceMapping</a>), or
          * configure a function trigger in the other service. For more information, see <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/invoking-lambda-functions.html">Invoking
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking
          * Functions</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction">AWS
          * API Reference</a></p>
@@ -634,7 +703,9 @@ namespace Model
          * <p>Deletes an <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event
          * source mapping</a>. You can get the identifier of a mapping from the output of
-         * <a>ListEventSourceMappings</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>ListEventSourceMappings</a>.</p> <p>When you delete an event source mapping,
+         * it enters a <code>Deleting</code> state and might not be completely deleted for
+         * several seconds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">AWS
          * API Reference</a></p>
          */
@@ -644,7 +715,9 @@ namespace Model
          * <p>Deletes an <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event
          * source mapping</a>. You can get the identifier of a mapping from the output of
-         * <a>ListEventSourceMappings</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>ListEventSourceMappings</a>.</p> <p>When you delete an event source mapping,
+         * it enters a <code>Deleting</code> state and might not be completely deleted for
+         * several seconds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">AWS
          * API Reference</a></p>
          *
@@ -656,7 +729,9 @@ namespace Model
          * <p>Deletes an <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event
          * source mapping</a>. You can get the identifier of a mapping from the output of
-         * <a>ListEventSourceMappings</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>ListEventSourceMappings</a>.</p> <p>When you delete an event source mapping,
+         * it enters a <code>Deleting</code> state and might not be completely deleted for
+         * several seconds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping">AWS
          * API Reference</a></p>
          *
@@ -731,6 +806,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteFunctionConcurrencyAsync(const Model::DeleteFunctionConcurrencyRequest& request, const DeleteFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the configuration for asynchronous invocation for a function,
+         * version, or alias.</p> <p>To configure options for asynchronous invocation, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionEventInvokeConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFunctionEventInvokeConfigOutcome DeleteFunctionEventInvokeConfig(const Model::DeleteFunctionEventInvokeConfigRequest& request) const;
+
+        /**
+         * <p>Deletes the configuration for asynchronous invocation for a function,
+         * version, or alias.</p> <p>To configure options for asynchronous invocation, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionEventInvokeConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFunctionEventInvokeConfigOutcomeCallable DeleteFunctionEventInvokeConfigCallable(const Model::DeleteFunctionEventInvokeConfigRequest& request) const;
+
+        /**
+         * <p>Deletes the configuration for asynchronous invocation for a function,
+         * version, or alias.</p> <p>To configure options for asynchronous invocation, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionEventInvokeConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFunctionEventInvokeConfigAsync(const Model::DeleteFunctionEventInvokeConfigRequest& request, const DeleteFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a version of an <a
@@ -934,6 +1040,37 @@ namespace Model
         virtual void GetFunctionConfigurationAsync(const Model::GetFunctionConfigurationRequest& request, const GetFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the configuration for asynchronous invocation for a function,
+         * version, or alias.</p> <p>To configure options for asynchronous invocation, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionEventInvokeConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFunctionEventInvokeConfigOutcome GetFunctionEventInvokeConfig(const Model::GetFunctionEventInvokeConfigRequest& request) const;
+
+        /**
+         * <p>Retrieves the configuration for asynchronous invocation for a function,
+         * version, or alias.</p> <p>To configure options for asynchronous invocation, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionEventInvokeConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetFunctionEventInvokeConfigOutcomeCallable GetFunctionEventInvokeConfigCallable(const Model::GetFunctionEventInvokeConfigRequest& request) const;
+
+        /**
+         * <p>Retrieves the configuration for asynchronous invocation for a function,
+         * version, or alias.</p> <p>To configure options for asynchronous invocation, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionEventInvokeConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetFunctionEventInvokeConfigAsync(const Model::GetFunctionEventInvokeConfigRequest& request, const GetFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about a version of an <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
          * Lambda layer</a>, with a link to download the layer archive that's valid for 10
@@ -1069,24 +1206,30 @@ namespace Model
         /**
          * <p>Invokes a Lambda function. You can invoke a function synchronously (and wait
          * for the response), or asynchronously. To invoke a function asynchronously, set
-         * <code>InvocationType</code> to <code>Event</code>.</p> <p>For synchronous
-         * invocation, details about the function response, including errors, are included
-         * in the response body and headers. For either invocation type, you can find more
-         * information in the <a
+         * <code>InvocationType</code> to <code>Event</code>.</p> <p>For <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous
+         * invocation</a>, details about the function response, including errors, are
+         * included in the response body and headers. For either invocation type, you can
+         * find more information in the <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution
          * log</a> and <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>. To
-         * record function errors for asynchronous invocations, configure your function
-         * with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead
-         * letter queue</a>.</p> <p>When an error occurs, your function may be invoked
-         * multiple times. Retry behavior varies by error type, client, event source, and
-         * invocation type. For example, if you invoke a function asynchronously and it
-         * returns an error, Lambda executes the function up to two more times. For more
-         * information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html">trace</a>.</p>
+         * <p>When an error occurs, your function may be invoked multiple times. Retry
+         * behavior varies by error type, client, event source, and invocation type. For
+         * example, if you invoke a function asynchronously and it returns an error, Lambda
+         * executes the function up to two more times. For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry
-         * Behavior</a>.</p> <p>The status code in the API response doesn't reflect
-         * function errors. Error codes are reserved for errors that prevent your function
-         * from executing, such as permissions errors, <a
+         * Behavior</a>.</p> <p>For <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
+         * invocation</a>, Lambda adds events to a queue before sending them to your
+         * function. If your function does not have enough capacity to keep up with the
+         * queue, events may be lost. Occasionally, your function may receive the same
+         * event multiple times, even if no error occurs. To retain events that were not
+         * processed, configure your function with a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter
+         * queue</a>.</p> <p>The status code in the API response doesn't reflect function
+         * errors. Error codes are reserved for errors that prevent your function from
+         * executing, such as permissions errors, <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit
          * errors</a>, or issues with your function's code and configuration. For example,
          * Lambda returns <code>TooManyRequestsException</code> if executing the function
@@ -1106,24 +1249,30 @@ namespace Model
         /**
          * <p>Invokes a Lambda function. You can invoke a function synchronously (and wait
          * for the response), or asynchronously. To invoke a function asynchronously, set
-         * <code>InvocationType</code> to <code>Event</code>.</p> <p>For synchronous
-         * invocation, details about the function response, including errors, are included
-         * in the response body and headers. For either invocation type, you can find more
-         * information in the <a
+         * <code>InvocationType</code> to <code>Event</code>.</p> <p>For <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous
+         * invocation</a>, details about the function response, including errors, are
+         * included in the response body and headers. For either invocation type, you can
+         * find more information in the <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution
          * log</a> and <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>. To
-         * record function errors for asynchronous invocations, configure your function
-         * with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead
-         * letter queue</a>.</p> <p>When an error occurs, your function may be invoked
-         * multiple times. Retry behavior varies by error type, client, event source, and
-         * invocation type. For example, if you invoke a function asynchronously and it
-         * returns an error, Lambda executes the function up to two more times. For more
-         * information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html">trace</a>.</p>
+         * <p>When an error occurs, your function may be invoked multiple times. Retry
+         * behavior varies by error type, client, event source, and invocation type. For
+         * example, if you invoke a function asynchronously and it returns an error, Lambda
+         * executes the function up to two more times. For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry
-         * Behavior</a>.</p> <p>The status code in the API response doesn't reflect
-         * function errors. Error codes are reserved for errors that prevent your function
-         * from executing, such as permissions errors, <a
+         * Behavior</a>.</p> <p>For <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
+         * invocation</a>, Lambda adds events to a queue before sending them to your
+         * function. If your function does not have enough capacity to keep up with the
+         * queue, events may be lost. Occasionally, your function may receive the same
+         * event multiple times, even if no error occurs. To retain events that were not
+         * processed, configure your function with a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter
+         * queue</a>.</p> <p>The status code in the API response doesn't reflect function
+         * errors. Error codes are reserved for errors that prevent your function from
+         * executing, such as permissions errors, <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit
          * errors</a>, or issues with your function's code and configuration. For example,
          * Lambda returns <code>TooManyRequestsException</code> if executing the function
@@ -1145,24 +1294,30 @@ namespace Model
         /**
          * <p>Invokes a Lambda function. You can invoke a function synchronously (and wait
          * for the response), or asynchronously. To invoke a function asynchronously, set
-         * <code>InvocationType</code> to <code>Event</code>.</p> <p>For synchronous
-         * invocation, details about the function response, including errors, are included
-         * in the response body and headers. For either invocation type, you can find more
-         * information in the <a
+         * <code>InvocationType</code> to <code>Event</code>.</p> <p>For <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous
+         * invocation</a>, details about the function response, including errors, are
+         * included in the response body and headers. For either invocation type, you can
+         * find more information in the <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution
          * log</a> and <a
-         * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">trace</a>. To
-         * record function errors for asynchronous invocations, configure your function
-         * with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">dead
-         * letter queue</a>.</p> <p>When an error occurs, your function may be invoked
-         * multiple times. Retry behavior varies by error type, client, event source, and
-         * invocation type. For example, if you invoke a function asynchronously and it
-         * returns an error, Lambda executes the function up to two more times. For more
-         * information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html">trace</a>.</p>
+         * <p>When an error occurs, your function may be invoked multiple times. Retry
+         * behavior varies by error type, client, event source, and invocation type. For
+         * example, if you invoke a function asynchronously and it returns an error, Lambda
+         * executes the function up to two more times. For more information, see <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry
-         * Behavior</a>.</p> <p>The status code in the API response doesn't reflect
-         * function errors. Error codes are reserved for errors that prevent your function
-         * from executing, such as permissions errors, <a
+         * Behavior</a>.</p> <p>For <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
+         * invocation</a>, Lambda adds events to a queue before sending them to your
+         * function. If your function does not have enough capacity to keep up with the
+         * queue, events may be lost. Occasionally, your function may receive the same
+         * event multiple times, even if no error occurs. To retain events that were not
+         * processed, configure your function with a <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter
+         * queue</a>.</p> <p>The status code in the API response doesn't reflect function
+         * errors. Error codes are reserved for errors that prevent your function from
+         * executing, such as permissions errors, <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit
          * errors</a>, or issues with your function's code and configuration. For example,
          * Lambda returns <code>TooManyRequestsException</code> if executing the function
@@ -1242,6 +1397,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEventSourceMappingsAsync(const Model::ListEventSourceMappingsRequest& request, const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a list of configurations for asynchronous invocation for a
+         * function.</p> <p>To configure options for asynchronous invocation, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionEventInvokeConfigs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFunctionEventInvokeConfigsOutcome ListFunctionEventInvokeConfigs(const Model::ListFunctionEventInvokeConfigsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of configurations for asynchronous invocation for a
+         * function.</p> <p>To configure options for asynchronous invocation, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionEventInvokeConfigs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFunctionEventInvokeConfigsOutcomeCallable ListFunctionEventInvokeConfigsCallable(const Model::ListFunctionEventInvokeConfigsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of configurations for asynchronous invocation for a
+         * function.</p> <p>To configure options for asynchronous invocation, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionEventInvokeConfigs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFunctionEventInvokeConfigsAsync(const Model::ListFunctionEventInvokeConfigsRequest& request, const ListFunctionEventInvokeConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns a list of Lambda functions, with the version-specific configuration
@@ -1429,7 +1615,7 @@ namespace Model
          * <p>Creates an <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
          * Lambda layer</a> from a ZIP archive. Each time you call
-         * <code>PublishLayerVersion</code> with the same version name, a new version is
+         * <code>PublishLayerVersion</code> with the same layer name, a new version is
          * created.</p> <p>Add layers to your function with <a>CreateFunction</a> or
          * <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">AWS
@@ -1441,7 +1627,7 @@ namespace Model
          * <p>Creates an <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
          * Lambda layer</a> from a ZIP archive. Each time you call
-         * <code>PublishLayerVersion</code> with the same version name, a new version is
+         * <code>PublishLayerVersion</code> with the same layer name, a new version is
          * created.</p> <p>Add layers to your function with <a>CreateFunction</a> or
          * <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">AWS
@@ -1455,7 +1641,7 @@ namespace Model
          * <p>Creates an <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS
          * Lambda layer</a> from a ZIP archive. Each time you call
-         * <code>PublishLayerVersion</code> with the same version name, a new version is
+         * <code>PublishLayerVersion</code> with the same layer name, a new version is
          * created.</p> <p>Add layers to your function with <a>CreateFunction</a> or
          * <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion">AWS
@@ -1574,6 +1760,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutFunctionConcurrencyAsync(const Model::PutFunctionConcurrencyRequest& request, const PutFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Configures options for <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
+         * invocation</a> on a function, version, or alias.</p> <p>By default, Lambda
+         * retries an asynchronous invocation twice if the function returns an error. It
+         * retains events in a queue for up to six hours. When an event fails all
+         * processing attempts or stays in the asynchronous invocation queue for too long,
+         * Lambda discards it. To retain discarded events, configure a dead-letter queue
+         * with <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutFunctionEventInvokeConfigOutcome PutFunctionEventInvokeConfig(const Model::PutFunctionEventInvokeConfigRequest& request) const;
+
+        /**
+         * <p>Configures options for <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
+         * invocation</a> on a function, version, or alias.</p> <p>By default, Lambda
+         * retries an asynchronous invocation twice if the function returns an error. It
+         * retains events in a queue for up to six hours. When an event fails all
+         * processing attempts or stays in the asynchronous invocation queue for too long,
+         * Lambda discards it. To retain discarded events, configure a dead-letter queue
+         * with <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutFunctionEventInvokeConfigOutcomeCallable PutFunctionEventInvokeConfigCallable(const Model::PutFunctionEventInvokeConfigRequest& request) const;
+
+        /**
+         * <p>Configures options for <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
+         * invocation</a> on a function, version, or alias.</p> <p>By default, Lambda
+         * retries an asynchronous invocation twice if the function returns an error. It
+         * retains events in a queue for up to six hours. When an event fails all
+         * processing attempts or stays in the asynchronous invocation queue for too long,
+         * Lambda discards it. To retain discarded events, configure a dead-letter queue
+         * with <a>UpdateFunctionConfiguration</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionEventInvokeConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutFunctionEventInvokeConfigAsync(const Model::PutFunctionEventInvokeConfigRequest& request, const PutFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Removes a statement from the permissions policy for a version of an <a
@@ -1735,8 +1967,15 @@ namespace Model
 
         /**
          * <p>Updates an event source mapping. You can change the function that AWS Lambda
-         * invokes, or pause invocation and resume later from the same
-         * location.</p><p><h3>See Also:</h3>   <a
+         * invokes, or pause invocation and resume later from the same location.</p> <p>The
+         * following error handling options are only available for stream sources (DynamoDB
+         * and Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
+         * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
+         * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
+         * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
+         * Discard records older than the specified age.</p> </li> <li> <p>
+         * <code>MaximumRetryAttempts</code> - Discard records after the specified number
+         * of retries.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
          * API Reference</a></p>
          */
@@ -1744,8 +1983,15 @@ namespace Model
 
         /**
          * <p>Updates an event source mapping. You can change the function that AWS Lambda
-         * invokes, or pause invocation and resume later from the same
-         * location.</p><p><h3>See Also:</h3>   <a
+         * invokes, or pause invocation and resume later from the same location.</p> <p>The
+         * following error handling options are only available for stream sources (DynamoDB
+         * and Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
+         * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
+         * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
+         * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
+         * Discard records older than the specified age.</p> </li> <li> <p>
+         * <code>MaximumRetryAttempts</code> - Discard records after the specified number
+         * of retries.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
          * API Reference</a></p>
          *
@@ -1755,8 +2001,15 @@ namespace Model
 
         /**
          * <p>Updates an event source mapping. You can change the function that AWS Lambda
-         * invokes, or pause invocation and resume later from the same
-         * location.</p><p><h3>See Also:</h3>   <a
+         * invokes, or pause invocation and resume later from the same location.</p> <p>The
+         * following error handling options are only available for stream sources (DynamoDB
+         * and Kinesis):</p> <ul> <li> <p> <code>BisectBatchOnFunctionError</code> - If the
+         * function returns an error, split the batch in two and retry.</p> </li> <li> <p>
+         * <code>DestinationConfig</code> - Send discarded records to an Amazon SQS queue
+         * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
+         * Discard records older than the specified age.</p> </li> <li> <p>
+         * <code>MaximumRetryAttempts</code> - Discard records after the specified number
+         * of retries.</p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
          * API Reference</a></p>
          *
@@ -1796,24 +2049,44 @@ namespace Model
         virtual void UpdateFunctionCodeAsync(const Model::UpdateFunctionCodeRequest& request, const UpdateFunctionCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modify the version-specific settings of a Lambda function.</p> <p>These
-         * settings can vary between versions of a function and are locked when you publish
-         * a version. You can't modify the configuration of a published version, only the
-         * unpublished version.</p> <p>To configure function concurrency, use
-         * <a>PutFunctionConcurrency</a>. To grant invoke permissions to an account or AWS
-         * service, use <a>AddPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Modify the version-specific settings of a Lambda function.</p> <p>When you
+         * update a function, Lambda provisions an instance of the function and its
+         * supporting resources. If your function connects to a VPC, this process can take
+         * a minute. During this time, you can't modify the function, but you can still
+         * invoke it. The <code>LastUpdateStatus</code>,
+         * <code>LastUpdateStatusReason</code>, and <code>LastUpdateStatusReasonCode</code>
+         * fields in the response from <a>GetFunctionConfiguration</a> indicate when the
+         * update is complete and the function is processing events with the new
+         * configuration. For more information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
+         * States</a>.</p> <p>These settings can vary between versions of a function and
+         * are locked when you publish a version. You can't modify the configuration of a
+         * published version, only the unpublished version.</p> <p>To configure function
+         * concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to
+         * an account or AWS service, use <a>AddPermission</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateFunctionConfigurationOutcome UpdateFunctionConfiguration(const Model::UpdateFunctionConfigurationRequest& request) const;
 
         /**
-         * <p>Modify the version-specific settings of a Lambda function.</p> <p>These
-         * settings can vary between versions of a function and are locked when you publish
-         * a version. You can't modify the configuration of a published version, only the
-         * unpublished version.</p> <p>To configure function concurrency, use
-         * <a>PutFunctionConcurrency</a>. To grant invoke permissions to an account or AWS
-         * service, use <a>AddPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Modify the version-specific settings of a Lambda function.</p> <p>When you
+         * update a function, Lambda provisions an instance of the function and its
+         * supporting resources. If your function connects to a VPC, this process can take
+         * a minute. During this time, you can't modify the function, but you can still
+         * invoke it. The <code>LastUpdateStatus</code>,
+         * <code>LastUpdateStatusReason</code>, and <code>LastUpdateStatusReasonCode</code>
+         * fields in the response from <a>GetFunctionConfiguration</a> indicate when the
+         * update is complete and the function is processing events with the new
+         * configuration. For more information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
+         * States</a>.</p> <p>These settings can vary between versions of a function and
+         * are locked when you publish a version. You can't modify the configuration of a
+         * published version, only the unpublished version.</p> <p>To configure function
+         * concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to
+         * an account or AWS service, use <a>AddPermission</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS
          * API Reference</a></p>
          *
@@ -1822,18 +2095,59 @@ namespace Model
         virtual Model::UpdateFunctionConfigurationOutcomeCallable UpdateFunctionConfigurationCallable(const Model::UpdateFunctionConfigurationRequest& request) const;
 
         /**
-         * <p>Modify the version-specific settings of a Lambda function.</p> <p>These
-         * settings can vary between versions of a function and are locked when you publish
-         * a version. You can't modify the configuration of a published version, only the
-         * unpublished version.</p> <p>To configure function concurrency, use
-         * <a>PutFunctionConcurrency</a>. To grant invoke permissions to an account or AWS
-         * service, use <a>AddPermission</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Modify the version-specific settings of a Lambda function.</p> <p>When you
+         * update a function, Lambda provisions an instance of the function and its
+         * supporting resources. If your function connects to a VPC, this process can take
+         * a minute. During this time, you can't modify the function, but you can still
+         * invoke it. The <code>LastUpdateStatus</code>,
+         * <code>LastUpdateStatusReason</code>, and <code>LastUpdateStatusReasonCode</code>
+         * fields in the response from <a>GetFunctionConfiguration</a> indicate when the
+         * update is complete and the function is processing events with the new
+         * configuration. For more information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
+         * States</a>.</p> <p>These settings can vary between versions of a function and
+         * are locked when you publish a version. You can't modify the configuration of a
+         * published version, only the unpublished version.</p> <p>To configure function
+         * concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to
+         * an account or AWS service, use <a>AddPermission</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateFunctionConfigurationAsync(const Model::UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates the configuration for asynchronous invocation for a function,
+         * version, or alias.</p> <p>To configure options for asynchronous invocation, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionEventInvokeConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFunctionEventInvokeConfigOutcome UpdateFunctionEventInvokeConfig(const Model::UpdateFunctionEventInvokeConfigRequest& request) const;
+
+        /**
+         * <p>Updates the configuration for asynchronous invocation for a function,
+         * version, or alias.</p> <p>To configure options for asynchronous invocation, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionEventInvokeConfig">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFunctionEventInvokeConfigOutcomeCallable UpdateFunctionEventInvokeConfigCallable(const Model::UpdateFunctionEventInvokeConfigRequest& request) const;
+
+        /**
+         * <p>Updates the configuration for asynchronous invocation for a function,
+         * version, or alias.</p> <p>To configure options for asynchronous invocation, use
+         * <a>PutFunctionEventInvokeConfig</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionEventInvokeConfig">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFunctionEventInvokeConfigAsync(const Model::UpdateFunctionEventInvokeConfigRequest& request, const UpdateFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
 
       void OverrideEndpoint(const Aws::String& endpoint);
@@ -1848,12 +2162,14 @@ namespace Model
         void DeleteEventSourceMappingAsyncHelper(const Model::DeleteEventSourceMappingRequest& request, const DeleteEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFunctionAsyncHelper(const Model::DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFunctionConcurrencyAsyncHelper(const Model::DeleteFunctionConcurrencyRequest& request, const DeleteFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFunctionEventInvokeConfigAsyncHelper(const Model::DeleteFunctionEventInvokeConfigRequest& request, const DeleteFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLayerVersionAsyncHelper(const Model::DeleteLayerVersionRequest& request, const DeleteLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountSettingsAsyncHelper(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAliasAsyncHelper(const Model::GetAliasRequest& request, const GetAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEventSourceMappingAsyncHelper(const Model::GetEventSourceMappingRequest& request, const GetEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFunctionAsyncHelper(const Model::GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFunctionConfigurationAsyncHelper(const Model::GetFunctionConfigurationRequest& request, const GetFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFunctionEventInvokeConfigAsyncHelper(const Model::GetFunctionEventInvokeConfigRequest& request, const GetFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLayerVersionAsyncHelper(const Model::GetLayerVersionRequest& request, const GetLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLayerVersionByArnAsyncHelper(const Model::GetLayerVersionByArnRequest& request, const GetLayerVersionByArnResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetLayerVersionPolicyAsyncHelper(const Model::GetLayerVersionPolicyRequest& request, const GetLayerVersionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1861,6 +2177,7 @@ namespace Model
         void InvokeAsyncHelper(const Model::InvokeRequest& request, const InvokeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAliasesAsyncHelper(const Model::ListAliasesRequest& request, const ListAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEventSourceMappingsAsyncHelper(const Model::ListEventSourceMappingsRequest& request, const ListEventSourceMappingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFunctionEventInvokeConfigsAsyncHelper(const Model::ListFunctionEventInvokeConfigsRequest& request, const ListFunctionEventInvokeConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFunctionsAsyncHelper(const Model::ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLayerVersionsAsyncHelper(const Model::ListLayerVersionsRequest& request, const ListLayerVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLayersAsyncHelper(const Model::ListLayersRequest& request, const ListLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1869,6 +2186,7 @@ namespace Model
         void PublishLayerVersionAsyncHelper(const Model::PublishLayerVersionRequest& request, const PublishLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PublishVersionAsyncHelper(const Model::PublishVersionRequest& request, const PublishVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutFunctionConcurrencyAsyncHelper(const Model::PutFunctionConcurrencyRequest& request, const PutFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutFunctionEventInvokeConfigAsyncHelper(const Model::PutFunctionEventInvokeConfigRequest& request, const PutFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveLayerVersionPermissionAsyncHelper(const Model::RemoveLayerVersionPermissionRequest& request, const RemoveLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemovePermissionAsyncHelper(const Model::RemovePermissionRequest& request, const RemovePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1877,6 +2195,7 @@ namespace Model
         void UpdateEventSourceMappingAsyncHelper(const Model::UpdateEventSourceMappingRequest& request, const UpdateEventSourceMappingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFunctionCodeAsyncHelper(const Model::UpdateFunctionCodeRequest& request, const UpdateFunctionCodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFunctionConfigurationAsyncHelper(const Model::UpdateFunctionConfigurationRequest& request, const UpdateFunctionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFunctionEventInvokeConfigAsyncHelper(const Model::UpdateFunctionEventInvokeConfigRequest& request, const UpdateFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

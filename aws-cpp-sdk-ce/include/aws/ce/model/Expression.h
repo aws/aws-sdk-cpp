@@ -19,6 +19,7 @@
 #include <aws/ce/model/Expression.h>
 #include <aws/ce/model/DimensionValues.h>
 #include <aws/ce/model/TagValues.h>
+#include <aws/ce/model/CostCategoryValues.h>
 #include <utility>
 
 namespace Aws
@@ -252,6 +253,67 @@ namespace Model
      */
     inline Expression& WithTags(TagValues&& value) { SetTags(std::move(value)); return *this;}
 
+
+    /**
+     * <p> <i> <b>Cost Category is in preview release for AWS Billing and Cost
+     * Management and is subject to change. Your use of Cost Categories is subject to
+     * the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+     * 1.10).</b> </i> </p> <p>The specific <code>CostCategory</code> used for
+     * <code>Expression</code>.</p>
+     */
+    inline const CostCategoryValues& GetCostCategories() const{ return m_costCategories; }
+
+    /**
+     * <p> <i> <b>Cost Category is in preview release for AWS Billing and Cost
+     * Management and is subject to change. Your use of Cost Categories is subject to
+     * the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+     * 1.10).</b> </i> </p> <p>The specific <code>CostCategory</code> used for
+     * <code>Expression</code>.</p>
+     */
+    inline bool CostCategoriesHasBeenSet() const { return m_costCategoriesHasBeenSet; }
+
+    /**
+     * <p> <i> <b>Cost Category is in preview release for AWS Billing and Cost
+     * Management and is subject to change. Your use of Cost Categories is subject to
+     * the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+     * 1.10).</b> </i> </p> <p>The specific <code>CostCategory</code> used for
+     * <code>Expression</code>.</p>
+     */
+    inline void SetCostCategories(const CostCategoryValues& value) { m_costCategoriesHasBeenSet = true; m_costCategories = value; }
+
+    /**
+     * <p> <i> <b>Cost Category is in preview release for AWS Billing and Cost
+     * Management and is subject to change. Your use of Cost Categories is subject to
+     * the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+     * 1.10).</b> </i> </p> <p>The specific <code>CostCategory</code> used for
+     * <code>Expression</code>.</p>
+     */
+    inline void SetCostCategories(CostCategoryValues&& value) { m_costCategoriesHasBeenSet = true; m_costCategories = std::move(value); }
+
+    /**
+     * <p> <i> <b>Cost Category is in preview release for AWS Billing and Cost
+     * Management and is subject to change. Your use of Cost Categories is subject to
+     * the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+     * 1.10).</b> </i> </p> <p>The specific <code>CostCategory</code> used for
+     * <code>Expression</code>.</p>
+     */
+    inline Expression& WithCostCategories(const CostCategoryValues& value) { SetCostCategories(value); return *this;}
+
+    /**
+     * <p> <i> <b>Cost Category is in preview release for AWS Billing and Cost
+     * Management and is subject to change. Your use of Cost Categories is subject to
+     * the Beta Service Participation terms of the <a
+     * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
+     * 1.10).</b> </i> </p> <p>The specific <code>CostCategory</code> used for
+     * <code>Expression</code>.</p>
+     */
+    inline Expression& WithCostCategories(CostCategoryValues&& value) { SetCostCategories(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<Expression> m_or;
@@ -268,6 +330,9 @@ namespace Model
 
     TagValues m_tags;
     bool m_tagsHasBeenSet;
+
+    CostCategoryValues m_costCategories;
+    bool m_costCategoriesHasBeenSet;
   };
 
 } // namespace Model

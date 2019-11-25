@@ -29,12 +29,14 @@ namespace Model
 {
 
 RunConfiguration::RunConfiguration() : 
+    m_flinkRunConfigurationHasBeenSet(false),
     m_sqlRunConfigurationsHasBeenSet(false),
     m_applicationRestoreConfigurationHasBeenSet(false)
 {
 }
 
 RunConfiguration::RunConfiguration(JsonView jsonValue) : 
+    m_flinkRunConfigurationHasBeenSet(false),
     m_sqlRunConfigurationsHasBeenSet(false),
     m_applicationRestoreConfigurationHasBeenSet(false)
 {
@@ -43,6 +45,13 @@ RunConfiguration::RunConfiguration(JsonView jsonValue) :
 
 RunConfiguration& RunConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("FlinkRunConfiguration"))
+  {
+    m_flinkRunConfiguration = jsonValue.GetObject("FlinkRunConfiguration");
+
+    m_flinkRunConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SqlRunConfigurations"))
   {
     Array<JsonView> sqlRunConfigurationsJsonList = jsonValue.GetArray("SqlRunConfigurations");
@@ -66,6 +75,12 @@ RunConfiguration& RunConfiguration::operator =(JsonView jsonValue)
 JsonValue RunConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_flinkRunConfigurationHasBeenSet)
+  {
+   payload.WithObject("FlinkRunConfiguration", m_flinkRunConfiguration.Jsonize());
+
+  }
 
   if(m_sqlRunConfigurationsHasBeenSet)
   {

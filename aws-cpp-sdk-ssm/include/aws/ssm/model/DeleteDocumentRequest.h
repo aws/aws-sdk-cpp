@@ -182,6 +182,47 @@ namespace Model
      */
     inline DeleteDocumentRequest& WithVersionName(const char* value) { SetVersionName(value); return *this;}
 
+
+    /**
+     * <p>Some SSM document types require that you specify a <code>Force</code> flag
+     * before you can delete the document. For example, you must specify a
+     * <code>Force</code> flag to delete a document of type
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the
+     * <code>Force</code> flag in an AWS Identity and Access Management (IAM)
+     * policy.</p>
+     */
+    inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>Some SSM document types require that you specify a <code>Force</code> flag
+     * before you can delete the document. For example, you must specify a
+     * <code>Force</code> flag to delete a document of type
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the
+     * <code>Force</code> flag in an AWS Identity and Access Management (IAM)
+     * policy.</p>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
+
+    /**
+     * <p>Some SSM document types require that you specify a <code>Force</code> flag
+     * before you can delete the document. For example, you must specify a
+     * <code>Force</code> flag to delete a document of type
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the
+     * <code>Force</code> flag in an AWS Identity and Access Management (IAM)
+     * policy.</p>
+     */
+    inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
+
+    /**
+     * <p>Some SSM document types require that you specify a <code>Force</code> flag
+     * before you can delete the document. For example, you must specify a
+     * <code>Force</code> flag to delete a document of type
+     * <code>ApplicationConfigurationSchema</code>. You can restrict access to the
+     * <code>Force</code> flag in an AWS Identity and Access Management (IAM)
+     * policy.</p>
+     */
+    inline DeleteDocumentRequest& WithForce(bool value) { SetForce(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -192,6 +233,9 @@ namespace Model
 
     Aws::String m_versionName;
     bool m_versionNameHasBeenSet;
+
+    bool m_force;
+    bool m_forceHasBeenSet;
   };
 
 } // namespace Model

@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 DescribeNodeConfigurationOptionsRequest::DescribeNodeConfigurationOptionsRequest() : 
     m_actionType(ActionType::NOT_SET),
     m_actionTypeHasBeenSet(false),
+    m_clusterIdentifierHasBeenSet(false),
     m_snapshotIdentifierHasBeenSet(false),
     m_ownerAccountHasBeenSet(false),
     m_filtersHasBeenSet(false),
@@ -39,6 +40,11 @@ Aws::String DescribeNodeConfigurationOptionsRequest::SerializePayload() const
   if(m_actionTypeHasBeenSet)
   {
     ss << "ActionType=" << ActionTypeMapper::GetNameForActionType(m_actionType) << "&";
+  }
+
+  if(m_clusterIdentifierHasBeenSet)
+  {
+    ss << "ClusterIdentifier=" << StringUtils::URLEncode(m_clusterIdentifier.c_str()) << "&";
   }
 
   if(m_snapshotIdentifierHasBeenSet)

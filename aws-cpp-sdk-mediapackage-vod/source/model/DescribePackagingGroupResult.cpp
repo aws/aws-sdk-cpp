@@ -44,6 +44,12 @@ DescribePackagingGroupResult& DescribePackagingGroupResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("domainName"))
+  {
+    m_domainName = jsonValue.GetString("domainName");
+
+  }
+
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");

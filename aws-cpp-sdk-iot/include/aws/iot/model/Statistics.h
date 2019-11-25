@@ -68,101 +68,85 @@ namespace Model
 
 
     /**
-     * <p>The average of the aggregated fields. If the field data type is String this
-     * value is indeterminate.</p>
+     * <p>The average of the aggregated field values.</p>
      */
     inline double GetAverage() const{ return m_average; }
 
     /**
-     * <p>The average of the aggregated fields. If the field data type is String this
-     * value is indeterminate.</p>
+     * <p>The average of the aggregated field values.</p>
      */
     inline bool AverageHasBeenSet() const { return m_averageHasBeenSet; }
 
     /**
-     * <p>The average of the aggregated fields. If the field data type is String this
-     * value is indeterminate.</p>
+     * <p>The average of the aggregated field values.</p>
      */
     inline void SetAverage(double value) { m_averageHasBeenSet = true; m_average = value; }
 
     /**
-     * <p>The average of the aggregated fields. If the field data type is String this
-     * value is indeterminate.</p>
+     * <p>The average of the aggregated field values.</p>
      */
     inline Statistics& WithAverage(double value) { SetAverage(value); return *this;}
 
 
     /**
-     * <p>The sum of the aggregated fields. If the field data type is String this value
-     * is indeterminate.</p>
+     * <p>The sum of the aggregated field values.</p>
      */
     inline double GetSum() const{ return m_sum; }
 
     /**
-     * <p>The sum of the aggregated fields. If the field data type is String this value
-     * is indeterminate.</p>
+     * <p>The sum of the aggregated field values.</p>
      */
     inline bool SumHasBeenSet() const { return m_sumHasBeenSet; }
 
     /**
-     * <p>The sum of the aggregated fields. If the field data type is String this value
-     * is indeterminate.</p>
+     * <p>The sum of the aggregated field values.</p>
      */
     inline void SetSum(double value) { m_sumHasBeenSet = true; m_sum = value; }
 
     /**
-     * <p>The sum of the aggregated fields. If the field data type is String this value
-     * is indeterminate.</p>
+     * <p>The sum of the aggregated field values.</p>
      */
     inline Statistics& WithSum(double value) { SetSum(value); return *this;}
 
 
     /**
-     * <p>The minimum value of the aggregated fields. If the field data type is String
-     * this value is indeterminate.</p>
+     * <p>The minimum aggregated field value.</p>
      */
     inline double GetMinimum() const{ return m_minimum; }
 
     /**
-     * <p>The minimum value of the aggregated fields. If the field data type is String
-     * this value is indeterminate.</p>
+     * <p>The minimum aggregated field value.</p>
      */
     inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
 
     /**
-     * <p>The minimum value of the aggregated fields. If the field data type is String
-     * this value is indeterminate.</p>
+     * <p>The minimum aggregated field value.</p>
      */
     inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
 
     /**
-     * <p>The minimum value of the aggregated fields. If the field data type is String
-     * this value is indeterminate.</p>
+     * <p>The minimum aggregated field value.</p>
      */
     inline Statistics& WithMinimum(double value) { SetMinimum(value); return *this;}
 
 
     /**
-     * <p>The maximum value of the aggregated fields. If the field data type is String
-     * this value is indeterminate.</p>
+     * <p>The maximum aggregated field value.</p>
      */
     inline double GetMaximum() const{ return m_maximum; }
 
     /**
-     * <p>The maximum value of the aggregated fields. If the field data type is String
-     * this value is indeterminate.</p>
+     * <p>The maximum aggregated field value.</p>
      */
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
 
     /**
-     * <p>The maximum value of the aggregated fields. If the field data type is String
-     * this value is indeterminate.</p>
+     * <p>The maximum aggregated field value.</p>
      */
     inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
 
     /**
-     * <p>The maximum value of the aggregated fields. If the field data type is String
-     * this value is indeterminate.</p>
+     * <p>The maximum aggregated field value.</p>
      */
     inline Statistics& WithMaximum(double value) { SetMaximum(value); return *this;}
 

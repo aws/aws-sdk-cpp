@@ -31,7 +31,9 @@ namespace Model
     IOT_POLICY,
     COGNITO_IDENTITY_POOL,
     CLIENT_ID,
-    ACCOUNT_SETTINGS
+    ACCOUNT_SETTINGS,
+    ROLE_ALIAS,
+    IAM_ROLE
   };
 
 namespace ResourceTypeMapper

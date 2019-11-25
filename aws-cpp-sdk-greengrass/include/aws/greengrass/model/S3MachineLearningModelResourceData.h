@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/greengrass/model/ResourceDownloadOwnerSetting.h>
 #include <utility>
 
 namespace Aws
@@ -89,6 +90,25 @@ namespace Model
     inline S3MachineLearningModelResourceData& WithDestinationPath(const char* value) { SetDestinationPath(value); return *this;}
 
 
+    
+    inline const ResourceDownloadOwnerSetting& GetOwnerSetting() const{ return m_ownerSetting; }
+
+    
+    inline bool OwnerSettingHasBeenSet() const { return m_ownerSettingHasBeenSet; }
+
+    
+    inline void SetOwnerSetting(const ResourceDownloadOwnerSetting& value) { m_ownerSettingHasBeenSet = true; m_ownerSetting = value; }
+
+    
+    inline void SetOwnerSetting(ResourceDownloadOwnerSetting&& value) { m_ownerSettingHasBeenSet = true; m_ownerSetting = std::move(value); }
+
+    
+    inline S3MachineLearningModelResourceData& WithOwnerSetting(const ResourceDownloadOwnerSetting& value) { SetOwnerSetting(value); return *this;}
+
+    
+    inline S3MachineLearningModelResourceData& WithOwnerSetting(ResourceDownloadOwnerSetting&& value) { SetOwnerSetting(std::move(value)); return *this;}
+
+
     /**
      * The URI of the source model in an S3 bucket. The model package must be in tar.gz
      * or .zip format.
@@ -141,6 +161,9 @@ namespace Model
 
     Aws::String m_destinationPath;
     bool m_destinationPathHasBeenSet;
+
+    ResourceDownloadOwnerSetting m_ownerSetting;
+    bool m_ownerSettingHasBeenSet;
 
     Aws::String m_s3Uri;
     bool m_s3UriHasBeenSet;

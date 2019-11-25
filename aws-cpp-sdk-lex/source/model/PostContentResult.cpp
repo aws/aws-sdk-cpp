@@ -43,7 +43,8 @@ PostContentResult::PostContentResult(PostContentResult&& toMove) :
     m_dialogState(toMove.m_dialogState),
     m_slotToElicit(std::move(toMove.m_slotToElicit)),
     m_inputTranscript(std::move(toMove.m_inputTranscript)),
-    m_audioStream(std::move(toMove.m_audioStream))
+    m_audioStream(std::move(toMove.m_audioStream)),
+    m_sessionId(std::move(toMove.m_sessionId))
 {
 }
 
@@ -65,6 +66,7 @@ PostContentResult& PostContentResult::operator=(PostContentResult&& toMove)
    m_slotToElicit = std::move(toMove.m_slotToElicit);
    m_inputTranscript = std::move(toMove.m_inputTranscript);
    m_audioStream = std::move(toMove.m_audioStream);
+   m_sessionId = std::move(toMove.m_sessionId);
 
    return *this;
 }
@@ -139,6 +141,12 @@ PostContentResult& PostContentResult::operator =(Aws::AmazonWebServiceResult<Res
   if(inputTranscriptIter != headers.end())
   {
     m_inputTranscript = inputTranscriptIter->second;
+  }
+
+  const auto& sessionIdIter = headers.find("x-amz-lex-session-id");
+  if(sessionIdIter != headers.end())
+  {
+    m_sessionId = sessionIdIter->second;
   }
 
    return *this;

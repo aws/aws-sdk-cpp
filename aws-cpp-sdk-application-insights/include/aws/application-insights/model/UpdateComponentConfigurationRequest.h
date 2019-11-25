@@ -17,6 +17,7 @@
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/application-insights/ApplicationInsightsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/application-insights/model/Tier.h>
 #include <utility>
 
 namespace Aws
@@ -149,59 +150,51 @@ namespace Model
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
+     * <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
+     * <code>DEFAULT</code>.</p>
      */
-    inline const Aws::String& GetTier() const{ return m_tier; }
+    inline const Tier& GetTier() const{ return m_tier; }
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
+     * <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
+     * <code>DEFAULT</code>.</p>
      */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
+     * <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
+     * <code>DEFAULT</code>.</p>
      */
-    inline void SetTier(const Aws::String& value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
+     * <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
+     * <code>DEFAULT</code>.</p>
      */
-    inline void SetTier(Aws::String&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
+    inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
+     * <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
+     * <code>DEFAULT</code>.</p>
      */
-    inline void SetTier(const char* value) { m_tierHasBeenSet = true; m_tier.assign(value); }
+    inline UpdateComponentConfigurationRequest& WithTier(const Tier& value) { SetTier(value); return *this;}
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>,
+     * <code>DOT_NET_CORE</code>, <code>SQL_SERVER</code>, and
+     * <code>DEFAULT</code>.</p>
      */
-    inline UpdateComponentConfigurationRequest& WithTier(const Aws::String& value) { SetTier(value); return *this;}
-
-    /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
-     */
-    inline UpdateComponentConfigurationRequest& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
-
-    /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
-     */
-    inline UpdateComponentConfigurationRequest& WithTier(const char* value) { SetTier(value); return *this;}
+    inline UpdateComponentConfigurationRequest& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 
 
     /**
@@ -210,7 +203,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working
      * with JSON</a>. You can send a request to
      * <code>DescribeComponentConfigurationRecommendation</code> to see the recommended
-     * configuration for a component.</p>
+     * configuration for a component. For the complete format of the component
+     * configuration file, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     * Configuration</a>.</p>
      */
     inline const Aws::String& GetComponentConfiguration() const{ return m_componentConfiguration; }
 
@@ -220,7 +216,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working
      * with JSON</a>. You can send a request to
      * <code>DescribeComponentConfigurationRecommendation</code> to see the recommended
-     * configuration for a component.</p>
+     * configuration for a component. For the complete format of the component
+     * configuration file, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     * Configuration</a>.</p>
      */
     inline bool ComponentConfigurationHasBeenSet() const { return m_componentConfigurationHasBeenSet; }
 
@@ -230,7 +229,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working
      * with JSON</a>. You can send a request to
      * <code>DescribeComponentConfigurationRecommendation</code> to see the recommended
-     * configuration for a component.</p>
+     * configuration for a component. For the complete format of the component
+     * configuration file, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     * Configuration</a>.</p>
      */
     inline void SetComponentConfiguration(const Aws::String& value) { m_componentConfigurationHasBeenSet = true; m_componentConfiguration = value; }
 
@@ -240,7 +242,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working
      * with JSON</a>. You can send a request to
      * <code>DescribeComponentConfigurationRecommendation</code> to see the recommended
-     * configuration for a component.</p>
+     * configuration for a component. For the complete format of the component
+     * configuration file, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     * Configuration</a>.</p>
      */
     inline void SetComponentConfiguration(Aws::String&& value) { m_componentConfigurationHasBeenSet = true; m_componentConfiguration = std::move(value); }
 
@@ -250,7 +255,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working
      * with JSON</a>. You can send a request to
      * <code>DescribeComponentConfigurationRecommendation</code> to see the recommended
-     * configuration for a component.</p>
+     * configuration for a component. For the complete format of the component
+     * configuration file, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     * Configuration</a>.</p>
      */
     inline void SetComponentConfiguration(const char* value) { m_componentConfigurationHasBeenSet = true; m_componentConfiguration.assign(value); }
 
@@ -260,7 +268,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working
      * with JSON</a>. You can send a request to
      * <code>DescribeComponentConfigurationRecommendation</code> to see the recommended
-     * configuration for a component.</p>
+     * configuration for a component. For the complete format of the component
+     * configuration file, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     * Configuration</a>.</p>
      */
     inline UpdateComponentConfigurationRequest& WithComponentConfiguration(const Aws::String& value) { SetComponentConfiguration(value); return *this;}
 
@@ -270,7 +281,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working
      * with JSON</a>. You can send a request to
      * <code>DescribeComponentConfigurationRecommendation</code> to see the recommended
-     * configuration for a component.</p>
+     * configuration for a component. For the complete format of the component
+     * configuration file, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     * Configuration</a>.</p>
      */
     inline UpdateComponentConfigurationRequest& WithComponentConfiguration(Aws::String&& value) { SetComponentConfiguration(std::move(value)); return *this;}
 
@@ -280,7 +294,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/working-with-json.html">Working
      * with JSON</a>. You can send a request to
      * <code>DescribeComponentConfigurationRecommendation</code> to see the recommended
-     * configuration for a component.</p>
+     * configuration for a component. For the complete format of the component
+     * configuration file, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/component-config.html">Component
+     * Configuration</a>.</p>
      */
     inline UpdateComponentConfigurationRequest& WithComponentConfiguration(const char* value) { SetComponentConfiguration(value); return *this;}
 
@@ -295,7 +312,7 @@ namespace Model
     bool m_monitor;
     bool m_monitorHasBeenSet;
 
-    Aws::String m_tier;
+    Tier m_tier;
     bool m_tierHasBeenSet;
 
     Aws::String m_componentConfiguration;

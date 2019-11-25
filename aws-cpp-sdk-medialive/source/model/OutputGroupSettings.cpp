@@ -34,6 +34,7 @@ OutputGroupSettings::OutputGroupSettings() :
     m_hlsGroupSettingsHasBeenSet(false),
     m_mediaPackageGroupSettingsHasBeenSet(false),
     m_msSmoothGroupSettingsHasBeenSet(false),
+    m_multiplexGroupSettingsHasBeenSet(false),
     m_rtmpGroupSettingsHasBeenSet(false),
     m_udpGroupSettingsHasBeenSet(false)
 {
@@ -45,6 +46,7 @@ OutputGroupSettings::OutputGroupSettings(JsonView jsonValue) :
     m_hlsGroupSettingsHasBeenSet(false),
     m_mediaPackageGroupSettingsHasBeenSet(false),
     m_msSmoothGroupSettingsHasBeenSet(false),
+    m_multiplexGroupSettingsHasBeenSet(false),
     m_rtmpGroupSettingsHasBeenSet(false),
     m_udpGroupSettingsHasBeenSet(false)
 {
@@ -86,6 +88,13 @@ OutputGroupSettings& OutputGroupSettings::operator =(JsonView jsonValue)
     m_msSmoothGroupSettings = jsonValue.GetObject("msSmoothGroupSettings");
 
     m_msSmoothGroupSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("multiplexGroupSettings"))
+  {
+    m_multiplexGroupSettings = jsonValue.GetObject("multiplexGroupSettings");
+
+    m_multiplexGroupSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("rtmpGroupSettings"))
@@ -136,6 +145,12 @@ JsonValue OutputGroupSettings::Jsonize() const
   if(m_msSmoothGroupSettingsHasBeenSet)
   {
    payload.WithObject("msSmoothGroupSettings", m_msSmoothGroupSettings.Jsonize());
+
+  }
+
+  if(m_multiplexGroupSettingsHasBeenSet)
+  {
+   payload.WithObject("multiplexGroupSettings", m_multiplexGroupSettings.Jsonize());
 
   }
 

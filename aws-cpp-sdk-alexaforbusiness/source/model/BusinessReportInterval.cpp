@@ -32,6 +32,7 @@ namespace Aws
 
         static const int ONE_DAY_HASH = HashingUtils::HashString("ONE_DAY");
         static const int ONE_WEEK_HASH = HashingUtils::HashString("ONE_WEEK");
+        static const int THIRTY_DAYS_HASH = HashingUtils::HashString("THIRTY_DAYS");
 
 
         BusinessReportInterval GetBusinessReportIntervalForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == ONE_WEEK_HASH)
           {
             return BusinessReportInterval::ONE_WEEK;
+          }
+          else if (hashCode == THIRTY_DAYS_HASH)
+          {
+            return BusinessReportInterval::THIRTY_DAYS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "ONE_DAY";
           case BusinessReportInterval::ONE_WEEK:
             return "ONE_WEEK";
+          case BusinessReportInterval::THIRTY_DAYS:
+            return "THIRTY_DAYS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

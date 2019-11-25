@@ -58,7 +58,9 @@ enum class ApplicationInsightsErrors
 
   BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   INTERNAL_SERVER,
-  RESOURCE_IN_USE
+  RESOURCE_IN_USE,
+  TAGS_ALREADY_EXIST,
+  TOO_MANY_TAGS
 };
 namespace ApplicationInsightsErrorMapper
 {

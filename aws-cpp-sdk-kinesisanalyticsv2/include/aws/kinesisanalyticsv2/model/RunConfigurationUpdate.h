@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
+#include <aws/kinesisanalyticsv2/model/FlinkRunConfiguration.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationRestoreConfiguration.h>
 #include <utility>
 
@@ -49,6 +50,43 @@ namespace Model
 
 
     /**
+     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline const FlinkRunConfiguration& GetFlinkRunConfiguration() const{ return m_flinkRunConfiguration; }
+
+    /**
+     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline bool FlinkRunConfigurationHasBeenSet() const { return m_flinkRunConfigurationHasBeenSet; }
+
+    /**
+     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline void SetFlinkRunConfiguration(const FlinkRunConfiguration& value) { m_flinkRunConfigurationHasBeenSet = true; m_flinkRunConfiguration = value; }
+
+    /**
+     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline void SetFlinkRunConfiguration(FlinkRunConfiguration&& value) { m_flinkRunConfigurationHasBeenSet = true; m_flinkRunConfiguration = std::move(value); }
+
+    /**
+     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline RunConfigurationUpdate& WithFlinkRunConfiguration(const FlinkRunConfiguration& value) { SetFlinkRunConfiguration(value); return *this;}
+
+    /**
+     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline RunConfigurationUpdate& WithFlinkRunConfiguration(FlinkRunConfiguration&& value) { SetFlinkRunConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>Describes updates to the restore behavior of a restarting application.</p>
      */
     inline const ApplicationRestoreConfiguration& GetApplicationRestoreConfiguration() const{ return m_applicationRestoreConfiguration; }
@@ -79,6 +117,9 @@ namespace Model
     inline RunConfigurationUpdate& WithApplicationRestoreConfiguration(ApplicationRestoreConfiguration&& value) { SetApplicationRestoreConfiguration(std::move(value)); return *this;}
 
   private:
+
+    FlinkRunConfiguration m_flinkRunConfiguration;
+    bool m_flinkRunConfigurationHasBeenSet;
 
     ApplicationRestoreConfiguration m_applicationRestoreConfiguration;
     bool m_applicationRestoreConfigurationHasBeenSet;

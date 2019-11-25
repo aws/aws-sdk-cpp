@@ -20,6 +20,8 @@
 #include <aws/kinesisanalyticsv2/model/FlinkApplicationConfigurationUpdate.h>
 #include <aws/kinesisanalyticsv2/model/EnvironmentPropertyUpdates.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationSnapshotConfigurationUpdate.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kinesisanalyticsv2/model/VpcConfigurationUpdate.h>
 #include <utility>
 
 namespace Aws
@@ -236,6 +238,55 @@ namespace Model
      */
     inline ApplicationConfigurationUpdate& WithApplicationSnapshotConfigurationUpdate(ApplicationSnapshotConfigurationUpdate&& value) { SetApplicationSnapshotConfigurationUpdate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Updates to the array of descriptions of VPC configurations available to the
+     * application.</p>
+     */
+    inline const Aws::Vector<VpcConfigurationUpdate>& GetVpcConfigurationUpdates() const{ return m_vpcConfigurationUpdates; }
+
+    /**
+     * <p>Updates to the array of descriptions of VPC configurations available to the
+     * application.</p>
+     */
+    inline bool VpcConfigurationUpdatesHasBeenSet() const { return m_vpcConfigurationUpdatesHasBeenSet; }
+
+    /**
+     * <p>Updates to the array of descriptions of VPC configurations available to the
+     * application.</p>
+     */
+    inline void SetVpcConfigurationUpdates(const Aws::Vector<VpcConfigurationUpdate>& value) { m_vpcConfigurationUpdatesHasBeenSet = true; m_vpcConfigurationUpdates = value; }
+
+    /**
+     * <p>Updates to the array of descriptions of VPC configurations available to the
+     * application.</p>
+     */
+    inline void SetVpcConfigurationUpdates(Aws::Vector<VpcConfigurationUpdate>&& value) { m_vpcConfigurationUpdatesHasBeenSet = true; m_vpcConfigurationUpdates = std::move(value); }
+
+    /**
+     * <p>Updates to the array of descriptions of VPC configurations available to the
+     * application.</p>
+     */
+    inline ApplicationConfigurationUpdate& WithVpcConfigurationUpdates(const Aws::Vector<VpcConfigurationUpdate>& value) { SetVpcConfigurationUpdates(value); return *this;}
+
+    /**
+     * <p>Updates to the array of descriptions of VPC configurations available to the
+     * application.</p>
+     */
+    inline ApplicationConfigurationUpdate& WithVpcConfigurationUpdates(Aws::Vector<VpcConfigurationUpdate>&& value) { SetVpcConfigurationUpdates(std::move(value)); return *this;}
+
+    /**
+     * <p>Updates to the array of descriptions of VPC configurations available to the
+     * application.</p>
+     */
+    inline ApplicationConfigurationUpdate& AddVpcConfigurationUpdates(const VpcConfigurationUpdate& value) { m_vpcConfigurationUpdatesHasBeenSet = true; m_vpcConfigurationUpdates.push_back(value); return *this; }
+
+    /**
+     * <p>Updates to the array of descriptions of VPC configurations available to the
+     * application.</p>
+     */
+    inline ApplicationConfigurationUpdate& AddVpcConfigurationUpdates(VpcConfigurationUpdate&& value) { m_vpcConfigurationUpdatesHasBeenSet = true; m_vpcConfigurationUpdates.push_back(std::move(value)); return *this; }
+
   private:
 
     SqlApplicationConfigurationUpdate m_sqlApplicationConfigurationUpdate;
@@ -252,6 +303,9 @@ namespace Model
 
     ApplicationSnapshotConfigurationUpdate m_applicationSnapshotConfigurationUpdate;
     bool m_applicationSnapshotConfigurationUpdateHasBeenSet;
+
+    Aws::Vector<VpcConfigurationUpdate> m_vpcConfigurationUpdates;
+    bool m_vpcConfigurationUpdatesHasBeenSet;
   };
 
 } // namespace Model

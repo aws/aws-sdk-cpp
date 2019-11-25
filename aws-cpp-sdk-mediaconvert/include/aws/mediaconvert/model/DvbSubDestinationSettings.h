@@ -21,6 +21,7 @@
 #include <aws/mediaconvert/model/FontScript.h>
 #include <aws/mediaconvert/model/DvbSubtitleOutlineColor.h>
 #include <aws/mediaconvert/model/DvbSubtitleShadowColor.h>
+#include <aws/mediaconvert/model/DvbSubtitlingType.h>
 #include <aws/mediaconvert/model/DvbSubtitleTeletextSpacing.h>
 #include <utility>
 
@@ -592,6 +593,49 @@ All burn-in and DVB-Sub
 
 
     /**
+     * Specify whether your DVB subtitles are standard or for hearing impaired. Choose
+     * hearing impaired if your subtitles include audio descriptions and dialogue.
+     * Choose standard if your subtitles include only dialogue.
+     */
+    inline const DvbSubtitlingType& GetSubtitlingType() const{ return m_subtitlingType; }
+
+    /**
+     * Specify whether your DVB subtitles are standard or for hearing impaired. Choose
+     * hearing impaired if your subtitles include audio descriptions and dialogue.
+     * Choose standard if your subtitles include only dialogue.
+     */
+    inline bool SubtitlingTypeHasBeenSet() const { return m_subtitlingTypeHasBeenSet; }
+
+    /**
+     * Specify whether your DVB subtitles are standard or for hearing impaired. Choose
+     * hearing impaired if your subtitles include audio descriptions and dialogue.
+     * Choose standard if your subtitles include only dialogue.
+     */
+    inline void SetSubtitlingType(const DvbSubtitlingType& value) { m_subtitlingTypeHasBeenSet = true; m_subtitlingType = value; }
+
+    /**
+     * Specify whether your DVB subtitles are standard or for hearing impaired. Choose
+     * hearing impaired if your subtitles include audio descriptions and dialogue.
+     * Choose standard if your subtitles include only dialogue.
+     */
+    inline void SetSubtitlingType(DvbSubtitlingType&& value) { m_subtitlingTypeHasBeenSet = true; m_subtitlingType = std::move(value); }
+
+    /**
+     * Specify whether your DVB subtitles are standard or for hearing impaired. Choose
+     * hearing impaired if your subtitles include audio descriptions and dialogue.
+     * Choose standard if your subtitles include only dialogue.
+     */
+    inline DvbSubDestinationSettings& WithSubtitlingType(const DvbSubtitlingType& value) { SetSubtitlingType(value); return *this;}
+
+    /**
+     * Specify whether your DVB subtitles are standard or for hearing impaired. Choose
+     * hearing impaired if your subtitles include audio descriptions and dialogue.
+     * Choose standard if your subtitles include only dialogue.
+     */
+    inline DvbSubDestinationSettings& WithSubtitlingType(DvbSubtitlingType&& value) { SetSubtitlingType(std::move(value)); return *this;}
+
+
+    /**
      * Only applies to jobs with input captions in Teletext or STL formats. Specify
      * whether the spacing between letters in your captions is set by the captions grid
      * or varies depending on letter width. Choose fixed grid to conform to the spacing
@@ -778,6 +822,9 @@ All burn-in and DVB-Sub
 
     int m_shadowYOffset;
     bool m_shadowYOffsetHasBeenSet;
+
+    DvbSubtitlingType m_subtitlingType;
+    bool m_subtitlingTypeHasBeenSet;
 
     DvbSubtitleTeletextSpacing m_teletextSpacing;
     bool m_teletextSpacingHasBeenSet;

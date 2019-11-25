@@ -32,6 +32,7 @@ namespace Aws
 
         static const int SD_HASH = HashingUtils::HashString("SD");
         static const int HD_HASH = HashingUtils::HashString("HD");
+        static const int FHD_HASH = HashingUtils::HashString("FHD");
         static const int UHD_HASH = HashingUtils::HashString("UHD");
 
 
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == HD_HASH)
           {
             return ReservationResolution::HD;
+          }
+          else if (hashCode == FHD_HASH)
+          {
+            return ReservationResolution::FHD;
           }
           else if (hashCode == UHD_HASH)
           {
@@ -68,6 +73,8 @@ namespace Aws
             return "SD";
           case ReservationResolution::HD:
             return "HD";
+          case ReservationResolution::FHD:
+            return "FHD";
           case ReservationResolution::UHD:
             return "UHD";
           default:

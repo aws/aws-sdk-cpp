@@ -1,0 +1,116 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/monitoring/CloudWatch_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/core/utils/DateTime.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Xml
+{
+  class XmlNode;
+} // namespace Xml
+} // namespace Utils
+namespace CloudWatch
+{
+namespace Model
+{
+
+  /**
+   * <p>One data point related to one contributor.</p> <p>For more information, see
+   * <a>GetInsightRuleReport</a> and <a>InsightRuleContributor</a>.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/InsightRuleContributorDatapoint">AWS
+   * API Reference</a></p>
+   */
+  class AWS_CLOUDWATCH_API InsightRuleContributorDatapoint
+  {
+  public:
+    InsightRuleContributorDatapoint();
+    InsightRuleContributorDatapoint(const Aws::Utils::Xml::XmlNode& xmlNode);
+    InsightRuleContributorDatapoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+
+    /**
+     * <p>The timestamp of the data point.</p>
+     */
+    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The timestamp of the data point.</p>
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The timestamp of the data point.</p>
+     */
+    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
+
+    /**
+     * <p>The timestamp of the data point.</p>
+     */
+    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
+
+    /**
+     * <p>The timestamp of the data point.</p>
+     */
+    inline InsightRuleContributorDatapoint& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
+
+    /**
+     * <p>The timestamp of the data point.</p>
+     */
+    inline InsightRuleContributorDatapoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The approximate value that this contributor added during this timestamp.</p>
+     */
+    inline double GetApproximateValue() const{ return m_approximateValue; }
+
+    /**
+     * <p>The approximate value that this contributor added during this timestamp.</p>
+     */
+    inline bool ApproximateValueHasBeenSet() const { return m_approximateValueHasBeenSet; }
+
+    /**
+     * <p>The approximate value that this contributor added during this timestamp.</p>
+     */
+    inline void SetApproximateValue(double value) { m_approximateValueHasBeenSet = true; m_approximateValue = value; }
+
+    /**
+     * <p>The approximate value that this contributor added during this timestamp.</p>
+     */
+    inline InsightRuleContributorDatapoint& WithApproximateValue(double value) { SetApproximateValue(value); return *this;}
+
+  private:
+
+    Aws::Utils::DateTime m_timestamp;
+    bool m_timestampHasBeenSet;
+
+    double m_approximateValue;
+    bool m_approximateValueHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace CloudWatch
+} // namespace Aws

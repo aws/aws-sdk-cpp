@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/model/EventSourcePosition.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lambda/model/DestinationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -284,17 +285,50 @@ namespace Model
     inline CreateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
 
-    
+    /**
+     * <p>The maximum amount of time to gather records before invoking the function, in
+     * seconds.</p>
+     */
     inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
 
-    
+    /**
+     * <p>The maximum amount of time to gather records before invoking the function, in
+     * seconds.</p>
+     */
     inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
 
-    
+    /**
+     * <p>The maximum amount of time to gather records before invoking the function, in
+     * seconds.</p>
+     */
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
 
-    
+    /**
+     * <p>The maximum amount of time to gather records before invoking the function, in
+     * seconds.</p>
+     */
     inline CreateEventSourceMappingRequest& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
+
+
+    /**
+     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     */
+    inline int GetParallelizationFactor() const{ return m_parallelizationFactor; }
+
+    /**
+     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     */
+    inline bool ParallelizationFactorHasBeenSet() const { return m_parallelizationFactorHasBeenSet; }
+
+    /**
+     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     */
+    inline void SetParallelizationFactor(int value) { m_parallelizationFactorHasBeenSet = true; m_parallelizationFactor = value; }
+
+    /**
+     * <p>(Streams) The number of batches to process from each shard concurrently.</p>
+     */
+    inline CreateEventSourceMappingRequest& WithParallelizationFactor(int value) { SetParallelizationFactor(value); return *this;}
 
 
     /**
@@ -376,6 +410,118 @@ namespace Model
      */
     inline CreateEventSourceMappingRequest& WithStartingPositionTimestamp(Aws::Utils::DateTime&& value) { SetStartingPositionTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
+     * records.</p>
+     */
+    inline const DestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
+
+    /**
+     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
+     * records.</p>
+     */
+    inline bool DestinationConfigHasBeenSet() const { return m_destinationConfigHasBeenSet; }
+
+    /**
+     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
+     * records.</p>
+     */
+    inline void SetDestinationConfig(const DestinationConfig& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = value; }
+
+    /**
+     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
+     * records.</p>
+     */
+    inline void SetDestinationConfig(DestinationConfig&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::move(value); }
+
+    /**
+     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
+     * records.</p>
+     */
+    inline CreateEventSourceMappingRequest& WithDestinationConfig(const DestinationConfig& value) { SetDestinationConfig(value); return *this;}
+
+    /**
+     * <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded
+     * records.</p>
+     */
+    inline CreateEventSourceMappingRequest& WithDestinationConfig(DestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
+     * processing.</p>
+     */
+    inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
+
+    /**
+     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
+     * processing.</p>
+     */
+    inline bool MaximumRecordAgeInSecondsHasBeenSet() const { return m_maximumRecordAgeInSecondsHasBeenSet; }
+
+    /**
+     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
+     * processing.</p>
+     */
+    inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSecondsHasBeenSet = true; m_maximumRecordAgeInSeconds = value; }
+
+    /**
+     * <p>(Streams) The maximum age of a record that Lambda sends to a function for
+     * processing.</p>
+     */
+    inline CreateEventSourceMappingRequest& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
+
+
+    /**
+     * <p>(Streams) If the function returns an error, split the batch in two and
+     * retry.</p>
+     */
+    inline bool GetBisectBatchOnFunctionError() const{ return m_bisectBatchOnFunctionError; }
+
+    /**
+     * <p>(Streams) If the function returns an error, split the batch in two and
+     * retry.</p>
+     */
+    inline bool BisectBatchOnFunctionErrorHasBeenSet() const { return m_bisectBatchOnFunctionErrorHasBeenSet; }
+
+    /**
+     * <p>(Streams) If the function returns an error, split the batch in two and
+     * retry.</p>
+     */
+    inline void SetBisectBatchOnFunctionError(bool value) { m_bisectBatchOnFunctionErrorHasBeenSet = true; m_bisectBatchOnFunctionError = value; }
+
+    /**
+     * <p>(Streams) If the function returns an error, split the batch in two and
+     * retry.</p>
+     */
+    inline CreateEventSourceMappingRequest& WithBisectBatchOnFunctionError(bool value) { SetBisectBatchOnFunctionError(value); return *this;}
+
+
+    /**
+     * <p>(Streams) The maximum number of times to retry when the function returns an
+     * error.</p>
+     */
+    inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
+
+    /**
+     * <p>(Streams) The maximum number of times to retry when the function returns an
+     * error.</p>
+     */
+    inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
+
+    /**
+     * <p>(Streams) The maximum number of times to retry when the function returns an
+     * error.</p>
+     */
+    inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttemptsHasBeenSet = true; m_maximumRetryAttempts = value; }
+
+    /**
+     * <p>(Streams) The maximum number of times to retry when the function returns an
+     * error.</p>
+     */
+    inline CreateEventSourceMappingRequest& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
+
   private:
 
     Aws::String m_eventSourceArn;
@@ -393,11 +539,26 @@ namespace Model
     int m_maximumBatchingWindowInSeconds;
     bool m_maximumBatchingWindowInSecondsHasBeenSet;
 
+    int m_parallelizationFactor;
+    bool m_parallelizationFactorHasBeenSet;
+
     EventSourcePosition m_startingPosition;
     bool m_startingPositionHasBeenSet;
 
     Aws::Utils::DateTime m_startingPositionTimestamp;
     bool m_startingPositionTimestampHasBeenSet;
+
+    DestinationConfig m_destinationConfig;
+    bool m_destinationConfigHasBeenSet;
+
+    int m_maximumRecordAgeInSeconds;
+    bool m_maximumRecordAgeInSecondsHasBeenSet;
+
+    bool m_bisectBatchOnFunctionError;
+    bool m_bisectBatchOnFunctionErrorHasBeenSet;
+
+    int m_maximumRetryAttempts;
+    bool m_maximumRetryAttemptsHasBeenSet;
   };
 
 } // namespace Model

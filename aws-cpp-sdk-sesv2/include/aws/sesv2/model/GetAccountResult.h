@@ -15,8 +15,9 @@
 
 #pragma once
 #include <aws/sesv2/SESV2_EXPORTS.h>
-#include <aws/sesv2/model/SendQuota.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sesv2/model/SendQuota.h>
+#include <aws/sesv2/model/SuppressionAttributes.h>
 #include <utility>
 
 namespace Aws
@@ -47,56 +48,6 @@ namespace Model
     GetAccountResult();
     GetAccountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     GetAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>An object that contains information about the per-day and per-second sending
-     * limits for your Amazon SES account in the current AWS Region.</p>
-     */
-    inline const SendQuota& GetSendQuota() const{ return m_sendQuota; }
-
-    /**
-     * <p>An object that contains information about the per-day and per-second sending
-     * limits for your Amazon SES account in the current AWS Region.</p>
-     */
-    inline void SetSendQuota(const SendQuota& value) { m_sendQuota = value; }
-
-    /**
-     * <p>An object that contains information about the per-day and per-second sending
-     * limits for your Amazon SES account in the current AWS Region.</p>
-     */
-    inline void SetSendQuota(SendQuota&& value) { m_sendQuota = std::move(value); }
-
-    /**
-     * <p>An object that contains information about the per-day and per-second sending
-     * limits for your Amazon SES account in the current AWS Region.</p>
-     */
-    inline GetAccountResult& WithSendQuota(const SendQuota& value) { SetSendQuota(value); return *this;}
-
-    /**
-     * <p>An object that contains information about the per-day and per-second sending
-     * limits for your Amazon SES account in the current AWS Region.</p>
-     */
-    inline GetAccountResult& WithSendQuota(SendQuota&& value) { SetSendQuota(std::move(value)); return *this;}
-
-
-    /**
-     * <p>Indicates whether or not email sending is enabled for your Amazon SES account
-     * in the current AWS Region.</p>
-     */
-    inline bool GetSendingEnabled() const{ return m_sendingEnabled; }
-
-    /**
-     * <p>Indicates whether or not email sending is enabled for your Amazon SES account
-     * in the current AWS Region.</p>
-     */
-    inline void SetSendingEnabled(bool value) { m_sendingEnabled = value; }
-
-    /**
-     * <p>Indicates whether or not email sending is enabled for your Amazon SES account
-     * in the current AWS Region.</p>
-     */
-    inline GetAccountResult& WithSendingEnabled(bool value) { SetSendingEnabled(value); return *this;}
 
 
     /**
@@ -252,17 +203,100 @@ namespace Model
      */
     inline GetAccountResult& WithProductionAccessEnabled(bool value) { SetProductionAccessEnabled(value); return *this;}
 
+
+    /**
+     * <p>An object that contains information about the per-day and per-second sending
+     * limits for your Amazon SES account in the current AWS Region.</p>
+     */
+    inline const SendQuota& GetSendQuota() const{ return m_sendQuota; }
+
+    /**
+     * <p>An object that contains information about the per-day and per-second sending
+     * limits for your Amazon SES account in the current AWS Region.</p>
+     */
+    inline void SetSendQuota(const SendQuota& value) { m_sendQuota = value; }
+
+    /**
+     * <p>An object that contains information about the per-day and per-second sending
+     * limits for your Amazon SES account in the current AWS Region.</p>
+     */
+    inline void SetSendQuota(SendQuota&& value) { m_sendQuota = std::move(value); }
+
+    /**
+     * <p>An object that contains information about the per-day and per-second sending
+     * limits for your Amazon SES account in the current AWS Region.</p>
+     */
+    inline GetAccountResult& WithSendQuota(const SendQuota& value) { SetSendQuota(value); return *this;}
+
+    /**
+     * <p>An object that contains information about the per-day and per-second sending
+     * limits for your Amazon SES account in the current AWS Region.</p>
+     */
+    inline GetAccountResult& WithSendQuota(SendQuota&& value) { SetSendQuota(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether or not email sending is enabled for your Amazon SES account
+     * in the current AWS Region.</p>
+     */
+    inline bool GetSendingEnabled() const{ return m_sendingEnabled; }
+
+    /**
+     * <p>Indicates whether or not email sending is enabled for your Amazon SES account
+     * in the current AWS Region.</p>
+     */
+    inline void SetSendingEnabled(bool value) { m_sendingEnabled = value; }
+
+    /**
+     * <p>Indicates whether or not email sending is enabled for your Amazon SES account
+     * in the current AWS Region.</p>
+     */
+    inline GetAccountResult& WithSendingEnabled(bool value) { SetSendingEnabled(value); return *this;}
+
+
+    /**
+     * <p>An object that contains information about your account's suppression
+     * preferences.</p>
+     */
+    inline const SuppressionAttributes& GetSuppressionAttributes() const{ return m_suppressionAttributes; }
+
+    /**
+     * <p>An object that contains information about your account's suppression
+     * preferences.</p>
+     */
+    inline void SetSuppressionAttributes(const SuppressionAttributes& value) { m_suppressionAttributes = value; }
+
+    /**
+     * <p>An object that contains information about your account's suppression
+     * preferences.</p>
+     */
+    inline void SetSuppressionAttributes(SuppressionAttributes&& value) { m_suppressionAttributes = std::move(value); }
+
+    /**
+     * <p>An object that contains information about your account's suppression
+     * preferences.</p>
+     */
+    inline GetAccountResult& WithSuppressionAttributes(const SuppressionAttributes& value) { SetSuppressionAttributes(value); return *this;}
+
+    /**
+     * <p>An object that contains information about your account's suppression
+     * preferences.</p>
+     */
+    inline GetAccountResult& WithSuppressionAttributes(SuppressionAttributes&& value) { SetSuppressionAttributes(std::move(value)); return *this;}
+
   private:
-
-    SendQuota m_sendQuota;
-
-    bool m_sendingEnabled;
 
     bool m_dedicatedIpAutoWarmupEnabled;
 
     Aws::String m_enforcementStatus;
 
     bool m_productionAccessEnabled;
+
+    SendQuota m_sendQuota;
+
+    bool m_sendingEnabled;
+
+    SuppressionAttributes m_suppressionAttributes;
   };
 
 } // namespace Model

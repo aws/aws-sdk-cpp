@@ -61,7 +61,8 @@ Build::Build() :
     m_vpcConfigHasBeenSet(false),
     m_networkInterfaceHasBeenSet(false),
     m_encryptionKeyHasBeenSet(false),
-    m_exportedEnvironmentVariablesHasBeenSet(false)
+    m_exportedEnvironmentVariablesHasBeenSet(false),
+    m_reportArnsHasBeenSet(false)
 {
 }
 
@@ -98,7 +99,8 @@ Build::Build(JsonView jsonValue) :
     m_vpcConfigHasBeenSet(false),
     m_networkInterfaceHasBeenSet(false),
     m_encryptionKeyHasBeenSet(false),
-    m_exportedEnvironmentVariablesHasBeenSet(false)
+    m_exportedEnvironmentVariablesHasBeenSet(false),
+    m_reportArnsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -316,6 +318,16 @@ Build& Build::operator =(JsonView jsonValue)
     m_exportedEnvironmentVariablesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("reportArns"))
+  {
+    Array<JsonView> reportArnsJsonList = jsonValue.GetArray("reportArns");
+    for(unsigned reportArnsIndex = 0; reportArnsIndex < reportArnsJsonList.GetLength(); ++reportArnsIndex)
+    {
+      m_reportArns.push_back(reportArnsJsonList[reportArnsIndex].AsString());
+    }
+    m_reportArnsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -510,6 +522,17 @@ JsonValue Build::Jsonize() const
      exportedEnvironmentVariablesJsonList[exportedEnvironmentVariablesIndex].AsObject(m_exportedEnvironmentVariables[exportedEnvironmentVariablesIndex].Jsonize());
    }
    payload.WithArray("exportedEnvironmentVariables", std::move(exportedEnvironmentVariablesJsonList));
+
+  }
+
+  if(m_reportArnsHasBeenSet)
+  {
+   Array<JsonValue> reportArnsJsonList(m_reportArns.size());
+   for(unsigned reportArnsIndex = 0; reportArnsIndex < reportArnsJsonList.GetLength(); ++reportArnsIndex)
+   {
+     reportArnsJsonList[reportArnsIndex].AsString(m_reportArns[reportArnsIndex]);
+   }
+   payload.WithArray("reportArns", std::move(reportArnsJsonList));
 
   }
 

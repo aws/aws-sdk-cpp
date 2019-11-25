@@ -26,6 +26,7 @@
 #include <aws/kinesisanalyticsv2/model/AddApplicationInputProcessingConfigurationResult.h>
 #include <aws/kinesisanalyticsv2/model/AddApplicationOutputResult.h>
 #include <aws/kinesisanalyticsv2/model/AddApplicationReferenceDataSourceResult.h>
+#include <aws/kinesisanalyticsv2/model/AddApplicationVpcConfigurationResult.h>
 #include <aws/kinesisanalyticsv2/model/CreateApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/CreateApplicationSnapshotResult.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationResult.h>
@@ -34,6 +35,7 @@
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationOutputResult.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationReferenceDataSourceResult.h>
 #include <aws/kinesisanalyticsv2/model/DeleteApplicationSnapshotResult.h>
+#include <aws/kinesisanalyticsv2/model/DeleteApplicationVpcConfigurationResult.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationResult.h>
 #include <aws/kinesisanalyticsv2/model/DescribeApplicationSnapshotResult.h>
 #include <aws/kinesisanalyticsv2/model/DiscoverInputSchemaResult.h>
@@ -89,6 +91,7 @@ namespace Model
         class AddApplicationInputProcessingConfigurationRequest;
         class AddApplicationOutputRequest;
         class AddApplicationReferenceDataSourceRequest;
+        class AddApplicationVpcConfigurationRequest;
         class CreateApplicationRequest;
         class CreateApplicationSnapshotRequest;
         class DeleteApplicationRequest;
@@ -97,6 +100,7 @@ namespace Model
         class DeleteApplicationOutputRequest;
         class DeleteApplicationReferenceDataSourceRequest;
         class DeleteApplicationSnapshotRequest;
+        class DeleteApplicationVpcConfigurationRequest;
         class DescribeApplicationRequest;
         class DescribeApplicationSnapshotRequest;
         class DiscoverInputSchemaRequest;
@@ -114,6 +118,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AddApplicationInputProcessingConfigurationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> AddApplicationInputProcessingConfigurationOutcome;
         typedef Aws::Utils::Outcome<AddApplicationOutputResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> AddApplicationOutputOutcome;
         typedef Aws::Utils::Outcome<AddApplicationReferenceDataSourceResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> AddApplicationReferenceDataSourceOutcome;
+        typedef Aws::Utils::Outcome<AddApplicationVpcConfigurationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> AddApplicationVpcConfigurationOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> CreateApplicationOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationSnapshotResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> CreateApplicationSnapshotOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DeleteApplicationOutcome;
@@ -122,6 +127,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteApplicationOutputResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DeleteApplicationOutputOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationReferenceDataSourceResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DeleteApplicationReferenceDataSourceOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationSnapshotResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DeleteApplicationSnapshotOutcome;
+        typedef Aws::Utils::Outcome<DeleteApplicationVpcConfigurationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DeleteApplicationVpcConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeApplicationResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DescribeApplicationOutcome;
         typedef Aws::Utils::Outcome<DescribeApplicationSnapshotResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DescribeApplicationSnapshotOutcome;
         typedef Aws::Utils::Outcome<DiscoverInputSchemaResult, Aws::Client::AWSError<KinesisAnalyticsV2Errors>> DiscoverInputSchemaOutcome;
@@ -139,6 +145,7 @@ namespace Model
         typedef std::future<AddApplicationInputProcessingConfigurationOutcome> AddApplicationInputProcessingConfigurationOutcomeCallable;
         typedef std::future<AddApplicationOutputOutcome> AddApplicationOutputOutcomeCallable;
         typedef std::future<AddApplicationReferenceDataSourceOutcome> AddApplicationReferenceDataSourceOutcomeCallable;
+        typedef std::future<AddApplicationVpcConfigurationOutcome> AddApplicationVpcConfigurationOutcomeCallable;
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
         typedef std::future<CreateApplicationSnapshotOutcome> CreateApplicationSnapshotOutcomeCallable;
         typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
@@ -147,6 +154,7 @@ namespace Model
         typedef std::future<DeleteApplicationOutputOutcome> DeleteApplicationOutputOutcomeCallable;
         typedef std::future<DeleteApplicationReferenceDataSourceOutcome> DeleteApplicationReferenceDataSourceOutcomeCallable;
         typedef std::future<DeleteApplicationSnapshotOutcome> DeleteApplicationSnapshotOutcomeCallable;
+        typedef std::future<DeleteApplicationVpcConfigurationOutcome> DeleteApplicationVpcConfigurationOutcomeCallable;
         typedef std::future<DescribeApplicationOutcome> DescribeApplicationOutcomeCallable;
         typedef std::future<DescribeApplicationSnapshotOutcome> DescribeApplicationSnapshotOutcomeCallable;
         typedef std::future<DiscoverInputSchemaOutcome> DiscoverInputSchemaOutcomeCallable;
@@ -167,6 +175,7 @@ namespace Model
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::AddApplicationInputProcessingConfigurationRequest&, const Model::AddApplicationInputProcessingConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationInputProcessingConfigurationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::AddApplicationOutputRequest&, const Model::AddApplicationOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationOutputResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::AddApplicationReferenceDataSourceRequest&, const Model::AddApplicationReferenceDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationReferenceDataSourceResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::AddApplicationVpcConfigurationRequest&, const Model::AddApplicationVpcConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddApplicationVpcConfigurationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::CreateApplicationSnapshotRequest&, const Model::CreateApplicationSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationSnapshotResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteApplicationRequest&, const Model::DeleteApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationResponseReceivedHandler;
@@ -175,6 +184,7 @@ namespace Model
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteApplicationOutputRequest&, const Model::DeleteApplicationOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationOutputResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteApplicationReferenceDataSourceRequest&, const Model::DeleteApplicationReferenceDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationReferenceDataSourceResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteApplicationSnapshotRequest&, const Model::DeleteApplicationSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationSnapshotResponseReceivedHandler;
+    typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DeleteApplicationVpcConfigurationRequest&, const Model::DeleteApplicationVpcConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationVpcConfigurationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DescribeApplicationRequest&, const Model::DescribeApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DescribeApplicationSnapshotRequest&, const Model::DescribeApplicationSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeApplicationSnapshotResponseReceivedHandler;
     typedef std::function<void(const KinesisAnalyticsV2Client*, const Model::DiscoverInputSchemaRequest&, const Model::DiscoverInputSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DiscoverInputSchemaResponseReceivedHandler;
@@ -442,6 +452,52 @@ namespace Model
         virtual void AddApplicationReferenceDataSourceAsync(const Model::AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Adds a Virtual Private Cloud (VPC) configuration to the application.
+         * Applications can use VPCs to store and access resources securely.</p> <p>Note
+         * the following about VPC configurations for Kinesis Data Analytics
+         * applications:</p> <ul> <li> <p>VPC configurations are not supported for SQL
+         * applications.</p> </li> <li> <p>When a VPC is added to a Kinesis Data Analytics
+         * application, the application can no longer be accessed from the Internet
+         * directly. To enable Internet access to the application, add an Internet gateway
+         * to your VPC.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationVpcConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddApplicationVpcConfigurationOutcome AddApplicationVpcConfiguration(const Model::AddApplicationVpcConfigurationRequest& request) const;
+
+        /**
+         * <p>Adds a Virtual Private Cloud (VPC) configuration to the application.
+         * Applications can use VPCs to store and access resources securely.</p> <p>Note
+         * the following about VPC configurations for Kinesis Data Analytics
+         * applications:</p> <ul> <li> <p>VPC configurations are not supported for SQL
+         * applications.</p> </li> <li> <p>When a VPC is added to a Kinesis Data Analytics
+         * application, the application can no longer be accessed from the Internet
+         * directly. To enable Internet access to the application, add an Internet gateway
+         * to your VPC.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationVpcConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AddApplicationVpcConfigurationOutcomeCallable AddApplicationVpcConfigurationCallable(const Model::AddApplicationVpcConfigurationRequest& request) const;
+
+        /**
+         * <p>Adds a Virtual Private Cloud (VPC) configuration to the application.
+         * Applications can use VPCs to store and access resources securely.</p> <p>Note
+         * the following about VPC configurations for Kinesis Data Analytics
+         * applications:</p> <ul> <li> <p>VPC configurations are not supported for SQL
+         * applications.</p> </li> <li> <p>When a VPC is added to a Kinesis Data Analytics
+         * application, the application can no longer be accessed from the Internet
+         * directly. To enable Internet access to the application, add an Internet gateway
+         * to your VPC.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationVpcConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AddApplicationVpcConfigurationAsync(const Model::AddApplicationVpcConfigurationRequest& request, const AddApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an Amazon Kinesis Data Analytics application. For information about
          * creating a Kinesis Data Analytics application, see <a
          * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
@@ -687,6 +743,34 @@ namespace Model
         virtual void DeleteApplicationSnapshotAsync(const Model::DeleteApplicationSnapshotRequest& request, const DeleteApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Removes a VPC configuration from a Kinesis Data Analytics
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationVpcConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteApplicationVpcConfigurationOutcome DeleteApplicationVpcConfiguration(const Model::DeleteApplicationVpcConfigurationRequest& request) const;
+
+        /**
+         * <p>Removes a VPC configuration from a Kinesis Data Analytics
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationVpcConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteApplicationVpcConfigurationOutcomeCallable DeleteApplicationVpcConfigurationCallable(const Model::DeleteApplicationVpcConfigurationRequest& request) const;
+
+        /**
+         * <p>Removes a VPC configuration from a Kinesis Data Analytics
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationVpcConfiguration">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteApplicationVpcConfigurationAsync(const Model::DeleteApplicationVpcConfigurationRequest& request, const DeleteApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about a specific Amazon Kinesis Data Analytics
          * application.</p> <p>If you want to retrieve a list of all applications in your
          * account, use the <a>ListApplications</a> operation.</p><p><h3>See Also:</h3>  
@@ -863,16 +947,20 @@ namespace Model
         virtual void ListApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the list of key-value tags assigned to the
-         * application.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of key-value tags assigned to the application. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Retrieves the list of key-value tags assigned to the
-         * application.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of key-value tags assigned to the application. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -881,8 +969,10 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Retrieves the list of key-value tags assigned to the
-         * application.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the list of key-value tags assigned to the application. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -955,7 +1045,9 @@ namespace Model
         /**
          * <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that
          * the maximum number of application tags includes system tags. The maximum number
-         * of user-defined application tags is 50.</p><p><h3>See Also:</h3>   <a
+         * of user-defined application tags is 50. For more information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">AWS
          * API Reference</a></p>
          */
@@ -964,7 +1056,9 @@ namespace Model
         /**
          * <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that
          * the maximum number of application tags includes system tags. The maximum number
-         * of user-defined application tags is 50.</p><p><h3>See Also:</h3>   <a
+         * of user-defined application tags is 50. For more information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">AWS
          * API Reference</a></p>
          *
@@ -975,7 +1069,9 @@ namespace Model
         /**
          * <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that
          * the maximum number of application tags includes system tags. The maximum number
-         * of user-defined application tags is 50.</p><p><h3>See Also:</h3>   <a
+         * of user-defined application tags is 50. For more information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/TagResource">AWS
          * API Reference</a></p>
          *
@@ -984,16 +1080,20 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Removes one or more tags from a Kinesis Analytics application.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes one or more tags from a Kinesis Analytics application. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from a Kinesis Analytics application.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes one or more tags from a Kinesis Analytics application. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1002,8 +1102,10 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Removes one or more tags from a Kinesis Analytics application.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Removes one or more tags from a Kinesis Analytics application. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+         * Tagging</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -1057,6 +1159,7 @@ namespace Model
         void AddApplicationInputProcessingConfigurationAsyncHelper(const Model::AddApplicationInputProcessingConfigurationRequest& request, const AddApplicationInputProcessingConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddApplicationOutputAsyncHelper(const Model::AddApplicationOutputRequest& request, const AddApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddApplicationReferenceDataSourceAsyncHelper(const Model::AddApplicationReferenceDataSourceRequest& request, const AddApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AddApplicationVpcConfigurationAsyncHelper(const Model::AddApplicationVpcConfigurationRequest& request, const AddApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationSnapshotAsyncHelper(const Model::CreateApplicationSnapshotRequest& request, const CreateApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationAsyncHelper(const Model::DeleteApplicationRequest& request, const DeleteApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1065,6 +1168,7 @@ namespace Model
         void DeleteApplicationOutputAsyncHelper(const Model::DeleteApplicationOutputRequest& request, const DeleteApplicationOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationReferenceDataSourceAsyncHelper(const Model::DeleteApplicationReferenceDataSourceRequest& request, const DeleteApplicationReferenceDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationSnapshotAsyncHelper(const Model::DeleteApplicationSnapshotRequest& request, const DeleteApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteApplicationVpcConfigurationAsyncHelper(const Model::DeleteApplicationVpcConfigurationRequest& request, const DeleteApplicationVpcConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeApplicationAsyncHelper(const Model::DescribeApplicationRequest& request, const DescribeApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeApplicationSnapshotAsyncHelper(const Model::DescribeApplicationSnapshotRequest& request, const DescribeApplicationSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DiscoverInputSchemaAsyncHelper(const Model::DiscoverInputSchemaRequest& request, const DiscoverInputSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

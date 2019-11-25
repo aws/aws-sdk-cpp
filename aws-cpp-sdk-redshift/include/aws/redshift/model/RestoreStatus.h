@@ -101,117 +101,137 @@ namespace Model
 
     /**
      * <p>The number of megabytes per second being transferred from the backup storage.
-     * Returns the average rate for a completed backup.</p>
+     * Returns the average rate for a completed backup. This field is only updated when
+     * you restore to DC2 and DS2 node types. </p>
      */
     inline double GetCurrentRestoreRateInMegaBytesPerSecond() const{ return m_currentRestoreRateInMegaBytesPerSecond; }
 
     /**
      * <p>The number of megabytes per second being transferred from the backup storage.
-     * Returns the average rate for a completed backup.</p>
+     * Returns the average rate for a completed backup. This field is only updated when
+     * you restore to DC2 and DS2 node types. </p>
      */
     inline bool CurrentRestoreRateInMegaBytesPerSecondHasBeenSet() const { return m_currentRestoreRateInMegaBytesPerSecondHasBeenSet; }
 
     /**
      * <p>The number of megabytes per second being transferred from the backup storage.
-     * Returns the average rate for a completed backup.</p>
+     * Returns the average rate for a completed backup. This field is only updated when
+     * you restore to DC2 and DS2 node types. </p>
      */
     inline void SetCurrentRestoreRateInMegaBytesPerSecond(double value) { m_currentRestoreRateInMegaBytesPerSecondHasBeenSet = true; m_currentRestoreRateInMegaBytesPerSecond = value; }
 
     /**
      * <p>The number of megabytes per second being transferred from the backup storage.
-     * Returns the average rate for a completed backup.</p>
+     * Returns the average rate for a completed backup. This field is only updated when
+     * you restore to DC2 and DS2 node types. </p>
      */
     inline RestoreStatus& WithCurrentRestoreRateInMegaBytesPerSecond(double value) { SetCurrentRestoreRateInMegaBytesPerSecond(value); return *this;}
 
 
     /**
-     * <p>The size of the set of snapshot data used to restore the cluster.</p>
+     * <p>The size of the set of snapshot data used to restore the cluster. This field
+     * is only updated when you restore to DC2 and DS2 node types. </p>
      */
     inline long long GetSnapshotSizeInMegaBytes() const{ return m_snapshotSizeInMegaBytes; }
 
     /**
-     * <p>The size of the set of snapshot data used to restore the cluster.</p>
+     * <p>The size of the set of snapshot data used to restore the cluster. This field
+     * is only updated when you restore to DC2 and DS2 node types. </p>
      */
     inline bool SnapshotSizeInMegaBytesHasBeenSet() const { return m_snapshotSizeInMegaBytesHasBeenSet; }
 
     /**
-     * <p>The size of the set of snapshot data used to restore the cluster.</p>
+     * <p>The size of the set of snapshot data used to restore the cluster. This field
+     * is only updated when you restore to DC2 and DS2 node types. </p>
      */
     inline void SetSnapshotSizeInMegaBytes(long long value) { m_snapshotSizeInMegaBytesHasBeenSet = true; m_snapshotSizeInMegaBytes = value; }
 
     /**
-     * <p>The size of the set of snapshot data used to restore the cluster.</p>
+     * <p>The size of the set of snapshot data used to restore the cluster. This field
+     * is only updated when you restore to DC2 and DS2 node types. </p>
      */
     inline RestoreStatus& WithSnapshotSizeInMegaBytes(long long value) { SetSnapshotSizeInMegaBytes(value); return *this;}
 
 
     /**
-     * <p>The number of megabytes that have been transferred from snapshot storage.</p>
+     * <p>The number of megabytes that have been transferred from snapshot storage.
+     * This field is only updated when you restore to DC2 and DS2 node types. </p>
      */
     inline long long GetProgressInMegaBytes() const{ return m_progressInMegaBytes; }
 
     /**
-     * <p>The number of megabytes that have been transferred from snapshot storage.</p>
+     * <p>The number of megabytes that have been transferred from snapshot storage.
+     * This field is only updated when you restore to DC2 and DS2 node types. </p>
      */
     inline bool ProgressInMegaBytesHasBeenSet() const { return m_progressInMegaBytesHasBeenSet; }
 
     /**
-     * <p>The number of megabytes that have been transferred from snapshot storage.</p>
+     * <p>The number of megabytes that have been transferred from snapshot storage.
+     * This field is only updated when you restore to DC2 and DS2 node types. </p>
      */
     inline void SetProgressInMegaBytes(long long value) { m_progressInMegaBytesHasBeenSet = true; m_progressInMegaBytes = value; }
 
     /**
-     * <p>The number of megabytes that have been transferred from snapshot storage.</p>
+     * <p>The number of megabytes that have been transferred from snapshot storage.
+     * This field is only updated when you restore to DC2 and DS2 node types. </p>
      */
     inline RestoreStatus& WithProgressInMegaBytes(long long value) { SetProgressInMegaBytes(value); return *this;}
 
 
     /**
      * <p>The amount of time an in-progress restore has been running, or the amount of
-     * time it took a completed restore to finish.</p>
+     * time it took a completed restore to finish. This field is only updated when you
+     * restore to DC2 and DS2 node types. </p>
      */
     inline long long GetElapsedTimeInSeconds() const{ return m_elapsedTimeInSeconds; }
 
     /**
      * <p>The amount of time an in-progress restore has been running, or the amount of
-     * time it took a completed restore to finish.</p>
+     * time it took a completed restore to finish. This field is only updated when you
+     * restore to DC2 and DS2 node types. </p>
      */
     inline bool ElapsedTimeInSecondsHasBeenSet() const { return m_elapsedTimeInSecondsHasBeenSet; }
 
     /**
      * <p>The amount of time an in-progress restore has been running, or the amount of
-     * time it took a completed restore to finish.</p>
+     * time it took a completed restore to finish. This field is only updated when you
+     * restore to DC2 and DS2 node types. </p>
      */
     inline void SetElapsedTimeInSeconds(long long value) { m_elapsedTimeInSecondsHasBeenSet = true; m_elapsedTimeInSeconds = value; }
 
     /**
      * <p>The amount of time an in-progress restore has been running, or the amount of
-     * time it took a completed restore to finish.</p>
+     * time it took a completed restore to finish. This field is only updated when you
+     * restore to DC2 and DS2 node types. </p>
      */
     inline RestoreStatus& WithElapsedTimeInSeconds(long long value) { SetElapsedTimeInSeconds(value); return *this;}
 
 
     /**
      * <p>The estimate of the time remaining before the restore will complete. Returns
-     * 0 for a completed restore.</p>
+     * 0 for a completed restore. This field is only updated when you restore to DC2
+     * and DS2 node types. </p>
      */
     inline long long GetEstimatedTimeToCompletionInSeconds() const{ return m_estimatedTimeToCompletionInSeconds; }
 
     /**
      * <p>The estimate of the time remaining before the restore will complete. Returns
-     * 0 for a completed restore.</p>
+     * 0 for a completed restore. This field is only updated when you restore to DC2
+     * and DS2 node types. </p>
      */
     inline bool EstimatedTimeToCompletionInSecondsHasBeenSet() const { return m_estimatedTimeToCompletionInSecondsHasBeenSet; }
 
     /**
      * <p>The estimate of the time remaining before the restore will complete. Returns
-     * 0 for a completed restore.</p>
+     * 0 for a completed restore. This field is only updated when you restore to DC2
+     * and DS2 node types. </p>
      */
     inline void SetEstimatedTimeToCompletionInSeconds(long long value) { m_estimatedTimeToCompletionInSecondsHasBeenSet = true; m_estimatedTimeToCompletionInSeconds = value; }
 
     /**
      * <p>The estimate of the time remaining before the restore will complete. Returns
-     * 0 for a completed restore.</p>
+     * 0 for a completed restore. This field is only updated when you restore to DC2
+     * and DS2 node types. </p>
      */
     inline RestoreStatus& WithEstimatedTimeToCompletionInSeconds(long long value) { SetEstimatedTimeToCompletionInSeconds(value); return *this;}
 

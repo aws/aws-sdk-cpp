@@ -154,66 +154,106 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the public subnets. You must specify subnets from at least two
-     * Availability Zones. You can specify only one subnet per Availability Zone. You
-     * must specify either subnets or subnet mappings.</p> <p>You cannot specify
-     * Elastic IP addresses for your subnets.</p>
+     * <p>The IDs of the public subnets. You can specify only one subnet per
+     * Availability Zone. You must specify either subnets or subnet mappings.</p>
+     * <p>[Application Load Balancers] You must specify subnets from at least two
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
+     * more Availability Zones. If you need static IP addresses for your
+     * internet-facing load balancer, you can specify one Elastic IP address per
+     * subnet. For internal load balancers, you can specify one private IP address per
+     * subnet from the IPv4 range of the subnet.</p>
      */
     inline const Aws::Vector<SubnetMapping>& GetSubnetMappings() const{ return m_subnetMappings; }
 
     /**
-     * <p>The IDs of the public subnets. You must specify subnets from at least two
-     * Availability Zones. You can specify only one subnet per Availability Zone. You
-     * must specify either subnets or subnet mappings.</p> <p>You cannot specify
-     * Elastic IP addresses for your subnets.</p>
+     * <p>The IDs of the public subnets. You can specify only one subnet per
+     * Availability Zone. You must specify either subnets or subnet mappings.</p>
+     * <p>[Application Load Balancers] You must specify subnets from at least two
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
+     * more Availability Zones. If you need static IP addresses for your
+     * internet-facing load balancer, you can specify one Elastic IP address per
+     * subnet. For internal load balancers, you can specify one private IP address per
+     * subnet from the IPv4 range of the subnet.</p>
      */
     inline bool SubnetMappingsHasBeenSet() const { return m_subnetMappingsHasBeenSet; }
 
     /**
-     * <p>The IDs of the public subnets. You must specify subnets from at least two
-     * Availability Zones. You can specify only one subnet per Availability Zone. You
-     * must specify either subnets or subnet mappings.</p> <p>You cannot specify
-     * Elastic IP addresses for your subnets.</p>
+     * <p>The IDs of the public subnets. You can specify only one subnet per
+     * Availability Zone. You must specify either subnets or subnet mappings.</p>
+     * <p>[Application Load Balancers] You must specify subnets from at least two
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
+     * more Availability Zones. If you need static IP addresses for your
+     * internet-facing load balancer, you can specify one Elastic IP address per
+     * subnet. For internal load balancers, you can specify one private IP address per
+     * subnet from the IPv4 range of the subnet.</p>
      */
     inline void SetSubnetMappings(const Aws::Vector<SubnetMapping>& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = value; }
 
     /**
-     * <p>The IDs of the public subnets. You must specify subnets from at least two
-     * Availability Zones. You can specify only one subnet per Availability Zone. You
-     * must specify either subnets or subnet mappings.</p> <p>You cannot specify
-     * Elastic IP addresses for your subnets.</p>
+     * <p>The IDs of the public subnets. You can specify only one subnet per
+     * Availability Zone. You must specify either subnets or subnet mappings.</p>
+     * <p>[Application Load Balancers] You must specify subnets from at least two
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
+     * more Availability Zones. If you need static IP addresses for your
+     * internet-facing load balancer, you can specify one Elastic IP address per
+     * subnet. For internal load balancers, you can specify one private IP address per
+     * subnet from the IPv4 range of the subnet.</p>
      */
     inline void SetSubnetMappings(Aws::Vector<SubnetMapping>&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = std::move(value); }
 
     /**
-     * <p>The IDs of the public subnets. You must specify subnets from at least two
-     * Availability Zones. You can specify only one subnet per Availability Zone. You
-     * must specify either subnets or subnet mappings.</p> <p>You cannot specify
-     * Elastic IP addresses for your subnets.</p>
+     * <p>The IDs of the public subnets. You can specify only one subnet per
+     * Availability Zone. You must specify either subnets or subnet mappings.</p>
+     * <p>[Application Load Balancers] You must specify subnets from at least two
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
+     * more Availability Zones. If you need static IP addresses for your
+     * internet-facing load balancer, you can specify one Elastic IP address per
+     * subnet. For internal load balancers, you can specify one private IP address per
+     * subnet from the IPv4 range of the subnet.</p>
      */
     inline SetSubnetsRequest& WithSubnetMappings(const Aws::Vector<SubnetMapping>& value) { SetSubnetMappings(value); return *this;}
 
     /**
-     * <p>The IDs of the public subnets. You must specify subnets from at least two
-     * Availability Zones. You can specify only one subnet per Availability Zone. You
-     * must specify either subnets or subnet mappings.</p> <p>You cannot specify
-     * Elastic IP addresses for your subnets.</p>
+     * <p>The IDs of the public subnets. You can specify only one subnet per
+     * Availability Zone. You must specify either subnets or subnet mappings.</p>
+     * <p>[Application Load Balancers] You must specify subnets from at least two
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
+     * more Availability Zones. If you need static IP addresses for your
+     * internet-facing load balancer, you can specify one Elastic IP address per
+     * subnet. For internal load balancers, you can specify one private IP address per
+     * subnet from the IPv4 range of the subnet.</p>
      */
     inline SetSubnetsRequest& WithSubnetMappings(Aws::Vector<SubnetMapping>&& value) { SetSubnetMappings(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the public subnets. You must specify subnets from at least two
-     * Availability Zones. You can specify only one subnet per Availability Zone. You
-     * must specify either subnets or subnet mappings.</p> <p>You cannot specify
-     * Elastic IP addresses for your subnets.</p>
+     * <p>The IDs of the public subnets. You can specify only one subnet per
+     * Availability Zone. You must specify either subnets or subnet mappings.</p>
+     * <p>[Application Load Balancers] You must specify subnets from at least two
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
+     * more Availability Zones. If you need static IP addresses for your
+     * internet-facing load balancer, you can specify one Elastic IP address per
+     * subnet. For internal load balancers, you can specify one private IP address per
+     * subnet from the IPv4 range of the subnet.</p>
      */
     inline SetSubnetsRequest& AddSubnetMappings(const SubnetMapping& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the public subnets. You must specify subnets from at least two
-     * Availability Zones. You can specify only one subnet per Availability Zone. You
-     * must specify either subnets or subnet mappings.</p> <p>You cannot specify
-     * Elastic IP addresses for your subnets.</p>
+     * <p>The IDs of the public subnets. You can specify only one subnet per
+     * Availability Zone. You must specify either subnets or subnet mappings.</p>
+     * <p>[Application Load Balancers] You must specify subnets from at least two
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
+     * more Availability Zones. If you need static IP addresses for your
+     * internet-facing load balancer, you can specify one Elastic IP address per
+     * subnet. For internal load balancers, you can specify one private IP address per
+     * subnet from the IPv4 range of the subnet.</p>
      */
     inline SetSubnetsRequest& AddSubnetMappings(SubnetMapping&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings.push_back(std::move(value)); return *this; }
 

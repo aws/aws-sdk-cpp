@@ -34,7 +34,9 @@ ResourceIdentifier::ResourceIdentifier() :
     m_cognitoIdentityPoolIdHasBeenSet(false),
     m_clientIdHasBeenSet(false),
     m_policyVersionIdentifierHasBeenSet(false),
-    m_accountHasBeenSet(false)
+    m_accountHasBeenSet(false),
+    m_iamRoleArnHasBeenSet(false),
+    m_roleAliasArnHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ ResourceIdentifier::ResourceIdentifier(JsonView jsonValue) :
     m_cognitoIdentityPoolIdHasBeenSet(false),
     m_clientIdHasBeenSet(false),
     m_policyVersionIdentifierHasBeenSet(false),
-    m_accountHasBeenSet(false)
+    m_accountHasBeenSet(false),
+    m_iamRoleArnHasBeenSet(false),
+    m_roleAliasArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +97,20 @@ ResourceIdentifier& ResourceIdentifier::operator =(JsonView jsonValue)
     m_accountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("iamRoleArn"))
+  {
+    m_iamRoleArn = jsonValue.GetString("iamRoleArn");
+
+    m_iamRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("roleAliasArn"))
+  {
+    m_roleAliasArn = jsonValue.GetString("roleAliasArn");
+
+    m_roleAliasArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +151,18 @@ JsonValue ResourceIdentifier::Jsonize() const
   if(m_accountHasBeenSet)
   {
    payload.WithString("account", m_account);
+
+  }
+
+  if(m_iamRoleArnHasBeenSet)
+  {
+   payload.WithString("iamRoleArn", m_iamRoleArn);
+
+  }
+
+  if(m_roleAliasArnHasBeenSet)
+  {
+   payload.WithString("roleAliasArn", m_roleAliasArn);
 
   }
 

@@ -1,0 +1,252 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/appconfig/AppConfig_EXPORTS.h>
+#include <aws/appconfig/AppConfigRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appconfig/model/GrowthType.h>
+#include <utility>
+
+namespace Aws
+{
+namespace AppConfig
+{
+namespace Model
+{
+
+  /**
+   */
+  class AWS_APPCONFIG_API UpdateDeploymentStrategyRequest : public AppConfigRequest
+  {
+  public:
+    UpdateDeploymentStrategyRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "UpdateDeploymentStrategy"; }
+
+    Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The deployment strategy ID.</p>
+     */
+    inline const Aws::String& GetDeploymentStrategyId() const{ return m_deploymentStrategyId; }
+
+    /**
+     * <p>The deployment strategy ID.</p>
+     */
+    inline bool DeploymentStrategyIdHasBeenSet() const { return m_deploymentStrategyIdHasBeenSet; }
+
+    /**
+     * <p>The deployment strategy ID.</p>
+     */
+    inline void SetDeploymentStrategyId(const Aws::String& value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId = value; }
+
+    /**
+     * <p>The deployment strategy ID.</p>
+     */
+    inline void SetDeploymentStrategyId(Aws::String&& value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId = std::move(value); }
+
+    /**
+     * <p>The deployment strategy ID.</p>
+     */
+    inline void SetDeploymentStrategyId(const char* value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId.assign(value); }
+
+    /**
+     * <p>The deployment strategy ID.</p>
+     */
+    inline UpdateDeploymentStrategyRequest& WithDeploymentStrategyId(const Aws::String& value) { SetDeploymentStrategyId(value); return *this;}
+
+    /**
+     * <p>The deployment strategy ID.</p>
+     */
+    inline UpdateDeploymentStrategyRequest& WithDeploymentStrategyId(Aws::String&& value) { SetDeploymentStrategyId(std::move(value)); return *this;}
+
+    /**
+     * <p>The deployment strategy ID.</p>
+     */
+    inline UpdateDeploymentStrategyRequest& WithDeploymentStrategyId(const char* value) { SetDeploymentStrategyId(value); return *this;}
+
+
+    /**
+     * <p>A description of the deployment strategy.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the deployment strategy.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the deployment strategy.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>A description of the deployment strategy.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>A description of the deployment strategy.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>A description of the deployment strategy.</p>
+     */
+    inline UpdateDeploymentStrategyRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>A description of the deployment strategy.</p>
+     */
+    inline UpdateDeploymentStrategyRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the deployment strategy.</p>
+     */
+    inline UpdateDeploymentStrategyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>Total amount of time for a deployment to last.</p>
+     */
+    inline int GetDeploymentDurationInMinutes() const{ return m_deploymentDurationInMinutes; }
+
+    /**
+     * <p>Total amount of time for a deployment to last.</p>
+     */
+    inline bool DeploymentDurationInMinutesHasBeenSet() const { return m_deploymentDurationInMinutesHasBeenSet; }
+
+    /**
+     * <p>Total amount of time for a deployment to last.</p>
+     */
+    inline void SetDeploymentDurationInMinutes(int value) { m_deploymentDurationInMinutesHasBeenSet = true; m_deploymentDurationInMinutes = value; }
+
+    /**
+     * <p>Total amount of time for a deployment to last.</p>
+     */
+    inline UpdateDeploymentStrategyRequest& WithDeploymentDurationInMinutes(int value) { SetDeploymentDurationInMinutes(value); return *this;}
+
+
+    /**
+     * <p>The amount of time AppConfig monitors for alarms before considering the
+     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     */
+    inline int GetFinalBakeTimeInMinutes() const{ return m_finalBakeTimeInMinutes; }
+
+    /**
+     * <p>The amount of time AppConfig monitors for alarms before considering the
+     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     */
+    inline bool FinalBakeTimeInMinutesHasBeenSet() const { return m_finalBakeTimeInMinutesHasBeenSet; }
+
+    /**
+     * <p>The amount of time AppConfig monitors for alarms before considering the
+     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     */
+    inline void SetFinalBakeTimeInMinutes(int value) { m_finalBakeTimeInMinutesHasBeenSet = true; m_finalBakeTimeInMinutes = value; }
+
+    /**
+     * <p>The amount of time AppConfig monitors for alarms before considering the
+     * deployment to be complete and no longer eligible for automatic roll back.</p>
+     */
+    inline UpdateDeploymentStrategyRequest& WithFinalBakeTimeInMinutes(int value) { SetFinalBakeTimeInMinutes(value); return *this;}
+
+
+    /**
+     * <p>The percentage of targets to receive a deployed configuration during each
+     * interval.</p>
+     */
+    inline double GetGrowthFactor() const{ return m_growthFactor; }
+
+    /**
+     * <p>The percentage of targets to receive a deployed configuration during each
+     * interval.</p>
+     */
+    inline bool GrowthFactorHasBeenSet() const { return m_growthFactorHasBeenSet; }
+
+    /**
+     * <p>The percentage of targets to receive a deployed configuration during each
+     * interval.</p>
+     */
+    inline void SetGrowthFactor(double value) { m_growthFactorHasBeenSet = true; m_growthFactor = value; }
+
+    /**
+     * <p>The percentage of targets to receive a deployed configuration during each
+     * interval.</p>
+     */
+    inline UpdateDeploymentStrategyRequest& WithGrowthFactor(double value) { SetGrowthFactor(value); return *this;}
+
+
+    /**
+     * <p>The algorithm used to define how percentage grows over time.</p>
+     */
+    inline const GrowthType& GetGrowthType() const{ return m_growthType; }
+
+    /**
+     * <p>The algorithm used to define how percentage grows over time.</p>
+     */
+    inline bool GrowthTypeHasBeenSet() const { return m_growthTypeHasBeenSet; }
+
+    /**
+     * <p>The algorithm used to define how percentage grows over time.</p>
+     */
+    inline void SetGrowthType(const GrowthType& value) { m_growthTypeHasBeenSet = true; m_growthType = value; }
+
+    /**
+     * <p>The algorithm used to define how percentage grows over time.</p>
+     */
+    inline void SetGrowthType(GrowthType&& value) { m_growthTypeHasBeenSet = true; m_growthType = std::move(value); }
+
+    /**
+     * <p>The algorithm used to define how percentage grows over time.</p>
+     */
+    inline UpdateDeploymentStrategyRequest& WithGrowthType(const GrowthType& value) { SetGrowthType(value); return *this;}
+
+    /**
+     * <p>The algorithm used to define how percentage grows over time.</p>
+     */
+    inline UpdateDeploymentStrategyRequest& WithGrowthType(GrowthType&& value) { SetGrowthType(std::move(value)); return *this;}
+
+  private:
+
+    Aws::String m_deploymentStrategyId;
+    bool m_deploymentStrategyIdHasBeenSet;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
+
+    int m_deploymentDurationInMinutes;
+    bool m_deploymentDurationInMinutesHasBeenSet;
+
+    int m_finalBakeTimeInMinutes;
+    bool m_finalBakeTimeInMinutesHasBeenSet;
+
+    double m_growthFactor;
+    bool m_growthFactorHasBeenSet;
+
+    GrowthType m_growthType;
+    bool m_growthTypeHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace AppConfig
+} // namespace Aws

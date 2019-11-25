@@ -46,32 +46,50 @@ namespace Model
 
 
     /**
-     * <p>The association type.</p>
+     * <p>The association type. Specify <code>PRINCIPAL</code> to list the principals
+     * that are associated with the specified resource share. Specify
+     * <code>RESOURCE</code> to list the resources that are associated with the
+     * specified resource share.</p>
      */
     inline const ResourceShareAssociationType& GetAssociationType() const{ return m_associationType; }
 
     /**
-     * <p>The association type.</p>
+     * <p>The association type. Specify <code>PRINCIPAL</code> to list the principals
+     * that are associated with the specified resource share. Specify
+     * <code>RESOURCE</code> to list the resources that are associated with the
+     * specified resource share.</p>
      */
     inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }
 
     /**
-     * <p>The association type.</p>
+     * <p>The association type. Specify <code>PRINCIPAL</code> to list the principals
+     * that are associated with the specified resource share. Specify
+     * <code>RESOURCE</code> to list the resources that are associated with the
+     * specified resource share.</p>
      */
     inline void SetAssociationType(const ResourceShareAssociationType& value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
 
     /**
-     * <p>The association type.</p>
+     * <p>The association type. Specify <code>PRINCIPAL</code> to list the principals
+     * that are associated with the specified resource share. Specify
+     * <code>RESOURCE</code> to list the resources that are associated with the
+     * specified resource share.</p>
      */
     inline void SetAssociationType(ResourceShareAssociationType&& value) { m_associationTypeHasBeenSet = true; m_associationType = std::move(value); }
 
     /**
-     * <p>The association type.</p>
+     * <p>The association type. Specify <code>PRINCIPAL</code> to list the principals
+     * that are associated with the specified resource share. Specify
+     * <code>RESOURCE</code> to list the resources that are associated with the
+     * specified resource share.</p>
      */
     inline GetResourceShareAssociationsRequest& WithAssociationType(const ResourceShareAssociationType& value) { SetAssociationType(value); return *this;}
 
     /**
-     * <p>The association type.</p>
+     * <p>The association type. Specify <code>PRINCIPAL</code> to list the principals
+     * that are associated with the specified resource share. Specify
+     * <code>RESOURCE</code> to list the resources that are associated with the
+     * specified resource share.</p>
      */
     inline GetResourceShareAssociationsRequest& WithAssociationType(ResourceShareAssociationType&& value) { SetAssociationType(std::move(value)); return *this;}
 

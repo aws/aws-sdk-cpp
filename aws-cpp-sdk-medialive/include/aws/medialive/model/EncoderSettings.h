@@ -20,6 +20,7 @@
 #include <aws/medialive/model/AvailConfiguration.h>
 #include <aws/medialive/model/BlackoutSlate.h>
 #include <aws/medialive/model/GlobalConfiguration.h>
+#include <aws/medialive/model/NielsenConfiguration.h>
 #include <aws/medialive/model/TimecodeConfig.h>
 #include <aws/medialive/model/AudioDescription.h>
 #include <aws/medialive/model/CaptionDescription.h>
@@ -246,6 +247,37 @@ namespace Model
     inline EncoderSettings& WithGlobalConfiguration(GlobalConfiguration&& value) { SetGlobalConfiguration(std::move(value)); return *this;}
 
 
+    /**
+     * Nielsen configuration settings.
+     */
+    inline const NielsenConfiguration& GetNielsenConfiguration() const{ return m_nielsenConfiguration; }
+
+    /**
+     * Nielsen configuration settings.
+     */
+    inline bool NielsenConfigurationHasBeenSet() const { return m_nielsenConfigurationHasBeenSet; }
+
+    /**
+     * Nielsen configuration settings.
+     */
+    inline void SetNielsenConfiguration(const NielsenConfiguration& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = value; }
+
+    /**
+     * Nielsen configuration settings.
+     */
+    inline void SetNielsenConfiguration(NielsenConfiguration&& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = std::move(value); }
+
+    /**
+     * Nielsen configuration settings.
+     */
+    inline EncoderSettings& WithNielsenConfiguration(const NielsenConfiguration& value) { SetNielsenConfiguration(value); return *this;}
+
+    /**
+     * Nielsen configuration settings.
+     */
+    inline EncoderSettings& WithNielsenConfiguration(NielsenConfiguration&& value) { SetNielsenConfiguration(std::move(value)); return *this;}
+
+
     
     inline const Aws::Vector<OutputGroup>& GetOutputGroups() const{ return m_outputGroups; }
 
@@ -345,6 +377,9 @@ namespace Model
 
     GlobalConfiguration m_globalConfiguration;
     bool m_globalConfigurationHasBeenSet;
+
+    NielsenConfiguration m_nielsenConfiguration;
+    bool m_nielsenConfigurationHasBeenSet;
 
     Aws::Vector<OutputGroup> m_outputGroups;
     bool m_outputGroupsHasBeenSet;

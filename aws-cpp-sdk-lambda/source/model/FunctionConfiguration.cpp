@@ -52,7 +52,17 @@ FunctionConfiguration::FunctionConfiguration() :
     m_tracingConfigHasBeenSet(false),
     m_masterArnHasBeenSet(false),
     m_revisionIdHasBeenSet(false),
-    m_layersHasBeenSet(false)
+    m_layersHasBeenSet(false),
+    m_state(State::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_stateReasonHasBeenSet(false),
+    m_stateReasonCode(StateReasonCode::NOT_SET),
+    m_stateReasonCodeHasBeenSet(false),
+    m_lastUpdateStatus(LastUpdateStatus::NOT_SET),
+    m_lastUpdateStatusHasBeenSet(false),
+    m_lastUpdateStatusReasonHasBeenSet(false),
+    m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET),
+    m_lastUpdateStatusReasonCodeHasBeenSet(false)
 {
 }
 
@@ -80,7 +90,17 @@ FunctionConfiguration::FunctionConfiguration(JsonView jsonValue) :
     m_tracingConfigHasBeenSet(false),
     m_masterArnHasBeenSet(false),
     m_revisionIdHasBeenSet(false),
-    m_layersHasBeenSet(false)
+    m_layersHasBeenSet(false),
+    m_state(State::NOT_SET),
+    m_stateHasBeenSet(false),
+    m_stateReasonHasBeenSet(false),
+    m_stateReasonCode(StateReasonCode::NOT_SET),
+    m_stateReasonCodeHasBeenSet(false),
+    m_lastUpdateStatus(LastUpdateStatus::NOT_SET),
+    m_lastUpdateStatusHasBeenSet(false),
+    m_lastUpdateStatusReasonHasBeenSet(false),
+    m_lastUpdateStatusReasonCode(LastUpdateStatusReasonCode::NOT_SET),
+    m_lastUpdateStatusReasonCodeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -230,6 +250,48 @@ FunctionConfiguration& FunctionConfiguration::operator =(JsonView jsonValue)
     m_layersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("State"))
+  {
+    m_state = StateMapper::GetStateForName(jsonValue.GetString("State"));
+
+    m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StateReason"))
+  {
+    m_stateReason = jsonValue.GetString("StateReason");
+
+    m_stateReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StateReasonCode"))
+  {
+    m_stateReasonCode = StateReasonCodeMapper::GetStateReasonCodeForName(jsonValue.GetString("StateReasonCode"));
+
+    m_stateReasonCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastUpdateStatus"))
+  {
+    m_lastUpdateStatus = LastUpdateStatusMapper::GetLastUpdateStatusForName(jsonValue.GetString("LastUpdateStatus"));
+
+    m_lastUpdateStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastUpdateStatusReason"))
+  {
+    m_lastUpdateStatusReason = jsonValue.GetString("LastUpdateStatusReason");
+
+    m_lastUpdateStatusReasonHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastUpdateStatusReasonCode"))
+  {
+    m_lastUpdateStatusReasonCode = LastUpdateStatusReasonCodeMapper::GetLastUpdateStatusReasonCodeForName(jsonValue.GetString("LastUpdateStatusReasonCode"));
+
+    m_lastUpdateStatusReasonCodeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -359,6 +421,38 @@ JsonValue FunctionConfiguration::Jsonize() const
    }
    payload.WithArray("Layers", std::move(layersJsonList));
 
+  }
+
+  if(m_stateHasBeenSet)
+  {
+   payload.WithString("State", StateMapper::GetNameForState(m_state));
+  }
+
+  if(m_stateReasonHasBeenSet)
+  {
+   payload.WithString("StateReason", m_stateReason);
+
+  }
+
+  if(m_stateReasonCodeHasBeenSet)
+  {
+   payload.WithString("StateReasonCode", StateReasonCodeMapper::GetNameForStateReasonCode(m_stateReasonCode));
+  }
+
+  if(m_lastUpdateStatusHasBeenSet)
+  {
+   payload.WithString("LastUpdateStatus", LastUpdateStatusMapper::GetNameForLastUpdateStatus(m_lastUpdateStatus));
+  }
+
+  if(m_lastUpdateStatusReasonHasBeenSet)
+  {
+   payload.WithString("LastUpdateStatusReason", m_lastUpdateStatusReason);
+
+  }
+
+  if(m_lastUpdateStatusReasonCodeHasBeenSet)
+  {
+   payload.WithString("LastUpdateStatusReasonCode", LastUpdateStatusReasonCodeMapper::GetNameForLastUpdateStatusReasonCode(m_lastUpdateStatusReasonCode));
   }
 
   return payload;

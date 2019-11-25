@@ -17,6 +17,7 @@
 #include <aws/application-insights/ApplicationInsights_EXPORTS.h>
 #include <aws/application-insights/ApplicationInsightsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/application-insights/model/Tier.h>
 #include <utility>
 
 namespace Aws
@@ -128,59 +129,45 @@ namespace Model
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>,
+     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
      */
-    inline const Aws::String& GetTier() const{ return m_tier; }
+    inline const Tier& GetTier() const{ return m_tier; }
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>,
+     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
      */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>,
+     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
      */
-    inline void SetTier(const Aws::String& value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>,
+     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
      */
-    inline void SetTier(Aws::String&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
+    inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>,
+     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
      */
-    inline void SetTier(const char* value) { m_tierHasBeenSet = true; m_tier.assign(value); }
+    inline DescribeComponentConfigurationRecommendationRequest& WithTier(const Tier& value) { SetTier(value); return *this;}
 
     /**
      * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
+     * <code>DOT_NET_CORE</code>, <code>DOT_NET_WORKER</code>,
+     * <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>, and <code>DEFAULT</code>.</p>
      */
-    inline DescribeComponentConfigurationRecommendationRequest& WithTier(const Aws::String& value) { SetTier(value); return *this;}
-
-    /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
-     */
-    inline DescribeComponentConfigurationRecommendationRequest& WithTier(Aws::String&& value) { SetTier(std::move(value)); return *this;}
-
-    /**
-     * <p>The tier of the application component. Supported tiers include
-     * <code>DOT_NET_WORKER</code>, <code>DOT_NET_WEB</code>, <code>SQL_SERVER</code>,
-     * and <code>DEFAULT</code>.</p>
-     */
-    inline DescribeComponentConfigurationRecommendationRequest& WithTier(const char* value) { SetTier(value); return *this;}
+    inline DescribeComponentConfigurationRecommendationRequest& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
 
   private:
 
@@ -190,7 +177,7 @@ namespace Model
     Aws::String m_componentName;
     bool m_componentNameHasBeenSet;
 
-    Aws::String m_tier;
+    Tier m_tier;
     bool m_tierHasBeenSet;
   };
 

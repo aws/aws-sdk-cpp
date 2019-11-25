@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 DescribeComponentConfigurationRecommendationRequest::DescribeComponentConfigurationRecommendationRequest() : 
     m_resourceGroupNameHasBeenSet(false),
     m_componentNameHasBeenSet(false),
+    m_tier(Tier::NOT_SET),
     m_tierHasBeenSet(false)
 {
 }
@@ -47,8 +48,7 @@ Aws::String DescribeComponentConfigurationRecommendationRequest::SerializePayloa
 
   if(m_tierHasBeenSet)
   {
-   payload.WithString("Tier", m_tier);
-
+   payload.WithString("Tier", TierMapper::GetNameForTier(m_tier));
   }
 
   return payload.View().WriteReadable();

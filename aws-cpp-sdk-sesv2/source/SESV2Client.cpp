@@ -39,6 +39,7 @@
 #include <aws/sesv2/model/DeleteConfigurationSetEventDestinationRequest.h>
 #include <aws/sesv2/model/DeleteDedicatedIpPoolRequest.h>
 #include <aws/sesv2/model/DeleteEmailIdentityRequest.h>
+#include <aws/sesv2/model/DeleteSuppressedDestinationRequest.h>
 #include <aws/sesv2/model/GetAccountRequest.h>
 #include <aws/sesv2/model/GetBlacklistReportsRequest.h>
 #include <aws/sesv2/model/GetConfigurationSetRequest.h>
@@ -50,17 +51,21 @@
 #include <aws/sesv2/model/GetDomainDeliverabilityCampaignRequest.h>
 #include <aws/sesv2/model/GetDomainStatisticsReportRequest.h>
 #include <aws/sesv2/model/GetEmailIdentityRequest.h>
+#include <aws/sesv2/model/GetSuppressedDestinationRequest.h>
 #include <aws/sesv2/model/ListConfigurationSetsRequest.h>
 #include <aws/sesv2/model/ListDedicatedIpPoolsRequest.h>
 #include <aws/sesv2/model/ListDeliverabilityTestReportsRequest.h>
 #include <aws/sesv2/model/ListDomainDeliverabilityCampaignsRequest.h>
 #include <aws/sesv2/model/ListEmailIdentitiesRequest.h>
+#include <aws/sesv2/model/ListSuppressedDestinationsRequest.h>
 #include <aws/sesv2/model/ListTagsForResourceRequest.h>
 #include <aws/sesv2/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
 #include <aws/sesv2/model/PutAccountSendingAttributesRequest.h>
+#include <aws/sesv2/model/PutAccountSuppressionAttributesRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetDeliveryOptionsRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetReputationOptionsRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetSendingOptionsRequest.h>
+#include <aws/sesv2/model/PutConfigurationSetSuppressionOptionsRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetTrackingOptionsRequest.h>
 #include <aws/sesv2/model/PutDedicatedIpInPoolRequest.h>
 #include <aws/sesv2/model/PutDedicatedIpWarmupAttributesRequest.h>
@@ -68,6 +73,7 @@
 #include <aws/sesv2/model/PutEmailIdentityDkimAttributesRequest.h>
 #include <aws/sesv2/model/PutEmailIdentityFeedbackAttributesRequest.h>
 #include <aws/sesv2/model/PutEmailIdentityMailFromAttributesRequest.h>
+#include <aws/sesv2/model/PutSuppressedDestinationRequest.h>
 #include <aws/sesv2/model/SendEmailRequest.h>
 #include <aws/sesv2/model/TagResourceRequest.h>
 #include <aws/sesv2/model/UntagResourceRequest.h>
@@ -496,6 +502,47 @@ void SESV2Client::DeleteEmailIdentityAsync(const DeleteEmailIdentityRequest& req
 void SESV2Client::DeleteEmailIdentityAsyncHelper(const DeleteEmailIdentityRequest& request, const DeleteEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteEmailIdentity(request), context);
+}
+
+DeleteSuppressedDestinationOutcome SESV2Client::DeleteSuppressedDestination(const DeleteSuppressedDestinationRequest& request) const
+{
+  if (!request.EmailAddressHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSuppressedDestination", "Required field: EmailAddress, is not set");
+    return DeleteSuppressedDestinationOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailAddress]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/suppression/addresses/";
+  ss << request.GetEmailAddress();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteSuppressedDestinationOutcome(DeleteSuppressedDestinationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteSuppressedDestinationOutcome(outcome.GetError());
+  }
+}
+
+DeleteSuppressedDestinationOutcomeCallable SESV2Client::DeleteSuppressedDestinationCallable(const DeleteSuppressedDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSuppressedDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSuppressedDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::DeleteSuppressedDestinationAsync(const DeleteSuppressedDestinationRequest& request, const DeleteSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSuppressedDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::DeleteSuppressedDestinationAsyncHelper(const DeleteSuppressedDestinationRequest& request, const DeleteSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSuppressedDestination(request), context);
 }
 
 GetAccountOutcome SESV2Client::GetAccount(const GetAccountRequest& request) const
@@ -941,6 +988,47 @@ void SESV2Client::GetEmailIdentityAsyncHelper(const GetEmailIdentityRequest& req
   handler(this, request, GetEmailIdentity(request), context);
 }
 
+GetSuppressedDestinationOutcome SESV2Client::GetSuppressedDestination(const GetSuppressedDestinationRequest& request) const
+{
+  if (!request.EmailAddressHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSuppressedDestination", "Required field: EmailAddress, is not set");
+    return GetSuppressedDestinationOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailAddress]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/suppression/addresses/";
+  ss << request.GetEmailAddress();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetSuppressedDestinationOutcome(GetSuppressedDestinationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSuppressedDestinationOutcome(outcome.GetError());
+  }
+}
+
+GetSuppressedDestinationOutcomeCallable SESV2Client::GetSuppressedDestinationCallable(const GetSuppressedDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSuppressedDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSuppressedDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::GetSuppressedDestinationAsync(const GetSuppressedDestinationRequest& request, const GetSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSuppressedDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::GetSuppressedDestinationAsyncHelper(const GetSuppressedDestinationRequest& request, const GetSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSuppressedDestination(request), context);
+}
+
 ListConfigurationSetsOutcome SESV2Client::ListConfigurationSets(const ListConfigurationSetsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1133,6 +1221,41 @@ void SESV2Client::ListEmailIdentitiesAsyncHelper(const ListEmailIdentitiesReques
   handler(this, request, ListEmailIdentities(request), context);
 }
 
+ListSuppressedDestinationsOutcome SESV2Client::ListSuppressedDestinations(const ListSuppressedDestinationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/suppression/addresses";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListSuppressedDestinationsOutcome(ListSuppressedDestinationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListSuppressedDestinationsOutcome(outcome.GetError());
+  }
+}
+
+ListSuppressedDestinationsOutcomeCallable SESV2Client::ListSuppressedDestinationsCallable(const ListSuppressedDestinationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSuppressedDestinationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSuppressedDestinations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::ListSuppressedDestinationsAsync(const ListSuppressedDestinationsRequest& request, const ListSuppressedDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSuppressedDestinationsAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::ListSuppressedDestinationsAsyncHelper(const ListSuppressedDestinationsRequest& request, const ListSuppressedDestinationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSuppressedDestinations(request), context);
+}
+
 ListTagsForResourceOutcome SESV2Client::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   if (!request.ResourceArnHasBeenSet())
@@ -1241,6 +1364,41 @@ void SESV2Client::PutAccountSendingAttributesAsync(const PutAccountSendingAttrib
 void SESV2Client::PutAccountSendingAttributesAsyncHelper(const PutAccountSendingAttributesRequest& request, const PutAccountSendingAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutAccountSendingAttributes(request), context);
+}
+
+PutAccountSuppressionAttributesOutcome SESV2Client::PutAccountSuppressionAttributes(const PutAccountSuppressionAttributesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/account/suppression";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutAccountSuppressionAttributesOutcome(PutAccountSuppressionAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutAccountSuppressionAttributesOutcome(outcome.GetError());
+  }
+}
+
+PutAccountSuppressionAttributesOutcomeCallable SESV2Client::PutAccountSuppressionAttributesCallable(const PutAccountSuppressionAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutAccountSuppressionAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutAccountSuppressionAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::PutAccountSuppressionAttributesAsync(const PutAccountSuppressionAttributesRequest& request, const PutAccountSuppressionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutAccountSuppressionAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::PutAccountSuppressionAttributesAsyncHelper(const PutAccountSuppressionAttributesRequest& request, const PutAccountSuppressionAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutAccountSuppressionAttributes(request), context);
 }
 
 PutConfigurationSetDeliveryOptionsOutcome SESV2Client::PutConfigurationSetDeliveryOptions(const PutConfigurationSetDeliveryOptionsRequest& request) const
@@ -1367,6 +1525,48 @@ void SESV2Client::PutConfigurationSetSendingOptionsAsync(const PutConfigurationS
 void SESV2Client::PutConfigurationSetSendingOptionsAsyncHelper(const PutConfigurationSetSendingOptionsRequest& request, const PutConfigurationSetSendingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutConfigurationSetSendingOptions(request), context);
+}
+
+PutConfigurationSetSuppressionOptionsOutcome SESV2Client::PutConfigurationSetSuppressionOptions(const PutConfigurationSetSuppressionOptionsRequest& request) const
+{
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutConfigurationSetSuppressionOptions", "Required field: ConfigurationSetName, is not set");
+    return PutConfigurationSetSuppressionOptionsOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/configuration-sets/";
+  ss << request.GetConfigurationSetName();
+  ss << "/suppression-options";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutConfigurationSetSuppressionOptionsOutcome(PutConfigurationSetSuppressionOptionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutConfigurationSetSuppressionOptionsOutcome(outcome.GetError());
+  }
+}
+
+PutConfigurationSetSuppressionOptionsOutcomeCallable SESV2Client::PutConfigurationSetSuppressionOptionsCallable(const PutConfigurationSetSuppressionOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutConfigurationSetSuppressionOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutConfigurationSetSuppressionOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::PutConfigurationSetSuppressionOptionsAsync(const PutConfigurationSetSuppressionOptionsRequest& request, const PutConfigurationSetSuppressionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutConfigurationSetSuppressionOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::PutConfigurationSetSuppressionOptionsAsyncHelper(const PutConfigurationSetSuppressionOptionsRequest& request, const PutConfigurationSetSuppressionOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutConfigurationSetSuppressionOptions(request), context);
 }
 
 PutConfigurationSetTrackingOptionsOutcome SESV2Client::PutConfigurationSetTrackingOptions(const PutConfigurationSetTrackingOptionsRequest& request) const
@@ -1654,6 +1854,41 @@ void SESV2Client::PutEmailIdentityMailFromAttributesAsync(const PutEmailIdentity
 void SESV2Client::PutEmailIdentityMailFromAttributesAsyncHelper(const PutEmailIdentityMailFromAttributesRequest& request, const PutEmailIdentityMailFromAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutEmailIdentityMailFromAttributes(request), context);
+}
+
+PutSuppressedDestinationOutcome SESV2Client::PutSuppressedDestination(const PutSuppressedDestinationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/email/suppression/addresses";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutSuppressedDestinationOutcome(PutSuppressedDestinationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutSuppressedDestinationOutcome(outcome.GetError());
+  }
+}
+
+PutSuppressedDestinationOutcomeCallable SESV2Client::PutSuppressedDestinationCallable(const PutSuppressedDestinationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutSuppressedDestinationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutSuppressedDestination(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::PutSuppressedDestinationAsync(const PutSuppressedDestinationRequest& request, const PutSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutSuppressedDestinationAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::PutSuppressedDestinationAsyncHelper(const PutSuppressedDestinationRequest& request, const PutSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutSuppressedDestination(request), context);
 }
 
 SendEmailOutcome SESV2Client::SendEmail(const SendEmailRequest& request) const

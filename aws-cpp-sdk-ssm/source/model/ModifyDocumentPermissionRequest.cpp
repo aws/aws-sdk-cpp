@@ -27,7 +27,8 @@ ModifyDocumentPermissionRequest::ModifyDocumentPermissionRequest() :
     m_permissionType(DocumentPermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false),
     m_accountIdsToAddHasBeenSet(false),
-    m_accountIdsToRemoveHasBeenSet(false)
+    m_accountIdsToRemoveHasBeenSet(false),
+    m_sharedDocumentVersionHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,12 @@ Aws::String ModifyDocumentPermissionRequest::SerializePayload() const
      accountIdsToRemoveJsonList[accountIdsToRemoveIndex].AsString(m_accountIdsToRemove[accountIdsToRemoveIndex]);
    }
    payload.WithArray("AccountIdsToRemove", std::move(accountIdsToRemoveJsonList));
+
+  }
+
+  if(m_sharedDocumentVersionHasBeenSet)
+  {
+   payload.WithString("SharedDocumentVersion", m_sharedDocumentVersion);
 
   }
 

@@ -27,16 +27,16 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetAccountResult::GetAccountResult() : 
-    m_sendingEnabled(false),
     m_dedicatedIpAutoWarmupEnabled(false),
-    m_productionAccessEnabled(false)
+    m_productionAccessEnabled(false),
+    m_sendingEnabled(false)
 {
 }
 
 GetAccountResult::GetAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_sendingEnabled(false),
     m_dedicatedIpAutoWarmupEnabled(false),
-    m_productionAccessEnabled(false)
+    m_productionAccessEnabled(false),
+    m_sendingEnabled(false)
 {
   *this = result;
 }
@@ -44,18 +44,6 @@ GetAccountResult::GetAccountResult(const Aws::AmazonWebServiceResult<JsonValue>&
 GetAccountResult& GetAccountResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("SendQuota"))
-  {
-    m_sendQuota = jsonValue.GetObject("SendQuota");
-
-  }
-
-  if(jsonValue.ValueExists("SendingEnabled"))
-  {
-    m_sendingEnabled = jsonValue.GetBool("SendingEnabled");
-
-  }
-
   if(jsonValue.ValueExists("DedicatedIpAutoWarmupEnabled"))
   {
     m_dedicatedIpAutoWarmupEnabled = jsonValue.GetBool("DedicatedIpAutoWarmupEnabled");
@@ -71,6 +59,24 @@ GetAccountResult& GetAccountResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("ProductionAccessEnabled"))
   {
     m_productionAccessEnabled = jsonValue.GetBool("ProductionAccessEnabled");
+
+  }
+
+  if(jsonValue.ValueExists("SendQuota"))
+  {
+    m_sendQuota = jsonValue.GetObject("SendQuota");
+
+  }
+
+  if(jsonValue.ValueExists("SendingEnabled"))
+  {
+    m_sendingEnabled = jsonValue.GetBool("SendingEnabled");
+
+  }
+
+  if(jsonValue.ValueExists("SuppressionAttributes"))
+  {
+    m_suppressionAttributes = jsonValue.GetObject("SuppressionAttributes");
 
   }
 

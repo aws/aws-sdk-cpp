@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
+#include <aws/kinesisanalyticsv2/model/FlinkRunConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kinesisanalyticsv2/model/ApplicationRestoreConfiguration.h>
 #include <aws/kinesisanalyticsv2/model/SqlRunConfiguration.h>
@@ -48,6 +49,43 @@ namespace Model
     RunConfiguration(Aws::Utils::Json::JsonView jsonValue);
     RunConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline const FlinkRunConfiguration& GetFlinkRunConfiguration() const{ return m_flinkRunConfiguration; }
+
+    /**
+     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline bool FlinkRunConfigurationHasBeenSet() const { return m_flinkRunConfigurationHasBeenSet; }
+
+    /**
+     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline void SetFlinkRunConfiguration(const FlinkRunConfiguration& value) { m_flinkRunConfigurationHasBeenSet = true; m_flinkRunConfiguration = value; }
+
+    /**
+     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline void SetFlinkRunConfiguration(FlinkRunConfiguration&& value) { m_flinkRunConfigurationHasBeenSet = true; m_flinkRunConfiguration = std::move(value); }
+
+    /**
+     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline RunConfiguration& WithFlinkRunConfiguration(const FlinkRunConfiguration& value) { SetFlinkRunConfiguration(value); return *this;}
+
+    /**
+     * <p>Describes the starting parameters for an Apache Flink-based Kinesis Data
+     * Analytics application.</p>
+     */
+    inline RunConfiguration& WithFlinkRunConfiguration(FlinkRunConfiguration&& value) { SetFlinkRunConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -130,6 +168,9 @@ namespace Model
     inline RunConfiguration& WithApplicationRestoreConfiguration(ApplicationRestoreConfiguration&& value) { SetApplicationRestoreConfiguration(std::move(value)); return *this;}
 
   private:
+
+    FlinkRunConfiguration m_flinkRunConfiguration;
+    bool m_flinkRunConfigurationHasBeenSet;
 
     Aws::Vector<SqlRunConfiguration> m_sqlRunConfigurations;
     bool m_sqlRunConfigurationsHasBeenSet;

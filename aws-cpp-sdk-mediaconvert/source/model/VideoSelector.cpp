@@ -29,6 +29,8 @@ namespace Model
 {
 
 VideoSelector::VideoSelector() : 
+    m_alphaBehavior(AlphaBehavior::NOT_SET),
+    m_alphaBehaviorHasBeenSet(false),
     m_colorSpace(ColorSpace::NOT_SET),
     m_colorSpaceHasBeenSet(false),
     m_colorSpaceUsage(ColorSpaceUsage::NOT_SET),
@@ -44,6 +46,8 @@ VideoSelector::VideoSelector() :
 }
 
 VideoSelector::VideoSelector(JsonView jsonValue) : 
+    m_alphaBehavior(AlphaBehavior::NOT_SET),
+    m_alphaBehaviorHasBeenSet(false),
     m_colorSpace(ColorSpace::NOT_SET),
     m_colorSpaceHasBeenSet(false),
     m_colorSpaceUsage(ColorSpaceUsage::NOT_SET),
@@ -61,6 +65,13 @@ VideoSelector::VideoSelector(JsonView jsonValue) :
 
 VideoSelector& VideoSelector::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("alphaBehavior"))
+  {
+    m_alphaBehavior = AlphaBehaviorMapper::GetAlphaBehaviorForName(jsonValue.GetString("alphaBehavior"));
+
+    m_alphaBehaviorHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("colorSpace"))
   {
     m_colorSpace = ColorSpaceMapper::GetColorSpaceForName(jsonValue.GetString("colorSpace"));
@@ -109,6 +120,11 @@ VideoSelector& VideoSelector::operator =(JsonView jsonValue)
 JsonValue VideoSelector::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_alphaBehaviorHasBeenSet)
+  {
+   payload.WithString("alphaBehavior", AlphaBehaviorMapper::GetNameForAlphaBehavior(m_alphaBehavior));
+  }
 
   if(m_colorSpaceHasBeenSet)
   {

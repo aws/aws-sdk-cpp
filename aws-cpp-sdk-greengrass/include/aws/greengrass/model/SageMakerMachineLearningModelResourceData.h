@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/greengrass/model/ResourceDownloadOwnerSetting.h>
 #include <utility>
 
 namespace Aws
@@ -89,6 +90,25 @@ namespace Model
     inline SageMakerMachineLearningModelResourceData& WithDestinationPath(const char* value) { SetDestinationPath(value); return *this;}
 
 
+    
+    inline const ResourceDownloadOwnerSetting& GetOwnerSetting() const{ return m_ownerSetting; }
+
+    
+    inline bool OwnerSettingHasBeenSet() const { return m_ownerSettingHasBeenSet; }
+
+    
+    inline void SetOwnerSetting(const ResourceDownloadOwnerSetting& value) { m_ownerSettingHasBeenSet = true; m_ownerSetting = value; }
+
+    
+    inline void SetOwnerSetting(ResourceDownloadOwnerSetting&& value) { m_ownerSettingHasBeenSet = true; m_ownerSetting = std::move(value); }
+
+    
+    inline SageMakerMachineLearningModelResourceData& WithOwnerSetting(const ResourceDownloadOwnerSetting& value) { SetOwnerSetting(value); return *this;}
+
+    
+    inline SageMakerMachineLearningModelResourceData& WithOwnerSetting(ResourceDownloadOwnerSetting&& value) { SetOwnerSetting(std::move(value)); return *this;}
+
+
     /**
      * The ARN of the Amazon SageMaker training job that represents the source model.
      */
@@ -133,6 +153,9 @@ namespace Model
 
     Aws::String m_destinationPath;
     bool m_destinationPathHasBeenSet;
+
+    ResourceDownloadOwnerSetting m_ownerSetting;
+    bool m_ownerSettingHasBeenSet;
 
     Aws::String m_sageMakerJobArn;
     bool m_sageMakerJobArnHasBeenSet;

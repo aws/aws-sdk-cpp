@@ -276,55 +276,49 @@ namespace Model
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language. You can specify any of the languages supported by Amazon Comprehend:
-     * English ("en"), Spanish ("es"), French ("fr"), German ("de"), Italian ("it"), or
-     * Portuguese ("pt"). If custom entities recognition is used, this parameter is
-     * ignored and the language used for training the model is used instead.</p>
+     * language. You can specify any of the languages supported by Amazon Comprehend.
+     * If custom entities recognition is used, this parameter is ignored and the
+     * language used for training the model is used instead.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language. You can specify any of the languages supported by Amazon Comprehend:
-     * English ("en"), Spanish ("es"), French ("fr"), German ("de"), Italian ("it"), or
-     * Portuguese ("pt"). If custom entities recognition is used, this parameter is
-     * ignored and the language used for training the model is used instead.</p>
+     * language. You can specify any of the languages supported by Amazon Comprehend.
+     * If custom entities recognition is used, this parameter is ignored and the
+     * language used for training the model is used instead.</p>
      */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language. You can specify any of the languages supported by Amazon Comprehend:
-     * English ("en"), Spanish ("es"), French ("fr"), German ("de"), Italian ("it"), or
-     * Portuguese ("pt"). If custom entities recognition is used, this parameter is
-     * ignored and the language used for training the model is used instead.</p>
+     * language. You can specify any of the languages supported by Amazon Comprehend.
+     * If custom entities recognition is used, this parameter is ignored and the
+     * language used for training the model is used instead.</p>
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language. You can specify any of the languages supported by Amazon Comprehend:
-     * English ("en"), Spanish ("es"), French ("fr"), German ("de"), Italian ("it"), or
-     * Portuguese ("pt"). If custom entities recognition is used, this parameter is
-     * ignored and the language used for training the model is used instead.</p>
+     * language. You can specify any of the languages supported by Amazon Comprehend.
+     * If custom entities recognition is used, this parameter is ignored and the
+     * language used for training the model is used instead.</p>
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language. You can specify any of the languages supported by Amazon Comprehend:
-     * English ("en"), Spanish ("es"), French ("fr"), German ("de"), Italian ("it"), or
-     * Portuguese ("pt"). If custom entities recognition is used, this parameter is
-     * ignored and the language used for training the model is used instead.</p>
+     * language. You can specify any of the languages supported by Amazon Comprehend.
+     * If custom entities recognition is used, this parameter is ignored and the
+     * language used for training the model is used instead.</p>
      */
     inline StartEntitiesDetectionJobRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
      * <p>The language of the input documents. All documents must be in the same
-     * language. You can specify any of the languages supported by Amazon Comprehend:
-     * English ("en"), Spanish ("es"), French ("fr"), German ("de"), Italian ("it"), or
-     * Portuguese ("pt"). If custom entities recognition is used, this parameter is
-     * ignored and the language used for training the model is used instead.</p>
+     * language. You can specify any of the languages supported by Amazon Comprehend.
+     * If custom entities recognition is used, this parameter is ignored and the
+     * language used for training the model is used instead.</p>
      */
     inline StartEntitiesDetectionJobRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 

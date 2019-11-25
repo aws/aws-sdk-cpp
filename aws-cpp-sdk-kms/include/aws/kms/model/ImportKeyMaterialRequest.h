@@ -48,11 +48,12 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the CMK to import the key material into. The CMK's
-     * <code>Origin</code> must be <code>EXTERNAL</code>.</p> <p>Specify the key ID or
-     * the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
+     * <p>The identifier of the symmetric CMK that receives the imported key material.
+     * The CMK's <code>Origin</code> must be <code>EXTERNAL</code>. This must be the
+     * same CMK specified in the <code>KeyID</code> parameter of the corresponding
+     * <a>GetParametersForImport</a> request.</p> <p>Specify the key ID or the Amazon
+     * Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p>
@@ -60,11 +61,12 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The identifier of the CMK to import the key material into. The CMK's
-     * <code>Origin</code> must be <code>EXTERNAL</code>.</p> <p>Specify the key ID or
-     * the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
+     * <p>The identifier of the symmetric CMK that receives the imported key material.
+     * The CMK's <code>Origin</code> must be <code>EXTERNAL</code>. This must be the
+     * same CMK specified in the <code>KeyID</code> parameter of the corresponding
+     * <a>GetParametersForImport</a> request.</p> <p>Specify the key ID or the Amazon
+     * Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p>
@@ -72,11 +74,12 @@ namespace Model
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the CMK to import the key material into. The CMK's
-     * <code>Origin</code> must be <code>EXTERNAL</code>.</p> <p>Specify the key ID or
-     * the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
+     * <p>The identifier of the symmetric CMK that receives the imported key material.
+     * The CMK's <code>Origin</code> must be <code>EXTERNAL</code>. This must be the
+     * same CMK specified in the <code>KeyID</code> parameter of the corresponding
+     * <a>GetParametersForImport</a> request.</p> <p>Specify the key ID or the Amazon
+     * Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p>
@@ -84,11 +87,12 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The identifier of the CMK to import the key material into. The CMK's
-     * <code>Origin</code> must be <code>EXTERNAL</code>.</p> <p>Specify the key ID or
-     * the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
+     * <p>The identifier of the symmetric CMK that receives the imported key material.
+     * The CMK's <code>Origin</code> must be <code>EXTERNAL</code>. This must be the
+     * same CMK specified in the <code>KeyID</code> parameter of the corresponding
+     * <a>GetParametersForImport</a> request.</p> <p>Specify the key ID or the Amazon
+     * Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p>
@@ -96,11 +100,12 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The identifier of the CMK to import the key material into. The CMK's
-     * <code>Origin</code> must be <code>EXTERNAL</code>.</p> <p>Specify the key ID or
-     * the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
+     * <p>The identifier of the symmetric CMK that receives the imported key material.
+     * The CMK's <code>Origin</code> must be <code>EXTERNAL</code>. This must be the
+     * same CMK specified in the <code>KeyID</code> parameter of the corresponding
+     * <a>GetParametersForImport</a> request.</p> <p>Specify the key ID or the Amazon
+     * Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p>
@@ -108,11 +113,12 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The identifier of the CMK to import the key material into. The CMK's
-     * <code>Origin</code> must be <code>EXTERNAL</code>.</p> <p>Specify the key ID or
-     * the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
+     * <p>The identifier of the symmetric CMK that receives the imported key material.
+     * The CMK's <code>Origin</code> must be <code>EXTERNAL</code>. This must be the
+     * same CMK specified in the <code>KeyID</code> parameter of the corresponding
+     * <a>GetParametersForImport</a> request.</p> <p>Specify the key ID or the Amazon
+     * Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p>
@@ -120,11 +126,12 @@ namespace Model
     inline ImportKeyMaterialRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the CMK to import the key material into. The CMK's
-     * <code>Origin</code> must be <code>EXTERNAL</code>.</p> <p>Specify the key ID or
-     * the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
+     * <p>The identifier of the symmetric CMK that receives the imported key material.
+     * The CMK's <code>Origin</code> must be <code>EXTERNAL</code>. This must be the
+     * same CMK specified in the <code>KeyID</code> parameter of the corresponding
+     * <a>GetParametersForImport</a> request.</p> <p>Specify the key ID or the Amazon
+     * Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p>
@@ -132,11 +139,12 @@ namespace Model
     inline ImportKeyMaterialRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the CMK to import the key material into. The CMK's
-     * <code>Origin</code> must be <code>EXTERNAL</code>.</p> <p>Specify the key ID or
-     * the Amazon Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li>
-     * <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li>
-     * <p>Key ARN:
+     * <p>The identifier of the symmetric CMK that receives the imported key material.
+     * The CMK's <code>Origin</code> must be <code>EXTERNAL</code>. This must be the
+     * same CMK specified in the <code>KeyID</code> parameter of the corresponding
+     * <a>GetParametersForImport</a> request.</p> <p>Specify the key ID or the Amazon
+     * Resource Name (ARN) of the CMK.</p> <p>For example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> </ul> <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a>
      * or <a>DescribeKey</a>.</p>
@@ -188,50 +196,50 @@ namespace Model
 
 
     /**
-     * <p>The encrypted key material to import. It must be encrypted with the public
-     * key that you received in the response to a previous
-     * <a>GetParametersForImport</a> request, using the wrapping algorithm that you
-     * specified in that request.</p>
+     * <p>The encrypted key material to import. The key material must be encrypted with
+     * the public wrapping key that <a>GetParametersForImport</a> returned, using the
+     * wrapping algorithm that you specified in the same
+     * <code>GetParametersForImport</code> request.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetEncryptedKeyMaterial() const{ return m_encryptedKeyMaterial; }
 
     /**
-     * <p>The encrypted key material to import. It must be encrypted with the public
-     * key that you received in the response to a previous
-     * <a>GetParametersForImport</a> request, using the wrapping algorithm that you
-     * specified in that request.</p>
+     * <p>The encrypted key material to import. The key material must be encrypted with
+     * the public wrapping key that <a>GetParametersForImport</a> returned, using the
+     * wrapping algorithm that you specified in the same
+     * <code>GetParametersForImport</code> request.</p>
      */
     inline bool EncryptedKeyMaterialHasBeenSet() const { return m_encryptedKeyMaterialHasBeenSet; }
 
     /**
-     * <p>The encrypted key material to import. It must be encrypted with the public
-     * key that you received in the response to a previous
-     * <a>GetParametersForImport</a> request, using the wrapping algorithm that you
-     * specified in that request.</p>
+     * <p>The encrypted key material to import. The key material must be encrypted with
+     * the public wrapping key that <a>GetParametersForImport</a> returned, using the
+     * wrapping algorithm that you specified in the same
+     * <code>GetParametersForImport</code> request.</p>
      */
     inline void SetEncryptedKeyMaterial(const Aws::Utils::ByteBuffer& value) { m_encryptedKeyMaterialHasBeenSet = true; m_encryptedKeyMaterial = value; }
 
     /**
-     * <p>The encrypted key material to import. It must be encrypted with the public
-     * key that you received in the response to a previous
-     * <a>GetParametersForImport</a> request, using the wrapping algorithm that you
-     * specified in that request.</p>
+     * <p>The encrypted key material to import. The key material must be encrypted with
+     * the public wrapping key that <a>GetParametersForImport</a> returned, using the
+     * wrapping algorithm that you specified in the same
+     * <code>GetParametersForImport</code> request.</p>
      */
     inline void SetEncryptedKeyMaterial(Aws::Utils::ByteBuffer&& value) { m_encryptedKeyMaterialHasBeenSet = true; m_encryptedKeyMaterial = std::move(value); }
 
     /**
-     * <p>The encrypted key material to import. It must be encrypted with the public
-     * key that you received in the response to a previous
-     * <a>GetParametersForImport</a> request, using the wrapping algorithm that you
-     * specified in that request.</p>
+     * <p>The encrypted key material to import. The key material must be encrypted with
+     * the public wrapping key that <a>GetParametersForImport</a> returned, using the
+     * wrapping algorithm that you specified in the same
+     * <code>GetParametersForImport</code> request.</p>
      */
     inline ImportKeyMaterialRequest& WithEncryptedKeyMaterial(const Aws::Utils::ByteBuffer& value) { SetEncryptedKeyMaterial(value); return *this;}
 
     /**
-     * <p>The encrypted key material to import. It must be encrypted with the public
-     * key that you received in the response to a previous
-     * <a>GetParametersForImport</a> request, using the wrapping algorithm that you
-     * specified in that request.</p>
+     * <p>The encrypted key material to import. The key material must be encrypted with
+     * the public wrapping key that <a>GetParametersForImport</a> returned, using the
+     * wrapping algorithm that you specified in the same
+     * <code>GetParametersForImport</code> request.</p>
      */
     inline ImportKeyMaterialRequest& WithEncryptedKeyMaterial(Aws::Utils::ByteBuffer&& value) { SetEncryptedKeyMaterial(std::move(value)); return *this;}
 

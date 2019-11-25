@@ -34,6 +34,7 @@ namespace Aws
         static const int cluster_parameter_group_HASH = HashingUtils::HashString("cluster-parameter-group");
         static const int cluster_security_group_HASH = HashingUtils::HashString("cluster-security-group");
         static const int cluster_snapshot_HASH = HashingUtils::HashString("cluster-snapshot");
+        static const int scheduled_action_HASH = HashingUtils::HashString("scheduled-action");
 
 
         SourceType GetSourceTypeForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == cluster_snapshot_HASH)
           {
             return SourceType::cluster_snapshot;
+          }
+          else if (hashCode == scheduled_action_HASH)
+          {
+            return SourceType::scheduled_action;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "cluster-security-group";
           case SourceType::cluster_snapshot:
             return "cluster-snapshot";
+          case SourceType::scheduled_action:
+            return "scheduled-action";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

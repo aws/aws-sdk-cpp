@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/medialive/model/M3u8NielsenId3Behavior.h>
 #include <aws/medialive/model/M3u8PcrControl.h>
 #include <aws/medialive/model/M3u8Scte35Behavior.h>
 #include <aws/medialive/model/M3u8TimedMetadataBehavior.h>
@@ -167,6 +168,49 @@ namespace Model
      * This parameter is unused and deprecated.
      */
     inline M3u8Settings& WithEcmPid(const char* value) { SetEcmPid(value); return *this;}
+
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline const M3u8NielsenId3Behavior& GetNielsenId3Behavior() const{ return m_nielsenId3Behavior; }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline bool NielsenId3BehaviorHasBeenSet() const { return m_nielsenId3BehaviorHasBeenSet; }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline void SetNielsenId3Behavior(const M3u8NielsenId3Behavior& value) { m_nielsenId3BehaviorHasBeenSet = true; m_nielsenId3Behavior = value; }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline void SetNielsenId3Behavior(M3u8NielsenId3Behavior&& value) { m_nielsenId3BehaviorHasBeenSet = true; m_nielsenId3Behavior = std::move(value); }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline M3u8Settings& WithNielsenId3Behavior(const M3u8NielsenId3Behavior& value) { SetNielsenId3Behavior(value); return *this;}
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline M3u8Settings& WithNielsenId3Behavior(M3u8NielsenId3Behavior&& value) { SetNielsenId3Behavior(std::move(value)); return *this;}
 
 
     /**
@@ -667,6 +711,9 @@ namespace Model
 
     Aws::String m_ecmPid;
     bool m_ecmPidHasBeenSet;
+
+    M3u8NielsenId3Behavior m_nielsenId3Behavior;
+    bool m_nielsenId3BehaviorHasBeenSet;
 
     int m_patInterval;
     bool m_patIntervalHasBeenSet;

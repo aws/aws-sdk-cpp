@@ -30,12 +30,14 @@ namespace Model
 
 PackagingGroup::PackagingGroup() : 
     m_arnHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
     m_idHasBeenSet(false)
 {
 }
 
 PackagingGroup::PackagingGroup(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
     m_idHasBeenSet(false)
 {
   *this = jsonValue;
@@ -48,6 +50,13 @@ PackagingGroup& PackagingGroup::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("domainName"))
+  {
+    m_domainName = jsonValue.GetString("domainName");
+
+    m_domainNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("id"))
@@ -67,6 +76,12 @@ JsonValue PackagingGroup::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_domainNameHasBeenSet)
+  {
+   payload.WithString("domainName", m_domainName);
 
   }
 

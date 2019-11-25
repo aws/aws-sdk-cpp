@@ -53,7 +53,8 @@ DocumentDescription::DocumentDescription() :
     m_documentFormatHasBeenSet(false),
     m_targetTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_attachmentsInformationHasBeenSet(false)
+    m_attachmentsInformationHasBeenSet(false),
+    m_requiresHasBeenSet(false)
 {
 }
 
@@ -82,7 +83,8 @@ DocumentDescription::DocumentDescription(JsonView jsonValue) :
     m_documentFormatHasBeenSet(false),
     m_targetTypeHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_attachmentsInformationHasBeenSet(false)
+    m_attachmentsInformationHasBeenSet(false),
+    m_requiresHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -248,6 +250,16 @@ DocumentDescription& DocumentDescription::operator =(JsonView jsonValue)
     m_attachmentsInformationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Requires"))
+  {
+    Array<JsonView> requiresJsonList = jsonValue.GetArray("Requires");
+    for(unsigned requiresIndex = 0; requiresIndex < requiresJsonList.GetLength(); ++requiresIndex)
+    {
+      m_requires.push_back(requiresJsonList[requiresIndex].AsObject());
+    }
+    m_requiresHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -393,6 +405,17 @@ JsonValue DocumentDescription::Jsonize() const
      attachmentsInformationJsonList[attachmentsInformationIndex].AsObject(m_attachmentsInformation[attachmentsInformationIndex].Jsonize());
    }
    payload.WithArray("AttachmentsInformation", std::move(attachmentsInformationJsonList));
+
+  }
+
+  if(m_requiresHasBeenSet)
+  {
+   Array<JsonValue> requiresJsonList(m_requires.size());
+   for(unsigned requiresIndex = 0; requiresIndex < requiresJsonList.GetLength(); ++requiresIndex)
+   {
+     requiresJsonList[requiresIndex].AsObject(m_requires[requiresIndex].Jsonize());
+   }
+   payload.WithArray("Requires", std::move(requiresJsonList));
 
   }
 

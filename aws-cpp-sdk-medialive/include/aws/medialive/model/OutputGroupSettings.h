@@ -20,6 +20,7 @@
 #include <aws/medialive/model/HlsGroupSettings.h>
 #include <aws/medialive/model/MediaPackageGroupSettings.h>
 #include <aws/medialive/model/MsSmoothGroupSettings.h>
+#include <aws/medialive/model/MultiplexGroupSettings.h>
 #include <aws/medialive/model/RtmpGroupSettings.h>
 #include <aws/medialive/model/UdpGroupSettings.h>
 #include <utility>
@@ -149,6 +150,25 @@ namespace Model
 
 
     
+    inline const MultiplexGroupSettings& GetMultiplexGroupSettings() const{ return m_multiplexGroupSettings; }
+
+    
+    inline bool MultiplexGroupSettingsHasBeenSet() const { return m_multiplexGroupSettingsHasBeenSet; }
+
+    
+    inline void SetMultiplexGroupSettings(const MultiplexGroupSettings& value) { m_multiplexGroupSettingsHasBeenSet = true; m_multiplexGroupSettings = value; }
+
+    
+    inline void SetMultiplexGroupSettings(MultiplexGroupSettings&& value) { m_multiplexGroupSettingsHasBeenSet = true; m_multiplexGroupSettings = std::move(value); }
+
+    
+    inline OutputGroupSettings& WithMultiplexGroupSettings(const MultiplexGroupSettings& value) { SetMultiplexGroupSettings(value); return *this;}
+
+    
+    inline OutputGroupSettings& WithMultiplexGroupSettings(MultiplexGroupSettings&& value) { SetMultiplexGroupSettings(std::move(value)); return *this;}
+
+
+    
     inline const RtmpGroupSettings& GetRtmpGroupSettings() const{ return m_rtmpGroupSettings; }
 
     
@@ -201,6 +221,9 @@ namespace Model
 
     MsSmoothGroupSettings m_msSmoothGroupSettings;
     bool m_msSmoothGroupSettingsHasBeenSet;
+
+    MultiplexGroupSettings m_multiplexGroupSettings;
+    bool m_multiplexGroupSettingsHasBeenSet;
 
     RtmpGroupSettings m_rtmpGroupSettings;
     bool m_rtmpGroupSettingsHasBeenSet;

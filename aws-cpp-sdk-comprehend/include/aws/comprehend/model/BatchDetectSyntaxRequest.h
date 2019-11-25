@@ -111,7 +111,7 @@ namespace Model
 
 
     /**
-     * <p>The language of the input documents. You can specify any of the primary
+     * <p>The language of the input documents. You can specify any of the following
      * languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish
      * ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must
      * be in the same language.</p>
@@ -119,7 +119,7 @@ namespace Model
     inline const SyntaxLanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * <p>The language of the input documents. You can specify any of the primary
+     * <p>The language of the input documents. You can specify any of the following
      * languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish
      * ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must
      * be in the same language.</p>
@@ -127,7 +127,7 @@ namespace Model
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
-     * <p>The language of the input documents. You can specify any of the primary
+     * <p>The language of the input documents. You can specify any of the following
      * languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish
      * ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must
      * be in the same language.</p>
@@ -135,7 +135,7 @@ namespace Model
     inline void SetLanguageCode(const SyntaxLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * <p>The language of the input documents. You can specify any of the primary
+     * <p>The language of the input documents. You can specify any of the following
      * languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish
      * ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must
      * be in the same language.</p>
@@ -143,7 +143,7 @@ namespace Model
     inline void SetLanguageCode(SyntaxLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * <p>The language of the input documents. You can specify any of the primary
+     * <p>The language of the input documents. You can specify any of the following
      * languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish
      * ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must
      * be in the same language.</p>
@@ -151,7 +151,7 @@ namespace Model
     inline BatchDetectSyntaxRequest& WithLanguageCode(const SyntaxLanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language of the input documents. You can specify any of the primary
+     * <p>The language of the input documents. You can specify any of the following
      * languages supported by Amazon Comprehend: German ("de"), English ("en"), Spanish
      * ("es"), French ("fr"), Italian ("it"), or Portuguese ("pt"). All documents must
      * be in the same language.</p>

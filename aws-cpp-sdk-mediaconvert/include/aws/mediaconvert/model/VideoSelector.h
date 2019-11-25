@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/AlphaBehavior.h>
 #include <aws/mediaconvert/model/ColorSpace.h>
 #include <aws/mediaconvert/model/ColorSpaceUsage.h>
 #include <aws/mediaconvert/model/Hdr10Metadata.h>
@@ -48,6 +49,61 @@ namespace Model
     VideoSelector(Aws::Utils::Json::JsonView jsonValue);
     VideoSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Ignore this setting unless this input is a QuickTime animation. Specify which
+     * part of this input MediaConvert uses for your outputs. Leave this setting set to
+     * DISCARD in order to delete the alpha channel and preserve the video. Use
+     * REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to
+     * the luma channel of your outputs.
+     */
+    inline const AlphaBehavior& GetAlphaBehavior() const{ return m_alphaBehavior; }
+
+    /**
+     * Ignore this setting unless this input is a QuickTime animation. Specify which
+     * part of this input MediaConvert uses for your outputs. Leave this setting set to
+     * DISCARD in order to delete the alpha channel and preserve the video. Use
+     * REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to
+     * the luma channel of your outputs.
+     */
+    inline bool AlphaBehaviorHasBeenSet() const { return m_alphaBehaviorHasBeenSet; }
+
+    /**
+     * Ignore this setting unless this input is a QuickTime animation. Specify which
+     * part of this input MediaConvert uses for your outputs. Leave this setting set to
+     * DISCARD in order to delete the alpha channel and preserve the video. Use
+     * REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to
+     * the luma channel of your outputs.
+     */
+    inline void SetAlphaBehavior(const AlphaBehavior& value) { m_alphaBehaviorHasBeenSet = true; m_alphaBehavior = value; }
+
+    /**
+     * Ignore this setting unless this input is a QuickTime animation. Specify which
+     * part of this input MediaConvert uses for your outputs. Leave this setting set to
+     * DISCARD in order to delete the alpha channel and preserve the video. Use
+     * REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to
+     * the luma channel of your outputs.
+     */
+    inline void SetAlphaBehavior(AlphaBehavior&& value) { m_alphaBehaviorHasBeenSet = true; m_alphaBehavior = std::move(value); }
+
+    /**
+     * Ignore this setting unless this input is a QuickTime animation. Specify which
+     * part of this input MediaConvert uses for your outputs. Leave this setting set to
+     * DISCARD in order to delete the alpha channel and preserve the video. Use
+     * REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to
+     * the luma channel of your outputs.
+     */
+    inline VideoSelector& WithAlphaBehavior(const AlphaBehavior& value) { SetAlphaBehavior(value); return *this;}
+
+    /**
+     * Ignore this setting unless this input is a QuickTime animation. Specify which
+     * part of this input MediaConvert uses for your outputs. Leave this setting set to
+     * DISCARD in order to delete the alpha channel and preserve the video. Use
+     * REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to
+     * the luma channel of your outputs.
+     */
+    inline VideoSelector& WithAlphaBehavior(AlphaBehavior&& value) { SetAlphaBehavior(std::move(value)); return *this;}
 
 
     /**
@@ -448,6 +504,9 @@ namespace Model
     inline VideoSelector& WithRotate(InputRotate&& value) { SetRotate(std::move(value)); return *this;}
 
   private:
+
+    AlphaBehavior m_alphaBehavior;
+    bool m_alphaBehaviorHasBeenSet;
 
     ColorSpace m_colorSpace;
     bool m_colorSpaceHasBeenSet;

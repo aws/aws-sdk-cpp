@@ -48,9 +48,9 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the customer master key (CMK) that encrypts the data
-     * key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
-     * name, or alias ARN. When using an alias name, prefix it with
+     * <p>The identifier of the symmetric customer master key (CMK) that encrypts the
+     * data key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
+     * alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
      * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -64,9 +64,9 @@ namespace Model
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
 
     /**
-     * <p>The identifier of the customer master key (CMK) that encrypts the data
-     * key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
-     * name, or alias ARN. When using an alias name, prefix it with
+     * <p>The identifier of the symmetric customer master key (CMK) that encrypts the
+     * data key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
+     * alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
      * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -80,9 +80,9 @@ namespace Model
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the customer master key (CMK) that encrypts the data
-     * key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
-     * name, or alias ARN. When using an alias name, prefix it with
+     * <p>The identifier of the symmetric customer master key (CMK) that encrypts the
+     * data key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
+     * alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
      * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -96,9 +96,9 @@ namespace Model
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
-     * <p>The identifier of the customer master key (CMK) that encrypts the data
-     * key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
-     * name, or alias ARN. When using an alias name, prefix it with
+     * <p>The identifier of the symmetric customer master key (CMK) that encrypts the
+     * data key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
+     * alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
      * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -112,9 +112,9 @@ namespace Model
     inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
 
     /**
-     * <p>The identifier of the customer master key (CMK) that encrypts the data
-     * key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
-     * name, or alias ARN. When using an alias name, prefix it with
+     * <p>The identifier of the symmetric customer master key (CMK) that encrypts the
+     * data key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
+     * alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
      * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -128,9 +128,9 @@ namespace Model
     inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
 
     /**
-     * <p>The identifier of the customer master key (CMK) that encrypts the data
-     * key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
-     * name, or alias ARN. When using an alias name, prefix it with
+     * <p>The identifier of the symmetric customer master key (CMK) that encrypts the
+     * data key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
+     * alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
      * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -144,9 +144,9 @@ namespace Model
     inline GenerateDataKeyWithoutPlaintextRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
 
     /**
-     * <p>The identifier of the customer master key (CMK) that encrypts the data
-     * key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
-     * name, or alias ARN. When using an alias name, prefix it with
+     * <p>The identifier of the symmetric customer master key (CMK) that encrypts the
+     * data key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
+     * alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
      * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -160,9 +160,9 @@ namespace Model
     inline GenerateDataKeyWithoutPlaintextRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the customer master key (CMK) that encrypts the data
-     * key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias
-     * name, or alias ARN. When using an alias name, prefix it with
+     * <p>The identifier of the symmetric customer master key (CMK) that encrypts the
+     * data key.</p> <p>To specify a CMK, use its key ID, Amazon Resource Name (ARN),
+     * alias name, or alias ARN. When using an alias name, prefix it with
      * <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use
      * the key ARN or alias ARN.</p> <p>For example:</p> <ul> <li> <p>Key ID:
      * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
@@ -177,104 +177,169 @@ namespace Model
 
 
     /**
-     * <p>A set of key-value pairs that represents additional authenticated data.</p>
-     * <p>For more information, see <a
+     * <p>Specifies the encryption context that will be used when encrypting the data
+     * key.</p> <p>An <i>encryption context</i> is a collection of non-secret key-value
+     * pairs that represents additional authenticated data. When you use an encryption
+     * context to encrypt data, you must specify the same (an exact case-sensitive
+     * match) encryption context to decrypt the data. An encryption context is optional
+     * when encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEncryptionContext() const{ return m_encryptionContext; }
 
     /**
-     * <p>A set of key-value pairs that represents additional authenticated data.</p>
-     * <p>For more information, see <a
+     * <p>Specifies the encryption context that will be used when encrypting the data
+     * key.</p> <p>An <i>encryption context</i> is a collection of non-secret key-value
+     * pairs that represents additional authenticated data. When you use an encryption
+     * context to encrypt data, you must specify the same (an exact case-sensitive
+     * match) encryption context to decrypt the data. An encryption context is optional
+     * when encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline bool EncryptionContextHasBeenSet() const { return m_encryptionContextHasBeenSet; }
 
     /**
-     * <p>A set of key-value pairs that represents additional authenticated data.</p>
-     * <p>For more information, see <a
+     * <p>Specifies the encryption context that will be used when encrypting the data
+     * key.</p> <p>An <i>encryption context</i> is a collection of non-secret key-value
+     * pairs that represents additional authenticated data. When you use an encryption
+     * context to encrypt data, you must specify the same (an exact case-sensitive
+     * match) encryption context to decrypt the data. An encryption context is optional
+     * when encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = value; }
 
     /**
-     * <p>A set of key-value pairs that represents additional authenticated data.</p>
-     * <p>For more information, see <a
+     * <p>Specifies the encryption context that will be used when encrypting the data
+     * key.</p> <p>An <i>encryption context</i> is a collection of non-secret key-value
+     * pairs that represents additional authenticated data. When you use an encryption
+     * context to encrypt data, you must specify the same (an exact case-sensitive
+     * match) encryption context to decrypt the data. An encryption context is optional
+     * when encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext = std::move(value); }
 
     /**
-     * <p>A set of key-value pairs that represents additional authenticated data.</p>
-     * <p>For more information, see <a
+     * <p>Specifies the encryption context that will be used when encrypting the data
+     * key.</p> <p>An <i>encryption context</i> is a collection of non-secret key-value
+     * pairs that represents additional authenticated data. When you use an encryption
+     * context to encrypt data, you must specify the same (an exact case-sensitive
+     * match) encryption context to decrypt the data. An encryption context is optional
+     * when encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& WithEncryptionContext(const Aws::Map<Aws::String, Aws::String>& value) { SetEncryptionContext(value); return *this;}
 
     /**
-     * <p>A set of key-value pairs that represents additional authenticated data.</p>
-     * <p>For more information, see <a
+     * <p>Specifies the encryption context that will be used when encrypting the data
+     * key.</p> <p>An <i>encryption context</i> is a collection of non-secret key-value
+     * pairs that represents additional authenticated data. When you use an encryption
+     * context to encrypt data, you must specify the same (an exact case-sensitive
+     * match) encryption context to decrypt the data. An encryption context is optional
+     * when encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& WithEncryptionContext(Aws::Map<Aws::String, Aws::String>&& value) { SetEncryptionContext(std::move(value)); return *this;}
 
     /**
-     * <p>A set of key-value pairs that represents additional authenticated data.</p>
-     * <p>For more information, see <a
+     * <p>Specifies the encryption context that will be used when encrypting the data
+     * key.</p> <p>An <i>encryption context</i> is a collection of non-secret key-value
+     * pairs that represents additional authenticated data. When you use an encryption
+     * context to encrypt data, you must specify the same (an exact case-sensitive
+     * match) encryption context to decrypt the data. An encryption context is optional
+     * when encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const Aws::String& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, value); return *this; }
 
     /**
-     * <p>A set of key-value pairs that represents additional authenticated data.</p>
-     * <p>For more information, see <a
+     * <p>Specifies the encryption context that will be used when encrypting the data
+     * key.</p> <p>An <i>encryption context</i> is a collection of non-secret key-value
+     * pairs that represents additional authenticated data. When you use an encryption
+     * context to encrypt data, you must specify the same (an exact case-sensitive
+     * match) encryption context to decrypt the data. An encryption context is optional
+     * when encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, const Aws::String& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A set of key-value pairs that represents additional authenticated data.</p>
-     * <p>For more information, see <a
+     * <p>Specifies the encryption context that will be used when encrypting the data
+     * key.</p> <p>An <i>encryption context</i> is a collection of non-secret key-value
+     * pairs that represents additional authenticated data. When you use an encryption
+     * context to encrypt data, you must specify the same (an exact case-sensitive
+     * match) encryption context to decrypt the data. An encryption context is optional
+     * when encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const Aws::String& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A set of key-value pairs that represents additional authenticated data.</p>
-     * <p>For more information, see <a
+     * <p>Specifies the encryption context that will be used when encrypting the data
+     * key.</p> <p>An <i>encryption context</i> is a collection of non-secret key-value
+     * pairs that represents additional authenticated data. When you use an encryption
+     * context to encrypt data, you must specify the same (an exact case-sensitive
+     * match) encryption context to decrypt the data. An encryption context is optional
+     * when encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A set of key-value pairs that represents additional authenticated data.</p>
-     * <p>For more information, see <a
+     * <p>Specifies the encryption context that will be used when encrypting the data
+     * key.</p> <p>An <i>encryption context</i> is a collection of non-secret key-value
+     * pairs that represents additional authenticated data. When you use an encryption
+     * context to encrypt data, you must specify the same (an exact case-sensitive
+     * match) encryption context to decrypt the data. An encryption context is optional
+     * when encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(const char* key, Aws::String&& value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A set of key-value pairs that represents additional authenticated data.</p>
-     * <p>For more information, see <a
+     * <p>Specifies the encryption context that will be used when encrypting the data
+     * key.</p> <p>An <i>encryption context</i> is a collection of non-secret key-value
+     * pairs that represents additional authenticated data. When you use an encryption
+     * context to encrypt data, you must specify the same (an exact case-sensitive
+     * match) encryption context to decrypt the data. An encryption context is optional
+     * when encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline GenerateDataKeyWithoutPlaintextRequest& AddEncryptionContext(Aws::String&& key, const char* value) { m_encryptionContextHasBeenSet = true; m_encryptionContext.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A set of key-value pairs that represents additional authenticated data.</p>
-     * <p>For more information, see <a
+     * <p>Specifies the encryption context that will be used when encrypting the data
+     * key.</p> <p>An <i>encryption context</i> is a collection of non-secret key-value
+     * pairs that represents additional authenticated data. When you use an encryption
+     * context to encrypt data, you must specify the same (an exact case-sensitive
+     * match) encryption context to decrypt the data. An encryption context is optional
+     * when encrypting with a symmetric CMK, but it is highly recommended.</p> <p>For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */

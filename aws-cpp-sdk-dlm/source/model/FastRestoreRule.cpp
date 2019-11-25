@@ -31,6 +31,10 @@ namespace Model
 FastRestoreRule::FastRestoreRule() : 
     m_count(0),
     m_countHasBeenSet(false),
+    m_interval(0),
+    m_intervalHasBeenSet(false),
+    m_intervalUnit(RetentionIntervalUnitValues::NOT_SET),
+    m_intervalUnitHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false)
 {
 }
@@ -38,6 +42,10 @@ FastRestoreRule::FastRestoreRule() :
 FastRestoreRule::FastRestoreRule(JsonView jsonValue) : 
     m_count(0),
     m_countHasBeenSet(false),
+    m_interval(0),
+    m_intervalHasBeenSet(false),
+    m_intervalUnit(RetentionIntervalUnitValues::NOT_SET),
+    m_intervalUnitHasBeenSet(false),
     m_availabilityZonesHasBeenSet(false)
 {
   *this = jsonValue;
@@ -50,6 +58,20 @@ FastRestoreRule& FastRestoreRule::operator =(JsonView jsonValue)
     m_count = jsonValue.GetInteger("Count");
 
     m_countHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Interval"))
+  {
+    m_interval = jsonValue.GetInteger("Interval");
+
+    m_intervalHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("IntervalUnit"))
+  {
+    m_intervalUnit = RetentionIntervalUnitValuesMapper::GetRetentionIntervalUnitValuesForName(jsonValue.GetString("IntervalUnit"));
+
+    m_intervalUnitHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AvailabilityZones"))
@@ -73,6 +95,17 @@ JsonValue FastRestoreRule::Jsonize() const
   {
    payload.WithInteger("Count", m_count);
 
+  }
+
+  if(m_intervalHasBeenSet)
+  {
+   payload.WithInteger("Interval", m_interval);
+
+  }
+
+  if(m_intervalUnitHasBeenSet)
+  {
+   payload.WithString("IntervalUnit", RetentionIntervalUnitValuesMapper::GetNameForRetentionIntervalUnitValues(m_intervalUnit));
   }
 
   if(m_availabilityZonesHasBeenSet)

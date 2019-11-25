@@ -31,6 +31,7 @@
 #include <aws/medialive/model/M2tsEbpPlacement.h>
 #include <aws/medialive/model/M2tsEsRateInPes.h>
 #include <aws/medialive/model/M2tsKlv.h>
+#include <aws/medialive/model/M2tsNielsenId3Behavior.h>
 #include <aws/medialive/model/M2tsPcrControl.h>
 #include <aws/medialive/model/M2tsRateMode.h>
 #include <aws/medialive/model/M2tsScte35Control.h>
@@ -1232,6 +1233,49 @@ namespace Model
 
 
     /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline const M2tsNielsenId3Behavior& GetNielsenId3Behavior() const{ return m_nielsenId3Behavior; }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline bool NielsenId3BehaviorHasBeenSet() const { return m_nielsenId3BehaviorHasBeenSet; }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline void SetNielsenId3Behavior(const M2tsNielsenId3Behavior& value) { m_nielsenId3BehaviorHasBeenSet = true; m_nielsenId3Behavior = value; }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline void SetNielsenId3Behavior(M2tsNielsenId3Behavior&& value) { m_nielsenId3BehaviorHasBeenSet = true; m_nielsenId3Behavior = std::move(value); }
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline M2tsSettings& WithNielsenId3Behavior(const M2tsNielsenId3Behavior& value) { SetNielsenId3Behavior(value); return *this;}
+
+    /**
+     * If set to passthrough, Nielsen inaudible tones for media tracking will be
+     * detected in the input audio and an equivalent ID3 tag will be inserted in the
+     * output.
+     */
+    inline M2tsSettings& WithNielsenId3Behavior(M2tsNielsenId3Behavior&& value) { SetNielsenId3Behavior(std::move(value)); return *this;}
+
+
+    /**
      * Value in bits per second of extra null packets to insert into the transport
      * stream. This can be used if a downstream encryption system requires periodic
      * null packets.
@@ -2167,6 +2211,9 @@ When
 
     Aws::String m_klvDataPids;
     bool m_klvDataPidsHasBeenSet;
+
+    M2tsNielsenId3Behavior m_nielsenId3Behavior;
+    bool m_nielsenId3BehaviorHasBeenSet;
 
     double m_nullPacketBitrate;
     bool m_nullPacketBitrateHasBeenSet;

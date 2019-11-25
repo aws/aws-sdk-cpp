@@ -572,25 +572,41 @@ namespace Model
 
     /**
      * GOP size (keyframe interval) in units of either frames or seconds per
-     * gopSizeUnits. Must be greater than zero.
+     * gopSizeUnits.
+If gopSizeUnits is frames, gopSize must be an integer and must be
+     * greater than or equal to 1.
+If gopSizeUnits is seconds, gopSize must be greater
+     * than 0, but need not be an integer.
      */
     inline double GetGopSize() const{ return m_gopSize; }
 
     /**
      * GOP size (keyframe interval) in units of either frames or seconds per
-     * gopSizeUnits. Must be greater than zero.
+     * gopSizeUnits.
+If gopSizeUnits is frames, gopSize must be an integer and must be
+     * greater than or equal to 1.
+If gopSizeUnits is seconds, gopSize must be greater
+     * than 0, but need not be an integer.
      */
     inline bool GopSizeHasBeenSet() const { return m_gopSizeHasBeenSet; }
 
     /**
      * GOP size (keyframe interval) in units of either frames or seconds per
-     * gopSizeUnits. Must be greater than zero.
+     * gopSizeUnits.
+If gopSizeUnits is frames, gopSize must be an integer and must be
+     * greater than or equal to 1.
+If gopSizeUnits is seconds, gopSize must be greater
+     * than 0, but need not be an integer.
      */
     inline void SetGopSize(double value) { m_gopSizeHasBeenSet = true; m_gopSize = value; }
 
     /**
      * GOP size (keyframe interval) in units of either frames or seconds per
-     * gopSizeUnits. Must be greater than zero.
+     * gopSizeUnits.
+If gopSizeUnits is frames, gopSize must be an integer and must be
+     * greater than or equal to 1.
+If gopSizeUnits is seconds, gopSize must be greater
+     * than 0, but need not be an integer.
      */
     inline H264Settings& WithGopSize(double value) { SetGopSize(value); return *this;}
 
@@ -734,46 +750,46 @@ For VBR: Set the maximum bitrate in
 
 
     /**
-     * Only meaningful if sceneChangeDetect is set to enabled.  Enforces separation
-     * between repeated (cadence) I-frames and I-frames inserted by Scene Change
-     * Detection. If a scene change I-frame is within I-interval frames of a cadence
-     * I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP
-     * stretch requires enabling lookahead as well as setting I-interval. The normal
-     * cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if
+     * multiplex rate control is used.  Enforces separation between repeated (cadence)
+     * I-frames and I-frames inserted by Scene Change Detection. If a scene change
+     * I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk
+     * and/or stretched to the scene change I-frame. GOP stretch requires enabling
+     * lookahead as well as setting I-interval. The normal cadence resumes for the next
+     * GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
      */
     inline int GetMinIInterval() const{ return m_minIInterval; }
 
     /**
-     * Only meaningful if sceneChangeDetect is set to enabled.  Enforces separation
-     * between repeated (cadence) I-frames and I-frames inserted by Scene Change
-     * Detection. If a scene change I-frame is within I-interval frames of a cadence
-     * I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP
-     * stretch requires enabling lookahead as well as setting I-interval. The normal
-     * cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if
+     * multiplex rate control is used.  Enforces separation between repeated (cadence)
+     * I-frames and I-frames inserted by Scene Change Detection. If a scene change
+     * I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk
+     * and/or stretched to the scene change I-frame. GOP stretch requires enabling
+     * lookahead as well as setting I-interval. The normal cadence resumes for the next
+     * GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
      */
     inline bool MinIIntervalHasBeenSet() const { return m_minIIntervalHasBeenSet; }
 
     /**
-     * Only meaningful if sceneChangeDetect is set to enabled.  Enforces separation
-     * between repeated (cadence) I-frames and I-frames inserted by Scene Change
-     * Detection. If a scene change I-frame is within I-interval frames of a cadence
-     * I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP
-     * stretch requires enabling lookahead as well as setting I-interval. The normal
-     * cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if
+     * multiplex rate control is used.  Enforces separation between repeated (cadence)
+     * I-frames and I-frames inserted by Scene Change Detection. If a scene change
+     * I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk
+     * and/or stretched to the scene change I-frame. GOP stretch requires enabling
+     * lookahead as well as setting I-interval. The normal cadence resumes for the next
+     * GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
      */
     inline void SetMinIInterval(int value) { m_minIIntervalHasBeenSet = true; m_minIInterval = value; }
 
     /**
-     * Only meaningful if sceneChangeDetect is set to enabled.  Enforces separation
-     * between repeated (cadence) I-frames and I-frames inserted by Scene Change
-     * Detection. If a scene change I-frame is within I-interval frames of a cadence
-     * I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP
-     * stretch requires enabling lookahead as well as setting I-interval. The normal
-     * cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size +
-     * Min-I-interval - 1
+     * Only meaningful if sceneChangeDetect is set to enabled.  Defaults to 5 if
+     * multiplex rate control is used.  Enforces separation between repeated (cadence)
+     * I-frames and I-frames inserted by Scene Change Detection. If a scene change
+     * I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk
+     * and/or stretched to the scene change I-frame. GOP stretch requires enabling
+     * lookahead as well as setting I-interval. The normal cadence resumes for the next
+     * GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
      */
     inline H264Settings& WithMinIInterval(int value) { SetMinIInterval(value); return *this;}
 

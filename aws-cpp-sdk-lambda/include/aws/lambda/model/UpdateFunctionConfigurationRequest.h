@@ -359,7 +359,7 @@ namespace Model
      * security groups and subnets in the VPC. When you connect a function to a VPC, it
      * can only access resources and the internet through that VPC. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
@@ -369,7 +369,7 @@ namespace Model
      * security groups and subnets in the VPC. When you connect a function to a VPC, it
      * can only access resources and the internet through that VPC. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
@@ -379,7 +379,7 @@ namespace Model
      * security groups and subnets in the VPC. When you connect a function to a VPC, it
      * can only access resources and the internet through that VPC. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
@@ -389,7 +389,7 @@ namespace Model
      * security groups and subnets in the VPC. When you connect a function to a VPC, it
      * can only access resources and the internet through that VPC. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
@@ -399,7 +399,7 @@ namespace Model
      * security groups and subnets in the VPC. When you connect a function to a VPC, it
      * can only access resources and the internet through that VPC. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
@@ -409,7 +409,7 @@ namespace Model
      * security groups and subnets in the VPC. When you connect a function to a VPC, it
      * can only access resources and the internet through that VPC. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/vpc.html">VPC
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
      * Settings</a>.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
@@ -493,8 +493,8 @@ namespace Model
      * <p>A dead letter queue configuration that specifies the queue or topic where
      * Lambda sends asynchronous events when they fail processing. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
-     * Queues</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead
+     * Letter Queues</a>.</p>
      */
     inline const DeadLetterConfig& GetDeadLetterConfig() const{ return m_deadLetterConfig; }
 
@@ -502,8 +502,8 @@ namespace Model
      * <p>A dead letter queue configuration that specifies the queue or topic where
      * Lambda sends asynchronous events when they fail processing. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
-     * Queues</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead
+     * Letter Queues</a>.</p>
      */
     inline bool DeadLetterConfigHasBeenSet() const { return m_deadLetterConfigHasBeenSet; }
 
@@ -511,8 +511,8 @@ namespace Model
      * <p>A dead letter queue configuration that specifies the queue or topic where
      * Lambda sends asynchronous events when they fail processing. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
-     * Queues</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead
+     * Letter Queues</a>.</p>
      */
     inline void SetDeadLetterConfig(const DeadLetterConfig& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = value; }
 
@@ -520,8 +520,8 @@ namespace Model
      * <p>A dead letter queue configuration that specifies the queue or topic where
      * Lambda sends asynchronous events when they fail processing. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
-     * Queues</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead
+     * Letter Queues</a>.</p>
      */
     inline void SetDeadLetterConfig(DeadLetterConfig&& value) { m_deadLetterConfigHasBeenSet = true; m_deadLetterConfig = std::move(value); }
 
@@ -529,8 +529,8 @@ namespace Model
      * <p>A dead letter queue configuration that specifies the queue or topic where
      * Lambda sends asynchronous events when they fail processing. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
-     * Queues</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead
+     * Letter Queues</a>.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithDeadLetterConfig(const DeadLetterConfig& value) { SetDeadLetterConfig(value); return *this;}
 
@@ -538,8 +538,8 @@ namespace Model
      * <p>A dead letter queue configuration that specifies the queue or topic where
      * Lambda sends asynchronous events when they fail processing. For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter
-     * Queues</a>.</p>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead
+     * Letter Queues</a>.</p>
      */
     inline UpdateFunctionConfigurationRequest& WithDeadLetterConfig(DeadLetterConfig&& value) { SetDeadLetterConfig(std::move(value)); return *this;}
 

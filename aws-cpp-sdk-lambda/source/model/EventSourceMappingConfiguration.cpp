@@ -34,12 +34,21 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration() :
     m_batchSizeHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
     m_maximumBatchingWindowInSecondsHasBeenSet(false),
+    m_parallelizationFactor(0),
+    m_parallelizationFactorHasBeenSet(false),
     m_eventSourceArnHasBeenSet(false),
     m_functionArnHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
     m_lastProcessingResultHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_stateTransitionReasonHasBeenSet(false)
+    m_stateTransitionReasonHasBeenSet(false),
+    m_destinationConfigHasBeenSet(false),
+    m_maximumRecordAgeInSeconds(0),
+    m_maximumRecordAgeInSecondsHasBeenSet(false),
+    m_bisectBatchOnFunctionError(false),
+    m_bisectBatchOnFunctionErrorHasBeenSet(false),
+    m_maximumRetryAttempts(0),
+    m_maximumRetryAttemptsHasBeenSet(false)
 {
 }
 
@@ -49,12 +58,21 @@ EventSourceMappingConfiguration::EventSourceMappingConfiguration(JsonView jsonVa
     m_batchSizeHasBeenSet(false),
     m_maximumBatchingWindowInSeconds(0),
     m_maximumBatchingWindowInSecondsHasBeenSet(false),
+    m_parallelizationFactor(0),
+    m_parallelizationFactorHasBeenSet(false),
     m_eventSourceArnHasBeenSet(false),
     m_functionArnHasBeenSet(false),
     m_lastModifiedHasBeenSet(false),
     m_lastProcessingResultHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_stateTransitionReasonHasBeenSet(false)
+    m_stateTransitionReasonHasBeenSet(false),
+    m_destinationConfigHasBeenSet(false),
+    m_maximumRecordAgeInSeconds(0),
+    m_maximumRecordAgeInSecondsHasBeenSet(false),
+    m_bisectBatchOnFunctionError(false),
+    m_bisectBatchOnFunctionErrorHasBeenSet(false),
+    m_maximumRetryAttempts(0),
+    m_maximumRetryAttemptsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +98,13 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_maximumBatchingWindowInSeconds = jsonValue.GetInteger("MaximumBatchingWindowInSeconds");
 
     m_maximumBatchingWindowInSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ParallelizationFactor"))
+  {
+    m_parallelizationFactor = jsonValue.GetInteger("ParallelizationFactor");
+
+    m_parallelizationFactorHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EventSourceArn"))
@@ -124,6 +149,34 @@ EventSourceMappingConfiguration& EventSourceMappingConfiguration::operator =(Jso
     m_stateTransitionReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DestinationConfig"))
+  {
+    m_destinationConfig = jsonValue.GetObject("DestinationConfig");
+
+    m_destinationConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaximumRecordAgeInSeconds"))
+  {
+    m_maximumRecordAgeInSeconds = jsonValue.GetInteger("MaximumRecordAgeInSeconds");
+
+    m_maximumRecordAgeInSecondsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BisectBatchOnFunctionError"))
+  {
+    m_bisectBatchOnFunctionError = jsonValue.GetBool("BisectBatchOnFunctionError");
+
+    m_bisectBatchOnFunctionErrorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaximumRetryAttempts"))
+  {
+    m_maximumRetryAttempts = jsonValue.GetInteger("MaximumRetryAttempts");
+
+    m_maximumRetryAttemptsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +199,12 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   if(m_maximumBatchingWindowInSecondsHasBeenSet)
   {
    payload.WithInteger("MaximumBatchingWindowInSeconds", m_maximumBatchingWindowInSeconds);
+
+  }
+
+  if(m_parallelizationFactorHasBeenSet)
+  {
+   payload.WithInteger("ParallelizationFactor", m_parallelizationFactor);
 
   }
 
@@ -181,6 +240,30 @@ JsonValue EventSourceMappingConfiguration::Jsonize() const
   if(m_stateTransitionReasonHasBeenSet)
   {
    payload.WithString("StateTransitionReason", m_stateTransitionReason);
+
+  }
+
+  if(m_destinationConfigHasBeenSet)
+  {
+   payload.WithObject("DestinationConfig", m_destinationConfig.Jsonize());
+
+  }
+
+  if(m_maximumRecordAgeInSecondsHasBeenSet)
+  {
+   payload.WithInteger("MaximumRecordAgeInSeconds", m_maximumRecordAgeInSeconds);
+
+  }
+
+  if(m_bisectBatchOnFunctionErrorHasBeenSet)
+  {
+   payload.WithBool("BisectBatchOnFunctionError", m_bisectBatchOnFunctionError);
+
+  }
+
+  if(m_maximumRetryAttemptsHasBeenSet)
+  {
+   payload.WithInteger("MaximumRetryAttempts", m_maximumRetryAttempts);
 
   }
 

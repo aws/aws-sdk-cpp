@@ -53,37 +53,49 @@ namespace Model
 
     /**
      * <p>Describes updates to whether to use the default CloudWatch logging
-     * configuration for an application.</p>
+     * configuration for an application. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+     * <code>MetricsLevel</code> parameters.</p>
      */
     inline const ConfigurationType& GetConfigurationTypeUpdate() const{ return m_configurationTypeUpdate; }
 
     /**
      * <p>Describes updates to whether to use the default CloudWatch logging
-     * configuration for an application.</p>
+     * configuration for an application. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+     * <code>MetricsLevel</code> parameters.</p>
      */
     inline bool ConfigurationTypeUpdateHasBeenSet() const { return m_configurationTypeUpdateHasBeenSet; }
 
     /**
      * <p>Describes updates to whether to use the default CloudWatch logging
-     * configuration for an application.</p>
+     * configuration for an application. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+     * <code>MetricsLevel</code> parameters.</p>
      */
     inline void SetConfigurationTypeUpdate(const ConfigurationType& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = value; }
 
     /**
      * <p>Describes updates to whether to use the default CloudWatch logging
-     * configuration for an application.</p>
+     * configuration for an application. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+     * <code>MetricsLevel</code> parameters.</p>
      */
     inline void SetConfigurationTypeUpdate(ConfigurationType&& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = std::move(value); }
 
     /**
      * <p>Describes updates to whether to use the default CloudWatch logging
-     * configuration for an application.</p>
+     * configuration for an application. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+     * <code>MetricsLevel</code> parameters.</p>
      */
     inline MonitoringConfigurationUpdate& WithConfigurationTypeUpdate(const ConfigurationType& value) { SetConfigurationTypeUpdate(value); return *this;}
 
     /**
      * <p>Describes updates to whether to use the default CloudWatch logging
-     * configuration for an application.</p>
+     * configuration for an application. You must set this property to
+     * <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
+     * <code>MetricsLevel</code> parameters.</p>
      */
     inline MonitoringConfigurationUpdate& WithConfigurationTypeUpdate(ConfigurationType&& value) { SetConfigurationTypeUpdate(std::move(value)); return *this;}
 

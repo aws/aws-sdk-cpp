@@ -27,6 +27,7 @@ UpdateComponentConfigurationRequest::UpdateComponentConfigurationRequest() :
     m_componentNameHasBeenSet(false),
     m_monitor(false),
     m_monitorHasBeenSet(false),
+    m_tier(Tier::NOT_SET),
     m_tierHasBeenSet(false),
     m_componentConfigurationHasBeenSet(false)
 {
@@ -56,8 +57,7 @@ Aws::String UpdateComponentConfigurationRequest::SerializePayload() const
 
   if(m_tierHasBeenSet)
   {
-   payload.WithString("Tier", m_tier);
-
+   payload.WithString("Tier", TierMapper::GetNameForTier(m_tier));
   }
 
   if(m_componentConfigurationHasBeenSet)
