@@ -47,56 +47,56 @@ namespace Model
     /**
      * <p>The unique identifier (ID) of the policy that you want to update.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID
-     * string requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * string requires "p-" followed by from 8 to 128 lowercase letters or digits.</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
 
     /**
      * <p>The unique identifier (ID) of the policy that you want to update.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID
-     * string requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * string requires "p-" followed by from 8 to 128 lowercase letters or digits.</p>
      */
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
 
     /**
      * <p>The unique identifier (ID) of the policy that you want to update.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID
-     * string requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * string requires "p-" followed by from 8 to 128 lowercase letters or digits.</p>
      */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
      * <p>The unique identifier (ID) of the policy that you want to update.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID
-     * string requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * string requires "p-" followed by from 8 to 128 lowercase letters or digits.</p>
      */
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
     /**
      * <p>The unique identifier (ID) of the policy that you want to update.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID
-     * string requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * string requires "p-" followed by from 8 to 128 lowercase letters or digits.</p>
      */
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
 
     /**
      * <p>The unique identifier (ID) of the policy that you want to update.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID
-     * string requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * string requires "p-" followed by from 8 to 128 lowercase letters or digits.</p>
      */
     inline UpdatePolicyRequest& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the policy that you want to update.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID
-     * string requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * string requires "p-" followed by from 8 to 128 lowercase letters or digits.</p>
      */
     inline UpdatePolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifier (ID) of the policy that you want to update.</p> <p>The
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy ID
-     * string requires "p-" followed by from 8 to 128 lower-case letters or digits.</p>
+     * string requires "p-" followed by from 8 to 128 lowercase letters or digits.</p>
      */
     inline UpdatePolicyRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 

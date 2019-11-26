@@ -79,53 +79,53 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the dashboard.</p>
+     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
      */
     inline const Aws::String& GetDashboardArn() const{ return m_dashboardArn; }
 
     /**
-     * <p>The ARN of the dashboard.</p>
+     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
      */
     inline void SetDashboardArn(const Aws::String& value) { m_dashboardArn = value; }
 
     /**
-     * <p>The ARN of the dashboard.</p>
+     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
      */
     inline void SetDashboardArn(Aws::String&& value) { m_dashboardArn = std::move(value); }
 
     /**
-     * <p>The ARN of the dashboard.</p>
+     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
      */
     inline void SetDashboardArn(const char* value) { m_dashboardArn.assign(value); }
 
     /**
-     * <p>The ARN of the dashboard.</p>
+     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
      */
     inline UpdateDashboardPublishedVersionResult& WithDashboardArn(const Aws::String& value) { SetDashboardArn(value); return *this;}
 
     /**
-     * <p>The ARN of the dashboard.</p>
+     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
      */
     inline UpdateDashboardPublishedVersionResult& WithDashboardArn(Aws::String&& value) { SetDashboardArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the dashboard.</p>
+     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
      */
     inline UpdateDashboardPublishedVersionResult& WithDashboardArn(const char* value) { SetDashboardArn(value); return *this;}
 
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(int value) { m_status = value; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline UpdateDashboardPublishedVersionResult& WithStatus(int value) { SetStatus(value); return *this;}
 

@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>SSL properties that apply when QuickSight connects to your underlying data
-   * source.</p><p><h3>See Also:</h3>   <a
+   * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+   * your underlying data source.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SslProperties">AWS
    * API Reference</a></p>
    */

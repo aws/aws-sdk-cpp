@@ -43,6 +43,7 @@
 #include <aws/organizations/model/DeletePolicyRequest.h>
 #include <aws/organizations/model/DescribeAccountRequest.h>
 #include <aws/organizations/model/DescribeCreateAccountStatusRequest.h>
+#include <aws/organizations/model/DescribeEffectivePolicyRequest.h>
 #include <aws/organizations/model/DescribeHandshakeRequest.h>
 #include <aws/organizations/model/DescribeOrganizationalUnitRequest.h>
 #include <aws/organizations/model/DescribePolicyRequest.h>
@@ -632,6 +633,41 @@ void OrganizationsClient::DescribeCreateAccountStatusAsync(const DescribeCreateA
 void OrganizationsClient::DescribeCreateAccountStatusAsyncHelper(const DescribeCreateAccountStatusRequest& request, const DescribeCreateAccountStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeCreateAccountStatus(request), context);
+}
+
+DescribeEffectivePolicyOutcome OrganizationsClient::DescribeEffectivePolicy(const DescribeEffectivePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeEffectivePolicyOutcome(DescribeEffectivePolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeEffectivePolicyOutcome(outcome.GetError());
+  }
+}
+
+DescribeEffectivePolicyOutcomeCallable OrganizationsClient::DescribeEffectivePolicyCallable(const DescribeEffectivePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeEffectivePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeEffectivePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void OrganizationsClient::DescribeEffectivePolicyAsync(const DescribeEffectivePolicyRequest& request, const DescribeEffectivePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeEffectivePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void OrganizationsClient::DescribeEffectivePolicyAsyncHelper(const DescribeEffectivePolicyRequest& request, const DescribeEffectivePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeEffectivePolicy(request), context);
 }
 
 DescribeHandshakeOutcome OrganizationsClient::DescribeHandshake(const DescribeHandshakeRequest& request) const

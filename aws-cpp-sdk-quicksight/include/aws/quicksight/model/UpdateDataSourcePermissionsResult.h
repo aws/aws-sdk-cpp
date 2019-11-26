@@ -43,73 +43,80 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline const Aws::String& GetDataSourceArn() const{ return m_dataSourceArn; }
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline void SetDataSourceArn(const Aws::String& value) { m_dataSourceArn = value; }
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline void SetDataSourceArn(Aws::String&& value) { m_dataSourceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline void SetDataSourceArn(const char* value) { m_dataSourceArn.assign(value); }
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline UpdateDataSourcePermissionsResult& WithDataSourceArn(const Aws::String& value) { SetDataSourceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline UpdateDataSourcePermissionsResult& WithDataSourceArn(Aws::String&& value) { SetDataSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline UpdateDataSourcePermissionsResult& WithDataSourceArn(const char* value) { SetDataSourceArn(value); return *this;}
 
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceId = value; }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceId = std::move(value); }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline void SetDataSourceId(const char* value) { m_dataSourceId.assign(value); }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline UpdateDataSourcePermissionsResult& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline UpdateDataSourcePermissionsResult& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline UpdateDataSourcePermissionsResult& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
@@ -151,17 +158,17 @@ namespace Model
 
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(int value) { m_status = value; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline UpdateDataSourcePermissionsResult& WithStatus(int value) { SetStatus(value); return *this;}
 

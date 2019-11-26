@@ -33,7 +33,8 @@ SSEDescription::SSEDescription() :
     m_statusHasBeenSet(false),
     m_sSEType(SSEType::NOT_SET),
     m_sSETypeHasBeenSet(false),
-    m_kMSMasterKeyArnHasBeenSet(false)
+    m_kMSMasterKeyArnHasBeenSet(false),
+    m_inaccessibleEncryptionDateTimeHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ SSEDescription::SSEDescription(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_sSEType(SSEType::NOT_SET),
     m_sSETypeHasBeenSet(false),
-    m_kMSMasterKeyArnHasBeenSet(false)
+    m_kMSMasterKeyArnHasBeenSet(false),
+    m_inaccessibleEncryptionDateTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -70,6 +72,13 @@ SSEDescription& SSEDescription::operator =(JsonView jsonValue)
     m_kMSMasterKeyArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InaccessibleEncryptionDateTime"))
+  {
+    m_inaccessibleEncryptionDateTime = jsonValue.GetDouble("InaccessibleEncryptionDateTime");
+
+    m_inaccessibleEncryptionDateTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -91,6 +100,11 @@ JsonValue SSEDescription::Jsonize() const
   {
    payload.WithString("KMSMasterKeyArn", m_kMSMasterKeyArn);
 
+  }
+
+  if(m_inaccessibleEncryptionDateTimeHasBeenSet)
+  {
+   payload.WithDouble("InaccessibleEncryptionDateTime", m_inaccessibleEncryptionDateTime.SecondsWithMSPrecision());
   }
 
   return payload;

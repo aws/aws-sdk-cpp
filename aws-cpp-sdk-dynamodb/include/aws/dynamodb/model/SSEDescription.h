@@ -18,6 +18,7 @@
 #include <aws/dynamodb/model/SSEStatus.h>
 #include <aws/dynamodb/model/SSEType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -196,6 +197,61 @@ namespace Model
      */
     inline SSEDescription& WithKMSMasterKeyArn(const char* value) { SetKMSMasterKeyArn(value); return *this;}
 
+
+    /**
+     * <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that
+     * the table's AWS KMS key was inaccessible. This attribute will automatically be
+     * cleared when DynamoDB detects that the table's AWS KMS key is accessible again.
+     * DynamoDB will initiate the table archival process when table's AWS KMS key
+     * remains inaccessible for more than seven days from this date.</p>
+     */
+    inline const Aws::Utils::DateTime& GetInaccessibleEncryptionDateTime() const{ return m_inaccessibleEncryptionDateTime; }
+
+    /**
+     * <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that
+     * the table's AWS KMS key was inaccessible. This attribute will automatically be
+     * cleared when DynamoDB detects that the table's AWS KMS key is accessible again.
+     * DynamoDB will initiate the table archival process when table's AWS KMS key
+     * remains inaccessible for more than seven days from this date.</p>
+     */
+    inline bool InaccessibleEncryptionDateTimeHasBeenSet() const { return m_inaccessibleEncryptionDateTimeHasBeenSet; }
+
+    /**
+     * <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that
+     * the table's AWS KMS key was inaccessible. This attribute will automatically be
+     * cleared when DynamoDB detects that the table's AWS KMS key is accessible again.
+     * DynamoDB will initiate the table archival process when table's AWS KMS key
+     * remains inaccessible for more than seven days from this date.</p>
+     */
+    inline void SetInaccessibleEncryptionDateTime(const Aws::Utils::DateTime& value) { m_inaccessibleEncryptionDateTimeHasBeenSet = true; m_inaccessibleEncryptionDateTime = value; }
+
+    /**
+     * <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that
+     * the table's AWS KMS key was inaccessible. This attribute will automatically be
+     * cleared when DynamoDB detects that the table's AWS KMS key is accessible again.
+     * DynamoDB will initiate the table archival process when table's AWS KMS key
+     * remains inaccessible for more than seven days from this date.</p>
+     */
+    inline void SetInaccessibleEncryptionDateTime(Aws::Utils::DateTime&& value) { m_inaccessibleEncryptionDateTimeHasBeenSet = true; m_inaccessibleEncryptionDateTime = std::move(value); }
+
+    /**
+     * <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that
+     * the table's AWS KMS key was inaccessible. This attribute will automatically be
+     * cleared when DynamoDB detects that the table's AWS KMS key is accessible again.
+     * DynamoDB will initiate the table archival process when table's AWS KMS key
+     * remains inaccessible for more than seven days from this date.</p>
+     */
+    inline SSEDescription& WithInaccessibleEncryptionDateTime(const Aws::Utils::DateTime& value) { SetInaccessibleEncryptionDateTime(value); return *this;}
+
+    /**
+     * <p>Indicates the time, in UNIX epoch date format, when DynamoDB detected that
+     * the table's AWS KMS key was inaccessible. This attribute will automatically be
+     * cleared when DynamoDB detects that the table's AWS KMS key is accessible again.
+     * DynamoDB will initiate the table archival process when table's AWS KMS key
+     * remains inaccessible for more than seven days from this date.</p>
+     */
+    inline SSEDescription& WithInaccessibleEncryptionDateTime(Aws::Utils::DateTime&& value) { SetInaccessibleEncryptionDateTime(std::move(value)); return *this;}
+
   private:
 
     SSEStatus m_status;
@@ -206,6 +262,9 @@ namespace Model
 
     Aws::String m_kMSMasterKeyArn;
     bool m_kMSMasterKeyArnHasBeenSet;
+
+    Aws::Utils::DateTime m_inaccessibleEncryptionDateTime;
+    bool m_inaccessibleEncryptionDateTimeHasBeenSet;
   };
 
 } // namespace Model

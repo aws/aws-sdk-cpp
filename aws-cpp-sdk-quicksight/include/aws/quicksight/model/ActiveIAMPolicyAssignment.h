@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>The active IAM policy assignment.</p><p><h3>See Also:</h3>   <a
+   * <p>The active AWS Identity and Access Management (IAM) policy
+   * assignment.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ActiveIAMPolicyAssignment">AWS
    * API Reference</a></p>
    */
@@ -89,42 +90,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline ActiveIAMPolicyAssignment& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline ActiveIAMPolicyAssignment& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline ActiveIAMPolicyAssignment& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 

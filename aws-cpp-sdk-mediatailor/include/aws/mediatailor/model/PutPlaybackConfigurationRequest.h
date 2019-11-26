@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediatailor/model/CdnConfiguration.h>
 #include <aws/mediatailor/model/DashConfigurationForPut.h>
+#include <aws/mediatailor/model/LivePreRollConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -184,6 +185,37 @@ namespace Model
      * <p>The configuration for DASH content. </p>
      */
     inline PutPlaybackConfigurationRequest& WithDashConfiguration(DashConfigurationForPut&& value) { SetDashConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration for pre-roll ad insertion.</p>
+     */
+    inline const LivePreRollConfiguration& GetLivePreRollConfiguration() const{ return m_livePreRollConfiguration; }
+
+    /**
+     * <p>The configuration for pre-roll ad insertion.</p>
+     */
+    inline bool LivePreRollConfigurationHasBeenSet() const { return m_livePreRollConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration for pre-roll ad insertion.</p>
+     */
+    inline void SetLivePreRollConfiguration(const LivePreRollConfiguration& value) { m_livePreRollConfigurationHasBeenSet = true; m_livePreRollConfiguration = value; }
+
+    /**
+     * <p>The configuration for pre-roll ad insertion.</p>
+     */
+    inline void SetLivePreRollConfiguration(LivePreRollConfiguration&& value) { m_livePreRollConfigurationHasBeenSet = true; m_livePreRollConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for pre-roll ad insertion.</p>
+     */
+    inline PutPlaybackConfigurationRequest& WithLivePreRollConfiguration(const LivePreRollConfiguration& value) { SetLivePreRollConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for pre-roll ad insertion.</p>
+     */
+    inline PutPlaybackConfigurationRequest& WithLivePreRollConfiguration(LivePreRollConfiguration&& value) { SetLivePreRollConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -497,6 +529,9 @@ namespace Model
 
     DashConfigurationForPut m_dashConfiguration;
     bool m_dashConfigurationHasBeenSet;
+
+    LivePreRollConfiguration m_livePreRollConfiguration;
+    bool m_livePreRollConfigurationHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

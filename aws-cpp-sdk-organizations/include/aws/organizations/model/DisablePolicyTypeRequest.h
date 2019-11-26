@@ -49,7 +49,7 @@ namespace Model
      * <p>The unique identifier (ID) of the root in which you want to disable a policy
      * type. You can get the ID from the <a>ListRoots</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline const Aws::String& GetRootId() const{ return m_rootId; }
 
@@ -57,7 +57,7 @@ namespace Model
      * <p>The unique identifier (ID) of the root in which you want to disable a policy
      * type. You can get the ID from the <a>ListRoots</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline bool RootIdHasBeenSet() const { return m_rootIdHasBeenSet; }
 
@@ -65,7 +65,7 @@ namespace Model
      * <p>The unique identifier (ID) of the root in which you want to disable a policy
      * type. You can get the ID from the <a>ListRoots</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline void SetRootId(const Aws::String& value) { m_rootIdHasBeenSet = true; m_rootId = value; }
 
@@ -73,7 +73,7 @@ namespace Model
      * <p>The unique identifier (ID) of the root in which you want to disable a policy
      * type. You can get the ID from the <a>ListRoots</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline void SetRootId(Aws::String&& value) { m_rootIdHasBeenSet = true; m_rootId = std::move(value); }
 
@@ -81,7 +81,7 @@ namespace Model
      * <p>The unique identifier (ID) of the root in which you want to disable a policy
      * type. You can get the ID from the <a>ListRoots</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline void SetRootId(const char* value) { m_rootIdHasBeenSet = true; m_rootId.assign(value); }
 
@@ -89,7 +89,7 @@ namespace Model
      * <p>The unique identifier (ID) of the root in which you want to disable a policy
      * type. You can get the ID from the <a>ListRoots</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline DisablePolicyTypeRequest& WithRootId(const Aws::String& value) { SetRootId(value); return *this;}
 
@@ -97,7 +97,7 @@ namespace Model
      * <p>The unique identifier (ID) of the root in which you want to disable a policy
      * type. You can get the ID from the <a>ListRoots</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline DisablePolicyTypeRequest& WithRootId(Aws::String&& value) { SetRootId(std::move(value)); return *this;}
 
@@ -105,7 +105,7 @@ namespace Model
      * <p>The unique identifier (ID) of the root in which you want to disable a policy
      * type. You can get the ID from the <a>ListRoots</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
-     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * requires "r-" followed by from 4 to 32 lowercase letters or digits.</p>
      */
     inline DisablePolicyTypeRequest& WithRootId(const char* value) { SetRootId(value); return *this;}
 

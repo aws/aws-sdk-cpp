@@ -40,7 +40,7 @@ namespace Model
    * <p>Contains details about an organization. An organization is a collection of
    * accounts that are centrally managed together using consolidated billing,
    * organized hierarchically with organizational units (OUs), and controlled with
-   * policies .</p><p><h3>See Also:</h3>   <a
+   * policies.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Organization">AWS
    * API Reference</a></p>
    */

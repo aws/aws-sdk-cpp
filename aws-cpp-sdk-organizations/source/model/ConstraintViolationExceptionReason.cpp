@@ -35,6 +35,7 @@ namespace Aws
         static const int OU_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OU_NUMBER_LIMIT_EXCEEDED");
         static const int OU_DEPTH_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("OU_DEPTH_LIMIT_EXCEEDED");
         static const int POLICY_NUMBER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("POLICY_NUMBER_LIMIT_EXCEEDED");
+        static const int POLICY_CONTENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("POLICY_CONTENT_LIMIT_EXCEEDED");
         static const int MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED");
         static const int MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED");
         static const int ACCOUNT_CANNOT_LEAVE_ORGANIZATION_HASH = HashingUtils::HashString("ACCOUNT_CANNOT_LEAVE_ORGANIZATION");
@@ -76,6 +77,10 @@ namespace Aws
           else if (hashCode == POLICY_NUMBER_LIMIT_EXCEEDED_HASH)
           {
             return ConstraintViolationExceptionReason::POLICY_NUMBER_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == POLICY_CONTENT_LIMIT_EXCEEDED_HASH)
+          {
+            return ConstraintViolationExceptionReason::POLICY_CONTENT_LIMIT_EXCEEDED;
           }
           else if (hashCode == MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED_HASH)
           {
@@ -169,6 +174,8 @@ namespace Aws
             return "OU_DEPTH_LIMIT_EXCEEDED";
           case ConstraintViolationExceptionReason::POLICY_NUMBER_LIMIT_EXCEEDED:
             return "POLICY_NUMBER_LIMIT_EXCEEDED";
+          case ConstraintViolationExceptionReason::POLICY_CONTENT_LIMIT_EXCEEDED:
+            return "POLICY_CONTENT_LIMIT_EXCEEDED";
           case ConstraintViolationExceptionReason::MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED:
             return "MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED";
           case ConstraintViolationExceptionReason::MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED:

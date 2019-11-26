@@ -48,7 +48,7 @@ namespace Model
      * <p>The unique identifier (ID) of the handshake that you want to decline. You can
      * get the ID from the <a>ListHandshakesForAccount</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline const Aws::String& GetHandshakeId() const{ return m_handshakeId; }
 
@@ -56,7 +56,7 @@ namespace Model
      * <p>The unique identifier (ID) of the handshake that you want to decline. You can
      * get the ID from the <a>ListHandshakesForAccount</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline bool HandshakeIdHasBeenSet() const { return m_handshakeIdHasBeenSet; }
 
@@ -64,7 +64,7 @@ namespace Model
      * <p>The unique identifier (ID) of the handshake that you want to decline. You can
      * get the ID from the <a>ListHandshakesForAccount</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline void SetHandshakeId(const Aws::String& value) { m_handshakeIdHasBeenSet = true; m_handshakeId = value; }
 
@@ -72,7 +72,7 @@ namespace Model
      * <p>The unique identifier (ID) of the handshake that you want to decline. You can
      * get the ID from the <a>ListHandshakesForAccount</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline void SetHandshakeId(Aws::String&& value) { m_handshakeIdHasBeenSet = true; m_handshakeId = std::move(value); }
 
@@ -80,7 +80,7 @@ namespace Model
      * <p>The unique identifier (ID) of the handshake that you want to decline. You can
      * get the ID from the <a>ListHandshakesForAccount</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline void SetHandshakeId(const char* value) { m_handshakeIdHasBeenSet = true; m_handshakeId.assign(value); }
 
@@ -88,7 +88,7 @@ namespace Model
      * <p>The unique identifier (ID) of the handshake that you want to decline. You can
      * get the ID from the <a>ListHandshakesForAccount</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline DeclineHandshakeRequest& WithHandshakeId(const Aws::String& value) { SetHandshakeId(value); return *this;}
 
@@ -96,7 +96,7 @@ namespace Model
      * <p>The unique identifier (ID) of the handshake that you want to decline. You can
      * get the ID from the <a>ListHandshakesForAccount</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline DeclineHandshakeRequest& WithHandshakeId(Aws::String&& value) { SetHandshakeId(std::move(value)); return *this;}
 
@@ -104,7 +104,7 @@ namespace Model
      * <p>The unique identifier (ID) of the handshake that you want to decline. You can
      * get the ID from the <a>ListHandshakesForAccount</a> operation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
-     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     * requires "h-" followed by from 8 to 32 lowercase letters or digits.</p>
      */
     inline DeclineHandshakeRequest& WithHandshakeId(const char* value) { SetHandshakeId(value); return *this;}
 

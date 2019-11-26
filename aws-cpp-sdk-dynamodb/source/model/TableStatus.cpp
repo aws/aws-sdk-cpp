@@ -34,6 +34,9 @@ namespace Aws
         static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+        static const int INACCESSIBLE_ENCRYPTION_CREDENTIALS_HASH = HashingUtils::HashString("INACCESSIBLE_ENCRYPTION_CREDENTIALS");
+        static const int ARCHIVING_HASH = HashingUtils::HashString("ARCHIVING");
+        static const int ARCHIVED_HASH = HashingUtils::HashString("ARCHIVED");
 
 
         TableStatus GetTableStatusForName(const Aws::String& name)
@@ -54,6 +57,18 @@ namespace Aws
           else if (hashCode == ACTIVE_HASH)
           {
             return TableStatus::ACTIVE;
+          }
+          else if (hashCode == INACCESSIBLE_ENCRYPTION_CREDENTIALS_HASH)
+          {
+            return TableStatus::INACCESSIBLE_ENCRYPTION_CREDENTIALS;
+          }
+          else if (hashCode == ARCHIVING_HASH)
+          {
+            return TableStatus::ARCHIVING;
+          }
+          else if (hashCode == ARCHIVED_HASH)
+          {
+            return TableStatus::ARCHIVED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +92,12 @@ namespace Aws
             return "DELETING";
           case TableStatus::ACTIVE:
             return "ACTIVE";
+          case TableStatus::INACCESSIBLE_ENCRYPTION_CREDENTIALS:
+            return "INACCESSIBLE_ENCRYPTION_CREDENTIALS";
+          case TableStatus::ARCHIVING:
+            return "ARCHIVING";
+          case TableStatus::ARCHIVED:
+            return "ARCHIVED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

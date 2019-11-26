@@ -56,7 +56,7 @@ namespace Model
      * <p>The unique identifier (ID) that references this request. You get this value
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for an create account request ID string requires "car-" followed by from 8 to 32
+     * for a create account request ID string requires "car-" followed by from 8 to 32
      * lower-case letters or digits.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -65,7 +65,7 @@ namespace Model
      * <p>The unique identifier (ID) that references this request. You get this value
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for an create account request ID string requires "car-" followed by from 8 to 32
+     * for a create account request ID string requires "car-" followed by from 8 to 32
      * lower-case letters or digits.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
@@ -74,7 +74,7 @@ namespace Model
      * <p>The unique identifier (ID) that references this request. You get this value
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for an create account request ID string requires "car-" followed by from 8 to 32
+     * for a create account request ID string requires "car-" followed by from 8 to 32
      * lower-case letters or digits.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
@@ -83,7 +83,7 @@ namespace Model
      * <p>The unique identifier (ID) that references this request. You get this value
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for an create account request ID string requires "car-" followed by from 8 to 32
+     * for a create account request ID string requires "car-" followed by from 8 to 32
      * lower-case letters or digits.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
@@ -92,7 +92,7 @@ namespace Model
      * <p>The unique identifier (ID) that references this request. You get this value
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for an create account request ID string requires "car-" followed by from 8 to 32
+     * for a create account request ID string requires "car-" followed by from 8 to 32
      * lower-case letters or digits.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
@@ -101,7 +101,7 @@ namespace Model
      * <p>The unique identifier (ID) that references this request. You get this value
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for an create account request ID string requires "car-" followed by from 8 to 32
+     * for a create account request ID string requires "car-" followed by from 8 to 32
      * lower-case letters or digits.</p>
      */
     inline CreateAccountStatus& WithId(const Aws::String& value) { SetId(value); return *this;}
@@ -110,7 +110,7 @@ namespace Model
      * <p>The unique identifier (ID) that references this request. You get this value
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for an create account request ID string requires "car-" followed by from 8 to 32
+     * for a create account request ID string requires "car-" followed by from 8 to 32
      * lower-case letters or digits.</p>
      */
     inline CreateAccountStatus& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
@@ -119,7 +119,7 @@ namespace Model
      * <p>The unique identifier (ID) that references this request. You get this value
      * from the response of the initial <a>CreateAccount</a> request to create the
      * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
-     * for an create account request ID string requires "car-" followed by from 8 to 32
+     * for a create account request ID string requires "car-" followed by from 8 to 32
      * lower-case letters or digits.</p>
      */
     inline CreateAccountStatus& WithId(const char* value) { SetId(value); return *this;}
@@ -378,7 +378,7 @@ namespace Model
      * <p>INVALID_EMAIL: The account could not be created because the email address you
      * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
      * be created because of an internal failure. Try again later. If the problem
-     * persists, contact Customer Support.</p> </li> </ul>
+     * persists, contact AWS Support.</p> </li> </ul>
      */
     inline const CreateAccountFailureReason& GetFailureReason() const{ return m_failureReason; }
 
@@ -395,7 +395,7 @@ namespace Model
      * <p>INVALID_EMAIL: The account could not be created because the email address you
      * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
      * be created because of an internal failure. Try again later. If the problem
-     * persists, contact Customer Support.</p> </li> </ul>
+     * persists, contact AWS Support.</p> </li> </ul>
      */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
@@ -412,7 +412,7 @@ namespace Model
      * <p>INVALID_EMAIL: The account could not be created because the email address you
      * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
      * be created because of an internal failure. Try again later. If the problem
-     * persists, contact Customer Support.</p> </li> </ul>
+     * persists, contact AWS Support.</p> </li> </ul>
      */
     inline void SetFailureReason(const CreateAccountFailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
@@ -429,7 +429,7 @@ namespace Model
      * <p>INVALID_EMAIL: The account could not be created because the email address you
      * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
      * be created because of an internal failure. Try again later. If the problem
-     * persists, contact Customer Support.</p> </li> </ul>
+     * persists, contact AWS Support.</p> </li> </ul>
      */
     inline void SetFailureReason(CreateAccountFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
@@ -446,7 +446,7 @@ namespace Model
      * <p>INVALID_EMAIL: The account could not be created because the email address you
      * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
      * be created because of an internal failure. Try again later. If the problem
-     * persists, contact Customer Support.</p> </li> </ul>
+     * persists, contact AWS Support.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(const CreateAccountFailureReason& value) { SetFailureReason(value); return *this;}
 
@@ -463,7 +463,7 @@ namespace Model
      * <p>INVALID_EMAIL: The account could not be created because the email address you
      * provided is not valid.</p> </li> <li> <p>INTERNAL_FAILURE: The account could not
      * be created because of an internal failure. Try again later. If the problem
-     * persists, contact Customer Support.</p> </li> </ul>
+     * persists, contact AWS Support.</p> </li> </ul>
      */
     inline CreateAccountStatus& WithFailureReason(CreateAccountFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
 

@@ -51,42 +51,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline const Aws::String& GetDataSourceArn() const{ return m_dataSourceArn; }
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline bool DataSourceArnHasBeenSet() const { return m_dataSourceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline void SetDataSourceArn(const Aws::String& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = value; }
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline void SetDataSourceArn(Aws::String&& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline void SetDataSourceArn(const char* value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn.assign(value); }
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline CustomSql& WithDataSourceArn(const Aws::String& value) { SetDataSourceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline CustomSql& WithDataSourceArn(Aws::String&& value) { SetDataSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline CustomSql& WithDataSourceArn(const char* value) { SetDataSourceArn(value); return *this;}
 

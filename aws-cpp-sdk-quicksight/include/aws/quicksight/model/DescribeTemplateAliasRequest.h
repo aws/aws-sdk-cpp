@@ -125,42 +125,74 @@ namespace Model
 
 
     /**
-     * <p>The alias name. <code>$PUBLISHED</code> is not supported for template.</p>
+     * <p>The alias of the template that you want to describe. If you provide a
+     * specific alias, you describe the version that the alias points to. You can
+     * specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
+     * <code>$PUBLISHED</code> doesn't apply to templates.</p>
      */
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
 
     /**
-     * <p>The alias name. <code>$PUBLISHED</code> is not supported for template.</p>
+     * <p>The alias of the template that you want to describe. If you provide a
+     * specific alias, you describe the version that the alias points to. You can
+     * specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
+     * <code>$PUBLISHED</code> doesn't apply to templates.</p>
      */
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
 
     /**
-     * <p>The alias name. <code>$PUBLISHED</code> is not supported for template.</p>
+     * <p>The alias of the template that you want to describe. If you provide a
+     * specific alias, you describe the version that the alias points to. You can
+     * specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
+     * <code>$PUBLISHED</code> doesn't apply to templates.</p>
      */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /**
-     * <p>The alias name. <code>$PUBLISHED</code> is not supported for template.</p>
+     * <p>The alias of the template that you want to describe. If you provide a
+     * specific alias, you describe the version that the alias points to. You can
+     * specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
+     * <code>$PUBLISHED</code> doesn't apply to templates.</p>
      */
     inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
 
     /**
-     * <p>The alias name. <code>$PUBLISHED</code> is not supported for template.</p>
+     * <p>The alias of the template that you want to describe. If you provide a
+     * specific alias, you describe the version that the alias points to. You can
+     * specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
+     * <code>$PUBLISHED</code> doesn't apply to templates.</p>
      */
     inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
 
     /**
-     * <p>The alias name. <code>$PUBLISHED</code> is not supported for template.</p>
+     * <p>The alias of the template that you want to describe. If you provide a
+     * specific alias, you describe the version that the alias points to. You can
+     * specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
+     * <code>$PUBLISHED</code> doesn't apply to templates.</p>
      */
     inline DescribeTemplateAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
 
     /**
-     * <p>The alias name. <code>$PUBLISHED</code> is not supported for template.</p>
+     * <p>The alias of the template that you want to describe. If you provide a
+     * specific alias, you describe the version that the alias points to. You can
+     * specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
+     * <code>$PUBLISHED</code> doesn't apply to templates.</p>
      */
     inline DescribeTemplateAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
-     * <p>The alias name. <code>$PUBLISHED</code> is not supported for template.</p>
+     * <p>The alias of the template that you want to describe. If you provide a
+     * specific alias, you describe the version that the alias points to. You can
+     * specify the latest version of the template by providing the keyword
+     * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
+     * <code>$PUBLISHED</code> doesn't apply to templates.</p>
      */
     inline DescribeTemplateAliasRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
 

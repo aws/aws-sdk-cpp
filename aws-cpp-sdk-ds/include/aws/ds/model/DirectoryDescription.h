@@ -361,42 +361,42 @@ namespace Model
 
 
     /**
-     * <p>The textual description for the directory.</p>
+     * <p>The description for the directory.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The textual description for the directory.</p>
+     * <p>The description for the directory.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The textual description for the directory.</p>
+     * <p>The description for the directory.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The textual description for the directory.</p>
+     * <p>The description for the directory.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The textual description for the directory.</p>
+     * <p>The description for the directory.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The textual description for the directory.</p>
+     * <p>The description for the directory.</p>
      */
     inline DirectoryDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The textual description for the directory.</p>
+     * <p>The description for the directory.</p>
      */
     inline DirectoryDescription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The textual description for the directory.</p>
+     * <p>The description for the directory.</p>
      */
     inline DirectoryDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
 

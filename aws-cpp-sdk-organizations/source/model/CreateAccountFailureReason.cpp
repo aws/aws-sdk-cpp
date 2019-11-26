@@ -36,6 +36,7 @@ namespace Aws
         static const int INVALID_EMAIL_HASH = HashingUtils::HashString("INVALID_EMAIL");
         static const int CONCURRENT_ACCOUNT_MODIFICATION_HASH = HashingUtils::HashString("CONCURRENT_ACCOUNT_MODIFICATION");
         static const int INTERNAL_FAILURE_HASH = HashingUtils::HashString("INTERNAL_FAILURE");
+        static const int GOVCLOUD_ACCOUNT_ALREADY_EXISTS_HASH = HashingUtils::HashString("GOVCLOUD_ACCOUNT_ALREADY_EXISTS");
 
 
         CreateAccountFailureReason GetCreateAccountFailureReasonForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return CreateAccountFailureReason::INTERNAL_FAILURE;
           }
+          else if (hashCode == GOVCLOUD_ACCOUNT_ALREADY_EXISTS_HASH)
+          {
+            return CreateAccountFailureReason::GOVCLOUD_ACCOUNT_ALREADY_EXISTS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "CONCURRENT_ACCOUNT_MODIFICATION";
           case CreateAccountFailureReason::INTERNAL_FAILURE:
             return "INTERNAL_FAILURE";
+          case CreateAccountFailureReason::GOVCLOUD_ACCOUNT_ALREADY_EXISTS:
+            return "GOVCLOUD_ACCOUNT_ALREADY_EXISTS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

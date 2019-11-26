@@ -1559,16 +1559,22 @@ namespace Model
         virtual void AdminUpdateUserAttributesAsync(const Model::AdminUpdateUserAttributesRequest& request, const AdminUpdateUserAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Signs out users from all devices, as an administrator.</p> <p>Calling this
-         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Signs out users from all devices, as an administrator. It also invalidates
+         * all refresh tokens issued to a user. The user's current access and Id tokens
+         * remain valid until their expiry. Access and Id tokens expire one hour after they
+         * are issued.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">AWS
          * API Reference</a></p>
          */
         virtual Model::AdminUserGlobalSignOutOutcome AdminUserGlobalSignOut(const Model::AdminUserGlobalSignOutRequest& request) const;
 
         /**
-         * <p>Signs out users from all devices, as an administrator.</p> <p>Calling this
-         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Signs out users from all devices, as an administrator. It also invalidates
+         * all refresh tokens issued to a user. The user's current access and Id tokens
+         * remain valid until their expiry. Access and Id tokens expire one hour after they
+         * are issued.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">AWS
          * API Reference</a></p>
          *
@@ -1577,8 +1583,11 @@ namespace Model
         virtual Model::AdminUserGlobalSignOutOutcomeCallable AdminUserGlobalSignOutCallable(const Model::AdminUserGlobalSignOutRequest& request) const;
 
         /**
-         * <p>Signs out users from all devices, as an administrator.</p> <p>Calling this
-         * action requires developer credentials.</p><p><h3>See Also:</h3>   <a
+         * <p>Signs out users from all devices, as an administrator. It also invalidates
+         * all refresh tokens issued to a user. The user's current access and Id tokens
+         * remain valid until their expiry. Access and Id tokens expire one hour after they
+         * are issued.</p> <p>Calling this action requires developer
+         * credentials.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminUserGlobalSignOut">AWS
          * API Reference</a></p>
          *
@@ -2636,14 +2645,20 @@ namespace Model
         virtual void GetUserPoolMfaConfigAsync(const Model::GetUserPoolMfaConfigRequest& request, const GetUserPoolMfaConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Signs out users from all devices.</p><p><h3>See Also:</h3>   <a
+         * <p>Signs out users from all devices. It also invalidates all refresh tokens
+         * issued to a user. The user's current access and Id tokens remain valid until
+         * their expiry. Access and Id tokens expire one hour after they are
+         * issued.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut">AWS
          * API Reference</a></p>
          */
         virtual Model::GlobalSignOutOutcome GlobalSignOut(const Model::GlobalSignOutRequest& request) const;
 
         /**
-         * <p>Signs out users from all devices.</p><p><h3>See Also:</h3>   <a
+         * <p>Signs out users from all devices. It also invalidates all refresh tokens
+         * issued to a user. The user's current access and Id tokens remain valid until
+         * their expiry. Access and Id tokens expire one hour after they are
+         * issued.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut">AWS
          * API Reference</a></p>
          *
@@ -2652,7 +2667,10 @@ namespace Model
         virtual Model::GlobalSignOutOutcomeCallable GlobalSignOutCallable(const Model::GlobalSignOutRequest& request) const;
 
         /**
-         * <p>Signs out users from all devices.</p><p><h3>See Also:</h3>   <a
+         * <p>Signs out users from all devices. It also invalidates all refresh tokens
+         * issued to a user. The user's current access and Id tokens remain valid until
+         * their expiry. Access and Id tokens expire one hour after they are
+         * issued.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GlobalSignOut">AWS
          * API Reference</a></p>
          *

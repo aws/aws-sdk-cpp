@@ -132,32 +132,32 @@ namespace Model
 
 
     /**
-     * <p>The authentication method the user uses to sign in (IAM only).</p>
+     * <p>The authentication method the user uses to sign in.</p>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
 
     /**
-     * <p>The authentication method the user uses to sign in (IAM only).</p>
+     * <p>The authentication method the user uses to sign in.</p>
      */
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
 
     /**
-     * <p>The authentication method the user uses to sign in (IAM only).</p>
+     * <p>The authentication method the user uses to sign in.</p>
      */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
 
     /**
-     * <p>The authentication method the user uses to sign in (IAM only).</p>
+     * <p>The authentication method the user uses to sign in.</p>
      */
     inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
 
     /**
-     * <p>The authentication method the user uses to sign in (IAM only).</p>
+     * <p>The authentication method the user uses to sign in.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
 
     /**
-     * <p>The authentication method the user uses to sign in (IAM only).</p>
+     * <p>The authentication method the user uses to sign in.</p>
      */
     inline GetDashboardEmbedUrlRequest& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
 
@@ -238,90 +238,90 @@ namespace Model
 
 
     /**
-     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
-     * identity type. You can use this for any Amazon QuickSight users in your account
-     * (readers, authors, or admins) authenticated as one of the following:</p> <ul>
-     * <li> <p>Active Directory (AD) users or group members</p> </li> <li> <p>Invited
-     * non-federated users</p> </li> <li> <p>IAM users and IAM role-based sessions
-     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
-     * IAM Federation</p> </li> </ul>
+     * <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with
+     * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
+     * QuickSight users in your account (readers, authors, or admins) authenticated as
+     * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
+     * members</p> </li> <li> <p>Invited non-federated users</p> </li> <li> <p>IAM
+     * users and IAM role-based sessions authenticated through Federated Single Sign-On
+     * using SAML, OpenID Connect, or IAM Federation</p> </li> </ul>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
 
     /**
-     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
-     * identity type. You can use this for any Amazon QuickSight users in your account
-     * (readers, authors, or admins) authenticated as one of the following:</p> <ul>
-     * <li> <p>Active Directory (AD) users or group members</p> </li> <li> <p>Invited
-     * non-federated users</p> </li> <li> <p>IAM users and IAM role-based sessions
-     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
-     * IAM Federation</p> </li> </ul>
+     * <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with
+     * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
+     * QuickSight users in your account (readers, authors, or admins) authenticated as
+     * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
+     * members</p> </li> <li> <p>Invited non-federated users</p> </li> <li> <p>IAM
+     * users and IAM role-based sessions authenticated through Federated Single Sign-On
+     * using SAML, OpenID Connect, or IAM Federation</p> </li> </ul>
      */
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
 
     /**
-     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
-     * identity type. You can use this for any Amazon QuickSight users in your account
-     * (readers, authors, or admins) authenticated as one of the following:</p> <ul>
-     * <li> <p>Active Directory (AD) users or group members</p> </li> <li> <p>Invited
-     * non-federated users</p> </li> <li> <p>IAM users and IAM role-based sessions
-     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
-     * IAM Federation</p> </li> </ul>
+     * <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with
+     * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
+     * QuickSight users in your account (readers, authors, or admins) authenticated as
+     * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
+     * members</p> </li> <li> <p>Invited non-federated users</p> </li> <li> <p>IAM
+     * users and IAM role-based sessions authenticated through Federated Single Sign-On
+     * using SAML, OpenID Connect, or IAM Federation</p> </li> </ul>
      */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
     /**
-     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
-     * identity type. You can use this for any Amazon QuickSight users in your account
-     * (readers, authors, or admins) authenticated as one of the following:</p> <ul>
-     * <li> <p>Active Directory (AD) users or group members</p> </li> <li> <p>Invited
-     * non-federated users</p> </li> <li> <p>IAM users and IAM role-based sessions
-     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
-     * IAM Federation</p> </li> </ul>
+     * <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with
+     * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
+     * QuickSight users in your account (readers, authors, or admins) authenticated as
+     * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
+     * members</p> </li> <li> <p>Invited non-federated users</p> </li> <li> <p>IAM
+     * users and IAM role-based sessions authenticated through Federated Single Sign-On
+     * using SAML, OpenID Connect, or IAM Federation</p> </li> </ul>
      */
     inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
 
     /**
-     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
-     * identity type. You can use this for any Amazon QuickSight users in your account
-     * (readers, authors, or admins) authenticated as one of the following:</p> <ul>
-     * <li> <p>Active Directory (AD) users or group members</p> </li> <li> <p>Invited
-     * non-federated users</p> </li> <li> <p>IAM users and IAM role-based sessions
-     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
-     * IAM Federation</p> </li> </ul>
+     * <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with
+     * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
+     * QuickSight users in your account (readers, authors, or admins) authenticated as
+     * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
+     * members</p> </li> <li> <p>Invited non-federated users</p> </li> <li> <p>IAM
+     * users and IAM role-based sessions authenticated through Federated Single Sign-On
+     * using SAML, OpenID Connect, or IAM Federation</p> </li> </ul>
      */
     inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
 
     /**
-     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
-     * identity type. You can use this for any Amazon QuickSight users in your account
-     * (readers, authors, or admins) authenticated as one of the following:</p> <ul>
-     * <li> <p>Active Directory (AD) users or group members</p> </li> <li> <p>Invited
-     * non-federated users</p> </li> <li> <p>IAM users and IAM role-based sessions
-     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
-     * IAM Federation</p> </li> </ul>
+     * <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with
+     * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
+     * QuickSight users in your account (readers, authors, or admins) authenticated as
+     * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
+     * members</p> </li> <li> <p>Invited non-federated users</p> </li> <li> <p>IAM
+     * users and IAM role-based sessions authenticated through Federated Single Sign-On
+     * using SAML, OpenID Connect, or IAM Federation</p> </li> </ul>
      */
     inline GetDashboardEmbedUrlRequest& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
 
     /**
-     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
-     * identity type. You can use this for any Amazon QuickSight users in your account
-     * (readers, authors, or admins) authenticated as one of the following:</p> <ul>
-     * <li> <p>Active Directory (AD) users or group members</p> </li> <li> <p>Invited
-     * non-federated users</p> </li> <li> <p>IAM users and IAM role-based sessions
-     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
-     * IAM Federation</p> </li> </ul>
+     * <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with
+     * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
+     * QuickSight users in your account (readers, authors, or admins) authenticated as
+     * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
+     * members</p> </li> <li> <p>Invited non-federated users</p> </li> <li> <p>IAM
+     * users and IAM role-based sessions authenticated through Federated Single Sign-On
+     * using SAML, OpenID Connect, or IAM Federation</p> </li> </ul>
      */
     inline GetDashboardEmbedUrlRequest& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon QuickSight user's ARN, for use with <code>QUICKSIGHT</code>
-     * identity type. You can use this for any Amazon QuickSight users in your account
-     * (readers, authors, or admins) authenticated as one of the following:</p> <ul>
-     * <li> <p>Active Directory (AD) users or group members</p> </li> <li> <p>Invited
-     * non-federated users</p> </li> <li> <p>IAM users and IAM role-based sessions
-     * authenticated through Federated Single Sign-On using SAML, OpenID Connect, or
-     * IAM Federation</p> </li> </ul>
+     * <p>The Amazon QuickSight user's Amazon Resource Name (ARN), for use with
+     * <code>QUICKSIGHT</code> identity type. You can use this for any Amazon
+     * QuickSight users in your account (readers, authors, or admins) authenticated as
+     * one of the following:</p> <ul> <li> <p>Active Directory (AD) users or group
+     * members</p> </li> <li> <p>Invited non-federated users</p> </li> <li> <p>IAM
+     * users and IAM role-based sessions authenticated through Federated Single Sign-On
+     * using SAML, OpenID Connect, or IAM Federation</p> </li> </ul>
      */
     inline GetDashboardEmbedUrlRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 

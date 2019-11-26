@@ -90,42 +90,50 @@ namespace Model
 
 
     /**
-     * <p>The parameter set for the batch operation.</p>
+     * <p>The parameter set for the batch operation.</p> <p>The maximum number of
+     * parameters in a parameter set is 1,000.</p>
      */
     inline const Aws::Vector<Aws::Vector<SqlParameter>>& GetParameterSets() const{ return m_parameterSets; }
 
     /**
-     * <p>The parameter set for the batch operation.</p>
+     * <p>The parameter set for the batch operation.</p> <p>The maximum number of
+     * parameters in a parameter set is 1,000.</p>
      */
     inline bool ParameterSetsHasBeenSet() const { return m_parameterSetsHasBeenSet; }
 
     /**
-     * <p>The parameter set for the batch operation.</p>
+     * <p>The parameter set for the batch operation.</p> <p>The maximum number of
+     * parameters in a parameter set is 1,000.</p>
      */
     inline void SetParameterSets(const Aws::Vector<Aws::Vector<SqlParameter>>& value) { m_parameterSetsHasBeenSet = true; m_parameterSets = value; }
 
     /**
-     * <p>The parameter set for the batch operation.</p>
+     * <p>The parameter set for the batch operation.</p> <p>The maximum number of
+     * parameters in a parameter set is 1,000.</p>
      */
     inline void SetParameterSets(Aws::Vector<Aws::Vector<SqlParameter>>&& value) { m_parameterSetsHasBeenSet = true; m_parameterSets = std::move(value); }
 
     /**
-     * <p>The parameter set for the batch operation.</p>
+     * <p>The parameter set for the batch operation.</p> <p>The maximum number of
+     * parameters in a parameter set is 1,000.</p>
      */
     inline BatchExecuteStatementRequest& WithParameterSets(const Aws::Vector<Aws::Vector<SqlParameter>>& value) { SetParameterSets(value); return *this;}
 
     /**
-     * <p>The parameter set for the batch operation.</p>
+     * <p>The parameter set for the batch operation.</p> <p>The maximum number of
+     * parameters in a parameter set is 1,000.</p>
      */
     inline BatchExecuteStatementRequest& WithParameterSets(Aws::Vector<Aws::Vector<SqlParameter>>&& value) { SetParameterSets(std::move(value)); return *this;}
 
     /**
-     * <p>The parameter set for the batch operation.</p>
+     * <p>The parameter set for the batch operation.</p> <p>The maximum number of
+     * parameters in a parameter set is 1,000.</p>
      */
     inline BatchExecuteStatementRequest& AddParameterSets(const Aws::Vector<SqlParameter>& value) { m_parameterSetsHasBeenSet = true; m_parameterSets.push_back(value); return *this; }
 
     /**
-     * <p>The parameter set for the batch operation.</p>
+     * <p>The parameter set for the batch operation.</p> <p>The maximum number of
+     * parameters in a parameter set is 1,000.</p>
      */
     inline BatchExecuteStatementRequest& AddParameterSets(Aws::Vector<SqlParameter>&& value) { m_parameterSetsHasBeenSet = true; m_parameterSets.push_back(std::move(value)); return *this; }
 

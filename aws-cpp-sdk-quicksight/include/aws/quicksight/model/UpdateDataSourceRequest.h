@@ -88,50 +88,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.
-     * </p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account. </p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.
-     * </p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account. </p>
      */
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.
-     * </p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account. </p>
      */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.
-     * </p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account. </p>
      */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.
-     * </p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account. </p>
      */
     inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.
-     * </p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account. </p>
      */
     inline UpdateDataSourceRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.
-     * </p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account. </p>
      */
     inline UpdateDataSourceRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.
-     * </p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account. </p>
      */
     inline UpdateDataSourceRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
@@ -178,143 +178,149 @@ namespace Model
 
 
     /**
-     * <p>The parameters QuickSight uses to connect to your underlying source.</p>
+     * <p>The parameters that QuickSight uses to connect to your underlying source.</p>
      */
     inline const DataSourceParameters& GetDataSourceParameters() const{ return m_dataSourceParameters; }
 
     /**
-     * <p>The parameters QuickSight uses to connect to your underlying source.</p>
+     * <p>The parameters that QuickSight uses to connect to your underlying source.</p>
      */
     inline bool DataSourceParametersHasBeenSet() const { return m_dataSourceParametersHasBeenSet; }
 
     /**
-     * <p>The parameters QuickSight uses to connect to your underlying source.</p>
+     * <p>The parameters that QuickSight uses to connect to your underlying source.</p>
      */
     inline void SetDataSourceParameters(const DataSourceParameters& value) { m_dataSourceParametersHasBeenSet = true; m_dataSourceParameters = value; }
 
     /**
-     * <p>The parameters QuickSight uses to connect to your underlying source.</p>
+     * <p>The parameters that QuickSight uses to connect to your underlying source.</p>
      */
     inline void SetDataSourceParameters(DataSourceParameters&& value) { m_dataSourceParametersHasBeenSet = true; m_dataSourceParameters = std::move(value); }
 
     /**
-     * <p>The parameters QuickSight uses to connect to your underlying source.</p>
+     * <p>The parameters that QuickSight uses to connect to your underlying source.</p>
      */
     inline UpdateDataSourceRequest& WithDataSourceParameters(const DataSourceParameters& value) { SetDataSourceParameters(value); return *this;}
 
     /**
-     * <p>The parameters QuickSight uses to connect to your underlying source.</p>
+     * <p>The parameters that QuickSight uses to connect to your underlying source.</p>
      */
     inline UpdateDataSourceRequest& WithDataSourceParameters(DataSourceParameters&& value) { SetDataSourceParameters(std::move(value)); return *this;}
 
 
     /**
-     * <p>The credentials QuickSight uses to connect to your underlying source.
-     * Currently only username/password based credentials are supported.</p>
+     * <p>The credentials that QuickSight that uses to connect to your underlying
+     * source. Currently, only credentials based on user name and password are
+     * supported.</p>
      */
     inline const DataSourceCredentials& GetCredentials() const{ return m_credentials; }
 
     /**
-     * <p>The credentials QuickSight uses to connect to your underlying source.
-     * Currently only username/password based credentials are supported.</p>
+     * <p>The credentials that QuickSight that uses to connect to your underlying
+     * source. Currently, only credentials based on user name and password are
+     * supported.</p>
      */
     inline bool CredentialsHasBeenSet() const { return m_credentialsHasBeenSet; }
 
     /**
-     * <p>The credentials QuickSight uses to connect to your underlying source.
-     * Currently only username/password based credentials are supported.</p>
+     * <p>The credentials that QuickSight that uses to connect to your underlying
+     * source. Currently, only credentials based on user name and password are
+     * supported.</p>
      */
     inline void SetCredentials(const DataSourceCredentials& value) { m_credentialsHasBeenSet = true; m_credentials = value; }
 
     /**
-     * <p>The credentials QuickSight uses to connect to your underlying source.
-     * Currently only username/password based credentials are supported.</p>
+     * <p>The credentials that QuickSight that uses to connect to your underlying
+     * source. Currently, only credentials based on user name and password are
+     * supported.</p>
      */
     inline void SetCredentials(DataSourceCredentials&& value) { m_credentialsHasBeenSet = true; m_credentials = std::move(value); }
 
     /**
-     * <p>The credentials QuickSight uses to connect to your underlying source.
-     * Currently only username/password based credentials are supported.</p>
+     * <p>The credentials that QuickSight that uses to connect to your underlying
+     * source. Currently, only credentials based on user name and password are
+     * supported.</p>
      */
     inline UpdateDataSourceRequest& WithCredentials(const DataSourceCredentials& value) { SetCredentials(value); return *this;}
 
     /**
-     * <p>The credentials QuickSight uses to connect to your underlying source.
-     * Currently only username/password based credentials are supported.</p>
+     * <p>The credentials that QuickSight that uses to connect to your underlying
+     * source. Currently, only credentials based on user name and password are
+     * supported.</p>
      */
     inline UpdateDataSourceRequest& WithCredentials(DataSourceCredentials&& value) { SetCredentials(std::move(value)); return *this;}
 
 
     /**
-     * <p>You need to use this parameter only when you want QuickSight to use a VPC
-     * connection when connecting to your underlying source.</p>
+     * <p>Use this parameter only when you want QuickSight to use a VPC connection when
+     * connecting to your underlying source.</p>
      */
     inline const VpcConnectionProperties& GetVpcConnectionProperties() const{ return m_vpcConnectionProperties; }
 
     /**
-     * <p>You need to use this parameter only when you want QuickSight to use a VPC
-     * connection when connecting to your underlying source.</p>
+     * <p>Use this parameter only when you want QuickSight to use a VPC connection when
+     * connecting to your underlying source.</p>
      */
     inline bool VpcConnectionPropertiesHasBeenSet() const { return m_vpcConnectionPropertiesHasBeenSet; }
 
     /**
-     * <p>You need to use this parameter only when you want QuickSight to use a VPC
-     * connection when connecting to your underlying source.</p>
+     * <p>Use this parameter only when you want QuickSight to use a VPC connection when
+     * connecting to your underlying source.</p>
      */
     inline void SetVpcConnectionProperties(const VpcConnectionProperties& value) { m_vpcConnectionPropertiesHasBeenSet = true; m_vpcConnectionProperties = value; }
 
     /**
-     * <p>You need to use this parameter only when you want QuickSight to use a VPC
-     * connection when connecting to your underlying source.</p>
+     * <p>Use this parameter only when you want QuickSight to use a VPC connection when
+     * connecting to your underlying source.</p>
      */
     inline void SetVpcConnectionProperties(VpcConnectionProperties&& value) { m_vpcConnectionPropertiesHasBeenSet = true; m_vpcConnectionProperties = std::move(value); }
 
     /**
-     * <p>You need to use this parameter only when you want QuickSight to use a VPC
-     * connection when connecting to your underlying source.</p>
+     * <p>Use this parameter only when you want QuickSight to use a VPC connection when
+     * connecting to your underlying source.</p>
      */
     inline UpdateDataSourceRequest& WithVpcConnectionProperties(const VpcConnectionProperties& value) { SetVpcConnectionProperties(value); return *this;}
 
     /**
-     * <p>You need to use this parameter only when you want QuickSight to use a VPC
-     * connection when connecting to your underlying source.</p>
+     * <p>Use this parameter only when you want QuickSight to use a VPC connection when
+     * connecting to your underlying source.</p>
      */
     inline UpdateDataSourceRequest& WithVpcConnectionProperties(VpcConnectionProperties&& value) { SetVpcConnectionProperties(std::move(value)); return *this;}
 
 
     /**
-     * <p>SSL properties that apply when QuickSight connects to your underlying
-     * source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline const SslProperties& GetSslProperties() const{ return m_sslProperties; }
 
     /**
-     * <p>SSL properties that apply when QuickSight connects to your underlying
-     * source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline bool SslPropertiesHasBeenSet() const { return m_sslPropertiesHasBeenSet; }
 
     /**
-     * <p>SSL properties that apply when QuickSight connects to your underlying
-     * source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline void SetSslProperties(const SslProperties& value) { m_sslPropertiesHasBeenSet = true; m_sslProperties = value; }
 
     /**
-     * <p>SSL properties that apply when QuickSight connects to your underlying
-     * source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline void SetSslProperties(SslProperties&& value) { m_sslPropertiesHasBeenSet = true; m_sslProperties = std::move(value); }
 
     /**
-     * <p>SSL properties that apply when QuickSight connects to your underlying
-     * source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline UpdateDataSourceRequest& WithSslProperties(const SslProperties& value) { SetSslProperties(value); return *this;}
 
     /**
-     * <p>SSL properties that apply when QuickSight connects to your underlying
-     * source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline UpdateDataSourceRequest& WithSslProperties(SslProperties&& value) { SetSslProperties(std::move(value)); return *this;}
 

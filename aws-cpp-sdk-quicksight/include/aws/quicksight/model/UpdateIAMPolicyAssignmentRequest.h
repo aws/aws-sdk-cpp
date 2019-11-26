@@ -224,50 +224,50 @@ namespace Model
 
 
     /**
-     * <p>An IAM policy ARN that will be applied to specified QuickSight users and
-     * groups in this assignment.</p>
+     * <p>An IAM policy Amazon Resource Name (ARN) that will be applied to specified
+     * QuickSight users and groups in this assignment.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
-     * <p>An IAM policy ARN that will be applied to specified QuickSight users and
-     * groups in this assignment.</p>
+     * <p>An IAM policy Amazon Resource Name (ARN) that will be applied to specified
+     * QuickSight users and groups in this assignment.</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     /**
-     * <p>An IAM policy ARN that will be applied to specified QuickSight users and
-     * groups in this assignment.</p>
+     * <p>An IAM policy Amazon Resource Name (ARN) that will be applied to specified
+     * QuickSight users and groups in this assignment.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
-     * <p>An IAM policy ARN that will be applied to specified QuickSight users and
-     * groups in this assignment.</p>
+     * <p>An IAM policy Amazon Resource Name (ARN) that will be applied to specified
+     * QuickSight users and groups in this assignment.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
-     * <p>An IAM policy ARN that will be applied to specified QuickSight users and
-     * groups in this assignment.</p>
+     * <p>An IAM policy Amazon Resource Name (ARN) that will be applied to specified
+     * QuickSight users and groups in this assignment.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     /**
-     * <p>An IAM policy ARN that will be applied to specified QuickSight users and
-     * groups in this assignment.</p>
+     * <p>An IAM policy Amazon Resource Name (ARN) that will be applied to specified
+     * QuickSight users and groups in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>An IAM policy ARN that will be applied to specified QuickSight users and
-     * groups in this assignment.</p>
+     * <p>An IAM policy Amazon Resource Name (ARN) that will be applied to specified
+     * QuickSight users and groups in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>An IAM policy ARN that will be applied to specified QuickSight users and
-     * groups in this assignment.</p>
+     * <p>An IAM policy Amazon Resource Name (ARN) that will be applied to specified
+     * QuickSight users and groups in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 

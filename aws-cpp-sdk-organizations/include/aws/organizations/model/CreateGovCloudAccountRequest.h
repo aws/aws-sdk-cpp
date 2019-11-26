@@ -52,8 +52,8 @@ namespace Model
      * creation. You can't access the root user of the account or remove an account
      * that was created with an invalid email address. Like all request parameters for
      * <code>CreateGovCloudAccount</code>, the request for the email address for the
-     * AWS GovCloud (US) account originates from the commercial Region, not from the
-     * AWS GovCloud (US) Region.</p>
+     * AWS GovCloud (US) account originates from the commercial Region. It does not
+     * come from the AWS GovCloud (US) Region.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
 
@@ -64,8 +64,8 @@ namespace Model
      * creation. You can't access the root user of the account or remove an account
      * that was created with an invalid email address. Like all request parameters for
      * <code>CreateGovCloudAccount</code>, the request for the email address for the
-     * AWS GovCloud (US) account originates from the commercial Region, not from the
-     * AWS GovCloud (US) Region.</p>
+     * AWS GovCloud (US) account originates from the commercial Region. It does not
+     * come from the AWS GovCloud (US) Region.</p>
      */
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
@@ -76,8 +76,8 @@ namespace Model
      * creation. You can't access the root user of the account or remove an account
      * that was created with an invalid email address. Like all request parameters for
      * <code>CreateGovCloudAccount</code>, the request for the email address for the
-     * AWS GovCloud (US) account originates from the commercial Region, not from the
-     * AWS GovCloud (US) Region.</p>
+     * AWS GovCloud (US) account originates from the commercial Region. It does not
+     * come from the AWS GovCloud (US) Region.</p>
      */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
 
@@ -88,8 +88,8 @@ namespace Model
      * creation. You can't access the root user of the account or remove an account
      * that was created with an invalid email address. Like all request parameters for
      * <code>CreateGovCloudAccount</code>, the request for the email address for the
-     * AWS GovCloud (US) account originates from the commercial Region, not from the
-     * AWS GovCloud (US) Region.</p>
+     * AWS GovCloud (US) account originates from the commercial Region. It does not
+     * come from the AWS GovCloud (US) Region.</p>
      */
     inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
 
@@ -100,8 +100,8 @@ namespace Model
      * creation. You can't access the root user of the account or remove an account
      * that was created with an invalid email address. Like all request parameters for
      * <code>CreateGovCloudAccount</code>, the request for the email address for the
-     * AWS GovCloud (US) account originates from the commercial Region, not from the
-     * AWS GovCloud (US) Region.</p>
+     * AWS GovCloud (US) account originates from the commercial Region. It does not
+     * come from the AWS GovCloud (US) Region.</p>
      */
     inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
 
@@ -112,8 +112,8 @@ namespace Model
      * creation. You can't access the root user of the account or remove an account
      * that was created with an invalid email address. Like all request parameters for
      * <code>CreateGovCloudAccount</code>, the request for the email address for the
-     * AWS GovCloud (US) account originates from the commercial Region, not from the
-     * AWS GovCloud (US) Region.</p>
+     * AWS GovCloud (US) account originates from the commercial Region. It does not
+     * come from the AWS GovCloud (US) Region.</p>
      */
     inline CreateGovCloudAccountRequest& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
 
@@ -124,8 +124,8 @@ namespace Model
      * creation. You can't access the root user of the account or remove an account
      * that was created with an invalid email address. Like all request parameters for
      * <code>CreateGovCloudAccount</code>, the request for the email address for the
-     * AWS GovCloud (US) account originates from the commercial Region, not from the
-     * AWS GovCloud (US) Region.</p>
+     * AWS GovCloud (US) account originates from the commercial Region. It does not
+     * come from the AWS GovCloud (US) Region.</p>
      */
     inline CreateGovCloudAccountRequest& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
 
@@ -136,8 +136,8 @@ namespace Model
      * creation. You can't access the root user of the account or remove an account
      * that was created with an invalid email address. Like all request parameters for
      * <code>CreateGovCloudAccount</code>, the request for the email address for the
-     * AWS GovCloud (US) account originates from the commercial Region, not from the
-     * AWS GovCloud (US) Region.</p>
+     * AWS GovCloud (US) account originates from the commercial Region. It does not
+     * come from the AWS GovCloud (US) Region.</p>
      */
     inline CreateGovCloudAccountRequest& WithEmail(const char* value) { SetEmail(value); return *this;}
 
@@ -194,13 +194,13 @@ namespace Model
      * information about how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i> and steps 2 and 3 in <a
+     * Organizations User Guide</i>. See also steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
@@ -215,13 +215,13 @@ namespace Model
      * information about how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i> and steps 2 and 3 in <a
+     * Organizations User Guide</i>. See also steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
 
@@ -236,13 +236,13 @@ namespace Model
      * information about how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i> and steps 2 and 3 in <a
+     * Organizations User Guide</i>. See also steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
@@ -257,13 +257,13 @@ namespace Model
      * information about how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i> and steps 2 and 3 in <a
+     * Organizations User Guide</i>. See also steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
@@ -278,13 +278,13 @@ namespace Model
      * information about how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i> and steps 2 and 3 in <a
+     * Organizations User Guide</i>. See also steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
@@ -299,13 +299,13 @@ namespace Model
      * information about how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i> and steps 2 and 3 in <a
+     * Organizations User Guide</i>. See also steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline CreateGovCloudAccountRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
@@ -320,13 +320,13 @@ namespace Model
      * information about how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i> and steps 2 and 3 in <a
+     * Organizations User Guide</i>. See also steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline CreateGovCloudAccountRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
@@ -341,13 +341,13 @@ namespace Model
      * information about how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i> and steps 2 and 3 in <a
+     * Organizations User Guide</i>. See also steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline CreateGovCloudAccountRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 

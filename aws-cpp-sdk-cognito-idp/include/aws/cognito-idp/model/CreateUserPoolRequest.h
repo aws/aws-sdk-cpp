@@ -28,6 +28,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
 #include <aws/cognito-idp/model/UserPoolAddOnsType.h>
+#include <aws/cognito-idp/model/AccountRecoverySettingType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
 #include <aws/cognito-idp/model/UsernameAttributeType.h>
@@ -899,6 +900,91 @@ namespace Model
      */
     inline CreateUserPoolRequest& WithUserPoolAddOns(UserPoolAddOnsType&& value) { SetUserPoolAddOns(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Use this setting to define which verified available method a user can use to
+     * recover their password when they call <code>ForgotPassword</code>. It allows you
+     * to define a preferred method when a user has more than one method available.
+     * With this setting, SMS does not qualify for a valid password recovery mechanism
+     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
+     * uses the legacy behavior to determine the recovery method where SMS is preferred
+     * over email.</p> <note> <p>Starting February 1, 2020, the value of
+     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
+     * first and <code>verified_phone_number</code> as the second option for newly
+     * created user pools if no value is provided.</p> </note>
+     */
+    inline const AccountRecoverySettingType& GetAccountRecoverySetting() const{ return m_accountRecoverySetting; }
+
+    /**
+     * <p>Use this setting to define which verified available method a user can use to
+     * recover their password when they call <code>ForgotPassword</code>. It allows you
+     * to define a preferred method when a user has more than one method available.
+     * With this setting, SMS does not qualify for a valid password recovery mechanism
+     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
+     * uses the legacy behavior to determine the recovery method where SMS is preferred
+     * over email.</p> <note> <p>Starting February 1, 2020, the value of
+     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
+     * first and <code>verified_phone_number</code> as the second option for newly
+     * created user pools if no value is provided.</p> </note>
+     */
+    inline bool AccountRecoverySettingHasBeenSet() const { return m_accountRecoverySettingHasBeenSet; }
+
+    /**
+     * <p>Use this setting to define which verified available method a user can use to
+     * recover their password when they call <code>ForgotPassword</code>. It allows you
+     * to define a preferred method when a user has more than one method available.
+     * With this setting, SMS does not qualify for a valid password recovery mechanism
+     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
+     * uses the legacy behavior to determine the recovery method where SMS is preferred
+     * over email.</p> <note> <p>Starting February 1, 2020, the value of
+     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
+     * first and <code>verified_phone_number</code> as the second option for newly
+     * created user pools if no value is provided.</p> </note>
+     */
+    inline void SetAccountRecoverySetting(const AccountRecoverySettingType& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = value; }
+
+    /**
+     * <p>Use this setting to define which verified available method a user can use to
+     * recover their password when they call <code>ForgotPassword</code>. It allows you
+     * to define a preferred method when a user has more than one method available.
+     * With this setting, SMS does not qualify for a valid password recovery mechanism
+     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
+     * uses the legacy behavior to determine the recovery method where SMS is preferred
+     * over email.</p> <note> <p>Starting February 1, 2020, the value of
+     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
+     * first and <code>verified_phone_number</code> as the second option for newly
+     * created user pools if no value is provided.</p> </note>
+     */
+    inline void SetAccountRecoverySetting(AccountRecoverySettingType&& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = std::move(value); }
+
+    /**
+     * <p>Use this setting to define which verified available method a user can use to
+     * recover their password when they call <code>ForgotPassword</code>. It allows you
+     * to define a preferred method when a user has more than one method available.
+     * With this setting, SMS does not qualify for a valid password recovery mechanism
+     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
+     * uses the legacy behavior to determine the recovery method where SMS is preferred
+     * over email.</p> <note> <p>Starting February 1, 2020, the value of
+     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
+     * first and <code>verified_phone_number</code> as the second option for newly
+     * created user pools if no value is provided.</p> </note>
+     */
+    inline CreateUserPoolRequest& WithAccountRecoverySetting(const AccountRecoverySettingType& value) { SetAccountRecoverySetting(value); return *this;}
+
+    /**
+     * <p>Use this setting to define which verified available method a user can use to
+     * recover their password when they call <code>ForgotPassword</code>. It allows you
+     * to define a preferred method when a user has more than one method available.
+     * With this setting, SMS does not qualify for a valid password recovery mechanism
+     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
+     * uses the legacy behavior to determine the recovery method where SMS is preferred
+     * over email.</p> <note> <p>Starting February 1, 2020, the value of
+     * <code>AccountRecoverySetting</code> will default to <code>verified_email</code>
+     * first and <code>verified_phone_number</code> as the second option for newly
+     * created user pools if no value is provided.</p> </note>
+     */
+    inline CreateUserPoolRequest& WithAccountRecoverySetting(AccountRecoverySettingType&& value) { SetAccountRecoverySetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_poolName;
@@ -957,6 +1043,9 @@ namespace Model
 
     UserPoolAddOnsType m_userPoolAddOns;
     bool m_userPoolAddOnsHasBeenSet;
+
+    AccountRecoverySettingType m_accountRecoverySetting;
+    bool m_accountRecoverySettingHasBeenSet;
   };
 
 } // namespace Model

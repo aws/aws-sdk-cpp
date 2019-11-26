@@ -184,56 +184,56 @@ namespace Model
     /**
      * <p>The email address associated with the AWS account.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard Internet email address.</p>
+     * string of characters that represents a standard internet email address.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
 
     /**
      * <p>The email address associated with the AWS account.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard Internet email address.</p>
+     * string of characters that represents a standard internet email address.</p>
      */
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
      * <p>The email address associated with the AWS account.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard Internet email address.</p>
+     * string of characters that represents a standard internet email address.</p>
      */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
 
     /**
      * <p>The email address associated with the AWS account.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard Internet email address.</p>
+     * string of characters that represents a standard internet email address.</p>
      */
     inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
 
     /**
      * <p>The email address associated with the AWS account.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard Internet email address.</p>
+     * string of characters that represents a standard internet email address.</p>
      */
     inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
 
     /**
      * <p>The email address associated with the AWS account.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard Internet email address.</p>
+     * string of characters that represents a standard internet email address.</p>
      */
     inline Account& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
 
     /**
      * <p>The email address associated with the AWS account.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard Internet email address.</p>
+     * string of characters that represents a standard internet email address.</p>
      */
     inline Account& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
 
     /**
      * <p>The email address associated with the AWS account.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for this parameter is a
-     * string of characters that represents a standard Internet email address.</p>
+     * string of characters that represents a standard internet email address.</p>
      */
     inline Account& WithEmail(const char* value) { SetEmail(value); return *this;}
 

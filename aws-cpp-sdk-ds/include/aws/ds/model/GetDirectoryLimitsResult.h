@@ -50,31 +50,31 @@ namespace Model
 
     /**
      * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-     * current region.</p>
+     * current rRegion.</p>
      */
     inline const DirectoryLimits& GetDirectoryLimits() const{ return m_directoryLimits; }
 
     /**
      * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-     * current region.</p>
+     * current rRegion.</p>
      */
     inline void SetDirectoryLimits(const DirectoryLimits& value) { m_directoryLimits = value; }
 
     /**
      * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-     * current region.</p>
+     * current rRegion.</p>
      */
     inline void SetDirectoryLimits(DirectoryLimits&& value) { m_directoryLimits = std::move(value); }
 
     /**
      * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-     * current region.</p>
+     * current rRegion.</p>
      */
     inline GetDirectoryLimitsResult& WithDirectoryLimits(const DirectoryLimits& value) { SetDirectoryLimits(value); return *this;}
 
     /**
      * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-     * current region.</p>
+     * current rRegion.</p>
      */
     inline GetDirectoryLimitsResult& WithDirectoryLimits(DirectoryLimits&& value) { SetDirectoryLimits(std::move(value)); return *this;}
 

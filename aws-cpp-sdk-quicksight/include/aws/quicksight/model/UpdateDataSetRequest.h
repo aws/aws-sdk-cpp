@@ -91,50 +91,50 @@ namespace Model
 
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = value; }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::move(value); }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline void SetDataSetId(const char* value) { m_dataSetIdHasBeenSet = true; m_dataSetId.assign(value); }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline UpdateDataSetRequest& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline UpdateDataSetRequest& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline UpdateDataSetRequest& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
 
@@ -359,49 +359,49 @@ namespace Model
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline const Aws::Vector<ColumnGroup>& GetColumnGroups() const{ return m_columnGroups; }
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline bool ColumnGroupsHasBeenSet() const { return m_columnGroupsHasBeenSet; }
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline void SetColumnGroups(const Aws::Vector<ColumnGroup>& value) { m_columnGroupsHasBeenSet = true; m_columnGroups = value; }
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline void SetColumnGroups(Aws::Vector<ColumnGroup>&& value) { m_columnGroupsHasBeenSet = true; m_columnGroups = std::move(value); }
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline UpdateDataSetRequest& WithColumnGroups(const Aws::Vector<ColumnGroup>& value) { SetColumnGroups(value); return *this;}
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline UpdateDataSetRequest& WithColumnGroups(Aws::Vector<ColumnGroup>&& value) { SetColumnGroups(std::move(value)); return *this;}
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline UpdateDataSetRequest& AddColumnGroups(const ColumnGroup& value) { m_columnGroupsHasBeenSet = true; m_columnGroups.push_back(value); return *this; }
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline UpdateDataSetRequest& AddColumnGroups(ColumnGroup&& value) { m_columnGroupsHasBeenSet = true; m_columnGroups.push_back(std::move(value)); return *this; }
 

@@ -79,37 +79,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline DeleteTemplateResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline DeleteTemplateResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline DeleteTemplateResult& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -151,17 +151,17 @@ namespace Model
 
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(int value) { m_status = value; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline DeleteTemplateResult& WithStatus(int value) { SetStatus(value); return *this;}
 

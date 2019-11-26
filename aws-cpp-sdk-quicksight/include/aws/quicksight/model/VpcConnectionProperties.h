@@ -48,42 +48,42 @@ namespace Model
 
 
     /**
-     * <p>VPC connection ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
      */
     inline const Aws::String& GetVpcConnectionArn() const{ return m_vpcConnectionArn; }
 
     /**
-     * <p>VPC connection ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
      */
     inline bool VpcConnectionArnHasBeenSet() const { return m_vpcConnectionArnHasBeenSet; }
 
     /**
-     * <p>VPC connection ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
      */
     inline void SetVpcConnectionArn(const Aws::String& value) { m_vpcConnectionArnHasBeenSet = true; m_vpcConnectionArn = value; }
 
     /**
-     * <p>VPC connection ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
      */
     inline void SetVpcConnectionArn(Aws::String&& value) { m_vpcConnectionArnHasBeenSet = true; m_vpcConnectionArn = std::move(value); }
 
     /**
-     * <p>VPC connection ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
      */
     inline void SetVpcConnectionArn(const char* value) { m_vpcConnectionArnHasBeenSet = true; m_vpcConnectionArn.assign(value); }
 
     /**
-     * <p>VPC connection ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
      */
     inline VpcConnectionProperties& WithVpcConnectionArn(const Aws::String& value) { SetVpcConnectionArn(value); return *this;}
 
     /**
-     * <p>VPC connection ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
      */
     inline VpcConnectionProperties& WithVpcConnectionArn(Aws::String&& value) { SetVpcConnectionArn(std::move(value)); return *this;}
 
     /**
-     * <p>VPC connection ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the VPC connection.</p>
      */
     inline VpcConnectionProperties& WithVpcConnectionArn(const char* value) { SetVpcConnectionArn(value); return *this;}
 

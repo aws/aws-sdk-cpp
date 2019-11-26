@@ -19,6 +19,7 @@
 #include <aws/mediatailor/model/CdnConfiguration.h>
 #include <aws/mediatailor/model/DashConfiguration.h>
 #include <aws/mediatailor/model/HlsConfiguration.h>
+#include <aws/mediatailor/model/LivePreRollConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -191,6 +192,32 @@ namespace Model
      * <p>The configuration for HLS content. </p>
      */
     inline PutPlaybackConfigurationResult& WithHlsConfiguration(HlsConfiguration&& value) { SetHlsConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The configuration for pre-roll ad insertion.</p>
+     */
+    inline const LivePreRollConfiguration& GetLivePreRollConfiguration() const{ return m_livePreRollConfiguration; }
+
+    /**
+     * <p>The configuration for pre-roll ad insertion.</p>
+     */
+    inline void SetLivePreRollConfiguration(const LivePreRollConfiguration& value) { m_livePreRollConfiguration = value; }
+
+    /**
+     * <p>The configuration for pre-roll ad insertion.</p>
+     */
+    inline void SetLivePreRollConfiguration(LivePreRollConfiguration&& value) { m_livePreRollConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration for pre-roll ad insertion.</p>
+     */
+    inline PutPlaybackConfigurationResult& WithLivePreRollConfiguration(const LivePreRollConfiguration& value) { SetLivePreRollConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration for pre-roll ad insertion.</p>
+     */
+    inline PutPlaybackConfigurationResult& WithLivePreRollConfiguration(LivePreRollConfiguration&& value) { SetLivePreRollConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -591,6 +618,8 @@ namespace Model
     DashConfiguration m_dashConfiguration;
 
     HlsConfiguration m_hlsConfiguration;
+
+    LivePreRollConfiguration m_livePreRollConfiguration;
 
     Aws::String m_name;
 

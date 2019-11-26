@@ -50,10 +50,10 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p> <b>Account</b> - A string that
      * consists of exactly 12 digits.</p> </li> <li> <p> <b>Organizational unit
-     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     * letters or digits (the ID of the root that contains the OU) followed by a second
-     * "-" dash and from 8 to 32 additional lower-case letters or digits.</p> </li>
-     * </ul>
+     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     * letters or digits (the ID of the root that contains the OU). This string is
+     * followed by a second "-" dash and from 8 to 32 additional lowercase letters or
+     * digits.</p> </li> </ul>
      */
     inline const Aws::String& GetChildId() const{ return m_childId; }
 
@@ -63,10 +63,10 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p> <b>Account</b> - A string that
      * consists of exactly 12 digits.</p> </li> <li> <p> <b>Organizational unit
-     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     * letters or digits (the ID of the root that contains the OU) followed by a second
-     * "-" dash and from 8 to 32 additional lower-case letters or digits.</p> </li>
-     * </ul>
+     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     * letters or digits (the ID of the root that contains the OU). This string is
+     * followed by a second "-" dash and from 8 to 32 additional lowercase letters or
+     * digits.</p> </li> </ul>
      */
     inline bool ChildIdHasBeenSet() const { return m_childIdHasBeenSet; }
 
@@ -76,10 +76,10 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p> <b>Account</b> - A string that
      * consists of exactly 12 digits.</p> </li> <li> <p> <b>Organizational unit
-     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     * letters or digits (the ID of the root that contains the OU) followed by a second
-     * "-" dash and from 8 to 32 additional lower-case letters or digits.</p> </li>
-     * </ul>
+     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     * letters or digits (the ID of the root that contains the OU). This string is
+     * followed by a second "-" dash and from 8 to 32 additional lowercase letters or
+     * digits.</p> </li> </ul>
      */
     inline void SetChildId(const Aws::String& value) { m_childIdHasBeenSet = true; m_childId = value; }
 
@@ -89,10 +89,10 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p> <b>Account</b> - A string that
      * consists of exactly 12 digits.</p> </li> <li> <p> <b>Organizational unit
-     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     * letters or digits (the ID of the root that contains the OU) followed by a second
-     * "-" dash and from 8 to 32 additional lower-case letters or digits.</p> </li>
-     * </ul>
+     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     * letters or digits (the ID of the root that contains the OU). This string is
+     * followed by a second "-" dash and from 8 to 32 additional lowercase letters or
+     * digits.</p> </li> </ul>
      */
     inline void SetChildId(Aws::String&& value) { m_childIdHasBeenSet = true; m_childId = std::move(value); }
 
@@ -102,10 +102,10 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p> <b>Account</b> - A string that
      * consists of exactly 12 digits.</p> </li> <li> <p> <b>Organizational unit
-     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     * letters or digits (the ID of the root that contains the OU) followed by a second
-     * "-" dash and from 8 to 32 additional lower-case letters or digits.</p> </li>
-     * </ul>
+     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     * letters or digits (the ID of the root that contains the OU). This string is
+     * followed by a second "-" dash and from 8 to 32 additional lowercase letters or
+     * digits.</p> </li> </ul>
      */
     inline void SetChildId(const char* value) { m_childIdHasBeenSet = true; m_childId.assign(value); }
 
@@ -115,10 +115,10 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p> <b>Account</b> - A string that
      * consists of exactly 12 digits.</p> </li> <li> <p> <b>Organizational unit
-     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     * letters or digits (the ID of the root that contains the OU) followed by a second
-     * "-" dash and from 8 to 32 additional lower-case letters or digits.</p> </li>
-     * </ul>
+     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     * letters or digits (the ID of the root that contains the OU). This string is
+     * followed by a second "-" dash and from 8 to 32 additional lowercase letters or
+     * digits.</p> </li> </ul>
      */
     inline ListParentsRequest& WithChildId(const Aws::String& value) { SetChildId(value); return *this;}
 
@@ -128,10 +128,10 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p> <b>Account</b> - A string that
      * consists of exactly 12 digits.</p> </li> <li> <p> <b>Organizational unit
-     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     * letters or digits (the ID of the root that contains the OU) followed by a second
-     * "-" dash and from 8 to 32 additional lower-case letters or digits.</p> </li>
-     * </ul>
+     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     * letters or digits (the ID of the root that contains the OU). This string is
+     * followed by a second "-" dash and from 8 to 32 additional lowercase letters or
+     * digits.</p> </li> </ul>
      */
     inline ListParentsRequest& WithChildId(Aws::String&& value) { SetChildId(std::move(value)); return *this;}
 
@@ -141,10 +141,10 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a child ID string
      * requires one of the following:</p> <ul> <li> <p> <b>Account</b> - A string that
      * consists of exactly 12 digits.</p> </li> <li> <p> <b>Organizational unit
-     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lower-case
-     * letters or digits (the ID of the root that contains the OU) followed by a second
-     * "-" dash and from 8 to 32 additional lower-case letters or digits.</p> </li>
-     * </ul>
+     * (OU)</b> - A string that begins with "ou-" followed by from 4 to 32 lowercase
+     * letters or digits (the ID of the root that contains the OU). This string is
+     * followed by a second "-" dash and from 8 to 32 additional lowercase letters or
+     * digits.</p> </li> </ul>
      */
     inline ListParentsRequest& WithChildId(const char* value) { SetChildId(value); return *this;}
 

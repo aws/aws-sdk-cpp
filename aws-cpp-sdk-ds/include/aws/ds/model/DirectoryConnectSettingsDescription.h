@@ -91,47 +91,47 @@ namespace Model
 
 
     /**
-     * <p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
+     * <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
 
     /**
-     * <p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
+     * <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
      */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
-     * <p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
+     * <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
      */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
-     * <p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
+     * <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
      */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
 
     /**
-     * <p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
+     * <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
      */
     inline DirectoryConnectSettingsDescription& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
 
     /**
-     * <p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
+     * <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
      */
     inline DirectoryConnectSettingsDescription& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
 
     /**
-     * <p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
+     * <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
      */
     inline DirectoryConnectSettingsDescription& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
     /**
-     * <p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
+     * <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
      */
     inline DirectoryConnectSettingsDescription& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of subnet identifiers in the VPC that the AD connector is in.</p>
+     * <p>A list of subnet identifiers in the VPC that the AD Connector is in.</p>
      */
     inline DirectoryConnectSettingsDescription& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 

@@ -45,49 +45,49 @@ namespace Model
 
 
     /**
-     * <p>Identifier (ID) of the directory to which you want to subscribe and receive
+     * <p>Identifier of the directory to which you want to subscribe and receive
      * real-time logs to your specified CloudWatch log group.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
 
     /**
-     * <p>Identifier (ID) of the directory to which you want to subscribe and receive
+     * <p>Identifier of the directory to which you want to subscribe and receive
      * real-time logs to your specified CloudWatch log group.</p>
      */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
 
     /**
-     * <p>Identifier (ID) of the directory to which you want to subscribe and receive
+     * <p>Identifier of the directory to which you want to subscribe and receive
      * real-time logs to your specified CloudWatch log group.</p>
      */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
-     * <p>Identifier (ID) of the directory to which you want to subscribe and receive
+     * <p>Identifier of the directory to which you want to subscribe and receive
      * real-time logs to your specified CloudWatch log group.</p>
      */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
 
     /**
-     * <p>Identifier (ID) of the directory to which you want to subscribe and receive
+     * <p>Identifier of the directory to which you want to subscribe and receive
      * real-time logs to your specified CloudWatch log group.</p>
      */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
 
     /**
-     * <p>Identifier (ID) of the directory to which you want to subscribe and receive
+     * <p>Identifier of the directory to which you want to subscribe and receive
      * real-time logs to your specified CloudWatch log group.</p>
      */
     inline CreateLogSubscriptionRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
 
     /**
-     * <p>Identifier (ID) of the directory to which you want to subscribe and receive
+     * <p>Identifier of the directory to which you want to subscribe and receive
      * real-time logs to your specified CloudWatch log group.</p>
      */
     inline CreateLogSubscriptionRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier (ID) of the directory to which you want to subscribe and receive
+     * <p>Identifier of the directory to which you want to subscribe and receive
      * real-time logs to your specified CloudWatch log group.</p>
      */
     inline CreateLogSubscriptionRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}

@@ -49,58 +49,58 @@ namespace Model
 
 
     /**
-     * <p>The ARN of a QuickSight user or group, or an IAM ARN. If you are using
-     * cross-account resource sharing, this is the IAM ARN of an account root.
-     * Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
+     * If you are using cross-account resource sharing, this is the IAM ARN of an
+     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>The ARN of a QuickSight user or group, or an IAM ARN. If you are using
-     * cross-account resource sharing, this is the IAM ARN of an account root.
-     * Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
+     * If you are using cross-account resource sharing, this is the IAM ARN of an
+     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
-     * <p>The ARN of a QuickSight user or group, or an IAM ARN. If you are using
-     * cross-account resource sharing, this is the IAM ARN of an account root.
-     * Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
+     * If you are using cross-account resource sharing, this is the IAM ARN of an
+     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The ARN of a QuickSight user or group, or an IAM ARN. If you are using
-     * cross-account resource sharing, this is the IAM ARN of an account root.
-     * Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
+     * If you are using cross-account resource sharing, this is the IAM ARN of an
+     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
-     * <p>The ARN of a QuickSight user or group, or an IAM ARN. If you are using
-     * cross-account resource sharing, this is the IAM ARN of an account root.
-     * Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
+     * If you are using cross-account resource sharing, this is the IAM ARN of an
+     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
-     * <p>The ARN of a QuickSight user or group, or an IAM ARN. If you are using
-     * cross-account resource sharing, this is the IAM ARN of an account root.
-     * Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
+     * If you are using cross-account resource sharing, this is the IAM ARN of an
+     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline ResourcePermission& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The ARN of a QuickSight user or group, or an IAM ARN. If you are using
-     * cross-account resource sharing, this is the IAM ARN of an account root.
-     * Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
+     * If you are using cross-account resource sharing, this is the IAM ARN of an
+     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline ResourcePermission& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of a QuickSight user or group, or an IAM ARN. If you are using
-     * cross-account resource sharing, this is the IAM ARN of an account root.
-     * Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
+     * If you are using cross-account resource sharing, this is the IAM ARN of an
+     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline ResourcePermission& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 

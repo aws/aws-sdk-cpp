@@ -170,13 +170,13 @@ namespace Model
      * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i>, and steps 2 and 3 in <a
+     * Organizations User Guide</i>. Also see steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
@@ -191,13 +191,13 @@ namespace Model
      * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i>, and steps 2 and 3 in <a
+     * Organizations User Guide</i>. Also see steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
 
@@ -212,13 +212,13 @@ namespace Model
      * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i>, and steps 2 and 3 in <a
+     * Organizations User Guide</i>. Also see steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
@@ -233,13 +233,13 @@ namespace Model
      * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i>, and steps 2 and 3 in <a
+     * Organizations User Guide</i>. Also see steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
@@ -254,13 +254,13 @@ namespace Model
      * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i>, and steps 2 and 3 in <a
+     * Organizations User Guide</i>. Also see steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
@@ -275,13 +275,13 @@ namespace Model
      * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i>, and steps 2 and 3 in <a
+     * Organizations User Guide</i>. Also see steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline CreateAccountRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
@@ -296,13 +296,13 @@ namespace Model
      * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i>, and steps 2 and 3 in <a
+     * Organizations User Guide</i>. Also see steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline CreateAccountRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
@@ -317,13 +317,13 @@ namespace Model
      * how to use this role to access the member account, see <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_access.html#orgs_manage_accounts_create-cross-account-role">Accessing
      * and Administering the Member Accounts in Your Organization</a> in the <i>AWS
-     * Organizations User Guide</i>, and steps 2 and 3 in <a
+     * Organizations User Guide</i>. Also see steps 2 and 3 in <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/tutorial_cross-account-with-roles.html">Tutorial:
      * Delegate Access Across AWS Accounts Using IAM Roles</a> in the <i>IAM User
      * Guide.</i> </p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a> that is used to validate this parameter is a string of characters
-     * that can consist of uppercase letters, lowercase letters, digits with no spaces,
-     * and any of the following characters: =,.@-</p>
+     * pattern</a> that is used to validate this parameter. The pattern can include
+     * uppercase letters, lowercase letters, digits with no spaces, and any of the
+     * following characters: =,.@-</p>
      */
     inline CreateAccountRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
 
@@ -336,8 +336,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
      * Cost Management User Guide</i>.</p> <p>If you don't specify this parameter, the
-     * value defaults to <code>ALLOW</code>, and IAM users and roles with the required
-     * permissions can access billing information for the new account.</p>
+     * value defaults to <code>ALLOW</code>. This value allows IAM users and roles with
+     * the required permissions to access billing information for the new account.</p>
      */
     inline const IAMUserAccessToBilling& GetIamUserAccessToBilling() const{ return m_iamUserAccessToBilling; }
 
@@ -349,8 +349,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
      * Cost Management User Guide</i>.</p> <p>If you don't specify this parameter, the
-     * value defaults to <code>ALLOW</code>, and IAM users and roles with the required
-     * permissions can access billing information for the new account.</p>
+     * value defaults to <code>ALLOW</code>. This value allows IAM users and roles with
+     * the required permissions to access billing information for the new account.</p>
      */
     inline bool IamUserAccessToBillingHasBeenSet() const { return m_iamUserAccessToBillingHasBeenSet; }
 
@@ -362,8 +362,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
      * Cost Management User Guide</i>.</p> <p>If you don't specify this parameter, the
-     * value defaults to <code>ALLOW</code>, and IAM users and roles with the required
-     * permissions can access billing information for the new account.</p>
+     * value defaults to <code>ALLOW</code>. This value allows IAM users and roles with
+     * the required permissions to access billing information for the new account.</p>
      */
     inline void SetIamUserAccessToBilling(const IAMUserAccessToBilling& value) { m_iamUserAccessToBillingHasBeenSet = true; m_iamUserAccessToBilling = value; }
 
@@ -375,8 +375,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
      * Cost Management User Guide</i>.</p> <p>If you don't specify this parameter, the
-     * value defaults to <code>ALLOW</code>, and IAM users and roles with the required
-     * permissions can access billing information for the new account.</p>
+     * value defaults to <code>ALLOW</code>. This value allows IAM users and roles with
+     * the required permissions to access billing information for the new account.</p>
      */
     inline void SetIamUserAccessToBilling(IAMUserAccessToBilling&& value) { m_iamUserAccessToBillingHasBeenSet = true; m_iamUserAccessToBilling = std::move(value); }
 
@@ -388,8 +388,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
      * Cost Management User Guide</i>.</p> <p>If you don't specify this parameter, the
-     * value defaults to <code>ALLOW</code>, and IAM users and roles with the required
-     * permissions can access billing information for the new account.</p>
+     * value defaults to <code>ALLOW</code>. This value allows IAM users and roles with
+     * the required permissions to access billing information for the new account.</p>
      */
     inline CreateAccountRequest& WithIamUserAccessToBilling(const IAMUserAccessToBilling& value) { SetIamUserAccessToBilling(value); return *this;}
 
@@ -401,8 +401,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">Activating
      * Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and
      * Cost Management User Guide</i>.</p> <p>If you don't specify this parameter, the
-     * value defaults to <code>ALLOW</code>, and IAM users and roles with the required
-     * permissions can access billing information for the new account.</p>
+     * value defaults to <code>ALLOW</code>. This value allows IAM users and roles with
+     * the required permissions to access billing information for the new account.</p>
      */
     inline CreateAccountRequest& WithIamUserAccessToBilling(IAMUserAccessToBilling&& value) { SetIamUserAccessToBilling(std::move(value)); return *this;}
 

@@ -174,42 +174,42 @@ namespace Model
 
 
     /**
-     * <p>Policy ARN.</p>
+     * <p>Policy Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
-     * <p>Policy ARN.</p>
+     * <p>Policy Amazon Resource Name (ARN).</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     /**
-     * <p>Policy ARN.</p>
+     * <p>Policy Amazon Resource Name (ARN).</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
-     * <p>Policy ARN.</p>
+     * <p>Policy Amazon Resource Name (ARN).</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
-     * <p>Policy ARN.</p>
+     * <p>Policy Amazon Resource Name (ARN).</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     /**
-     * <p>Policy ARN.</p>
+     * <p>Policy Amazon Resource Name (ARN).</p>
      */
     inline IAMPolicyAssignment& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>Policy ARN.</p>
+     * <p>Policy Amazon Resource Name (ARN).</p>
      */
     inline IAMPolicyAssignment& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>Policy ARN.</p>
+     * <p>Policy Amazon Resource Name (ARN).</p>
      */
     inline IAMPolicyAssignment& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 

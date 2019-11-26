@@ -84,42 +84,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline DescribeDataSourceRequest& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline DescribeDataSourceRequest& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline DescribeDataSourceRequest& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 

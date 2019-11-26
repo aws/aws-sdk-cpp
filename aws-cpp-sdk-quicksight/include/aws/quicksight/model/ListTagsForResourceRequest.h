@@ -43,42 +43,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the resource you want a list of tags for.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags
+     * for.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The ARN of the resource you want a list of tags for.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags
+     * for.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the resource you want a list of tags for.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags
+     * for.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The ARN of the resource you want a list of tags for.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags
+     * for.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the resource you want a list of tags for.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags
+     * for.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The ARN of the resource you want a list of tags for.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags
+     * for.</p>
      */
     inline ListTagsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the resource you want a list of tags for.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags
+     * for.</p>
      */
     inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the resource you want a list of tags for.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource that you want a list of tags
+     * for.</p>
      */
     inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

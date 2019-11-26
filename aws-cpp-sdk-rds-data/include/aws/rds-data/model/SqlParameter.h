@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/rds-data/RDSDataService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rds-data/model/TypeHint.h>
 #include <aws/rds-data/model/Field.h>
 #include <utility>
 
@@ -90,6 +91,109 @@ namespace Model
 
 
     /**
+     * <p>A hint that specifies the correct object type for data type mapping.</p> <p>
+     * <b>Values:</b> </p> <ul> <li> <p> <code>DECIMAL</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>DECIMAL</code>
+     * type to the database.</p> </li> <li> <p> <code>TIMESTAMP</code> - The
+     * corresponding <code>String</code> parameter value is sent as an object of
+     * <code>TIMESTAMP</code> type to the database. The accepted format is
+     * <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>TIME</code> -
+     * The corresponding <code>String</code> parameter value is sent as an object of
+     * <code>TIME</code> type to the database. The accepted format is
+     * <code>HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>DATE</code> - The
+     * corresponding <code>String</code> parameter value is sent as an object of
+     * <code>DATE</code> type to the database. The accepted format is
+     * <code>YYYY-MM-DD</code>.</p> </li> </ul>
+     */
+    inline const TypeHint& GetTypeHint() const{ return m_typeHint; }
+
+    /**
+     * <p>A hint that specifies the correct object type for data type mapping.</p> <p>
+     * <b>Values:</b> </p> <ul> <li> <p> <code>DECIMAL</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>DECIMAL</code>
+     * type to the database.</p> </li> <li> <p> <code>TIMESTAMP</code> - The
+     * corresponding <code>String</code> parameter value is sent as an object of
+     * <code>TIMESTAMP</code> type to the database. The accepted format is
+     * <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>TIME</code> -
+     * The corresponding <code>String</code> parameter value is sent as an object of
+     * <code>TIME</code> type to the database. The accepted format is
+     * <code>HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>DATE</code> - The
+     * corresponding <code>String</code> parameter value is sent as an object of
+     * <code>DATE</code> type to the database. The accepted format is
+     * <code>YYYY-MM-DD</code>.</p> </li> </ul>
+     */
+    inline bool TypeHintHasBeenSet() const { return m_typeHintHasBeenSet; }
+
+    /**
+     * <p>A hint that specifies the correct object type for data type mapping.</p> <p>
+     * <b>Values:</b> </p> <ul> <li> <p> <code>DECIMAL</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>DECIMAL</code>
+     * type to the database.</p> </li> <li> <p> <code>TIMESTAMP</code> - The
+     * corresponding <code>String</code> parameter value is sent as an object of
+     * <code>TIMESTAMP</code> type to the database. The accepted format is
+     * <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>TIME</code> -
+     * The corresponding <code>String</code> parameter value is sent as an object of
+     * <code>TIME</code> type to the database. The accepted format is
+     * <code>HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>DATE</code> - The
+     * corresponding <code>String</code> parameter value is sent as an object of
+     * <code>DATE</code> type to the database. The accepted format is
+     * <code>YYYY-MM-DD</code>.</p> </li> </ul>
+     */
+    inline void SetTypeHint(const TypeHint& value) { m_typeHintHasBeenSet = true; m_typeHint = value; }
+
+    /**
+     * <p>A hint that specifies the correct object type for data type mapping.</p> <p>
+     * <b>Values:</b> </p> <ul> <li> <p> <code>DECIMAL</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>DECIMAL</code>
+     * type to the database.</p> </li> <li> <p> <code>TIMESTAMP</code> - The
+     * corresponding <code>String</code> parameter value is sent as an object of
+     * <code>TIMESTAMP</code> type to the database. The accepted format is
+     * <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>TIME</code> -
+     * The corresponding <code>String</code> parameter value is sent as an object of
+     * <code>TIME</code> type to the database. The accepted format is
+     * <code>HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>DATE</code> - The
+     * corresponding <code>String</code> parameter value is sent as an object of
+     * <code>DATE</code> type to the database. The accepted format is
+     * <code>YYYY-MM-DD</code>.</p> </li> </ul>
+     */
+    inline void SetTypeHint(TypeHint&& value) { m_typeHintHasBeenSet = true; m_typeHint = std::move(value); }
+
+    /**
+     * <p>A hint that specifies the correct object type for data type mapping.</p> <p>
+     * <b>Values:</b> </p> <ul> <li> <p> <code>DECIMAL</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>DECIMAL</code>
+     * type to the database.</p> </li> <li> <p> <code>TIMESTAMP</code> - The
+     * corresponding <code>String</code> parameter value is sent as an object of
+     * <code>TIMESTAMP</code> type to the database. The accepted format is
+     * <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>TIME</code> -
+     * The corresponding <code>String</code> parameter value is sent as an object of
+     * <code>TIME</code> type to the database. The accepted format is
+     * <code>HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>DATE</code> - The
+     * corresponding <code>String</code> parameter value is sent as an object of
+     * <code>DATE</code> type to the database. The accepted format is
+     * <code>YYYY-MM-DD</code>.</p> </li> </ul>
+     */
+    inline SqlParameter& WithTypeHint(const TypeHint& value) { SetTypeHint(value); return *this;}
+
+    /**
+     * <p>A hint that specifies the correct object type for data type mapping.</p> <p>
+     * <b>Values:</b> </p> <ul> <li> <p> <code>DECIMAL</code> - The corresponding
+     * <code>String</code> parameter value is sent as an object of <code>DECIMAL</code>
+     * type to the database.</p> </li> <li> <p> <code>TIMESTAMP</code> - The
+     * corresponding <code>String</code> parameter value is sent as an object of
+     * <code>TIMESTAMP</code> type to the database. The accepted format is
+     * <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>TIME</code> -
+     * The corresponding <code>String</code> parameter value is sent as an object of
+     * <code>TIME</code> type to the database. The accepted format is
+     * <code>HH:MM:SS[.FFF]</code>.</p> </li> <li> <p> <code>DATE</code> - The
+     * corresponding <code>String</code> parameter value is sent as an object of
+     * <code>DATE</code> type to the database. The accepted format is
+     * <code>YYYY-MM-DD</code>.</p> </li> </ul>
+     */
+    inline SqlParameter& WithTypeHint(TypeHint&& value) { SetTypeHint(std::move(value)); return *this;}
+
+
+    /**
      * <p>The value of the parameter.</p>
      */
     inline const Field& GetValue() const{ return m_value; }
@@ -123,6 +227,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    TypeHint m_typeHint;
+    bool m_typeHintHasBeenSet;
 
     Field m_value;
     bool m_valueHasBeenSet;

@@ -26,6 +26,7 @@ PutPlaybackConfigurationRequest::PutPlaybackConfigurationRequest() :
     m_adDecisionServerUrlHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
     m_dashConfigurationHasBeenSet(false),
+    m_livePreRollConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_slateAdUrlHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -53,6 +54,12 @@ Aws::String PutPlaybackConfigurationRequest::SerializePayload() const
   if(m_dashConfigurationHasBeenSet)
   {
    payload.WithObject("DashConfiguration", m_dashConfiguration.Jsonize());
+
+  }
+
+  if(m_livePreRollConfigurationHasBeenSet)
+  {
+   payload.WithObject("LivePreRollConfiguration", m_livePreRollConfiguration.Jsonize());
 
   }
 

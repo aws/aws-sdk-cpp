@@ -45,80 +45,80 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline const Aws::String& GetDataSetArn() const{ return m_dataSetArn; }
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline void SetDataSetArn(const Aws::String& value) { m_dataSetArn = value; }
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline void SetDataSetArn(Aws::String&& value) { m_dataSetArn = std::move(value); }
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline void SetDataSetArn(const char* value) { m_dataSetArn.assign(value); }
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline DescribeDataSetPermissionsResult& WithDataSetArn(const Aws::String& value) { SetDataSetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline DescribeDataSetPermissionsResult& WithDataSetArn(Aws::String&& value) { SetDataSetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline DescribeDataSetPermissionsResult& WithDataSetArn(const char* value) { SetDataSetArn(value); return *this;}
 
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetId = value; }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetId = std::move(value); }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline void SetDataSetId(const char* value) { m_dataSetId.assign(value); }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline DescribeDataSetPermissionsResult& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline DescribeDataSetPermissionsResult& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline DescribeDataSetPermissionsResult& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
 
@@ -196,17 +196,17 @@ namespace Model
 
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(int value) { m_status = value; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline DescribeDataSetPermissionsResult& WithStatus(int value) { SetStatus(value); return *this;}
 

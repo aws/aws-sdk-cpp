@@ -43,80 +43,80 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline DeleteDataSetResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline DeleteDataSetResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline DeleteDataSetResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetId = value; }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetId = std::move(value); }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline void SetDataSetId(const char* value) { m_dataSetId.assign(value); }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline DeleteDataSetResult& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline DeleteDataSetResult& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline DeleteDataSetResult& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
 
@@ -158,17 +158,17 @@ namespace Model
 
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(int value) { m_status = value; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline DeleteDataSetResult& WithStatus(int value) { SetStatus(value); return *this;}
 

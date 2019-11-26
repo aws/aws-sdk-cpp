@@ -58,42 +58,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline Template& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline Template& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline Template& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -171,42 +171,50 @@ namespace Model
 
 
     /**
-     * <p>The ID for the template. This is unique per region per AWS account.</p>
+     * <p>The ID for the template. This is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
 
     /**
-     * <p>The ID for the template. This is unique per region per AWS account.</p>
+     * <p>The ID for the template. This is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
 
     /**
-     * <p>The ID for the template. This is unique per region per AWS account.</p>
+     * <p>The ID for the template. This is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
 
     /**
-     * <p>The ID for the template. This is unique per region per AWS account.</p>
+     * <p>The ID for the template. This is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
 
     /**
-     * <p>The ID for the template. This is unique per region per AWS account.</p>
+     * <p>The ID for the template. This is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
 
     /**
-     * <p>The ID for the template. This is unique per region per AWS account.</p>
+     * <p>The ID for the template. This is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline Template& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
 
     /**
-     * <p>The ID for the template. This is unique per region per AWS account.</p>
+     * <p>The ID for the template. This is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline Template& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the template. This is unique per region per AWS account.</p>
+     * <p>The ID for the template. This is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline Template& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
 

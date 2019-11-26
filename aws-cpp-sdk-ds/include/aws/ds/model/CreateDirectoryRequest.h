@@ -102,42 +102,42 @@ namespace Model
 
 
     /**
-     * <p>The short name of the directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
      */
     inline const Aws::String& GetShortName() const{ return m_shortName; }
 
     /**
-     * <p>The short name of the directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
      */
     inline bool ShortNameHasBeenSet() const { return m_shortNameHasBeenSet; }
 
     /**
-     * <p>The short name of the directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
      */
     inline void SetShortName(const Aws::String& value) { m_shortNameHasBeenSet = true; m_shortName = value; }
 
     /**
-     * <p>The short name of the directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
      */
     inline void SetShortName(Aws::String&& value) { m_shortNameHasBeenSet = true; m_shortName = std::move(value); }
 
     /**
-     * <p>The short name of the directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
      */
     inline void SetShortName(const char* value) { m_shortNameHasBeenSet = true; m_shortName.assign(value); }
 
     /**
-     * <p>The short name of the directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
      */
     inline CreateDirectoryRequest& WithShortName(const Aws::String& value) { SetShortName(value); return *this;}
 
     /**
-     * <p>The short name of the directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
      */
     inline CreateDirectoryRequest& WithShortName(Aws::String&& value) { SetShortName(std::move(value)); return *this;}
 
     /**
-     * <p>The short name of the directory, such as <code>CORP</code>.</p>
+     * <p>The NetBIOS name of the directory, such as <code>CORP</code>.</p>
      */
     inline CreateDirectoryRequest& WithShortName(const char* value) { SetShortName(value); return *this;}
 
@@ -145,97 +145,113 @@ namespace Model
     /**
      * <p>The password for the directory administrator. The directory creation process
      * creates a directory administrator account with the user name
-     * <code>Administrator</code> and this password.</p>
+     * <code>Administrator</code> and this password.</p> <p>If you need to change the
+     * password for the administrator account, you can use the <a>ResetUserPassword</a>
+     * API call.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
 
     /**
      * <p>The password for the directory administrator. The directory creation process
      * creates a directory administrator account with the user name
-     * <code>Administrator</code> and this password.</p>
+     * <code>Administrator</code> and this password.</p> <p>If you need to change the
+     * password for the administrator account, you can use the <a>ResetUserPassword</a>
+     * API call.</p>
      */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>The password for the directory administrator. The directory creation process
      * creates a directory administrator account with the user name
-     * <code>Administrator</code> and this password.</p>
+     * <code>Administrator</code> and this password.</p> <p>If you need to change the
+     * password for the administrator account, you can use the <a>ResetUserPassword</a>
+     * API call.</p>
      */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
      * <p>The password for the directory administrator. The directory creation process
      * creates a directory administrator account with the user name
-     * <code>Administrator</code> and this password.</p>
+     * <code>Administrator</code> and this password.</p> <p>If you need to change the
+     * password for the administrator account, you can use the <a>ResetUserPassword</a>
+     * API call.</p>
      */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
 
     /**
      * <p>The password for the directory administrator. The directory creation process
      * creates a directory administrator account with the user name
-     * <code>Administrator</code> and this password.</p>
+     * <code>Administrator</code> and this password.</p> <p>If you need to change the
+     * password for the administrator account, you can use the <a>ResetUserPassword</a>
+     * API call.</p>
      */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
 
     /**
      * <p>The password for the directory administrator. The directory creation process
      * creates a directory administrator account with the user name
-     * <code>Administrator</code> and this password.</p>
+     * <code>Administrator</code> and this password.</p> <p>If you need to change the
+     * password for the administrator account, you can use the <a>ResetUserPassword</a>
+     * API call.</p>
      */
     inline CreateDirectoryRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
 
     /**
      * <p>The password for the directory administrator. The directory creation process
      * creates a directory administrator account with the user name
-     * <code>Administrator</code> and this password.</p>
+     * <code>Administrator</code> and this password.</p> <p>If you need to change the
+     * password for the administrator account, you can use the <a>ResetUserPassword</a>
+     * API call.</p>
      */
     inline CreateDirectoryRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
 
     /**
      * <p>The password for the directory administrator. The directory creation process
      * creates a directory administrator account with the user name
-     * <code>Administrator</code> and this password.</p>
+     * <code>Administrator</code> and this password.</p> <p>If you need to change the
+     * password for the administrator account, you can use the <a>ResetUserPassword</a>
+     * API call.</p>
      */
     inline CreateDirectoryRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
 
 
     /**
-     * <p>A textual description for the directory.</p>
+     * <p>A description for the directory.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A textual description for the directory.</p>
+     * <p>A description for the directory.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A textual description for the directory.</p>
+     * <p>A description for the directory.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A textual description for the directory.</p>
+     * <p>A description for the directory.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A textual description for the directory.</p>
+     * <p>A description for the directory.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A textual description for the directory.</p>
+     * <p>A description for the directory.</p>
      */
     inline CreateDirectoryRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A textual description for the directory.</p>
+     * <p>A description for the directory.</p>
      */
     inline CreateDirectoryRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A textual description for the directory.</p>
+     * <p>A description for the directory.</p>
      */
     inline CreateDirectoryRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

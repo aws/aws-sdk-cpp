@@ -186,101 +186,91 @@ namespace Model
 
 
     /**
-     * <p>A list of resource permissions to be set on the template. The shorthand
-     * syntax should look similar to this: <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be set on the template. </p>
      */
     inline const Aws::Vector<ResourcePermission>& GetPermissions() const{ return m_permissions; }
 
     /**
-     * <p>A list of resource permissions to be set on the template. The shorthand
-     * syntax should look similar to this: <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be set on the template. </p>
      */
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
 
     /**
-     * <p>A list of resource permissions to be set on the template. The shorthand
-     * syntax should look similar to this: <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be set on the template. </p>
      */
     inline void SetPermissions(const Aws::Vector<ResourcePermission>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
 
     /**
-     * <p>A list of resource permissions to be set on the template. The shorthand
-     * syntax should look similar to this: <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be set on the template. </p>
      */
     inline void SetPermissions(Aws::Vector<ResourcePermission>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
 
     /**
-     * <p>A list of resource permissions to be set on the template. The shorthand
-     * syntax should look similar to this: <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be set on the template. </p>
      */
     inline CreateTemplateRequest& WithPermissions(const Aws::Vector<ResourcePermission>& value) { SetPermissions(value); return *this;}
 
     /**
-     * <p>A list of resource permissions to be set on the template. The shorthand
-     * syntax should look similar to this: <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be set on the template. </p>
      */
     inline CreateTemplateRequest& WithPermissions(Aws::Vector<ResourcePermission>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of resource permissions to be set on the template. The shorthand
-     * syntax should look similar to this: <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be set on the template. </p>
      */
     inline CreateTemplateRequest& AddPermissions(const ResourcePermission& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
 
     /**
-     * <p>A list of resource permissions to be set on the template. The shorthand
-     * syntax should look similar to this: <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be set on the template. </p>
      */
     inline CreateTemplateRequest& AddPermissions(ResourcePermission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The ARN of the source entity from which this template is being created.
-     * Templates can be currently created from an analysis or another template. If the
-     * ARN is for an analysis, you must include its dataset references. </p>
+     * <p>The Amazon Resource Name (ARN) of the source entity from which this template
+     * is being created. Templates can be currently created from an analysis or another
+     * template. If the ARN is for an analysis, you must include its dataset
+     * references. </p>
      */
     inline const TemplateSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
     /**
-     * <p>The ARN of the source entity from which this template is being created.
-     * Templates can be currently created from an analysis or another template. If the
-     * ARN is for an analysis, you must include its dataset references. </p>
+     * <p>The Amazon Resource Name (ARN) of the source entity from which this template
+     * is being created. Templates can be currently created from an analysis or another
+     * template. If the ARN is for an analysis, you must include its dataset
+     * references. </p>
      */
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
     /**
-     * <p>The ARN of the source entity from which this template is being created.
-     * Templates can be currently created from an analysis or another template. If the
-     * ARN is for an analysis, you must include its dataset references. </p>
+     * <p>The Amazon Resource Name (ARN) of the source entity from which this template
+     * is being created. Templates can be currently created from an analysis or another
+     * template. If the ARN is for an analysis, you must include its dataset
+     * references. </p>
      */
     inline void SetSourceEntity(const TemplateSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
     /**
-     * <p>The ARN of the source entity from which this template is being created.
-     * Templates can be currently created from an analysis or another template. If the
-     * ARN is for an analysis, you must include its dataset references. </p>
+     * <p>The Amazon Resource Name (ARN) of the source entity from which this template
+     * is being created. Templates can be currently created from an analysis or another
+     * template. If the ARN is for an analysis, you must include its dataset
+     * references. </p>
      */
     inline void SetSourceEntity(TemplateSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
     /**
-     * <p>The ARN of the source entity from which this template is being created.
-     * Templates can be currently created from an analysis or another template. If the
-     * ARN is for an analysis, you must include its dataset references. </p>
+     * <p>The Amazon Resource Name (ARN) of the source entity from which this template
+     * is being created. Templates can be currently created from an analysis or another
+     * template. If the ARN is for an analysis, you must include its dataset
+     * references. </p>
      */
     inline CreateTemplateRequest& WithSourceEntity(const TemplateSourceEntity& value) { SetSourceEntity(value); return *this;}
 
     /**
-     * <p>The ARN of the source entity from which this template is being created.
-     * Templates can be currently created from an analysis or another template. If the
-     * ARN is for an analysis, you must include its dataset references. </p>
+     * <p>The Amazon Resource Name (ARN) of the source entity from which this template
+     * is being created. Templates can be currently created from an analysis or another
+     * template. If the ARN is for an analysis, you must include its dataset
+     * references. </p>
      */
     inline CreateTemplateRequest& WithSourceEntity(TemplateSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
 

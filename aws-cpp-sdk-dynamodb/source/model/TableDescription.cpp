@@ -51,7 +51,8 @@ TableDescription::TableDescription() :
     m_globalTableVersionHasBeenSet(false),
     m_replicasHasBeenSet(false),
     m_restoreSummaryHasBeenSet(false),
-    m_sSEDescriptionHasBeenSet(false)
+    m_sSEDescriptionHasBeenSet(false),
+    m_archivalSummaryHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ TableDescription::TableDescription(JsonView jsonValue) :
     m_globalTableVersionHasBeenSet(false),
     m_replicasHasBeenSet(false),
     m_restoreSummaryHasBeenSet(false),
-    m_sSEDescriptionHasBeenSet(false)
+    m_sSEDescriptionHasBeenSet(false),
+    m_archivalSummaryHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -240,6 +242,13 @@ TableDescription& TableDescription::operator =(JsonView jsonValue)
     m_sSEDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ArchivalSummary"))
+  {
+    m_archivalSummary = jsonValue.GetObject("ArchivalSummary");
+
+    m_archivalSummaryHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -387,6 +396,12 @@ JsonValue TableDescription::Jsonize() const
   if(m_sSEDescriptionHasBeenSet)
   {
    payload.WithObject("SSEDescription", m_sSEDescription.Jsonize());
+
+  }
+
+  if(m_archivalSummaryHasBeenSet)
+  {
+   payload.WithObject("ArchivalSummary", m_archivalSummary.Jsonize());
 
   }
 

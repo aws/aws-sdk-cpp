@@ -51,42 +51,42 @@ namespace Model
 
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the data source.</p>
      */
     inline const Aws::String& GetDataSourceArn() const{ return m_dataSourceArn; }
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the data source.</p>
      */
     inline bool DataSourceArnHasBeenSet() const { return m_dataSourceArnHasBeenSet; }
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the data source.</p>
      */
     inline void SetDataSourceArn(const Aws::String& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = value; }
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the data source.</p>
      */
     inline void SetDataSourceArn(Aws::String&& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = std::move(value); }
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the data source.</p>
      */
     inline void SetDataSourceArn(const char* value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn.assign(value); }
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the data source.</p>
      */
     inline RelationalTable& WithDataSourceArn(const Aws::String& value) { SetDataSourceArn(value); return *this;}
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the data source.</p>
      */
     inline RelationalTable& WithDataSourceArn(Aws::String&& value) { SetDataSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The Amazon Resource Name (ARN) for the data source.</p>
      */
     inline RelationalTable& WithDataSourceArn(const char* value) { SetDataSourceArn(value); return *this;}
 

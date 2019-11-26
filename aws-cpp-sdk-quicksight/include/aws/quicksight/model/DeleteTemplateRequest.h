@@ -131,22 +131,30 @@ namespace Model
 
 
     /**
-     * <p>The version number</p>
+     * <p>Specifies the version of the template that you want to delete. If you don't
+     * provide a version number, <code>DeleteTemplate</code> deletes all versions of
+     * the template. </p>
      */
     inline long long GetVersionNumber() const{ return m_versionNumber; }
 
     /**
-     * <p>The version number</p>
+     * <p>Specifies the version of the template that you want to delete. If you don't
+     * provide a version number, <code>DeleteTemplate</code> deletes all versions of
+     * the template. </p>
      */
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
 
     /**
-     * <p>The version number</p>
+     * <p>Specifies the version of the template that you want to delete. If you don't
+     * provide a version number, <code>DeleteTemplate</code> deletes all versions of
+     * the template. </p>
      */
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
 
     /**
-     * <p>The version number</p>
+     * <p>Specifies the version of the template that you want to delete. If you don't
+     * provide a version number, <code>DeleteTemplate</code> deletes all versions of
+     * the template. </p>
      */
     inline DeleteTemplateRequest& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
 

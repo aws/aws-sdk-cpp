@@ -43,123 +43,123 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline CreateDataSetResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline CreateDataSetResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
     inline CreateDataSetResult& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetId = value; }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetId = std::move(value); }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline void SetDataSetId(const char* value) { m_dataSetId.assign(value); }
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline CreateDataSetResult& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline CreateDataSetResult& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the dataset you want to create. This is unique per region per AWS
-     * account.</p>
+     * <p>The ID for the dataset that you want to create. This ID is unique per AWS
+     * Region for each AWS account.</p>
      */
     inline CreateDataSetResult& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the ingestion, which is triggered as a
-     * result of dataset creation if the import mode is SPICE</p>
+     * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
+     * if the import mode is SPICE</p>
      */
     inline const Aws::String& GetIngestionArn() const{ return m_ingestionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the ingestion, which is triggered as a
-     * result of dataset creation if the import mode is SPICE</p>
+     * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
+     * if the import mode is SPICE</p>
      */
     inline void SetIngestionArn(const Aws::String& value) { m_ingestionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the ingestion, which is triggered as a
-     * result of dataset creation if the import mode is SPICE</p>
+     * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
+     * if the import mode is SPICE</p>
      */
     inline void SetIngestionArn(Aws::String&& value) { m_ingestionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the ingestion, which is triggered as a
-     * result of dataset creation if the import mode is SPICE</p>
+     * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
+     * if the import mode is SPICE</p>
      */
     inline void SetIngestionArn(const char* value) { m_ingestionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the ingestion, which is triggered as a
-     * result of dataset creation if the import mode is SPICE</p>
+     * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
+     * if the import mode is SPICE</p>
      */
     inline CreateDataSetResult& WithIngestionArn(const Aws::String& value) { SetIngestionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the ingestion, which is triggered as a
-     * result of dataset creation if the import mode is SPICE</p>
+     * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
+     * if the import mode is SPICE</p>
      */
     inline CreateDataSetResult& WithIngestionArn(Aws::String&& value) { SetIngestionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the ingestion, which is triggered as a
-     * result of dataset creation if the import mode is SPICE</p>
+     * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
+     * if the import mode is SPICE</p>
      */
     inline CreateDataSetResult& WithIngestionArn(const char* value) { SetIngestionArn(value); return *this;}
 
@@ -244,17 +244,17 @@ namespace Model
 
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(int value) { m_status = value; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline CreateDataSetResult& WithStatus(int value) { SetStatus(value); return *this;}
 

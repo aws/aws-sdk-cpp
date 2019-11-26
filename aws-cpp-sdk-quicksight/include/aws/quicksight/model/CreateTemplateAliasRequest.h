@@ -125,58 +125,50 @@ namespace Model
 
 
     /**
-     * <p>The name you want to give the template's alias. Alias names can't begin with
-     * a <code>$</code>, which is reserved by QuickSight. Alias names that start with
-     * ‘$’ sign are QuickSight reserved naming and can't be deleted. </p>
+     * <p>The name that you want to give to the template alias that you're creating.
+     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
 
     /**
-     * <p>The name you want to give the template's alias. Alias names can't begin with
-     * a <code>$</code>, which is reserved by QuickSight. Alias names that start with
-     * ‘$’ sign are QuickSight reserved naming and can't be deleted. </p>
+     * <p>The name that you want to give to the template alias that you're creating.
+     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
 
     /**
-     * <p>The name you want to give the template's alias. Alias names can't begin with
-     * a <code>$</code>, which is reserved by QuickSight. Alias names that start with
-     * ‘$’ sign are QuickSight reserved naming and can't be deleted. </p>
+     * <p>The name that you want to give to the template alias that you're creating.
+     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /**
-     * <p>The name you want to give the template's alias. Alias names can't begin with
-     * a <code>$</code>, which is reserved by QuickSight. Alias names that start with
-     * ‘$’ sign are QuickSight reserved naming and can't be deleted. </p>
+     * <p>The name that you want to give to the template alias that you're creating.
+     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
 
     /**
-     * <p>The name you want to give the template's alias. Alias names can't begin with
-     * a <code>$</code>, which is reserved by QuickSight. Alias names that start with
-     * ‘$’ sign are QuickSight reserved naming and can't be deleted. </p>
+     * <p>The name that you want to give to the template alias that you're creating.
+     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
 
     /**
-     * <p>The name you want to give the template's alias. Alias names can't begin with
-     * a <code>$</code>, which is reserved by QuickSight. Alias names that start with
-     * ‘$’ sign are QuickSight reserved naming and can't be deleted. </p>
+     * <p>The name that you want to give to the template alias that you're creating.
+     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline CreateTemplateAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
 
     /**
-     * <p>The name you want to give the template's alias. Alias names can't begin with
-     * a <code>$</code>, which is reserved by QuickSight. Alias names that start with
-     * ‘$’ sign are QuickSight reserved naming and can't be deleted. </p>
+     * <p>The name that you want to give to the template alias that you're creating.
+     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline CreateTemplateAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
-     * <p>The name you want to give the template's alias. Alias names can't begin with
-     * a <code>$</code>, which is reserved by QuickSight. Alias names that start with
-     * ‘$’ sign are QuickSight reserved naming and can't be deleted. </p>
+     * <p>The name that you want to give to the template alias that you're creating.
+     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline CreateTemplateAliasRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
 

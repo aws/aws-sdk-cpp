@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Athena parameters.</p><p><h3>See Also:</h3>   <a
+   * <p>Amazon Athena parameters.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AthenaParameters">AWS
    * API Reference</a></p>
    */
@@ -48,42 +48,42 @@ namespace Model
 
 
     /**
-     * <p>The workgroup that Athena uses.</p>
+     * <p>The workgroup that Amazon Athena uses.</p>
      */
     inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
 
     /**
-     * <p>The workgroup that Athena uses.</p>
+     * <p>The workgroup that Amazon Athena uses.</p>
      */
     inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
 
     /**
-     * <p>The workgroup that Athena uses.</p>
+     * <p>The workgroup that Amazon Athena uses.</p>
      */
     inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
 
     /**
-     * <p>The workgroup that Athena uses.</p>
+     * <p>The workgroup that Amazon Athena uses.</p>
      */
     inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
 
     /**
-     * <p>The workgroup that Athena uses.</p>
+     * <p>The workgroup that Amazon Athena uses.</p>
      */
     inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
 
     /**
-     * <p>The workgroup that Athena uses.</p>
+     * <p>The workgroup that Amazon Athena uses.</p>
      */
     inline AthenaParameters& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
 
     /**
-     * <p>The workgroup that Athena uses.</p>
+     * <p>The workgroup that Amazon Athena uses.</p>
      */
     inline AthenaParameters& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
 
     /**
-     * <p>The workgroup that Athena uses.</p>
+     * <p>The workgroup that Amazon Athena uses.</p>
      */
     inline AthenaParameters& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
 

@@ -163,66 +163,66 @@ namespace Model
 
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being updated. Every time you
+     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
+     * template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline const Aws::String& GetVersionDescription() const{ return m_versionDescription; }
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being updated. Every time you
+     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
+     * template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being updated. Every time you
+     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
+     * template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being updated. Every time you
+     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
+     * template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline void SetVersionDescription(Aws::String&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::move(value); }
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being updated. Every time you
+     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
+     * template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline void SetVersionDescription(const char* value) { m_versionDescriptionHasBeenSet = true; m_versionDescription.assign(value); }
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being updated. Every time you
+     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
+     * template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline UpdateTemplateRequest& WithVersionDescription(const Aws::String& value) { SetVersionDescription(value); return *this;}
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being updated. Every time you
+     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
+     * template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline UpdateTemplateRequest& WithVersionDescription(Aws::String&& value) { SetVersionDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being updated. Every time you
+     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
+     * template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline UpdateTemplateRequest& WithVersionDescription(const char* value) { SetVersionDescription(value); return *this;}
 

@@ -24,6 +24,7 @@
 #include <aws/dynamodb/model/StreamSpecification.h>
 #include <aws/dynamodb/model/RestoreSummary.h>
 #include <aws/dynamodb/model/SSEDescription.h>
+#include <aws/dynamodb/model/ArchivalSummary.h>
 #include <aws/dynamodb/model/AttributeDefinition.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <aws/dynamodb/model/LocalSecondaryIndexDescription.h>
@@ -332,7 +333,14 @@ namespace Model
      * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The table is
      * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
      * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
-     * use.</p> </li> </ul>
+     * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
+     * AWS KMS key used to encrypt the table in inaccessible. Table operations may fail
+     * due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
+     * process when a table's AWS KMS key remains inaccessible for more than seven
+     * days. </p> </li> <li> <p> <code>ARCHIVING</code> - The table is being archived.
+     * Operations are not allowed until archival is complete. </p> </li> <li> <p>
+     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
+     * more information. </p> </li> </ul>
      */
     inline const TableStatus& GetTableStatus() const{ return m_tableStatus; }
 
@@ -341,7 +349,14 @@ namespace Model
      * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The table is
      * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
      * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
-     * use.</p> </li> </ul>
+     * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
+     * AWS KMS key used to encrypt the table in inaccessible. Table operations may fail
+     * due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
+     * process when a table's AWS KMS key remains inaccessible for more than seven
+     * days. </p> </li> <li> <p> <code>ARCHIVING</code> - The table is being archived.
+     * Operations are not allowed until archival is complete. </p> </li> <li> <p>
+     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
+     * more information. </p> </li> </ul>
      */
     inline bool TableStatusHasBeenSet() const { return m_tableStatusHasBeenSet; }
 
@@ -350,7 +365,14 @@ namespace Model
      * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The table is
      * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
      * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
-     * use.</p> </li> </ul>
+     * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
+     * AWS KMS key used to encrypt the table in inaccessible. Table operations may fail
+     * due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
+     * process when a table's AWS KMS key remains inaccessible for more than seven
+     * days. </p> </li> <li> <p> <code>ARCHIVING</code> - The table is being archived.
+     * Operations are not allowed until archival is complete. </p> </li> <li> <p>
+     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
+     * more information. </p> </li> </ul>
      */
     inline void SetTableStatus(const TableStatus& value) { m_tableStatusHasBeenSet = true; m_tableStatus = value; }
 
@@ -359,7 +381,14 @@ namespace Model
      * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The table is
      * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
      * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
-     * use.</p> </li> </ul>
+     * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
+     * AWS KMS key used to encrypt the table in inaccessible. Table operations may fail
+     * due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
+     * process when a table's AWS KMS key remains inaccessible for more than seven
+     * days. </p> </li> <li> <p> <code>ARCHIVING</code> - The table is being archived.
+     * Operations are not allowed until archival is complete. </p> </li> <li> <p>
+     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
+     * more information. </p> </li> </ul>
      */
     inline void SetTableStatus(TableStatus&& value) { m_tableStatusHasBeenSet = true; m_tableStatus = std::move(value); }
 
@@ -368,7 +397,14 @@ namespace Model
      * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The table is
      * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
      * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
-     * use.</p> </li> </ul>
+     * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
+     * AWS KMS key used to encrypt the table in inaccessible. Table operations may fail
+     * due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
+     * process when a table's AWS KMS key remains inaccessible for more than seven
+     * days. </p> </li> <li> <p> <code>ARCHIVING</code> - The table is being archived.
+     * Operations are not allowed until archival is complete. </p> </li> <li> <p>
+     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
+     * more information. </p> </li> </ul>
      */
     inline TableDescription& WithTableStatus(const TableStatus& value) { SetTableStatus(value); return *this;}
 
@@ -377,7 +413,14 @@ namespace Model
      * table is being created.</p> </li> <li> <p> <code>UPDATING</code> - The table is
      * being updated.</p> </li> <li> <p> <code>DELETING</code> - The table is being
      * deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The table is ready for
-     * use.</p> </li> </ul>
+     * use.</p> </li> <li> <p> <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The
+     * AWS KMS key used to encrypt the table in inaccessible. Table operations may fail
+     * due to failure to use the AWS KMS key. DynamoDB will initiate the table archival
+     * process when a table's AWS KMS key remains inaccessible for more than seven
+     * days. </p> </li> <li> <p> <code>ARCHIVING</code> - The table is being archived.
+     * Operations are not allowed until archival is complete. </p> </li> <li> <p>
+     * <code>ARCHIVED</code> - The table has been archived. See the ArchivalReason for
+     * more information. </p> </li> </ul>
      */
     inline TableDescription& WithTableStatus(TableStatus&& value) { SetTableStatus(std::move(value)); return *this;}
 
@@ -1635,6 +1678,37 @@ namespace Model
      */
     inline TableDescription& WithSSEDescription(SSEDescription&& value) { SetSSEDescription(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains information about the table archive.</p>
+     */
+    inline const ArchivalSummary& GetArchivalSummary() const{ return m_archivalSummary; }
+
+    /**
+     * <p>Contains information about the table archive.</p>
+     */
+    inline bool ArchivalSummaryHasBeenSet() const { return m_archivalSummaryHasBeenSet; }
+
+    /**
+     * <p>Contains information about the table archive.</p>
+     */
+    inline void SetArchivalSummary(const ArchivalSummary& value) { m_archivalSummaryHasBeenSet = true; m_archivalSummary = value; }
+
+    /**
+     * <p>Contains information about the table archive.</p>
+     */
+    inline void SetArchivalSummary(ArchivalSummary&& value) { m_archivalSummaryHasBeenSet = true; m_archivalSummary = std::move(value); }
+
+    /**
+     * <p>Contains information about the table archive.</p>
+     */
+    inline TableDescription& WithArchivalSummary(const ArchivalSummary& value) { SetArchivalSummary(value); return *this;}
+
+    /**
+     * <p>Contains information about the table archive.</p>
+     */
+    inline TableDescription& WithArchivalSummary(ArchivalSummary&& value) { SetArchivalSummary(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<AttributeDefinition> m_attributeDefinitions;
@@ -1696,6 +1770,9 @@ namespace Model
 
     SSEDescription m_sSEDescription;
     bool m_sSEDescriptionHasBeenSet;
+
+    ArchivalSummary m_archivalSummary;
+    bool m_archivalSummaryHasBeenSet;
   };
 
 } // namespace Model

@@ -366,76 +366,80 @@ namespace Model
 
 
     /**
-     * <p>A limit that restricts the number of tags (key and value pairs) returned by
-     * GetResources in paginated output. A resource with no tags is counted as having
-     * one tag (one key and value pair).</p> <p> <code>GetResources</code> does not
-     * split a resource and its associated tags across pages. If the specified
-     * <code>TagsPerPage</code> would cause such a break, a
-     * <code>PaginationToken</code> is returned in place of the affected resource and
-     * its tags. Use that token in another request to get the remaining data. For
-     * example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the
-     * account has 22 resources with 10 tags each (meaning that each resource has 10
-     * key and value pairs), the output will consist of 3 pages, with the first page
-     * displaying the first 10 resources, each with its 10 tags, the second page
-     * displaying the next 10 resources each with its 10 tags, and the third page
-     * displaying the remaining 2 resources, each with its 10 tags.</p> <p>You can set
+     * <p>AWS recommends using <code>ResourcesPerPage</code> instead of this
+     * parameter.</p> <p>A limit that restricts the number of tags (key and value
+     * pairs) returned by GetResources in paginated output. A resource with no tags is
+     * counted as having one tag (one key and value pair).</p> <p>
+     * <code>GetResources</code> does not split a resource and its associated tags
+     * across pages. If the specified <code>TagsPerPage</code> would cause such a
+     * break, a <code>PaginationToken</code> is returned in place of the affected
+     * resource and its tags. Use that token in another request to get the remaining
+     * data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code>
+     * and the account has 22 resources with 10 tags each (meaning that each resource
+     * has 10 key and value pairs), the output will consist of three pages. The first
+     * page displays the first 10 resources, each with its 10 tags. The second page
+     * displays the next 10 resources, each with its 10 tags. The third page displays
+     * the remaining 2 resources, each with its 10 tags.</p> <p>You can set
      * <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500
      * items.</p>
      */
     inline int GetTagsPerPage() const{ return m_tagsPerPage; }
 
     /**
-     * <p>A limit that restricts the number of tags (key and value pairs) returned by
-     * GetResources in paginated output. A resource with no tags is counted as having
-     * one tag (one key and value pair).</p> <p> <code>GetResources</code> does not
-     * split a resource and its associated tags across pages. If the specified
-     * <code>TagsPerPage</code> would cause such a break, a
-     * <code>PaginationToken</code> is returned in place of the affected resource and
-     * its tags. Use that token in another request to get the remaining data. For
-     * example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the
-     * account has 22 resources with 10 tags each (meaning that each resource has 10
-     * key and value pairs), the output will consist of 3 pages, with the first page
-     * displaying the first 10 resources, each with its 10 tags, the second page
-     * displaying the next 10 resources each with its 10 tags, and the third page
-     * displaying the remaining 2 resources, each with its 10 tags.</p> <p>You can set
+     * <p>AWS recommends using <code>ResourcesPerPage</code> instead of this
+     * parameter.</p> <p>A limit that restricts the number of tags (key and value
+     * pairs) returned by GetResources in paginated output. A resource with no tags is
+     * counted as having one tag (one key and value pair).</p> <p>
+     * <code>GetResources</code> does not split a resource and its associated tags
+     * across pages. If the specified <code>TagsPerPage</code> would cause such a
+     * break, a <code>PaginationToken</code> is returned in place of the affected
+     * resource and its tags. Use that token in another request to get the remaining
+     * data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code>
+     * and the account has 22 resources with 10 tags each (meaning that each resource
+     * has 10 key and value pairs), the output will consist of three pages. The first
+     * page displays the first 10 resources, each with its 10 tags. The second page
+     * displays the next 10 resources, each with its 10 tags. The third page displays
+     * the remaining 2 resources, each with its 10 tags.</p> <p>You can set
      * <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500
      * items.</p>
      */
     inline bool TagsPerPageHasBeenSet() const { return m_tagsPerPageHasBeenSet; }
 
     /**
-     * <p>A limit that restricts the number of tags (key and value pairs) returned by
-     * GetResources in paginated output. A resource with no tags is counted as having
-     * one tag (one key and value pair).</p> <p> <code>GetResources</code> does not
-     * split a resource and its associated tags across pages. If the specified
-     * <code>TagsPerPage</code> would cause such a break, a
-     * <code>PaginationToken</code> is returned in place of the affected resource and
-     * its tags. Use that token in another request to get the remaining data. For
-     * example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the
-     * account has 22 resources with 10 tags each (meaning that each resource has 10
-     * key and value pairs), the output will consist of 3 pages, with the first page
-     * displaying the first 10 resources, each with its 10 tags, the second page
-     * displaying the next 10 resources each with its 10 tags, and the third page
-     * displaying the remaining 2 resources, each with its 10 tags.</p> <p>You can set
+     * <p>AWS recommends using <code>ResourcesPerPage</code> instead of this
+     * parameter.</p> <p>A limit that restricts the number of tags (key and value
+     * pairs) returned by GetResources in paginated output. A resource with no tags is
+     * counted as having one tag (one key and value pair).</p> <p>
+     * <code>GetResources</code> does not split a resource and its associated tags
+     * across pages. If the specified <code>TagsPerPage</code> would cause such a
+     * break, a <code>PaginationToken</code> is returned in place of the affected
+     * resource and its tags. Use that token in another request to get the remaining
+     * data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code>
+     * and the account has 22 resources with 10 tags each (meaning that each resource
+     * has 10 key and value pairs), the output will consist of three pages. The first
+     * page displays the first 10 resources, each with its 10 tags. The second page
+     * displays the next 10 resources, each with its 10 tags. The third page displays
+     * the remaining 2 resources, each with its 10 tags.</p> <p>You can set
      * <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500
      * items.</p>
      */
     inline void SetTagsPerPage(int value) { m_tagsPerPageHasBeenSet = true; m_tagsPerPage = value; }
 
     /**
-     * <p>A limit that restricts the number of tags (key and value pairs) returned by
-     * GetResources in paginated output. A resource with no tags is counted as having
-     * one tag (one key and value pair).</p> <p> <code>GetResources</code> does not
-     * split a resource and its associated tags across pages. If the specified
-     * <code>TagsPerPage</code> would cause such a break, a
-     * <code>PaginationToken</code> is returned in place of the affected resource and
-     * its tags. Use that token in another request to get the remaining data. For
-     * example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the
-     * account has 22 resources with 10 tags each (meaning that each resource has 10
-     * key and value pairs), the output will consist of 3 pages, with the first page
-     * displaying the first 10 resources, each with its 10 tags, the second page
-     * displaying the next 10 resources each with its 10 tags, and the third page
-     * displaying the remaining 2 resources, each with its 10 tags.</p> <p>You can set
+     * <p>AWS recommends using <code>ResourcesPerPage</code> instead of this
+     * parameter.</p> <p>A limit that restricts the number of tags (key and value
+     * pairs) returned by GetResources in paginated output. A resource with no tags is
+     * counted as having one tag (one key and value pair).</p> <p>
+     * <code>GetResources</code> does not split a resource and its associated tags
+     * across pages. If the specified <code>TagsPerPage</code> would cause such a
+     * break, a <code>PaginationToken</code> is returned in place of the affected
+     * resource and its tags. Use that token in another request to get the remaining
+     * data. For example, if you specify a <code>TagsPerPage</code> of <code>100</code>
+     * and the account has 22 resources with 10 tags each (meaning that each resource
+     * has 10 key and value pairs), the output will consist of three pages. The first
+     * page displays the first 10 resources, each with its 10 tags. The second page
+     * displays the next 10 resources, each with its 10 tags. The third page displays
+     * the remaining 2 resources, each with its 10 tags.</p> <p>You can set
      * <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500
      * items.</p>
      */
@@ -631,6 +635,72 @@ namespace Model
      */
     inline GetResourcesRequest& AddResourceTypeFilters(const char* value) { m_resourceTypeFiltersHasBeenSet = true; m_resourceTypeFilters.push_back(value); return *this; }
 
+
+    /**
+     * <p>Specifies whether to include details regarding the compliance with the
+     * effective tag policy. Set this to <code>true</code> to determine whether
+     * resources are compliant with the tag policy and to get details.</p>
+     */
+    inline bool GetIncludeComplianceDetails() const{ return m_includeComplianceDetails; }
+
+    /**
+     * <p>Specifies whether to include details regarding the compliance with the
+     * effective tag policy. Set this to <code>true</code> to determine whether
+     * resources are compliant with the tag policy and to get details.</p>
+     */
+    inline bool IncludeComplianceDetailsHasBeenSet() const { return m_includeComplianceDetailsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to include details regarding the compliance with the
+     * effective tag policy. Set this to <code>true</code> to determine whether
+     * resources are compliant with the tag policy and to get details.</p>
+     */
+    inline void SetIncludeComplianceDetails(bool value) { m_includeComplianceDetailsHasBeenSet = true; m_includeComplianceDetails = value; }
+
+    /**
+     * <p>Specifies whether to include details regarding the compliance with the
+     * effective tag policy. Set this to <code>true</code> to determine whether
+     * resources are compliant with the tag policy and to get details.</p>
+     */
+    inline GetResourcesRequest& WithIncludeComplianceDetails(bool value) { SetIncludeComplianceDetails(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether to exclude resources that are compliant with the tag
+     * policy. Set this to <code>true</code> if you are interested in retrieving
+     * information on noncompliant resources only.</p> <p>You can use this parameter
+     * only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.</p>
+     */
+    inline bool GetExcludeCompliantResources() const{ return m_excludeCompliantResources; }
+
+    /**
+     * <p>Specifies whether to exclude resources that are compliant with the tag
+     * policy. Set this to <code>true</code> if you are interested in retrieving
+     * information on noncompliant resources only.</p> <p>You can use this parameter
+     * only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.</p>
+     */
+    inline bool ExcludeCompliantResourcesHasBeenSet() const { return m_excludeCompliantResourcesHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to exclude resources that are compliant with the tag
+     * policy. Set this to <code>true</code> if you are interested in retrieving
+     * information on noncompliant resources only.</p> <p>You can use this parameter
+     * only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.</p>
+     */
+    inline void SetExcludeCompliantResources(bool value) { m_excludeCompliantResourcesHasBeenSet = true; m_excludeCompliantResources = value; }
+
+    /**
+     * <p>Specifies whether to exclude resources that are compliant with the tag
+     * policy. Set this to <code>true</code> if you are interested in retrieving
+     * information on noncompliant resources only.</p> <p>You can use this parameter
+     * only if the <code>IncludeComplianceDetails</code> parameter is also set to
+     * <code>true</code>.</p>
+     */
+    inline GetResourcesRequest& WithExcludeCompliantResources(bool value) { SetExcludeCompliantResources(value); return *this;}
+
   private:
 
     Aws::String m_paginationToken;
@@ -647,6 +717,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_resourceTypeFilters;
     bool m_resourceTypeFiltersHasBeenSet;
+
+    bool m_includeComplianceDetails;
+    bool m_includeComplianceDetailsHasBeenSet;
+
+    bool m_excludeCompliantResources;
+    bool m_excludeCompliantResourcesHasBeenSet;
   };
 
 } // namespace Model

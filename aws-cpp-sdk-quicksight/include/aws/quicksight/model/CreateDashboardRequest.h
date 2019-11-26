@@ -271,67 +271,67 @@ namespace Model
 
     /**
      * <p>Source entity from which the dashboard is created. The souce entity accepts
-     * the ARN of the source template or analysis and also references the replacement
-     * datasets for the placeholders set when creating the template. The replacement
-     * datasets need to follow the same schema as the datasets for which placeholders
-     * were created when creating the template. </p> <p>If you are creating a dashboard
-     * from a source entity in a different AWS account, use the ARN of the source
-     * template.</p>
+     * the Amazon Resource Name (ARN) of the source template or analysis and also
+     * references the replacement datasets for the placeholders set when creating the
+     * template. The replacement datasets need to follow the same schema as the
+     * datasets for which placeholders were created when creating the template. </p>
+     * <p>If you are creating a dashboard from a source entity in a different AWS
+     * account, use the ARN of the source template.</p>
      */
     inline const DashboardSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
     /**
      * <p>Source entity from which the dashboard is created. The souce entity accepts
-     * the ARN of the source template or analysis and also references the replacement
-     * datasets for the placeholders set when creating the template. The replacement
-     * datasets need to follow the same schema as the datasets for which placeholders
-     * were created when creating the template. </p> <p>If you are creating a dashboard
-     * from a source entity in a different AWS account, use the ARN of the source
-     * template.</p>
+     * the Amazon Resource Name (ARN) of the source template or analysis and also
+     * references the replacement datasets for the placeholders set when creating the
+     * template. The replacement datasets need to follow the same schema as the
+     * datasets for which placeholders were created when creating the template. </p>
+     * <p>If you are creating a dashboard from a source entity in a different AWS
+     * account, use the ARN of the source template.</p>
      */
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
     /**
      * <p>Source entity from which the dashboard is created. The souce entity accepts
-     * the ARN of the source template or analysis and also references the replacement
-     * datasets for the placeholders set when creating the template. The replacement
-     * datasets need to follow the same schema as the datasets for which placeholders
-     * were created when creating the template. </p> <p>If you are creating a dashboard
-     * from a source entity in a different AWS account, use the ARN of the source
-     * template.</p>
+     * the Amazon Resource Name (ARN) of the source template or analysis and also
+     * references the replacement datasets for the placeholders set when creating the
+     * template. The replacement datasets need to follow the same schema as the
+     * datasets for which placeholders were created when creating the template. </p>
+     * <p>If you are creating a dashboard from a source entity in a different AWS
+     * account, use the ARN of the source template.</p>
      */
     inline void SetSourceEntity(const DashboardSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
     /**
      * <p>Source entity from which the dashboard is created. The souce entity accepts
-     * the ARN of the source template or analysis and also references the replacement
-     * datasets for the placeholders set when creating the template. The replacement
-     * datasets need to follow the same schema as the datasets for which placeholders
-     * were created when creating the template. </p> <p>If you are creating a dashboard
-     * from a source entity in a different AWS account, use the ARN of the source
-     * template.</p>
+     * the Amazon Resource Name (ARN) of the source template or analysis and also
+     * references the replacement datasets for the placeholders set when creating the
+     * template. The replacement datasets need to follow the same schema as the
+     * datasets for which placeholders were created when creating the template. </p>
+     * <p>If you are creating a dashboard from a source entity in a different AWS
+     * account, use the ARN of the source template.</p>
      */
     inline void SetSourceEntity(DashboardSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
     /**
      * <p>Source entity from which the dashboard is created. The souce entity accepts
-     * the ARN of the source template or analysis and also references the replacement
-     * datasets for the placeholders set when creating the template. The replacement
-     * datasets need to follow the same schema as the datasets for which placeholders
-     * were created when creating the template. </p> <p>If you are creating a dashboard
-     * from a source entity in a different AWS account, use the ARN of the source
-     * template.</p>
+     * the Amazon Resource Name (ARN) of the source template or analysis and also
+     * references the replacement datasets for the placeholders set when creating the
+     * template. The replacement datasets need to follow the same schema as the
+     * datasets for which placeholders were created when creating the template. </p>
+     * <p>If you are creating a dashboard from a source entity in a different AWS
+     * account, use the ARN of the source template.</p>
      */
     inline CreateDashboardRequest& WithSourceEntity(const DashboardSourceEntity& value) { SetSourceEntity(value); return *this;}
 
     /**
      * <p>Source entity from which the dashboard is created. The souce entity accepts
-     * the ARN of the source template or analysis and also references the replacement
-     * datasets for the placeholders set when creating the template. The replacement
-     * datasets need to follow the same schema as the datasets for which placeholders
-     * were created when creating the template. </p> <p>If you are creating a dashboard
-     * from a source entity in a different AWS account, use the ARN of the source
-     * template.</p>
+     * the Amazon Resource Name (ARN) of the source template or analysis and also
+     * references the replacement datasets for the placeholders set when creating the
+     * template. The replacement datasets need to follow the same schema as the
+     * datasets for which placeholders were created when creating the template. </p>
+     * <p>If you are creating a dashboard from a source entity in a different AWS
+     * account, use the ARN of the source template.</p>
      */
     inline CreateDashboardRequest& WithSourceEntity(DashboardSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
 
@@ -438,9 +438,7 @@ namespace Model
      * default. </p> </li> <li> <p>VisibilityState for SheetControlsOption - This can
      * be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
      * pane is collapsed by default when set to true. Collapsed by default. </p> </li>
-     * </ul> <p>Shorthand Syntax:</p> <p>
-     * <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
-     * </p>
+     * </ul>
      */
     inline const DashboardPublishOptions& GetDashboardPublishOptions() const{ return m_dashboardPublishOptions; }
 
@@ -456,9 +454,7 @@ namespace Model
      * default. </p> </li> <li> <p>VisibilityState for SheetControlsOption - This can
      * be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
      * pane is collapsed by default when set to true. Collapsed by default. </p> </li>
-     * </ul> <p>Shorthand Syntax:</p> <p>
-     * <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
-     * </p>
+     * </ul>
      */
     inline bool DashboardPublishOptionsHasBeenSet() const { return m_dashboardPublishOptionsHasBeenSet; }
 
@@ -474,9 +470,7 @@ namespace Model
      * default. </p> </li> <li> <p>VisibilityState for SheetControlsOption - This can
      * be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
      * pane is collapsed by default when set to true. Collapsed by default. </p> </li>
-     * </ul> <p>Shorthand Syntax:</p> <p>
-     * <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
-     * </p>
+     * </ul>
      */
     inline void SetDashboardPublishOptions(const DashboardPublishOptions& value) { m_dashboardPublishOptionsHasBeenSet = true; m_dashboardPublishOptions = value; }
 
@@ -492,9 +486,7 @@ namespace Model
      * default. </p> </li> <li> <p>VisibilityState for SheetControlsOption - This can
      * be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
      * pane is collapsed by default when set to true. Collapsed by default. </p> </li>
-     * </ul> <p>Shorthand Syntax:</p> <p>
-     * <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
-     * </p>
+     * </ul>
      */
     inline void SetDashboardPublishOptions(DashboardPublishOptions&& value) { m_dashboardPublishOptionsHasBeenSet = true; m_dashboardPublishOptions = std::move(value); }
 
@@ -510,9 +502,7 @@ namespace Model
      * default. </p> </li> <li> <p>VisibilityState for SheetControlsOption - This can
      * be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
      * pane is collapsed by default when set to true. Collapsed by default. </p> </li>
-     * </ul> <p>Shorthand Syntax:</p> <p>
-     * <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
-     * </p>
+     * </ul>
      */
     inline CreateDashboardRequest& WithDashboardPublishOptions(const DashboardPublishOptions& value) { SetDashboardPublishOptions(value); return *this;}
 
@@ -528,9 +518,7 @@ namespace Model
      * default. </p> </li> <li> <p>VisibilityState for SheetControlsOption - This can
      * be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
      * pane is collapsed by default when set to true. Collapsed by default. </p> </li>
-     * </ul> <p>Shorthand Syntax:</p> <p>
-     * <code>AdHocFilteringDisabled=boolean,ExportToCSVDisabled=boolean,SheetControlsCollapsed=boolean</code>
-     * </p>
+     * </ul>
      */
     inline CreateDashboardRequest& WithDashboardPublishOptions(DashboardPublishOptions&& value) { SetDashboardPublishOptions(std::move(value)); return *this;}
 

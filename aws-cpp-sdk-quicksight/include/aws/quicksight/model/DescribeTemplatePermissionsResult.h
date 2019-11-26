@@ -81,37 +81,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline void SetTemplateArn(const Aws::String& value) { m_templateArn = value; }
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline void SetTemplateArn(Aws::String&& value) { m_templateArn = std::move(value); }
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline void SetTemplateArn(const char* value) { m_templateArn.assign(value); }
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline DescribeTemplatePermissionsResult& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline DescribeTemplatePermissionsResult& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the template.</p>
+     * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline DescribeTemplatePermissionsResult& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
 
@@ -189,17 +189,17 @@ namespace Model
 
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(int value) { m_status = value; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline DescribeTemplatePermissionsResult& WithStatus(int value) { SetStatus(value); return *this;}
 

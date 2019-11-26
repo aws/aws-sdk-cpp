@@ -96,42 +96,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline DataSource& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline DataSource& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the data source. This is unique per AWS Region per AWS account.</p>
+     * <p>The ID of the data source. This ID is unique per AWS Region for each AWS
+     * account.</p>
      */
     inline DataSource& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
 
@@ -215,32 +223,32 @@ namespace Model
 
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline const ResourceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(const ResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(ResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline DataSource& WithStatus(const ResourceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline DataSource& WithStatus(ResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -308,44 +316,44 @@ namespace Model
 
 
     /**
-     * <p>The parameters QuickSight uses to connect to your underlying source. This is
-     * a variant type structure. At most one of the attributes should be non-null for
-     * this structure to be valid.</p>
+     * <p>The parameters that QuickSight uses to connect to your underlying source.
+     * This is a variant type structure. At most one of the attributes should be
+     * non-null for this structure to be valid.</p>
      */
     inline const DataSourceParameters& GetDataSourceParameters() const{ return m_dataSourceParameters; }
 
     /**
-     * <p>The parameters QuickSight uses to connect to your underlying source. This is
-     * a variant type structure. At most one of the attributes should be non-null for
-     * this structure to be valid.</p>
+     * <p>The parameters that QuickSight uses to connect to your underlying source.
+     * This is a variant type structure. At most one of the attributes should be
+     * non-null for this structure to be valid.</p>
      */
     inline bool DataSourceParametersHasBeenSet() const { return m_dataSourceParametersHasBeenSet; }
 
     /**
-     * <p>The parameters QuickSight uses to connect to your underlying source. This is
-     * a variant type structure. At most one of the attributes should be non-null for
-     * this structure to be valid.</p>
+     * <p>The parameters that QuickSight uses to connect to your underlying source.
+     * This is a variant type structure. At most one of the attributes should be
+     * non-null for this structure to be valid.</p>
      */
     inline void SetDataSourceParameters(const DataSourceParameters& value) { m_dataSourceParametersHasBeenSet = true; m_dataSourceParameters = value; }
 
     /**
-     * <p>The parameters QuickSight uses to connect to your underlying source. This is
-     * a variant type structure. At most one of the attributes should be non-null for
-     * this structure to be valid.</p>
+     * <p>The parameters that QuickSight uses to connect to your underlying source.
+     * This is a variant type structure. At most one of the attributes should be
+     * non-null for this structure to be valid.</p>
      */
     inline void SetDataSourceParameters(DataSourceParameters&& value) { m_dataSourceParametersHasBeenSet = true; m_dataSourceParameters = std::move(value); }
 
     /**
-     * <p>The parameters QuickSight uses to connect to your underlying source. This is
-     * a variant type structure. At most one of the attributes should be non-null for
-     * this structure to be valid.</p>
+     * <p>The parameters that QuickSight uses to connect to your underlying source.
+     * This is a variant type structure. At most one of the attributes should be
+     * non-null for this structure to be valid.</p>
      */
     inline DataSource& WithDataSourceParameters(const DataSourceParameters& value) { SetDataSourceParameters(value); return *this;}
 
     /**
-     * <p>The parameters QuickSight uses to connect to your underlying source. This is
-     * a variant type structure. At most one of the attributes should be non-null for
-     * this structure to be valid.</p>
+     * <p>The parameters that QuickSight uses to connect to your underlying source.
+     * This is a variant type structure. At most one of the attributes should be
+     * non-null for this structure to be valid.</p>
      */
     inline DataSource& WithDataSourceParameters(DataSourceParameters&& value) { SetDataSourceParameters(std::move(value)); return *this;}
 
@@ -394,38 +402,38 @@ namespace Model
 
 
     /**
-     * <p>SSL properties that apply when QuickSight connects to your underlying
-     * source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline const SslProperties& GetSslProperties() const{ return m_sslProperties; }
 
     /**
-     * <p>SSL properties that apply when QuickSight connects to your underlying
-     * source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline bool SslPropertiesHasBeenSet() const { return m_sslPropertiesHasBeenSet; }
 
     /**
-     * <p>SSL properties that apply when QuickSight connects to your underlying
-     * source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline void SetSslProperties(const SslProperties& value) { m_sslPropertiesHasBeenSet = true; m_sslProperties = value; }
 
     /**
-     * <p>SSL properties that apply when QuickSight connects to your underlying
-     * source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline void SetSslProperties(SslProperties&& value) { m_sslPropertiesHasBeenSet = true; m_sslProperties = std::move(value); }
 
     /**
-     * <p>SSL properties that apply when QuickSight connects to your underlying
-     * source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline DataSource& WithSslProperties(const SslProperties& value) { SetSslProperties(value); return *this;}
 
     /**
-     * <p>SSL properties that apply when QuickSight connects to your underlying
-     * source.</p>
+     * <p>Secure Socket Layer (SSL) properties that apply when QuickSight connects to
+     * your underlying source.</p>
      */
     inline DataSource& WithSslProperties(SslProperties&& value) { SetSslProperties(std::move(value)); return *this;}
 

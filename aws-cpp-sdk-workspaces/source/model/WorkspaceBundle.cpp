@@ -33,9 +33,11 @@ WorkspaceBundle::WorkspaceBundle() :
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
     m_rootStorageHasBeenSet(false),
     m_userStorageHasBeenSet(false),
-    m_computeTypeHasBeenSet(false)
+    m_computeTypeHasBeenSet(false),
+    m_lastUpdatedTimeHasBeenSet(false)
 {
 }
 
@@ -44,9 +46,11 @@ WorkspaceBundle::WorkspaceBundle(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_ownerHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
     m_rootStorageHasBeenSet(false),
     m_userStorageHasBeenSet(false),
-    m_computeTypeHasBeenSet(false)
+    m_computeTypeHasBeenSet(false),
+    m_lastUpdatedTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -81,6 +85,13 @@ WorkspaceBundle& WorkspaceBundle::operator =(JsonView jsonValue)
     m_descriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ImageId"))
+  {
+    m_imageId = jsonValue.GetString("ImageId");
+
+    m_imageIdHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("RootStorage"))
   {
     m_rootStorage = jsonValue.GetObject("RootStorage");
@@ -100,6 +111,13 @@ WorkspaceBundle& WorkspaceBundle::operator =(JsonView jsonValue)
     m_computeType = jsonValue.GetObject("ComputeType");
 
     m_computeTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("LastUpdatedTime"))
+  {
+    m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
+
+    m_lastUpdatedTimeHasBeenSet = true;
   }
 
   return *this;
@@ -133,6 +151,12 @@ JsonValue WorkspaceBundle::Jsonize() const
 
   }
 
+  if(m_imageIdHasBeenSet)
+  {
+   payload.WithString("ImageId", m_imageId);
+
+  }
+
   if(m_rootStorageHasBeenSet)
   {
    payload.WithObject("RootStorage", m_rootStorage.Jsonize());
@@ -149,6 +173,11 @@ JsonValue WorkspaceBundle::Jsonize() const
   {
    payload.WithObject("ComputeType", m_computeType.Jsonize());
 
+  }
+
+  if(m_lastUpdatedTimeHasBeenSet)
+  {
+   payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
   }
 
   return payload;

@@ -146,32 +146,32 @@ namespace Model
 
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline const ResourceStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(const ResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline void SetStatus(ResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline TemplateVersion& WithStatus(const ResourceStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The http status of the request.</p>
+     * <p>The HTTP status of the request.</p>
      */
     inline TemplateVersion& WithStatus(ResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -275,50 +275,50 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the analysis or template which was used to create this
-     * template.</p>
+     * <p>The Amazon Resource Name (ARN) of the analysis or template which was used to
+     * create this template.</p>
      */
     inline const Aws::String& GetSourceEntityArn() const{ return m_sourceEntityArn; }
 
     /**
-     * <p>The ARN of the analysis or template which was used to create this
-     * template.</p>
+     * <p>The Amazon Resource Name (ARN) of the analysis or template which was used to
+     * create this template.</p>
      */
     inline bool SourceEntityArnHasBeenSet() const { return m_sourceEntityArnHasBeenSet; }
 
     /**
-     * <p>The ARN of the analysis or template which was used to create this
-     * template.</p>
+     * <p>The Amazon Resource Name (ARN) of the analysis or template which was used to
+     * create this template.</p>
      */
     inline void SetSourceEntityArn(const Aws::String& value) { m_sourceEntityArnHasBeenSet = true; m_sourceEntityArn = value; }
 
     /**
-     * <p>The ARN of the analysis or template which was used to create this
-     * template.</p>
+     * <p>The Amazon Resource Name (ARN) of the analysis or template which was used to
+     * create this template.</p>
      */
     inline void SetSourceEntityArn(Aws::String&& value) { m_sourceEntityArnHasBeenSet = true; m_sourceEntityArn = std::move(value); }
 
     /**
-     * <p>The ARN of the analysis or template which was used to create this
-     * template.</p>
+     * <p>The Amazon Resource Name (ARN) of the analysis or template which was used to
+     * create this template.</p>
      */
     inline void SetSourceEntityArn(const char* value) { m_sourceEntityArnHasBeenSet = true; m_sourceEntityArn.assign(value); }
 
     /**
-     * <p>The ARN of the analysis or template which was used to create this
-     * template.</p>
+     * <p>The Amazon Resource Name (ARN) of the analysis or template which was used to
+     * create this template.</p>
      */
     inline TemplateVersion& WithSourceEntityArn(const Aws::String& value) { SetSourceEntityArn(value); return *this;}
 
     /**
-     * <p>The ARN of the analysis or template which was used to create this
-     * template.</p>
+     * <p>The Amazon Resource Name (ARN) of the analysis or template which was used to
+     * create this template.</p>
      */
     inline TemplateVersion& WithSourceEntityArn(Aws::String&& value) { SetSourceEntityArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the analysis or template which was used to create this
-     * template.</p>
+     * <p>The Amazon Resource Name (ARN) of the analysis or template which was used to
+     * create this template.</p>
      */
     inline TemplateVersion& WithSourceEntityArn(const char* value) { SetSourceEntityArn(value); return *this;}
 

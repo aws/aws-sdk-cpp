@@ -1,0 +1,119 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPI_EXPORTS.h>
+#include <aws/resourcegroupstaggingapi/ResourceGroupsTaggingAPIRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace ResourceGroupsTaggingAPI
+{
+namespace Model
+{
+
+  /**
+   */
+  class AWS_RESOURCEGROUPSTAGGINGAPI_API StartReportCreationRequest : public ResourceGroupsTaggingAPIRequest
+  {
+  public:
+    StartReportCreationRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "StartReportCreation"; }
+
+    Aws::String SerializePayload() const override;
+
+    Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>The name of the Amazon S3 bucket where the report will be stored; for
+     * example:</p> <p> <code>awsexamplebucket</code> </p> <p>For more information on
+     * S3 bucket requirements, including an example bucket policy, see the example S3
+     * bucket policy on this page.</p>
+     */
+    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket where the report will be stored; for
+     * example:</p> <p> <code>awsexamplebucket</code> </p> <p>For more information on
+     * S3 bucket requirements, including an example bucket policy, see the example S3
+     * bucket policy on this page.</p>
+     */
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket where the report will be stored; for
+     * example:</p> <p> <code>awsexamplebucket</code> </p> <p>For more information on
+     * S3 bucket requirements, including an example bucket policy, see the example S3
+     * bucket policy on this page.</p>
+     */
+    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket where the report will be stored; for
+     * example:</p> <p> <code>awsexamplebucket</code> </p> <p>For more information on
+     * S3 bucket requirements, including an example bucket policy, see the example S3
+     * bucket policy on this page.</p>
+     */
+    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
+
+    /**
+     * <p>The name of the Amazon S3 bucket where the report will be stored; for
+     * example:</p> <p> <code>awsexamplebucket</code> </p> <p>For more information on
+     * S3 bucket requirements, including an example bucket policy, see the example S3
+     * bucket policy on this page.</p>
+     */
+    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
+
+    /**
+     * <p>The name of the Amazon S3 bucket where the report will be stored; for
+     * example:</p> <p> <code>awsexamplebucket</code> </p> <p>For more information on
+     * S3 bucket requirements, including an example bucket policy, see the example S3
+     * bucket policy on this page.</p>
+     */
+    inline StartReportCreationRequest& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
+
+    /**
+     * <p>The name of the Amazon S3 bucket where the report will be stored; for
+     * example:</p> <p> <code>awsexamplebucket</code> </p> <p>For more information on
+     * S3 bucket requirements, including an example bucket policy, see the example S3
+     * bucket policy on this page.</p>
+     */
+    inline StartReportCreationRequest& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Amazon S3 bucket where the report will be stored; for
+     * example:</p> <p> <code>awsexamplebucket</code> </p> <p>For more information on
+     * S3 bucket requirements, including an example bucket policy, see the example S3
+     * bucket policy on this page.</p>
+     */
+    inline StartReportCreationRequest& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+
+  private:
+
+    Aws::String m_s3Bucket;
+    bool m_s3BucketHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace ResourceGroupsTaggingAPI
+} // namespace Aws

@@ -34,6 +34,7 @@ static const int A_W_S_ORGANIZATIONS_NOT_IN_USE_HASH = HashingUtils::HashString(
 static const int DUPLICATE_POLICY_ATTACHMENT_HASH = HashingUtils::HashString("DuplicatePolicyAttachmentException");
 static const int FINALIZING_ORGANIZATION_HASH = HashingUtils::HashString("FinalizingOrganizationException");
 static const int DESTINATION_PARENT_NOT_FOUND_HASH = HashingUtils::HashString("DestinationParentNotFoundException");
+static const int POLICY_CHANGES_IN_PROGRESS_HASH = HashingUtils::HashString("PolicyChangesInProgressException");
 static const int MASTER_CANNOT_LEAVE_ORGANIZATION_HASH = HashingUtils::HashString("MasterCannotLeaveOrganizationException");
 static const int DUPLICATE_ACCOUNT_HASH = HashingUtils::HashString("DuplicateAccountException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
@@ -58,6 +59,7 @@ static const int INVALID_INPUT_HASH = HashingUtils::HashString("InvalidInputExce
 static const int ORGANIZATION_NOT_EMPTY_HASH = HashingUtils::HashString("OrganizationNotEmptyException");
 static const int POLICY_NOT_FOUND_HASH = HashingUtils::HashString("PolicyNotFoundException");
 static const int CREATE_ACCOUNT_STATUS_NOT_FOUND_HASH = HashingUtils::HashString("CreateAccountStatusNotFoundException");
+static const int EFFECTIVE_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("EffectivePolicyNotFoundException");
 static const int SOURCE_PARENT_NOT_FOUND_HASH = HashingUtils::HashString("SourceParentNotFoundException");
 static const int ACCESS_DENIED_FOR_DEPENDENCY_HASH = HashingUtils::HashString("AccessDeniedForDependencyException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
@@ -96,6 +98,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DESTINATION_PARENT_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::DESTINATION_PARENT_NOT_FOUND), false);
+  }
+  else if (hashCode == POLICY_CHANGES_IN_PROGRESS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::POLICY_CHANGES_IN_PROGRESS), false);
   }
   else if (hashCode == MASTER_CANNOT_LEAVE_ORGANIZATION_HASH)
   {
@@ -192,6 +198,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == CREATE_ACCOUNT_STATUS_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::CREATE_ACCOUNT_STATUS_NOT_FOUND), false);
+  }
+  else if (hashCode == EFFECTIVE_POLICY_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OrganizationsErrors::EFFECTIVE_POLICY_NOT_FOUND), false);
   }
   else if (hashCode == SOURCE_PARENT_NOT_FOUND_HASH)
   {

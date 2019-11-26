@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Ad hoc filtering option.</p><p><h3>See Also:</h3>   <a
+   * <p>Ad hoc (one-time) filtering option.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/AdHocFilteringOption">AWS
    * API Reference</a></p>
    */

@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains directory limit information for a region.</p><p><h3>See Also:</h3>  
+   * <p>Contains directory limit information for a Region.</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DirectoryLimits">AWS
    * API Reference</a></p>
@@ -47,43 +47,43 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of cloud directories allowed in the region.</p>
+     * <p>The maximum number of cloud directories allowed in the Region.</p>
      */
     inline int GetCloudOnlyDirectoriesLimit() const{ return m_cloudOnlyDirectoriesLimit; }
 
     /**
-     * <p>The maximum number of cloud directories allowed in the region.</p>
+     * <p>The maximum number of cloud directories allowed in the Region.</p>
      */
     inline bool CloudOnlyDirectoriesLimitHasBeenSet() const { return m_cloudOnlyDirectoriesLimitHasBeenSet; }
 
     /**
-     * <p>The maximum number of cloud directories allowed in the region.</p>
+     * <p>The maximum number of cloud directories allowed in the Region.</p>
      */
     inline void SetCloudOnlyDirectoriesLimit(int value) { m_cloudOnlyDirectoriesLimitHasBeenSet = true; m_cloudOnlyDirectoriesLimit = value; }
 
     /**
-     * <p>The maximum number of cloud directories allowed in the region.</p>
+     * <p>The maximum number of cloud directories allowed in the Region.</p>
      */
     inline DirectoryLimits& WithCloudOnlyDirectoriesLimit(int value) { SetCloudOnlyDirectoriesLimit(value); return *this;}
 
 
     /**
-     * <p>The current number of cloud directories in the region.</p>
+     * <p>The current number of cloud directories in the Region.</p>
      */
     inline int GetCloudOnlyDirectoriesCurrentCount() const{ return m_cloudOnlyDirectoriesCurrentCount; }
 
     /**
-     * <p>The current number of cloud directories in the region.</p>
+     * <p>The current number of cloud directories in the Region.</p>
      */
     inline bool CloudOnlyDirectoriesCurrentCountHasBeenSet() const { return m_cloudOnlyDirectoriesCurrentCountHasBeenSet; }
 
     /**
-     * <p>The current number of cloud directories in the region.</p>
+     * <p>The current number of cloud directories in the Region.</p>
      */
     inline void SetCloudOnlyDirectoriesCurrentCount(int value) { m_cloudOnlyDirectoriesCurrentCountHasBeenSet = true; m_cloudOnlyDirectoriesCurrentCount = value; }
 
     /**
-     * <p>The current number of cloud directories in the region.</p>
+     * <p>The current number of cloud directories in the Region.</p>
      */
     inline DirectoryLimits& WithCloudOnlyDirectoriesCurrentCount(int value) { SetCloudOnlyDirectoriesCurrentCount(value); return *this;}
 
@@ -181,43 +181,43 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of connected directories allowed in the region.</p>
+     * <p>The maximum number of connected directories allowed in the Region.</p>
      */
     inline int GetConnectedDirectoriesLimit() const{ return m_connectedDirectoriesLimit; }
 
     /**
-     * <p>The maximum number of connected directories allowed in the region.</p>
+     * <p>The maximum number of connected directories allowed in the Region.</p>
      */
     inline bool ConnectedDirectoriesLimitHasBeenSet() const { return m_connectedDirectoriesLimitHasBeenSet; }
 
     /**
-     * <p>The maximum number of connected directories allowed in the region.</p>
+     * <p>The maximum number of connected directories allowed in the Region.</p>
      */
     inline void SetConnectedDirectoriesLimit(int value) { m_connectedDirectoriesLimitHasBeenSet = true; m_connectedDirectoriesLimit = value; }
 
     /**
-     * <p>The maximum number of connected directories allowed in the region.</p>
+     * <p>The maximum number of connected directories allowed in the Region.</p>
      */
     inline DirectoryLimits& WithConnectedDirectoriesLimit(int value) { SetConnectedDirectoriesLimit(value); return *this;}
 
 
     /**
-     * <p>The current number of connected directories in the region.</p>
+     * <p>The current number of connected directories in the Region.</p>
      */
     inline int GetConnectedDirectoriesCurrentCount() const{ return m_connectedDirectoriesCurrentCount; }
 
     /**
-     * <p>The current number of connected directories in the region.</p>
+     * <p>The current number of connected directories in the Region.</p>
      */
     inline bool ConnectedDirectoriesCurrentCountHasBeenSet() const { return m_connectedDirectoriesCurrentCountHasBeenSet; }
 
     /**
-     * <p>The current number of connected directories in the region.</p>
+     * <p>The current number of connected directories in the Region.</p>
      */
     inline void SetConnectedDirectoriesCurrentCount(int value) { m_connectedDirectoriesCurrentCountHasBeenSet = true; m_connectedDirectoriesCurrentCount = value; }
 
     /**
-     * <p>The current number of connected directories in the region.</p>
+     * <p>The current number of connected directories in the Region.</p>
      */
     inline DirectoryLimits& WithConnectedDirectoriesCurrentCount(int value) { SetConnectedDirectoriesCurrentCount(value); return *this;}
 

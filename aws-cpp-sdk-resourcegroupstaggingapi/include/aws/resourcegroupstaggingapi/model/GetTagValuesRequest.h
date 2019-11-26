@@ -46,106 +46,114 @@ namespace Model
 
     /**
      * <p>A string that indicates that additional data is available. Leave this value
-     * empty for your initial request. If the response includes a PaginationToken, use
-     * that string for this value to request an additional page of data.</p>
+     * empty for your initial request. If the response includes a
+     * <code>PaginationToken</code>, use that string for this value to request an
+     * additional page of data.</p>
      */
     inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
 
     /**
      * <p>A string that indicates that additional data is available. Leave this value
-     * empty for your initial request. If the response includes a PaginationToken, use
-     * that string for this value to request an additional page of data.</p>
+     * empty for your initial request. If the response includes a
+     * <code>PaginationToken</code>, use that string for this value to request an
+     * additional page of data.</p>
      */
     inline bool PaginationTokenHasBeenSet() const { return m_paginationTokenHasBeenSet; }
 
     /**
      * <p>A string that indicates that additional data is available. Leave this value
-     * empty for your initial request. If the response includes a PaginationToken, use
-     * that string for this value to request an additional page of data.</p>
+     * empty for your initial request. If the response includes a
+     * <code>PaginationToken</code>, use that string for this value to request an
+     * additional page of data.</p>
      */
     inline void SetPaginationToken(const Aws::String& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
 
     /**
      * <p>A string that indicates that additional data is available. Leave this value
-     * empty for your initial request. If the response includes a PaginationToken, use
-     * that string for this value to request an additional page of data.</p>
+     * empty for your initial request. If the response includes a
+     * <code>PaginationToken</code>, use that string for this value to request an
+     * additional page of data.</p>
      */
     inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::move(value); }
 
     /**
      * <p>A string that indicates that additional data is available. Leave this value
-     * empty for your initial request. If the response includes a PaginationToken, use
-     * that string for this value to request an additional page of data.</p>
+     * empty for your initial request. If the response includes a
+     * <code>PaginationToken</code>, use that string for this value to request an
+     * additional page of data.</p>
      */
     inline void SetPaginationToken(const char* value) { m_paginationTokenHasBeenSet = true; m_paginationToken.assign(value); }
 
     /**
      * <p>A string that indicates that additional data is available. Leave this value
-     * empty for your initial request. If the response includes a PaginationToken, use
-     * that string for this value to request an additional page of data.</p>
+     * empty for your initial request. If the response includes a
+     * <code>PaginationToken</code>, use that string for this value to request an
+     * additional page of data.</p>
      */
     inline GetTagValuesRequest& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
 
     /**
      * <p>A string that indicates that additional data is available. Leave this value
-     * empty for your initial request. If the response includes a PaginationToken, use
-     * that string for this value to request an additional page of data.</p>
+     * empty for your initial request. If the response includes a
+     * <code>PaginationToken</code>, use that string for this value to request an
+     * additional page of data.</p>
      */
     inline GetTagValuesRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
 
     /**
      * <p>A string that indicates that additional data is available. Leave this value
-     * empty for your initial request. If the response includes a PaginationToken, use
-     * that string for this value to request an additional page of data.</p>
+     * empty for your initial request. If the response includes a
+     * <code>PaginationToken</code>, use that string for this value to request an
+     * additional page of data.</p>
      */
     inline GetTagValuesRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
 
 
     /**
      * <p>The key for which you want to list all existing values in the specified
-     * region for the AWS account.</p>
+     * Region for the AWS account.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
      * <p>The key for which you want to list all existing values in the specified
-     * region for the AWS account.</p>
+     * Region for the AWS account.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The key for which you want to list all existing values in the specified
-     * region for the AWS account.</p>
+     * Region for the AWS account.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
      * <p>The key for which you want to list all existing values in the specified
-     * region for the AWS account.</p>
+     * Region for the AWS account.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
      * <p>The key for which you want to list all existing values in the specified
-     * region for the AWS account.</p>
+     * Region for the AWS account.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
      * <p>The key for which you want to list all existing values in the specified
-     * region for the AWS account.</p>
+     * Region for the AWS account.</p>
      */
     inline GetTagValuesRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
      * <p>The key for which you want to list all existing values in the specified
-     * region for the AWS account.</p>
+     * Region for the AWS account.</p>
      */
     inline GetTagValuesRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
      * <p>The key for which you want to list all existing values in the specified
-     * region for the AWS account.</p>
+     * Region for the AWS account.</p>
      */
     inline GetTagValuesRequest& WithKey(const char* value) { SetKey(value); return *this;}
 

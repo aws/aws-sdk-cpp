@@ -26,7 +26,8 @@ namespace Model
   enum class PolicyType
   {
     NOT_SET,
-    SERVICE_CONTROL_POLICY
+    SERVICE_CONTROL_POLICY,
+    TAG_POLICY
   };
 
 namespace PolicyTypeMapper

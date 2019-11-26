@@ -50,49 +50,49 @@ namespace Model
 
 
     /**
-     * <p>One part of a key-value pair that make up a tag. A key is a general label
+     * <p>One part of a key-value pair that makes up a tag. A key is a general label
      * that acts like a category for more specific tag values.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>One part of a key-value pair that make up a tag. A key is a general label
+     * <p>One part of a key-value pair that makes up a tag. A key is a general label
      * that acts like a category for more specific tag values.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>One part of a key-value pair that make up a tag. A key is a general label
+     * <p>One part of a key-value pair that makes up a tag. A key is a general label
      * that acts like a category for more specific tag values.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>One part of a key-value pair that make up a tag. A key is a general label
+     * <p>One part of a key-value pair that makes up a tag. A key is a general label
      * that acts like a category for more specific tag values.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>One part of a key-value pair that make up a tag. A key is a general label
+     * <p>One part of a key-value pair that makes up a tag. A key is a general label
      * that acts like a category for more specific tag values.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>One part of a key-value pair that make up a tag. A key is a general label
+     * <p>One part of a key-value pair that makes up a tag. A key is a general label
      * that acts like a category for more specific tag values.</p>
      */
     inline TagFilter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>One part of a key-value pair that make up a tag. A key is a general label
+     * <p>One part of a key-value pair that makes up a tag. A key is a general label
      * that acts like a category for more specific tag values.</p>
      */
     inline TagFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>One part of a key-value pair that make up a tag. A key is a general label
+     * <p>One part of a key-value pair that makes up a tag. A key is a general label
      * that acts like a category for more specific tag values.</p>
      */
     inline TagFilter& WithKey(const char* value) { SetKey(value); return *this;}

@@ -494,49 +494,49 @@ namespace Model
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline const Aws::Vector<ColumnGroup>& GetColumnGroups() const{ return m_columnGroups; }
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline bool ColumnGroupsHasBeenSet() const { return m_columnGroupsHasBeenSet; }
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline void SetColumnGroups(const Aws::Vector<ColumnGroup>& value) { m_columnGroupsHasBeenSet = true; m_columnGroups = value; }
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline void SetColumnGroups(Aws::Vector<ColumnGroup>&& value) { m_columnGroupsHasBeenSet = true; m_columnGroups = std::move(value); }
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline DataSet& WithColumnGroups(const Aws::Vector<ColumnGroup>& value) { SetColumnGroups(value); return *this;}
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline DataSet& WithColumnGroups(Aws::Vector<ColumnGroup>&& value) { SetColumnGroups(std::move(value)); return *this;}
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline DataSet& AddColumnGroups(const ColumnGroup& value) { m_columnGroupsHasBeenSet = true; m_columnGroups.push_back(value); return *this; }
 
     /**
      * <p>Groupings of columns that work together in certain QuickSight features.
-     * Currently only geospatial hierarchy is supported.</p>
+     * Currently, only geospatial hierarchy is supported.</p>
      */
     inline DataSet& AddColumnGroups(ColumnGroup&& value) { m_columnGroupsHasBeenSet = true; m_columnGroups.push_back(std::move(value)); return *this; }
 

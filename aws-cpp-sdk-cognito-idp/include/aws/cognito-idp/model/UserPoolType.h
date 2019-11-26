@@ -29,6 +29,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/cognito-idp/model/AdminCreateUserConfigType.h>
 #include <aws/cognito-idp/model/UserPoolAddOnsType.h>
+#include <aws/cognito-idp/model/AccountRecoverySettingType.h>
 #include <aws/cognito-idp/model/SchemaAttributeType.h>
 #include <aws/cognito-idp/model/VerifiedAttributeType.h>
 #include <aws/cognito-idp/model/AliasAttributeType.h>
@@ -1258,6 +1259,73 @@ namespace Model
      */
     inline UserPoolType& WithArn(const char* value) { SetArn(value); return *this;}
 
+
+    /**
+     * <p>Use this setting to define which verified available method a user can use to
+     * recover their password when they call <code>ForgotPassword</code>. It allows you
+     * to define a preferred method when a user has more than one method available.
+     * With this setting, SMS does not qualify for a valid password recovery mechanism
+     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
+     * uses the legacy behavior to determine the recovery method where SMS is preferred
+     * over email.</p>
+     */
+    inline const AccountRecoverySettingType& GetAccountRecoverySetting() const{ return m_accountRecoverySetting; }
+
+    /**
+     * <p>Use this setting to define which verified available method a user can use to
+     * recover their password when they call <code>ForgotPassword</code>. It allows you
+     * to define a preferred method when a user has more than one method available.
+     * With this setting, SMS does not qualify for a valid password recovery mechanism
+     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
+     * uses the legacy behavior to determine the recovery method where SMS is preferred
+     * over email.</p>
+     */
+    inline bool AccountRecoverySettingHasBeenSet() const { return m_accountRecoverySettingHasBeenSet; }
+
+    /**
+     * <p>Use this setting to define which verified available method a user can use to
+     * recover their password when they call <code>ForgotPassword</code>. It allows you
+     * to define a preferred method when a user has more than one method available.
+     * With this setting, SMS does not qualify for a valid password recovery mechanism
+     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
+     * uses the legacy behavior to determine the recovery method where SMS is preferred
+     * over email.</p>
+     */
+    inline void SetAccountRecoverySetting(const AccountRecoverySettingType& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = value; }
+
+    /**
+     * <p>Use this setting to define which verified available method a user can use to
+     * recover their password when they call <code>ForgotPassword</code>. It allows you
+     * to define a preferred method when a user has more than one method available.
+     * With this setting, SMS does not qualify for a valid password recovery mechanism
+     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
+     * uses the legacy behavior to determine the recovery method where SMS is preferred
+     * over email.</p>
+     */
+    inline void SetAccountRecoverySetting(AccountRecoverySettingType&& value) { m_accountRecoverySettingHasBeenSet = true; m_accountRecoverySetting = std::move(value); }
+
+    /**
+     * <p>Use this setting to define which verified available method a user can use to
+     * recover their password when they call <code>ForgotPassword</code>. It allows you
+     * to define a preferred method when a user has more than one method available.
+     * With this setting, SMS does not qualify for a valid password recovery mechanism
+     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
+     * uses the legacy behavior to determine the recovery method where SMS is preferred
+     * over email.</p>
+     */
+    inline UserPoolType& WithAccountRecoverySetting(const AccountRecoverySettingType& value) { SetAccountRecoverySetting(value); return *this;}
+
+    /**
+     * <p>Use this setting to define which verified available method a user can use to
+     * recover their password when they call <code>ForgotPassword</code>. It allows you
+     * to define a preferred method when a user has more than one method available.
+     * With this setting, SMS does not qualify for a valid password recovery mechanism
+     * if the user also has SMS MFA enabled. In the absence of this setting, Cognito
+     * uses the legacy behavior to determine the recovery method where SMS is preferred
+     * over email.</p>
+     */
+    inline UserPoolType& WithAccountRecoverySetting(AccountRecoverySettingType&& value) { SetAccountRecoverySetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -1346,6 +1414,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    AccountRecoverySettingType m_accountRecoverySetting;
+    bool m_accountRecoverySettingHasBeenSet;
   };
 
 } // namespace Model

@@ -34,6 +34,7 @@ namespace Aws
         static const int INVALID_SYNTAX_ORGANIZATION_ARN_HASH = HashingUtils::HashString("INVALID_SYNTAX_ORGANIZATION_ARN");
         static const int INVALID_SYNTAX_POLICY_ID_HASH = HashingUtils::HashString("INVALID_SYNTAX_POLICY_ID");
         static const int INVALID_ENUM_HASH = HashingUtils::HashString("INVALID_ENUM");
+        static const int INVALID_ENUM_POLICY_TYPE_HASH = HashingUtils::HashString("INVALID_ENUM_POLICY_TYPE");
         static const int INVALID_LIST_MEMBER_HASH = HashingUtils::HashString("INVALID_LIST_MEMBER");
         static const int MAX_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("MAX_LENGTH_EXCEEDED");
         static const int MAX_VALUE_EXCEEDED_HASH = HashingUtils::HashString("MAX_VALUE_EXCEEDED");
@@ -50,6 +51,7 @@ namespace Aws
         static const int UNRECOGNIZED_SERVICE_PRINCIPAL_HASH = HashingUtils::HashString("UNRECOGNIZED_SERVICE_PRINCIPAL");
         static const int INVALID_ROLE_NAME_HASH = HashingUtils::HashString("INVALID_ROLE_NAME");
         static const int INVALID_SYSTEM_TAGS_PARAMETER_HASH = HashingUtils::HashString("INVALID_SYSTEM_TAGS_PARAMETER");
+        static const int TARGET_NOT_SUPPORTED_HASH = HashingUtils::HashString("TARGET_NOT_SUPPORTED");
 
 
         InvalidInputExceptionReason GetInvalidInputExceptionReasonForName(const Aws::String& name)
@@ -70,6 +72,10 @@ namespace Aws
           else if (hashCode == INVALID_ENUM_HASH)
           {
             return InvalidInputExceptionReason::INVALID_ENUM;
+          }
+          else if (hashCode == INVALID_ENUM_POLICY_TYPE_HASH)
+          {
+            return InvalidInputExceptionReason::INVALID_ENUM_POLICY_TYPE;
           }
           else if (hashCode == INVALID_LIST_MEMBER_HASH)
           {
@@ -135,6 +141,10 @@ namespace Aws
           {
             return InvalidInputExceptionReason::INVALID_SYSTEM_TAGS_PARAMETER;
           }
+          else if (hashCode == TARGET_NOT_SUPPORTED_HASH)
+          {
+            return InvalidInputExceptionReason::TARGET_NOT_SUPPORTED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -157,6 +167,8 @@ namespace Aws
             return "INVALID_SYNTAX_POLICY_ID";
           case InvalidInputExceptionReason::INVALID_ENUM:
             return "INVALID_ENUM";
+          case InvalidInputExceptionReason::INVALID_ENUM_POLICY_TYPE:
+            return "INVALID_ENUM_POLICY_TYPE";
           case InvalidInputExceptionReason::INVALID_LIST_MEMBER:
             return "INVALID_LIST_MEMBER";
           case InvalidInputExceptionReason::MAX_LENGTH_EXCEEDED:
@@ -189,6 +201,8 @@ namespace Aws
             return "INVALID_ROLE_NAME";
           case InvalidInputExceptionReason::INVALID_SYSTEM_TAGS_PARAMETER:
             return "INVALID_SYSTEM_TAGS_PARAMETER";
+          case InvalidInputExceptionReason::TARGET_NOT_SUPPORTED:
+            return "TARGET_NOT_SUPPORTED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

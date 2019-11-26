@@ -62,6 +62,12 @@ PutPlaybackConfigurationResult& PutPlaybackConfigurationResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("LivePreRollConfiguration"))
+  {
+    m_livePreRollConfiguration = jsonValue.GetObject("LivePreRollConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");

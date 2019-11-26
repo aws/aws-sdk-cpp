@@ -127,115 +127,83 @@ namespace Model
 
 
     /**
-     * <p>A list of resource permissions to be granted on the template. The following
-     * example shows the shorthand syntax: </p> <p> <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be granted on the template. </p>
      */
     inline const Aws::Vector<ResourcePermission>& GetGrantPermissions() const{ return m_grantPermissions; }
 
     /**
-     * <p>A list of resource permissions to be granted on the template. The following
-     * example shows the shorthand syntax: </p> <p> <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be granted on the template. </p>
      */
     inline bool GrantPermissionsHasBeenSet() const { return m_grantPermissionsHasBeenSet; }
 
     /**
-     * <p>A list of resource permissions to be granted on the template. The following
-     * example shows the shorthand syntax: </p> <p> <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be granted on the template. </p>
      */
     inline void SetGrantPermissions(const Aws::Vector<ResourcePermission>& value) { m_grantPermissionsHasBeenSet = true; m_grantPermissions = value; }
 
     /**
-     * <p>A list of resource permissions to be granted on the template. The following
-     * example shows the shorthand syntax: </p> <p> <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be granted on the template. </p>
      */
     inline void SetGrantPermissions(Aws::Vector<ResourcePermission>&& value) { m_grantPermissionsHasBeenSet = true; m_grantPermissions = std::move(value); }
 
     /**
-     * <p>A list of resource permissions to be granted on the template. The following
-     * example shows the shorthand syntax: </p> <p> <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be granted on the template. </p>
      */
     inline UpdateTemplatePermissionsRequest& WithGrantPermissions(const Aws::Vector<ResourcePermission>& value) { SetGrantPermissions(value); return *this;}
 
     /**
-     * <p>A list of resource permissions to be granted on the template. The following
-     * example shows the shorthand syntax: </p> <p> <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be granted on the template. </p>
      */
     inline UpdateTemplatePermissionsRequest& WithGrantPermissions(Aws::Vector<ResourcePermission>&& value) { SetGrantPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of resource permissions to be granted on the template. The following
-     * example shows the shorthand syntax: </p> <p> <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be granted on the template. </p>
      */
     inline UpdateTemplatePermissionsRequest& AddGrantPermissions(const ResourcePermission& value) { m_grantPermissionsHasBeenSet = true; m_grantPermissions.push_back(value); return *this; }
 
     /**
-     * <p>A list of resource permissions to be granted on the template. The following
-     * example shows the shorthand syntax: </p> <p> <code>Shorthand Syntax:
-     * Principal=string,Actions=string,string ... </code> </p>
+     * <p>A list of resource permissions to be granted on the template. </p>
      */
     inline UpdateTemplatePermissionsRequest& AddGrantPermissions(ResourcePermission&& value) { m_grantPermissionsHasBeenSet = true; m_grantPermissions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of resource permissions to be revoked from the template. Shorthand
-     * syntax: <code>Shorthand Syntax: Principal=string,Actions=string,string ...
-     * </code> </p>
+     * <p>A list of resource permissions to be revoked from the template. </p>
      */
     inline const Aws::Vector<ResourcePermission>& GetRevokePermissions() const{ return m_revokePermissions; }
 
     /**
-     * <p>A list of resource permissions to be revoked from the template. Shorthand
-     * syntax: <code>Shorthand Syntax: Principal=string,Actions=string,string ...
-     * </code> </p>
+     * <p>A list of resource permissions to be revoked from the template. </p>
      */
     inline bool RevokePermissionsHasBeenSet() const { return m_revokePermissionsHasBeenSet; }
 
     /**
-     * <p>A list of resource permissions to be revoked from the template. Shorthand
-     * syntax: <code>Shorthand Syntax: Principal=string,Actions=string,string ...
-     * </code> </p>
+     * <p>A list of resource permissions to be revoked from the template. </p>
      */
     inline void SetRevokePermissions(const Aws::Vector<ResourcePermission>& value) { m_revokePermissionsHasBeenSet = true; m_revokePermissions = value; }
 
     /**
-     * <p>A list of resource permissions to be revoked from the template. Shorthand
-     * syntax: <code>Shorthand Syntax: Principal=string,Actions=string,string ...
-     * </code> </p>
+     * <p>A list of resource permissions to be revoked from the template. </p>
      */
     inline void SetRevokePermissions(Aws::Vector<ResourcePermission>&& value) { m_revokePermissionsHasBeenSet = true; m_revokePermissions = std::move(value); }
 
     /**
-     * <p>A list of resource permissions to be revoked from the template. Shorthand
-     * syntax: <code>Shorthand Syntax: Principal=string,Actions=string,string ...
-     * </code> </p>
+     * <p>A list of resource permissions to be revoked from the template. </p>
      */
     inline UpdateTemplatePermissionsRequest& WithRevokePermissions(const Aws::Vector<ResourcePermission>& value) { SetRevokePermissions(value); return *this;}
 
     /**
-     * <p>A list of resource permissions to be revoked from the template. Shorthand
-     * syntax: <code>Shorthand Syntax: Principal=string,Actions=string,string ...
-     * </code> </p>
+     * <p>A list of resource permissions to be revoked from the template. </p>
      */
     inline UpdateTemplatePermissionsRequest& WithRevokePermissions(Aws::Vector<ResourcePermission>&& value) { SetRevokePermissions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of resource permissions to be revoked from the template. Shorthand
-     * syntax: <code>Shorthand Syntax: Principal=string,Actions=string,string ...
-     * </code> </p>
+     * <p>A list of resource permissions to be revoked from the template. </p>
      */
     inline UpdateTemplatePermissionsRequest& AddRevokePermissions(const ResourcePermission& value) { m_revokePermissionsHasBeenSet = true; m_revokePermissions.push_back(value); return *this; }
 
     /**
-     * <p>A list of resource permissions to be revoked from the template. Shorthand
-     * syntax: <code>Shorthand Syntax: Principal=string,Actions=string,string ...
-     * </code> </p>
+     * <p>A list of resource permissions to be revoked from the template. </p>
      */
     inline UpdateTemplatePermissionsRequest& AddRevokePermissions(ResourcePermission&& value) { m_revokePermissionsHasBeenSet = true; m_revokePermissions.push_back(std::move(value)); return *this; }
 

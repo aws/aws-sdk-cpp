@@ -30,12 +30,16 @@ namespace Model
 
 SqlParameter::SqlParameter() : 
     m_nameHasBeenSet(false),
+    m_typeHint(TypeHint::NOT_SET),
+    m_typeHintHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
 }
 
 SqlParameter::SqlParameter(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
+    m_typeHint(TypeHint::NOT_SET),
+    m_typeHintHasBeenSet(false),
     m_valueHasBeenSet(false)
 {
   *this = jsonValue;
@@ -48,6 +52,13 @@ SqlParameter& SqlParameter::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("typeHint"))
+  {
+    m_typeHint = TypeHintMapper::GetTypeHintForName(jsonValue.GetString("typeHint"));
+
+    m_typeHintHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("value"))
@@ -68,6 +79,11 @@ JsonValue SqlParameter::Jsonize() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_typeHintHasBeenSet)
+  {
+   payload.WithString("typeHint", TypeHintMapper::GetNameForTypeHint(m_typeHint));
   }
 
   if(m_valueHasBeenSet)

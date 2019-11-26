@@ -318,28 +318,28 @@ namespace Model
 
 
     /**
-     * <p>A boolean value that indicates whether the specified policy is an AWS managed
+     * <p>A Boolean value that indicates whether the specified policy is an AWS managed
      * policy. If true, then you can attach the policy to roots, OUs, or accounts, but
      * you cannot edit it.</p>
      */
     inline bool GetAwsManaged() const{ return m_awsManaged; }
 
     /**
-     * <p>A boolean value that indicates whether the specified policy is an AWS managed
+     * <p>A Boolean value that indicates whether the specified policy is an AWS managed
      * policy. If true, then you can attach the policy to roots, OUs, or accounts, but
      * you cannot edit it.</p>
      */
     inline bool AwsManagedHasBeenSet() const { return m_awsManagedHasBeenSet; }
 
     /**
-     * <p>A boolean value that indicates whether the specified policy is an AWS managed
+     * <p>A Boolean value that indicates whether the specified policy is an AWS managed
      * policy. If true, then you can attach the policy to roots, OUs, or accounts, but
      * you cannot edit it.</p>
      */
     inline void SetAwsManaged(bool value) { m_awsManagedHasBeenSet = true; m_awsManaged = value; }
 
     /**
-     * <p>A boolean value that indicates whether the specified policy is an AWS managed
+     * <p>A Boolean value that indicates whether the specified policy is an AWS managed
      * policy. If true, then you can attach the policy to roots, OUs, or accounts, but
      * you cannot edit it.</p>
      */
