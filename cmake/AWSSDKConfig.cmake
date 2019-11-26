@@ -278,15 +278,26 @@ macro(AWSSDK_LIB_DEPS HIGH_LEVEL_LIB_NAME OUTPUT_VAR)
 endmacro(AWSSDK_LIB_DEPS)
 
 if (AWSSDK_FIND_COMPONENTS)
-    message(STATUS "Components specified for AWSSDK: ${AWSSDK_FIND_COMPONENTS}")
+    #AWSSDK_LINK_LIBRARIES includes all the libraries (including dependencies) used by SDK and needed by customer application when doing linking.
+    #It only comes with COMPONENTS when doing find_package in customer application. e.g. find_package(AWSSDK REQUIRED COMPONENT s3 ec2)
+    #While SDK will resolve all the dependencies for customer application by doing find_package when COMPONENTS are specified,
+    #there is no need to add those dependencies into AWSSDK_LINK_LIBRARIES. Dependencies in AWSSDK_LINK_LIBRARIES will also become a problem when
+    #customer specified CMAKE_PREFIX_PATH and set it with non-default CMake search directories for dependencies when building SDK. In this case, when building customer
+    #application, target_link_libraries(target ${AWSSDK_LINK_LIBRARIES}) will fail to find the dependencies even when you specify CMAKE_PREFIX_PATH to the same directories.
+    #See https://github.com/aws/aws-sdk-cpp/issues/1279
+    #Because CMAKE_PREFIX_PATH is used for find_package, find_dependency, find_library, etc, but not target_link_libraries.
+    #Well, you could still solve it by adding an additional target_link_directories call before target_link_libraries, whereas remove those dependencies from
+    #AWSSDK_LINK_LIBRARIES will be more convenient and less confusing.
     AWSSDK_DETERMINE_LIBS_TO_LINK(AWSSDK_FIND_COMPONENTS AWSSDK_LINK_LIBRARIES)
-    set(AWSSDK_TARGETS ${AWSSDK_LINK_LIBRARIES})
-    # for static sdk, platform dependencies will be included in AWSSDK_LINK_LIBRARIES.
-    list(REMOVE_ITEM AWSSDK_TARGETS ${AWSSDK_PLATFORM_DEPS})
-    # for static sdk, third_party dependencies should be included in AWSSDK_LINK_LIBRARIES and should be resolved automatically by find_package(aws-cpp-sdk-core).
-    list(REMOVE_ITEM AWSSDK_TARGETS ${AWSSDK_THIRD_PARTY_LIBS})
-    list(REVERSE AWSSDK_TARGETS)
+    message(STATUS "Components specified for AWSSDK: ${AWSSDK_FIND_COMPONENTS}, application wll be depending on libs: ${AWSSDK_LINK_LIBRARIES}")
 
+    # platform dependencies will be resolved automatically when doing find_package(aws-cpp-sdk-core).
+    list(REMOVE_ITEM AWSSDK_LINK_LIBRARIES ${AWSSDK_PLATFORM_DEPS})
+    # third_party dependencies will be resolved automatically when doing fidn_package(aws-cpp-sdk-core) as well.
+    list(REMOVE_ITEM AWSSDK_LINK_LIBRARIES ${AWSSDK_THIRD_PARTY_LIBS})
+
+    set(AWSSDK_TARGETS ${AWSSDK_LINK_LIBRARIES})
+    list(REVERSE AWSSDK_TARGETS)
     foreach(TARGET IN LISTS AWSSDK_TARGETS)
         message(STATUS "Try finding ${TARGET}")
         find_package(${TARGET} REQUIRED)
