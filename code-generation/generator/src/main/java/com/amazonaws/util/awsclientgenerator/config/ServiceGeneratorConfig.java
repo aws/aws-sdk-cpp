@@ -30,7 +30,6 @@ import com.amazonaws.util.awsclientgenerator.generators.cpp.lambda.LambdaRestJso
 import com.amazonaws.util.awsclientgenerator.generators.cpp.machinelearning.MachineLearningJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.polly.PollyCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.rds.RDSCppClientGenerator;
-import com.amazonaws.util.awsclientgenerator.generators.cpp.rdsdata.RDSDataJsonCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3.S3RestXmlCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.s3control.S3ControlRestXmlCppClientGenerator;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.sqs.SQSQueryXmlCppClientGenerator;
@@ -68,7 +67,6 @@ public class ServiceGeneratorConfig {
             SPEC_OVERRIDE_MAPPING.put("cpp-machinelearning", new MachineLearningJsonCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-polly", new PollyCppClientGenerator());
             SPEC_OVERRIDE_MAPPING.put("cpp-rds", new RDSCppClientGenerator());
-            SPEC_OVERRIDE_MAPPING.put("cpp-rds-data", new RDSDataJsonCppClientGenerator());
 
         } catch (Exception e) {
             e.printStackTrace();
