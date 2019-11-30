@@ -47,6 +47,7 @@ public class CoreErrors
         VARIANTS.add("MissingParameter");
         VARIANTS.add("MissingParameterException");
         VARIANTS.add("OptInRequired");
+        VARIANTS.add("OptInRequiredException");
         VARIANTS.add("RequestExpired");
         VARIANTS.add("RequestExpiredException");
         VARIANTS.add("ServiceUnavailable");
