@@ -50,7 +50,9 @@ Host::Host() :
     m_allowsMultipleInstanceTypes(AllowsMultipleInstanceTypes::NOT_SET),
     m_allowsMultipleInstanceTypesHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false)
+    m_availabilityZoneIdHasBeenSet(false),
+    m_memberOfServiceLinkedResourceGroup(false),
+    m_memberOfServiceLinkedResourceGroupHasBeenSet(false)
 {
 }
 
@@ -74,7 +76,9 @@ Host::Host(const XmlNode& xmlNode) :
     m_allowsMultipleInstanceTypes(AllowsMultipleInstanceTypes::NOT_SET),
     m_allowsMultipleInstanceTypesHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false)
+    m_availabilityZoneIdHasBeenSet(false),
+    m_memberOfServiceLinkedResourceGroup(false),
+    m_memberOfServiceLinkedResourceGroupHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -193,6 +197,12 @@ Host& Host::operator =(const XmlNode& xmlNode)
       m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
       m_availabilityZoneIdHasBeenSet = true;
     }
+    XmlNode memberOfServiceLinkedResourceGroupNode = resultNode.FirstChild("memberOfServiceLinkedResourceGroup");
+    if(!memberOfServiceLinkedResourceGroupNode.IsNull())
+    {
+      m_memberOfServiceLinkedResourceGroup = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(memberOfServiceLinkedResourceGroupNode.GetText()).c_str()).c_str());
+      m_memberOfServiceLinkedResourceGroupHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -296,6 +306,11 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location, unsigned 
       oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 
+  if(m_memberOfServiceLinkedResourceGroupHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MemberOfServiceLinkedResourceGroup=" << std::boolalpha << m_memberOfServiceLinkedResourceGroup << "&";
+  }
+
 }
 
 void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -379,6 +394,10 @@ void Host::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_availabilityZoneIdHasBeenSet)
   {
       oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+  if(m_memberOfServiceLinkedResourceGroupHasBeenSet)
+  {
+      oStream << location << ".MemberOfServiceLinkedResourceGroup=" << std::boolalpha << m_memberOfServiceLinkedResourceGroup << "&";
   }
 }
 

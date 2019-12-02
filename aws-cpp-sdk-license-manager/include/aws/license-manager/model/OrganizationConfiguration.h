@@ -32,8 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>Object containing configuration information for AWS
-   * Organizations.</p><p><h3>See Also:</h3>   <a
+   * <p>Configuration information for AWS Organizations.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/OrganizationConfiguration">AWS
    * API Reference</a></p>
    */
@@ -47,22 +47,22 @@ namespace Model
 
 
     /**
-     * <p>Flag to activate AWS Organization integration.</p>
+     * <p>Enables AWS Organization integration.</p>
      */
     inline bool GetEnableIntegration() const{ return m_enableIntegration; }
 
     /**
-     * <p>Flag to activate AWS Organization integration.</p>
+     * <p>Enables AWS Organization integration.</p>
      */
     inline bool EnableIntegrationHasBeenSet() const { return m_enableIntegrationHasBeenSet; }
 
     /**
-     * <p>Flag to activate AWS Organization integration.</p>
+     * <p>Enables AWS Organization integration.</p>
      */
     inline void SetEnableIntegration(bool value) { m_enableIntegrationHasBeenSet = true; m_enableIntegration = value; }
 
     /**
-     * <p>Flag to activate AWS Organization integration.</p>
+     * <p>Enables AWS Organization integration.</p>
      */
     inline OrganizationConfiguration& WithEnableIntegration(bool value) { SetEnableIntegration(value); return *this;}
 

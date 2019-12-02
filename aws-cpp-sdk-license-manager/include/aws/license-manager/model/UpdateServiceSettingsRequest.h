@@ -46,120 +46,130 @@ namespace Model
 
 
     /**
-     * <p>ARN of the Amazon S3 bucket where License Manager information is stored.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager
+     * information is stored.</p>
      */
     inline const Aws::String& GetS3BucketArn() const{ return m_s3BucketArn; }
 
     /**
-     * <p>ARN of the Amazon S3 bucket where License Manager information is stored.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager
+     * information is stored.</p>
      */
     inline bool S3BucketArnHasBeenSet() const { return m_s3BucketArnHasBeenSet; }
 
     /**
-     * <p>ARN of the Amazon S3 bucket where License Manager information is stored.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager
+     * information is stored.</p>
      */
     inline void SetS3BucketArn(const Aws::String& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = value; }
 
     /**
-     * <p>ARN of the Amazon S3 bucket where License Manager information is stored.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager
+     * information is stored.</p>
      */
     inline void SetS3BucketArn(Aws::String&& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = std::move(value); }
 
     /**
-     * <p>ARN of the Amazon S3 bucket where License Manager information is stored.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager
+     * information is stored.</p>
      */
     inline void SetS3BucketArn(const char* value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn.assign(value); }
 
     /**
-     * <p>ARN of the Amazon S3 bucket where License Manager information is stored.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager
+     * information is stored.</p>
      */
     inline UpdateServiceSettingsRequest& WithS3BucketArn(const Aws::String& value) { SetS3BucketArn(value); return *this;}
 
     /**
-     * <p>ARN of the Amazon S3 bucket where License Manager information is stored.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager
+     * information is stored.</p>
      */
     inline UpdateServiceSettingsRequest& WithS3BucketArn(Aws::String&& value) { SetS3BucketArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the Amazon S3 bucket where License Manager information is stored.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager
+     * information is stored.</p>
      */
     inline UpdateServiceSettingsRequest& WithS3BucketArn(const char* value) { SetS3BucketArn(value); return *this;}
 
 
     /**
-     * <p>ARN of the Amazon SNS topic used for License Manager alerts.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager
+     * alerts.</p>
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
 
     /**
-     * <p>ARN of the Amazon SNS topic used for License Manager alerts.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager
+     * alerts.</p>
      */
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
 
     /**
-     * <p>ARN of the Amazon SNS topic used for License Manager alerts.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager
+     * alerts.</p>
      */
     inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
 
     /**
-     * <p>ARN of the Amazon SNS topic used for License Manager alerts.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager
+     * alerts.</p>
      */
     inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
 
     /**
-     * <p>ARN of the Amazon SNS topic used for License Manager alerts.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager
+     * alerts.</p>
      */
     inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
 
     /**
-     * <p>ARN of the Amazon SNS topic used for License Manager alerts.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager
+     * alerts.</p>
      */
     inline UpdateServiceSettingsRequest& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
 
     /**
-     * <p>ARN of the Amazon SNS topic used for License Manager alerts.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager
+     * alerts.</p>
      */
     inline UpdateServiceSettingsRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the Amazon SNS topic used for License Manager alerts.</p>
+     * <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager
+     * alerts.</p>
      */
     inline UpdateServiceSettingsRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
 
 
     /**
-     * <p>Integrates AWS Organizations with License Manager for cross-account
-     * discovery.</p>
+     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
      */
     inline const OrganizationConfiguration& GetOrganizationConfiguration() const{ return m_organizationConfiguration; }
 
     /**
-     * <p>Integrates AWS Organizations with License Manager for cross-account
-     * discovery.</p>
+     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
      */
     inline bool OrganizationConfigurationHasBeenSet() const { return m_organizationConfigurationHasBeenSet; }
 
     /**
-     * <p>Integrates AWS Organizations with License Manager for cross-account
-     * discovery.</p>
+     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
      */
     inline void SetOrganizationConfiguration(const OrganizationConfiguration& value) { m_organizationConfigurationHasBeenSet = true; m_organizationConfiguration = value; }
 
     /**
-     * <p>Integrates AWS Organizations with License Manager for cross-account
-     * discovery.</p>
+     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
      */
     inline void SetOrganizationConfiguration(OrganizationConfiguration&& value) { m_organizationConfigurationHasBeenSet = true; m_organizationConfiguration = std::move(value); }
 
     /**
-     * <p>Integrates AWS Organizations with License Manager for cross-account
-     * discovery.</p>
+     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
      */
     inline UpdateServiceSettingsRequest& WithOrganizationConfiguration(const OrganizationConfiguration& value) { SetOrganizationConfiguration(value); return *this;}
 
     /**
-     * <p>Integrates AWS Organizations with License Manager for cross-account
-     * discovery.</p>
+     * <p>Enables integration with AWS Organizations for cross-account discovery.</p>
      */
     inline UpdateServiceSettingsRequest& WithOrganizationConfiguration(OrganizationConfiguration&& value) { SetOrganizationConfiguration(std::move(value)); return *this;}
 

@@ -18,8 +18,10 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager/model/LicenseCountingType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/license-manager/model/AutomatedDiscoveryInformation.h>
 #include <aws/license-manager/model/ConsumedLicenseSummary.h>
 #include <aws/license-manager/model/ManagedResourceSummary.h>
+#include <aws/license-manager/model/ProductInformation.h>
 #include <utility>
 
 namespace Aws
@@ -41,10 +43,9 @@ namespace Model
    * <p>A license configuration is an abstraction of a customer license agreement
    * that can be consumed and enforced by License Manager. Components include
    * specifications for the license type (licensing by instance, socket, CPU, or
-   * VCPU), tenancy (shared tenancy, Amazon EC2 Dedicated Instance, Amazon EC2
-   * Dedicated Host, or any of these), host affinity (how long a VM must be
-   * associated with a host), the number of licenses purchased and
-   * used.</p><p><h3>See Also:</h3>   <a
+   * vCPU), allowed tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or
+   * all of these), host affinity (how long a VM must be associated with a host), and
+   * the number of licenses purchased and used.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/LicenseConfiguration">AWS
    * API Reference</a></p>
    */
@@ -58,83 +59,83 @@ namespace Model
 
 
     /**
-     * <p>Unique ID of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Unique ID of the license configuration.</p>
      */
     inline const Aws::String& GetLicenseConfigurationId() const{ return m_licenseConfigurationId; }
 
     /**
-     * <p>Unique ID of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Unique ID of the license configuration.</p>
      */
     inline bool LicenseConfigurationIdHasBeenSet() const { return m_licenseConfigurationIdHasBeenSet; }
 
     /**
-     * <p>Unique ID of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Unique ID of the license configuration.</p>
      */
     inline void SetLicenseConfigurationId(const Aws::String& value) { m_licenseConfigurationIdHasBeenSet = true; m_licenseConfigurationId = value; }
 
     /**
-     * <p>Unique ID of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Unique ID of the license configuration.</p>
      */
     inline void SetLicenseConfigurationId(Aws::String&& value) { m_licenseConfigurationIdHasBeenSet = true; m_licenseConfigurationId = std::move(value); }
 
     /**
-     * <p>Unique ID of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Unique ID of the license configuration.</p>
      */
     inline void SetLicenseConfigurationId(const char* value) { m_licenseConfigurationIdHasBeenSet = true; m_licenseConfigurationId.assign(value); }
 
     /**
-     * <p>Unique ID of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Unique ID of the license configuration.</p>
      */
     inline LicenseConfiguration& WithLicenseConfigurationId(const Aws::String& value) { SetLicenseConfigurationId(value); return *this;}
 
     /**
-     * <p>Unique ID of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Unique ID of the license configuration.</p>
      */
     inline LicenseConfiguration& WithLicenseConfigurationId(Aws::String&& value) { SetLicenseConfigurationId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique ID of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Unique ID of the license configuration.</p>
      */
     inline LicenseConfiguration& WithLicenseConfigurationId(const char* value) { SetLicenseConfigurationId(value); return *this;}
 
 
     /**
-     * <p>ARN of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline const Aws::String& GetLicenseConfigurationArn() const{ return m_licenseConfigurationArn; }
 
     /**
-     * <p>ARN of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline bool LicenseConfigurationArnHasBeenSet() const { return m_licenseConfigurationArnHasBeenSet; }
 
     /**
-     * <p>ARN of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline void SetLicenseConfigurationArn(const Aws::String& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = value; }
 
     /**
-     * <p>ARN of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline void SetLicenseConfigurationArn(Aws::String&& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = std::move(value); }
 
     /**
-     * <p>ARN of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline void SetLicenseConfigurationArn(const char* value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn.assign(value); }
 
     /**
-     * <p>ARN of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline LicenseConfiguration& WithLicenseConfigurationArn(const Aws::String& value) { SetLicenseConfigurationArn(value); return *this;}
 
     /**
-     * <p>ARN of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline LicenseConfiguration& WithLicenseConfigurationArn(Aws::String&& value) { SetLicenseConfigurationArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline LicenseConfiguration& WithLicenseConfigurationArn(const char* value) { SetLicenseConfigurationArn(value); return *this;}
 
@@ -222,78 +223,78 @@ namespace Model
 
 
     /**
-     * <p>Dimension to use to track license inventory.</p>
+     * <p>Dimension to use to track the license inventory.</p>
      */
     inline const LicenseCountingType& GetLicenseCountingType() const{ return m_licenseCountingType; }
 
     /**
-     * <p>Dimension to use to track license inventory.</p>
+     * <p>Dimension to use to track the license inventory.</p>
      */
     inline bool LicenseCountingTypeHasBeenSet() const { return m_licenseCountingTypeHasBeenSet; }
 
     /**
-     * <p>Dimension to use to track license inventory.</p>
+     * <p>Dimension to use to track the license inventory.</p>
      */
     inline void SetLicenseCountingType(const LicenseCountingType& value) { m_licenseCountingTypeHasBeenSet = true; m_licenseCountingType = value; }
 
     /**
-     * <p>Dimension to use to track license inventory.</p>
+     * <p>Dimension to use to track the license inventory.</p>
      */
     inline void SetLicenseCountingType(LicenseCountingType&& value) { m_licenseCountingTypeHasBeenSet = true; m_licenseCountingType = std::move(value); }
 
     /**
-     * <p>Dimension to use to track license inventory.</p>
+     * <p>Dimension to use to track the license inventory.</p>
      */
     inline LicenseConfiguration& WithLicenseCountingType(const LicenseCountingType& value) { SetLicenseCountingType(value); return *this;}
 
     /**
-     * <p>Dimension to use to track license inventory.</p>
+     * <p>Dimension to use to track the license inventory.</p>
      */
     inline LicenseConfiguration& WithLicenseCountingType(LicenseCountingType&& value) { SetLicenseCountingType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLicenseRules() const{ return m_licenseRules; }
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules.</p>
      */
     inline bool LicenseRulesHasBeenSet() const { return m_licenseRulesHasBeenSet; }
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules.</p>
      */
     inline void SetLicenseRules(const Aws::Vector<Aws::String>& value) { m_licenseRulesHasBeenSet = true; m_licenseRules = value; }
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules.</p>
      */
     inline void SetLicenseRules(Aws::Vector<Aws::String>&& value) { m_licenseRulesHasBeenSet = true; m_licenseRules = std::move(value); }
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules.</p>
      */
     inline LicenseConfiguration& WithLicenseRules(const Aws::Vector<Aws::String>& value) { SetLicenseRules(value); return *this;}
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules.</p>
      */
     inline LicenseConfiguration& WithLicenseRules(Aws::Vector<Aws::String>&& value) { SetLicenseRules(std::move(value)); return *this;}
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules.</p>
      */
     inline LicenseConfiguration& AddLicenseRules(const Aws::String& value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(value); return *this; }
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules.</p>
      */
     inline LicenseConfiguration& AddLicenseRules(Aws::String&& value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules.</p>
      */
     inline LicenseConfiguration& AddLicenseRules(const char* value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(value); return *this; }
 
@@ -320,22 +321,22 @@ namespace Model
 
 
     /**
-     * <p>Sets the number of available licenses as a hard limit.</p>
+     * <p>Number of available licenses as a hard limit.</p>
      */
     inline bool GetLicenseCountHardLimit() const{ return m_licenseCountHardLimit; }
 
     /**
-     * <p>Sets the number of available licenses as a hard limit.</p>
+     * <p>Number of available licenses as a hard limit.</p>
      */
     inline bool LicenseCountHardLimitHasBeenSet() const { return m_licenseCountHardLimitHasBeenSet; }
 
     /**
-     * <p>Sets the number of available licenses as a hard limit.</p>
+     * <p>Number of available licenses as a hard limit.</p>
      */
     inline void SetLicenseCountHardLimit(bool value) { m_licenseCountHardLimitHasBeenSet = true; m_licenseCountHardLimit = value; }
 
     /**
-     * <p>Sets the number of available licenses as a hard limit.</p>
+     * <p>Number of available licenses as a hard limit.</p>
      */
     inline LicenseConfiguration& WithLicenseCountHardLimit(bool value) { SetLicenseCountHardLimit(value); return *this;}
 
@@ -444,85 +445,157 @@ namespace Model
 
 
     /**
-     * <p>List of summaries for licenses consumed by various resources.</p>
+     * <p>Summaries for licenses consumed by various resources.</p>
      */
     inline const Aws::Vector<ConsumedLicenseSummary>& GetConsumedLicenseSummaryList() const{ return m_consumedLicenseSummaryList; }
 
     /**
-     * <p>List of summaries for licenses consumed by various resources.</p>
+     * <p>Summaries for licenses consumed by various resources.</p>
      */
     inline bool ConsumedLicenseSummaryListHasBeenSet() const { return m_consumedLicenseSummaryListHasBeenSet; }
 
     /**
-     * <p>List of summaries for licenses consumed by various resources.</p>
+     * <p>Summaries for licenses consumed by various resources.</p>
      */
     inline void SetConsumedLicenseSummaryList(const Aws::Vector<ConsumedLicenseSummary>& value) { m_consumedLicenseSummaryListHasBeenSet = true; m_consumedLicenseSummaryList = value; }
 
     /**
-     * <p>List of summaries for licenses consumed by various resources.</p>
+     * <p>Summaries for licenses consumed by various resources.</p>
      */
     inline void SetConsumedLicenseSummaryList(Aws::Vector<ConsumedLicenseSummary>&& value) { m_consumedLicenseSummaryListHasBeenSet = true; m_consumedLicenseSummaryList = std::move(value); }
 
     /**
-     * <p>List of summaries for licenses consumed by various resources.</p>
+     * <p>Summaries for licenses consumed by various resources.</p>
      */
     inline LicenseConfiguration& WithConsumedLicenseSummaryList(const Aws::Vector<ConsumedLicenseSummary>& value) { SetConsumedLicenseSummaryList(value); return *this;}
 
     /**
-     * <p>List of summaries for licenses consumed by various resources.</p>
+     * <p>Summaries for licenses consumed by various resources.</p>
      */
     inline LicenseConfiguration& WithConsumedLicenseSummaryList(Aws::Vector<ConsumedLicenseSummary>&& value) { SetConsumedLicenseSummaryList(std::move(value)); return *this;}
 
     /**
-     * <p>List of summaries for licenses consumed by various resources.</p>
+     * <p>Summaries for licenses consumed by various resources.</p>
      */
     inline LicenseConfiguration& AddConsumedLicenseSummaryList(const ConsumedLicenseSummary& value) { m_consumedLicenseSummaryListHasBeenSet = true; m_consumedLicenseSummaryList.push_back(value); return *this; }
 
     /**
-     * <p>List of summaries for licenses consumed by various resources.</p>
+     * <p>Summaries for licenses consumed by various resources.</p>
      */
     inline LicenseConfiguration& AddConsumedLicenseSummaryList(ConsumedLicenseSummary&& value) { m_consumedLicenseSummaryListHasBeenSet = true; m_consumedLicenseSummaryList.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>List of summaries for managed resources.</p>
+     * <p>Summaries for managed resources.</p>
      */
     inline const Aws::Vector<ManagedResourceSummary>& GetManagedResourceSummaryList() const{ return m_managedResourceSummaryList; }
 
     /**
-     * <p>List of summaries for managed resources.</p>
+     * <p>Summaries for managed resources.</p>
      */
     inline bool ManagedResourceSummaryListHasBeenSet() const { return m_managedResourceSummaryListHasBeenSet; }
 
     /**
-     * <p>List of summaries for managed resources.</p>
+     * <p>Summaries for managed resources.</p>
      */
     inline void SetManagedResourceSummaryList(const Aws::Vector<ManagedResourceSummary>& value) { m_managedResourceSummaryListHasBeenSet = true; m_managedResourceSummaryList = value; }
 
     /**
-     * <p>List of summaries for managed resources.</p>
+     * <p>Summaries for managed resources.</p>
      */
     inline void SetManagedResourceSummaryList(Aws::Vector<ManagedResourceSummary>&& value) { m_managedResourceSummaryListHasBeenSet = true; m_managedResourceSummaryList = std::move(value); }
 
     /**
-     * <p>List of summaries for managed resources.</p>
+     * <p>Summaries for managed resources.</p>
      */
     inline LicenseConfiguration& WithManagedResourceSummaryList(const Aws::Vector<ManagedResourceSummary>& value) { SetManagedResourceSummaryList(value); return *this;}
 
     /**
-     * <p>List of summaries for managed resources.</p>
+     * <p>Summaries for managed resources.</p>
      */
     inline LicenseConfiguration& WithManagedResourceSummaryList(Aws::Vector<ManagedResourceSummary>&& value) { SetManagedResourceSummaryList(std::move(value)); return *this;}
 
     /**
-     * <p>List of summaries for managed resources.</p>
+     * <p>Summaries for managed resources.</p>
      */
     inline LicenseConfiguration& AddManagedResourceSummaryList(const ManagedResourceSummary& value) { m_managedResourceSummaryListHasBeenSet = true; m_managedResourceSummaryList.push_back(value); return *this; }
 
     /**
-     * <p>List of summaries for managed resources.</p>
+     * <p>Summaries for managed resources.</p>
      */
     inline LicenseConfiguration& AddManagedResourceSummaryList(ManagedResourceSummary&& value) { m_managedResourceSummaryListHasBeenSet = true; m_managedResourceSummaryList.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline const Aws::Vector<ProductInformation>& GetProductInformationList() const{ return m_productInformationList; }
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline bool ProductInformationListHasBeenSet() const { return m_productInformationListHasBeenSet; }
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline void SetProductInformationList(const Aws::Vector<ProductInformation>& value) { m_productInformationListHasBeenSet = true; m_productInformationList = value; }
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline void SetProductInformationList(Aws::Vector<ProductInformation>&& value) { m_productInformationListHasBeenSet = true; m_productInformationList = std::move(value); }
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline LicenseConfiguration& WithProductInformationList(const Aws::Vector<ProductInformation>& value) { SetProductInformationList(value); return *this;}
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline LicenseConfiguration& WithProductInformationList(Aws::Vector<ProductInformation>&& value) { SetProductInformationList(std::move(value)); return *this;}
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline LicenseConfiguration& AddProductInformationList(const ProductInformation& value) { m_productInformationListHasBeenSet = true; m_productInformationList.push_back(value); return *this; }
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline LicenseConfiguration& AddProductInformationList(ProductInformation&& value) { m_productInformationListHasBeenSet = true; m_productInformationList.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Automated discovery information.</p>
+     */
+    inline const AutomatedDiscoveryInformation& GetAutomatedDiscoveryInformation() const{ return m_automatedDiscoveryInformation; }
+
+    /**
+     * <p>Automated discovery information.</p>
+     */
+    inline bool AutomatedDiscoveryInformationHasBeenSet() const { return m_automatedDiscoveryInformationHasBeenSet; }
+
+    /**
+     * <p>Automated discovery information.</p>
+     */
+    inline void SetAutomatedDiscoveryInformation(const AutomatedDiscoveryInformation& value) { m_automatedDiscoveryInformationHasBeenSet = true; m_automatedDiscoveryInformation = value; }
+
+    /**
+     * <p>Automated discovery information.</p>
+     */
+    inline void SetAutomatedDiscoveryInformation(AutomatedDiscoveryInformation&& value) { m_automatedDiscoveryInformationHasBeenSet = true; m_automatedDiscoveryInformation = std::move(value); }
+
+    /**
+     * <p>Automated discovery information.</p>
+     */
+    inline LicenseConfiguration& WithAutomatedDiscoveryInformation(const AutomatedDiscoveryInformation& value) { SetAutomatedDiscoveryInformation(value); return *this;}
+
+    /**
+     * <p>Automated discovery information.</p>
+     */
+    inline LicenseConfiguration& WithAutomatedDiscoveryInformation(AutomatedDiscoveryInformation&& value) { SetAutomatedDiscoveryInformation(std::move(value)); return *this;}
 
   private:
 
@@ -564,6 +637,12 @@ namespace Model
 
     Aws::Vector<ManagedResourceSummary> m_managedResourceSummaryList;
     bool m_managedResourceSummaryListHasBeenSet;
+
+    Aws::Vector<ProductInformation> m_productInformationList;
+    bool m_productInformationListHasBeenSet;
+
+    AutomatedDiscoveryInformation m_automatedDiscoveryInformation;
+    bool m_automatedDiscoveryInformationHasBeenSet;
   };
 
 } // namespace Model

@@ -45,71 +45,63 @@ namespace Model
 
 
     /**
-     * <p>ARN of a <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of a license configuration.</p>
      */
     inline const Aws::String& GetLicenseConfigurationArn() const{ return m_licenseConfigurationArn; }
 
     /**
-     * <p>ARN of a <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of a license configuration.</p>
      */
     inline bool LicenseConfigurationArnHasBeenSet() const { return m_licenseConfigurationArnHasBeenSet; }
 
     /**
-     * <p>ARN of a <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of a license configuration.</p>
      */
     inline void SetLicenseConfigurationArn(const Aws::String& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = value; }
 
     /**
-     * <p>ARN of a <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of a license configuration.</p>
      */
     inline void SetLicenseConfigurationArn(Aws::String&& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = std::move(value); }
 
     /**
-     * <p>ARN of a <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of a license configuration.</p>
      */
     inline void SetLicenseConfigurationArn(const char* value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn.assign(value); }
 
     /**
-     * <p>ARN of a <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of a license configuration.</p>
      */
     inline ListAssociationsForLicenseConfigurationRequest& WithLicenseConfigurationArn(const Aws::String& value) { SetLicenseConfigurationArn(value); return *this;}
 
     /**
-     * <p>ARN of a <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of a license configuration.</p>
      */
     inline ListAssociationsForLicenseConfigurationRequest& WithLicenseConfigurationArn(Aws::String&& value) { SetLicenseConfigurationArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of a <code>LicenseConfiguration</code> object.</p>
+     * <p>Amazon Resource Name (ARN) of a license configuration.</p>
      */
     inline ListAssociationsForLicenseConfigurationRequest& WithLicenseConfigurationArn(const char* value) { SetLicenseConfigurationArn(value); return *this;}
 
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline ListAssociationsForLicenseConfigurationRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

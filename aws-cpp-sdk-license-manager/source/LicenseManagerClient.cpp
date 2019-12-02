@@ -35,6 +35,7 @@
 #include <aws/license-manager/model/GetLicenseConfigurationRequest.h>
 #include <aws/license-manager/model/GetServiceSettingsRequest.h>
 #include <aws/license-manager/model/ListAssociationsForLicenseConfigurationRequest.h>
+#include <aws/license-manager/model/ListFailuresForLicenseConfigurationOperationsRequest.h>
 #include <aws/license-manager/model/ListLicenseConfigurationsRequest.h>
 #include <aws/license-manager/model/ListLicenseSpecificationsForResourceRequest.h>
 #include <aws/license-manager/model/ListResourceInventoryRequest.h>
@@ -291,6 +292,41 @@ void LicenseManagerClient::ListAssociationsForLicenseConfigurationAsync(const Li
 void LicenseManagerClient::ListAssociationsForLicenseConfigurationAsyncHelper(const ListAssociationsForLicenseConfigurationRequest& request, const ListAssociationsForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAssociationsForLicenseConfiguration(request), context);
+}
+
+ListFailuresForLicenseConfigurationOperationsOutcome LicenseManagerClient::ListFailuresForLicenseConfigurationOperations(const ListFailuresForLicenseConfigurationOperationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListFailuresForLicenseConfigurationOperationsOutcome(ListFailuresForLicenseConfigurationOperationsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListFailuresForLicenseConfigurationOperationsOutcome(outcome.GetError());
+  }
+}
+
+ListFailuresForLicenseConfigurationOperationsOutcomeCallable LicenseManagerClient::ListFailuresForLicenseConfigurationOperationsCallable(const ListFailuresForLicenseConfigurationOperationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFailuresForLicenseConfigurationOperationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFailuresForLicenseConfigurationOperations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LicenseManagerClient::ListFailuresForLicenseConfigurationOperationsAsync(const ListFailuresForLicenseConfigurationOperationsRequest& request, const ListFailuresForLicenseConfigurationOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFailuresForLicenseConfigurationOperationsAsyncHelper( request, handler, context ); } );
+}
+
+void LicenseManagerClient::ListFailuresForLicenseConfigurationOperationsAsyncHelper(const ListFailuresForLicenseConfigurationOperationsRequest& request, const ListFailuresForLicenseConfigurationOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFailuresForLicenseConfigurationOperations(request), context);
 }
 
 ListLicenseConfigurationsOutcome LicenseManagerClient::ListLicenseConfigurations(const ListLicenseConfigurationsRequest& request) const

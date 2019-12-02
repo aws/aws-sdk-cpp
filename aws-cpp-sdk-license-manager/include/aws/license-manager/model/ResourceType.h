@@ -28,7 +28,9 @@ namespace Model
     NOT_SET,
     EC2_INSTANCE,
     EC2_HOST,
-    EC2_AMI
+    EC2_AMI,
+    RDS,
+    SYSTEMS_MANAGER_MANAGED_INSTANCE
   };
 
 namespace ResourceTypeMapper

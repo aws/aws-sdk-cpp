@@ -47,30 +47,22 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline ListResourceInventoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -117,42 +109,146 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>account_id</code> - The ID of the AWS account
+     * that owns the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>application_name</code> - The
+     * name of the application. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>license_included</code> - The
+     * type of license included. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code>
+     * | <code>sql-server-standard</code> | <code>sql-server-web</code> |
+     * <code>windows-server-datacenter</code>.</p> </li> <li> <p> <code>platform</code>
+     * - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
+     * of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<InventoryFilter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>account_id</code> - The ID of the AWS account
+     * that owns the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>application_name</code> - The
+     * name of the application. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>license_included</code> - The
+     * type of license included. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code>
+     * | <code>sql-server-standard</code> | <code>sql-server-web</code> |
+     * <code>windows-server-datacenter</code>.</p> </li> <li> <p> <code>platform</code>
+     * - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
+     * of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>account_id</code> - The ID of the AWS account
+     * that owns the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>application_name</code> - The
+     * name of the application. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>license_included</code> - The
+     * type of license included. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code>
+     * | <code>sql-server-standard</code> | <code>sql-server-web</code> |
+     * <code>windows-server-datacenter</code>.</p> </li> <li> <p> <code>platform</code>
+     * - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
+     * of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<InventoryFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>account_id</code> - The ID of the AWS account
+     * that owns the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>application_name</code> - The
+     * name of the application. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>license_included</code> - The
+     * type of license included. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code>
+     * | <code>sql-server-standard</code> | <code>sql-server-web</code> |
+     * <code>windows-server-datacenter</code>.</p> </li> <li> <p> <code>platform</code>
+     * - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
+     * of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<InventoryFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>account_id</code> - The ID of the AWS account
+     * that owns the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>application_name</code> - The
+     * name of the application. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>license_included</code> - The
+     * type of license included. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code>
+     * | <code>sql-server-standard</code> | <code>sql-server-web</code> |
+     * <code>windows-server-datacenter</code>.</p> </li> <li> <p> <code>platform</code>
+     * - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
+     * of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline ListResourceInventoryRequest& WithFilters(const Aws::Vector<InventoryFilter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>account_id</code> - The ID of the AWS account
+     * that owns the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>application_name</code> - The
+     * name of the application. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>license_included</code> - The
+     * type of license included. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code>
+     * | <code>sql-server-standard</code> | <code>sql-server-web</code> |
+     * <code>windows-server-datacenter</code>.</p> </li> <li> <p> <code>platform</code>
+     * - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
+     * of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline ListResourceInventoryRequest& WithFilters(Aws::Vector<InventoryFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>account_id</code> - The ID of the AWS account
+     * that owns the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>application_name</code> - The
+     * name of the application. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>license_included</code> - The
+     * type of license included. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code>
+     * | <code>sql-server-standard</code> | <code>sql-server-web</code> |
+     * <code>windows-server-datacenter</code>.</p> </li> <li> <p> <code>platform</code>
+     * - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
+     * of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline ListResourceInventoryRequest& AddFilters(const InventoryFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>account_id</code> - The ID of the AWS account
+     * that owns the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>application_name</code> - The
+     * name of the application. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>license_included</code> - The
+     * type of license included. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>. Possible values are <code>sql-server-enterprise</code>
+     * | <code>sql-server-standard</code> | <code>sql-server-web</code> |
+     * <code>windows-server-datacenter</code>.</p> </li> <li> <p> <code>platform</code>
+     * - The platform of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>BEGINS_WITH</code>.</p> </li> <li> <p> <code>resource_id</code> - The ID
+     * of the resource. Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline ListResourceInventoryRequest& AddFilters(InventoryFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

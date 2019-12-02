@@ -45,79 +45,71 @@ namespace Model
 
 
     /**
-     * <p>ARN of an AMI or Amazon EC2 instance that has an associated license
+     * <p>Amazon Resource Name (ARN) of a resource that has an associated license
      * configuration.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>ARN of an AMI or Amazon EC2 instance that has an associated license
+     * <p>Amazon Resource Name (ARN) of a resource that has an associated license
      * configuration.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>ARN of an AMI or Amazon EC2 instance that has an associated license
+     * <p>Amazon Resource Name (ARN) of a resource that has an associated license
      * configuration.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>ARN of an AMI or Amazon EC2 instance that has an associated license
+     * <p>Amazon Resource Name (ARN) of a resource that has an associated license
      * configuration.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>ARN of an AMI or Amazon EC2 instance that has an associated license
+     * <p>Amazon Resource Name (ARN) of a resource that has an associated license
      * configuration.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>ARN of an AMI or Amazon EC2 instance that has an associated license
+     * <p>Amazon Resource Name (ARN) of a resource that has an associated license
      * configuration.</p>
      */
     inline ListLicenseSpecificationsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>ARN of an AMI or Amazon EC2 instance that has an associated license
+     * <p>Amazon Resource Name (ARN) of a resource that has an associated license
      * configuration.</p>
      */
     inline ListLicenseSpecificationsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of an AMI or Amazon EC2 instance that has an associated license
+     * <p>Amazon Resource Name (ARN) of a resource that has an associated license
      * configuration.</p>
      */
     inline ListLicenseSpecificationsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline ListLicenseSpecificationsForResourceRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -33,6 +33,8 @@ namespace Aws
         static const int EC2_INSTANCE_HASH = HashingUtils::HashString("EC2_INSTANCE");
         static const int EC2_HOST_HASH = HashingUtils::HashString("EC2_HOST");
         static const int EC2_AMI_HASH = HashingUtils::HashString("EC2_AMI");
+        static const int RDS_HASH = HashingUtils::HashString("RDS");
+        static const int SYSTEMS_MANAGER_MANAGED_INSTANCE_HASH = HashingUtils::HashString("SYSTEMS_MANAGER_MANAGED_INSTANCE");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -49,6 +51,14 @@ namespace Aws
           else if (hashCode == EC2_AMI_HASH)
           {
             return ResourceType::EC2_AMI;
+          }
+          else if (hashCode == RDS_HASH)
+          {
+            return ResourceType::RDS;
+          }
+          else if (hashCode == SYSTEMS_MANAGER_MANAGED_INSTANCE_HASH)
+          {
+            return ResourceType::SYSTEMS_MANAGER_MANAGED_INSTANCE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +80,10 @@ namespace Aws
             return "EC2_HOST";
           case ResourceType::EC2_AMI:
             return "EC2_AMI";
+          case ResourceType::RDS:
+            return "RDS";
+          case ResourceType::SYSTEMS_MANAGER_MANAGED_INSTANCE:
+            return "SYSTEMS_MANAGER_MANAGED_INSTANCE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

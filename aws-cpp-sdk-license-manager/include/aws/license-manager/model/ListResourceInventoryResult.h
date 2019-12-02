@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The detailed list of resources.</p>
+     * <p>Information about the resources.</p>
      */
     inline const Aws::Vector<ResourceInventory>& GetResourceInventoryList() const{ return m_resourceInventoryList; }
 
     /**
-     * <p>The detailed list of resources.</p>
+     * <p>Information about the resources.</p>
      */
     inline void SetResourceInventoryList(const Aws::Vector<ResourceInventory>& value) { m_resourceInventoryList = value; }
 
     /**
-     * <p>The detailed list of resources.</p>
+     * <p>Information about the resources.</p>
      */
     inline void SetResourceInventoryList(Aws::Vector<ResourceInventory>&& value) { m_resourceInventoryList = std::move(value); }
 
     /**
-     * <p>The detailed list of resources.</p>
+     * <p>Information about the resources.</p>
      */
     inline ListResourceInventoryResult& WithResourceInventoryList(const Aws::Vector<ResourceInventory>& value) { SetResourceInventoryList(value); return *this;}
 
     /**
-     * <p>The detailed list of resources.</p>
+     * <p>Information about the resources.</p>
      */
     inline ListResourceInventoryResult& WithResourceInventoryList(Aws::Vector<ResourceInventory>&& value) { SetResourceInventoryList(std::move(value)); return *this;}
 
     /**
-     * <p>The detailed list of resources.</p>
+     * <p>Information about the resources.</p>
      */
     inline ListResourceInventoryResult& AddResourceInventoryList(const ResourceInventory& value) { m_resourceInventoryList.push_back(value); return *this; }
 
     /**
-     * <p>The detailed list of resources.</p>
+     * <p>Information about the resources.</p>
      */
     inline ListResourceInventoryResult& AddResourceInventoryList(ResourceInventory&& value) { m_resourceInventoryList.push_back(std::move(value)); return *this; }
 

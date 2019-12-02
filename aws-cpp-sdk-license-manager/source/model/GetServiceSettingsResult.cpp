@@ -64,6 +64,12 @@ GetServiceSettingsResult& GetServiceSettingsResult::operator =(const Aws::Amazon
 
   }
 
+  if(jsonValue.ValueExists("LicenseManagerResourceShareArn"))
+  {
+    m_licenseManagerResourceShareArn = jsonValue.GetString("LicenseManagerResourceShareArn");
+
+  }
+
 
 
   return *this;

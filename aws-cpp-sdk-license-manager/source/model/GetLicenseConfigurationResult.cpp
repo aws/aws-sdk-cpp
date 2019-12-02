@@ -142,6 +142,21 @@ GetLicenseConfigurationResult& GetLicenseConfigurationResult::operator =(const A
     }
   }
 
+  if(jsonValue.ValueExists("ProductInformationList"))
+  {
+    Array<JsonView> productInformationListJsonList = jsonValue.GetArray("ProductInformationList");
+    for(unsigned productInformationListIndex = 0; productInformationListIndex < productInformationListJsonList.GetLength(); ++productInformationListIndex)
+    {
+      m_productInformationList.push_back(productInformationListJsonList[productInformationListIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("AutomatedDiscoveryInformation"))
+  {
+    m_automatedDiscoveryInformation = jsonValue.GetObject("AutomatedDiscoveryInformation");
+
+  }
+
 
 
   return *this;

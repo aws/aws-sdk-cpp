@@ -45,7 +45,9 @@ LicenseConfiguration::LicenseConfiguration() :
     m_statusHasBeenSet(false),
     m_ownerAccountIdHasBeenSet(false),
     m_consumedLicenseSummaryListHasBeenSet(false),
-    m_managedResourceSummaryListHasBeenSet(false)
+    m_managedResourceSummaryListHasBeenSet(false),
+    m_productInformationListHasBeenSet(false),
+    m_automatedDiscoveryInformationHasBeenSet(false)
 {
 }
 
@@ -66,7 +68,9 @@ LicenseConfiguration::LicenseConfiguration(JsonView jsonValue) :
     m_statusHasBeenSet(false),
     m_ownerAccountIdHasBeenSet(false),
     m_consumedLicenseSummaryListHasBeenSet(false),
-    m_managedResourceSummaryListHasBeenSet(false)
+    m_managedResourceSummaryListHasBeenSet(false),
+    m_productInformationListHasBeenSet(false),
+    m_automatedDiscoveryInformationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -173,6 +177,23 @@ LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
     m_managedResourceSummaryListHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ProductInformationList"))
+  {
+    Array<JsonView> productInformationListJsonList = jsonValue.GetArray("ProductInformationList");
+    for(unsigned productInformationListIndex = 0; productInformationListIndex < productInformationListJsonList.GetLength(); ++productInformationListIndex)
+    {
+      m_productInformationList.push_back(productInformationListJsonList[productInformationListIndex].AsObject());
+    }
+    m_productInformationListHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AutomatedDiscoveryInformation"))
+  {
+    m_automatedDiscoveryInformation = jsonValue.GetObject("AutomatedDiscoveryInformation");
+
+    m_automatedDiscoveryInformationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -269,6 +290,23 @@ JsonValue LicenseConfiguration::Jsonize() const
      managedResourceSummaryListJsonList[managedResourceSummaryListIndex].AsObject(m_managedResourceSummaryList[managedResourceSummaryListIndex].Jsonize());
    }
    payload.WithArray("ManagedResourceSummaryList", std::move(managedResourceSummaryListJsonList));
+
+  }
+
+  if(m_productInformationListHasBeenSet)
+  {
+   Array<JsonValue> productInformationListJsonList(m_productInformationList.size());
+   for(unsigned productInformationListIndex = 0; productInformationListIndex < productInformationListJsonList.GetLength(); ++productInformationListIndex)
+   {
+     productInformationListJsonList[productInformationListIndex].AsObject(m_productInformationList[productInformationListIndex].Jsonize());
+   }
+   payload.WithArray("ProductInformationList", std::move(productInformationListJsonList));
+
+  }
+
+  if(m_automatedDiscoveryInformationHasBeenSet)
+  {
+   payload.WithObject("AutomatedDiscoveryInformation", m_automatedDiscoveryInformation.Jsonize());
 
   }
 

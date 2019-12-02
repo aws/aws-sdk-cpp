@@ -45,51 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Lists association objects for the license configuration, each containing the
-     * association time, number of consumed licenses, resource ARN, resource ID,
-     * account ID that owns the resource, resource size, and resource type.</p>
+     * <p>Information about the associations for the license configuration.</p>
      */
     inline const Aws::Vector<LicenseConfigurationAssociation>& GetLicenseConfigurationAssociations() const{ return m_licenseConfigurationAssociations; }
 
     /**
-     * <p>Lists association objects for the license configuration, each containing the
-     * association time, number of consumed licenses, resource ARN, resource ID,
-     * account ID that owns the resource, resource size, and resource type.</p>
+     * <p>Information about the associations for the license configuration.</p>
      */
     inline void SetLicenseConfigurationAssociations(const Aws::Vector<LicenseConfigurationAssociation>& value) { m_licenseConfigurationAssociations = value; }
 
     /**
-     * <p>Lists association objects for the license configuration, each containing the
-     * association time, number of consumed licenses, resource ARN, resource ID,
-     * account ID that owns the resource, resource size, and resource type.</p>
+     * <p>Information about the associations for the license configuration.</p>
      */
     inline void SetLicenseConfigurationAssociations(Aws::Vector<LicenseConfigurationAssociation>&& value) { m_licenseConfigurationAssociations = std::move(value); }
 
     /**
-     * <p>Lists association objects for the license configuration, each containing the
-     * association time, number of consumed licenses, resource ARN, resource ID,
-     * account ID that owns the resource, resource size, and resource type.</p>
+     * <p>Information about the associations for the license configuration.</p>
      */
     inline ListAssociationsForLicenseConfigurationResult& WithLicenseConfigurationAssociations(const Aws::Vector<LicenseConfigurationAssociation>& value) { SetLicenseConfigurationAssociations(value); return *this;}
 
     /**
-     * <p>Lists association objects for the license configuration, each containing the
-     * association time, number of consumed licenses, resource ARN, resource ID,
-     * account ID that owns the resource, resource size, and resource type.</p>
+     * <p>Information about the associations for the license configuration.</p>
      */
     inline ListAssociationsForLicenseConfigurationResult& WithLicenseConfigurationAssociations(Aws::Vector<LicenseConfigurationAssociation>&& value) { SetLicenseConfigurationAssociations(std::move(value)); return *this;}
 
     /**
-     * <p>Lists association objects for the license configuration, each containing the
-     * association time, number of consumed licenses, resource ARN, resource ID,
-     * account ID that owns the resource, resource size, and resource type.</p>
+     * <p>Information about the associations for the license configuration.</p>
      */
     inline ListAssociationsForLicenseConfigurationResult& AddLicenseConfigurationAssociations(const LicenseConfigurationAssociation& value) { m_licenseConfigurationAssociations.push_back(value); return *this; }
 
     /**
-     * <p>Lists association objects for the license configuration, each containing the
-     * association time, number of consumed licenses, resource ARN, resource ID,
-     * account ID that owns the resource, resource size, and resource type.</p>
+     * <p>Information about the associations for the license configuration.</p>
      */
     inline ListAssociationsForLicenseConfigurationResult& AddLicenseConfigurationAssociations(LicenseConfigurationAssociation&& value) { m_licenseConfigurationAssociations.push_back(std::move(value)); return *this; }
 

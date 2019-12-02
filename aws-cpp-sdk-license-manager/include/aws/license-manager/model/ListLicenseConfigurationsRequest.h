@@ -47,76 +47,68 @@ namespace Model
 
 
     /**
-     * <p>An array of ARNs for the calling account’s license configurations.</p>
+     * <p>Amazon Resource Names (ARN) of the license configurations.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLicenseConfigurationArns() const{ return m_licenseConfigurationArns; }
 
     /**
-     * <p>An array of ARNs for the calling account’s license configurations.</p>
+     * <p>Amazon Resource Names (ARN) of the license configurations.</p>
      */
     inline bool LicenseConfigurationArnsHasBeenSet() const { return m_licenseConfigurationArnsHasBeenSet; }
 
     /**
-     * <p>An array of ARNs for the calling account’s license configurations.</p>
+     * <p>Amazon Resource Names (ARN) of the license configurations.</p>
      */
     inline void SetLicenseConfigurationArns(const Aws::Vector<Aws::String>& value) { m_licenseConfigurationArnsHasBeenSet = true; m_licenseConfigurationArns = value; }
 
     /**
-     * <p>An array of ARNs for the calling account’s license configurations.</p>
+     * <p>Amazon Resource Names (ARN) of the license configurations.</p>
      */
     inline void SetLicenseConfigurationArns(Aws::Vector<Aws::String>&& value) { m_licenseConfigurationArnsHasBeenSet = true; m_licenseConfigurationArns = std::move(value); }
 
     /**
-     * <p>An array of ARNs for the calling account’s license configurations.</p>
+     * <p>Amazon Resource Names (ARN) of the license configurations.</p>
      */
     inline ListLicenseConfigurationsRequest& WithLicenseConfigurationArns(const Aws::Vector<Aws::String>& value) { SetLicenseConfigurationArns(value); return *this;}
 
     /**
-     * <p>An array of ARNs for the calling account’s license configurations.</p>
+     * <p>Amazon Resource Names (ARN) of the license configurations.</p>
      */
     inline ListLicenseConfigurationsRequest& WithLicenseConfigurationArns(Aws::Vector<Aws::String>&& value) { SetLicenseConfigurationArns(std::move(value)); return *this;}
 
     /**
-     * <p>An array of ARNs for the calling account’s license configurations.</p>
+     * <p>Amazon Resource Names (ARN) of the license configurations.</p>
      */
     inline ListLicenseConfigurationsRequest& AddLicenseConfigurationArns(const Aws::String& value) { m_licenseConfigurationArnsHasBeenSet = true; m_licenseConfigurationArns.push_back(value); return *this; }
 
     /**
-     * <p>An array of ARNs for the calling account’s license configurations.</p>
+     * <p>Amazon Resource Names (ARN) of the license configurations.</p>
      */
     inline ListLicenseConfigurationsRequest& AddLicenseConfigurationArns(Aws::String&& value) { m_licenseConfigurationArnsHasBeenSet = true; m_licenseConfigurationArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of ARNs for the calling account’s license configurations.</p>
+     * <p>Amazon Resource Names (ARN) of the license configurations.</p>
      */
     inline ListLicenseConfigurationsRequest& AddLicenseConfigurationArns(const char* value) { m_licenseConfigurationArnsHasBeenSet = true; m_licenseConfigurationArns.push_back(value); return *this; }
 
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Maximum number of results to return in a single call. To retrieve the
-     * remaining results, make another call with the returned <code>NextToken</code>
-     * value.</p>
+     * <p>Maximum number of results to return in a single call.</p>
      */
     inline ListLicenseConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -163,42 +155,106 @@ namespace Model
 
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
+     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
+     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
+     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
+     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
+     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
+     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
+     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
+     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
+     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
+     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
+     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
+     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
+     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
+     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
+     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
+     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
+     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
+     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
+     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
+     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline ListLicenseConfigurationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
+     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
+     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
+     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
+     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline ListLicenseConfigurationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
+     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
+     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
+     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
+     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline ListLicenseConfigurationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p>
+     * <p>Filters to scope the results. The following filters and logical operators are
+     * supported:</p> <ul> <li> <p> <code>licenseCountingType</code> - The dimension on
+     * which licenses are counted (vCPU). Logical operators are <code>EQUALS</code> |
+     * <code>NOT_EQUALS</code>.</p> </li> <li> <p> <code>enforceLicenseCount</code> - A
+     * Boolean value that indicates whether hard license enforcement is used. Logical
+     * operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.</p> </li> <li> <p>
+     * <code>usagelimitExceeded</code> - A Boolean value that indicates whether the
+     * available licenses have been exceeded. Logical operators are <code>EQUALS</code>
+     * | <code>NOT_EQUALS</code>.</p> </li> </ul>
      */
     inline ListLicenseConfigurationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

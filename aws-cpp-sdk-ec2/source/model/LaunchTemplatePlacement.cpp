@@ -37,7 +37,8 @@ LaunchTemplatePlacement::LaunchTemplatePlacement() :
     m_hostIdHasBeenSet(false),
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
-    m_spreadDomainHasBeenSet(false)
+    m_spreadDomainHasBeenSet(false),
+    m_hostResourceGroupArnHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ LaunchTemplatePlacement::LaunchTemplatePlacement(const XmlNode& xmlNode) :
     m_hostIdHasBeenSet(false),
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
-    m_spreadDomainHasBeenSet(false)
+    m_spreadDomainHasBeenSet(false),
+    m_hostResourceGroupArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -95,6 +97,12 @@ LaunchTemplatePlacement& LaunchTemplatePlacement::operator =(const XmlNode& xmlN
       m_spreadDomain = Aws::Utils::Xml::DecodeEscapedXmlText(spreadDomainNode.GetText());
       m_spreadDomainHasBeenSet = true;
     }
+    XmlNode hostResourceGroupArnNode = resultNode.FirstChild("hostResourceGroupArn");
+    if(!hostResourceGroupArnNode.IsNull())
+    {
+      m_hostResourceGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(hostResourceGroupArnNode.GetText());
+      m_hostResourceGroupArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -132,6 +140,11 @@ void LaunchTemplatePlacement::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".SpreadDomain=" << StringUtils::URLEncode(m_spreadDomain.c_str()) << "&";
   }
 
+  if(m_hostResourceGroupArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HostResourceGroupArn=" << StringUtils::URLEncode(m_hostResourceGroupArn.c_str()) << "&";
+  }
+
 }
 
 void LaunchTemplatePlacement::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -159,6 +172,10 @@ void LaunchTemplatePlacement::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_spreadDomainHasBeenSet)
   {
       oStream << location << ".SpreadDomain=" << StringUtils::URLEncode(m_spreadDomain.c_str()) << "&";
+  }
+  if(m_hostResourceGroupArnHasBeenSet)
+  {
+      oStream << location << ".HostResourceGroupArn=" << StringUtils::URLEncode(m_hostResourceGroupArn.c_str()) << "&";
   }
 }
 

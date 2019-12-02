@@ -49,6 +49,7 @@ namespace Aws
         static const int route_table_HASH = HashingUtils::HashString("route-table");
         static const int security_group_HASH = HashingUtils::HashString("security-group");
         static const int snapshot_HASH = HashingUtils::HashString("snapshot");
+        static const int spot_fleet_request_HASH = HashingUtils::HashString("spot-fleet-request");
         static const int spot_instances_request_HASH = HashingUtils::HashString("spot-instances-request");
         static const int subnet_HASH = HashingUtils::HashString("subnet");
         static const int traffic_mirror_filter_HASH = HashingUtils::HashString("traffic-mirror-filter");
@@ -142,6 +143,10 @@ namespace Aws
           else if (hashCode == snapshot_HASH)
           {
             return ResourceType::snapshot;
+          }
+          else if (hashCode == spot_fleet_request_HASH)
+          {
+            return ResourceType::spot_fleet_request;
           }
           else if (hashCode == spot_instances_request_HASH)
           {
@@ -247,6 +252,8 @@ namespace Aws
             return "security-group";
           case ResourceType::snapshot:
             return "snapshot";
+          case ResourceType::spot_fleet_request:
+            return "spot-fleet-request";
           case ResourceType::spot_instances_request:
             return "spot-instances-request";
           case ResourceType::subnet:

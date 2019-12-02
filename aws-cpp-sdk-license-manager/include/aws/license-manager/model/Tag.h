@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Tag for a resource in a key-value format.</p><p><h3>See Also:</h3>   <a
+   * <p>Details about a tag for a license configuration.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/Tag">AWS
    * API Reference</a></p>
    */
@@ -48,83 +49,83 @@ namespace Model
 
 
     /**
-     * <p>Key for the resource tag.</p>
+     * <p>Tag key.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>Key for the resource tag.</p>
+     * <p>Tag key.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>Key for the resource tag.</p>
+     * <p>Tag key.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>Key for the resource tag.</p>
+     * <p>Tag key.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>Key for the resource tag.</p>
+     * <p>Tag key.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>Key for the resource tag.</p>
+     * <p>Tag key.</p>
      */
     inline Tag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>Key for the resource tag.</p>
+     * <p>Tag key.</p>
      */
     inline Tag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>Key for the resource tag.</p>
+     * <p>Tag key.</p>
      */
     inline Tag& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * <p>Value for the resource tag.</p>
+     * <p>Tag value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>Value for the resource tag.</p>
+     * <p>Tag value.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>Value for the resource tag.</p>
+     * <p>Tag value.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Value for the resource tag.</p>
+     * <p>Tag value.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>Value for the resource tag.</p>
+     * <p>Tag value.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>Value for the resource tag.</p>
+     * <p>Tag value.</p>
      */
     inline Tag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>Value for the resource tag.</p>
+     * <p>Tag value.</p>
      */
     inline Tag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>Value for the resource tag.</p>
+     * <p>Tag value.</p>
      */
     inline Tag& WithValue(const char* value) { SetValue(value); return *this;}
 

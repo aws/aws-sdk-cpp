@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Array of license configuration objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline const Aws::Vector<LicenseConfiguration>& GetLicenseConfigurations() const{ return m_licenseConfigurations; }
 
     /**
-     * <p>Array of license configuration objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline void SetLicenseConfigurations(const Aws::Vector<LicenseConfiguration>& value) { m_licenseConfigurations = value; }
 
     /**
-     * <p>Array of license configuration objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline void SetLicenseConfigurations(Aws::Vector<LicenseConfiguration>&& value) { m_licenseConfigurations = std::move(value); }
 
     /**
-     * <p>Array of license configuration objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline ListLicenseConfigurationsResult& WithLicenseConfigurations(const Aws::Vector<LicenseConfiguration>& value) { SetLicenseConfigurations(value); return *this;}
 
     /**
-     * <p>Array of license configuration objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline ListLicenseConfigurationsResult& WithLicenseConfigurations(Aws::Vector<LicenseConfiguration>&& value) { SetLicenseConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Array of license configuration objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline ListLicenseConfigurationsResult& AddLicenseConfigurations(const LicenseConfiguration& value) { m_licenseConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>Array of license configuration objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline ListLicenseConfigurationsResult& AddLicenseConfigurations(LicenseConfiguration&& value) { m_licenseConfigurations.push_back(std::move(value)); return *this; }
 

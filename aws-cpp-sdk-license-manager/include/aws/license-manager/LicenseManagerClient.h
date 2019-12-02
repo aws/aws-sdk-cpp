@@ -26,6 +26,7 @@
 #include <aws/license-manager/model/GetLicenseConfigurationResult.h>
 #include <aws/license-manager/model/GetServiceSettingsResult.h>
 #include <aws/license-manager/model/ListAssociationsForLicenseConfigurationResult.h>
+#include <aws/license-manager/model/ListFailuresForLicenseConfigurationOperationsResult.h>
 #include <aws/license-manager/model/ListLicenseConfigurationsResult.h>
 #include <aws/license-manager/model/ListLicenseSpecificationsForResourceResult.h>
 #include <aws/license-manager/model/ListResourceInventoryResult.h>
@@ -80,6 +81,7 @@ namespace Model
         class GetLicenseConfigurationRequest;
         class GetServiceSettingsRequest;
         class ListAssociationsForLicenseConfigurationRequest;
+        class ListFailuresForLicenseConfigurationOperationsRequest;
         class ListLicenseConfigurationsRequest;
         class ListLicenseSpecificationsForResourceRequest;
         class ListResourceInventoryRequest;
@@ -96,6 +98,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetLicenseConfigurationResult, Aws::Client::AWSError<LicenseManagerErrors>> GetLicenseConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetServiceSettingsResult, Aws::Client::AWSError<LicenseManagerErrors>> GetServiceSettingsOutcome;
         typedef Aws::Utils::Outcome<ListAssociationsForLicenseConfigurationResult, Aws::Client::AWSError<LicenseManagerErrors>> ListAssociationsForLicenseConfigurationOutcome;
+        typedef Aws::Utils::Outcome<ListFailuresForLicenseConfigurationOperationsResult, Aws::Client::AWSError<LicenseManagerErrors>> ListFailuresForLicenseConfigurationOperationsOutcome;
         typedef Aws::Utils::Outcome<ListLicenseConfigurationsResult, Aws::Client::AWSError<LicenseManagerErrors>> ListLicenseConfigurationsOutcome;
         typedef Aws::Utils::Outcome<ListLicenseSpecificationsForResourceResult, Aws::Client::AWSError<LicenseManagerErrors>> ListLicenseSpecificationsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListResourceInventoryResult, Aws::Client::AWSError<LicenseManagerErrors>> ListResourceInventoryOutcome;
@@ -112,6 +115,7 @@ namespace Model
         typedef std::future<GetLicenseConfigurationOutcome> GetLicenseConfigurationOutcomeCallable;
         typedef std::future<GetServiceSettingsOutcome> GetServiceSettingsOutcomeCallable;
         typedef std::future<ListAssociationsForLicenseConfigurationOutcome> ListAssociationsForLicenseConfigurationOutcomeCallable;
+        typedef std::future<ListFailuresForLicenseConfigurationOperationsOutcome> ListFailuresForLicenseConfigurationOperationsOutcomeCallable;
         typedef std::future<ListLicenseConfigurationsOutcome> ListLicenseConfigurationsOutcomeCallable;
         typedef std::future<ListLicenseSpecificationsForResourceOutcome> ListLicenseSpecificationsForResourceOutcomeCallable;
         typedef std::future<ListResourceInventoryOutcome> ListResourceInventoryOutcomeCallable;
@@ -131,6 +135,7 @@ namespace Model
     typedef std::function<void(const LicenseManagerClient*, const Model::GetLicenseConfigurationRequest&, const Model::GetLicenseConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLicenseConfigurationResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::GetServiceSettingsRequest&, const Model::GetServiceSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceSettingsResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListAssociationsForLicenseConfigurationRequest&, const Model::ListAssociationsForLicenseConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociationsForLicenseConfigurationResponseReceivedHandler;
+    typedef std::function<void(const LicenseManagerClient*, const Model::ListFailuresForLicenseConfigurationOperationsRequest&, const Model::ListFailuresForLicenseConfigurationOperationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFailuresForLicenseConfigurationOperationsResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListLicenseConfigurationsRequest&, const Model::ListLicenseConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLicenseConfigurationsResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListLicenseSpecificationsForResourceRequest&, const Model::ListLicenseSpecificationsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLicenseSpecificationsForResourceResponseReceivedHandler;
     typedef std::function<void(const LicenseManagerClient*, const Model::ListResourceInventoryRequest&, const Model::ListResourceInventoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResourceInventoryResponseReceivedHandler;
@@ -143,14 +148,9 @@ namespace Model
     typedef std::function<void(const LicenseManagerClient*, const Model::UpdateServiceSettingsRequest&, const Model::UpdateServiceSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceSettingsResponseReceivedHandler;
 
   /**
-   * <fullname> AWS License Manager </fullname> <p> <i>This is the AWS License
-   * Manager API Reference.</i> It provides descriptions, syntax, and usage examples
-   * for each of the actions and data types for License Manager. The topic for each
-   * action shows the Query API request parameters and the XML response. You can also
-   * view the XML request elements in the WSDL. </p> <p> Alternatively, you can use
-   * one of the AWS SDKs to access an API that's tailored to the programming language
-   * or platform that you're using. For more information, see <a
-   * href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>. </p>
+   * <fullname> AWS License Manager </fullname> <p>AWS License Manager makes it
+   * easier to manage licenses from software vendors across multiple AWS accounts and
+   * on-premises servers.</p>
    */
   class AWS_LICENSEMANAGER_API LicenseManagerClient : public Aws::Client::AWSJsonClient
   {
@@ -182,26 +182,26 @@ namespace Model
 
 
         /**
-         * <p>Creates a new license configuration object. A license configuration is an
+         * <p>Creates a license configuration.</p> <p>A license configuration is an
          * abstraction of a customer license agreement that can be consumed and enforced by
          * License Manager. Components include specifications for the license type
-         * (licensing by instance, socket, CPU, or VCPU), tenancy (shared tenancy, Amazon
-         * EC2 Dedicated Instance, Amazon EC2 Dedicated Host, or any of these), host
-         * affinity (how long a VM must be associated with a host), the number of licenses
-         * purchased and used.</p><p><h3>See Also:</h3>   <a
+         * (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy,
+         * Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a
+         * VM must be associated with a host), and the number of licenses purchased and
+         * used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateLicenseConfigurationOutcome CreateLicenseConfiguration(const Model::CreateLicenseConfigurationRequest& request) const;
 
         /**
-         * <p>Creates a new license configuration object. A license configuration is an
+         * <p>Creates a license configuration.</p> <p>A license configuration is an
          * abstraction of a customer license agreement that can be consumed and enforced by
          * License Manager. Components include specifications for the license type
-         * (licensing by instance, socket, CPU, or VCPU), tenancy (shared tenancy, Amazon
-         * EC2 Dedicated Instance, Amazon EC2 Dedicated Host, or any of these), host
-         * affinity (how long a VM must be associated with a host), the number of licenses
-         * purchased and used.</p><p><h3>See Also:</h3>   <a
+         * (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy,
+         * Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a
+         * VM must be associated with a host), and the number of licenses purchased and
+         * used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseConfiguration">AWS
          * API Reference</a></p>
          *
@@ -210,13 +210,13 @@ namespace Model
         virtual Model::CreateLicenseConfigurationOutcomeCallable CreateLicenseConfigurationCallable(const Model::CreateLicenseConfigurationRequest& request) const;
 
         /**
-         * <p>Creates a new license configuration object. A license configuration is an
+         * <p>Creates a license configuration.</p> <p>A license configuration is an
          * abstraction of a customer license agreement that can be consumed and enforced by
          * License Manager. Components include specifications for the license type
-         * (licensing by instance, socket, CPU, or VCPU), tenancy (shared tenancy, Amazon
-         * EC2 Dedicated Instance, Amazon EC2 Dedicated Host, or any of these), host
-         * affinity (how long a VM must be associated with a host), the number of licenses
-         * purchased and used.</p><p><h3>See Also:</h3>   <a
+         * (licensing by instance, socket, CPU, or vCPU), allowed tenancy (shared tenancy,
+         * Dedicated Instance, Dedicated Host, or all of these), host affinity (how long a
+         * VM must be associated with a host), and the number of licenses purchased and
+         * used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/CreateLicenseConfiguration">AWS
          * API Reference</a></p>
          *
@@ -225,16 +225,16 @@ namespace Model
         virtual void CreateLicenseConfigurationAsync(const Model::CreateLicenseConfigurationRequest& request, const CreateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing license configuration. This action fails if the
-         * configuration is in use.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified license configuration.</p> <p>You cannot delete a
+         * license configuration that is in use.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteLicenseConfigurationOutcome DeleteLicenseConfiguration(const Model::DeleteLicenseConfigurationRequest& request) const;
 
         /**
-         * <p>Deletes an existing license configuration. This action fails if the
-         * configuration is in use.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified license configuration.</p> <p>You cannot delete a
+         * license configuration that is in use.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseConfiguration">AWS
          * API Reference</a></p>
          *
@@ -243,8 +243,8 @@ namespace Model
         virtual Model::DeleteLicenseConfigurationOutcomeCallable DeleteLicenseConfigurationCallable(const Model::DeleteLicenseConfigurationRequest& request) const;
 
         /**
-         * <p>Deletes an existing license configuration. This action fails if the
-         * configuration is in use.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified license configuration.</p> <p>You cannot delete a
+         * license configuration that is in use.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/DeleteLicenseConfiguration">AWS
          * API Reference</a></p>
          *
@@ -253,16 +253,16 @@ namespace Model
         virtual void DeleteLicenseConfigurationAsync(const Model::DeleteLicenseConfigurationRequest& request, const DeleteLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a detailed description of a license configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets detailed information about the specified license
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::GetLicenseConfigurationOutcome GetLicenseConfiguration(const Model::GetLicenseConfigurationRequest& request) const;
 
         /**
-         * <p>Returns a detailed description of a license configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets detailed information about the specified license
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseConfiguration">AWS
          * API Reference</a></p>
          *
@@ -271,8 +271,8 @@ namespace Model
         virtual Model::GetLicenseConfigurationOutcomeCallable GetLicenseConfigurationCallable(const Model::GetLicenseConfigurationRequest& request) const;
 
         /**
-         * <p>Returns a detailed description of a license configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets detailed information about the specified license
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetLicenseConfiguration">AWS
          * API Reference</a></p>
          *
@@ -281,16 +281,16 @@ namespace Model
         virtual void GetLicenseConfigurationAsync(const Model::GetLicenseConfigurationRequest& request, const GetLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets License Manager settings for a region. Exposes the configured S3 bucket,
-         * SNS topic, etc., for inspection. </p><p><h3>See Also:</h3>   <a
+         * <p>Gets the License Manager settings for the current Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetServiceSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::GetServiceSettingsOutcome GetServiceSettings(const Model::GetServiceSettingsRequest& request) const;
 
         /**
-         * <p>Gets License Manager settings for a region. Exposes the configured S3 bucket,
-         * SNS topic, etc., for inspection. </p><p><h3>See Also:</h3>   <a
+         * <p>Gets the License Manager settings for the current Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetServiceSettings">AWS
          * API Reference</a></p>
          *
@@ -299,8 +299,8 @@ namespace Model
         virtual Model::GetServiceSettingsOutcomeCallable GetServiceSettingsCallable(const Model::GetServiceSettingsRequest& request) const;
 
         /**
-         * <p>Gets License Manager settings for a region. Exposes the configured S3 bucket,
-         * SNS topic, etc., for inspection. </p><p><h3>See Also:</h3>   <a
+         * <p>Gets the License Manager settings for the current Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/GetServiceSettings">AWS
          * API Reference</a></p>
          *
@@ -309,22 +309,20 @@ namespace Model
         virtual void GetServiceSettingsAsync(const Model::GetServiceSettingsRequest& request, const GetServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the resource associations for a license configuration. Resource
-         * associations need not consume licenses from a license configuration. For
-         * example, an AMI or a stopped instance may not consume a license (depending on
-         * the license rules). Use this operation to find all resources associated with a
-         * license configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the resource associations for the specified license configuration.</p>
+         * <p>Resource associations need not consume licenses from a license configuration.
+         * For example, an AMI or a stopped instance might not consume a license (depending
+         * on the license rules).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListAssociationsForLicenseConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAssociationsForLicenseConfigurationOutcome ListAssociationsForLicenseConfiguration(const Model::ListAssociationsForLicenseConfigurationRequest& request) const;
 
         /**
-         * <p>Lists the resource associations for a license configuration. Resource
-         * associations need not consume licenses from a license configuration. For
-         * example, an AMI or a stopped instance may not consume a license (depending on
-         * the license rules). Use this operation to find all resources associated with a
-         * license configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the resource associations for the specified license configuration.</p>
+         * <p>Resource associations need not consume licenses from a license configuration.
+         * For example, an AMI or a stopped instance might not consume a license (depending
+         * on the license rules).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListAssociationsForLicenseConfiguration">AWS
          * API Reference</a></p>
          *
@@ -333,11 +331,10 @@ namespace Model
         virtual Model::ListAssociationsForLicenseConfigurationOutcomeCallable ListAssociationsForLicenseConfigurationCallable(const Model::ListAssociationsForLicenseConfigurationRequest& request) const;
 
         /**
-         * <p>Lists the resource associations for a license configuration. Resource
-         * associations need not consume licenses from a license configuration. For
-         * example, an AMI or a stopped instance may not consume a license (depending on
-         * the license rules). Use this operation to find all resources associated with a
-         * license configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the resource associations for the specified license configuration.</p>
+         * <p>Resource associations need not consume licenses from a license configuration.
+         * For example, an AMI or a stopped instance might not consume a license (depending
+         * on the license rules).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListAssociationsForLicenseConfiguration">AWS
          * API Reference</a></p>
          *
@@ -346,18 +343,44 @@ namespace Model
         virtual void ListAssociationsForLicenseConfigurationAsync(const Model::ListAssociationsForLicenseConfigurationRequest& request, const ListAssociationsForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists license configuration objects for an account, each containing the name,
-         * description, license type, and other license terms modeled from a license
-         * agreement.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the license configuration operations that failed.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListFailuresForLicenseConfigurationOperations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFailuresForLicenseConfigurationOperationsOutcome ListFailuresForLicenseConfigurationOperations(const Model::ListFailuresForLicenseConfigurationOperationsRequest& request) const;
+
+        /**
+         * <p>Lists the license configuration operations that failed.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListFailuresForLicenseConfigurationOperations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFailuresForLicenseConfigurationOperationsOutcomeCallable ListFailuresForLicenseConfigurationOperationsCallable(const Model::ListFailuresForLicenseConfigurationOperationsRequest& request) const;
+
+        /**
+         * <p>Lists the license configuration operations that failed.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListFailuresForLicenseConfigurationOperations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFailuresForLicenseConfigurationOperationsAsync(const Model::ListFailuresForLicenseConfigurationOperationsRequest& request, const ListFailuresForLicenseConfigurationOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the license configurations for your account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConfigurations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListLicenseConfigurationsOutcome ListLicenseConfigurations(const Model::ListLicenseConfigurationsRequest& request) const;
 
         /**
-         * <p>Lists license configuration objects for an account, each containing the name,
-         * description, license type, and other license terms modeled from a license
-         * agreement.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the license configurations for your account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConfigurations">AWS
          * API Reference</a></p>
          *
@@ -366,9 +389,8 @@ namespace Model
         virtual Model::ListLicenseConfigurationsOutcomeCallable ListLicenseConfigurationsCallable(const Model::ListLicenseConfigurationsRequest& request) const;
 
         /**
-         * <p>Lists license configuration objects for an account, each containing the name,
-         * description, license type, and other license terms modeled from a license
-         * agreement.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the license configurations for your account.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseConfigurations">AWS
          * API Reference</a></p>
          *
@@ -377,16 +399,16 @@ namespace Model
         virtual void ListLicenseConfigurationsAsync(const Model::ListLicenseConfigurationsRequest& request, const ListLicenseConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the license configuration for a resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the license configurations for the specified
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseSpecificationsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListLicenseSpecificationsForResourceOutcome ListLicenseSpecificationsForResource(const Model::ListLicenseSpecificationsForResourceRequest& request) const;
 
         /**
-         * <p>Returns the license configuration for a resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the license configurations for the specified
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseSpecificationsForResource">AWS
          * API Reference</a></p>
          *
@@ -395,8 +417,8 @@ namespace Model
         virtual Model::ListLicenseSpecificationsForResourceOutcomeCallable ListLicenseSpecificationsForResourceCallable(const Model::ListLicenseSpecificationsForResourceRequest& request) const;
 
         /**
-         * <p>Returns the license configuration for a resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Describes the license configurations for the specified
+         * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListLicenseSpecificationsForResource">AWS
          * API Reference</a></p>
          *
@@ -405,14 +427,16 @@ namespace Model
         virtual void ListLicenseSpecificationsForResourceAsync(const Model::ListLicenseSpecificationsForResourceRequest& request, const ListLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns a detailed list of resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists resources managed using Systems Manager inventory.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListResourceInventory">AWS
          * API Reference</a></p>
          */
         virtual Model::ListResourceInventoryOutcome ListResourceInventory(const Model::ListResourceInventoryRequest& request) const;
 
         /**
-         * <p>Returns a detailed list of resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists resources managed using Systems Manager inventory.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListResourceInventory">AWS
          * API Reference</a></p>
          *
@@ -421,7 +445,8 @@ namespace Model
         virtual Model::ListResourceInventoryOutcomeCallable ListResourceInventoryCallable(const Model::ListResourceInventoryRequest& request) const;
 
         /**
-         * <p>Returns a detailed list of resources.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists resources managed using Systems Manager inventory.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListResourceInventory">AWS
          * API Reference</a></p>
          *
@@ -430,14 +455,16 @@ namespace Model
         virtual void ListResourceInventoryAsync(const Model::ListResourceInventoryRequest& request, const ListResourceInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists tags attached to a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags for the specified license configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTagsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists tags attached to a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags for the specified license configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -446,7 +473,8 @@ namespace Model
         virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Lists tags attached to a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the tags for the specified license configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListTagsForResource">AWS
          * API Reference</a></p>
          *
@@ -489,14 +517,16 @@ namespace Model
         virtual void ListUsageForLicenseConfigurationAsync(const Model::ListUsageForLicenseConfigurationRequest& request, const ListUsageForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attach one of more tags to any resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified tags to the specified license configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/TagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Attach one of more tags to any resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified tags to the specified license configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/TagResource">AWS
          * API Reference</a></p>
          *
@@ -505,7 +535,8 @@ namespace Model
         virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
 
         /**
-         * <p>Attach one of more tags to any resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds the specified tags to the specified license configuration.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/TagResource">AWS
          * API Reference</a></p>
          *
@@ -514,14 +545,16 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Remove tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from the specified license
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UntagResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Remove tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from the specified license
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -530,7 +563,8 @@ namespace Model
         virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
 
         /**
-         * <p>Remove tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the specified tags from the specified license
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UntagResource">AWS
          * API Reference</a></p>
          *
@@ -539,24 +573,26 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the attributes of an existing license configuration object. A
+         * <p>Modifies the attributes of an existing license configuration.</p> <p>A
          * license configuration is an abstraction of a customer license agreement that can
          * be consumed and enforced by License Manager. Components include specifications
-         * for the license type (Instances, cores, sockets, VCPUs), tenancy (shared or
-         * Dedicated Host), host affinity (how long a VM is associated with a host), the
-         * number of licenses purchased and used.</p><p><h3>See Also:</h3>   <a
+         * for the license type (licensing by instance, socket, CPU, or vCPU), allowed
+         * tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these),
+         * host affinity (how long a VM must be associated with a host), and the number of
+         * licenses purchased and used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateLicenseConfigurationOutcome UpdateLicenseConfiguration(const Model::UpdateLicenseConfigurationRequest& request) const;
 
         /**
-         * <p>Modifies the attributes of an existing license configuration object. A
+         * <p>Modifies the attributes of an existing license configuration.</p> <p>A
          * license configuration is an abstraction of a customer license agreement that can
          * be consumed and enforced by License Manager. Components include specifications
-         * for the license type (Instances, cores, sockets, VCPUs), tenancy (shared or
-         * Dedicated Host), host affinity (how long a VM is associated with a host), the
-         * number of licenses purchased and used.</p><p><h3>See Also:</h3>   <a
+         * for the license type (licensing by instance, socket, CPU, or vCPU), allowed
+         * tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these),
+         * host affinity (how long a VM must be associated with a host), and the number of
+         * licenses purchased and used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseConfiguration">AWS
          * API Reference</a></p>
          *
@@ -565,12 +601,13 @@ namespace Model
         virtual Model::UpdateLicenseConfigurationOutcomeCallable UpdateLicenseConfigurationCallable(const Model::UpdateLicenseConfigurationRequest& request) const;
 
         /**
-         * <p>Modifies the attributes of an existing license configuration object. A
+         * <p>Modifies the attributes of an existing license configuration.</p> <p>A
          * license configuration is an abstraction of a customer license agreement that can
          * be consumed and enforced by License Manager. Components include specifications
-         * for the license type (Instances, cores, sockets, VCPUs), tenancy (shared or
-         * Dedicated Host), host affinity (how long a VM is associated with a host), the
-         * number of licenses purchased and used.</p><p><h3>See Also:</h3>   <a
+         * for the license type (licensing by instance, socket, CPU, or vCPU), allowed
+         * tenancy (shared tenancy, Dedicated Instance, Dedicated Host, or all of these),
+         * host affinity (how long a VM must be associated with a host), and the number of
+         * licenses purchased and used.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseConfiguration">AWS
          * API Reference</a></p>
          *
@@ -579,24 +616,22 @@ namespace Model
         virtual void UpdateLicenseConfigurationAsync(const Model::UpdateLicenseConfigurationRequest& request, const UpdateLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds or removes license configurations for a specified AWS resource. This
-         * operation currently supports updating the license specifications of AMIs,
-         * instances, and hosts. Launch templates and AWS CloudFormation templates are not
-         * managed from this operation as those resources send the license configurations
-         * directly to a resource creation operation, such as
-         * <code>RunInstances</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or removes the specified license configurations for the specified AWS
+         * resource.</p> <p>You can update the license specifications of AMIs, instances,
+         * and hosts. You cannot update the license specifications for launch templates and
+         * AWS CloudFormation templates, as they send license configurations to the
+         * operation that creates the resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseSpecificationsForResource">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateLicenseSpecificationsForResourceOutcome UpdateLicenseSpecificationsForResource(const Model::UpdateLicenseSpecificationsForResourceRequest& request) const;
 
         /**
-         * <p>Adds or removes license configurations for a specified AWS resource. This
-         * operation currently supports updating the license specifications of AMIs,
-         * instances, and hosts. Launch templates and AWS CloudFormation templates are not
-         * managed from this operation as those resources send the license configurations
-         * directly to a resource creation operation, such as
-         * <code>RunInstances</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or removes the specified license configurations for the specified AWS
+         * resource.</p> <p>You can update the license specifications of AMIs, instances,
+         * and hosts. You cannot update the license specifications for launch templates and
+         * AWS CloudFormation templates, as they send license configurations to the
+         * operation that creates the resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseSpecificationsForResource">AWS
          * API Reference</a></p>
          *
@@ -605,12 +640,11 @@ namespace Model
         virtual Model::UpdateLicenseSpecificationsForResourceOutcomeCallable UpdateLicenseSpecificationsForResourceCallable(const Model::UpdateLicenseSpecificationsForResourceRequest& request) const;
 
         /**
-         * <p>Adds or removes license configurations for a specified AWS resource. This
-         * operation currently supports updating the license specifications of AMIs,
-         * instances, and hosts. Launch templates and AWS CloudFormation templates are not
-         * managed from this operation as those resources send the license configurations
-         * directly to a resource creation operation, such as
-         * <code>RunInstances</code>.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds or removes the specified license configurations for the specified AWS
+         * resource.</p> <p>You can update the license specifications of AMIs, instances,
+         * and hosts. You cannot update the license specifications for launch templates and
+         * AWS CloudFormation templates, as they send license configurations to the
+         * operation that creates the resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateLicenseSpecificationsForResource">AWS
          * API Reference</a></p>
          *
@@ -619,14 +653,16 @@ namespace Model
         virtual void UpdateLicenseSpecificationsForResourceAsync(const Model::UpdateLicenseSpecificationsForResourceRequest& request, const UpdateLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates License Manager service settings.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates License Manager settings for the current Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateServiceSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateServiceSettingsOutcome UpdateServiceSettings(const Model::UpdateServiceSettingsRequest& request) const;
 
         /**
-         * <p>Updates License Manager service settings.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates License Manager settings for the current Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateServiceSettings">AWS
          * API Reference</a></p>
          *
@@ -635,7 +671,8 @@ namespace Model
         virtual Model::UpdateServiceSettingsOutcomeCallable UpdateServiceSettingsCallable(const Model::UpdateServiceSettingsRequest& request) const;
 
         /**
-         * <p>Updates License Manager service settings.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates License Manager settings for the current Region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/UpdateServiceSettings">AWS
          * API Reference</a></p>
          *
@@ -652,6 +689,7 @@ namespace Model
         void GetLicenseConfigurationAsyncHelper(const Model::GetLicenseConfigurationRequest& request, const GetLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetServiceSettingsAsyncHelper(const Model::GetServiceSettingsRequest& request, const GetServiceSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociationsForLicenseConfigurationAsyncHelper(const Model::ListAssociationsForLicenseConfigurationRequest& request, const ListAssociationsForLicenseConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFailuresForLicenseConfigurationOperationsAsyncHelper(const Model::ListFailuresForLicenseConfigurationOperationsRequest& request, const ListFailuresForLicenseConfigurationOperationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLicenseConfigurationsAsyncHelper(const Model::ListLicenseConfigurationsRequest& request, const ListLicenseConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLicenseSpecificationsForResourceAsyncHelper(const Model::ListLicenseSpecificationsForResourceRequest& request, const ListLicenseSpecificationsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResourceInventoryAsyncHelper(const Model::ListResourceInventoryRequest& request, const ListResourceInventoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

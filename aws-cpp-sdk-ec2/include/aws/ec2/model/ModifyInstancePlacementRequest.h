@@ -285,6 +285,47 @@ namespace Model
      */
     inline ModifyInstancePlacementRequest& WithPartitionNumber(int value) { SetPartitionNumber(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the host resource group in which to place the instance.</p>
+     */
+    inline const Aws::String& GetHostResourceGroupArn() const{ return m_hostResourceGroupArn; }
+
+    /**
+     * <p>The ARN of the host resource group in which to place the instance.</p>
+     */
+    inline bool HostResourceGroupArnHasBeenSet() const { return m_hostResourceGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the host resource group in which to place the instance.</p>
+     */
+    inline void SetHostResourceGroupArn(const Aws::String& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = value; }
+
+    /**
+     * <p>The ARN of the host resource group in which to place the instance.</p>
+     */
+    inline void SetHostResourceGroupArn(Aws::String&& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the host resource group in which to place the instance.</p>
+     */
+    inline void SetHostResourceGroupArn(const char* value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn.assign(value); }
+
+    /**
+     * <p>The ARN of the host resource group in which to place the instance.</p>
+     */
+    inline ModifyInstancePlacementRequest& WithHostResourceGroupArn(const Aws::String& value) { SetHostResourceGroupArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the host resource group in which to place the instance.</p>
+     */
+    inline ModifyInstancePlacementRequest& WithHostResourceGroupArn(Aws::String&& value) { SetHostResourceGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the host resource group in which to place the instance.</p>
+     */
+    inline ModifyInstancePlacementRequest& WithHostResourceGroupArn(const char* value) { SetHostResourceGroupArn(value); return *this;}
+
   private:
 
     Affinity m_affinity;
@@ -304,6 +345,9 @@ namespace Model
 
     int m_partitionNumber;
     bool m_partitionNumberHasBeenSet;
+
+    Aws::String m_hostResourceGroupArn;
+    bool m_hostResourceGroupArnHasBeenSet;
   };
 
 } // namespace Model

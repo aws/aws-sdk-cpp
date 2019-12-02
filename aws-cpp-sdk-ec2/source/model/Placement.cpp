@@ -39,7 +39,8 @@ Placement::Placement() :
     m_hostIdHasBeenSet(false),
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
-    m_spreadDomainHasBeenSet(false)
+    m_spreadDomainHasBeenSet(false),
+    m_hostResourceGroupArnHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Placement::Placement(const XmlNode& xmlNode) :
     m_hostIdHasBeenSet(false),
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
-    m_spreadDomainHasBeenSet(false)
+    m_spreadDomainHasBeenSet(false),
+    m_hostResourceGroupArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -105,6 +107,12 @@ Placement& Placement::operator =(const XmlNode& xmlNode)
       m_spreadDomain = Aws::Utils::Xml::DecodeEscapedXmlText(spreadDomainNode.GetText());
       m_spreadDomainHasBeenSet = true;
     }
+    XmlNode hostResourceGroupArnNode = resultNode.FirstChild("hostResourceGroupArn");
+    if(!hostResourceGroupArnNode.IsNull())
+    {
+      m_hostResourceGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(hostResourceGroupArnNode.GetText());
+      m_hostResourceGroupArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -147,6 +155,11 @@ void Placement::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".SpreadDomain=" << StringUtils::URLEncode(m_spreadDomain.c_str()) << "&";
   }
 
+  if(m_hostResourceGroupArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".HostResourceGroupArn=" << StringUtils::URLEncode(m_hostResourceGroupArn.c_str()) << "&";
+  }
+
 }
 
 void Placement::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -178,6 +191,10 @@ void Placement::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_spreadDomainHasBeenSet)
   {
       oStream << location << ".SpreadDomain=" << StringUtils::URLEncode(m_spreadDomain.c_str()) << "&";
+  }
+  if(m_hostResourceGroupArnHasBeenSet)
+  {
+      oStream << location << ".HostResourceGroupArn=" << StringUtils::URLEncode(m_hostResourceGroupArn.c_str()) << "&";
   }
 }
 

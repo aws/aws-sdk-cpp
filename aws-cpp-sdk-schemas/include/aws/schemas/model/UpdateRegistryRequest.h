@@ -1,0 +1,121 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/schemas/Schemas_EXPORTS.h>
+#include <aws/schemas/SchemasRequest.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Schemas
+{
+namespace Model
+{
+
+  /**
+   */
+  class AWS_SCHEMAS_API UpdateRegistryRequest : public SchemasRequest
+  {
+  public:
+    UpdateRegistryRequest();
+
+    // Service request name is the Operation name which will send this request out,
+    // each operation should has unique request name, so that we can get operation's name from this request.
+    // Note: this is not true for response, multiple operations may have the same response name,
+    // so we can not get operation's name from response.
+    inline virtual const char* GetServiceRequestName() const override { return "UpdateRegistry"; }
+
+    Aws::String SerializePayload() const override;
+
+
+    /**
+     * <p>The description of the registry to update.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the registry to update.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the registry to update.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The description of the registry to update.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The description of the registry to update.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The description of the registry to update.</p>
+     */
+    inline UpdateRegistryRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The description of the registry to update.</p>
+     */
+    inline UpdateRegistryRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The description of the registry to update.</p>
+     */
+    inline UpdateRegistryRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    
+    inline const Aws::String& GetRegistryName() const{ return m_registryName; }
+
+    
+    inline bool RegistryNameHasBeenSet() const { return m_registryNameHasBeenSet; }
+
+    
+    inline void SetRegistryName(const Aws::String& value) { m_registryNameHasBeenSet = true; m_registryName = value; }
+
+    
+    inline void SetRegistryName(Aws::String&& value) { m_registryNameHasBeenSet = true; m_registryName = std::move(value); }
+
+    
+    inline void SetRegistryName(const char* value) { m_registryNameHasBeenSet = true; m_registryName.assign(value); }
+
+    
+    inline UpdateRegistryRequest& WithRegistryName(const Aws::String& value) { SetRegistryName(value); return *this;}
+
+    
+    inline UpdateRegistryRequest& WithRegistryName(Aws::String&& value) { SetRegistryName(std::move(value)); return *this;}
+
+    
+    inline UpdateRegistryRequest& WithRegistryName(const char* value) { SetRegistryName(value); return *this;}
+
+  private:
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet;
+
+    Aws::String m_registryName;
+    bool m_registryNameHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace Schemas
+} // namespace Aws

@@ -32,7 +32,8 @@ CreateLicenseConfigurationRequest::CreateLicenseConfigurationRequest() :
     m_licenseCountHardLimit(false),
     m_licenseCountHardLimitHasBeenSet(false),
     m_licenseRulesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_productInformationListHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,17 @@ Aws::String CreateLicenseConfigurationRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_productInformationListHasBeenSet)
+  {
+   Array<JsonValue> productInformationListJsonList(m_productInformationList.size());
+   for(unsigned productInformationListIndex = 0; productInformationListIndex < productInformationListJsonList.GetLength(); ++productInformationListIndex)
+   {
+     productInformationListJsonList[productInformationListIndex].AsObject(m_productInformationList[productInformationListIndex].Jsonize());
+   }
+   payload.WithArray("ProductInformationList", std::move(productInformationListJsonList));
 
   }
 

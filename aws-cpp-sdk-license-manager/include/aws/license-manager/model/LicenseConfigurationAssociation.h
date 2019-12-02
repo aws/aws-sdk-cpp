@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes a server resource that is associated with a license
-   * configuration.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an association with a license configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/LicenseConfigurationAssociation">AWS
    * API Reference</a></p>
    */
@@ -51,42 +51,42 @@ namespace Model
 
 
     /**
-     * <p>ARN of the resource associated with the license configuration.</p>
+     * <p>Amazon Resource Name (ARN) of the resource.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>ARN of the resource associated with the license configuration.</p>
+     * <p>Amazon Resource Name (ARN) of the resource.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>ARN of the resource associated with the license configuration.</p>
+     * <p>Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>ARN of the resource associated with the license configuration.</p>
+     * <p>Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>ARN of the resource associated with the license configuration.</p>
+     * <p>Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>ARN of the resource associated with the license configuration.</p>
+     * <p>Amazon Resource Name (ARN) of the resource.</p>
      */
     inline LicenseConfigurationAssociation& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>ARN of the resource associated with the license configuration.</p>
+     * <p>Amazon Resource Name (ARN) of the resource.</p>
      */
     inline LicenseConfigurationAssociation& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>ARN of the resource associated with the license configuration.</p>
+     * <p>Amazon Resource Name (ARN) of the resource.</p>
      */
     inline LicenseConfigurationAssociation& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 

@@ -704,6 +704,35 @@ namespace Model
      */
     inline Host& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the Dedicated Host is in a host resource group. If
+     * <b>memberOfServiceLinkedResourceGroup</b> is <code>true</code>, the host is in a
+     * host resource group; otherwise, it is not.</p>
+     */
+    inline bool GetMemberOfServiceLinkedResourceGroup() const{ return m_memberOfServiceLinkedResourceGroup; }
+
+    /**
+     * <p>Indicates whether the Dedicated Host is in a host resource group. If
+     * <b>memberOfServiceLinkedResourceGroup</b> is <code>true</code>, the host is in a
+     * host resource group; otherwise, it is not.</p>
+     */
+    inline bool MemberOfServiceLinkedResourceGroupHasBeenSet() const { return m_memberOfServiceLinkedResourceGroupHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the Dedicated Host is in a host resource group. If
+     * <b>memberOfServiceLinkedResourceGroup</b> is <code>true</code>, the host is in a
+     * host resource group; otherwise, it is not.</p>
+     */
+    inline void SetMemberOfServiceLinkedResourceGroup(bool value) { m_memberOfServiceLinkedResourceGroupHasBeenSet = true; m_memberOfServiceLinkedResourceGroup = value; }
+
+    /**
+     * <p>Indicates whether the Dedicated Host is in a host resource group. If
+     * <b>memberOfServiceLinkedResourceGroup</b> is <code>true</code>, the host is in a
+     * host resource group; otherwise, it is not.</p>
+     */
+    inline Host& WithMemberOfServiceLinkedResourceGroup(bool value) { SetMemberOfServiceLinkedResourceGroup(value); return *this;}
+
   private:
 
     AutoPlacement m_autoPlacement;
@@ -753,6 +782,9 @@ namespace Model
 
     Aws::String m_availabilityZoneId;
     bool m_availabilityZoneIdHasBeenSet;
+
+    bool m_memberOfServiceLinkedResourceGroup;
+    bool m_memberOfServiceLinkedResourceGroupHasBeenSet;
   };
 
 } // namespace Model

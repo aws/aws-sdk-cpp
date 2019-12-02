@@ -360,6 +360,63 @@ namespace Model
      */
     inline Placement& WithSpreadDomain(const char* value) { SetSpreadDomain(value); return *this;}
 
+
+    /**
+     * <p>The ARN of the host resource group in which to launch the instances. If you
+     * specify a host resource group ARN, omit the <b>Tenancy</b> parameter or set it
+     * to <code>host</code>.</p>
+     */
+    inline const Aws::String& GetHostResourceGroupArn() const{ return m_hostResourceGroupArn; }
+
+    /**
+     * <p>The ARN of the host resource group in which to launch the instances. If you
+     * specify a host resource group ARN, omit the <b>Tenancy</b> parameter or set it
+     * to <code>host</code>.</p>
+     */
+    inline bool HostResourceGroupArnHasBeenSet() const { return m_hostResourceGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the host resource group in which to launch the instances. If you
+     * specify a host resource group ARN, omit the <b>Tenancy</b> parameter or set it
+     * to <code>host</code>.</p>
+     */
+    inline void SetHostResourceGroupArn(const Aws::String& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = value; }
+
+    /**
+     * <p>The ARN of the host resource group in which to launch the instances. If you
+     * specify a host resource group ARN, omit the <b>Tenancy</b> parameter or set it
+     * to <code>host</code>.</p>
+     */
+    inline void SetHostResourceGroupArn(Aws::String&& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the host resource group in which to launch the instances. If you
+     * specify a host resource group ARN, omit the <b>Tenancy</b> parameter or set it
+     * to <code>host</code>.</p>
+     */
+    inline void SetHostResourceGroupArn(const char* value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn.assign(value); }
+
+    /**
+     * <p>The ARN of the host resource group in which to launch the instances. If you
+     * specify a host resource group ARN, omit the <b>Tenancy</b> parameter or set it
+     * to <code>host</code>.</p>
+     */
+    inline Placement& WithHostResourceGroupArn(const Aws::String& value) { SetHostResourceGroupArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the host resource group in which to launch the instances. If you
+     * specify a host resource group ARN, omit the <b>Tenancy</b> parameter or set it
+     * to <code>host</code>.</p>
+     */
+    inline Placement& WithHostResourceGroupArn(Aws::String&& value) { SetHostResourceGroupArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the host resource group in which to launch the instances. If you
+     * specify a host resource group ARN, omit the <b>Tenancy</b> parameter or set it
+     * to <code>host</code>.</p>
+     */
+    inline Placement& WithHostResourceGroupArn(const char* value) { SetHostResourceGroupArn(value); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
@@ -382,6 +439,9 @@ namespace Model
 
     Aws::String m_spreadDomain;
     bool m_spreadDomainHasBeenSet;
+
+    Aws::String m_hostResourceGroupArn;
+    bool m_hostResourceGroupArnHasBeenSet;
   };
 
 } // namespace Model

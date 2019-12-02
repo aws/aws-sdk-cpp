@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>An array of <code>LicenseConfigurationUsage</code> objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline const Aws::Vector<LicenseConfigurationUsage>& GetLicenseConfigurationUsageList() const{ return m_licenseConfigurationUsageList; }
 
     /**
-     * <p>An array of <code>LicenseConfigurationUsage</code> objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline void SetLicenseConfigurationUsageList(const Aws::Vector<LicenseConfigurationUsage>& value) { m_licenseConfigurationUsageList = value; }
 
     /**
-     * <p>An array of <code>LicenseConfigurationUsage</code> objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline void SetLicenseConfigurationUsageList(Aws::Vector<LicenseConfigurationUsage>&& value) { m_licenseConfigurationUsageList = std::move(value); }
 
     /**
-     * <p>An array of <code>LicenseConfigurationUsage</code> objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline ListUsageForLicenseConfigurationResult& WithLicenseConfigurationUsageList(const Aws::Vector<LicenseConfigurationUsage>& value) { SetLicenseConfigurationUsageList(value); return *this;}
 
     /**
-     * <p>An array of <code>LicenseConfigurationUsage</code> objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline ListUsageForLicenseConfigurationResult& WithLicenseConfigurationUsageList(Aws::Vector<LicenseConfigurationUsage>&& value) { SetLicenseConfigurationUsageList(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <code>LicenseConfigurationUsage</code> objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline ListUsageForLicenseConfigurationResult& AddLicenseConfigurationUsageList(const LicenseConfigurationUsage& value) { m_licenseConfigurationUsageList.push_back(value); return *this; }
 
     /**
-     * <p>An array of <code>LicenseConfigurationUsage</code> objects.</p>
+     * <p>Information about the license configurations.</p>
      */
     inline ListUsageForLicenseConfigurationResult& AddLicenseConfigurationUsageList(LicenseConfigurationUsage&& value) { m_licenseConfigurationUsageList.push_back(std::move(value)); return *this; }
 

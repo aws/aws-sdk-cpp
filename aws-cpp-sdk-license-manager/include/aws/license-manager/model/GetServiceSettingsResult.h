@@ -45,43 +45,43 @@ namespace Model
 
     /**
      * <p>Regional S3 bucket path for storing reports, license trail event data,
-     * discovery data, etc.</p>
+     * discovery data, and so on.</p>
      */
     inline const Aws::String& GetS3BucketArn() const{ return m_s3BucketArn; }
 
     /**
      * <p>Regional S3 bucket path for storing reports, license trail event data,
-     * discovery data, etc.</p>
+     * discovery data, and so on.</p>
      */
     inline void SetS3BucketArn(const Aws::String& value) { m_s3BucketArn = value; }
 
     /**
      * <p>Regional S3 bucket path for storing reports, license trail event data,
-     * discovery data, etc.</p>
+     * discovery data, and so on.</p>
      */
     inline void SetS3BucketArn(Aws::String&& value) { m_s3BucketArn = std::move(value); }
 
     /**
      * <p>Regional S3 bucket path for storing reports, license trail event data,
-     * discovery data, etc.</p>
+     * discovery data, and so on.</p>
      */
     inline void SetS3BucketArn(const char* value) { m_s3BucketArn.assign(value); }
 
     /**
      * <p>Regional S3 bucket path for storing reports, license trail event data,
-     * discovery data, etc.</p>
+     * discovery data, and so on.</p>
      */
     inline GetServiceSettingsResult& WithS3BucketArn(const Aws::String& value) { SetS3BucketArn(value); return *this;}
 
     /**
      * <p>Regional S3 bucket path for storing reports, license trail event data,
-     * discovery data, etc.</p>
+     * discovery data, and so on.</p>
      */
     inline GetServiceSettingsResult& WithS3BucketArn(Aws::String&& value) { SetS3BucketArn(std::move(value)); return *this;}
 
     /**
      * <p>Regional S3 bucket path for storing reports, license trail event data,
-     * discovery data, etc.</p>
+     * discovery data, and so on.</p>
      */
     inline GetServiceSettingsResult& WithS3BucketArn(const char* value) { SetS3BucketArn(value); return *this;}
 
@@ -168,6 +168,49 @@ namespace Model
      */
     inline GetServiceSettingsResult& WithEnableCrossAccountsDiscovery(bool value) { SetEnableCrossAccountsDiscovery(value); return *this;}
 
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
+     * master account will provide member accounts with access to this share.</p>
+     */
+    inline const Aws::String& GetLicenseManagerResourceShareArn() const{ return m_licenseManagerResourceShareArn; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
+     * master account will provide member accounts with access to this share.</p>
+     */
+    inline void SetLicenseManagerResourceShareArn(const Aws::String& value) { m_licenseManagerResourceShareArn = value; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
+     * master account will provide member accounts with access to this share.</p>
+     */
+    inline void SetLicenseManagerResourceShareArn(Aws::String&& value) { m_licenseManagerResourceShareArn = std::move(value); }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
+     * master account will provide member accounts with access to this share.</p>
+     */
+    inline void SetLicenseManagerResourceShareArn(const char* value) { m_licenseManagerResourceShareArn.assign(value); }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
+     * master account will provide member accounts with access to this share.</p>
+     */
+    inline GetServiceSettingsResult& WithLicenseManagerResourceShareArn(const Aws::String& value) { SetLicenseManagerResourceShareArn(value); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
+     * master account will provide member accounts with access to this share.</p>
+     */
+    inline GetServiceSettingsResult& WithLicenseManagerResourceShareArn(Aws::String&& value) { SetLicenseManagerResourceShareArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the AWS resource share. The License Manager
+     * master account will provide member accounts with access to this share.</p>
+     */
+    inline GetServiceSettingsResult& WithLicenseManagerResourceShareArn(const char* value) { SetLicenseManagerResourceShareArn(value); return *this;}
+
   private:
 
     Aws::String m_s3BucketArn;
@@ -177,6 +220,8 @@ namespace Model
     OrganizationConfiguration m_organizationConfiguration;
 
     bool m_enableCrossAccountsDiscovery;
+
+    Aws::String m_licenseManagerResourceShareArn;
   };
 
 } // namespace Model

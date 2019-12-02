@@ -45,6 +45,7 @@ namespace Model
     route_table,
     security_group,
     snapshot,
+    spot_fleet_request,
     spot_instances_request,
     subnet,
     traffic_mirror_filter,

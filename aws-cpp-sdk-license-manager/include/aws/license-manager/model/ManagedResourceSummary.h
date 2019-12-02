@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Summary for a resource.</p><p><h3>See Also:</h3>   <a
+   * <p>Summary information about a managed resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ManagedResourceSummary">AWS
    * API Reference</a></p>
    */
@@ -48,32 +48,32 @@ namespace Model
 
 
     /**
-     * <p>Type of resource associated with a license (instance, host, or AMI).</p>
+     * <p>Type of resource associated with a license.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>Type of resource associated with a license (instance, host, or AMI).</p>
+     * <p>Type of resource associated with a license.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>Type of resource associated with a license (instance, host, or AMI).</p>
+     * <p>Type of resource associated with a license.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>Type of resource associated with a license (instance, host, or AMI).</p>
+     * <p>Type of resource associated with a license.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>Type of resource associated with a license (instance, host, or AMI).</p>
+     * <p>Type of resource associated with a license.</p>
      */
     inline ManagedResourceSummary& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>Type of resource associated with a license (instance, host, or AMI).</p>
+     * <p>Type of resource associated with a license.</p>
      */
     inline ManagedResourceSummary& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
 

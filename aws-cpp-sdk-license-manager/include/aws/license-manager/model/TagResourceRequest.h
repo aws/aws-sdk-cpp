@@ -47,83 +47,83 @@ namespace Model
 
 
     /**
-     * <p>Resource of the ARN to be tagged.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>Resource of the ARN to be tagged.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
-     * <p>Resource of the ARN to be tagged.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>Resource of the ARN to be tagged.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>Resource of the ARN to be tagged.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>Resource of the ARN to be tagged.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline TagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>Resource of the ARN to be tagged.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline TagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>Resource of the ARN to be tagged.</p>
+     * <p>Amazon Resource Name (ARN) of the license configuration.</p>
      */
     inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
 
     /**
-     * <p>Names of the tags to attach to the resource.</p>
+     * <p>One or more tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Names of the tags to attach to the resource.</p>
+     * <p>One or more tags.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>Names of the tags to attach to the resource.</p>
+     * <p>One or more tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>Names of the tags to attach to the resource.</p>
+     * <p>One or more tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>Names of the tags to attach to the resource.</p>
+     * <p>One or more tags.</p>
      */
     inline TagResourceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Names of the tags to attach to the resource.</p>
+     * <p>One or more tags.</p>
      */
     inline TagResourceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Names of the tags to attach to the resource.</p>
+     * <p>One or more tags.</p>
      */
     inline TagResourceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>Names of the tags to attach to the resource.</p>
+     * <p>One or more tags.</p>
      */
     inline TagResourceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

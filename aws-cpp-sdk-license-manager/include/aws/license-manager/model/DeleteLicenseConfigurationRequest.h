@@ -45,42 +45,42 @@ namespace Model
 
 
     /**
-     * <p>Unique ID of the configuration object to delete.</p>
+     * <p>ID of the license configuration.</p>
      */
     inline const Aws::String& GetLicenseConfigurationArn() const{ return m_licenseConfigurationArn; }
 
     /**
-     * <p>Unique ID of the configuration object to delete.</p>
+     * <p>ID of the license configuration.</p>
      */
     inline bool LicenseConfigurationArnHasBeenSet() const { return m_licenseConfigurationArnHasBeenSet; }
 
     /**
-     * <p>Unique ID of the configuration object to delete.</p>
+     * <p>ID of the license configuration.</p>
      */
     inline void SetLicenseConfigurationArn(const Aws::String& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = value; }
 
     /**
-     * <p>Unique ID of the configuration object to delete.</p>
+     * <p>ID of the license configuration.</p>
      */
     inline void SetLicenseConfigurationArn(Aws::String&& value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn = std::move(value); }
 
     /**
-     * <p>Unique ID of the configuration object to delete.</p>
+     * <p>ID of the license configuration.</p>
      */
     inline void SetLicenseConfigurationArn(const char* value) { m_licenseConfigurationArnHasBeenSet = true; m_licenseConfigurationArn.assign(value); }
 
     /**
-     * <p>Unique ID of the configuration object to delete.</p>
+     * <p>ID of the license configuration.</p>
      */
     inline DeleteLicenseConfigurationRequest& WithLicenseConfigurationArn(const Aws::String& value) { SetLicenseConfigurationArn(value); return *this;}
 
     /**
-     * <p>Unique ID of the configuration object to delete.</p>
+     * <p>ID of the license configuration.</p>
      */
     inline DeleteLicenseConfigurationRequest& WithLicenseConfigurationArn(Aws::String&& value) { SetLicenseConfigurationArn(std::move(value)); return *this;}
 
     /**
-     * <p>Unique ID of the configuration object to delete.</p>
+     * <p>ID of the license configuration.</p>
      */
     inline DeleteLicenseConfigurationRequest& WithLicenseConfigurationArn(const char* value) { SetLicenseConfigurationArn(value); return *this;}
 

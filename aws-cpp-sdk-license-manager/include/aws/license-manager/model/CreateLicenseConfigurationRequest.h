@@ -20,6 +20,7 @@
 #include <aws/license-manager/model/LicenseCountingType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/license-manager/model/Tag.h>
+#include <aws/license-manager/model/ProductInformation.h>
 #include <utility>
 
 namespace Aws
@@ -89,73 +90,73 @@ namespace Model
 
 
     /**
-     * <p>Human-friendly description of the license configuration.</p>
+     * <p>Description of the license configuration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Human-friendly description of the license configuration.</p>
+     * <p>Description of the license configuration.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>Human-friendly description of the license configuration.</p>
+     * <p>Description of the license configuration.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Human-friendly description of the license configuration.</p>
+     * <p>Description of the license configuration.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Human-friendly description of the license configuration.</p>
+     * <p>Description of the license configuration.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Human-friendly description of the license configuration.</p>
+     * <p>Description of the license configuration.</p>
      */
     inline CreateLicenseConfigurationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Human-friendly description of the license configuration.</p>
+     * <p>Description of the license configuration.</p>
      */
     inline CreateLicenseConfigurationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Human-friendly description of the license configuration.</p>
+     * <p>Description of the license configuration.</p>
      */
     inline CreateLicenseConfigurationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>Dimension to use to track the license inventory.</p>
+     * <p>Dimension used to track the license inventory.</p>
      */
     inline const LicenseCountingType& GetLicenseCountingType() const{ return m_licenseCountingType; }
 
     /**
-     * <p>Dimension to use to track the license inventory.</p>
+     * <p>Dimension used to track the license inventory.</p>
      */
     inline bool LicenseCountingTypeHasBeenSet() const { return m_licenseCountingTypeHasBeenSet; }
 
     /**
-     * <p>Dimension to use to track the license inventory.</p>
+     * <p>Dimension used to track the license inventory.</p>
      */
     inline void SetLicenseCountingType(const LicenseCountingType& value) { m_licenseCountingTypeHasBeenSet = true; m_licenseCountingType = value; }
 
     /**
-     * <p>Dimension to use to track the license inventory.</p>
+     * <p>Dimension used to track the license inventory.</p>
      */
     inline void SetLicenseCountingType(LicenseCountingType&& value) { m_licenseCountingTypeHasBeenSet = true; m_licenseCountingType = std::move(value); }
 
     /**
-     * <p>Dimension to use to track the license inventory.</p>
+     * <p>Dimension used to track the license inventory.</p>
      */
     inline CreateLicenseConfigurationRequest& WithLicenseCountingType(const LicenseCountingType& value) { SetLicenseCountingType(value); return *this;}
 
     /**
-     * <p>Dimension to use to track the license inventory.</p>
+     * <p>Dimension used to track the license inventory.</p>
      */
     inline CreateLicenseConfigurationRequest& WithLicenseCountingType(LicenseCountingType&& value) { SetLicenseCountingType(std::move(value)); return *this;}
 
@@ -182,139 +183,264 @@ namespace Model
 
 
     /**
-     * <p>Flag indicating whether hard or soft license enforcement is used. Exceeding a
-     * hard limit results in the blocked deployment of new instances.</p>
+     * <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard
+     * limit blocks the launch of new instances.</p>
      */
     inline bool GetLicenseCountHardLimit() const{ return m_licenseCountHardLimit; }
 
     /**
-     * <p>Flag indicating whether hard or soft license enforcement is used. Exceeding a
-     * hard limit results in the blocked deployment of new instances.</p>
+     * <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard
+     * limit blocks the launch of new instances.</p>
      */
     inline bool LicenseCountHardLimitHasBeenSet() const { return m_licenseCountHardLimitHasBeenSet; }
 
     /**
-     * <p>Flag indicating whether hard or soft license enforcement is used. Exceeding a
-     * hard limit results in the blocked deployment of new instances.</p>
+     * <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard
+     * limit blocks the launch of new instances.</p>
      */
     inline void SetLicenseCountHardLimit(bool value) { m_licenseCountHardLimitHasBeenSet = true; m_licenseCountHardLimit = value; }
 
     /**
-     * <p>Flag indicating whether hard or soft license enforcement is used. Exceeding a
-     * hard limit results in the blocked deployment of new instances.</p>
+     * <p>Indicates whether hard or soft license enforcement is used. Exceeding a hard
+     * limit blocks the launch of new instances.</p>
      */
     inline CreateLicenseConfigurationRequest& WithLicenseCountHardLimit(bool value) { SetLicenseCountHardLimit(value); return *this;}
 
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules. The syntax is #name=value (for example,
+     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
+     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
+     * <code>Instances</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
+     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
+     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
+     * <code>minimumVcpus</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetLicenseRules() const{ return m_licenseRules; }
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules. The syntax is #name=value (for example,
+     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
+     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
+     * <code>Instances</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
+     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
+     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
+     * <code>minimumVcpus</code> </p> </li> </ul>
      */
     inline bool LicenseRulesHasBeenSet() const { return m_licenseRulesHasBeenSet; }
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules. The syntax is #name=value (for example,
+     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
+     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
+     * <code>Instances</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
+     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
+     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
+     * <code>minimumVcpus</code> </p> </li> </ul>
      */
     inline void SetLicenseRules(const Aws::Vector<Aws::String>& value) { m_licenseRulesHasBeenSet = true; m_licenseRules = value; }
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules. The syntax is #name=value (for example,
+     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
+     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
+     * <code>Instances</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
+     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
+     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
+     * <code>minimumVcpus</code> </p> </li> </ul>
      */
     inline void SetLicenseRules(Aws::Vector<Aws::String>&& value) { m_licenseRulesHasBeenSet = true; m_licenseRules = std::move(value); }
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules. The syntax is #name=value (for example,
+     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
+     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
+     * <code>Instances</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
+     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
+     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
+     * <code>minimumVcpus</code> </p> </li> </ul>
      */
     inline CreateLicenseConfigurationRequest& WithLicenseRules(const Aws::Vector<Aws::String>& value) { SetLicenseRules(value); return *this;}
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules. The syntax is #name=value (for example,
+     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
+     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
+     * <code>Instances</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
+     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
+     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
+     * <code>minimumVcpus</code> </p> </li> </ul>
      */
     inline CreateLicenseConfigurationRequest& WithLicenseRules(Aws::Vector<Aws::String>&& value) { SetLicenseRules(std::move(value)); return *this;}
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules. The syntax is #name=value (for example,
+     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
+     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
+     * <code>Instances</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
+     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
+     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
+     * <code>minimumVcpus</code> </p> </li> </ul>
      */
     inline CreateLicenseConfigurationRequest& AddLicenseRules(const Aws::String& value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(value); return *this; }
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules. The syntax is #name=value (for example,
+     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
+     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
+     * <code>Instances</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
+     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
+     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
+     * <code>minimumVcpus</code> </p> </li> </ul>
      */
     inline CreateLicenseConfigurationRequest& AddLicenseRules(Aws::String&& value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Array of configured License Manager rules.</p>
+     * <p>License rules. The syntax is #name=value (for example,
+     * #allowedTenancy=EC2-DedicatedHost). Available rules vary by dimension.</p> <ul>
+     * <li> <p> <code>Cores</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> </p> </li> <li> <p>
+     * <code>Instances</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumCores</code> | <code>minimumCores</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> |
+     * <code>maximumVcpus</code> | <code>minimumVcpus</code> </p> </li> <li> <p>
+     * <code>Sockets</code> dimension: <code>allowedTenancy</code> |
+     * <code>maximumSockets</code> | <code>minimumSockets</code> </p> </li> <li> <p>
+     * <code>vCPUs</code> dimension: <code>allowedTenancy</code> |
+     * <code>honorVcpuOptimization</code> | <code>maximumVcpus</code> |
+     * <code>minimumVcpus</code> </p> </li> </ul>
      */
     inline CreateLicenseConfigurationRequest& AddLicenseRules(const char* value) { m_licenseRulesHasBeenSet = true; m_licenseRules.push_back(value); return *this; }
 
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see CreateTags .</p> <p/>
+     * <p>Tags to add to the license configuration.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see CreateTags .</p> <p/>
+     * <p>Tags to add to the license configuration.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see CreateTags .</p> <p/>
+     * <p>Tags to add to the license configuration.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see CreateTags .</p> <p/>
+     * <p>Tags to add to the license configuration.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see CreateTags .</p> <p/>
+     * <p>Tags to add to the license configuration.</p>
      */
     inline CreateLicenseConfigurationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see CreateTags .</p> <p/>
+     * <p>Tags to add to the license configuration.</p>
      */
     inline CreateLicenseConfigurationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see CreateTags .</p> <p/>
+     * <p>Tags to add to the license configuration.</p>
      */
     inline CreateLicenseConfigurationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>The tags to apply to the resources during launch. You can only tag instances
-     * and volumes on launch. The specified tags are applied to all instances or
-     * volumes that are created during launch. To tag a resource after it has been
-     * created, see CreateTags .</p> <p/>
+     * <p>Tags to add to the license configuration.</p>
      */
     inline CreateLicenseConfigurationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline const Aws::Vector<ProductInformation>& GetProductInformationList() const{ return m_productInformationList; }
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline bool ProductInformationListHasBeenSet() const { return m_productInformationListHasBeenSet; }
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline void SetProductInformationList(const Aws::Vector<ProductInformation>& value) { m_productInformationListHasBeenSet = true; m_productInformationList = value; }
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline void SetProductInformationList(Aws::Vector<ProductInformation>&& value) { m_productInformationListHasBeenSet = true; m_productInformationList = std::move(value); }
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline CreateLicenseConfigurationRequest& WithProductInformationList(const Aws::Vector<ProductInformation>& value) { SetProductInformationList(value); return *this;}
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline CreateLicenseConfigurationRequest& WithProductInformationList(Aws::Vector<ProductInformation>&& value) { SetProductInformationList(std::move(value)); return *this;}
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline CreateLicenseConfigurationRequest& AddProductInformationList(const ProductInformation& value) { m_productInformationListHasBeenSet = true; m_productInformationList.push_back(value); return *this; }
+
+    /**
+     * <p>Product information.</p>
+     */
+    inline CreateLicenseConfigurationRequest& AddProductInformationList(ProductInformation&& value) { m_productInformationListHasBeenSet = true; m_productInformationList.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -338,6 +464,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<ProductInformation> m_productInformationList;
+    bool m_productInformationListHasBeenSet;
   };
 
 } // namespace Model
