@@ -1,0 +1,87 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/accessanalyzer/AccessAnalyzer_EXPORTS.h>
+#include <aws/accessanalyzer/model/AnalyzedResource.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace AccessAnalyzer
+{
+namespace Model
+{
+  /**
+   * <p>The response to the request.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAnalyzedResourceResponse">AWS
+   * API Reference</a></p>
+   */
+  class AWS_ACCESSANALYZER_API GetAnalyzedResourceResult
+  {
+  public:
+    GetAnalyzedResourceResult();
+    GetAnalyzedResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    GetAnalyzedResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>An <code>AnalyedResource</code> object that contains information that Access
+     * Analyzer found when it analyzed the resource.</p>
+     */
+    inline const AnalyzedResource& GetResource() const{ return m_resource; }
+
+    /**
+     * <p>An <code>AnalyedResource</code> object that contains information that Access
+     * Analyzer found when it analyzed the resource.</p>
+     */
+    inline void SetResource(const AnalyzedResource& value) { m_resource = value; }
+
+    /**
+     * <p>An <code>AnalyedResource</code> object that contains information that Access
+     * Analyzer found when it analyzed the resource.</p>
+     */
+    inline void SetResource(AnalyzedResource&& value) { m_resource = std::move(value); }
+
+    /**
+     * <p>An <code>AnalyedResource</code> object that contains information that Access
+     * Analyzer found when it analyzed the resource.</p>
+     */
+    inline GetAnalyzedResourceResult& WithResource(const AnalyzedResource& value) { SetResource(value); return *this;}
+
+    /**
+     * <p>An <code>AnalyedResource</code> object that contains information that Access
+     * Analyzer found when it analyzed the resource.</p>
+     */
+    inline GetAnalyzedResourceResult& WithResource(AnalyzedResource&& value) { SetResource(std::move(value)); return *this;}
+
+  private:
+
+    AnalyzedResource m_resource;
+  };
+
+} // namespace Model
+} // namespace AccessAnalyzer
+} // namespace Aws
