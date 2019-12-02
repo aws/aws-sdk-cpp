@@ -33,7 +33,7 @@ namespace Aws
              * Empty credentials are not expired by default.
              * Credentials expire only if an expiration date is explicitly set on them.
              */
-            AWSCredentials() : m_expiration(std::chrono::time_point<std::chrono::system_clock>::max())
+            AWSCredentials() : m_expiration((std::chrono::time_point<std::chrono::system_clock>::max)())
             {
             }
 
@@ -43,7 +43,7 @@ namespace Aws
              * Expiration date is set to "never expire".
              */
             AWSCredentials(const Aws::String& accessKeyId, const Aws::String& secretKey) :
-                m_accessKeyId(accessKeyId), m_secretKey(secretKey), m_expiration(std::chrono::time_point<std::chrono::system_clock>::max())
+                m_accessKeyId(accessKeyId), m_secretKey(secretKey), m_expiration((std::chrono::time_point<std::chrono::system_clock>::max)())
             {
             }
 
@@ -52,7 +52,7 @@ namespace Aws
              * Expiration date is set to "never expire".
              */
             AWSCredentials(const Aws::String& accessKeyId, const Aws::String& secretKey, const Aws::String& sessionToken) :
-                m_accessKeyId(accessKeyId), m_secretKey(secretKey), m_sessionToken(sessionToken), m_expiration(std::chrono::time_point<std::chrono::system_clock>::max())
+                m_accessKeyId(accessKeyId), m_secretKey(secretKey), m_sessionToken(sessionToken), m_expiration((std::chrono::time_point<std::chrono::system_clock>::max)())
             {
             }
 
