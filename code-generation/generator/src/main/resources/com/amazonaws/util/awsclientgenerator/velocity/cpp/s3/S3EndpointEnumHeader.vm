@@ -1,0 +1,36 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#pragma once
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
+\#include <aws/core/Region.h>
+\#include <aws/core/utils/memory/stl/AWSString.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ARN.h>
+
+namespace ${rootNamespace}
+{
+
+namespace ${serviceNamespace}
+{
+namespace ${metadata.classNamePrefix}Endpoint
+{
+  /**
+   * Compute endpoint based on region.
+   * @param regionName The AWS region used in the endpoint
+   * @param useDualStack Using dual-stack endpoint if true
+   * @param USEast1UseRegionalEndpoint Using global endpoint for us-east-1 if the value is LEGACY, or using regional endpoint if it's REGIONAL
+   */
+  AWS_S3_API Aws::String ForRegion(const Aws::String& regionName, bool useDualStack = false, bool USEast1UseRegionalEndpoint = false);
+
+  /**
+   * Compute endpoint based on Access Point ARN.
+   * @param arn The S3 Access Point ARN
+   * @param regionNameOverride Override region name in ARN if it's not empty
+   * @param useDualStack Using dual-stack endpoint if true
+   */
+  AWS_S3_API Aws::String ForAccessPointArn(const ${metadata.classNamePrefix}ARN& arn, const Aws::String& regionNameOverride = "", bool useDualStack = false);
+} // namespace ${metadata.classNamePrefix}Endpoint
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

@@ -44,7 +44,7 @@ public:
     void SetSigningTimestamp(const DateTime& dateTime) { m_signingTimeStamp = dateTime; }
 
 protected:
-    virtual Aws::Utils::DateTime GetSigningTimestamp() const { return m_signingTimeStamp; }    
+    virtual Aws::Utils::DateTime GetSigningTimestamp() const { return m_signingTimeStamp; }
 
 private:
     DateTime m_signingTimeStamp;
@@ -100,7 +100,7 @@ static Standard::StandardHttpRequest ParseHttpRequest(Aws::IOStream& inputStream
                             headers[currentHeader] = pair[1].c_str();
                         }
                         else
-                        {          
+                        {
                             headers[currentHeader] += ",";
                             headers[currentHeader] += pair[1].c_str();
                         }
@@ -109,18 +109,18 @@ static Standard::StandardHttpRequest ParseHttpRequest(Aws::IOStream& inputStream
                     {
                         headers[currentHeader] += "\n";
                         headers[currentHeader] += pair[0].c_str();
-                    }            
+                    }
                 }
             }
             //parse content-body
-            else 
-            {                
+            else
+            {
                 auto pair = StringUtils::Split(pairLine, '=');
                 *bodyStream << StringUtils::URLEncode(pair[0].c_str()) << StringUtils::URLEncode(pair[1].c_str()) << "&" << std::endl;
             }
         }
     }
-    
+
     auto pathAndQuery = StringUtils::Split(pathStr, '?');
     auto pathOnly = pathAndQuery[0];
     URI uri;
@@ -211,9 +211,27 @@ static void RunV4TestCase(const char* testCaseName)
     std::getline(signatureFile, expectedSignature);
 
     ASSERT_STREQ(expectedSignature.c_str(), httpRequestToMake.GetAwsAuthorization().c_str());
+
+    // Override signer's region
+    requestFile.clear();
+    requestFile.seekg(0, std::ios::beg);
+    httpRequestToMake = ParseHttpRequest(requestFile, timestampForSigner, Scheme::HTTP);
+    TestableAuthv4Signer signerInUSWest2(credProvider, "service", "us-west-2", AWSAuthV4Signer::PayloadSigningPolicy::Never, false);
+    signerInUSWest2.SetSigningTimestamp(timestampForSigner);
+    successfullySigned = signerInUSWest2.SignRequest(httpRequestToMake, "us-east-1", true);
+    ASSERT_TRUE(successfullySigned);
+    ASSERT_STREQ(expectedSignature.c_str(), httpRequestToMake.GetAwsAuthorization().c_str());
+
+    // Using signer's default region
+    requestFile.clear();
+    requestFile.seekg(0, std::ios::beg);
+    httpRequestToMake = ParseHttpRequest(requestFile, timestampForSigner, Scheme::HTTP);
+    successfullySigned = signerInUSWest2.SignRequest(httpRequestToMake);
+    ASSERT_TRUE(successfullySigned);
+    ASSERT_STRNE(expectedSignature.c_str(), httpRequestToMake.GetAwsAuthorization().c_str());
 }
 
-/** 
+/**
  * Construct a standard http request object from local test suite file specified by testCaseName.
  * timestamp is parsed from the file and will be passed to signer as signing timestamp,
  * scheme will determine if secure http will be used.
@@ -307,7 +325,7 @@ TEST(AWSAuthV4SignerTest, PayloadSigningPolicyNever)
     RunV4TestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::Never, Aws::Http::Scheme::HTTP, false);
     RunV4TestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::Never, Aws::Http::Scheme::HTTPS, true);
     RunV4TestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy::Never, Aws::Http::Scheme::HTTPS, false);
-    
+
     // Test with payload(non-empty body)
     RunV4TestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::Never, Aws::Http::Scheme::HTTP, true);
     RunV4TestCaseWithPayload("post-x-www-form-urlencoded", AWSAuthV4Signer::PayloadSigningPolicy::Never, Aws::Http::Scheme::HTTP, false);
@@ -377,7 +395,7 @@ TEST(AWSAuthV4SignerTest, GetUtf8)
 
 TEST(AWSAuthV4SignerTest, GetVanilla)
 {
-    RunV4TestCase("get-vanilla");   
+    RunV4TestCase("get-vanilla");
 }
 
 TEST(AWSAuthV4SignerTest, GetVanillaEmptyQueryKey)

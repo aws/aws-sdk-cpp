@@ -1,24 +1,50 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
 
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($endpointPrefix = $metadata.endpointPrefix)
 \#include <aws/s3/S3Endpoint.h>
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
 \#include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws;
-using namespace Aws::S3;
+using namespace ${rootNamespace}::${serviceNamespace};
 
-namespace Aws
+namespace ${rootNamespace}
 {
-namespace S3
+namespace ${serviceNamespace}
 {
-namespace S3Endpoint
+namespace ${metadata.classNamePrefix}Endpoint
 {
   static const int CN_NORTH_1_HASH = Aws::Utils::HashingUtils::HashString("cn-north-1");
   static const int CN_NORTHWEST_1_HASH = Aws::Utils::HashingUtils::HashString("cn-northwest-1");
 
   static const int FIPS_US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("fips-us-gov-west-1");
   static const int US_GOV_WEST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-west-1");
+  static const int US_GOV_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-gov-east-1");
   static const int US_EAST_1_HASH = Aws::Utils::HashingUtils::HashString("us-east-1");
+
+  Aws::String ForAccessPointArn(const ${metadata.classNamePrefix}ARN& arn, const Aws::String& regionNameOverride, bool useDualStack)
+  {
+      const Aws::String& region = regionNameOverride.empty() ? arn.GetRegion() : regionNameOverride;
+      auto hash = Aws::Utils::HashingUtils::HashString(region.c_str());
+
+      Aws::StringStream ss;
+      ss << arn.GetResourceId() << "-" << arn.GetAccountId() << ".s3-accesspoint.";
+      if (useDualStack)
+      {
+          ss << "dualstack.";
+      }
+      ss << region << "." << "amazonaws.com";
+
+      if (hash == CN_NORTH_1_HASH || hash == CN_NORTHWEST_1_HASH)
+      {
+          ss << ".cn";
+      }
+
+      return ss.str();
+  }
 
   Aws::String ForRegion(const Aws::String& regionName, bool useDualStack, bool USEast1UseRegionalEndpoint)
   {
@@ -32,7 +58,11 @@ namespace S3Endpoint
       }
       if(hash == US_GOV_WEST_1_HASH)
       {
-        return "s3-us-gov-west-1.amazonaws.com";
+        return "s3.us-gov-west-1.amazonaws.com";
+      }
+      if(hash == US_GOV_EAST_1_HASH)
+      {
+        return "s3.us-gov-east-1.amazonaws.com";
       }
       if(hash == US_EAST_1_HASH)
       {
@@ -64,6 +94,6 @@ namespace S3Endpoint
     return ss.str();
   }
 
-} // namespace S3Endpoint
-} // namespace S3
-} // namespace Aws
+} // namespace ${metadata.classNamePrefix}Endpoint
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

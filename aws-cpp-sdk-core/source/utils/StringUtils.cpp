@@ -85,10 +85,20 @@ bool StringUtils::CaselessCompare(const char* value1, const char* value2)
 
 Aws::Vector<Aws::String> StringUtils::Split(const Aws::String& toSplit, char splitOn)
 {
-    return Split(toSplit, splitOn, SIZE_MAX);
+    return Split(toSplit, splitOn, SIZE_MAX, SplitOptions::NOT_SET);
+}
+
+Aws::Vector<Aws::String> StringUtils::Split(const Aws::String& toSplit, char splitOn, SplitOptions option)
+{
+    return Split(toSplit, splitOn, SIZE_MAX, option);
 }
 
 Aws::Vector<Aws::String> StringUtils::Split(const Aws::String& toSplit, char splitOn, size_t numOfTargetParts)
+{
+    return Split(toSplit, splitOn, numOfTargetParts, SplitOptions::NOT_SET);
+}
+
+Aws::Vector<Aws::String> StringUtils::Split(const Aws::String& toSplit, char splitOn, size_t numOfTargetParts, SplitOptions option)
 {
     Aws::Vector<Aws::String> returnValues;
     Aws::StringStream input(toSplit);
@@ -96,16 +106,35 @@ Aws::Vector<Aws::String> StringUtils::Split(const Aws::String& toSplit, char spl
 
     while(returnValues.size() < numOfTargetParts - 1 && std::getline(input, item, splitOn))
     {
-        if (item.size())
+        if (!item.empty() || option == SplitOptions::INCLUDE_EMPTY_ENTRIES)
         {
             returnValues.emplace_back(std::move(item));
         }
     }
 
-    if (std::getline(input, item, static_cast<char>(EOF)) && item.size())
+    if (std::getline(input, item, static_cast<char>(EOF)))
     {
-        returnValues.emplace_back(std::move(item));
+        if (option != SplitOptions::INCLUDE_EMPTY_ENTRIES)
+        {
+            // Trim all leading delimiters.
+            item.erase(item.begin(), std::find_if(item.begin(), item.end(), [splitOn](int ch) { return ch != splitOn; }));
+            if (!item.empty())
+            {
+                returnValues.emplace_back(std::move(item));
+            }
+        }
+        else
+        {
+            returnValues.emplace_back(std::move(item));
+        }
+
     }
+    // To handle the case when there are trailing delimiters.
+    else if (!toSplit.empty() && toSplit.back() == splitOn && option == SplitOptions::INCLUDE_EMPTY_ENTRIES)
+    {
+        returnValues.emplace_back();
+    }
+
     return returnValues;
 }
 

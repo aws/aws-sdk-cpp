@@ -14,23 +14,32 @@
 */
 
 #include <aws/external/gtest.h>
-#include <aws/testing/ProxyConfig.h>
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/ClientConfiguration.h>
 #include <aws/core/client/CoreErrors.h>
-#include <aws/core/auth/AWSCredentialsProviderChain.h>
-#include <aws/core/platform/Platform.h>
-#include <aws/core/utils/Outcome.h>
-#include <aws/s3/S3Client.h>
+#include <aws/core/client/RetryStrategy.h>
+#include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/http/HttpClient.h>
+#include <aws/core/utils/crypto/Cipher.h>
+#include <aws/core/utils/crypto/Factories.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/UUID.h>
+#include <aws/core/utils/Outcome.h>
+#include <aws/core/platform/Environment.h>
+#include <aws/core/platform/Platform.h>
+#include <aws/s3/S3Client.h>
+#include <aws/s3/S3ARN.h>
+#include <aws/s3/S3Endpoint.h>
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/CreateBucketRequest.h>
 #include <aws/s3/model/HeadBucketRequest.h>
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/CopyObjectRequest.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
-#include <aws/core/utils/HashingUtils.h>
-#include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/UUID.h>
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
 #include <aws/s3/model/HeadObjectRequest.h>
@@ -40,16 +49,9 @@
 #include <aws/s3/model/ListObjectsRequest.h>
 #include <aws/s3/model/GetBucketLocationRequest.h>
 #include <aws/s3/model/SelectObjectContentRequest.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/core/http/HttpClientFactory.h>
-#include <aws/core/http/HttpClient.h>
-#include <aws/core/client/RetryStrategy.h>
-#include <aws/core/utils/threading/Executor.h>
+#include <aws/testing/ProxyConfig.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/TestingEnvironment.h>
-#include <aws/core/utils/crypto/Factories.h>
-#include <aws/core/utils/crypto/Cipher.h>
-#include <aws/core/utils/HashingUtils.h>
 #include <fstream>
 
 #ifdef _WIN32
@@ -1584,4 +1586,73 @@ namespace
 
         ASSERT_TRUE(isErrorEventReceived);
     }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3AccessPointARNValidation)
+    {
+        // The followings are examples for valid S3 ARN:
+        ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint/endpoint").Validate().IsSuccess());
+        // Pseudo region in client configuration
+        ASSERT_TRUE(S3ARN("arn:aws:s3:us-gov-west-1:123456789120:accesspoint:endpoint").Validate("fips-us-gov-west-1").IsSuccess());
+        ASSERT_TRUE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate("us-east-1-fips").IsSuccess());
+
+        // The followings are examples for invalid S3 ARN:
+        // S3ARN partition
+        // Invalid partition: cn-aws
+        ASSERT_FALSE(S3ARN("arn:cn-aws:s3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
+        // Empty partition name
+        ASSERT_FALSE(S3ARN("arn::s3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
+
+        // S3ARN service
+        // Invalid service: EC2
+        ASSERT_FALSE(S3ARN("arn:aws:ec2:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
+        // Empty service name
+        ASSERT_FALSE(S3ARN("arn:aws::us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
+
+        // S3ARN region
+        // Cross region ARN when useArnRegion = false
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-west-1:123456789120:accesspoint:endpoint").Validate("us-east-1").IsSuccess());
+        // Invalid region name with upper case
+        ASSERT_FALSE(S3ARN("arn:aws:S3:us-east-1:123456789120:accesspoint:endpoint").Validate().IsSuccess());
+        // Empty region name
+        ASSERT_FALSE(S3ARN("arn:aws:s3::123456789120:accesspoint:endpoint").Validate().IsSuccess());
+
+        // S3ARN account id
+        // Invalid account ID with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:12345.678912:accesspoint:endpoint").Validate().IsSuccess());
+        // Empty account ID
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1::accesspoint:endpoint").Validate().IsSuccess());
+
+        // S3ARN resource type
+        // Invalid resource type: bucket_name
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:bucket_name:bucket").Validate().IsSuccess());
+        // Empty resource ID
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:").Validate().IsSuccess());
+        // Invalid resource ID with non RFC 3986 Host label
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint.1").Validate().IsSuccess());
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:*").Validate().IsSuccess());
+        // Invalid resource ID with qualifier, namely, the third part of the resource segments.
+        ASSERT_FALSE(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:bucket:qualifier").Validate().IsSuccess());
+    }
+
+    TEST_F(BucketAndObjectOperationTest, TestS3EndpointForAccessPointARN)
+    {
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.us-east-1.amazonaws.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint"), "", false).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.us-east-1.amazonaws.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint/endpoint"), "", false).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.dualstack.us-east-1.amazonaws.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint"), "", true).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.cn-north-1.amazonaws.com.cn",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-cn:s3:cn-north-1:123456789120:accesspoint:endpoint"), "", false).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.dualstack.cn-north-1.amazonaws.com.cn",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-cn:s3:cn-north-1:123456789120:accesspoint:endpoint"), "", true).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.us-east-1-fips.amazonaws.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws:s3:us-east-1:123456789120:accesspoint:endpoint"), "us-east-1-fips", false).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.fips-us-gov-west-1.amazonaws.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint"), "fips-us-gov-west-1", false).c_str());
+        ASSERT_STREQ("endpoint-123456789120.s3-accesspoint.dualstack.fips-us-gov-west-1.amazonaws.com",
+            S3Endpoint::ForAccessPointArn(S3ARN("arn:aws-us-gov:s3:us-gov-west-1:123456789120:accesspoint:endpoint"), "fips-us-gov-west-1", true).c_str());
+    }
+
 }

@@ -1,6 +1,9 @@
 \#include <aws/${metadata.projectName}/${className}.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Endpoint.h>
 \#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ErrorMarshaller.h>
+#if($arnEndpointSupported)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ARN.h>
+#end
 #foreach($operation in $serviceModel.operations)
 #if($operation.request)
 \#include <aws/${metadata.projectName}/model/${operation.request.shape.name}.h>

@@ -68,6 +68,8 @@ public abstract class CppClientGenerator implements ClientGenerator {
         fileList.addAll(generateModelSourceFiles(serviceModel));
         fileList.add(generateClientHeaderFile(serviceModel));
         fileList.add(generateClientSourceFile(serviceModel));
+        fileList.add(generateARNHeaderFile(serviceModel));
+        fileList.add(generateARNSourceFile(serviceModel));
         fileList.add(generateRegionHeaderFile(serviceModel));
         fileList.add(generateRegionSourceFile(serviceModel));
         fileList.add(generateErrorsHeaderFile(serviceModel));
@@ -311,6 +313,16 @@ public abstract class CppClientGenerator implements ClientGenerator {
                 serviceModel.getMetadata().getClassNamePrefix());
 
         return makeFile(template, context, fileName, true);
+    }
+
+    protected SdkFileEntry generateARNHeaderFile(final ServiceModel serviceModel) throws Exception {
+        // no-op for services other than S3.
+        return null;
+    }
+
+    protected SdkFileEntry generateARNSourceFile(final ServiceModel serviceModel) throws Exception {
+        // no-op for services other than S3.
+        return null;
     }
 
     private SdkFileEntry generateServiceRequestHeader(final ServiceModel serviceModel) throws Exception {

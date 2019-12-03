@@ -1,11 +1,24 @@
 #set($startIndex = 0)
 #set($skipFirst = false)
-#if($virtualAddressingSupported || $accountIdInHostnameSupported)
+#if($virtualAddressingSupported || $arnEndpointSupported)
 #if($operation.virtualAddressAllowed)
-  Aws::Http::URI uri = ComputeEndpointString(request.Get${CppViewHelper.convertToUpperCamel($operation.virtualAddressMemberName)}());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.Get${CppViewHelper.convertToUpperCamel($operation.virtualAddressMemberName)}());
 #set($startIndex = 1)
 #set($skipFirst = true)
-#elseif($operation.hasAccountIdInHostname)
+#elseif($operation.arnEndpointAllowed)
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.Get${CppViewHelper.convertToUpperCamel($operation.arnEndpointMemberName)}());
+#set($startIndex = 1)
+#set($skipFirst = true)
+#else
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+#end
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ${operation.name}Outcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
+#elseif($accountIdInHostnameSupported)
+#if($operation.hasAccountIdInHostname)
   Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
   if (endpointString.empty())
   {
@@ -68,7 +81,7 @@
         uri = item.GetAddress();
         AWS_LOGSTREAM_TRACE("${operation.name}", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
       }
-      else 
+      else
       {
 #if($operation.requireEndpointDiscovery)
         AWS_LOGSTREAM_ERROR("${operation.name}", "Failed to discover endpoints " << endpointOutcome.GetError());

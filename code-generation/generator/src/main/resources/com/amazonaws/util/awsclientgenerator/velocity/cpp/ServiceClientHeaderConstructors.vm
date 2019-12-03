@@ -4,7 +4,7 @@
 #set($signPayloads = "")
 #end
 #if($virtualAddressingSupported)
-    #set($virtualAddressing = ", bool useVirtualAdressing = true")
+    #set($virtualAddressing = ", bool useVirtualAddressing = true")
 #else
     #set($virtualAddressing = "")
 #end

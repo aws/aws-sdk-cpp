@@ -149,7 +149,7 @@ static Http::HeaderValueCollection CanonicalizeHeaders(Http::HeaderValueCollecti
         );
         headerValue.erase(new_end, headerValue.end());
 
-        canonicalHeaders[trimmedHeaderName] = headerValue;       
+        canonicalHeaders[trimmedHeaderName] = headerValue;
     }
 
     return canonicalHeaders;
@@ -168,12 +168,12 @@ AWSAuthV4Signer::AWSAuthV4Signer(const std::shared_ptr<Auth::AWSCredentialsProvi
     m_urlEscapePath(urlEscapePath)
 {
     //go ahead and warm up the signing cache.
-    ComputeHash(credentialsProvider->GetAWSCredentials().GetAWSSecretKey(), DateTime::CalculateGmtTimestampAsString(SIMPLE_DATE_FORMAT_STR));
+    ComputeHash(credentialsProvider->GetAWSCredentials().GetAWSSecretKey(), DateTime::CalculateGmtTimestampAsString(SIMPLE_DATE_FORMAT_STR), region, m_serviceName);
 }
 
 AWSAuthV4Signer::~AWSAuthV4Signer()
 {
-    // empty destructor in .cpp file to keep from needing the implementation of (AWSCredentialsProvider, Sha256, Sha256HMAC) in the header file 
+    // empty destructor in .cpp file to keep from needing the implementation of (AWSCredentialsProvider, Sha256, Sha256HMAC) in the header file
 }
 
 
@@ -182,12 +182,7 @@ bool AWSAuthV4Signer::ShouldSignHeader(const Aws::String& header) const
     return m_unsignedHeaders.find(Aws::Utils::StringUtils::ToLower(header.c_str())) == m_unsignedHeaders.cend();
 }
 
-bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request) const
-{
-    return SignRequest(request, true/*signBody*/);
-}
-
-bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, bool signBody) const
+bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, bool signBody) const
 {
     AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
 
@@ -291,20 +286,20 @@ bool AWSAuthV4Signer::SignRequest(Aws::Http::HttpRequest& request, bool signBody
     Aws::String cannonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
     Aws::String simpleDate = now.ToGmtString(SIMPLE_DATE_FORMAT_STR);
 
-    Aws::String stringToSign = GenerateStringToSign(dateHeaderValue, simpleDate, cannonicalRequestHash, m_region,
-            m_serviceName);
-    auto finalSignature = GenerateSignature(credentials, stringToSign, simpleDate);
+    Aws::String signingRegion = region ? region : m_region;
+    Aws::String stringToSign = GenerateStringToSign(dateHeaderValue, simpleDate, cannonicalRequestHash, signingRegion, m_serviceName);
+    auto finalSignature = GenerateSignature(credentials, stringToSign, simpleDate, signingRegion, m_serviceName);
 
     Aws::StringStream ss;
     ss << AWS_HMAC_SHA256 << " " << CREDENTIAL << EQ << credentials.GetAWSAccessKeyId() << "/" << simpleDate
-        << "/" << m_region << "/" << m_serviceName << "/" << AWS4_REQUEST << ", " << SIGNED_HEADERS << EQ
+        << "/" << signingRegion << "/" << m_serviceName << "/" << AWS4_REQUEST << ", " << SIGNED_HEADERS << EQ
         << signedHeadersValue << ", " << SIGNATURE << EQ << finalSignature;
 
     auto awsAuthString = ss.str();
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Signing request with: " << awsAuthString);
     request.SetAwsAuthorization(awsAuthString);
     request.SetSigningAccessKey(credentials.GetAWSAccessKeyId());
-    request.SetSigningRegion(m_region);
+    request.SetSigningRegion(signingRegion);
     return true;
 }
 
@@ -368,16 +363,18 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     AWS_LOGSTREAM_DEBUG(v4LogTag, "Signed Headers value: " << signedHeadersValue);
 
     Aws::StringStream ss;
+    Aws::String signingRegion = region ? region : m_region;
+    Aws::String signingServiceName = serviceName ? serviceName : m_serviceName;
     Aws::String simpleDate = now.ToGmtString(SIMPLE_DATE_FORMAT_STR);
     ss << credentials.GetAWSAccessKeyId() << "/" << simpleDate
-        << "/" << region << "/" << serviceName << "/" << AWS4_REQUEST;
+        << "/" << signingRegion << "/" << signingServiceName << "/" << AWS4_REQUEST;
 
     request.AddQueryStringParameter(X_AMZ_ALGORITHM, AWS_HMAC_SHA256);
     request.AddQueryStringParameter(X_AMZ_CREDENTIAL, ss.str());
     ss.str("");
 
     request.SetSigningAccessKey(credentials.GetAWSAccessKeyId());
-    request.SetSigningRegion(region);
+    request.SetSigningRegion(signingRegion);
 
     //generate generalized canonicalized request string.
     Aws::String canonicalRequestString = CanonicalizeRequestSigningString(request, m_urlEscapePath);
@@ -387,7 +384,7 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     canonicalRequestString.append(NEWLINE);
     canonicalRequestString.append(signedHeadersValue);
     canonicalRequestString.append(NEWLINE);
-    if (ServiceRequireUnsignedPayload(serviceName))
+    if (ServiceRequireUnsignedPayload(signingServiceName))
     {
         canonicalRequestString.append(UNSIGNED_PAYLOAD);
     }
@@ -409,15 +406,15 @@ bool AWSAuthV4Signer::PresignRequest(Aws::Http::HttpRequest& request, const char
     auto sha256Digest = hashResult.GetResult();
     auto cannonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
 
-    auto stringToSign = GenerateStringToSign(dateQueryValue, simpleDate, cannonicalRequestHash, region, serviceName);
+    auto stringToSign = GenerateStringToSign(dateQueryValue, simpleDate, cannonicalRequestHash, signingRegion, signingServiceName);
 
-    auto finalSigningHash = GenerateSignature(credentials, stringToSign, simpleDate, region, serviceName);
+    auto finalSigningHash = GenerateSignature(credentials, stringToSign, simpleDate, signingRegion, signingServiceName);
     if (finalSigningHash.empty())
     {
         return false;
     }
 
-    //add that the signature to the query string    
+    //add that the signature to the query string
     request.AddQueryStringParameter(X_AMZ_SIGNATURE, finalSigningHash);
 
     return true;
@@ -432,13 +429,6 @@ bool AWSAuthV4Signer::ServiceRequireUnsignedPayload(const Aws::String& serviceNa
     // https://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html
     // which states that body-less requests should use the empty-string SHA256 hash.
     return "s3" == serviceName;
-}
-
-Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials& credentials, const Aws::String& stringToSign,
-        const Aws::String& simpleDate) const
-{
-    auto key = ComputeHash(credentials.GetAWSSecretKey(), simpleDate);
-    return GenerateSignature(stringToSign, key);
 }
 
 Aws::String AWSAuthV4Signer::GenerateSignature(const AWSCredentials& credentials, const Aws::String& stringToSign,
@@ -513,23 +503,6 @@ Aws::String AWSAuthV4Signer::GenerateStringToSign(const Aws::String& dateValue, 
     return ss.str();
 }
 
-ByteBuffer AWSAuthV4Signer::ComputeHash(const Aws::String& secretKey, const Aws::String& simpleDate) const
-{
-    Utils::Threading::ReaderLockGuard guard(m_partialSignatureLock);
-    if (m_currentDateStr != simpleDate || m_currentSecretKey != secretKey)
-    {
-        guard.UpgradeToWriterLock();
-        // check again to prevent racing writers
-        if (m_currentDateStr != simpleDate || m_currentSecretKey != secretKey)
-        {
-            m_currentSecretKey = secretKey;
-            m_currentDateStr = simpleDate;
-            m_partialSignature = ComputeHash(m_currentSecretKey, m_currentDateStr, m_region, m_serviceName);
-        }
-    }
-    return m_partialSignature;
-}
-
 Aws::Utils::ByteBuffer AWSAuthV4Signer::ComputeHash(const Aws::String& secretKey,
         const Aws::String& simpleDate, const Aws::String& region, const Aws::String& serviceName) const
 {
@@ -583,7 +556,7 @@ AWSAuthEventStreamV4Signer::AWSAuthEventStreamV4Signer(const std::shared_ptr<Aut
     m_unsignedHeaders.emplace_back(USER_AGENT_HEADER);
 }
 
-bool AWSAuthEventStreamV4Signer::SignRequest(Aws::Http::HttpRequest& request, bool /* signBody */) const
+bool AWSAuthEventStreamV4Signer::SignRequest(Aws::Http::HttpRequest& request, const char* region, bool /* signBody */) const
 {
     AWSCredentials credentials = m_credentialsProvider->GetAWSCredentials();
 
@@ -655,20 +628,20 @@ bool AWSAuthEventStreamV4Signer::SignRequest(Aws::Http::HttpRequest& request, bo
     Aws::String cannonicalRequestHash = HashingUtils::HexEncode(sha256Digest);
     Aws::String simpleDate = now.ToGmtString(SIMPLE_DATE_FORMAT_STR);
 
-    Aws::String stringToSign = GenerateStringToSign(dateHeaderValue, simpleDate, cannonicalRequestHash, m_region,
-            m_serviceName);
-    auto finalSignature = GenerateSignature(credentials, stringToSign, simpleDate);
+    Aws::String signingRegion = region ? region : m_region;
+    Aws::String stringToSign = GenerateStringToSign(dateHeaderValue, simpleDate, cannonicalRequestHash, signingRegion, m_serviceName);
+    auto finalSignature = GenerateSignature(credentials, stringToSign, simpleDate, signingRegion, m_serviceName);
 
     Aws::StringStream ss;
     ss << AWS_HMAC_SHA256 << " " << CREDENTIAL << EQ << credentials.GetAWSAccessKeyId() << "/" << simpleDate
-        << "/" << m_region << "/" << m_serviceName << "/" << AWS4_REQUEST << ", " << SIGNED_HEADERS << EQ
+        << "/" << signingRegion << "/" << m_serviceName << "/" << AWS4_REQUEST << ", " << SIGNED_HEADERS << EQ
         << signedHeadersValue << ", " << SIGNATURE << EQ << HashingUtils::HexEncode(finalSignature);
 
     auto awsAuthString = ss.str();
     AWS_LOGSTREAM_DEBUG(v4StreamingLogTag, "Signing request with: " << awsAuthString);
     request.SetAwsAuthorization(awsAuthString);
     request.SetSigningAccessKey(credentials.GetAWSAccessKeyId());
-    request.SetSigningRegion(m_region);
+    request.SetSigningRegion(signingRegion);
     return true;
 }
 
@@ -736,7 +709,7 @@ bool AWSAuthEventStreamV4Signer::SignEventMessage(Event::Message& message, Aws::
         AWS_LOGSTREAM_DEBUG(v4StreamingLogTag, "Payload hash  - " << HashingUtils::HexEncode(payloadHash));
     }
 
-    Utils::ByteBuffer finalSignatureDigest = GenerateSignature(m_credentialsProvider->GetAWSCredentials(), stringToSign.str(), simpleDate);
+    Utils::ByteBuffer finalSignatureDigest = GenerateSignature(m_credentialsProvider->GetAWSCredentials(), stringToSign.str(), simpleDate, m_region, m_serviceName);
     const auto finalSignature = HashingUtils::HexEncode(finalSignatureDigest);
     AWS_LOGSTREAM_DEBUG(v4StreamingLogTag, "Final computed signing hash: " << finalSignature);
     priorSignature = finalSignature;
@@ -754,7 +727,7 @@ bool AWSAuthEventStreamV4Signer::ShouldSignHeader(const Aws::String& header) con
 }
 
 Utils::ByteBuffer AWSAuthEventStreamV4Signer::GenerateSignature(const AWSCredentials& credentials, const Aws::String& stringToSign,
-        const Aws::String& simpleDate) const
+        const Aws::String& simpleDate, const Aws::String& region, const Aws::String& serviceName) const
 {
     Utils::Threading::ReaderLockGuard guard(m_derivedKeyLock);
     const auto& secretKey = credentials.GetAWSSecretKey();
@@ -766,7 +739,7 @@ Utils::ByteBuffer AWSAuthEventStreamV4Signer::GenerateSignature(const AWSCredent
         {
             m_currentSecretKey = secretKey;
             m_currentDateStr = simpleDate;
-            m_derivedKey = ComputeHash(m_currentSecretKey, m_currentDateStr, m_region, m_serviceName);
+            m_derivedKey = ComputeHash(m_currentSecretKey, m_currentDateStr, region, serviceName);
         }
 
     }
@@ -800,11 +773,6 @@ Aws::String AWSAuthEventStreamV4Signer::GenerateStringToSign(const Aws::String& 
         << serviceName << "/" << AWS4_REQUEST << NEWLINE << canonicalRequestHash;
 
     return ss.str();
-}
-
-ByteBuffer AWSAuthEventStreamV4Signer::ComputeHash(const Aws::String& secretKey, const Aws::String& simpleDate) const
-{
-    return ComputeHash(secretKey, simpleDate, m_region, m_serviceName);
 }
 
 Aws::Utils::ByteBuffer AWSAuthEventStreamV4Signer::ComputeHash(const Aws::String& secretKey,

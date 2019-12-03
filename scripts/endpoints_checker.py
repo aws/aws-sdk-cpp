@@ -26,11 +26,11 @@ import os
 import re
 
 """
-endpoints = ["us-east-1", "us-east-2", 
-          "us-west-1", "us-west-2", 
-          "eu-west-1", "eu-west-2", "eu-west-3", "eu-central-1", 
+endpoints = ["us-east-1", "us-east-2",
+          "us-west-1", "us-west-2",
+          "eu-west-1", "eu-west-2", "eu-west-3", "eu-central-1",
           "ap-southeast-1", "ap-southeast-2", "ap-northeast-1", "ap-northeast-2", "ap-south-1",
-          "sa-east-1", 
+          "sa-east-1",
           "cn-north-1", "cn-northwest-1",
           "ca-central-1",
           "us-gov-west-1"];
@@ -48,6 +48,7 @@ def RemoveCPPComments(text):
 
 def SkipFile(fileName):
     skipFilePattern = re.compile(r'.*source\/model\/BucketLocationConstraint\.cpp'
+            '|.*source\/S3Client\.cpp'
             '|.*source\/model\/.*Region.*\.cpp'
             '|.*source\/[^\/]+Endpoint\.cpp'
             '|.*aws-cpp-sdk-core\/include\/aws\/core/\Region.h'
@@ -104,6 +105,7 @@ assert SkipFile("source/model/abcRegion.cpp") == True;
 assert SkipFile("source/abcEndpoint.cpp") == True;
 assert SkipFile("aws-cpp-sdk-core/include/aws/core/Region.h") == True;
 assert SkipFile("aws-cpp-sdk-s3/source/model/BucketLocationConstraint.cpp") == True;
+assert SkipFile("aws-cpp-sdk-s3/source/S3Client.cpp") == True;
 assert SkipFile("source/model/abc.cpp") == False;
 assert SkipFile("source/model/absEndpoint.cpp") == False;
 assert SkipFile("source/model/Endpointabs.cpp") == False;

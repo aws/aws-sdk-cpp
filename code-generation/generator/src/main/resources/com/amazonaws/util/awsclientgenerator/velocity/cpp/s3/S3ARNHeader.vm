@@ -1,0 +1,55 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#pragma once
+
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
+
+\#include <aws/core/client/AWSError.h>
+\#include <aws/core/utils/ARN.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
+
+namespace ${rootNamespace}
+{
+    namespace Utils
+    {
+        template<typename R, typename E> class Outcome;
+    }
+
+    namespace ${serviceNamespace}
+    {
+        namespace ARNResourceType
+        {
+            static const char ACCESSPOINT[] = "accesspoint";
+        }
+
+#set($className = "${metadata.classNamePrefix}ARN")
+#set($validateOutcome = "${metadata.classNamePrefix}ARNOutcome")
+#set($serviceError = "${metadata.classNamePrefix}Errors")
+        typedef Aws::Utils::Outcome<bool, Aws::Client::AWSError<${serviceError}>> ${validateOutcome};
+
+        class ${exportValue} ${className} : public Aws::Utils::ARN
+        {
+        public:
+            ${className}(const Aws::String& arn);
+
+            const Aws::String& GetResourceType() const { return m_resourceType; }
+            const Aws::String& GetResourceId() const { return m_resourceId; }
+            const Aws::String& GetResourceQualifier() const { return m_resourceQualifier; }
+
+            // Check if S3ARN is valid.
+            ${validateOutcome} Validate() const;
+            // Check if S3ARN is valid, and especially, ARN region should match the region specified.
+            ${validateOutcome} Validate(const char* region) const;
+
+        private:
+            void ParseARNResource();
+
+            Aws::String m_resourceType;
+            Aws::String m_resourceId;
+            Aws::String m_resourceQualifier;
+        };
+    }
+}
