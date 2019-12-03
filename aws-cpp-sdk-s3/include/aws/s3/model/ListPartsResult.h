@@ -57,8 +57,8 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
      * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the x-amz-abort-rule-id header that will provide the
-     * ID of the lifecycle configuration rule that defines this action.</p>
+     * response will also include the <code>x-amz-abort-rule-id</code> header that will
+     * provide the ID of the lifecycle configuration rule that defines this action.</p>
      */
     inline const Aws::Utils::DateTime& GetAbortDate() const{ return m_abortDate; }
 
@@ -70,8 +70,8 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
      * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the x-amz-abort-rule-id header that will provide the
-     * ID of the lifecycle configuration rule that defines this action.</p>
+     * response will also include the <code>x-amz-abort-rule-id</code> header that will
+     * provide the ID of the lifecycle configuration rule that defines this action.</p>
      */
     inline void SetAbortDate(const Aws::Utils::DateTime& value) { m_abortDate = value; }
 
@@ -83,8 +83,8 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
      * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the x-amz-abort-rule-id header that will provide the
-     * ID of the lifecycle configuration rule that defines this action.</p>
+     * response will also include the <code>x-amz-abort-rule-id</code> header that will
+     * provide the ID of the lifecycle configuration rule that defines this action.</p>
      */
     inline void SetAbortDate(Aws::Utils::DateTime&& value) { m_abortDate = std::move(value); }
 
@@ -96,8 +96,8 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
      * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the x-amz-abort-rule-id header that will provide the
-     * ID of the lifecycle configuration rule that defines this action.</p>
+     * response will also include the <code>x-amz-abort-rule-id</code> header that will
+     * provide the ID of the lifecycle configuration rule that defines this action.</p>
      */
     inline ListPartsResult& WithAbortDate(const Aws::Utils::DateTime& value) { SetAbortDate(value); return *this;}
 
@@ -109,58 +109,58 @@ namespace Model
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
      * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the x-amz-abort-rule-id header that will provide the
-     * ID of the lifecycle configuration rule that defines this action.</p>
+     * response will also include the <code>x-amz-abort-rule-id</code> header that will
+     * provide the ID of the lifecycle configuration rule that defines this action.</p>
      */
     inline ListPartsResult& WithAbortDate(Aws::Utils::DateTime&& value) { SetAbortDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>This header is returned along with the x-amz-abort-date header. It identifies
-     * applicable lifecycle configuration rule that defines the action to abort
-     * incomplete multipart uploads.</p>
+     * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
+     * It identifies applicable lifecycle configuration rule that defines the action to
+     * abort incomplete multipart uploads.</p>
      */
     inline const Aws::String& GetAbortRuleId() const{ return m_abortRuleId; }
 
     /**
-     * <p>This header is returned along with the x-amz-abort-date header. It identifies
-     * applicable lifecycle configuration rule that defines the action to abort
-     * incomplete multipart uploads.</p>
+     * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
+     * It identifies applicable lifecycle configuration rule that defines the action to
+     * abort incomplete multipart uploads.</p>
      */
     inline void SetAbortRuleId(const Aws::String& value) { m_abortRuleId = value; }
 
     /**
-     * <p>This header is returned along with the x-amz-abort-date header. It identifies
-     * applicable lifecycle configuration rule that defines the action to abort
-     * incomplete multipart uploads.</p>
+     * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
+     * It identifies applicable lifecycle configuration rule that defines the action to
+     * abort incomplete multipart uploads.</p>
      */
     inline void SetAbortRuleId(Aws::String&& value) { m_abortRuleId = std::move(value); }
 
     /**
-     * <p>This header is returned along with the x-amz-abort-date header. It identifies
-     * applicable lifecycle configuration rule that defines the action to abort
-     * incomplete multipart uploads.</p>
+     * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
+     * It identifies applicable lifecycle configuration rule that defines the action to
+     * abort incomplete multipart uploads.</p>
      */
     inline void SetAbortRuleId(const char* value) { m_abortRuleId.assign(value); }
 
     /**
-     * <p>This header is returned along with the x-amz-abort-date header. It identifies
-     * applicable lifecycle configuration rule that defines the action to abort
-     * incomplete multipart uploads.</p>
+     * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
+     * It identifies applicable lifecycle configuration rule that defines the action to
+     * abort incomplete multipart uploads.</p>
      */
     inline ListPartsResult& WithAbortRuleId(const Aws::String& value) { SetAbortRuleId(value); return *this;}
 
     /**
-     * <p>This header is returned along with the x-amz-abort-date header. It identifies
-     * applicable lifecycle configuration rule that defines the action to abort
-     * incomplete multipart uploads.</p>
+     * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
+     * It identifies applicable lifecycle configuration rule that defines the action to
+     * abort incomplete multipart uploads.</p>
      */
     inline ListPartsResult& WithAbortRuleId(Aws::String&& value) { SetAbortRuleId(std::move(value)); return *this;}
 
     /**
-     * <p>This header is returned along with the x-amz-abort-date header. It identifies
-     * applicable lifecycle configuration rule that defines the action to abort
-     * incomplete multipart uploads.</p>
+     * <p>This header is returned along with the <code>x-amz-abort-date</code> header.
+     * It identifies applicable lifecycle configuration rule that defines the action to
+     * abort incomplete multipart uploads.</p>
      */
     inline ListPartsResult& WithAbortRuleId(const char* value) { SetAbortRuleId(value); return *this;}
 
@@ -357,43 +357,43 @@ namespace Model
 
     /**
      * <p> Container for elements related to a particular part. A response can contain
-     * zero or more Part elements.</p>
+     * zero or more <code>Part</code> elements.</p>
      */
     inline const Aws::Vector<Part>& GetParts() const{ return m_parts; }
 
     /**
      * <p> Container for elements related to a particular part. A response can contain
-     * zero or more Part elements.</p>
+     * zero or more <code>Part</code> elements.</p>
      */
     inline void SetParts(const Aws::Vector<Part>& value) { m_parts = value; }
 
     /**
      * <p> Container for elements related to a particular part. A response can contain
-     * zero or more Part elements.</p>
+     * zero or more <code>Part</code> elements.</p>
      */
     inline void SetParts(Aws::Vector<Part>&& value) { m_parts = std::move(value); }
 
     /**
      * <p> Container for elements related to a particular part. A response can contain
-     * zero or more Part elements.</p>
+     * zero or more <code>Part</code> elements.</p>
      */
     inline ListPartsResult& WithParts(const Aws::Vector<Part>& value) { SetParts(value); return *this;}
 
     /**
      * <p> Container for elements related to a particular part. A response can contain
-     * zero or more Part elements.</p>
+     * zero or more <code>Part</code> elements.</p>
      */
     inline ListPartsResult& WithParts(Aws::Vector<Part>&& value) { SetParts(std::move(value)); return *this;}
 
     /**
      * <p> Container for elements related to a particular part. A response can contain
-     * zero or more Part elements.</p>
+     * zero or more <code>Part</code> elements.</p>
      */
     inline ListPartsResult& AddParts(const Part& value) { m_parts.push_back(value); return *this; }
 
     /**
      * <p> Container for elements related to a particular part. A response can contain
-     * zero or more Part elements.</p>
+     * zero or more <code>Part</code> elements.</p>
      */
     inline ListPartsResult& AddParts(Part&& value) { m_parts.push_back(std::move(value)); return *this; }
 
@@ -401,40 +401,40 @@ namespace Model
     /**
      * <p>Container element that identifies who initiated the multipart upload. If the
      * initiator is an AWS account, this element provides the same information as the
-     * Owner element. If the initiator is an IAM User, then this element provides the
-     * user ARN and display name.</p>
+     * <code>Owner</code> element. If the initiator is an IAM User, this element
+     * provides the user ARN and display name.</p>
      */
     inline const Initiator& GetInitiator() const{ return m_initiator; }
 
     /**
      * <p>Container element that identifies who initiated the multipart upload. If the
      * initiator is an AWS account, this element provides the same information as the
-     * Owner element. If the initiator is an IAM User, then this element provides the
-     * user ARN and display name.</p>
+     * <code>Owner</code> element. If the initiator is an IAM User, this element
+     * provides the user ARN and display name.</p>
      */
     inline void SetInitiator(const Initiator& value) { m_initiator = value; }
 
     /**
      * <p>Container element that identifies who initiated the multipart upload. If the
      * initiator is an AWS account, this element provides the same information as the
-     * Owner element. If the initiator is an IAM User, then this element provides the
-     * user ARN and display name.</p>
+     * <code>Owner</code> element. If the initiator is an IAM User, this element
+     * provides the user ARN and display name.</p>
      */
     inline void SetInitiator(Initiator&& value) { m_initiator = std::move(value); }
 
     /**
      * <p>Container element that identifies who initiated the multipart upload. If the
      * initiator is an AWS account, this element provides the same information as the
-     * Owner element. If the initiator is an IAM User, then this element provides the
-     * user ARN and display name.</p>
+     * <code>Owner</code> element. If the initiator is an IAM User, this element
+     * provides the user ARN and display name.</p>
      */
     inline ListPartsResult& WithInitiator(const Initiator& value) { SetInitiator(value); return *this;}
 
     /**
      * <p>Container element that identifies who initiated the multipart upload. If the
      * initiator is an AWS account, this element provides the same information as the
-     * Owner element. If the initiator is an IAM User, then this element provides the
-     * user ARN and display name.</p>
+     * <code>Owner</code> element. If the initiator is an IAM User, this element
+     * provides the user ARN and display name.</p>
      */
     inline ListPartsResult& WithInitiator(Initiator&& value) { SetInitiator(std::move(value)); return *this;}
 

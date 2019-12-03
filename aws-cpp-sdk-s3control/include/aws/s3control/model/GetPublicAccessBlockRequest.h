@@ -45,42 +45,50 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p/>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p/>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p/>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
      */
     inline GetPublicAccessBlockRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
      */
     inline GetPublicAccessBlockRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to retrieve.</p>
      */
     inline GetPublicAccessBlockRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

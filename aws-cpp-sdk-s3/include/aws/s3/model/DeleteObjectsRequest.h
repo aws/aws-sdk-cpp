@@ -56,42 +56,114 @@ namespace Model
 
 
     /**
-     * <p>The bucket name containing the objects to delete.</p>
+     * <p>The bucket name containing the objects to delete. </p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The bucket name containing the objects to delete.</p>
+     * <p>The bucket name containing the objects to delete. </p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The bucket name containing the objects to delete.</p>
+     * <p>The bucket name containing the objects to delete. </p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The bucket name containing the objects to delete.</p>
+     * <p>The bucket name containing the objects to delete. </p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The bucket name containing the objects to delete.</p>
+     * <p>The bucket name containing the objects to delete. </p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The bucket name containing the objects to delete.</p>
+     * <p>The bucket name containing the objects to delete. </p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline DeleteObjectsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The bucket name containing the objects to delete.</p>
+     * <p>The bucket name containing the objects to delete. </p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline DeleteObjectsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The bucket name containing the objects to delete.</p>
+     * <p>The bucket name containing the objects to delete. </p> <p>When using this API
+     * with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline DeleteObjectsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -131,7 +203,7 @@ namespace Model
      * <p>The concatenation of the authentication device's serial number, a space, and
      * the value that is displayed on your authentication device. Required to
      * permanently delete a versioned object if versioning is configured with MFA
-     * Delete enabled.</p>
+     * delete enabled.</p>
      */
     inline const Aws::String& GetMFA() const{ return m_mFA; }
 
@@ -139,7 +211,7 @@ namespace Model
      * <p>The concatenation of the authentication device's serial number, a space, and
      * the value that is displayed on your authentication device. Required to
      * permanently delete a versioned object if versioning is configured with MFA
-     * Delete enabled.</p>
+     * delete enabled.</p>
      */
     inline bool MFAHasBeenSet() const { return m_mFAHasBeenSet; }
 
@@ -147,7 +219,7 @@ namespace Model
      * <p>The concatenation of the authentication device's serial number, a space, and
      * the value that is displayed on your authentication device. Required to
      * permanently delete a versioned object if versioning is configured with MFA
-     * Delete enabled.</p>
+     * delete enabled.</p>
      */
     inline void SetMFA(const Aws::String& value) { m_mFAHasBeenSet = true; m_mFA = value; }
 
@@ -155,7 +227,7 @@ namespace Model
      * <p>The concatenation of the authentication device's serial number, a space, and
      * the value that is displayed on your authentication device. Required to
      * permanently delete a versioned object if versioning is configured with MFA
-     * Delete enabled.</p>
+     * delete enabled.</p>
      */
     inline void SetMFA(Aws::String&& value) { m_mFAHasBeenSet = true; m_mFA = std::move(value); }
 
@@ -163,7 +235,7 @@ namespace Model
      * <p>The concatenation of the authentication device's serial number, a space, and
      * the value that is displayed on your authentication device. Required to
      * permanently delete a versioned object if versioning is configured with MFA
-     * Delete enabled.</p>
+     * delete enabled.</p>
      */
     inline void SetMFA(const char* value) { m_mFAHasBeenSet = true; m_mFA.assign(value); }
 
@@ -171,7 +243,7 @@ namespace Model
      * <p>The concatenation of the authentication device's serial number, a space, and
      * the value that is displayed on your authentication device. Required to
      * permanently delete a versioned object if versioning is configured with MFA
-     * Delete enabled.</p>
+     * delete enabled.</p>
      */
     inline DeleteObjectsRequest& WithMFA(const Aws::String& value) { SetMFA(value); return *this;}
 
@@ -179,7 +251,7 @@ namespace Model
      * <p>The concatenation of the authentication device's serial number, a space, and
      * the value that is displayed on your authentication device. Required to
      * permanently delete a versioned object if versioning is configured with MFA
-     * Delete enabled.</p>
+     * delete enabled.</p>
      */
     inline DeleteObjectsRequest& WithMFA(Aws::String&& value) { SetMFA(std::move(value)); return *this;}
 
@@ -187,7 +259,7 @@ namespace Model
      * <p>The concatenation of the authentication device's serial number, a space, and
      * the value that is displayed on your authentication device. Required to
      * permanently delete a versioned object if versioning is configured with MFA
-     * Delete enabled.</p>
+     * delete enabled.</p>
      */
     inline DeleteObjectsRequest& WithMFA(const char* value) { SetMFA(value); return *this;}
 

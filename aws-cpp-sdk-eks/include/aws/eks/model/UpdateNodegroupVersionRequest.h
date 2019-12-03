@@ -273,33 +273,33 @@ namespace Model
 
     /**
      * <p>Force the update if the existing node group's pods are unable to be drained
-     * due to a pod disruption budget issue. If a previous update fails because pods
-     * could not be drained, you can force the update after it fails to terminate the
-     * old node regardless of whether or not any pods are running on the node.</p>
+     * due to a pod disruption budget issue. If an update fails because pods could not
+     * be drained, you can force the update after it fails to terminate the old node
+     * whether or not any pods are running on the node.</p>
      */
     inline bool GetForce() const{ return m_force; }
 
     /**
      * <p>Force the update if the existing node group's pods are unable to be drained
-     * due to a pod disruption budget issue. If a previous update fails because pods
-     * could not be drained, you can force the update after it fails to terminate the
-     * old node regardless of whether or not any pods are running on the node.</p>
+     * due to a pod disruption budget issue. If an update fails because pods could not
+     * be drained, you can force the update after it fails to terminate the old node
+     * whether or not any pods are running on the node.</p>
      */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>Force the update if the existing node group's pods are unable to be drained
-     * due to a pod disruption budget issue. If a previous update fails because pods
-     * could not be drained, you can force the update after it fails to terminate the
-     * old node regardless of whether or not any pods are running on the node.</p>
+     * due to a pod disruption budget issue. If an update fails because pods could not
+     * be drained, you can force the update after it fails to terminate the old node
+     * whether or not any pods are running on the node.</p>
      */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
      * <p>Force the update if the existing node group's pods are unable to be drained
-     * due to a pod disruption budget issue. If a previous update fails because pods
-     * could not be drained, you can force the update after it fails to terminate the
-     * old node regardless of whether or not any pods are running on the node.</p>
+     * due to a pod disruption budget issue. If an update fails because pods could not
+     * be drained, you can force the update after it fails to terminate the old node
+     * whether or not any pods are running on the node.</p>
      */
     inline UpdateNodegroupVersionRequest& WithForce(bool value) { SetForce(value); return *this;}
 

@@ -47,54 +47,54 @@ namespace Model
     /**
      * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
-     * document must be an image in JPG or PNG format.</p> <p>If you are using an AWS
+     * document must be an image in JPEG or PNG format.</p> <p>If you're using an AWS
      * SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     * passed using the <code>Bytes</code> field. </p>
+     * that are passed using the <code>Bytes</code> field. </p>
      */
     inline const Document& GetDocument() const{ return m_document; }
 
     /**
      * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
-     * document must be an image in JPG or PNG format.</p> <p>If you are using an AWS
+     * document must be an image in JPEG or PNG format.</p> <p>If you're using an AWS
      * SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     * passed using the <code>Bytes</code> field. </p>
+     * that are passed using the <code>Bytes</code> field. </p>
      */
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
 
     /**
      * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
-     * document must be an image in JPG or PNG format.</p> <p>If you are using an AWS
+     * document must be an image in JPEG or PNG format.</p> <p>If you're using an AWS
      * SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     * passed using the <code>Bytes</code> field. </p>
+     * that are passed using the <code>Bytes</code> field. </p>
      */
     inline void SetDocument(const Document& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
      * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
-     * document must be an image in JPG or PNG format.</p> <p>If you are using an AWS
+     * document must be an image in JPEG or PNG format.</p> <p>If you're using an AWS
      * SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     * passed using the <code>Bytes</code> field. </p>
+     * that are passed using the <code>Bytes</code> field. </p>
      */
     inline void SetDocument(Document&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
      * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
-     * document must be an image in JPG or PNG format.</p> <p>If you are using an AWS
+     * document must be an image in JPEG or PNG format.</p> <p>If you're using an AWS
      * SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     * passed using the <code>Bytes</code> field. </p>
+     * that are passed using the <code>Bytes</code> field. </p>
      */
     inline DetectDocumentTextRequest& WithDocument(const Document& value) { SetDocument(value); return *this;}
 
     /**
      * <p>The input document as base64-encoded bytes or an Amazon S3 object. If you use
      * the AWS CLI to call Amazon Textract operations, you can't pass image bytes. The
-     * document must be an image in JPG or PNG format.</p> <p>If you are using an AWS
+     * document must be an image in JPEG or PNG format.</p> <p>If you're using an AWS
      * SDK to call Amazon Textract, you might not need to base64-encode image bytes
-     * passed using the <code>Bytes</code> field. </p>
+     * that are passed using the <code>Bytes</code> field. </p>
      */
     inline DetectDocumentTextRequest& WithDocument(Document&& value) { SetDocument(std::move(value)); return *this;}
 

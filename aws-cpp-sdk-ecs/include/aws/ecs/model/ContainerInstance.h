@@ -179,6 +179,47 @@ namespace Model
 
 
     /**
+     * <p>The capacity provider associated with the container instance.</p>
+     */
+    inline const Aws::String& GetCapacityProviderName() const{ return m_capacityProviderName; }
+
+    /**
+     * <p>The capacity provider associated with the container instance.</p>
+     */
+    inline bool CapacityProviderNameHasBeenSet() const { return m_capacityProviderNameHasBeenSet; }
+
+    /**
+     * <p>The capacity provider associated with the container instance.</p>
+     */
+    inline void SetCapacityProviderName(const Aws::String& value) { m_capacityProviderNameHasBeenSet = true; m_capacityProviderName = value; }
+
+    /**
+     * <p>The capacity provider associated with the container instance.</p>
+     */
+    inline void SetCapacityProviderName(Aws::String&& value) { m_capacityProviderNameHasBeenSet = true; m_capacityProviderName = std::move(value); }
+
+    /**
+     * <p>The capacity provider associated with the container instance.</p>
+     */
+    inline void SetCapacityProviderName(const char* value) { m_capacityProviderNameHasBeenSet = true; m_capacityProviderName.assign(value); }
+
+    /**
+     * <p>The capacity provider associated with the container instance.</p>
+     */
+    inline ContainerInstance& WithCapacityProviderName(const Aws::String& value) { SetCapacityProviderName(value); return *this;}
+
+    /**
+     * <p>The capacity provider associated with the container instance.</p>
+     */
+    inline ContainerInstance& WithCapacityProviderName(Aws::String&& value) { SetCapacityProviderName(std::move(value)); return *this;}
+
+    /**
+     * <p>The capacity provider associated with the container instance.</p>
+     */
+    inline ContainerInstance& WithCapacityProviderName(const char* value) { SetCapacityProviderName(value); return *this;}
+
+
+    /**
      * <p>The version counter for the container instance. Every time a container
      * instance experiences a change that triggers a CloudWatch event, the version
      * counter is incremented. If you are replicating your Amazon ECS container
@@ -1096,6 +1137,9 @@ namespace Model
 
     Aws::String m_ec2InstanceId;
     bool m_ec2InstanceIdHasBeenSet;
+
+    Aws::String m_capacityProviderName;
+    bool m_capacityProviderNameHasBeenSet;
 
     long long m_version;
     bool m_versionHasBeenSet;

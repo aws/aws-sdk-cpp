@@ -91,6 +91,11 @@ CreateVolumeResponse& CreateVolumeResponse::operator =(const Aws::AmazonWebServi
     {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
     }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+    }
     XmlNode sizeNode = resultNode.FirstChild("size");
     if(!sizeNode.IsNull())
     {

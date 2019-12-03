@@ -35,7 +35,9 @@ RouteTableAssociation::RouteTableAssociation() :
     m_mainHasBeenSet(false),
     m_routeTableAssociationIdHasBeenSet(false),
     m_routeTableIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_gatewayIdHasBeenSet(false),
+    m_associationStateHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ RouteTableAssociation::RouteTableAssociation(const XmlNode& xmlNode) :
     m_mainHasBeenSet(false),
     m_routeTableAssociationIdHasBeenSet(false),
     m_routeTableIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_gatewayIdHasBeenSet(false),
+    m_associationStateHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -79,6 +83,18 @@ RouteTableAssociation& RouteTableAssociation::operator =(const XmlNode& xmlNode)
       m_subnetId = Aws::Utils::Xml::DecodeEscapedXmlText(subnetIdNode.GetText());
       m_subnetIdHasBeenSet = true;
     }
+    XmlNode gatewayIdNode = resultNode.FirstChild("gatewayId");
+    if(!gatewayIdNode.IsNull())
+    {
+      m_gatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(gatewayIdNode.GetText());
+      m_gatewayIdHasBeenSet = true;
+    }
+    XmlNode associationStateNode = resultNode.FirstChild("associationState");
+    if(!associationStateNode.IsNull())
+    {
+      m_associationState = associationStateNode;
+      m_associationStateHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -106,6 +122,18 @@ void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
   }
 
+  if(m_gatewayIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GatewayId=" << StringUtils::URLEncode(m_gatewayId.c_str()) << "&";
+  }
+
+  if(m_associationStateHasBeenSet)
+  {
+      Aws::StringStream associationStateLocationAndMemberSs;
+      associationStateLocationAndMemberSs << location << index << locationValue << ".AssociationState";
+      m_associationState.OutputToStream(oStream, associationStateLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -125,6 +153,16 @@ void RouteTableAssociation::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_subnetIdHasBeenSet)
   {
       oStream << location << ".SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+  if(m_gatewayIdHasBeenSet)
+  {
+      oStream << location << ".GatewayId=" << StringUtils::URLEncode(m_gatewayId.c_str()) << "&";
+  }
+  if(m_associationStateHasBeenSet)
+  {
+      Aws::String associationStateLocationAndMember(location);
+      associationStateLocationAndMember += ".AssociationState";
+      m_associationState.OutputToStream(oStream, associationStateLocationAndMember.c_str());
   }
 }
 

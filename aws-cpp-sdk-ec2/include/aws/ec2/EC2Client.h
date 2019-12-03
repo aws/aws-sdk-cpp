@@ -23,6 +23,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/ec2/model/AcceptReservedInstancesExchangeQuoteResponse.h>
+#include <aws/ec2/model/AcceptTransitGatewayPeeringAttachmentResponse.h>
 #include <aws/ec2/model/AcceptTransitGatewayVpcAttachmentResponse.h>
 #include <aws/ec2/model/AcceptVpcEndpointConnectionsResponse.h>
 #include <aws/ec2/model/AcceptVpcPeeringConnectionResponse.h>
@@ -37,6 +38,7 @@
 #include <aws/ec2/model/AssociateIamInstanceProfileResponse.h>
 #include <aws/ec2/model/AssociateRouteTableResponse.h>
 #include <aws/ec2/model/AssociateSubnetCidrBlockResponse.h>
+#include <aws/ec2/model/AssociateTransitGatewayMulticastDomainResponse.h>
 #include <aws/ec2/model/AssociateTransitGatewayRouteTableResponse.h>
 #include <aws/ec2/model/AssociateVpcCidrBlockResponse.h>
 #include <aws/ec2/model/AttachClassicLinkVpcResponse.h>
@@ -72,6 +74,8 @@
 #include <aws/ec2/model/CreateKeyPairResponse.h>
 #include <aws/ec2/model/CreateLaunchTemplateResponse.h>
 #include <aws/ec2/model/CreateLaunchTemplateVersionResponse.h>
+#include <aws/ec2/model/CreateLocalGatewayRouteResponse.h>
+#include <aws/ec2/model/CreateLocalGatewayRouteTableVpcAssociationResponse.h>
 #include <aws/ec2/model/CreateNatGatewayResponse.h>
 #include <aws/ec2/model/CreateNetworkAclResponse.h>
 #include <aws/ec2/model/CreateNetworkInterfaceResponse.h>
@@ -89,6 +93,8 @@
 #include <aws/ec2/model/CreateTrafficMirrorSessionResponse.h>
 #include <aws/ec2/model/CreateTrafficMirrorTargetResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayResponse.h>
+#include <aws/ec2/model/CreateTransitGatewayMulticastDomainResponse.h>
+#include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayRouteResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayRouteTableResponse.h>
 #include <aws/ec2/model/CreateTransitGatewayVpcAttachmentResponse.h>
@@ -108,6 +114,8 @@
 #include <aws/ec2/model/DeleteFpgaImageResponse.h>
 #include <aws/ec2/model/DeleteLaunchTemplateResponse.h>
 #include <aws/ec2/model/DeleteLaunchTemplateVersionsResponse.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteResponse.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationResponse.h>
 #include <aws/ec2/model/DeleteNatGatewayResponse.h>
 #include <aws/ec2/model/DeleteNetworkInterfacePermissionResponse.h>
 #include <aws/ec2/model/DeleteQueuedReservedInstancesResponse.h>
@@ -116,6 +124,8 @@
 #include <aws/ec2/model/DeleteTrafficMirrorSessionResponse.h>
 #include <aws/ec2/model/DeleteTrafficMirrorTargetResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayResponse.h>
+#include <aws/ec2/model/DeleteTransitGatewayMulticastDomainResponse.h>
+#include <aws/ec2/model/DeleteTransitGatewayPeeringAttachmentResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayRouteResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayRouteTableResponse.h>
 #include <aws/ec2/model/DeleteTransitGatewayVpcAttachmentResponse.h>
@@ -124,6 +134,8 @@
 #include <aws/ec2/model/DeleteVpcEndpointsResponse.h>
 #include <aws/ec2/model/DeleteVpcPeeringConnectionResponse.h>
 #include <aws/ec2/model/DeprovisionByoipCidrResponse.h>
+#include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupMembersResponse.h>
+#include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupSourcesResponse.h>
 #include <aws/ec2/model/DescribeAccountAttributesResponse.h>
 #include <aws/ec2/model/DescribeAddressesResponse.h>
 #include <aws/ec2/model/DescribeAggregateIdFormatResponse.h>
@@ -137,6 +149,7 @@
 #include <aws/ec2/model/DescribeClientVpnEndpointsResponse.h>
 #include <aws/ec2/model/DescribeClientVpnRoutesResponse.h>
 #include <aws/ec2/model/DescribeClientVpnTargetNetworksResponse.h>
+#include <aws/ec2/model/DescribeCoipPoolsResponse.h>
 #include <aws/ec2/model/DescribeConversionTasksResponse.h>
 #include <aws/ec2/model/DescribeCustomerGatewaysResponse.h>
 #include <aws/ec2/model/DescribeDhcpOptionsResponse.h>
@@ -171,6 +184,12 @@
 #include <aws/ec2/model/DescribeKeyPairsResponse.h>
 #include <aws/ec2/model/DescribeLaunchTemplateVersionsResponse.h>
 #include <aws/ec2/model/DescribeLaunchTemplatesResponse.h>
+#include <aws/ec2/model/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse.h>
+#include <aws/ec2/model/DescribeLocalGatewayRouteTableVpcAssociationsResponse.h>
+#include <aws/ec2/model/DescribeLocalGatewayRouteTablesResponse.h>
+#include <aws/ec2/model/DescribeLocalGatewayVirtualInterfaceGroupsResponse.h>
+#include <aws/ec2/model/DescribeLocalGatewayVirtualInterfacesResponse.h>
+#include <aws/ec2/model/DescribeLocalGatewaysResponse.h>
 #include <aws/ec2/model/DescribeMovingAddressesResponse.h>
 #include <aws/ec2/model/DescribeNatGatewaysResponse.h>
 #include <aws/ec2/model/DescribeNetworkAclsResponse.h>
@@ -206,6 +225,8 @@
 #include <aws/ec2/model/DescribeTrafficMirrorSessionsResponse.h>
 #include <aws/ec2/model/DescribeTrafficMirrorTargetsResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayAttachmentsResponse.h>
+#include <aws/ec2/model/DescribeTransitGatewayMulticastDomainsResponse.h>
+#include <aws/ec2/model/DescribeTransitGatewayPeeringAttachmentsResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayRouteTablesResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewayVpcAttachmentsResponse.h>
 #include <aws/ec2/model/DescribeTransitGatewaysResponse.h>
@@ -236,6 +257,7 @@
 #include <aws/ec2/model/DisassociateClientVpnTargetNetworkResponse.h>
 #include <aws/ec2/model/DisassociateIamInstanceProfileResponse.h>
 #include <aws/ec2/model/DisassociateSubnetCidrBlockResponse.h>
+#include <aws/ec2/model/DisassociateTransitGatewayMulticastDomainResponse.h>
 #include <aws/ec2/model/DisassociateTransitGatewayRouteTableResponse.h>
 #include <aws/ec2/model/DisassociateVpcCidrBlockResponse.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultResponse.h>
@@ -248,6 +270,7 @@
 #include <aws/ec2/model/ExportImageResponse.h>
 #include <aws/ec2/model/ExportTransitGatewayRoutesResponse.h>
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
+#include <aws/ec2/model/GetCoipPoolUsageResponse.h>
 #include <aws/ec2/model/GetConsoleOutputResponse.h>
 #include <aws/ec2/model/GetConsoleScreenshotResponse.h>
 #include <aws/ec2/model/GetDefaultCreditSpecificationResponse.h>
@@ -258,6 +281,7 @@
 #include <aws/ec2/model/GetPasswordDataResponse.h>
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteResponse.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsResponse.h>
+#include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTableAssociationsResponse.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTablePropagationsResponse.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListResponse.h>
@@ -302,6 +326,9 @@
 #include <aws/ec2/model/PurchaseReservedInstancesOfferingResponse.h>
 #include <aws/ec2/model/PurchaseScheduledInstancesResponse.h>
 #include <aws/ec2/model/RegisterImageResponse.h>
+#include <aws/ec2/model/RegisterTransitGatewayMulticastGroupMembersResponse.h>
+#include <aws/ec2/model/RegisterTransitGatewayMulticastGroupSourcesResponse.h>
+#include <aws/ec2/model/RejectTransitGatewayPeeringAttachmentResponse.h>
 #include <aws/ec2/model/RejectTransitGatewayVpcAttachmentResponse.h>
 #include <aws/ec2/model/RejectVpcEndpointConnectionsResponse.h>
 #include <aws/ec2/model/RejectVpcPeeringConnectionResponse.h>
@@ -318,6 +345,8 @@
 #include <aws/ec2/model/RevokeClientVpnIngressResponse.h>
 #include <aws/ec2/model/RunInstancesResponse.h>
 #include <aws/ec2/model/RunScheduledInstancesResponse.h>
+#include <aws/ec2/model/SearchLocalGatewayRoutesResponse.h>
+#include <aws/ec2/model/SearchTransitGatewayMulticastGroupsResponse.h>
 #include <aws/ec2/model/SearchTransitGatewayRoutesResponse.h>
 #include <aws/ec2/model/StartInstancesResponse.h>
 #include <aws/ec2/model/StopInstancesResponse.h>
@@ -375,6 +404,7 @@ namespace EC2
 namespace Model
 {
         class AcceptReservedInstancesExchangeQuoteRequest;
+        class AcceptTransitGatewayPeeringAttachmentRequest;
         class AcceptTransitGatewayVpcAttachmentRequest;
         class AcceptVpcEndpointConnectionsRequest;
         class AcceptVpcPeeringConnectionRequest;
@@ -390,6 +420,7 @@ namespace Model
         class AssociateIamInstanceProfileRequest;
         class AssociateRouteTableRequest;
         class AssociateSubnetCidrBlockRequest;
+        class AssociateTransitGatewayMulticastDomainRequest;
         class AssociateTransitGatewayRouteTableRequest;
         class AssociateVpcCidrBlockRequest;
         class AttachClassicLinkVpcRequest;
@@ -430,6 +461,8 @@ namespace Model
         class CreateKeyPairRequest;
         class CreateLaunchTemplateRequest;
         class CreateLaunchTemplateVersionRequest;
+        class CreateLocalGatewayRouteRequest;
+        class CreateLocalGatewayRouteTableVpcAssociationRequest;
         class CreateNatGatewayRequest;
         class CreateNetworkAclRequest;
         class CreateNetworkAclEntryRequest;
@@ -450,6 +483,8 @@ namespace Model
         class CreateTrafficMirrorSessionRequest;
         class CreateTrafficMirrorTargetRequest;
         class CreateTransitGatewayRequest;
+        class CreateTransitGatewayMulticastDomainRequest;
+        class CreateTransitGatewayPeeringAttachmentRequest;
         class CreateTransitGatewayRouteRequest;
         class CreateTransitGatewayRouteTableRequest;
         class CreateTransitGatewayVpcAttachmentRequest;
@@ -474,6 +509,8 @@ namespace Model
         class DeleteKeyPairRequest;
         class DeleteLaunchTemplateRequest;
         class DeleteLaunchTemplateVersionsRequest;
+        class DeleteLocalGatewayRouteRequest;
+        class DeleteLocalGatewayRouteTableVpcAssociationRequest;
         class DeleteNatGatewayRequest;
         class DeleteNetworkAclRequest;
         class DeleteNetworkAclEntryRequest;
@@ -493,6 +530,8 @@ namespace Model
         class DeleteTrafficMirrorSessionRequest;
         class DeleteTrafficMirrorTargetRequest;
         class DeleteTransitGatewayRequest;
+        class DeleteTransitGatewayMulticastDomainRequest;
+        class DeleteTransitGatewayPeeringAttachmentRequest;
         class DeleteTransitGatewayRouteRequest;
         class DeleteTransitGatewayRouteTableRequest;
         class DeleteTransitGatewayVpcAttachmentRequest;
@@ -507,6 +546,8 @@ namespace Model
         class DeleteVpnGatewayRequest;
         class DeprovisionByoipCidrRequest;
         class DeregisterImageRequest;
+        class DeregisterTransitGatewayMulticastGroupMembersRequest;
+        class DeregisterTransitGatewayMulticastGroupSourcesRequest;
         class DescribeAccountAttributesRequest;
         class DescribeAddressesRequest;
         class DescribeAggregateIdFormatRequest;
@@ -520,6 +561,7 @@ namespace Model
         class DescribeClientVpnEndpointsRequest;
         class DescribeClientVpnRoutesRequest;
         class DescribeClientVpnTargetNetworksRequest;
+        class DescribeCoipPoolsRequest;
         class DescribeConversionTasksRequest;
         class DescribeCustomerGatewaysRequest;
         class DescribeDhcpOptionsRequest;
@@ -554,6 +596,12 @@ namespace Model
         class DescribeKeyPairsRequest;
         class DescribeLaunchTemplateVersionsRequest;
         class DescribeLaunchTemplatesRequest;
+        class DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest;
+        class DescribeLocalGatewayRouteTableVpcAssociationsRequest;
+        class DescribeLocalGatewayRouteTablesRequest;
+        class DescribeLocalGatewayVirtualInterfaceGroupsRequest;
+        class DescribeLocalGatewayVirtualInterfacesRequest;
+        class DescribeLocalGatewaysRequest;
         class DescribeMovingAddressesRequest;
         class DescribeNatGatewaysRequest;
         class DescribeNetworkAclsRequest;
@@ -589,6 +637,8 @@ namespace Model
         class DescribeTrafficMirrorSessionsRequest;
         class DescribeTrafficMirrorTargetsRequest;
         class DescribeTransitGatewayAttachmentsRequest;
+        class DescribeTransitGatewayMulticastDomainsRequest;
+        class DescribeTransitGatewayPeeringAttachmentsRequest;
         class DescribeTransitGatewayRouteTablesRequest;
         class DescribeTransitGatewayVpcAttachmentsRequest;
         class DescribeTransitGatewaysRequest;
@@ -625,6 +675,7 @@ namespace Model
         class DisassociateIamInstanceProfileRequest;
         class DisassociateRouteTableRequest;
         class DisassociateSubnetCidrBlockRequest;
+        class DisassociateTransitGatewayMulticastDomainRequest;
         class DisassociateTransitGatewayRouteTableRequest;
         class DisassociateVpcCidrBlockRequest;
         class EnableEbsEncryptionByDefaultRequest;
@@ -639,6 +690,7 @@ namespace Model
         class ExportImageRequest;
         class ExportTransitGatewayRoutesRequest;
         class GetCapacityReservationUsageRequest;
+        class GetCoipPoolUsageRequest;
         class GetConsoleOutputRequest;
         class GetConsoleScreenshotRequest;
         class GetDefaultCreditSpecificationRequest;
@@ -649,6 +701,7 @@ namespace Model
         class GetPasswordDataRequest;
         class GetReservedInstancesExchangeQuoteRequest;
         class GetTransitGatewayAttachmentPropagationsRequest;
+        class GetTransitGatewayMulticastDomainAssociationsRequest;
         class GetTransitGatewayRouteTableAssociationsRequest;
         class GetTransitGatewayRouteTablePropagationsRequest;
         class ImportClientVpnClientCertificateRevocationListRequest;
@@ -703,6 +756,9 @@ namespace Model
         class PurchaseScheduledInstancesRequest;
         class RebootInstancesRequest;
         class RegisterImageRequest;
+        class RegisterTransitGatewayMulticastGroupMembersRequest;
+        class RegisterTransitGatewayMulticastGroupSourcesRequest;
+        class RejectTransitGatewayPeeringAttachmentRequest;
         class RejectTransitGatewayVpcAttachmentRequest;
         class RejectVpcEndpointConnectionsRequest;
         class RejectVpcPeeringConnectionRequest;
@@ -729,6 +785,8 @@ namespace Model
         class RevokeSecurityGroupIngressRequest;
         class RunInstancesRequest;
         class RunScheduledInstancesRequest;
+        class SearchLocalGatewayRoutesRequest;
+        class SearchTransitGatewayMulticastGroupsRequest;
         class SearchTransitGatewayRoutesRequest;
         class SendDiagnosticInterruptRequest;
         class StartInstancesRequest;
@@ -743,6 +801,7 @@ namespace Model
         class WithdrawByoipCidrRequest;
 
         typedef Aws::Utils::Outcome<AcceptReservedInstancesExchangeQuoteResponse, Aws::Client::AWSError<EC2Errors>> AcceptReservedInstancesExchangeQuoteOutcome;
+        typedef Aws::Utils::Outcome<AcceptTransitGatewayPeeringAttachmentResponse, Aws::Client::AWSError<EC2Errors>> AcceptTransitGatewayPeeringAttachmentOutcome;
         typedef Aws::Utils::Outcome<AcceptTransitGatewayVpcAttachmentResponse, Aws::Client::AWSError<EC2Errors>> AcceptTransitGatewayVpcAttachmentOutcome;
         typedef Aws::Utils::Outcome<AcceptVpcEndpointConnectionsResponse, Aws::Client::AWSError<EC2Errors>> AcceptVpcEndpointConnectionsOutcome;
         typedef Aws::Utils::Outcome<AcceptVpcPeeringConnectionResponse, Aws::Client::AWSError<EC2Errors>> AcceptVpcPeeringConnectionOutcome;
@@ -758,6 +817,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AssociateIamInstanceProfileResponse, Aws::Client::AWSError<EC2Errors>> AssociateIamInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<AssociateRouteTableResponse, Aws::Client::AWSError<EC2Errors>> AssociateRouteTableOutcome;
         typedef Aws::Utils::Outcome<AssociateSubnetCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> AssociateSubnetCidrBlockOutcome;
+        typedef Aws::Utils::Outcome<AssociateTransitGatewayMulticastDomainResponse, Aws::Client::AWSError<EC2Errors>> AssociateTransitGatewayMulticastDomainOutcome;
         typedef Aws::Utils::Outcome<AssociateTransitGatewayRouteTableResponse, Aws::Client::AWSError<EC2Errors>> AssociateTransitGatewayRouteTableOutcome;
         typedef Aws::Utils::Outcome<AssociateVpcCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> AssociateVpcCidrBlockOutcome;
         typedef Aws::Utils::Outcome<AttachClassicLinkVpcResponse, Aws::Client::AWSError<EC2Errors>> AttachClassicLinkVpcOutcome;
@@ -798,6 +858,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateKeyPairResponse, Aws::Client::AWSError<EC2Errors>> CreateKeyPairOutcome;
         typedef Aws::Utils::Outcome<CreateLaunchTemplateResponse, Aws::Client::AWSError<EC2Errors>> CreateLaunchTemplateOutcome;
         typedef Aws::Utils::Outcome<CreateLaunchTemplateVersionResponse, Aws::Client::AWSError<EC2Errors>> CreateLaunchTemplateVersionOutcome;
+        typedef Aws::Utils::Outcome<CreateLocalGatewayRouteResponse, Aws::Client::AWSError<EC2Errors>> CreateLocalGatewayRouteOutcome;
+        typedef Aws::Utils::Outcome<CreateLocalGatewayRouteTableVpcAssociationResponse, Aws::Client::AWSError<EC2Errors>> CreateLocalGatewayRouteTableVpcAssociationOutcome;
         typedef Aws::Utils::Outcome<CreateNatGatewayResponse, Aws::Client::AWSError<EC2Errors>> CreateNatGatewayOutcome;
         typedef Aws::Utils::Outcome<CreateNetworkAclResponse, Aws::Client::AWSError<EC2Errors>> CreateNetworkAclOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> CreateNetworkAclEntryOutcome;
@@ -818,6 +880,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateTrafficMirrorSessionResponse, Aws::Client::AWSError<EC2Errors>> CreateTrafficMirrorSessionOutcome;
         typedef Aws::Utils::Outcome<CreateTrafficMirrorTargetResponse, Aws::Client::AWSError<EC2Errors>> CreateTrafficMirrorTargetOutcome;
         typedef Aws::Utils::Outcome<CreateTransitGatewayResponse, Aws::Client::AWSError<EC2Errors>> CreateTransitGatewayOutcome;
+        typedef Aws::Utils::Outcome<CreateTransitGatewayMulticastDomainResponse, Aws::Client::AWSError<EC2Errors>> CreateTransitGatewayMulticastDomainOutcome;
+        typedef Aws::Utils::Outcome<CreateTransitGatewayPeeringAttachmentResponse, Aws::Client::AWSError<EC2Errors>> CreateTransitGatewayPeeringAttachmentOutcome;
         typedef Aws::Utils::Outcome<CreateTransitGatewayRouteResponse, Aws::Client::AWSError<EC2Errors>> CreateTransitGatewayRouteOutcome;
         typedef Aws::Utils::Outcome<CreateTransitGatewayRouteTableResponse, Aws::Client::AWSError<EC2Errors>> CreateTransitGatewayRouteTableOutcome;
         typedef Aws::Utils::Outcome<CreateTransitGatewayVpcAttachmentResponse, Aws::Client::AWSError<EC2Errors>> CreateTransitGatewayVpcAttachmentOutcome;
@@ -842,6 +906,8 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteKeyPairOutcome;
         typedef Aws::Utils::Outcome<DeleteLaunchTemplateResponse, Aws::Client::AWSError<EC2Errors>> DeleteLaunchTemplateOutcome;
         typedef Aws::Utils::Outcome<DeleteLaunchTemplateVersionsResponse, Aws::Client::AWSError<EC2Errors>> DeleteLaunchTemplateVersionsOutcome;
+        typedef Aws::Utils::Outcome<DeleteLocalGatewayRouteResponse, Aws::Client::AWSError<EC2Errors>> DeleteLocalGatewayRouteOutcome;
+        typedef Aws::Utils::Outcome<DeleteLocalGatewayRouteTableVpcAssociationResponse, Aws::Client::AWSError<EC2Errors>> DeleteLocalGatewayRouteTableVpcAssociationOutcome;
         typedef Aws::Utils::Outcome<DeleteNatGatewayResponse, Aws::Client::AWSError<EC2Errors>> DeleteNatGatewayOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkAclOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteNetworkAclEntryOutcome;
@@ -861,6 +927,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteTrafficMirrorSessionResponse, Aws::Client::AWSError<EC2Errors>> DeleteTrafficMirrorSessionOutcome;
         typedef Aws::Utils::Outcome<DeleteTrafficMirrorTargetResponse, Aws::Client::AWSError<EC2Errors>> DeleteTrafficMirrorTargetOutcome;
         typedef Aws::Utils::Outcome<DeleteTransitGatewayResponse, Aws::Client::AWSError<EC2Errors>> DeleteTransitGatewayOutcome;
+        typedef Aws::Utils::Outcome<DeleteTransitGatewayMulticastDomainResponse, Aws::Client::AWSError<EC2Errors>> DeleteTransitGatewayMulticastDomainOutcome;
+        typedef Aws::Utils::Outcome<DeleteTransitGatewayPeeringAttachmentResponse, Aws::Client::AWSError<EC2Errors>> DeleteTransitGatewayPeeringAttachmentOutcome;
         typedef Aws::Utils::Outcome<DeleteTransitGatewayRouteResponse, Aws::Client::AWSError<EC2Errors>> DeleteTransitGatewayRouteOutcome;
         typedef Aws::Utils::Outcome<DeleteTransitGatewayRouteTableResponse, Aws::Client::AWSError<EC2Errors>> DeleteTransitGatewayRouteTableOutcome;
         typedef Aws::Utils::Outcome<DeleteTransitGatewayVpcAttachmentResponse, Aws::Client::AWSError<EC2Errors>> DeleteTransitGatewayVpcAttachmentOutcome;
@@ -875,6 +943,8 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeleteVpnGatewayOutcome;
         typedef Aws::Utils::Outcome<DeprovisionByoipCidrResponse, Aws::Client::AWSError<EC2Errors>> DeprovisionByoipCidrOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DeregisterImageOutcome;
+        typedef Aws::Utils::Outcome<DeregisterTransitGatewayMulticastGroupMembersResponse, Aws::Client::AWSError<EC2Errors>> DeregisterTransitGatewayMulticastGroupMembersOutcome;
+        typedef Aws::Utils::Outcome<DeregisterTransitGatewayMulticastGroupSourcesResponse, Aws::Client::AWSError<EC2Errors>> DeregisterTransitGatewayMulticastGroupSourcesOutcome;
         typedef Aws::Utils::Outcome<DescribeAccountAttributesResponse, Aws::Client::AWSError<EC2Errors>> DescribeAccountAttributesOutcome;
         typedef Aws::Utils::Outcome<DescribeAddressesResponse, Aws::Client::AWSError<EC2Errors>> DescribeAddressesOutcome;
         typedef Aws::Utils::Outcome<DescribeAggregateIdFormatResponse, Aws::Client::AWSError<EC2Errors>> DescribeAggregateIdFormatOutcome;
@@ -888,6 +958,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeClientVpnEndpointsResponse, Aws::Client::AWSError<EC2Errors>> DescribeClientVpnEndpointsOutcome;
         typedef Aws::Utils::Outcome<DescribeClientVpnRoutesResponse, Aws::Client::AWSError<EC2Errors>> DescribeClientVpnRoutesOutcome;
         typedef Aws::Utils::Outcome<DescribeClientVpnTargetNetworksResponse, Aws::Client::AWSError<EC2Errors>> DescribeClientVpnTargetNetworksOutcome;
+        typedef Aws::Utils::Outcome<DescribeCoipPoolsResponse, Aws::Client::AWSError<EC2Errors>> DescribeCoipPoolsOutcome;
         typedef Aws::Utils::Outcome<DescribeConversionTasksResponse, Aws::Client::AWSError<EC2Errors>> DescribeConversionTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeCustomerGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeCustomerGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeDhcpOptionsResponse, Aws::Client::AWSError<EC2Errors>> DescribeDhcpOptionsOutcome;
@@ -922,6 +993,12 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeKeyPairsResponse, Aws::Client::AWSError<EC2Errors>> DescribeKeyPairsOutcome;
         typedef Aws::Utils::Outcome<DescribeLaunchTemplateVersionsResponse, Aws::Client::AWSError<EC2Errors>> DescribeLaunchTemplateVersionsOutcome;
         typedef Aws::Utils::Outcome<DescribeLaunchTemplatesResponse, Aws::Client::AWSError<EC2Errors>> DescribeLaunchTemplatesOutcome;
+        typedef Aws::Utils::Outcome<DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse, Aws::Client::AWSError<EC2Errors>> DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeLocalGatewayRouteTableVpcAssociationsResponse, Aws::Client::AWSError<EC2Errors>> DescribeLocalGatewayRouteTableVpcAssociationsOutcome;
+        typedef Aws::Utils::Outcome<DescribeLocalGatewayRouteTablesResponse, Aws::Client::AWSError<EC2Errors>> DescribeLocalGatewayRouteTablesOutcome;
+        typedef Aws::Utils::Outcome<DescribeLocalGatewayVirtualInterfaceGroupsResponse, Aws::Client::AWSError<EC2Errors>> DescribeLocalGatewayVirtualInterfaceGroupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeLocalGatewayVirtualInterfacesResponse, Aws::Client::AWSError<EC2Errors>> DescribeLocalGatewayVirtualInterfacesOutcome;
+        typedef Aws::Utils::Outcome<DescribeLocalGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeLocalGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeMovingAddressesResponse, Aws::Client::AWSError<EC2Errors>> DescribeMovingAddressesOutcome;
         typedef Aws::Utils::Outcome<DescribeNatGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeNatGatewaysOutcome;
         typedef Aws::Utils::Outcome<DescribeNetworkAclsResponse, Aws::Client::AWSError<EC2Errors>> DescribeNetworkAclsOutcome;
@@ -957,6 +1034,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeTrafficMirrorSessionsResponse, Aws::Client::AWSError<EC2Errors>> DescribeTrafficMirrorSessionsOutcome;
         typedef Aws::Utils::Outcome<DescribeTrafficMirrorTargetsResponse, Aws::Client::AWSError<EC2Errors>> DescribeTrafficMirrorTargetsOutcome;
         typedef Aws::Utils::Outcome<DescribeTransitGatewayAttachmentsResponse, Aws::Client::AWSError<EC2Errors>> DescribeTransitGatewayAttachmentsOutcome;
+        typedef Aws::Utils::Outcome<DescribeTransitGatewayMulticastDomainsResponse, Aws::Client::AWSError<EC2Errors>> DescribeTransitGatewayMulticastDomainsOutcome;
+        typedef Aws::Utils::Outcome<DescribeTransitGatewayPeeringAttachmentsResponse, Aws::Client::AWSError<EC2Errors>> DescribeTransitGatewayPeeringAttachmentsOutcome;
         typedef Aws::Utils::Outcome<DescribeTransitGatewayRouteTablesResponse, Aws::Client::AWSError<EC2Errors>> DescribeTransitGatewayRouteTablesOutcome;
         typedef Aws::Utils::Outcome<DescribeTransitGatewayVpcAttachmentsResponse, Aws::Client::AWSError<EC2Errors>> DescribeTransitGatewayVpcAttachmentsOutcome;
         typedef Aws::Utils::Outcome<DescribeTransitGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeTransitGatewaysOutcome;
@@ -993,6 +1072,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateIamInstanceProfileResponse, Aws::Client::AWSError<EC2Errors>> DisassociateIamInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> DisassociateRouteTableOutcome;
         typedef Aws::Utils::Outcome<DisassociateSubnetCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> DisassociateSubnetCidrBlockOutcome;
+        typedef Aws::Utils::Outcome<DisassociateTransitGatewayMulticastDomainResponse, Aws::Client::AWSError<EC2Errors>> DisassociateTransitGatewayMulticastDomainOutcome;
         typedef Aws::Utils::Outcome<DisassociateTransitGatewayRouteTableResponse, Aws::Client::AWSError<EC2Errors>> DisassociateTransitGatewayRouteTableOutcome;
         typedef Aws::Utils::Outcome<DisassociateVpcCidrBlockResponse, Aws::Client::AWSError<EC2Errors>> DisassociateVpcCidrBlockOutcome;
         typedef Aws::Utils::Outcome<EnableEbsEncryptionByDefaultResponse, Aws::Client::AWSError<EC2Errors>> EnableEbsEncryptionByDefaultOutcome;
@@ -1007,6 +1087,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ExportImageResponse, Aws::Client::AWSError<EC2Errors>> ExportImageOutcome;
         typedef Aws::Utils::Outcome<ExportTransitGatewayRoutesResponse, Aws::Client::AWSError<EC2Errors>> ExportTransitGatewayRoutesOutcome;
         typedef Aws::Utils::Outcome<GetCapacityReservationUsageResponse, Aws::Client::AWSError<EC2Errors>> GetCapacityReservationUsageOutcome;
+        typedef Aws::Utils::Outcome<GetCoipPoolUsageResponse, Aws::Client::AWSError<EC2Errors>> GetCoipPoolUsageOutcome;
         typedef Aws::Utils::Outcome<GetConsoleOutputResponse, Aws::Client::AWSError<EC2Errors>> GetConsoleOutputOutcome;
         typedef Aws::Utils::Outcome<GetConsoleScreenshotResponse, Aws::Client::AWSError<EC2Errors>> GetConsoleScreenshotOutcome;
         typedef Aws::Utils::Outcome<GetDefaultCreditSpecificationResponse, Aws::Client::AWSError<EC2Errors>> GetDefaultCreditSpecificationOutcome;
@@ -1017,6 +1098,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetPasswordDataResponse, Aws::Client::AWSError<EC2Errors>> GetPasswordDataOutcome;
         typedef Aws::Utils::Outcome<GetReservedInstancesExchangeQuoteResponse, Aws::Client::AWSError<EC2Errors>> GetReservedInstancesExchangeQuoteOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayAttachmentPropagationsResponse, Aws::Client::AWSError<EC2Errors>> GetTransitGatewayAttachmentPropagationsOutcome;
+        typedef Aws::Utils::Outcome<GetTransitGatewayMulticastDomainAssociationsResponse, Aws::Client::AWSError<EC2Errors>> GetTransitGatewayMulticastDomainAssociationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayRouteTableAssociationsResponse, Aws::Client::AWSError<EC2Errors>> GetTransitGatewayRouteTableAssociationsOutcome;
         typedef Aws::Utils::Outcome<GetTransitGatewayRouteTablePropagationsResponse, Aws::Client::AWSError<EC2Errors>> GetTransitGatewayRouteTablePropagationsOutcome;
         typedef Aws::Utils::Outcome<ImportClientVpnClientCertificateRevocationListResponse, Aws::Client::AWSError<EC2Errors>> ImportClientVpnClientCertificateRevocationListOutcome;
@@ -1071,6 +1153,9 @@ namespace Model
         typedef Aws::Utils::Outcome<PurchaseScheduledInstancesResponse, Aws::Client::AWSError<EC2Errors>> PurchaseScheduledInstancesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> RebootInstancesOutcome;
         typedef Aws::Utils::Outcome<RegisterImageResponse, Aws::Client::AWSError<EC2Errors>> RegisterImageOutcome;
+        typedef Aws::Utils::Outcome<RegisterTransitGatewayMulticastGroupMembersResponse, Aws::Client::AWSError<EC2Errors>> RegisterTransitGatewayMulticastGroupMembersOutcome;
+        typedef Aws::Utils::Outcome<RegisterTransitGatewayMulticastGroupSourcesResponse, Aws::Client::AWSError<EC2Errors>> RegisterTransitGatewayMulticastGroupSourcesOutcome;
+        typedef Aws::Utils::Outcome<RejectTransitGatewayPeeringAttachmentResponse, Aws::Client::AWSError<EC2Errors>> RejectTransitGatewayPeeringAttachmentOutcome;
         typedef Aws::Utils::Outcome<RejectTransitGatewayVpcAttachmentResponse, Aws::Client::AWSError<EC2Errors>> RejectTransitGatewayVpcAttachmentOutcome;
         typedef Aws::Utils::Outcome<RejectVpcEndpointConnectionsResponse, Aws::Client::AWSError<EC2Errors>> RejectVpcEndpointConnectionsOutcome;
         typedef Aws::Utils::Outcome<RejectVpcPeeringConnectionResponse, Aws::Client::AWSError<EC2Errors>> RejectVpcPeeringConnectionOutcome;
@@ -1097,6 +1182,8 @@ namespace Model
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> RevokeSecurityGroupIngressOutcome;
         typedef Aws::Utils::Outcome<RunInstancesResponse, Aws::Client::AWSError<EC2Errors>> RunInstancesOutcome;
         typedef Aws::Utils::Outcome<RunScheduledInstancesResponse, Aws::Client::AWSError<EC2Errors>> RunScheduledInstancesOutcome;
+        typedef Aws::Utils::Outcome<SearchLocalGatewayRoutesResponse, Aws::Client::AWSError<EC2Errors>> SearchLocalGatewayRoutesOutcome;
+        typedef Aws::Utils::Outcome<SearchTransitGatewayMulticastGroupsResponse, Aws::Client::AWSError<EC2Errors>> SearchTransitGatewayMulticastGroupsOutcome;
         typedef Aws::Utils::Outcome<SearchTransitGatewayRoutesResponse, Aws::Client::AWSError<EC2Errors>> SearchTransitGatewayRoutesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> SendDiagnosticInterruptOutcome;
         typedef Aws::Utils::Outcome<StartInstancesResponse, Aws::Client::AWSError<EC2Errors>> StartInstancesOutcome;
@@ -1111,6 +1198,7 @@ namespace Model
         typedef Aws::Utils::Outcome<WithdrawByoipCidrResponse, Aws::Client::AWSError<EC2Errors>> WithdrawByoipCidrOutcome;
 
         typedef std::future<AcceptReservedInstancesExchangeQuoteOutcome> AcceptReservedInstancesExchangeQuoteOutcomeCallable;
+        typedef std::future<AcceptTransitGatewayPeeringAttachmentOutcome> AcceptTransitGatewayPeeringAttachmentOutcomeCallable;
         typedef std::future<AcceptTransitGatewayVpcAttachmentOutcome> AcceptTransitGatewayVpcAttachmentOutcomeCallable;
         typedef std::future<AcceptVpcEndpointConnectionsOutcome> AcceptVpcEndpointConnectionsOutcomeCallable;
         typedef std::future<AcceptVpcPeeringConnectionOutcome> AcceptVpcPeeringConnectionOutcomeCallable;
@@ -1126,6 +1214,7 @@ namespace Model
         typedef std::future<AssociateIamInstanceProfileOutcome> AssociateIamInstanceProfileOutcomeCallable;
         typedef std::future<AssociateRouteTableOutcome> AssociateRouteTableOutcomeCallable;
         typedef std::future<AssociateSubnetCidrBlockOutcome> AssociateSubnetCidrBlockOutcomeCallable;
+        typedef std::future<AssociateTransitGatewayMulticastDomainOutcome> AssociateTransitGatewayMulticastDomainOutcomeCallable;
         typedef std::future<AssociateTransitGatewayRouteTableOutcome> AssociateTransitGatewayRouteTableOutcomeCallable;
         typedef std::future<AssociateVpcCidrBlockOutcome> AssociateVpcCidrBlockOutcomeCallable;
         typedef std::future<AttachClassicLinkVpcOutcome> AttachClassicLinkVpcOutcomeCallable;
@@ -1166,6 +1255,8 @@ namespace Model
         typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
         typedef std::future<CreateLaunchTemplateOutcome> CreateLaunchTemplateOutcomeCallable;
         typedef std::future<CreateLaunchTemplateVersionOutcome> CreateLaunchTemplateVersionOutcomeCallable;
+        typedef std::future<CreateLocalGatewayRouteOutcome> CreateLocalGatewayRouteOutcomeCallable;
+        typedef std::future<CreateLocalGatewayRouteTableVpcAssociationOutcome> CreateLocalGatewayRouteTableVpcAssociationOutcomeCallable;
         typedef std::future<CreateNatGatewayOutcome> CreateNatGatewayOutcomeCallable;
         typedef std::future<CreateNetworkAclOutcome> CreateNetworkAclOutcomeCallable;
         typedef std::future<CreateNetworkAclEntryOutcome> CreateNetworkAclEntryOutcomeCallable;
@@ -1186,6 +1277,8 @@ namespace Model
         typedef std::future<CreateTrafficMirrorSessionOutcome> CreateTrafficMirrorSessionOutcomeCallable;
         typedef std::future<CreateTrafficMirrorTargetOutcome> CreateTrafficMirrorTargetOutcomeCallable;
         typedef std::future<CreateTransitGatewayOutcome> CreateTransitGatewayOutcomeCallable;
+        typedef std::future<CreateTransitGatewayMulticastDomainOutcome> CreateTransitGatewayMulticastDomainOutcomeCallable;
+        typedef std::future<CreateTransitGatewayPeeringAttachmentOutcome> CreateTransitGatewayPeeringAttachmentOutcomeCallable;
         typedef std::future<CreateTransitGatewayRouteOutcome> CreateTransitGatewayRouteOutcomeCallable;
         typedef std::future<CreateTransitGatewayRouteTableOutcome> CreateTransitGatewayRouteTableOutcomeCallable;
         typedef std::future<CreateTransitGatewayVpcAttachmentOutcome> CreateTransitGatewayVpcAttachmentOutcomeCallable;
@@ -1210,6 +1303,8 @@ namespace Model
         typedef std::future<DeleteKeyPairOutcome> DeleteKeyPairOutcomeCallable;
         typedef std::future<DeleteLaunchTemplateOutcome> DeleteLaunchTemplateOutcomeCallable;
         typedef std::future<DeleteLaunchTemplateVersionsOutcome> DeleteLaunchTemplateVersionsOutcomeCallable;
+        typedef std::future<DeleteLocalGatewayRouteOutcome> DeleteLocalGatewayRouteOutcomeCallable;
+        typedef std::future<DeleteLocalGatewayRouteTableVpcAssociationOutcome> DeleteLocalGatewayRouteTableVpcAssociationOutcomeCallable;
         typedef std::future<DeleteNatGatewayOutcome> DeleteNatGatewayOutcomeCallable;
         typedef std::future<DeleteNetworkAclOutcome> DeleteNetworkAclOutcomeCallable;
         typedef std::future<DeleteNetworkAclEntryOutcome> DeleteNetworkAclEntryOutcomeCallable;
@@ -1229,6 +1324,8 @@ namespace Model
         typedef std::future<DeleteTrafficMirrorSessionOutcome> DeleteTrafficMirrorSessionOutcomeCallable;
         typedef std::future<DeleteTrafficMirrorTargetOutcome> DeleteTrafficMirrorTargetOutcomeCallable;
         typedef std::future<DeleteTransitGatewayOutcome> DeleteTransitGatewayOutcomeCallable;
+        typedef std::future<DeleteTransitGatewayMulticastDomainOutcome> DeleteTransitGatewayMulticastDomainOutcomeCallable;
+        typedef std::future<DeleteTransitGatewayPeeringAttachmentOutcome> DeleteTransitGatewayPeeringAttachmentOutcomeCallable;
         typedef std::future<DeleteTransitGatewayRouteOutcome> DeleteTransitGatewayRouteOutcomeCallable;
         typedef std::future<DeleteTransitGatewayRouteTableOutcome> DeleteTransitGatewayRouteTableOutcomeCallable;
         typedef std::future<DeleteTransitGatewayVpcAttachmentOutcome> DeleteTransitGatewayVpcAttachmentOutcomeCallable;
@@ -1243,6 +1340,8 @@ namespace Model
         typedef std::future<DeleteVpnGatewayOutcome> DeleteVpnGatewayOutcomeCallable;
         typedef std::future<DeprovisionByoipCidrOutcome> DeprovisionByoipCidrOutcomeCallable;
         typedef std::future<DeregisterImageOutcome> DeregisterImageOutcomeCallable;
+        typedef std::future<DeregisterTransitGatewayMulticastGroupMembersOutcome> DeregisterTransitGatewayMulticastGroupMembersOutcomeCallable;
+        typedef std::future<DeregisterTransitGatewayMulticastGroupSourcesOutcome> DeregisterTransitGatewayMulticastGroupSourcesOutcomeCallable;
         typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
         typedef std::future<DescribeAddressesOutcome> DescribeAddressesOutcomeCallable;
         typedef std::future<DescribeAggregateIdFormatOutcome> DescribeAggregateIdFormatOutcomeCallable;
@@ -1256,6 +1355,7 @@ namespace Model
         typedef std::future<DescribeClientVpnEndpointsOutcome> DescribeClientVpnEndpointsOutcomeCallable;
         typedef std::future<DescribeClientVpnRoutesOutcome> DescribeClientVpnRoutesOutcomeCallable;
         typedef std::future<DescribeClientVpnTargetNetworksOutcome> DescribeClientVpnTargetNetworksOutcomeCallable;
+        typedef std::future<DescribeCoipPoolsOutcome> DescribeCoipPoolsOutcomeCallable;
         typedef std::future<DescribeConversionTasksOutcome> DescribeConversionTasksOutcomeCallable;
         typedef std::future<DescribeCustomerGatewaysOutcome> DescribeCustomerGatewaysOutcomeCallable;
         typedef std::future<DescribeDhcpOptionsOutcome> DescribeDhcpOptionsOutcomeCallable;
@@ -1290,6 +1390,12 @@ namespace Model
         typedef std::future<DescribeKeyPairsOutcome> DescribeKeyPairsOutcomeCallable;
         typedef std::future<DescribeLaunchTemplateVersionsOutcome> DescribeLaunchTemplateVersionsOutcomeCallable;
         typedef std::future<DescribeLaunchTemplatesOutcome> DescribeLaunchTemplatesOutcomeCallable;
+        typedef std::future<DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcome> DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcomeCallable;
+        typedef std::future<DescribeLocalGatewayRouteTableVpcAssociationsOutcome> DescribeLocalGatewayRouteTableVpcAssociationsOutcomeCallable;
+        typedef std::future<DescribeLocalGatewayRouteTablesOutcome> DescribeLocalGatewayRouteTablesOutcomeCallable;
+        typedef std::future<DescribeLocalGatewayVirtualInterfaceGroupsOutcome> DescribeLocalGatewayVirtualInterfaceGroupsOutcomeCallable;
+        typedef std::future<DescribeLocalGatewayVirtualInterfacesOutcome> DescribeLocalGatewayVirtualInterfacesOutcomeCallable;
+        typedef std::future<DescribeLocalGatewaysOutcome> DescribeLocalGatewaysOutcomeCallable;
         typedef std::future<DescribeMovingAddressesOutcome> DescribeMovingAddressesOutcomeCallable;
         typedef std::future<DescribeNatGatewaysOutcome> DescribeNatGatewaysOutcomeCallable;
         typedef std::future<DescribeNetworkAclsOutcome> DescribeNetworkAclsOutcomeCallable;
@@ -1325,6 +1431,8 @@ namespace Model
         typedef std::future<DescribeTrafficMirrorSessionsOutcome> DescribeTrafficMirrorSessionsOutcomeCallable;
         typedef std::future<DescribeTrafficMirrorTargetsOutcome> DescribeTrafficMirrorTargetsOutcomeCallable;
         typedef std::future<DescribeTransitGatewayAttachmentsOutcome> DescribeTransitGatewayAttachmentsOutcomeCallable;
+        typedef std::future<DescribeTransitGatewayMulticastDomainsOutcome> DescribeTransitGatewayMulticastDomainsOutcomeCallable;
+        typedef std::future<DescribeTransitGatewayPeeringAttachmentsOutcome> DescribeTransitGatewayPeeringAttachmentsOutcomeCallable;
         typedef std::future<DescribeTransitGatewayRouteTablesOutcome> DescribeTransitGatewayRouteTablesOutcomeCallable;
         typedef std::future<DescribeTransitGatewayVpcAttachmentsOutcome> DescribeTransitGatewayVpcAttachmentsOutcomeCallable;
         typedef std::future<DescribeTransitGatewaysOutcome> DescribeTransitGatewaysOutcomeCallable;
@@ -1361,6 +1469,7 @@ namespace Model
         typedef std::future<DisassociateIamInstanceProfileOutcome> DisassociateIamInstanceProfileOutcomeCallable;
         typedef std::future<DisassociateRouteTableOutcome> DisassociateRouteTableOutcomeCallable;
         typedef std::future<DisassociateSubnetCidrBlockOutcome> DisassociateSubnetCidrBlockOutcomeCallable;
+        typedef std::future<DisassociateTransitGatewayMulticastDomainOutcome> DisassociateTransitGatewayMulticastDomainOutcomeCallable;
         typedef std::future<DisassociateTransitGatewayRouteTableOutcome> DisassociateTransitGatewayRouteTableOutcomeCallable;
         typedef std::future<DisassociateVpcCidrBlockOutcome> DisassociateVpcCidrBlockOutcomeCallable;
         typedef std::future<EnableEbsEncryptionByDefaultOutcome> EnableEbsEncryptionByDefaultOutcomeCallable;
@@ -1375,6 +1484,7 @@ namespace Model
         typedef std::future<ExportImageOutcome> ExportImageOutcomeCallable;
         typedef std::future<ExportTransitGatewayRoutesOutcome> ExportTransitGatewayRoutesOutcomeCallable;
         typedef std::future<GetCapacityReservationUsageOutcome> GetCapacityReservationUsageOutcomeCallable;
+        typedef std::future<GetCoipPoolUsageOutcome> GetCoipPoolUsageOutcomeCallable;
         typedef std::future<GetConsoleOutputOutcome> GetConsoleOutputOutcomeCallable;
         typedef std::future<GetConsoleScreenshotOutcome> GetConsoleScreenshotOutcomeCallable;
         typedef std::future<GetDefaultCreditSpecificationOutcome> GetDefaultCreditSpecificationOutcomeCallable;
@@ -1385,6 +1495,7 @@ namespace Model
         typedef std::future<GetPasswordDataOutcome> GetPasswordDataOutcomeCallable;
         typedef std::future<GetReservedInstancesExchangeQuoteOutcome> GetReservedInstancesExchangeQuoteOutcomeCallable;
         typedef std::future<GetTransitGatewayAttachmentPropagationsOutcome> GetTransitGatewayAttachmentPropagationsOutcomeCallable;
+        typedef std::future<GetTransitGatewayMulticastDomainAssociationsOutcome> GetTransitGatewayMulticastDomainAssociationsOutcomeCallable;
         typedef std::future<GetTransitGatewayRouteTableAssociationsOutcome> GetTransitGatewayRouteTableAssociationsOutcomeCallable;
         typedef std::future<GetTransitGatewayRouteTablePropagationsOutcome> GetTransitGatewayRouteTablePropagationsOutcomeCallable;
         typedef std::future<ImportClientVpnClientCertificateRevocationListOutcome> ImportClientVpnClientCertificateRevocationListOutcomeCallable;
@@ -1439,6 +1550,9 @@ namespace Model
         typedef std::future<PurchaseScheduledInstancesOutcome> PurchaseScheduledInstancesOutcomeCallable;
         typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
         typedef std::future<RegisterImageOutcome> RegisterImageOutcomeCallable;
+        typedef std::future<RegisterTransitGatewayMulticastGroupMembersOutcome> RegisterTransitGatewayMulticastGroupMembersOutcomeCallable;
+        typedef std::future<RegisterTransitGatewayMulticastGroupSourcesOutcome> RegisterTransitGatewayMulticastGroupSourcesOutcomeCallable;
+        typedef std::future<RejectTransitGatewayPeeringAttachmentOutcome> RejectTransitGatewayPeeringAttachmentOutcomeCallable;
         typedef std::future<RejectTransitGatewayVpcAttachmentOutcome> RejectTransitGatewayVpcAttachmentOutcomeCallable;
         typedef std::future<RejectVpcEndpointConnectionsOutcome> RejectVpcEndpointConnectionsOutcomeCallable;
         typedef std::future<RejectVpcPeeringConnectionOutcome> RejectVpcPeeringConnectionOutcomeCallable;
@@ -1465,6 +1579,8 @@ namespace Model
         typedef std::future<RevokeSecurityGroupIngressOutcome> RevokeSecurityGroupIngressOutcomeCallable;
         typedef std::future<RunInstancesOutcome> RunInstancesOutcomeCallable;
         typedef std::future<RunScheduledInstancesOutcome> RunScheduledInstancesOutcomeCallable;
+        typedef std::future<SearchLocalGatewayRoutesOutcome> SearchLocalGatewayRoutesOutcomeCallable;
+        typedef std::future<SearchTransitGatewayMulticastGroupsOutcome> SearchTransitGatewayMulticastGroupsOutcomeCallable;
         typedef std::future<SearchTransitGatewayRoutesOutcome> SearchTransitGatewayRoutesOutcomeCallable;
         typedef std::future<SendDiagnosticInterruptOutcome> SendDiagnosticInterruptOutcomeCallable;
         typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
@@ -1482,6 +1598,7 @@ namespace Model
   class EC2Client;
 
     typedef std::function<void(const EC2Client*, const Model::AcceptReservedInstancesExchangeQuoteRequest&, const Model::AcceptReservedInstancesExchangeQuoteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptReservedInstancesExchangeQuoteResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AcceptTransitGatewayPeeringAttachmentRequest&, const Model::AcceptTransitGatewayPeeringAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptTransitGatewayPeeringAttachmentResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AcceptTransitGatewayVpcAttachmentRequest&, const Model::AcceptTransitGatewayVpcAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptTransitGatewayVpcAttachmentResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AcceptVpcEndpointConnectionsRequest&, const Model::AcceptVpcEndpointConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptVpcEndpointConnectionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AcceptVpcPeeringConnectionRequest&, const Model::AcceptVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AcceptVpcPeeringConnectionResponseReceivedHandler;
@@ -1497,6 +1614,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::AssociateIamInstanceProfileRequest&, const Model::AssociateIamInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateIamInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateRouteTableRequest&, const Model::AssociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateSubnetCidrBlockRequest&, const Model::AssociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateSubnetCidrBlockResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::AssociateTransitGatewayMulticastDomainRequest&, const Model::AssociateTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTransitGatewayMulticastDomainResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateTransitGatewayRouteTableRequest&, const Model::AssociateTransitGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTransitGatewayRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AssociateVpcCidrBlockRequest&, const Model::AssociateVpcCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateVpcCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::AttachClassicLinkVpcRequest&, const Model::AttachClassicLinkVpcOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachClassicLinkVpcResponseReceivedHandler;
@@ -1537,6 +1655,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateKeyPairRequest&, const Model::CreateKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateKeyPairResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateLaunchTemplateRequest&, const Model::CreateLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLaunchTemplateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateLaunchTemplateVersionRequest&, const Model::CreateLaunchTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLaunchTemplateVersionResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayRouteRequest&, const Model::CreateLocalGatewayRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayRouteResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateLocalGatewayRouteTableVpcAssociationRequest&, const Model::CreateLocalGatewayRouteTableVpcAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNatGatewayRequest&, const Model::CreateNatGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNatGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkAclRequest&, const Model::CreateNetworkAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkAclResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateNetworkAclEntryRequest&, const Model::CreateNetworkAclEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkAclEntryResponseReceivedHandler;
@@ -1557,6 +1677,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::CreateTrafficMirrorSessionRequest&, const Model::CreateTrafficMirrorSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficMirrorSessionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTrafficMirrorTargetRequest&, const Model::CreateTrafficMirrorTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrafficMirrorTargetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayRequest&, const Model::CreateTransitGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayMulticastDomainRequest&, const Model::CreateTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayMulticastDomainResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayPeeringAttachmentRequest&, const Model::CreateTransitGatewayPeeringAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayPeeringAttachmentResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayRouteRequest&, const Model::CreateTransitGatewayRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayRouteTableRequest&, const Model::CreateTransitGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::CreateTransitGatewayVpcAttachmentRequest&, const Model::CreateTransitGatewayVpcAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransitGatewayVpcAttachmentResponseReceivedHandler;
@@ -1581,6 +1703,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteKeyPairRequest&, const Model::DeleteKeyPairOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteKeyPairResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteLaunchTemplateRequest&, const Model::DeleteLaunchTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchTemplateResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteLaunchTemplateVersionsRequest&, const Model::DeleteLaunchTemplateVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchTemplateVersionsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayRouteRequest&, const Model::DeleteLocalGatewayRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocalGatewayRouteResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteLocalGatewayRouteTableVpcAssociationRequest&, const Model::DeleteLocalGatewayRouteTableVpcAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNatGatewayRequest&, const Model::DeleteNatGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNatGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkAclRequest&, const Model::DeleteNetworkAclOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkAclResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteNetworkAclEntryRequest&, const Model::DeleteNetworkAclEntryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNetworkAclEntryResponseReceivedHandler;
@@ -1600,6 +1724,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteTrafficMirrorSessionRequest&, const Model::DeleteTrafficMirrorSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficMirrorSessionResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTrafficMirrorTargetRequest&, const Model::DeleteTrafficMirrorTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrafficMirrorTargetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayRequest&, const Model::DeleteTransitGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayMulticastDomainRequest&, const Model::DeleteTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayMulticastDomainResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayPeeringAttachmentRequest&, const Model::DeleteTransitGatewayPeeringAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayPeeringAttachmentResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayRouteRequest&, const Model::DeleteTransitGatewayRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayRouteTableRequest&, const Model::DeleteTransitGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeleteTransitGatewayVpcAttachmentRequest&, const Model::DeleteTransitGatewayVpcAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTransitGatewayVpcAttachmentResponseReceivedHandler;
@@ -1614,6 +1740,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DeleteVpnGatewayRequest&, const Model::DeleteVpnGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVpnGatewayResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeprovisionByoipCidrRequest&, const Model::DeprovisionByoipCidrOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeprovisionByoipCidrResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DeregisterImageRequest&, const Model::DeregisterImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterImageResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeregisterTransitGatewayMulticastGroupMembersRequest&, const Model::DeregisterTransitGatewayMulticastGroupMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest&, const Model::DeregisterTransitGatewayMulticastGroupSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAccountAttributesRequest&, const Model::DescribeAccountAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountAttributesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAddressesRequest&, const Model::DescribeAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeAggregateIdFormatRequest&, const Model::DescribeAggregateIdFormatOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAggregateIdFormatResponseReceivedHandler;
@@ -1627,6 +1755,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeClientVpnEndpointsRequest&, const Model::DescribeClientVpnEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientVpnEndpointsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeClientVpnRoutesRequest&, const Model::DescribeClientVpnRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientVpnRoutesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeClientVpnTargetNetworksRequest&, const Model::DescribeClientVpnTargetNetworksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClientVpnTargetNetworksResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeCoipPoolsRequest&, const Model::DescribeCoipPoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCoipPoolsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeConversionTasksRequest&, const Model::DescribeConversionTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConversionTasksResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeCustomerGatewaysRequest&, const Model::DescribeCustomerGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCustomerGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeDhcpOptionsRequest&, const Model::DescribeDhcpOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDhcpOptionsResponseReceivedHandler;
@@ -1661,6 +1790,12 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeKeyPairsRequest&, const Model::DescribeKeyPairsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeKeyPairsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeLaunchTemplateVersionsRequest&, const Model::DescribeLaunchTemplateVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLaunchTemplateVersionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeLaunchTemplatesRequest&, const Model::DescribeLaunchTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLaunchTemplatesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest&, const Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest&, const Model::DescribeLocalGatewayRouteTableVpcAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewayRouteTableVpcAssociationsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewayRouteTablesRequest&, const Model::DescribeLocalGatewayRouteTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewayRouteTablesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest&, const Model::DescribeLocalGatewayVirtualInterfaceGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewayVirtualInterfaceGroupsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewayVirtualInterfacesRequest&, const Model::DescribeLocalGatewayVirtualInterfacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeLocalGatewaysRequest&, const Model::DescribeLocalGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLocalGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeMovingAddressesRequest&, const Model::DescribeMovingAddressesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMovingAddressesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNatGatewaysRequest&, const Model::DescribeNatGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNatGatewaysResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeNetworkAclsRequest&, const Model::DescribeNetworkAclsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNetworkAclsResponseReceivedHandler;
@@ -1696,6 +1831,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeTrafficMirrorSessionsRequest&, const Model::DescribeTrafficMirrorSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrafficMirrorSessionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTrafficMirrorTargetsRequest&, const Model::DescribeTrafficMirrorTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrafficMirrorTargetsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayAttachmentsRequest&, const Model::DescribeTransitGatewayAttachmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewayAttachmentsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayMulticastDomainsRequest&, const Model::DescribeTransitGatewayMulticastDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewayMulticastDomainsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayPeeringAttachmentsRequest&, const Model::DescribeTransitGatewayPeeringAttachmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewayPeeringAttachmentsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayRouteTablesRequest&, const Model::DescribeTransitGatewayRouteTablesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewayRouteTablesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewayVpcAttachmentsRequest&, const Model::DescribeTransitGatewayVpcAttachmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewayVpcAttachmentsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeTransitGatewaysRequest&, const Model::DescribeTransitGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransitGatewaysResponseReceivedHandler;
@@ -1732,6 +1869,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DisassociateIamInstanceProfileRequest&, const Model::DisassociateIamInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIamInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateRouteTableRequest&, const Model::DisassociateRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateSubnetCidrBlockRequest&, const Model::DisassociateSubnetCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateSubnetCidrBlockResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DisassociateTransitGatewayMulticastDomainRequest&, const Model::DisassociateTransitGatewayMulticastDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTransitGatewayMulticastDomainResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateTransitGatewayRouteTableRequest&, const Model::DisassociateTransitGatewayRouteTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTransitGatewayRouteTableResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DisassociateVpcCidrBlockRequest&, const Model::DisassociateVpcCidrBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateVpcCidrBlockResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::EnableEbsEncryptionByDefaultRequest&, const Model::EnableEbsEncryptionByDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableEbsEncryptionByDefaultResponseReceivedHandler;
@@ -1746,6 +1884,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ExportImageRequest&, const Model::ExportImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ExportTransitGatewayRoutesRequest&, const Model::ExportTransitGatewayRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportTransitGatewayRoutesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetCapacityReservationUsageRequest&, const Model::GetCapacityReservationUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCapacityReservationUsageResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetCoipPoolUsageRequest&, const Model::GetCoipPoolUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCoipPoolUsageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetConsoleOutputRequest&, const Model::GetConsoleOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsoleOutputResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetConsoleScreenshotRequest&, const Model::GetConsoleScreenshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsoleScreenshotResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetDefaultCreditSpecificationRequest&, const Model::GetDefaultCreditSpecificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDefaultCreditSpecificationResponseReceivedHandler;
@@ -1756,6 +1895,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::GetPasswordDataRequest&, const Model::GetPasswordDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPasswordDataResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetReservedInstancesExchangeQuoteRequest&, const Model::GetReservedInstancesExchangeQuoteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservedInstancesExchangeQuoteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayAttachmentPropagationsRequest&, const Model::GetTransitGatewayAttachmentPropagationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayAttachmentPropagationsResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayMulticastDomainAssociationsRequest&, const Model::GetTransitGatewayMulticastDomainAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayRouteTableAssociationsRequest&, const Model::GetTransitGatewayRouteTableAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayRouteTableAssociationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetTransitGatewayRouteTablePropagationsRequest&, const Model::GetTransitGatewayRouteTablePropagationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTransitGatewayRouteTablePropagationsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportClientVpnClientCertificateRevocationListRequest&, const Model::ImportClientVpnClientCertificateRevocationListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportClientVpnClientCertificateRevocationListResponseReceivedHandler;
@@ -1810,6 +1950,9 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::PurchaseScheduledInstancesRequest&, const Model::PurchaseScheduledInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PurchaseScheduledInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RebootInstancesRequest&, const Model::RebootInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RebootInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RegisterImageRequest&, const Model::RegisterImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterImageResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::RegisterTransitGatewayMulticastGroupMembersRequest&, const Model::RegisterTransitGatewayMulticastGroupMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTransitGatewayMulticastGroupMembersResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::RegisterTransitGatewayMulticastGroupSourcesRequest&, const Model::RegisterTransitGatewayMulticastGroupSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::RejectTransitGatewayPeeringAttachmentRequest&, const Model::RejectTransitGatewayPeeringAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectTransitGatewayPeeringAttachmentResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RejectTransitGatewayVpcAttachmentRequest&, const Model::RejectTransitGatewayVpcAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectTransitGatewayVpcAttachmentResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RejectVpcEndpointConnectionsRequest&, const Model::RejectVpcEndpointConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectVpcEndpointConnectionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RejectVpcPeeringConnectionRequest&, const Model::RejectVpcPeeringConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectVpcPeeringConnectionResponseReceivedHandler;
@@ -1836,6 +1979,8 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::RevokeSecurityGroupIngressRequest&, const Model::RevokeSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RevokeSecurityGroupIngressResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RunInstancesRequest&, const Model::RunInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RunScheduledInstancesRequest&, const Model::RunScheduledInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RunScheduledInstancesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::SearchLocalGatewayRoutesRequest&, const Model::SearchLocalGatewayRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchLocalGatewayRoutesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::SearchTransitGatewayMulticastGroupsRequest&, const Model::SearchTransitGatewayMulticastGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchTransitGatewayMulticastGroupsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::SearchTransitGatewayRoutesRequest&, const Model::SearchTransitGatewayRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchTransitGatewayRoutesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::SendDiagnosticInterruptRequest&, const Model::SendDiagnosticInterruptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendDiagnosticInterruptResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::StartInstancesRequest&, const Model::StartInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstancesResponseReceivedHandler;
@@ -1923,6 +2068,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AcceptReservedInstancesExchangeQuoteAsync(const Model::AcceptReservedInstancesExchangeQuoteRequest& request, const AcceptReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Accepts a transit gateway peering attachment request. The peering attachment
+         * must be in the <code>pendingAcceptance</code> state.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayPeeringAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AcceptTransitGatewayPeeringAttachmentOutcome AcceptTransitGatewayPeeringAttachment(const Model::AcceptTransitGatewayPeeringAttachmentRequest& request) const;
+
+        /**
+         * <p>Accepts a transit gateway peering attachment request. The peering attachment
+         * must be in the <code>pendingAcceptance</code> state.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayPeeringAttachment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AcceptTransitGatewayPeeringAttachmentOutcomeCallable AcceptTransitGatewayPeeringAttachmentCallable(const Model::AcceptTransitGatewayPeeringAttachmentRequest& request) const;
+
+        /**
+         * <p>Accepts a transit gateway peering attachment request. The peering attachment
+         * must be in the <code>pendingAcceptance</code> state.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptTransitGatewayPeeringAttachment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AcceptTransitGatewayPeeringAttachmentAsync(const Model::AcceptTransitGatewayPeeringAttachmentRequest& request, const AcceptTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Accepts a request to attach a VPC to a transit gateway.</p> <p>The VPC
@@ -2571,12 +2747,12 @@ namespace Model
         virtual void AssociateIamInstanceProfileAsync(const Model::AssociateIamInstanceProfileRequest& request, const AssociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Associates a subnet with a route table. The subnet and route table must be in
-         * the same VPC. This association causes traffic originating from the subnet to be
-         * routed according to the routes in the route table. The action returns an
-         * association ID, which you need in order to disassociate the route table from the
-         * subnet later. A route table can be associated with multiple subnets.</p> <p>For
-         * more information, see <a
+         * <p>Associates a subnet in your VPC or an internet gateway or virtual private
+         * gateway attached to your VPC with a route table in your VPC. This association
+         * causes traffic from the subnet or gateway to be routed according to the routes
+         * in the route table. The action returns an association ID, which you need in
+         * order to disassociate the route table later. A route table can be associated
+         * with multiple subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2586,12 +2762,12 @@ namespace Model
         virtual Model::AssociateRouteTableOutcome AssociateRouteTable(const Model::AssociateRouteTableRequest& request) const;
 
         /**
-         * <p>Associates a subnet with a route table. The subnet and route table must be in
-         * the same VPC. This association causes traffic originating from the subnet to be
-         * routed according to the routes in the route table. The action returns an
-         * association ID, which you need in order to disassociate the route table from the
-         * subnet later. A route table can be associated with multiple subnets.</p> <p>For
-         * more information, see <a
+         * <p>Associates a subnet in your VPC or an internet gateway or virtual private
+         * gateway attached to your VPC with a route table in your VPC. This association
+         * causes traffic from the subnet or gateway to be routed according to the routes
+         * in the route table. The action returns an association ID, which you need in
+         * order to disassociate the route table later. A route table can be associated
+         * with multiple subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2603,12 +2779,12 @@ namespace Model
         virtual Model::AssociateRouteTableOutcomeCallable AssociateRouteTableCallable(const Model::AssociateRouteTableRequest& request) const;
 
         /**
-         * <p>Associates a subnet with a route table. The subnet and route table must be in
-         * the same VPC. This association causes traffic originating from the subnet to be
-         * routed according to the routes in the route table. The action returns an
-         * association ID, which you need in order to disassociate the route table from the
-         * subnet later. A route table can be associated with multiple subnets.</p> <p>For
-         * more information, see <a
+         * <p>Associates a subnet in your VPC or an internet gateway or virtual private
+         * gateway attached to your VPC with a route table in your VPC. This association
+         * causes traffic from the subnet or gateway to be routed according to the routes
+         * in the route table. The action returns an association ID, which you need in
+         * order to disassociate the route table later. A route table can be associated
+         * with multiple subnets.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -2649,6 +2825,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateSubnetCidrBlockAsync(const Model::AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates the specified subnets and transit gateway attachments with the
+         * specified transit gateway multicast domain.</p> <p>The transit gateway
+         * attachment must be in the available state before you can add a resource. Use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayAttachments.html">DescribeTransitGatewayAttachments</a>
+         * to see the state of the attachment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayMulticastDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateTransitGatewayMulticastDomainOutcome AssociateTransitGatewayMulticastDomain(const Model::AssociateTransitGatewayMulticastDomainRequest& request) const;
+
+        /**
+         * <p>Associates the specified subnets and transit gateway attachments with the
+         * specified transit gateway multicast domain.</p> <p>The transit gateway
+         * attachment must be in the available state before you can add a resource. Use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayAttachments.html">DescribeTransitGatewayAttachments</a>
+         * to see the state of the attachment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayMulticastDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateTransitGatewayMulticastDomainOutcomeCallable AssociateTransitGatewayMulticastDomainCallable(const Model::AssociateTransitGatewayMulticastDomainRequest& request) const;
+
+        /**
+         * <p>Associates the specified subnets and transit gateway attachments with the
+         * specified transit gateway multicast domain.</p> <p>The transit gateway
+         * attachment must be in the available state before you can add a resource. Use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGatewayAttachments.html">DescribeTransitGatewayAttachments</a>
+         * to see the state of the attachment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateTransitGatewayMulticastDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateTransitGatewayMulticastDomainAsync(const Model::AssociateTransitGatewayMulticastDomainRequest& request, const AssociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Associates the specified attachment with the specified transit gateway route
@@ -2777,20 +2990,22 @@ namespace Model
         virtual void AttachClassicLinkVpcAsync(const Model::AttachClassicLinkVpcRequest& request, const AttachClassicLinkVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Attaches an internet gateway to a VPC, enabling connectivity between the
-         * internet and the VPC. For more information about your VPC and internet gateway,
-         * see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon
-         * Virtual Private Cloud User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Attaches an internet gateway or a virtual private gateway to a VPC, enabling
+         * connectivity between the internet and the VPC. For more information about your
+         * VPC and internet gateway, see the <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private
+         * Cloud User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">AWS
          * API Reference</a></p>
          */
         virtual Model::AttachInternetGatewayOutcome AttachInternetGateway(const Model::AttachInternetGatewayRequest& request) const;
 
         /**
-         * <p>Attaches an internet gateway to a VPC, enabling connectivity between the
-         * internet and the VPC. For more information about your VPC and internet gateway,
-         * see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon
-         * Virtual Private Cloud User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Attaches an internet gateway or a virtual private gateway to a VPC, enabling
+         * connectivity between the internet and the VPC. For more information about your
+         * VPC and internet gateway, see the <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private
+         * Cloud User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">AWS
          * API Reference</a></p>
          *
@@ -2799,10 +3014,11 @@ namespace Model
         virtual Model::AttachInternetGatewayOutcomeCallable AttachInternetGatewayCallable(const Model::AttachInternetGatewayRequest& request) const;
 
         /**
-         * <p>Attaches an internet gateway to a VPC, enabling connectivity between the
-         * internet and the VPC. For more information about your VPC and internet gateway,
-         * see the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon
-         * Virtual Private Cloud User Guide</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Attaches an internet gateway or a virtual private gateway to a VPC, enabling
+         * connectivity between the internet and the VPC. For more information about your
+         * VPC and internet gateway, see the <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/">Amazon Virtual Private
+         * Cloud User Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachInternetGateway">AWS
          * API Reference</a></p>
          *
@@ -4524,6 +4740,62 @@ namespace Model
         virtual void CreateLaunchTemplateVersionAsync(const Model::CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a static route for the specified local gateway route
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLocalGatewayRouteOutcome CreateLocalGatewayRoute(const Model::CreateLocalGatewayRouteRequest& request) const;
+
+        /**
+         * <p>Creates a static route for the specified local gateway route
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLocalGatewayRouteOutcomeCallable CreateLocalGatewayRouteCallable(const Model::CreateLocalGatewayRouteRequest& request) const;
+
+        /**
+         * <p>Creates a static route for the specified local gateway route
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRoute">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLocalGatewayRouteAsync(const Model::CreateLocalGatewayRouteRequest& request, const CreateLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Associates the specified VPC with the specified local gateway route
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVpcAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLocalGatewayRouteTableVpcAssociationOutcome CreateLocalGatewayRouteTableVpcAssociation(const Model::CreateLocalGatewayRouteTableVpcAssociationRequest& request) const;
+
+        /**
+         * <p>Associates the specified VPC with the specified local gateway route
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVpcAssociation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateLocalGatewayRouteTableVpcAssociationOutcomeCallable CreateLocalGatewayRouteTableVpcAssociationCallable(const Model::CreateLocalGatewayRouteTableVpcAssociationRequest& request) const;
+
+        /**
+         * <p>Associates the specified VPC with the specified local gateway route
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLocalGatewayRouteTableVpcAssociation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateLocalGatewayRouteTableVpcAssociationAsync(const Model::CreateLocalGatewayRouteTableVpcAssociationRequest& request, const CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a NAT gateway in the specified public subnet. This action creates a
          * network interface in the specified subnet with a private IP address from the IP
          * address range of the subnet. Internet-bound traffic from a private subnet can be
@@ -4893,17 +5165,17 @@ namespace Model
         /**
          * <p>Creates a route in a route table within a VPC.</p> <p>You must specify one of
          * the following targets: internet gateway or virtual private gateway, NAT
-         * instance, NAT gateway, VPC peering connection, network interface, or egress-only
-         * internet gateway.</p> <p>When determining how to route traffic, we use the route
-         * with the most specific match. For example, traffic is destined for the IPv4
-         * address <code>192.0.2.3</code>, and the route table includes the following two
-         * IPv4 routes:</p> <ul> <li> <p> <code>192.0.2.0/24</code> (goes to some target
-         * A)</p> </li> <li> <p> <code>192.0.2.0/28</code> (goes to some target B)</p>
-         * </li> </ul> <p>Both routes apply to the traffic destined for
-         * <code>192.0.2.3</code>. However, the second route in the list covers a smaller
-         * number of IP addresses and is therefore more specific, so we use that route to
-         * determine where to target the traffic.</p> <p>For more information about route
-         * tables, see <a
+         * instance, NAT gateway, VPC peering connection, network interface, egress-only
+         * internet gateway, or transit gateway.</p> <p>When determining how to route
+         * traffic, we use the route with the most specific match. For example, traffic is
+         * destined for the IPv4 address <code>192.0.2.3</code>, and the route table
+         * includes the following two IPv4 routes:</p> <ul> <li> <p>
+         * <code>192.0.2.0/24</code> (goes to some target A)</p> </li> <li> <p>
+         * <code>192.0.2.0/28</code> (goes to some target B)</p> </li> </ul> <p>Both routes
+         * apply to the traffic destined for <code>192.0.2.3</code>. However, the second
+         * route in the list covers a smaller number of IP addresses and is therefore more
+         * specific, so we use that route to determine where to target the traffic.</p>
+         * <p>For more information about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -4915,17 +5187,17 @@ namespace Model
         /**
          * <p>Creates a route in a route table within a VPC.</p> <p>You must specify one of
          * the following targets: internet gateway or virtual private gateway, NAT
-         * instance, NAT gateway, VPC peering connection, network interface, or egress-only
-         * internet gateway.</p> <p>When determining how to route traffic, we use the route
-         * with the most specific match. For example, traffic is destined for the IPv4
-         * address <code>192.0.2.3</code>, and the route table includes the following two
-         * IPv4 routes:</p> <ul> <li> <p> <code>192.0.2.0/24</code> (goes to some target
-         * A)</p> </li> <li> <p> <code>192.0.2.0/28</code> (goes to some target B)</p>
-         * </li> </ul> <p>Both routes apply to the traffic destined for
-         * <code>192.0.2.3</code>. However, the second route in the list covers a smaller
-         * number of IP addresses and is therefore more specific, so we use that route to
-         * determine where to target the traffic.</p> <p>For more information about route
-         * tables, see <a
+         * instance, NAT gateway, VPC peering connection, network interface, egress-only
+         * internet gateway, or transit gateway.</p> <p>When determining how to route
+         * traffic, we use the route with the most specific match. For example, traffic is
+         * destined for the IPv4 address <code>192.0.2.3</code>, and the route table
+         * includes the following two IPv4 routes:</p> <ul> <li> <p>
+         * <code>192.0.2.0/24</code> (goes to some target A)</p> </li> <li> <p>
+         * <code>192.0.2.0/28</code> (goes to some target B)</p> </li> </ul> <p>Both routes
+         * apply to the traffic destined for <code>192.0.2.3</code>. However, the second
+         * route in the list covers a smaller number of IP addresses and is therefore more
+         * specific, so we use that route to determine where to target the traffic.</p>
+         * <p>For more information about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -4939,17 +5211,17 @@ namespace Model
         /**
          * <p>Creates a route in a route table within a VPC.</p> <p>You must specify one of
          * the following targets: internet gateway or virtual private gateway, NAT
-         * instance, NAT gateway, VPC peering connection, network interface, or egress-only
-         * internet gateway.</p> <p>When determining how to route traffic, we use the route
-         * with the most specific match. For example, traffic is destined for the IPv4
-         * address <code>192.0.2.3</code>, and the route table includes the following two
-         * IPv4 routes:</p> <ul> <li> <p> <code>192.0.2.0/24</code> (goes to some target
-         * A)</p> </li> <li> <p> <code>192.0.2.0/28</code> (goes to some target B)</p>
-         * </li> </ul> <p>Both routes apply to the traffic destined for
-         * <code>192.0.2.3</code>. However, the second route in the list covers a smaller
-         * number of IP addresses and is therefore more specific, so we use that route to
-         * determine where to target the traffic.</p> <p>For more information about route
-         * tables, see <a
+         * instance, NAT gateway, VPC peering connection, network interface, egress-only
+         * internet gateway, or transit gateway.</p> <p>When determining how to route
+         * traffic, we use the route with the most specific match. For example, traffic is
+         * destined for the IPv4 address <code>192.0.2.3</code>, and the route table
+         * includes the following two IPv4 routes:</p> <ul> <li> <p>
+         * <code>192.0.2.0/24</code> (goes to some target A)</p> </li> <li> <p>
+         * <code>192.0.2.0/28</code> (goes to some target B)</p> </li> </ul> <p>Both routes
+         * apply to the traffic destined for <code>192.0.2.3</code>. However, the second
+         * route in the list covers a smaller number of IP addresses and is therefore more
+         * specific, so we use that route to determine where to target the traffic.</p>
+         * <p>For more information about route tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -5664,6 +5936,83 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateTransitGatewayAsync(const Model::CreateTransitGatewayRequest& request, const CreateTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a multicast domain using the specified transit gateway.</p> <p>The
+         * transit gateway must be in the available state before you create a domain. Use
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGateways.html">DescribeTransitGateways</a>
+         * to see the state of transit gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMulticastDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTransitGatewayMulticastDomainOutcome CreateTransitGatewayMulticastDomain(const Model::CreateTransitGatewayMulticastDomainRequest& request) const;
+
+        /**
+         * <p>Creates a multicast domain using the specified transit gateway.</p> <p>The
+         * transit gateway must be in the available state before you create a domain. Use
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGateways.html">DescribeTransitGateways</a>
+         * to see the state of transit gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMulticastDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTransitGatewayMulticastDomainOutcomeCallable CreateTransitGatewayMulticastDomainCallable(const Model::CreateTransitGatewayMulticastDomainRequest& request) const;
+
+        /**
+         * <p>Creates a multicast domain using the specified transit gateway.</p> <p>The
+         * transit gateway must be in the available state before you create a domain. Use
+         * <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeTransitGateways.html">DescribeTransitGateways</a>
+         * to see the state of transit gateway.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayMulticastDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTransitGatewayMulticastDomainAsync(const Model::CreateTransitGatewayMulticastDomainRequest& request, const CreateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Requests a transit gateway peering attachment between the specified transit
+         * gateway (requester) and a peer transit gateway (accepter). The transit gateways
+         * must be in different Regions. The peer transit gateway can be in your account or
+         * a different AWS account. </p> <p>After you create the peering attachment, the
+         * owner of the accepter transit gateway must accept the attachment
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTransitGatewayPeeringAttachmentOutcome CreateTransitGatewayPeeringAttachment(const Model::CreateTransitGatewayPeeringAttachmentRequest& request) const;
+
+        /**
+         * <p>Requests a transit gateway peering attachment between the specified transit
+         * gateway (requester) and a peer transit gateway (accepter). The transit gateways
+         * must be in different Regions. The peer transit gateway can be in your account or
+         * a different AWS account. </p> <p>After you create the peering attachment, the
+         * owner of the accepter transit gateway must accept the attachment
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTransitGatewayPeeringAttachmentOutcomeCallable CreateTransitGatewayPeeringAttachmentCallable(const Model::CreateTransitGatewayPeeringAttachmentRequest& request) const;
+
+        /**
+         * <p>Requests a transit gateway peering attachment between the specified transit
+         * gateway (requester) and a peer transit gateway (accepter). The transit gateways
+         * must be in different Regions. The peer transit gateway can be in your account or
+         * a different AWS account. </p> <p>After you create the peering attachment, the
+         * owner of the accepter transit gateway must accept the attachment
+         * request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPeeringAttachment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTransitGatewayPeeringAttachmentAsync(const Model::CreateTransitGatewayPeeringAttachmentRequest& request, const CreateTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a static route for the specified transit gateway route
@@ -6659,6 +7008,62 @@ namespace Model
         virtual void DeleteLaunchTemplateVersionsAsync(const Model::DeleteLaunchTemplateVersionsRequest& request, const DeleteLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the specified route from the specified local gateway route
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRoute">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLocalGatewayRouteOutcome DeleteLocalGatewayRoute(const Model::DeleteLocalGatewayRouteRequest& request) const;
+
+        /**
+         * <p>Deletes the specified route from the specified local gateway route
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRoute">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLocalGatewayRouteOutcomeCallable DeleteLocalGatewayRouteCallable(const Model::DeleteLocalGatewayRouteRequest& request) const;
+
+        /**
+         * <p>Deletes the specified route from the specified local gateway route
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRoute">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLocalGatewayRouteAsync(const Model::DeleteLocalGatewayRouteRequest& request, const DeleteLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified association between a VPC and local gateway route
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLocalGatewayRouteTableVpcAssociationOutcome DeleteLocalGatewayRouteTableVpcAssociation(const Model::DeleteLocalGatewayRouteTableVpcAssociationRequest& request) const;
+
+        /**
+         * <p>Deletes the specified association between a VPC and local gateway route
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteLocalGatewayRouteTableVpcAssociationOutcomeCallable DeleteLocalGatewayRouteTableVpcAssociationCallable(const Model::DeleteLocalGatewayRouteTableVpcAssociationRequest& request) const;
+
+        /**
+         * <p>Deletes the specified association between a VPC and local gateway route
+         * table.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteLocalGatewayRouteTableVpcAssociation">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteLocalGatewayRouteTableVpcAssociationAsync(const Model::DeleteLocalGatewayRouteTableVpcAssociationRequest& request, const DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified NAT gateway. Deleting a NAT gateway disassociates its
          * Elastic IP address, but does not release the address from your account. Deleting
          * a NAT gateway does not delete any NAT gateway routes in your route
@@ -7263,6 +7668,59 @@ namespace Model
         virtual void DeleteTransitGatewayAsync(const Model::DeleteTransitGatewayRequest& request, const DeleteTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the specified transit gateway multicast domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMulticastDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTransitGatewayMulticastDomainOutcome DeleteTransitGatewayMulticastDomain(const Model::DeleteTransitGatewayMulticastDomainRequest& request) const;
+
+        /**
+         * <p>Deletes the specified transit gateway multicast domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMulticastDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTransitGatewayMulticastDomainOutcomeCallable DeleteTransitGatewayMulticastDomainCallable(const Model::DeleteTransitGatewayMulticastDomainRequest& request) const;
+
+        /**
+         * <p>Deletes the specified transit gateway multicast domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayMulticastDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTransitGatewayMulticastDomainAsync(const Model::DeleteTransitGatewayMulticastDomainRequest& request, const DeleteTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a transit gateway peering attachment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPeeringAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTransitGatewayPeeringAttachmentOutcome DeleteTransitGatewayPeeringAttachment(const Model::DeleteTransitGatewayPeeringAttachmentRequest& request) const;
+
+        /**
+         * <p>Deletes a transit gateway peering attachment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPeeringAttachment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTransitGatewayPeeringAttachmentOutcomeCallable DeleteTransitGatewayPeeringAttachmentCallable(const Model::DeleteTransitGatewayPeeringAttachmentRequest& request) const;
+
+        /**
+         * <p>Deletes a transit gateway peering attachment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPeeringAttachment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTransitGatewayPeeringAttachmentAsync(const Model::DeleteTransitGatewayPeeringAttachmentRequest& request, const DeleteTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified route from the specified transit gateway route
          * table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayRoute">AWS
@@ -7769,6 +8227,62 @@ namespace Model
         virtual void DeregisterImageAsync(const Model::DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deregisters the specified members (network interfaces) from the transit
+         * gateway multicast group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupMembers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterTransitGatewayMulticastGroupMembersOutcome DeregisterTransitGatewayMulticastGroupMembers(const Model::DeregisterTransitGatewayMulticastGroupMembersRequest& request) const;
+
+        /**
+         * <p>Deregisters the specified members (network interfaces) from the transit
+         * gateway multicast group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupMembers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeregisterTransitGatewayMulticastGroupMembersOutcomeCallable DeregisterTransitGatewayMulticastGroupMembersCallable(const Model::DeregisterTransitGatewayMulticastGroupMembersRequest& request) const;
+
+        /**
+         * <p>Deregisters the specified members (network interfaces) from the transit
+         * gateway multicast group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupMembers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeregisterTransitGatewayMulticastGroupMembersAsync(const Model::DeregisterTransitGatewayMulticastGroupMembersRequest& request, const DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deregisters the specified sources (network interfaces) from the transit
+         * gateway multicast group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupSources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterTransitGatewayMulticastGroupSourcesOutcome DeregisterTransitGatewayMulticastGroupSources(const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest& request) const;
+
+        /**
+         * <p>Deregisters the specified sources (network interfaces) from the transit
+         * gateway multicast group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupSources">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeregisterTransitGatewayMulticastGroupSourcesOutcomeCallable DeregisterTransitGatewayMulticastGroupSourcesCallable(const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest& request) const;
+
+        /**
+         * <p>Deregisters the specified sources (network interfaces) from the transit
+         * gateway multicast group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeregisterTransitGatewayMulticastGroupSources">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeregisterTransitGatewayMulticastGroupSourcesAsync(const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest& request, const DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes attributes of your AWS account. The following are the supported
          * account attributes:</p> <ul> <li> <p> <code>supported-platforms</code>:
          * Indicates whether your account can launch instances into EC2-Classic and
@@ -7952,11 +8466,11 @@ namespace Model
         virtual void DescribeAggregateIdFormatAsync(const Model::DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the Availability Zones that are available to you. The results
-         * include zones only for the Region you're currently using. If there is an event
-         * impacting an Availability Zone, you can use this request to view the state and
-         * any provided message for that Availability Zone.</p> <p>For more information,
-         * see <a
+         * <p>Describes the Availability Zones and Local Zones that are available to you.
+         * If there is an event impacting an Availability Zone or Local Zone, you can use
+         * this request to view the state and any provided messages for that Availability
+         * Zone or Local Zone.</p> <p>For more information about Availability Zones and
+         * Local Zones, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
          * and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -7966,11 +8480,11 @@ namespace Model
         virtual Model::DescribeAvailabilityZonesOutcome DescribeAvailabilityZones(const Model::DescribeAvailabilityZonesRequest& request) const;
 
         /**
-         * <p>Describes the Availability Zones that are available to you. The results
-         * include zones only for the Region you're currently using. If there is an event
-         * impacting an Availability Zone, you can use this request to view the state and
-         * any provided message for that Availability Zone.</p> <p>For more information,
-         * see <a
+         * <p>Describes the Availability Zones and Local Zones that are available to you.
+         * If there is an event impacting an Availability Zone or Local Zone, you can use
+         * this request to view the state and any provided messages for that Availability
+         * Zone or Local Zone.</p> <p>For more information about Availability Zones and
+         * Local Zones, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
          * and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -7982,11 +8496,11 @@ namespace Model
         virtual Model::DescribeAvailabilityZonesOutcomeCallable DescribeAvailabilityZonesCallable(const Model::DescribeAvailabilityZonesRequest& request) const;
 
         /**
-         * <p>Describes the Availability Zones that are available to you. The results
-         * include zones only for the Region you're currently using. If there is an event
-         * impacting an Availability Zone, you can use this request to view the state and
-         * any provided message for that Availability Zone.</p> <p>For more information,
-         * see <a
+         * <p>Describes the Availability Zones and Local Zones that are available to you.
+         * If there is an event impacting an Availability Zone or Local Zone, you can use
+         * this request to view the state and any provided messages for that Availability
+         * Zone or Local Zone.</p> <p>For more information about Availability Zones and
+         * Local Zones, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
          * and Availability Zones</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -8275,6 +8789,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeClientVpnTargetNetworksAsync(const Model::DescribeClientVpnTargetNetworksRequest& request, const DescribeClientVpnTargetNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the specified customer-owned address pools or all of your
+         * customer-owned address pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCoipPools">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCoipPoolsOutcome DescribeCoipPools(const Model::DescribeCoipPoolsRequest& request) const;
+
+        /**
+         * <p>Describes the specified customer-owned address pools or all of your
+         * customer-owned address pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCoipPools">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeCoipPoolsOutcomeCallable DescribeCoipPoolsCallable(const Model::DescribeCoipPoolsRequest& request) const;
+
+        /**
+         * <p>Describes the specified customer-owned address pools or all of your
+         * customer-owned address pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCoipPools">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeCoipPoolsAsync(const Model::DescribeCoipPoolsRequest& request, const DescribeCoipPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified conversion tasks or all your conversion tasks. For
@@ -9644,6 +10186,180 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeLaunchTemplatesAsync(const Model::DescribeLaunchTemplatesRequest& request, const DescribeLaunchTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the associations between virtual interface groups and local gateway
+         * route tables.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcome DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(const Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request) const;
+
+        /**
+         * <p>Describes the associations between virtual interface groups and local gateway
+         * route tables.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcomeCallable DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsCallable(const Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request) const;
+
+        /**
+         * <p>Describes the associations between virtual interface groups and local gateway
+         * route tables.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsync(const Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request, const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the specified associations between VPCs and local gateway route
+         * tables.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVpcAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLocalGatewayRouteTableVpcAssociationsOutcome DescribeLocalGatewayRouteTableVpcAssociations(const Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest& request) const;
+
+        /**
+         * <p>Describes the specified associations between VPCs and local gateway route
+         * tables.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVpcAssociations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLocalGatewayRouteTableVpcAssociationsOutcomeCallable DescribeLocalGatewayRouteTableVpcAssociationsCallable(const Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest& request) const;
+
+        /**
+         * <p>Describes the specified associations between VPCs and local gateway route
+         * tables.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTableVpcAssociations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLocalGatewayRouteTableVpcAssociationsAsync(const Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest& request, const DescribeLocalGatewayRouteTableVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes one or more local gateway route tables. By default, all local
+         * gateway route tables are described. Alternatively, you can filter the
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTables">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLocalGatewayRouteTablesOutcome DescribeLocalGatewayRouteTables(const Model::DescribeLocalGatewayRouteTablesRequest& request) const;
+
+        /**
+         * <p>Describes one or more local gateway route tables. By default, all local
+         * gateway route tables are described. Alternatively, you can filter the
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTables">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLocalGatewayRouteTablesOutcomeCallable DescribeLocalGatewayRouteTablesCallable(const Model::DescribeLocalGatewayRouteTablesRequest& request) const;
+
+        /**
+         * <p>Describes one or more local gateway route tables. By default, all local
+         * gateway route tables are described. Alternatively, you can filter the
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayRouteTables">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLocalGatewayRouteTablesAsync(const Model::DescribeLocalGatewayRouteTablesRequest& request, const DescribeLocalGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the specified local gateway virtual interface groups.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaceGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLocalGatewayVirtualInterfaceGroupsOutcome DescribeLocalGatewayVirtualInterfaceGroups(const Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest& request) const;
+
+        /**
+         * <p>Describes the specified local gateway virtual interface groups.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaceGroups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLocalGatewayVirtualInterfaceGroupsOutcomeCallable DescribeLocalGatewayVirtualInterfaceGroupsCallable(const Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest& request) const;
+
+        /**
+         * <p>Describes the specified local gateway virtual interface groups.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaceGroups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLocalGatewayVirtualInterfaceGroupsAsync(const Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest& request, const DescribeLocalGatewayVirtualInterfaceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the specified local gateway virtual interfaces.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaces">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLocalGatewayVirtualInterfacesOutcome DescribeLocalGatewayVirtualInterfaces(const Model::DescribeLocalGatewayVirtualInterfacesRequest& request) const;
+
+        /**
+         * <p>Describes the specified local gateway virtual interfaces.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaces">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLocalGatewayVirtualInterfacesOutcomeCallable DescribeLocalGatewayVirtualInterfacesCallable(const Model::DescribeLocalGatewayVirtualInterfacesRequest& request) const;
+
+        /**
+         * <p>Describes the specified local gateway virtual interfaces.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGatewayVirtualInterfaces">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLocalGatewayVirtualInterfacesAsync(const Model::DescribeLocalGatewayVirtualInterfacesRequest& request, const DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes one or more local gateways. By default, all local gateways are
+         * described. Alternatively, you can filter the results.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGateways">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLocalGatewaysOutcome DescribeLocalGateways(const Model::DescribeLocalGatewaysRequest& request) const;
+
+        /**
+         * <p>Describes one or more local gateways. By default, all local gateways are
+         * described. Alternatively, you can filter the results.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGateways">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeLocalGatewaysOutcomeCallable DescribeLocalGatewaysCallable(const Model::DescribeLocalGatewaysRequest& request) const;
+
+        /**
+         * <p>Describes one or more local gateways. By default, all local gateways are
+         * described. Alternatively, you can filter the results.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLocalGateways">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeLocalGatewaysAsync(const Model::DescribeLocalGatewaysRequest& request, const DescribeLocalGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes your Elastic IP addresses that are being moved to the EC2-VPC
@@ -11097,6 +11813,62 @@ namespace Model
         virtual void DescribeTransitGatewayAttachmentsAsync(const Model::DescribeTransitGatewayAttachmentsRequest& request, const DescribeTransitGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes one or more transit gateway multicast domains.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMulticastDomains">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTransitGatewayMulticastDomainsOutcome DescribeTransitGatewayMulticastDomains(const Model::DescribeTransitGatewayMulticastDomainsRequest& request) const;
+
+        /**
+         * <p>Describes one or more transit gateway multicast domains.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMulticastDomains">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTransitGatewayMulticastDomainsOutcomeCallable DescribeTransitGatewayMulticastDomainsCallable(const Model::DescribeTransitGatewayMulticastDomainsRequest& request) const;
+
+        /**
+         * <p>Describes one or more transit gateway multicast domains.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayMulticastDomains">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTransitGatewayMulticastDomainsAsync(const Model::DescribeTransitGatewayMulticastDomainsRequest& request, const DescribeTransitGatewayMulticastDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes your transit gateway peering attachments.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPeeringAttachments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTransitGatewayPeeringAttachmentsOutcome DescribeTransitGatewayPeeringAttachments(const Model::DescribeTransitGatewayPeeringAttachmentsRequest& request) const;
+
+        /**
+         * <p>Describes your transit gateway peering attachments.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPeeringAttachments">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTransitGatewayPeeringAttachmentsOutcomeCallable DescribeTransitGatewayPeeringAttachmentsCallable(const Model::DescribeTransitGatewayPeeringAttachmentsRequest& request) const;
+
+        /**
+         * <p>Describes your transit gateway peering attachments.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeTransitGatewayPeeringAttachments">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTransitGatewayPeeringAttachmentsAsync(const Model::DescribeTransitGatewayPeeringAttachmentsRequest& request, const DescribeTransitGatewayPeeringAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Describes one or more transit gateway route tables. By default, all transit
          * gateway route tables are described. Alternatively, you can filter the
          * results.</p><p><h3>See Also:</h3>   <a
@@ -12459,6 +13231,34 @@ namespace Model
         virtual void DisassociateSubnetCidrBlockAsync(const Model::DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Disassociates the specified subnets from the transit gateway multicast
+         * domain. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayMulticastDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateTransitGatewayMulticastDomainOutcome DisassociateTransitGatewayMulticastDomain(const Model::DisassociateTransitGatewayMulticastDomainRequest& request) const;
+
+        /**
+         * <p>Disassociates the specified subnets from the transit gateway multicast
+         * domain. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayMulticastDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateTransitGatewayMulticastDomainOutcomeCallable DisassociateTransitGatewayMulticastDomainCallable(const Model::DisassociateTransitGatewayMulticastDomainRequest& request) const;
+
+        /**
+         * <p>Disassociates the specified subnets from the transit gateway multicast
+         * domain. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayMulticastDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateTransitGatewayMulticastDomainAsync(const Model::DisassociateTransitGatewayMulticastDomainRequest& request, const DisassociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Disassociates a resource attachment from a transit gateway route
          * table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateTransitGatewayRouteTable">AWS
@@ -12986,6 +13786,34 @@ namespace Model
         virtual void GetCapacityReservationUsageAsync(const Model::GetCapacityReservationUsageRequest& request, const GetCapacityReservationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the allocations from the specified customer-owned address
+         * pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCoipPoolUsage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCoipPoolUsageOutcome GetCoipPoolUsage(const Model::GetCoipPoolUsageRequest& request) const;
+
+        /**
+         * <p>Describes the allocations from the specified customer-owned address
+         * pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCoipPoolUsage">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCoipPoolUsageOutcomeCallable GetCoipPoolUsageCallable(const Model::GetCoipPoolUsageRequest& request) const;
+
+        /**
+         * <p>Describes the allocations from the specified customer-owned address
+         * pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetCoipPoolUsage">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCoipPoolUsageAsync(const Model::GetCoipPoolUsageRequest& request, const GetCoipPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets the console output for the specified instance. For Linux instances, the
          * instance console output displays the exact console output that would normally be
          * displayed on a physical monitor attached to a computer. For Windows instances,
@@ -13402,6 +14230,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetTransitGatewayAttachmentPropagationsAsync(const Model::GetTransitGatewayAttachmentPropagationsRequest& request, const GetTransitGatewayAttachmentPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets information about the associations for the transit gateway multicast
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTransitGatewayMulticastDomainAssociationsOutcome GetTransitGatewayMulticastDomainAssociations(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request) const;
+
+        /**
+         * <p>Gets information about the associations for the transit gateway multicast
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTransitGatewayMulticastDomainAssociationsOutcomeCallable GetTransitGatewayMulticastDomainAssociationsCallable(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request) const;
+
+        /**
+         * <p>Gets information about the associations for the transit gateway multicast
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetTransitGatewayMulticastDomainAssociations">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTransitGatewayMulticastDomainAssociationsAsync(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about the associations for the specified transit gateway
@@ -16137,6 +16993,138 @@ namespace Model
         virtual void RegisterImageAsync(const Model::RegisterImageRequest& request, const RegisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Registers members (network interfaces) with the transit gateway multicast
+         * group. A member is a network interface associated with a supported EC2 instance
+         * that receives multicast traffic. For information about supported instances, see
+         * <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
+         * Consideration</a> in <i>Amazon VPC Transit Gateways</i>.</p> <p>After you add
+         * the members, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a>
+         * to verify that the members were added to the transit gateway multicast
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupMembers">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterTransitGatewayMulticastGroupMembersOutcome RegisterTransitGatewayMulticastGroupMembers(const Model::RegisterTransitGatewayMulticastGroupMembersRequest& request) const;
+
+        /**
+         * <p>Registers members (network interfaces) with the transit gateway multicast
+         * group. A member is a network interface associated with a supported EC2 instance
+         * that receives multicast traffic. For information about supported instances, see
+         * <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
+         * Consideration</a> in <i>Amazon VPC Transit Gateways</i>.</p> <p>After you add
+         * the members, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a>
+         * to verify that the members were added to the transit gateway multicast
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupMembers">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterTransitGatewayMulticastGroupMembersOutcomeCallable RegisterTransitGatewayMulticastGroupMembersCallable(const Model::RegisterTransitGatewayMulticastGroupMembersRequest& request) const;
+
+        /**
+         * <p>Registers members (network interfaces) with the transit gateway multicast
+         * group. A member is a network interface associated with a supported EC2 instance
+         * that receives multicast traffic. For information about supported instances, see
+         * <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
+         * Consideration</a> in <i>Amazon VPC Transit Gateways</i>.</p> <p>After you add
+         * the members, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a>
+         * to verify that the members were added to the transit gateway multicast
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupMembers">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterTransitGatewayMulticastGroupMembersAsync(const Model::RegisterTransitGatewayMulticastGroupMembersRequest& request, const RegisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Registers sources (network interfaces) with the specified transit gateway
+         * multicast group.</p> <p>A multicast source is a network interface attached to a
+         * supported instance that sends multicast traffic. For information about supported
+         * instances, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
+         * Considerations</a> in <i>Amazon VPC Transit Gateways</i>.</p> <p>After you add
+         * the source, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a>
+         * to verify that the source was added to the multicast group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupSources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RegisterTransitGatewayMulticastGroupSourcesOutcome RegisterTransitGatewayMulticastGroupSources(const Model::RegisterTransitGatewayMulticastGroupSourcesRequest& request) const;
+
+        /**
+         * <p>Registers sources (network interfaces) with the specified transit gateway
+         * multicast group.</p> <p>A multicast source is a network interface attached to a
+         * supported instance that sends multicast traffic. For information about supported
+         * instances, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
+         * Considerations</a> in <i>Amazon VPC Transit Gateways</i>.</p> <p>After you add
+         * the source, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a>
+         * to verify that the source was added to the multicast group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupSources">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RegisterTransitGatewayMulticastGroupSourcesOutcomeCallable RegisterTransitGatewayMulticastGroupSourcesCallable(const Model::RegisterTransitGatewayMulticastGroupSourcesRequest& request) const;
+
+        /**
+         * <p>Registers sources (network interfaces) with the specified transit gateway
+         * multicast group.</p> <p>A multicast source is a network interface attached to a
+         * supported instance that sends multicast traffic. For information about supported
+         * instances, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast
+         * Considerations</a> in <i>Amazon VPC Transit Gateways</i>.</p> <p>After you add
+         * the source, use <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SearchTransitGatewayMulticastGroups.html">SearchTransitGatewayMulticastGroups</a>
+         * to verify that the source was added to the multicast group.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RegisterTransitGatewayMulticastGroupSources">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RegisterTransitGatewayMulticastGroupSourcesAsync(const Model::RegisterTransitGatewayMulticastGroupSourcesRequest& request, const RegisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Rejects a transit gateway peering attachment request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayPeeringAttachment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RejectTransitGatewayPeeringAttachmentOutcome RejectTransitGatewayPeeringAttachment(const Model::RejectTransitGatewayPeeringAttachmentRequest& request) const;
+
+        /**
+         * <p>Rejects a transit gateway peering attachment request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayPeeringAttachment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::RejectTransitGatewayPeeringAttachmentOutcomeCallable RejectTransitGatewayPeeringAttachmentCallable(const Model::RejectTransitGatewayPeeringAttachmentRequest& request) const;
+
+        /**
+         * <p>Rejects a transit gateway peering attachment request.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RejectTransitGatewayPeeringAttachment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void RejectTransitGatewayPeeringAttachmentAsync(const Model::RejectTransitGatewayPeeringAttachmentRequest& request, const RejectTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Rejects a request to attach a VPC to a transit gateway.</p> <p>The VPC
          * attachment must be in the <code>pendingAcceptance</code> state. Use
          * <a>DescribeTransitGatewayVpcAttachments</a> to view your pending VPC attachment
@@ -16470,9 +17458,9 @@ namespace Model
 
         /**
          * <p>Replaces an existing route within a route table in a VPC. You must provide
-         * only one of the following: internet gateway or virtual private gateway, NAT
-         * instance, NAT gateway, VPC peering connection, network interface, or egress-only
-         * internet gateway.</p> <p>For more information, see <a
+         * only one of the following: internet gateway, virtual private gateway, NAT
+         * instance, NAT gateway, VPC peering connection, network interface, egress-only
+         * internet gateway, or transit gateway.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -16483,9 +17471,9 @@ namespace Model
 
         /**
          * <p>Replaces an existing route within a route table in a VPC. You must provide
-         * only one of the following: internet gateway or virtual private gateway, NAT
-         * instance, NAT gateway, VPC peering connection, network interface, or egress-only
-         * internet gateway.</p> <p>For more information, see <a
+         * only one of the following: internet gateway, virtual private gateway, NAT
+         * instance, NAT gateway, VPC peering connection, network interface, egress-only
+         * internet gateway, or transit gateway.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -16498,9 +17486,9 @@ namespace Model
 
         /**
          * <p>Replaces an existing route within a route table in a VPC. You must provide
-         * only one of the following: internet gateway or virtual private gateway, NAT
-         * instance, NAT gateway, VPC peering connection, network interface, or egress-only
-         * internet gateway.</p> <p>For more information, see <a
+         * only one of the following: internet gateway, virtual private gateway, NAT
+         * instance, NAT gateway, VPC peering connection, network interface, egress-only
+         * internet gateway, or transit gateway.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -16512,28 +17500,30 @@ namespace Model
         virtual void ReplaceRouteAsync(const Model::ReplaceRouteRequest& request, const ReplaceRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Changes the route table associated with a given subnet in a VPC. After the
-         * operation completes, the subnet uses the routes in the new route table it's
-         * associated with. For more information about route tables, see <a
+         * <p>Changes the route table associated with a given subnet, internet gateway, or
+         * virtual private gateway in a VPC. After the operation completes, the subnet or
+         * gateway uses the routes in the new route table. For more information about route
+         * tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
-         * also use ReplaceRouteTableAssociation to change which table is the main route
-         * table in the VPC. You just specify the main route table's association ID and the
-         * route table to be the new main route table.</p><p><h3>See Also:</h3>   <a
+         * also use this operation to change which table is the main route table in the
+         * VPC. Specify the main route table's association ID and the route table ID of the
+         * new main route table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation">AWS
          * API Reference</a></p>
          */
         virtual Model::ReplaceRouteTableAssociationOutcome ReplaceRouteTableAssociation(const Model::ReplaceRouteTableAssociationRequest& request) const;
 
         /**
-         * <p>Changes the route table associated with a given subnet in a VPC. After the
-         * operation completes, the subnet uses the routes in the new route table it's
-         * associated with. For more information about route tables, see <a
+         * <p>Changes the route table associated with a given subnet, internet gateway, or
+         * virtual private gateway in a VPC. After the operation completes, the subnet or
+         * gateway uses the routes in the new route table. For more information about route
+         * tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
-         * also use ReplaceRouteTableAssociation to change which table is the main route
-         * table in the VPC. You just specify the main route table's association ID and the
-         * route table to be the new main route table.</p><p><h3>See Also:</h3>   <a
+         * also use this operation to change which table is the main route table in the
+         * VPC. Specify the main route table's association ID and the route table ID of the
+         * new main route table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation">AWS
          * API Reference</a></p>
          *
@@ -16542,14 +17532,15 @@ namespace Model
         virtual Model::ReplaceRouteTableAssociationOutcomeCallable ReplaceRouteTableAssociationCallable(const Model::ReplaceRouteTableAssociationRequest& request) const;
 
         /**
-         * <p>Changes the route table associated with a given subnet in a VPC. After the
-         * operation completes, the subnet uses the routes in the new route table it's
-         * associated with. For more information about route tables, see <a
+         * <p>Changes the route table associated with a given subnet, internet gateway, or
+         * virtual private gateway in a VPC. After the operation completes, the subnet or
+         * gateway uses the routes in the new route table. For more information about route
+         * tables, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
          * Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>You can
-         * also use ReplaceRouteTableAssociation to change which table is the main route
-         * table in the VPC. You just specify the main route table's association ID and the
-         * route table to be the new main route table.</p><p><h3>See Also:</h3>   <a
+         * also use this operation to change which table is the main route table in the
+         * VPC. Specify the main route table's association ID and the route table ID of the
+         * new main route table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceRouteTableAssociation">AWS
          * API Reference</a></p>
          *
@@ -17357,6 +18348,62 @@ namespace Model
         virtual void RunScheduledInstancesAsync(const Model::RunScheduledInstancesRequest& request, const RunScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Searches for routes in the specified local gateway route table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchLocalGatewayRoutes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchLocalGatewayRoutesOutcome SearchLocalGatewayRoutes(const Model::SearchLocalGatewayRoutesRequest& request) const;
+
+        /**
+         * <p>Searches for routes in the specified local gateway route table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchLocalGatewayRoutes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchLocalGatewayRoutesOutcomeCallable SearchLocalGatewayRoutesCallable(const Model::SearchLocalGatewayRoutesRequest& request) const;
+
+        /**
+         * <p>Searches for routes in the specified local gateway route table.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchLocalGatewayRoutes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchLocalGatewayRoutesAsync(const Model::SearchLocalGatewayRoutesRequest& request, const SearchLocalGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Searches one or more transit gateway multicast groups and returns the group
+         * membership information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayMulticastGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchTransitGatewayMulticastGroupsOutcome SearchTransitGatewayMulticastGroups(const Model::SearchTransitGatewayMulticastGroupsRequest& request) const;
+
+        /**
+         * <p>Searches one or more transit gateway multicast groups and returns the group
+         * membership information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayMulticastGroups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::SearchTransitGatewayMulticastGroupsOutcomeCallable SearchTransitGatewayMulticastGroupsCallable(const Model::SearchTransitGatewayMulticastGroupsRequest& request) const;
+
+        /**
+         * <p>Searches one or more transit gateway multicast groups and returns the group
+         * membership information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayMulticastGroups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void SearchTransitGatewayMulticastGroupsAsync(const Model::SearchTransitGatewayMulticastGroupsRequest& request, const SearchTransitGatewayMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Searches for routes in the specified transit gateway route
          * table.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/SearchTransitGatewayRoutes">AWS
@@ -18009,6 +19056,7 @@ namespace Model
   private:
         void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AcceptReservedInstancesExchangeQuoteAsyncHelper(const Model::AcceptReservedInstancesExchangeQuoteRequest& request, const AcceptReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AcceptTransitGatewayPeeringAttachmentAsyncHelper(const Model::AcceptTransitGatewayPeeringAttachmentRequest& request, const AcceptTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AcceptTransitGatewayVpcAttachmentAsyncHelper(const Model::AcceptTransitGatewayVpcAttachmentRequest& request, const AcceptTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AcceptVpcEndpointConnectionsAsyncHelper(const Model::AcceptVpcEndpointConnectionsRequest& request, const AcceptVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AcceptVpcPeeringConnectionAsyncHelper(const Model::AcceptVpcPeeringConnectionRequest& request, const AcceptVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18024,6 +19072,7 @@ namespace Model
         void AssociateIamInstanceProfileAsyncHelper(const Model::AssociateIamInstanceProfileRequest& request, const AssociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateRouteTableAsyncHelper(const Model::AssociateRouteTableRequest& request, const AssociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateSubnetCidrBlockAsyncHelper(const Model::AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateTransitGatewayMulticastDomainAsyncHelper(const Model::AssociateTransitGatewayMulticastDomainRequest& request, const AssociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateTransitGatewayRouteTableAsyncHelper(const Model::AssociateTransitGatewayRouteTableRequest& request, const AssociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociateVpcCidrBlockAsyncHelper(const Model::AssociateVpcCidrBlockRequest& request, const AssociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AttachClassicLinkVpcAsyncHelper(const Model::AttachClassicLinkVpcRequest& request, const AttachClassicLinkVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18064,6 +19113,8 @@ namespace Model
         void CreateKeyPairAsyncHelper(const Model::CreateKeyPairRequest& request, const CreateKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLaunchTemplateAsyncHelper(const Model::CreateLaunchTemplateRequest& request, const CreateLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLaunchTemplateVersionAsyncHelper(const Model::CreateLaunchTemplateVersionRequest& request, const CreateLaunchTemplateVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateLocalGatewayRouteAsyncHelper(const Model::CreateLocalGatewayRouteRequest& request, const CreateLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateLocalGatewayRouteTableVpcAssociationAsyncHelper(const Model::CreateLocalGatewayRouteTableVpcAssociationRequest& request, const CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNatGatewayAsyncHelper(const Model::CreateNatGatewayRequest& request, const CreateNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNetworkAclAsyncHelper(const Model::CreateNetworkAclRequest& request, const CreateNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNetworkAclEntryAsyncHelper(const Model::CreateNetworkAclEntryRequest& request, const CreateNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18084,6 +19135,8 @@ namespace Model
         void CreateTrafficMirrorSessionAsyncHelper(const Model::CreateTrafficMirrorSessionRequest& request, const CreateTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrafficMirrorTargetAsyncHelper(const Model::CreateTrafficMirrorTargetRequest& request, const CreateTrafficMirrorTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTransitGatewayAsyncHelper(const Model::CreateTransitGatewayRequest& request, const CreateTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateTransitGatewayMulticastDomainAsyncHelper(const Model::CreateTransitGatewayMulticastDomainRequest& request, const CreateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateTransitGatewayPeeringAttachmentAsyncHelper(const Model::CreateTransitGatewayPeeringAttachmentRequest& request, const CreateTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTransitGatewayRouteAsyncHelper(const Model::CreateTransitGatewayRouteRequest& request, const CreateTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTransitGatewayRouteTableAsyncHelper(const Model::CreateTransitGatewayRouteTableRequest& request, const CreateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTransitGatewayVpcAttachmentAsyncHelper(const Model::CreateTransitGatewayVpcAttachmentRequest& request, const CreateTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18108,6 +19161,8 @@ namespace Model
         void DeleteKeyPairAsyncHelper(const Model::DeleteKeyPairRequest& request, const DeleteKeyPairResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLaunchTemplateAsyncHelper(const Model::DeleteLaunchTemplateRequest& request, const DeleteLaunchTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteLaunchTemplateVersionsAsyncHelper(const Model::DeleteLaunchTemplateVersionsRequest& request, const DeleteLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteLocalGatewayRouteAsyncHelper(const Model::DeleteLocalGatewayRouteRequest& request, const DeleteLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteLocalGatewayRouteTableVpcAssociationAsyncHelper(const Model::DeleteLocalGatewayRouteTableVpcAssociationRequest& request, const DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNatGatewayAsyncHelper(const Model::DeleteNatGatewayRequest& request, const DeleteNatGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkAclAsyncHelper(const Model::DeleteNetworkAclRequest& request, const DeleteNetworkAclResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNetworkAclEntryAsyncHelper(const Model::DeleteNetworkAclEntryRequest& request, const DeleteNetworkAclEntryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18127,6 +19182,8 @@ namespace Model
         void DeleteTrafficMirrorSessionAsyncHelper(const Model::DeleteTrafficMirrorSessionRequest& request, const DeleteTrafficMirrorSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTrafficMirrorTargetAsyncHelper(const Model::DeleteTrafficMirrorTargetRequest& request, const DeleteTrafficMirrorTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTransitGatewayAsyncHelper(const Model::DeleteTransitGatewayRequest& request, const DeleteTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTransitGatewayMulticastDomainAsyncHelper(const Model::DeleteTransitGatewayMulticastDomainRequest& request, const DeleteTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTransitGatewayPeeringAttachmentAsyncHelper(const Model::DeleteTransitGatewayPeeringAttachmentRequest& request, const DeleteTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTransitGatewayRouteAsyncHelper(const Model::DeleteTransitGatewayRouteRequest& request, const DeleteTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTransitGatewayRouteTableAsyncHelper(const Model::DeleteTransitGatewayRouteTableRequest& request, const DeleteTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTransitGatewayVpcAttachmentAsyncHelper(const Model::DeleteTransitGatewayVpcAttachmentRequest& request, const DeleteTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18141,6 +19198,8 @@ namespace Model
         void DeleteVpnGatewayAsyncHelper(const Model::DeleteVpnGatewayRequest& request, const DeleteVpnGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeprovisionByoipCidrAsyncHelper(const Model::DeprovisionByoipCidrRequest& request, const DeprovisionByoipCidrResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterImageAsyncHelper(const Model::DeregisterImageRequest& request, const DeregisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeregisterTransitGatewayMulticastGroupMembersAsyncHelper(const Model::DeregisterTransitGatewayMulticastGroupMembersRequest& request, const DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeregisterTransitGatewayMulticastGroupSourcesAsyncHelper(const Model::DeregisterTransitGatewayMulticastGroupSourcesRequest& request, const DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAccountAttributesAsyncHelper(const Model::DescribeAccountAttributesRequest& request, const DescribeAccountAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAddressesAsyncHelper(const Model::DescribeAddressesRequest& request, const DescribeAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAggregateIdFormatAsyncHelper(const Model::DescribeAggregateIdFormatRequest& request, const DescribeAggregateIdFormatResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18154,6 +19213,7 @@ namespace Model
         void DescribeClientVpnEndpointsAsyncHelper(const Model::DescribeClientVpnEndpointsRequest& request, const DescribeClientVpnEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClientVpnRoutesAsyncHelper(const Model::DescribeClientVpnRoutesRequest& request, const DescribeClientVpnRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClientVpnTargetNetworksAsyncHelper(const Model::DescribeClientVpnTargetNetworksRequest& request, const DescribeClientVpnTargetNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeCoipPoolsAsyncHelper(const Model::DescribeCoipPoolsRequest& request, const DescribeCoipPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeConversionTasksAsyncHelper(const Model::DescribeConversionTasksRequest& request, const DescribeConversionTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCustomerGatewaysAsyncHelper(const Model::DescribeCustomerGatewaysRequest& request, const DescribeCustomerGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeDhcpOptionsAsyncHelper(const Model::DescribeDhcpOptionsRequest& request, const DescribeDhcpOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18188,6 +19248,12 @@ namespace Model
         void DescribeKeyPairsAsyncHelper(const Model::DescribeKeyPairsRequest& request, const DescribeKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLaunchTemplateVersionsAsyncHelper(const Model::DescribeLaunchTemplateVersionsRequest& request, const DescribeLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLaunchTemplatesAsyncHelper(const Model::DescribeLaunchTemplatesRequest& request, const DescribeLaunchTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsyncHelper(const Model::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request, const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLocalGatewayRouteTableVpcAssociationsAsyncHelper(const Model::DescribeLocalGatewayRouteTableVpcAssociationsRequest& request, const DescribeLocalGatewayRouteTableVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLocalGatewayRouteTablesAsyncHelper(const Model::DescribeLocalGatewayRouteTablesRequest& request, const DescribeLocalGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLocalGatewayVirtualInterfaceGroupsAsyncHelper(const Model::DescribeLocalGatewayVirtualInterfaceGroupsRequest& request, const DescribeLocalGatewayVirtualInterfaceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLocalGatewayVirtualInterfacesAsyncHelper(const Model::DescribeLocalGatewayVirtualInterfacesRequest& request, const DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeLocalGatewaysAsyncHelper(const Model::DescribeLocalGatewaysRequest& request, const DescribeLocalGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMovingAddressesAsyncHelper(const Model::DescribeMovingAddressesRequest& request, const DescribeMovingAddressesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNatGatewaysAsyncHelper(const Model::DescribeNatGatewaysRequest& request, const DescribeNatGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNetworkAclsAsyncHelper(const Model::DescribeNetworkAclsRequest& request, const DescribeNetworkAclsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18223,6 +19289,8 @@ namespace Model
         void DescribeTrafficMirrorSessionsAsyncHelper(const Model::DescribeTrafficMirrorSessionsRequest& request, const DescribeTrafficMirrorSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTrafficMirrorTargetsAsyncHelper(const Model::DescribeTrafficMirrorTargetsRequest& request, const DescribeTrafficMirrorTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTransitGatewayAttachmentsAsyncHelper(const Model::DescribeTransitGatewayAttachmentsRequest& request, const DescribeTransitGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTransitGatewayMulticastDomainsAsyncHelper(const Model::DescribeTransitGatewayMulticastDomainsRequest& request, const DescribeTransitGatewayMulticastDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTransitGatewayPeeringAttachmentsAsyncHelper(const Model::DescribeTransitGatewayPeeringAttachmentsRequest& request, const DescribeTransitGatewayPeeringAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTransitGatewayRouteTablesAsyncHelper(const Model::DescribeTransitGatewayRouteTablesRequest& request, const DescribeTransitGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTransitGatewayVpcAttachmentsAsyncHelper(const Model::DescribeTransitGatewayVpcAttachmentsRequest& request, const DescribeTransitGatewayVpcAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTransitGatewaysAsyncHelper(const Model::DescribeTransitGatewaysRequest& request, const DescribeTransitGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18259,6 +19327,7 @@ namespace Model
         void DisassociateIamInstanceProfileAsyncHelper(const Model::DisassociateIamInstanceProfileRequest& request, const DisassociateIamInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateRouteTableAsyncHelper(const Model::DisassociateRouteTableRequest& request, const DisassociateRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateSubnetCidrBlockAsyncHelper(const Model::DisassociateSubnetCidrBlockRequest& request, const DisassociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateTransitGatewayMulticastDomainAsyncHelper(const Model::DisassociateTransitGatewayMulticastDomainRequest& request, const DisassociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateTransitGatewayRouteTableAsyncHelper(const Model::DisassociateTransitGatewayRouteTableRequest& request, const DisassociateTransitGatewayRouteTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateVpcCidrBlockAsyncHelper(const Model::DisassociateVpcCidrBlockRequest& request, const DisassociateVpcCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void EnableEbsEncryptionByDefaultAsyncHelper(const Model::EnableEbsEncryptionByDefaultRequest& request, const EnableEbsEncryptionByDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18273,6 +19342,7 @@ namespace Model
         void ExportImageAsyncHelper(const Model::ExportImageRequest& request, const ExportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportTransitGatewayRoutesAsyncHelper(const Model::ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCapacityReservationUsageAsyncHelper(const Model::GetCapacityReservationUsageRequest& request, const GetCapacityReservationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCoipPoolUsageAsyncHelper(const Model::GetCoipPoolUsageRequest& request, const GetCoipPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConsoleOutputAsyncHelper(const Model::GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConsoleScreenshotAsyncHelper(const Model::GetConsoleScreenshotRequest& request, const GetConsoleScreenshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDefaultCreditSpecificationAsyncHelper(const Model::GetDefaultCreditSpecificationRequest& request, const GetDefaultCreditSpecificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18283,6 +19353,7 @@ namespace Model
         void GetPasswordDataAsyncHelper(const Model::GetPasswordDataRequest& request, const GetPasswordDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservedInstancesExchangeQuoteAsyncHelper(const Model::GetReservedInstancesExchangeQuoteRequest& request, const GetReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayAttachmentPropagationsAsyncHelper(const Model::GetTransitGatewayAttachmentPropagationsRequest& request, const GetTransitGatewayAttachmentPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetTransitGatewayMulticastDomainAssociationsAsyncHelper(const Model::GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayRouteTableAssociationsAsyncHelper(const Model::GetTransitGatewayRouteTableAssociationsRequest& request, const GetTransitGatewayRouteTableAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTransitGatewayRouteTablePropagationsAsyncHelper(const Model::GetTransitGatewayRouteTablePropagationsRequest& request, const GetTransitGatewayRouteTablePropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportClientVpnClientCertificateRevocationListAsyncHelper(const Model::ImportClientVpnClientCertificateRevocationListRequest& request, const ImportClientVpnClientCertificateRevocationListResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18337,6 +19408,9 @@ namespace Model
         void PurchaseScheduledInstancesAsyncHelper(const Model::PurchaseScheduledInstancesRequest& request, const PurchaseScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RebootInstancesAsyncHelper(const Model::RebootInstancesRequest& request, const RebootInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterImageAsyncHelper(const Model::RegisterImageRequest& request, const RegisterImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegisterTransitGatewayMulticastGroupMembersAsyncHelper(const Model::RegisterTransitGatewayMulticastGroupMembersRequest& request, const RegisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RegisterTransitGatewayMulticastGroupSourcesAsyncHelper(const Model::RegisterTransitGatewayMulticastGroupSourcesRequest& request, const RegisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void RejectTransitGatewayPeeringAttachmentAsyncHelper(const Model::RejectTransitGatewayPeeringAttachmentRequest& request, const RejectTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectTransitGatewayVpcAttachmentAsyncHelper(const Model::RejectTransitGatewayVpcAttachmentRequest& request, const RejectTransitGatewayVpcAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectVpcEndpointConnectionsAsyncHelper(const Model::RejectVpcEndpointConnectionsRequest& request, const RejectVpcEndpointConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RejectVpcPeeringConnectionAsyncHelper(const Model::RejectVpcPeeringConnectionRequest& request, const RejectVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -18363,6 +19437,8 @@ namespace Model
         void RevokeSecurityGroupIngressAsyncHelper(const Model::RevokeSecurityGroupIngressRequest& request, const RevokeSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RunInstancesAsyncHelper(const Model::RunInstancesRequest& request, const RunInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RunScheduledInstancesAsyncHelper(const Model::RunScheduledInstancesRequest& request, const RunScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchLocalGatewayRoutesAsyncHelper(const Model::SearchLocalGatewayRoutesRequest& request, const SearchLocalGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void SearchTransitGatewayMulticastGroupsAsyncHelper(const Model::SearchTransitGatewayMulticastGroupsRequest& request, const SearchTransitGatewayMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchTransitGatewayRoutesAsyncHelper(const Model::SearchTransitGatewayRoutesRequest& request, const SearchTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendDiagnosticInterruptAsyncHelper(const Model::SendDiagnosticInterruptRequest& request, const SendDiagnosticInterruptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartInstancesAsyncHelper(const Model::StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the bucket for which to the the lifecycle information.</p>
+     * <p>The name of the bucket for which to get the lifecycle information.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The name of the bucket for which to the the lifecycle information.</p>
+     * <p>The name of the bucket for which to get the lifecycle information.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The name of the bucket for which to the the lifecycle information.</p>
+     * <p>The name of the bucket for which to get the lifecycle information.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The name of the bucket for which to the the lifecycle information.</p>
+     * <p>The name of the bucket for which to get the lifecycle information.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The name of the bucket for which to the the lifecycle information.</p>
+     * <p>The name of the bucket for which to get the lifecycle information.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The name of the bucket for which to the the lifecycle information.</p>
+     * <p>The name of the bucket for which to get the lifecycle information.</p>
      */
     inline GetBucketLifecycleConfigurationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The name of the bucket for which to the the lifecycle information.</p>
+     * <p>The name of the bucket for which to get the lifecycle information.</p>
      */
     inline GetBucketLifecycleConfigurationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the bucket for which to the the lifecycle information.</p>
+     * <p>The name of the bucket for which to get the lifecycle information.</p>
      */
     inline GetBucketLifecycleConfigurationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

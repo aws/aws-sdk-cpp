@@ -31,6 +31,7 @@
 #include <aws/ec2/EC2Endpoint.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
 #include <aws/ec2/model/AcceptReservedInstancesExchangeQuoteRequest.h>
+#include <aws/ec2/model/AcceptTransitGatewayPeeringAttachmentRequest.h>
 #include <aws/ec2/model/AcceptTransitGatewayVpcAttachmentRequest.h>
 #include <aws/ec2/model/AcceptVpcEndpointConnectionsRequest.h>
 #include <aws/ec2/model/AcceptVpcPeeringConnectionRequest.h>
@@ -46,6 +47,7 @@
 #include <aws/ec2/model/AssociateIamInstanceProfileRequest.h>
 #include <aws/ec2/model/AssociateRouteTableRequest.h>
 #include <aws/ec2/model/AssociateSubnetCidrBlockRequest.h>
+#include <aws/ec2/model/AssociateTransitGatewayMulticastDomainRequest.h>
 #include <aws/ec2/model/AssociateTransitGatewayRouteTableRequest.h>
 #include <aws/ec2/model/AssociateVpcCidrBlockRequest.h>
 #include <aws/ec2/model/AttachClassicLinkVpcRequest.h>
@@ -86,6 +88,8 @@
 #include <aws/ec2/model/CreateKeyPairRequest.h>
 #include <aws/ec2/model/CreateLaunchTemplateRequest.h>
 #include <aws/ec2/model/CreateLaunchTemplateVersionRequest.h>
+#include <aws/ec2/model/CreateLocalGatewayRouteRequest.h>
+#include <aws/ec2/model/CreateLocalGatewayRouteTableVpcAssociationRequest.h>
 #include <aws/ec2/model/CreateNatGatewayRequest.h>
 #include <aws/ec2/model/CreateNetworkAclRequest.h>
 #include <aws/ec2/model/CreateNetworkAclEntryRequest.h>
@@ -106,6 +110,8 @@
 #include <aws/ec2/model/CreateTrafficMirrorSessionRequest.h>
 #include <aws/ec2/model/CreateTrafficMirrorTargetRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayRequest.h>
+#include <aws/ec2/model/CreateTransitGatewayMulticastDomainRequest.h>
+#include <aws/ec2/model/CreateTransitGatewayPeeringAttachmentRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayRouteRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayRouteTableRequest.h>
 #include <aws/ec2/model/CreateTransitGatewayVpcAttachmentRequest.h>
@@ -130,6 +136,8 @@
 #include <aws/ec2/model/DeleteKeyPairRequest.h>
 #include <aws/ec2/model/DeleteLaunchTemplateRequest.h>
 #include <aws/ec2/model/DeleteLaunchTemplateVersionsRequest.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteRequest.h>
+#include <aws/ec2/model/DeleteLocalGatewayRouteTableVpcAssociationRequest.h>
 #include <aws/ec2/model/DeleteNatGatewayRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclRequest.h>
 #include <aws/ec2/model/DeleteNetworkAclEntryRequest.h>
@@ -149,6 +157,8 @@
 #include <aws/ec2/model/DeleteTrafficMirrorSessionRequest.h>
 #include <aws/ec2/model/DeleteTrafficMirrorTargetRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayRequest.h>
+#include <aws/ec2/model/DeleteTransitGatewayMulticastDomainRequest.h>
+#include <aws/ec2/model/DeleteTransitGatewayPeeringAttachmentRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayRouteRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayRouteTableRequest.h>
 #include <aws/ec2/model/DeleteTransitGatewayVpcAttachmentRequest.h>
@@ -163,6 +173,8 @@
 #include <aws/ec2/model/DeleteVpnGatewayRequest.h>
 #include <aws/ec2/model/DeprovisionByoipCidrRequest.h>
 #include <aws/ec2/model/DeregisterImageRequest.h>
+#include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupMembersRequest.h>
+#include <aws/ec2/model/DeregisterTransitGatewayMulticastGroupSourcesRequest.h>
 #include <aws/ec2/model/DescribeAccountAttributesRequest.h>
 #include <aws/ec2/model/DescribeAddressesRequest.h>
 #include <aws/ec2/model/DescribeAggregateIdFormatRequest.h>
@@ -176,6 +188,7 @@
 #include <aws/ec2/model/DescribeClientVpnEndpointsRequest.h>
 #include <aws/ec2/model/DescribeClientVpnRoutesRequest.h>
 #include <aws/ec2/model/DescribeClientVpnTargetNetworksRequest.h>
+#include <aws/ec2/model/DescribeCoipPoolsRequest.h>
 #include <aws/ec2/model/DescribeConversionTasksRequest.h>
 #include <aws/ec2/model/DescribeCustomerGatewaysRequest.h>
 #include <aws/ec2/model/DescribeDhcpOptionsRequest.h>
@@ -210,6 +223,12 @@
 #include <aws/ec2/model/DescribeKeyPairsRequest.h>
 #include <aws/ec2/model/DescribeLaunchTemplateVersionsRequest.h>
 #include <aws/ec2/model/DescribeLaunchTemplatesRequest.h>
+#include <aws/ec2/model/DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest.h>
+#include <aws/ec2/model/DescribeLocalGatewayRouteTableVpcAssociationsRequest.h>
+#include <aws/ec2/model/DescribeLocalGatewayRouteTablesRequest.h>
+#include <aws/ec2/model/DescribeLocalGatewayVirtualInterfaceGroupsRequest.h>
+#include <aws/ec2/model/DescribeLocalGatewayVirtualInterfacesRequest.h>
+#include <aws/ec2/model/DescribeLocalGatewaysRequest.h>
 #include <aws/ec2/model/DescribeMovingAddressesRequest.h>
 #include <aws/ec2/model/DescribeNatGatewaysRequest.h>
 #include <aws/ec2/model/DescribeNetworkAclsRequest.h>
@@ -245,6 +264,8 @@
 #include <aws/ec2/model/DescribeTrafficMirrorSessionsRequest.h>
 #include <aws/ec2/model/DescribeTrafficMirrorTargetsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayAttachmentsRequest.h>
+#include <aws/ec2/model/DescribeTransitGatewayMulticastDomainsRequest.h>
+#include <aws/ec2/model/DescribeTransitGatewayPeeringAttachmentsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayRouteTablesRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewayVpcAttachmentsRequest.h>
 #include <aws/ec2/model/DescribeTransitGatewaysRequest.h>
@@ -281,6 +302,7 @@
 #include <aws/ec2/model/DisassociateIamInstanceProfileRequest.h>
 #include <aws/ec2/model/DisassociateRouteTableRequest.h>
 #include <aws/ec2/model/DisassociateSubnetCidrBlockRequest.h>
+#include <aws/ec2/model/DisassociateTransitGatewayMulticastDomainRequest.h>
 #include <aws/ec2/model/DisassociateTransitGatewayRouteTableRequest.h>
 #include <aws/ec2/model/DisassociateVpcCidrBlockRequest.h>
 #include <aws/ec2/model/EnableEbsEncryptionByDefaultRequest.h>
@@ -295,6 +317,7 @@
 #include <aws/ec2/model/ExportImageRequest.h>
 #include <aws/ec2/model/ExportTransitGatewayRoutesRequest.h>
 #include <aws/ec2/model/GetCapacityReservationUsageRequest.h>
+#include <aws/ec2/model/GetCoipPoolUsageRequest.h>
 #include <aws/ec2/model/GetConsoleOutputRequest.h>
 #include <aws/ec2/model/GetConsoleScreenshotRequest.h>
 #include <aws/ec2/model/GetDefaultCreditSpecificationRequest.h>
@@ -305,6 +328,7 @@
 #include <aws/ec2/model/GetPasswordDataRequest.h>
 #include <aws/ec2/model/GetReservedInstancesExchangeQuoteRequest.h>
 #include <aws/ec2/model/GetTransitGatewayAttachmentPropagationsRequest.h>
+#include <aws/ec2/model/GetTransitGatewayMulticastDomainAssociationsRequest.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTableAssociationsRequest.h>
 #include <aws/ec2/model/GetTransitGatewayRouteTablePropagationsRequest.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListRequest.h>
@@ -359,6 +383,9 @@
 #include <aws/ec2/model/PurchaseScheduledInstancesRequest.h>
 #include <aws/ec2/model/RebootInstancesRequest.h>
 #include <aws/ec2/model/RegisterImageRequest.h>
+#include <aws/ec2/model/RegisterTransitGatewayMulticastGroupMembersRequest.h>
+#include <aws/ec2/model/RegisterTransitGatewayMulticastGroupSourcesRequest.h>
+#include <aws/ec2/model/RejectTransitGatewayPeeringAttachmentRequest.h>
 #include <aws/ec2/model/RejectTransitGatewayVpcAttachmentRequest.h>
 #include <aws/ec2/model/RejectVpcEndpointConnectionsRequest.h>
 #include <aws/ec2/model/RejectVpcPeeringConnectionRequest.h>
@@ -385,6 +412,8 @@
 #include <aws/ec2/model/RevokeSecurityGroupIngressRequest.h>
 #include <aws/ec2/model/RunInstancesRequest.h>
 #include <aws/ec2/model/RunScheduledInstancesRequest.h>
+#include <aws/ec2/model/SearchLocalGatewayRoutesRequest.h>
+#include <aws/ec2/model/SearchTransitGatewayMulticastGroupsRequest.h>
 #include <aws/ec2/model/SearchTransitGatewayRoutesRequest.h>
 #include <aws/ec2/model/SendDiagnosticInterruptRequest.h>
 #include <aws/ec2/model/StartInstancesRequest.h>
@@ -504,6 +533,41 @@ void EC2Client::AcceptReservedInstancesExchangeQuoteAsync(const AcceptReservedIn
 void EC2Client::AcceptReservedInstancesExchangeQuoteAsyncHelper(const AcceptReservedInstancesExchangeQuoteRequest& request, const AcceptReservedInstancesExchangeQuoteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AcceptReservedInstancesExchangeQuote(request), context);
+}
+
+AcceptTransitGatewayPeeringAttachmentOutcome EC2Client::AcceptTransitGatewayPeeringAttachment(const AcceptTransitGatewayPeeringAttachmentRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AcceptTransitGatewayPeeringAttachmentOutcome(AcceptTransitGatewayPeeringAttachmentResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return AcceptTransitGatewayPeeringAttachmentOutcome(outcome.GetError());
+  }
+}
+
+AcceptTransitGatewayPeeringAttachmentOutcomeCallable EC2Client::AcceptTransitGatewayPeeringAttachmentCallable(const AcceptTransitGatewayPeeringAttachmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AcceptTransitGatewayPeeringAttachmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AcceptTransitGatewayPeeringAttachment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::AcceptTransitGatewayPeeringAttachmentAsync(const AcceptTransitGatewayPeeringAttachmentRequest& request, const AcceptTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AcceptTransitGatewayPeeringAttachmentAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::AcceptTransitGatewayPeeringAttachmentAsyncHelper(const AcceptTransitGatewayPeeringAttachmentRequest& request, const AcceptTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AcceptTransitGatewayPeeringAttachment(request), context);
 }
 
 AcceptTransitGatewayVpcAttachmentOutcome EC2Client::AcceptTransitGatewayVpcAttachment(const AcceptTransitGatewayVpcAttachmentRequest& request) const
@@ -1029,6 +1093,41 @@ void EC2Client::AssociateSubnetCidrBlockAsync(const AssociateSubnetCidrBlockRequ
 void EC2Client::AssociateSubnetCidrBlockAsyncHelper(const AssociateSubnetCidrBlockRequest& request, const AssociateSubnetCidrBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociateSubnetCidrBlock(request), context);
+}
+
+AssociateTransitGatewayMulticastDomainOutcome EC2Client::AssociateTransitGatewayMulticastDomain(const AssociateTransitGatewayMulticastDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return AssociateTransitGatewayMulticastDomainOutcome(AssociateTransitGatewayMulticastDomainResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateTransitGatewayMulticastDomainOutcome(outcome.GetError());
+  }
+}
+
+AssociateTransitGatewayMulticastDomainOutcomeCallable EC2Client::AssociateTransitGatewayMulticastDomainCallable(const AssociateTransitGatewayMulticastDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateTransitGatewayMulticastDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateTransitGatewayMulticastDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::AssociateTransitGatewayMulticastDomainAsync(const AssociateTransitGatewayMulticastDomainRequest& request, const AssociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateTransitGatewayMulticastDomainAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::AssociateTransitGatewayMulticastDomainAsyncHelper(const AssociateTransitGatewayMulticastDomainRequest& request, const AssociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateTransitGatewayMulticastDomain(request), context);
 }
 
 AssociateTransitGatewayRouteTableOutcome EC2Client::AssociateTransitGatewayRouteTable(const AssociateTransitGatewayRouteTableRequest& request) const
@@ -2431,6 +2530,76 @@ void EC2Client::CreateLaunchTemplateVersionAsyncHelper(const CreateLaunchTemplat
   handler(this, request, CreateLaunchTemplateVersion(request), context);
 }
 
+CreateLocalGatewayRouteOutcome EC2Client::CreateLocalGatewayRoute(const CreateLocalGatewayRouteRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateLocalGatewayRouteOutcome(CreateLocalGatewayRouteResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateLocalGatewayRouteOutcome(outcome.GetError());
+  }
+}
+
+CreateLocalGatewayRouteOutcomeCallable EC2Client::CreateLocalGatewayRouteCallable(const CreateLocalGatewayRouteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLocalGatewayRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocalGatewayRoute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateLocalGatewayRouteAsync(const CreateLocalGatewayRouteRequest& request, const CreateLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLocalGatewayRouteAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::CreateLocalGatewayRouteAsyncHelper(const CreateLocalGatewayRouteRequest& request, const CreateLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLocalGatewayRoute(request), context);
+}
+
+CreateLocalGatewayRouteTableVpcAssociationOutcome EC2Client::CreateLocalGatewayRouteTableVpcAssociation(const CreateLocalGatewayRouteTableVpcAssociationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateLocalGatewayRouteTableVpcAssociationOutcome(CreateLocalGatewayRouteTableVpcAssociationResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateLocalGatewayRouteTableVpcAssociationOutcome(outcome.GetError());
+  }
+}
+
+CreateLocalGatewayRouteTableVpcAssociationOutcomeCallable EC2Client::CreateLocalGatewayRouteTableVpcAssociationCallable(const CreateLocalGatewayRouteTableVpcAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateLocalGatewayRouteTableVpcAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateLocalGatewayRouteTableVpcAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateLocalGatewayRouteTableVpcAssociationAsync(const CreateLocalGatewayRouteTableVpcAssociationRequest& request, const CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateLocalGatewayRouteTableVpcAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::CreateLocalGatewayRouteTableVpcAssociationAsyncHelper(const CreateLocalGatewayRouteTableVpcAssociationRequest& request, const CreateLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateLocalGatewayRouteTableVpcAssociation(request), context);
+}
+
 CreateNatGatewayOutcome EC2Client::CreateNatGateway(const CreateNatGatewayRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -3129,6 +3298,76 @@ void EC2Client::CreateTransitGatewayAsync(const CreateTransitGatewayRequest& req
 void EC2Client::CreateTransitGatewayAsyncHelper(const CreateTransitGatewayRequest& request, const CreateTransitGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateTransitGateway(request), context);
+}
+
+CreateTransitGatewayMulticastDomainOutcome EC2Client::CreateTransitGatewayMulticastDomain(const CreateTransitGatewayMulticastDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateTransitGatewayMulticastDomainOutcome(CreateTransitGatewayMulticastDomainResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateTransitGatewayMulticastDomainOutcome(outcome.GetError());
+  }
+}
+
+CreateTransitGatewayMulticastDomainOutcomeCallable EC2Client::CreateTransitGatewayMulticastDomainCallable(const CreateTransitGatewayMulticastDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTransitGatewayMulticastDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTransitGatewayMulticastDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateTransitGatewayMulticastDomainAsync(const CreateTransitGatewayMulticastDomainRequest& request, const CreateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayMulticastDomainAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::CreateTransitGatewayMulticastDomainAsyncHelper(const CreateTransitGatewayMulticastDomainRequest& request, const CreateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTransitGatewayMulticastDomain(request), context);
+}
+
+CreateTransitGatewayPeeringAttachmentOutcome EC2Client::CreateTransitGatewayPeeringAttachment(const CreateTransitGatewayPeeringAttachmentRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return CreateTransitGatewayPeeringAttachmentOutcome(CreateTransitGatewayPeeringAttachmentResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateTransitGatewayPeeringAttachmentOutcome(outcome.GetError());
+  }
+}
+
+CreateTransitGatewayPeeringAttachmentOutcomeCallable EC2Client::CreateTransitGatewayPeeringAttachmentCallable(const CreateTransitGatewayPeeringAttachmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateTransitGatewayPeeringAttachmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateTransitGatewayPeeringAttachment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::CreateTransitGatewayPeeringAttachmentAsync(const CreateTransitGatewayPeeringAttachmentRequest& request, const CreateTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateTransitGatewayPeeringAttachmentAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::CreateTransitGatewayPeeringAttachmentAsyncHelper(const CreateTransitGatewayPeeringAttachmentRequest& request, const CreateTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateTransitGatewayPeeringAttachment(request), context);
 }
 
 CreateTransitGatewayRouteOutcome EC2Client::CreateTransitGatewayRoute(const CreateTransitGatewayRouteRequest& request) const
@@ -3971,6 +4210,76 @@ void EC2Client::DeleteLaunchTemplateVersionsAsyncHelper(const DeleteLaunchTempla
   handler(this, request, DeleteLaunchTemplateVersions(request), context);
 }
 
+DeleteLocalGatewayRouteOutcome EC2Client::DeleteLocalGatewayRoute(const DeleteLocalGatewayRouteRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteLocalGatewayRouteOutcome(DeleteLocalGatewayRouteResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteLocalGatewayRouteOutcome(outcome.GetError());
+  }
+}
+
+DeleteLocalGatewayRouteOutcomeCallable EC2Client::DeleteLocalGatewayRouteCallable(const DeleteLocalGatewayRouteRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLocalGatewayRouteOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLocalGatewayRoute(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteLocalGatewayRouteAsync(const DeleteLocalGatewayRouteRequest& request, const DeleteLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLocalGatewayRouteAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DeleteLocalGatewayRouteAsyncHelper(const DeleteLocalGatewayRouteRequest& request, const DeleteLocalGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLocalGatewayRoute(request), context);
+}
+
+DeleteLocalGatewayRouteTableVpcAssociationOutcome EC2Client::DeleteLocalGatewayRouteTableVpcAssociation(const DeleteLocalGatewayRouteTableVpcAssociationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteLocalGatewayRouteTableVpcAssociationOutcome(DeleteLocalGatewayRouteTableVpcAssociationResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteLocalGatewayRouteTableVpcAssociationOutcome(outcome.GetError());
+  }
+}
+
+DeleteLocalGatewayRouteTableVpcAssociationOutcomeCallable EC2Client::DeleteLocalGatewayRouteTableVpcAssociationCallable(const DeleteLocalGatewayRouteTableVpcAssociationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLocalGatewayRouteTableVpcAssociationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLocalGatewayRouteTableVpcAssociation(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteLocalGatewayRouteTableVpcAssociationAsync(const DeleteLocalGatewayRouteTableVpcAssociationRequest& request, const DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLocalGatewayRouteTableVpcAssociationAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DeleteLocalGatewayRouteTableVpcAssociationAsyncHelper(const DeleteLocalGatewayRouteTableVpcAssociationRequest& request, const DeleteLocalGatewayRouteTableVpcAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLocalGatewayRouteTableVpcAssociation(request), context);
+}
+
 DeleteNatGatewayOutcome EC2Client::DeleteNatGateway(const DeleteNatGatewayRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -4636,6 +4945,76 @@ void EC2Client::DeleteTransitGatewayAsyncHelper(const DeleteTransitGatewayReques
   handler(this, request, DeleteTransitGateway(request), context);
 }
 
+DeleteTransitGatewayMulticastDomainOutcome EC2Client::DeleteTransitGatewayMulticastDomain(const DeleteTransitGatewayMulticastDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteTransitGatewayMulticastDomainOutcome(DeleteTransitGatewayMulticastDomainResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteTransitGatewayMulticastDomainOutcome(outcome.GetError());
+  }
+}
+
+DeleteTransitGatewayMulticastDomainOutcomeCallable EC2Client::DeleteTransitGatewayMulticastDomainCallable(const DeleteTransitGatewayMulticastDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTransitGatewayMulticastDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTransitGatewayMulticastDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteTransitGatewayMulticastDomainAsync(const DeleteTransitGatewayMulticastDomainRequest& request, const DeleteTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTransitGatewayMulticastDomainAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DeleteTransitGatewayMulticastDomainAsyncHelper(const DeleteTransitGatewayMulticastDomainRequest& request, const DeleteTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTransitGatewayMulticastDomain(request), context);
+}
+
+DeleteTransitGatewayPeeringAttachmentOutcome EC2Client::DeleteTransitGatewayPeeringAttachment(const DeleteTransitGatewayPeeringAttachmentRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeleteTransitGatewayPeeringAttachmentOutcome(DeleteTransitGatewayPeeringAttachmentResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteTransitGatewayPeeringAttachmentOutcome(outcome.GetError());
+  }
+}
+
+DeleteTransitGatewayPeeringAttachmentOutcomeCallable EC2Client::DeleteTransitGatewayPeeringAttachmentCallable(const DeleteTransitGatewayPeeringAttachmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteTransitGatewayPeeringAttachmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteTransitGatewayPeeringAttachment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeleteTransitGatewayPeeringAttachmentAsync(const DeleteTransitGatewayPeeringAttachmentRequest& request, const DeleteTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteTransitGatewayPeeringAttachmentAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DeleteTransitGatewayPeeringAttachmentAsyncHelper(const DeleteTransitGatewayPeeringAttachmentRequest& request, const DeleteTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteTransitGatewayPeeringAttachment(request), context);
+}
+
 DeleteTransitGatewayRouteOutcome EC2Client::DeleteTransitGatewayRoute(const DeleteTransitGatewayRouteRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -5126,6 +5505,76 @@ void EC2Client::DeregisterImageAsyncHelper(const DeregisterImageRequest& request
   handler(this, request, DeregisterImage(request), context);
 }
 
+DeregisterTransitGatewayMulticastGroupMembersOutcome EC2Client::DeregisterTransitGatewayMulticastGroupMembers(const DeregisterTransitGatewayMulticastGroupMembersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeregisterTransitGatewayMulticastGroupMembersOutcome(DeregisterTransitGatewayMulticastGroupMembersResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DeregisterTransitGatewayMulticastGroupMembersOutcome(outcome.GetError());
+  }
+}
+
+DeregisterTransitGatewayMulticastGroupMembersOutcomeCallable EC2Client::DeregisterTransitGatewayMulticastGroupMembersCallable(const DeregisterTransitGatewayMulticastGroupMembersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterTransitGatewayMulticastGroupMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterTransitGatewayMulticastGroupMembers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeregisterTransitGatewayMulticastGroupMembersAsync(const DeregisterTransitGatewayMulticastGroupMembersRequest& request, const DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeregisterTransitGatewayMulticastGroupMembersAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DeregisterTransitGatewayMulticastGroupMembersAsyncHelper(const DeregisterTransitGatewayMulticastGroupMembersRequest& request, const DeregisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeregisterTransitGatewayMulticastGroupMembers(request), context);
+}
+
+DeregisterTransitGatewayMulticastGroupSourcesOutcome EC2Client::DeregisterTransitGatewayMulticastGroupSources(const DeregisterTransitGatewayMulticastGroupSourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DeregisterTransitGatewayMulticastGroupSourcesOutcome(DeregisterTransitGatewayMulticastGroupSourcesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DeregisterTransitGatewayMulticastGroupSourcesOutcome(outcome.GetError());
+  }
+}
+
+DeregisterTransitGatewayMulticastGroupSourcesOutcomeCallable EC2Client::DeregisterTransitGatewayMulticastGroupSourcesCallable(const DeregisterTransitGatewayMulticastGroupSourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeregisterTransitGatewayMulticastGroupSourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeregisterTransitGatewayMulticastGroupSources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DeregisterTransitGatewayMulticastGroupSourcesAsync(const DeregisterTransitGatewayMulticastGroupSourcesRequest& request, const DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeregisterTransitGatewayMulticastGroupSourcesAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DeregisterTransitGatewayMulticastGroupSourcesAsyncHelper(const DeregisterTransitGatewayMulticastGroupSourcesRequest& request, const DeregisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeregisterTransitGatewayMulticastGroupSources(request), context);
+}
+
 DescribeAccountAttributesOutcome EC2Client::DescribeAccountAttributes(const DescribeAccountAttributesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -5579,6 +6028,41 @@ void EC2Client::DescribeClientVpnTargetNetworksAsync(const DescribeClientVpnTarg
 void EC2Client::DescribeClientVpnTargetNetworksAsyncHelper(const DescribeClientVpnTargetNetworksRequest& request, const DescribeClientVpnTargetNetworksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeClientVpnTargetNetworks(request), context);
+}
+
+DescribeCoipPoolsOutcome EC2Client::DescribeCoipPools(const DescribeCoipPoolsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeCoipPoolsOutcome(DescribeCoipPoolsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeCoipPoolsOutcome(outcome.GetError());
+  }
+}
+
+DescribeCoipPoolsOutcomeCallable EC2Client::DescribeCoipPoolsCallable(const DescribeCoipPoolsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeCoipPoolsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCoipPools(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeCoipPoolsAsync(const DescribeCoipPoolsRequest& request, const DescribeCoipPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCoipPoolsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeCoipPoolsAsyncHelper(const DescribeCoipPoolsRequest& request, const DescribeCoipPoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeCoipPools(request), context);
 }
 
 DescribeConversionTasksOutcome EC2Client::DescribeConversionTasks(const DescribeConversionTasksRequest& request) const
@@ -6769,6 +7253,216 @@ void EC2Client::DescribeLaunchTemplatesAsync(const DescribeLaunchTemplatesReques
 void EC2Client::DescribeLaunchTemplatesAsyncHelper(const DescribeLaunchTemplatesRequest& request, const DescribeLaunchTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeLaunchTemplates(request), context);
+}
+
+DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcome EC2Client::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcome(DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcome(outcome.GetError());
+  }
+}
+
+DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcomeCallable EC2Client::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsCallable(const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsync(const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request, const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsAsyncHelper(const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsRequest& request, const DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations(request), context);
+}
+
+DescribeLocalGatewayRouteTableVpcAssociationsOutcome EC2Client::DescribeLocalGatewayRouteTableVpcAssociations(const DescribeLocalGatewayRouteTableVpcAssociationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLocalGatewayRouteTableVpcAssociationsOutcome(DescribeLocalGatewayRouteTableVpcAssociationsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLocalGatewayRouteTableVpcAssociationsOutcome(outcome.GetError());
+  }
+}
+
+DescribeLocalGatewayRouteTableVpcAssociationsOutcomeCallable EC2Client::DescribeLocalGatewayRouteTableVpcAssociationsCallable(const DescribeLocalGatewayRouteTableVpcAssociationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocalGatewayRouteTableVpcAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocalGatewayRouteTableVpcAssociations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeLocalGatewayRouteTableVpcAssociationsAsync(const DescribeLocalGatewayRouteTableVpcAssociationsRequest& request, const DescribeLocalGatewayRouteTableVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocalGatewayRouteTableVpcAssociationsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeLocalGatewayRouteTableVpcAssociationsAsyncHelper(const DescribeLocalGatewayRouteTableVpcAssociationsRequest& request, const DescribeLocalGatewayRouteTableVpcAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocalGatewayRouteTableVpcAssociations(request), context);
+}
+
+DescribeLocalGatewayRouteTablesOutcome EC2Client::DescribeLocalGatewayRouteTables(const DescribeLocalGatewayRouteTablesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLocalGatewayRouteTablesOutcome(DescribeLocalGatewayRouteTablesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLocalGatewayRouteTablesOutcome(outcome.GetError());
+  }
+}
+
+DescribeLocalGatewayRouteTablesOutcomeCallable EC2Client::DescribeLocalGatewayRouteTablesCallable(const DescribeLocalGatewayRouteTablesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocalGatewayRouteTablesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocalGatewayRouteTables(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeLocalGatewayRouteTablesAsync(const DescribeLocalGatewayRouteTablesRequest& request, const DescribeLocalGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocalGatewayRouteTablesAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeLocalGatewayRouteTablesAsyncHelper(const DescribeLocalGatewayRouteTablesRequest& request, const DescribeLocalGatewayRouteTablesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocalGatewayRouteTables(request), context);
+}
+
+DescribeLocalGatewayVirtualInterfaceGroupsOutcome EC2Client::DescribeLocalGatewayVirtualInterfaceGroups(const DescribeLocalGatewayVirtualInterfaceGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLocalGatewayVirtualInterfaceGroupsOutcome(DescribeLocalGatewayVirtualInterfaceGroupsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLocalGatewayVirtualInterfaceGroupsOutcome(outcome.GetError());
+  }
+}
+
+DescribeLocalGatewayVirtualInterfaceGroupsOutcomeCallable EC2Client::DescribeLocalGatewayVirtualInterfaceGroupsCallable(const DescribeLocalGatewayVirtualInterfaceGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocalGatewayVirtualInterfaceGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocalGatewayVirtualInterfaceGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeLocalGatewayVirtualInterfaceGroupsAsync(const DescribeLocalGatewayVirtualInterfaceGroupsRequest& request, const DescribeLocalGatewayVirtualInterfaceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocalGatewayVirtualInterfaceGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeLocalGatewayVirtualInterfaceGroupsAsyncHelper(const DescribeLocalGatewayVirtualInterfaceGroupsRequest& request, const DescribeLocalGatewayVirtualInterfaceGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocalGatewayVirtualInterfaceGroups(request), context);
+}
+
+DescribeLocalGatewayVirtualInterfacesOutcome EC2Client::DescribeLocalGatewayVirtualInterfaces(const DescribeLocalGatewayVirtualInterfacesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLocalGatewayVirtualInterfacesOutcome(DescribeLocalGatewayVirtualInterfacesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLocalGatewayVirtualInterfacesOutcome(outcome.GetError());
+  }
+}
+
+DescribeLocalGatewayVirtualInterfacesOutcomeCallable EC2Client::DescribeLocalGatewayVirtualInterfacesCallable(const DescribeLocalGatewayVirtualInterfacesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocalGatewayVirtualInterfacesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocalGatewayVirtualInterfaces(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeLocalGatewayVirtualInterfacesAsync(const DescribeLocalGatewayVirtualInterfacesRequest& request, const DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocalGatewayVirtualInterfacesAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeLocalGatewayVirtualInterfacesAsyncHelper(const DescribeLocalGatewayVirtualInterfacesRequest& request, const DescribeLocalGatewayVirtualInterfacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocalGatewayVirtualInterfaces(request), context);
+}
+
+DescribeLocalGatewaysOutcome EC2Client::DescribeLocalGateways(const DescribeLocalGatewaysRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLocalGatewaysOutcome(DescribeLocalGatewaysResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLocalGatewaysOutcome(outcome.GetError());
+  }
+}
+
+DescribeLocalGatewaysOutcomeCallable EC2Client::DescribeLocalGatewaysCallable(const DescribeLocalGatewaysRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLocalGatewaysOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLocalGateways(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeLocalGatewaysAsync(const DescribeLocalGatewaysRequest& request, const DescribeLocalGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLocalGatewaysAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeLocalGatewaysAsyncHelper(const DescribeLocalGatewaysRequest& request, const DescribeLocalGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLocalGateways(request), context);
 }
 
 DescribeMovingAddressesOutcome EC2Client::DescribeMovingAddresses(const DescribeMovingAddressesRequest& request) const
@@ -7994,6 +8688,76 @@ void EC2Client::DescribeTransitGatewayAttachmentsAsync(const DescribeTransitGate
 void EC2Client::DescribeTransitGatewayAttachmentsAsyncHelper(const DescribeTransitGatewayAttachmentsRequest& request, const DescribeTransitGatewayAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeTransitGatewayAttachments(request), context);
+}
+
+DescribeTransitGatewayMulticastDomainsOutcome EC2Client::DescribeTransitGatewayMulticastDomains(const DescribeTransitGatewayMulticastDomainsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeTransitGatewayMulticastDomainsOutcome(DescribeTransitGatewayMulticastDomainsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeTransitGatewayMulticastDomainsOutcome(outcome.GetError());
+  }
+}
+
+DescribeTransitGatewayMulticastDomainsOutcomeCallable EC2Client::DescribeTransitGatewayMulticastDomainsCallable(const DescribeTransitGatewayMulticastDomainsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTransitGatewayMulticastDomainsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTransitGatewayMulticastDomains(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeTransitGatewayMulticastDomainsAsync(const DescribeTransitGatewayMulticastDomainsRequest& request, const DescribeTransitGatewayMulticastDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransitGatewayMulticastDomainsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeTransitGatewayMulticastDomainsAsyncHelper(const DescribeTransitGatewayMulticastDomainsRequest& request, const DescribeTransitGatewayMulticastDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeTransitGatewayMulticastDomains(request), context);
+}
+
+DescribeTransitGatewayPeeringAttachmentsOutcome EC2Client::DescribeTransitGatewayPeeringAttachments(const DescribeTransitGatewayPeeringAttachmentsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeTransitGatewayPeeringAttachmentsOutcome(DescribeTransitGatewayPeeringAttachmentsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeTransitGatewayPeeringAttachmentsOutcome(outcome.GetError());
+  }
+}
+
+DescribeTransitGatewayPeeringAttachmentsOutcomeCallable EC2Client::DescribeTransitGatewayPeeringAttachmentsCallable(const DescribeTransitGatewayPeeringAttachmentsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTransitGatewayPeeringAttachmentsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTransitGatewayPeeringAttachments(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeTransitGatewayPeeringAttachmentsAsync(const DescribeTransitGatewayPeeringAttachmentsRequest& request, const DescribeTransitGatewayPeeringAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTransitGatewayPeeringAttachmentsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeTransitGatewayPeeringAttachmentsAsyncHelper(const DescribeTransitGatewayPeeringAttachmentsRequest& request, const DescribeTransitGatewayPeeringAttachmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeTransitGatewayPeeringAttachments(request), context);
 }
 
 DescribeTransitGatewayRouteTablesOutcome EC2Client::DescribeTransitGatewayRouteTables(const DescribeTransitGatewayRouteTablesRequest& request) const
@@ -9256,6 +10020,41 @@ void EC2Client::DisassociateSubnetCidrBlockAsyncHelper(const DisassociateSubnetC
   handler(this, request, DisassociateSubnetCidrBlock(request), context);
 }
 
+DisassociateTransitGatewayMulticastDomainOutcome EC2Client::DisassociateTransitGatewayMulticastDomain(const DisassociateTransitGatewayMulticastDomainRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateTransitGatewayMulticastDomainOutcome(DisassociateTransitGatewayMulticastDomainResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateTransitGatewayMulticastDomainOutcome(outcome.GetError());
+  }
+}
+
+DisassociateTransitGatewayMulticastDomainOutcomeCallable EC2Client::DisassociateTransitGatewayMulticastDomainCallable(const DisassociateTransitGatewayMulticastDomainRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateTransitGatewayMulticastDomainOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateTransitGatewayMulticastDomain(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DisassociateTransitGatewayMulticastDomainAsync(const DisassociateTransitGatewayMulticastDomainRequest& request, const DisassociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateTransitGatewayMulticastDomainAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DisassociateTransitGatewayMulticastDomainAsyncHelper(const DisassociateTransitGatewayMulticastDomainRequest& request, const DisassociateTransitGatewayMulticastDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateTransitGatewayMulticastDomain(request), context);
+}
+
 DisassociateTransitGatewayRouteTableOutcome EC2Client::DisassociateTransitGatewayRouteTable(const DisassociateTransitGatewayRouteTableRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -9746,6 +10545,41 @@ void EC2Client::GetCapacityReservationUsageAsyncHelper(const GetCapacityReservat
   handler(this, request, GetCapacityReservationUsage(request), context);
 }
 
+GetCoipPoolUsageOutcome EC2Client::GetCoipPoolUsage(const GetCoipPoolUsageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetCoipPoolUsageOutcome(GetCoipPoolUsageResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCoipPoolUsageOutcome(outcome.GetError());
+  }
+}
+
+GetCoipPoolUsageOutcomeCallable EC2Client::GetCoipPoolUsageCallable(const GetCoipPoolUsageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCoipPoolUsageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCoipPoolUsage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::GetCoipPoolUsageAsync(const GetCoipPoolUsageRequest& request, const GetCoipPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCoipPoolUsageAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::GetCoipPoolUsageAsyncHelper(const GetCoipPoolUsageRequest& request, const GetCoipPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCoipPoolUsage(request), context);
+}
+
 GetConsoleOutputOutcome EC2Client::GetConsoleOutput(const GetConsoleOutputRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -10094,6 +10928,41 @@ void EC2Client::GetTransitGatewayAttachmentPropagationsAsync(const GetTransitGat
 void EC2Client::GetTransitGatewayAttachmentPropagationsAsyncHelper(const GetTransitGatewayAttachmentPropagationsRequest& request, const GetTransitGatewayAttachmentPropagationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetTransitGatewayAttachmentPropagations(request), context);
+}
+
+GetTransitGatewayMulticastDomainAssociationsOutcome EC2Client::GetTransitGatewayMulticastDomainAssociations(const GetTransitGatewayMulticastDomainAssociationsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetTransitGatewayMulticastDomainAssociationsOutcome(GetTransitGatewayMulticastDomainAssociationsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return GetTransitGatewayMulticastDomainAssociationsOutcome(outcome.GetError());
+  }
+}
+
+GetTransitGatewayMulticastDomainAssociationsOutcomeCallable EC2Client::GetTransitGatewayMulticastDomainAssociationsCallable(const GetTransitGatewayMulticastDomainAssociationsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetTransitGatewayMulticastDomainAssociationsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetTransitGatewayMulticastDomainAssociations(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::GetTransitGatewayMulticastDomainAssociationsAsync(const GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetTransitGatewayMulticastDomainAssociationsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::GetTransitGatewayMulticastDomainAssociationsAsyncHelper(const GetTransitGatewayMulticastDomainAssociationsRequest& request, const GetTransitGatewayMulticastDomainAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetTransitGatewayMulticastDomainAssociations(request), context);
 }
 
 GetTransitGatewayRouteTableAssociationsOutcome EC2Client::GetTransitGatewayRouteTableAssociations(const GetTransitGatewayRouteTableAssociationsRequest& request) const
@@ -11986,6 +12855,111 @@ void EC2Client::RegisterImageAsyncHelper(const RegisterImageRequest& request, co
   handler(this, request, RegisterImage(request), context);
 }
 
+RegisterTransitGatewayMulticastGroupMembersOutcome EC2Client::RegisterTransitGatewayMulticastGroupMembers(const RegisterTransitGatewayMulticastGroupMembersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RegisterTransitGatewayMulticastGroupMembersOutcome(RegisterTransitGatewayMulticastGroupMembersResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return RegisterTransitGatewayMulticastGroupMembersOutcome(outcome.GetError());
+  }
+}
+
+RegisterTransitGatewayMulticastGroupMembersOutcomeCallable EC2Client::RegisterTransitGatewayMulticastGroupMembersCallable(const RegisterTransitGatewayMulticastGroupMembersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterTransitGatewayMulticastGroupMembersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterTransitGatewayMulticastGroupMembers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::RegisterTransitGatewayMulticastGroupMembersAsync(const RegisterTransitGatewayMulticastGroupMembersRequest& request, const RegisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterTransitGatewayMulticastGroupMembersAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::RegisterTransitGatewayMulticastGroupMembersAsyncHelper(const RegisterTransitGatewayMulticastGroupMembersRequest& request, const RegisterTransitGatewayMulticastGroupMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterTransitGatewayMulticastGroupMembers(request), context);
+}
+
+RegisterTransitGatewayMulticastGroupSourcesOutcome EC2Client::RegisterTransitGatewayMulticastGroupSources(const RegisterTransitGatewayMulticastGroupSourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RegisterTransitGatewayMulticastGroupSourcesOutcome(RegisterTransitGatewayMulticastGroupSourcesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return RegisterTransitGatewayMulticastGroupSourcesOutcome(outcome.GetError());
+  }
+}
+
+RegisterTransitGatewayMulticastGroupSourcesOutcomeCallable EC2Client::RegisterTransitGatewayMulticastGroupSourcesCallable(const RegisterTransitGatewayMulticastGroupSourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterTransitGatewayMulticastGroupSourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterTransitGatewayMulticastGroupSources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::RegisterTransitGatewayMulticastGroupSourcesAsync(const RegisterTransitGatewayMulticastGroupSourcesRequest& request, const RegisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterTransitGatewayMulticastGroupSourcesAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::RegisterTransitGatewayMulticastGroupSourcesAsyncHelper(const RegisterTransitGatewayMulticastGroupSourcesRequest& request, const RegisterTransitGatewayMulticastGroupSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterTransitGatewayMulticastGroupSources(request), context);
+}
+
+RejectTransitGatewayPeeringAttachmentOutcome EC2Client::RejectTransitGatewayPeeringAttachment(const RejectTransitGatewayPeeringAttachmentRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return RejectTransitGatewayPeeringAttachmentOutcome(RejectTransitGatewayPeeringAttachmentResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return RejectTransitGatewayPeeringAttachmentOutcome(outcome.GetError());
+  }
+}
+
+RejectTransitGatewayPeeringAttachmentOutcomeCallable EC2Client::RejectTransitGatewayPeeringAttachmentCallable(const RejectTransitGatewayPeeringAttachmentRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RejectTransitGatewayPeeringAttachmentOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RejectTransitGatewayPeeringAttachment(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::RejectTransitGatewayPeeringAttachmentAsync(const RejectTransitGatewayPeeringAttachmentRequest& request, const RejectTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RejectTransitGatewayPeeringAttachmentAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::RejectTransitGatewayPeeringAttachmentAsyncHelper(const RejectTransitGatewayPeeringAttachmentRequest& request, const RejectTransitGatewayPeeringAttachmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RejectTransitGatewayPeeringAttachment(request), context);
+}
+
 RejectTransitGatewayVpcAttachmentOutcome EC2Client::RejectTransitGatewayVpcAttachment(const RejectTransitGatewayVpcAttachmentRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -12894,6 +13868,76 @@ void EC2Client::RunScheduledInstancesAsync(const RunScheduledInstancesRequest& r
 void EC2Client::RunScheduledInstancesAsyncHelper(const RunScheduledInstancesRequest& request, const RunScheduledInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, RunScheduledInstances(request), context);
+}
+
+SearchLocalGatewayRoutesOutcome EC2Client::SearchLocalGatewayRoutes(const SearchLocalGatewayRoutesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SearchLocalGatewayRoutesOutcome(SearchLocalGatewayRoutesResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return SearchLocalGatewayRoutesOutcome(outcome.GetError());
+  }
+}
+
+SearchLocalGatewayRoutesOutcomeCallable EC2Client::SearchLocalGatewayRoutesCallable(const SearchLocalGatewayRoutesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchLocalGatewayRoutesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchLocalGatewayRoutes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::SearchLocalGatewayRoutesAsync(const SearchLocalGatewayRoutesRequest& request, const SearchLocalGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchLocalGatewayRoutesAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::SearchLocalGatewayRoutesAsyncHelper(const SearchLocalGatewayRoutesRequest& request, const SearchLocalGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchLocalGatewayRoutes(request), context);
+}
+
+SearchTransitGatewayMulticastGroupsOutcome EC2Client::SearchTransitGatewayMulticastGroups(const SearchTransitGatewayMulticastGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return SearchTransitGatewayMulticastGroupsOutcome(SearchTransitGatewayMulticastGroupsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return SearchTransitGatewayMulticastGroupsOutcome(outcome.GetError());
+  }
+}
+
+SearchTransitGatewayMulticastGroupsOutcomeCallable EC2Client::SearchTransitGatewayMulticastGroupsCallable(const SearchTransitGatewayMulticastGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< SearchTransitGatewayMulticastGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SearchTransitGatewayMulticastGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::SearchTransitGatewayMulticastGroupsAsync(const SearchTransitGatewayMulticastGroupsRequest& request, const SearchTransitGatewayMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->SearchTransitGatewayMulticastGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::SearchTransitGatewayMulticastGroupsAsyncHelper(const SearchTransitGatewayMulticastGroupsRequest& request, const SearchTransitGatewayMulticastGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, SearchTransitGatewayMulticastGroups(request), context);
 }
 
 SearchTransitGatewayRoutesOutcome EC2Client::SearchTransitGatewayRoutes(const SearchTransitGatewayRoutesRequest& request) const

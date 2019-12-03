@@ -55,6 +55,8 @@ namespace Aws
         static const int c5_4xlarge_elasticsearch_HASH = HashingUtils::HashString("c5.4xlarge.elasticsearch");
         static const int c5_9xlarge_elasticsearch_HASH = HashingUtils::HashString("c5.9xlarge.elasticsearch");
         static const int c5_18xlarge_elasticsearch_HASH = HashingUtils::HashString("c5.18xlarge.elasticsearch");
+        static const int ultrawarm1_medium_elasticsearch_HASH = HashingUtils::HashString("ultrawarm1.medium.elasticsearch");
+        static const int ultrawarm1_large_elasticsearch_HASH = HashingUtils::HashString("ultrawarm1.large.elasticsearch");
         static const int t2_micro_elasticsearch_HASH = HashingUtils::HashString("t2.micro.elasticsearch");
         static const int t2_small_elasticsearch_HASH = HashingUtils::HashString("t2.small.elasticsearch");
         static const int t2_medium_elasticsearch_HASH = HashingUtils::HashString("t2.medium.elasticsearch");
@@ -190,6 +192,14 @@ namespace Aws
           else if (hashCode == c5_18xlarge_elasticsearch_HASH)
           {
             return ESPartitionInstanceType::c5_18xlarge_elasticsearch;
+          }
+          else if (hashCode == ultrawarm1_medium_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::ultrawarm1_medium_elasticsearch;
+          }
+          else if (hashCode == ultrawarm1_large_elasticsearch_HASH)
+          {
+            return ESPartitionInstanceType::ultrawarm1_large_elasticsearch;
           }
           else if (hashCode == t2_micro_elasticsearch_HASH)
           {
@@ -379,6 +389,10 @@ namespace Aws
             return "c5.9xlarge.elasticsearch";
           case ESPartitionInstanceType::c5_18xlarge_elasticsearch:
             return "c5.18xlarge.elasticsearch";
+          case ESPartitionInstanceType::ultrawarm1_medium_elasticsearch:
+            return "ultrawarm1.medium.elasticsearch";
+          case ESPartitionInstanceType::ultrawarm1_large_elasticsearch:
+            return "ultrawarm1.large.elasticsearch";
           case ESPartitionInstanceType::t2_micro_elasticsearch:
             return "t2.micro.elasticsearch";
           case ESPartitionInstanceType::t2_small_elasticsearch:

@@ -100,12 +100,12 @@ namespace Model
      * replication configuration, Amazon S3 prioritizes the rules to prevent conflicts
      * when filtering. If two or more rules identify the same object based on a
      * specified filter, the rule with higher priority takes precedence. For
-     * example:</p> <ul> <li> <p>Same object quality prefix based filter criteria If
+     * example:</p> <ul> <li> <p>Same object quality prefix-based filter criteria if
      * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
-     * qualify tag based filter criteria specified in multiple rules</p> </li> </ul>
+     * qualify tag-based filter criteria specified in multiple rules</p> </li> </ul>
      * <p>For more information, see <a href="
      * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
-     * in the <i>Amazon S3 Developer Guide</i>.</p>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
@@ -114,12 +114,12 @@ namespace Model
      * replication configuration, Amazon S3 prioritizes the rules to prevent conflicts
      * when filtering. If two or more rules identify the same object based on a
      * specified filter, the rule with higher priority takes precedence. For
-     * example:</p> <ul> <li> <p>Same object quality prefix based filter criteria If
+     * example:</p> <ul> <li> <p>Same object quality prefix-based filter criteria if
      * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
-     * qualify tag based filter criteria specified in multiple rules</p> </li> </ul>
+     * qualify tag-based filter criteria specified in multiple rules</p> </li> </ul>
      * <p>For more information, see <a href="
      * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
-     * in the <i>Amazon S3 Developer Guide</i>.</p>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
@@ -128,12 +128,12 @@ namespace Model
      * replication configuration, Amazon S3 prioritizes the rules to prevent conflicts
      * when filtering. If two or more rules identify the same object based on a
      * specified filter, the rule with higher priority takes precedence. For
-     * example:</p> <ul> <li> <p>Same object quality prefix based filter criteria If
+     * example:</p> <ul> <li> <p>Same object quality prefix-based filter criteria if
      * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
-     * qualify tag based filter criteria specified in multiple rules</p> </li> </ul>
+     * qualify tag-based filter criteria specified in multiple rules</p> </li> </ul>
      * <p>For more information, see <a href="
      * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
-     * in the <i>Amazon S3 Developer Guide</i>.</p>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
@@ -142,12 +142,12 @@ namespace Model
      * replication configuration, Amazon S3 prioritizes the rules to prevent conflicts
      * when filtering. If two or more rules identify the same object based on a
      * specified filter, the rule with higher priority takes precedence. For
-     * example:</p> <ul> <li> <p>Same object quality prefix based filter criteria If
+     * example:</p> <ul> <li> <p>Same object quality prefix-based filter criteria if
      * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
-     * qualify tag based filter criteria specified in multiple rules</p> </li> </ul>
+     * qualify tag-based filter criteria specified in multiple rules</p> </li> </ul>
      * <p>For more information, see <a href="
      * https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a>
-     * in the <i>Amazon S3 Developer Guide</i>.</p>
+     * in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
      */
     inline ReplicationRule& WithPriority(int value) { SetPriority(value); return *this;}
 
@@ -258,75 +258,69 @@ namespace Model
 
 
     /**
-     * <p> A container that specifies information about existing object replication.
-     * You can choose whether to enable or disable the replication of existing
-     * objects.</p>
+     * <p/>
      */
     inline const ExistingObjectReplication& GetExistingObjectReplication() const{ return m_existingObjectReplication; }
 
     /**
-     * <p> A container that specifies information about existing object replication.
-     * You can choose whether to enable or disable the replication of existing
-     * objects.</p>
+     * <p/>
      */
     inline bool ExistingObjectReplicationHasBeenSet() const { return m_existingObjectReplicationHasBeenSet; }
 
     /**
-     * <p> A container that specifies information about existing object replication.
-     * You can choose whether to enable or disable the replication of existing
-     * objects.</p>
+     * <p/>
      */
     inline void SetExistingObjectReplication(const ExistingObjectReplication& value) { m_existingObjectReplicationHasBeenSet = true; m_existingObjectReplication = value; }
 
     /**
-     * <p> A container that specifies information about existing object replication.
-     * You can choose whether to enable or disable the replication of existing
-     * objects.</p>
+     * <p/>
      */
     inline void SetExistingObjectReplication(ExistingObjectReplication&& value) { m_existingObjectReplicationHasBeenSet = true; m_existingObjectReplication = std::move(value); }
 
     /**
-     * <p> A container that specifies information about existing object replication.
-     * You can choose whether to enable or disable the replication of existing
-     * objects.</p>
+     * <p/>
      */
     inline ReplicationRule& WithExistingObjectReplication(const ExistingObjectReplication& value) { SetExistingObjectReplication(value); return *this;}
 
     /**
-     * <p> A container that specifies information about existing object replication.
-     * You can choose whether to enable or disable the replication of existing
-     * objects.</p>
+     * <p/>
      */
     inline ReplicationRule& WithExistingObjectReplication(ExistingObjectReplication&& value) { SetExistingObjectReplication(std::move(value)); return *this;}
 
 
     /**
-     * <p>A container for information about the replication destination.</p>
+     * <p>A container for information about the replication destination and its
+     * configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
      */
     inline const Destination& GetDestination() const{ return m_destination; }
 
     /**
-     * <p>A container for information about the replication destination.</p>
+     * <p>A container for information about the replication destination and its
+     * configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
      */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
-     * <p>A container for information about the replication destination.</p>
+     * <p>A container for information about the replication destination and its
+     * configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
      */
     inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
-     * <p>A container for information about the replication destination.</p>
+     * <p>A container for information about the replication destination and its
+     * configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
      */
     inline void SetDestination(Destination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
 
     /**
-     * <p>A container for information about the replication destination.</p>
+     * <p>A container for information about the replication destination and its
+     * configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
      */
     inline ReplicationRule& WithDestination(const Destination& value) { SetDestination(value); return *this;}
 
     /**
-     * <p>A container for information about the replication destination.</p>
+     * <p>A container for information about the replication destination and its
+     * configurations including enabling the S3 Replication Time Control (S3 RTC).</p>
      */
     inline ReplicationRule& WithDestination(Destination&& value) { SetDestination(std::move(value)); return *this;}
 

@@ -47,20 +47,20 @@ namespace Model
 
 
     /**
-     * <p>A flag that indicates whether or not Amazon S3 returned all of the results
-     * that satisfied the search criteria.</p>
+     * <p>A flag that indicates whether Amazon S3 returned all of the results that
+     * satisfied the search criteria.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
-     * <p>A flag that indicates whether or not Amazon S3 returned all of the results
-     * that satisfied the search criteria.</p>
+     * <p>A flag that indicates whether Amazon S3 returned all of the results that
+     * satisfied the search criteria.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
-     * <p>A flag that indicates whether or not Amazon S3 returned all of the results
-     * that satisfied the search criteria.</p>
+     * <p>A flag that indicates whether Amazon S3 returned all of the results that
+     * satisfied the search criteria.</p>
      */
     inline ListObjectsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
@@ -223,37 +223,37 @@ namespace Model
 
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name.</p>
      */
     inline ListObjectsResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name.</p>
      */
     inline ListObjectsResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name.</p>
      */
     inline ListObjectsResult& WithName(const char* value) { SetName(value); return *this;}
 
@@ -297,63 +297,63 @@ namespace Model
     /**
      * <p>Causes keys that contain the same string between the prefix and the first
      * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>CommonPrefixes</code> collection. These rolled-up keys are not returned
+     * elsewhere in the response. Each rolled-up result counts as only one return
+     * against the <code>MaxKeys</code> value.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
     /**
      * <p>Causes keys that contain the same string between the prefix and the first
      * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>CommonPrefixes</code> collection. These rolled-up keys are not returned
+     * elsewhere in the response. Each rolled-up result counts as only one return
+     * against the <code>MaxKeys</code> value.</p>
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
 
     /**
      * <p>Causes keys that contain the same string between the prefix and the first
      * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>CommonPrefixes</code> collection. These rolled-up keys are not returned
+     * elsewhere in the response. Each rolled-up result counts as only one return
+     * against the <code>MaxKeys</code> value.</p>
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
 
     /**
      * <p>Causes keys that contain the same string between the prefix and the first
      * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>CommonPrefixes</code> collection. These rolled-up keys are not returned
+     * elsewhere in the response. Each rolled-up result counts as only one return
+     * against the <code>MaxKeys</code> value.</p>
      */
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
     /**
      * <p>Causes keys that contain the same string between the prefix and the first
      * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>CommonPrefixes</code> collection. These rolled-up keys are not returned
+     * elsewhere in the response. Each rolled-up result counts as only one return
+     * against the <code>MaxKeys</code> value.</p>
      */
     inline ListObjectsResult& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
     /**
      * <p>Causes keys that contain the same string between the prefix and the first
      * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>CommonPrefixes</code> collection. These rolled-up keys are not returned
+     * elsewhere in the response. Each rolled-up result counts as only one return
+     * against the <code>MaxKeys</code> value.</p>
      */
     inline ListObjectsResult& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
      * <p>Causes keys that contain the same string between the prefix and the first
      * occurrence of the delimiter to be rolled up into a single result element in the
-     * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
-     * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>CommonPrefixes</code> collection. These rolled-up keys are not returned
+     * elsewhere in the response. Each rolled-up result counts as only one return
+     * against the <code>MaxKeys</code> value.</p>
      */
     inline ListObjectsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 

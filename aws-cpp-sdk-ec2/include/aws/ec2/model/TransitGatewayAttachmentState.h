@@ -26,6 +26,7 @@ namespace Model
   enum class TransitGatewayAttachmentState
   {
     NOT_SET,
+    initiating,
     pendingAcceptance,
     rollingBack,
     pending,

@@ -31,7 +31,9 @@ namespace Model
 {
 
   /**
-   * <p> A container specifying the time value. </p><p><h3>See Also:</h3>   <a
+   * <p> A container specifying the time value for S3 Replication Time Control (S3
+   * RTC) and replication metrics <code>EventThreshold</code>. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ReplicationTimeValue">AWS
    * API Reference</a></p>
    */
@@ -46,22 +48,26 @@ namespace Model
 
 
     /**
-     * <p> Contains an integer specifying time in minutes. </p>
+     * <p> Contains an integer specifying time in minutes. </p> <p> Valid values: 15
+     * minutes. </p>
      */
     inline int GetMinutes() const{ return m_minutes; }
 
     /**
-     * <p> Contains an integer specifying time in minutes. </p>
+     * <p> Contains an integer specifying time in minutes. </p> <p> Valid values: 15
+     * minutes. </p>
      */
     inline bool MinutesHasBeenSet() const { return m_minutesHasBeenSet; }
 
     /**
-     * <p> Contains an integer specifying time in minutes. </p>
+     * <p> Contains an integer specifying time in minutes. </p> <p> Valid values: 15
+     * minutes. </p>
      */
     inline void SetMinutes(int value) { m_minutesHasBeenSet = true; m_minutes = value; }
 
     /**
-     * <p> Contains an integer specifying time in minutes. </p>
+     * <p> Contains an integer specifying time in minutes. </p> <p> Valid values: 15
+     * minutes. </p>
      */
     inline ReplicationTimeValue& WithMinutes(int value) { SetMinutes(value); return *this;}
 

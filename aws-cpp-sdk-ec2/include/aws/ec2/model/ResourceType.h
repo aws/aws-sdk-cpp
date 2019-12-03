@@ -53,6 +53,7 @@ namespace Model
     traffic_mirror_target,
     transit_gateway,
     transit_gateway_attachment,
+    transit_gateway_multicast_domain,
     transit_gateway_route_table,
     volume,
     vpc,

@@ -37,8 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for the MultipartUpload for the Amazon S3 object.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Container for the <code>MultipartUpload</code> for the Amazon S3
+   * object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MultipartUpload">AWS
    * API Reference</a></p>
    */

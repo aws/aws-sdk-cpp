@@ -939,38 +939,38 @@ namespace Model
 
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline CopyObjectRequest& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline CopyObjectRequest& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
@@ -1064,49 +1064,49 @@ namespace Model
 
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline CopyObjectRequest& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline CopyObjectRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline CopyObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
@@ -1115,128 +1115,128 @@ namespace Model
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline CopyObjectRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline CopyObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline CopyObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5.assign(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline CopyObjectRequest& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline CopyObjectRequest& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline CopyObjectRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
@@ -1245,72 +1245,88 @@ namespace Model
     /**
      * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * using SigV4. For information about configuring using any of the officially
+     * supported AWS SDKs and AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
+     * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
      * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * using SigV4. For information about configuring using any of the officially
+     * supported AWS SDKs and AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
+     * Developer Guide</i>.</p>
      */
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
      * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * using SigV4. For information about configuring using any of the officially
+     * supported AWS SDKs and AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
+     * Developer Guide</i>.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
      * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * using SigV4. For information about configuring using any of the officially
+     * supported AWS SDKs and AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
+     * Developer Guide</i>.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
      * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * using SigV4. For information about configuring using any of the officially
+     * supported AWS SDKs and AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
+     * Developer Guide</i>.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
      * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * using SigV4. For information about configuring using any of the officially
+     * supported AWS SDKs and AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
+     * Developer Guide</i>.</p>
      */
     inline CopyObjectRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
      * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * using SigV4. For information about configuring using any of the officially
+     * supported AWS SDKs and AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
+     * Developer Guide</i>.</p>
      */
     inline CopyObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
      * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. Documentation on configuring any of the officially supported AWS
-     * SDKs and CLI can be found at
-     * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version</p>
+     * using SigV4. For information about configuring using any of the officially
+     * supported AWS SDKs and AWS CLI, see <a
+     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * the Signature Version in Request Authentication</a> in the <i>Amazon S3
+     * Developer Guide</i>.</p>
      */
     inline CopyObjectRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
@@ -1373,50 +1389,50 @@ namespace Model
 
 
     /**
-     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when decrypting the source object (for
+     * example, AES256).</p>
      */
     inline const Aws::String& GetCopySourceSSECustomerAlgorithm() const{ return m_copySourceSSECustomerAlgorithm; }
 
     /**
-     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when decrypting the source object (for
+     * example, AES256).</p>
      */
     inline bool CopySourceSSECustomerAlgorithmHasBeenSet() const { return m_copySourceSSECustomerAlgorithmHasBeenSet; }
 
     /**
-     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when decrypting the source object (for
+     * example, AES256).</p>
      */
     inline void SetCopySourceSSECustomerAlgorithm(const Aws::String& value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm = value; }
 
     /**
-     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when decrypting the source object (for
+     * example, AES256).</p>
      */
     inline void SetCopySourceSSECustomerAlgorithm(Aws::String&& value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm = std::move(value); }
 
     /**
-     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when decrypting the source object (for
+     * example, AES256).</p>
      */
     inline void SetCopySourceSSECustomerAlgorithm(const char* value) { m_copySourceSSECustomerAlgorithmHasBeenSet = true; m_copySourceSSECustomerAlgorithm.assign(value); }
 
     /**
-     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when decrypting the source object (for
+     * example, AES256).</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerAlgorithm(const Aws::String& value) { SetCopySourceSSECustomerAlgorithm(value); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when decrypting the source object (for
+     * example, AES256).</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerAlgorithm(Aws::String&& value) { SetCopySourceSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use when decrypting the source object (e.g.,
-     * AES256).</p>
+     * <p>Specifies the algorithm to use when decrypting the source object (for
+     * example, AES256).</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerAlgorithm(const char* value) { SetCopySourceSSECustomerAlgorithm(value); return *this;}
 
@@ -1480,56 +1496,56 @@ namespace Model
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline const Aws::String& GetCopySourceSSECustomerKeyMD5() const{ return m_copySourceSSECustomerKeyMD5; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline bool CopySourceSSECustomerKeyMD5HasBeenSet() const { return m_copySourceSSECustomerKeyMD5HasBeenSet; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetCopySourceSSECustomerKeyMD5(const Aws::String& value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5 = value; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetCopySourceSSECustomerKeyMD5(Aws::String&& value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5 = std::move(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetCopySourceSSECustomerKeyMD5(const char* value) { m_copySourceSSECustomerKeyMD5HasBeenSet = true; m_copySourceSSECustomerKeyMD5.assign(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKeyMD5(const Aws::String& value) { SetCopySourceSSECustomerKeyMD5(value); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKeyMD5(Aws::String&& value) { SetCopySourceSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline CopyObjectRequest& WithCopySourceSSECustomerKeyMD5(const char* value) { SetCopySourceSSECustomerKeyMD5(value); return *this;}
@@ -1556,57 +1572,57 @@ namespace Model
 
     /**
      * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
+     * as URL Query parameters.</p>
      */
     inline const Aws::String& GetTagging() const{ return m_tagging; }
 
     /**
      * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
+     * as URL Query parameters.</p>
      */
     inline bool TaggingHasBeenSet() const { return m_taggingHasBeenSet; }
 
     /**
      * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
+     * as URL Query parameters.</p>
      */
     inline void SetTagging(const Aws::String& value) { m_taggingHasBeenSet = true; m_tagging = value; }
 
     /**
      * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
+     * as URL Query parameters.</p>
      */
     inline void SetTagging(Aws::String&& value) { m_taggingHasBeenSet = true; m_tagging = std::move(value); }
 
     /**
      * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
+     * as URL Query parameters.</p>
      */
     inline void SetTagging(const char* value) { m_taggingHasBeenSet = true; m_tagging.assign(value); }
 
     /**
      * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
+     * as URL Query parameters.</p>
      */
     inline CopyObjectRequest& WithTagging(const Aws::String& value) { SetTagging(value); return *this;}
 
     /**
      * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
+     * as URL Query parameters.</p>
      */
     inline CopyObjectRequest& WithTagging(Aws::String&& value) { SetTagging(std::move(value)); return *this;}
 
     /**
      * <p>The tag-set for the object destination object this value must be used in
-     * conjunction with the TaggingDirective. The tag-set must be encoded as URL Query
-     * parameters</p>
+     * conjunction with the <code>TaggingDirective</code>. The tag-set must be encoded
+     * as URL Query parameters.</p>
      */
     inline CopyObjectRequest& WithTagging(const char* value) { SetTagging(value); return *this;}
 

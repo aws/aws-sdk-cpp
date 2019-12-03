@@ -25,7 +25,11 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/s3control/model/CreateJobResult.h>
 #include <aws/s3control/model/DescribeJobResult.h>
+#include <aws/s3control/model/GetAccessPointResult.h>
+#include <aws/s3control/model/GetAccessPointPolicyResult.h>
+#include <aws/s3control/model/GetAccessPointPolicyStatusResult.h>
 #include <aws/s3control/model/GetPublicAccessBlockResult.h>
+#include <aws/s3control/model/ListAccessPointsResult.h>
 #include <aws/s3control/model/ListJobsResult.h>
 #include <aws/s3control/model/UpdateJobPriorityResult.h>
 #include <aws/s3control/model/UpdateJobStatusResult.h>
@@ -73,29 +77,53 @@ namespace Aws
   {
     namespace Model
     {
+        class CreateAccessPointRequest;
         class CreateJobRequest;
+        class DeleteAccessPointRequest;
+        class DeleteAccessPointPolicyRequest;
         class DeletePublicAccessBlockRequest;
         class DescribeJobRequest;
+        class GetAccessPointRequest;
+        class GetAccessPointPolicyRequest;
+        class GetAccessPointPolicyStatusRequest;
         class GetPublicAccessBlockRequest;
+        class ListAccessPointsRequest;
         class ListJobsRequest;
+        class PutAccessPointPolicyRequest;
         class PutPublicAccessBlockRequest;
         class UpdateJobPriorityRequest;
         class UpdateJobStatusRequest;
 
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<S3ControlErrors>> CreateAccessPointOutcome;
         typedef Aws::Utils::Outcome<CreateJobResult, Aws::Client::AWSError<S3ControlErrors>> CreateJobOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<S3ControlErrors>> DeleteAccessPointOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<S3ControlErrors>> DeleteAccessPointPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<S3ControlErrors>> DeletePublicAccessBlockOutcome;
         typedef Aws::Utils::Outcome<DescribeJobResult, Aws::Client::AWSError<S3ControlErrors>> DescribeJobOutcome;
+        typedef Aws::Utils::Outcome<GetAccessPointResult, Aws::Client::AWSError<S3ControlErrors>> GetAccessPointOutcome;
+        typedef Aws::Utils::Outcome<GetAccessPointPolicyResult, Aws::Client::AWSError<S3ControlErrors>> GetAccessPointPolicyOutcome;
+        typedef Aws::Utils::Outcome<GetAccessPointPolicyStatusResult, Aws::Client::AWSError<S3ControlErrors>> GetAccessPointPolicyStatusOutcome;
         typedef Aws::Utils::Outcome<GetPublicAccessBlockResult, Aws::Client::AWSError<S3ControlErrors>> GetPublicAccessBlockOutcome;
+        typedef Aws::Utils::Outcome<ListAccessPointsResult, Aws::Client::AWSError<S3ControlErrors>> ListAccessPointsOutcome;
         typedef Aws::Utils::Outcome<ListJobsResult, Aws::Client::AWSError<S3ControlErrors>> ListJobsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<S3ControlErrors>> PutAccessPointPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<S3ControlErrors>> PutPublicAccessBlockOutcome;
         typedef Aws::Utils::Outcome<UpdateJobPriorityResult, Aws::Client::AWSError<S3ControlErrors>> UpdateJobPriorityOutcome;
         typedef Aws::Utils::Outcome<UpdateJobStatusResult, Aws::Client::AWSError<S3ControlErrors>> UpdateJobStatusOutcome;
 
+        typedef std::future<CreateAccessPointOutcome> CreateAccessPointOutcomeCallable;
         typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
+        typedef std::future<DeleteAccessPointOutcome> DeleteAccessPointOutcomeCallable;
+        typedef std::future<DeleteAccessPointPolicyOutcome> DeleteAccessPointPolicyOutcomeCallable;
         typedef std::future<DeletePublicAccessBlockOutcome> DeletePublicAccessBlockOutcomeCallable;
         typedef std::future<DescribeJobOutcome> DescribeJobOutcomeCallable;
+        typedef std::future<GetAccessPointOutcome> GetAccessPointOutcomeCallable;
+        typedef std::future<GetAccessPointPolicyOutcome> GetAccessPointPolicyOutcomeCallable;
+        typedef std::future<GetAccessPointPolicyStatusOutcome> GetAccessPointPolicyStatusOutcomeCallable;
         typedef std::future<GetPublicAccessBlockOutcome> GetPublicAccessBlockOutcomeCallable;
+        typedef std::future<ListAccessPointsOutcome> ListAccessPointsOutcomeCallable;
         typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
+        typedef std::future<PutAccessPointPolicyOutcome> PutAccessPointPolicyOutcomeCallable;
         typedef std::future<PutPublicAccessBlockOutcome> PutPublicAccessBlockOutcomeCallable;
         typedef std::future<UpdateJobPriorityOutcome> UpdateJobPriorityOutcomeCallable;
         typedef std::future<UpdateJobStatusOutcome> UpdateJobStatusOutcomeCallable;
@@ -103,11 +131,19 @@ namespace Aws
 
     class S3ControlClient;
 
+    typedef std::function<void(const S3ControlClient*, const Model::CreateAccessPointRequest&, const Model::CreateAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessPointResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointRequest&, const Model::DeleteAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::DeleteAccessPointPolicyRequest&, const Model::DeleteAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DeletePublicAccessBlockRequest&, const Model::DeletePublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePublicAccessBlockResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::DescribeJobRequest&, const Model::DescribeJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointRequest&, const Model::GetAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointPolicyRequest&, const Model::GetAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointPolicyResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::GetAccessPointPolicyStatusRequest&, const Model::GetAccessPointPolicyStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccessPointPolicyStatusResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::GetPublicAccessBlockRequest&, const Model::GetPublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPublicAccessBlockResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::ListAccessPointsRequest&, const Model::ListAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessPointsResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::ListJobsRequest&, const Model::ListJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobsResponseReceivedHandler;
+    typedef std::function<void(const S3ControlClient*, const Model::PutAccessPointPolicyRequest&, const Model::PutAccessPointPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccessPointPolicyResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::PutPublicAccessBlockRequest&, const Model::PutPublicAccessBlockOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutPublicAccessBlockResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::UpdateJobPriorityRequest&, const Model::UpdateJobPriorityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobPriorityResponseReceivedHandler;
     typedef std::function<void(const S3ControlClient*, const Model::UpdateJobStatusRequest&, const Model::UpdateJobStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateJobStatusResponseReceivedHandler;
@@ -145,6 +181,34 @@ namespace Aws
 
 
         /**
+         * <p>Creates an access point and associates it with the specified
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAccessPointOutcome CreateAccessPoint(const Model::CreateAccessPointRequest& request) const;
+
+        /**
+         * <p>Creates an access point and associates it with the specified
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAccessPointOutcomeCallable CreateAccessPointCallable(const Model::CreateAccessPointRequest& request) const;
+
+        /**
+         * <p>Creates an access point and associates it with the specified
+         * bucket.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAccessPointAsync(const Model::CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an Amazon S3 batch operations job.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/CreateJob">AWS
          * API Reference</a></p>
@@ -170,16 +234,69 @@ namespace Aws
         virtual void CreateJobAsync(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the block public access configuration for the specified
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified access point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccessPointOutcome DeleteAccessPoint(const Model::DeleteAccessPointRequest& request) const;
+
+        /**
+         * <p>Deletes the specified access point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAccessPointOutcomeCallable DeleteAccessPointCallable(const Model::DeleteAccessPointRequest& request) const;
+
+        /**
+         * <p>Deletes the specified access point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAccessPointAsync(const Model::DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the access point policy for the specified access point.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAccessPointPolicyOutcome DeleteAccessPointPolicy(const Model::DeleteAccessPointPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the access point policy for the specified access point.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAccessPointPolicyOutcomeCallable DeleteAccessPointPolicyCallable(const Model::DeleteAccessPointPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the access point policy for the specified access point.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeleteAccessPointPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAccessPointPolicyAsync(const Model::DeleteAccessPointPolicyRequest& request, const DeleteAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeletePublicAccessBlock">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePublicAccessBlockOutcome DeletePublicAccessBlock(const Model::DeletePublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Deletes the block public access configuration for the specified
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeletePublicAccessBlock">AWS
          * API Reference</a></p>
          *
@@ -188,8 +305,8 @@ namespace Aws
         virtual Model::DeletePublicAccessBlockOutcomeCallable DeletePublicAccessBlockCallable(const Model::DeletePublicAccessBlockRequest& request) const;
 
         /**
-         * <p>Deletes the block public access configuration for the specified
-         * account.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes the <code>PublicAccessBlock</code> configuration for an Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/DeletePublicAccessBlock">AWS
          * API Reference</a></p>
          *
@@ -226,14 +343,112 @@ namespace Aws
         virtual void DescribeJobAsync(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Returns configuration information about the specified access
+         * point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccessPointOutcome GetAccessPoint(const Model::GetAccessPointRequest& request) const;
+
+        /**
+         * <p>Returns configuration information about the specified access
+         * point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccessPointOutcomeCallable GetAccessPointCallable(const Model::GetAccessPointRequest& request) const;
+
+        /**
+         * <p>Returns configuration information about the specified access
+         * point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccessPointAsync(const Model::GetAccessPointRequest& request, const GetAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the access point policy associated with the specified access
+         * point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccessPointPolicyOutcome GetAccessPointPolicy(const Model::GetAccessPointPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the access point policy associated with the specified access
+         * point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccessPointPolicyOutcomeCallable GetAccessPointPolicyCallable(const Model::GetAccessPointPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the access point policy associated with the specified access
+         * point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccessPointPolicyAsync(const Model::GetAccessPointPolicyRequest& request, const GetAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Indicates whether the specified access point currently has a policy that
+         * allows public access. For more information about public access through access
+         * points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+         * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAccessPointPolicyStatusOutcome GetAccessPointPolicyStatus(const Model::GetAccessPointPolicyStatusRequest& request) const;
+
+        /**
+         * <p>Indicates whether the specified access point currently has a policy that
+         * allows public access. For more information about public access through access
+         * points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+         * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAccessPointPolicyStatusOutcomeCallable GetAccessPointPolicyStatusCallable(const Model::GetAccessPointPolicyStatusRequest& request) const;
+
+        /**
+         * <p>Indicates whether the specified access point currently has a policy that
+         * allows public access. For more information about public access through access
+         * points, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing
+         * Data Access with Amazon S3 Access Points</a> in the <i>Amazon Simple Storage
+         * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetAccessPointPolicyStatus">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAccessPointPolicyStatusAsync(const Model::GetAccessPointPolicyStatusRequest& request, const GetAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock">AWS
          * API Reference</a></p>
          */
         virtual Model::GetPublicAccessBlockOutcome GetPublicAccessBlock(const Model::GetPublicAccessBlockRequest& request) const;
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock">AWS
          * API Reference</a></p>
          *
@@ -242,13 +457,54 @@ namespace Aws
         virtual Model::GetPublicAccessBlockOutcomeCallable GetPublicAccessBlockCallable(const Model::GetPublicAccessBlockRequest& request) const;
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web
+         * Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetPublicAccessBlock">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetPublicAccessBlockAsync(const Model::GetPublicAccessBlockRequest& request, const GetPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of the access points currently associated with the specified
+         * bucket. You can retrieve up to 1000 access points per call. If the specified
+         * bucket has more than 1000 access points (or the number specified in
+         * <code>maxResults</code>, whichever is less), then the response will include a
+         * continuation token that you can use to list the additional access
+         * points.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAccessPointsOutcome ListAccessPoints(const Model::ListAccessPointsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the access points currently associated with the specified
+         * bucket. You can retrieve up to 1000 access points per call. If the specified
+         * bucket has more than 1000 access points (or the number specified in
+         * <code>maxResults</code>, whichever is less), then the response will include a
+         * continuation token that you can use to list the additional access
+         * points.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAccessPointsOutcomeCallable ListAccessPointsCallable(const Model::ListAccessPointsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the access points currently associated with the specified
+         * bucket. You can retrieve up to 1000 access points per call. If the specified
+         * bucket has more than 1000 access points (or the number specified in
+         * <code>maxResults</code>, whichever is less), then the response will include a
+         * continuation token that you can use to list the additional access
+         * points.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ListAccessPoints">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAccessPointsAsync(const Model::ListAccessPointsRequest& request, const ListAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists current jobs and jobs that have ended within the last 30 days for the
@@ -279,14 +535,50 @@ namespace Aws
         virtual void ListJobsAsync(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Associates an access policy with the specified access point. Each access
+         * point can have only one policy, so a request made to this API replaces any
+         * existing policy associated with the specified access point.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAccessPointPolicyOutcome PutAccessPointPolicy(const Model::PutAccessPointPolicyRequest& request) const;
+
+        /**
+         * <p>Associates an access policy with the specified access point. Each access
+         * point can have only one policy, so a request made to this API replaces any
+         * existing policy associated with the specified access point.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAccessPointPolicyOutcomeCallable PutAccessPointPolicyCallable(const Model::PutAccessPointPolicyRequest& request) const;
+
+        /**
+         * <p>Associates an access policy with the specified access point. Each access
+         * point can have only one policy, so a request made to this API replaces any
+         * existing policy associated with the specified access point.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutAccessPointPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAccessPointPolicyAsync(const Model::PutAccessPointPolicyRequest& request, const PutAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutPublicAccessBlock">AWS
          * API Reference</a></p>
          */
         virtual Model::PutPublicAccessBlockOutcome PutPublicAccessBlock(const Model::PutPublicAccessBlockRequest& request) const;
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutPublicAccessBlock">AWS
          * API Reference</a></p>
          *
@@ -295,7 +587,8 @@ namespace Aws
         virtual Model::PutPublicAccessBlockOutcomeCallable PutPublicAccessBlockCallable(const Model::PutPublicAccessBlockRequest& request) const;
 
         /**
-         * <p/><p><h3>See Also:</h3>   <a
+         * <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an
+         * Amazon Web Services account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PutPublicAccessBlock">AWS
          * API Reference</a></p>
          *
@@ -366,11 +659,19 @@ namespace Aws
         Aws::String ComputeEndpointString(const Aws::String& accountId) const;
         Aws::String ComputeEndpointString() const;
 
+        void CreateAccessPointAsyncHelper(const Model::CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAccessPointAsyncHelper(const Model::DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAccessPointPolicyAsyncHelper(const Model::DeleteAccessPointPolicyRequest& request, const DeleteAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeletePublicAccessBlockAsyncHelper(const Model::DeletePublicAccessBlockRequest& request, const DeletePublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeJobAsyncHelper(const Model::DescribeJobRequest& request, const DescribeJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAccessPointAsyncHelper(const Model::GetAccessPointRequest& request, const GetAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAccessPointPolicyAsyncHelper(const Model::GetAccessPointPolicyRequest& request, const GetAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAccessPointPolicyStatusAsyncHelper(const Model::GetAccessPointPolicyStatusRequest& request, const GetAccessPointPolicyStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPublicAccessBlockAsyncHelper(const Model::GetPublicAccessBlockRequest& request, const GetPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAccessPointsAsyncHelper(const Model::ListAccessPointsRequest& request, const ListAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJobsAsyncHelper(const Model::ListJobsRequest& request, const ListJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAccessPointPolicyAsyncHelper(const Model::PutAccessPointPolicyRequest& request, const PutAccessPointPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutPublicAccessBlockAsyncHelper(const Model::PutPublicAccessBlockRequest& request, const PutPublicAccessBlockResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateJobPriorityAsyncHelper(const Model::UpdateJobPriorityRequest& request, const UpdateJobPriorityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateJobStatusAsyncHelper(const Model::UpdateJobStatusRequest& request, const UpdateJobStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

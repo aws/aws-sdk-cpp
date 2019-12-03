@@ -266,100 +266,100 @@ namespace Model
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5 = value; }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5.assign(value); }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline PutObjectResult& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline PutObjectResult& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline PutObjectResult& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
      */
     inline PutObjectResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
      */
     inline PutObjectResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
      */
     inline PutObjectResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 

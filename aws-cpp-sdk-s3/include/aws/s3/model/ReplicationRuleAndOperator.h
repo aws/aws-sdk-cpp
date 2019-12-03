@@ -38,9 +38,10 @@ namespace Model
    * <p>A container for specifying rule filters. The filters determine the subset of
    * objects to which the rule applies. This element is required only if you specify
    * more than one filter. </p> <p>For example:</p> <ul> <li> <p>If you specify both
-   * a Prefix and a Tag filter, wrap these filters in an And tag. </p> </li> <li>
-   * <p>If you specify a filter based on multiple tags, wrap the Tag elements in an
-   * And tag</p> </li> </ul><p><h3>See Also:</h3>   <a
+   * a <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an
+   * <code>And</code> tag. </p> </li> <li> <p>If you specify a filter based on
+   * multiple tags, wrap the <code>Tag</code> elements in an <code>And</code> tag</p>
+   * </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ReplicationRuleAndOperator">AWS
    * API Reference</a></p>
    */
@@ -55,49 +56,49 @@ namespace Model
 
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline ReplicationRuleAndOperator& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline ReplicationRuleAndOperator& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline ReplicationRuleAndOperator& WithPrefix(const char* value) { SetPrefix(value); return *this;}

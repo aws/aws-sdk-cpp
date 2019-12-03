@@ -31,8 +31,8 @@ namespace Model
 {
 
   /**
-   * <p>Container for specifiying if periodic QueryProgress messages should be
-   * sent.</p><p><h3>See Also:</h3>   <a
+   * <p>Container for specifying if periodic <code>QueryProgress</code> messages
+   * should be sent.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RequestProgress">AWS
    * API Reference</a></p>
    */

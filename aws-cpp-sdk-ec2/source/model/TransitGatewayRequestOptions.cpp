@@ -42,7 +42,9 @@ TransitGatewayRequestOptions::TransitGatewayRequestOptions() :
     m_vpnEcmpSupport(VpnEcmpSupportValue::NOT_SET),
     m_vpnEcmpSupportHasBeenSet(false),
     m_dnsSupport(DnsSupportValue::NOT_SET),
-    m_dnsSupportHasBeenSet(false)
+    m_dnsSupportHasBeenSet(false),
+    m_multicastSupport(MulticastSupportValue::NOT_SET),
+    m_multicastSupportHasBeenSet(false)
 {
 }
 
@@ -58,7 +60,9 @@ TransitGatewayRequestOptions::TransitGatewayRequestOptions(const XmlNode& xmlNod
     m_vpnEcmpSupport(VpnEcmpSupportValue::NOT_SET),
     m_vpnEcmpSupportHasBeenSet(false),
     m_dnsSupport(DnsSupportValue::NOT_SET),
-    m_dnsSupportHasBeenSet(false)
+    m_dnsSupportHasBeenSet(false),
+    m_multicastSupport(MulticastSupportValue::NOT_SET),
+    m_multicastSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -105,6 +109,12 @@ TransitGatewayRequestOptions& TransitGatewayRequestOptions::operator =(const Xml
       m_dnsSupport = DnsSupportValueMapper::GetDnsSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dnsSupportNode.GetText()).c_str()).c_str());
       m_dnsSupportHasBeenSet = true;
     }
+    XmlNode multicastSupportNode = resultNode.FirstChild("MulticastSupport");
+    if(!multicastSupportNode.IsNull())
+    {
+      m_multicastSupport = MulticastSupportValueMapper::GetMulticastSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(multicastSupportNode.GetText()).c_str()).c_str());
+      m_multicastSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -142,6 +152,11 @@ void TransitGatewayRequestOptions::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << index << locationValue << ".DnsSupport=" << DnsSupportValueMapper::GetNameForDnsSupportValue(m_dnsSupport) << "&";
   }
 
+  if(m_multicastSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MulticastSupport=" << MulticastSupportValueMapper::GetNameForMulticastSupportValue(m_multicastSupport) << "&";
+  }
+
 }
 
 void TransitGatewayRequestOptions::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -169,6 +184,10 @@ void TransitGatewayRequestOptions::OutputToStream(Aws::OStream& oStream, const c
   if(m_dnsSupportHasBeenSet)
   {
       oStream << location << ".DnsSupport=" << DnsSupportValueMapper::GetNameForDnsSupportValue(m_dnsSupport) << "&";
+  }
+  if(m_multicastSupportHasBeenSet)
+  {
+      oStream << location << ".MulticastSupport=" << MulticastSupportValueMapper::GetNameForMulticastSupportValue(m_multicastSupport) << "&";
   }
 }
 

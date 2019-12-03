@@ -156,6 +156,79 @@ namespace Model
      */
     inline AssociateVpcCidrBlockRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
+     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
+     * parameter.</p> <p> You can have one IPv6 CIDR block association per network
+     * border group.</p>
+     */
+    inline const Aws::String& GetIpv6CidrBlockNetworkBorderGroup() const{ return m_ipv6CidrBlockNetworkBorderGroup; }
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
+     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
+     * parameter.</p> <p> You can have one IPv6 CIDR block association per network
+     * border group.</p>
+     */
+    inline bool Ipv6CidrBlockNetworkBorderGroupHasBeenSet() const { return m_ipv6CidrBlockNetworkBorderGroupHasBeenSet; }
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
+     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
+     * parameter.</p> <p> You can have one IPv6 CIDR block association per network
+     * border group.</p>
+     */
+    inline void SetIpv6CidrBlockNetworkBorderGroup(const Aws::String& value) { m_ipv6CidrBlockNetworkBorderGroupHasBeenSet = true; m_ipv6CidrBlockNetworkBorderGroup = value; }
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
+     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
+     * parameter.</p> <p> You can have one IPv6 CIDR block association per network
+     * border group.</p>
+     */
+    inline void SetIpv6CidrBlockNetworkBorderGroup(Aws::String&& value) { m_ipv6CidrBlockNetworkBorderGroupHasBeenSet = true; m_ipv6CidrBlockNetworkBorderGroup = std::move(value); }
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
+     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
+     * parameter.</p> <p> You can have one IPv6 CIDR block association per network
+     * border group.</p>
+     */
+    inline void SetIpv6CidrBlockNetworkBorderGroup(const char* value) { m_ipv6CidrBlockNetworkBorderGroupHasBeenSet = true; m_ipv6CidrBlockNetworkBorderGroup.assign(value); }
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
+     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
+     * parameter.</p> <p> You can have one IPv6 CIDR block association per network
+     * border group.</p>
+     */
+    inline AssociateVpcCidrBlockRequest& WithIpv6CidrBlockNetworkBorderGroup(const Aws::String& value) { SetIpv6CidrBlockNetworkBorderGroup(value); return *this;}
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
+     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
+     * parameter.</p> <p> You can have one IPv6 CIDR block association per network
+     * border group.</p>
+     */
+    inline AssociateVpcCidrBlockRequest& WithIpv6CidrBlockNetworkBorderGroup(Aws::String&& value) { SetIpv6CidrBlockNetworkBorderGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block. Use
+     * this parameter to limit the CiDR block to this location.</p> <p> You must set
+     * <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use this
+     * parameter.</p> <p> You can have one IPv6 CIDR block association per network
+     * border group.</p>
+     */
+    inline AssociateVpcCidrBlockRequest& WithIpv6CidrBlockNetworkBorderGroup(const char* value) { SetIpv6CidrBlockNetworkBorderGroup(value); return *this;}
+
   private:
 
     bool m_amazonProvidedIpv6CidrBlock;
@@ -166,6 +239,9 @@ namespace Model
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
+
+    Aws::String m_ipv6CidrBlockNetworkBorderGroup;
+    bool m_ipv6CidrBlockNetworkBorderGroupHasBeenSet;
   };
 
 } // namespace Model

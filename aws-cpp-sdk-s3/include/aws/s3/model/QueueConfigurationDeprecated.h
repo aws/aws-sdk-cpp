@@ -35,9 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>This data type is deprecated. Please use <a>QueueConfiguration</a> for the
-   * same purposes. This dat type specifies the configuration for publishing messages
-   * to an Amazon Simple Queue Service (Amazon SQS) queue when Amazon S3 detects
+   * <p>This data type is deprecated. Use <a>QueueConfiguration</a> for the same
+   * purposes. This data type specifies the configuration for publishing messages to
+   * an Amazon Simple Queue Service (Amazon SQS) queue when Amazon S3 detects
    * specified events. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/QueueConfigurationDeprecated">AWS
    * API Reference</a></p>
@@ -78,42 +78,42 @@ namespace Model
 
 
     /**
-     * <p>A collection of bucket events for which to send notiications</p>
+     * <p>A collection of bucket events for which to send notifications</p>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
     /**
-     * <p>A collection of bucket events for which to send notiications</p>
+     * <p>A collection of bucket events for which to send notifications</p>
      */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
-     * <p>A collection of bucket events for which to send notiications</p>
+     * <p>A collection of bucket events for which to send notifications</p>
      */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
-     * <p>A collection of bucket events for which to send notiications</p>
+     * <p>A collection of bucket events for which to send notifications</p>
      */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
     /**
-     * <p>A collection of bucket events for which to send notiications</p>
+     * <p>A collection of bucket events for which to send notifications</p>
      */
     inline QueueConfigurationDeprecated& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     /**
-     * <p>A collection of bucket events for which to send notiications</p>
+     * <p>A collection of bucket events for which to send notifications</p>
      */
     inline QueueConfigurationDeprecated& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
-     * <p>A collection of bucket events for which to send notiications</p>
+     * <p>A collection of bucket events for which to send notifications</p>
      */
     inline QueueConfigurationDeprecated& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
     /**
-     * <p>A collection of bucket events for which to send notiications</p>
+     * <p>A collection of bucket events for which to send notifications</p>
      */
     inline QueueConfigurationDeprecated& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 

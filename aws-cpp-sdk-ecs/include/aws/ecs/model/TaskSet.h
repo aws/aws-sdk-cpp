@@ -18,10 +18,11 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecs/model/LaunchType.h>
-#include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/Scale.h>
 #include <aws/ecs/model/StabilityStatus.h>
+#include <aws/ecs/model/CapacityProviderStrategyItem.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/ServiceRegistry.h>
 #include <utility>
@@ -715,6 +716,47 @@ namespace Model
 
 
     /**
+     * <p>The capacity provider strategy associated with the task set.</p>
+     */
+    inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
+
+    /**
+     * <p>The capacity provider strategy associated with the task set.</p>
+     */
+    inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
+
+    /**
+     * <p>The capacity provider strategy associated with the task set.</p>
+     */
+    inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
+
+    /**
+     * <p>The capacity provider strategy associated with the task set.</p>
+     */
+    inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
+
+    /**
+     * <p>The capacity provider strategy associated with the task set.</p>
+     */
+    inline TaskSet& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
+
+    /**
+     * <p>The capacity provider strategy associated with the task set.</p>
+     */
+    inline TaskSet& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
+
+    /**
+     * <p>The capacity provider strategy associated with the task set.</p>
+     */
+    inline TaskSet& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
+
+    /**
+     * <p>The capacity provider strategy associated with the task set.</p>
+     */
+    inline TaskSet& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The platform version on which the tasks in the task set are running. A
      * platform version is only specified for tasks using the Fargate launch type. If
      * one is not specified, the <code>LATEST</code> platform version is used by
@@ -1135,6 +1177,9 @@ namespace Model
 
     LaunchType m_launchType;
     bool m_launchTypeHasBeenSet;
+
+    Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
+    bool m_capacityProviderStrategyHasBeenSet;
 
     Aws::String m_platformVersion;
     bool m_platformVersionHasBeenSet;

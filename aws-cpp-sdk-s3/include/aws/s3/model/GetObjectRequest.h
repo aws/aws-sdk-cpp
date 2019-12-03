@@ -54,42 +54,114 @@ namespace Model
 
 
     /**
-     * <p>The bucket name containing the object.</p>
+     * <p>The bucket name containing the object. </p> <p>When using this API with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The bucket name containing the object.</p>
+     * <p>The bucket name containing the object. </p> <p>When using this API with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The bucket name containing the object.</p>
+     * <p>The bucket name containing the object. </p> <p>When using this API with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The bucket name containing the object.</p>
+     * <p>The bucket name containing the object. </p> <p>When using this API with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The bucket name containing the object.</p>
+     * <p>The bucket name containing the object. </p> <p>When using this API with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The bucket name containing the object.</p>
+     * <p>The bucket name containing the object. </p> <p>When using this API with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline GetObjectRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The bucket name containing the object.</p>
+     * <p>The bucket name containing the object. </p> <p>When using this API with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline GetObjectRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The bucket name containing the object.</p>
+     * <p>The bucket name containing the object. </p> <p>When using this API with an
+     * access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline GetObjectRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -309,293 +381,293 @@ namespace Model
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline const Aws::String& GetRange() const{ return m_range; }
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline void SetRange(const Aws::String& value) { m_rangeHasBeenSet = true; m_range = value; }
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline void SetRange(Aws::String&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline void SetRange(const char* value) { m_rangeHasBeenSet = true; m_range.assign(value); }
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline GetObjectRequest& WithRange(const Aws::String& value) { SetRange(value); return *this;}
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline GetObjectRequest& WithRange(Aws::String&& value) { SetRange(std::move(value)); return *this;}
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline GetObjectRequest& WithRange(const char* value) { SetRange(value); return *this;}
 
 
     /**
-     * <p>Sets the Cache-Control header of the response.</p>
+     * <p>Sets the <code>Cache-Control</code> header of the response.</p>
      */
     inline const Aws::String& GetResponseCacheControl() const{ return m_responseCacheControl; }
 
     /**
-     * <p>Sets the Cache-Control header of the response.</p>
+     * <p>Sets the <code>Cache-Control</code> header of the response.</p>
      */
     inline bool ResponseCacheControlHasBeenSet() const { return m_responseCacheControlHasBeenSet; }
 
     /**
-     * <p>Sets the Cache-Control header of the response.</p>
+     * <p>Sets the <code>Cache-Control</code> header of the response.</p>
      */
     inline void SetResponseCacheControl(const Aws::String& value) { m_responseCacheControlHasBeenSet = true; m_responseCacheControl = value; }
 
     /**
-     * <p>Sets the Cache-Control header of the response.</p>
+     * <p>Sets the <code>Cache-Control</code> header of the response.</p>
      */
     inline void SetResponseCacheControl(Aws::String&& value) { m_responseCacheControlHasBeenSet = true; m_responseCacheControl = std::move(value); }
 
     /**
-     * <p>Sets the Cache-Control header of the response.</p>
+     * <p>Sets the <code>Cache-Control</code> header of the response.</p>
      */
     inline void SetResponseCacheControl(const char* value) { m_responseCacheControlHasBeenSet = true; m_responseCacheControl.assign(value); }
 
     /**
-     * <p>Sets the Cache-Control header of the response.</p>
+     * <p>Sets the <code>Cache-Control</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseCacheControl(const Aws::String& value) { SetResponseCacheControl(value); return *this;}
 
     /**
-     * <p>Sets the Cache-Control header of the response.</p>
+     * <p>Sets the <code>Cache-Control</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseCacheControl(Aws::String&& value) { SetResponseCacheControl(std::move(value)); return *this;}
 
     /**
-     * <p>Sets the Cache-Control header of the response.</p>
+     * <p>Sets the <code>Cache-Control</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseCacheControl(const char* value) { SetResponseCacheControl(value); return *this;}
 
 
     /**
-     * <p>Sets the Content-Disposition header of the response</p>
+     * <p>Sets the <code>Content-Disposition</code> header of the response</p>
      */
     inline const Aws::String& GetResponseContentDisposition() const{ return m_responseContentDisposition; }
 
     /**
-     * <p>Sets the Content-Disposition header of the response</p>
+     * <p>Sets the <code>Content-Disposition</code> header of the response</p>
      */
     inline bool ResponseContentDispositionHasBeenSet() const { return m_responseContentDispositionHasBeenSet; }
 
     /**
-     * <p>Sets the Content-Disposition header of the response</p>
+     * <p>Sets the <code>Content-Disposition</code> header of the response</p>
      */
     inline void SetResponseContentDisposition(const Aws::String& value) { m_responseContentDispositionHasBeenSet = true; m_responseContentDisposition = value; }
 
     /**
-     * <p>Sets the Content-Disposition header of the response</p>
+     * <p>Sets the <code>Content-Disposition</code> header of the response</p>
      */
     inline void SetResponseContentDisposition(Aws::String&& value) { m_responseContentDispositionHasBeenSet = true; m_responseContentDisposition = std::move(value); }
 
     /**
-     * <p>Sets the Content-Disposition header of the response</p>
+     * <p>Sets the <code>Content-Disposition</code> header of the response</p>
      */
     inline void SetResponseContentDisposition(const char* value) { m_responseContentDispositionHasBeenSet = true; m_responseContentDisposition.assign(value); }
 
     /**
-     * <p>Sets the Content-Disposition header of the response</p>
+     * <p>Sets the <code>Content-Disposition</code> header of the response</p>
      */
     inline GetObjectRequest& WithResponseContentDisposition(const Aws::String& value) { SetResponseContentDisposition(value); return *this;}
 
     /**
-     * <p>Sets the Content-Disposition header of the response</p>
+     * <p>Sets the <code>Content-Disposition</code> header of the response</p>
      */
     inline GetObjectRequest& WithResponseContentDisposition(Aws::String&& value) { SetResponseContentDisposition(std::move(value)); return *this;}
 
     /**
-     * <p>Sets the Content-Disposition header of the response</p>
+     * <p>Sets the <code>Content-Disposition</code> header of the response</p>
      */
     inline GetObjectRequest& WithResponseContentDisposition(const char* value) { SetResponseContentDisposition(value); return *this;}
 
 
     /**
-     * <p>Sets the Content-Encoding header of the response.</p>
+     * <p>Sets the <code>Content-Encoding</code> header of the response.</p>
      */
     inline const Aws::String& GetResponseContentEncoding() const{ return m_responseContentEncoding; }
 
     /**
-     * <p>Sets the Content-Encoding header of the response.</p>
+     * <p>Sets the <code>Content-Encoding</code> header of the response.</p>
      */
     inline bool ResponseContentEncodingHasBeenSet() const { return m_responseContentEncodingHasBeenSet; }
 
     /**
-     * <p>Sets the Content-Encoding header of the response.</p>
+     * <p>Sets the <code>Content-Encoding</code> header of the response.</p>
      */
     inline void SetResponseContentEncoding(const Aws::String& value) { m_responseContentEncodingHasBeenSet = true; m_responseContentEncoding = value; }
 
     /**
-     * <p>Sets the Content-Encoding header of the response.</p>
+     * <p>Sets the <code>Content-Encoding</code> header of the response.</p>
      */
     inline void SetResponseContentEncoding(Aws::String&& value) { m_responseContentEncodingHasBeenSet = true; m_responseContentEncoding = std::move(value); }
 
     /**
-     * <p>Sets the Content-Encoding header of the response.</p>
+     * <p>Sets the <code>Content-Encoding</code> header of the response.</p>
      */
     inline void SetResponseContentEncoding(const char* value) { m_responseContentEncodingHasBeenSet = true; m_responseContentEncoding.assign(value); }
 
     /**
-     * <p>Sets the Content-Encoding header of the response.</p>
+     * <p>Sets the <code>Content-Encoding</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseContentEncoding(const Aws::String& value) { SetResponseContentEncoding(value); return *this;}
 
     /**
-     * <p>Sets the Content-Encoding header of the response.</p>
+     * <p>Sets the <code>Content-Encoding</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseContentEncoding(Aws::String&& value) { SetResponseContentEncoding(std::move(value)); return *this;}
 
     /**
-     * <p>Sets the Content-Encoding header of the response.</p>
+     * <p>Sets the <code>Content-Encoding</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseContentEncoding(const char* value) { SetResponseContentEncoding(value); return *this;}
 
 
     /**
-     * <p>Sets the Content-Language header of the response.</p>
+     * <p>Sets the <code>Content-Language</code> header of the response.</p>
      */
     inline const Aws::String& GetResponseContentLanguage() const{ return m_responseContentLanguage; }
 
     /**
-     * <p>Sets the Content-Language header of the response.</p>
+     * <p>Sets the <code>Content-Language</code> header of the response.</p>
      */
     inline bool ResponseContentLanguageHasBeenSet() const { return m_responseContentLanguageHasBeenSet; }
 
     /**
-     * <p>Sets the Content-Language header of the response.</p>
+     * <p>Sets the <code>Content-Language</code> header of the response.</p>
      */
     inline void SetResponseContentLanguage(const Aws::String& value) { m_responseContentLanguageHasBeenSet = true; m_responseContentLanguage = value; }
 
     /**
-     * <p>Sets the Content-Language header of the response.</p>
+     * <p>Sets the <code>Content-Language</code> header of the response.</p>
      */
     inline void SetResponseContentLanguage(Aws::String&& value) { m_responseContentLanguageHasBeenSet = true; m_responseContentLanguage = std::move(value); }
 
     /**
-     * <p>Sets the Content-Language header of the response.</p>
+     * <p>Sets the <code>Content-Language</code> header of the response.</p>
      */
     inline void SetResponseContentLanguage(const char* value) { m_responseContentLanguageHasBeenSet = true; m_responseContentLanguage.assign(value); }
 
     /**
-     * <p>Sets the Content-Language header of the response.</p>
+     * <p>Sets the <code>Content-Language</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseContentLanguage(const Aws::String& value) { SetResponseContentLanguage(value); return *this;}
 
     /**
-     * <p>Sets the Content-Language header of the response.</p>
+     * <p>Sets the <code>Content-Language</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseContentLanguage(Aws::String&& value) { SetResponseContentLanguage(std::move(value)); return *this;}
 
     /**
-     * <p>Sets the Content-Language header of the response.</p>
+     * <p>Sets the <code>Content-Language</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseContentLanguage(const char* value) { SetResponseContentLanguage(value); return *this;}
 
 
     /**
-     * <p>Sets the Content-Type header of the response.</p>
+     * <p>Sets the <code>Content-Type</code> header of the response.</p>
      */
     inline const Aws::String& GetResponseContentType() const{ return m_responseContentType; }
 
     /**
-     * <p>Sets the Content-Type header of the response.</p>
+     * <p>Sets the <code>Content-Type</code> header of the response.</p>
      */
     inline bool ResponseContentTypeHasBeenSet() const { return m_responseContentTypeHasBeenSet; }
 
     /**
-     * <p>Sets the Content-Type header of the response.</p>
+     * <p>Sets the <code>Content-Type</code> header of the response.</p>
      */
     inline void SetResponseContentType(const Aws::String& value) { m_responseContentTypeHasBeenSet = true; m_responseContentType = value; }
 
     /**
-     * <p>Sets the Content-Type header of the response.</p>
+     * <p>Sets the <code>Content-Type</code> header of the response.</p>
      */
     inline void SetResponseContentType(Aws::String&& value) { m_responseContentTypeHasBeenSet = true; m_responseContentType = std::move(value); }
 
     /**
-     * <p>Sets the Content-Type header of the response.</p>
+     * <p>Sets the <code>Content-Type</code> header of the response.</p>
      */
     inline void SetResponseContentType(const char* value) { m_responseContentTypeHasBeenSet = true; m_responseContentType.assign(value); }
 
     /**
-     * <p>Sets the Content-Type header of the response.</p>
+     * <p>Sets the <code>Content-Type</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseContentType(const Aws::String& value) { SetResponseContentType(value); return *this;}
 
     /**
-     * <p>Sets the Content-Type header of the response.</p>
+     * <p>Sets the <code>Content-Type</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseContentType(Aws::String&& value) { SetResponseContentType(std::move(value)); return *this;}
 
     /**
-     * <p>Sets the Content-Type header of the response.</p>
+     * <p>Sets the <code>Content-Type</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseContentType(const char* value) { SetResponseContentType(value); return *this;}
 
 
     /**
-     * <p>Sets the Expires header of the response.</p>
+     * <p>Sets the <code>Expires</code> header of the response.</p>
      */
     inline const Aws::Utils::DateTime& GetResponseExpires() const{ return m_responseExpires; }
 
     /**
-     * <p>Sets the Expires header of the response.</p>
+     * <p>Sets the <code>Expires</code> header of the response.</p>
      */
     inline bool ResponseExpiresHasBeenSet() const { return m_responseExpiresHasBeenSet; }
 
     /**
-     * <p>Sets the Expires header of the response.</p>
+     * <p>Sets the <code>Expires</code> header of the response.</p>
      */
     inline void SetResponseExpires(const Aws::Utils::DateTime& value) { m_responseExpiresHasBeenSet = true; m_responseExpires = value; }
 
     /**
-     * <p>Sets the Expires header of the response.</p>
+     * <p>Sets the <code>Expires</code> header of the response.</p>
      */
     inline void SetResponseExpires(Aws::Utils::DateTime&& value) { m_responseExpiresHasBeenSet = true; m_responseExpires = std::move(value); }
 
     /**
-     * <p>Sets the Expires header of the response.</p>
+     * <p>Sets the <code>Expires</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseExpires(const Aws::Utils::DateTime& value) { SetResponseExpires(value); return *this;}
 
     /**
-     * <p>Sets the Expires header of the response.</p>
+     * <p>Sets the <code>Expires</code> header of the response.</p>
      */
     inline GetObjectRequest& WithResponseExpires(Aws::Utils::DateTime&& value) { SetResponseExpires(std::move(value)); return *this;}
 
@@ -642,49 +714,49 @@ namespace Model
 
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline GetObjectRequest& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline GetObjectRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline GetObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
@@ -693,128 +765,128 @@ namespace Model
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline GetObjectRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline GetObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline GetObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5.assign(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline GetObjectRequest& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline GetObjectRequest& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline GetObjectRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}

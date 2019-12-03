@@ -35,9 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>The Filter is used to identify objects that a Lifecycle Rule applies to. A
-   * Filter must have exactly one of Prefix, Tag, or And specified.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The <code>Filter</code> is used to identify objects that a Lifecycle Rule
+   * applies to. A <code>Filter</code> must have exactly one of <code>Prefix</code>,
+   * <code>Tag</code>, or <code>And</code> specified.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LifecycleRuleFilter">AWS
    * API Reference</a></p>
    */

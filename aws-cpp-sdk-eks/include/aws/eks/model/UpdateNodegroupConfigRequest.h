@@ -173,37 +173,37 @@ namespace Model
 
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group after the
+     * <p>The scaling configuration details for the Auto Scaling group after the
      * update.</p>
      */
     inline const NodegroupScalingConfig& GetScalingConfig() const{ return m_scalingConfig; }
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group after the
+     * <p>The scaling configuration details for the Auto Scaling group after the
      * update.</p>
      */
     inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group after the
+     * <p>The scaling configuration details for the Auto Scaling group after the
      * update.</p>
      */
     inline void SetScalingConfig(const NodegroupScalingConfig& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = value; }
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group after the
+     * <p>The scaling configuration details for the Auto Scaling group after the
      * update.</p>
      */
     inline void SetScalingConfig(NodegroupScalingConfig&& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = std::move(value); }
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group after the
+     * <p>The scaling configuration details for the Auto Scaling group after the
      * update.</p>
      */
     inline UpdateNodegroupConfigRequest& WithScalingConfig(const NodegroupScalingConfig& value) { SetScalingConfig(value); return *this;}
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group after the
+     * <p>The scaling configuration details for the Auto Scaling group after the
      * update.</p>
      */
     inline UpdateNodegroupConfigRequest& WithScalingConfig(NodegroupScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}

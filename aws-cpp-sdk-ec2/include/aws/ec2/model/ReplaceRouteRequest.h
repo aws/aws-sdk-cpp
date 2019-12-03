@@ -301,6 +301,31 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether to reset the local route to its default target
+     * (<code>local</code>).</p>
+     */
+    inline bool GetLocalTarget() const{ return m_localTarget; }
+
+    /**
+     * <p>Specifies whether to reset the local route to its default target
+     * (<code>local</code>).</p>
+     */
+    inline bool LocalTargetHasBeenSet() const { return m_localTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to reset the local route to its default target
+     * (<code>local</code>).</p>
+     */
+    inline void SetLocalTarget(bool value) { m_localTargetHasBeenSet = true; m_localTarget = value; }
+
+    /**
+     * <p>Specifies whether to reset the local route to its default target
+     * (<code>local</code>).</p>
+     */
+    inline ReplaceRouteRequest& WithLocalTarget(bool value) { SetLocalTarget(value); return *this;}
+
+
+    /**
      * <p>[IPv4 traffic only] The ID of a NAT gateway.</p>
      */
     inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
@@ -380,6 +405,47 @@ namespace Model
      * <p>The ID of a transit gateway.</p>
      */
     inline ReplaceRouteRequest& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the local gateway.</p>
+     */
+    inline const Aws::String& GetLocalGatewayId() const{ return m_localGatewayId; }
+
+    /**
+     * <p>The ID of the local gateway.</p>
+     */
+    inline bool LocalGatewayIdHasBeenSet() const { return m_localGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the local gateway.</p>
+     */
+    inline void SetLocalGatewayId(const Aws::String& value) { m_localGatewayIdHasBeenSet = true; m_localGatewayId = value; }
+
+    /**
+     * <p>The ID of the local gateway.</p>
+     */
+    inline void SetLocalGatewayId(Aws::String&& value) { m_localGatewayIdHasBeenSet = true; m_localGatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of the local gateway.</p>
+     */
+    inline void SetLocalGatewayId(const char* value) { m_localGatewayIdHasBeenSet = true; m_localGatewayId.assign(value); }
+
+    /**
+     * <p>The ID of the local gateway.</p>
+     */
+    inline ReplaceRouteRequest& WithLocalGatewayId(const Aws::String& value) { SetLocalGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the local gateway.</p>
+     */
+    inline ReplaceRouteRequest& WithLocalGatewayId(Aws::String&& value) { SetLocalGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the local gateway.</p>
+     */
+    inline ReplaceRouteRequest& WithLocalGatewayId(const char* value) { SetLocalGatewayId(value); return *this;}
 
 
     /**
@@ -524,11 +590,17 @@ namespace Model
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet;
 
+    bool m_localTarget;
+    bool m_localTargetHasBeenSet;
+
     Aws::String m_natGatewayId;
     bool m_natGatewayIdHasBeenSet;
 
     Aws::String m_transitGatewayId;
     bool m_transitGatewayIdHasBeenSet;
+
+    Aws::String m_localGatewayId;
+    bool m_localGatewayIdHasBeenSet;
 
     Aws::String m_networkInterfaceId;
     bool m_networkInterfaceIdHasBeenSet;

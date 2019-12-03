@@ -129,7 +129,7 @@ namespace Model
      * redirect requests for <code>ExamplePage.html</code>, the key prefix will be
      * <code>ExamplePage.html</code>. To redirect request for all pages with the prefix
      * <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies
-     * all objects in the docs/ folder. Required when the parent element
+     * all objects in the <code>docs/</code> folder. Required when the parent element
      * <code>Condition</code> is specified and sibling
      * <code>HttpErrorCodeReturnedEquals</code> is not specified. If both conditions
      * are specified, both must be true for the redirect to be applied.</p>
@@ -141,7 +141,7 @@ namespace Model
      * redirect requests for <code>ExamplePage.html</code>, the key prefix will be
      * <code>ExamplePage.html</code>. To redirect request for all pages with the prefix
      * <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies
-     * all objects in the docs/ folder. Required when the parent element
+     * all objects in the <code>docs/</code> folder. Required when the parent element
      * <code>Condition</code> is specified and sibling
      * <code>HttpErrorCodeReturnedEquals</code> is not specified. If both conditions
      * are specified, both must be true for the redirect to be applied.</p>
@@ -153,7 +153,7 @@ namespace Model
      * redirect requests for <code>ExamplePage.html</code>, the key prefix will be
      * <code>ExamplePage.html</code>. To redirect request for all pages with the prefix
      * <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies
-     * all objects in the docs/ folder. Required when the parent element
+     * all objects in the <code>docs/</code> folder. Required when the parent element
      * <code>Condition</code> is specified and sibling
      * <code>HttpErrorCodeReturnedEquals</code> is not specified. If both conditions
      * are specified, both must be true for the redirect to be applied.</p>
@@ -165,7 +165,7 @@ namespace Model
      * redirect requests for <code>ExamplePage.html</code>, the key prefix will be
      * <code>ExamplePage.html</code>. To redirect request for all pages with the prefix
      * <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies
-     * all objects in the docs/ folder. Required when the parent element
+     * all objects in the <code>docs/</code> folder. Required when the parent element
      * <code>Condition</code> is specified and sibling
      * <code>HttpErrorCodeReturnedEquals</code> is not specified. If both conditions
      * are specified, both must be true for the redirect to be applied.</p>
@@ -177,7 +177,7 @@ namespace Model
      * redirect requests for <code>ExamplePage.html</code>, the key prefix will be
      * <code>ExamplePage.html</code>. To redirect request for all pages with the prefix
      * <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies
-     * all objects in the docs/ folder. Required when the parent element
+     * all objects in the <code>docs/</code> folder. Required when the parent element
      * <code>Condition</code> is specified and sibling
      * <code>HttpErrorCodeReturnedEquals</code> is not specified. If both conditions
      * are specified, both must be true for the redirect to be applied.</p>
@@ -189,7 +189,7 @@ namespace Model
      * redirect requests for <code>ExamplePage.html</code>, the key prefix will be
      * <code>ExamplePage.html</code>. To redirect request for all pages with the prefix
      * <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies
-     * all objects in the docs/ folder. Required when the parent element
+     * all objects in the <code>docs/</code> folder. Required when the parent element
      * <code>Condition</code> is specified and sibling
      * <code>HttpErrorCodeReturnedEquals</code> is not specified. If both conditions
      * are specified, both must be true for the redirect to be applied.</p>
@@ -201,7 +201,7 @@ namespace Model
      * redirect requests for <code>ExamplePage.html</code>, the key prefix will be
      * <code>ExamplePage.html</code>. To redirect request for all pages with the prefix
      * <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies
-     * all objects in the docs/ folder. Required when the parent element
+     * all objects in the <code>docs/</code> folder. Required when the parent element
      * <code>Condition</code> is specified and sibling
      * <code>HttpErrorCodeReturnedEquals</code> is not specified. If both conditions
      * are specified, both must be true for the redirect to be applied.</p>
@@ -213,7 +213,7 @@ namespace Model
      * redirect requests for <code>ExamplePage.html</code>, the key prefix will be
      * <code>ExamplePage.html</code>. To redirect request for all pages with the prefix
      * <code>docs/</code>, the key prefix will be <code>/docs</code>, which identifies
-     * all objects in the docs/ folder. Required when the parent element
+     * all objects in the <code>docs/</code> folder. Required when the parent element
      * <code>Condition</code> is specified and sibling
      * <code>HttpErrorCodeReturnedEquals</code> is not specified. If both conditions
      * are specified, both must be true for the redirect to be applied.</p>

@@ -54,42 +54,114 @@ namespace Model
 
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Bucket name to list. </p> <p>When using this API with an access point, you
+     * must direct requests to the access point hostname. The access point hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Bucket name to list. </p> <p>When using this API with an access point, you
+     * must direct requests to the access point hostname. The access point hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Bucket name to list. </p> <p>When using this API with an access point, you
+     * must direct requests to the access point hostname. The access point hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Bucket name to list. </p> <p>When using this API with an access point, you
+     * must direct requests to the access point hostname. The access point hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Bucket name to list. </p> <p>When using this API with an access point, you
+     * must direct requests to the access point hostname. The access point hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Bucket name to list. </p> <p>When using this API with an access point, you
+     * must direct requests to the access point hostname. The access point hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline ListObjectsV2Request& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Bucket name to list. </p> <p>When using this API with an access point, you
+     * must direct requests to the access point hostname. The access point hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline ListObjectsV2Request& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the bucket to list.</p>
+     * <p>Bucket name to list. </p> <p>When using this API with an access point, you
+     * must direct requests to the access point hostname. The access point hostname
+     * takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline ListObjectsV2Request& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -292,28 +364,28 @@ namespace Model
     /**
      * <p>The owner field is not present in listV2 by default, if you want to return
      * owner field with each key in the result then set the fetch owner field to
-     * true</p>
+     * true.</p>
      */
     inline bool GetFetchOwner() const{ return m_fetchOwner; }
 
     /**
      * <p>The owner field is not present in listV2 by default, if you want to return
      * owner field with each key in the result then set the fetch owner field to
-     * true</p>
+     * true.</p>
      */
     inline bool FetchOwnerHasBeenSet() const { return m_fetchOwnerHasBeenSet; }
 
     /**
      * <p>The owner field is not present in listV2 by default, if you want to return
      * owner field with each key in the result then set the fetch owner field to
-     * true</p>
+     * true.</p>
      */
     inline void SetFetchOwner(bool value) { m_fetchOwnerHasBeenSet = true; m_fetchOwner = value; }
 
     /**
      * <p>The owner field is not present in listV2 by default, if you want to return
      * owner field with each key in the result then set the fetch owner field to
-     * true</p>
+     * true.</p>
      */
     inline ListObjectsV2Request& WithFetchOwner(bool value) { SetFetchOwner(value); return *this;}
 

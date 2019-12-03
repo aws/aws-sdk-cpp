@@ -57,6 +57,7 @@ namespace Aws
         static const int traffic_mirror_target_HASH = HashingUtils::HashString("traffic-mirror-target");
         static const int transit_gateway_HASH = HashingUtils::HashString("transit-gateway");
         static const int transit_gateway_attachment_HASH = HashingUtils::HashString("transit-gateway-attachment");
+        static const int transit_gateway_multicast_domain_HASH = HashingUtils::HashString("transit-gateway-multicast-domain");
         static const int transit_gateway_route_table_HASH = HashingUtils::HashString("transit-gateway-route-table");
         static const int volume_HASH = HashingUtils::HashString("volume");
         static const int vpc_HASH = HashingUtils::HashString("vpc");
@@ -176,6 +177,10 @@ namespace Aws
           {
             return ResourceType::transit_gateway_attachment;
           }
+          else if (hashCode == transit_gateway_multicast_domain_HASH)
+          {
+            return ResourceType::transit_gateway_multicast_domain;
+          }
           else if (hashCode == transit_gateway_route_table_HASH)
           {
             return ResourceType::transit_gateway_route_table;
@@ -268,6 +273,8 @@ namespace Aws
             return "transit-gateway";
           case ResourceType::transit_gateway_attachment:
             return "transit-gateway-attachment";
+          case ResourceType::transit_gateway_multicast_domain:
+            return "transit-gateway-multicast-domain";
           case ResourceType::transit_gateway_route_table:
             return "transit-gateway-route-table";
           case ResourceType::volume:

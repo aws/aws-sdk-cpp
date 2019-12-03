@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>A warning about an issue that occurred during asynchronous text analysis
-   * (<a>StartDocumentAnalysis</a>) or asynchronous document-text detection
+   * (<a>StartDocumentAnalysis</a>) or asynchronous document text detection
    * (<a>StartDocumentTextDetection</a>). </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/Warning">AWS
    * API Reference</a></p>

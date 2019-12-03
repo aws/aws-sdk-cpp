@@ -160,6 +160,47 @@ namespace Model
      */
     inline AssociateRouteTableRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline AssociateRouteTableRequest& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline AssociateRouteTableRequest& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline AssociateRouteTableRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -170,6 +211,9 @@ namespace Model
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
+    Aws::String m_gatewayId;
+    bool m_gatewayIdHasBeenSet;
   };
 
 } // namespace Model

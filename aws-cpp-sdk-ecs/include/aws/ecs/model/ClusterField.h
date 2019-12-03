@@ -26,6 +26,8 @@ namespace Model
   enum class ClusterField
   {
     NOT_SET,
+    ATTACHMENTS,
+    SETTINGS,
     STATISTICS,
     TAGS
   };

@@ -30,6 +30,7 @@
 #include <aws/ecs/ECSClient.h>
 #include <aws/ecs/ECSEndpoint.h>
 #include <aws/ecs/ECSErrorMarshaller.h>
+#include <aws/ecs/model/CreateCapacityProviderRequest.h>
 #include <aws/ecs/model/CreateClusterRequest.h>
 #include <aws/ecs/model/CreateServiceRequest.h>
 #include <aws/ecs/model/CreateTaskSetRequest.h>
@@ -40,6 +41,7 @@
 #include <aws/ecs/model/DeleteTaskSetRequest.h>
 #include <aws/ecs/model/DeregisterContainerInstanceRequest.h>
 #include <aws/ecs/model/DeregisterTaskDefinitionRequest.h>
+#include <aws/ecs/model/DescribeCapacityProvidersRequest.h>
 #include <aws/ecs/model/DescribeClustersRequest.h>
 #include <aws/ecs/model/DescribeContainerInstancesRequest.h>
 #include <aws/ecs/model/DescribeServicesRequest.h>
@@ -59,6 +61,7 @@
 #include <aws/ecs/model/PutAccountSettingRequest.h>
 #include <aws/ecs/model/PutAccountSettingDefaultRequest.h>
 #include <aws/ecs/model/PutAttributesRequest.h>
+#include <aws/ecs/model/PutClusterCapacityProvidersRequest.h>
 #include <aws/ecs/model/RegisterContainerInstanceRequest.h>
 #include <aws/ecs/model/RegisterTaskDefinitionRequest.h>
 #include <aws/ecs/model/RunTaskRequest.h>
@@ -146,6 +149,41 @@ void ECSClient::OverrideEndpoint(const Aws::String& endpoint)
   {
       m_uri = m_configScheme + "://" + endpoint;
   }
+}
+
+CreateCapacityProviderOutcome ECSClient::CreateCapacityProvider(const CreateCapacityProviderRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateCapacityProviderOutcome(CreateCapacityProviderResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateCapacityProviderOutcome(outcome.GetError());
+  }
+}
+
+CreateCapacityProviderOutcomeCallable ECSClient::CreateCapacityProviderCallable(const CreateCapacityProviderRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateCapacityProviderOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateCapacityProvider(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::CreateCapacityProviderAsync(const CreateCapacityProviderRequest& request, const CreateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateCapacityProviderAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::CreateCapacityProviderAsyncHelper(const CreateCapacityProviderRequest& request, const CreateCapacityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateCapacityProvider(request), context);
 }
 
 CreateClusterOutcome ECSClient::CreateCluster(const CreateClusterRequest& request) const
@@ -496,6 +534,41 @@ void ECSClient::DeregisterTaskDefinitionAsync(const DeregisterTaskDefinitionRequ
 void ECSClient::DeregisterTaskDefinitionAsyncHelper(const DeregisterTaskDefinitionRequest& request, const DeregisterTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeregisterTaskDefinition(request), context);
+}
+
+DescribeCapacityProvidersOutcome ECSClient::DescribeCapacityProviders(const DescribeCapacityProvidersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeCapacityProvidersOutcome(DescribeCapacityProvidersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeCapacityProvidersOutcome(outcome.GetError());
+  }
+}
+
+DescribeCapacityProvidersOutcomeCallable ECSClient::DescribeCapacityProvidersCallable(const DescribeCapacityProvidersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeCapacityProvidersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCapacityProviders(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::DescribeCapacityProvidersAsync(const DescribeCapacityProvidersRequest& request, const DescribeCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCapacityProvidersAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::DescribeCapacityProvidersAsyncHelper(const DescribeCapacityProvidersRequest& request, const DescribeCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeCapacityProviders(request), context);
 }
 
 DescribeClustersOutcome ECSClient::DescribeClusters(const DescribeClustersRequest& request) const
@@ -1161,6 +1234,41 @@ void ECSClient::PutAttributesAsync(const PutAttributesRequest& request, const Pu
 void ECSClient::PutAttributesAsyncHelper(const PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutAttributes(request), context);
+}
+
+PutClusterCapacityProvidersOutcome ECSClient::PutClusterCapacityProviders(const PutClusterCapacityProvidersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutClusterCapacityProvidersOutcome(PutClusterCapacityProvidersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutClusterCapacityProvidersOutcome(outcome.GetError());
+  }
+}
+
+PutClusterCapacityProvidersOutcomeCallable ECSClient::PutClusterCapacityProvidersCallable(const PutClusterCapacityProvidersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutClusterCapacityProvidersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutClusterCapacityProviders(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ECSClient::PutClusterCapacityProvidersAsync(const PutClusterCapacityProvidersRequest& request, const PutClusterCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutClusterCapacityProvidersAsyncHelper( request, handler, context ); } );
+}
+
+void ECSClient::PutClusterCapacityProvidersAsyncHelper(const PutClusterCapacityProvidersRequest& request, const PutClusterCapacityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutClusterCapacityProviders(request), context);
 }
 
 RegisterContainerInstanceOutcome ECSClient::RegisterContainerInstance(const RegisterContainerInstanceRequest& request) const

@@ -191,6 +191,47 @@ namespace Model
 
 
     /**
+     * <p>The capacity provider associated with the task.</p>
+     */
+    inline const Aws::String& GetCapacityProviderName() const{ return m_capacityProviderName; }
+
+    /**
+     * <p>The capacity provider associated with the task.</p>
+     */
+    inline bool CapacityProviderNameHasBeenSet() const { return m_capacityProviderNameHasBeenSet; }
+
+    /**
+     * <p>The capacity provider associated with the task.</p>
+     */
+    inline void SetCapacityProviderName(const Aws::String& value) { m_capacityProviderNameHasBeenSet = true; m_capacityProviderName = value; }
+
+    /**
+     * <p>The capacity provider associated with the task.</p>
+     */
+    inline void SetCapacityProviderName(Aws::String&& value) { m_capacityProviderNameHasBeenSet = true; m_capacityProviderName = std::move(value); }
+
+    /**
+     * <p>The capacity provider associated with the task.</p>
+     */
+    inline void SetCapacityProviderName(const char* value) { m_capacityProviderNameHasBeenSet = true; m_capacityProviderName.assign(value); }
+
+    /**
+     * <p>The capacity provider associated with the task.</p>
+     */
+    inline Task& WithCapacityProviderName(const Aws::String& value) { SetCapacityProviderName(value); return *this;}
+
+    /**
+     * <p>The capacity provider associated with the task.</p>
+     */
+    inline Task& WithCapacityProviderName(Aws::String&& value) { SetCapacityProviderName(std::move(value)); return *this;}
+
+    /**
+     * <p>The capacity provider associated with the task.</p>
+     */
+    inline Task& WithCapacityProviderName(const char* value) { SetCapacityProviderName(value); return *this;}
+
+
+    /**
      * <p>The ARN of the cluster that hosts the task.</p>
      */
     inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
@@ -1874,6 +1915,9 @@ namespace Model
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
+    Aws::String m_capacityProviderName;
+    bool m_capacityProviderNameHasBeenSet;
 
     Aws::String m_clusterArn;
     bool m_clusterArnHasBeenSet;

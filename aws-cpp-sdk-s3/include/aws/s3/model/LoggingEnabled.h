@@ -57,9 +57,9 @@ namespace Model
      * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
      * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
-     * their logs to the same target bucket. In this case you should choose a different
-     * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.</p>
+     * their logs to the same target bucket. In this case, you should choose a
+     * different <code>TargetPrefix</code> for each source bucket so that the delivered
+     * log files can be distinguished by key.</p>
      */
     inline const Aws::String& GetTargetBucket() const{ return m_targetBucket; }
 
@@ -67,9 +67,9 @@ namespace Model
      * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
      * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
-     * their logs to the same target bucket. In this case you should choose a different
-     * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.</p>
+     * their logs to the same target bucket. In this case, you should choose a
+     * different <code>TargetPrefix</code> for each source bucket so that the delivered
+     * log files can be distinguished by key.</p>
      */
     inline bool TargetBucketHasBeenSet() const { return m_targetBucketHasBeenSet; }
 
@@ -77,9 +77,9 @@ namespace Model
      * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
      * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
-     * their logs to the same target bucket. In this case you should choose a different
-     * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.</p>
+     * their logs to the same target bucket. In this case, you should choose a
+     * different <code>TargetPrefix</code> for each source bucket so that the delivered
+     * log files can be distinguished by key.</p>
      */
     inline void SetTargetBucket(const Aws::String& value) { m_targetBucketHasBeenSet = true; m_targetBucket = value; }
 
@@ -87,9 +87,9 @@ namespace Model
      * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
      * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
-     * their logs to the same target bucket. In this case you should choose a different
-     * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.</p>
+     * their logs to the same target bucket. In this case, you should choose a
+     * different <code>TargetPrefix</code> for each source bucket so that the delivered
+     * log files can be distinguished by key.</p>
      */
     inline void SetTargetBucket(Aws::String&& value) { m_targetBucketHasBeenSet = true; m_targetBucket = std::move(value); }
 
@@ -97,9 +97,9 @@ namespace Model
      * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
      * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
-     * their logs to the same target bucket. In this case you should choose a different
-     * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.</p>
+     * their logs to the same target bucket. In this case, you should choose a
+     * different <code>TargetPrefix</code> for each source bucket so that the delivered
+     * log files can be distinguished by key.</p>
      */
     inline void SetTargetBucket(const char* value) { m_targetBucketHasBeenSet = true; m_targetBucket.assign(value); }
 
@@ -107,9 +107,9 @@ namespace Model
      * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
      * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
-     * their logs to the same target bucket. In this case you should choose a different
-     * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.</p>
+     * their logs to the same target bucket. In this case, you should choose a
+     * different <code>TargetPrefix</code> for each source bucket so that the delivered
+     * log files can be distinguished by key.</p>
      */
     inline LoggingEnabled& WithTargetBucket(const Aws::String& value) { SetTargetBucket(value); return *this;}
 
@@ -117,9 +117,9 @@ namespace Model
      * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
      * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
-     * their logs to the same target bucket. In this case you should choose a different
-     * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.</p>
+     * their logs to the same target bucket. In this case, you should choose a
+     * different <code>TargetPrefix</code> for each source bucket so that the delivered
+     * log files can be distinguished by key.</p>
      */
     inline LoggingEnabled& WithTargetBucket(Aws::String&& value) { SetTargetBucket(std::move(value)); return *this;}
 
@@ -127,9 +127,9 @@ namespace Model
      * <p>Specifies the bucket where you want Amazon S3 to store server access logs.
      * You can have your logs delivered to any bucket that you own, including the same
      * bucket that is being logged. You can also configure multiple buckets to deliver
-     * their logs to the same target bucket. In this case you should choose a different
-     * TargetPrefix for each source bucket so that the delivered log files can be
-     * distinguished by key.</p>
+     * their logs to the same target bucket. In this case, you should choose a
+     * different <code>TargetPrefix</code> for each source bucket so that the delivered
+     * log files can be distinguished by key.</p>
      */
     inline LoggingEnabled& WithTargetBucket(const char* value) { SetTargetBucket(value); return *this;}
 

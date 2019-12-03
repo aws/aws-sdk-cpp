@@ -37,8 +37,8 @@ namespace Model
   /**
    * <p>A container for specifying the configuration for publication of messages to
    * an Amazon Simple Notification Service (Amazon SNS) topic when Amazon S3 detects
-   * specified events. This data type is deperecated. Please use
-   * <a>TopicConfiguration</a> instead.</p><p><h3>See Also:</h3>   <a
+   * specified events. This data type is deprecated. Use <a>TopicConfiguration</a>
+   * instead.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/TopicConfigurationDeprecated">AWS
    * API Reference</a></p>
    */

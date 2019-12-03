@@ -249,72 +249,72 @@ namespace Model
 
     /**
      * <p> Specifies the transition rule for the lifecycle rule that describes when
-     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * noncurrent objects transition to a specific storage class. If your bucket is
      * versioning-enabled (or versioning is suspended), you can set this action to
-     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * request that Amazon S3 transition noncurrent object versions to a specific
      * storage class at a set period in the object's lifetime. </p>
      */
     inline const Aws::Vector<NoncurrentVersionTransition>& GetNoncurrentVersionTransitions() const{ return m_noncurrentVersionTransitions; }
 
     /**
      * <p> Specifies the transition rule for the lifecycle rule that describes when
-     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * noncurrent objects transition to a specific storage class. If your bucket is
      * versioning-enabled (or versioning is suspended), you can set this action to
-     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * request that Amazon S3 transition noncurrent object versions to a specific
      * storage class at a set period in the object's lifetime. </p>
      */
     inline bool NoncurrentVersionTransitionsHasBeenSet() const { return m_noncurrentVersionTransitionsHasBeenSet; }
 
     /**
      * <p> Specifies the transition rule for the lifecycle rule that describes when
-     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * noncurrent objects transition to a specific storage class. If your bucket is
      * versioning-enabled (or versioning is suspended), you can set this action to
-     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * request that Amazon S3 transition noncurrent object versions to a specific
      * storage class at a set period in the object's lifetime. </p>
      */
     inline void SetNoncurrentVersionTransitions(const Aws::Vector<NoncurrentVersionTransition>& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions = value; }
 
     /**
      * <p> Specifies the transition rule for the lifecycle rule that describes when
-     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * noncurrent objects transition to a specific storage class. If your bucket is
      * versioning-enabled (or versioning is suspended), you can set this action to
-     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * request that Amazon S3 transition noncurrent object versions to a specific
      * storage class at a set period in the object's lifetime. </p>
      */
     inline void SetNoncurrentVersionTransitions(Aws::Vector<NoncurrentVersionTransition>&& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions = std::move(value); }
 
     /**
      * <p> Specifies the transition rule for the lifecycle rule that describes when
-     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * noncurrent objects transition to a specific storage class. If your bucket is
      * versioning-enabled (or versioning is suspended), you can set this action to
-     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * request that Amazon S3 transition noncurrent object versions to a specific
      * storage class at a set period in the object's lifetime. </p>
      */
     inline LifecycleRule& WithNoncurrentVersionTransitions(const Aws::Vector<NoncurrentVersionTransition>& value) { SetNoncurrentVersionTransitions(value); return *this;}
 
     /**
      * <p> Specifies the transition rule for the lifecycle rule that describes when
-     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * noncurrent objects transition to a specific storage class. If your bucket is
      * versioning-enabled (or versioning is suspended), you can set this action to
-     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * request that Amazon S3 transition noncurrent object versions to a specific
      * storage class at a set period in the object's lifetime. </p>
      */
     inline LifecycleRule& WithNoncurrentVersionTransitions(Aws::Vector<NoncurrentVersionTransition>&& value) { SetNoncurrentVersionTransitions(std::move(value)); return *this;}
 
     /**
      * <p> Specifies the transition rule for the lifecycle rule that describes when
-     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * noncurrent objects transition to a specific storage class. If your bucket is
      * versioning-enabled (or versioning is suspended), you can set this action to
-     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * request that Amazon S3 transition noncurrent object versions to a specific
      * storage class at a set period in the object's lifetime. </p>
      */
     inline LifecycleRule& AddNoncurrentVersionTransitions(const NoncurrentVersionTransition& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions.push_back(value); return *this; }
 
     /**
      * <p> Specifies the transition rule for the lifecycle rule that describes when
-     * noncurrent objects transition to the a specific storage class. If your bucket is
+     * noncurrent objects transition to a specific storage class. If your bucket is
      * versioning-enabled (or versioning is suspended), you can set this action to
-     * request that Amazon S3 transition noncurrent object versions to the a specifc
+     * request that Amazon S3 transition noncurrent object versions to a specific
      * storage class at a set period in the object's lifetime. </p>
      */
     inline LifecycleRule& AddNoncurrentVersionTransitions(NoncurrentVersionTransition&& value) { m_noncurrentVersionTransitionsHasBeenSet = true; m_noncurrentVersionTransitions.push_back(std::move(value)); return *this; }

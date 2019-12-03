@@ -41,6 +41,7 @@ NetworkInterface::NetworkInterface() :
     m_ipv6AddressesHasBeenSet(false),
     m_macAddressHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
@@ -69,6 +70,7 @@ NetworkInterface::NetworkInterface(const XmlNode& xmlNode) :
     m_ipv6AddressesHasBeenSet(false),
     m_macAddressHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
@@ -158,6 +160,12 @@ NetworkInterface& NetworkInterface::operator =(const XmlNode& xmlNode)
     {
       m_networkInterfaceId = Aws::Utils::Xml::DecodeEscapedXmlText(networkInterfaceIdNode.GetText());
       m_networkInterfaceIdHasBeenSet = true;
+    }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+      m_outpostArnHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
     if(!ownerIdNode.IsNull())
@@ -305,6 +313,11 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
   }
 
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
   if(m_ownerIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
@@ -427,6 +440,10 @@ void NetworkInterface::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_networkInterfaceIdHasBeenSet)
   {
       oStream << location << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
+  }
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
   if(m_ownerIdHasBeenSet)
   {

@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 RunTaskRequest::RunTaskRequest() : 
+    m_capacityProviderStrategyHasBeenSet(false),
     m_clusterHasBeenSet(false),
     m_count(0),
     m_countHasBeenSet(false),
@@ -48,6 +49,17 @@ RunTaskRequest::RunTaskRequest() :
 Aws::String RunTaskRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_capacityProviderStrategyHasBeenSet)
+  {
+   Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
+   for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
+   {
+     capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
+   }
+   payload.WithArray("capacityProviderStrategy", std::move(capacityProviderStrategyJsonList));
+
+  }
 
   if(m_clusterHasBeenSet)
   {

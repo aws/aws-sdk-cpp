@@ -33,7 +33,7 @@ namespace Model
 {
 
   /**
-   * <p>Container for the Suffix element.</p><p><h3>See Also:</h3>   <a
+   * <p>Container for the <code>Suffix</code> element.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/IndexDocument">AWS
    * API Reference</a></p>
    */
@@ -49,7 +49,7 @@ namespace Model
 
     /**
      * <p>A suffix that is appended to a request that is for a directory on the website
-     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
      * slash character.</p>
@@ -58,7 +58,7 @@ namespace Model
 
     /**
      * <p>A suffix that is appended to a request that is for a directory on the website
-     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
      * slash character.</p>
@@ -67,7 +67,7 @@ namespace Model
 
     /**
      * <p>A suffix that is appended to a request that is for a directory on the website
-     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
      * slash character.</p>
@@ -76,7 +76,7 @@ namespace Model
 
     /**
      * <p>A suffix that is appended to a request that is for a directory on the website
-     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
      * slash character.</p>
@@ -85,7 +85,7 @@ namespace Model
 
     /**
      * <p>A suffix that is appended to a request that is for a directory on the website
-     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
      * slash character.</p>
@@ -94,7 +94,7 @@ namespace Model
 
     /**
      * <p>A suffix that is appended to a request that is for a directory on the website
-     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
      * slash character.</p>
@@ -103,7 +103,7 @@ namespace Model
 
     /**
      * <p>A suffix that is appended to a request that is for a directory on the website
-     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
      * slash character.</p>
@@ -112,7 +112,7 @@ namespace Model
 
     /**
      * <p>A suffix that is appended to a request that is for a directory on the website
-     * endpoint (e.g. if the suffix is index.html and you make a request to
+     * endpoint (for example,if the suffix is index.html and you make a request to
      * samplebucket/images/ the data that is returned will be for the object with the
      * key name images/index.html) The suffix must not be empty and must not include a
      * slash character.</p>

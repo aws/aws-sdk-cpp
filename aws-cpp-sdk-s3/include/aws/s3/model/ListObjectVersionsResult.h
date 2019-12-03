@@ -48,27 +48,27 @@ namespace Model
 
 
     /**
-     * <p>A flag that indicates whether or not Amazon S3 returned all of the results
-     * that satisfied the search criteria. If your results were truncated, you can make
-     * a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker
+     * <p>A flag that indicates whether Amazon S3 returned all of the results that
+     * satisfied the search criteria. If your results were truncated, you can make a
+     * follow-up paginated request using the NextKeyMarker and NextVersionIdMarker
      * response parameters as a starting place in another request to return the rest of
      * the results.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
 
     /**
-     * <p>A flag that indicates whether or not Amazon S3 returned all of the results
-     * that satisfied the search criteria. If your results were truncated, you can make
-     * a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker
+     * <p>A flag that indicates whether Amazon S3 returned all of the results that
+     * satisfied the search criteria. If your results were truncated, you can make a
+     * follow-up paginated request using the NextKeyMarker and NextVersionIdMarker
      * response parameters as a starting place in another request to return the rest of
      * the results.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
 
     /**
-     * <p>A flag that indicates whether or not Amazon S3 returned all of the results
-     * that satisfied the search criteria. If your results were truncated, you can make
-     * a follow-up paginated request using the NextKeyMarker and NextVersionIdMarker
+     * <p>A flag that indicates whether Amazon S3 returned all of the results that
+     * satisfied the search criteria. If your results were truncated, you can make a
+     * follow-up paginated request using the NextKeyMarker and NextVersionIdMarker
      * response parameters as a starting place in another request to return the rest of
      * the results.</p>
      */
@@ -76,180 +76,187 @@ namespace Model
 
 
     /**
-     * <p>Marks the last Key returned in a truncated response.</p>
+     * <p>Marks the last key returned in a truncated response.</p>
      */
     inline const Aws::String& GetKeyMarker() const{ return m_keyMarker; }
 
     /**
-     * <p>Marks the last Key returned in a truncated response.</p>
+     * <p>Marks the last key returned in a truncated response.</p>
      */
     inline void SetKeyMarker(const Aws::String& value) { m_keyMarker = value; }
 
     /**
-     * <p>Marks the last Key returned in a truncated response.</p>
+     * <p>Marks the last key returned in a truncated response.</p>
      */
     inline void SetKeyMarker(Aws::String&& value) { m_keyMarker = std::move(value); }
 
     /**
-     * <p>Marks the last Key returned in a truncated response.</p>
+     * <p>Marks the last key returned in a truncated response.</p>
      */
     inline void SetKeyMarker(const char* value) { m_keyMarker.assign(value); }
 
     /**
-     * <p>Marks the last Key returned in a truncated response.</p>
+     * <p>Marks the last key returned in a truncated response.</p>
      */
     inline ListObjectVersionsResult& WithKeyMarker(const Aws::String& value) { SetKeyMarker(value); return *this;}
 
     /**
-     * <p>Marks the last Key returned in a truncated response.</p>
+     * <p>Marks the last key returned in a truncated response.</p>
      */
     inline ListObjectVersionsResult& WithKeyMarker(Aws::String&& value) { SetKeyMarker(std::move(value)); return *this;}
 
     /**
-     * <p>Marks the last Key returned in a truncated response.</p>
+     * <p>Marks the last key returned in a truncated response.</p>
      */
     inline ListObjectVersionsResult& WithKeyMarker(const char* value) { SetKeyMarker(value); return *this;}
 
 
     /**
-     * <p>Marks the last version of the Key returned in a truncated response.</p>
+     * <p>Marks the last version of the key returned in a truncated response.</p>
      */
     inline const Aws::String& GetVersionIdMarker() const{ return m_versionIdMarker; }
 
     /**
-     * <p>Marks the last version of the Key returned in a truncated response.</p>
+     * <p>Marks the last version of the key returned in a truncated response.</p>
      */
     inline void SetVersionIdMarker(const Aws::String& value) { m_versionIdMarker = value; }
 
     /**
-     * <p>Marks the last version of the Key returned in a truncated response.</p>
+     * <p>Marks the last version of the key returned in a truncated response.</p>
      */
     inline void SetVersionIdMarker(Aws::String&& value) { m_versionIdMarker = std::move(value); }
 
     /**
-     * <p>Marks the last version of the Key returned in a truncated response.</p>
+     * <p>Marks the last version of the key returned in a truncated response.</p>
      */
     inline void SetVersionIdMarker(const char* value) { m_versionIdMarker.assign(value); }
 
     /**
-     * <p>Marks the last version of the Key returned in a truncated response.</p>
+     * <p>Marks the last version of the key returned in a truncated response.</p>
      */
     inline ListObjectVersionsResult& WithVersionIdMarker(const Aws::String& value) { SetVersionIdMarker(value); return *this;}
 
     /**
-     * <p>Marks the last version of the Key returned in a truncated response.</p>
+     * <p>Marks the last version of the key returned in a truncated response.</p>
      */
     inline ListObjectVersionsResult& WithVersionIdMarker(Aws::String&& value) { SetVersionIdMarker(std::move(value)); return *this;}
 
     /**
-     * <p>Marks the last version of the Key returned in a truncated response.</p>
+     * <p>Marks the last version of the key returned in a truncated response.</p>
      */
     inline ListObjectVersionsResult& WithVersionIdMarker(const char* value) { SetVersionIdMarker(value); return *this;}
 
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys, NextKeyMarker
-     * specifies the first key not returned that satisfies the search criteria. Use
-     * this value for the key-marker request parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextKeyMarker</code> specifies the first key not returned that satisfies
+     * the search criteria. Use this value for the key-marker request parameter in a
+     * subsequent request.</p>
      */
     inline const Aws::String& GetNextKeyMarker() const{ return m_nextKeyMarker; }
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys, NextKeyMarker
-     * specifies the first key not returned that satisfies the search criteria. Use
-     * this value for the key-marker request parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextKeyMarker</code> specifies the first key not returned that satisfies
+     * the search criteria. Use this value for the key-marker request parameter in a
+     * subsequent request.</p>
      */
     inline void SetNextKeyMarker(const Aws::String& value) { m_nextKeyMarker = value; }
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys, NextKeyMarker
-     * specifies the first key not returned that satisfies the search criteria. Use
-     * this value for the key-marker request parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextKeyMarker</code> specifies the first key not returned that satisfies
+     * the search criteria. Use this value for the key-marker request parameter in a
+     * subsequent request.</p>
      */
     inline void SetNextKeyMarker(Aws::String&& value) { m_nextKeyMarker = std::move(value); }
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys, NextKeyMarker
-     * specifies the first key not returned that satisfies the search criteria. Use
-     * this value for the key-marker request parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextKeyMarker</code> specifies the first key not returned that satisfies
+     * the search criteria. Use this value for the key-marker request parameter in a
+     * subsequent request.</p>
      */
     inline void SetNextKeyMarker(const char* value) { m_nextKeyMarker.assign(value); }
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys, NextKeyMarker
-     * specifies the first key not returned that satisfies the search criteria. Use
-     * this value for the key-marker request parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextKeyMarker</code> specifies the first key not returned that satisfies
+     * the search criteria. Use this value for the key-marker request parameter in a
+     * subsequent request.</p>
      */
     inline ListObjectVersionsResult& WithNextKeyMarker(const Aws::String& value) { SetNextKeyMarker(value); return *this;}
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys, NextKeyMarker
-     * specifies the first key not returned that satisfies the search criteria. Use
-     * this value for the key-marker request parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextKeyMarker</code> specifies the first key not returned that satisfies
+     * the search criteria. Use this value for the key-marker request parameter in a
+     * subsequent request.</p>
      */
     inline ListObjectVersionsResult& WithNextKeyMarker(Aws::String&& value) { SetNextKeyMarker(std::move(value)); return *this;}
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys, NextKeyMarker
-     * specifies the first key not returned that satisfies the search criteria. Use
-     * this value for the key-marker request parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextKeyMarker</code> specifies the first key not returned that satisfies
+     * the search criteria. Use this value for the key-marker request parameter in a
+     * subsequent request.</p>
      */
     inline ListObjectVersionsResult& WithNextKeyMarker(const char* value) { SetNextKeyMarker(value); return *this;}
 
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys,
-     * NextVersionIdMarker specifies the first object version not returned that
-     * satisfies the search criteria. Use this value for the version-id-marker request
-     * parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextVersionIdMarker</code> specifies the first object version not returned
+     * that satisfies the search criteria. Use this value for the version-id-marker
+     * request parameter in a subsequent request.</p>
      */
     inline const Aws::String& GetNextVersionIdMarker() const{ return m_nextVersionIdMarker; }
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys,
-     * NextVersionIdMarker specifies the first object version not returned that
-     * satisfies the search criteria. Use this value for the version-id-marker request
-     * parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextVersionIdMarker</code> specifies the first object version not returned
+     * that satisfies the search criteria. Use this value for the version-id-marker
+     * request parameter in a subsequent request.</p>
      */
     inline void SetNextVersionIdMarker(const Aws::String& value) { m_nextVersionIdMarker = value; }
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys,
-     * NextVersionIdMarker specifies the first object version not returned that
-     * satisfies the search criteria. Use this value for the version-id-marker request
-     * parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextVersionIdMarker</code> specifies the first object version not returned
+     * that satisfies the search criteria. Use this value for the version-id-marker
+     * request parameter in a subsequent request.</p>
      */
     inline void SetNextVersionIdMarker(Aws::String&& value) { m_nextVersionIdMarker = std::move(value); }
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys,
-     * NextVersionIdMarker specifies the first object version not returned that
-     * satisfies the search criteria. Use this value for the version-id-marker request
-     * parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextVersionIdMarker</code> specifies the first object version not returned
+     * that satisfies the search criteria. Use this value for the version-id-marker
+     * request parameter in a subsequent request.</p>
      */
     inline void SetNextVersionIdMarker(const char* value) { m_nextVersionIdMarker.assign(value); }
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys,
-     * NextVersionIdMarker specifies the first object version not returned that
-     * satisfies the search criteria. Use this value for the version-id-marker request
-     * parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextVersionIdMarker</code> specifies the first object version not returned
+     * that satisfies the search criteria. Use this value for the version-id-marker
+     * request parameter in a subsequent request.</p>
      */
     inline ListObjectVersionsResult& WithNextVersionIdMarker(const Aws::String& value) { SetNextVersionIdMarker(value); return *this;}
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys,
-     * NextVersionIdMarker specifies the first object version not returned that
-     * satisfies the search criteria. Use this value for the version-id-marker request
-     * parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextVersionIdMarker</code> specifies the first object version not returned
+     * that satisfies the search criteria. Use this value for the version-id-marker
+     * request parameter in a subsequent request.</p>
      */
     inline ListObjectVersionsResult& WithNextVersionIdMarker(Aws::String&& value) { SetNextVersionIdMarker(std::move(value)); return *this;}
 
     /**
-     * <p>When the number of responses exceeds the value of MaxKeys,
-     * NextVersionIdMarker specifies the first object version not returned that
-     * satisfies the search criteria. Use this value for the version-id-marker request
-     * parameter in a subsequent request.</p>
+     * <p>When the number of responses exceeds the value of <code>MaxKeys</code>,
+     * <code>NextVersionIdMarker</code> specifies the first object version not returned
+     * that satisfies the search criteria. Use this value for the version-id-marker
+     * request parameter in a subsequent request.</p>
      */
     inline ListObjectVersionsResult& WithNextVersionIdMarker(const char* value) { SetNextVersionIdMarker(value); return *this;}
 
@@ -327,37 +334,37 @@ namespace Model
 
 
     /**
-     * <p>Bucket owner's name.</p>
+     * <p>Bucket name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Bucket owner's name.</p>
+     * <p>Bucket name.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>Bucket owner's name.</p>
+     * <p>Bucket name.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>Bucket owner's name.</p>
+     * <p>Bucket name.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>Bucket owner's name.</p>
+     * <p>Bucket name.</p>
      */
     inline ListObjectVersionsResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Bucket owner's name.</p>
+     * <p>Bucket name.</p>
      */
     inline ListObjectVersionsResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Bucket owner's name.</p>
+     * <p>Bucket name.</p>
      */
     inline ListObjectVersionsResult& WithName(const char* value) { SetName(value); return *this;}
 
@@ -399,65 +406,72 @@ namespace Model
 
 
     /**
-     * <p>The delimeter grouping the included keys. A delimiter is a character that you
+     * <p>The delimiter grouping the included keys. A delimiter is a character that you
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
-     * element in CommonPrefixes. These groups are counted as one result against the
-     * max-keys limitation. These keys are not returned elsewhere in the response.</p>
+     * element in <code>CommonPrefixes</code>. These groups are counted as one result
+     * against the max-keys limitation. These keys are not returned elsewhere in the
+     * response.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
     /**
-     * <p>The delimeter grouping the included keys. A delimiter is a character that you
+     * <p>The delimiter grouping the included keys. A delimiter is a character that you
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
-     * element in CommonPrefixes. These groups are counted as one result against the
-     * max-keys limitation. These keys are not returned elsewhere in the response.</p>
+     * element in <code>CommonPrefixes</code>. These groups are counted as one result
+     * against the max-keys limitation. These keys are not returned elsewhere in the
+     * response.</p>
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
 
     /**
-     * <p>The delimeter grouping the included keys. A delimiter is a character that you
+     * <p>The delimiter grouping the included keys. A delimiter is a character that you
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
-     * element in CommonPrefixes. These groups are counted as one result against the
-     * max-keys limitation. These keys are not returned elsewhere in the response.</p>
+     * element in <code>CommonPrefixes</code>. These groups are counted as one result
+     * against the max-keys limitation. These keys are not returned elsewhere in the
+     * response.</p>
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
 
     /**
-     * <p>The delimeter grouping the included keys. A delimiter is a character that you
+     * <p>The delimiter grouping the included keys. A delimiter is a character that you
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
-     * element in CommonPrefixes. These groups are counted as one result against the
-     * max-keys limitation. These keys are not returned elsewhere in the response.</p>
+     * element in <code>CommonPrefixes</code>. These groups are counted as one result
+     * against the max-keys limitation. These keys are not returned elsewhere in the
+     * response.</p>
      */
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
     /**
-     * <p>The delimeter grouping the included keys. A delimiter is a character that you
+     * <p>The delimiter grouping the included keys. A delimiter is a character that you
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
-     * element in CommonPrefixes. These groups are counted as one result against the
-     * max-keys limitation. These keys are not returned elsewhere in the response.</p>
+     * element in <code>CommonPrefixes</code>. These groups are counted as one result
+     * against the max-keys limitation. These keys are not returned elsewhere in the
+     * response.</p>
      */
     inline ListObjectVersionsResult& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
     /**
-     * <p>The delimeter grouping the included keys. A delimiter is a character that you
+     * <p>The delimiter grouping the included keys. A delimiter is a character that you
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
-     * element in CommonPrefixes. These groups are counted as one result against the
-     * max-keys limitation. These keys are not returned elsewhere in the response.</p>
+     * element in <code>CommonPrefixes</code>. These groups are counted as one result
+     * against the max-keys limitation. These keys are not returned elsewhere in the
+     * response.</p>
      */
     inline ListObjectVersionsResult& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
     /**
-     * <p>The delimeter grouping the included keys. A delimiter is a character that you
+     * <p>The delimiter grouping the included keys. A delimiter is a character that you
      * specify to group keys. All keys that contain the same string between the prefix
      * and the first occurrence of the delimiter are grouped under a single result
-     * element in CommonPrefixes. These groups are counted as one result against the
-     * max-keys limitation. These keys are not returned elsewhere in the response.</p>
+     * element in <code>CommonPrefixes</code>. These groups are counted as one result
+     * against the max-keys limitation. These keys are not returned elsewhere in the
+     * response.</p>
      */
     inline ListObjectVersionsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 

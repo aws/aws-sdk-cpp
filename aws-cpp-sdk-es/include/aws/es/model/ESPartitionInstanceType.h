@@ -51,6 +51,8 @@ namespace Model
     c5_4xlarge_elasticsearch,
     c5_9xlarge_elasticsearch,
     c5_18xlarge_elasticsearch,
+    ultrawarm1_medium_elasticsearch,
+    ultrawarm1_large_elasticsearch,
     t2_micro_elasticsearch,
     t2_small_elasticsearch,
     t2_medium_elasticsearch,

@@ -93,50 +93,58 @@ namespace Model
 
 
     /**
-     * <p>The file name of the input document. It must be an image file (.JPG or .PNG
-     * format). Asynchronous operations also support PDF files.</p>
+     * <p>The file name of the input document. Synchronous operations can use image
+     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
+     * format files.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The file name of the input document. It must be an image file (.JPG or .PNG
-     * format). Asynchronous operations also support PDF files.</p>
+     * <p>The file name of the input document. Synchronous operations can use image
+     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
+     * format files.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The file name of the input document. It must be an image file (.JPG or .PNG
-     * format). Asynchronous operations also support PDF files.</p>
+     * <p>The file name of the input document. Synchronous operations can use image
+     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
+     * format files.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The file name of the input document. It must be an image file (.JPG or .PNG
-     * format). Asynchronous operations also support PDF files.</p>
+     * <p>The file name of the input document. Synchronous operations can use image
+     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
+     * format files.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The file name of the input document. It must be an image file (.JPG or .PNG
-     * format). Asynchronous operations also support PDF files.</p>
+     * <p>The file name of the input document. Synchronous operations can use image
+     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
+     * format files.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The file name of the input document. It must be an image file (.JPG or .PNG
-     * format). Asynchronous operations also support PDF files.</p>
+     * <p>The file name of the input document. Synchronous operations can use image
+     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
+     * format files.</p>
      */
     inline S3Object& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The file name of the input document. It must be an image file (.JPG or .PNG
-     * format). Asynchronous operations also support PDF files.</p>
+     * <p>The file name of the input document. Synchronous operations can use image
+     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
+     * format files.</p>
      */
     inline S3Object& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The file name of the input document. It must be an image file (.JPG or .PNG
-     * format). Asynchronous operations also support PDF files.</p>
+     * <p>The file name of the input document. Synchronous operations can use image
+     * files that are in JPEG or PNG format. Asynchronous operations also support PDF
+     * format files.</p>
      */
     inline S3Object& WithName(const char* value) { SetName(value); return *this;}
 

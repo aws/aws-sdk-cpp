@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 AnalyzeDocumentRequest::AnalyzeDocumentRequest() : 
     m_documentHasBeenSet(false),
-    m_featureTypesHasBeenSet(false)
+    m_featureTypesHasBeenSet(false),
+    m_humanLoopConfigHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,12 @@ Aws::String AnalyzeDocumentRequest::SerializePayload() const
      featureTypesJsonList[featureTypesIndex].AsString(FeatureTypeMapper::GetNameForFeatureType(m_featureTypes[featureTypesIndex]));
    }
    payload.WithArray("FeatureTypes", std::move(featureTypesJsonList));
+
+  }
+
+  if(m_humanLoopConfigHasBeenSet)
+  {
+   payload.WithObject("HumanLoopConfig", m_humanLoopConfig.Jsonize());
 
   }
 

@@ -70,44 +70,44 @@ namespace Model
 
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline const Aws::String& GetAcceptRanges() const{ return m_acceptRanges; }
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline void SetAcceptRanges(const Aws::String& value) { m_acceptRanges = value; }
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline void SetAcceptRanges(Aws::String&& value) { m_acceptRanges = std::move(value); }
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline void SetAcceptRanges(const char* value) { m_acceptRanges.assign(value); }
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline HeadObjectResult& WithAcceptRanges(const Aws::String& value) { SetAcceptRanges(value); return *this;}
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline HeadObjectResult& WithAcceptRanges(Aws::String&& value) { SetAcceptRanges(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline HeadObjectResult& WithAcceptRanges(const char* value) { SetAcceptRanges(value); return *this;}
 
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -115,7 +115,7 @@ namespace Model
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -123,7 +123,7 @@ namespace Model
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -131,7 +131,7 @@ namespace Model
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -139,7 +139,7 @@ namespace Model
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -147,7 +147,7 @@ namespace Model
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -155,7 +155,7 @@ namespace Model
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -312,68 +312,71 @@ namespace Model
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline HeadObjectResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline HeadObjectResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline HeadObjectResult& WithETag(const char* value) { SetETag(value); return *this;}
 
 
     /**
-     * <p>This is set to the number of metadata entries not returned in x-amz-meta
-     * headers. This can happen if you create metadata using an API like SOAP that
-     * supports more flexible metadata than the REST API. For example, using SOAP, you
-     * can create metadata whose values are not legal HTTP headers.</p>
+     * <p>This is set to the number of metadata entries not returned in
+     * <code>x-amz-meta</code> headers. This can happen if you create metadata using an
+     * API like SOAP that supports more flexible metadata than the REST API. For
+     * example, using SOAP, you can create metadata whose values are not legal HTTP
+     * headers.</p>
      */
     inline int GetMissingMeta() const{ return m_missingMeta; }
 
     /**
-     * <p>This is set to the number of metadata entries not returned in x-amz-meta
-     * headers. This can happen if you create metadata using an API like SOAP that
-     * supports more flexible metadata than the REST API. For example, using SOAP, you
-     * can create metadata whose values are not legal HTTP headers.</p>
+     * <p>This is set to the number of metadata entries not returned in
+     * <code>x-amz-meta</code> headers. This can happen if you create metadata using an
+     * API like SOAP that supports more flexible metadata than the REST API. For
+     * example, using SOAP, you can create metadata whose values are not legal HTTP
+     * headers.</p>
      */
     inline void SetMissingMeta(int value) { m_missingMeta = value; }
 
     /**
-     * <p>This is set to the number of metadata entries not returned in x-amz-meta
-     * headers. This can happen if you create metadata using an API like SOAP that
-     * supports more flexible metadata than the REST API. For example, using SOAP, you
-     * can create metadata whose values are not legal HTTP headers.</p>
+     * <p>This is set to the number of metadata entries not returned in
+     * <code>x-amz-meta</code> headers. This can happen if you create metadata using an
+     * API like SOAP that supports more flexible metadata than the REST API. For
+     * example, using SOAP, you can create metadata whose values are not legal HTTP
+     * headers.</p>
      */
     inline HeadObjectResult& WithMissingMeta(int value) { SetMissingMeta(value); return *this;}
 
@@ -687,40 +690,40 @@ namespace Model
     /**
      * <p>If the object is stored using server-side encryption either with an AWS KMS
      * customer master key (CMK) or an Amazon S3-managed encryption key, the response
-     * includes this header with the value of the Server-side encryption algorithm used
-     * when storing this object in S3 (e.g., AES256, aws:kms).</p>
+     * includes this header with the value of the server-side encryption algorithm used
+     * when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
      * <p>If the object is stored using server-side encryption either with an AWS KMS
      * customer master key (CMK) or an Amazon S3-managed encryption key, the response
-     * includes this header with the value of the Server-side encryption algorithm used
-     * when storing this object in S3 (e.g., AES256, aws:kms).</p>
+     * includes this header with the value of the server-side encryption algorithm used
+     * when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryption = value; }
 
     /**
      * <p>If the object is stored using server-side encryption either with an AWS KMS
      * customer master key (CMK) or an Amazon S3-managed encryption key, the response
-     * includes this header with the value of the Server-side encryption algorithm used
-     * when storing this object in S3 (e.g., AES256, aws:kms).</p>
+     * includes this header with the value of the server-side encryption algorithm used
+     * when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = std::move(value); }
 
     /**
      * <p>If the object is stored using server-side encryption either with an AWS KMS
      * customer master key (CMK) or an Amazon S3-managed encryption key, the response
-     * includes this header with the value of the Server-side encryption algorithm used
-     * when storing this object in S3 (e.g., AES256, aws:kms).</p>
+     * includes this header with the value of the server-side encryption algorithm used
+     * when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
      */
     inline HeadObjectResult& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
      * <p>If the object is stored using server-side encryption either with an AWS KMS
      * customer master key (CMK) or an Amazon S3-managed encryption key, the response
-     * includes this header with the value of the Server-side encryption algorithm used
-     * when storing this object in S3 (e.g., AES256, aws:kms).</p>
+     * includes this header with the value of the server-side encryption algorithm used
+     * when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
      */
     inline HeadObjectResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
@@ -838,93 +841,93 @@ namespace Model
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5 = value; }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5.assign(value); }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline HeadObjectResult& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline HeadObjectResult& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline HeadObjectResult& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline HeadObjectResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline HeadObjectResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline HeadObjectResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
@@ -993,115 +996,125 @@ namespace Model
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication you
+     * either a source or destination in a replication rule.</p> <p>In replication, you
      * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object (GetObject)
-     * or object metadata (HeadObject) from these buckets, Amazon S3 will return the
-     * x-amz-replication-status header in the response as follows:</p> <ul> <li> <p>If
-     * requesting object from the source bucket — Amazon S3 will return the
-     * x-amz-replication-status header if object in your request is eligible for
-     * replication.</p> <p> For example, suppose in your replication configuration you
-     * specify object prefix "TaxDocs" requesting Amazon S3 to replicate objects with
-     * key prefix "TaxDocs". Then any objects you upload with this key name prefix, for
-     * example "TaxDocs/document1.pdf", is eligible for replication. For any object
-     * request with this key name prefix Amazon S3 will return the
-     * x-amz-replication-status header with value PENDING, COMPLETED or FAILED
-     * indicating object replication status.</p> </li> <li> <p>If requesting object
-     * from the destination bucket — Amazon S3 will return the x-amz-replication-status
-     * header with value REPLICA if object in your request is a replica that Amazon S3
-     * created.</p> </li> </ul> <p>For more information, see <a
+     * where Amazon S3 stores object replicas. When you request an object
+     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
+     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
+     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
+     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
+     * header if the object in your request is eligible for replication.</p> <p> For
+     * example, suppose that in your replication configuration, you specify object
+     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
+     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
+     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
+     * For any object request with this key name prefix, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
+     * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
+     * object from the destination bucket — Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header with value REPLICA if the object in
+     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline const ReplicationStatus& GetReplicationStatus() const{ return m_replicationStatus; }
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication you
+     * either a source or destination in a replication rule.</p> <p>In replication, you
      * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object (GetObject)
-     * or object metadata (HeadObject) from these buckets, Amazon S3 will return the
-     * x-amz-replication-status header in the response as follows:</p> <ul> <li> <p>If
-     * requesting object from the source bucket — Amazon S3 will return the
-     * x-amz-replication-status header if object in your request is eligible for
-     * replication.</p> <p> For example, suppose in your replication configuration you
-     * specify object prefix "TaxDocs" requesting Amazon S3 to replicate objects with
-     * key prefix "TaxDocs". Then any objects you upload with this key name prefix, for
-     * example "TaxDocs/document1.pdf", is eligible for replication. For any object
-     * request with this key name prefix Amazon S3 will return the
-     * x-amz-replication-status header with value PENDING, COMPLETED or FAILED
-     * indicating object replication status.</p> </li> <li> <p>If requesting object
-     * from the destination bucket — Amazon S3 will return the x-amz-replication-status
-     * header with value REPLICA if object in your request is a replica that Amazon S3
-     * created.</p> </li> </ul> <p>For more information, see <a
+     * where Amazon S3 stores object replicas. When you request an object
+     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
+     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
+     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
+     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
+     * header if the object in your request is eligible for replication.</p> <p> For
+     * example, suppose that in your replication configuration, you specify object
+     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
+     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
+     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
+     * For any object request with this key name prefix, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
+     * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
+     * object from the destination bucket — Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header with value REPLICA if the object in
+     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline void SetReplicationStatus(const ReplicationStatus& value) { m_replicationStatus = value; }
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication you
+     * either a source or destination in a replication rule.</p> <p>In replication, you
      * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object (GetObject)
-     * or object metadata (HeadObject) from these buckets, Amazon S3 will return the
-     * x-amz-replication-status header in the response as follows:</p> <ul> <li> <p>If
-     * requesting object from the source bucket — Amazon S3 will return the
-     * x-amz-replication-status header if object in your request is eligible for
-     * replication.</p> <p> For example, suppose in your replication configuration you
-     * specify object prefix "TaxDocs" requesting Amazon S3 to replicate objects with
-     * key prefix "TaxDocs". Then any objects you upload with this key name prefix, for
-     * example "TaxDocs/document1.pdf", is eligible for replication. For any object
-     * request with this key name prefix Amazon S3 will return the
-     * x-amz-replication-status header with value PENDING, COMPLETED or FAILED
-     * indicating object replication status.</p> </li> <li> <p>If requesting object
-     * from the destination bucket — Amazon S3 will return the x-amz-replication-status
-     * header with value REPLICA if object in your request is a replica that Amazon S3
-     * created.</p> </li> </ul> <p>For more information, see <a
+     * where Amazon S3 stores object replicas. When you request an object
+     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
+     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
+     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
+     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
+     * header if the object in your request is eligible for replication.</p> <p> For
+     * example, suppose that in your replication configuration, you specify object
+     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
+     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
+     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
+     * For any object request with this key name prefix, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
+     * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
+     * object from the destination bucket — Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header with value REPLICA if the object in
+     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline void SetReplicationStatus(ReplicationStatus&& value) { m_replicationStatus = std::move(value); }
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication you
+     * either a source or destination in a replication rule.</p> <p>In replication, you
      * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object (GetObject)
-     * or object metadata (HeadObject) from these buckets, Amazon S3 will return the
-     * x-amz-replication-status header in the response as follows:</p> <ul> <li> <p>If
-     * requesting object from the source bucket — Amazon S3 will return the
-     * x-amz-replication-status header if object in your request is eligible for
-     * replication.</p> <p> For example, suppose in your replication configuration you
-     * specify object prefix "TaxDocs" requesting Amazon S3 to replicate objects with
-     * key prefix "TaxDocs". Then any objects you upload with this key name prefix, for
-     * example "TaxDocs/document1.pdf", is eligible for replication. For any object
-     * request with this key name prefix Amazon S3 will return the
-     * x-amz-replication-status header with value PENDING, COMPLETED or FAILED
-     * indicating object replication status.</p> </li> <li> <p>If requesting object
-     * from the destination bucket — Amazon S3 will return the x-amz-replication-status
-     * header with value REPLICA if object in your request is a replica that Amazon S3
-     * created.</p> </li> </ul> <p>For more information, see <a
+     * where Amazon S3 stores object replicas. When you request an object
+     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
+     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
+     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
+     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
+     * header if the object in your request is eligible for replication.</p> <p> For
+     * example, suppose that in your replication configuration, you specify object
+     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
+     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
+     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
+     * For any object request with this key name prefix, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
+     * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
+     * object from the destination bucket — Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header with value REPLICA if the object in
+     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline HeadObjectResult& WithReplicationStatus(const ReplicationStatus& value) { SetReplicationStatus(value); return *this;}
 
     /**
      * <p>Amazon S3 can return this header if your request involves a bucket that is
-     * either a source or destination in a replication rule.</p> <p>In replication you
+     * either a source or destination in a replication rule.</p> <p>In replication, you
      * have a source bucket on which you configure replication and destination bucket
-     * where Amazon S3 stores object replicas. When you request an object (GetObject)
-     * or object metadata (HeadObject) from these buckets, Amazon S3 will return the
-     * x-amz-replication-status header in the response as follows:</p> <ul> <li> <p>If
-     * requesting object from the source bucket — Amazon S3 will return the
-     * x-amz-replication-status header if object in your request is eligible for
-     * replication.</p> <p> For example, suppose in your replication configuration you
-     * specify object prefix "TaxDocs" requesting Amazon S3 to replicate objects with
-     * key prefix "TaxDocs". Then any objects you upload with this key name prefix, for
-     * example "TaxDocs/document1.pdf", is eligible for replication. For any object
-     * request with this key name prefix Amazon S3 will return the
-     * x-amz-replication-status header with value PENDING, COMPLETED or FAILED
-     * indicating object replication status.</p> </li> <li> <p>If requesting object
-     * from the destination bucket — Amazon S3 will return the x-amz-replication-status
-     * header with value REPLICA if object in your request is a replica that Amazon S3
-     * created.</p> </li> </ul> <p>For more information, see <a
+     * where Amazon S3 stores object replicas. When you request an object
+     * (<code>GetObject</code>) or object metadata (<code>HeadObject</code>) from these
+     * buckets, Amazon S3 will return the <code>x-amz-replication-status</code> header
+     * in the response as follows:</p> <ul> <li> <p>If requesting an object from the
+     * source bucket — Amazon S3 will return the <code>x-amz-replication-status</code>
+     * header if the object in your request is eligible for replication.</p> <p> For
+     * example, suppose that in your replication configuration, you specify object
+     * prefix <code>TaxDocs</code> requesting Amazon S3 to replicate objects with key
+     * prefix <code>TaxDocs</code>. Any objects you upload with this key name prefix,
+     * for example <code>TaxDocs/document1.pdf</code>, are eligible for replication.
+     * For any object request with this key name prefix, Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header with value PENDING, COMPLETED or
+     * FAILED indicating object replication status.</p> </li> <li> <p>If requesting an
+     * object from the destination bucket — Amazon S3 will return the
+     * <code>x-amz-replication-status</code> header with value REPLICA if the object in
+     * your request is a replica that Amazon S3 created.</p> </li> </ul> <p>For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Replication</a>.</p>
      */
     inline HeadObjectResult& WithReplicationStatus(ReplicationStatus&& value) { SetReplicationStatus(std::move(value)); return *this;}

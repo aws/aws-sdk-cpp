@@ -384,37 +384,37 @@ namespace Model
 
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group that is
+     * <p>The scaling configuration details for the Auto Scaling group that is
      * associated with your node group.</p>
      */
     inline const NodegroupScalingConfig& GetScalingConfig() const{ return m_scalingConfig; }
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group that is
+     * <p>The scaling configuration details for the Auto Scaling group that is
      * associated with your node group.</p>
      */
     inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group that is
+     * <p>The scaling configuration details for the Auto Scaling group that is
      * associated with your node group.</p>
      */
     inline void SetScalingConfig(const NodegroupScalingConfig& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = value; }
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group that is
+     * <p>The scaling configuration details for the Auto Scaling group that is
      * associated with your node group.</p>
      */
     inline void SetScalingConfig(NodegroupScalingConfig&& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = std::move(value); }
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group that is
+     * <p>The scaling configuration details for the Auto Scaling group that is
      * associated with your node group.</p>
      */
     inline Nodegroup& WithScalingConfig(const NodegroupScalingConfig& value) { SetScalingConfig(value); return *this;}
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group that is
+     * <p>The scaling configuration details for the Auto Scaling group that is
      * associated with your node group.</p>
      */
     inline Nodegroup& WithScalingConfig(NodegroupScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
@@ -467,7 +467,7 @@ namespace Model
 
 
     /**
-     * <p>The subnets allowed for the AutoScaling group that is associated with your
+     * <p>The subnets allowed for the Auto Scaling group that is associated with your
      * node group. These subnets must have the following tag:
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
      * is replaced with the name of your cluster.</p>
@@ -475,7 +475,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
     /**
-     * <p>The subnets allowed for the AutoScaling group that is associated with your
+     * <p>The subnets allowed for the Auto Scaling group that is associated with your
      * node group. These subnets must have the following tag:
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
      * is replaced with the name of your cluster.</p>
@@ -483,7 +483,7 @@ namespace Model
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
-     * <p>The subnets allowed for the AutoScaling group that is associated with your
+     * <p>The subnets allowed for the Auto Scaling group that is associated with your
      * node group. These subnets must have the following tag:
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
      * is replaced with the name of your cluster.</p>
@@ -491,7 +491,7 @@ namespace Model
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
-     * <p>The subnets allowed for the AutoScaling group that is associated with your
+     * <p>The subnets allowed for the Auto Scaling group that is associated with your
      * node group. These subnets must have the following tag:
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
      * is replaced with the name of your cluster.</p>
@@ -499,7 +499,7 @@ namespace Model
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
-     * <p>The subnets allowed for the AutoScaling group that is associated with your
+     * <p>The subnets allowed for the Auto Scaling group that is associated with your
      * node group. These subnets must have the following tag:
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
      * is replaced with the name of your cluster.</p>
@@ -507,7 +507,7 @@ namespace Model
     inline Nodegroup& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
     /**
-     * <p>The subnets allowed for the AutoScaling group that is associated with your
+     * <p>The subnets allowed for the Auto Scaling group that is associated with your
      * node group. These subnets must have the following tag:
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
      * is replaced with the name of your cluster.</p>
@@ -515,7 +515,7 @@ namespace Model
     inline Nodegroup& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
-     * <p>The subnets allowed for the AutoScaling group that is associated with your
+     * <p>The subnets allowed for the Auto Scaling group that is associated with your
      * node group. These subnets must have the following tag:
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
      * is replaced with the name of your cluster.</p>
@@ -523,7 +523,7 @@ namespace Model
     inline Nodegroup& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /**
-     * <p>The subnets allowed for the AutoScaling group that is associated with your
+     * <p>The subnets allowed for the Auto Scaling group that is associated with your
      * node group. These subnets must have the following tag:
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
      * is replaced with the name of your cluster.</p>
@@ -531,7 +531,7 @@ namespace Model
     inline Nodegroup& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The subnets allowed for the AutoScaling group that is associated with your
+     * <p>The subnets allowed for the Auto Scaling group that is associated with your
      * node group. These subnets must have the following tag:
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
      * is replaced with the name of your cluster.</p>
@@ -579,7 +579,7 @@ namespace Model
     /**
      * <p>The AMI type associated with your node group. GPU instance types should use
      * the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized
-     * Linux AMI with GPU support; non-GPU instances should use the
+     * Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux
      * AMI.</p>
      */
@@ -588,7 +588,7 @@ namespace Model
     /**
      * <p>The AMI type associated with your node group. GPU instance types should use
      * the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized
-     * Linux AMI with GPU support; non-GPU instances should use the
+     * Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux
      * AMI.</p>
      */
@@ -597,7 +597,7 @@ namespace Model
     /**
      * <p>The AMI type associated with your node group. GPU instance types should use
      * the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized
-     * Linux AMI with GPU support; non-GPU instances should use the
+     * Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux
      * AMI.</p>
      */
@@ -606,7 +606,7 @@ namespace Model
     /**
      * <p>The AMI type associated with your node group. GPU instance types should use
      * the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized
-     * Linux AMI with GPU support; non-GPU instances should use the
+     * Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux
      * AMI.</p>
      */
@@ -615,7 +615,7 @@ namespace Model
     /**
      * <p>The AMI type associated with your node group. GPU instance types should use
      * the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized
-     * Linux AMI with GPU support; non-GPU instances should use the
+     * Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux
      * AMI.</p>
      */
@@ -624,7 +624,7 @@ namespace Model
     /**
      * <p>The AMI type associated with your node group. GPU instance types should use
      * the <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized
-     * Linux AMI with GPU support; non-GPU instances should use the
+     * Linux AMI with GPU support. Non-GPU instances should use the
      * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux
      * AMI.</p>
      */
@@ -821,37 +821,37 @@ namespace Model
 
 
     /**
-     * <p>The resources associated with the nodegroup, such as AutoScaling groups and
+     * <p>The resources associated with the node group, such as Auto Scaling groups and
      * security groups for remote access.</p>
      */
     inline const NodegroupResources& GetResources() const{ return m_resources; }
 
     /**
-     * <p>The resources associated with the nodegroup, such as AutoScaling groups and
+     * <p>The resources associated with the node group, such as Auto Scaling groups and
      * security groups for remote access.</p>
      */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
-     * <p>The resources associated with the nodegroup, such as AutoScaling groups and
+     * <p>The resources associated with the node group, such as Auto Scaling groups and
      * security groups for remote access.</p>
      */
     inline void SetResources(const NodegroupResources& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
-     * <p>The resources associated with the nodegroup, such as AutoScaling groups and
+     * <p>The resources associated with the node group, such as Auto Scaling groups and
      * security groups for remote access.</p>
      */
     inline void SetResources(NodegroupResources&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
-     * <p>The resources associated with the nodegroup, such as AutoScaling groups and
+     * <p>The resources associated with the node group, such as Auto Scaling groups and
      * security groups for remote access.</p>
      */
     inline Nodegroup& WithResources(const NodegroupResources& value) { SetResources(value); return *this;}
 
     /**
-     * <p>The resources associated with the nodegroup, such as AutoScaling groups and
+     * <p>The resources associated with the node group, such as Auto Scaling groups and
      * security groups for remote access.</p>
      */
     inline Nodegroup& WithResources(NodegroupResources&& value) { SetResources(std::move(value)); return *this;}
@@ -920,7 +920,7 @@ namespace Model
 
 
     /**
-     * <p>The metadata applied the node group to assist with categorization and
+     * <p>The metadata applied to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
      * with the node group, such as the Amazon EC2 instances or subnets. </p>
@@ -928,7 +928,7 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>The metadata applied the node group to assist with categorization and
+     * <p>The metadata applied to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
      * with the node group, such as the Amazon EC2 instances or subnets. </p>
@@ -936,7 +936,7 @@ namespace Model
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>The metadata applied the node group to assist with categorization and
+     * <p>The metadata applied to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
      * with the node group, such as the Amazon EC2 instances or subnets. </p>
@@ -944,7 +944,7 @@ namespace Model
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>The metadata applied the node group to assist with categorization and
+     * <p>The metadata applied to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
      * with the node group, such as the Amazon EC2 instances or subnets. </p>
@@ -952,7 +952,7 @@ namespace Model
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>The metadata applied the node group to assist with categorization and
+     * <p>The metadata applied to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
      * with the node group, such as the Amazon EC2 instances or subnets. </p>
@@ -960,7 +960,7 @@ namespace Model
     inline Nodegroup& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>The metadata applied the node group to assist with categorization and
+     * <p>The metadata applied to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
      * with the node group, such as the Amazon EC2 instances or subnets. </p>
@@ -968,7 +968,7 @@ namespace Model
     inline Nodegroup& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>The metadata applied the node group to assist with categorization and
+     * <p>The metadata applied to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
      * with the node group, such as the Amazon EC2 instances or subnets. </p>
@@ -976,7 +976,7 @@ namespace Model
     inline Nodegroup& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>The metadata applied the node group to assist with categorization and
+     * <p>The metadata applied to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
      * with the node group, such as the Amazon EC2 instances or subnets. </p>
@@ -984,7 +984,7 @@ namespace Model
     inline Nodegroup& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata applied the node group to assist with categorization and
+     * <p>The metadata applied to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
      * with the node group, such as the Amazon EC2 instances or subnets. </p>
@@ -992,7 +992,7 @@ namespace Model
     inline Nodegroup& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata applied the node group to assist with categorization and
+     * <p>The metadata applied to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
      * with the node group, such as the Amazon EC2 instances or subnets. </p>
@@ -1000,7 +1000,7 @@ namespace Model
     inline Nodegroup& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The metadata applied the node group to assist with categorization and
+     * <p>The metadata applied to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
      * with the node group, such as the Amazon EC2 instances or subnets. </p>
@@ -1008,7 +1008,7 @@ namespace Model
     inline Nodegroup& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The metadata applied the node group to assist with categorization and
+     * <p>The metadata applied to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
      * with the node group, such as the Amazon EC2 instances or subnets. </p>
@@ -1016,7 +1016,7 @@ namespace Model
     inline Nodegroup& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The metadata applied the node group to assist with categorization and
+     * <p>The metadata applied to the node group to assist with categorization and
      * organization. Each tag consists of a key and an optional value, both of which
      * you define. Node group tags do not propagate to any other resources associated
      * with the node group, such as the Amazon EC2 instances or subnets. </p>

@@ -33,6 +33,7 @@ namespace Model
 VolumeStatusItem::VolumeStatusItem() : 
     m_actionsHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_eventsHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_volumeStatusHasBeenSet(false)
@@ -42,6 +43,7 @@ VolumeStatusItem::VolumeStatusItem() :
 VolumeStatusItem::VolumeStatusItem(const XmlNode& xmlNode) : 
     m_actionsHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_eventsHasBeenSet(false),
     m_volumeIdHasBeenSet(false),
     m_volumeStatusHasBeenSet(false)
@@ -72,6 +74,12 @@ VolumeStatusItem& VolumeStatusItem::operator =(const XmlNode& xmlNode)
     {
       m_availabilityZone = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneNode.GetText());
       m_availabilityZoneHasBeenSet = true;
+    }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+      m_outpostArnHasBeenSet = true;
     }
     XmlNode eventsNode = resultNode.FirstChild("eventsSet");
     if(!eventsNode.IsNull())
@@ -120,6 +128,11 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
   }
 
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
   if(m_eventsHasBeenSet)
   {
       unsigned eventsIdx = 1;
@@ -160,6 +173,10 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
   if(m_eventsHasBeenSet)
   {

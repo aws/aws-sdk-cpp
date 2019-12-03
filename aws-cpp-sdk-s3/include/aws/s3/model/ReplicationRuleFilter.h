@@ -53,49 +53,49 @@ namespace Model
 
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline ReplicationRuleFilter& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline ReplicationRuleFilter& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * <p>An object key name prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
     inline ReplicationRuleFilter& WithPrefix(const char* value) { SetPrefix(value); return *this;}

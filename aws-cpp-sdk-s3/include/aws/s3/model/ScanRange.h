@@ -30,6 +30,15 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p>Specifies the byte range of the object to get the records from. A record is
+   * processed when its first byte is contained by the range. This parameter is
+   * optional, but when specified, it must not be empty. See RFC 2616, Section
+   * 14.35.1 about how to specify the start and end of the range.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ScanRange">AWS API
+   * Reference</a></p>
+   */
   class AWS_S3_API ScanRange
   {
   public:
@@ -81,7 +90,7 @@ namespace Model
      * <p>Specifies the end of the byte range. This parameter is optional. Valid
      * values: non-negative integers. The default value is one less than the size of
      * the object being queried. If only the End parameter is supplied, it is
-     * interpreted to mean scan the last N bytes of the file. For example;
+     * interpreted to mean scan the last N bytes of the file. For example,
      * <code>&lt;scanrange&gt;&lt;end&gt;50&lt;/end&gt;&lt;/scanrange&gt;</code> means
      * scan the last 50 bytes.</p>
      */
@@ -91,7 +100,7 @@ namespace Model
      * <p>Specifies the end of the byte range. This parameter is optional. Valid
      * values: non-negative integers. The default value is one less than the size of
      * the object being queried. If only the End parameter is supplied, it is
-     * interpreted to mean scan the last N bytes of the file. For example;
+     * interpreted to mean scan the last N bytes of the file. For example,
      * <code>&lt;scanrange&gt;&lt;end&gt;50&lt;/end&gt;&lt;/scanrange&gt;</code> means
      * scan the last 50 bytes.</p>
      */
@@ -101,7 +110,7 @@ namespace Model
      * <p>Specifies the end of the byte range. This parameter is optional. Valid
      * values: non-negative integers. The default value is one less than the size of
      * the object being queried. If only the End parameter is supplied, it is
-     * interpreted to mean scan the last N bytes of the file. For example;
+     * interpreted to mean scan the last N bytes of the file. For example,
      * <code>&lt;scanrange&gt;&lt;end&gt;50&lt;/end&gt;&lt;/scanrange&gt;</code> means
      * scan the last 50 bytes.</p>
      */
@@ -111,7 +120,7 @@ namespace Model
      * <p>Specifies the end of the byte range. This parameter is optional. Valid
      * values: non-negative integers. The default value is one less than the size of
      * the object being queried. If only the End parameter is supplied, it is
-     * interpreted to mean scan the last N bytes of the file. For example;
+     * interpreted to mean scan the last N bytes of the file. For example,
      * <code>&lt;scanrange&gt;&lt;end&gt;50&lt;/end&gt;&lt;/scanrange&gt;</code> means
      * scan the last 50 bytes.</p>
      */

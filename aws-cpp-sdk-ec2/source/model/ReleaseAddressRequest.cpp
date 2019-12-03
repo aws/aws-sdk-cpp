@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 ReleaseAddressRequest::ReleaseAddressRequest() : 
     m_allocationIdHasBeenSet(false),
     m_publicIpHasBeenSet(false),
+    m_networkBorderGroupHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -40,6 +41,11 @@ Aws::String ReleaseAddressRequest::SerializePayload() const
   if(m_publicIpHasBeenSet)
   {
     ss << "PublicIp=" << StringUtils::URLEncode(m_publicIp.c_str()) << "&";
+  }
+
+  if(m_networkBorderGroupHasBeenSet)
+  {
+    ss << "NetworkBorderGroup=" << StringUtils::URLEncode(m_networkBorderGroup.c_str()) << "&";
   }
 
   if(m_dryRunHasBeenSet)

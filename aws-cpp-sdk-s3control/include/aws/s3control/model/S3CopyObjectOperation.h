@@ -473,85 +473,137 @@ namespace Model
     inline S3CopyObjectOperation& WithSSEAwsKmsKeyId(const char* value) { SetSSEAwsKmsKeyId(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetTargetKeyPrefix() const{ return m_targetKeyPrefix; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool TargetKeyPrefixHasBeenSet() const { return m_targetKeyPrefixHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTargetKeyPrefix(const Aws::String& value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTargetKeyPrefix(Aws::String&& value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTargetKeyPrefix(const char* value) { m_targetKeyPrefixHasBeenSet = true; m_targetKeyPrefix.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline S3CopyObjectOperation& WithTargetKeyPrefix(const Aws::String& value) { SetTargetKeyPrefix(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline S3CopyObjectOperation& WithTargetKeyPrefix(Aws::String&& value) { SetTargetKeyPrefix(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline S3CopyObjectOperation& WithTargetKeyPrefix(const char* value) { SetTargetKeyPrefix(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const S3ObjectLockLegalHoldStatus& GetObjectLockLegalHoldStatus() const{ return m_objectLockLegalHoldStatus; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool ObjectLockLegalHoldStatusHasBeenSet() const { return m_objectLockLegalHoldStatusHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetObjectLockLegalHoldStatus(const S3ObjectLockLegalHoldStatus& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetObjectLockLegalHoldStatus(S3ObjectLockLegalHoldStatus&& value) { m_objectLockLegalHoldStatusHasBeenSet = true; m_objectLockLegalHoldStatus = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline S3CopyObjectOperation& WithObjectLockLegalHoldStatus(const S3ObjectLockLegalHoldStatus& value) { SetObjectLockLegalHoldStatus(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline S3CopyObjectOperation& WithObjectLockLegalHoldStatus(S3ObjectLockLegalHoldStatus&& value) { SetObjectLockLegalHoldStatus(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const S3ObjectLockMode& GetObjectLockMode() const{ return m_objectLockMode; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool ObjectLockModeHasBeenSet() const { return m_objectLockModeHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetObjectLockMode(const S3ObjectLockMode& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetObjectLockMode(S3ObjectLockMode&& value) { m_objectLockModeHasBeenSet = true; m_objectLockMode = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline S3CopyObjectOperation& WithObjectLockMode(const S3ObjectLockMode& value) { SetObjectLockMode(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline S3CopyObjectOperation& WithObjectLockMode(S3ObjectLockMode&& value) { SetObjectLockMode(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Utils::DateTime& GetObjectLockRetainUntilDate() const{ return m_objectLockRetainUntilDate; }
 
-    
+    /**
+     * <p/>
+     */
     inline bool ObjectLockRetainUntilDateHasBeenSet() const { return m_objectLockRetainUntilDateHasBeenSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { m_objectLockRetainUntilDateHasBeenSet = true; m_objectLockRetainUntilDate = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline S3CopyObjectOperation& WithObjectLockRetainUntilDate(const Aws::Utils::DateTime& value) { SetObjectLockRetainUntilDate(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline S3CopyObjectOperation& WithObjectLockRetainUntilDate(Aws::Utils::DateTime&& value) { SetObjectLockRetainUntilDate(std::move(value)); return *this;}
 
   private:

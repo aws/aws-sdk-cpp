@@ -1,0 +1,77 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/kendra/Kendra_EXPORTS.h>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace kendra
+{
+namespace Model
+{
+
+  /**
+   * <p>Provides statistical information about the FAQ questions and answers
+   * contained in an index.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/FaqStatistics">AWS
+   * API Reference</a></p>
+   */
+  class AWS_KENDRA_API FaqStatistics
+  {
+  public:
+    FaqStatistics();
+    FaqStatistics(Aws::Utils::Json::JsonView jsonValue);
+    FaqStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The total number of FAQ questions and answers contained in the index.</p>
+     */
+    inline int GetIndexedQuestionAnswersCount() const{ return m_indexedQuestionAnswersCount; }
+
+    /**
+     * <p>The total number of FAQ questions and answers contained in the index.</p>
+     */
+    inline bool IndexedQuestionAnswersCountHasBeenSet() const { return m_indexedQuestionAnswersCountHasBeenSet; }
+
+    /**
+     * <p>The total number of FAQ questions and answers contained in the index.</p>
+     */
+    inline void SetIndexedQuestionAnswersCount(int value) { m_indexedQuestionAnswersCountHasBeenSet = true; m_indexedQuestionAnswersCount = value; }
+
+    /**
+     * <p>The total number of FAQ questions and answers contained in the index.</p>
+     */
+    inline FaqStatistics& WithIndexedQuestionAnswersCount(int value) { SetIndexedQuestionAnswersCount(value); return *this;}
+
+  private:
+
+    int m_indexedQuestionAnswersCount;
+    bool m_indexedQuestionAnswersCountHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace kendra
+} // namespace Aws

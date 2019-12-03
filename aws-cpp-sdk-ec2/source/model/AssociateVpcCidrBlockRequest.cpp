@@ -24,7 +24,8 @@ AssociateVpcCidrBlockRequest::AssociateVpcCidrBlockRequest() :
     m_amazonProvidedIpv6CidrBlock(false),
     m_amazonProvidedIpv6CidrBlockHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_ipv6CidrBlockNetworkBorderGroupHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,11 @@ Aws::String AssociateVpcCidrBlockRequest::SerializePayload() const
   if(m_vpcIdHasBeenSet)
   {
     ss << "VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+
+  if(m_ipv6CidrBlockNetworkBorderGroupHasBeenSet)
+  {
+    ss << "Ipv6CidrBlockNetworkBorderGroup=" << StringUtils::URLEncode(m_ipv6CidrBlockNetworkBorderGroup.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

@@ -21,6 +21,7 @@
 #include <aws/ec2/model/DefaultRouteTablePropagationValue.h>
 #include <aws/ec2/model/VpnEcmpSupportValue.h>
 #include <aws/ec2/model/DnsSupportValue.h>
+#include <aws/ec2/model/MulticastSupportValue.h>
 #include <utility>
 
 namespace Aws
@@ -254,6 +255,37 @@ namespace Model
      */
     inline TransitGatewayRequestOptions& WithDnsSupport(DnsSupportValue&& value) { SetDnsSupport(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether multicast is enabled on the transit gateway</p>
+     */
+    inline const MulticastSupportValue& GetMulticastSupport() const{ return m_multicastSupport; }
+
+    /**
+     * <p>Indicates whether multicast is enabled on the transit gateway</p>
+     */
+    inline bool MulticastSupportHasBeenSet() const { return m_multicastSupportHasBeenSet; }
+
+    /**
+     * <p>Indicates whether multicast is enabled on the transit gateway</p>
+     */
+    inline void SetMulticastSupport(const MulticastSupportValue& value) { m_multicastSupportHasBeenSet = true; m_multicastSupport = value; }
+
+    /**
+     * <p>Indicates whether multicast is enabled on the transit gateway</p>
+     */
+    inline void SetMulticastSupport(MulticastSupportValue&& value) { m_multicastSupportHasBeenSet = true; m_multicastSupport = std::move(value); }
+
+    /**
+     * <p>Indicates whether multicast is enabled on the transit gateway</p>
+     */
+    inline TransitGatewayRequestOptions& WithMulticastSupport(const MulticastSupportValue& value) { SetMulticastSupport(value); return *this;}
+
+    /**
+     * <p>Indicates whether multicast is enabled on the transit gateway</p>
+     */
+    inline TransitGatewayRequestOptions& WithMulticastSupport(MulticastSupportValue&& value) { SetMulticastSupport(std::move(value)); return *this;}
+
   private:
 
     long long m_amazonSideAsn;
@@ -273,6 +305,9 @@ namespace Model
 
     DnsSupportValue m_dnsSupport;
     bool m_dnsSupportHasBeenSet;
+
+    MulticastSupportValue m_multicastSupport;
+    bool m_multicastSupportHasBeenSet;
   };
 
 } // namespace Model

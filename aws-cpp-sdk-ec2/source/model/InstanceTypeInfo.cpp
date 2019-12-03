@@ -54,6 +54,7 @@ InstanceTypeInfo::InstanceTypeInfo() :
     m_gpuInfoHasBeenSet(false),
     m_fpgaInfoHasBeenSet(false),
     m_placementGroupInfoHasBeenSet(false),
+    m_inferenceAcceleratorInfoHasBeenSet(false),
     m_hibernationSupported(false),
     m_hibernationSupportedHasBeenSet(false),
     m_burstablePerformanceSupported(false),
@@ -89,6 +90,7 @@ InstanceTypeInfo::InstanceTypeInfo(const XmlNode& xmlNode) :
     m_gpuInfoHasBeenSet(false),
     m_fpgaInfoHasBeenSet(false),
     m_placementGroupInfoHasBeenSet(false),
+    m_inferenceAcceleratorInfoHasBeenSet(false),
     m_hibernationSupported(false),
     m_hibernationSupportedHasBeenSet(false),
     m_burstablePerformanceSupported(false),
@@ -220,6 +222,12 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
     {
       m_placementGroupInfo = placementGroupInfoNode;
       m_placementGroupInfoHasBeenSet = true;
+    }
+    XmlNode inferenceAcceleratorInfoNode = resultNode.FirstChild("inferenceAcceleratorInfo");
+    if(!inferenceAcceleratorInfoNode.IsNull())
+    {
+      m_inferenceAcceleratorInfo = inferenceAcceleratorInfoNode;
+      m_inferenceAcceleratorInfoHasBeenSet = true;
     }
     XmlNode hibernationSupportedNode = resultNode.FirstChild("hibernationSupported");
     if(!hibernationSupportedNode.IsNull())
@@ -363,6 +371,13 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       m_placementGroupInfo.OutputToStream(oStream, placementGroupInfoLocationAndMemberSs.str().c_str());
   }
 
+  if(m_inferenceAcceleratorInfoHasBeenSet)
+  {
+      Aws::StringStream inferenceAcceleratorInfoLocationAndMemberSs;
+      inferenceAcceleratorInfoLocationAndMemberSs << location << index << locationValue << ".InferenceAcceleratorInfo";
+      m_inferenceAcceleratorInfo.OutputToStream(oStream, inferenceAcceleratorInfoLocationAndMemberSs.str().c_str());
+  }
+
   if(m_hibernationSupportedHasBeenSet)
   {
       oStream << location << index << locationValue << ".HibernationSupported=" << std::boolalpha << m_hibernationSupported << "&";
@@ -480,6 +495,12 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       Aws::String placementGroupInfoLocationAndMember(location);
       placementGroupInfoLocationAndMember += ".PlacementGroupInfo";
       m_placementGroupInfo.OutputToStream(oStream, placementGroupInfoLocationAndMember.c_str());
+  }
+  if(m_inferenceAcceleratorInfoHasBeenSet)
+  {
+      Aws::String inferenceAcceleratorInfoLocationAndMember(location);
+      inferenceAcceleratorInfoLocationAndMember += ".InferenceAcceleratorInfo";
+      m_inferenceAcceleratorInfo.OutputToStream(oStream, inferenceAcceleratorInfoLocationAndMember.c_str());
   }
   if(m_hibernationSupportedHasBeenSet)
   {

@@ -49,7 +49,8 @@ Subnet::Subnet() :
     m_assignIpv6AddressOnCreationHasBeenSet(false),
     m_ipv6CidrBlockAssociationSetHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_subnetArnHasBeenSet(false)
+    m_subnetArnHasBeenSet(false),
+    m_outpostArnHasBeenSet(false)
 {
 }
 
@@ -72,7 +73,8 @@ Subnet::Subnet(const XmlNode& xmlNode) :
     m_assignIpv6AddressOnCreationHasBeenSet(false),
     m_ipv6CidrBlockAssociationSetHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_subnetArnHasBeenSet(false)
+    m_subnetArnHasBeenSet(false),
+    m_outpostArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -179,6 +181,12 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
       m_subnetArn = Aws::Utils::Xml::DecodeEscapedXmlText(subnetArnNode.GetText());
       m_subnetArnHasBeenSet = true;
     }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+      m_outpostArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -268,6 +276,11 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".SubnetArn=" << StringUtils::URLEncode(m_subnetArn.c_str()) << "&";
   }
 
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
 }
 
 void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -339,6 +352,10 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_subnetArnHasBeenSet)
   {
       oStream << location << ".SubnetArn=" << StringUtils::URLEncode(m_subnetArn.c_str()) << "&";
+  }
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 }
 

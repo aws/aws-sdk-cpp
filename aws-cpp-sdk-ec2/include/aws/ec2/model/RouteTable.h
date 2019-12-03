@@ -55,42 +55,50 @@ namespace Model
 
 
     /**
-     * <p>The associations between the route table and one or more subnets.</p>
+     * <p>The associations between the route table and one or more subnets or a
+     * gateway.</p>
      */
     inline const Aws::Vector<RouteTableAssociation>& GetAssociations() const{ return m_associations; }
 
     /**
-     * <p>The associations between the route table and one or more subnets.</p>
+     * <p>The associations between the route table and one or more subnets or a
+     * gateway.</p>
      */
     inline bool AssociationsHasBeenSet() const { return m_associationsHasBeenSet; }
 
     /**
-     * <p>The associations between the route table and one or more subnets.</p>
+     * <p>The associations between the route table and one or more subnets or a
+     * gateway.</p>
      */
     inline void SetAssociations(const Aws::Vector<RouteTableAssociation>& value) { m_associationsHasBeenSet = true; m_associations = value; }
 
     /**
-     * <p>The associations between the route table and one or more subnets.</p>
+     * <p>The associations between the route table and one or more subnets or a
+     * gateway.</p>
      */
     inline void SetAssociations(Aws::Vector<RouteTableAssociation>&& value) { m_associationsHasBeenSet = true; m_associations = std::move(value); }
 
     /**
-     * <p>The associations between the route table and one or more subnets.</p>
+     * <p>The associations between the route table and one or more subnets or a
+     * gateway.</p>
      */
     inline RouteTable& WithAssociations(const Aws::Vector<RouteTableAssociation>& value) { SetAssociations(value); return *this;}
 
     /**
-     * <p>The associations between the route table and one or more subnets.</p>
+     * <p>The associations between the route table and one or more subnets or a
+     * gateway.</p>
      */
     inline RouteTable& WithAssociations(Aws::Vector<RouteTableAssociation>&& value) { SetAssociations(std::move(value)); return *this;}
 
     /**
-     * <p>The associations between the route table and one or more subnets.</p>
+     * <p>The associations between the route table and one or more subnets or a
+     * gateway.</p>
      */
     inline RouteTable& AddAssociations(const RouteTableAssociation& value) { m_associationsHasBeenSet = true; m_associations.push_back(value); return *this; }
 
     /**
-     * <p>The associations between the route table and one or more subnets.</p>
+     * <p>The associations between the route table and one or more subnets or a
+     * gateway.</p>
      */
     inline RouteTable& AddAssociations(RouteTableAssociation&& value) { m_associationsHasBeenSet = true; m_associations.push_back(std::move(value)); return *this; }
 

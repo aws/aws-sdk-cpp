@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     vpc,
     vpn,
-    direct_connect_gateway
+    direct_connect_gateway,
+    tgw_peering
   };
 
 namespace TransitGatewayAttachmentResourceTypeMapper

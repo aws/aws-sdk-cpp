@@ -46,49 +46,57 @@ namespace Model
 
     /**
      * <p>A unique identifier for the text-detection job. The <code>JobId</code> is
-     * returned from <code>StartDocumentAnalysis</code>.</p>
+     * returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is
+     * only valid for 7 days.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
      * <p>A unique identifier for the text-detection job. The <code>JobId</code> is
-     * returned from <code>StartDocumentAnalysis</code>.</p>
+     * returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is
+     * only valid for 7 days.</p>
      */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
      * <p>A unique identifier for the text-detection job. The <code>JobId</code> is
-     * returned from <code>StartDocumentAnalysis</code>.</p>
+     * returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is
+     * only valid for 7 days.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
      * <p>A unique identifier for the text-detection job. The <code>JobId</code> is
-     * returned from <code>StartDocumentAnalysis</code>.</p>
+     * returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is
+     * only valid for 7 days.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
      * <p>A unique identifier for the text-detection job. The <code>JobId</code> is
-     * returned from <code>StartDocumentAnalysis</code>.</p>
+     * returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is
+     * only valid for 7 days.</p>
      */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
     /**
      * <p>A unique identifier for the text-detection job. The <code>JobId</code> is
-     * returned from <code>StartDocumentAnalysis</code>.</p>
+     * returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is
+     * only valid for 7 days.</p>
      */
     inline GetDocumentAnalysisRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
      * <p>A unique identifier for the text-detection job. The <code>JobId</code> is
-     * returned from <code>StartDocumentAnalysis</code>.</p>
+     * returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is
+     * only valid for 7 days.</p>
      */
     inline GetDocumentAnalysisRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the text-detection job. The <code>JobId</code> is
-     * returned from <code>StartDocumentAnalysis</code>.</p>
+     * returned from <code>StartDocumentAnalysis</code>. A <code>JobId</code> value is
+     * only valid for 7 days.</p>
      */
     inline GetDocumentAnalysisRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
 

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>&gt;Container for all response elements.</p><p><h3>See Also:</h3>   <a
+   * <p>Container for all response elements.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObjectResult">AWS
    * API Reference</a></p>
    */

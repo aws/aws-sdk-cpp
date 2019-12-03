@@ -115,32 +115,32 @@ namespace Model
 
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryption = value; }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = std::move(value); }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline UploadPartCopyResult& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline UploadPartCopyResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
@@ -197,93 +197,93 @@ namespace Model
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5 = value; }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5.assign(value); }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline UploadPartCopyResult& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline UploadPartCopyResult& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline UploadPartCopyResult& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline UploadPartCopyResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline UploadPartCopyResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline UploadPartCopyResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 

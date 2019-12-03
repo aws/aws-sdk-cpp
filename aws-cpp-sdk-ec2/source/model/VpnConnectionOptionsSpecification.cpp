@@ -31,6 +31,8 @@ namespace Model
 {
 
 VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification() : 
+    m_enableAcceleration(false),
+    m_enableAccelerationHasBeenSet(false),
     m_staticRoutesOnly(false),
     m_staticRoutesOnlyHasBeenSet(false),
     m_tunnelOptionsHasBeenSet(false)
@@ -38,6 +40,8 @@ VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification() :
 }
 
 VpnConnectionOptionsSpecification::VpnConnectionOptionsSpecification(const XmlNode& xmlNode) : 
+    m_enableAcceleration(false),
+    m_enableAccelerationHasBeenSet(false),
     m_staticRoutesOnly(false),
     m_staticRoutesOnlyHasBeenSet(false),
     m_tunnelOptionsHasBeenSet(false)
@@ -51,6 +55,12 @@ VpnConnectionOptionsSpecification& VpnConnectionOptionsSpecification::operator =
 
   if(!resultNode.IsNull())
   {
+    XmlNode enableAccelerationNode = resultNode.FirstChild("EnableAcceleration");
+    if(!enableAccelerationNode.IsNull())
+    {
+      m_enableAcceleration = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableAccelerationNode.GetText()).c_str()).c_str());
+      m_enableAccelerationHasBeenSet = true;
+    }
     XmlNode staticRoutesOnlyNode = resultNode.FirstChild("staticRoutesOnly");
     if(!staticRoutesOnlyNode.IsNull())
     {
@@ -76,6 +86,11 @@ VpnConnectionOptionsSpecification& VpnConnectionOptionsSpecification::operator =
 
 void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
+  if(m_enableAccelerationHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnableAcceleration=" << std::boolalpha << m_enableAcceleration << "&";
+  }
+
   if(m_staticRoutesOnlyHasBeenSet)
   {
       oStream << location << index << locationValue << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";
@@ -96,6 +111,10 @@ void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, co
 
 void VpnConnectionOptionsSpecification::OutputToStream(Aws::OStream& oStream, const char* location) const
 {
+  if(m_enableAccelerationHasBeenSet)
+  {
+      oStream << location << ".EnableAcceleration=" << std::boolalpha << m_enableAcceleration << "&";
+  }
   if(m_staticRoutesOnlyHasBeenSet)
   {
       oStream << location << ".StaticRoutesOnly=" << std::boolalpha << m_staticRoutesOnly << "&";

@@ -161,56 +161,56 @@ namespace Model
 
     /**
      * <p>The cluster security group that was created by Amazon EKS for the cluster.
-     * Managed node groups use this security group for control plane to data plane
+     * Managed node groups use this security group for control-plane-to-data-plane
      * communication.</p>
      */
     inline const Aws::String& GetClusterSecurityGroupId() const{ return m_clusterSecurityGroupId; }
 
     /**
      * <p>The cluster security group that was created by Amazon EKS for the cluster.
-     * Managed node groups use this security group for control plane to data plane
+     * Managed node groups use this security group for control-plane-to-data-plane
      * communication.</p>
      */
     inline bool ClusterSecurityGroupIdHasBeenSet() const { return m_clusterSecurityGroupIdHasBeenSet; }
 
     /**
      * <p>The cluster security group that was created by Amazon EKS for the cluster.
-     * Managed node groups use this security group for control plane to data plane
+     * Managed node groups use this security group for control-plane-to-data-plane
      * communication.</p>
      */
     inline void SetClusterSecurityGroupId(const Aws::String& value) { m_clusterSecurityGroupIdHasBeenSet = true; m_clusterSecurityGroupId = value; }
 
     /**
      * <p>The cluster security group that was created by Amazon EKS for the cluster.
-     * Managed node groups use this security group for control plane to data plane
+     * Managed node groups use this security group for control-plane-to-data-plane
      * communication.</p>
      */
     inline void SetClusterSecurityGroupId(Aws::String&& value) { m_clusterSecurityGroupIdHasBeenSet = true; m_clusterSecurityGroupId = std::move(value); }
 
     /**
      * <p>The cluster security group that was created by Amazon EKS for the cluster.
-     * Managed node groups use this security group for control plane to data plane
+     * Managed node groups use this security group for control-plane-to-data-plane
      * communication.</p>
      */
     inline void SetClusterSecurityGroupId(const char* value) { m_clusterSecurityGroupIdHasBeenSet = true; m_clusterSecurityGroupId.assign(value); }
 
     /**
      * <p>The cluster security group that was created by Amazon EKS for the cluster.
-     * Managed node groups use this security group for control plane to data plane
+     * Managed node groups use this security group for control-plane-to-data-plane
      * communication.</p>
      */
     inline VpcConfigResponse& WithClusterSecurityGroupId(const Aws::String& value) { SetClusterSecurityGroupId(value); return *this;}
 
     /**
      * <p>The cluster security group that was created by Amazon EKS for the cluster.
-     * Managed node groups use this security group for control plane to data plane
+     * Managed node groups use this security group for control-plane-to-data-plane
      * communication.</p>
      */
     inline VpcConfigResponse& WithClusterSecurityGroupId(Aws::String&& value) { SetClusterSecurityGroupId(std::move(value)); return *this;}
 
     /**
      * <p>The cluster security group that was created by Amazon EKS for the cluster.
-     * Managed node groups use this security group for control plane to data plane
+     * Managed node groups use this security group for control-plane-to-data-plane
      * communication.</p>
      */
     inline VpcConfigResponse& WithClusterSecurityGroupId(const char* value) { SetClusterSecurityGroupId(value); return *this;}

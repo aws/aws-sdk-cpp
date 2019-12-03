@@ -309,57 +309,57 @@ namespace Model
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline const Aws::String& GetRange() const{ return m_range; }
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline void SetRange(const Aws::String& value) { m_rangeHasBeenSet = true; m_range = value; }
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline void SetRange(Aws::String&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline void SetRange(const char* value) { m_rangeHasBeenSet = true; m_range.assign(value); }
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline HeadObjectRequest& WithRange(const Aws::String& value) { SetRange(value); return *this;}
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline HeadObjectRequest& WithRange(Aws::String&& value) { SetRange(std::move(value)); return *this;}
 
     /**
      * <p>Downloads the specified range bytes of an object. For more information about
-     * the HTTP Range header, go to
-     * http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35.</p>
+     * the HTTP Range header, see <a
+     * href="">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.</p>
      */
     inline HeadObjectRequest& WithRange(const char* value) { SetRange(value); return *this;}
 
@@ -406,49 +406,49 @@ namespace Model
 
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline HeadObjectRequest& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline HeadObjectRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline HeadObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
@@ -457,128 +457,128 @@ namespace Model
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5.assign(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline HeadObjectRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}

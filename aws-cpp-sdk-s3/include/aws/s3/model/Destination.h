@@ -39,7 +39,8 @@ namespace Model
 
   /**
    * <p>Specifies information about where to publish analysis or configuration
-   * results for an Amazon S3 bucket.</p><p><h3>See Also:</h3>   <a
+   * results for an Amazon S3 bucket and S3 Replication Time Control (S3
+   * RTC).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Destination">AWS API
    * Reference</a></p>
    */
@@ -109,7 +110,7 @@ namespace Model
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
-     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon Simple
      * Storage Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
@@ -121,7 +122,7 @@ namespace Model
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
-     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon Simple
      * Storage Service Developer Guide</i>.</p>
      */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
@@ -133,7 +134,7 @@ namespace Model
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
-     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon Simple
      * Storage Service Developer Guide</i>.</p>
      */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
@@ -145,7 +146,7 @@ namespace Model
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
-     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon Simple
      * Storage Service Developer Guide</i>.</p>
      */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
@@ -157,7 +158,7 @@ namespace Model
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
-     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon Simple
      * Storage Service Developer Guide</i>.</p>
      */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
@@ -169,7 +170,7 @@ namespace Model
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
-     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon Simple
      * Storage Service Developer Guide</i>.</p>
      */
     inline Destination& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
@@ -181,7 +182,7 @@ namespace Model
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
-     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon Simple
      * Storage Service Developer Guide</i>.</p>
      */
     inline Destination& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
@@ -193,7 +194,7 @@ namespace Model
      * property, this is the account ID of the destination bucket owner. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication
-     * Additional Configuration: Change Replica Owner</a> in the <i>Amazon Simple
+     * Additional Configuration: Changing the Replica Owner</a> in the <i>Amazon Simple
      * Storage Service Developer Guide</i>.</p>
      */
     inline Destination& WithAccount(const char* value) { SetAccount(value); return *this;}
@@ -365,93 +366,93 @@ namespace Model
 
 
     /**
-     * <p> A container specifying the time when all objects and operations on objects
-     * are replicated. Must be specified together with a <code>Metrics</code> block.
-     * </p>
+     * <p> A container specifying S3 Replication Time Control (S3 RTC), including
+     * whether S3 RTC is enabled and the time when all objects and operations on
+     * objects must be replicated. Must be specified together with a
+     * <code>Metrics</code> block. </p>
      */
     inline const ReplicationTime& GetReplicationTime() const{ return m_replicationTime; }
 
     /**
-     * <p> A container specifying the time when all objects and operations on objects
-     * are replicated. Must be specified together with a <code>Metrics</code> block.
-     * </p>
+     * <p> A container specifying S3 Replication Time Control (S3 RTC), including
+     * whether S3 RTC is enabled and the time when all objects and operations on
+     * objects must be replicated. Must be specified together with a
+     * <code>Metrics</code> block. </p>
      */
     inline bool ReplicationTimeHasBeenSet() const { return m_replicationTimeHasBeenSet; }
 
     /**
-     * <p> A container specifying the time when all objects and operations on objects
-     * are replicated. Must be specified together with a <code>Metrics</code> block.
-     * </p>
+     * <p> A container specifying S3 Replication Time Control (S3 RTC), including
+     * whether S3 RTC is enabled and the time when all objects and operations on
+     * objects must be replicated. Must be specified together with a
+     * <code>Metrics</code> block. </p>
      */
     inline void SetReplicationTime(const ReplicationTime& value) { m_replicationTimeHasBeenSet = true; m_replicationTime = value; }
 
     /**
-     * <p> A container specifying the time when all objects and operations on objects
-     * are replicated. Must be specified together with a <code>Metrics</code> block.
-     * </p>
+     * <p> A container specifying S3 Replication Time Control (S3 RTC), including
+     * whether S3 RTC is enabled and the time when all objects and operations on
+     * objects must be replicated. Must be specified together with a
+     * <code>Metrics</code> block. </p>
      */
     inline void SetReplicationTime(ReplicationTime&& value) { m_replicationTimeHasBeenSet = true; m_replicationTime = std::move(value); }
 
     /**
-     * <p> A container specifying the time when all objects and operations on objects
-     * are replicated. Must be specified together with a <code>Metrics</code> block.
-     * </p>
+     * <p> A container specifying S3 Replication Time Control (S3 RTC), including
+     * whether S3 RTC is enabled and the time when all objects and operations on
+     * objects must be replicated. Must be specified together with a
+     * <code>Metrics</code> block. </p>
      */
     inline Destination& WithReplicationTime(const ReplicationTime& value) { SetReplicationTime(value); return *this;}
 
     /**
-     * <p> A container specifying the time when all objects and operations on objects
-     * are replicated. Must be specified together with a <code>Metrics</code> block.
-     * </p>
+     * <p> A container specifying S3 Replication Time Control (S3 RTC), including
+     * whether S3 RTC is enabled and the time when all objects and operations on
+     * objects must be replicated. Must be specified together with a
+     * <code>Metrics</code> block. </p>
      */
     inline Destination& WithReplicationTime(ReplicationTime&& value) { SetReplicationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p> A container specifying replication metrics-related information, including
-     * whether emitting metrics and Amazon S3 events for replication are enabled. In
-     * addition, contains configurations related to specific metrics or events. Must be
-     * specified together with a <code>ReplicationTime</code> block. </p>
+     * <p> A container specifying replication metrics-related settings enabling metrics
+     * and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified
+     * together with a <code>ReplicationTime</code> block. </p>
      */
     inline const Metrics& GetMetrics() const{ return m_metrics; }
 
     /**
-     * <p> A container specifying replication metrics-related information, including
-     * whether emitting metrics and Amazon S3 events for replication are enabled. In
-     * addition, contains configurations related to specific metrics or events. Must be
-     * specified together with a <code>ReplicationTime</code> block. </p>
+     * <p> A container specifying replication metrics-related settings enabling metrics
+     * and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified
+     * together with a <code>ReplicationTime</code> block. </p>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
-     * <p> A container specifying replication metrics-related information, including
-     * whether emitting metrics and Amazon S3 events for replication are enabled. In
-     * addition, contains configurations related to specific metrics or events. Must be
-     * specified together with a <code>ReplicationTime</code> block. </p>
+     * <p> A container specifying replication metrics-related settings enabling metrics
+     * and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified
+     * together with a <code>ReplicationTime</code> block. </p>
      */
     inline void SetMetrics(const Metrics& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
     /**
-     * <p> A container specifying replication metrics-related information, including
-     * whether emitting metrics and Amazon S3 events for replication are enabled. In
-     * addition, contains configurations related to specific metrics or events. Must be
-     * specified together with a <code>ReplicationTime</code> block. </p>
+     * <p> A container specifying replication metrics-related settings enabling metrics
+     * and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified
+     * together with a <code>ReplicationTime</code> block. </p>
      */
     inline void SetMetrics(Metrics&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
     /**
-     * <p> A container specifying replication metrics-related information, including
-     * whether emitting metrics and Amazon S3 events for replication are enabled. In
-     * addition, contains configurations related to specific metrics or events. Must be
-     * specified together with a <code>ReplicationTime</code> block. </p>
+     * <p> A container specifying replication metrics-related settings enabling metrics
+     * and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified
+     * together with a <code>ReplicationTime</code> block. </p>
      */
     inline Destination& WithMetrics(const Metrics& value) { SetMetrics(value); return *this;}
 
     /**
-     * <p> A container specifying replication metrics-related information, including
-     * whether emitting metrics and Amazon S3 events for replication are enabled. In
-     * addition, contains configurations related to specific metrics or events. Must be
-     * specified together with a <code>ReplicationTime</code> block. </p>
+     * <p> A container specifying replication metrics-related settings enabling metrics
+     * and Amazon S3 events for S3 Replication Time Control (S3 RTC). Must be specified
+     * together with a <code>ReplicationTime</code> block. </p>
      */
     inline Destination& WithMetrics(Metrics&& value) { SetMetrics(std::move(value)); return *this;}
 

@@ -161,32 +161,32 @@ namespace Model
 
 
     /**
-     * <p>Container for the TagSet and Tag elements.</p>
+     * <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
      */
     inline const Tagging& GetTagging() const{ return m_tagging; }
 
     /**
-     * <p>Container for the TagSet and Tag elements.</p>
+     * <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
      */
     inline bool TaggingHasBeenSet() const { return m_taggingHasBeenSet; }
 
     /**
-     * <p>Container for the TagSet and Tag elements.</p>
+     * <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
      */
     inline void SetTagging(const Tagging& value) { m_taggingHasBeenSet = true; m_tagging = value; }
 
     /**
-     * <p>Container for the TagSet and Tag elements.</p>
+     * <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
      */
     inline void SetTagging(Tagging&& value) { m_taggingHasBeenSet = true; m_tagging = std::move(value); }
 
     /**
-     * <p>Container for the TagSet and Tag elements.</p>
+     * <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
      */
     inline PutBucketTaggingRequest& WithTagging(const Tagging& value) { SetTagging(value); return *this;}
 
     /**
-     * <p>Container for the TagSet and Tag elements.</p>
+     * <p>Container for the <code>TagSet</code> and <code>Tag</code> elements.</p>
      */
     inline PutBucketTaggingRequest& WithTagging(Tagging&& value) { SetTagging(std::move(value)); return *this;}
 

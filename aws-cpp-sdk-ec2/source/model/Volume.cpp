@@ -37,6 +37,7 @@ Volume::Volume() :
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
@@ -61,6 +62,7 @@ Volume::Volume(const XmlNode& xmlNode) :
     m_encrypted(false),
     m_encryptedHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
@@ -120,6 +122,12 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
     {
       m_kmsKeyId = Aws::Utils::Xml::DecodeEscapedXmlText(kmsKeyIdNode.GetText());
       m_kmsKeyIdHasBeenSet = true;
+    }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+      m_outpostArnHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("size");
     if(!sizeNode.IsNull())
@@ -213,6 +221,11 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
   }
 
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
   if(m_sizeHasBeenSet)
   {
       oStream << location << index << locationValue << ".Size=" << m_size << "&";
@@ -295,6 +308,10 @@ void Volume::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_kmsKeyIdHasBeenSet)
   {
       oStream << location << ".KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
   if(m_sizeHasBeenSet)
   {

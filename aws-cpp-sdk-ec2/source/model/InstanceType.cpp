@@ -297,6 +297,10 @@ namespace Aws
         static const int r5n_12xlarge_HASH = HashingUtils::HashString("r5n.12xlarge");
         static const int r5n_16xlarge_HASH = HashingUtils::HashString("r5n.16xlarge");
         static const int r5n_24xlarge_HASH = HashingUtils::HashString("r5n.24xlarge");
+        static const int inf1_xlarge_HASH = HashingUtils::HashString("inf1.xlarge");
+        static const int inf1_2xlarge_HASH = HashingUtils::HashString("inf1.2xlarge");
+        static const int inf1_6xlarge_HASH = HashingUtils::HashString("inf1.6xlarge");
+        static const int inf1_24xlarge_HASH = HashingUtils::HashString("inf1.24xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -1648,6 +1652,26 @@ namespace Aws
             enumValue = InstanceType::r5n_24xlarge;
             return true;
           }
+          else if (hashCode == inf1_xlarge_HASH)
+          {
+            enumValue = InstanceType::inf1_xlarge;
+            return true;
+          }
+          else if (hashCode == inf1_2xlarge_HASH)
+          {
+            enumValue = InstanceType::inf1_2xlarge;
+            return true;
+          }
+          else if (hashCode == inf1_6xlarge_HASH)
+          {
+            enumValue = InstanceType::inf1_6xlarge;
+            return true;
+          }
+          else if (hashCode == inf1_24xlarge_HASH)
+          {
+            enumValue = InstanceType::inf1_24xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -2471,6 +2495,18 @@ namespace Aws
             return true;
           case InstanceType::r5n_24xlarge:
             value = "r5n.24xlarge";
+            return true;
+          case InstanceType::inf1_xlarge:
+            value = "inf1.xlarge";
+            return true;
+          case InstanceType::inf1_2xlarge:
+            value = "inf1.2xlarge";
+            return true;
+          case InstanceType::inf1_6xlarge:
+            value = "inf1.6xlarge";
+            return true;
+          case InstanceType::inf1_24xlarge:
+            value = "inf1.24xlarge";
             return true;
           default:
             return false;

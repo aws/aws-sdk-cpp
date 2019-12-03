@@ -31,6 +31,7 @@ namespace Model
 ContainerInstance::ContainerInstance() : 
     m_containerInstanceArnHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
+    m_capacityProviderNameHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
     m_versionInfoHasBeenSet(false),
@@ -56,6 +57,7 @@ ContainerInstance::ContainerInstance() :
 ContainerInstance::ContainerInstance(JsonView jsonValue) : 
     m_containerInstanceArnHasBeenSet(false),
     m_ec2InstanceIdHasBeenSet(false),
+    m_capacityProviderNameHasBeenSet(false),
     m_version(0),
     m_versionHasBeenSet(false),
     m_versionInfoHasBeenSet(false),
@@ -93,6 +95,13 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
     m_ec2InstanceId = jsonValue.GetString("ec2InstanceId");
 
     m_ec2InstanceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("capacityProviderName"))
+  {
+    m_capacityProviderName = jsonValue.GetString("capacityProviderName");
+
+    m_capacityProviderNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("version"))
@@ -224,6 +233,12 @@ JsonValue ContainerInstance::Jsonize() const
   if(m_ec2InstanceIdHasBeenSet)
   {
    payload.WithString("ec2InstanceId", m_ec2InstanceId);
+
+  }
+
+  if(m_capacityProviderNameHasBeenSet)
+  {
+   payload.WithString("capacityProviderName", m_capacityProviderName);
 
   }
 

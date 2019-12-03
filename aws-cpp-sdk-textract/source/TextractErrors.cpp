@@ -33,10 +33,11 @@ static const int BAD_DOCUMENT_HASH = HashingUtils::HashString("BadDocumentExcept
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
-static const int DOCUMENT_TOO_LARGE_HASH = HashingUtils::HashString("DocumentTooLargeException");
 static const int INVALID_JOB_ID_HASH = HashingUtils::HashString("InvalidJobIdException");
+static const int DOCUMENT_TOO_LARGE_HASH = HashingUtils::HashString("DocumentTooLargeException");
 static const int PROVISIONED_THROUGHPUT_EXCEEDED_HASH = HashingUtils::HashString("ProvisionedThroughputExceededException");
 static const int INVALID_S3_OBJECT_HASH = HashingUtils::HashString("InvalidS3ObjectException");
+static const int HUMAN_LOOP_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("HumanLoopQuotaExceededException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -63,13 +64,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == DOCUMENT_TOO_LARGE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::DOCUMENT_TOO_LARGE), false);
-  }
   else if (hashCode == INVALID_JOB_ID_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::INVALID_JOB_ID), false);
+  }
+  else if (hashCode == DOCUMENT_TOO_LARGE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::DOCUMENT_TOO_LARGE), false);
   }
   else if (hashCode == PROVISIONED_THROUGHPUT_EXCEEDED_HASH)
   {
@@ -78,6 +79,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_S3_OBJECT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::INVALID_S3_OBJECT), false);
+  }
+  else if (hashCode == HUMAN_LOOP_QUOTA_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TextractErrors::HUMAN_LOOP_QUOTA_EXCEEDED), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

@@ -30,6 +30,7 @@ namespace Aws
       namespace TransitGatewayAttachmentStateMapper
       {
 
+        static const int initiating_HASH = HashingUtils::HashString("initiating");
         static const int pendingAcceptance_HASH = HashingUtils::HashString("pendingAcceptance");
         static const int rollingBack_HASH = HashingUtils::HashString("rollingBack");
         static const int pending_HASH = HashingUtils::HashString("pending");
@@ -46,7 +47,11 @@ namespace Aws
         TransitGatewayAttachmentState GetTransitGatewayAttachmentStateForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == pendingAcceptance_HASH)
+          if (hashCode == initiating_HASH)
+          {
+            return TransitGatewayAttachmentState::initiating;
+          }
+          else if (hashCode == pendingAcceptance_HASH)
           {
             return TransitGatewayAttachmentState::pendingAcceptance;
           }
@@ -104,6 +109,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TransitGatewayAttachmentState::initiating:
+            return "initiating";
           case TransitGatewayAttachmentState::pendingAcceptance:
             return "pendingAcceptance";
           case TransitGatewayAttachmentState::rollingBack:

@@ -53,6 +53,12 @@ DetectDocumentTextResult& DetectDocumentTextResult::operator =(const Aws::Amazon
     }
   }
 
+  if(jsonValue.ValueExists("DetectDocumentTextModelVersion"))
+  {
+    m_detectDocumentTextModelVersion = jsonValue.GetString("DetectDocumentTextModelVersion");
+
+  }
+
 
 
   return *this;

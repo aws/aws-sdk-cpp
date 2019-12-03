@@ -24,7 +24,8 @@ AssociateRouteTableRequest::AssociateRouteTableRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_routeTableIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_gatewayIdHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,11 @@ Aws::String AssociateRouteTableRequest::SerializePayload() const
   if(m_subnetIdHasBeenSet)
   {
     ss << "SubnetId=" << StringUtils::URLEncode(m_subnetId.c_str()) << "&";
+  }
+
+  if(m_gatewayIdHasBeenSet)
+  {
+    ss << "GatewayId=" << StringUtils::URLEncode(m_gatewayId.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

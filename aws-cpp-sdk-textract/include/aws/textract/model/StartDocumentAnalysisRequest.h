@@ -82,80 +82,80 @@ namespace Model
     /**
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
-     * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
-     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
-     * whatever the value of <code>FeatureTypes</code>. </p>
+     * to return detected form data. To perform both types of analysis, add TABLES and
+     * FORMS to <code>FeatureTypes</code>. All lines and words detected in the document
+     * are included in the response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline const Aws::Vector<FeatureType>& GetFeatureTypes() const{ return m_featureTypes; }
 
     /**
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
-     * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
-     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
-     * whatever the value of <code>FeatureTypes</code>. </p>
+     * to return detected form data. To perform both types of analysis, add TABLES and
+     * FORMS to <code>FeatureTypes</code>. All lines and words detected in the document
+     * are included in the response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline bool FeatureTypesHasBeenSet() const { return m_featureTypesHasBeenSet; }
 
     /**
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
-     * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
-     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
-     * whatever the value of <code>FeatureTypes</code>. </p>
+     * to return detected form data. To perform both types of analysis, add TABLES and
+     * FORMS to <code>FeatureTypes</code>. All lines and words detected in the document
+     * are included in the response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline void SetFeatureTypes(const Aws::Vector<FeatureType>& value) { m_featureTypesHasBeenSet = true; m_featureTypes = value; }
 
     /**
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
-     * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
-     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
-     * whatever the value of <code>FeatureTypes</code>. </p>
+     * to return detected form data. To perform both types of analysis, add TABLES and
+     * FORMS to <code>FeatureTypes</code>. All lines and words detected in the document
+     * are included in the response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline void SetFeatureTypes(Aws::Vector<FeatureType>&& value) { m_featureTypesHasBeenSet = true; m_featureTypes = std::move(value); }
 
     /**
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
-     * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
-     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
-     * whatever the value of <code>FeatureTypes</code>. </p>
+     * to return detected form data. To perform both types of analysis, add TABLES and
+     * FORMS to <code>FeatureTypes</code>. All lines and words detected in the document
+     * are included in the response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline StartDocumentAnalysisRequest& WithFeatureTypes(const Aws::Vector<FeatureType>& value) { SetFeatureTypes(value); return *this;}
 
     /**
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
-     * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
-     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
-     * whatever the value of <code>FeatureTypes</code>. </p>
+     * to return detected form data. To perform both types of analysis, add TABLES and
+     * FORMS to <code>FeatureTypes</code>. All lines and words detected in the document
+     * are included in the response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline StartDocumentAnalysisRequest& WithFeatureTypes(Aws::Vector<FeatureType>&& value) { SetFeatureTypes(std::move(value)); return *this;}
 
     /**
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
-     * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
-     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
-     * whatever the value of <code>FeatureTypes</code>. </p>
+     * to return detected form data. To perform both types of analysis, add TABLES and
+     * FORMS to <code>FeatureTypes</code>. All lines and words detected in the document
+     * are included in the response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline StartDocumentAnalysisRequest& AddFeatureTypes(const FeatureType& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(value); return *this; }
 
     /**
      * <p>A list of the types of analysis to perform. Add TABLES to the list to return
      * information about the tables that are detected in the input document. Add FORMS
-     * to return detected fields and the associated text. To perform both types of
-     * analysis, add TABLES and FORMS to <code>FeatureTypes</code>. All selectable
-     * elements (<code>SELECTION_ELEMENT</code>) that are detected are returned,
-     * whatever the value of <code>FeatureTypes</code>. </p>
+     * to return detected form data. To perform both types of analysis, add TABLES and
+     * FORMS to <code>FeatureTypes</code>. All lines and words detected in the document
+     * are included in the response (including text that isn't related to the value of
+     * <code>FeatureTypes</code>). </p>
      */
     inline StartDocumentAnalysisRequest& AddFeatureTypes(FeatureType&& value) { m_featureTypesHasBeenSet = true; m_featureTypes.push_back(std::move(value)); return *this; }
 
@@ -164,7 +164,10 @@ namespace Model
      * <p>The idempotent token that you use to identify the start request. If you use
      * the same token with multiple <code>StartDocumentAnalysis</code> requests, the
      * same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -172,7 +175,10 @@ namespace Model
      * <p>The idempotent token that you use to identify the start request. If you use
      * the same token with multiple <code>StartDocumentAnalysis</code> requests, the
      * same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
@@ -180,7 +186,10 @@ namespace Model
      * <p>The idempotent token that you use to identify the start request. If you use
      * the same token with multiple <code>StartDocumentAnalysis</code> requests, the
      * same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -188,7 +197,10 @@ namespace Model
      * <p>The idempotent token that you use to identify the start request. If you use
      * the same token with multiple <code>StartDocumentAnalysis</code> requests, the
      * same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -196,7 +208,10 @@ namespace Model
      * <p>The idempotent token that you use to identify the start request. If you use
      * the same token with multiple <code>StartDocumentAnalysis</code> requests, the
      * same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -204,7 +219,10 @@ namespace Model
      * <p>The idempotent token that you use to identify the start request. If you use
      * the same token with multiple <code>StartDocumentAnalysis</code> requests, the
      * same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline StartDocumentAnalysisRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -212,7 +230,10 @@ namespace Model
      * <p>The idempotent token that you use to identify the start request. If you use
      * the same token with multiple <code>StartDocumentAnalysis</code> requests, the
      * same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline StartDocumentAnalysisRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -220,72 +241,75 @@ namespace Model
      * <p>The idempotent token that you use to identify the start request. If you use
      * the same token with multiple <code>StartDocumentAnalysis</code> requests, the
      * same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline StartDocumentAnalysisRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline const Aws::String& GetJobTag() const{ return m_jobTag; }
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline bool JobTagHasBeenSet() const { return m_jobTagHasBeenSet; }
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline void SetJobTag(const Aws::String& value) { m_jobTagHasBeenSet = true; m_jobTag = value; }
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline void SetJobTag(Aws::String&& value) { m_jobTagHasBeenSet = true; m_jobTag = std::move(value); }
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline void SetJobTag(const char* value) { m_jobTagHasBeenSet = true; m_jobTag.assign(value); }
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline StartDocumentAnalysisRequest& WithJobTag(const Aws::String& value) { SetJobTag(value); return *this;}
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline StartDocumentAnalysisRequest& WithJobTag(Aws::String&& value) { SetJobTag(std::move(value)); return *this;}
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline StartDocumentAnalysisRequest& WithJobTag(const char* value) { SetJobTag(value); return *this;}
 

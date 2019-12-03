@@ -54,62 +54,62 @@ namespace Model
 
     /**
      * <p>Lifetime of the active copy in days. Do not use with restores that specify
-     * OutputLocation.</p>
+     * <code>OutputLocation</code>.</p>
      */
     inline int GetDays() const{ return m_days; }
 
     /**
      * <p>Lifetime of the active copy in days. Do not use with restores that specify
-     * OutputLocation.</p>
+     * <code>OutputLocation</code>.</p>
      */
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
 
     /**
      * <p>Lifetime of the active copy in days. Do not use with restores that specify
-     * OutputLocation.</p>
+     * <code>OutputLocation</code>.</p>
      */
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
 
     /**
      * <p>Lifetime of the active copy in days. Do not use with restores that specify
-     * OutputLocation.</p>
+     * <code>OutputLocation</code>.</p>
      */
     inline RestoreRequest& WithDays(int value) { SetDays(value); return *this;}
 
 
     /**
      * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify OutputLocation.</p>
+     * that specify <code>OutputLocation</code>.</p>
      */
     inline const GlacierJobParameters& GetGlacierJobParameters() const{ return m_glacierJobParameters; }
 
     /**
      * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify OutputLocation.</p>
+     * that specify <code>OutputLocation</code>.</p>
      */
     inline bool GlacierJobParametersHasBeenSet() const { return m_glacierJobParametersHasBeenSet; }
 
     /**
      * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify OutputLocation.</p>
+     * that specify <code>OutputLocation</code>.</p>
      */
     inline void SetGlacierJobParameters(const GlacierJobParameters& value) { m_glacierJobParametersHasBeenSet = true; m_glacierJobParameters = value; }
 
     /**
      * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify OutputLocation.</p>
+     * that specify <code>OutputLocation</code>.</p>
      */
     inline void SetGlacierJobParameters(GlacierJobParameters&& value) { m_glacierJobParametersHasBeenSet = true; m_glacierJobParameters = std::move(value); }
 
     /**
      * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify OutputLocation.</p>
+     * that specify <code>OutputLocation</code>.</p>
      */
     inline RestoreRequest& WithGlacierJobParameters(const GlacierJobParameters& value) { SetGlacierJobParameters(value); return *this;}
 
     /**
      * <p>Glacier related parameters pertaining to this job. Do not use with restores
-     * that specify OutputLocation.</p>
+     * that specify <code>OutputLocation</code>.</p>
      */
     inline RestoreRequest& WithGlacierJobParameters(GlacierJobParameters&& value) { SetGlacierJobParameters(std::move(value)); return *this;}
 

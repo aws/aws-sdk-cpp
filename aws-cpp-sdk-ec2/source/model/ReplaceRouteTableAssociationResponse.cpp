@@ -53,6 +53,11 @@ ReplaceRouteTableAssociationResponse& ReplaceRouteTableAssociationResponse::oper
     {
       m_newAssociationId = Aws::Utils::Xml::DecodeEscapedXmlText(newAssociationIdNode.GetText());
     }
+    XmlNode associationStateNode = resultNode.FirstChild("associationState");
+    if(!associationStateNode.IsNull())
+    {
+      m_associationState = associationStateNode;
+    }
   }
 
   if (!rootNode.IsNull()) {

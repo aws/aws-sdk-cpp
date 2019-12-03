@@ -164,10 +164,10 @@ namespace Model
      * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
      * <i>Description:</i> The bucket you tried to create already exists, and you own
      * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia region, Amazon S3 returns 200 OK and resets
+     * Region. For legacy compatibility, if you re-create an existing bucket that you
+     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
      * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all regions except the North Virginia region) </p> </li> <li> <p>
+     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
      * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
      * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
      * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
@@ -524,10 +524,10 @@ namespace Model
      * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
      * <i>Description:</i> The bucket you tried to create already exists, and you own
      * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia region, Amazon S3 returns 200 OK and resets
+     * Region. For legacy compatibility, if you re-create an existing bucket that you
+     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
      * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all regions except the North Virginia region) </p> </li> <li> <p>
+     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
      * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
      * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
      * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
@@ -884,10 +884,10 @@ namespace Model
      * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
      * <i>Description:</i> The bucket you tried to create already exists, and you own
      * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia region, Amazon S3 returns 200 OK and resets
+     * Region. For legacy compatibility, if you re-create an existing bucket that you
+     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
      * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all regions except the North Virginia region) </p> </li> <li> <p>
+     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
      * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
      * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
      * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
@@ -1244,10 +1244,10 @@ namespace Model
      * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
      * <i>Description:</i> The bucket you tried to create already exists, and you own
      * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia region, Amazon S3 returns 200 OK and resets
+     * Region. For legacy compatibility, if you re-create an existing bucket that you
+     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
      * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all regions except the North Virginia region) </p> </li> <li> <p>
+     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
      * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
      * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
      * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
@@ -1604,10 +1604,10 @@ namespace Model
      * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
      * <i>Description:</i> The bucket you tried to create already exists, and you own
      * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia region, Amazon S3 returns 200 OK and resets
+     * Region. For legacy compatibility, if you re-create an existing bucket that you
+     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
      * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all regions except the North Virginia region) </p> </li> <li> <p>
+     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
      * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
      * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
      * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
@@ -1964,10 +1964,10 @@ namespace Model
      * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
      * <i>Description:</i> The bucket you tried to create already exists, and you own
      * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia region, Amazon S3 returns 200 OK and resets
+     * Region. For legacy compatibility, if you re-create an existing bucket that you
+     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
      * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all regions except the North Virginia region) </p> </li> <li> <p>
+     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
      * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
      * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
      * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
@@ -2324,10 +2324,10 @@ namespace Model
      * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
      * <i>Description:</i> The bucket you tried to create already exists, and you own
      * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia region, Amazon S3 returns 200 OK and resets
+     * Region. For legacy compatibility, if you re-create an existing bucket that you
+     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
      * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all regions except the North Virginia region) </p> </li> <li> <p>
+     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
      * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
      * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
      * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>
@@ -2684,10 +2684,10 @@ namespace Model
      * <ul> <li> <p> <i>Code:</i> BucketAlreadyOwnedByYou</p> </li> <li> <p>
      * <i>Description:</i> The bucket you tried to create already exists, and you own
      * it. Amazon S3 returns this error in all AWS Regions except in the North Virginia
-     * region. For legacy compatibility, if you re-create an existing bucket that you
-     * already own in the North Virginia region, Amazon S3 returns 200 OK and resets
+     * Region. For legacy compatibility, if you re-create an existing bucket that you
+     * already own in the North Virginia Region, Amazon S3 returns 200 OK and resets
      * the bucket access control lists (ACLs).</p> </li> <li> <p> <i>Code:</i> 409
-     * Conflict (in all regions except the North Virginia region) </p> </li> <li> <p>
+     * Conflict (in all Regions except the North Virginia Region) </p> </li> <li> <p>
      * <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p>
      * <i>Code:</i> BucketNotEmpty</p> </li> <li> <p> <i>Description:</i> The bucket
      * you tried to delete is not empty.</p> </li> <li> <p> <i>HTTP Status Code:</i>

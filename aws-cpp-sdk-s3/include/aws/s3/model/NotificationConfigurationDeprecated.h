@@ -45,42 +45,42 @@ namespace Model
 
 
     /**
-     * <p>This data type is deperecated. A container for specifying the configuration
+     * <p>This data type is deprecated. A container for specifying the configuration
      * for publication of messages to an Amazon Simple Notification Service (Amazon
      * SNS) topic when Amazon S3 detects specified events. </p>
      */
     inline const TopicConfigurationDeprecated& GetTopicConfiguration() const{ return m_topicConfiguration; }
 
     /**
-     * <p>This data type is deperecated. A container for specifying the configuration
+     * <p>This data type is deprecated. A container for specifying the configuration
      * for publication of messages to an Amazon Simple Notification Service (Amazon
      * SNS) topic when Amazon S3 detects specified events. </p>
      */
     inline bool TopicConfigurationHasBeenSet() const { return m_topicConfigurationHasBeenSet; }
 
     /**
-     * <p>This data type is deperecated. A container for specifying the configuration
+     * <p>This data type is deprecated. A container for specifying the configuration
      * for publication of messages to an Amazon Simple Notification Service (Amazon
      * SNS) topic when Amazon S3 detects specified events. </p>
      */
     inline void SetTopicConfiguration(const TopicConfigurationDeprecated& value) { m_topicConfigurationHasBeenSet = true; m_topicConfiguration = value; }
 
     /**
-     * <p>This data type is deperecated. A container for specifying the configuration
+     * <p>This data type is deprecated. A container for specifying the configuration
      * for publication of messages to an Amazon Simple Notification Service (Amazon
      * SNS) topic when Amazon S3 detects specified events. </p>
      */
     inline void SetTopicConfiguration(TopicConfigurationDeprecated&& value) { m_topicConfigurationHasBeenSet = true; m_topicConfiguration = std::move(value); }
 
     /**
-     * <p>This data type is deperecated. A container for specifying the configuration
+     * <p>This data type is deprecated. A container for specifying the configuration
      * for publication of messages to an Amazon Simple Notification Service (Amazon
      * SNS) topic when Amazon S3 detects specified events. </p>
      */
     inline NotificationConfigurationDeprecated& WithTopicConfiguration(const TopicConfigurationDeprecated& value) { SetTopicConfiguration(value); return *this;}
 
     /**
-     * <p>This data type is deperecated. A container for specifying the configuration
+     * <p>This data type is deprecated. A container for specifying the configuration
      * for publication of messages to an Amazon Simple Notification Service (Amazon
      * SNS) topic when Amazon S3 detects specified events. </p>
      */

@@ -31,13 +31,17 @@
 #include <aws/eks/EKSEndpoint.h>
 #include <aws/eks/EKSErrorMarshaller.h>
 #include <aws/eks/model/CreateClusterRequest.h>
+#include <aws/eks/model/CreateFargateProfileRequest.h>
 #include <aws/eks/model/CreateNodegroupRequest.h>
 #include <aws/eks/model/DeleteClusterRequest.h>
+#include <aws/eks/model/DeleteFargateProfileRequest.h>
 #include <aws/eks/model/DeleteNodegroupRequest.h>
 #include <aws/eks/model/DescribeClusterRequest.h>
+#include <aws/eks/model/DescribeFargateProfileRequest.h>
 #include <aws/eks/model/DescribeNodegroupRequest.h>
 #include <aws/eks/model/DescribeUpdateRequest.h>
 #include <aws/eks/model/ListClustersRequest.h>
+#include <aws/eks/model/ListFargateProfilesRequest.h>
 #include <aws/eks/model/ListNodegroupsRequest.h>
 #include <aws/eks/model/ListTagsForResourceRequest.h>
 #include <aws/eks/model/ListUpdatesRequest.h>
@@ -155,6 +159,48 @@ void EKSClient::CreateClusterAsyncHelper(const CreateClusterRequest& request, co
   handler(this, request, CreateCluster(request), context);
 }
 
+CreateFargateProfileOutcome EKSClient::CreateFargateProfile(const CreateFargateProfileRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFargateProfile", "Required field: ClusterName, is not set");
+    return CreateFargateProfileOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/fargate-profiles";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateFargateProfileOutcome(CreateFargateProfileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateFargateProfileOutcome(outcome.GetError());
+  }
+}
+
+CreateFargateProfileOutcomeCallable EKSClient::CreateFargateProfileCallable(const CreateFargateProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateFargateProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateFargateProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::CreateFargateProfileAsync(const CreateFargateProfileRequest& request, const CreateFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateFargateProfileAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::CreateFargateProfileAsyncHelper(const CreateFargateProfileRequest& request, const CreateFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateFargateProfile(request), context);
+}
+
 CreateNodegroupOutcome EKSClient::CreateNodegroup(const CreateNodegroupRequest& request) const
 {
   if (!request.ClusterNameHasBeenSet())
@@ -236,6 +282,54 @@ void EKSClient::DeleteClusterAsync(const DeleteClusterRequest& request, const De
 void EKSClient::DeleteClusterAsyncHelper(const DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteCluster(request), context);
+}
+
+DeleteFargateProfileOutcome EKSClient::DeleteFargateProfile(const DeleteFargateProfileRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFargateProfile", "Required field: ClusterName, is not set");
+    return DeleteFargateProfileOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  if (!request.FargateProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFargateProfile", "Required field: FargateProfileName, is not set");
+    return DeleteFargateProfileOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FargateProfileName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/fargate-profiles/";
+  ss << request.GetFargateProfileName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteFargateProfileOutcome(DeleteFargateProfileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteFargateProfileOutcome(outcome.GetError());
+  }
+}
+
+DeleteFargateProfileOutcomeCallable EKSClient::DeleteFargateProfileCallable(const DeleteFargateProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteFargateProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteFargateProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::DeleteFargateProfileAsync(const DeleteFargateProfileRequest& request, const DeleteFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteFargateProfileAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::DeleteFargateProfileAsyncHelper(const DeleteFargateProfileRequest& request, const DeleteFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteFargateProfile(request), context);
 }
 
 DeleteNodegroupOutcome EKSClient::DeleteNodegroup(const DeleteNodegroupRequest& request) const
@@ -325,6 +419,54 @@ void EKSClient::DescribeClusterAsync(const DescribeClusterRequest& request, cons
 void EKSClient::DescribeClusterAsyncHelper(const DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeCluster(request), context);
+}
+
+DescribeFargateProfileOutcome EKSClient::DescribeFargateProfile(const DescribeFargateProfileRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFargateProfile", "Required field: ClusterName, is not set");
+    return DescribeFargateProfileOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  if (!request.FargateProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFargateProfile", "Required field: FargateProfileName, is not set");
+    return DescribeFargateProfileOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FargateProfileName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/fargate-profiles/";
+  ss << request.GetFargateProfileName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeFargateProfileOutcome(DescribeFargateProfileResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeFargateProfileOutcome(outcome.GetError());
+  }
+}
+
+DescribeFargateProfileOutcomeCallable EKSClient::DescribeFargateProfileCallable(const DescribeFargateProfileRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeFargateProfileOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeFargateProfile(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::DescribeFargateProfileAsync(const DescribeFargateProfileRequest& request, const DescribeFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeFargateProfileAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::DescribeFargateProfileAsyncHelper(const DescribeFargateProfileRequest& request, const DescribeFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeFargateProfile(request), context);
 }
 
 DescribeNodegroupOutcome EKSClient::DescribeNodegroup(const DescribeNodegroupRequest& request) const
@@ -456,6 +598,48 @@ void EKSClient::ListClustersAsync(const ListClustersRequest& request, const List
 void EKSClient::ListClustersAsyncHelper(const ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListClusters(request), context);
+}
+
+ListFargateProfilesOutcome EKSClient::ListFargateProfiles(const ListFargateProfilesRequest& request) const
+{
+  if (!request.ClusterNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFargateProfiles", "Required field: ClusterName, is not set");
+    return ListFargateProfilesOutcome(Aws::Client::AWSError<EKSErrors>(EKSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ClusterName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/clusters/";
+  ss << request.GetClusterName();
+  ss << "/fargate-profiles";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListFargateProfilesOutcome(ListFargateProfilesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListFargateProfilesOutcome(outcome.GetError());
+  }
+}
+
+ListFargateProfilesOutcomeCallable EKSClient::ListFargateProfilesCallable(const ListFargateProfilesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListFargateProfilesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListFargateProfiles(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EKSClient::ListFargateProfilesAsync(const ListFargateProfilesRequest& request, const ListFargateProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListFargateProfilesAsyncHelper( request, handler, context ); } );
+}
+
+void EKSClient::ListFargateProfilesAsyncHelper(const ListFargateProfilesRequest& request, const ListFargateProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListFargateProfiles(request), context);
 }
 
 ListNodegroupsOutcome EKSClient::ListNodegroups(const ListNodegroupsRequest& request) const

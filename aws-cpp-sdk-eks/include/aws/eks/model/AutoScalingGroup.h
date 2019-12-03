@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>An AutoScaling group that is associated with an Amazon EKS managed node
+   * <p>An Auto Scaling group that is associated with an Amazon EKS managed node
    * group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AutoScalingGroup">AWS
    * API Reference</a></p>
@@ -49,49 +49,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the AutoScaling group associated with an Amazon EKS managed node
+     * <p>The name of the Auto Scaling group associated with an Amazon EKS managed node
      * group.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the AutoScaling group associated with an Amazon EKS managed node
+     * <p>The name of the Auto Scaling group associated with an Amazon EKS managed node
      * group.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the AutoScaling group associated with an Amazon EKS managed node
+     * <p>The name of the Auto Scaling group associated with an Amazon EKS managed node
      * group.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the AutoScaling group associated with an Amazon EKS managed node
+     * <p>The name of the Auto Scaling group associated with an Amazon EKS managed node
      * group.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the AutoScaling group associated with an Amazon EKS managed node
+     * <p>The name of the Auto Scaling group associated with an Amazon EKS managed node
      * group.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the AutoScaling group associated with an Amazon EKS managed node
+     * <p>The name of the Auto Scaling group associated with an Amazon EKS managed node
      * group.</p>
      */
     inline AutoScalingGroup& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the AutoScaling group associated with an Amazon EKS managed node
+     * <p>The name of the Auto Scaling group associated with an Amazon EKS managed node
      * group.</p>
      */
     inline AutoScalingGroup& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the AutoScaling group associated with an Amazon EKS managed node
+     * <p>The name of the Auto Scaling group associated with an Amazon EKS managed node
      * group.</p>
      */
     inline AutoScalingGroup& WithName(const char* value) { SetName(value); return *this;}

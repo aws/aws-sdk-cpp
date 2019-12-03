@@ -27,6 +27,7 @@ CreateVolumeRequest::CreateVolumeRequest() :
     m_iops(0),
     m_iopsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_size(0),
     m_sizeHasBeenSet(false),
     m_snapshotIdHasBeenSet(false),
@@ -60,6 +61,11 @@ Aws::String CreateVolumeRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
     ss << "KmsKeyId=" << StringUtils::URLEncode(m_kmsKeyId.c_str()) << "&";
+  }
+
+  if(m_outpostArnHasBeenSet)
+  {
+    ss << "OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
 
   if(m_sizeHasBeenSet)

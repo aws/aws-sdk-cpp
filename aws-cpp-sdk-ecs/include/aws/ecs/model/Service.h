@@ -26,6 +26,7 @@
 #include <aws/ecs/model/PropagateTags.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/ServiceRegistry.h>
+#include <aws/ecs/model/CapacityProviderStrategyItem.h>
 #include <aws/ecs/model/TaskSet.h>
 #include <aws/ecs/model/Deployment.h>
 #include <aws/ecs/model/ServiceEvent.h>
@@ -551,6 +552,47 @@ namespace Model
      * Guide</i>.</p>
      */
     inline Service& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The capacity provider strategy associated with the service.</p>
+     */
+    inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
+
+    /**
+     * <p>The capacity provider strategy associated with the service.</p>
+     */
+    inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
+
+    /**
+     * <p>The capacity provider strategy associated with the service.</p>
+     */
+    inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
+
+    /**
+     * <p>The capacity provider strategy associated with the service.</p>
+     */
+    inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
+
+    /**
+     * <p>The capacity provider strategy associated with the service.</p>
+     */
+    inline Service& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
+
+    /**
+     * <p>The capacity provider strategy associated with the service.</p>
+     */
+    inline Service& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
+
+    /**
+     * <p>The capacity provider strategy associated with the service.</p>
+     */
+    inline Service& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
+
+    /**
+     * <p>The capacity provider strategy associated with the service.</p>
+     */
+    inline Service& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -1587,6 +1629,9 @@ namespace Model
 
     LaunchType m_launchType;
     bool m_launchTypeHasBeenSet;
+
+    Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
+    bool m_capacityProviderStrategyHasBeenSet;
 
     Aws::String m_platformVersion;
     bool m_platformVersionHasBeenSet;

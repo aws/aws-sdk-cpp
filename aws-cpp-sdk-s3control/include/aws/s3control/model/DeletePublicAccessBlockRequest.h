@@ -45,50 +45,50 @@ namespace Model
 
 
     /**
-     * <p>The account ID for the AWS account whose block public access configuration
-     * you want to delete.</p>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to remove.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
     /**
-     * <p>The account ID for the AWS account whose block public access configuration
-     * you want to delete.</p>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to remove.</p>
      */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
-     * <p>The account ID for the AWS account whose block public access configuration
-     * you want to delete.</p>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to remove.</p>
      */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
-     * <p>The account ID for the AWS account whose block public access configuration
-     * you want to delete.</p>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to remove.</p>
      */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
     /**
-     * <p>The account ID for the AWS account whose block public access configuration
-     * you want to delete.</p>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to remove.</p>
      */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
     /**
-     * <p>The account ID for the AWS account whose block public access configuration
-     * you want to delete.</p>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to remove.</p>
      */
     inline DeletePublicAccessBlockRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
     /**
-     * <p>The account ID for the AWS account whose block public access configuration
-     * you want to delete.</p>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to remove.</p>
      */
     inline DeletePublicAccessBlockRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The account ID for the AWS account whose block public access configuration
-     * you want to delete.</p>
+     * <p>The account ID for the Amazon Web Services account whose
+     * <code>PublicAccessBlock</code> configuration you want to remove.</p>
      */
     inline DeletePublicAccessBlockRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 

@@ -47,6 +47,7 @@ TaskSet::TaskSet() :
     m_updatedAtHasBeenSet(false),
     m_launchType(LaunchType::NOT_SET),
     m_launchTypeHasBeenSet(false),
+    m_capacityProviderStrategyHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
@@ -77,6 +78,7 @@ TaskSet::TaskSet(JsonView jsonValue) :
     m_updatedAtHasBeenSet(false),
     m_launchType(LaunchType::NOT_SET),
     m_launchTypeHasBeenSet(false),
+    m_capacityProviderStrategyHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
@@ -187,6 +189,16 @@ TaskSet& TaskSet::operator =(JsonView jsonValue)
     m_launchType = LaunchTypeMapper::GetLaunchTypeForName(jsonValue.GetString("launchType"));
 
     m_launchTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("capacityProviderStrategy"))
+  {
+    Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("capacityProviderStrategy");
+    for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
+    {
+      m_capacityProviderStrategy.push_back(capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject());
+    }
+    m_capacityProviderStrategyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("platformVersion"))
@@ -330,6 +342,17 @@ JsonValue TaskSet::Jsonize() const
   if(m_launchTypeHasBeenSet)
   {
    payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
+  }
+
+  if(m_capacityProviderStrategyHasBeenSet)
+  {
+   Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
+   for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
+   {
+     capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
+   }
+   payload.WithArray("capacityProviderStrategy", std::move(capacityProviderStrategyJsonList));
+
   }
 
   if(m_platformVersionHasBeenSet)

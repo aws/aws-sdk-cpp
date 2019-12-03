@@ -27,7 +27,8 @@ CreateVpcRequest::CreateVpcRequest() :
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_instanceTenancy(Tenancy::NOT_SET),
-    m_instanceTenancyHasBeenSet(false)
+    m_instanceTenancyHasBeenSet(false),
+    m_ipv6CidrBlockNetworkBorderGroupHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,11 @@ Aws::String CreateVpcRequest::SerializePayload() const
   if(m_instanceTenancyHasBeenSet)
   {
     ss << "InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
+  }
+
+  if(m_ipv6CidrBlockNetworkBorderGroupHasBeenSet)
+  {
+    ss << "Ipv6CidrBlockNetworkBorderGroup=" << StringUtils::URLEncode(m_ipv6CidrBlockNetworkBorderGroup.c_str()) << "&";
   }
 
   ss << "Version=2016-11-15";

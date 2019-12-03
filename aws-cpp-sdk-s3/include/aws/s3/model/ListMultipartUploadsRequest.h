@@ -51,42 +51,114 @@ namespace Model
 
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>Name of the bucket to which the multipart upload was initiated. </p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>Name of the bucket to which the multipart upload was initiated. </p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>Name of the bucket to which the multipart upload was initiated. </p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>Name of the bucket to which the multipart upload was initiated. </p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>Name of the bucket to which the multipart upload was initiated. </p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>Name of the bucket to which the multipart upload was initiated. </p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline ListMultipartUploadsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>Name of the bucket to which the multipart upload was initiated. </p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline ListMultipartUploadsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the bucket to which the multipart upload was initiated.</p>
+     * <p>Name of the bucket to which the multipart upload was initiated. </p> <p>When
+     * using this API with an access point, you must direct requests to the access
+     * point hostname. The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline ListMultipartUploadsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -395,7 +467,7 @@ namespace Model
      * should begin. If key-marker is not specified, the upload-id-marker parameter is
      * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
      * might be included in the list only if they have an upload ID lexicographically
-     * greater than the specified upload-id-marker.</p>
+     * greater than the specified <code>upload-id-marker</code>.</p>
      */
     inline const Aws::String& GetUploadIdMarker() const{ return m_uploadIdMarker; }
 
@@ -404,7 +476,7 @@ namespace Model
      * should begin. If key-marker is not specified, the upload-id-marker parameter is
      * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
      * might be included in the list only if they have an upload ID lexicographically
-     * greater than the specified upload-id-marker.</p>
+     * greater than the specified <code>upload-id-marker</code>.</p>
      */
     inline bool UploadIdMarkerHasBeenSet() const { return m_uploadIdMarkerHasBeenSet; }
 
@@ -413,7 +485,7 @@ namespace Model
      * should begin. If key-marker is not specified, the upload-id-marker parameter is
      * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
      * might be included in the list only if they have an upload ID lexicographically
-     * greater than the specified upload-id-marker.</p>
+     * greater than the specified <code>upload-id-marker</code>.</p>
      */
     inline void SetUploadIdMarker(const Aws::String& value) { m_uploadIdMarkerHasBeenSet = true; m_uploadIdMarker = value; }
 
@@ -422,7 +494,7 @@ namespace Model
      * should begin. If key-marker is not specified, the upload-id-marker parameter is
      * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
      * might be included in the list only if they have an upload ID lexicographically
-     * greater than the specified upload-id-marker.</p>
+     * greater than the specified <code>upload-id-marker</code>.</p>
      */
     inline void SetUploadIdMarker(Aws::String&& value) { m_uploadIdMarkerHasBeenSet = true; m_uploadIdMarker = std::move(value); }
 
@@ -431,7 +503,7 @@ namespace Model
      * should begin. If key-marker is not specified, the upload-id-marker parameter is
      * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
      * might be included in the list only if they have an upload ID lexicographically
-     * greater than the specified upload-id-marker.</p>
+     * greater than the specified <code>upload-id-marker</code>.</p>
      */
     inline void SetUploadIdMarker(const char* value) { m_uploadIdMarkerHasBeenSet = true; m_uploadIdMarker.assign(value); }
 
@@ -440,7 +512,7 @@ namespace Model
      * should begin. If key-marker is not specified, the upload-id-marker parameter is
      * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
      * might be included in the list only if they have an upload ID lexicographically
-     * greater than the specified upload-id-marker.</p>
+     * greater than the specified <code>upload-id-marker</code>.</p>
      */
     inline ListMultipartUploadsRequest& WithUploadIdMarker(const Aws::String& value) { SetUploadIdMarker(value); return *this;}
 
@@ -449,7 +521,7 @@ namespace Model
      * should begin. If key-marker is not specified, the upload-id-marker parameter is
      * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
      * might be included in the list only if they have an upload ID lexicographically
-     * greater than the specified upload-id-marker.</p>
+     * greater than the specified <code>upload-id-marker</code>.</p>
      */
     inline ListMultipartUploadsRequest& WithUploadIdMarker(Aws::String&& value) { SetUploadIdMarker(std::move(value)); return *this;}
 
@@ -458,7 +530,7 @@ namespace Model
      * should begin. If key-marker is not specified, the upload-id-marker parameter is
      * ignored. Otherwise, any multipart uploads for a key equal to the key-marker
      * might be included in the list only if they have an upload ID lexicographically
-     * greater than the specified upload-id-marker.</p>
+     * greater than the specified <code>upload-id-marker</code>.</p>
      */
     inline ListMultipartUploadsRequest& WithUploadIdMarker(const char* value) { SetUploadIdMarker(value); return *this;}
 

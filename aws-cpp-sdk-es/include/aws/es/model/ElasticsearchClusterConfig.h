@@ -17,6 +17,7 @@
 #include <aws/es/ElasticsearchService_EXPORTS.h>
 #include <aws/es/model/ESPartitionInstanceType.h>
 #include <aws/es/model/ZoneAwarenessConfig.h>
+#include <aws/es/model/ESWarmPartitionInstanceType.h>
 #include <utility>
 
 namespace Aws
@@ -50,32 +51,38 @@ namespace Model
 
 
     /**
-     * <p>The instance type for an Elasticsearch cluster.</p>
+     * <p>The instance type for an Elasticsearch cluster. UltraWarm instance types are
+     * not supported for data instances.</p>
      */
     inline const ESPartitionInstanceType& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The instance type for an Elasticsearch cluster.</p>
+     * <p>The instance type for an Elasticsearch cluster. UltraWarm instance types are
+     * not supported for data instances.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The instance type for an Elasticsearch cluster.</p>
+     * <p>The instance type for an Elasticsearch cluster. UltraWarm instance types are
+     * not supported for data instances.</p>
      */
     inline void SetInstanceType(const ESPartitionInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The instance type for an Elasticsearch cluster.</p>
+     * <p>The instance type for an Elasticsearch cluster. UltraWarm instance types are
+     * not supported for data instances.</p>
      */
     inline void SetInstanceType(ESPartitionInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The instance type for an Elasticsearch cluster.</p>
+     * <p>The instance type for an Elasticsearch cluster. UltraWarm instance types are
+     * not supported for data instances.</p>
      */
     inline ElasticsearchClusterConfig& WithInstanceType(const ESPartitionInstanceType& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The instance type for an Elasticsearch cluster.</p>
+     * <p>The instance type for an Elasticsearch cluster. UltraWarm instance types are
+     * not supported for data instances.</p>
      */
     inline ElasticsearchClusterConfig& WithInstanceType(ESPartitionInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
 
@@ -255,6 +262,79 @@ namespace Model
      */
     inline ElasticsearchClusterConfig& WithDedicatedMasterCount(int value) { SetDedicatedMasterCount(value); return *this;}
 
+
+    /**
+     * <p>True to enable warm storage.</p>
+     */
+    inline bool GetWarmEnabled() const{ return m_warmEnabled; }
+
+    /**
+     * <p>True to enable warm storage.</p>
+     */
+    inline bool WarmEnabledHasBeenSet() const { return m_warmEnabledHasBeenSet; }
+
+    /**
+     * <p>True to enable warm storage.</p>
+     */
+    inline void SetWarmEnabled(bool value) { m_warmEnabledHasBeenSet = true; m_warmEnabled = value; }
+
+    /**
+     * <p>True to enable warm storage.</p>
+     */
+    inline ElasticsearchClusterConfig& WithWarmEnabled(bool value) { SetWarmEnabled(value); return *this;}
+
+
+    /**
+     * <p>The instance type for the Elasticsearch cluster's warm nodes.</p>
+     */
+    inline const ESWarmPartitionInstanceType& GetWarmType() const{ return m_warmType; }
+
+    /**
+     * <p>The instance type for the Elasticsearch cluster's warm nodes.</p>
+     */
+    inline bool WarmTypeHasBeenSet() const { return m_warmTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type for the Elasticsearch cluster's warm nodes.</p>
+     */
+    inline void SetWarmType(const ESWarmPartitionInstanceType& value) { m_warmTypeHasBeenSet = true; m_warmType = value; }
+
+    /**
+     * <p>The instance type for the Elasticsearch cluster's warm nodes.</p>
+     */
+    inline void SetWarmType(ESWarmPartitionInstanceType&& value) { m_warmTypeHasBeenSet = true; m_warmType = std::move(value); }
+
+    /**
+     * <p>The instance type for the Elasticsearch cluster's warm nodes.</p>
+     */
+    inline ElasticsearchClusterConfig& WithWarmType(const ESWarmPartitionInstanceType& value) { SetWarmType(value); return *this;}
+
+    /**
+     * <p>The instance type for the Elasticsearch cluster's warm nodes.</p>
+     */
+    inline ElasticsearchClusterConfig& WithWarmType(ESWarmPartitionInstanceType&& value) { SetWarmType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The number of warm nodes in the cluster.</p>
+     */
+    inline int GetWarmCount() const{ return m_warmCount; }
+
+    /**
+     * <p>The number of warm nodes in the cluster.</p>
+     */
+    inline bool WarmCountHasBeenSet() const { return m_warmCountHasBeenSet; }
+
+    /**
+     * <p>The number of warm nodes in the cluster.</p>
+     */
+    inline void SetWarmCount(int value) { m_warmCountHasBeenSet = true; m_warmCount = value; }
+
+    /**
+     * <p>The number of warm nodes in the cluster.</p>
+     */
+    inline ElasticsearchClusterConfig& WithWarmCount(int value) { SetWarmCount(value); return *this;}
+
   private:
 
     ESPartitionInstanceType m_instanceType;
@@ -277,6 +357,15 @@ namespace Model
 
     int m_dedicatedMasterCount;
     bool m_dedicatedMasterCountHasBeenSet;
+
+    bool m_warmEnabled;
+    bool m_warmEnabledHasBeenSet;
+
+    ESWarmPartitionInstanceType m_warmType;
+    bool m_warmTypeHasBeenSet;
+
+    int m_warmCount;
+    bool m_warmCountHasBeenSet;
   };
 
 } // namespace Model

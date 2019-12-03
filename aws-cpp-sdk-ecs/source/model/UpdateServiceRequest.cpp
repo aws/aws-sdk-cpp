@@ -28,6 +28,7 @@ UpdateServiceRequest::UpdateServiceRequest() :
     m_desiredCount(0),
     m_desiredCountHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
+    m_capacityProviderStrategyHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
@@ -63,6 +64,17 @@ Aws::String UpdateServiceRequest::SerializePayload() const
   if(m_taskDefinitionHasBeenSet)
   {
    payload.WithString("taskDefinition", m_taskDefinition);
+
+  }
+
+  if(m_capacityProviderStrategyHasBeenSet)
+  {
+   Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
+   for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
+   {
+     capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
+   }
+   payload.WithArray("capacityProviderStrategy", std::move(capacityProviderStrategyJsonList));
 
   }
 

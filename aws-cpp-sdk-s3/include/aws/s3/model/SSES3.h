@@ -31,7 +31,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies the use of SSE-S3 to encrypt delivered Inventory
+   * <p>Specifies the use of SSE-S3 to encrypt delivered inventory
    * reports.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SSES3">AWS API
    * Reference</a></p>

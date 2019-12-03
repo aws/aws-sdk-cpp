@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>The Amazon S3 bucket that contains the document to be processed. It's used by
    * asynchronous operations such as <a>StartDocumentTextDetection</a>.</p> <p>The
-   * input document can be an image file in JPG or PNG format. It can also be a file
+   * input document can be an image file in JPEG or PNG format. It can also be a file
    * in PDF format.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/DocumentLocation">AWS
    * API Reference</a></p>

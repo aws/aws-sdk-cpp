@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the resources associated with the nodegroup, such as
-   * AutoScaling groups and security groups for remote access.</p><p><h3>See
+   * <p>An object representing the resources associated with the node group, such as
+   * Auto Scaling groups and security groups for remote access.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/NodegroupResources">AWS
    * API Reference</a></p>
@@ -52,42 +52,42 @@ namespace Model
 
 
     /**
-     * <p>The autoscaling groups associated with the node group.</p>
+     * <p>The Auto Scaling groups associated with the node group.</p>
      */
     inline const Aws::Vector<AutoScalingGroup>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
 
     /**
-     * <p>The autoscaling groups associated with the node group.</p>
+     * <p>The Auto Scaling groups associated with the node group.</p>
      */
     inline bool AutoScalingGroupsHasBeenSet() const { return m_autoScalingGroupsHasBeenSet; }
 
     /**
-     * <p>The autoscaling groups associated with the node group.</p>
+     * <p>The Auto Scaling groups associated with the node group.</p>
      */
     inline void SetAutoScalingGroups(const Aws::Vector<AutoScalingGroup>& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = value; }
 
     /**
-     * <p>The autoscaling groups associated with the node group.</p>
+     * <p>The Auto Scaling groups associated with the node group.</p>
      */
     inline void SetAutoScalingGroups(Aws::Vector<AutoScalingGroup>&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups = std::move(value); }
 
     /**
-     * <p>The autoscaling groups associated with the node group.</p>
+     * <p>The Auto Scaling groups associated with the node group.</p>
      */
     inline NodegroupResources& WithAutoScalingGroups(const Aws::Vector<AutoScalingGroup>& value) { SetAutoScalingGroups(value); return *this;}
 
     /**
-     * <p>The autoscaling groups associated with the node group.</p>
+     * <p>The Auto Scaling groups associated with the node group.</p>
      */
     inline NodegroupResources& WithAutoScalingGroups(Aws::Vector<AutoScalingGroup>&& value) { SetAutoScalingGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The autoscaling groups associated with the node group.</p>
+     * <p>The Auto Scaling groups associated with the node group.</p>
      */
     inline NodegroupResources& AddAutoScalingGroups(const AutoScalingGroup& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(value); return *this; }
 
     /**
-     * <p>The autoscaling groups associated with the node group.</p>
+     * <p>The Auto Scaling groups associated with the node group.</p>
      */
     inline NodegroupResources& AddAutoScalingGroups(AutoScalingGroup&& value) { m_autoScalingGroupsHasBeenSet = true; m_autoScalingGroups.push_back(std::move(value)); return *this; }
 

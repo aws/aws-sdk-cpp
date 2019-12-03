@@ -32,6 +32,7 @@ Task::Task() :
     m_attachmentsHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_capacityProviderNameHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
     m_connectivity(Connectivity::NOT_SET),
     m_connectivityHasBeenSet(false),
@@ -73,6 +74,7 @@ Task::Task(JsonView jsonValue) :
     m_attachmentsHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
+    m_capacityProviderNameHasBeenSet(false),
     m_clusterArnHasBeenSet(false),
     m_connectivity(Connectivity::NOT_SET),
     m_connectivityHasBeenSet(false),
@@ -138,6 +140,13 @@ Task& Task::operator =(JsonView jsonValue)
     m_availabilityZone = jsonValue.GetString("availabilityZone");
 
     m_availabilityZoneHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("capacityProviderName"))
+  {
+    m_capacityProviderName = jsonValue.GetString("capacityProviderName");
+
+    m_capacityProviderNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("clusterArn"))
@@ -384,6 +393,12 @@ JsonValue Task::Jsonize() const
   if(m_availabilityZoneHasBeenSet)
   {
    payload.WithString("availabilityZone", m_availabilityZone);
+
+  }
+
+  if(m_capacityProviderNameHasBeenSet)
+  {
+   payload.WithString("capacityProviderName", m_capacityProviderName);
 
   }
 

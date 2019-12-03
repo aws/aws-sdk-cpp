@@ -33,6 +33,7 @@ CreateServiceRequest::CreateServiceRequest() :
     m_clientTokenHasBeenSet(false),
     m_launchType(LaunchType::NOT_SET),
     m_launchTypeHasBeenSet(false),
+    m_capacityProviderStrategyHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
@@ -111,6 +112,17 @@ Aws::String CreateServiceRequest::SerializePayload() const
   if(m_launchTypeHasBeenSet)
   {
    payload.WithString("launchType", LaunchTypeMapper::GetNameForLaunchType(m_launchType));
+  }
+
+  if(m_capacityProviderStrategyHasBeenSet)
+  {
+   Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
+   for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
+   {
+     capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
+   }
+   payload.WithArray("capacityProviderStrategy", std::move(capacityProviderStrategyJsonList));
+
   }
 
   if(m_platformVersionHasBeenSet)

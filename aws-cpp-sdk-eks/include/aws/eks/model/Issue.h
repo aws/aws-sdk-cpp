@@ -64,7 +64,7 @@ namespace Model
      * to recreate a launch template with the same settings to recover.</p> </li> <li>
      * <p> <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template
      * version for your managed node group does not match the version that Amazon EKS
-     * created. You may be able to revert to the Amazon EKS-created version to
+     * created. You may be able to revert to the version that Amazon EKS created to
      * recover.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We couldn't find
      * the IAM instance profile for your managed node group. You may be able to
      * recreate an instance profile with the same settings to recover.</p> </li> <li>
@@ -72,15 +72,20 @@ namespace Model
      * node group. You may be able to recreate an IAM role with the same settings to
      * recover.</p> </li> <li> <p> <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling
      * group is experiencing failures while attempting to launch instances.</p> </li>
-     * <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any
-     * more instances of the specified instance type. You may be able to request an
-     * Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
+     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
+     * register with your Amazon EKS cluster. Common causes of this failure are
+     * insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
+     * node IAM role</a> permissions or lack of outbound internet access for the nodes.
+     * </p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is unable to
+     * launch any more instances of the specified instance type. You may be able to
+     * request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
      * <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
      * your managed node group does not have enough available IP addresses for new
-     * nodes.</p> </li> <li> <p> <b>AccessDenied</b>: Amazon EKS and or one or more of
-     * your managed nodes is unable to communicate with your cluster API server.</p>
-     * </li> <li> <p> <b>InternalFailure</b>: These errors are usually caused by an
-     * Amazon EKS server-side issue.</p> </li> </ul>
+     * nodes.</p> </li> <li> <p> <b>AccessDenied</b>: Amazon EKS or one or more of your
+     * managed nodes is unable to communicate with your cluster API server.</p> </li>
+     * <li> <p> <b>InternalFailure</b>: These errors are usually caused by an Amazon
+     * EKS server-side issue.</p> </li> </ul>
      */
     inline const NodegroupIssueCode& GetCode() const{ return m_code; }
 
@@ -98,7 +103,7 @@ namespace Model
      * to recreate a launch template with the same settings to recover.</p> </li> <li>
      * <p> <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template
      * version for your managed node group does not match the version that Amazon EKS
-     * created. You may be able to revert to the Amazon EKS-created version to
+     * created. You may be able to revert to the version that Amazon EKS created to
      * recover.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We couldn't find
      * the IAM instance profile for your managed node group. You may be able to
      * recreate an instance profile with the same settings to recover.</p> </li> <li>
@@ -106,15 +111,20 @@ namespace Model
      * node group. You may be able to recreate an IAM role with the same settings to
      * recover.</p> </li> <li> <p> <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling
      * group is experiencing failures while attempting to launch instances.</p> </li>
-     * <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any
-     * more instances of the specified instance type. You may be able to request an
-     * Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
+     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
+     * register with your Amazon EKS cluster. Common causes of this failure are
+     * insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
+     * node IAM role</a> permissions or lack of outbound internet access for the nodes.
+     * </p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is unable to
+     * launch any more instances of the specified instance type. You may be able to
+     * request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
      * <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
      * your managed node group does not have enough available IP addresses for new
-     * nodes.</p> </li> <li> <p> <b>AccessDenied</b>: Amazon EKS and or one or more of
-     * your managed nodes is unable to communicate with your cluster API server.</p>
-     * </li> <li> <p> <b>InternalFailure</b>: These errors are usually caused by an
-     * Amazon EKS server-side issue.</p> </li> </ul>
+     * nodes.</p> </li> <li> <p> <b>AccessDenied</b>: Amazon EKS or one or more of your
+     * managed nodes is unable to communicate with your cluster API server.</p> </li>
+     * <li> <p> <b>InternalFailure</b>: These errors are usually caused by an Amazon
+     * EKS server-side issue.</p> </li> </ul>
      */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
@@ -132,7 +142,7 @@ namespace Model
      * to recreate a launch template with the same settings to recover.</p> </li> <li>
      * <p> <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template
      * version for your managed node group does not match the version that Amazon EKS
-     * created. You may be able to revert to the Amazon EKS-created version to
+     * created. You may be able to revert to the version that Amazon EKS created to
      * recover.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We couldn't find
      * the IAM instance profile for your managed node group. You may be able to
      * recreate an instance profile with the same settings to recover.</p> </li> <li>
@@ -140,15 +150,20 @@ namespace Model
      * node group. You may be able to recreate an IAM role with the same settings to
      * recover.</p> </li> <li> <p> <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling
      * group is experiencing failures while attempting to launch instances.</p> </li>
-     * <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any
-     * more instances of the specified instance type. You may be able to request an
-     * Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
+     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
+     * register with your Amazon EKS cluster. Common causes of this failure are
+     * insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
+     * node IAM role</a> permissions or lack of outbound internet access for the nodes.
+     * </p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is unable to
+     * launch any more instances of the specified instance type. You may be able to
+     * request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
      * <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
      * your managed node group does not have enough available IP addresses for new
-     * nodes.</p> </li> <li> <p> <b>AccessDenied</b>: Amazon EKS and or one or more of
-     * your managed nodes is unable to communicate with your cluster API server.</p>
-     * </li> <li> <p> <b>InternalFailure</b>: These errors are usually caused by an
-     * Amazon EKS server-side issue.</p> </li> </ul>
+     * nodes.</p> </li> <li> <p> <b>AccessDenied</b>: Amazon EKS or one or more of your
+     * managed nodes is unable to communicate with your cluster API server.</p> </li>
+     * <li> <p> <b>InternalFailure</b>: These errors are usually caused by an Amazon
+     * EKS server-side issue.</p> </li> </ul>
      */
     inline void SetCode(const NodegroupIssueCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
@@ -166,7 +181,7 @@ namespace Model
      * to recreate a launch template with the same settings to recover.</p> </li> <li>
      * <p> <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template
      * version for your managed node group does not match the version that Amazon EKS
-     * created. You may be able to revert to the Amazon EKS-created version to
+     * created. You may be able to revert to the version that Amazon EKS created to
      * recover.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We couldn't find
      * the IAM instance profile for your managed node group. You may be able to
      * recreate an instance profile with the same settings to recover.</p> </li> <li>
@@ -174,15 +189,20 @@ namespace Model
      * node group. You may be able to recreate an IAM role with the same settings to
      * recover.</p> </li> <li> <p> <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling
      * group is experiencing failures while attempting to launch instances.</p> </li>
-     * <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any
-     * more instances of the specified instance type. You may be able to request an
-     * Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
+     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
+     * register with your Amazon EKS cluster. Common causes of this failure are
+     * insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
+     * node IAM role</a> permissions or lack of outbound internet access for the nodes.
+     * </p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is unable to
+     * launch any more instances of the specified instance type. You may be able to
+     * request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
      * <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
      * your managed node group does not have enough available IP addresses for new
-     * nodes.</p> </li> <li> <p> <b>AccessDenied</b>: Amazon EKS and or one or more of
-     * your managed nodes is unable to communicate with your cluster API server.</p>
-     * </li> <li> <p> <b>InternalFailure</b>: These errors are usually caused by an
-     * Amazon EKS server-side issue.</p> </li> </ul>
+     * nodes.</p> </li> <li> <p> <b>AccessDenied</b>: Amazon EKS or one or more of your
+     * managed nodes is unable to communicate with your cluster API server.</p> </li>
+     * <li> <p> <b>InternalFailure</b>: These errors are usually caused by an Amazon
+     * EKS server-side issue.</p> </li> </ul>
      */
     inline void SetCode(NodegroupIssueCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
@@ -200,7 +220,7 @@ namespace Model
      * to recreate a launch template with the same settings to recover.</p> </li> <li>
      * <p> <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template
      * version for your managed node group does not match the version that Amazon EKS
-     * created. You may be able to revert to the Amazon EKS-created version to
+     * created. You may be able to revert to the version that Amazon EKS created to
      * recover.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We couldn't find
      * the IAM instance profile for your managed node group. You may be able to
      * recreate an instance profile with the same settings to recover.</p> </li> <li>
@@ -208,15 +228,20 @@ namespace Model
      * node group. You may be able to recreate an IAM role with the same settings to
      * recover.</p> </li> <li> <p> <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling
      * group is experiencing failures while attempting to launch instances.</p> </li>
-     * <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any
-     * more instances of the specified instance type. You may be able to request an
-     * Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
+     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
+     * register with your Amazon EKS cluster. Common causes of this failure are
+     * insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
+     * node IAM role</a> permissions or lack of outbound internet access for the nodes.
+     * </p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is unable to
+     * launch any more instances of the specified instance type. You may be able to
+     * request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
      * <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
      * your managed node group does not have enough available IP addresses for new
-     * nodes.</p> </li> <li> <p> <b>AccessDenied</b>: Amazon EKS and or one or more of
-     * your managed nodes is unable to communicate with your cluster API server.</p>
-     * </li> <li> <p> <b>InternalFailure</b>: These errors are usually caused by an
-     * Amazon EKS server-side issue.</p> </li> </ul>
+     * nodes.</p> </li> <li> <p> <b>AccessDenied</b>: Amazon EKS or one or more of your
+     * managed nodes is unable to communicate with your cluster API server.</p> </li>
+     * <li> <p> <b>InternalFailure</b>: These errors are usually caused by an Amazon
+     * EKS server-side issue.</p> </li> </ul>
      */
     inline Issue& WithCode(const NodegroupIssueCode& value) { SetCode(value); return *this;}
 
@@ -234,7 +259,7 @@ namespace Model
      * to recreate a launch template with the same settings to recover.</p> </li> <li>
      * <p> <b>Ec2LaunchTemplateVersionMismatch</b>: The Amazon EC2 launch template
      * version for your managed node group does not match the version that Amazon EKS
-     * created. You may be able to revert to the Amazon EKS-created version to
+     * created. You may be able to revert to the version that Amazon EKS created to
      * recover.</p> </li> <li> <p> <b>IamInstanceProfileNotFound</b>: We couldn't find
      * the IAM instance profile for your managed node group. You may be able to
      * recreate an instance profile with the same settings to recover.</p> </li> <li>
@@ -242,15 +267,20 @@ namespace Model
      * node group. You may be able to recreate an IAM role with the same settings to
      * recover.</p> </li> <li> <p> <b>AsgInstanceLaunchFailures</b>: Your Auto Scaling
      * group is experiencing failures while attempting to launch instances.</p> </li>
-     * <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is unable to launch any
-     * more instances of the specified instance type. You may be able to request an
-     * Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
+     * <li> <p> <b>NodeCreationFailure</b>: Your launched instances are unable to
+     * register with your Amazon EKS cluster. Common causes of this failure are
+     * insufficient <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">worker
+     * node IAM role</a> permissions or lack of outbound internet access for the nodes.
+     * </p> </li> <li> <p> <b>InstanceLimitExceeded</b>: Your AWS account is unable to
+     * launch any more instances of the specified instance type. You may be able to
+     * request an Amazon EC2 instance limit increase to recover.</p> </li> <li> <p>
      * <b>InsufficientFreeAddresses</b>: One or more of the subnets associated with
      * your managed node group does not have enough available IP addresses for new
-     * nodes.</p> </li> <li> <p> <b>AccessDenied</b>: Amazon EKS and or one or more of
-     * your managed nodes is unable to communicate with your cluster API server.</p>
-     * </li> <li> <p> <b>InternalFailure</b>: These errors are usually caused by an
-     * Amazon EKS server-side issue.</p> </li> </ul>
+     * nodes.</p> </li> <li> <p> <b>AccessDenied</b>: Amazon EKS or one or more of your
+     * managed nodes is unable to communicate with your cluster API server.</p> </li>
+     * <li> <p> <b>InternalFailure</b>: These errors are usually caused by an Amazon
+     * EKS server-side issue.</p> </li> </ul>
      */
     inline Issue& WithCode(NodegroupIssueCode&& value) { SetCode(std::move(value)); return *this;}
 

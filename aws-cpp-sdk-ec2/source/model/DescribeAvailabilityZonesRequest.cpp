@@ -24,6 +24,8 @@ DescribeAvailabilityZonesRequest::DescribeAvailabilityZonesRequest() :
     m_filtersHasBeenSet(false),
     m_zoneNamesHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
+    m_allAvailabilityZones(false),
+    m_allAvailabilityZonesHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -63,6 +65,11 @@ Aws::String DescribeAvailabilityZonesRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       zoneIdsCount++;
     }
+  }
+
+  if(m_allAvailabilityZonesHasBeenSet)
+  {
+    ss << "AllAvailabilityZones=" << std::boolalpha << m_allAvailabilityZones << "&";
   }
 
   if(m_dryRunHasBeenSet)

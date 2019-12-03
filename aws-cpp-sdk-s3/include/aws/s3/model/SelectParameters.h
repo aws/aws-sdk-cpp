@@ -82,32 +82,32 @@ namespace Model
 
 
     /**
-     * <p>The type of the provided expression (e.g., SQL).</p>
+     * <p>The type of the provided expression (for example, SQL).</p>
      */
     inline const ExpressionType& GetExpressionType() const{ return m_expressionType; }
 
     /**
-     * <p>The type of the provided expression (e.g., SQL).</p>
+     * <p>The type of the provided expression (for example, SQL).</p>
      */
     inline bool ExpressionTypeHasBeenSet() const { return m_expressionTypeHasBeenSet; }
 
     /**
-     * <p>The type of the provided expression (e.g., SQL).</p>
+     * <p>The type of the provided expression (for example, SQL).</p>
      */
     inline void SetExpressionType(const ExpressionType& value) { m_expressionTypeHasBeenSet = true; m_expressionType = value; }
 
     /**
-     * <p>The type of the provided expression (e.g., SQL).</p>
+     * <p>The type of the provided expression (for example, SQL).</p>
      */
     inline void SetExpressionType(ExpressionType&& value) { m_expressionTypeHasBeenSet = true; m_expressionType = std::move(value); }
 
     /**
-     * <p>The type of the provided expression (e.g., SQL).</p>
+     * <p>The type of the provided expression (for example, SQL).</p>
      */
     inline SelectParameters& WithExpressionType(const ExpressionType& value) { SetExpressionType(value); return *this;}
 
     /**
-     * <p>The type of the provided expression (e.g., SQL).</p>
+     * <p>The type of the provided expression (for example, SQL).</p>
      */
     inline SelectParameters& WithExpressionType(ExpressionType&& value) { SetExpressionType(std::move(value)); return *this;}
 

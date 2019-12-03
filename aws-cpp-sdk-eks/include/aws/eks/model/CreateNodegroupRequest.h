@@ -131,37 +131,37 @@ namespace Model
 
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group that is created
+     * <p>The scaling configuration details for the Auto Scaling group that is created
      * for your node group.</p>
      */
     inline const NodegroupScalingConfig& GetScalingConfig() const{ return m_scalingConfig; }
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group that is created
+     * <p>The scaling configuration details for the Auto Scaling group that is created
      * for your node group.</p>
      */
     inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group that is created
+     * <p>The scaling configuration details for the Auto Scaling group that is created
      * for your node group.</p>
      */
     inline void SetScalingConfig(const NodegroupScalingConfig& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = value; }
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group that is created
+     * <p>The scaling configuration details for the Auto Scaling group that is created
      * for your node group.</p>
      */
     inline void SetScalingConfig(NodegroupScalingConfig&& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = std::move(value); }
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group that is created
+     * <p>The scaling configuration details for the Auto Scaling group that is created
      * for your node group.</p>
      */
     inline CreateNodegroupRequest& WithScalingConfig(const NodegroupScalingConfig& value) { SetScalingConfig(value); return *this;}
 
     /**
-     * <p>The scaling configuration details for the AutoScaling group that is created
+     * <p>The scaling configuration details for the Auto Scaling group that is created
      * for your node group.</p>
      */
     inline CreateNodegroupRequest& WithScalingConfig(NodegroupScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
@@ -193,7 +193,7 @@ namespace Model
 
 
     /**
-     * <p>The subnets to use for the AutoScaling group that is created for your node
+     * <p>The subnets to use for the Auto Scaling group that is created for your node
      * group. These subnets must have the tag key
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
      * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
@@ -202,7 +202,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
     /**
-     * <p>The subnets to use for the AutoScaling group that is created for your node
+     * <p>The subnets to use for the Auto Scaling group that is created for your node
      * group. These subnets must have the tag key
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
      * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
@@ -211,7 +211,7 @@ namespace Model
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
-     * <p>The subnets to use for the AutoScaling group that is created for your node
+     * <p>The subnets to use for the Auto Scaling group that is created for your node
      * group. These subnets must have the tag key
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
      * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
@@ -220,7 +220,7 @@ namespace Model
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
-     * <p>The subnets to use for the AutoScaling group that is created for your node
+     * <p>The subnets to use for the Auto Scaling group that is created for your node
      * group. These subnets must have the tag key
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
      * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
@@ -229,7 +229,7 @@ namespace Model
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
-     * <p>The subnets to use for the AutoScaling group that is created for your node
+     * <p>The subnets to use for the Auto Scaling group that is created for your node
      * group. These subnets must have the tag key
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
      * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
@@ -238,7 +238,7 @@ namespace Model
     inline CreateNodegroupRequest& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
     /**
-     * <p>The subnets to use for the AutoScaling group that is created for your node
+     * <p>The subnets to use for the Auto Scaling group that is created for your node
      * group. These subnets must have the tag key
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
      * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
@@ -247,7 +247,7 @@ namespace Model
     inline CreateNodegroupRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
-     * <p>The subnets to use for the AutoScaling group that is created for your node
+     * <p>The subnets to use for the Auto Scaling group that is created for your node
      * group. These subnets must have the tag key
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
      * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
@@ -256,7 +256,7 @@ namespace Model
     inline CreateNodegroupRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /**
-     * <p>The subnets to use for the AutoScaling group that is created for your node
+     * <p>The subnets to use for the Auto Scaling group that is created for your node
      * group. These subnets must have the tag key
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
      * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
@@ -265,7 +265,7 @@ namespace Model
     inline CreateNodegroupRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The subnets to use for the AutoScaling group that is created for your node
+     * <p>The subnets to use for the Auto Scaling group that is created for your node
      * group. These subnets must have the tag key
      * <code>kubernetes.io/cluster/CLUSTER_NAME</code> with a value of
      * <code>shared</code>, where <code>CLUSTER_NAME</code> is replaced with the name
@@ -350,7 +350,7 @@ namespace Model
     /**
      * <p>The AMI type for your node group. GPU instance types should use the
      * <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux
-     * AMI with GPU support; non-GPU instances should use the <code>AL2_x86_64</code>
+     * AMI with GPU support. Non-GPU instances should use the <code>AL2_x86_64</code>
      * AMI type, which uses the Amazon EKS-optimized Linux AMI.</p>
      */
     inline const AMITypes& GetAmiType() const{ return m_amiType; }
@@ -358,7 +358,7 @@ namespace Model
     /**
      * <p>The AMI type for your node group. GPU instance types should use the
      * <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux
-     * AMI with GPU support; non-GPU instances should use the <code>AL2_x86_64</code>
+     * AMI with GPU support. Non-GPU instances should use the <code>AL2_x86_64</code>
      * AMI type, which uses the Amazon EKS-optimized Linux AMI.</p>
      */
     inline bool AmiTypeHasBeenSet() const { return m_amiTypeHasBeenSet; }
@@ -366,7 +366,7 @@ namespace Model
     /**
      * <p>The AMI type for your node group. GPU instance types should use the
      * <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux
-     * AMI with GPU support; non-GPU instances should use the <code>AL2_x86_64</code>
+     * AMI with GPU support. Non-GPU instances should use the <code>AL2_x86_64</code>
      * AMI type, which uses the Amazon EKS-optimized Linux AMI.</p>
      */
     inline void SetAmiType(const AMITypes& value) { m_amiTypeHasBeenSet = true; m_amiType = value; }
@@ -374,7 +374,7 @@ namespace Model
     /**
      * <p>The AMI type for your node group. GPU instance types should use the
      * <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux
-     * AMI with GPU support; non-GPU instances should use the <code>AL2_x86_64</code>
+     * AMI with GPU support. Non-GPU instances should use the <code>AL2_x86_64</code>
      * AMI type, which uses the Amazon EKS-optimized Linux AMI.</p>
      */
     inline void SetAmiType(AMITypes&& value) { m_amiTypeHasBeenSet = true; m_amiType = std::move(value); }
@@ -382,7 +382,7 @@ namespace Model
     /**
      * <p>The AMI type for your node group. GPU instance types should use the
      * <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux
-     * AMI with GPU support; non-GPU instances should use the <code>AL2_x86_64</code>
+     * AMI with GPU support. Non-GPU instances should use the <code>AL2_x86_64</code>
      * AMI type, which uses the Amazon EKS-optimized Linux AMI.</p>
      */
     inline CreateNodegroupRequest& WithAmiType(const AMITypes& value) { SetAmiType(value); return *this;}
@@ -390,7 +390,7 @@ namespace Model
     /**
      * <p>The AMI type for your node group. GPU instance types should use the
      * <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux
-     * AMI with GPU support; non-GPU instances should use the <code>AL2_x86_64</code>
+     * AMI with GPU support. Non-GPU instances should use the <code>AL2_x86_64</code>
      * AMI type, which uses the Amazon EKS-optimized Linux AMI.</p>
      */
     inline CreateNodegroupRequest& WithAmiType(AMITypes&& value) { SetAmiType(std::move(value)); return *this;}

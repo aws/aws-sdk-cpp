@@ -292,7 +292,11 @@ namespace Model
     r5n_8xlarge,
     r5n_12xlarge,
     r5n_16xlarge,
-    r5n_24xlarge
+    r5n_24xlarge,
+    inf1_xlarge,
+    inf1_2xlarge,
+    inf1_6xlarge,
+    inf1_24xlarge
   };
 
 namespace InstanceTypeMapper

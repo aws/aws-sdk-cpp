@@ -160,111 +160,147 @@ namespace Model
 
 
     /**
-     * <p>The results of the text analysis operation.</p>
+     * <p>The results of the text-analysis operation.</p>
      */
     inline const Aws::Vector<Block>& GetBlocks() const{ return m_blocks; }
 
     /**
-     * <p>The results of the text analysis operation.</p>
+     * <p>The results of the text-analysis operation.</p>
      */
     inline void SetBlocks(const Aws::Vector<Block>& value) { m_blocks = value; }
 
     /**
-     * <p>The results of the text analysis operation.</p>
+     * <p>The results of the text-analysis operation.</p>
      */
     inline void SetBlocks(Aws::Vector<Block>&& value) { m_blocks = std::move(value); }
 
     /**
-     * <p>The results of the text analysis operation.</p>
+     * <p>The results of the text-analysis operation.</p>
      */
     inline GetDocumentAnalysisResult& WithBlocks(const Aws::Vector<Block>& value) { SetBlocks(value); return *this;}
 
     /**
-     * <p>The results of the text analysis operation.</p>
+     * <p>The results of the text-analysis operation.</p>
      */
     inline GetDocumentAnalysisResult& WithBlocks(Aws::Vector<Block>&& value) { SetBlocks(std::move(value)); return *this;}
 
     /**
-     * <p>The results of the text analysis operation.</p>
+     * <p>The results of the text-analysis operation.</p>
      */
     inline GetDocumentAnalysisResult& AddBlocks(const Block& value) { m_blocks.push_back(value); return *this; }
 
     /**
-     * <p>The results of the text analysis operation.</p>
+     * <p>The results of the text-analysis operation.</p>
      */
     inline GetDocumentAnalysisResult& AddBlocks(Block&& value) { m_blocks.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A list of warnings that occurred during the document analysis operation.</p>
+     * <p>A list of warnings that occurred during the document-analysis operation.</p>
      */
     inline const Aws::Vector<Warning>& GetWarnings() const{ return m_warnings; }
 
     /**
-     * <p>A list of warnings that occurred during the document analysis operation.</p>
+     * <p>A list of warnings that occurred during the document-analysis operation.</p>
      */
     inline void SetWarnings(const Aws::Vector<Warning>& value) { m_warnings = value; }
 
     /**
-     * <p>A list of warnings that occurred during the document analysis operation.</p>
+     * <p>A list of warnings that occurred during the document-analysis operation.</p>
      */
     inline void SetWarnings(Aws::Vector<Warning>&& value) { m_warnings = std::move(value); }
 
     /**
-     * <p>A list of warnings that occurred during the document analysis operation.</p>
+     * <p>A list of warnings that occurred during the document-analysis operation.</p>
      */
     inline GetDocumentAnalysisResult& WithWarnings(const Aws::Vector<Warning>& value) { SetWarnings(value); return *this;}
 
     /**
-     * <p>A list of warnings that occurred during the document analysis operation.</p>
+     * <p>A list of warnings that occurred during the document-analysis operation.</p>
      */
     inline GetDocumentAnalysisResult& WithWarnings(Aws::Vector<Warning>&& value) { SetWarnings(std::move(value)); return *this;}
 
     /**
-     * <p>A list of warnings that occurred during the document analysis operation.</p>
+     * <p>A list of warnings that occurred during the document-analysis operation.</p>
      */
     inline GetDocumentAnalysisResult& AddWarnings(const Warning& value) { m_warnings.push_back(value); return *this; }
 
     /**
-     * <p>A list of warnings that occurred during the document analysis operation.</p>
+     * <p>A list of warnings that occurred during the document-analysis operation.</p>
      */
     inline GetDocumentAnalysisResult& AddWarnings(Warning&& value) { m_warnings.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The current status of an asynchronous document analysis operation.</p>
+     * <p>The current status of an asynchronous document-analysis operation.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * <p>The current status of an asynchronous document analysis operation.</p>
+     * <p>The current status of an asynchronous document-analysis operation.</p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
 
     /**
-     * <p>The current status of an asynchronous document analysis operation.</p>
+     * <p>The current status of an asynchronous document-analysis operation.</p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
 
     /**
-     * <p>The current status of an asynchronous document analysis operation.</p>
+     * <p>The current status of an asynchronous document-analysis operation.</p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
 
     /**
-     * <p>The current status of an asynchronous document analysis operation.</p>
+     * <p>The current status of an asynchronous document-analysis operation.</p>
      */
     inline GetDocumentAnalysisResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>The current status of an asynchronous document analysis operation.</p>
+     * <p>The current status of an asynchronous document-analysis operation.</p>
      */
     inline GetDocumentAnalysisResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The current status of an asynchronous document analysis operation.</p>
+     * <p>The current status of an asynchronous document-analysis operation.</p>
      */
     inline GetDocumentAnalysisResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetAnalyzeDocumentModelVersion() const{ return m_analyzeDocumentModelVersion; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAnalyzeDocumentModelVersion(const Aws::String& value) { m_analyzeDocumentModelVersion = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAnalyzeDocumentModelVersion(Aws::String&& value) { m_analyzeDocumentModelVersion = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline void SetAnalyzeDocumentModelVersion(const char* value) { m_analyzeDocumentModelVersion.assign(value); }
+
+    /**
+     * <p/>
+     */
+    inline GetDocumentAnalysisResult& WithAnalyzeDocumentModelVersion(const Aws::String& value) { SetAnalyzeDocumentModelVersion(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline GetDocumentAnalysisResult& WithAnalyzeDocumentModelVersion(Aws::String&& value) { SetAnalyzeDocumentModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline GetDocumentAnalysisResult& WithAnalyzeDocumentModelVersion(const char* value) { SetAnalyzeDocumentModelVersion(value); return *this;}
 
   private:
 
@@ -279,6 +315,8 @@ namespace Model
     Aws::Vector<Warning> m_warnings;
 
     Aws::String m_statusMessage;
+
+    Aws::String m_analyzeDocumentModelVersion;
   };
 
 } // namespace Model

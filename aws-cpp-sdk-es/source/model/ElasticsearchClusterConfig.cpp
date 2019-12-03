@@ -41,7 +41,13 @@ ElasticsearchClusterConfig::ElasticsearchClusterConfig() :
     m_dedicatedMasterType(ESPartitionInstanceType::NOT_SET),
     m_dedicatedMasterTypeHasBeenSet(false),
     m_dedicatedMasterCount(0),
-    m_dedicatedMasterCountHasBeenSet(false)
+    m_dedicatedMasterCountHasBeenSet(false),
+    m_warmEnabled(false),
+    m_warmEnabledHasBeenSet(false),
+    m_warmType(ESWarmPartitionInstanceType::NOT_SET),
+    m_warmTypeHasBeenSet(false),
+    m_warmCount(0),
+    m_warmCountHasBeenSet(false)
 {
 }
 
@@ -58,7 +64,13 @@ ElasticsearchClusterConfig::ElasticsearchClusterConfig(JsonView jsonValue) :
     m_dedicatedMasterType(ESPartitionInstanceType::NOT_SET),
     m_dedicatedMasterTypeHasBeenSet(false),
     m_dedicatedMasterCount(0),
-    m_dedicatedMasterCountHasBeenSet(false)
+    m_dedicatedMasterCountHasBeenSet(false),
+    m_warmEnabled(false),
+    m_warmEnabledHasBeenSet(false),
+    m_warmType(ESWarmPartitionInstanceType::NOT_SET),
+    m_warmTypeHasBeenSet(false),
+    m_warmCount(0),
+    m_warmCountHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -114,6 +126,27 @@ ElasticsearchClusterConfig& ElasticsearchClusterConfig::operator =(JsonView json
     m_dedicatedMasterCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WarmEnabled"))
+  {
+    m_warmEnabled = jsonValue.GetBool("WarmEnabled");
+
+    m_warmEnabledHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WarmType"))
+  {
+    m_warmType = ESWarmPartitionInstanceTypeMapper::GetESWarmPartitionInstanceTypeForName(jsonValue.GetString("WarmType"));
+
+    m_warmTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("WarmCount"))
+  {
+    m_warmCount = jsonValue.GetInteger("WarmCount");
+
+    m_warmCountHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -158,6 +191,23 @@ JsonValue ElasticsearchClusterConfig::Jsonize() const
   if(m_dedicatedMasterCountHasBeenSet)
   {
    payload.WithInteger("DedicatedMasterCount", m_dedicatedMasterCount);
+
+  }
+
+  if(m_warmEnabledHasBeenSet)
+  {
+   payload.WithBool("WarmEnabled", m_warmEnabled);
+
+  }
+
+  if(m_warmTypeHasBeenSet)
+  {
+   payload.WithString("WarmType", ESWarmPartitionInstanceTypeMapper::GetNameForESWarmPartitionInstanceType(m_warmType));
+  }
+
+  if(m_warmCountHasBeenSet)
+  {
+   payload.WithInteger("WarmCount", m_warmCount);
 
   }
 

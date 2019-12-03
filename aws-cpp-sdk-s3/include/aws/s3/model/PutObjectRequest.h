@@ -101,42 +101,114 @@ namespace Model
 
 
     /**
-     * <p>Name of the bucket to which the PUT operation was initiated.</p>
+     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
+     * API with an access point, you must direct requests to the access point hostname.
+     * The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>Name of the bucket to which the PUT operation was initiated.</p>
+     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
+     * API with an access point, you must direct requests to the access point hostname.
+     * The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>Name of the bucket to which the PUT operation was initiated.</p>
+     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
+     * API with an access point, you must direct requests to the access point hostname.
+     * The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>Name of the bucket to which the PUT operation was initiated.</p>
+     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
+     * API with an access point, you must direct requests to the access point hostname.
+     * The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>Name of the bucket to which the PUT operation was initiated.</p>
+     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
+     * API with an access point, you must direct requests to the access point hostname.
+     * The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>Name of the bucket to which the PUT operation was initiated.</p>
+     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
+     * API with an access point, you must direct requests to the access point hostname.
+     * The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline PutObjectRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>Name of the bucket to which the PUT operation was initiated.</p>
+     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
+     * API with an access point, you must direct requests to the access point hostname.
+     * The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline PutObjectRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the bucket to which the PUT operation was initiated.</p>
+     * <p>Bucket name to which the PUT operation was initiated. </p> <p>When using this
+     * API with an access point, you must direct requests to the access point hostname.
+     * The access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline PutObjectRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -802,38 +874,38 @@ namespace Model
 
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline PutObjectRequest& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline PutObjectRequest& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
@@ -879,8 +951,10 @@ namespace Model
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
      * value of this header in the object metadata. For information about object
-     * metadata, see .</p> <p>In the following example, the request header sets the
-     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * metadata, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object
+     * Key and Metadata</a>.</p> <p>In the following example, the request header sets
+     * the redirect to an object (anotherPage.html) in the same bucket:</p> <p>
      * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
      * following example, the request header sets the object redirect to another
      * website:</p> <p> <code>x-amz-website-redirect-location:
@@ -897,8 +971,10 @@ namespace Model
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
      * value of this header in the object metadata. For information about object
-     * metadata, see .</p> <p>In the following example, the request header sets the
-     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * metadata, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object
+     * Key and Metadata</a>.</p> <p>In the following example, the request header sets
+     * the redirect to an object (anotherPage.html) in the same bucket:</p> <p>
      * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
      * following example, the request header sets the object redirect to another
      * website:</p> <p> <code>x-amz-website-redirect-location:
@@ -915,8 +991,10 @@ namespace Model
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
      * value of this header in the object metadata. For information about object
-     * metadata, see .</p> <p>In the following example, the request header sets the
-     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * metadata, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object
+     * Key and Metadata</a>.</p> <p>In the following example, the request header sets
+     * the redirect to an object (anotherPage.html) in the same bucket:</p> <p>
      * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
      * following example, the request header sets the object redirect to another
      * website:</p> <p> <code>x-amz-website-redirect-location:
@@ -933,8 +1011,10 @@ namespace Model
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
      * value of this header in the object metadata. For information about object
-     * metadata, see .</p> <p>In the following example, the request header sets the
-     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * metadata, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object
+     * Key and Metadata</a>.</p> <p>In the following example, the request header sets
+     * the redirect to an object (anotherPage.html) in the same bucket:</p> <p>
      * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
      * following example, the request header sets the object redirect to another
      * website:</p> <p> <code>x-amz-website-redirect-location:
@@ -951,8 +1031,10 @@ namespace Model
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
      * value of this header in the object metadata. For information about object
-     * metadata, see .</p> <p>In the following example, the request header sets the
-     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * metadata, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object
+     * Key and Metadata</a>.</p> <p>In the following example, the request header sets
+     * the redirect to an object (anotherPage.html) in the same bucket:</p> <p>
      * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
      * following example, the request header sets the object redirect to another
      * website:</p> <p> <code>x-amz-website-redirect-location:
@@ -969,8 +1051,10 @@ namespace Model
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
      * value of this header in the object metadata. For information about object
-     * metadata, see .</p> <p>In the following example, the request header sets the
-     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * metadata, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object
+     * Key and Metadata</a>.</p> <p>In the following example, the request header sets
+     * the redirect to an object (anotherPage.html) in the same bucket:</p> <p>
      * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
      * following example, the request header sets the object redirect to another
      * website:</p> <p> <code>x-amz-website-redirect-location:
@@ -987,8 +1071,10 @@ namespace Model
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
      * value of this header in the object metadata. For information about object
-     * metadata, see .</p> <p>In the following example, the request header sets the
-     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * metadata, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object
+     * Key and Metadata</a>.</p> <p>In the following example, the request header sets
+     * the redirect to an object (anotherPage.html) in the same bucket:</p> <p>
      * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
      * following example, the request header sets the object redirect to another
      * website:</p> <p> <code>x-amz-website-redirect-location:
@@ -1005,8 +1091,10 @@ namespace Model
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
      * value of this header in the object metadata. For information about object
-     * metadata, see .</p> <p>In the following example, the request header sets the
-     * redirect to an object (anotherPage.html) in the same bucket:</p> <p>
+     * metadata, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html">Object
+     * Key and Metadata</a>.</p> <p>In the following example, the request header sets
+     * the redirect to an object (anotherPage.html) in the same bucket:</p> <p>
      * <code>x-amz-website-redirect-location: /anotherPage.html</code> </p> <p>In the
      * following example, the request header sets the object redirect to another
      * website:</p> <p> <code>x-amz-website-redirect-location:
@@ -1021,49 +1109,49 @@ namespace Model
 
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline const Aws::String& GetSSECustomerAlgorithm() const{ return m_sSECustomerAlgorithm; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline bool SSECustomerAlgorithmHasBeenSet() const { return m_sSECustomerAlgorithmHasBeenSet; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const Aws::String& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = value; }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(Aws::String&& value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm = std::move(value); }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline void SetSSECustomerAlgorithm(const char* value) { m_sSECustomerAlgorithmHasBeenSet = true; m_sSECustomerAlgorithm.assign(value); }
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline PutObjectRequest& WithSSECustomerAlgorithm(const Aws::String& value) { SetSSECustomerAlgorithm(value); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline PutObjectRequest& WithSSECustomerAlgorithm(Aws::String&& value) { SetSSECustomerAlgorithm(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the algorithm to use to when encrypting the object (e.g.,
+     * <p>Specifies the algorithm to use to when encrypting the object (for example,
      * AES256).</p>
      */
     inline PutObjectRequest& WithSSECustomerAlgorithm(const char* value) { SetSSECustomerAlgorithm(value); return *this;}
@@ -1072,226 +1160,234 @@ namespace Model
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline const Aws::String& GetSSECustomerKey() const{ return m_sSECustomerKey; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline bool SSECustomerKeyHasBeenSet() const { return m_sSECustomerKeyHasBeenSet; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const Aws::String& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = value; }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(Aws::String&& value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey = std::move(value); }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline void SetSSECustomerKey(const char* value) { m_sSECustomerKeyHasBeenSet = true; m_sSECustomerKey.assign(value); }
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline PutObjectRequest& WithSSECustomerKey(const Aws::String& value) { SetSSECustomerKey(value); return *this;}
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline PutObjectRequest& WithSSECustomerKey(Aws::String&& value) { SetSSECustomerKey(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the customer-provided encryption key for Amazon S3 to use in
      * encrypting data. This value is used to store the object and then it is
-     * discarded; Amazon does not store the encryption key. The key must be appropriate
-     * for use with the algorithm specified in the
-     * x-amz-server-side​-encryption​-customer-algorithm header.</p>
+     * discarded; Amazon S3 does not store the encryption key. The key must be
+     * appropriate for use with the algorithm specified in the
+     * <code>x-amz-server-side​-encryption​-customer-algorithm</code> header.</p>
      */
     inline PutObjectRequest& WithSSECustomerKey(const char* value) { SetSSECustomerKey(value); return *this;}
 
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline bool SSECustomerKeyMD5HasBeenSet() const { return m_sSECustomerKeyMD5HasBeenSet; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = value; }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5HasBeenSet = true; m_sSECustomerKeyMD5.assign(value); }
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline PutObjectRequest& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline PutObjectRequest& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321.
-     * Amazon S3 uses this header for a message integrity check to ensure the
+     * Amazon S3 uses this header for a message integrity check to ensure that the
      * encryption key was transmitted without error.</p>
      */
     inline PutObjectRequest& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used for the object.</p> <p> If the value of
-     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
-     * KMS CMK that will be used for the object. If you specify
-     * x-amz-server-side-encryption:aws:kms, but do not provide
-     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
-     * in AWS to protect the data.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
+     * <p> If the value of <code>x-amz-server-side-encryption</code> is
+     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
+     * be used for the object. If you specify
+     * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+     * managed CMK in AWS to protect the data.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used for the object.</p> <p> If the value of
-     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
-     * KMS CMK that will be used for the object. If you specify
-     * x-amz-server-side-encryption:aws:kms, but do not provide
-     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
-     * in AWS to protect the data.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
+     * <p> If the value of <code>x-amz-server-side-encryption</code> is
+     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
+     * be used for the object. If you specify
+     * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+     * managed CMK in AWS to protect the data.</p>
      */
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used for the object.</p> <p> If the value of
-     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
-     * KMS CMK that will be used for the object. If you specify
-     * x-amz-server-side-encryption:aws:kms, but do not provide
-     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
-     * in AWS to protect the data.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
+     * <p> If the value of <code>x-amz-server-side-encryption</code> is
+     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
+     * be used for the object. If you specify
+     * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+     * managed CMK in AWS to protect the data.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used for the object.</p> <p> If the value of
-     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
-     * KMS CMK that will be used for the object. If you specify
-     * x-amz-server-side-encryption:aws:kms, but do not provide
-     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
-     * in AWS to protect the data.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
+     * <p> If the value of <code>x-amz-server-side-encryption</code> is
+     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
+     * be used for the object. If you specify
+     * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+     * managed CMK in AWS to protect the data.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used for the object.</p> <p> If the value of
-     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
-     * KMS CMK that will be used for the object. If you specify
-     * x-amz-server-side-encryption:aws:kms, but do not provide
-     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
-     * in AWS to protect the data.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
+     * <p> If the value of <code>x-amz-server-side-encryption</code> is
+     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
+     * be used for the object. If you specify
+     * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+     * managed CMK in AWS to protect the data.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used for the object.</p> <p> If the value of
-     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
-     * KMS CMK that will be used for the object. If you specify
-     * x-amz-server-side-encryption:aws:kms, but do not provide
-     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
-     * in AWS to protect the data.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
+     * <p> If the value of <code>x-amz-server-side-encryption</code> is
+     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
+     * be used for the object. If you specify
+     * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+     * managed CMK in AWS to protect the data.</p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used for the object.</p> <p> If the value of
-     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
-     * KMS CMK that will be used for the object. If you specify
-     * x-amz-server-side-encryption:aws:kms, but do not provide
-     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
-     * in AWS to protect the data.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
+     * <p> If the value of <code>x-amz-server-side-encryption</code> is
+     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
+     * be used for the object. If you specify
+     * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+     * managed CMK in AWS to protect the data.</p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If the x-amz-server-side-encryption is present and has the value of aws:kms,
-     * this header specifies the ID of the AWS Key Management Service (AWS KMS)
-     * customer master key (CMK) that was used for the object.</p> <p> If the value of
-     * x-amz-server-side-encryption is aws:kms, this header specifies the ID of the AWS
-     * KMS CMK that will be used for the object. If you specify
-     * x-amz-server-side-encryption:aws:kms, but do not provide
-     * x-amz-server-side-encryption-aws-kms-key-id, Amazon S3 uses the AWS managed CMK
-     * in AWS to protect the data.</p>
+     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
+     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
+     * <p> If the value of <code>x-amz-server-side-encryption</code> is
+     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
+     * be used for the object. If you specify
+     * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
+     * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+     * managed CMK in AWS to protect the data.</p>
      */
     inline PutObjectRequest& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 

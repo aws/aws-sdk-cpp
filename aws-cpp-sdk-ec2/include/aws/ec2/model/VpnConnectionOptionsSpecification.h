@@ -51,6 +51,31 @@ namespace Model
 
 
     /**
+     * <p>Indicate whether to enable acceleration for the VPN connection.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline bool GetEnableAcceleration() const{ return m_enableAcceleration; }
+
+    /**
+     * <p>Indicate whether to enable acceleration for the VPN connection.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline bool EnableAccelerationHasBeenSet() const { return m_enableAccelerationHasBeenSet; }
+
+    /**
+     * <p>Indicate whether to enable acceleration for the VPN connection.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline void SetEnableAcceleration(bool value) { m_enableAccelerationHasBeenSet = true; m_enableAcceleration = value; }
+
+    /**
+     * <p>Indicate whether to enable acceleration for the VPN connection.</p>
+     * <p>Default: <code>false</code> </p>
+     */
+    inline VpnConnectionOptionsSpecification& WithEnableAcceleration(bool value) { SetEnableAcceleration(value); return *this;}
+
+
+    /**
      * <p>Indicate whether the VPN connection uses static routes only. If you are
      * creating a VPN connection for a device that does not support BGP, you must
      * specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
@@ -124,6 +149,9 @@ namespace Model
     inline VpnConnectionOptionsSpecification& AddTunnelOptions(VpnTunnelOptionsSpecification&& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions.push_back(std::move(value)); return *this; }
 
   private:
+
+    bool m_enableAcceleration;
+    bool m_enableAccelerationHasBeenSet;
 
     bool m_staticRoutesOnly;
     bool m_staticRoutesOnlyHasBeenSet;

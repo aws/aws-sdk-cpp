@@ -285,43 +285,50 @@ namespace Model
 
     /**
      * <p>When a list is truncated, this element specifies the value that should be
-     * used for the upload-id-marker request parameter in a subsequent request.</p>
+     * used for the <code>upload-id-marker</code> request parameter in a subsequent
+     * request.</p>
      */
     inline const Aws::String& GetNextUploadIdMarker() const{ return m_nextUploadIdMarker; }
 
     /**
      * <p>When a list is truncated, this element specifies the value that should be
-     * used for the upload-id-marker request parameter in a subsequent request.</p>
+     * used for the <code>upload-id-marker</code> request parameter in a subsequent
+     * request.</p>
      */
     inline void SetNextUploadIdMarker(const Aws::String& value) { m_nextUploadIdMarker = value; }
 
     /**
      * <p>When a list is truncated, this element specifies the value that should be
-     * used for the upload-id-marker request parameter in a subsequent request.</p>
+     * used for the <code>upload-id-marker</code> request parameter in a subsequent
+     * request.</p>
      */
     inline void SetNextUploadIdMarker(Aws::String&& value) { m_nextUploadIdMarker = std::move(value); }
 
     /**
      * <p>When a list is truncated, this element specifies the value that should be
-     * used for the upload-id-marker request parameter in a subsequent request.</p>
+     * used for the <code>upload-id-marker</code> request parameter in a subsequent
+     * request.</p>
      */
     inline void SetNextUploadIdMarker(const char* value) { m_nextUploadIdMarker.assign(value); }
 
     /**
      * <p>When a list is truncated, this element specifies the value that should be
-     * used for the upload-id-marker request parameter in a subsequent request.</p>
+     * used for the <code>upload-id-marker</code> request parameter in a subsequent
+     * request.</p>
      */
     inline ListMultipartUploadsResult& WithNextUploadIdMarker(const Aws::String& value) { SetNextUploadIdMarker(value); return *this;}
 
     /**
      * <p>When a list is truncated, this element specifies the value that should be
-     * used for the upload-id-marker request parameter in a subsequent request.</p>
+     * used for the <code>upload-id-marker</code> request parameter in a subsequent
+     * request.</p>
      */
     inline ListMultipartUploadsResult& WithNextUploadIdMarker(Aws::String&& value) { SetNextUploadIdMarker(std::move(value)); return *this;}
 
     /**
      * <p>When a list is truncated, this element specifies the value that should be
-     * used for the upload-id-marker request parameter in a subsequent request.</p>
+     * used for the <code>upload-id-marker</code> request parameter in a subsequent
+     * request.</p>
      */
     inline ListMultipartUploadsResult& WithNextUploadIdMarker(const char* value) { SetNextUploadIdMarker(value); return *this;}
 
@@ -372,93 +379,100 @@ namespace Model
 
     /**
      * <p>Container for elements related to a particular multipart upload. A response
-     * can contain zero or more Upload elements.</p>
+     * can contain zero or more <code>Upload</code> elements.</p>
      */
     inline const Aws::Vector<MultipartUpload>& GetUploads() const{ return m_uploads; }
 
     /**
      * <p>Container for elements related to a particular multipart upload. A response
-     * can contain zero or more Upload elements.</p>
+     * can contain zero or more <code>Upload</code> elements.</p>
      */
     inline void SetUploads(const Aws::Vector<MultipartUpload>& value) { m_uploads = value; }
 
     /**
      * <p>Container for elements related to a particular multipart upload. A response
-     * can contain zero or more Upload elements.</p>
+     * can contain zero or more <code>Upload</code> elements.</p>
      */
     inline void SetUploads(Aws::Vector<MultipartUpload>&& value) { m_uploads = std::move(value); }
 
     /**
      * <p>Container for elements related to a particular multipart upload. A response
-     * can contain zero or more Upload elements.</p>
+     * can contain zero or more <code>Upload</code> elements.</p>
      */
     inline ListMultipartUploadsResult& WithUploads(const Aws::Vector<MultipartUpload>& value) { SetUploads(value); return *this;}
 
     /**
      * <p>Container for elements related to a particular multipart upload. A response
-     * can contain zero or more Upload elements.</p>
+     * can contain zero or more <code>Upload</code> elements.</p>
      */
     inline ListMultipartUploadsResult& WithUploads(Aws::Vector<MultipartUpload>&& value) { SetUploads(std::move(value)); return *this;}
 
     /**
      * <p>Container for elements related to a particular multipart upload. A response
-     * can contain zero or more Upload elements.</p>
+     * can contain zero or more <code>Upload</code> elements.</p>
      */
     inline ListMultipartUploadsResult& AddUploads(const MultipartUpload& value) { m_uploads.push_back(value); return *this; }
 
     /**
      * <p>Container for elements related to a particular multipart upload. A response
-     * can contain zero or more Upload elements.</p>
+     * can contain zero or more <code>Upload</code> elements.</p>
      */
     inline ListMultipartUploadsResult& AddUploads(MultipartUpload&& value) { m_uploads.push_back(std::move(value)); return *this; }
 
 
     /**
      * <p>If you specify a delimiter in the request, then the result returns each
-     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
-     * distinct key prefixes are returned in the Prefix child element.</p>
+     * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
+     * element. The distinct key prefixes are returned in the <code>Prefix</code> child
+     * element.</p>
      */
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
 
     /**
      * <p>If you specify a delimiter in the request, then the result returns each
-     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
-     * distinct key prefixes are returned in the Prefix child element.</p>
+     * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
+     * element. The distinct key prefixes are returned in the <code>Prefix</code> child
+     * element.</p>
      */
     inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
 
     /**
      * <p>If you specify a delimiter in the request, then the result returns each
-     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
-     * distinct key prefixes are returned in the Prefix child element.</p>
+     * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
+     * element. The distinct key prefixes are returned in the <code>Prefix</code> child
+     * element.</p>
      */
     inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
 
     /**
      * <p>If you specify a delimiter in the request, then the result returns each
-     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
-     * distinct key prefixes are returned in the Prefix child element.</p>
+     * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
+     * element. The distinct key prefixes are returned in the <code>Prefix</code> child
+     * element.</p>
      */
     inline ListMultipartUploadsResult& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
 
     /**
      * <p>If you specify a delimiter in the request, then the result returns each
-     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
-     * distinct key prefixes are returned in the Prefix child element.</p>
+     * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
+     * element. The distinct key prefixes are returned in the <code>Prefix</code> child
+     * element.</p>
      */
     inline ListMultipartUploadsResult& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
 
     /**
      * <p>If you specify a delimiter in the request, then the result returns each
-     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
-     * distinct key prefixes are returned in the Prefix child element.</p>
+     * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
+     * element. The distinct key prefixes are returned in the <code>Prefix</code> child
+     * element.</p>
      */
     inline ListMultipartUploadsResult& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
 
     /**
      * <p>If you specify a delimiter in the request, then the result returns each
-     * distinct key prefix containing the delimiter in a CommonPrefixes element. The
-     * distinct key prefixes are returned in the Prefix child element.</p>
+     * distinct key prefix containing the delimiter in a <code>CommonPrefixes</code>
+     * element. The distinct key prefixes are returned in the <code>Prefix</code> child
+     * element.</p>
      */
     inline ListMultipartUploadsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
 

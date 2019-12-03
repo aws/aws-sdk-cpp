@@ -163,6 +163,47 @@ namespace Model
      */
     inline VpcIpv6CidrBlockAssociation& WithIpv6CidrBlockState(VpcCidrBlockState&& value) { SetIpv6CidrBlockState(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block.</p>
+     */
+    inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block.</p>
+     */
+    inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block.</p>
+     */
+    inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block.</p>
+     */
+    inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block.</p>
+     */
+    inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block.</p>
+     */
+    inline VpcIpv6CidrBlockAssociation& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block.</p>
+     */
+    inline VpcIpv6CidrBlockAssociation& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the location from which we advertise the IPV6 CIDR block.</p>
+     */
+    inline VpcIpv6CidrBlockAssociation& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
+
   private:
 
     Aws::String m_associationId;
@@ -173,6 +214,9 @@ namespace Model
 
     VpcCidrBlockState m_ipv6CidrBlockState;
     bool m_ipv6CidrBlockStateHasBeenSet;
+
+    Aws::String m_networkBorderGroup;
+    bool m_networkBorderGroupHasBeenSet;
   };
 
 } // namespace Model

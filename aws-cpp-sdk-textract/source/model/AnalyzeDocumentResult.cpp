@@ -53,6 +53,18 @@ AnalyzeDocumentResult& AnalyzeDocumentResult::operator =(const Aws::AmazonWebSer
     }
   }
 
+  if(jsonValue.ValueExists("HumanLoopActivationOutput"))
+  {
+    m_humanLoopActivationOutput = jsonValue.GetObject("HumanLoopActivationOutput");
+
+  }
+
+  if(jsonValue.ValueExists("AnalyzeDocumentModelVersion"))
+  {
+    m_analyzeDocumentModelVersion = jsonValue.GetString("AnalyzeDocumentModelVersion");
+
+  }
+
 
 
   return *this;

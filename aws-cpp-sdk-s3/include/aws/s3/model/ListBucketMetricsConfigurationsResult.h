@@ -111,57 +111,57 @@ namespace Model
 
     /**
      * <p>The marker used to continue a metrics configuration listing that has been
-     * truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline const Aws::String& GetNextContinuationToken() const{ return m_nextContinuationToken; }
 
     /**
      * <p>The marker used to continue a metrics configuration listing that has been
-     * truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline void SetNextContinuationToken(const Aws::String& value) { m_nextContinuationToken = value; }
 
     /**
      * <p>The marker used to continue a metrics configuration listing that has been
-     * truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline void SetNextContinuationToken(Aws::String&& value) { m_nextContinuationToken = std::move(value); }
 
     /**
      * <p>The marker used to continue a metrics configuration listing that has been
-     * truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline void SetNextContinuationToken(const char* value) { m_nextContinuationToken.assign(value); }
 
     /**
      * <p>The marker used to continue a metrics configuration listing that has been
-     * truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline ListBucketMetricsConfigurationsResult& WithNextContinuationToken(const Aws::String& value) { SetNextContinuationToken(value); return *this;}
 
     /**
      * <p>The marker used to continue a metrics configuration listing that has been
-     * truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline ListBucketMetricsConfigurationsResult& WithNextContinuationToken(Aws::String&& value) { SetNextContinuationToken(std::move(value)); return *this;}
 
     /**
      * <p>The marker used to continue a metrics configuration listing that has been
-     * truncated. Use the NextContinuationToken from a previously truncated list
-     * response to continue the listing. The continuation token is an opaque value that
-     * Amazon S3 understands.</p>
+     * truncated. Use the <code>NextContinuationToken</code> from a previously
+     * truncated list response to continue the listing. The continuation token is an
+     * opaque value that Amazon S3 understands.</p>
      */
     inline ListBucketMetricsConfigurationsResult& WithNextContinuationToken(const char* value) { SetNextContinuationToken(value); return *this;}
 

@@ -166,42 +166,42 @@ namespace Model
 
 
     /**
-     * <p>The role supporting the invocation of the lambda function</p>
+     * <p>The role supporting the invocation of the Lambda function</p>
      */
     inline const Aws::String& GetInvocationRole() const{ return m_invocationRole; }
 
     /**
-     * <p>The role supporting the invocation of the lambda function</p>
+     * <p>The role supporting the invocation of the Lambda function</p>
      */
     inline bool InvocationRoleHasBeenSet() const { return m_invocationRoleHasBeenSet; }
 
     /**
-     * <p>The role supporting the invocation of the lambda function</p>
+     * <p>The role supporting the invocation of the Lambda function</p>
      */
     inline void SetInvocationRole(const Aws::String& value) { m_invocationRoleHasBeenSet = true; m_invocationRole = value; }
 
     /**
-     * <p>The role supporting the invocation of the lambda function</p>
+     * <p>The role supporting the invocation of the Lambda function</p>
      */
     inline void SetInvocationRole(Aws::String&& value) { m_invocationRoleHasBeenSet = true; m_invocationRole = std::move(value); }
 
     /**
-     * <p>The role supporting the invocation of the lambda function</p>
+     * <p>The role supporting the invocation of the Lambda function</p>
      */
     inline void SetInvocationRole(const char* value) { m_invocationRoleHasBeenSet = true; m_invocationRole.assign(value); }
 
     /**
-     * <p>The role supporting the invocation of the lambda function</p>
+     * <p>The role supporting the invocation of the Lambda function</p>
      */
     inline CloudFunctionConfiguration& WithInvocationRole(const Aws::String& value) { SetInvocationRole(value); return *this;}
 
     /**
-     * <p>The role supporting the invocation of the lambda function</p>
+     * <p>The role supporting the invocation of the Lambda function</p>
      */
     inline CloudFunctionConfiguration& WithInvocationRole(Aws::String&& value) { SetInvocationRole(std::move(value)); return *this;}
 
     /**
-     * <p>The role supporting the invocation of the lambda function</p>
+     * <p>The role supporting the invocation of the Lambda function</p>
      */
     inline CloudFunctionConfiguration& WithInvocationRole(const char* value) { SetInvocationRole(value); return *this;}
 

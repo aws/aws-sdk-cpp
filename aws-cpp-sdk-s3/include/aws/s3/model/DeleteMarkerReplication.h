@@ -40,10 +40,10 @@ namespace Model
    * <code>DeleteMarkerReplication</code> element can contain only
    * &lt;Status&gt;Disabled&lt;/Status&gt;. For an example configuration, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic
-   * Rule Configuration</a>. </p> <note> <p> If you don't specify the Filter element,
-   * Amazon S3 assumes the replication configuration is the earlier version, V1. In
-   * the earlier version, Amazon S3 handled replication of delete markers
-   * differently. For more information, see <a
+   * Rule Configuration</a>. </p> <note> <p> If you don't specify the
+   * <code>Filter</code> element, Amazon S3 assumes that the replication
+   * configuration is the earlier version, V1. In the earlier version, Amazon S3
+   * handled replication of delete markers differently. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward
    * Compatibility</a>.</p> </note><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteMarkerReplication">AWS

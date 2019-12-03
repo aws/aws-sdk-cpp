@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/RouteTableAssociationState.h>
 #include <aws/ec2/model/ResponseMetadata.h>
 #include <utility>
 
@@ -79,6 +80,32 @@ namespace Model
     inline ReplaceRouteTableAssociationResponse& WithNewAssociationId(const char* value) { SetNewAssociationId(value); return *this;}
 
 
+    /**
+     * <p>The state of the association.</p>
+     */
+    inline const RouteTableAssociationState& GetAssociationState() const{ return m_associationState; }
+
+    /**
+     * <p>The state of the association.</p>
+     */
+    inline void SetAssociationState(const RouteTableAssociationState& value) { m_associationState = value; }
+
+    /**
+     * <p>The state of the association.</p>
+     */
+    inline void SetAssociationState(RouteTableAssociationState&& value) { m_associationState = std::move(value); }
+
+    /**
+     * <p>The state of the association.</p>
+     */
+    inline ReplaceRouteTableAssociationResponse& WithAssociationState(const RouteTableAssociationState& value) { SetAssociationState(value); return *this;}
+
+    /**
+     * <p>The state of the association.</p>
+     */
+    inline ReplaceRouteTableAssociationResponse& WithAssociationState(RouteTableAssociationState&& value) { SetAssociationState(std::move(value)); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -97,6 +124,8 @@ namespace Model
   private:
 
     Aws::String m_newAssociationId;
+
+    RouteTableAssociationState m_associationState;
 
     ResponseMetadata m_responseMetadata;
   };

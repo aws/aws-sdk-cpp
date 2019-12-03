@@ -40,6 +40,7 @@ Deployment::Deployment() :
     m_runningCountHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
+    m_capacityProviderStrategyHasBeenSet(false),
     m_launchType(LaunchType::NOT_SET),
     m_launchTypeHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
@@ -59,6 +60,7 @@ Deployment::Deployment(JsonView jsonValue) :
     m_runningCountHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
+    m_capacityProviderStrategyHasBeenSet(false),
     m_launchType(LaunchType::NOT_SET),
     m_launchTypeHasBeenSet(false),
     m_platformVersionHasBeenSet(false),
@@ -123,6 +125,16 @@ Deployment& Deployment::operator =(JsonView jsonValue)
     m_updatedAt = jsonValue.GetDouble("updatedAt");
 
     m_updatedAtHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("capacityProviderStrategy"))
+  {
+    Array<JsonView> capacityProviderStrategyJsonList = jsonValue.GetArray("capacityProviderStrategy");
+    for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
+    {
+      m_capacityProviderStrategy.push_back(capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject());
+    }
+    m_capacityProviderStrategyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("launchType"))
@@ -197,6 +209,17 @@ JsonValue Deployment::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_capacityProviderStrategyHasBeenSet)
+  {
+   Array<JsonValue> capacityProviderStrategyJsonList(m_capacityProviderStrategy.size());
+   for(unsigned capacityProviderStrategyIndex = 0; capacityProviderStrategyIndex < capacityProviderStrategyJsonList.GetLength(); ++capacityProviderStrategyIndex)
+   {
+     capacityProviderStrategyJsonList[capacityProviderStrategyIndex].AsObject(m_capacityProviderStrategy[capacityProviderStrategyIndex].Jsonize());
+   }
+   payload.WithArray("capacityProviderStrategy", std::move(capacityProviderStrategyJsonList));
+
   }
 
   if(m_launchTypeHasBeenSet)

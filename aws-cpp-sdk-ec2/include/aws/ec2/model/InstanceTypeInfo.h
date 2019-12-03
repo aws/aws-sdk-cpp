@@ -28,6 +28,7 @@
 #include <aws/ec2/model/GpuInfo.h>
 #include <aws/ec2/model/FpgaInfo.h>
 #include <aws/ec2/model/PlacementGroupInfo.h>
+#include <aws/ec2/model/InferenceAcceleratorInfo.h>
 #include <aws/ec2/model/UsageClassType.h>
 #include <aws/ec2/model/RootDeviceType.h>
 #include <utility>
@@ -582,6 +583,37 @@ namespace Model
 
 
     /**
+     * <p>Describes the Inference accelerator settings for the instance type.</p>
+     */
+    inline const InferenceAcceleratorInfo& GetInferenceAcceleratorInfo() const{ return m_inferenceAcceleratorInfo; }
+
+    /**
+     * <p>Describes the Inference accelerator settings for the instance type.</p>
+     */
+    inline bool InferenceAcceleratorInfoHasBeenSet() const { return m_inferenceAcceleratorInfoHasBeenSet; }
+
+    /**
+     * <p>Describes the Inference accelerator settings for the instance type.</p>
+     */
+    inline void SetInferenceAcceleratorInfo(const InferenceAcceleratorInfo& value) { m_inferenceAcceleratorInfoHasBeenSet = true; m_inferenceAcceleratorInfo = value; }
+
+    /**
+     * <p>Describes the Inference accelerator settings for the instance type.</p>
+     */
+    inline void SetInferenceAcceleratorInfo(InferenceAcceleratorInfo&& value) { m_inferenceAcceleratorInfoHasBeenSet = true; m_inferenceAcceleratorInfo = std::move(value); }
+
+    /**
+     * <p>Describes the Inference accelerator settings for the instance type.</p>
+     */
+    inline InstanceTypeInfo& WithInferenceAcceleratorInfo(const InferenceAcceleratorInfo& value) { SetInferenceAcceleratorInfo(value); return *this;}
+
+    /**
+     * <p>Describes the Inference accelerator settings for the instance type.</p>
+     */
+    inline InstanceTypeInfo& WithInferenceAcceleratorInfo(InferenceAcceleratorInfo&& value) { SetInferenceAcceleratorInfo(std::move(value)); return *this;}
+
+
+    /**
      * <p>Indicates whether On-Demand hibernation is supported.</p>
      */
     inline bool GetHibernationSupported() const{ return m_hibernationSupported; }
@@ -720,6 +752,9 @@ namespace Model
 
     PlacementGroupInfo m_placementGroupInfo;
     bool m_placementGroupInfoHasBeenSet;
+
+    InferenceAcceleratorInfo m_inferenceAcceleratorInfo;
+    bool m_inferenceAcceleratorInfoHasBeenSet;
 
     bool m_hibernationSupported;
     bool m_hibernationSupportedHasBeenSet;

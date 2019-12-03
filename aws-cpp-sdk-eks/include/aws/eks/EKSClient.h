@@ -22,13 +22,17 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/eks/model/CreateClusterResult.h>
+#include <aws/eks/model/CreateFargateProfileResult.h>
 #include <aws/eks/model/CreateNodegroupResult.h>
 #include <aws/eks/model/DeleteClusterResult.h>
+#include <aws/eks/model/DeleteFargateProfileResult.h>
 #include <aws/eks/model/DeleteNodegroupResult.h>
 #include <aws/eks/model/DescribeClusterResult.h>
+#include <aws/eks/model/DescribeFargateProfileResult.h>
 #include <aws/eks/model/DescribeNodegroupResult.h>
 #include <aws/eks/model/DescribeUpdateResult.h>
 #include <aws/eks/model/ListClustersResult.h>
+#include <aws/eks/model/ListFargateProfilesResult.h>
 #include <aws/eks/model/ListNodegroupsResult.h>
 #include <aws/eks/model/ListTagsForResourceResult.h>
 #include <aws/eks/model/ListUpdatesResult.h>
@@ -78,13 +82,17 @@ namespace EKS
 namespace Model
 {
         class CreateClusterRequest;
+        class CreateFargateProfileRequest;
         class CreateNodegroupRequest;
         class DeleteClusterRequest;
+        class DeleteFargateProfileRequest;
         class DeleteNodegroupRequest;
         class DescribeClusterRequest;
+        class DescribeFargateProfileRequest;
         class DescribeNodegroupRequest;
         class DescribeUpdateRequest;
         class ListClustersRequest;
+        class ListFargateProfilesRequest;
         class ListNodegroupsRequest;
         class ListTagsForResourceRequest;
         class ListUpdatesRequest;
@@ -96,13 +104,17 @@ namespace Model
         class UpdateNodegroupVersionRequest;
 
         typedef Aws::Utils::Outcome<CreateClusterResult, Aws::Client::AWSError<EKSErrors>> CreateClusterOutcome;
+        typedef Aws::Utils::Outcome<CreateFargateProfileResult, Aws::Client::AWSError<EKSErrors>> CreateFargateProfileOutcome;
         typedef Aws::Utils::Outcome<CreateNodegroupResult, Aws::Client::AWSError<EKSErrors>> CreateNodegroupOutcome;
         typedef Aws::Utils::Outcome<DeleteClusterResult, Aws::Client::AWSError<EKSErrors>> DeleteClusterOutcome;
+        typedef Aws::Utils::Outcome<DeleteFargateProfileResult, Aws::Client::AWSError<EKSErrors>> DeleteFargateProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteNodegroupResult, Aws::Client::AWSError<EKSErrors>> DeleteNodegroupOutcome;
         typedef Aws::Utils::Outcome<DescribeClusterResult, Aws::Client::AWSError<EKSErrors>> DescribeClusterOutcome;
+        typedef Aws::Utils::Outcome<DescribeFargateProfileResult, Aws::Client::AWSError<EKSErrors>> DescribeFargateProfileOutcome;
         typedef Aws::Utils::Outcome<DescribeNodegroupResult, Aws::Client::AWSError<EKSErrors>> DescribeNodegroupOutcome;
         typedef Aws::Utils::Outcome<DescribeUpdateResult, Aws::Client::AWSError<EKSErrors>> DescribeUpdateOutcome;
         typedef Aws::Utils::Outcome<ListClustersResult, Aws::Client::AWSError<EKSErrors>> ListClustersOutcome;
+        typedef Aws::Utils::Outcome<ListFargateProfilesResult, Aws::Client::AWSError<EKSErrors>> ListFargateProfilesOutcome;
         typedef Aws::Utils::Outcome<ListNodegroupsResult, Aws::Client::AWSError<EKSErrors>> ListNodegroupsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<EKSErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<ListUpdatesResult, Aws::Client::AWSError<EKSErrors>> ListUpdatesOutcome;
@@ -114,13 +126,17 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateNodegroupVersionResult, Aws::Client::AWSError<EKSErrors>> UpdateNodegroupVersionOutcome;
 
         typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
+        typedef std::future<CreateFargateProfileOutcome> CreateFargateProfileOutcomeCallable;
         typedef std::future<CreateNodegroupOutcome> CreateNodegroupOutcomeCallable;
         typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
+        typedef std::future<DeleteFargateProfileOutcome> DeleteFargateProfileOutcomeCallable;
         typedef std::future<DeleteNodegroupOutcome> DeleteNodegroupOutcomeCallable;
         typedef std::future<DescribeClusterOutcome> DescribeClusterOutcomeCallable;
+        typedef std::future<DescribeFargateProfileOutcome> DescribeFargateProfileOutcomeCallable;
         typedef std::future<DescribeNodegroupOutcome> DescribeNodegroupOutcomeCallable;
         typedef std::future<DescribeUpdateOutcome> DescribeUpdateOutcomeCallable;
         typedef std::future<ListClustersOutcome> ListClustersOutcomeCallable;
+        typedef std::future<ListFargateProfilesOutcome> ListFargateProfilesOutcomeCallable;
         typedef std::future<ListNodegroupsOutcome> ListNodegroupsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ListUpdatesOutcome> ListUpdatesOutcomeCallable;
@@ -135,13 +151,17 @@ namespace Model
   class EKSClient;
 
     typedef std::function<void(const EKSClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::CreateFargateProfileRequest&, const Model::CreateFargateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFargateProfileResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::CreateNodegroupRequest&, const Model::CreateNodegroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNodegroupResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::DeleteFargateProfileRequest&, const Model::DeleteFargateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFargateProfileResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DeleteNodegroupRequest&, const Model::DeleteNodegroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNodegroupResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeClusterRequest&, const Model::DescribeClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClusterResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::DescribeFargateProfileRequest&, const Model::DescribeFargateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFargateProfileResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeNodegroupRequest&, const Model::DescribeNodegroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNodegroupResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::DescribeUpdateRequest&, const Model::DescribeUpdateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUpdateResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListClustersRequest&, const Model::ListClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListClustersResponseReceivedHandler;
+    typedef std::function<void(const EKSClient*, const Model::ListFargateProfilesRequest&, const Model::ListFargateProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFargateProfilesResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListNodegroupsRequest&, const Model::ListNodegroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNodegroupsResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const EKSClient*, const Model::ListUpdatesRequest&, const Model::ListUpdatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUpdatesResponseReceivedHandler;
@@ -331,6 +351,121 @@ namespace Model
         virtual void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at
+         * least one Fargate profile in a cluster to be able to schedule pods on Fargate
+         * infrastructure.</p> <p>The Fargate profile allows an administrator to declare
+         * which pods run on Fargate infrastructure and specify which pods run on which
+         * Fargate profile. This declaration is done through the profile’s selectors. Each
+         * profile can have up to five selectors that contain a namespace and labels. A
+         * namespace is required for every selector. The label field consists of multiple
+         * optional key-value pairs. Pods that match the selectors are scheduled on Fargate
+         * infrastructure. If a to-be-scheduled pod matches any of the selectors in the
+         * Fargate profile, then that pod is scheduled on Fargate infrastructure.</p>
+         * <p>When you create a Fargate profile, you must specify a pod execution role to
+         * use with the pods that are scheduled with the profile. This role is added to the
+         * cluster's Kubernetes <a
+         * href="https://kubernetes.io/docs/admin/authorization/rbac/">Role Based Access
+         * Control</a> (RBAC) for authorization so that the <code>kubelet</code> that is
+         * running on the Fargate infrastructure can register with your Amazon EKS cluster.
+         * This role is what allows Fargate infrastructure to appear in your cluster as
+         * nodes. The pod execution role also provides IAM permissions to the Fargate
+         * infrastructure to allow read access to Amazon ECR image repositories. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+         * Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p> <p>Fargate profiles
+         * are immutable. However, you can create a new updated profile to replace an
+         * existing profile and then delete the original after the updated profile has
+         * finished creating.</p> <p>If any Fargate profiles in a cluster are in the
+         * <code>DELETING</code> status, you must wait for that Fargate profile to finish
+         * deleting before you can create any other profiles in that cluster.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
+         * Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFargateProfileOutcome CreateFargateProfile(const Model::CreateFargateProfileRequest& request) const;
+
+        /**
+         * <p>Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at
+         * least one Fargate profile in a cluster to be able to schedule pods on Fargate
+         * infrastructure.</p> <p>The Fargate profile allows an administrator to declare
+         * which pods run on Fargate infrastructure and specify which pods run on which
+         * Fargate profile. This declaration is done through the profile’s selectors. Each
+         * profile can have up to five selectors that contain a namespace and labels. A
+         * namespace is required for every selector. The label field consists of multiple
+         * optional key-value pairs. Pods that match the selectors are scheduled on Fargate
+         * infrastructure. If a to-be-scheduled pod matches any of the selectors in the
+         * Fargate profile, then that pod is scheduled on Fargate infrastructure.</p>
+         * <p>When you create a Fargate profile, you must specify a pod execution role to
+         * use with the pods that are scheduled with the profile. This role is added to the
+         * cluster's Kubernetes <a
+         * href="https://kubernetes.io/docs/admin/authorization/rbac/">Role Based Access
+         * Control</a> (RBAC) for authorization so that the <code>kubelet</code> that is
+         * running on the Fargate infrastructure can register with your Amazon EKS cluster.
+         * This role is what allows Fargate infrastructure to appear in your cluster as
+         * nodes. The pod execution role also provides IAM permissions to the Fargate
+         * infrastructure to allow read access to Amazon ECR image repositories. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+         * Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p> <p>Fargate profiles
+         * are immutable. However, you can create a new updated profile to replace an
+         * existing profile and then delete the original after the updated profile has
+         * finished creating.</p> <p>If any Fargate profiles in a cluster are in the
+         * <code>DELETING</code> status, you must wait for that Fargate profile to finish
+         * deleting before you can create any other profiles in that cluster.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
+         * Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFargateProfileOutcomeCallable CreateFargateProfileCallable(const Model::CreateFargateProfileRequest& request) const;
+
+        /**
+         * <p>Creates an AWS Fargate profile for your Amazon EKS cluster. You must have at
+         * least one Fargate profile in a cluster to be able to schedule pods on Fargate
+         * infrastructure.</p> <p>The Fargate profile allows an administrator to declare
+         * which pods run on Fargate infrastructure and specify which pods run on which
+         * Fargate profile. This declaration is done through the profile’s selectors. Each
+         * profile can have up to five selectors that contain a namespace and labels. A
+         * namespace is required for every selector. The label field consists of multiple
+         * optional key-value pairs. Pods that match the selectors are scheduled on Fargate
+         * infrastructure. If a to-be-scheduled pod matches any of the selectors in the
+         * Fargate profile, then that pod is scheduled on Fargate infrastructure.</p>
+         * <p>When you create a Fargate profile, you must specify a pod execution role to
+         * use with the pods that are scheduled with the profile. This role is added to the
+         * cluster's Kubernetes <a
+         * href="https://kubernetes.io/docs/admin/authorization/rbac/">Role Based Access
+         * Control</a> (RBAC) for authorization so that the <code>kubelet</code> that is
+         * running on the Fargate infrastructure can register with your Amazon EKS cluster.
+         * This role is what allows Fargate infrastructure to appear in your cluster as
+         * nodes. The pod execution role also provides IAM permissions to the Fargate
+         * infrastructure to allow read access to Amazon ECR image repositories. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+         * Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p> <p>Fargate profiles
+         * are immutable. However, you can create a new updated profile to replace an
+         * existing profile and then delete the original after the updated profile has
+         * finished creating.</p> <p>If any Fargate profiles in a cluster are in the
+         * <code>DELETING</code> status, you must wait for that Fargate profile to finish
+         * deleting before you can create any other profiles in that cluster.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS
+         * Fargate Profile</a> in the <i>Amazon EKS User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateFargateProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFargateProfileAsync(const Model::CreateFargateProfileRequest& request, const CreateFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a managed worker node group for an Amazon EKS cluster. You can only
          * create a node group for your cluster that is equal to the current Kubernetes
          * version for the cluster. All node groups are created with the latest AMI release
@@ -393,8 +528,9 @@ namespace Model
          * prevent you from being able to delete the VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
          * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> <p>If you have managed
-         * node groups attached to the cluster, you must delete them first. For more
-         * information, see <a>DeleteNodegroup</a>.</p><p><h3>See Also:</h3>   <a
+         * node groups or Fargate profiles attached to the cluster, you must delete them
+         * first. For more information, see <a>DeleteNodegroup</a>
+         * and<a>DeleteFargateProfile</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">AWS
          * API Reference</a></p>
          */
@@ -408,8 +544,9 @@ namespace Model
          * prevent you from being able to delete the VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
          * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> <p>If you have managed
-         * node groups attached to the cluster, you must delete them first. For more
-         * information, see <a>DeleteNodegroup</a>.</p><p><h3>See Also:</h3>   <a
+         * node groups or Fargate profiles attached to the cluster, you must delete them
+         * first. For more information, see <a>DeleteNodegroup</a>
+         * and<a>DeleteFargateProfile</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">AWS
          * API Reference</a></p>
          *
@@ -425,14 +562,61 @@ namespace Model
          * prevent you from being able to delete the VPC. For more information, see <a
          * href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting
          * a Cluster</a> in the <i>Amazon EKS User Guide</i>.</p> <p>If you have managed
-         * node groups attached to the cluster, you must delete them first. For more
-         * information, see <a>DeleteNodegroup</a>.</p><p><h3>See Also:</h3>   <a
+         * node groups or Fargate profiles attached to the cluster, you must delete them
+         * first. For more information, see <a>DeleteNodegroup</a>
+         * and<a>DeleteFargateProfile</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCluster">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteClusterAsync(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes an AWS Fargate profile.</p> <p>When you delete a Fargate profile, any
+         * pods that were scheduled onto Fargate infrastructure with the profile are
+         * deleted. If those pods match another Fargate profile, then they are scheduled on
+         * Fargate infrastructure with that profile. If they no longer match any Fargate
+         * profiles, then they are not scheduled on Fargate infrastructure.</p> <p>Only one
+         * Fargate profile in a cluster can be in the <code>DELETING</code> status at a
+         * time. You must wait for a Fargate profile to finish deleting before you can
+         * delete any other profiles in that cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteFargateProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFargateProfileOutcome DeleteFargateProfile(const Model::DeleteFargateProfileRequest& request) const;
+
+        /**
+         * <p>Deletes an AWS Fargate profile.</p> <p>When you delete a Fargate profile, any
+         * pods that were scheduled onto Fargate infrastructure with the profile are
+         * deleted. If those pods match another Fargate profile, then they are scheduled on
+         * Fargate infrastructure with that profile. If they no longer match any Fargate
+         * profiles, then they are not scheduled on Fargate infrastructure.</p> <p>Only one
+         * Fargate profile in a cluster can be in the <code>DELETING</code> status at a
+         * time. You must wait for a Fargate profile to finish deleting before you can
+         * delete any other profiles in that cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteFargateProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFargateProfileOutcomeCallable DeleteFargateProfileCallable(const Model::DeleteFargateProfileRequest& request) const;
+
+        /**
+         * <p>Deletes an AWS Fargate profile.</p> <p>When you delete a Fargate profile, any
+         * pods that were scheduled onto Fargate infrastructure with the profile are
+         * deleted. If those pods match another Fargate profile, then they are scheduled on
+         * Fargate infrastructure with that profile. If they no longer match any Fargate
+         * profiles, then they are not scheduled on Fargate infrastructure.</p> <p>Only one
+         * Fargate profile in a cluster can be in the <code>DELETING</code> status at a
+         * time. You must wait for a Fargate profile to finish deleting before you can
+         * delete any other profiles in that cluster.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteFargateProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFargateProfileAsync(const Model::DeleteFargateProfileRequest& request, const DeleteFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an Amazon EKS node group for a cluster.</p><p><h3>See Also:</h3>   <a
@@ -504,6 +688,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeClusterAsync(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns descriptive information about an AWS Fargate profile.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFargateProfileOutcome DescribeFargateProfile(const Model::DescribeFargateProfileRequest& request) const;
+
+        /**
+         * <p>Returns descriptive information about an AWS Fargate profile.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFargateProfileOutcomeCallable DescribeFargateProfileCallable(const Model::DescribeFargateProfileRequest& request) const;
+
+        /**
+         * <p>Returns descriptive information about an AWS Fargate profile.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeFargateProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFargateProfileAsync(const Model::DescribeFargateProfileRequest& request, const DescribeFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns descriptive information about an Amazon EKS node group.</p><p><h3>See
@@ -597,6 +809,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListClustersAsync(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the AWS Fargate profiles associated with the specified cluster in your
+         * AWS account in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFargateProfilesOutcome ListFargateProfiles(const Model::ListFargateProfilesRequest& request) const;
+
+        /**
+         * <p>Lists the AWS Fargate profiles associated with the specified cluster in your
+         * AWS account in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFargateProfilesOutcomeCallable ListFargateProfilesCallable(const Model::ListFargateProfilesRequest& request) const;
+
+        /**
+         * <p>Lists the AWS Fargate profiles associated with the specified cluster in your
+         * AWS account in the specified Region.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListFargateProfiles">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFargateProfilesAsync(const Model::ListFargateProfilesRequest& request, const ListFargateProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the Amazon EKS node groups associated with the specified cluster in
@@ -1011,13 +1251,17 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFargateProfileAsyncHelper(const Model::CreateFargateProfileRequest& request, const CreateFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNodegroupAsyncHelper(const Model::CreateNodegroupRequest& request, const CreateNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFargateProfileAsyncHelper(const Model::DeleteFargateProfileRequest& request, const DeleteFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNodegroupAsyncHelper(const Model::DeleteNodegroupRequest& request, const DeleteNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClusterAsyncHelper(const Model::DescribeClusterRequest& request, const DescribeClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFargateProfileAsyncHelper(const Model::DescribeFargateProfileRequest& request, const DescribeFargateProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNodegroupAsyncHelper(const Model::DescribeNodegroupRequest& request, const DescribeNodegroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUpdateAsyncHelper(const Model::DescribeUpdateRequest& request, const DescribeUpdateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListClustersAsyncHelper(const Model::ListClustersRequest& request, const ListClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFargateProfilesAsyncHelper(const Model::ListFargateProfilesRequest& request, const ListFargateProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNodegroupsAsyncHelper(const Model::ListNodegroupsRequest& request, const ListNodegroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUpdatesAsyncHelper(const Model::ListUpdatesRequest& request, const ListUpdatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

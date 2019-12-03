@@ -196,82 +196,125 @@ namespace Model
 
 
     /**
-     * <p>A list of warnings that occurred during the document text-detection
-     * operation.</p>
+     * <p>A list of warnings that occurred during the text-detection operation for the
+     * document.</p>
      */
     inline const Aws::Vector<Warning>& GetWarnings() const{ return m_warnings; }
 
     /**
-     * <p>A list of warnings that occurred during the document text-detection
-     * operation.</p>
+     * <p>A list of warnings that occurred during the text-detection operation for the
+     * document.</p>
      */
     inline void SetWarnings(const Aws::Vector<Warning>& value) { m_warnings = value; }
 
     /**
-     * <p>A list of warnings that occurred during the document text-detection
-     * operation.</p>
+     * <p>A list of warnings that occurred during the text-detection operation for the
+     * document.</p>
      */
     inline void SetWarnings(Aws::Vector<Warning>&& value) { m_warnings = std::move(value); }
 
     /**
-     * <p>A list of warnings that occurred during the document text-detection
-     * operation.</p>
+     * <p>A list of warnings that occurred during the text-detection operation for the
+     * document.</p>
      */
     inline GetDocumentTextDetectionResult& WithWarnings(const Aws::Vector<Warning>& value) { SetWarnings(value); return *this;}
 
     /**
-     * <p>A list of warnings that occurred during the document text-detection
-     * operation.</p>
+     * <p>A list of warnings that occurred during the text-detection operation for the
+     * document.</p>
      */
     inline GetDocumentTextDetectionResult& WithWarnings(Aws::Vector<Warning>&& value) { SetWarnings(std::move(value)); return *this;}
 
     /**
-     * <p>A list of warnings that occurred during the document text-detection
-     * operation.</p>
+     * <p>A list of warnings that occurred during the text-detection operation for the
+     * document.</p>
      */
     inline GetDocumentTextDetectionResult& AddWarnings(const Warning& value) { m_warnings.push_back(value); return *this; }
 
     /**
-     * <p>A list of warnings that occurred during the document text-detection
-     * operation.</p>
+     * <p>A list of warnings that occurred during the text-detection operation for the
+     * document.</p>
      */
     inline GetDocumentTextDetectionResult& AddWarnings(Warning&& value) { m_warnings.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The current status of an asynchronous document text-detection operation. </p>
+     * <p>The current status of an asynchronous text-detection operation for the
+     * document. </p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * <p>The current status of an asynchronous document text-detection operation. </p>
+     * <p>The current status of an asynchronous text-detection operation for the
+     * document. </p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
 
     /**
-     * <p>The current status of an asynchronous document text-detection operation. </p>
+     * <p>The current status of an asynchronous text-detection operation for the
+     * document. </p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
 
     /**
-     * <p>The current status of an asynchronous document text-detection operation. </p>
+     * <p>The current status of an asynchronous text-detection operation for the
+     * document. </p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
 
     /**
-     * <p>The current status of an asynchronous document text-detection operation. </p>
+     * <p>The current status of an asynchronous text-detection operation for the
+     * document. </p>
      */
     inline GetDocumentTextDetectionResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>The current status of an asynchronous document text-detection operation. </p>
+     * <p>The current status of an asynchronous text-detection operation for the
+     * document. </p>
      */
     inline GetDocumentTextDetectionResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The current status of an asynchronous document text-detection operation. </p>
+     * <p>The current status of an asynchronous text-detection operation for the
+     * document. </p>
      */
     inline GetDocumentTextDetectionResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetDetectDocumentTextModelVersion() const{ return m_detectDocumentTextModelVersion; }
+
+    /**
+     * <p/>
+     */
+    inline void SetDetectDocumentTextModelVersion(const Aws::String& value) { m_detectDocumentTextModelVersion = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetDetectDocumentTextModelVersion(Aws::String&& value) { m_detectDocumentTextModelVersion = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline void SetDetectDocumentTextModelVersion(const char* value) { m_detectDocumentTextModelVersion.assign(value); }
+
+    /**
+     * <p/>
+     */
+    inline GetDocumentTextDetectionResult& WithDetectDocumentTextModelVersion(const Aws::String& value) { SetDetectDocumentTextModelVersion(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline GetDocumentTextDetectionResult& WithDetectDocumentTextModelVersion(Aws::String&& value) { SetDetectDocumentTextModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline GetDocumentTextDetectionResult& WithDetectDocumentTextModelVersion(const char* value) { SetDetectDocumentTextModelVersion(value); return *this;}
 
   private:
 
@@ -286,6 +329,8 @@ namespace Model
     Aws::Vector<Warning> m_warnings;
 
     Aws::String m_statusMessage;
+
+    Aws::String m_detectDocumentTextModelVersion;
   };
 
 } // namespace Model

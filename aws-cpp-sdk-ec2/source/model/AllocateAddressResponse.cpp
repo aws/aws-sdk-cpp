@@ -65,10 +65,25 @@ AllocateAddressResponse& AllocateAddressResponse::operator =(const Aws::AmazonWe
     {
       m_publicIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpv4PoolNode.GetText());
     }
+    XmlNode networkBorderGroupNode = resultNode.FirstChild("networkBorderGroup");
+    if(!networkBorderGroupNode.IsNull())
+    {
+      m_networkBorderGroup = Aws::Utils::Xml::DecodeEscapedXmlText(networkBorderGroupNode.GetText());
+    }
     XmlNode domainNode = resultNode.FirstChild("domain");
     if(!domainNode.IsNull())
     {
       m_domain = DomainTypeMapper::GetDomainTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(domainNode.GetText()).c_str()).c_str());
+    }
+    XmlNode customerOwnedIpNode = resultNode.FirstChild("customerOwnedIp");
+    if(!customerOwnedIpNode.IsNull())
+    {
+      m_customerOwnedIp = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpNode.GetText());
+    }
+    XmlNode customerOwnedIpv4PoolNode = resultNode.FirstChild("customerOwnedIpv4Pool");
+    if(!customerOwnedIpv4PoolNode.IsNull())
+    {
+      m_customerOwnedIpv4Pool = Aws::Utils::Xml::DecodeEscapedXmlText(customerOwnedIpv4PoolNode.GetText());
     }
   }
 

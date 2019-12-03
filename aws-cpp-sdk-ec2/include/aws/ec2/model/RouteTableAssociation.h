@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/RouteTableAssociationState.h>
 #include <utility>
 
 namespace Aws
@@ -34,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes an association between a route table and a subnet.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes an association between a route table and a subnet or
+   * gateway.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RouteTableAssociation">AWS
    * API Reference</a></p>
    */
@@ -72,42 +73,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the association between a route table and a subnet.</p>
+     * <p>The ID of the association.</p>
      */
     inline const Aws::String& GetRouteTableAssociationId() const{ return m_routeTableAssociationId; }
 
     /**
-     * <p>The ID of the association between a route table and a subnet.</p>
+     * <p>The ID of the association.</p>
      */
     inline bool RouteTableAssociationIdHasBeenSet() const { return m_routeTableAssociationIdHasBeenSet; }
 
     /**
-     * <p>The ID of the association between a route table and a subnet.</p>
+     * <p>The ID of the association.</p>
      */
     inline void SetRouteTableAssociationId(const Aws::String& value) { m_routeTableAssociationIdHasBeenSet = true; m_routeTableAssociationId = value; }
 
     /**
-     * <p>The ID of the association between a route table and a subnet.</p>
+     * <p>The ID of the association.</p>
      */
     inline void SetRouteTableAssociationId(Aws::String&& value) { m_routeTableAssociationIdHasBeenSet = true; m_routeTableAssociationId = std::move(value); }
 
     /**
-     * <p>The ID of the association between a route table and a subnet.</p>
+     * <p>The ID of the association.</p>
      */
     inline void SetRouteTableAssociationId(const char* value) { m_routeTableAssociationIdHasBeenSet = true; m_routeTableAssociationId.assign(value); }
 
     /**
-     * <p>The ID of the association between a route table and a subnet.</p>
+     * <p>The ID of the association.</p>
      */
     inline RouteTableAssociation& WithRouteTableAssociationId(const Aws::String& value) { SetRouteTableAssociationId(value); return *this;}
 
     /**
-     * <p>The ID of the association between a route table and a subnet.</p>
+     * <p>The ID of the association.</p>
      */
     inline RouteTableAssociation& WithRouteTableAssociationId(Aws::String&& value) { SetRouteTableAssociationId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the association between a route table and a subnet.</p>
+     * <p>The ID of the association.</p>
      */
     inline RouteTableAssociation& WithRouteTableAssociationId(const char* value) { SetRouteTableAssociationId(value); return *this;}
 
@@ -201,6 +202,78 @@ namespace Model
      */
     inline RouteTableAssociation& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline RouteTableAssociation& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline RouteTableAssociation& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the internet gateway or virtual private gateway.</p>
+     */
+    inline RouteTableAssociation& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+
+
+    /**
+     * <p>The state of the association.</p>
+     */
+    inline const RouteTableAssociationState& GetAssociationState() const{ return m_associationState; }
+
+    /**
+     * <p>The state of the association.</p>
+     */
+    inline bool AssociationStateHasBeenSet() const { return m_associationStateHasBeenSet; }
+
+    /**
+     * <p>The state of the association.</p>
+     */
+    inline void SetAssociationState(const RouteTableAssociationState& value) { m_associationStateHasBeenSet = true; m_associationState = value; }
+
+    /**
+     * <p>The state of the association.</p>
+     */
+    inline void SetAssociationState(RouteTableAssociationState&& value) { m_associationStateHasBeenSet = true; m_associationState = std::move(value); }
+
+    /**
+     * <p>The state of the association.</p>
+     */
+    inline RouteTableAssociation& WithAssociationState(const RouteTableAssociationState& value) { SetAssociationState(value); return *this;}
+
+    /**
+     * <p>The state of the association.</p>
+     */
+    inline RouteTableAssociation& WithAssociationState(RouteTableAssociationState&& value) { SetAssociationState(std::move(value)); return *this;}
+
   private:
 
     bool m_main;
@@ -214,6 +287,12 @@ namespace Model
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet;
+
+    Aws::String m_gatewayId;
+    bool m_gatewayIdHasBeenSet;
+
+    RouteTableAssociationState m_associationState;
+    bool m_associationStateHasBeenSet;
   };
 
 } // namespace Model

@@ -147,56 +147,56 @@ namespace Model
 
     /**
      * <p>The marker used to continue this inventory configuration listing. Use the
-     * NextContinuationToken from this response to continue the listing in a subsequent
-     * request. The continuation token is an opaque value that Amazon S3
+     * <code>NextContinuationToken</code> from this response to continue the listing in
+     * a subsequent request. The continuation token is an opaque value that Amazon S3
      * understands.</p>
      */
     inline const Aws::String& GetNextContinuationToken() const{ return m_nextContinuationToken; }
 
     /**
      * <p>The marker used to continue this inventory configuration listing. Use the
-     * NextContinuationToken from this response to continue the listing in a subsequent
-     * request. The continuation token is an opaque value that Amazon S3
+     * <code>NextContinuationToken</code> from this response to continue the listing in
+     * a subsequent request. The continuation token is an opaque value that Amazon S3
      * understands.</p>
      */
     inline void SetNextContinuationToken(const Aws::String& value) { m_nextContinuationToken = value; }
 
     /**
      * <p>The marker used to continue this inventory configuration listing. Use the
-     * NextContinuationToken from this response to continue the listing in a subsequent
-     * request. The continuation token is an opaque value that Amazon S3
+     * <code>NextContinuationToken</code> from this response to continue the listing in
+     * a subsequent request. The continuation token is an opaque value that Amazon S3
      * understands.</p>
      */
     inline void SetNextContinuationToken(Aws::String&& value) { m_nextContinuationToken = std::move(value); }
 
     /**
      * <p>The marker used to continue this inventory configuration listing. Use the
-     * NextContinuationToken from this response to continue the listing in a subsequent
-     * request. The continuation token is an opaque value that Amazon S3
+     * <code>NextContinuationToken</code> from this response to continue the listing in
+     * a subsequent request. The continuation token is an opaque value that Amazon S3
      * understands.</p>
      */
     inline void SetNextContinuationToken(const char* value) { m_nextContinuationToken.assign(value); }
 
     /**
      * <p>The marker used to continue this inventory configuration listing. Use the
-     * NextContinuationToken from this response to continue the listing in a subsequent
-     * request. The continuation token is an opaque value that Amazon S3
+     * <code>NextContinuationToken</code> from this response to continue the listing in
+     * a subsequent request. The continuation token is an opaque value that Amazon S3
      * understands.</p>
      */
     inline ListBucketInventoryConfigurationsResult& WithNextContinuationToken(const Aws::String& value) { SetNextContinuationToken(value); return *this;}
 
     /**
      * <p>The marker used to continue this inventory configuration listing. Use the
-     * NextContinuationToken from this response to continue the listing in a subsequent
-     * request. The continuation token is an opaque value that Amazon S3
+     * <code>NextContinuationToken</code> from this response to continue the listing in
+     * a subsequent request. The continuation token is an opaque value that Amazon S3
      * understands.</p>
      */
     inline ListBucketInventoryConfigurationsResult& WithNextContinuationToken(Aws::String&& value) { SetNextContinuationToken(std::move(value)); return *this;}
 
     /**
      * <p>The marker used to continue this inventory configuration listing. Use the
-     * NextContinuationToken from this response to continue the listing in a subsequent
-     * request. The continuation token is an opaque value that Amazon S3
+     * <code>NextContinuationToken</code> from this response to continue the listing in
+     * a subsequent request. The continuation token is an opaque value that Amazon S3
      * understands.</p>
      */
     inline ListBucketInventoryConfigurationsResult& WithNextContinuationToken(const char* value) { SetNextContinuationToken(value); return *this;}

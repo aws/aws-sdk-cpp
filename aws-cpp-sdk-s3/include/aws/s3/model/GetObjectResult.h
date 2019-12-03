@@ -86,44 +86,44 @@ namespace Model
 
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline const Aws::String& GetAcceptRanges() const{ return m_acceptRanges; }
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline void SetAcceptRanges(const Aws::String& value) { m_acceptRanges = value; }
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline void SetAcceptRanges(Aws::String&& value) { m_acceptRanges = std::move(value); }
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline void SetAcceptRanges(const char* value) { m_acceptRanges.assign(value); }
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline GetObjectResult& WithAcceptRanges(const Aws::String& value) { SetAcceptRanges(value); return *this;}
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline GetObjectResult& WithAcceptRanges(Aws::String&& value) { SetAcceptRanges(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates that a range of bytes was specifed.</p>
+     * <p>Indicates that a range of bytes was specified.</p>
      */
     inline GetObjectResult& WithAcceptRanges(const char* value) { SetAcceptRanges(value); return *this;}
 
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -131,7 +131,7 @@ namespace Model
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -139,7 +139,7 @@ namespace Model
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -147,7 +147,7 @@ namespace Model
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -155,7 +155,7 @@ namespace Model
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -163,7 +163,7 @@ namespace Model
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -171,7 +171,7 @@ namespace Model
 
     /**
      * <p>If the object expiration is configured (see PUT Bucket lifecycle), the
-     * response includes this header. It includes the expiry-date and rule-id key value
+     * response includes this header. It includes the expiry-date and rule-id key-value
      * pairs providing object expiration information. The value of the rule-id is URL
      * encoded.</p>
      */
@@ -265,68 +265,71 @@ namespace Model
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline GetObjectResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline GetObjectResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
 
     /**
      * <p>An ETag is an opaque identifier assigned by a web server to a specific
-     * version of a resource found at a URL</p>
+     * version of a resource found at a URL.</p>
      */
     inline GetObjectResult& WithETag(const char* value) { SetETag(value); return *this;}
 
 
     /**
-     * <p>This is set to the number of metadata entries not returned in x-amz-meta
-     * headers. This can happen if you create metadata using an API like SOAP that
-     * supports more flexible metadata than the REST API. For example, using SOAP, you
-     * can create metadata whose values are not legal HTTP headers.</p>
+     * <p>This is set to the number of metadata entries not returned in
+     * <code>x-amz-meta</code> headers. This can happen if you create metadata using an
+     * API like SOAP that supports more flexible metadata than the REST API. For
+     * example, using SOAP, you can create metadata whose values are not legal HTTP
+     * headers.</p>
      */
     inline int GetMissingMeta() const{ return m_missingMeta; }
 
     /**
-     * <p>This is set to the number of metadata entries not returned in x-amz-meta
-     * headers. This can happen if you create metadata using an API like SOAP that
-     * supports more flexible metadata than the REST API. For example, using SOAP, you
-     * can create metadata whose values are not legal HTTP headers.</p>
+     * <p>This is set to the number of metadata entries not returned in
+     * <code>x-amz-meta</code> headers. This can happen if you create metadata using an
+     * API like SOAP that supports more flexible metadata than the REST API. For
+     * example, using SOAP, you can create metadata whose values are not legal HTTP
+     * headers.</p>
      */
     inline void SetMissingMeta(int value) { m_missingMeta = value; }
 
     /**
-     * <p>This is set to the number of metadata entries not returned in x-amz-meta
-     * headers. This can happen if you create metadata using an API like SOAP that
-     * supports more flexible metadata than the REST API. For example, using SOAP, you
-     * can create metadata whose values are not legal HTTP headers.</p>
+     * <p>This is set to the number of metadata entries not returned in
+     * <code>x-amz-meta</code> headers. This can happen if you create metadata using an
+     * API like SOAP that supports more flexible metadata than the REST API. For
+     * example, using SOAP, you can create metadata whose values are not legal HTTP
+     * headers.</p>
      */
     inline GetObjectResult& WithMissingMeta(int value) { SetMissingMeta(value); return *this;}
 
@@ -674,32 +677,32 @@ namespace Model
 
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryption = value; }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = std::move(value); }
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline GetObjectResult& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
-     * <p>The Server-side encryption algorithm used when storing this object in S3
-     * (e.g., AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, aws:kms).</p>
      */
     inline GetObjectResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
@@ -817,93 +820,93 @@ namespace Model
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline const Aws::String& GetSSECustomerKeyMD5() const{ return m_sSECustomerKeyMD5; }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(const Aws::String& value) { m_sSECustomerKeyMD5 = value; }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(Aws::String&& value) { m_sSECustomerKeyMD5 = std::move(value); }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline void SetSSECustomerKeyMD5(const char* value) { m_sSECustomerKeyMD5.assign(value); }
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline GetObjectResult& WithSSECustomerKeyMD5(const Aws::String& value) { SetSSECustomerKeyMD5(value); return *this;}
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline GetObjectResult& WithSSECustomerKeyMD5(Aws::String&& value) { SetSSECustomerKeyMD5(std::move(value)); return *this;}
 
     /**
      * <p>If server-side encryption with a customer-provided encryption key was
-     * requested, the response will include this header to provide round trip message
+     * requested, the response will include this header to provide round-trip message
      * integrity verification of the customer-provided encryption key.</p>
      */
     inline GetObjectResult& WithSSECustomerKeyMD5(const char* value) { SetSSECustomerKeyMD5(value); return *this;}
 
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline GetObjectResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline GetObjectResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If present, specifies the ID of the AWS Key Management Service (KMS) customer
-     * master key (CMK) that was used for the object.</p>
+     * <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used for the object.</p>
      */
     inline GetObjectResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 

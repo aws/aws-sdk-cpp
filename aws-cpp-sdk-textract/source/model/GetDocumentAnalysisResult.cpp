@@ -82,6 +82,12 @@ GetDocumentAnalysisResult& GetDocumentAnalysisResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("AnalyzeDocumentModelVersion"))
+  {
+    m_analyzeDocumentModelVersion = jsonValue.GetString("AnalyzeDocumentModelVersion");
+
+  }
+
 
 
   return *this;

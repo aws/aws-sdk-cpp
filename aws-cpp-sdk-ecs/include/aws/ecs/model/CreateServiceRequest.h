@@ -26,6 +26,7 @@
 #include <aws/ecs/model/PropagateTags.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/ServiceRegistry.h>
+#include <aws/ecs/model/CapacityProviderStrategyItem.h>
 #include <aws/ecs/model/PlacementConstraint.h>
 #include <aws/ecs/model/PlacementStrategy.h>
 #include <aws/ecs/model/Tag.h>
@@ -807,7 +808,8 @@ namespace Model
      * <p>The launch type on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
@@ -815,7 +817,8 @@ namespace Model
      * <p>The launch type on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
@@ -823,7 +826,8 @@ namespace Model
      * <p>The launch type on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
@@ -831,7 +835,8 @@ namespace Model
      * <p>The launch type on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
@@ -839,7 +844,8 @@ namespace Model
      * <p>The launch type on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline CreateServiceRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
@@ -847,9 +853,203 @@ namespace Model
      * <p>The launch type on which to run your service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
      * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> <p>If a <code>launchType</code> is specified, the
+     * <code>capacityProviderStrategy</code> parameter must be omitted.</p>
      */
     inline CreateServiceRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
+     * provider strategy consists of one or more capacity providers along with the
+     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+     * must be associated with the cluster to be used in a capacity provider strategy.
+     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * <code>launchType</code> is specified, the
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p>
+     */
+    inline const Aws::Vector<CapacityProviderStrategyItem>& GetCapacityProviderStrategy() const{ return m_capacityProviderStrategy; }
+
+    /**
+     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
+     * provider strategy consists of one or more capacity providers along with the
+     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+     * must be associated with the cluster to be used in a capacity provider strategy.
+     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * <code>launchType</code> is specified, the
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p>
+     */
+    inline bool CapacityProviderStrategyHasBeenSet() const { return m_capacityProviderStrategyHasBeenSet; }
+
+    /**
+     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
+     * provider strategy consists of one or more capacity providers along with the
+     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+     * must be associated with the cluster to be used in a capacity provider strategy.
+     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * <code>launchType</code> is specified, the
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p>
+     */
+    inline void SetCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = value; }
+
+    /**
+     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
+     * provider strategy consists of one or more capacity providers along with the
+     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+     * must be associated with the cluster to be used in a capacity provider strategy.
+     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * <code>launchType</code> is specified, the
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p>
+     */
+    inline void SetCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy = std::move(value); }
+
+    /**
+     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
+     * provider strategy consists of one or more capacity providers along with the
+     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+     * must be associated with the cluster to be used in a capacity provider strategy.
+     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * <code>launchType</code> is specified, the
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p>
+     */
+    inline CreateServiceRequest& WithCapacityProviderStrategy(const Aws::Vector<CapacityProviderStrategyItem>& value) { SetCapacityProviderStrategy(value); return *this;}
+
+    /**
+     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
+     * provider strategy consists of one or more capacity providers along with the
+     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+     * must be associated with the cluster to be used in a capacity provider strategy.
+     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * <code>launchType</code> is specified, the
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p>
+     */
+    inline CreateServiceRequest& WithCapacityProviderStrategy(Aws::Vector<CapacityProviderStrategyItem>&& value) { SetCapacityProviderStrategy(std::move(value)); return *this;}
+
+    /**
+     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
+     * provider strategy consists of one or more capacity providers along with the
+     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+     * must be associated with the cluster to be used in a capacity provider strategy.
+     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * <code>launchType</code> is specified, the
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p>
+     */
+    inline CreateServiceRequest& AddCapacityProviderStrategy(const CapacityProviderStrategyItem& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(value); return *this; }
+
+    /**
+     * <p>The capacity provider strategy to use for the service.</p> <p>A capacity
+     * provider strategy consists of one or more capacity providers along with the
+     * <code>base</code> and <code>weight</code> to assign to them. A capacity provider
+     * must be associated with the cluster to be used in a capacity provider strategy.
+     * The <a>PutClusterCapacityProviders</a> API is used to associate a capacity
+     * provider with a cluster. Only capacity providers with an <code>ACTIVE</code> or
+     * <code>UPDATING</code> status can be used.</p> <p>If a
+     * <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
+     * parameter must be omitted. If no <code>capacityProviderStrategy</code> or
+     * <code>launchType</code> is specified, the
+     * <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p> <p>If
+     * specifying a capacity provider that uses an Auto Scaling group, the capacity
+     * provider must already be created. New capacity providers can be created with the
+     * <a>CreateCapacityProvider</a> API operation.</p> <p>To use a AWS Fargate
+     * capacity provider, specify either the <code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers
+     * are available to all accounts and only need to be associated with a cluster to
+     * be used.</p> <p>The <a>PutClusterCapacityProviders</a> API operation is used to
+     * update the list of available capacity providers for a cluster after the cluster
+     * is created.</p>
+     */
+    inline CreateServiceRequest& AddCapacityProviderStrategy(CapacityProviderStrategyItem&& value) { m_capacityProviderStrategyHasBeenSet = true; m_capacityProviderStrategy.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -952,8 +1152,8 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
      * the service is configured to use service discovery, an external deployment
-     * controller, or multiple target groups in which case you should not specify a
-     * role here. For more information, see <a
+     * controller, multiple target groups, or Elastic Inference accelerators in which
+     * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
@@ -978,8 +1178,8 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
      * the service is configured to use service discovery, an external deployment
-     * controller, or multiple target groups in which case you should not specify a
-     * role here. For more information, see <a
+     * controller, multiple target groups, or Elastic Inference accelerators in which
+     * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
@@ -1004,8 +1204,8 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
      * the service is configured to use service discovery, an external deployment
-     * controller, or multiple target groups in which case you should not specify a
-     * role here. For more information, see <a
+     * controller, multiple target groups, or Elastic Inference accelerators in which
+     * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
@@ -1030,8 +1230,8 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
      * the service is configured to use service discovery, an external deployment
-     * controller, or multiple target groups in which case you should not specify a
-     * role here. For more information, see <a
+     * controller, multiple target groups, or Elastic Inference accelerators in which
+     * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
@@ -1056,8 +1256,8 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
      * the service is configured to use service discovery, an external deployment
-     * controller, or multiple target groups in which case you should not specify a
-     * role here. For more information, see <a
+     * controller, multiple target groups, or Elastic Inference accelerators in which
+     * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
@@ -1082,8 +1282,8 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
      * the service is configured to use service discovery, an external deployment
-     * controller, or multiple target groups in which case you should not specify a
-     * role here. For more information, see <a
+     * controller, multiple target groups, or Elastic Inference accelerators in which
+     * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
@@ -1108,8 +1308,8 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
      * the service is configured to use service discovery, an external deployment
-     * controller, or multiple target groups in which case you should not specify a
-     * role here. For more information, see <a
+     * controller, multiple target groups, or Elastic Inference accelerators in which
+     * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
@@ -1134,8 +1334,8 @@ namespace Model
      * for your service unless you specify a role here. The service-linked role is
      * required if your task definition uses the <code>awsvpc</code> network mode or if
      * the service is configured to use service discovery, an external deployment
-     * controller, or multiple target groups in which case you should not specify a
-     * role here. For more information, see <a
+     * controller, multiple target groups, or Elastic Inference accelerators in which
+     * case you should not specify a role here. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
      * Service-Linked Roles for Amazon ECS</a> in the <i>Amazon Elastic Container
      * Service Developer Guide</i>.</p> </important> <p>If your specified role has a
@@ -1856,6 +2056,9 @@ namespace Model
 
     LaunchType m_launchType;
     bool m_launchTypeHasBeenSet;
+
+    Aws::Vector<CapacityProviderStrategyItem> m_capacityProviderStrategy;
+    bool m_capacityProviderStrategyHasBeenSet;
 
     Aws::String m_platformVersion;
     bool m_platformVersionHasBeenSet;

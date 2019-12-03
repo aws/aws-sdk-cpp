@@ -82,6 +82,12 @@ GetDocumentTextDetectionResult& GetDocumentTextDetectionResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("DetectDocumentTextModelVersion"))
+  {
+    m_detectDocumentTextModelVersion = jsonValue.GetString("DetectDocumentTextModelVersion");
+
+  }
+
 
 
   return *this;

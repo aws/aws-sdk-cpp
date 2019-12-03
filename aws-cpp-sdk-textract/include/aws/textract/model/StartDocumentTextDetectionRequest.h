@@ -81,7 +81,10 @@ namespace Model
      * <p>The idempotent token that's used to identify the start request. If you use
      * the same token with multiple <code>StartDocumentTextDetection</code> requests,
      * the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
@@ -89,7 +92,10 @@ namespace Model
      * <p>The idempotent token that's used to identify the start request. If you use
      * the same token with multiple <code>StartDocumentTextDetection</code> requests,
      * the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
@@ -97,7 +103,10 @@ namespace Model
      * <p>The idempotent token that's used to identify the start request. If you use
      * the same token with multiple <code>StartDocumentTextDetection</code> requests,
      * the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
@@ -105,7 +114,10 @@ namespace Model
      * <p>The idempotent token that's used to identify the start request. If you use
      * the same token with multiple <code>StartDocumentTextDetection</code> requests,
      * the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
@@ -113,7 +125,10 @@ namespace Model
      * <p>The idempotent token that's used to identify the start request. If you use
      * the same token with multiple <code>StartDocumentTextDetection</code> requests,
      * the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
@@ -121,7 +136,10 @@ namespace Model
      * <p>The idempotent token that's used to identify the start request. If you use
      * the same token with multiple <code>StartDocumentTextDetection</code> requests,
      * the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline StartDocumentTextDetectionRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
@@ -129,7 +147,10 @@ namespace Model
      * <p>The idempotent token that's used to identify the start request. If you use
      * the same token with multiple <code>StartDocumentTextDetection</code> requests,
      * the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline StartDocumentTextDetectionRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
@@ -137,72 +158,75 @@ namespace Model
      * <p>The idempotent token that's used to identify the start request. If you use
      * the same token with multiple <code>StartDocumentTextDetection</code> requests,
      * the same <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to
-     * prevent the same job from being accidentally started more than once. </p>
+     * prevent the same job from being accidentally started more than once. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/textract/latest/dg/api-async.html">Calling
+     * Amazon Textract Asynchronous Operations</a>.</p>
      */
     inline StartDocumentTextDetectionRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline const Aws::String& GetJobTag() const{ return m_jobTag; }
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline bool JobTagHasBeenSet() const { return m_jobTagHasBeenSet; }
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline void SetJobTag(const Aws::String& value) { m_jobTagHasBeenSet = true; m_jobTag = value; }
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline void SetJobTag(Aws::String&& value) { m_jobTagHasBeenSet = true; m_jobTag = std::move(value); }
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline void SetJobTag(const char* value) { m_jobTagHasBeenSet = true; m_jobTag.assign(value); }
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline StartDocumentTextDetectionRequest& WithJobTag(const Aws::String& value) { SetJobTag(value); return *this;}
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline StartDocumentTextDetectionRequest& WithJobTag(Aws::String&& value) { SetJobTag(std::move(value)); return *this;}
 
     /**
-     * <p>An identifier you specify that's included in the completion notification
-     * that's published to the Amazon SNS topic. For example, you can use
-     * <code>JobTag</code> to identify the type of document, such as a tax form or a
-     * receipt, that the completion notification corresponds to.</p>
+     * <p>An identifier that you specify that's included in the completion notification
+     * published to the Amazon SNS topic. For example, you can use <code>JobTag</code>
+     * to identify the type of document that the completion notification corresponds to
+     * (such as a tax form or a receipt).</p>
      */
     inline StartDocumentTextDetectionRequest& WithJobTag(const char* value) { SetJobTag(value); return *this;}
 

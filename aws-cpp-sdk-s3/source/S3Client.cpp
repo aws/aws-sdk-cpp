@@ -31,6 +31,7 @@
 #include <aws/s3/S3Client.h>
 #include <aws/s3/S3Endpoint.h>
 #include <aws/s3/S3ErrorMarshaller.h>
+#include <aws/s3/S3ARN.h>
 #include <aws/s3/model/AbortMultipartUploadRequest.h>
 #include <aws/s3/model/CompleteMultipartUploadRequest.h>
 #include <aws/s3/model/CopyObjectRequest.h>
@@ -128,33 +129,33 @@ static const char* SERVICE_NAME = "s3";
 static const char* ALLOCATION_TAG = "S3Client";
 
 
-S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
+S3Client::S3Client(const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAddressing, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG),
         SERVICE_NAME, clientConfiguration.region, signPayloads, false),
     Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
+    m_executor(clientConfiguration.executor), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
 {
   init(clientConfiguration);
 }
 
-S3Client::S3Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
+S3Client::S3Client(const AWSCredentials& credentials, const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAddressing, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
          SERVICE_NAME, clientConfiguration.region, signPayloads, false),
     Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
+    m_executor(clientConfiguration.executor), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
 {
   init(clientConfiguration);
 }
 
 S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
-  const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAdressing, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
+  const Client::ClientConfiguration& clientConfiguration, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy signPayloads, bool useVirtualAddressing, Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION USEast1RegionalEndPointOption) :
   BASECLASS(clientConfiguration,
     Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider,
          SERVICE_NAME, clientConfiguration.region, signPayloads, false),
     Aws::MakeShared<S3ErrorMarshaller>(ALLOCATION_TAG)),
-    m_executor(clientConfiguration.executor), m_useVirtualAdressing(useVirtualAdressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
+    m_executor(clientConfiguration.executor), m_useVirtualAddressing(useVirtualAddressing), m_USEast1RegionalEndpointOption(USEast1RegionalEndPointOption)
 {
   init(clientConfiguration);
 }
@@ -168,12 +169,16 @@ void S3Client::init(const ClientConfiguration& config)
   LoadS3SpecificConfig(config.profileName);
   m_configScheme = SchemeMapper::ToString(config.scheme);
   m_scheme = m_configScheme;
+  m_region = config.region;
+  m_useDualStack = config.useDualStack;
   if (config.endpointOverride.empty())
   {
+      m_useCustomEndpoint = false;
       m_baseUri = S3Endpoint::ForRegion(config.region, config.useDualStack, m_USEast1RegionalEndpointOption == Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::REGIONAL);
   }
   else
   {
+      m_useCustomEndpoint = true;
       OverrideEndpoint(config.endpointOverride);
   }
 }
@@ -214,12 +219,17 @@ AbortMultipartUploadOutcome S3Client::AbortMultipartUpload(const AbortMultipartU
     AWS_LOGSTREAM_ERROR("AbortMultipartUpload", "Required field: UploadId, is not set");
     return AbortMultipartUploadOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return AbortMultipartUploadOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return AbortMultipartUploadOutcome(AbortMultipartUploadResult(outcome.GetResult()));
@@ -265,12 +275,17 @@ CompleteMultipartUploadOutcome S3Client::CompleteMultipartUpload(const CompleteM
     AWS_LOGSTREAM_ERROR("CompleteMultipartUpload", "Required field: UploadId, is not set");
     return CompleteMultipartUploadOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return CompleteMultipartUploadOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return CompleteMultipartUploadOutcome(CompleteMultipartUploadResult(outcome.GetResult()));
@@ -316,12 +331,17 @@ CopyObjectOutcome S3Client::CopyObject(const CopyObjectRequest& request) const
     AWS_LOGSTREAM_ERROR("CopyObject", "Required field: Key, is not set");
     return CopyObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return CopyObjectOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return CopyObjectOutcome(CopyObjectResult(outcome.GetResult()));
@@ -357,12 +377,17 @@ CreateBucketOutcome S3Client::CreateBucket(const CreateBucketRequest& request) c
     AWS_LOGSTREAM_ERROR("CreateBucket", "Required field: Bucket, is not set");
     return CreateBucketOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString();
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return CreateBucketOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetBucket();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return CreateBucketOutcome(CreateBucketResult(outcome.GetResult()));
@@ -403,14 +428,19 @@ CreateMultipartUploadOutcome S3Client::CreateMultipartUpload(const CreateMultipa
     AWS_LOGSTREAM_ERROR("CreateMultipartUpload", "Required field: Key, is not set");
     return CreateMultipartUploadOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return CreateMultipartUploadOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?uploads");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return CreateMultipartUploadOutcome(CreateMultipartUploadResult(outcome.GetResult()));
@@ -446,10 +476,15 @@ DeleteBucketOutcome S3Client::DeleteBucket(const DeleteBucketRequest& request) c
     AWS_LOGSTREAM_ERROR("DeleteBucket", "Required field: Bucket, is not set");
     return DeleteBucketOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteBucketOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteBucketOutcome(NoResult());
@@ -490,11 +525,16 @@ DeleteBucketAnalyticsConfigurationOutcome S3Client::DeleteBucketAnalyticsConfigu
     AWS_LOGSTREAM_ERROR("DeleteBucketAnalyticsConfiguration", "Required field: Id, is not set");
     return DeleteBucketAnalyticsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteBucketAnalyticsConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?analytics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteBucketAnalyticsConfigurationOutcome(NoResult());
@@ -530,11 +570,16 @@ DeleteBucketCorsOutcome S3Client::DeleteBucketCors(const DeleteBucketCorsRequest
     AWS_LOGSTREAM_ERROR("DeleteBucketCors", "Required field: Bucket, is not set");
     return DeleteBucketCorsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteBucketCorsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?cors");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteBucketCorsOutcome(NoResult());
@@ -570,11 +615,16 @@ DeleteBucketEncryptionOutcome S3Client::DeleteBucketEncryption(const DeleteBucke
     AWS_LOGSTREAM_ERROR("DeleteBucketEncryption", "Required field: Bucket, is not set");
     return DeleteBucketEncryptionOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteBucketEncryptionOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?encryption");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteBucketEncryptionOutcome(NoResult());
@@ -615,11 +665,16 @@ DeleteBucketInventoryConfigurationOutcome S3Client::DeleteBucketInventoryConfigu
     AWS_LOGSTREAM_ERROR("DeleteBucketInventoryConfiguration", "Required field: Id, is not set");
     return DeleteBucketInventoryConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteBucketInventoryConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?inventory");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteBucketInventoryConfigurationOutcome(NoResult());
@@ -655,11 +710,16 @@ DeleteBucketLifecycleOutcome S3Client::DeleteBucketLifecycle(const DeleteBucketL
     AWS_LOGSTREAM_ERROR("DeleteBucketLifecycle", "Required field: Bucket, is not set");
     return DeleteBucketLifecycleOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteBucketLifecycleOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?lifecycle");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteBucketLifecycleOutcome(NoResult());
@@ -700,11 +760,16 @@ DeleteBucketMetricsConfigurationOutcome S3Client::DeleteBucketMetricsConfigurati
     AWS_LOGSTREAM_ERROR("DeleteBucketMetricsConfiguration", "Required field: Id, is not set");
     return DeleteBucketMetricsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteBucketMetricsConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?metrics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteBucketMetricsConfigurationOutcome(NoResult());
@@ -740,11 +805,16 @@ DeleteBucketPolicyOutcome S3Client::DeleteBucketPolicy(const DeleteBucketPolicyR
     AWS_LOGSTREAM_ERROR("DeleteBucketPolicy", "Required field: Bucket, is not set");
     return DeleteBucketPolicyOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteBucketPolicyOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?policy");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteBucketPolicyOutcome(NoResult());
@@ -780,11 +850,16 @@ DeleteBucketReplicationOutcome S3Client::DeleteBucketReplication(const DeleteBuc
     AWS_LOGSTREAM_ERROR("DeleteBucketReplication", "Required field: Bucket, is not set");
     return DeleteBucketReplicationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteBucketReplicationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?replication");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteBucketReplicationOutcome(NoResult());
@@ -820,11 +895,16 @@ DeleteBucketTaggingOutcome S3Client::DeleteBucketTagging(const DeleteBucketTaggi
     AWS_LOGSTREAM_ERROR("DeleteBucketTagging", "Required field: Bucket, is not set");
     return DeleteBucketTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteBucketTaggingOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteBucketTaggingOutcome(NoResult());
@@ -860,11 +940,16 @@ DeleteBucketWebsiteOutcome S3Client::DeleteBucketWebsite(const DeleteBucketWebsi
     AWS_LOGSTREAM_ERROR("DeleteBucketWebsite", "Required field: Bucket, is not set");
     return DeleteBucketWebsiteOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteBucketWebsiteOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?website");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteBucketWebsiteOutcome(NoResult());
@@ -905,12 +990,17 @@ DeleteObjectOutcome S3Client::DeleteObject(const DeleteObjectRequest& request) c
     AWS_LOGSTREAM_ERROR("DeleteObject", "Required field: Key, is not set");
     return DeleteObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteObjectOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteObjectOutcome(DeleteObjectResult(outcome.GetResult()));
@@ -951,14 +1041,19 @@ DeleteObjectTaggingOutcome S3Client::DeleteObjectTagging(const DeleteObjectTaggi
     AWS_LOGSTREAM_ERROR("DeleteObjectTagging", "Required field: Key, is not set");
     return DeleteObjectTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteObjectTaggingOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteObjectTaggingOutcome(DeleteObjectTaggingResult(outcome.GetResult()));
@@ -994,11 +1089,16 @@ DeleteObjectsOutcome S3Client::DeleteObjects(const DeleteObjectsRequest& request
     AWS_LOGSTREAM_ERROR("DeleteObjects", "Required field: Bucket, is not set");
     return DeleteObjectsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeleteObjectsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?delete");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeleteObjectsOutcome(DeleteObjectsResult(outcome.GetResult()));
@@ -1034,11 +1134,16 @@ DeletePublicAccessBlockOutcome S3Client::DeletePublicAccessBlock(const DeletePub
     AWS_LOGSTREAM_ERROR("DeletePublicAccessBlock", "Required field: Bucket, is not set");
     return DeletePublicAccessBlockOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return DeletePublicAccessBlockOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?publicAccessBlock");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return DeletePublicAccessBlockOutcome(NoResult());
@@ -1074,11 +1179,16 @@ GetBucketAccelerateConfigurationOutcome S3Client::GetBucketAccelerateConfigurati
     AWS_LOGSTREAM_ERROR("GetBucketAccelerateConfiguration", "Required field: Bucket, is not set");
     return GetBucketAccelerateConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketAccelerateConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?accelerate");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketAccelerateConfigurationOutcome(GetBucketAccelerateConfigurationResult(outcome.GetResult()));
@@ -1114,11 +1224,16 @@ GetBucketAclOutcome S3Client::GetBucketAcl(const GetBucketAclRequest& request) c
     AWS_LOGSTREAM_ERROR("GetBucketAcl", "Required field: Bucket, is not set");
     return GetBucketAclOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketAclOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?acl");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketAclOutcome(GetBucketAclResult(outcome.GetResult()));
@@ -1159,11 +1274,16 @@ GetBucketAnalyticsConfigurationOutcome S3Client::GetBucketAnalyticsConfiguration
     AWS_LOGSTREAM_ERROR("GetBucketAnalyticsConfiguration", "Required field: Id, is not set");
     return GetBucketAnalyticsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketAnalyticsConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?analytics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketAnalyticsConfigurationOutcome(GetBucketAnalyticsConfigurationResult(outcome.GetResult()));
@@ -1199,11 +1319,16 @@ GetBucketCorsOutcome S3Client::GetBucketCors(const GetBucketCorsRequest& request
     AWS_LOGSTREAM_ERROR("GetBucketCors", "Required field: Bucket, is not set");
     return GetBucketCorsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketCorsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?cors");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketCorsOutcome(GetBucketCorsResult(outcome.GetResult()));
@@ -1239,11 +1364,16 @@ GetBucketEncryptionOutcome S3Client::GetBucketEncryption(const GetBucketEncrypti
     AWS_LOGSTREAM_ERROR("GetBucketEncryption", "Required field: Bucket, is not set");
     return GetBucketEncryptionOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketEncryptionOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?encryption");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketEncryptionOutcome(GetBucketEncryptionResult(outcome.GetResult()));
@@ -1284,11 +1414,16 @@ GetBucketInventoryConfigurationOutcome S3Client::GetBucketInventoryConfiguration
     AWS_LOGSTREAM_ERROR("GetBucketInventoryConfiguration", "Required field: Id, is not set");
     return GetBucketInventoryConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketInventoryConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?inventory");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketInventoryConfigurationOutcome(GetBucketInventoryConfigurationResult(outcome.GetResult()));
@@ -1324,11 +1459,16 @@ GetBucketLifecycleConfigurationOutcome S3Client::GetBucketLifecycleConfiguration
     AWS_LOGSTREAM_ERROR("GetBucketLifecycleConfiguration", "Required field: Bucket, is not set");
     return GetBucketLifecycleConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketLifecycleConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?lifecycle");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketLifecycleConfigurationOutcome(GetBucketLifecycleConfigurationResult(outcome.GetResult()));
@@ -1364,11 +1504,16 @@ GetBucketLocationOutcome S3Client::GetBucketLocation(const GetBucketLocationRequ
     AWS_LOGSTREAM_ERROR("GetBucketLocation", "Required field: Bucket, is not set");
     return GetBucketLocationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketLocationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?location");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketLocationOutcome(GetBucketLocationResult(outcome.GetResult()));
@@ -1404,11 +1549,16 @@ GetBucketLoggingOutcome S3Client::GetBucketLogging(const GetBucketLoggingRequest
     AWS_LOGSTREAM_ERROR("GetBucketLogging", "Required field: Bucket, is not set");
     return GetBucketLoggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketLoggingOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?logging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketLoggingOutcome(GetBucketLoggingResult(outcome.GetResult()));
@@ -1449,11 +1599,16 @@ GetBucketMetricsConfigurationOutcome S3Client::GetBucketMetricsConfiguration(con
     AWS_LOGSTREAM_ERROR("GetBucketMetricsConfiguration", "Required field: Id, is not set");
     return GetBucketMetricsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketMetricsConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?metrics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketMetricsConfigurationOutcome(GetBucketMetricsConfigurationResult(outcome.GetResult()));
@@ -1489,11 +1644,16 @@ GetBucketNotificationConfigurationOutcome S3Client::GetBucketNotificationConfigu
     AWS_LOGSTREAM_ERROR("GetBucketNotificationConfiguration", "Required field: Bucket, is not set");
     return GetBucketNotificationConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketNotificationConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?notification");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketNotificationConfigurationOutcome(GetBucketNotificationConfigurationResult(outcome.GetResult()));
@@ -1529,11 +1689,16 @@ GetBucketPolicyOutcome S3Client::GetBucketPolicy(const GetBucketPolicyRequest& r
     AWS_LOGSTREAM_ERROR("GetBucketPolicy", "Required field: Bucket, is not set");
     return GetBucketPolicyOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketPolicyOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?policy");
   uri.SetQueryString(ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketPolicyOutcome(GetBucketPolicyResult(outcome.GetResultWithOwnership()));
@@ -1569,11 +1734,16 @@ GetBucketPolicyStatusOutcome S3Client::GetBucketPolicyStatus(const GetBucketPoli
     AWS_LOGSTREAM_ERROR("GetBucketPolicyStatus", "Required field: Bucket, is not set");
     return GetBucketPolicyStatusOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketPolicyStatusOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?policyStatus");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketPolicyStatusOutcome(GetBucketPolicyStatusResult(outcome.GetResult()));
@@ -1609,11 +1779,16 @@ GetBucketReplicationOutcome S3Client::GetBucketReplication(const GetBucketReplic
     AWS_LOGSTREAM_ERROR("GetBucketReplication", "Required field: Bucket, is not set");
     return GetBucketReplicationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketReplicationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?replication");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketReplicationOutcome(GetBucketReplicationResult(outcome.GetResult()));
@@ -1649,11 +1824,16 @@ GetBucketRequestPaymentOutcome S3Client::GetBucketRequestPayment(const GetBucket
     AWS_LOGSTREAM_ERROR("GetBucketRequestPayment", "Required field: Bucket, is not set");
     return GetBucketRequestPaymentOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketRequestPaymentOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?requestPayment");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketRequestPaymentOutcome(GetBucketRequestPaymentResult(outcome.GetResult()));
@@ -1689,11 +1869,16 @@ GetBucketTaggingOutcome S3Client::GetBucketTagging(const GetBucketTaggingRequest
     AWS_LOGSTREAM_ERROR("GetBucketTagging", "Required field: Bucket, is not set");
     return GetBucketTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketTaggingOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketTaggingOutcome(GetBucketTaggingResult(outcome.GetResult()));
@@ -1729,11 +1914,16 @@ GetBucketVersioningOutcome S3Client::GetBucketVersioning(const GetBucketVersioni
     AWS_LOGSTREAM_ERROR("GetBucketVersioning", "Required field: Bucket, is not set");
     return GetBucketVersioningOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketVersioningOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?versioning");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketVersioningOutcome(GetBucketVersioningResult(outcome.GetResult()));
@@ -1769,11 +1959,16 @@ GetBucketWebsiteOutcome S3Client::GetBucketWebsite(const GetBucketWebsiteRequest
     AWS_LOGSTREAM_ERROR("GetBucketWebsite", "Required field: Bucket, is not set");
     return GetBucketWebsiteOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetBucketWebsiteOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?website");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetBucketWebsiteOutcome(GetBucketWebsiteResult(outcome.GetResult()));
@@ -1814,12 +2009,17 @@ GetObjectOutcome S3Client::GetObject(const GetObjectRequest& request) const
     AWS_LOGSTREAM_ERROR("GetObject", "Required field: Key, is not set");
     return GetObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetObjectOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetObjectOutcome(GetObjectResult(outcome.GetResultWithOwnership()));
@@ -1860,14 +2060,19 @@ GetObjectAclOutcome S3Client::GetObjectAcl(const GetObjectAclRequest& request) c
     AWS_LOGSTREAM_ERROR("GetObjectAcl", "Required field: Key, is not set");
     return GetObjectAclOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetObjectAclOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?acl");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetObjectAclOutcome(GetObjectAclResult(outcome.GetResult()));
@@ -1908,14 +2113,19 @@ GetObjectLegalHoldOutcome S3Client::GetObjectLegalHold(const GetObjectLegalHoldR
     AWS_LOGSTREAM_ERROR("GetObjectLegalHold", "Required field: Key, is not set");
     return GetObjectLegalHoldOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetObjectLegalHoldOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?legal-hold");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetObjectLegalHoldOutcome(GetObjectLegalHoldResult(outcome.GetResult()));
@@ -1951,11 +2161,16 @@ GetObjectLockConfigurationOutcome S3Client::GetObjectLockConfiguration(const Get
     AWS_LOGSTREAM_ERROR("GetObjectLockConfiguration", "Required field: Bucket, is not set");
     return GetObjectLockConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetObjectLockConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?object-lock");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetObjectLockConfigurationOutcome(GetObjectLockConfigurationResult(outcome.GetResult()));
@@ -1996,14 +2211,19 @@ GetObjectRetentionOutcome S3Client::GetObjectRetention(const GetObjectRetentionR
     AWS_LOGSTREAM_ERROR("GetObjectRetention", "Required field: Key, is not set");
     return GetObjectRetentionOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetObjectRetentionOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?retention");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetObjectRetentionOutcome(GetObjectRetentionResult(outcome.GetResult()));
@@ -2044,14 +2264,19 @@ GetObjectTaggingOutcome S3Client::GetObjectTagging(const GetObjectTaggingRequest
     AWS_LOGSTREAM_ERROR("GetObjectTagging", "Required field: Key, is not set");
     return GetObjectTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetObjectTaggingOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetObjectTaggingOutcome(GetObjectTaggingResult(outcome.GetResult()));
@@ -2092,14 +2317,19 @@ GetObjectTorrentOutcome S3Client::GetObjectTorrent(const GetObjectTorrentRequest
     AWS_LOGSTREAM_ERROR("GetObjectTorrent", "Required field: Key, is not set");
     return GetObjectTorrentOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetObjectTorrentOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?torrent");
   uri.SetQueryString(ss.str());
-  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  StreamOutcome outcome = MakeRequestWithUnparsedResponse(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetObjectTorrentOutcome(GetObjectTorrentResult(outcome.GetResultWithOwnership()));
@@ -2135,11 +2365,16 @@ GetPublicAccessBlockOutcome S3Client::GetPublicAccessBlock(const GetPublicAccess
     AWS_LOGSTREAM_ERROR("GetPublicAccessBlock", "Required field: Bucket, is not set");
     return GetPublicAccessBlockOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return GetPublicAccessBlockOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?publicAccessBlock");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return GetPublicAccessBlockOutcome(GetPublicAccessBlockResult(outcome.GetResult()));
@@ -2175,10 +2410,15 @@ HeadBucketOutcome S3Client::HeadBucket(const HeadBucketRequest& request) const
     AWS_LOGSTREAM_ERROR("HeadBucket", "Required field: Bucket, is not set");
     return HeadBucketOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return HeadBucketOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_HEAD);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_HEAD, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return HeadBucketOutcome(NoResult());
@@ -2219,12 +2459,17 @@ HeadObjectOutcome S3Client::HeadObject(const HeadObjectRequest& request) const
     AWS_LOGSTREAM_ERROR("HeadObject", "Required field: Key, is not set");
     return HeadObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return HeadObjectOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_HEAD);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_HEAD, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return HeadObjectOutcome(HeadObjectResult(outcome.GetResult()));
@@ -2260,11 +2505,16 @@ ListBucketAnalyticsConfigurationsOutcome S3Client::ListBucketAnalyticsConfigurat
     AWS_LOGSTREAM_ERROR("ListBucketAnalyticsConfigurations", "Required field: Bucket, is not set");
     return ListBucketAnalyticsConfigurationsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListBucketAnalyticsConfigurationsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?analytics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return ListBucketAnalyticsConfigurationsOutcome(ListBucketAnalyticsConfigurationsResult(outcome.GetResult()));
@@ -2300,11 +2550,16 @@ ListBucketInventoryConfigurationsOutcome S3Client::ListBucketInventoryConfigurat
     AWS_LOGSTREAM_ERROR("ListBucketInventoryConfigurations", "Required field: Bucket, is not set");
     return ListBucketInventoryConfigurationsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListBucketInventoryConfigurationsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?inventory");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return ListBucketInventoryConfigurationsOutcome(ListBucketInventoryConfigurationsResult(outcome.GetResult()));
@@ -2340,11 +2595,16 @@ ListBucketMetricsConfigurationsOutcome S3Client::ListBucketMetricsConfigurations
     AWS_LOGSTREAM_ERROR("ListBucketMetricsConfigurations", "Required field: Bucket, is not set");
     return ListBucketMetricsConfigurationsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListBucketMetricsConfigurationsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?metrics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return ListBucketMetricsConfigurationsOutcome(ListBucketMetricsConfigurationsResult(outcome.GetResult()));
@@ -2376,8 +2636,13 @@ void S3Client::ListBucketMetricsConfigurationsAsyncHelper(const ListBucketMetric
 ListBucketsOutcome S3Client::ListBuckets() const
 {
   Aws::StringStream ss;
-  ss << ComputeEndpointString();
-  XmlOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "ListBuckets");
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListBucketsOutcome(computeEndpointOutcome.GetError());
+  }
+  ss << computeEndpointOutcome.GetResult().first;
+  XmlOutcome outcome = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, "ListBuckets", computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return ListBucketsOutcome(ListBucketsResult(outcome.GetResult()));
@@ -2413,11 +2678,16 @@ ListMultipartUploadsOutcome S3Client::ListMultipartUploads(const ListMultipartUp
     AWS_LOGSTREAM_ERROR("ListMultipartUploads", "Required field: Bucket, is not set");
     return ListMultipartUploadsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListMultipartUploadsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?uploads");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return ListMultipartUploadsOutcome(ListMultipartUploadsResult(outcome.GetResult()));
@@ -2453,11 +2723,16 @@ ListObjectVersionsOutcome S3Client::ListObjectVersions(const ListObjectVersionsR
     AWS_LOGSTREAM_ERROR("ListObjectVersions", "Required field: Bucket, is not set");
     return ListObjectVersionsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListObjectVersionsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?versions");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return ListObjectVersionsOutcome(ListObjectVersionsResult(outcome.GetResult()));
@@ -2493,10 +2768,15 @@ ListObjectsOutcome S3Client::ListObjects(const ListObjectsRequest& request) cons
     AWS_LOGSTREAM_ERROR("ListObjects", "Required field: Bucket, is not set");
     return ListObjectsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListObjectsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return ListObjectsOutcome(ListObjectsResult(outcome.GetResult()));
@@ -2532,11 +2812,16 @@ ListObjectsV2Outcome S3Client::ListObjectsV2(const ListObjectsV2Request& request
     AWS_LOGSTREAM_ERROR("ListObjectsV2", "Required field: Bucket, is not set");
     return ListObjectsV2Outcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListObjectsV2Outcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?list-type=2");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return ListObjectsV2Outcome(ListObjectsV2Result(outcome.GetResult()));
@@ -2582,12 +2867,17 @@ ListPartsOutcome S3Client::ListParts(const ListPartsRequest& request) const
     AWS_LOGSTREAM_ERROR("ListParts", "Required field: UploadId, is not set");
     return ListPartsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return ListPartsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return ListPartsOutcome(ListPartsResult(outcome.GetResult()));
@@ -2623,11 +2913,16 @@ PutBucketAccelerateConfigurationOutcome S3Client::PutBucketAccelerateConfigurati
     AWS_LOGSTREAM_ERROR("PutBucketAccelerateConfiguration", "Required field: Bucket, is not set");
     return PutBucketAccelerateConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketAccelerateConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?accelerate");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketAccelerateConfigurationOutcome(NoResult());
@@ -2663,11 +2958,16 @@ PutBucketAclOutcome S3Client::PutBucketAcl(const PutBucketAclRequest& request) c
     AWS_LOGSTREAM_ERROR("PutBucketAcl", "Required field: Bucket, is not set");
     return PutBucketAclOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketAclOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?acl");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketAclOutcome(NoResult());
@@ -2708,11 +3008,16 @@ PutBucketAnalyticsConfigurationOutcome S3Client::PutBucketAnalyticsConfiguration
     AWS_LOGSTREAM_ERROR("PutBucketAnalyticsConfiguration", "Required field: Id, is not set");
     return PutBucketAnalyticsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketAnalyticsConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?analytics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketAnalyticsConfigurationOutcome(NoResult());
@@ -2748,11 +3053,16 @@ PutBucketCorsOutcome S3Client::PutBucketCors(const PutBucketCorsRequest& request
     AWS_LOGSTREAM_ERROR("PutBucketCors", "Required field: Bucket, is not set");
     return PutBucketCorsOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketCorsOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?cors");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketCorsOutcome(NoResult());
@@ -2788,11 +3098,16 @@ PutBucketEncryptionOutcome S3Client::PutBucketEncryption(const PutBucketEncrypti
     AWS_LOGSTREAM_ERROR("PutBucketEncryption", "Required field: Bucket, is not set");
     return PutBucketEncryptionOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketEncryptionOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?encryption");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketEncryptionOutcome(NoResult());
@@ -2833,11 +3148,16 @@ PutBucketInventoryConfigurationOutcome S3Client::PutBucketInventoryConfiguration
     AWS_LOGSTREAM_ERROR("PutBucketInventoryConfiguration", "Required field: Id, is not set");
     return PutBucketInventoryConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketInventoryConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?inventory");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketInventoryConfigurationOutcome(NoResult());
@@ -2873,11 +3193,16 @@ PutBucketLifecycleConfigurationOutcome S3Client::PutBucketLifecycleConfiguration
     AWS_LOGSTREAM_ERROR("PutBucketLifecycleConfiguration", "Required field: Bucket, is not set");
     return PutBucketLifecycleConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketLifecycleConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?lifecycle");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketLifecycleConfigurationOutcome(NoResult());
@@ -2913,11 +3238,16 @@ PutBucketLoggingOutcome S3Client::PutBucketLogging(const PutBucketLoggingRequest
     AWS_LOGSTREAM_ERROR("PutBucketLogging", "Required field: Bucket, is not set");
     return PutBucketLoggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketLoggingOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?logging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketLoggingOutcome(NoResult());
@@ -2958,11 +3288,16 @@ PutBucketMetricsConfigurationOutcome S3Client::PutBucketMetricsConfiguration(con
     AWS_LOGSTREAM_ERROR("PutBucketMetricsConfiguration", "Required field: Id, is not set");
     return PutBucketMetricsConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketMetricsConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?metrics");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketMetricsConfigurationOutcome(NoResult());
@@ -2998,11 +3333,16 @@ PutBucketNotificationConfigurationOutcome S3Client::PutBucketNotificationConfigu
     AWS_LOGSTREAM_ERROR("PutBucketNotificationConfiguration", "Required field: Bucket, is not set");
     return PutBucketNotificationConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketNotificationConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?notification");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketNotificationConfigurationOutcome(NoResult());
@@ -3038,11 +3378,16 @@ PutBucketPolicyOutcome S3Client::PutBucketPolicy(const PutBucketPolicyRequest& r
     AWS_LOGSTREAM_ERROR("PutBucketPolicy", "Required field: Bucket, is not set");
     return PutBucketPolicyOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketPolicyOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?policy");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketPolicyOutcome(NoResult());
@@ -3078,11 +3423,16 @@ PutBucketReplicationOutcome S3Client::PutBucketReplication(const PutBucketReplic
     AWS_LOGSTREAM_ERROR("PutBucketReplication", "Required field: Bucket, is not set");
     return PutBucketReplicationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketReplicationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?replication");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketReplicationOutcome(NoResult());
@@ -3118,11 +3468,16 @@ PutBucketRequestPaymentOutcome S3Client::PutBucketRequestPayment(const PutBucket
     AWS_LOGSTREAM_ERROR("PutBucketRequestPayment", "Required field: Bucket, is not set");
     return PutBucketRequestPaymentOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketRequestPaymentOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?requestPayment");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketRequestPaymentOutcome(NoResult());
@@ -3158,11 +3513,16 @@ PutBucketTaggingOutcome S3Client::PutBucketTagging(const PutBucketTaggingRequest
     AWS_LOGSTREAM_ERROR("PutBucketTagging", "Required field: Bucket, is not set");
     return PutBucketTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketTaggingOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketTaggingOutcome(NoResult());
@@ -3198,11 +3558,16 @@ PutBucketVersioningOutcome S3Client::PutBucketVersioning(const PutBucketVersioni
     AWS_LOGSTREAM_ERROR("PutBucketVersioning", "Required field: Bucket, is not set");
     return PutBucketVersioningOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketVersioningOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?versioning");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketVersioningOutcome(NoResult());
@@ -3238,11 +3603,16 @@ PutBucketWebsiteOutcome S3Client::PutBucketWebsite(const PutBucketWebsiteRequest
     AWS_LOGSTREAM_ERROR("PutBucketWebsite", "Required field: Bucket, is not set");
     return PutBucketWebsiteOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutBucketWebsiteOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?website");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutBucketWebsiteOutcome(NoResult());
@@ -3283,12 +3653,17 @@ PutObjectOutcome S3Client::PutObject(const PutObjectRequest& request) const
     AWS_LOGSTREAM_ERROR("PutObject", "Required field: Key, is not set");
     return PutObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutObjectOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutObjectOutcome(PutObjectResult(outcome.GetResult()));
@@ -3329,14 +3704,19 @@ PutObjectAclOutcome S3Client::PutObjectAcl(const PutObjectAclRequest& request) c
     AWS_LOGSTREAM_ERROR("PutObjectAcl", "Required field: Key, is not set");
     return PutObjectAclOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutObjectAclOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?acl");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutObjectAclOutcome(PutObjectAclResult(outcome.GetResult()));
@@ -3377,14 +3757,19 @@ PutObjectLegalHoldOutcome S3Client::PutObjectLegalHold(const PutObjectLegalHoldR
     AWS_LOGSTREAM_ERROR("PutObjectLegalHold", "Required field: Key, is not set");
     return PutObjectLegalHoldOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutObjectLegalHoldOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?legal-hold");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutObjectLegalHoldOutcome(PutObjectLegalHoldResult(outcome.GetResult()));
@@ -3420,11 +3805,16 @@ PutObjectLockConfigurationOutcome S3Client::PutObjectLockConfiguration(const Put
     AWS_LOGSTREAM_ERROR("PutObjectLockConfiguration", "Required field: Bucket, is not set");
     return PutObjectLockConfigurationOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutObjectLockConfigurationOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?object-lock");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutObjectLockConfigurationOutcome(PutObjectLockConfigurationResult(outcome.GetResult()));
@@ -3465,14 +3855,19 @@ PutObjectRetentionOutcome S3Client::PutObjectRetention(const PutObjectRetentionR
     AWS_LOGSTREAM_ERROR("PutObjectRetention", "Required field: Key, is not set");
     return PutObjectRetentionOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutObjectRetentionOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?retention");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutObjectRetentionOutcome(PutObjectRetentionResult(outcome.GetResult()));
@@ -3513,14 +3908,19 @@ PutObjectTaggingOutcome S3Client::PutObjectTagging(const PutObjectTaggingRequest
     AWS_LOGSTREAM_ERROR("PutObjectTagging", "Required field: Key, is not set");
     return PutObjectTaggingOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutObjectTaggingOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?tagging");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutObjectTaggingOutcome(PutObjectTaggingResult(outcome.GetResult()));
@@ -3556,11 +3956,16 @@ PutPublicAccessBlockOutcome S3Client::PutPublicAccessBlock(const PutPublicAccess
     AWS_LOGSTREAM_ERROR("PutPublicAccessBlock", "Required field: Bucket, is not set");
     return PutPublicAccessBlockOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Bucket]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return PutPublicAccessBlockOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss.str("?publicAccessBlock");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return PutPublicAccessBlockOutcome(NoResult());
@@ -3601,14 +4006,19 @@ RestoreObjectOutcome S3Client::RestoreObject(const RestoreObjectRequest& request
     AWS_LOGSTREAM_ERROR("RestoreObject", "Required field: Key, is not set");
     return RestoreObjectOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return RestoreObjectOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
   ss.str("?restore");
   uri.SetQueryString(ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return RestoreObjectOutcome(RestoreObjectResult(outcome.GetResult()));
@@ -3649,7 +4059,12 @@ SelectObjectContentOutcome S3Client::SelectObjectContent(SelectObjectContentRequ
     AWS_LOGSTREAM_ERROR("SelectObjectContent", "Required field: Key, is not set");
     return SelectObjectContentOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Key]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return SelectObjectContentOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
@@ -3659,7 +4074,7 @@ SelectObjectContentOutcome S3Client::SelectObjectContent(SelectObjectContentRequ
   request.SetResponseStreamFactory(
       [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
   );
-  XmlOutcome outcome = MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  XmlOutcome outcome = MakeRequestWithEventStream(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return SelectObjectContentOutcome(NoResult());
@@ -3710,12 +4125,17 @@ UploadPartOutcome S3Client::UploadPart(const UploadPartRequest& request) const
     AWS_LOGSTREAM_ERROR("UploadPart", "Required field: UploadId, is not set");
     return UploadPartOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return UploadPartOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return UploadPartOutcome(UploadPartResult(outcome.GetResult()));
@@ -3771,12 +4191,17 @@ UploadPartCopyOutcome S3Client::UploadPartCopy(const UploadPartCopyRequest& requ
     AWS_LOGSTREAM_ERROR("UploadPartCopy", "Required field: UploadId, is not set");
     return UploadPartCopyOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
   }
-  Aws::Http::URI uri = ComputeEndpointString(request.GetBucket());
+  ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.GetBucket());
+  if (!computeEndpointOutcome.IsSuccess())
+  {
+    return UploadPartCopyOutcome(computeEndpointOutcome.GetError());
+  }
+  Aws::Http::URI uri = computeEndpointOutcome.GetResult().first;
   Aws::StringStream ss;
   ss << "/";
   ss << request.GetKey();
   uri.SetPath(uri.GetPath() + ss.str());
-  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT);
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER, computeEndpointOutcome.GetResult().second.c_str() /*signerRegionOverride*/);
   if(outcome.IsSuccess())
   {
     return UploadPartCopyOutcome(UploadPartCopyResult(outcome.GetResult()));
@@ -3812,6 +4237,8 @@ void S3Client::UploadPartCopyAsyncHelper(const UploadPartCopyRequest& request, c
 
 static const char US_EAST_1_REGIONAL_ENDPOINT_ENV_VAR[] = "AWS_S3_US_EAST_1_REGIONAL_ENDPOINT";
 static const char US_EAST_1_REGIONAL_ENDPOINT_CONFIG_VAR[] = "s3_us_east_1_regional_endpoint";
+static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
+static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
 
 void S3Client::LoadS3SpecificConfig(const Aws::String& profile)
 {
@@ -3832,69 +4259,131 @@ void S3Client::LoadS3SpecificConfig(const Aws::String& profile)
       m_USEast1RegionalEndpointOption = Aws::S3::US_EAST_1_REGIONAL_ENDPOINT_OPTION::LEGACY;
     }
   }
+
+  Aws::String s3UseArnRegion = Aws::Environment::GetEnv(S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE);
+  if (s3UseArnRegion.empty())
+  {
+    s3UseArnRegion = Aws::Config::GetCachedConfigValue(profile, S3_USE_ARN_REGION_CONFIG_FILE_OPTION);
+  }
+
+  if (s3UseArnRegion == "true")
+  {
+    m_useArnRegion = true;
+  }
+  else
+  {
+    if (!s3UseArnRegion.empty() && s3UseArnRegion != "false")
+    {
+      AWS_LOGSTREAM_WARN("S3Client", "AWS_S3_USE_ARN_REGION in environment variables or s3_use_arn_region in config file"
+                                  << "should either be true of false if specified, otherwise turn off this flag by default.");
+    }
+    m_useArnRegion = false;
+  }
 }
 
 #include<aws/core/utils/HashingUtils.h>
-Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
 {
+    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
+    if (!computeEndpointOutcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
+        return {};
+    }
     Aws::StringStream ss;
-    ss << ComputeEndpointString(bucketName) << "/" << key;
+    ss << computeEndpointOutcome.GetResult().first << "/" << key;
     URI uri(ss.str());
-    return AWSClient::GeneratePresignedUrl(uri, method, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, const Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrl(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
 {
+    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
+    if (!computeEndpointOutcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
+        return {};
+    }
     Aws::StringStream ss;
-    ss << ComputeEndpointString(bucketName) << "/" << key;
+    ss << computeEndpointOutcome.GetResult().first << "/" << key;
     URI uri(ss.str());
-    return AWSClient::GeneratePresignedUrl(uri, method, customizedHeaders, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, long long expirationInSeconds)
 {
+    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
+    if (!computeEndpointOutcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
+        return {};
+    }
     Aws::StringStream ss;
-    ss << ComputeEndpointString(bucketName) << "/" << key;
+    ss << computeEndpointOutcome.GetResult().first << "/" << key;
     URI uri(ss.str());
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
-    return AWSClient::GeneratePresignedUrl(uri, method, headers, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSES3(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, long long expirationInSeconds)
 {
+    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
+    if (!computeEndpointOutcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
+        return {};
+    }
     Aws::StringStream ss;
-    ss << ComputeEndpointString(bucketName) << "/" << key;
+    ss << computeEndpointOutcome.GetResult().first << "/" << key;
     URI uri(ss.str());
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
-    return AWSClient::GeneratePresignedUrl(uri, method, customizedHeaders, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
 {
+    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
+    if (!computeEndpointOutcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
+        return {};
+    }
     Aws::StringStream ss;
-    ss << ComputeEndpointString(bucketName) << "/" << key;
+    ss << computeEndpointOutcome.GetResult().first << "/" << key;
     URI uri(ss.str());
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::aws_kms));
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
-    return AWSClient::GeneratePresignedUrl(uri, method, headers, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEKMS(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& kmsMasterKeyId, long long expirationInSeconds)
 {
+    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
+    if (!computeEndpointOutcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
+        return {};
+    }
     Aws::StringStream ss;
-    ss << ComputeEndpointString(bucketName) << "/" << key;
+    ss << computeEndpointOutcome.GetResult().first << "/" << key;
     URI uri(ss.str());
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::aws_kms));
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_AWS_KMS_KEY_ID, kmsMasterKeyId);
-    return AWSClient::GeneratePresignedUrl(uri, method, customizedHeaders, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), customizedHeaders, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
 {
+    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
+    if (!computeEndpointOutcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
+        return {};
+    }
     Aws::StringStream ss;
-    ss << ComputeEndpointString(bucketName) << "/" << key;
+    ss << computeEndpointOutcome.GetResult().first << "/" << key;
     URI uri(ss.str());
     Aws::Http::HeaderValueCollection headers;
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
@@ -3902,29 +4391,71 @@ Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucketName
     Aws::Utils::ByteBuffer buffer = Aws::Utils::HashingUtils::Base64Decode(base64EncodedAES256Key);
     Aws::String strBuffer(reinterpret_cast<char*>(buffer.GetUnderlyingData()), buffer.GetLength());
     headers.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
-    return AWSClient::GeneratePresignedUrl(uri, method, headers, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), headers, expirationInSeconds);
 }
 
-Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucketName, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
+Aws::String S3Client::GeneratePresignedUrlWithSSEC(const Aws::String& bucket, const Aws::String& key, Aws::Http::HttpMethod method, Http::HeaderValueCollection customizedHeaders, const Aws::String& base64EncodedAES256Key, long long expirationInSeconds)
 {
+    ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(bucket);
+    if (!computeEndpointOutcome.IsSuccess())
+    {
+        AWS_LOGSTREAM_ERROR(ALLOCATION_TAG, "Presigned URL generating failed. Encountered error: " << computeEndpointOutcome.GetError());
+        return {};
+    }
     Aws::StringStream ss;
-    ss << ComputeEndpointString(bucketName) << "/" << key;
+    ss << computeEndpointOutcome.GetResult().first << "/" << key;
     URI uri(ss.str());
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_ALGORITHM, Aws::S3::Model::ServerSideEncryptionMapper::GetNameForServerSideEncryption(Aws::S3::Model::ServerSideEncryption::AES256));
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY, base64EncodedAES256Key);
     Aws::Utils::ByteBuffer buffer = Aws::Utils::HashingUtils::Base64Decode(base64EncodedAES256Key);
     Aws::String strBuffer(reinterpret_cast<char*>(buffer.GetUnderlyingData()), buffer.GetLength());
     customizedHeaders.emplace(Aws::S3::SSEHeaders::SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY_MD5, Aws::Utils::HashingUtils::Base64Encode(Aws::Utils::HashingUtils::CalculateMD5(strBuffer)));
-    return AWSClient::GeneratePresignedUrl(uri, method, customizedHeaders, expirationInSeconds);
+    return AWSClient::GeneratePresignedUrl(uri, method, computeEndpointOutcome.GetResult().second.c_str(), customizedHeaders, expirationInSeconds);
 }
-Aws::String S3Client::ComputeEndpointString(const Aws::String& bucket) const
+
+ComputeEndpointOutcome S3Client::ComputeEndpointString(const Aws::String& bucketOrArn) const
 {
     Aws::StringStream ss;
+    Aws::String bucket = bucketOrArn;
+    Aws::String signerRegion = m_region;
+    S3ARN arn(bucketOrArn);
+
+    if (arn)
+    {
+        if (m_useCustomEndpoint)
+        {
+            return ComputeEndpointOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION",
+                "Custom endpoint is not compatible with Access Point ARN in Bucket field.", false));
+        }
+
+        if (!m_useVirtualAddressing)
+        {
+            return ComputeEndpointOutcome(Aws::Client::AWSError<S3Errors>(S3Errors::VALIDATION, "VALIDATION",
+                "Path style addressing is not compatible with Access Point ARN in Bucket field, please consider using virtual addressing for this client instead.", false));
+        }
+
+        S3ARNOutcome s3ArnOutcome = m_useArnRegion ? arn.Validate() : arn.Validate(m_region.c_str());
+        if (!s3ArnOutcome.IsSuccess())
+        {
+            return ComputeEndpointOutcome(s3ArnOutcome.GetError());
+        }
+        if (arn.GetResourceType() == ARNResourceType::ACCESSPOINT)
+        {
+            ss << m_scheme << "://" << S3Endpoint::ForAccessPointArn(arn, m_useArnRegion ? "" : m_region, m_useDualStack);
+            signerRegion = m_useArnRegion ? arn.GetRegion() : m_region;
+            if (signerRegion == "fips-us-gov-west-1")
+            {
+                signerRegion = "us-gov-west-1";
+            }
+            return ComputeEndpointOutcome(EndpointRegionPair(ss.str(), signerRegion));
+        }
+    }
+
     // when using virtual hosting of buckets, the bucket name has to follow some rules.
     // Mainly, it has to be a valid DNS label, and it must be lowercase.
     // For more information see http://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#VirtualHostingSpecifyBucket
-    if(m_useVirtualAdressing && Aws::Utils::IsValidDnsLabel(bucket) &&
-            bucket == Aws::Utils::StringUtils::ToLower(bucket.c_str()))
+    if(m_useVirtualAddressing && Aws::Utils::IsValidDnsLabel(bucket) &&
+        bucket == Aws::Utils::StringUtils::ToLower(bucket.c_str()))
     {
         ss << m_scheme << "://" << bucket << "." << m_baseUri;
     }
@@ -3932,14 +4463,25 @@ Aws::String S3Client::ComputeEndpointString(const Aws::String& bucket) const
     {
         ss << m_scheme << "://" << m_baseUri << "/" << bucket;
     }
-    return ss.str();
+
+    if (m_region == "fips-us-gov-west-1")
+    {
+      signerRegion = "us-gov-west-1";
+    }
+
+    return ComputeEndpointOutcome(EndpointRegionPair(ss.str(), signerRegion));
 }
 
-Aws::String S3Client::ComputeEndpointString() const
+ComputeEndpointOutcome S3Client::ComputeEndpointString() const
 {
+    Aws::String signerRegion = m_region;
     Aws::StringStream ss;
     ss << m_scheme << "://" << m_baseUri;
-    return ss.str();
+    if (m_region == "fips-us-gov-west-1")
+    {
+      signerRegion = "us-gov-west-1";
+    }
+    return ComputeEndpointOutcome(EndpointRegionPair(ss.str(), signerRegion));
 }
 
 bool S3Client::MultipartUploadSupported() const

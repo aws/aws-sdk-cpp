@@ -105,37 +105,100 @@ namespace Model
 
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * direct requests to the access point hostname. The access point hostname takes
+     * the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * direct requests to the access point hostname. The access point hostname takes
+     * the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * direct requests to the access point hostname. The access point hostname takes
+     * the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * direct requests to the access point hostname. The access point hostname takes
+     * the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline void SetName(const char* value) { m_name.assign(value); }
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * direct requests to the access point hostname. The access point hostname takes
+     * the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline ListObjectsV2Result& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * direct requests to the access point hostname. The access point hostname takes
+     * the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline ListObjectsV2Result& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the bucket.</p>
+     * <p>Bucket name. </p> <p>When using this API with an access point, you must
+     * direct requests to the access point hostname. The access point hostname takes
+     * the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this operation using an access point through the AWS SDKs, you
+     * provide the access point ARN in place of the bucket name. For more information
+     * about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html">Using
+     * Access Points</a> in the <i>Amazon Simple Storage Service Developer
+     * Guide</i>.</p>
      */
     inline ListObjectsV2Result& WithName(const char* value) { SetName(value); return *this;}
 
@@ -181,7 +244,7 @@ namespace Model
      * occurrence of the delimiter to be rolled up into a single result element in the
      * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
      * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>MaxKeys</code> value.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
@@ -190,7 +253,7 @@ namespace Model
      * occurrence of the delimiter to be rolled up into a single result element in the
      * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
      * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>MaxKeys</code> value.</p>
      */
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
 
@@ -199,7 +262,7 @@ namespace Model
      * occurrence of the delimiter to be rolled up into a single result element in the
      * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
      * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>MaxKeys</code> value.</p>
      */
     inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
 
@@ -208,7 +271,7 @@ namespace Model
      * occurrence of the delimiter to be rolled up into a single result element in the
      * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
      * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>MaxKeys</code> value.</p>
      */
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
@@ -217,7 +280,7 @@ namespace Model
      * occurrence of the delimiter to be rolled up into a single result element in the
      * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
      * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>MaxKeys</code> value.</p>
      */
     inline ListObjectsV2Result& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
@@ -226,7 +289,7 @@ namespace Model
      * occurrence of the delimiter to be rolled up into a single result element in the
      * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
      * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>MaxKeys</code> value.</p>
      */
     inline ListObjectsV2Result& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
@@ -235,7 +298,7 @@ namespace Model
      * occurrence of the delimiter to be rolled up into a single result element in the
      * CommonPrefixes collection. These rolled-up keys are not returned elsewhere in
      * the response. Each rolled-up result counts as only one return against the
-     * MaxKeys value.</p>
+     * <code>MaxKeys</code> value.</p>
      */
     inline ListObjectsV2Result& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
@@ -477,57 +540,64 @@ namespace Model
 
 
     /**
-     * <p>NextContinuationToken is sent when isTruncated is true which means there are
-     * more keys in the bucket that can be listed. The next list requests to Amazon S3
-     * can be continued with this NextContinuationToken. NextContinuationToken is
+     * <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is
+     * true, which means there are more keys in the bucket that can be listed. The next
+     * list requests to Amazon S3 can be continued with this
+     * <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is
      * obfuscated and is not a real key</p>
      */
     inline const Aws::String& GetNextContinuationToken() const{ return m_nextContinuationToken; }
 
     /**
-     * <p>NextContinuationToken is sent when isTruncated is true which means there are
-     * more keys in the bucket that can be listed. The next list requests to Amazon S3
-     * can be continued with this NextContinuationToken. NextContinuationToken is
+     * <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is
+     * true, which means there are more keys in the bucket that can be listed. The next
+     * list requests to Amazon S3 can be continued with this
+     * <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is
      * obfuscated and is not a real key</p>
      */
     inline void SetNextContinuationToken(const Aws::String& value) { m_nextContinuationToken = value; }
 
     /**
-     * <p>NextContinuationToken is sent when isTruncated is true which means there are
-     * more keys in the bucket that can be listed. The next list requests to Amazon S3
-     * can be continued with this NextContinuationToken. NextContinuationToken is
+     * <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is
+     * true, which means there are more keys in the bucket that can be listed. The next
+     * list requests to Amazon S3 can be continued with this
+     * <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is
      * obfuscated and is not a real key</p>
      */
     inline void SetNextContinuationToken(Aws::String&& value) { m_nextContinuationToken = std::move(value); }
 
     /**
-     * <p>NextContinuationToken is sent when isTruncated is true which means there are
-     * more keys in the bucket that can be listed. The next list requests to Amazon S3
-     * can be continued with this NextContinuationToken. NextContinuationToken is
+     * <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is
+     * true, which means there are more keys in the bucket that can be listed. The next
+     * list requests to Amazon S3 can be continued with this
+     * <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is
      * obfuscated and is not a real key</p>
      */
     inline void SetNextContinuationToken(const char* value) { m_nextContinuationToken.assign(value); }
 
     /**
-     * <p>NextContinuationToken is sent when isTruncated is true which means there are
-     * more keys in the bucket that can be listed. The next list requests to Amazon S3
-     * can be continued with this NextContinuationToken. NextContinuationToken is
+     * <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is
+     * true, which means there are more keys in the bucket that can be listed. The next
+     * list requests to Amazon S3 can be continued with this
+     * <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is
      * obfuscated and is not a real key</p>
      */
     inline ListObjectsV2Result& WithNextContinuationToken(const Aws::String& value) { SetNextContinuationToken(value); return *this;}
 
     /**
-     * <p>NextContinuationToken is sent when isTruncated is true which means there are
-     * more keys in the bucket that can be listed. The next list requests to Amazon S3
-     * can be continued with this NextContinuationToken. NextContinuationToken is
+     * <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is
+     * true, which means there are more keys in the bucket that can be listed. The next
+     * list requests to Amazon S3 can be continued with this
+     * <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is
      * obfuscated and is not a real key</p>
      */
     inline ListObjectsV2Result& WithNextContinuationToken(Aws::String&& value) { SetNextContinuationToken(std::move(value)); return *this;}
 
     /**
-     * <p>NextContinuationToken is sent when isTruncated is true which means there are
-     * more keys in the bucket that can be listed. The next list requests to Amazon S3
-     * can be continued with this NextContinuationToken. NextContinuationToken is
+     * <p> <code>NextContinuationToken</code> is sent when <code>isTruncated</code> is
+     * true, which means there are more keys in the bucket that can be listed. The next
+     * list requests to Amazon S3 can be continued with this
+     * <code>NextContinuationToken</code>. <code>NextContinuationToken</code> is
      * obfuscated and is not a real key</p>
      */
     inline ListObjectsV2Result& WithNextContinuationToken(const char* value) { SetNextContinuationToken(value); return *this;}

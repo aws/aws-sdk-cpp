@@ -47,99 +47,139 @@ namespace Model
   public:
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
+     * selects one for you. If you create more than one subnet in your VPC, we do not
+     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
+     * in a Local Zone, set this value to the Local Zone ID, for example
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
+     * Local Zones, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
+     * selects one for you. If you create more than one subnet in your VPC, we do not
+     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
+     * in a Local Zone, set this value to the Local Zone ID, for example
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
+     * Local Zones, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
+     * selects one for you. If you create more than one subnet in your VPC, we do not
+     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
+     * in a Local Zone, set this value to the Local Zone ID, for example
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
+     * Local Zones, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
+     * selects one for you. If you create more than one subnet in your VPC, we do not
+     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
+     * in a Local Zone, set this value to the Local Zone ID, for example
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
+     * Local Zones, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
+     * selects one for you. If you create more than one subnet in your VPC, we do not
+     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
+     * in a Local Zone, set this value to the Local Zone ID, for example
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
+     * Local Zones, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
+     * selects one for you. If you create more than one subnet in your VPC, we do not
+     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
+     * in a Local Zone, set this value to the Local Zone ID, for example
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
+     * Local Zones, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
+     * selects one for you. If you create more than one subnet in your VPC, we do not
+     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
+     * in a Local Zone, set this value to the Local Zone ID, for example
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
+     * Local Zones, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
-     * you. If you create more than one subnet in your VPC, we may not necessarily
-     * select a different zone for each subnet.</p>
+     * <p>The Availability Zone or Local Zone for the subnet.</p> <p>Default: AWS
+     * selects one for you. If you create more than one subnet in your VPC, we do not
+     * necessarily select a different zone for each subnet.</p> <p>To create a subnet
+     * in a Local Zone, set this value to the Local Zone ID, for example
+     * <code>us-west-2-lax-1a</code>. For information about the Regions that support
+     * Local Zones, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions">Available
+     * Regions</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 
 
     /**
-     * <p>The AZ ID of the subnet.</p>
+     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
      */
     inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
 
     /**
-     * <p>The AZ ID of the subnet.</p>
+     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
      */
     inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
 
     /**
-     * <p>The AZ ID of the subnet.</p>
+     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
      */
     inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
 
     /**
-     * <p>The AZ ID of the subnet.</p>
+     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
      */
     inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
 
     /**
-     * <p>The AZ ID of the subnet.</p>
+     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
      */
     inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
 
     /**
-     * <p>The AZ ID of the subnet.</p>
+     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
 
     /**
-     * <p>The AZ ID of the subnet.</p>
+     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
 
     /**
-     * <p>The AZ ID of the subnet.</p>
+     * <p>The AZ ID or the Local Zone ID of the subnet.</p>
      */
     inline CreateSubnetRequest& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
 
@@ -243,6 +283,47 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+     */
+    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+     */
+    inline bool OutpostArnHasBeenSet() const { return m_outpostArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+     */
+    inline void SetOutpostArn(const Aws::String& value) { m_outpostArnHasBeenSet = true; m_outpostArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+     */
+    inline void SetOutpostArn(Aws::String&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+     */
+    inline void SetOutpostArn(const char* value) { m_outpostArnHasBeenSet = true; m_outpostArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+     */
+    inline CreateSubnetRequest& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+     */
+    inline CreateSubnetRequest& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Outpost.</p>
+     */
+    inline CreateSubnetRequest& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+
+
+    /**
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
@@ -328,6 +409,9 @@ namespace Model
 
     Aws::String m_ipv6CidrBlock;
     bool m_ipv6CidrBlockHasBeenSet;
+
+    Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet;
 
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;

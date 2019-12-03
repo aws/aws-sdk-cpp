@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes how a uncompressed comma-separated values (CSV)-formatted input
+   * <p>Describes how an uncompressed comma-separated values (CSV)-formatted input
    * object is formatted.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CSVInput">AWS API
    * Reference</a></p>

@@ -48,38 +48,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket is created in US East (N. Virginia) Region (us-east-1).</p>
+     * <p>Specifies the Region where the bucket will be created. If you don't specify a
+     * Region, the bucket is created in the US East (N. Virginia) Region
+     * (us-east-1).</p>
      */
     inline const BucketLocationConstraint& GetLocationConstraint() const{ return m_locationConstraint; }
 
     /**
-     * <p>Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket is created in US East (N. Virginia) Region (us-east-1).</p>
+     * <p>Specifies the Region where the bucket will be created. If you don't specify a
+     * Region, the bucket is created in the US East (N. Virginia) Region
+     * (us-east-1).</p>
      */
     inline bool LocationConstraintHasBeenSet() const { return m_locationConstraintHasBeenSet; }
 
     /**
-     * <p>Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket is created in US East (N. Virginia) Region (us-east-1).</p>
+     * <p>Specifies the Region where the bucket will be created. If you don't specify a
+     * Region, the bucket is created in the US East (N. Virginia) Region
+     * (us-east-1).</p>
      */
     inline void SetLocationConstraint(const BucketLocationConstraint& value) { m_locationConstraintHasBeenSet = true; m_locationConstraint = value; }
 
     /**
-     * <p>Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket is created in US East (N. Virginia) Region (us-east-1).</p>
+     * <p>Specifies the Region where the bucket will be created. If you don't specify a
+     * Region, the bucket is created in the US East (N. Virginia) Region
+     * (us-east-1).</p>
      */
     inline void SetLocationConstraint(BucketLocationConstraint&& value) { m_locationConstraintHasBeenSet = true; m_locationConstraint = std::move(value); }
 
     /**
-     * <p>Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket is created in US East (N. Virginia) Region (us-east-1).</p>
+     * <p>Specifies the Region where the bucket will be created. If you don't specify a
+     * Region, the bucket is created in the US East (N. Virginia) Region
+     * (us-east-1).</p>
      */
     inline CreateBucketConfiguration& WithLocationConstraint(const BucketLocationConstraint& value) { SetLocationConstraint(value); return *this;}
 
     /**
-     * <p>Specifies the region where the bucket will be created. If you don't specify a
-     * region, the bucket is created in US East (N. Virginia) Region (us-east-1).</p>
+     * <p>Specifies the Region where the bucket will be created. If you don't specify a
+     * Region, the bucket is created in the US East (N. Virginia) Region
+     * (us-east-1).</p>
      */
     inline CreateBucketConfiguration& WithLocationConstraint(BucketLocationConstraint&& value) { SetLocationConstraint(std::move(value)); return *this;}
 

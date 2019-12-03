@@ -51,6 +51,27 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether acceleration is enabled for the VPN connection.</p>
+     */
+    inline bool GetEnableAcceleration() const{ return m_enableAcceleration; }
+
+    /**
+     * <p>Indicates whether acceleration is enabled for the VPN connection.</p>
+     */
+    inline bool EnableAccelerationHasBeenSet() const { return m_enableAccelerationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether acceleration is enabled for the VPN connection.</p>
+     */
+    inline void SetEnableAcceleration(bool value) { m_enableAccelerationHasBeenSet = true; m_enableAcceleration = value; }
+
+    /**
+     * <p>Indicates whether acceleration is enabled for the VPN connection.</p>
+     */
+    inline VpnConnectionOptions& WithEnableAcceleration(bool value) { SetEnableAcceleration(value); return *this;}
+
+
+    /**
      * <p>Indicates whether the VPN connection uses static routes only. Static routes
      * must be used for devices that don't support BGP.</p>
      */
@@ -116,6 +137,9 @@ namespace Model
     inline VpnConnectionOptions& AddTunnelOptions(TunnelOption&& value) { m_tunnelOptionsHasBeenSet = true; m_tunnelOptions.push_back(std::move(value)); return *this; }
 
   private:
+
+    bool m_enableAcceleration;
+    bool m_enableAccelerationHasBeenSet;
 
     bool m_staticRoutesOnly;
     bool m_staticRoutesOnlyHasBeenSet;

@@ -70,6 +70,7 @@ Instance::Instance() :
     m_elasticGpuAssociationsHasBeenSet(false),
     m_elasticInferenceAcceleratorAssociationsHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_rootDeviceNameHasBeenSet(false),
     m_rootDeviceType(DeviceType::NOT_SET),
     m_rootDeviceTypeHasBeenSet(false),
@@ -131,6 +132,7 @@ Instance::Instance(const XmlNode& xmlNode) :
     m_elasticGpuAssociationsHasBeenSet(false),
     m_elasticInferenceAcceleratorAssociationsHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
+    m_outpostArnHasBeenSet(false),
     m_rootDeviceNameHasBeenSet(false),
     m_rootDeviceType(DeviceType::NOT_SET),
     m_rootDeviceTypeHasBeenSet(false),
@@ -374,6 +376,12 @@ Instance& Instance::operator =(const XmlNode& xmlNode)
       }
 
       m_networkInterfacesHasBeenSet = true;
+    }
+    XmlNode outpostArnNode = resultNode.FirstChild("outpostArn");
+    if(!outpostArnNode.IsNull())
+    {
+      m_outpostArn = Aws::Utils::Xml::DecodeEscapedXmlText(outpostArnNode.GetText());
+      m_outpostArnHasBeenSet = true;
     }
     XmlNode rootDeviceNameNode = resultNode.FirstChild("rootDeviceName");
     if(!rootDeviceNameNode.IsNull())
@@ -683,6 +691,11 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location, unsig
       }
   }
 
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
+  }
+
   if(m_rootDeviceNameHasBeenSet)
   {
       oStream << location << index << locationValue << ".RootDeviceName=" << StringUtils::URLEncode(m_rootDeviceName.c_str()) << "&";
@@ -951,6 +964,10 @@ void Instance::OutputToStream(Aws::OStream& oStream, const char* location) const
         networkInterfacesSs << location <<  ".NetworkInterfaceSet." << networkInterfacesIdx++;
         item.OutputToStream(oStream, networkInterfacesSs.str().c_str());
       }
+  }
+  if(m_outpostArnHasBeenSet)
+  {
+      oStream << location << ".OutpostArn=" << StringUtils::URLEncode(m_outpostArn.c_str()) << "&";
   }
   if(m_rootDeviceNameHasBeenSet)
   {

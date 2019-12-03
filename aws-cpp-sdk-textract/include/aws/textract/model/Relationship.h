@@ -55,43 +55,55 @@ namespace Model
 
     /**
      * <p>The type of relationship that the blocks in the IDs array have with the
-     * current block. The relationship can be <code>VALUE</code> or
-     * <code>CHILD</code>.</p>
+     * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
+     * A relationship of type VALUE is a list that contains the ID of the VALUE block
+     * that's associated with the KEY of a key-value pair. A relationship of type CHILD
+     * is a list of IDs that identify WORD blocks.</p>
      */
     inline const RelationshipType& GetType() const{ return m_type; }
 
     /**
      * <p>The type of relationship that the blocks in the IDs array have with the
-     * current block. The relationship can be <code>VALUE</code> or
-     * <code>CHILD</code>.</p>
+     * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
+     * A relationship of type VALUE is a list that contains the ID of the VALUE block
+     * that's associated with the KEY of a key-value pair. A relationship of type CHILD
+     * is a list of IDs that identify WORD blocks.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of relationship that the blocks in the IDs array have with the
-     * current block. The relationship can be <code>VALUE</code> or
-     * <code>CHILD</code>.</p>
+     * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
+     * A relationship of type VALUE is a list that contains the ID of the VALUE block
+     * that's associated with the KEY of a key-value pair. A relationship of type CHILD
+     * is a list of IDs that identify WORD blocks.</p>
      */
     inline void SetType(const RelationshipType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The type of relationship that the blocks in the IDs array have with the
-     * current block. The relationship can be <code>VALUE</code> or
-     * <code>CHILD</code>.</p>
+     * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
+     * A relationship of type VALUE is a list that contains the ID of the VALUE block
+     * that's associated with the KEY of a key-value pair. A relationship of type CHILD
+     * is a list of IDs that identify WORD blocks.</p>
      */
     inline void SetType(RelationshipType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The type of relationship that the blocks in the IDs array have with the
-     * current block. The relationship can be <code>VALUE</code> or
-     * <code>CHILD</code>.</p>
+     * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
+     * A relationship of type VALUE is a list that contains the ID of the VALUE block
+     * that's associated with the KEY of a key-value pair. A relationship of type CHILD
+     * is a list of IDs that identify WORD blocks.</p>
      */
     inline Relationship& WithType(const RelationshipType& value) { SetType(value); return *this;}
 
     /**
      * <p>The type of relationship that the blocks in the IDs array have with the
-     * current block. The relationship can be <code>VALUE</code> or
-     * <code>CHILD</code>.</p>
+     * current block. The relationship can be <code>VALUE</code> or <code>CHILD</code>.
+     * A relationship of type VALUE is a list that contains the ID of the VALUE block
+     * that's associated with the KEY of a key-value pair. A relationship of type CHILD
+     * is a list of IDs that identify WORD blocks.</p>
      */
     inline Relationship& WithType(RelationshipType&& value) { SetType(std::move(value)); return *this;}
 
