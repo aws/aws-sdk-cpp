@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/states/model/StateMachineType.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
 
@@ -171,6 +172,37 @@ namespace Model
 
 
     /**
+     * <p/>
+     */
+    inline const StateMachineType& GetType() const{ return m_type; }
+
+    /**
+     * <p/>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetType(const StateMachineType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetType(StateMachineType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline StateMachineListItem& WithType(const StateMachineType& value) { SetType(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline StateMachineListItem& WithType(StateMachineType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The date the state machine is created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
@@ -207,6 +239,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    StateMachineType m_type;
+    bool m_typeHasBeenSet;
 
     Aws::Utils::DateTime m_creationDate;
     bool m_creationDateHasBeenSet;

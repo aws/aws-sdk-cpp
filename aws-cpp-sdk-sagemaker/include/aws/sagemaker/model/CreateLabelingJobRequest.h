@@ -506,38 +506,38 @@ namespace Model
 
 
     /**
-     * <p>Configures the information required for human workers to complete a labeling
-     * task.</p>
+     * <p>Configures the labeling task and how it is presented to workers; including,
+     * but not limited to price, keywords, and batch size (task count).</p>
      */
     inline const HumanTaskConfig& GetHumanTaskConfig() const{ return m_humanTaskConfig; }
 
     /**
-     * <p>Configures the information required for human workers to complete a labeling
-     * task.</p>
+     * <p>Configures the labeling task and how it is presented to workers; including,
+     * but not limited to price, keywords, and batch size (task count).</p>
      */
     inline bool HumanTaskConfigHasBeenSet() const { return m_humanTaskConfigHasBeenSet; }
 
     /**
-     * <p>Configures the information required for human workers to complete a labeling
-     * task.</p>
+     * <p>Configures the labeling task and how it is presented to workers; including,
+     * but not limited to price, keywords, and batch size (task count).</p>
      */
     inline void SetHumanTaskConfig(const HumanTaskConfig& value) { m_humanTaskConfigHasBeenSet = true; m_humanTaskConfig = value; }
 
     /**
-     * <p>Configures the information required for human workers to complete a labeling
-     * task.</p>
+     * <p>Configures the labeling task and how it is presented to workers; including,
+     * but not limited to price, keywords, and batch size (task count).</p>
      */
     inline void SetHumanTaskConfig(HumanTaskConfig&& value) { m_humanTaskConfigHasBeenSet = true; m_humanTaskConfig = std::move(value); }
 
     /**
-     * <p>Configures the information required for human workers to complete a labeling
-     * task.</p>
+     * <p>Configures the labeling task and how it is presented to workers; including,
+     * but not limited to price, keywords, and batch size (task count).</p>
      */
     inline CreateLabelingJobRequest& WithHumanTaskConfig(const HumanTaskConfig& value) { SetHumanTaskConfig(value); return *this;}
 
     /**
-     * <p>Configures the information required for human workers to complete a labeling
-     * task.</p>
+     * <p>Configures the labeling task and how it is presented to workers; including,
+     * but not limited to price, keywords, and batch size (task count).</p>
      */
     inline CreateLabelingJobRequest& WithHumanTaskConfig(HumanTaskConfig&& value) { SetHumanTaskConfig(std::move(value)); return *this;}
 

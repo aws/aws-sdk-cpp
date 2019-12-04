@@ -22,64 +22,112 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/sagemaker/model/AddTagsResult.h>
+#include <aws/sagemaker/model/AssociateTrialComponentResult.h>
 #include <aws/sagemaker/model/CreateAlgorithmResult.h>
+#include <aws/sagemaker/model/CreateAppResult.h>
+#include <aws/sagemaker/model/CreateAutoMLJobResult.h>
 #include <aws/sagemaker/model/CreateCodeRepositoryResult.h>
 #include <aws/sagemaker/model/CreateCompilationJobResult.h>
+#include <aws/sagemaker/model/CreateDomainResult.h>
 #include <aws/sagemaker/model/CreateEndpointResult.h>
 #include <aws/sagemaker/model/CreateEndpointConfigResult.h>
+#include <aws/sagemaker/model/CreateExperimentResult.h>
+#include <aws/sagemaker/model/CreateFlowDefinitionResult.h>
+#include <aws/sagemaker/model/CreateHumanTaskUiResult.h>
 #include <aws/sagemaker/model/CreateHyperParameterTuningJobResult.h>
 #include <aws/sagemaker/model/CreateLabelingJobResult.h>
 #include <aws/sagemaker/model/CreateModelResult.h>
 #include <aws/sagemaker/model/CreateModelPackageResult.h>
+#include <aws/sagemaker/model/CreateMonitoringScheduleResult.h>
 #include <aws/sagemaker/model/CreateNotebookInstanceResult.h>
 #include <aws/sagemaker/model/CreateNotebookInstanceLifecycleConfigResult.h>
+#include <aws/sagemaker/model/CreatePresignedDomainUrlResult.h>
 #include <aws/sagemaker/model/CreatePresignedNotebookInstanceUrlResult.h>
+#include <aws/sagemaker/model/CreateProcessingJobResult.h>
 #include <aws/sagemaker/model/CreateTrainingJobResult.h>
 #include <aws/sagemaker/model/CreateTransformJobResult.h>
+#include <aws/sagemaker/model/CreateTrialResult.h>
+#include <aws/sagemaker/model/CreateTrialComponentResult.h>
+#include <aws/sagemaker/model/CreateUserProfileResult.h>
 #include <aws/sagemaker/model/CreateWorkteamResult.h>
+#include <aws/sagemaker/model/DeleteExperimentResult.h>
+#include <aws/sagemaker/model/DeleteFlowDefinitionResult.h>
 #include <aws/sagemaker/model/DeleteTagsResult.h>
+#include <aws/sagemaker/model/DeleteTrialResult.h>
+#include <aws/sagemaker/model/DeleteTrialComponentResult.h>
 #include <aws/sagemaker/model/DeleteWorkteamResult.h>
 #include <aws/sagemaker/model/DescribeAlgorithmResult.h>
+#include <aws/sagemaker/model/DescribeAppResult.h>
+#include <aws/sagemaker/model/DescribeAutoMLJobResult.h>
 #include <aws/sagemaker/model/DescribeCodeRepositoryResult.h>
 #include <aws/sagemaker/model/DescribeCompilationJobResult.h>
+#include <aws/sagemaker/model/DescribeDomainResult.h>
 #include <aws/sagemaker/model/DescribeEndpointResult.h>
 #include <aws/sagemaker/model/DescribeEndpointConfigResult.h>
+#include <aws/sagemaker/model/DescribeExperimentResult.h>
+#include <aws/sagemaker/model/DescribeFlowDefinitionResult.h>
+#include <aws/sagemaker/model/DescribeHumanTaskUiResult.h>
 #include <aws/sagemaker/model/DescribeHyperParameterTuningJobResult.h>
 #include <aws/sagemaker/model/DescribeLabelingJobResult.h>
 #include <aws/sagemaker/model/DescribeModelResult.h>
 #include <aws/sagemaker/model/DescribeModelPackageResult.h>
+#include <aws/sagemaker/model/DescribeMonitoringScheduleResult.h>
 #include <aws/sagemaker/model/DescribeNotebookInstanceResult.h>
 #include <aws/sagemaker/model/DescribeNotebookInstanceLifecycleConfigResult.h>
+#include <aws/sagemaker/model/DescribeProcessingJobResult.h>
 #include <aws/sagemaker/model/DescribeSubscribedWorkteamResult.h>
 #include <aws/sagemaker/model/DescribeTrainingJobResult.h>
 #include <aws/sagemaker/model/DescribeTransformJobResult.h>
+#include <aws/sagemaker/model/DescribeTrialResult.h>
+#include <aws/sagemaker/model/DescribeTrialComponentResult.h>
+#include <aws/sagemaker/model/DescribeUserProfileResult.h>
 #include <aws/sagemaker/model/DescribeWorkteamResult.h>
+#include <aws/sagemaker/model/DisassociateTrialComponentResult.h>
 #include <aws/sagemaker/model/GetSearchSuggestionsResult.h>
 #include <aws/sagemaker/model/ListAlgorithmsResult.h>
+#include <aws/sagemaker/model/ListAppsResult.h>
+#include <aws/sagemaker/model/ListAutoMLJobsResult.h>
+#include <aws/sagemaker/model/ListCandidatesForAutoMLJobResult.h>
 #include <aws/sagemaker/model/ListCodeRepositoriesResult.h>
 #include <aws/sagemaker/model/ListCompilationJobsResult.h>
+#include <aws/sagemaker/model/ListDomainsResult.h>
 #include <aws/sagemaker/model/ListEndpointConfigsResult.h>
 #include <aws/sagemaker/model/ListEndpointsResult.h>
+#include <aws/sagemaker/model/ListExperimentsResult.h>
+#include <aws/sagemaker/model/ListFlowDefinitionsResult.h>
+#include <aws/sagemaker/model/ListHumanTaskUisResult.h>
 #include <aws/sagemaker/model/ListHyperParameterTuningJobsResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsResult.h>
 #include <aws/sagemaker/model/ListLabelingJobsForWorkteamResult.h>
 #include <aws/sagemaker/model/ListModelPackagesResult.h>
 #include <aws/sagemaker/model/ListModelsResult.h>
+#include <aws/sagemaker/model/ListMonitoringExecutionsResult.h>
+#include <aws/sagemaker/model/ListMonitoringSchedulesResult.h>
 #include <aws/sagemaker/model/ListNotebookInstanceLifecycleConfigsResult.h>
 #include <aws/sagemaker/model/ListNotebookInstancesResult.h>
+#include <aws/sagemaker/model/ListProcessingJobsResult.h>
 #include <aws/sagemaker/model/ListSubscribedWorkteamsResult.h>
 #include <aws/sagemaker/model/ListTagsResult.h>
 #include <aws/sagemaker/model/ListTrainingJobsResult.h>
 #include <aws/sagemaker/model/ListTrainingJobsForHyperParameterTuningJobResult.h>
 #include <aws/sagemaker/model/ListTransformJobsResult.h>
+#include <aws/sagemaker/model/ListTrialComponentsResult.h>
+#include <aws/sagemaker/model/ListTrialsResult.h>
+#include <aws/sagemaker/model/ListUserProfilesResult.h>
 #include <aws/sagemaker/model/ListWorkteamsResult.h>
 #include <aws/sagemaker/model/RenderUiTemplateResult.h>
 #include <aws/sagemaker/model/SearchResult.h>
 #include <aws/sagemaker/model/UpdateCodeRepositoryResult.h>
+#include <aws/sagemaker/model/UpdateDomainResult.h>
 #include <aws/sagemaker/model/UpdateEndpointResult.h>
 #include <aws/sagemaker/model/UpdateEndpointWeightsAndCapacitiesResult.h>
+#include <aws/sagemaker/model/UpdateExperimentResult.h>
+#include <aws/sagemaker/model/UpdateMonitoringScheduleResult.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceResult.h>
 #include <aws/sagemaker/model/UpdateNotebookInstanceLifecycleConfigResult.h>
+#include <aws/sagemaker/model/UpdateTrialResult.h>
+#include <aws/sagemaker/model/UpdateTrialComponentResult.h>
+#include <aws/sagemaker/model/UpdateUserProfileResult.h>
 #include <aws/sagemaker/model/UpdateWorkteamResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -122,310 +170,534 @@ namespace SageMaker
 namespace Model
 {
         class AddTagsRequest;
+        class AssociateTrialComponentRequest;
         class CreateAlgorithmRequest;
+        class CreateAppRequest;
+        class CreateAutoMLJobRequest;
         class CreateCodeRepositoryRequest;
         class CreateCompilationJobRequest;
+        class CreateDomainRequest;
         class CreateEndpointRequest;
         class CreateEndpointConfigRequest;
+        class CreateExperimentRequest;
+        class CreateFlowDefinitionRequest;
+        class CreateHumanTaskUiRequest;
         class CreateHyperParameterTuningJobRequest;
         class CreateLabelingJobRequest;
         class CreateModelRequest;
         class CreateModelPackageRequest;
+        class CreateMonitoringScheduleRequest;
         class CreateNotebookInstanceRequest;
         class CreateNotebookInstanceLifecycleConfigRequest;
+        class CreatePresignedDomainUrlRequest;
         class CreatePresignedNotebookInstanceUrlRequest;
+        class CreateProcessingJobRequest;
         class CreateTrainingJobRequest;
         class CreateTransformJobRequest;
+        class CreateTrialRequest;
+        class CreateTrialComponentRequest;
+        class CreateUserProfileRequest;
         class CreateWorkteamRequest;
         class DeleteAlgorithmRequest;
+        class DeleteAppRequest;
         class DeleteCodeRepositoryRequest;
+        class DeleteDomainRequest;
         class DeleteEndpointRequest;
         class DeleteEndpointConfigRequest;
+        class DeleteExperimentRequest;
+        class DeleteFlowDefinitionRequest;
         class DeleteModelRequest;
         class DeleteModelPackageRequest;
+        class DeleteMonitoringScheduleRequest;
         class DeleteNotebookInstanceRequest;
         class DeleteNotebookInstanceLifecycleConfigRequest;
         class DeleteTagsRequest;
+        class DeleteTrialRequest;
+        class DeleteTrialComponentRequest;
+        class DeleteUserProfileRequest;
         class DeleteWorkteamRequest;
         class DescribeAlgorithmRequest;
+        class DescribeAppRequest;
+        class DescribeAutoMLJobRequest;
         class DescribeCodeRepositoryRequest;
         class DescribeCompilationJobRequest;
+        class DescribeDomainRequest;
         class DescribeEndpointRequest;
         class DescribeEndpointConfigRequest;
+        class DescribeExperimentRequest;
+        class DescribeFlowDefinitionRequest;
+        class DescribeHumanTaskUiRequest;
         class DescribeHyperParameterTuningJobRequest;
         class DescribeLabelingJobRequest;
         class DescribeModelRequest;
         class DescribeModelPackageRequest;
+        class DescribeMonitoringScheduleRequest;
         class DescribeNotebookInstanceRequest;
         class DescribeNotebookInstanceLifecycleConfigRequest;
+        class DescribeProcessingJobRequest;
         class DescribeSubscribedWorkteamRequest;
         class DescribeTrainingJobRequest;
         class DescribeTransformJobRequest;
+        class DescribeTrialRequest;
+        class DescribeTrialComponentRequest;
+        class DescribeUserProfileRequest;
         class DescribeWorkteamRequest;
+        class DisassociateTrialComponentRequest;
         class GetSearchSuggestionsRequest;
         class ListAlgorithmsRequest;
+        class ListAppsRequest;
+        class ListAutoMLJobsRequest;
+        class ListCandidatesForAutoMLJobRequest;
         class ListCodeRepositoriesRequest;
         class ListCompilationJobsRequest;
+        class ListDomainsRequest;
         class ListEndpointConfigsRequest;
         class ListEndpointsRequest;
+        class ListExperimentsRequest;
+        class ListFlowDefinitionsRequest;
+        class ListHumanTaskUisRequest;
         class ListHyperParameterTuningJobsRequest;
         class ListLabelingJobsRequest;
         class ListLabelingJobsForWorkteamRequest;
         class ListModelPackagesRequest;
         class ListModelsRequest;
+        class ListMonitoringExecutionsRequest;
+        class ListMonitoringSchedulesRequest;
         class ListNotebookInstanceLifecycleConfigsRequest;
         class ListNotebookInstancesRequest;
+        class ListProcessingJobsRequest;
         class ListSubscribedWorkteamsRequest;
         class ListTagsRequest;
         class ListTrainingJobsRequest;
         class ListTrainingJobsForHyperParameterTuningJobRequest;
         class ListTransformJobsRequest;
+        class ListTrialComponentsRequest;
+        class ListTrialsRequest;
+        class ListUserProfilesRequest;
         class ListWorkteamsRequest;
         class RenderUiTemplateRequest;
         class SearchRequest;
+        class StartMonitoringScheduleRequest;
         class StartNotebookInstanceRequest;
+        class StopAutoMLJobRequest;
         class StopCompilationJobRequest;
         class StopHyperParameterTuningJobRequest;
         class StopLabelingJobRequest;
+        class StopMonitoringScheduleRequest;
         class StopNotebookInstanceRequest;
+        class StopProcessingJobRequest;
         class StopTrainingJobRequest;
         class StopTransformJobRequest;
         class UpdateCodeRepositoryRequest;
+        class UpdateDomainRequest;
         class UpdateEndpointRequest;
         class UpdateEndpointWeightsAndCapacitiesRequest;
+        class UpdateExperimentRequest;
+        class UpdateMonitoringScheduleRequest;
         class UpdateNotebookInstanceRequest;
         class UpdateNotebookInstanceLifecycleConfigRequest;
+        class UpdateTrialRequest;
+        class UpdateTrialComponentRequest;
+        class UpdateUserProfileRequest;
         class UpdateWorkteamRequest;
 
         typedef Aws::Utils::Outcome<AddTagsResult, Aws::Client::AWSError<SageMakerErrors>> AddTagsOutcome;
+        typedef Aws::Utils::Outcome<AssociateTrialComponentResult, Aws::Client::AWSError<SageMakerErrors>> AssociateTrialComponentOutcome;
         typedef Aws::Utils::Outcome<CreateAlgorithmResult, Aws::Client::AWSError<SageMakerErrors>> CreateAlgorithmOutcome;
+        typedef Aws::Utils::Outcome<CreateAppResult, Aws::Client::AWSError<SageMakerErrors>> CreateAppOutcome;
+        typedef Aws::Utils::Outcome<CreateAutoMLJobResult, Aws::Client::AWSError<SageMakerErrors>> CreateAutoMLJobOutcome;
         typedef Aws::Utils::Outcome<CreateCodeRepositoryResult, Aws::Client::AWSError<SageMakerErrors>> CreateCodeRepositoryOutcome;
         typedef Aws::Utils::Outcome<CreateCompilationJobResult, Aws::Client::AWSError<SageMakerErrors>> CreateCompilationJobOutcome;
+        typedef Aws::Utils::Outcome<CreateDomainResult, Aws::Client::AWSError<SageMakerErrors>> CreateDomainOutcome;
         typedef Aws::Utils::Outcome<CreateEndpointResult, Aws::Client::AWSError<SageMakerErrors>> CreateEndpointOutcome;
         typedef Aws::Utils::Outcome<CreateEndpointConfigResult, Aws::Client::AWSError<SageMakerErrors>> CreateEndpointConfigOutcome;
+        typedef Aws::Utils::Outcome<CreateExperimentResult, Aws::Client::AWSError<SageMakerErrors>> CreateExperimentOutcome;
+        typedef Aws::Utils::Outcome<CreateFlowDefinitionResult, Aws::Client::AWSError<SageMakerErrors>> CreateFlowDefinitionOutcome;
+        typedef Aws::Utils::Outcome<CreateHumanTaskUiResult, Aws::Client::AWSError<SageMakerErrors>> CreateHumanTaskUiOutcome;
         typedef Aws::Utils::Outcome<CreateHyperParameterTuningJobResult, Aws::Client::AWSError<SageMakerErrors>> CreateHyperParameterTuningJobOutcome;
         typedef Aws::Utils::Outcome<CreateLabelingJobResult, Aws::Client::AWSError<SageMakerErrors>> CreateLabelingJobOutcome;
         typedef Aws::Utils::Outcome<CreateModelResult, Aws::Client::AWSError<SageMakerErrors>> CreateModelOutcome;
         typedef Aws::Utils::Outcome<CreateModelPackageResult, Aws::Client::AWSError<SageMakerErrors>> CreateModelPackageOutcome;
+        typedef Aws::Utils::Outcome<CreateMonitoringScheduleResult, Aws::Client::AWSError<SageMakerErrors>> CreateMonitoringScheduleOutcome;
         typedef Aws::Utils::Outcome<CreateNotebookInstanceResult, Aws::Client::AWSError<SageMakerErrors>> CreateNotebookInstanceOutcome;
         typedef Aws::Utils::Outcome<CreateNotebookInstanceLifecycleConfigResult, Aws::Client::AWSError<SageMakerErrors>> CreateNotebookInstanceLifecycleConfigOutcome;
+        typedef Aws::Utils::Outcome<CreatePresignedDomainUrlResult, Aws::Client::AWSError<SageMakerErrors>> CreatePresignedDomainUrlOutcome;
         typedef Aws::Utils::Outcome<CreatePresignedNotebookInstanceUrlResult, Aws::Client::AWSError<SageMakerErrors>> CreatePresignedNotebookInstanceUrlOutcome;
+        typedef Aws::Utils::Outcome<CreateProcessingJobResult, Aws::Client::AWSError<SageMakerErrors>> CreateProcessingJobOutcome;
         typedef Aws::Utils::Outcome<CreateTrainingJobResult, Aws::Client::AWSError<SageMakerErrors>> CreateTrainingJobOutcome;
         typedef Aws::Utils::Outcome<CreateTransformJobResult, Aws::Client::AWSError<SageMakerErrors>> CreateTransformJobOutcome;
+        typedef Aws::Utils::Outcome<CreateTrialResult, Aws::Client::AWSError<SageMakerErrors>> CreateTrialOutcome;
+        typedef Aws::Utils::Outcome<CreateTrialComponentResult, Aws::Client::AWSError<SageMakerErrors>> CreateTrialComponentOutcome;
+        typedef Aws::Utils::Outcome<CreateUserProfileResult, Aws::Client::AWSError<SageMakerErrors>> CreateUserProfileOutcome;
         typedef Aws::Utils::Outcome<CreateWorkteamResult, Aws::Client::AWSError<SageMakerErrors>> CreateWorkteamOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteAlgorithmOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteAppOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteCodeRepositoryOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteDomainOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteEndpointOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteEndpointConfigOutcome;
+        typedef Aws::Utils::Outcome<DeleteExperimentResult, Aws::Client::AWSError<SageMakerErrors>> DeleteExperimentOutcome;
+        typedef Aws::Utils::Outcome<DeleteFlowDefinitionResult, Aws::Client::AWSError<SageMakerErrors>> DeleteFlowDefinitionOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteModelOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteModelPackageOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteMonitoringScheduleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteNotebookInstanceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteNotebookInstanceLifecycleConfigOutcome;
         typedef Aws::Utils::Outcome<DeleteTagsResult, Aws::Client::AWSError<SageMakerErrors>> DeleteTagsOutcome;
+        typedef Aws::Utils::Outcome<DeleteTrialResult, Aws::Client::AWSError<SageMakerErrors>> DeleteTrialOutcome;
+        typedef Aws::Utils::Outcome<DeleteTrialComponentResult, Aws::Client::AWSError<SageMakerErrors>> DeleteTrialComponentOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> DeleteUserProfileOutcome;
         typedef Aws::Utils::Outcome<DeleteWorkteamResult, Aws::Client::AWSError<SageMakerErrors>> DeleteWorkteamOutcome;
         typedef Aws::Utils::Outcome<DescribeAlgorithmResult, Aws::Client::AWSError<SageMakerErrors>> DescribeAlgorithmOutcome;
+        typedef Aws::Utils::Outcome<DescribeAppResult, Aws::Client::AWSError<SageMakerErrors>> DescribeAppOutcome;
+        typedef Aws::Utils::Outcome<DescribeAutoMLJobResult, Aws::Client::AWSError<SageMakerErrors>> DescribeAutoMLJobOutcome;
         typedef Aws::Utils::Outcome<DescribeCodeRepositoryResult, Aws::Client::AWSError<SageMakerErrors>> DescribeCodeRepositoryOutcome;
         typedef Aws::Utils::Outcome<DescribeCompilationJobResult, Aws::Client::AWSError<SageMakerErrors>> DescribeCompilationJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeDomainResult, Aws::Client::AWSError<SageMakerErrors>> DescribeDomainOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointResult, Aws::Client::AWSError<SageMakerErrors>> DescribeEndpointOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointConfigResult, Aws::Client::AWSError<SageMakerErrors>> DescribeEndpointConfigOutcome;
+        typedef Aws::Utils::Outcome<DescribeExperimentResult, Aws::Client::AWSError<SageMakerErrors>> DescribeExperimentOutcome;
+        typedef Aws::Utils::Outcome<DescribeFlowDefinitionResult, Aws::Client::AWSError<SageMakerErrors>> DescribeFlowDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DescribeHumanTaskUiResult, Aws::Client::AWSError<SageMakerErrors>> DescribeHumanTaskUiOutcome;
         typedef Aws::Utils::Outcome<DescribeHyperParameterTuningJobResult, Aws::Client::AWSError<SageMakerErrors>> DescribeHyperParameterTuningJobOutcome;
         typedef Aws::Utils::Outcome<DescribeLabelingJobResult, Aws::Client::AWSError<SageMakerErrors>> DescribeLabelingJobOutcome;
         typedef Aws::Utils::Outcome<DescribeModelResult, Aws::Client::AWSError<SageMakerErrors>> DescribeModelOutcome;
         typedef Aws::Utils::Outcome<DescribeModelPackageResult, Aws::Client::AWSError<SageMakerErrors>> DescribeModelPackageOutcome;
+        typedef Aws::Utils::Outcome<DescribeMonitoringScheduleResult, Aws::Client::AWSError<SageMakerErrors>> DescribeMonitoringScheduleOutcome;
         typedef Aws::Utils::Outcome<DescribeNotebookInstanceResult, Aws::Client::AWSError<SageMakerErrors>> DescribeNotebookInstanceOutcome;
         typedef Aws::Utils::Outcome<DescribeNotebookInstanceLifecycleConfigResult, Aws::Client::AWSError<SageMakerErrors>> DescribeNotebookInstanceLifecycleConfigOutcome;
+        typedef Aws::Utils::Outcome<DescribeProcessingJobResult, Aws::Client::AWSError<SageMakerErrors>> DescribeProcessingJobOutcome;
         typedef Aws::Utils::Outcome<DescribeSubscribedWorkteamResult, Aws::Client::AWSError<SageMakerErrors>> DescribeSubscribedWorkteamOutcome;
         typedef Aws::Utils::Outcome<DescribeTrainingJobResult, Aws::Client::AWSError<SageMakerErrors>> DescribeTrainingJobOutcome;
         typedef Aws::Utils::Outcome<DescribeTransformJobResult, Aws::Client::AWSError<SageMakerErrors>> DescribeTransformJobOutcome;
+        typedef Aws::Utils::Outcome<DescribeTrialResult, Aws::Client::AWSError<SageMakerErrors>> DescribeTrialOutcome;
+        typedef Aws::Utils::Outcome<DescribeTrialComponentResult, Aws::Client::AWSError<SageMakerErrors>> DescribeTrialComponentOutcome;
+        typedef Aws::Utils::Outcome<DescribeUserProfileResult, Aws::Client::AWSError<SageMakerErrors>> DescribeUserProfileOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkteamResult, Aws::Client::AWSError<SageMakerErrors>> DescribeWorkteamOutcome;
+        typedef Aws::Utils::Outcome<DisassociateTrialComponentResult, Aws::Client::AWSError<SageMakerErrors>> DisassociateTrialComponentOutcome;
         typedef Aws::Utils::Outcome<GetSearchSuggestionsResult, Aws::Client::AWSError<SageMakerErrors>> GetSearchSuggestionsOutcome;
         typedef Aws::Utils::Outcome<ListAlgorithmsResult, Aws::Client::AWSError<SageMakerErrors>> ListAlgorithmsOutcome;
+        typedef Aws::Utils::Outcome<ListAppsResult, Aws::Client::AWSError<SageMakerErrors>> ListAppsOutcome;
+        typedef Aws::Utils::Outcome<ListAutoMLJobsResult, Aws::Client::AWSError<SageMakerErrors>> ListAutoMLJobsOutcome;
+        typedef Aws::Utils::Outcome<ListCandidatesForAutoMLJobResult, Aws::Client::AWSError<SageMakerErrors>> ListCandidatesForAutoMLJobOutcome;
         typedef Aws::Utils::Outcome<ListCodeRepositoriesResult, Aws::Client::AWSError<SageMakerErrors>> ListCodeRepositoriesOutcome;
         typedef Aws::Utils::Outcome<ListCompilationJobsResult, Aws::Client::AWSError<SageMakerErrors>> ListCompilationJobsOutcome;
+        typedef Aws::Utils::Outcome<ListDomainsResult, Aws::Client::AWSError<SageMakerErrors>> ListDomainsOutcome;
         typedef Aws::Utils::Outcome<ListEndpointConfigsResult, Aws::Client::AWSError<SageMakerErrors>> ListEndpointConfigsOutcome;
         typedef Aws::Utils::Outcome<ListEndpointsResult, Aws::Client::AWSError<SageMakerErrors>> ListEndpointsOutcome;
+        typedef Aws::Utils::Outcome<ListExperimentsResult, Aws::Client::AWSError<SageMakerErrors>> ListExperimentsOutcome;
+        typedef Aws::Utils::Outcome<ListFlowDefinitionsResult, Aws::Client::AWSError<SageMakerErrors>> ListFlowDefinitionsOutcome;
+        typedef Aws::Utils::Outcome<ListHumanTaskUisResult, Aws::Client::AWSError<SageMakerErrors>> ListHumanTaskUisOutcome;
         typedef Aws::Utils::Outcome<ListHyperParameterTuningJobsResult, Aws::Client::AWSError<SageMakerErrors>> ListHyperParameterTuningJobsOutcome;
         typedef Aws::Utils::Outcome<ListLabelingJobsResult, Aws::Client::AWSError<SageMakerErrors>> ListLabelingJobsOutcome;
         typedef Aws::Utils::Outcome<ListLabelingJobsForWorkteamResult, Aws::Client::AWSError<SageMakerErrors>> ListLabelingJobsForWorkteamOutcome;
         typedef Aws::Utils::Outcome<ListModelPackagesResult, Aws::Client::AWSError<SageMakerErrors>> ListModelPackagesOutcome;
         typedef Aws::Utils::Outcome<ListModelsResult, Aws::Client::AWSError<SageMakerErrors>> ListModelsOutcome;
+        typedef Aws::Utils::Outcome<ListMonitoringExecutionsResult, Aws::Client::AWSError<SageMakerErrors>> ListMonitoringExecutionsOutcome;
+        typedef Aws::Utils::Outcome<ListMonitoringSchedulesResult, Aws::Client::AWSError<SageMakerErrors>> ListMonitoringSchedulesOutcome;
         typedef Aws::Utils::Outcome<ListNotebookInstanceLifecycleConfigsResult, Aws::Client::AWSError<SageMakerErrors>> ListNotebookInstanceLifecycleConfigsOutcome;
         typedef Aws::Utils::Outcome<ListNotebookInstancesResult, Aws::Client::AWSError<SageMakerErrors>> ListNotebookInstancesOutcome;
+        typedef Aws::Utils::Outcome<ListProcessingJobsResult, Aws::Client::AWSError<SageMakerErrors>> ListProcessingJobsOutcome;
         typedef Aws::Utils::Outcome<ListSubscribedWorkteamsResult, Aws::Client::AWSError<SageMakerErrors>> ListSubscribedWorkteamsOutcome;
         typedef Aws::Utils::Outcome<ListTagsResult, Aws::Client::AWSError<SageMakerErrors>> ListTagsOutcome;
         typedef Aws::Utils::Outcome<ListTrainingJobsResult, Aws::Client::AWSError<SageMakerErrors>> ListTrainingJobsOutcome;
         typedef Aws::Utils::Outcome<ListTrainingJobsForHyperParameterTuningJobResult, Aws::Client::AWSError<SageMakerErrors>> ListTrainingJobsForHyperParameterTuningJobOutcome;
         typedef Aws::Utils::Outcome<ListTransformJobsResult, Aws::Client::AWSError<SageMakerErrors>> ListTransformJobsOutcome;
+        typedef Aws::Utils::Outcome<ListTrialComponentsResult, Aws::Client::AWSError<SageMakerErrors>> ListTrialComponentsOutcome;
+        typedef Aws::Utils::Outcome<ListTrialsResult, Aws::Client::AWSError<SageMakerErrors>> ListTrialsOutcome;
+        typedef Aws::Utils::Outcome<ListUserProfilesResult, Aws::Client::AWSError<SageMakerErrors>> ListUserProfilesOutcome;
         typedef Aws::Utils::Outcome<ListWorkteamsResult, Aws::Client::AWSError<SageMakerErrors>> ListWorkteamsOutcome;
         typedef Aws::Utils::Outcome<RenderUiTemplateResult, Aws::Client::AWSError<SageMakerErrors>> RenderUiTemplateOutcome;
         typedef Aws::Utils::Outcome<SearchResult, Aws::Client::AWSError<SageMakerErrors>> SearchOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> StartMonitoringScheduleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> StartNotebookInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> StopAutoMLJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> StopCompilationJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> StopHyperParameterTuningJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> StopLabelingJobOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> StopMonitoringScheduleOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> StopNotebookInstanceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> StopProcessingJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> StopTrainingJobOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<SageMakerErrors>> StopTransformJobOutcome;
         typedef Aws::Utils::Outcome<UpdateCodeRepositoryResult, Aws::Client::AWSError<SageMakerErrors>> UpdateCodeRepositoryOutcome;
+        typedef Aws::Utils::Outcome<UpdateDomainResult, Aws::Client::AWSError<SageMakerErrors>> UpdateDomainOutcome;
         typedef Aws::Utils::Outcome<UpdateEndpointResult, Aws::Client::AWSError<SageMakerErrors>> UpdateEndpointOutcome;
         typedef Aws::Utils::Outcome<UpdateEndpointWeightsAndCapacitiesResult, Aws::Client::AWSError<SageMakerErrors>> UpdateEndpointWeightsAndCapacitiesOutcome;
+        typedef Aws::Utils::Outcome<UpdateExperimentResult, Aws::Client::AWSError<SageMakerErrors>> UpdateExperimentOutcome;
+        typedef Aws::Utils::Outcome<UpdateMonitoringScheduleResult, Aws::Client::AWSError<SageMakerErrors>> UpdateMonitoringScheduleOutcome;
         typedef Aws::Utils::Outcome<UpdateNotebookInstanceResult, Aws::Client::AWSError<SageMakerErrors>> UpdateNotebookInstanceOutcome;
         typedef Aws::Utils::Outcome<UpdateNotebookInstanceLifecycleConfigResult, Aws::Client::AWSError<SageMakerErrors>> UpdateNotebookInstanceLifecycleConfigOutcome;
+        typedef Aws::Utils::Outcome<UpdateTrialResult, Aws::Client::AWSError<SageMakerErrors>> UpdateTrialOutcome;
+        typedef Aws::Utils::Outcome<UpdateTrialComponentResult, Aws::Client::AWSError<SageMakerErrors>> UpdateTrialComponentOutcome;
+        typedef Aws::Utils::Outcome<UpdateUserProfileResult, Aws::Client::AWSError<SageMakerErrors>> UpdateUserProfileOutcome;
         typedef Aws::Utils::Outcome<UpdateWorkteamResult, Aws::Client::AWSError<SageMakerErrors>> UpdateWorkteamOutcome;
 
         typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
+        typedef std::future<AssociateTrialComponentOutcome> AssociateTrialComponentOutcomeCallable;
         typedef std::future<CreateAlgorithmOutcome> CreateAlgorithmOutcomeCallable;
+        typedef std::future<CreateAppOutcome> CreateAppOutcomeCallable;
+        typedef std::future<CreateAutoMLJobOutcome> CreateAutoMLJobOutcomeCallable;
         typedef std::future<CreateCodeRepositoryOutcome> CreateCodeRepositoryOutcomeCallable;
         typedef std::future<CreateCompilationJobOutcome> CreateCompilationJobOutcomeCallable;
+        typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
         typedef std::future<CreateEndpointOutcome> CreateEndpointOutcomeCallable;
         typedef std::future<CreateEndpointConfigOutcome> CreateEndpointConfigOutcomeCallable;
+        typedef std::future<CreateExperimentOutcome> CreateExperimentOutcomeCallable;
+        typedef std::future<CreateFlowDefinitionOutcome> CreateFlowDefinitionOutcomeCallable;
+        typedef std::future<CreateHumanTaskUiOutcome> CreateHumanTaskUiOutcomeCallable;
         typedef std::future<CreateHyperParameterTuningJobOutcome> CreateHyperParameterTuningJobOutcomeCallable;
         typedef std::future<CreateLabelingJobOutcome> CreateLabelingJobOutcomeCallable;
         typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
         typedef std::future<CreateModelPackageOutcome> CreateModelPackageOutcomeCallable;
+        typedef std::future<CreateMonitoringScheduleOutcome> CreateMonitoringScheduleOutcomeCallable;
         typedef std::future<CreateNotebookInstanceOutcome> CreateNotebookInstanceOutcomeCallable;
         typedef std::future<CreateNotebookInstanceLifecycleConfigOutcome> CreateNotebookInstanceLifecycleConfigOutcomeCallable;
+        typedef std::future<CreatePresignedDomainUrlOutcome> CreatePresignedDomainUrlOutcomeCallable;
         typedef std::future<CreatePresignedNotebookInstanceUrlOutcome> CreatePresignedNotebookInstanceUrlOutcomeCallable;
+        typedef std::future<CreateProcessingJobOutcome> CreateProcessingJobOutcomeCallable;
         typedef std::future<CreateTrainingJobOutcome> CreateTrainingJobOutcomeCallable;
         typedef std::future<CreateTransformJobOutcome> CreateTransformJobOutcomeCallable;
+        typedef std::future<CreateTrialOutcome> CreateTrialOutcomeCallable;
+        typedef std::future<CreateTrialComponentOutcome> CreateTrialComponentOutcomeCallable;
+        typedef std::future<CreateUserProfileOutcome> CreateUserProfileOutcomeCallable;
         typedef std::future<CreateWorkteamOutcome> CreateWorkteamOutcomeCallable;
         typedef std::future<DeleteAlgorithmOutcome> DeleteAlgorithmOutcomeCallable;
+        typedef std::future<DeleteAppOutcome> DeleteAppOutcomeCallable;
         typedef std::future<DeleteCodeRepositoryOutcome> DeleteCodeRepositoryOutcomeCallable;
+        typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
         typedef std::future<DeleteEndpointOutcome> DeleteEndpointOutcomeCallable;
         typedef std::future<DeleteEndpointConfigOutcome> DeleteEndpointConfigOutcomeCallable;
+        typedef std::future<DeleteExperimentOutcome> DeleteExperimentOutcomeCallable;
+        typedef std::future<DeleteFlowDefinitionOutcome> DeleteFlowDefinitionOutcomeCallable;
         typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
         typedef std::future<DeleteModelPackageOutcome> DeleteModelPackageOutcomeCallable;
+        typedef std::future<DeleteMonitoringScheduleOutcome> DeleteMonitoringScheduleOutcomeCallable;
         typedef std::future<DeleteNotebookInstanceOutcome> DeleteNotebookInstanceOutcomeCallable;
         typedef std::future<DeleteNotebookInstanceLifecycleConfigOutcome> DeleteNotebookInstanceLifecycleConfigOutcomeCallable;
         typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
+        typedef std::future<DeleteTrialOutcome> DeleteTrialOutcomeCallable;
+        typedef std::future<DeleteTrialComponentOutcome> DeleteTrialComponentOutcomeCallable;
+        typedef std::future<DeleteUserProfileOutcome> DeleteUserProfileOutcomeCallable;
         typedef std::future<DeleteWorkteamOutcome> DeleteWorkteamOutcomeCallable;
         typedef std::future<DescribeAlgorithmOutcome> DescribeAlgorithmOutcomeCallable;
+        typedef std::future<DescribeAppOutcome> DescribeAppOutcomeCallable;
+        typedef std::future<DescribeAutoMLJobOutcome> DescribeAutoMLJobOutcomeCallable;
         typedef std::future<DescribeCodeRepositoryOutcome> DescribeCodeRepositoryOutcomeCallable;
         typedef std::future<DescribeCompilationJobOutcome> DescribeCompilationJobOutcomeCallable;
+        typedef std::future<DescribeDomainOutcome> DescribeDomainOutcomeCallable;
         typedef std::future<DescribeEndpointOutcome> DescribeEndpointOutcomeCallable;
         typedef std::future<DescribeEndpointConfigOutcome> DescribeEndpointConfigOutcomeCallable;
+        typedef std::future<DescribeExperimentOutcome> DescribeExperimentOutcomeCallable;
+        typedef std::future<DescribeFlowDefinitionOutcome> DescribeFlowDefinitionOutcomeCallable;
+        typedef std::future<DescribeHumanTaskUiOutcome> DescribeHumanTaskUiOutcomeCallable;
         typedef std::future<DescribeHyperParameterTuningJobOutcome> DescribeHyperParameterTuningJobOutcomeCallable;
         typedef std::future<DescribeLabelingJobOutcome> DescribeLabelingJobOutcomeCallable;
         typedef std::future<DescribeModelOutcome> DescribeModelOutcomeCallable;
         typedef std::future<DescribeModelPackageOutcome> DescribeModelPackageOutcomeCallable;
+        typedef std::future<DescribeMonitoringScheduleOutcome> DescribeMonitoringScheduleOutcomeCallable;
         typedef std::future<DescribeNotebookInstanceOutcome> DescribeNotebookInstanceOutcomeCallable;
         typedef std::future<DescribeNotebookInstanceLifecycleConfigOutcome> DescribeNotebookInstanceLifecycleConfigOutcomeCallable;
+        typedef std::future<DescribeProcessingJobOutcome> DescribeProcessingJobOutcomeCallable;
         typedef std::future<DescribeSubscribedWorkteamOutcome> DescribeSubscribedWorkteamOutcomeCallable;
         typedef std::future<DescribeTrainingJobOutcome> DescribeTrainingJobOutcomeCallable;
         typedef std::future<DescribeTransformJobOutcome> DescribeTransformJobOutcomeCallable;
+        typedef std::future<DescribeTrialOutcome> DescribeTrialOutcomeCallable;
+        typedef std::future<DescribeTrialComponentOutcome> DescribeTrialComponentOutcomeCallable;
+        typedef std::future<DescribeUserProfileOutcome> DescribeUserProfileOutcomeCallable;
         typedef std::future<DescribeWorkteamOutcome> DescribeWorkteamOutcomeCallable;
+        typedef std::future<DisassociateTrialComponentOutcome> DisassociateTrialComponentOutcomeCallable;
         typedef std::future<GetSearchSuggestionsOutcome> GetSearchSuggestionsOutcomeCallable;
         typedef std::future<ListAlgorithmsOutcome> ListAlgorithmsOutcomeCallable;
+        typedef std::future<ListAppsOutcome> ListAppsOutcomeCallable;
+        typedef std::future<ListAutoMLJobsOutcome> ListAutoMLJobsOutcomeCallable;
+        typedef std::future<ListCandidatesForAutoMLJobOutcome> ListCandidatesForAutoMLJobOutcomeCallable;
         typedef std::future<ListCodeRepositoriesOutcome> ListCodeRepositoriesOutcomeCallable;
         typedef std::future<ListCompilationJobsOutcome> ListCompilationJobsOutcomeCallable;
+        typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
         typedef std::future<ListEndpointConfigsOutcome> ListEndpointConfigsOutcomeCallable;
         typedef std::future<ListEndpointsOutcome> ListEndpointsOutcomeCallable;
+        typedef std::future<ListExperimentsOutcome> ListExperimentsOutcomeCallable;
+        typedef std::future<ListFlowDefinitionsOutcome> ListFlowDefinitionsOutcomeCallable;
+        typedef std::future<ListHumanTaskUisOutcome> ListHumanTaskUisOutcomeCallable;
         typedef std::future<ListHyperParameterTuningJobsOutcome> ListHyperParameterTuningJobsOutcomeCallable;
         typedef std::future<ListLabelingJobsOutcome> ListLabelingJobsOutcomeCallable;
         typedef std::future<ListLabelingJobsForWorkteamOutcome> ListLabelingJobsForWorkteamOutcomeCallable;
         typedef std::future<ListModelPackagesOutcome> ListModelPackagesOutcomeCallable;
         typedef std::future<ListModelsOutcome> ListModelsOutcomeCallable;
+        typedef std::future<ListMonitoringExecutionsOutcome> ListMonitoringExecutionsOutcomeCallable;
+        typedef std::future<ListMonitoringSchedulesOutcome> ListMonitoringSchedulesOutcomeCallable;
         typedef std::future<ListNotebookInstanceLifecycleConfigsOutcome> ListNotebookInstanceLifecycleConfigsOutcomeCallable;
         typedef std::future<ListNotebookInstancesOutcome> ListNotebookInstancesOutcomeCallable;
+        typedef std::future<ListProcessingJobsOutcome> ListProcessingJobsOutcomeCallable;
         typedef std::future<ListSubscribedWorkteamsOutcome> ListSubscribedWorkteamsOutcomeCallable;
         typedef std::future<ListTagsOutcome> ListTagsOutcomeCallable;
         typedef std::future<ListTrainingJobsOutcome> ListTrainingJobsOutcomeCallable;
         typedef std::future<ListTrainingJobsForHyperParameterTuningJobOutcome> ListTrainingJobsForHyperParameterTuningJobOutcomeCallable;
         typedef std::future<ListTransformJobsOutcome> ListTransformJobsOutcomeCallable;
+        typedef std::future<ListTrialComponentsOutcome> ListTrialComponentsOutcomeCallable;
+        typedef std::future<ListTrialsOutcome> ListTrialsOutcomeCallable;
+        typedef std::future<ListUserProfilesOutcome> ListUserProfilesOutcomeCallable;
         typedef std::future<ListWorkteamsOutcome> ListWorkteamsOutcomeCallable;
         typedef std::future<RenderUiTemplateOutcome> RenderUiTemplateOutcomeCallable;
         typedef std::future<SearchOutcome> SearchOutcomeCallable;
+        typedef std::future<StartMonitoringScheduleOutcome> StartMonitoringScheduleOutcomeCallable;
         typedef std::future<StartNotebookInstanceOutcome> StartNotebookInstanceOutcomeCallable;
+        typedef std::future<StopAutoMLJobOutcome> StopAutoMLJobOutcomeCallable;
         typedef std::future<StopCompilationJobOutcome> StopCompilationJobOutcomeCallable;
         typedef std::future<StopHyperParameterTuningJobOutcome> StopHyperParameterTuningJobOutcomeCallable;
         typedef std::future<StopLabelingJobOutcome> StopLabelingJobOutcomeCallable;
+        typedef std::future<StopMonitoringScheduleOutcome> StopMonitoringScheduleOutcomeCallable;
         typedef std::future<StopNotebookInstanceOutcome> StopNotebookInstanceOutcomeCallable;
+        typedef std::future<StopProcessingJobOutcome> StopProcessingJobOutcomeCallable;
         typedef std::future<StopTrainingJobOutcome> StopTrainingJobOutcomeCallable;
         typedef std::future<StopTransformJobOutcome> StopTransformJobOutcomeCallable;
         typedef std::future<UpdateCodeRepositoryOutcome> UpdateCodeRepositoryOutcomeCallable;
+        typedef std::future<UpdateDomainOutcome> UpdateDomainOutcomeCallable;
         typedef std::future<UpdateEndpointOutcome> UpdateEndpointOutcomeCallable;
         typedef std::future<UpdateEndpointWeightsAndCapacitiesOutcome> UpdateEndpointWeightsAndCapacitiesOutcomeCallable;
+        typedef std::future<UpdateExperimentOutcome> UpdateExperimentOutcomeCallable;
+        typedef std::future<UpdateMonitoringScheduleOutcome> UpdateMonitoringScheduleOutcomeCallable;
         typedef std::future<UpdateNotebookInstanceOutcome> UpdateNotebookInstanceOutcomeCallable;
         typedef std::future<UpdateNotebookInstanceLifecycleConfigOutcome> UpdateNotebookInstanceLifecycleConfigOutcomeCallable;
+        typedef std::future<UpdateTrialOutcome> UpdateTrialOutcomeCallable;
+        typedef std::future<UpdateTrialComponentOutcome> UpdateTrialComponentOutcomeCallable;
+        typedef std::future<UpdateUserProfileOutcome> UpdateUserProfileOutcomeCallable;
         typedef std::future<UpdateWorkteamOutcome> UpdateWorkteamOutcomeCallable;
 } // namespace Model
 
   class SageMakerClient;
 
     typedef std::function<void(const SageMakerClient*, const Model::AddTagsRequest&, const Model::AddTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::AssociateTrialComponentRequest&, const Model::AssociateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateAlgorithmRequest&, const Model::CreateAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAlgorithmResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateAppRequest&, const Model::CreateAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAppResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateAutoMLJobRequest&, const Model::CreateAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAutoMLJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateCodeRepositoryRequest&, const Model::CreateCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCodeRepositoryResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateCompilationJobRequest&, const Model::CreateCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCompilationJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateEndpointRequest&, const Model::CreateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateEndpointConfigRequest&, const Model::CreateEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEndpointConfigResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateExperimentRequest&, const Model::CreateExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExperimentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateFlowDefinitionRequest&, const Model::CreateFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateHumanTaskUiRequest&, const Model::CreateHumanTaskUiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHumanTaskUiResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateHyperParameterTuningJobRequest&, const Model::CreateHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateHyperParameterTuningJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateLabelingJobRequest&, const Model::CreateLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLabelingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelRequest&, const Model::CreateModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateModelPackageRequest&, const Model::CreateModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateModelPackageResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateMonitoringScheduleRequest&, const Model::CreateMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateNotebookInstanceRequest&, const Model::CreateNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateNotebookInstanceLifecycleConfigRequest&, const Model::CreateNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNotebookInstanceLifecycleConfigResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreatePresignedDomainUrlRequest&, const Model::CreatePresignedDomainUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresignedDomainUrlResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreatePresignedNotebookInstanceUrlRequest&, const Model::CreatePresignedNotebookInstanceUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreatePresignedNotebookInstanceUrlResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateProcessingJobRequest&, const Model::CreateProcessingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProcessingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateTrainingJobRequest&, const Model::CreateTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrainingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateTransformJobRequest&, const Model::CreateTransformJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTransformJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateTrialRequest&, const Model::CreateTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrialResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateTrialComponentRequest&, const Model::CreateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTrialComponentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::CreateUserProfileRequest&, const Model::CreateUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUserProfileResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::CreateWorkteamRequest&, const Model::CreateWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteAlgorithmRequest&, const Model::DeleteAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAlgorithmResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteAppRequest&, const Model::DeleteAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAppResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteCodeRepositoryRequest&, const Model::DeleteCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCodeRepositoryResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteEndpointRequest&, const Model::DeleteEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteEndpointConfigRequest&, const Model::DeleteEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEndpointConfigResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteExperimentRequest&, const Model::DeleteExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteExperimentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteFlowDefinitionRequest&, const Model::DeleteFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFlowDefinitionResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelRequest&, const Model::DeleteModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteModelPackageRequest&, const Model::DeleteModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteModelPackageResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteMonitoringScheduleRequest&, const Model::DeleteMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteNotebookInstanceRequest&, const Model::DeleteNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteNotebookInstanceLifecycleConfigRequest&, const Model::DeleteNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteTrialRequest&, const Model::DeleteTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrialResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteTrialComponentRequest&, const Model::DeleteTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTrialComponentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DeleteUserProfileRequest&, const Model::DeleteUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserProfileResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DeleteWorkteamRequest&, const Model::DeleteWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeAlgorithmRequest&, const Model::DescribeAlgorithmOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAlgorithmResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeAppRequest&, const Model::DescribeAppOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAppResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeAutoMLJobRequest&, const Model::DescribeAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAutoMLJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeCodeRepositoryRequest&, const Model::DescribeCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCodeRepositoryResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeCompilationJobRequest&, const Model::DescribeCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCompilationJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeDomainRequest&, const Model::DescribeDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeEndpointRequest&, const Model::DescribeEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeEndpointConfigRequest&, const Model::DescribeEndpointConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointConfigResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeExperimentRequest&, const Model::DescribeExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExperimentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeFlowDefinitionRequest&, const Model::DescribeFlowDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFlowDefinitionResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeHumanTaskUiRequest&, const Model::DescribeHumanTaskUiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHumanTaskUiResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeHyperParameterTuningJobRequest&, const Model::DescribeHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHyperParameterTuningJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeLabelingJobRequest&, const Model::DescribeLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLabelingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelRequest&, const Model::DescribeModelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeModelPackageRequest&, const Model::DescribeModelPackageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeModelPackageResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeMonitoringScheduleRequest&, const Model::DescribeMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeNotebookInstanceRequest&, const Model::DescribeNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeNotebookInstanceLifecycleConfigRequest&, const Model::DescribeNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeProcessingJobRequest&, const Model::DescribeProcessingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProcessingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeSubscribedWorkteamRequest&, const Model::DescribeSubscribedWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSubscribedWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeTrainingJobRequest&, const Model::DescribeTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrainingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeTransformJobRequest&, const Model::DescribeTransformJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTransformJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeTrialRequest&, const Model::DescribeTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrialResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeTrialComponentRequest&, const Model::DescribeTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrialComponentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeUserProfileRequest&, const Model::DescribeUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserProfileResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeWorkteamRequest&, const Model::DescribeWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkteamResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DisassociateTrialComponentRequest&, const Model::DisassociateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetSearchSuggestionsRequest&, const Model::GetSearchSuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSearchSuggestionsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListAlgorithmsRequest&, const Model::ListAlgorithmsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAlgorithmsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListAppsRequest&, const Model::ListAppsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAppsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListAutoMLJobsRequest&, const Model::ListAutoMLJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAutoMLJobsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListCandidatesForAutoMLJobRequest&, const Model::ListCandidatesForAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCandidatesForAutoMLJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListCodeRepositoriesRequest&, const Model::ListCodeRepositoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCodeRepositoriesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListCompilationJobsRequest&, const Model::ListCompilationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCompilationJobsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListEndpointConfigsRequest&, const Model::ListEndpointConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointConfigsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListEndpointsRequest&, const Model::ListEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEndpointsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListExperimentsRequest&, const Model::ListExperimentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExperimentsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListFlowDefinitionsRequest&, const Model::ListFlowDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFlowDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListHumanTaskUisRequest&, const Model::ListHumanTaskUisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHumanTaskUisResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListHyperParameterTuningJobsRequest&, const Model::ListHyperParameterTuningJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListHyperParameterTuningJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsRequest&, const Model::ListLabelingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListLabelingJobsForWorkteamRequest&, const Model::ListLabelingJobsForWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLabelingJobsForWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelPackagesRequest&, const Model::ListModelPackagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelPackagesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListModelsRequest&, const Model::ListModelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListModelsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListMonitoringExecutionsRequest&, const Model::ListMonitoringExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMonitoringExecutionsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListMonitoringSchedulesRequest&, const Model::ListMonitoringSchedulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMonitoringSchedulesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListNotebookInstanceLifecycleConfigsRequest&, const Model::ListNotebookInstanceLifecycleConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNotebookInstanceLifecycleConfigsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListNotebookInstancesRequest&, const Model::ListNotebookInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNotebookInstancesResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListProcessingJobsRequest&, const Model::ListProcessingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProcessingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListSubscribedWorkteamsRequest&, const Model::ListSubscribedWorkteamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscribedWorkteamsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListTagsRequest&, const Model::ListTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListTrainingJobsRequest&, const Model::ListTrainingJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrainingJobsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListTrainingJobsForHyperParameterTuningJobRequest&, const Model::ListTrainingJobsForHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrainingJobsForHyperParameterTuningJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListTransformJobsRequest&, const Model::ListTransformJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTransformJobsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListTrialComponentsRequest&, const Model::ListTrialComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrialComponentsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListTrialsRequest&, const Model::ListTrialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrialsResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::ListUserProfilesRequest&, const Model::ListUserProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserProfilesResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::ListWorkteamsRequest&, const Model::ListWorkteamsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkteamsResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::RenderUiTemplateRequest&, const Model::RenderUiTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RenderUiTemplateResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::SearchRequest&, const Model::SearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::StartMonitoringScheduleRequest&, const Model::StartMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StartNotebookInstanceRequest&, const Model::StartNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartNotebookInstanceResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::StopAutoMLJobRequest&, const Model::StopAutoMLJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopAutoMLJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopCompilationJobRequest&, const Model::StopCompilationJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopCompilationJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopHyperParameterTuningJobRequest&, const Model::StopHyperParameterTuningJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopHyperParameterTuningJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopLabelingJobRequest&, const Model::StopLabelingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopLabelingJobResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::StopMonitoringScheduleRequest&, const Model::StopMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopNotebookInstanceRequest&, const Model::StopNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopNotebookInstanceResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::StopProcessingJobRequest&, const Model::StopProcessingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopProcessingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopTrainingJobRequest&, const Model::StopTrainingJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTrainingJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::StopTransformJobRequest&, const Model::StopTransformJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopTransformJobResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateCodeRepositoryRequest&, const Model::UpdateCodeRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCodeRepositoryResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateDomainRequest&, const Model::UpdateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateEndpointRequest&, const Model::UpdateEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateEndpointWeightsAndCapacitiesRequest&, const Model::UpdateEndpointWeightsAndCapacitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateExperimentRequest&, const Model::UpdateExperimentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExperimentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateMonitoringScheduleRequest&, const Model::UpdateMonitoringScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMonitoringScheduleResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateNotebookInstanceRequest&, const Model::UpdateNotebookInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotebookInstanceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateNotebookInstanceLifecycleConfigRequest&, const Model::UpdateNotebookInstanceLifecycleConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateTrialRequest&, const Model::UpdateTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrialResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateTrialComponentRequest&, const Model::UpdateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrialComponentResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateUserProfileRequest&, const Model::UpdateUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserProfileResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateWorkteamRequest&, const Model::UpdateWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkteamResponseReceivedHandler;
 
   /**
@@ -531,6 +803,37 @@ namespace Model
         virtual void AddTagsAsync(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Associates a trial component with a trial. A trial component can be
+         * associated with multiple trials. To disassociate a trial component from a trial,
+         * call the <a>DisassociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AssociateTrialComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateTrialComponentOutcome AssociateTrialComponent(const Model::AssociateTrialComponentRequest& request) const;
+
+        /**
+         * <p>Associates a trial component with a trial. A trial component can be
+         * associated with multiple trials. To disassociate a trial component from a trial,
+         * call the <a>DisassociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AssociateTrialComponent">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateTrialComponentOutcomeCallable AssociateTrialComponentCallable(const Model::AssociateTrialComponentRequest& request) const;
+
+        /**
+         * <p>Associates a trial component with a trial. A trial component can be
+         * associated with multiple trials. To disassociate a trial component from a trial,
+         * call the <a>DisassociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AssociateTrialComponent">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateTrialComponentAsync(const Model::AssociateTrialComponentRequest& request, const AssociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Create a machine learning algorithm that you can use in Amazon SageMaker and
          * list in the AWS Marketplace.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAlgorithm">AWS
@@ -557,6 +860,77 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateAlgorithmAsync(const Model::CreateAlgorithmRequest& request, const CreateAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a running App for the specified UserProfile. Supported Apps are
+         * JupyterServer and KernelGateway. This operation is automatically invoked by
+         * Amazon SageMaker Amazon SageMaker Studio (Studio) upon access to the associated
+         * Studio Domain, and when new kernel configurations are selected by the user. A
+         * user may have multiple Apps active simultaneously. Apps will automatically
+         * terminate and be deleted when stopped from within Studio, or when the DeleteApp
+         * API is manually called. UserProfiles are limited to 5 concurrently running Apps
+         * at a time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateApp">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAppOutcome CreateApp(const Model::CreateAppRequest& request) const;
+
+        /**
+         * <p>Creates a running App for the specified UserProfile. Supported Apps are
+         * JupyterServer and KernelGateway. This operation is automatically invoked by
+         * Amazon SageMaker Amazon SageMaker Studio (Studio) upon access to the associated
+         * Studio Domain, and when new kernel configurations are selected by the user. A
+         * user may have multiple Apps active simultaneously. Apps will automatically
+         * terminate and be deleted when stopped from within Studio, or when the DeleteApp
+         * API is manually called. UserProfiles are limited to 5 concurrently running Apps
+         * at a time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateApp">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAppOutcomeCallable CreateAppCallable(const Model::CreateAppRequest& request) const;
+
+        /**
+         * <p>Creates a running App for the specified UserProfile. Supported Apps are
+         * JupyterServer and KernelGateway. This operation is automatically invoked by
+         * Amazon SageMaker Amazon SageMaker Studio (Studio) upon access to the associated
+         * Studio Domain, and when new kernel configurations are selected by the user. A
+         * user may have multiple Apps active simultaneously. Apps will automatically
+         * terminate and be deleted when stopped from within Studio, or when the DeleteApp
+         * API is manually called. UserProfiles are limited to 5 concurrently running Apps
+         * at a time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateApp">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAppAsync(const Model::CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an AutoPilot job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAutoMLJobOutcome CreateAutoMLJob(const Model::CreateAutoMLJobRequest& request) const;
+
+        /**
+         * <p>Creates an AutoPilot job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAutoMLJobOutcomeCallable CreateAutoMLJobCallable(const Model::CreateAutoMLJobRequest& request) const;
+
+        /**
+         * <p>Creates an AutoPilot job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAutoMLJobAsync(const Model::CreateAutoMLJobRequest& request, const CreateAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a Git repository as a resource in your Amazon SageMaker account. You
@@ -684,6 +1058,55 @@ namespace Model
         virtual void CreateCompilationJobAsync(const Model::CreateCompilationJobRequest& request, const CreateCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a Domain for Amazon SageMaker Amazon SageMaker Studio (Studio), which
+         * can be accessed by end-users in a web browser. A Domain has an associated
+         * directory, list of authorized users, and a variety of security, application,
+         * policies, and Amazon Virtual Private Cloud configurations. An AWS account is
+         * limited to one Domain, per region. Users within a domain can share notebook
+         * files and other artifacts with each other. When a Domain is created, an Amazon
+         * Elastic File System (EFS) is also created for use by all of the users within the
+         * Domain. Each user receives a private home directory within the EFS for
+         * notebooks, Git repositories, and data files. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDomainOutcome CreateDomain(const Model::CreateDomainRequest& request) const;
+
+        /**
+         * <p>Creates a Domain for Amazon SageMaker Amazon SageMaker Studio (Studio), which
+         * can be accessed by end-users in a web browser. A Domain has an associated
+         * directory, list of authorized users, and a variety of security, application,
+         * policies, and Amazon Virtual Private Cloud configurations. An AWS account is
+         * limited to one Domain, per region. Users within a domain can share notebook
+         * files and other artifacts with each other. When a Domain is created, an Amazon
+         * Elastic File System (EFS) is also created for use by all of the users within the
+         * Domain. Each user receives a private home directory within the EFS for
+         * notebooks, Git repositories, and data files. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDomainOutcomeCallable CreateDomainCallable(const Model::CreateDomainRequest& request) const;
+
+        /**
+         * <p>Creates a Domain for Amazon SageMaker Amazon SageMaker Studio (Studio), which
+         * can be accessed by end-users in a web browser. A Domain has an associated
+         * directory, list of authorized users, and a variety of security, application,
+         * policies, and Amazon Virtual Private Cloud configurations. An AWS account is
+         * limited to one Domain, per region. Users within a domain can share notebook
+         * files and other artifacts with each other. When a Domain is created, an Amazon
+         * Elastic File System (EFS) is also created for use by all of the users within the
+         * Domain. Each user receives a private home directory within the EFS for
+         * notebooks, Git repositories, and data files. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDomainAsync(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an endpoint using the endpoint configuration specified in the
          * request. Amazon SageMaker uses the endpoint to provision resources and deploy
          * models. You create the endpoint configuration with the <a
@@ -709,8 +1132,8 @@ namespace Model
          * from the S3 path you provided. AWS STS is activated in your IAM user account by
          * default. If you previously deactivated AWS STS for a region, you need to
          * reactivate AWS STS for that region. For more information, see <a
-         * href="IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint">AWS
          * API Reference</a></p>
@@ -743,8 +1166,8 @@ namespace Model
          * from the S3 path you provided. AWS STS is activated in your IAM user account by
          * default. If you previously deactivated AWS STS for a region, you need to
          * reactivate AWS STS for that region. For more information, see <a
-         * href="IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint">AWS
          * API Reference</a></p>
@@ -779,8 +1202,8 @@ namespace Model
          * from the S3 path you provided. AWS STS is activated in your IAM user account by
          * default. If you previously deactivated AWS STS for a region, you need to
          * reactivate AWS STS for that region. For more information, see <a
-         * href="IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
-         * and Deactivating AWS STS i an AWS Region</a> in the <i>AWS Identity and Access
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpoint">AWS
          * API Reference</a></p>
@@ -858,6 +1281,138 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateEndpointConfigAsync(const Model::CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an Amazon SageMaker <i>experiment</i>. An experiment is a collection
+         * of <i>trials</i> that are observed, compared and evaluated as a group. A trial
+         * is a set of steps, called <i>trial components</i>, that produce a machine
+         * learning model.</p> <p>The goal of an experiment is to determine the components
+         * that produce the best model. Multiple trials are performed, each one isolating
+         * and measuring the impact of a change to one or more inputs, while keeping the
+         * remaining inputs constant.</p> <p>When you use Amazon SageMaker Studio or the
+         * Amazon SageMaker Python SDK, all experiments, trials, and trial components are
+         * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
+         * (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can add
+         * tags to experiments, trials, trial components and then use the <a>Search</a> API
+         * to search for the tags.</p> <p>To add a description to an experiment, specify
+         * the optional <code>Description</code> parameter. To add a description later, or
+         * to change the description, call the <a>UpdateExperiment</a> API.</p> <p>To get a
+         * list of all your experiments, call the <a>ListExperiments</a> API. To view an
+         * experiment's properties, call the <a>DescribeExperiment</a> API. To get a list
+         * of all the trials associated with an experiment, call the <a>ListTrials</a> API.
+         * To create a trial call the <a>CreateTrial</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateExperiment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateExperimentOutcome CreateExperiment(const Model::CreateExperimentRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon SageMaker <i>experiment</i>. An experiment is a collection
+         * of <i>trials</i> that are observed, compared and evaluated as a group. A trial
+         * is a set of steps, called <i>trial components</i>, that produce a machine
+         * learning model.</p> <p>The goal of an experiment is to determine the components
+         * that produce the best model. Multiple trials are performed, each one isolating
+         * and measuring the impact of a change to one or more inputs, while keeping the
+         * remaining inputs constant.</p> <p>When you use Amazon SageMaker Studio or the
+         * Amazon SageMaker Python SDK, all experiments, trials, and trial components are
+         * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
+         * (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can add
+         * tags to experiments, trials, trial components and then use the <a>Search</a> API
+         * to search for the tags.</p> <p>To add a description to an experiment, specify
+         * the optional <code>Description</code> parameter. To add a description later, or
+         * to change the description, call the <a>UpdateExperiment</a> API.</p> <p>To get a
+         * list of all your experiments, call the <a>ListExperiments</a> API. To view an
+         * experiment's properties, call the <a>DescribeExperiment</a> API. To get a list
+         * of all the trials associated with an experiment, call the <a>ListTrials</a> API.
+         * To create a trial call the <a>CreateTrial</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateExperiment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateExperimentOutcomeCallable CreateExperimentCallable(const Model::CreateExperimentRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon SageMaker <i>experiment</i>. An experiment is a collection
+         * of <i>trials</i> that are observed, compared and evaluated as a group. A trial
+         * is a set of steps, called <i>trial components</i>, that produce a machine
+         * learning model.</p> <p>The goal of an experiment is to determine the components
+         * that produce the best model. Multiple trials are performed, each one isolating
+         * and measuring the impact of a change to one or more inputs, while keeping the
+         * remaining inputs constant.</p> <p>When you use Amazon SageMaker Studio or the
+         * Amazon SageMaker Python SDK, all experiments, trials, and trial components are
+         * automatically tracked, logged, and indexed. When you use the AWS SDK for Python
+         * (Boto), you must use the logging APIs provided by the SDK.</p> <p>You can add
+         * tags to experiments, trials, trial components and then use the <a>Search</a> API
+         * to search for the tags.</p> <p>To add a description to an experiment, specify
+         * the optional <code>Description</code> parameter. To add a description later, or
+         * to change the description, call the <a>UpdateExperiment</a> API.</p> <p>To get a
+         * list of all your experiments, call the <a>ListExperiments</a> API. To view an
+         * experiment's properties, call the <a>DescribeExperiment</a> API. To get a list
+         * of all the trials associated with an experiment, call the <a>ListTrials</a> API.
+         * To create a trial call the <a>CreateTrial</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateExperiment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateExperimentAsync(const Model::CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a flow definition.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFlowDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFlowDefinitionOutcome CreateFlowDefinition(const Model::CreateFlowDefinitionRequest& request) const;
+
+        /**
+         * <p>Creates a flow definition.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFlowDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFlowDefinitionOutcomeCallable CreateFlowDefinitionCallable(const Model::CreateFlowDefinitionRequest& request) const;
+
+        /**
+         * <p>Creates a flow definition.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateFlowDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFlowDefinitionAsync(const Model::CreateFlowDefinitionRequest& request, const CreateFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Defines the settings you will use for the human review workflow user
+         * interface. Reviewers will see a three-panel interface with an instruction area,
+         * the item to review, and an input area.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHumanTaskUi">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateHumanTaskUiOutcome CreateHumanTaskUi(const Model::CreateHumanTaskUiRequest& request) const;
+
+        /**
+         * <p>Defines the settings you will use for the human review workflow user
+         * interface. Reviewers will see a three-panel interface with an instruction area,
+         * the item to review, and an input area.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHumanTaskUi">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateHumanTaskUiOutcomeCallable CreateHumanTaskUiCallable(const Model::CreateHumanTaskUiRequest& request) const;
+
+        /**
+         * <p>Defines the settings you will use for the human review workflow user
+         * interface. Reviewers will see a three-panel interface with an instruction area,
+         * the item to review, and an input area.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHumanTaskUi">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateHumanTaskUiAsync(const Model::CreateHumanTaskUiRequest& request, const CreateHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a hyperparameter tuning job. A hyperparameter tuning job finds the
@@ -1122,6 +1677,37 @@ namespace Model
         virtual void CreateModelPackageAsync(const Model::CreateModelPackageRequest& request, const CreateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to
+         * monitor the data captured for an Amazon SageMaker Endoint.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMonitoringSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMonitoringScheduleOutcome CreateMonitoringSchedule(const Model::CreateMonitoringScheduleRequest& request) const;
+
+        /**
+         * <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to
+         * monitor the data captured for an Amazon SageMaker Endoint.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMonitoringSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateMonitoringScheduleOutcomeCallable CreateMonitoringScheduleCallable(const Model::CreateMonitoringScheduleRequest& request) const;
+
+        /**
+         * <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to
+         * monitor the data captured for an Amazon SageMaker Endoint.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateMonitoringSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateMonitoringScheduleAsync(const Model::CreateMonitoringScheduleRequest& request, const CreateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates an Amazon SageMaker notebook instance. A notebook instance is a
          * machine learning (ML) compute instance running on a Jupyter notebook. </p> <p>In
          * a <code>CreateNotebookInstance</code> request, specify the type of ML compute
@@ -1295,6 +1881,43 @@ namespace Model
         virtual void CreateNotebookInstanceLifecycleConfigAsync(const Model::CreateNotebookInstanceLifecycleConfigRequest& request, const CreateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a URL for a specified UserProfile in a Domain. When accessed in a web
+         * browser, the user will be automatically signed in to Amazon SageMaker Amazon
+         * SageMaker Studio (Studio), and granted access to all of the Apps and files
+         * associated with that Amazon Elastic File System (EFS). This operation can only
+         * be called when AuthMode equals IAM. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePresignedDomainUrlOutcome CreatePresignedDomainUrl(const Model::CreatePresignedDomainUrlRequest& request) const;
+
+        /**
+         * <p>Creates a URL for a specified UserProfile in a Domain. When accessed in a web
+         * browser, the user will be automatically signed in to Amazon SageMaker Amazon
+         * SageMaker Studio (Studio), and granted access to all of the Apps and files
+         * associated with that Amazon Elastic File System (EFS). This operation can only
+         * be called when AuthMode equals IAM. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreatePresignedDomainUrlOutcomeCallable CreatePresignedDomainUrlCallable(const Model::CreatePresignedDomainUrlRequest& request) const;
+
+        /**
+         * <p>Creates a URL for a specified UserProfile in a Domain. When accessed in a web
+         * browser, the user will be automatically signed in to Amazon SageMaker Amazon
+         * SageMaker Studio (Studio), and granted access to all of the Apps and files
+         * associated with that Amazon Elastic File System (EFS). This operation can only
+         * be called when AuthMode equals IAM. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedDomainUrl">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreatePresignedDomainUrlAsync(const Model::CreatePresignedDomainUrlRequest& request, const CreatePresignedDomainUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns a URL that you can use to connect to the Jupyter server from a
          * notebook instance. In the Amazon SageMaker console, when you choose
          * <code>Open</code> next to a notebook instance, Amazon SageMaker opens a new tab
@@ -1307,7 +1930,7 @@ namespace Model
          * and the <code>aws:SourceIP</code> condition context key to specify the list of
          * IP addresses that you want to have access to the notebook instance. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
          * get from a call to is valid only for 5 minutes. If you try to use the URL after
          * the 5-minute limit expires, you are directed to the AWS console sign-in
@@ -1330,7 +1953,7 @@ namespace Model
          * and the <code>aws:SourceIP</code> condition context key to specify the list of
          * IP addresses that you want to have access to the notebook instance. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
          * get from a call to is valid only for 5 minutes. If you try to use the URL after
          * the 5-minute limit expires, you are directed to the AWS console sign-in
@@ -1355,7 +1978,7 @@ namespace Model
          * and the <code>aws:SourceIP</code> condition context key to specify the list of
          * IP addresses that you want to have access to the notebook instance. For more
          * information, see <a
-         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-ip-filter.html">Limit
+         * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p> <note> <p>The URL that you
          * get from a call to is valid only for 5 minutes. If you try to use the URL after
          * the 5-minute limit expires, you are directed to the AWS console sign-in
@@ -1366,6 +1989,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreatePresignedNotebookInstanceUrlAsync(const Model::CreatePresignedNotebookInstanceUrlRequest& request, const CreatePresignedNotebookInstanceUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a processing job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateProcessingJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateProcessingJobOutcome CreateProcessingJob(const Model::CreateProcessingJobRequest& request) const;
+
+        /**
+         * <p>Creates a processing job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateProcessingJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateProcessingJobOutcomeCallable CreateProcessingJobCallable(const Model::CreateProcessingJobRequest& request) const;
+
+        /**
+         * <p>Creates a processing job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateProcessingJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateProcessingJobAsync(const Model::CreateProcessingJobRequest& request, const CreateProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts a model training job. After training completes, Amazon SageMaker saves
@@ -1398,7 +2046,7 @@ namespace Model
          * so that Amazon SageMaker can successfully complete model training. </p> </li>
          * <li> <p> <code>StoppingCondition</code> - To help cap training costs, use
          * <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
-         * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to to wait
+         * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to wait
          * for a managed spot training job to complete. </p> </li> </ul> <p> For more
          * information about Amazon SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
@@ -1439,7 +2087,7 @@ namespace Model
          * so that Amazon SageMaker can successfully complete model training. </p> </li>
          * <li> <p> <code>StoppingCondition</code> - To help cap training costs, use
          * <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
-         * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to to wait
+         * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to wait
          * for a managed spot training job to complete. </p> </li> </ul> <p> For more
          * information about Amazon SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
@@ -1482,7 +2130,7 @@ namespace Model
          * so that Amazon SageMaker can successfully complete model training. </p> </li>
          * <li> <p> <code>StoppingCondition</code> - To help cap training costs, use
          * <code>MaxRuntimeInSeconds</code> to set a time limit for training. Use
-         * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to to wait
+         * <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to wait
          * for a managed spot training job to complete. </p> </li> </ul> <p> For more
          * information about Amazon SageMaker, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It
@@ -1571,6 +2219,174 @@ namespace Model
         virtual void CreateTransformJobAsync(const Model::CreateTransformJobRequest& request, const CreateTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates an Amazon SageMaker <i>trial</i>. A trial is a set of steps called
+         * <i>trial components</i> that produce a machine learning model. A trial is part
+         * of a single Amazon SageMaker <i>experiment</i>.</p> <p>When you use Amazon
+         * SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials,
+         * and trial components are automatically tracked, logged, and indexed. When you
+         * use the AWS SDK for Python (Boto), you must use the logging APIs provided by the
+         * SDK.</p> <p>You can add tags to a trial and then use the <a>Search</a> API to
+         * search for the tags.</p> <p>To get a list of all your trials, call the
+         * <a>ListTrials</a> API. To view a trial's properties, call the
+         * <a>DescribeTrial</a> API. To create a trial component, call the
+         * <a>CreateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrial">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTrialOutcome CreateTrial(const Model::CreateTrialRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon SageMaker <i>trial</i>. A trial is a set of steps called
+         * <i>trial components</i> that produce a machine learning model. A trial is part
+         * of a single Amazon SageMaker <i>experiment</i>.</p> <p>When you use Amazon
+         * SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials,
+         * and trial components are automatically tracked, logged, and indexed. When you
+         * use the AWS SDK for Python (Boto), you must use the logging APIs provided by the
+         * SDK.</p> <p>You can add tags to a trial and then use the <a>Search</a> API to
+         * search for the tags.</p> <p>To get a list of all your trials, call the
+         * <a>ListTrials</a> API. To view a trial's properties, call the
+         * <a>DescribeTrial</a> API. To create a trial component, call the
+         * <a>CreateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrial">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTrialOutcomeCallable CreateTrialCallable(const Model::CreateTrialRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon SageMaker <i>trial</i>. A trial is a set of steps called
+         * <i>trial components</i> that produce a machine learning model. A trial is part
+         * of a single Amazon SageMaker <i>experiment</i>.</p> <p>When you use Amazon
+         * SageMaker Studio or the Amazon SageMaker Python SDK, all experiments, trials,
+         * and trial components are automatically tracked, logged, and indexed. When you
+         * use the AWS SDK for Python (Boto), you must use the logging APIs provided by the
+         * SDK.</p> <p>You can add tags to a trial and then use the <a>Search</a> API to
+         * search for the tags.</p> <p>To get a list of all your trials, call the
+         * <a>ListTrials</a> API. To view a trial's properties, call the
+         * <a>DescribeTrial</a> API. To create a trial component, call the
+         * <a>CreateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrial">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTrialAsync(const Model::CreateTrialRequest& request, const CreateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a <i>trial component</i>, which is a stage of a machine learning
+         * <i>trial</i>. A trial is composed of one or more trial components. A trial
+         * component can be used in multiple trials.</p> <p>Trial components include
+         * pre-processing jobs, training jobs, and batch transform jobs.</p> <p>When you
+         * use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments,
+         * trials, and trial components are automatically tracked, logged, and indexed.
+         * When you use the AWS SDK for Python (Boto), you must use the logging APIs
+         * provided by the SDK.</p> <p>You can add tags to a trial component and then use
+         * the <a>Search</a> API to search for the tags.</p> <note> <p>You can create a
+         * trial component through a direct call to the <code>CreateTrialComponent</code>
+         * API. However, you can't specify the <code>Source</code> property of the
+         * component in the request, therefore, the component isn't associated with an
+         * Amazon SageMaker job. You must use Amazon SageMaker Studio, the Amazon SageMaker
+         * Python SDK, or the AWS SDK for Python (Boto) to create the component with a
+         * valid <code>Source</code> property.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTrialComponentOutcome CreateTrialComponent(const Model::CreateTrialComponentRequest& request) const;
+
+        /**
+         * <p>Creates a <i>trial component</i>, which is a stage of a machine learning
+         * <i>trial</i>. A trial is composed of one or more trial components. A trial
+         * component can be used in multiple trials.</p> <p>Trial components include
+         * pre-processing jobs, training jobs, and batch transform jobs.</p> <p>When you
+         * use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments,
+         * trials, and trial components are automatically tracked, logged, and indexed.
+         * When you use the AWS SDK for Python (Boto), you must use the logging APIs
+         * provided by the SDK.</p> <p>You can add tags to a trial component and then use
+         * the <a>Search</a> API to search for the tags.</p> <note> <p>You can create a
+         * trial component through a direct call to the <code>CreateTrialComponent</code>
+         * API. However, you can't specify the <code>Source</code> property of the
+         * component in the request, therefore, the component isn't associated with an
+         * Amazon SageMaker job. You must use Amazon SageMaker Studio, the Amazon SageMaker
+         * Python SDK, or the AWS SDK for Python (Boto) to create the component with a
+         * valid <code>Source</code> property.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTrialComponentOutcomeCallable CreateTrialComponentCallable(const Model::CreateTrialComponentRequest& request) const;
+
+        /**
+         * <p>Creates a <i>trial component</i>, which is a stage of a machine learning
+         * <i>trial</i>. A trial is composed of one or more trial components. A trial
+         * component can be used in multiple trials.</p> <p>Trial components include
+         * pre-processing jobs, training jobs, and batch transform jobs.</p> <p>When you
+         * use Amazon SageMaker Studio or the Amazon SageMaker Python SDK, all experiments,
+         * trials, and trial components are automatically tracked, logged, and indexed.
+         * When you use the AWS SDK for Python (Boto), you must use the logging APIs
+         * provided by the SDK.</p> <p>You can add tags to a trial component and then use
+         * the <a>Search</a> API to search for the tags.</p> <note> <p>You can create a
+         * trial component through a direct call to the <code>CreateTrialComponent</code>
+         * API. However, you can't specify the <code>Source</code> property of the
+         * component in the request, therefore, the component isn't associated with an
+         * Amazon SageMaker job. You must use Amazon SageMaker Studio, the Amazon SageMaker
+         * Python SDK, or the AWS SDK for Python (Boto) to create the component with a
+         * valid <code>Source</code> property.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTrialComponentAsync(const Model::CreateTrialComponentRequest& request, const CreateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new user profile. A user profile represents a single user within a
+         * Domain, and is the main way to reference a "person" for the purposes of sharing,
+         * reporting and other user-oriented features. This entity is created during
+         * on-boarding. If an administrator invites a person by email or imports them from
+         * SSO, a new UserProfile is automatically created. This entity is the primary
+         * holder of settings for an individual user and has a reference to the user's
+         * private Amazon Elastic File System (EFS) home directory. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateUserProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateUserProfileOutcome CreateUserProfile(const Model::CreateUserProfileRequest& request) const;
+
+        /**
+         * <p>Creates a new user profile. A user profile represents a single user within a
+         * Domain, and is the main way to reference a "person" for the purposes of sharing,
+         * reporting and other user-oriented features. This entity is created during
+         * on-boarding. If an administrator invites a person by email or imports them from
+         * SSO, a new UserProfile is automatically created. This entity is the primary
+         * holder of settings for an individual user and has a reference to the user's
+         * private Amazon Elastic File System (EFS) home directory. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateUserProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateUserProfileOutcomeCallable CreateUserProfileCallable(const Model::CreateUserProfileRequest& request) const;
+
+        /**
+         * <p>Creates a new user profile. A user profile represents a single user within a
+         * Domain, and is the main way to reference a "person" for the purposes of sharing,
+         * reporting and other user-oriented features. This entity is created during
+         * on-boarding. If an administrator invites a person by email or imports them from
+         * SSO, a new UserProfile is automatically created. This entity is the primary
+         * holder of settings for an individual user and has a reference to the user's
+         * private Amazon Elastic File System (EFS) home directory. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateUserProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateUserProfileAsync(const Model::CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new work team for labeling your data. A work team is defined by one
          * or more Amazon Cognito user pools. You must first create the user pools before
          * you can create a work team.</p> <p>You cannot create more than 25 work teams in
@@ -1633,6 +2449,31 @@ namespace Model
         virtual void DeleteAlgorithmAsync(const Model::DeleteAlgorithmRequest& request, const DeleteAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Used to stop and delete an app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteApp">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteAppOutcome DeleteApp(const Model::DeleteAppRequest& request) const;
+
+        /**
+         * <p>Used to stop and delete an app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteApp">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteAppOutcomeCallable DeleteAppCallable(const Model::DeleteAppRequest& request) const;
+
+        /**
+         * <p>Used to stop and delete an app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteApp">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteAppAsync(const Model::DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes the specified Git repository from your account.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteCodeRepository">AWS
@@ -1659,6 +2500,40 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteCodeRepositoryAsync(const Model::DeleteCodeRepositoryRequest& request, const DeleteCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Used to delete a domain. If you on-boarded with IAM mode, you will need to
+         * delete your domain to on-board again using SSO. Use with caution. All of the
+         * members of the domain will lose access to their EFS volume, including data,
+         * notebooks, and other artifacts. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDomainOutcome DeleteDomain(const Model::DeleteDomainRequest& request) const;
+
+        /**
+         * <p>Used to delete a domain. If you on-boarded with IAM mode, you will need to
+         * delete your domain to on-board again using SSO. Use with caution. All of the
+         * members of the domain will lose access to their EFS volume, including data,
+         * notebooks, and other artifacts. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteDomainOutcomeCallable DeleteDomainCallable(const Model::DeleteDomainRequest& request) const;
+
+        /**
+         * <p>Used to delete a domain. If you on-boarded with IAM mode, you will need to
+         * delete your domain to on-board again using SSO. Use with caution. All of the
+         * members of the domain will lose access to their EFS volume, including data,
+         * notebooks, and other artifacts. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteDomainAsync(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an endpoint. Amazon SageMaker frees up all of the resources that were
@@ -1732,6 +2607,62 @@ namespace Model
         virtual void DeleteEndpointConfigAsync(const Model::DeleteEndpointConfigRequest& request, const DeleteEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes an Amazon SageMaker experiment. All trials associated with the
+         * experiment must be deleted first. Use the <a>ListTrials</a> API to get a list of
+         * the trials associated with the experiment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteExperiment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteExperimentOutcome DeleteExperiment(const Model::DeleteExperimentRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon SageMaker experiment. All trials associated with the
+         * experiment must be deleted first. Use the <a>ListTrials</a> API to get a list of
+         * the trials associated with the experiment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteExperiment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteExperimentOutcomeCallable DeleteExperimentCallable(const Model::DeleteExperimentRequest& request) const;
+
+        /**
+         * <p>Deletes an Amazon SageMaker experiment. All trials associated with the
+         * experiment must be deleted first. Use the <a>ListTrials</a> API to get a list of
+         * the trials associated with the experiment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteExperiment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteExperimentAsync(const Model::DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified flow definition.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFlowDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFlowDefinitionOutcome DeleteFlowDefinition(const Model::DeleteFlowDefinitionRequest& request) const;
+
+        /**
+         * <p>Deletes the specified flow definition.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFlowDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFlowDefinitionOutcomeCallable DeleteFlowDefinitionCallable(const Model::DeleteFlowDefinitionRequest& request) const;
+
+        /**
+         * <p>Deletes the specified flow definition.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteFlowDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFlowDefinitionAsync(const Model::DeleteFlowDefinitionRequest& request, const DeleteFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a model. The <code>DeleteModel</code> API deletes only the model
          * entry that was created in Amazon SageMaker when you called the <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateModel.html">CreateModel</a>
@@ -1801,6 +2732,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteModelPackageAsync(const Model::DeleteModelPackageRequest& request, const DeleteModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a monitoring schedule. Also stops the schedule had not already been
+         * stopped. This does not delete the job execution history of the monitoring
+         * schedule. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMonitoringSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteMonitoringScheduleOutcome DeleteMonitoringSchedule(const Model::DeleteMonitoringScheduleRequest& request) const;
+
+        /**
+         * <p>Deletes a monitoring schedule. Also stops the schedule had not already been
+         * stopped. This does not delete the job execution history of the monitoring
+         * schedule. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMonitoringSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteMonitoringScheduleOutcomeCallable DeleteMonitoringScheduleCallable(const Model::DeleteMonitoringScheduleRequest& request) const;
+
+        /**
+         * <p>Deletes a monitoring schedule. Also stops the schedule had not already been
+         * stopped. This does not delete the job execution history of the monitoring
+         * schedule. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteMonitoringSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteMonitoringScheduleAsync(const Model::DeleteMonitoringScheduleRequest& request, const DeleteMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Deletes an Amazon SageMaker notebook instance. Before you can delete a
@@ -1908,6 +2870,96 @@ namespace Model
         virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes the specified trial. All trial components that make up the trial must
+         * be deleted first. Use the <a>DescribeTrialComponent</a> API to get the list of
+         * trial components.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrial">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTrialOutcome DeleteTrial(const Model::DeleteTrialRequest& request) const;
+
+        /**
+         * <p>Deletes the specified trial. All trial components that make up the trial must
+         * be deleted first. Use the <a>DescribeTrialComponent</a> API to get the list of
+         * trial components.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrial">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTrialOutcomeCallable DeleteTrialCallable(const Model::DeleteTrialRequest& request) const;
+
+        /**
+         * <p>Deletes the specified trial. All trial components that make up the trial must
+         * be deleted first. Use the <a>DescribeTrialComponent</a> API to get the list of
+         * trial components.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrial">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTrialAsync(const Model::DeleteTrialRequest& request, const DeleteTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the specified trial component. A trial component must be
+         * disassociated from all trials before the trial component can be deleted. To
+         * disassociate a trial component from a trial, call the
+         * <a>DisassociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrialComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTrialComponentOutcome DeleteTrialComponent(const Model::DeleteTrialComponentRequest& request) const;
+
+        /**
+         * <p>Deletes the specified trial component. A trial component must be
+         * disassociated from all trials before the trial component can be deleted. To
+         * disassociate a trial component from a trial, call the
+         * <a>DisassociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrialComponent">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTrialComponentOutcomeCallable DeleteTrialComponentCallable(const Model::DeleteTrialComponentRequest& request) const;
+
+        /**
+         * <p>Deletes the specified trial component. A trial component must be
+         * disassociated from all trials before the trial component can be deleted. To
+         * disassociate a trial component from a trial, call the
+         * <a>DisassociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrialComponent">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTrialComponentAsync(const Model::DeleteTrialComponentRequest& request, const DeleteTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a user profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteUserProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteUserProfileOutcome DeleteUserProfile(const Model::DeleteUserProfileRequest& request) const;
+
+        /**
+         * <p>Deletes a user profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteUserProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteUserProfileOutcomeCallable DeleteUserProfileCallable(const Model::DeleteUserProfileRequest& request) const;
+
+        /**
+         * <p>Deletes a user profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteUserProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteUserProfileAsync(const Model::DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes an existing work team. This operation can't be undone.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkteam">AWS
@@ -1962,6 +3014,59 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeAlgorithmAsync(const Model::DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeApp">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAppOutcome DescribeApp(const Model::DescribeAppRequest& request) const;
+
+        /**
+         * <p>Describes the app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeApp">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAppOutcomeCallable DescribeAppCallable(const Model::DescribeAppRequest& request) const;
+
+        /**
+         * <p>Describes the app.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeApp">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAppAsync(const Model::DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about an Amazon SageMaker job.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAutoMLJobOutcome DescribeAutoMLJob(const Model::DescribeAutoMLJobRequest& request) const;
+
+        /**
+         * <p>Returns information about an Amazon SageMaker job.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeAutoMLJobOutcomeCallable DescribeAutoMLJobCallable(const Model::DescribeAutoMLJobRequest& request) const;
+
+        /**
+         * <p>Returns information about an Amazon SageMaker job.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeAutoMLJobAsync(const Model::DescribeAutoMLJobRequest& request, const DescribeAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets details about the specified Git repository.</p><p><h3>See Also:</h3>  
@@ -2026,6 +3131,31 @@ namespace Model
         virtual void DescribeCompilationJobAsync(const Model::DescribeCompilationJobRequest& request, const DescribeCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>The desciption of the domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDomainOutcome DescribeDomain(const Model::DescribeDomainRequest& request) const;
+
+        /**
+         * <p>The desciption of the domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDomainOutcomeCallable DescribeDomainCallable(const Model::DescribeDomainRequest& request) const;
+
+        /**
+         * <p>The desciption of the domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDomainAsync(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns the description of an endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeEndpoint">AWS
          * API Reference</a></p>
@@ -2077,6 +3207,87 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEndpointConfigAsync(const Model::DescribeEndpointConfigRequest& request, const DescribeEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides a list of an experiment's properties.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeExperiment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeExperimentOutcome DescribeExperiment(const Model::DescribeExperimentRequest& request) const;
+
+        /**
+         * <p>Provides a list of an experiment's properties.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeExperiment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeExperimentOutcomeCallable DescribeExperimentCallable(const Model::DescribeExperimentRequest& request) const;
+
+        /**
+         * <p>Provides a list of an experiment's properties.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeExperiment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeExperimentAsync(const Model::DescribeExperimentRequest& request, const DescribeExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the specified flow definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFlowDefinition">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFlowDefinitionOutcome DescribeFlowDefinition(const Model::DescribeFlowDefinitionRequest& request) const;
+
+        /**
+         * <p>Returns information about the specified flow definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFlowDefinition">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFlowDefinitionOutcomeCallable DescribeFlowDefinitionCallable(const Model::DescribeFlowDefinitionRequest& request) const;
+
+        /**
+         * <p>Returns information about the specified flow definition.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeFlowDefinition">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFlowDefinitionAsync(const Model::DescribeFlowDefinitionRequest& request, const DescribeFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the requested human task user
+         * interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHumanTaskUi">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeHumanTaskUiOutcome DescribeHumanTaskUi(const Model::DescribeHumanTaskUiRequest& request) const;
+
+        /**
+         * <p>Returns information about the requested human task user
+         * interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHumanTaskUi">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeHumanTaskUiOutcomeCallable DescribeHumanTaskUiCallable(const Model::DescribeHumanTaskUiRequest& request) const;
+
+        /**
+         * <p>Returns information about the requested human task user
+         * interface.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHumanTaskUi">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeHumanTaskUiAsync(const Model::DescribeHumanTaskUiRequest& request, const DescribeHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a description of a hyperparameter tuning job.</p><p><h3>See Also:</h3>  
@@ -2194,6 +3405,31 @@ namespace Model
         virtual void DescribeModelPackageAsync(const Model::DescribeModelPackageRequest& request, const DescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Describes the schedule for a monitoring job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMonitoringSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeMonitoringScheduleOutcome DescribeMonitoringSchedule(const Model::DescribeMonitoringScheduleRequest& request) const;
+
+        /**
+         * <p>Describes the schedule for a monitoring job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMonitoringSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeMonitoringScheduleOutcomeCallable DescribeMonitoringScheduleCallable(const Model::DescribeMonitoringScheduleRequest& request) const;
+
+        /**
+         * <p>Describes the schedule for a monitoring job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeMonitoringSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeMonitoringScheduleAsync(const Model::DescribeMonitoringScheduleRequest& request, const DescribeMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Returns information about a notebook instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstance">AWS
          * API Reference</a></p>
@@ -2251,6 +3487,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeNotebookInstanceLifecycleConfigAsync(const Model::DescribeNotebookInstanceLifecycleConfigRequest& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a description of a processing job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeProcessingJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeProcessingJobOutcome DescribeProcessingJob(const Model::DescribeProcessingJobRequest& request) const;
+
+        /**
+         * <p>Returns a description of a processing job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeProcessingJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeProcessingJobOutcomeCallable DescribeProcessingJobCallable(const Model::DescribeProcessingJobRequest& request) const;
+
+        /**
+         * <p>Returns a description of a processing job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeProcessingJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeProcessingJobAsync(const Model::DescribeProcessingJobRequest& request, const DescribeProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about a work team provided by a vendor. It returns details
@@ -2334,6 +3595,84 @@ namespace Model
         virtual void DescribeTransformJobAsync(const Model::DescribeTransformJobRequest& request, const DescribeTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Provides a list of a trial's properties.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrial">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTrialOutcome DescribeTrial(const Model::DescribeTrialRequest& request) const;
+
+        /**
+         * <p>Provides a list of a trial's properties.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrial">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTrialOutcomeCallable DescribeTrialCallable(const Model::DescribeTrialRequest& request) const;
+
+        /**
+         * <p>Provides a list of a trial's properties.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrial">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTrialAsync(const Model::DescribeTrialRequest& request, const DescribeTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Provides a list of a trials component's properties.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrialComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTrialComponentOutcome DescribeTrialComponent(const Model::DescribeTrialComponentRequest& request) const;
+
+        /**
+         * <p>Provides a list of a trials component's properties.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrialComponent">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTrialComponentOutcomeCallable DescribeTrialComponentCallable(const Model::DescribeTrialComponentRequest& request) const;
+
+        /**
+         * <p>Provides a list of a trials component's properties.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrialComponent">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTrialComponentAsync(const Model::DescribeTrialComponentRequest& request, const DescribeTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the user profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeUserProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeUserProfileOutcome DescribeUserProfile(const Model::DescribeUserProfileRequest& request) const;
+
+        /**
+         * <p>Describes the user profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeUserProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeUserProfileOutcomeCallable DescribeUserProfileCallable(const Model::DescribeUserProfileRequest& request) const;
+
+        /**
+         * <p>Describes the user profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeUserProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeUserProfileAsync(const Model::DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about a specific work team. You can see information such as
          * the create date, the last updated date, membership information, and the work
          * team's Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
@@ -2363,6 +3702,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeWorkteamAsync(const Model::DescribeWorkteamRequest& request, const DescribeWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disassociates a trial component from a trial. This doesn't effect other
+         * trials the component is associated with. Before you can delete a component, you
+         * must disassociate the component from all trials it is associated with. To
+         * associate a trial component with a trial, call the
+         * <a>AssociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisassociateTrialComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateTrialComponentOutcome DisassociateTrialComponent(const Model::DisassociateTrialComponentRequest& request) const;
+
+        /**
+         * <p>Disassociates a trial component from a trial. This doesn't effect other
+         * trials the component is associated with. Before you can delete a component, you
+         * must disassociate the component from all trials it is associated with. To
+         * associate a trial component with a trial, call the
+         * <a>AssociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisassociateTrialComponent">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateTrialComponentOutcomeCallable DisassociateTrialComponentCallable(const Model::DisassociateTrialComponentRequest& request) const;
+
+        /**
+         * <p>Disassociates a trial component from a trial. This doesn't effect other
+         * trials the component is associated with. Before you can delete a component, you
+         * must disassociate the component from all trials it is associated with. To
+         * associate a trial component with a trial, call the
+         * <a>AssociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisassociateTrialComponent">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateTrialComponentAsync(const Model::DisassociateTrialComponentRequest& request, const DisassociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>An auto-complete API for the search functionality in the Amazon SageMaker
@@ -2430,6 +3806,81 @@ namespace Model
         virtual void ListAlgorithmsAsync(const Model::ListAlgorithmsRequest& request, const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists apps.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListApps">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAppsOutcome ListApps(const Model::ListAppsRequest& request) const;
+
+        /**
+         * <p>Lists apps.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListApps">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAppsOutcomeCallable ListAppsCallable(const Model::ListAppsRequest& request) const;
+
+        /**
+         * <p>Lists apps.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListApps">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAppsAsync(const Model::ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Request a list of jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAutoMLJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAutoMLJobsOutcome ListAutoMLJobs(const Model::ListAutoMLJobsRequest& request) const;
+
+        /**
+         * <p>Request a list of jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAutoMLJobs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListAutoMLJobsOutcomeCallable ListAutoMLJobsCallable(const Model::ListAutoMLJobsRequest& request) const;
+
+        /**
+         * <p>Request a list of jobs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAutoMLJobs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListAutoMLJobsAsync(const Model::ListAutoMLJobsRequest& request, const ListAutoMLJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List the Candidates created for the job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCandidatesForAutoMLJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCandidatesForAutoMLJobOutcome ListCandidatesForAutoMLJob(const Model::ListCandidatesForAutoMLJobRequest& request) const;
+
+        /**
+         * <p>List the Candidates created for the job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCandidatesForAutoMLJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListCandidatesForAutoMLJobOutcomeCallable ListCandidatesForAutoMLJobCallable(const Model::ListCandidatesForAutoMLJobRequest& request) const;
+
+        /**
+         * <p>List the Candidates created for the job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCandidatesForAutoMLJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListCandidatesForAutoMLJobAsync(const Model::ListCandidatesForAutoMLJobRequest& request, const ListCandidatesForAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of the Git repositories in your account.</p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCodeRepositories">AWS
@@ -2492,6 +3943,31 @@ namespace Model
         virtual void ListCompilationJobsAsync(const Model::ListCompilationJobsRequest& request, const ListCompilationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the domains.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDomains">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDomainsOutcome ListDomains(const Model::ListDomainsRequest& request) const;
+
+        /**
+         * <p>Lists the domains.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDomains">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListDomainsOutcomeCallable ListDomainsCallable(const Model::ListDomainsRequest& request) const;
+
+        /**
+         * <p>Lists the domains.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListDomains">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListDomainsAsync(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists endpoint configurations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListEndpointConfigs">AWS
          * API Reference</a></p>
@@ -2540,6 +4016,93 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListEndpointsAsync(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists all the experiments in your account. The list can be filtered to show
+         * only experiments that were created in a specific time range. The list can be
+         * sorted by experiment name or creation time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListExperiments">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListExperimentsOutcome ListExperiments(const Model::ListExperimentsRequest& request) const;
+
+        /**
+         * <p>Lists all the experiments in your account. The list can be filtered to show
+         * only experiments that were created in a specific time range. The list can be
+         * sorted by experiment name or creation time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListExperiments">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListExperimentsOutcomeCallable ListExperimentsCallable(const Model::ListExperimentsRequest& request) const;
+
+        /**
+         * <p>Lists all the experiments in your account. The list can be filtered to show
+         * only experiments that were created in a specific time range. The list can be
+         * sorted by experiment name or creation time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListExperiments">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListExperimentsAsync(const Model::ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the flow definitions in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListFlowDefinitions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFlowDefinitionsOutcome ListFlowDefinitions(const Model::ListFlowDefinitionsRequest& request) const;
+
+        /**
+         * <p>Returns information about the flow definitions in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListFlowDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFlowDefinitionsOutcomeCallable ListFlowDefinitionsCallable(const Model::ListFlowDefinitionsRequest& request) const;
+
+        /**
+         * <p>Returns information about the flow definitions in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListFlowDefinitions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFlowDefinitionsAsync(const Model::ListFlowDefinitionsRequest& request, const ListFlowDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns information about the human task user interfaces in your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHumanTaskUis">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListHumanTaskUisOutcome ListHumanTaskUis(const Model::ListHumanTaskUisRequest& request) const;
+
+        /**
+         * <p>Returns information about the human task user interfaces in your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHumanTaskUis">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListHumanTaskUisOutcomeCallable ListHumanTaskUisCallable(const Model::ListHumanTaskUisRequest& request) const;
+
+        /**
+         * <p>Returns information about the human task user interfaces in your
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHumanTaskUis">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListHumanTaskUisAsync(const Model::ListHumanTaskUisRequest& request, const ListHumanTaskUisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of <a>HyperParameterTuningJobSummary</a> objects that describe
@@ -2685,6 +4248,56 @@ namespace Model
         virtual void ListModelsAsync(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns list of all monitoring job executions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringExecutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMonitoringExecutionsOutcome ListMonitoringExecutions(const Model::ListMonitoringExecutionsRequest& request) const;
+
+        /**
+         * <p>Returns list of all monitoring job executions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringExecutions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMonitoringExecutionsOutcomeCallable ListMonitoringExecutionsCallable(const Model::ListMonitoringExecutionsRequest& request) const;
+
+        /**
+         * <p>Returns list of all monitoring job executions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringExecutions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMonitoringExecutionsAsync(const Model::ListMonitoringExecutionsRequest& request, const ListMonitoringExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns list of all monitoring schedules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringSchedules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMonitoringSchedulesOutcome ListMonitoringSchedules(const Model::ListMonitoringSchedulesRequest& request) const;
+
+        /**
+         * <p>Returns list of all monitoring schedules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringSchedules">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListMonitoringSchedulesOutcomeCallable ListMonitoringSchedulesCallable(const Model::ListMonitoringSchedulesRequest& request) const;
+
+        /**
+         * <p>Returns list of all monitoring schedules.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringSchedules">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListMonitoringSchedulesAsync(const Model::ListMonitoringSchedulesRequest& request, const ListMonitoringSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists notebook instance lifestyle configurations created with the
          * <a>CreateNotebookInstanceLifecycleConfig</a> API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">AWS
@@ -2739,6 +4352,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListNotebookInstancesAsync(const Model::ListNotebookInstancesRequest& request, const ListNotebookInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists processing jobs that satisfy various filters.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListProcessingJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListProcessingJobsOutcome ListProcessingJobs(const Model::ListProcessingJobsRequest& request) const;
+
+        /**
+         * <p>Lists processing jobs that satisfy various filters.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListProcessingJobs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListProcessingJobsOutcomeCallable ListProcessingJobsCallable(const Model::ListProcessingJobsRequest& request) const;
+
+        /**
+         * <p>Lists processing jobs that satisfy various filters.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListProcessingJobs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListProcessingJobsAsync(const Model::ListProcessingJobsRequest& request, const ListProcessingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of the work teams that you are subscribed to in the AWS
@@ -2881,6 +4522,96 @@ namespace Model
         virtual void ListTransformJobsAsync(const Model::ListTransformJobsRequest& request, const ListTransformJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists the trial components in your account. You can filter the list to show
+         * only components that were created in a specific time range. You can sort the
+         * list by trial component name or creation time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrialComponents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTrialComponentsOutcome ListTrialComponents(const Model::ListTrialComponentsRequest& request) const;
+
+        /**
+         * <p>Lists the trial components in your account. You can filter the list to show
+         * only components that were created in a specific time range. You can sort the
+         * list by trial component name or creation time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrialComponents">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTrialComponentsOutcomeCallable ListTrialComponentsCallable(const Model::ListTrialComponentsRequest& request) const;
+
+        /**
+         * <p>Lists the trial components in your account. You can filter the list to show
+         * only components that were created in a specific time range. You can sort the
+         * list by trial component name or creation time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrialComponents">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTrialComponentsAsync(const Model::ListTrialComponentsRequest& request, const ListTrialComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists the trials in your account. Specify an experiment name to limit the
+         * list to the trials that are part of that experiment. The list can be filtered to
+         * show only trials that were created in a specific time range. The list can be
+         * sorted by trial name or creation time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTrialsOutcome ListTrials(const Model::ListTrialsRequest& request) const;
+
+        /**
+         * <p>Lists the trials in your account. Specify an experiment name to limit the
+         * list to the trials that are part of that experiment. The list can be filtered to
+         * show only trials that were created in a specific time range. The list can be
+         * sorted by trial name or creation time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTrialsOutcomeCallable ListTrialsCallable(const Model::ListTrialsRequest& request) const;
+
+        /**
+         * <p>Lists the trials in your account. Specify an experiment name to limit the
+         * list to the trials that are part of that experiment. The list can be filtered to
+         * show only trials that were created in a specific time range. The list can be
+         * sorted by trial name or creation time.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrials">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTrialsAsync(const Model::ListTrialsRequest& request, const ListTrialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists user profiles.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUserProfiles">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListUserProfilesOutcome ListUserProfiles(const Model::ListUserProfilesRequest& request) const;
+
+        /**
+         * <p>Lists user profiles.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUserProfiles">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListUserProfilesOutcomeCallable ListUserProfilesCallable(const Model::ListUserProfilesRequest& request) const;
+
+        /**
+         * <p>Lists user profiles.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListUserProfiles">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListUserProfilesAsync(const Model::ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets a list of work teams that you have defined in a region. The list may be
          * empty if no work team satisfies the filter specified in the
          * <code>NameContains</code> parameter.</p><p><h3>See Also:</h3>   <a
@@ -2977,6 +4708,37 @@ namespace Model
         virtual void SearchAsync(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts a previously stopped monitoring schedule.</p> <note> <p>New monitoring
+         * schedules are immediately started after creation.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMonitoringSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartMonitoringScheduleOutcome StartMonitoringSchedule(const Model::StartMonitoringScheduleRequest& request) const;
+
+        /**
+         * <p>Starts a previously stopped monitoring schedule.</p> <note> <p>New monitoring
+         * schedules are immediately started after creation.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMonitoringSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartMonitoringScheduleOutcomeCallable StartMonitoringScheduleCallable(const Model::StartMonitoringScheduleRequest& request) const;
+
+        /**
+         * <p>Starts a previously stopped monitoring schedule.</p> <note> <p>New monitoring
+         * schedules are immediately started after creation.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartMonitoringSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartMonitoringScheduleAsync(const Model::StartMonitoringScheduleRequest& request, const StartMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Launches an ML compute instance with the latest version of the libraries and
          * attaches your ML storage volume. After configuring the notebook instance, Amazon
          * SageMaker sets the notebook instance status to <code>InService</code>. A
@@ -3012,6 +4774,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartNotebookInstanceAsync(const Model::StartNotebookInstanceRequest& request, const StartNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>A method for forcing the termination of a running job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAutoMLJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopAutoMLJobOutcome StopAutoMLJob(const Model::StopAutoMLJobRequest& request) const;
+
+        /**
+         * <p>A method for forcing the termination of a running job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAutoMLJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopAutoMLJobOutcomeCallable StopAutoMLJobCallable(const Model::StopAutoMLJobRequest& request) const;
+
+        /**
+         * <p>A method for forcing the termination of a running job.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopAutoMLJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopAutoMLJobAsync(const Model::StopAutoMLJobRequest& request, const StopAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a model compilation job.</p> <p> To stop a job, Amazon SageMaker sends
@@ -3131,6 +4921,31 @@ namespace Model
         virtual void StopLabelingJobAsync(const Model::StopLabelingJobRequest& request, const StopLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Stops a previously started monitoring schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopMonitoringSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopMonitoringScheduleOutcome StopMonitoringSchedule(const Model::StopMonitoringScheduleRequest& request) const;
+
+        /**
+         * <p>Stops a previously started monitoring schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopMonitoringSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopMonitoringScheduleOutcomeCallable StopMonitoringScheduleCallable(const Model::StopMonitoringScheduleRequest& request) const;
+
+        /**
+         * <p>Stops a previously started monitoring schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopMonitoringSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopMonitoringScheduleAsync(const Model::StopMonitoringScheduleRequest& request, const StopMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Terminates the ML compute instance. Before terminating the instance, Amazon
          * SageMaker disconnects the ML storage volume from it. Amazon SageMaker preserves
          * the ML storage volume. Amazon SageMaker stops charging you for the ML compute
@@ -3175,6 +4990,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StopNotebookInstanceAsync(const Model::StopNotebookInstanceRequest& request, const StopNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Stops a processing job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopProcessingJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopProcessingJobOutcome StopProcessingJob(const Model::StopProcessingJobRequest& request) const;
+
+        /**
+         * <p>Stops a processing job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopProcessingJob">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopProcessingJobOutcomeCallable StopProcessingJobCallable(const Model::StopProcessingJobRequest& request) const;
+
+        /**
+         * <p>Stops a processing job.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopProcessingJob">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopProcessingJobAsync(const Model::StopProcessingJobRequest& request, const StopProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Stops a training job. To stop a job, Amazon SageMaker sends the algorithm the
@@ -3288,6 +5128,34 @@ namespace Model
         virtual void UpdateCodeRepositoryAsync(const Model::UpdateCodeRepositoryRequest& request, const UpdateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a domain. Changes will impact all of the people in the
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDomain">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateDomainOutcome UpdateDomain(const Model::UpdateDomainRequest& request) const;
+
+        /**
+         * <p>Updates a domain. Changes will impact all of the people in the
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDomain">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateDomainOutcomeCallable UpdateDomainCallable(const Model::UpdateDomainRequest& request) const;
+
+        /**
+         * <p>Updates a domain. Changes will impact all of the people in the
+         * domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateDomain">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateDomainAsync(const Model::UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deploys the new <code>EndpointConfig</code> specified in the request,
          * switches to using newly created endpoint, and then deletes resources provisioned
          * for the endpoint using the previous <code>EndpointConfig</code> (there is no
@@ -3392,6 +5260,59 @@ namespace Model
         virtual void UpdateEndpointWeightsAndCapacitiesAsync(const Model::UpdateEndpointWeightsAndCapacitiesRequest& request, const UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Adds, updates, or removes the description of an experiment. Updates the
+         * display name of an experiment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateExperiment">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateExperimentOutcome UpdateExperiment(const Model::UpdateExperimentRequest& request) const;
+
+        /**
+         * <p>Adds, updates, or removes the description of an experiment. Updates the
+         * display name of an experiment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateExperiment">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateExperimentOutcomeCallable UpdateExperimentCallable(const Model::UpdateExperimentRequest& request) const;
+
+        /**
+         * <p>Adds, updates, or removes the description of an experiment. Updates the
+         * display name of an experiment.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateExperiment">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateExperimentAsync(const Model::UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates a previously created schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateMonitoringScheduleOutcome UpdateMonitoringSchedule(const Model::UpdateMonitoringScheduleRequest& request) const;
+
+        /**
+         * <p>Updates a previously created schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringSchedule">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateMonitoringScheduleOutcomeCallable UpdateMonitoringScheduleCallable(const Model::UpdateMonitoringScheduleRequest& request) const;
+
+        /**
+         * <p>Updates a previously created schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringSchedule">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateMonitoringScheduleAsync(const Model::UpdateMonitoringScheduleRequest& request, const UpdateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a notebook instance. NotebookInstance updates include upgrading or
          * downgrading the ML compute instance used for your notebook instance to
          * accommodate changes in your workload requirements.</p><p><h3>See Also:</h3>   <a
@@ -3451,6 +5372,84 @@ namespace Model
         virtual void UpdateNotebookInstanceLifecycleConfigAsync(const Model::UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates the display name of a trial.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrial">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTrialOutcome UpdateTrial(const Model::UpdateTrialRequest& request) const;
+
+        /**
+         * <p>Updates the display name of a trial.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrial">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTrialOutcomeCallable UpdateTrialCallable(const Model::UpdateTrialRequest& request) const;
+
+        /**
+         * <p>Updates the display name of a trial.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrial">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTrialAsync(const Model::UpdateTrialRequest& request, const UpdateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates one or more properties of a trial component.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrialComponent">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTrialComponentOutcome UpdateTrialComponent(const Model::UpdateTrialComponentRequest& request) const;
+
+        /**
+         * <p>Updates one or more properties of a trial component.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrialComponent">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTrialComponentOutcomeCallable UpdateTrialComponentCallable(const Model::UpdateTrialComponentRequest& request) const;
+
+        /**
+         * <p>Updates one or more properties of a trial component.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateTrialComponent">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTrialComponentAsync(const Model::UpdateTrialComponentRequest& request, const UpdateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates a user profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateUserProfile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateUserProfileOutcome UpdateUserProfile(const Model::UpdateUserProfileRequest& request) const;
+
+        /**
+         * <p>Updates a user profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateUserProfile">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateUserProfileOutcomeCallable UpdateUserProfileCallable(const Model::UpdateUserProfileRequest& request) const;
+
+        /**
+         * <p>Updates a user profile.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateUserProfile">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateUserProfileAsync(const Model::UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing work team with new member definitions or
          * description.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkteam">AWS
@@ -3483,79 +5482,135 @@ namespace Model
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void AddTagsAsyncHelper(const Model::AddTagsRequest& request, const AddTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AssociateTrialComponentAsyncHelper(const Model::AssociateTrialComponentRequest& request, const AssociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateAlgorithmAsyncHelper(const Model::CreateAlgorithmRequest& request, const CreateAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAppAsyncHelper(const Model::CreateAppRequest& request, const CreateAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateAutoMLJobAsyncHelper(const Model::CreateAutoMLJobRequest& request, const CreateAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCodeRepositoryAsyncHelper(const Model::CreateCodeRepositoryRequest& request, const CreateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCompilationJobAsyncHelper(const Model::CreateCompilationJobRequest& request, const CreateCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDomainAsyncHelper(const Model::CreateDomainRequest& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEndpointAsyncHelper(const Model::CreateEndpointRequest& request, const CreateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateEndpointConfigAsyncHelper(const Model::CreateEndpointConfigRequest& request, const CreateEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateExperimentAsyncHelper(const Model::CreateExperimentRequest& request, const CreateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFlowDefinitionAsyncHelper(const Model::CreateFlowDefinitionRequest& request, const CreateFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateHumanTaskUiAsyncHelper(const Model::CreateHumanTaskUiRequest& request, const CreateHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateHyperParameterTuningJobAsyncHelper(const Model::CreateHyperParameterTuningJobRequest& request, const CreateHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateLabelingJobAsyncHelper(const Model::CreateLabelingJobRequest& request, const CreateLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelAsyncHelper(const Model::CreateModelRequest& request, const CreateModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateModelPackageAsyncHelper(const Model::CreateModelPackageRequest& request, const CreateModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateMonitoringScheduleAsyncHelper(const Model::CreateMonitoringScheduleRequest& request, const CreateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNotebookInstanceAsyncHelper(const Model::CreateNotebookInstanceRequest& request, const CreateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateNotebookInstanceLifecycleConfigAsyncHelper(const Model::CreateNotebookInstanceLifecycleConfigRequest& request, const CreateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreatePresignedDomainUrlAsyncHelper(const Model::CreatePresignedDomainUrlRequest& request, const CreatePresignedDomainUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreatePresignedNotebookInstanceUrlAsyncHelper(const Model::CreatePresignedNotebookInstanceUrlRequest& request, const CreatePresignedNotebookInstanceUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateProcessingJobAsyncHelper(const Model::CreateProcessingJobRequest& request, const CreateProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTrainingJobAsyncHelper(const Model::CreateTrainingJobRequest& request, const CreateTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTransformJobAsyncHelper(const Model::CreateTransformJobRequest& request, const CreateTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateTrialAsyncHelper(const Model::CreateTrialRequest& request, const CreateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateTrialComponentAsyncHelper(const Model::CreateTrialComponentRequest& request, const CreateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateUserProfileAsyncHelper(const Model::CreateUserProfileRequest& request, const CreateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateWorkteamAsyncHelper(const Model::CreateWorkteamRequest& request, const CreateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAlgorithmAsyncHelper(const Model::DeleteAlgorithmRequest& request, const DeleteAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAppAsyncHelper(const Model::DeleteAppRequest& request, const DeleteAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCodeRepositoryAsyncHelper(const Model::DeleteCodeRepositoryRequest& request, const DeleteCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteDomainAsyncHelper(const Model::DeleteDomainRequest& request, const DeleteDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEndpointAsyncHelper(const Model::DeleteEndpointRequest& request, const DeleteEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteEndpointConfigAsyncHelper(const Model::DeleteEndpointConfigRequest& request, const DeleteEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteExperimentAsyncHelper(const Model::DeleteExperimentRequest& request, const DeleteExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFlowDefinitionAsyncHelper(const Model::DeleteFlowDefinitionRequest& request, const DeleteFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelAsyncHelper(const Model::DeleteModelRequest& request, const DeleteModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteModelPackageAsyncHelper(const Model::DeleteModelPackageRequest& request, const DeleteModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteMonitoringScheduleAsyncHelper(const Model::DeleteMonitoringScheduleRequest& request, const DeleteMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNotebookInstanceAsyncHelper(const Model::DeleteNotebookInstanceRequest& request, const DeleteNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteNotebookInstanceLifecycleConfigAsyncHelper(const Model::DeleteNotebookInstanceLifecycleConfigRequest& request, const DeleteNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTrialAsyncHelper(const Model::DeleteTrialRequest& request, const DeleteTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTrialComponentAsyncHelper(const Model::DeleteTrialComponentRequest& request, const DeleteTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteUserProfileAsyncHelper(const Model::DeleteUserProfileRequest& request, const DeleteUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWorkteamAsyncHelper(const Model::DeleteWorkteamRequest& request, const DeleteWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeAlgorithmAsyncHelper(const Model::DescribeAlgorithmRequest& request, const DescribeAlgorithmResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAppAsyncHelper(const Model::DescribeAppRequest& request, const DescribeAppResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAutoMLJobAsyncHelper(const Model::DescribeAutoMLJobRequest& request, const DescribeAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCodeRepositoryAsyncHelper(const Model::DescribeCodeRepositoryRequest& request, const DescribeCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCompilationJobAsyncHelper(const Model::DescribeCompilationJobRequest& request, const DescribeCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDomainAsyncHelper(const Model::DescribeDomainRequest& request, const DescribeDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointAsyncHelper(const Model::DescribeEndpointRequest& request, const DescribeEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointConfigAsyncHelper(const Model::DescribeEndpointConfigRequest& request, const DescribeEndpointConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeExperimentAsyncHelper(const Model::DescribeExperimentRequest& request, const DescribeExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFlowDefinitionAsyncHelper(const Model::DescribeFlowDefinitionRequest& request, const DescribeFlowDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeHumanTaskUiAsyncHelper(const Model::DescribeHumanTaskUiRequest& request, const DescribeHumanTaskUiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHyperParameterTuningJobAsyncHelper(const Model::DescribeHyperParameterTuningJobRequest& request, const DescribeHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLabelingJobAsyncHelper(const Model::DescribeLabelingJobRequest& request, const DescribeLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelAsyncHelper(const Model::DescribeModelRequest& request, const DescribeModelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeModelPackageAsyncHelper(const Model::DescribeModelPackageRequest& request, const DescribeModelPackageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeMonitoringScheduleAsyncHelper(const Model::DescribeMonitoringScheduleRequest& request, const DescribeMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNotebookInstanceAsyncHelper(const Model::DescribeNotebookInstanceRequest& request, const DescribeNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeNotebookInstanceLifecycleConfigAsyncHelper(const Model::DescribeNotebookInstanceLifecycleConfigRequest& request, const DescribeNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeProcessingJobAsyncHelper(const Model::DescribeProcessingJobRequest& request, const DescribeProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSubscribedWorkteamAsyncHelper(const Model::DescribeSubscribedWorkteamRequest& request, const DescribeSubscribedWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTrainingJobAsyncHelper(const Model::DescribeTrainingJobRequest& request, const DescribeTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTransformJobAsyncHelper(const Model::DescribeTransformJobRequest& request, const DescribeTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTrialAsyncHelper(const Model::DescribeTrialRequest& request, const DescribeTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTrialComponentAsyncHelper(const Model::DescribeTrialComponentRequest& request, const DescribeTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeUserProfileAsyncHelper(const Model::DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkteamAsyncHelper(const Model::DescribeWorkteamRequest& request, const DescribeWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateTrialComponentAsyncHelper(const Model::DisassociateTrialComponentRequest& request, const DisassociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSearchSuggestionsAsyncHelper(const Model::GetSearchSuggestionsRequest& request, const GetSearchSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAlgorithmsAsyncHelper(const Model::ListAlgorithmsRequest& request, const ListAlgorithmsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAppsAsyncHelper(const Model::ListAppsRequest& request, const ListAppsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListAutoMLJobsAsyncHelper(const Model::ListAutoMLJobsRequest& request, const ListAutoMLJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListCandidatesForAutoMLJobAsyncHelper(const Model::ListCandidatesForAutoMLJobRequest& request, const ListCandidatesForAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCodeRepositoriesAsyncHelper(const Model::ListCodeRepositoriesRequest& request, const ListCodeRepositoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCompilationJobsAsyncHelper(const Model::ListCompilationJobsRequest& request, const ListCompilationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListDomainsAsyncHelper(const Model::ListDomainsRequest& request, const ListDomainsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEndpointConfigsAsyncHelper(const Model::ListEndpointConfigsRequest& request, const ListEndpointConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEndpointsAsyncHelper(const Model::ListEndpointsRequest& request, const ListEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListExperimentsAsyncHelper(const Model::ListExperimentsRequest& request, const ListExperimentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFlowDefinitionsAsyncHelper(const Model::ListFlowDefinitionsRequest& request, const ListFlowDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListHumanTaskUisAsyncHelper(const Model::ListHumanTaskUisRequest& request, const ListHumanTaskUisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListHyperParameterTuningJobsAsyncHelper(const Model::ListHyperParameterTuningJobsRequest& request, const ListHyperParameterTuningJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLabelingJobsAsyncHelper(const Model::ListLabelingJobsRequest& request, const ListLabelingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLabelingJobsForWorkteamAsyncHelper(const Model::ListLabelingJobsForWorkteamRequest& request, const ListLabelingJobsForWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelPackagesAsyncHelper(const Model::ListModelPackagesRequest& request, const ListModelPackagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListModelsAsyncHelper(const Model::ListModelsRequest& request, const ListModelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMonitoringExecutionsAsyncHelper(const Model::ListMonitoringExecutionsRequest& request, const ListMonitoringExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListMonitoringSchedulesAsyncHelper(const Model::ListMonitoringSchedulesRequest& request, const ListMonitoringSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNotebookInstanceLifecycleConfigsAsyncHelper(const Model::ListNotebookInstanceLifecycleConfigsRequest& request, const ListNotebookInstanceLifecycleConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListNotebookInstancesAsyncHelper(const Model::ListNotebookInstancesRequest& request, const ListNotebookInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListProcessingJobsAsyncHelper(const Model::ListProcessingJobsRequest& request, const ListProcessingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSubscribedWorkteamsAsyncHelper(const Model::ListSubscribedWorkteamsRequest& request, const ListSubscribedWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsAsyncHelper(const Model::ListTagsRequest& request, const ListTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTrainingJobsAsyncHelper(const Model::ListTrainingJobsRequest& request, const ListTrainingJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTrainingJobsForHyperParameterTuningJobAsyncHelper(const Model::ListTrainingJobsForHyperParameterTuningJobRequest& request, const ListTrainingJobsForHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTransformJobsAsyncHelper(const Model::ListTransformJobsRequest& request, const ListTransformJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTrialComponentsAsyncHelper(const Model::ListTrialComponentsRequest& request, const ListTrialComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTrialsAsyncHelper(const Model::ListTrialsRequest& request, const ListTrialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListUserProfilesAsyncHelper(const Model::ListUserProfilesRequest& request, const ListUserProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListWorkteamsAsyncHelper(const Model::ListWorkteamsRequest& request, const ListWorkteamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RenderUiTemplateAsyncHelper(const Model::RenderUiTemplateRequest& request, const RenderUiTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SearchAsyncHelper(const Model::SearchRequest& request, const SearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartMonitoringScheduleAsyncHelper(const Model::StartMonitoringScheduleRequest& request, const StartMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartNotebookInstanceAsyncHelper(const Model::StartNotebookInstanceRequest& request, const StartNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopAutoMLJobAsyncHelper(const Model::StopAutoMLJobRequest& request, const StopAutoMLJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopCompilationJobAsyncHelper(const Model::StopCompilationJobRequest& request, const StopCompilationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopHyperParameterTuningJobAsyncHelper(const Model::StopHyperParameterTuningJobRequest& request, const StopHyperParameterTuningJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopLabelingJobAsyncHelper(const Model::StopLabelingJobRequest& request, const StopLabelingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopMonitoringScheduleAsyncHelper(const Model::StopMonitoringScheduleRequest& request, const StopMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopNotebookInstanceAsyncHelper(const Model::StopNotebookInstanceRequest& request, const StopNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopProcessingJobAsyncHelper(const Model::StopProcessingJobRequest& request, const StopProcessingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopTrainingJobAsyncHelper(const Model::StopTrainingJobRequest& request, const StopTrainingJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopTransformJobAsyncHelper(const Model::StopTransformJobRequest& request, const StopTransformJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateCodeRepositoryAsyncHelper(const Model::UpdateCodeRepositoryRequest& request, const UpdateCodeRepositoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateDomainAsyncHelper(const Model::UpdateDomainRequest& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEndpointAsyncHelper(const Model::UpdateEndpointRequest& request, const UpdateEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateEndpointWeightsAndCapacitiesAsyncHelper(const Model::UpdateEndpointWeightsAndCapacitiesRequest& request, const UpdateEndpointWeightsAndCapacitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateExperimentAsyncHelper(const Model::UpdateExperimentRequest& request, const UpdateExperimentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateMonitoringScheduleAsyncHelper(const Model::UpdateMonitoringScheduleRequest& request, const UpdateMonitoringScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNotebookInstanceAsyncHelper(const Model::UpdateNotebookInstanceRequest& request, const UpdateNotebookInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNotebookInstanceLifecycleConfigAsyncHelper(const Model::UpdateNotebookInstanceLifecycleConfigRequest& request, const UpdateNotebookInstanceLifecycleConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTrialAsyncHelper(const Model::UpdateTrialRequest& request, const UpdateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTrialComponentAsyncHelper(const Model::UpdateTrialComponentRequest& request, const UpdateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateUserProfileAsyncHelper(const Model::UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWorkteamAsyncHelper(const Model::UpdateWorkteamRequest& request, const UpdateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

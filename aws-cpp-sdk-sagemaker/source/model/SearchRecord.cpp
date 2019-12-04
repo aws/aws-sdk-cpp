@@ -29,12 +29,18 @@ namespace Model
 {
 
 SearchRecord::SearchRecord() : 
-    m_trainingJobHasBeenSet(false)
+    m_trainingJobHasBeenSet(false),
+    m_experimentHasBeenSet(false),
+    m_trialHasBeenSet(false),
+    m_trialComponentHasBeenSet(false)
 {
 }
 
 SearchRecord::SearchRecord(JsonView jsonValue) : 
-    m_trainingJobHasBeenSet(false)
+    m_trainingJobHasBeenSet(false),
+    m_experimentHasBeenSet(false),
+    m_trialHasBeenSet(false),
+    m_trialComponentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +54,27 @@ SearchRecord& SearchRecord::operator =(JsonView jsonValue)
     m_trainingJobHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Experiment"))
+  {
+    m_experiment = jsonValue.GetObject("Experiment");
+
+    m_experimentHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Trial"))
+  {
+    m_trial = jsonValue.GetObject("Trial");
+
+    m_trialHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TrialComponent"))
+  {
+    m_trialComponent = jsonValue.GetObject("TrialComponent");
+
+    m_trialComponentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +85,24 @@ JsonValue SearchRecord::Jsonize() const
   if(m_trainingJobHasBeenSet)
   {
    payload.WithObject("TrainingJob", m_trainingJob.Jsonize());
+
+  }
+
+  if(m_experimentHasBeenSet)
+  {
+   payload.WithObject("Experiment", m_experiment.Jsonize());
+
+  }
+
+  if(m_trialHasBeenSet)
+  {
+   payload.WithObject("Trial", m_trial.Jsonize());
+
+  }
+
+  if(m_trialComponentHasBeenSet)
+  {
+   payload.WithObject("TrialComponent", m_trialComponent.Jsonize());
 
   }
 

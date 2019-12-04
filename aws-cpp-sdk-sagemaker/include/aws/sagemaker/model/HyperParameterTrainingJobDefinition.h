@@ -15,9 +15,11 @@
 
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/HyperParameterTuningJobObjective.h>
+#include <aws/sagemaker/model/ParameterRanges.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/sagemaker/model/HyperParameterAlgorithmSpecification.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/OutputDataConfig.h>
@@ -55,6 +57,85 @@ namespace Model
     HyperParameterTrainingJobDefinition(Aws::Utils::Json::JsonView jsonValue);
     HyperParameterTrainingJobDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The job definition name.</p>
+     */
+    inline const Aws::String& GetDefinitionName() const{ return m_definitionName; }
+
+    /**
+     * <p>The job definition name.</p>
+     */
+    inline bool DefinitionNameHasBeenSet() const { return m_definitionNameHasBeenSet; }
+
+    /**
+     * <p>The job definition name.</p>
+     */
+    inline void SetDefinitionName(const Aws::String& value) { m_definitionNameHasBeenSet = true; m_definitionName = value; }
+
+    /**
+     * <p>The job definition name.</p>
+     */
+    inline void SetDefinitionName(Aws::String&& value) { m_definitionNameHasBeenSet = true; m_definitionName = std::move(value); }
+
+    /**
+     * <p>The job definition name.</p>
+     */
+    inline void SetDefinitionName(const char* value) { m_definitionNameHasBeenSet = true; m_definitionName.assign(value); }
+
+    /**
+     * <p>The job definition name.</p>
+     */
+    inline HyperParameterTrainingJobDefinition& WithDefinitionName(const Aws::String& value) { SetDefinitionName(value); return *this;}
+
+    /**
+     * <p>The job definition name.</p>
+     */
+    inline HyperParameterTrainingJobDefinition& WithDefinitionName(Aws::String&& value) { SetDefinitionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The job definition name.</p>
+     */
+    inline HyperParameterTrainingJobDefinition& WithDefinitionName(const char* value) { SetDefinitionName(value); return *this;}
+
+
+    
+    inline const HyperParameterTuningJobObjective& GetTuningObjective() const{ return m_tuningObjective; }
+
+    
+    inline bool TuningObjectiveHasBeenSet() const { return m_tuningObjectiveHasBeenSet; }
+
+    
+    inline void SetTuningObjective(const HyperParameterTuningJobObjective& value) { m_tuningObjectiveHasBeenSet = true; m_tuningObjective = value; }
+
+    
+    inline void SetTuningObjective(HyperParameterTuningJobObjective&& value) { m_tuningObjectiveHasBeenSet = true; m_tuningObjective = std::move(value); }
+
+    
+    inline HyperParameterTrainingJobDefinition& WithTuningObjective(const HyperParameterTuningJobObjective& value) { SetTuningObjective(value); return *this;}
+
+    
+    inline HyperParameterTrainingJobDefinition& WithTuningObjective(HyperParameterTuningJobObjective&& value) { SetTuningObjective(std::move(value)); return *this;}
+
+
+    
+    inline const ParameterRanges& GetHyperParameterRanges() const{ return m_hyperParameterRanges; }
+
+    
+    inline bool HyperParameterRangesHasBeenSet() const { return m_hyperParameterRangesHasBeenSet; }
+
+    
+    inline void SetHyperParameterRanges(const ParameterRanges& value) { m_hyperParameterRangesHasBeenSet = true; m_hyperParameterRanges = value; }
+
+    
+    inline void SetHyperParameterRanges(ParameterRanges&& value) { m_hyperParameterRangesHasBeenSet = true; m_hyperParameterRanges = std::move(value); }
+
+    
+    inline HyperParameterTrainingJobDefinition& WithHyperParameterRanges(const ParameterRanges& value) { SetHyperParameterRanges(value); return *this;}
+
+    
+    inline HyperParameterTrainingJobDefinition& WithHyperParameterRanges(ParameterRanges&& value) { SetHyperParameterRanges(std::move(value)); return *this;}
 
 
     /**
@@ -617,6 +698,15 @@ namespace Model
     inline HyperParameterTrainingJobDefinition& WithCheckpointConfig(CheckpointConfig&& value) { SetCheckpointConfig(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_definitionName;
+    bool m_definitionNameHasBeenSet;
+
+    HyperParameterTuningJobObjective m_tuningObjective;
+    bool m_tuningObjectiveHasBeenSet;
+
+    ParameterRanges m_hyperParameterRanges;
+    bool m_hyperParameterRangesHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_staticHyperParameters;
     bool m_staticHyperParametersHasBeenSet;

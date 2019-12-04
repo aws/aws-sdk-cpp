@@ -17,7 +17,9 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/states/model/StateMachineStatus.h>
+#include <aws/states/model/StateMachineType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/states/model/LoggingConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -278,6 +280,32 @@ namespace Model
 
 
     /**
+     * <p/>
+     */
+    inline const StateMachineType& GetType() const{ return m_type; }
+
+    /**
+     * <p/>
+     */
+    inline void SetType(const StateMachineType& value) { m_type = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetType(StateMachineType&& value) { m_type = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline DescribeStateMachineResult& WithType(const StateMachineType& value) { SetType(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline DescribeStateMachineResult& WithType(StateMachineType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The date the state machine is created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
@@ -302,6 +330,32 @@ namespace Model
      */
     inline DescribeStateMachineResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p/>
+     */
+    inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
+
+    /**
+     * <p/>
+     */
+    inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfiguration = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfiguration = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline DescribeStateMachineResult& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline DescribeStateMachineResult& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_stateMachineArn;
@@ -314,7 +368,11 @@ namespace Model
 
     Aws::String m_roleArn;
 
+    StateMachineType m_type;
+
     Aws::Utils::DateTime m_creationDate;
+
+    LoggingConfiguration m_loggingConfiguration;
   };
 
 } // namespace Model

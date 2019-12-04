@@ -29,6 +29,9 @@ namespace Model
 {
 
 HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition() : 
+    m_definitionNameHasBeenSet(false),
+    m_tuningObjectiveHasBeenSet(false),
+    m_hyperParameterRangesHasBeenSet(false),
     m_staticHyperParametersHasBeenSet(false),
     m_algorithmSpecificationHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -48,6 +51,9 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition() :
 }
 
 HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonView jsonValue) : 
+    m_definitionNameHasBeenSet(false),
+    m_tuningObjectiveHasBeenSet(false),
+    m_hyperParameterRangesHasBeenSet(false),
     m_staticHyperParametersHasBeenSet(false),
     m_algorithmSpecificationHasBeenSet(false),
     m_roleArnHasBeenSet(false),
@@ -69,6 +75,27 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonVie
 
 HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("DefinitionName"))
+  {
+    m_definitionName = jsonValue.GetString("DefinitionName");
+
+    m_definitionNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TuningObjective"))
+  {
+    m_tuningObjective = jsonValue.GetObject("TuningObjective");
+
+    m_tuningObjectiveHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HyperParameterRanges"))
+  {
+    m_hyperParameterRanges = jsonValue.GetObject("HyperParameterRanges");
+
+    m_hyperParameterRangesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("StaticHyperParameters"))
   {
     Aws::Map<Aws::String, JsonView> staticHyperParametersJsonMap = jsonValue.GetObject("StaticHyperParameters").GetAllObjects();
@@ -165,6 +192,24 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
 JsonValue HyperParameterTrainingJobDefinition::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_definitionNameHasBeenSet)
+  {
+   payload.WithString("DefinitionName", m_definitionName);
+
+  }
+
+  if(m_tuningObjectiveHasBeenSet)
+  {
+   payload.WithObject("TuningObjective", m_tuningObjective.Jsonize());
+
+  }
+
+  if(m_hyperParameterRangesHasBeenSet)
+  {
+   payload.WithObject("HyperParameterRanges", m_hyperParameterRanges.Jsonize());
+
+  }
 
   if(m_staticHyperParametersHasBeenSet)
   {

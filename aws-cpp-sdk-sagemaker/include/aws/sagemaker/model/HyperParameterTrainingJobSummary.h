@@ -54,6 +54,47 @@ namespace Model
 
 
     /**
+     * <p>The training job definition name.</p>
+     */
+    inline const Aws::String& GetTrainingJobDefinitionName() const{ return m_trainingJobDefinitionName; }
+
+    /**
+     * <p>The training job definition name.</p>
+     */
+    inline bool TrainingJobDefinitionNameHasBeenSet() const { return m_trainingJobDefinitionNameHasBeenSet; }
+
+    /**
+     * <p>The training job definition name.</p>
+     */
+    inline void SetTrainingJobDefinitionName(const Aws::String& value) { m_trainingJobDefinitionNameHasBeenSet = true; m_trainingJobDefinitionName = value; }
+
+    /**
+     * <p>The training job definition name.</p>
+     */
+    inline void SetTrainingJobDefinitionName(Aws::String&& value) { m_trainingJobDefinitionNameHasBeenSet = true; m_trainingJobDefinitionName = std::move(value); }
+
+    /**
+     * <p>The training job definition name.</p>
+     */
+    inline void SetTrainingJobDefinitionName(const char* value) { m_trainingJobDefinitionNameHasBeenSet = true; m_trainingJobDefinitionName.assign(value); }
+
+    /**
+     * <p>The training job definition name.</p>
+     */
+    inline HyperParameterTrainingJobSummary& WithTrainingJobDefinitionName(const Aws::String& value) { SetTrainingJobDefinitionName(value); return *this;}
+
+    /**
+     * <p>The training job definition name.</p>
+     */
+    inline HyperParameterTrainingJobSummary& WithTrainingJobDefinitionName(Aws::String&& value) { SetTrainingJobDefinitionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The training job definition name.</p>
+     */
+    inline HyperParameterTrainingJobSummary& WithTrainingJobDefinitionName(const char* value) { SetTrainingJobDefinitionName(value); return *this;}
+
+
+    /**
      * <p>The name of the training job.</p>
      */
     inline const Aws::String& GetTrainingJobName() const{ return m_trainingJobName; }
@@ -547,6 +588,9 @@ namespace Model
     inline HyperParameterTrainingJobSummary& WithObjectiveStatus(ObjectiveStatus&& value) { SetObjectiveStatus(std::move(value)); return *this;}
 
   private:
+
+    Aws::String m_trainingJobDefinitionName;
+    bool m_trainingJobDefinitionNameHasBeenSet;
 
     Aws::String m_trainingJobName;
     bool m_trainingJobNameHasBeenSet;

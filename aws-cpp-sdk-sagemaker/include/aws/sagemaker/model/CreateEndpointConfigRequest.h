@@ -18,6 +18,7 @@
 #include <aws/sagemaker/SageMakerRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/DataCaptureConfig.h>
 #include <aws/sagemaker/model/ProductionVariant.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
@@ -151,6 +152,25 @@ namespace Model
      * you want to host at this endpoint.</p>
      */
     inline CreateEndpointConfigRequest& AddProductionVariants(ProductionVariant&& value) { m_productionVariantsHasBeenSet = true; m_productionVariants.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const DataCaptureConfig& GetDataCaptureConfig() const{ return m_dataCaptureConfig; }
+
+    
+    inline bool DataCaptureConfigHasBeenSet() const { return m_dataCaptureConfigHasBeenSet; }
+
+    
+    inline void SetDataCaptureConfig(const DataCaptureConfig& value) { m_dataCaptureConfigHasBeenSet = true; m_dataCaptureConfig = value; }
+
+    
+    inline void SetDataCaptureConfig(DataCaptureConfig&& value) { m_dataCaptureConfigHasBeenSet = true; m_dataCaptureConfig = std::move(value); }
+
+    
+    inline CreateEndpointConfigRequest& WithDataCaptureConfig(const DataCaptureConfig& value) { SetDataCaptureConfig(value); return *this;}
+
+    
+    inline CreateEndpointConfigRequest& WithDataCaptureConfig(DataCaptureConfig&& value) { SetDataCaptureConfig(std::move(value)); return *this;}
 
 
     /**
@@ -393,6 +413,9 @@ namespace Model
 
     Aws::Vector<ProductionVariant> m_productionVariants;
     bool m_productionVariantsHasBeenSet;
+
+    DataCaptureConfig m_dataCaptureConfig;
+    bool m_dataCaptureConfigHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

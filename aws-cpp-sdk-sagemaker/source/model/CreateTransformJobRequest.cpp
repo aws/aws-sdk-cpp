@@ -36,7 +36,8 @@ CreateTransformJobRequest::CreateTransformJobRequest() :
     m_transformOutputHasBeenSet(false),
     m_transformResourcesHasBeenSet(false),
     m_dataProcessingHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_experimentConfigHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,12 @@ Aws::String CreateTransformJobRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_experimentConfigHasBeenSet)
+  {
+   payload.WithObject("ExperimentConfig", m_experimentConfig.Jsonize());
 
   }
 

@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 UpdateStateMachineRequest::UpdateStateMachineRequest() : 
     m_stateMachineArnHasBeenSet(false),
     m_definitionHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_loggingConfigurationHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,12 @@ Aws::String UpdateStateMachineRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_loggingConfigurationHasBeenSet)
+  {
+   payload.WithObject("loggingConfiguration", m_loggingConfiguration.Jsonize());
 
   }
 

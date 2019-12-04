@@ -28,9 +28,14 @@
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/CheckpointConfig.h>
+#include <aws/sagemaker/model/DebugHookConfig.h>
+#include <aws/sagemaker/model/ExperimentConfig.h>
+#include <aws/sagemaker/model/TensorBoardOutputConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/SecondaryStatusTransition.h>
 #include <aws/sagemaker/model/MetricData.h>
+#include <aws/sagemaker/model/DebugRuleConfiguration.h>
+#include <aws/sagemaker/model/DebugRuleEvaluationStatus.h>
 #include <utility>
 
 namespace Aws
@@ -213,6 +218,42 @@ namespace Model
      * job that created the transform or training job.</p>
      */
     inline DescribeTrainingJobResult& WithLabelingJobArn(const char* value) { SetLabelingJobArn(value); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const Aws::String& GetAutoMLJobArn() const{ return m_autoMLJobArn; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAutoMLJobArn(const Aws::String& value) { m_autoMLJobArn = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetAutoMLJobArn(Aws::String&& value) { m_autoMLJobArn = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline void SetAutoMLJobArn(const char* value) { m_autoMLJobArn.assign(value); }
+
+    /**
+     * <p/>
+     */
+    inline DescribeTrainingJobResult& WithAutoMLJobArn(const Aws::String& value) { SetAutoMLJobArn(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline DescribeTrainingJobResult& WithAutoMLJobArn(Aws::String&& value) { SetAutoMLJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline DescribeTrainingJobResult& WithAutoMLJobArn(const char* value) { SetAutoMLJobArn(value); return *this;}
 
 
     /**
@@ -1233,6 +1274,126 @@ namespace Model
      */
     inline DescribeTrainingJobResult& WithBillableTimeInSeconds(int value) { SetBillableTimeInSeconds(value); return *this;}
 
+
+    
+    inline const DebugHookConfig& GetDebugHookConfig() const{ return m_debugHookConfig; }
+
+    
+    inline void SetDebugHookConfig(const DebugHookConfig& value) { m_debugHookConfig = value; }
+
+    
+    inline void SetDebugHookConfig(DebugHookConfig&& value) { m_debugHookConfig = std::move(value); }
+
+    
+    inline DescribeTrainingJobResult& WithDebugHookConfig(const DebugHookConfig& value) { SetDebugHookConfig(value); return *this;}
+
+    
+    inline DescribeTrainingJobResult& WithDebugHookConfig(DebugHookConfig&& value) { SetDebugHookConfig(std::move(value)); return *this;}
+
+
+    
+    inline const ExperimentConfig& GetExperimentConfig() const{ return m_experimentConfig; }
+
+    
+    inline void SetExperimentConfig(const ExperimentConfig& value) { m_experimentConfig = value; }
+
+    
+    inline void SetExperimentConfig(ExperimentConfig&& value) { m_experimentConfig = std::move(value); }
+
+    
+    inline DescribeTrainingJobResult& WithExperimentConfig(const ExperimentConfig& value) { SetExperimentConfig(value); return *this;}
+
+    
+    inline DescribeTrainingJobResult& WithExperimentConfig(ExperimentConfig&& value) { SetExperimentConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline const Aws::Vector<DebugRuleConfiguration>& GetDebugRuleConfigurations() const{ return m_debugRuleConfigurations; }
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline void SetDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { m_debugRuleConfigurations = value; }
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline void SetDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { m_debugRuleConfigurations = std::move(value); }
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline DescribeTrainingJobResult& WithDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { SetDebugRuleConfigurations(value); return *this;}
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline DescribeTrainingJobResult& WithDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { SetDebugRuleConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline DescribeTrainingJobResult& AddDebugRuleConfigurations(const DebugRuleConfiguration& value) { m_debugRuleConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline DescribeTrainingJobResult& AddDebugRuleConfigurations(DebugRuleConfiguration&& value) { m_debugRuleConfigurations.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const TensorBoardOutputConfig& GetTensorBoardOutputConfig() const{ return m_tensorBoardOutputConfig; }
+
+    
+    inline void SetTensorBoardOutputConfig(const TensorBoardOutputConfig& value) { m_tensorBoardOutputConfig = value; }
+
+    
+    inline void SetTensorBoardOutputConfig(TensorBoardOutputConfig&& value) { m_tensorBoardOutputConfig = std::move(value); }
+
+    
+    inline DescribeTrainingJobResult& WithTensorBoardOutputConfig(const TensorBoardOutputConfig& value) { SetTensorBoardOutputConfig(value); return *this;}
+
+    
+    inline DescribeTrainingJobResult& WithTensorBoardOutputConfig(TensorBoardOutputConfig&& value) { SetTensorBoardOutputConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Status about the debug rule evaluation.</p>
+     */
+    inline const Aws::Vector<DebugRuleEvaluationStatus>& GetDebugRuleEvaluationStatuses() const{ return m_debugRuleEvaluationStatuses; }
+
+    /**
+     * <p>Status about the debug rule evaluation.</p>
+     */
+    inline void SetDebugRuleEvaluationStatuses(const Aws::Vector<DebugRuleEvaluationStatus>& value) { m_debugRuleEvaluationStatuses = value; }
+
+    /**
+     * <p>Status about the debug rule evaluation.</p>
+     */
+    inline void SetDebugRuleEvaluationStatuses(Aws::Vector<DebugRuleEvaluationStatus>&& value) { m_debugRuleEvaluationStatuses = std::move(value); }
+
+    /**
+     * <p>Status about the debug rule evaluation.</p>
+     */
+    inline DescribeTrainingJobResult& WithDebugRuleEvaluationStatuses(const Aws::Vector<DebugRuleEvaluationStatus>& value) { SetDebugRuleEvaluationStatuses(value); return *this;}
+
+    /**
+     * <p>Status about the debug rule evaluation.</p>
+     */
+    inline DescribeTrainingJobResult& WithDebugRuleEvaluationStatuses(Aws::Vector<DebugRuleEvaluationStatus>&& value) { SetDebugRuleEvaluationStatuses(std::move(value)); return *this;}
+
+    /**
+     * <p>Status about the debug rule evaluation.</p>
+     */
+    inline DescribeTrainingJobResult& AddDebugRuleEvaluationStatuses(const DebugRuleEvaluationStatus& value) { m_debugRuleEvaluationStatuses.push_back(value); return *this; }
+
+    /**
+     * <p>Status about the debug rule evaluation.</p>
+     */
+    inline DescribeTrainingJobResult& AddDebugRuleEvaluationStatuses(DebugRuleEvaluationStatus&& value) { m_debugRuleEvaluationStatuses.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_trainingJobName;
@@ -1242,6 +1403,8 @@ namespace Model
     Aws::String m_tuningJobArn;
 
     Aws::String m_labelingJobArn;
+
+    Aws::String m_autoMLJobArn;
 
     ModelArtifacts m_modelArtifacts;
 
@@ -1290,6 +1453,16 @@ namespace Model
     int m_trainingTimeInSeconds;
 
     int m_billableTimeInSeconds;
+
+    DebugHookConfig m_debugHookConfig;
+
+    ExperimentConfig m_experimentConfig;
+
+    Aws::Vector<DebugRuleConfiguration> m_debugRuleConfigurations;
+
+    TensorBoardOutputConfig m_tensorBoardOutputConfig;
+
+    Aws::Vector<DebugRuleEvaluationStatus> m_debugRuleEvaluationStatuses;
   };
 
 } // namespace Model

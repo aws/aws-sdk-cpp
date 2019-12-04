@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>This parameter is ignored for models that contain only a
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
-     * part of an inference pipeline, the value of ths parameter uniquely identifies
+     * part of an inference pipeline, the value of the parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
@@ -70,7 +70,7 @@ namespace Model
     /**
      * <p>This parameter is ignored for models that contain only a
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
-     * part of an inference pipeline, the value of ths parameter uniquely identifies
+     * part of an inference pipeline, the value of the parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
@@ -87,7 +87,7 @@ namespace Model
     /**
      * <p>This parameter is ignored for models that contain only a
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
-     * part of an inference pipeline, the value of ths parameter uniquely identifies
+     * part of an inference pipeline, the value of the parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
@@ -104,7 +104,7 @@ namespace Model
     /**
      * <p>This parameter is ignored for models that contain only a
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
-     * part of an inference pipeline, the value of ths parameter uniquely identifies
+     * part of an inference pipeline, the value of the parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
@@ -121,7 +121,7 @@ namespace Model
     /**
      * <p>This parameter is ignored for models that contain only a
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
-     * part of an inference pipeline, the value of ths parameter uniquely identifies
+     * part of an inference pipeline, the value of the parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
@@ -138,7 +138,7 @@ namespace Model
     /**
      * <p>This parameter is ignored for models that contain only a
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
-     * part of an inference pipeline, the value of ths parameter uniquely identifies
+     * part of an inference pipeline, the value of the parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
@@ -155,7 +155,7 @@ namespace Model
     /**
      * <p>This parameter is ignored for models that contain only a
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
-     * part of an inference pipeline, the value of ths parameter uniquely identifies
+     * part of an inference pipeline, the value of the parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
@@ -172,7 +172,7 @@ namespace Model
     /**
      * <p>This parameter is ignored for models that contain only a
      * <code>PrimaryContainer</code>.</p> <p>When a <code>ContainerDefinition</code> is
-     * part of an inference pipeline, the value of ths parameter uniquely identifies
+     * part of an inference pipeline, the value of the parameter uniquely identifies
      * the container for the purposes of logging and metrics. For information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/inference-pipeline-logs-metrics.html">Use
      * Logs and Metrics to Monitor an Inference Pipeline</a>. If you don't specify a
@@ -293,32 +293,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the container hosts a single model or multiple models.</p>
+     * <p>Whether the container hosts a single model or multiple models.</p>
      */
     inline const ContainerMode& GetMode() const{ return m_mode; }
 
     /**
-     * <p>Specifies whether the container hosts a single model or multiple models.</p>
+     * <p>Whether the container hosts a single model or multiple models.</p>
      */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
 
     /**
-     * <p>Specifies whether the container hosts a single model or multiple models.</p>
+     * <p>Whether the container hosts a single model or multiple models.</p>
      */
     inline void SetMode(const ContainerMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
     /**
-     * <p>Specifies whether the container hosts a single model or multiple models.</p>
+     * <p>Whether the container hosts a single model or multiple models.</p>
      */
     inline void SetMode(ContainerMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
     /**
-     * <p>Specifies whether the container hosts a single model or multiple models.</p>
+     * <p>Whether the container hosts a single model or multiple models.</p>
      */
     inline ContainerDefinition& WithMode(const ContainerMode& value) { SetMode(value); return *this;}
 
     /**
-     * <p>Specifies whether the container hosts a single model or multiple models.</p>
+     * <p>Whether the container hosts a single model or multiple models.</p>
      */
     inline ContainerDefinition& WithMode(ContainerMode&& value) { SetMode(std::move(value)); return *this;}
 

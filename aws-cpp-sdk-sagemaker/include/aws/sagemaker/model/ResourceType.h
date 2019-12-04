@@ -26,7 +26,10 @@ namespace Model
   enum class ResourceType
   {
     NOT_SET,
-    TrainingJob
+    TrainingJob,
+    Experiment,
+    ExperimentTrial,
+    ExperimentTrialComponent
   };
 
 namespace ResourceTypeMapper

@@ -24,6 +24,7 @@
 #include <aws/sagemaker/model/TransformResources.h>
 #include <aws/sagemaker/model/DataProcessing.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/ExperimentConfig.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -162,9 +163,9 @@ namespace Model
      * <p>The maximum number of parallel requests that can be sent to each instance in
      * a transform job. If <code>MaxConcurrentTransforms</code> is set to
      * <code>0</code> or left unset, Amazon SageMaker checks the optional
-     * execution-parameters to determine the optimal settings for your chosen
-     * algorithm. If the execution-parameters endpoint is not enabled, the default
-     * value is <code>1</code>. For more information on execution-parameters, see <a
+     * execution-parameters to determine the settings for your chosen algorithm. If the
+     * execution-parameters endpoint is not enabled, the default value is
+     * <code>1</code>. For more information on execution-parameters, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
      * Containers Serve Requests</a>. For built-in algorithms, you don't need to set a
      * value for <code>MaxConcurrentTransforms</code>.</p>
@@ -175,9 +176,9 @@ namespace Model
      * <p>The maximum number of parallel requests that can be sent to each instance in
      * a transform job. If <code>MaxConcurrentTransforms</code> is set to
      * <code>0</code> or left unset, Amazon SageMaker checks the optional
-     * execution-parameters to determine the optimal settings for your chosen
-     * algorithm. If the execution-parameters endpoint is not enabled, the default
-     * value is <code>1</code>. For more information on execution-parameters, see <a
+     * execution-parameters to determine the settings for your chosen algorithm. If the
+     * execution-parameters endpoint is not enabled, the default value is
+     * <code>1</code>. For more information on execution-parameters, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
      * Containers Serve Requests</a>. For built-in algorithms, you don't need to set a
      * value for <code>MaxConcurrentTransforms</code>.</p>
@@ -188,9 +189,9 @@ namespace Model
      * <p>The maximum number of parallel requests that can be sent to each instance in
      * a transform job. If <code>MaxConcurrentTransforms</code> is set to
      * <code>0</code> or left unset, Amazon SageMaker checks the optional
-     * execution-parameters to determine the optimal settings for your chosen
-     * algorithm. If the execution-parameters endpoint is not enabled, the default
-     * value is <code>1</code>. For more information on execution-parameters, see <a
+     * execution-parameters to determine the settings for your chosen algorithm. If the
+     * execution-parameters endpoint is not enabled, the default value is
+     * <code>1</code>. For more information on execution-parameters, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
      * Containers Serve Requests</a>. For built-in algorithms, you don't need to set a
      * value for <code>MaxConcurrentTransforms</code>.</p>
@@ -201,9 +202,9 @@ namespace Model
      * <p>The maximum number of parallel requests that can be sent to each instance in
      * a transform job. If <code>MaxConcurrentTransforms</code> is set to
      * <code>0</code> or left unset, Amazon SageMaker checks the optional
-     * execution-parameters to determine the optimal settings for your chosen
-     * algorithm. If the execution-parameters endpoint is not enabled, the default
-     * value is <code>1</code>. For more information on execution-parameters, see <a
+     * execution-parameters to determine the settings for your chosen algorithm. If the
+     * execution-parameters endpoint is not enabled, the default value is
+     * <code>1</code>. For more information on execution-parameters, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
      * Containers Serve Requests</a>. For built-in algorithms, you don't need to set a
      * value for <code>MaxConcurrentTransforms</code>.</p>
@@ -680,6 +681,25 @@ namespace Model
      */
     inline CreateTransformJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    
+    inline const ExperimentConfig& GetExperimentConfig() const{ return m_experimentConfig; }
+
+    
+    inline bool ExperimentConfigHasBeenSet() const { return m_experimentConfigHasBeenSet; }
+
+    
+    inline void SetExperimentConfig(const ExperimentConfig& value) { m_experimentConfigHasBeenSet = true; m_experimentConfig = value; }
+
+    
+    inline void SetExperimentConfig(ExperimentConfig&& value) { m_experimentConfigHasBeenSet = true; m_experimentConfig = std::move(value); }
+
+    
+    inline CreateTransformJobRequest& WithExperimentConfig(const ExperimentConfig& value) { SetExperimentConfig(value); return *this;}
+
+    
+    inline CreateTransformJobRequest& WithExperimentConfig(ExperimentConfig&& value) { SetExperimentConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transformJobName;
@@ -714,6 +734,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    ExperimentConfig m_experimentConfig;
+    bool m_experimentConfigHasBeenSet;
   };
 
 } // namespace Model

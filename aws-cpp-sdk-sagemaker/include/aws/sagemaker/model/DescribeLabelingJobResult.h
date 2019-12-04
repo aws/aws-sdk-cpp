@@ -459,12 +459,15 @@ namespace Model
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
-     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
-     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * data objects. Please note the following label-category limits:</p> <ul> <li>
+     * <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p>
+     * </li> <li> <p>Box bounding labeling jobs (all): 10 lables</p> </li> </ul> <p>The
+     * file is a JSON structure in the following format:</p> <p> <code>{</code> </p>
+     * <p> <code> "document-version": "2018-11-28"</code> </p> <p> <code> "labels":
+     * [</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p> <p> <code>
+     * "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p> <code>
+     * ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
      * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
      * <code>}</code> </p>
      */
@@ -472,12 +475,15 @@ namespace Model
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
-     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
-     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * data objects. Please note the following label-category limits:</p> <ul> <li>
+     * <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p>
+     * </li> <li> <p>Box bounding labeling jobs (all): 10 lables</p> </li> </ul> <p>The
+     * file is a JSON structure in the following format:</p> <p> <code>{</code> </p>
+     * <p> <code> "document-version": "2018-11-28"</code> </p> <p> <code> "labels":
+     * [</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p> <p> <code>
+     * "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p> <code>
+     * ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
      * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
      * <code>}</code> </p>
      */
@@ -485,12 +491,15 @@ namespace Model
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
-     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
-     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * data objects. Please note the following label-category limits:</p> <ul> <li>
+     * <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p>
+     * </li> <li> <p>Box bounding labeling jobs (all): 10 lables</p> </li> </ul> <p>The
+     * file is a JSON structure in the following format:</p> <p> <code>{</code> </p>
+     * <p> <code> "document-version": "2018-11-28"</code> </p> <p> <code> "labels":
+     * [</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p> <p> <code>
+     * "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p> <code>
+     * ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
      * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
      * <code>}</code> </p>
      */
@@ -498,12 +507,15 @@ namespace Model
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
-     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
-     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * data objects. Please note the following label-category limits:</p> <ul> <li>
+     * <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p>
+     * </li> <li> <p>Box bounding labeling jobs (all): 10 lables</p> </li> </ul> <p>The
+     * file is a JSON structure in the following format:</p> <p> <code>{</code> </p>
+     * <p> <code> "document-version": "2018-11-28"</code> </p> <p> <code> "labels":
+     * [</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p> <p> <code>
+     * "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p> <code>
+     * ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
      * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
      * <code>}</code> </p>
      */
@@ -511,12 +523,15 @@ namespace Model
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
-     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
-     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * data objects. Please note the following label-category limits:</p> <ul> <li>
+     * <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p>
+     * </li> <li> <p>Box bounding labeling jobs (all): 10 lables</p> </li> </ul> <p>The
+     * file is a JSON structure in the following format:</p> <p> <code>{</code> </p>
+     * <p> <code> "document-version": "2018-11-28"</code> </p> <p> <code> "labels":
+     * [</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p> <p> <code>
+     * "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p> <code>
+     * ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
      * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
      * <code>}</code> </p>
      */
@@ -524,12 +539,15 @@ namespace Model
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
-     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
-     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * data objects. Please note the following label-category limits:</p> <ul> <li>
+     * <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p>
+     * </li> <li> <p>Box bounding labeling jobs (all): 10 lables</p> </li> </ul> <p>The
+     * file is a JSON structure in the following format:</p> <p> <code>{</code> </p>
+     * <p> <code> "document-version": "2018-11-28"</code> </p> <p> <code> "labels":
+     * [</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p> <p> <code>
+     * "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p> <code>
+     * ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
      * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
      * <code>}</code> </p>
      */
@@ -537,12 +555,15 @@ namespace Model
 
     /**
      * <p>The S3 location of the JSON file that defines the categories used to label
-     * data objects.</p> <p>The file is a JSON structure in the following format:</p>
-     * <p> <code>{</code> </p> <p> <code> "document-version": "2018-11-28"</code> </p>
-     * <p> <code> "labels": [</code> </p> <p> <code> {</code> </p> <p> <code> "label":
-     * "<i>label 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p>
-     * <p> <code> "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p>
-     * <code> ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * data objects. Please note the following label-category limits:</p> <ul> <li>
+     * <p>Semantic segmentation labeling jobs using automated labeling: 20 labels</p>
+     * </li> <li> <p>Box bounding labeling jobs (all): 10 lables</p> </li> </ul> <p>The
+     * file is a JSON structure in the following format:</p> <p> <code>{</code> </p>
+     * <p> <code> "document-version": "2018-11-28"</code> </p> <p> <code> "labels":
+     * [</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
+     * 1</i>"</code> </p> <p> <code> },</code> </p> <p> <code> {</code> </p> <p> <code>
+     * "label": "<i>label 2</i>"</code> </p> <p> <code> },</code> </p> <p> <code>
+     * ...</code> </p> <p> <code> {</code> </p> <p> <code> "label": "<i>label
      * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
      * <code>}</code> </p>
      */

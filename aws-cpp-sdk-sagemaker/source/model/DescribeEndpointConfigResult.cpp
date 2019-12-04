@@ -59,6 +59,12 @@ DescribeEndpointConfigResult& DescribeEndpointConfigResult::operator =(const Aws
     }
   }
 
+  if(jsonValue.ValueExists("DataCaptureConfig"))
+  {
+    m_dataCaptureConfig = jsonValue.GetObject("DataCaptureConfig");
+
+  }
+
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");

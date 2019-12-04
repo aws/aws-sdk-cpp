@@ -31,6 +31,8 @@ namespace Model
 StateMachineListItem::StateMachineListItem() : 
     m_stateMachineArnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_type(StateMachineType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_creationDateHasBeenSet(false)
 {
 }
@@ -38,6 +40,8 @@ StateMachineListItem::StateMachineListItem() :
 StateMachineListItem::StateMachineListItem(JsonView jsonValue) : 
     m_stateMachineArnHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_type(StateMachineType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_creationDateHasBeenSet(false)
 {
   *this = jsonValue;
@@ -57,6 +61,13 @@ StateMachineListItem& StateMachineListItem::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = StateMachineTypeMapper::GetStateMachineTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("creationDate"))
@@ -83,6 +94,11 @@ JsonValue StateMachineListItem::Jsonize() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", StateMachineTypeMapper::GetNameForStateMachineType(m_type));
   }
 
   if(m_creationDateHasBeenSet)

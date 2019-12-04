@@ -416,6 +416,51 @@ namespace Model
      */
     inline AlgorithmSpecification& AddMetricDefinitions(MetricDefinition&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>To generate and save time-series metrics during training, set to
+     * <code>true</code>. The default is <code>false</code> and time-series metrics
+     * aren't generated except in the following cases:</p> <ul> <li> <p>You use one of
+     * the Amazon SageMaker built-in algorithms</p> </li> <li> <p>You use one of the
+     * following prebuilt Amazon SageMaker Docker images:</p> <ul> <li>
+     * <p>Tensorflow</p> </li> <li> <p>MXNet</p> </li> <li> <p>PyTorch</p> </li> </ul>
+     * </li> <li> <p>You specify at least one <a>MetricDefinition</a> </p> </li> </ul>
+     */
+    inline bool GetEnableSageMakerMetricsTimeSeries() const{ return m_enableSageMakerMetricsTimeSeries; }
+
+    /**
+     * <p>To generate and save time-series metrics during training, set to
+     * <code>true</code>. The default is <code>false</code> and time-series metrics
+     * aren't generated except in the following cases:</p> <ul> <li> <p>You use one of
+     * the Amazon SageMaker built-in algorithms</p> </li> <li> <p>You use one of the
+     * following prebuilt Amazon SageMaker Docker images:</p> <ul> <li>
+     * <p>Tensorflow</p> </li> <li> <p>MXNet</p> </li> <li> <p>PyTorch</p> </li> </ul>
+     * </li> <li> <p>You specify at least one <a>MetricDefinition</a> </p> </li> </ul>
+     */
+    inline bool EnableSageMakerMetricsTimeSeriesHasBeenSet() const { return m_enableSageMakerMetricsTimeSeriesHasBeenSet; }
+
+    /**
+     * <p>To generate and save time-series metrics during training, set to
+     * <code>true</code>. The default is <code>false</code> and time-series metrics
+     * aren't generated except in the following cases:</p> <ul> <li> <p>You use one of
+     * the Amazon SageMaker built-in algorithms</p> </li> <li> <p>You use one of the
+     * following prebuilt Amazon SageMaker Docker images:</p> <ul> <li>
+     * <p>Tensorflow</p> </li> <li> <p>MXNet</p> </li> <li> <p>PyTorch</p> </li> </ul>
+     * </li> <li> <p>You specify at least one <a>MetricDefinition</a> </p> </li> </ul>
+     */
+    inline void SetEnableSageMakerMetricsTimeSeries(bool value) { m_enableSageMakerMetricsTimeSeriesHasBeenSet = true; m_enableSageMakerMetricsTimeSeries = value; }
+
+    /**
+     * <p>To generate and save time-series metrics during training, set to
+     * <code>true</code>. The default is <code>false</code> and time-series metrics
+     * aren't generated except in the following cases:</p> <ul> <li> <p>You use one of
+     * the Amazon SageMaker built-in algorithms</p> </li> <li> <p>You use one of the
+     * following prebuilt Amazon SageMaker Docker images:</p> <ul> <li>
+     * <p>Tensorflow</p> </li> <li> <p>MXNet</p> </li> <li> <p>PyTorch</p> </li> </ul>
+     * </li> <li> <p>You specify at least one <a>MetricDefinition</a> </p> </li> </ul>
+     */
+    inline AlgorithmSpecification& WithEnableSageMakerMetricsTimeSeries(bool value) { SetEnableSageMakerMetricsTimeSeries(value); return *this;}
+
   private:
 
     Aws::String m_trainingImage;
@@ -429,6 +474,9 @@ namespace Model
 
     Aws::Vector<MetricDefinition> m_metricDefinitions;
     bool m_metricDefinitionsHasBeenSet;
+
+    bool m_enableSageMakerMetricsTimeSeries;
+    bool m_enableSageMakerMetricsTimeSeriesHasBeenSet;
   };
 
 } // namespace Model

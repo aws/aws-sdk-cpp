@@ -123,9 +123,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * encrypt model data on the storage volume attached to the ML compute instance(s)
+     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
+     * the following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -135,9 +135,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * encrypt model data on the storage volume attached to the ML compute instance(s)
+     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
+     * the following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -147,9 +147,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * encrypt model data on the storage volume attached to the ML compute instance(s)
+     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
+     * the following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -159,9 +159,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * encrypt model data on the storage volume attached to the ML compute instance(s)
+     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
+     * the following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -171,9 +171,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * encrypt model data on the storage volume attached to the ML compute instance(s)
+     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
+     * the following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -183,9 +183,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * encrypt model data on the storage volume attached to the ML compute instance(s)
+     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
+     * the following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -195,9 +195,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * encrypt model data on the storage volume attached to the ML compute instance(s)
+     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
+     * the following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
@@ -207,9 +207,9 @@ namespace Model
 
     /**
      * <p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to
-     * encrypt data on the storage volume attached to the ML compute instance(s) that
-     * run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of the
-     * following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
+     * encrypt model data on the storage volume attached to the ML compute instance(s)
+     * that run the batch transform job. The <code>VolumeKmsKeyId</code> can be any of
+     * the following formats:</p> <ul> <li> <p>// KMS Key ID</p> <p>
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>

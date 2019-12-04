@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 CreateEndpointConfigRequest::CreateEndpointConfigRequest() : 
     m_endpointConfigNameHasBeenSet(false),
     m_productionVariantsHasBeenSet(false),
+    m_dataCaptureConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false)
 {
@@ -48,6 +49,12 @@ Aws::String CreateEndpointConfigRequest::SerializePayload() const
      productionVariantsJsonList[productionVariantsIndex].AsObject(m_productionVariants[productionVariantsIndex].Jsonize());
    }
    payload.WithArray("ProductionVariants", std::move(productionVariantsJsonList));
+
+  }
+
+  if(m_dataCaptureConfigHasBeenSet)
+  {
+   payload.WithObject("DataCaptureConfig", m_dataCaptureConfig.Jsonize());
 
   }
 

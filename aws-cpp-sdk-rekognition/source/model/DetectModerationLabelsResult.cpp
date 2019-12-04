@@ -53,6 +53,12 @@ DetectModerationLabelsResult& DetectModerationLabelsResult::operator =(const Aws
 
   }
 
+  if(jsonValue.ValueExists("HumanLoopActivationOutput"))
+  {
+    m_humanLoopActivationOutput = jsonValue.GetObject("HumanLoopActivationOutput");
+
+  }
+
 
 
   return *this;

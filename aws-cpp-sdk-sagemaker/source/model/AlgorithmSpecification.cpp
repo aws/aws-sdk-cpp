@@ -33,7 +33,9 @@ AlgorithmSpecification::AlgorithmSpecification() :
     m_algorithmNameHasBeenSet(false),
     m_trainingInputMode(TrainingInputMode::NOT_SET),
     m_trainingInputModeHasBeenSet(false),
-    m_metricDefinitionsHasBeenSet(false)
+    m_metricDefinitionsHasBeenSet(false),
+    m_enableSageMakerMetricsTimeSeries(false),
+    m_enableSageMakerMetricsTimeSeriesHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ AlgorithmSpecification::AlgorithmSpecification(JsonView jsonValue) :
     m_algorithmNameHasBeenSet(false),
     m_trainingInputMode(TrainingInputMode::NOT_SET),
     m_trainingInputModeHasBeenSet(false),
-    m_metricDefinitionsHasBeenSet(false)
+    m_metricDefinitionsHasBeenSet(false),
+    m_enableSageMakerMetricsTimeSeries(false),
+    m_enableSageMakerMetricsTimeSeriesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +84,13 @@ AlgorithmSpecification& AlgorithmSpecification::operator =(JsonView jsonValue)
     m_metricDefinitionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableSageMakerMetricsTimeSeries"))
+  {
+    m_enableSageMakerMetricsTimeSeries = jsonValue.GetBool("EnableSageMakerMetricsTimeSeries");
+
+    m_enableSageMakerMetricsTimeSeriesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -112,6 +123,12 @@ JsonValue AlgorithmSpecification::Jsonize() const
      metricDefinitionsJsonList[metricDefinitionsIndex].AsObject(m_metricDefinitions[metricDefinitionsIndex].Jsonize());
    }
    payload.WithArray("MetricDefinitions", std::move(metricDefinitionsJsonList));
+
+  }
+
+  if(m_enableSageMakerMetricsTimeSeriesHasBeenSet)
+  {
+   payload.WithBool("EnableSageMakerMetricsTimeSeries", m_enableSageMakerMetricsTimeSeries);
 
   }
 

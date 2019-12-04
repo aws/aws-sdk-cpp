@@ -31,6 +31,9 @@ namespace Aws
       {
 
         static const int TrainingJob_HASH = HashingUtils::HashString("TrainingJob");
+        static const int Experiment_HASH = HashingUtils::HashString("Experiment");
+        static const int ExperimentTrial_HASH = HashingUtils::HashString("ExperimentTrial");
+        static const int ExperimentTrialComponent_HASH = HashingUtils::HashString("ExperimentTrialComponent");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -39,6 +42,18 @@ namespace Aws
           if (hashCode == TrainingJob_HASH)
           {
             return ResourceType::TrainingJob;
+          }
+          else if (hashCode == Experiment_HASH)
+          {
+            return ResourceType::Experiment;
+          }
+          else if (hashCode == ExperimentTrial_HASH)
+          {
+            return ResourceType::ExperimentTrial;
+          }
+          else if (hashCode == ExperimentTrialComponent_HASH)
+          {
+            return ResourceType::ExperimentTrialComponent;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +71,12 @@ namespace Aws
           {
           case ResourceType::TrainingJob:
             return "TrainingJob";
+          case ResourceType::Experiment:
+            return "Experiment";
+          case ResourceType::ExperimentTrial:
+            return "ExperimentTrial";
+          case ResourceType::ExperimentTrialComponent:
+            return "ExperimentTrialComponent";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

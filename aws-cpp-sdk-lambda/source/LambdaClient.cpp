@@ -41,16 +41,19 @@
 #include <aws/lambda/model/DeleteFunctionConcurrencyRequest.h>
 #include <aws/lambda/model/DeleteFunctionEventInvokeConfigRequest.h>
 #include <aws/lambda/model/DeleteLayerVersionRequest.h>
+#include <aws/lambda/model/DeleteProvisionedConcurrencyConfigRequest.h>
 #include <aws/lambda/model/GetAccountSettingsRequest.h>
 #include <aws/lambda/model/GetAliasRequest.h>
 #include <aws/lambda/model/GetEventSourceMappingRequest.h>
 #include <aws/lambda/model/GetFunctionRequest.h>
+#include <aws/lambda/model/GetFunctionConcurrencyRequest.h>
 #include <aws/lambda/model/GetFunctionConfigurationRequest.h>
 #include <aws/lambda/model/GetFunctionEventInvokeConfigRequest.h>
 #include <aws/lambda/model/GetLayerVersionRequest.h>
 #include <aws/lambda/model/GetLayerVersionByArnRequest.h>
 #include <aws/lambda/model/GetLayerVersionPolicyRequest.h>
 #include <aws/lambda/model/GetPolicyRequest.h>
+#include <aws/lambda/model/GetProvisionedConcurrencyConfigRequest.h>
 #include <aws/lambda/model/InvokeRequest.h>
 #include <aws/lambda/model/ListAliasesRequest.h>
 #include <aws/lambda/model/ListEventSourceMappingsRequest.h>
@@ -58,12 +61,14 @@
 #include <aws/lambda/model/ListFunctionsRequest.h>
 #include <aws/lambda/model/ListLayerVersionsRequest.h>
 #include <aws/lambda/model/ListLayersRequest.h>
+#include <aws/lambda/model/ListProvisionedConcurrencyConfigsRequest.h>
 #include <aws/lambda/model/ListTagsRequest.h>
 #include <aws/lambda/model/ListVersionsByFunctionRequest.h>
 #include <aws/lambda/model/PublishLayerVersionRequest.h>
 #include <aws/lambda/model/PublishVersionRequest.h>
 #include <aws/lambda/model/PutFunctionConcurrencyRequest.h>
 #include <aws/lambda/model/PutFunctionEventInvokeConfigRequest.h>
+#include <aws/lambda/model/PutProvisionedConcurrencyConfigRequest.h>
 #include <aws/lambda/model/RemoveLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/RemovePermissionRequest.h>
 #include <aws/lambda/model/TagResourceRequest.h>
@@ -611,6 +616,53 @@ void LambdaClient::DeleteLayerVersionAsyncHelper(const DeleteLayerVersionRequest
   handler(this, request, DeleteLayerVersion(request), context);
 }
 
+DeleteProvisionedConcurrencyConfigOutcome LambdaClient::DeleteProvisionedConcurrencyConfig(const DeleteProvisionedConcurrencyConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteProvisionedConcurrencyConfig", "Required field: FunctionName, is not set");
+    return DeleteProvisionedConcurrencyConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  if (!request.QualifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteProvisionedConcurrencyConfig", "Required field: Qualifier, is not set");
+    return DeleteProvisionedConcurrencyConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Qualifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2019-09-30/functions/";
+  ss << request.GetFunctionName();
+  ss << "/provisioned-concurrency";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteProvisionedConcurrencyConfigOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteProvisionedConcurrencyConfigOutcome(outcome.GetError());
+  }
+}
+
+DeleteProvisionedConcurrencyConfigOutcomeCallable LambdaClient::DeleteProvisionedConcurrencyConfigCallable(const DeleteProvisionedConcurrencyConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteProvisionedConcurrencyConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteProvisionedConcurrencyConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::DeleteProvisionedConcurrencyConfigAsync(const DeleteProvisionedConcurrencyConfigRequest& request, const DeleteProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteProvisionedConcurrencyConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::DeleteProvisionedConcurrencyConfigAsyncHelper(const DeleteProvisionedConcurrencyConfigRequest& request, const DeleteProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteProvisionedConcurrencyConfig(request), context);
+}
+
 GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -774,6 +826,48 @@ void LambdaClient::GetFunctionAsync(const GetFunctionRequest& request, const Get
 void LambdaClient::GetFunctionAsyncHelper(const GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetFunction(request), context);
+}
+
+GetFunctionConcurrencyOutcome LambdaClient::GetFunctionConcurrency(const GetFunctionConcurrencyRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFunctionConcurrency", "Required field: FunctionName, is not set");
+    return GetFunctionConcurrencyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2019-09-30/functions/";
+  ss << request.GetFunctionName();
+  ss << "/concurrency";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetFunctionConcurrencyOutcome(GetFunctionConcurrencyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetFunctionConcurrencyOutcome(outcome.GetError());
+  }
+}
+
+GetFunctionConcurrencyOutcomeCallable LambdaClient::GetFunctionConcurrencyCallable(const GetFunctionConcurrencyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetFunctionConcurrencyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetFunctionConcurrency(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::GetFunctionConcurrencyAsync(const GetFunctionConcurrencyRequest& request, const GetFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetFunctionConcurrencyAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::GetFunctionConcurrencyAsyncHelper(const GetFunctionConcurrencyRequest& request, const GetFunctionConcurrencyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetFunctionConcurrency(request), context);
 }
 
 GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const GetFunctionConfigurationRequest& request) const
@@ -1039,6 +1133,53 @@ void LambdaClient::GetPolicyAsync(const GetPolicyRequest& request, const GetPoli
 void LambdaClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetPolicy(request), context);
+}
+
+GetProvisionedConcurrencyConfigOutcome LambdaClient::GetProvisionedConcurrencyConfig(const GetProvisionedConcurrencyConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetProvisionedConcurrencyConfig", "Required field: FunctionName, is not set");
+    return GetProvisionedConcurrencyConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  if (!request.QualifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetProvisionedConcurrencyConfig", "Required field: Qualifier, is not set");
+    return GetProvisionedConcurrencyConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Qualifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2019-09-30/functions/";
+  ss << request.GetFunctionName();
+  ss << "/provisioned-concurrency";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetProvisionedConcurrencyConfigOutcome(GetProvisionedConcurrencyConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetProvisionedConcurrencyConfigOutcome(outcome.GetError());
+  }
+}
+
+GetProvisionedConcurrencyConfigOutcomeCallable LambdaClient::GetProvisionedConcurrencyConfigCallable(const GetProvisionedConcurrencyConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetProvisionedConcurrencyConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetProvisionedConcurrencyConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::GetProvisionedConcurrencyConfigAsync(const GetProvisionedConcurrencyConfigRequest& request, const GetProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetProvisionedConcurrencyConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::GetProvisionedConcurrencyConfigAsyncHelper(const GetProvisionedConcurrencyConfigRequest& request, const GetProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetProvisionedConcurrencyConfig(request), context);
 }
 
 InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
@@ -1314,6 +1455,50 @@ void LambdaClient::ListLayersAsyncHelper(const ListLayersRequest& request, const
   handler(this, request, ListLayers(request), context);
 }
 
+ListProvisionedConcurrencyConfigsOutcome LambdaClient::ListProvisionedConcurrencyConfigs(const ListProvisionedConcurrencyConfigsRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListProvisionedConcurrencyConfigs", "Required field: FunctionName, is not set");
+    return ListProvisionedConcurrencyConfigsOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2019-09-30/functions/";
+  ss << request.GetFunctionName();
+  ss << "/provisioned-concurrency";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?List=ALL");
+  uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListProvisionedConcurrencyConfigsOutcome(ListProvisionedConcurrencyConfigsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListProvisionedConcurrencyConfigsOutcome(outcome.GetError());
+  }
+}
+
+ListProvisionedConcurrencyConfigsOutcomeCallable LambdaClient::ListProvisionedConcurrencyConfigsCallable(const ListProvisionedConcurrencyConfigsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListProvisionedConcurrencyConfigsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListProvisionedConcurrencyConfigs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::ListProvisionedConcurrencyConfigsAsync(const ListProvisionedConcurrencyConfigsRequest& request, const ListProvisionedConcurrencyConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListProvisionedConcurrencyConfigsAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::ListProvisionedConcurrencyConfigsAsyncHelper(const ListProvisionedConcurrencyConfigsRequest& request, const ListProvisionedConcurrencyConfigsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListProvisionedConcurrencyConfigs(request), context);
+}
+
 ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const
 {
   if (!request.ResourceHasBeenSet())
@@ -1563,6 +1748,53 @@ void LambdaClient::PutFunctionEventInvokeConfigAsync(const PutFunctionEventInvok
 void LambdaClient::PutFunctionEventInvokeConfigAsyncHelper(const PutFunctionEventInvokeConfigRequest& request, const PutFunctionEventInvokeConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutFunctionEventInvokeConfig(request), context);
+}
+
+PutProvisionedConcurrencyConfigOutcome LambdaClient::PutProvisionedConcurrencyConfig(const PutProvisionedConcurrencyConfigRequest& request) const
+{
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutProvisionedConcurrencyConfig", "Required field: FunctionName, is not set");
+    return PutProvisionedConcurrencyConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  if (!request.QualifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutProvisionedConcurrencyConfig", "Required field: Qualifier, is not set");
+    return PutProvisionedConcurrencyConfigOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Qualifier]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2019-09-30/functions/";
+  ss << request.GetFunctionName();
+  ss << "/provisioned-concurrency";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutProvisionedConcurrencyConfigOutcome(PutProvisionedConcurrencyConfigResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutProvisionedConcurrencyConfigOutcome(outcome.GetError());
+  }
+}
+
+PutProvisionedConcurrencyConfigOutcomeCallable LambdaClient::PutProvisionedConcurrencyConfigCallable(const PutProvisionedConcurrencyConfigRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutProvisionedConcurrencyConfigOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutProvisionedConcurrencyConfig(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::PutProvisionedConcurrencyConfigAsync(const PutProvisionedConcurrencyConfigRequest& request, const PutProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutProvisionedConcurrencyConfigAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::PutProvisionedConcurrencyConfigAsyncHelper(const PutProvisionedConcurrencyConfigRequest& request, const PutProvisionedConcurrencyConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutProvisionedConcurrencyConfig(request), context);
 }
 
 RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(const RemoveLayerVersionPermissionRequest& request) const

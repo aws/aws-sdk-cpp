@@ -87,7 +87,11 @@ namespace Model
     ml_r5d_2xlarge,
     ml_r5d_4xlarge,
     ml_r5d_12xlarge,
-    ml_r5d_24xlarge
+    ml_r5d_24xlarge,
+    ml_inf1_xlarge,
+    ml_inf1_2xlarge,
+    ml_inf1_6xlarge,
+    ml_inf1_24xlarge
   };
 
 namespace ProductionVariantInstanceTypeMapper

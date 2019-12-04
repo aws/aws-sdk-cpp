@@ -37,6 +37,7 @@ namespace Aws
         static const int ml_c5_HASH = HashingUtils::HashString("ml_c5");
         static const int ml_p2_HASH = HashingUtils::HashString("ml_p2");
         static const int ml_p3_HASH = HashingUtils::HashString("ml_p3");
+        static const int ml_inf1_HASH = HashingUtils::HashString("ml_inf1");
         static const int jetson_tx1_HASH = HashingUtils::HashString("jetson_tx1");
         static const int jetson_tx2_HASH = HashingUtils::HashString("jetson_tx2");
         static const int jetson_nano_HASH = HashingUtils::HashString("jetson_nano");
@@ -80,6 +81,10 @@ namespace Aws
           else if (hashCode == ml_p3_HASH)
           {
             return TargetDevice::ml_p3;
+          }
+          else if (hashCode == ml_inf1_HASH)
+          {
+            return TargetDevice::ml_inf1;
           }
           else if (hashCode == jetson_tx1_HASH)
           {
@@ -153,6 +158,8 @@ namespace Aws
             return "ml_p2";
           case TargetDevice::ml_p3:
             return "ml_p3";
+          case TargetDevice::ml_inf1:
+            return "ml_inf1";
           case TargetDevice::jetson_tx1:
             return "jetson_tx1";
           case TargetDevice::jetson_tx2:

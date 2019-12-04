@@ -17,6 +17,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/rekognition/model/HumanLoopActivationOutput.h>
 #include <aws/rekognition/model/ModerationLabel.h>
 #include <utility>
 
@@ -129,11 +130,39 @@ namespace Model
      */
     inline DetectModerationLabelsResult& WithModerationModelVersion(const char* value) { SetModerationModelVersion(value); return *this;}
 
+
+    /**
+     * <p>Shows the results of the human in the loop evaluation.</p>
+     */
+    inline const HumanLoopActivationOutput& GetHumanLoopActivationOutput() const{ return m_humanLoopActivationOutput; }
+
+    /**
+     * <p>Shows the results of the human in the loop evaluation.</p>
+     */
+    inline void SetHumanLoopActivationOutput(const HumanLoopActivationOutput& value) { m_humanLoopActivationOutput = value; }
+
+    /**
+     * <p>Shows the results of the human in the loop evaluation.</p>
+     */
+    inline void SetHumanLoopActivationOutput(HumanLoopActivationOutput&& value) { m_humanLoopActivationOutput = std::move(value); }
+
+    /**
+     * <p>Shows the results of the human in the loop evaluation.</p>
+     */
+    inline DetectModerationLabelsResult& WithHumanLoopActivationOutput(const HumanLoopActivationOutput& value) { SetHumanLoopActivationOutput(value); return *this;}
+
+    /**
+     * <p>Shows the results of the human in the loop evaluation.</p>
+     */
+    inline DetectModerationLabelsResult& WithHumanLoopActivationOutput(HumanLoopActivationOutput&& value) { SetHumanLoopActivationOutput(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<ModerationLabel> m_moderationLabels;
 
     Aws::String m_moderationModelVersion;
+
+    HumanLoopActivationOutput m_humanLoopActivationOutput;
   };
 
 } // namespace Model

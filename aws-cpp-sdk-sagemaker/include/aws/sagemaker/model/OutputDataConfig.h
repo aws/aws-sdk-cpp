@@ -74,7 +74,7 @@ namespace Model
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
@@ -106,7 +106,7 @@ namespace Model
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
@@ -138,7 +138,7 @@ namespace Model
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
@@ -170,7 +170,7 @@ namespace Model
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
@@ -202,7 +202,7 @@ namespace Model
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
@@ -234,7 +234,7 @@ namespace Model
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
@@ -266,7 +266,7 @@ namespace Model
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */
@@ -298,7 +298,7 @@ namespace Model
      * specify in your <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>,
      * or <code>CreateHyperParameterTuningJob</code> requests. For more information,
      * see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
      * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer
      * Guide</i>.</p>
      */

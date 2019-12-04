@@ -26,6 +26,7 @@ CreateHyperParameterTuningJobRequest::CreateHyperParameterTuningJobRequest() :
     m_hyperParameterTuningJobNameHasBeenSet(false),
     m_hyperParameterTuningJobConfigHasBeenSet(false),
     m_trainingJobDefinitionHasBeenSet(false),
+    m_trainingJobDefinitionsHasBeenSet(false),
     m_warmStartConfigHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -50,6 +51,17 @@ Aws::String CreateHyperParameterTuningJobRequest::SerializePayload() const
   if(m_trainingJobDefinitionHasBeenSet)
   {
    payload.WithObject("TrainingJobDefinition", m_trainingJobDefinition.Jsonize());
+
+  }
+
+  if(m_trainingJobDefinitionsHasBeenSet)
+  {
+   Array<JsonValue> trainingJobDefinitionsJsonList(m_trainingJobDefinitions.size());
+   for(unsigned trainingJobDefinitionsIndex = 0; trainingJobDefinitionsIndex < trainingJobDefinitionsJsonList.GetLength(); ++trainingJobDefinitionsIndex)
+   {
+     trainingJobDefinitionsJsonList[trainingJobDefinitionsIndex].AsObject(m_trainingJobDefinitions[trainingJobDefinitionsIndex].Jsonize());
+   }
+   payload.WithArray("TrainingJobDefinitions", std::move(trainingJobDefinitionsJsonList));
 
   }
 

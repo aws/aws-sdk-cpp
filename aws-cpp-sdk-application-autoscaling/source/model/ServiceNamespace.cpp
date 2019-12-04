@@ -39,6 +39,7 @@ namespace Aws
         static const int sagemaker_HASH = HashingUtils::HashString("sagemaker");
         static const int custom_resource_HASH = HashingUtils::HashString("custom-resource");
         static const int comprehend_HASH = HashingUtils::HashString("comprehend");
+        static const int lambda_HASH = HashingUtils::HashString("lambda");
 
 
         ServiceNamespace GetServiceNamespaceForName(const Aws::String& name)
@@ -80,6 +81,10 @@ namespace Aws
           {
             return ServiceNamespace::comprehend;
           }
+          else if (hashCode == lambda_HASH)
+          {
+            return ServiceNamespace::lambda;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -112,6 +117,8 @@ namespace Aws
             return "custom-resource";
           case ServiceNamespace::comprehend:
             return "comprehend";
+          case ServiceNamespace::lambda:
+            return "lambda";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

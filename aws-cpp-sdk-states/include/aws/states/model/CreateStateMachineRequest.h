@@ -17,6 +17,8 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/states/model/StateMachineType.h>
+#include <aws/states/model/LoggingConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/states/model/Tag.h>
 #include <utility>
@@ -234,6 +236,80 @@ namespace Model
 
 
     /**
+     * <p>Determines whether a Standard or Express state machine is created. If not
+     * set, Standard is created.</p>
+     */
+    inline const StateMachineType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Determines whether a Standard or Express state machine is created. If not
+     * set, Standard is created.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Determines whether a Standard or Express state machine is created. If not
+     * set, Standard is created.</p>
+     */
+    inline void SetType(const StateMachineType& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>Determines whether a Standard or Express state machine is created. If not
+     * set, Standard is created.</p>
+     */
+    inline void SetType(StateMachineType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>Determines whether a Standard or Express state machine is created. If not
+     * set, Standard is created.</p>
+     */
+    inline CreateStateMachineRequest& WithType(const StateMachineType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>Determines whether a Standard or Express state machine is created. If not
+     * set, Standard is created.</p>
+     */
+    inline CreateStateMachineRequest& WithType(StateMachineType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Defines what execution history events are logged and where they are
+     * logged.</p>
+     */
+    inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
+
+    /**
+     * <p>Defines what execution history events are logged and where they are
+     * logged.</p>
+     */
+    inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
+
+    /**
+     * <p>Defines what execution history events are logged and where they are
+     * logged.</p>
+     */
+    inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = value; }
+
+    /**
+     * <p>Defines what execution history events are logged and where they are
+     * logged.</p>
+     */
+    inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::move(value); }
+
+    /**
+     * <p>Defines what execution history events are logged and where they are
+     * logged.</p>
+     */
+    inline CreateStateMachineRequest& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
+
+    /**
+     * <p>Defines what execution history events are logged and where they are
+     * logged.</p>
+     */
+    inline CreateStateMachineRequest& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
+
+
+    /**
      * <p>Tags to be added when creating a state machine.</p> <p>An array of key-value
      * pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
@@ -339,6 +415,12 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    StateMachineType m_type;
+    bool m_typeHasBeenSet;
+
+    LoggingConfiguration m_loggingConfiguration;
+    bool m_loggingConfigurationHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

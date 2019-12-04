@@ -252,25 +252,25 @@ namespace Model
 
     /**
      * <p>Indicates whether the algorithm supports distributed training. If set to
-     * false, buyers can’t request more than one instance during training.</p>
+     * false, buyers can't request more than one instance during training.</p>
      */
     inline bool GetSupportsDistributedTraining() const{ return m_supportsDistributedTraining; }
 
     /**
      * <p>Indicates whether the algorithm supports distributed training. If set to
-     * false, buyers can’t request more than one instance during training.</p>
+     * false, buyers can't request more than one instance during training.</p>
      */
     inline bool SupportsDistributedTrainingHasBeenSet() const { return m_supportsDistributedTrainingHasBeenSet; }
 
     /**
      * <p>Indicates whether the algorithm supports distributed training. If set to
-     * false, buyers can’t request more than one instance during training.</p>
+     * false, buyers can't request more than one instance during training.</p>
      */
     inline void SetSupportsDistributedTraining(bool value) { m_supportsDistributedTrainingHasBeenSet = true; m_supportsDistributedTraining = value; }
 
     /**
      * <p>Indicates whether the algorithm supports distributed training. If set to
-     * false, buyers can’t request more than one instance during training.</p>
+     * false, buyers can't request more than one instance during training.</p>
      */
     inline TrainingSpecification& WithSupportsDistributedTraining(bool value) { SetSupportsDistributedTraining(value); return *this;}
 

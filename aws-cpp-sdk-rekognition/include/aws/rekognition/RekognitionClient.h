@@ -23,12 +23,17 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/rekognition/model/CompareFacesResult.h>
 #include <aws/rekognition/model/CreateCollectionResult.h>
+#include <aws/rekognition/model/CreateProjectResult.h>
+#include <aws/rekognition/model/CreateProjectVersionResult.h>
 #include <aws/rekognition/model/CreateStreamProcessorResult.h>
 #include <aws/rekognition/model/DeleteCollectionResult.h>
 #include <aws/rekognition/model/DeleteFacesResult.h>
 #include <aws/rekognition/model/DeleteStreamProcessorResult.h>
 #include <aws/rekognition/model/DescribeCollectionResult.h>
+#include <aws/rekognition/model/DescribeProjectVersionsResult.h>
+#include <aws/rekognition/model/DescribeProjectsResult.h>
 #include <aws/rekognition/model/DescribeStreamProcessorResult.h>
+#include <aws/rekognition/model/DetectCustomLabelsResult.h>
 #include <aws/rekognition/model/DetectFacesResult.h>
 #include <aws/rekognition/model/DetectLabelsResult.h>
 #include <aws/rekognition/model/DetectModerationLabelsResult.h>
@@ -53,7 +58,9 @@
 #include <aws/rekognition/model/StartFaceSearchResult.h>
 #include <aws/rekognition/model/StartLabelDetectionResult.h>
 #include <aws/rekognition/model/StartPersonTrackingResult.h>
+#include <aws/rekognition/model/StartProjectVersionResult.h>
 #include <aws/rekognition/model/StartStreamProcessorResult.h>
+#include <aws/rekognition/model/StopProjectVersionResult.h>
 #include <aws/rekognition/model/StopStreamProcessorResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -96,12 +103,17 @@ namespace Model
 {
         class CompareFacesRequest;
         class CreateCollectionRequest;
+        class CreateProjectRequest;
+        class CreateProjectVersionRequest;
         class CreateStreamProcessorRequest;
         class DeleteCollectionRequest;
         class DeleteFacesRequest;
         class DeleteStreamProcessorRequest;
         class DescribeCollectionRequest;
+        class DescribeProjectVersionsRequest;
+        class DescribeProjectsRequest;
         class DescribeStreamProcessorRequest;
+        class DetectCustomLabelsRequest;
         class DetectFacesRequest;
         class DetectLabelsRequest;
         class DetectModerationLabelsRequest;
@@ -126,17 +138,24 @@ namespace Model
         class StartFaceSearchRequest;
         class StartLabelDetectionRequest;
         class StartPersonTrackingRequest;
+        class StartProjectVersionRequest;
         class StartStreamProcessorRequest;
+        class StopProjectVersionRequest;
         class StopStreamProcessorRequest;
 
         typedef Aws::Utils::Outcome<CompareFacesResult, Aws::Client::AWSError<RekognitionErrors>> CompareFacesOutcome;
         typedef Aws::Utils::Outcome<CreateCollectionResult, Aws::Client::AWSError<RekognitionErrors>> CreateCollectionOutcome;
+        typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<RekognitionErrors>> CreateProjectOutcome;
+        typedef Aws::Utils::Outcome<CreateProjectVersionResult, Aws::Client::AWSError<RekognitionErrors>> CreateProjectVersionOutcome;
         typedef Aws::Utils::Outcome<CreateStreamProcessorResult, Aws::Client::AWSError<RekognitionErrors>> CreateStreamProcessorOutcome;
         typedef Aws::Utils::Outcome<DeleteCollectionResult, Aws::Client::AWSError<RekognitionErrors>> DeleteCollectionOutcome;
         typedef Aws::Utils::Outcome<DeleteFacesResult, Aws::Client::AWSError<RekognitionErrors>> DeleteFacesOutcome;
         typedef Aws::Utils::Outcome<DeleteStreamProcessorResult, Aws::Client::AWSError<RekognitionErrors>> DeleteStreamProcessorOutcome;
         typedef Aws::Utils::Outcome<DescribeCollectionResult, Aws::Client::AWSError<RekognitionErrors>> DescribeCollectionOutcome;
+        typedef Aws::Utils::Outcome<DescribeProjectVersionsResult, Aws::Client::AWSError<RekognitionErrors>> DescribeProjectVersionsOutcome;
+        typedef Aws::Utils::Outcome<DescribeProjectsResult, Aws::Client::AWSError<RekognitionErrors>> DescribeProjectsOutcome;
         typedef Aws::Utils::Outcome<DescribeStreamProcessorResult, Aws::Client::AWSError<RekognitionErrors>> DescribeStreamProcessorOutcome;
+        typedef Aws::Utils::Outcome<DetectCustomLabelsResult, Aws::Client::AWSError<RekognitionErrors>> DetectCustomLabelsOutcome;
         typedef Aws::Utils::Outcome<DetectFacesResult, Aws::Client::AWSError<RekognitionErrors>> DetectFacesOutcome;
         typedef Aws::Utils::Outcome<DetectLabelsResult, Aws::Client::AWSError<RekognitionErrors>> DetectLabelsOutcome;
         typedef Aws::Utils::Outcome<DetectModerationLabelsResult, Aws::Client::AWSError<RekognitionErrors>> DetectModerationLabelsOutcome;
@@ -161,17 +180,24 @@ namespace Model
         typedef Aws::Utils::Outcome<StartFaceSearchResult, Aws::Client::AWSError<RekognitionErrors>> StartFaceSearchOutcome;
         typedef Aws::Utils::Outcome<StartLabelDetectionResult, Aws::Client::AWSError<RekognitionErrors>> StartLabelDetectionOutcome;
         typedef Aws::Utils::Outcome<StartPersonTrackingResult, Aws::Client::AWSError<RekognitionErrors>> StartPersonTrackingOutcome;
+        typedef Aws::Utils::Outcome<StartProjectVersionResult, Aws::Client::AWSError<RekognitionErrors>> StartProjectVersionOutcome;
         typedef Aws::Utils::Outcome<StartStreamProcessorResult, Aws::Client::AWSError<RekognitionErrors>> StartStreamProcessorOutcome;
+        typedef Aws::Utils::Outcome<StopProjectVersionResult, Aws::Client::AWSError<RekognitionErrors>> StopProjectVersionOutcome;
         typedef Aws::Utils::Outcome<StopStreamProcessorResult, Aws::Client::AWSError<RekognitionErrors>> StopStreamProcessorOutcome;
 
         typedef std::future<CompareFacesOutcome> CompareFacesOutcomeCallable;
         typedef std::future<CreateCollectionOutcome> CreateCollectionOutcomeCallable;
+        typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
+        typedef std::future<CreateProjectVersionOutcome> CreateProjectVersionOutcomeCallable;
         typedef std::future<CreateStreamProcessorOutcome> CreateStreamProcessorOutcomeCallable;
         typedef std::future<DeleteCollectionOutcome> DeleteCollectionOutcomeCallable;
         typedef std::future<DeleteFacesOutcome> DeleteFacesOutcomeCallable;
         typedef std::future<DeleteStreamProcessorOutcome> DeleteStreamProcessorOutcomeCallable;
         typedef std::future<DescribeCollectionOutcome> DescribeCollectionOutcomeCallable;
+        typedef std::future<DescribeProjectVersionsOutcome> DescribeProjectVersionsOutcomeCallable;
+        typedef std::future<DescribeProjectsOutcome> DescribeProjectsOutcomeCallable;
         typedef std::future<DescribeStreamProcessorOutcome> DescribeStreamProcessorOutcomeCallable;
+        typedef std::future<DetectCustomLabelsOutcome> DetectCustomLabelsOutcomeCallable;
         typedef std::future<DetectFacesOutcome> DetectFacesOutcomeCallable;
         typedef std::future<DetectLabelsOutcome> DetectLabelsOutcomeCallable;
         typedef std::future<DetectModerationLabelsOutcome> DetectModerationLabelsOutcomeCallable;
@@ -196,7 +222,9 @@ namespace Model
         typedef std::future<StartFaceSearchOutcome> StartFaceSearchOutcomeCallable;
         typedef std::future<StartLabelDetectionOutcome> StartLabelDetectionOutcomeCallable;
         typedef std::future<StartPersonTrackingOutcome> StartPersonTrackingOutcomeCallable;
+        typedef std::future<StartProjectVersionOutcome> StartProjectVersionOutcomeCallable;
         typedef std::future<StartStreamProcessorOutcome> StartStreamProcessorOutcomeCallable;
+        typedef std::future<StopProjectVersionOutcome> StopProjectVersionOutcomeCallable;
         typedef std::future<StopStreamProcessorOutcome> StopStreamProcessorOutcomeCallable;
 } // namespace Model
 
@@ -204,12 +232,17 @@ namespace Model
 
     typedef std::function<void(const RekognitionClient*, const Model::CompareFacesRequest&, const Model::CompareFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompareFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateCollectionRequest&, const Model::CreateCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCollectionResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::CreateProjectVersionRequest&, const Model::CreateProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateStreamProcessorRequest&, const Model::CreateStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamProcessorResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteCollectionRequest&, const Model::DeleteCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCollectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteFacesRequest&, const Model::DeleteFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DeleteStreamProcessorRequest&, const Model::DeleteStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStreamProcessorResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DescribeCollectionRequest&, const Model::DescribeCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCollectionResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DescribeProjectVersionsRequest&, const Model::DescribeProjectVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectVersionsResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DescribeProjectsRequest&, const Model::DescribeProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProjectsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DescribeStreamProcessorRequest&, const Model::DescribeStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStreamProcessorResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::DetectCustomLabelsRequest&, const Model::DetectCustomLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectCustomLabelsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectFacesRequest&, const Model::DetectFacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectFacesResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectLabelsRequest&, const Model::DetectLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectLabelsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::DetectModerationLabelsRequest&, const Model::DetectModerationLabelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectModerationLabelsResponseReceivedHandler;
@@ -234,7 +267,9 @@ namespace Model
     typedef std::function<void(const RekognitionClient*, const Model::StartFaceSearchRequest&, const Model::StartFaceSearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFaceSearchResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartLabelDetectionRequest&, const Model::StartLabelDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartLabelDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartPersonTrackingRequest&, const Model::StartPersonTrackingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPersonTrackingResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::StartProjectVersionRequest&, const Model::StartProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StartStreamProcessorRequest&, const Model::StartStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartStreamProcessorResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::StopProjectVersionRequest&, const Model::StopProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::StopStreamProcessorRequest&, const Model::StopStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopStreamProcessorResponseReceivedHandler;
 
   /**
@@ -292,11 +327,10 @@ namespace Model
          * about the face in the source image, including the bounding box of the face and
          * confidence value.</p> <p>The <code>QualityFilter</code> input parameter allows
          * you to filter out detected faces that don’t meet a required quality bar. The
-         * quality bar is based on a variety of common use cases. By default,
-         * <code>CompareFaces</code> chooses the quality bar that's used to filter faces.
-         * You can also explicitly choose the quality bar. Use <code>QualityFilter</code>,
-         * to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or
-         * <code>HIGH</code>. If you do not want to filter detected faces, specify
+         * quality bar is based on a variety of common use cases. Use
+         * <code>QualityFilter</code> to set the quality bar by specifying
+         * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
+         * to filter detected faces, specify <code>NONE</code>. The default value is
          * <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
          * collection associated with version 3 of the face model or higher. To get the
          * version of the face model associated with a collection, call
@@ -339,11 +373,10 @@ namespace Model
          * about the face in the source image, including the bounding box of the face and
          * confidence value.</p> <p>The <code>QualityFilter</code> input parameter allows
          * you to filter out detected faces that don’t meet a required quality bar. The
-         * quality bar is based on a variety of common use cases. By default,
-         * <code>CompareFaces</code> chooses the quality bar that's used to filter faces.
-         * You can also explicitly choose the quality bar. Use <code>QualityFilter</code>,
-         * to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or
-         * <code>HIGH</code>. If you do not want to filter detected faces, specify
+         * quality bar is based on a variety of common use cases. Use
+         * <code>QualityFilter</code> to set the quality bar by specifying
+         * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
+         * to filter detected faces, specify <code>NONE</code>. The default value is
          * <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
          * collection associated with version 3 of the face model or higher. To get the
          * version of the face model associated with a collection, call
@@ -388,11 +421,10 @@ namespace Model
          * about the face in the source image, including the bounding box of the face and
          * confidence value.</p> <p>The <code>QualityFilter</code> input parameter allows
          * you to filter out detected faces that don’t meet a required quality bar. The
-         * quality bar is based on a variety of common use cases. By default,
-         * <code>CompareFaces</code> chooses the quality bar that's used to filter faces.
-         * You can also explicitly choose the quality bar. Use <code>QualityFilter</code>,
-         * to set the quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or
-         * <code>HIGH</code>. If you do not want to filter detected faces, specify
+         * quality bar is based on a variety of common use cases. Use
+         * <code>QualityFilter</code> to set the quality bar by specifying
+         * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
+         * to filter detected faces, specify <code>NONE</code>. The default value is
          * <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
          * collection associated with version 3 of the face model or higher. To get the
          * version of the face model associated with a collection, call
@@ -465,6 +497,101 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateCollectionAsync(const Model::CreateCollectionRequest& request, const CreateCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new Amazon Rekognition Custom Labels project. A project is a
+         * logical grouping of resources (images, Labels, models) and operations (training,
+         * evaluation and detection). </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:CreateProject</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
+
+        /**
+         * <p>Creates a new Amazon Rekognition Custom Labels project. A project is a
+         * logical grouping of resources (images, Labels, models) and operations (training,
+         * evaluation and detection). </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:CreateProject</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
+
+        /**
+         * <p>Creates a new Amazon Rekognition Custom Labels project. A project is a
+         * logical grouping of resources (images, Labels, models) and operations (training,
+         * evaluation and detection). </p> <p>This operation requires permissions to
+         * perform the <code>rekognition:CreateProject</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProject">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateProjectAsync(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a new version of a model and begins training. Models are managed as
+         * part of an Amazon Rekognition Custom Labels project. You can specify one
+         * training dataset and one testing dataset. The response from
+         * <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the
+         * version of the model. </p> <p>Training takes a while to complete. You can get
+         * the current status by calling <a>DescribeProjectVersions</a>.</p> <p>Once
+         * training has successfully completed, call <a>DescribeProjectVersions</a> to get
+         * the training results and evaluate the model. </p> <p>After evaluating the model,
+         * you start the model by calling <a>StartProjectVersion</a>.</p> <p>This operation
+         * requires permissions to perform the
+         * <code>rekognition:CreateProjectVersion</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateProjectVersionOutcome CreateProjectVersion(const Model::CreateProjectVersionRequest& request) const;
+
+        /**
+         * <p>Creates a new version of a model and begins training. Models are managed as
+         * part of an Amazon Rekognition Custom Labels project. You can specify one
+         * training dataset and one testing dataset. The response from
+         * <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the
+         * version of the model. </p> <p>Training takes a while to complete. You can get
+         * the current status by calling <a>DescribeProjectVersions</a>.</p> <p>Once
+         * training has successfully completed, call <a>DescribeProjectVersions</a> to get
+         * the training results and evaluate the model. </p> <p>After evaluating the model,
+         * you start the model by calling <a>StartProjectVersion</a>.</p> <p>This operation
+         * requires permissions to perform the
+         * <code>rekognition:CreateProjectVersion</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateProjectVersionOutcomeCallable CreateProjectVersionCallable(const Model::CreateProjectVersionRequest& request) const;
+
+        /**
+         * <p>Creates a new version of a model and begins training. Models are managed as
+         * part of an Amazon Rekognition Custom Labels project. You can specify one
+         * training dataset and one testing dataset. The response from
+         * <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the
+         * version of the model. </p> <p>Training takes a while to complete. You can get
+         * the current status by calling <a>DescribeProjectVersions</a>.</p> <p>Once
+         * training has successfully completed, call <a>DescribeProjectVersions</a> to get
+         * the training results and evaluate the model. </p> <p>After evaluating the model,
+         * you start the model by calling <a>StartProjectVersion</a>.</p> <p>This operation
+         * requires permissions to perform the
+         * <code>rekognition:CreateProjectVersion</code> action.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateProjectVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateProjectVersionAsync(const Model::CreateProjectVersionRequest& request, const CreateProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an Amazon Rekognition stream processor that you can use to detect and
@@ -673,6 +800,77 @@ namespace Model
         virtual void DescribeCollectionAsync(const Model::DescribeCollectionRequest& request, const DescribeCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists and describes the models in an Amazon Rekognition Custom Labels
+         * project. You can specify up to 10 model versions in
+         * <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for
+         * all models are returned.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DescribeProjectVersions</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeProjectVersionsOutcome DescribeProjectVersions(const Model::DescribeProjectVersionsRequest& request) const;
+
+        /**
+         * <p>Lists and describes the models in an Amazon Rekognition Custom Labels
+         * project. You can specify up to 10 model versions in
+         * <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for
+         * all models are returned.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DescribeProjectVersions</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeProjectVersionsOutcomeCallable DescribeProjectVersionsCallable(const Model::DescribeProjectVersionsRequest& request) const;
+
+        /**
+         * <p>Lists and describes the models in an Amazon Rekognition Custom Labels
+         * project. You can specify up to 10 model versions in
+         * <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for
+         * all models are returned.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:DescribeProjectVersions</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjectVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeProjectVersionsAsync(const Model::DescribeProjectVersionsRequest& request, const DescribeProjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Lists and gets information about your Amazon Rekognition Custom Labels
+         * projects.</p> <p>This operation requires permissions to perform the
+         * <code>rekognition:DescribeProjects</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeProjectsOutcome DescribeProjects(const Model::DescribeProjectsRequest& request) const;
+
+        /**
+         * <p>Lists and gets information about your Amazon Rekognition Custom Labels
+         * projects.</p> <p>This operation requires permissions to perform the
+         * <code>rekognition:DescribeProjects</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeProjectsOutcomeCallable DescribeProjectsCallable(const Model::DescribeProjectsRequest& request) const;
+
+        /**
+         * <p>Lists and gets information about your Amazon Rekognition Custom Labels
+         * projects.</p> <p>This operation requires permissions to perform the
+         * <code>rekognition:DescribeProjects</code> action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DescribeProjects">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeProjectsAsync(const Model::DescribeProjectsRequest& request, const DescribeProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Provides information about a stream processor created by
          * <a>CreateStreamProcessor</a>. You can get information about the input and output
          * streams, the input parameters for the face recognition being performed, and the
@@ -705,6 +903,103 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeStreamProcessorAsync(const Model::DescribeStreamProcessorRequest& request, const DescribeStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Detects custom labels in a supplied image by using an Amazon Rekognition
+         * Custom Labels model. </p> <p>You specify which version of a model version to use
+         * by using the <code>ProjectVersionArn</code> input parameter. </p> <p>You pass
+         * the input image as base64-encoded image bytes or as a reference to an image in
+         * an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
+         * operations, passing image bytes is not supported. The image must be either a PNG
+         * or JPEG formatted file. </p> <p> For each object that the model version detects
+         * on an image, the API returns a (<code>CustomLabel</code>) object in an array
+         * (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the
+         * label name (<code>Name</code>), the level of confidence that the image contains
+         * the object (<code>Confidence</code>), and object location information, if it
+         * exists, for the label on the image (<code>Geometry</code>). </p> <p>During
+         * training model calculates a threshold value that determines if a prediction for
+         * a label is true. By default, <code>DetectCustomLabels</code> doesn't return
+         * labels whose confidence value is below the model's calculated threshold value.
+         * To filter labels that are returned, specify a value for
+         * <code>MinConfidence</code> that is higher than the model's calculated threshold.
+         * You can get the model's calculated threshold from the model's training results
+         * shown in the Amazon Rekognition Custom Labels console. To get all labels,
+         * regardless of confidence, specify a <code>MinConfidence</code> value of 0. </p>
+         * <p>You can also add the <code>MaxResults</code> parameter to limit the number of
+         * labels returned. </p> <p>This is a stateless API operation. That is, the
+         * operation does not persist any data.</p> <p>This operation requires permissions
+         * to perform the <code>rekognition:DetectCustomLabels</code> action.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetectCustomLabelsOutcome DetectCustomLabels(const Model::DetectCustomLabelsRequest& request) const;
+
+        /**
+         * <p>Detects custom labels in a supplied image by using an Amazon Rekognition
+         * Custom Labels model. </p> <p>You specify which version of a model version to use
+         * by using the <code>ProjectVersionArn</code> input parameter. </p> <p>You pass
+         * the input image as base64-encoded image bytes or as a reference to an image in
+         * an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
+         * operations, passing image bytes is not supported. The image must be either a PNG
+         * or JPEG formatted file. </p> <p> For each object that the model version detects
+         * on an image, the API returns a (<code>CustomLabel</code>) object in an array
+         * (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the
+         * label name (<code>Name</code>), the level of confidence that the image contains
+         * the object (<code>Confidence</code>), and object location information, if it
+         * exists, for the label on the image (<code>Geometry</code>). </p> <p>During
+         * training model calculates a threshold value that determines if a prediction for
+         * a label is true. By default, <code>DetectCustomLabels</code> doesn't return
+         * labels whose confidence value is below the model's calculated threshold value.
+         * To filter labels that are returned, specify a value for
+         * <code>MinConfidence</code> that is higher than the model's calculated threshold.
+         * You can get the model's calculated threshold from the model's training results
+         * shown in the Amazon Rekognition Custom Labels console. To get all labels,
+         * regardless of confidence, specify a <code>MinConfidence</code> value of 0. </p>
+         * <p>You can also add the <code>MaxResults</code> parameter to limit the number of
+         * labels returned. </p> <p>This is a stateless API operation. That is, the
+         * operation does not persist any data.</p> <p>This operation requires permissions
+         * to perform the <code>rekognition:DetectCustomLabels</code> action.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetectCustomLabelsOutcomeCallable DetectCustomLabelsCallable(const Model::DetectCustomLabelsRequest& request) const;
+
+        /**
+         * <p>Detects custom labels in a supplied image by using an Amazon Rekognition
+         * Custom Labels model. </p> <p>You specify which version of a model version to use
+         * by using the <code>ProjectVersionArn</code> input parameter. </p> <p>You pass
+         * the input image as base64-encoded image bytes or as a reference to an image in
+         * an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition
+         * operations, passing image bytes is not supported. The image must be either a PNG
+         * or JPEG formatted file. </p> <p> For each object that the model version detects
+         * on an image, the API returns a (<code>CustomLabel</code>) object in an array
+         * (<code>CustomLabels</code>). Each <code>CustomLabel</code> object provides the
+         * label name (<code>Name</code>), the level of confidence that the image contains
+         * the object (<code>Confidence</code>), and object location information, if it
+         * exists, for the label on the image (<code>Geometry</code>). </p> <p>During
+         * training model calculates a threshold value that determines if a prediction for
+         * a label is true. By default, <code>DetectCustomLabels</code> doesn't return
+         * labels whose confidence value is below the model's calculated threshold value.
+         * To filter labels that are returned, specify a value for
+         * <code>MinConfidence</code> that is higher than the model's calculated threshold.
+         * You can get the model's calculated threshold from the model's training results
+         * shown in the Amazon Rekognition Custom Labels console. To get all labels,
+         * regardless of confidence, specify a <code>MinConfidence</code> value of 0. </p>
+         * <p>You can also add the <code>MaxResults</code> parameter to limit the number of
+         * labels returned. </p> <p>This is a stateless API operation. That is, the
+         * operation does not persist any data.</p> <p>This operation requires permissions
+         * to perform the <code>rekognition:DetectCustomLabels</code> action.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectCustomLabels">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetectCustomLabelsAsync(const Model::DetectCustomLabelsRequest& request, const DetectCustomLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Detects faces within an image that is provided as input.</p> <p>
@@ -2276,17 +2571,16 @@ namespace Model
          * <p>For an example, Searching for a Face Using an Image in the Amazon Rekognition
          * Developer Guide.</p> <p>The <code>QualityFilter</code> input parameter allows
          * you to filter out detected faces that don’t meet a required quality bar. The
-         * quality bar is based on a variety of common use cases. By default, Amazon
-         * Rekognition chooses the quality bar that's used to filter faces. You can also
-         * explicitly choose the quality bar. Use <code>QualityFilter</code>, to set the
-         * quality bar for filtering by specifying <code>LOW</code>, <code>MEDIUM</code>,
-         * or <code>HIGH</code>. If you do not want to filter detected faces, specify
-         * <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
-         * collection associated with version 3 of the face model or higher. To get the
-         * version of the face model associated with a collection, call
-         * <a>DescribeCollection</a>. </p> </note> <p>This operation requires permissions
-         * to perform the <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * quality bar is based on a variety of common use cases. Use
+         * <code>QualityFilter</code> to set the quality bar for filtering by specifying
+         * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
+         * to filter detected faces, specify <code>NONE</code>. The default value is
+         * <code>NONE</code>.</p> <note> <p>To use quality filtering, you need a collection
+         * associated with version 3 of the face model or higher. To get the version of the
+         * face model associated with a collection, call <a>DescribeCollection</a>. </p>
+         * </note> <p>This operation requires permissions to perform the
+         * <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">AWS
          * API Reference</a></p>
          */
@@ -2315,17 +2609,16 @@ namespace Model
          * <p>For an example, Searching for a Face Using an Image in the Amazon Rekognition
          * Developer Guide.</p> <p>The <code>QualityFilter</code> input parameter allows
          * you to filter out detected faces that don’t meet a required quality bar. The
-         * quality bar is based on a variety of common use cases. By default, Amazon
-         * Rekognition chooses the quality bar that's used to filter faces. You can also
-         * explicitly choose the quality bar. Use <code>QualityFilter</code>, to set the
-         * quality bar for filtering by specifying <code>LOW</code>, <code>MEDIUM</code>,
-         * or <code>HIGH</code>. If you do not want to filter detected faces, specify
-         * <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
-         * collection associated with version 3 of the face model or higher. To get the
-         * version of the face model associated with a collection, call
-         * <a>DescribeCollection</a>. </p> </note> <p>This operation requires permissions
-         * to perform the <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * quality bar is based on a variety of common use cases. Use
+         * <code>QualityFilter</code> to set the quality bar for filtering by specifying
+         * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
+         * to filter detected faces, specify <code>NONE</code>. The default value is
+         * <code>NONE</code>.</p> <note> <p>To use quality filtering, you need a collection
+         * associated with version 3 of the face model or higher. To get the version of the
+         * face model associated with a collection, call <a>DescribeCollection</a>. </p>
+         * </note> <p>This operation requires permissions to perform the
+         * <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">AWS
          * API Reference</a></p>
          *
@@ -2356,17 +2649,16 @@ namespace Model
          * <p>For an example, Searching for a Face Using an Image in the Amazon Rekognition
          * Developer Guide.</p> <p>The <code>QualityFilter</code> input parameter allows
          * you to filter out detected faces that don’t meet a required quality bar. The
-         * quality bar is based on a variety of common use cases. By default, Amazon
-         * Rekognition chooses the quality bar that's used to filter faces. You can also
-         * explicitly choose the quality bar. Use <code>QualityFilter</code>, to set the
-         * quality bar for filtering by specifying <code>LOW</code>, <code>MEDIUM</code>,
-         * or <code>HIGH</code>. If you do not want to filter detected faces, specify
-         * <code>NONE</code>. </p> <note> <p>To use quality filtering, you need a
-         * collection associated with version 3 of the face model or higher. To get the
-         * version of the face model associated with a collection, call
-         * <a>DescribeCollection</a>. </p> </note> <p>This operation requires permissions
-         * to perform the <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See
-         * Also:</h3>   <a
+         * quality bar is based on a variety of common use cases. Use
+         * <code>QualityFilter</code> to set the quality bar for filtering by specifying
+         * <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want
+         * to filter detected faces, specify <code>NONE</code>. The default value is
+         * <code>NONE</code>.</p> <note> <p>To use quality filtering, you need a collection
+         * associated with version 3 of the face model or higher. To get the version of the
+         * face model associated with a collection, call <a>DescribeCollection</a>. </p>
+         * </note> <p>This operation requires permissions to perform the
+         * <code>rekognition:SearchFacesByImage</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFacesByImage">AWS
          * API Reference</a></p>
          *
@@ -2756,6 +3048,52 @@ namespace Model
         virtual void StartPersonTrackingAsync(const Model::StartPersonTrackingRequest& request, const StartPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts the running of the version of a model. Starting a model takes a while
+         * to complete. To check the current state of the model, use
+         * <a>DescribeProjectVersions</a>.</p> <p>Once the model is running, you can detect
+         * custom labels in new images by calling <a>DetectCustomLabels</a>.</p> <note>
+         * <p>You are charged for the amount of time that the model is running. To stop a
+         * running model, call <a>StopProjectVersion</a>.</p> </note> <p>This operation
+         * requires permissions to perform the <code>rekognition:StartProjectVersion</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartProjectVersionOutcome StartProjectVersion(const Model::StartProjectVersionRequest& request) const;
+
+        /**
+         * <p>Starts the running of the version of a model. Starting a model takes a while
+         * to complete. To check the current state of the model, use
+         * <a>DescribeProjectVersions</a>.</p> <p>Once the model is running, you can detect
+         * custom labels in new images by calling <a>DetectCustomLabels</a>.</p> <note>
+         * <p>You are charged for the amount of time that the model is running. To stop a
+         * running model, call <a>StopProjectVersion</a>.</p> </note> <p>This operation
+         * requires permissions to perform the <code>rekognition:StartProjectVersion</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartProjectVersionOutcomeCallable StartProjectVersionCallable(const Model::StartProjectVersionRequest& request) const;
+
+        /**
+         * <p>Starts the running of the version of a model. Starting a model takes a while
+         * to complete. To check the current state of the model, use
+         * <a>DescribeProjectVersions</a>.</p> <p>Once the model is running, you can detect
+         * custom labels in new images by calling <a>DetectCustomLabels</a>.</p> <note>
+         * <p>You are charged for the amount of time that the model is running. To stop a
+         * running model, call <a>StopProjectVersion</a>.</p> </note> <p>This operation
+         * requires permissions to perform the <code>rekognition:StartProjectVersion</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StartProjectVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartProjectVersionAsync(const Model::StartProjectVersionRequest& request, const StartProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Starts processing a stream processor. You create a stream processor by
          * calling <a>CreateStreamProcessor</a>. To tell <code>StartStreamProcessor</code>
          * which stream processor to start, use the value of the <code>Name</code> field
@@ -2793,6 +3131,37 @@ namespace Model
         virtual void StartStreamProcessorAsync(const Model::StartStreamProcessorRequest& request, const StartStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Stops a running model. The operation might take a while to complete. To check
+         * the current status, call <a>DescribeProjectVersions</a>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopProjectVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopProjectVersionOutcome StopProjectVersion(const Model::StopProjectVersionRequest& request) const;
+
+        /**
+         * <p>Stops a running model. The operation might take a while to complete. To check
+         * the current status, call <a>DescribeProjectVersions</a>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopProjectVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopProjectVersionOutcomeCallable StopProjectVersionCallable(const Model::StopProjectVersionRequest& request) const;
+
+        /**
+         * <p>Stops a running model. The operation might take a while to complete. To check
+         * the current status, call <a>DescribeProjectVersions</a>. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopProjectVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopProjectVersionAsync(const Model::StopProjectVersionRequest& request, const StopProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Stops a running stream processor that was created by
          * <a>CreateStreamProcessor</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopStreamProcessor">AWS
@@ -2826,12 +3195,17 @@ namespace Model
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
         void CompareFacesAsyncHelper(const Model::CompareFacesRequest& request, const CompareFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCollectionAsyncHelper(const Model::CreateCollectionRequest& request, const CreateCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateProjectVersionAsyncHelper(const Model::CreateProjectVersionRequest& request, const CreateProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateStreamProcessorAsyncHelper(const Model::CreateStreamProcessorRequest& request, const CreateStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteCollectionAsyncHelper(const Model::DeleteCollectionRequest& request, const DeleteCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFacesAsyncHelper(const Model::DeleteFacesRequest& request, const DeleteFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteStreamProcessorAsyncHelper(const Model::DeleteStreamProcessorRequest& request, const DeleteStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeCollectionAsyncHelper(const Model::DescribeCollectionRequest& request, const DescribeCollectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeProjectVersionsAsyncHelper(const Model::DescribeProjectVersionsRequest& request, const DescribeProjectVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeProjectsAsyncHelper(const Model::DescribeProjectsRequest& request, const DescribeProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeStreamProcessorAsyncHelper(const Model::DescribeStreamProcessorRequest& request, const DescribeStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetectCustomLabelsAsyncHelper(const Model::DetectCustomLabelsRequest& request, const DetectCustomLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectFacesAsyncHelper(const Model::DetectFacesRequest& request, const DetectFacesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectLabelsAsyncHelper(const Model::DetectLabelsRequest& request, const DetectLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectModerationLabelsAsyncHelper(const Model::DetectModerationLabelsRequest& request, const DetectModerationLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2856,7 +3230,9 @@ namespace Model
         void StartFaceSearchAsyncHelper(const Model::StartFaceSearchRequest& request, const StartFaceSearchResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartLabelDetectionAsyncHelper(const Model::StartLabelDetectionRequest& request, const StartLabelDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartPersonTrackingAsyncHelper(const Model::StartPersonTrackingRequest& request, const StartPersonTrackingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartProjectVersionAsyncHelper(const Model::StartProjectVersionRequest& request, const StartProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartStreamProcessorAsyncHelper(const Model::StartStreamProcessorRequest& request, const StartStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopProjectVersionAsyncHelper(const Model::StopProjectVersionRequest& request, const StopProjectVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopStreamProcessorAsyncHelper(const Model::StopStreamProcessorRequest& request, const StopStreamProcessorResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

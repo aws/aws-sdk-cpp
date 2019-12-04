@@ -17,6 +17,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/DataCaptureConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/ProductionVariant.h>
 #include <utility>
@@ -160,6 +161,22 @@ namespace Model
     inline DescribeEndpointConfigResult& AddProductionVariants(ProductionVariant&& value) { m_productionVariants.push_back(std::move(value)); return *this; }
 
 
+    
+    inline const DataCaptureConfig& GetDataCaptureConfig() const{ return m_dataCaptureConfig; }
+
+    
+    inline void SetDataCaptureConfig(const DataCaptureConfig& value) { m_dataCaptureConfig = value; }
+
+    
+    inline void SetDataCaptureConfig(DataCaptureConfig&& value) { m_dataCaptureConfig = std::move(value); }
+
+    
+    inline DescribeEndpointConfigResult& WithDataCaptureConfig(const DataCaptureConfig& value) { SetDataCaptureConfig(value); return *this;}
+
+    
+    inline DescribeEndpointConfigResult& WithDataCaptureConfig(DataCaptureConfig&& value) { SetDataCaptureConfig(std::move(value)); return *this;}
+
+
     /**
      * <p>AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the
      * ML storage volume attached to the instance.</p>
@@ -235,6 +252,8 @@ namespace Model
     Aws::String m_endpointConfigArn;
 
     Aws::Vector<ProductionVariant> m_productionVariants;
+
+    DataCaptureConfig m_dataCaptureConfig;
 
     Aws::String m_kmsKeyId;
 

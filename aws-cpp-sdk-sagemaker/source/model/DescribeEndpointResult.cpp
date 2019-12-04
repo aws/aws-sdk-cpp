@@ -67,6 +67,12 @@ DescribeEndpointResult& DescribeEndpointResult::operator =(const Aws::AmazonWebS
     }
   }
 
+  if(jsonValue.ValueExists("DataCaptureConfig"))
+  {
+    m_dataCaptureConfig = jsonValue.GetObject("DataCaptureConfig");
+
+  }
+
   if(jsonValue.ValueExists("EndpointStatus"))
   {
     m_endpointStatus = EndpointStatusMapper::GetEndpointStatusForName(jsonValue.GetString("EndpointStatus"));

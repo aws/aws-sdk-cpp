@@ -19,8 +19,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobConfig.h>
 #include <aws/sagemaker/model/HyperParameterTrainingJobDefinition.h>
-#include <aws/sagemaker/model/HyperParameterTuningJobWarmStartConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/HyperParameterTuningJobWarmStartConfig.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -221,6 +221,47 @@ namespace Model
 
 
     /**
+     * <p/>
+     */
+    inline const Aws::Vector<HyperParameterTrainingJobDefinition>& GetTrainingJobDefinitions() const{ return m_trainingJobDefinitions; }
+
+    /**
+     * <p/>
+     */
+    inline bool TrainingJobDefinitionsHasBeenSet() const { return m_trainingJobDefinitionsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetTrainingJobDefinitions(const Aws::Vector<HyperParameterTrainingJobDefinition>& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetTrainingJobDefinitions(Aws::Vector<HyperParameterTrainingJobDefinition>&& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline CreateHyperParameterTuningJobRequest& WithTrainingJobDefinitions(const Aws::Vector<HyperParameterTrainingJobDefinition>& value) { SetTrainingJobDefinitions(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline CreateHyperParameterTuningJobRequest& WithTrainingJobDefinitions(Aws::Vector<HyperParameterTrainingJobDefinition>&& value) { SetTrainingJobDefinitions(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline CreateHyperParameterTuningJobRequest& AddTrainingJobDefinitions(const HyperParameterTrainingJobDefinition& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions.push_back(value); return *this; }
+
+    /**
+     * <p/>
+     */
+    inline CreateHyperParameterTuningJobRequest& AddTrainingJobDefinitions(HyperParameterTrainingJobDefinition&& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Specifies the configuration for starting the hyperparameter tuning job using
      * one or more previous tuning jobs as a starting point. The results of previous
      * tuning jobs are used to inform which combinations of hyperparameters to search
@@ -327,7 +368,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -337,7 +378,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -347,7 +388,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -357,7 +398,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -367,7 +408,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -377,7 +418,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -387,7 +428,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -397,7 +438,7 @@ namespace Model
      * <p>An array of key-value pairs. You can use tags to categorize your AWS
      * resources in different ways, for example, by purpose, owner, or environment. For
      * more information, see <a
-     * href="https://docs.aws.amazon.com/https:/aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
      * Tagging Strategies</a>.</p> <p>Tags that you specify for the tuning job are also
      * added to all training jobs that the tuning job launches.</p>
      */
@@ -413,6 +454,9 @@ namespace Model
 
     HyperParameterTrainingJobDefinition m_trainingJobDefinition;
     bool m_trainingJobDefinitionHasBeenSet;
+
+    Aws::Vector<HyperParameterTrainingJobDefinition> m_trainingJobDefinitions;
+    bool m_trainingJobDefinitionsHasBeenSet;
 
     HyperParameterTuningJobWarmStartConfig m_warmStartConfig;
     bool m_warmStartConfigHasBeenSet;

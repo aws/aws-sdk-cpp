@@ -651,8 +651,8 @@ namespace Model
      * <p>A list of the Elastic Inference (EI) instance types associated with this
      * notebook instance. Currently only one EI instance type can be associated with a
      * notebook instance. For more information, see <a
-     * href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
-     * SageMaker</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
      */
     inline const Aws::Vector<NotebookInstanceAcceleratorType>& GetAcceleratorTypes() const{ return m_acceleratorTypes; }
 
@@ -660,8 +660,8 @@ namespace Model
      * <p>A list of the Elastic Inference (EI) instance types associated with this
      * notebook instance. Currently only one EI instance type can be associated with a
      * notebook instance. For more information, see <a
-     * href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
-     * SageMaker</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
      */
     inline void SetAcceleratorTypes(const Aws::Vector<NotebookInstanceAcceleratorType>& value) { m_acceleratorTypes = value; }
 
@@ -669,8 +669,8 @@ namespace Model
      * <p>A list of the Elastic Inference (EI) instance types associated with this
      * notebook instance. Currently only one EI instance type can be associated with a
      * notebook instance. For more information, see <a
-     * href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
-     * SageMaker</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
      */
     inline void SetAcceleratorTypes(Aws::Vector<NotebookInstanceAcceleratorType>&& value) { m_acceleratorTypes = std::move(value); }
 
@@ -678,8 +678,8 @@ namespace Model
      * <p>A list of the Elastic Inference (EI) instance types associated with this
      * notebook instance. Currently only one EI instance type can be associated with a
      * notebook instance. For more information, see <a
-     * href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
-     * SageMaker</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
      */
     inline DescribeNotebookInstanceResult& WithAcceleratorTypes(const Aws::Vector<NotebookInstanceAcceleratorType>& value) { SetAcceleratorTypes(value); return *this;}
 
@@ -687,8 +687,8 @@ namespace Model
      * <p>A list of the Elastic Inference (EI) instance types associated with this
      * notebook instance. Currently only one EI instance type can be associated with a
      * notebook instance. For more information, see <a
-     * href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
-     * SageMaker</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
      */
     inline DescribeNotebookInstanceResult& WithAcceleratorTypes(Aws::Vector<NotebookInstanceAcceleratorType>&& value) { SetAcceleratorTypes(std::move(value)); return *this;}
 
@@ -696,8 +696,8 @@ namespace Model
      * <p>A list of the Elastic Inference (EI) instance types associated with this
      * notebook instance. Currently only one EI instance type can be associated with a
      * notebook instance. For more information, see <a
-     * href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
-     * SageMaker</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
      */
     inline DescribeNotebookInstanceResult& AddAcceleratorTypes(const NotebookInstanceAcceleratorType& value) { m_acceleratorTypes.push_back(value); return *this; }
 
@@ -705,8 +705,8 @@ namespace Model
      * <p>A list of the Elastic Inference (EI) instance types associated with this
      * notebook instance. Currently only one EI instance type can be associated with a
      * notebook instance. For more information, see <a
-     * href="sagemaker/latest/dg/ei.html">Using Elastic Inference in Amazon
-     * SageMaker</a>.</p>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/ei.html">Using Elastic
+     * Inference in Amazon SageMaker</a>.</p>
      */
     inline DescribeNotebookInstanceResult& AddAcceleratorTypes(NotebookInstanceAcceleratorType&& value) { m_acceleratorTypes.push_back(std::move(value)); return *this; }
 

@@ -29,28 +29,29 @@ namespace LambdaErrorMapper
 {
 
 static const int RESOURCE_NOT_READY_HASH = HashingUtils::HashString("ResourceNotReadyException");
+static const int PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH = HashingUtils::HashString("ProvisionedConcurrencyConfigNotFoundException");
+static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
+static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
+static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFoundException");
+static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailedException");
+static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
+static const int SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH = HashingUtils::HashString("SubnetIPAddressLimitReachedException");
+static const int INVALID_REQUEST_CONTENT_HASH = HashingUtils::HashString("InvalidRequestContentException");
 static const int E_C2_ACCESS_DENIED_HASH = HashingUtils::HashString("EC2AccessDeniedException");
 static const int REQUEST_TOO_LARGE_HASH = HashingUtils::HashString("RequestTooLargeException");
-static const int K_M_S_INVALID_STATE_HASH = HashingUtils::HashString("KMSInvalidStateException");
 static const int INVALID_SECURITY_GROUP_I_D_HASH = HashingUtils::HashString("InvalidSecurityGroupIDException");
 static const int INVALID_SUBNET_I_D_HASH = HashingUtils::HashString("InvalidSubnetIDException");
 static const int INVALID_RUNTIME_HASH = HashingUtils::HashString("InvalidRuntimeException");
 static const int E_C2_UNEXPECTED_HASH = HashingUtils::HashString("EC2UnexpectedException");
 static const int INVALID_ZIP_FILE_HASH = HashingUtils::HashString("InvalidZipFileException");
 static const int UNSUPPORTED_MEDIA_TYPE_HASH = HashingUtils::HashString("UnsupportedMediaTypeException");
-static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyLengthExceededException");
-static const int K_M_S_NOT_FOUND_HASH = HashingUtils::HashString("KMSNotFoundException");
 static const int K_M_S_DISABLED_HASH = HashingUtils::HashString("KMSDisabledException");
 static const int K_M_S_ACCESS_DENIED_HASH = HashingUtils::HashString("KMSAccessDeniedException");
-static const int PRECONDITION_FAILED_HASH = HashingUtils::HashString("PreconditionFailedException");
 static const int E_C2_THROTTLED_HASH = HashingUtils::HashString("EC2ThrottledException");
 static const int RESOURCE_CONFLICT_HASH = HashingUtils::HashString("ResourceConflictException");
 static const int E_N_I_LIMIT_REACHED_HASH = HashingUtils::HashString("ENILimitReachedException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
-static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
-static const int SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH = HashingUtils::HashString("SubnetIPAddressLimitReachedException");
 static const int SERVICE_HASH = HashingUtils::HashString("ServiceException");
-static const int INVALID_REQUEST_CONTENT_HASH = HashingUtils::HashString("InvalidRequestContentException");
 static const int CODE_STORAGE_EXCEEDED_HASH = HashingUtils::HashString("CodeStorageExceededException");
 
 
@@ -62,6 +63,38 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_NOT_READY), false);
   }
+  else if (hashCode == PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PROVISIONED_CONCURRENCY_CONFIG_NOT_FOUND), false);
+  }
+  else if (hashCode == K_M_S_INVALID_STATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_INVALID_STATE), false);
+  }
+  else if (hashCode == POLICY_LENGTH_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::POLICY_LENGTH_EXCEEDED), false);
+  }
+  else if (hashCode == K_M_S_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_NOT_FOUND), false);
+  }
+  else if (hashCode == PRECONDITION_FAILED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PRECONDITION_FAILED), false);
+  }
+  else if (hashCode == RESOURCE_IN_USE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_IN_USE), false);
+  }
+  else if (hashCode == SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SUBNET_I_P_ADDRESS_LIMIT_REACHED), false);
+  }
+  else if (hashCode == INVALID_REQUEST_CONTENT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_REQUEST_CONTENT), false);
+  }
   else if (hashCode == E_C2_ACCESS_DENIED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_ACCESS_DENIED), false);
@@ -69,10 +102,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == REQUEST_TOO_LARGE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::REQUEST_TOO_LARGE), false);
-  }
-  else if (hashCode == K_M_S_INVALID_STATE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_INVALID_STATE), false);
   }
   else if (hashCode == INVALID_SECURITY_GROUP_I_D_HASH)
   {
@@ -98,14 +127,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::UNSUPPORTED_MEDIA_TYPE), false);
   }
-  else if (hashCode == POLICY_LENGTH_EXCEEDED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::POLICY_LENGTH_EXCEEDED), false);
-  }
-  else if (hashCode == K_M_S_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_NOT_FOUND), false);
-  }
   else if (hashCode == K_M_S_DISABLED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_DISABLED), false);
@@ -113,10 +134,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == K_M_S_ACCESS_DENIED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::K_M_S_ACCESS_DENIED), false);
-  }
-  else if (hashCode == PRECONDITION_FAILED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::PRECONDITION_FAILED), false);
   }
   else if (hashCode == E_C2_THROTTLED_HASH)
   {
@@ -134,21 +151,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::TOO_MANY_REQUESTS), false);
   }
-  else if (hashCode == RESOURCE_IN_USE_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::RESOURCE_IN_USE), false);
-  }
-  else if (hashCode == SUBNET_I_P_ADDRESS_LIMIT_REACHED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SUBNET_I_P_ADDRESS_LIMIT_REACHED), false);
-  }
   else if (hashCode == SERVICE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::SERVICE), false);
-  }
-  else if (hashCode == INVALID_REQUEST_CONTENT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::INVALID_REQUEST_CONTENT), false);
   }
   else if (hashCode == CODE_STORAGE_EXCEEDED_HASH)
   {

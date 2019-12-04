@@ -17,6 +17,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/DataCaptureConfigSummary.h>
 #include <aws/sagemaker/model/EndpointStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/sagemaker/model/ProductionVariantSummary.h>
@@ -195,6 +196,22 @@ namespace Model
      * hosted behind this endpoint. </p>
      */
     inline DescribeEndpointResult& AddProductionVariants(ProductionVariantSummary&& value) { m_productionVariants.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const DataCaptureConfigSummary& GetDataCaptureConfig() const{ return m_dataCaptureConfig; }
+
+    
+    inline void SetDataCaptureConfig(const DataCaptureConfigSummary& value) { m_dataCaptureConfig = value; }
+
+    
+    inline void SetDataCaptureConfig(DataCaptureConfigSummary&& value) { m_dataCaptureConfig = std::move(value); }
+
+    
+    inline DescribeEndpointResult& WithDataCaptureConfig(const DataCaptureConfigSummary& value) { SetDataCaptureConfig(value); return *this;}
+
+    
+    inline DescribeEndpointResult& WithDataCaptureConfig(DataCaptureConfigSummary&& value) { SetDataCaptureConfig(std::move(value)); return *this;}
 
 
     /**
@@ -436,6 +453,8 @@ namespace Model
     Aws::String m_endpointConfigName;
 
     Aws::Vector<ProductionVariantSummary> m_productionVariants;
+
+    DataCaptureConfigSummary m_dataCaptureConfig;
 
     EndpointStatus m_endpointStatus;
 

@@ -136,7 +136,11 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Lambda provisioned concurrency - The resource type is
+     * <code>function</code> and the unique identifier is the function name with a
+     * function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     * <code>function:my-function:prod</code> or
+     * <code>function:my-function:1</code>.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
 
@@ -174,7 +178,11 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Lambda provisioned concurrency - The resource type is
+     * <code>function</code> and the unique identifier is the function name with a
+     * function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     * <code>function:my-function:prod</code> or
+     * <code>function:my-function:1</code>.</p> </li> </ul>
      */
     inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
 
@@ -212,7 +220,11 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Lambda provisioned concurrency - The resource type is
+     * <code>function</code> and the unique identifier is the function name with a
+     * function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     * <code>function:my-function:prod</code> or
+     * <code>function:my-function:1</code>.</p> </li> </ul>
      */
     inline void SetResourceIds(const Aws::Vector<Aws::String>& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = value; }
 
@@ -250,7 +262,11 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Lambda provisioned concurrency - The resource type is
+     * <code>function</code> and the unique identifier is the function name with a
+     * function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     * <code>function:my-function:prod</code> or
+     * <code>function:my-function:1</code>.</p> </li> </ul>
      */
     inline void SetResourceIds(Aws::Vector<Aws::String>&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds = std::move(value); }
 
@@ -288,7 +304,11 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Lambda provisioned concurrency - The resource type is
+     * <code>function</code> and the unique identifier is the function name with a
+     * function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     * <code>function:my-function:prod</code> or
+     * <code>function:my-function:1</code>.</p> </li> </ul>
      */
     inline DescribeScalableTargetsRequest& WithResourceIds(const Aws::Vector<Aws::String>& value) { SetResourceIds(value); return *this;}
 
@@ -326,7 +346,11 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Lambda provisioned concurrency - The resource type is
+     * <code>function</code> and the unique identifier is the function name with a
+     * function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     * <code>function:my-function:prod</code> or
+     * <code>function:my-function:1</code>.</p> </li> </ul>
      */
     inline DescribeScalableTargetsRequest& WithResourceIds(Aws::Vector<Aws::String>&& value) { SetResourceIds(std::move(value)); return *this;}
 
@@ -364,7 +388,11 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Lambda provisioned concurrency - The resource type is
+     * <code>function</code> and the unique identifier is the function name with a
+     * function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     * <code>function:my-function:prod</code> or
+     * <code>function:my-function:1</code>.</p> </li> </ul>
      */
     inline DescribeScalableTargetsRequest& AddResourceIds(const Aws::String& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
@@ -402,7 +430,11 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Lambda provisioned concurrency - The resource type is
+     * <code>function</code> and the unique identifier is the function name with a
+     * function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     * <code>function:my-function:prod</code> or
+     * <code>function:my-function:1</code>.</p> </li> </ul>
      */
     inline DescribeScalableTargetsRequest& AddResourceIds(Aws::String&& value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(std::move(value)); return *this; }
 
@@ -440,7 +472,11 @@ namespace Model
      * endpoint - The resource type and unique identifier are specified using the
      * endpoint ARN. Example:
      * <code>arn:aws:comprehend:us-west-2:123456789012:document-classifier-endpoint/EXAMPLE</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>Lambda provisioned concurrency - The resource type is
+     * <code>function</code> and the unique identifier is the function name with a
+     * function version or alias name suffix that is not <code>$LATEST</code>. Example:
+     * <code>function:my-function:prod</code> or
+     * <code>function:my-function:1</code>.</p> </li> </ul>
      */
     inline DescribeScalableTargetsRequest& AddResourceIds(const char* value) { m_resourceIdsHasBeenSet = true; m_resourceIds.push_back(value); return *this; }
 
@@ -473,7 +509,8 @@ namespace Model
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
+     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -505,7 +542,8 @@ namespace Model
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
+     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
      */
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
 
@@ -537,7 +575,8 @@ namespace Model
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
+     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -569,7 +608,8 @@ namespace Model
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
+     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
@@ -601,7 +641,8 @@ namespace Model
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
+     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
      */
     inline DescribeScalableTargetsRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -633,7 +674,8 @@ namespace Model
      * a custom resource provided by your own application or service.</p> </li> <li>
      * <p> <code>comprehend:document-classifier-endpoint:DesiredInferenceUnits</code> -
      * The number of inference units for an Amazon Comprehend document classification
-     * endpoint.</p> </li> </ul>
+     * endpoint.</p> </li> <li> <p> <code>lambda:function:ProvisionedConcurrency</code>
+     * - The provisioned concurrency for a Lambda function.</p> </li> </ul>
      */
     inline DescribeScalableTargetsRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 

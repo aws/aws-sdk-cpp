@@ -76,6 +76,12 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("AutoMLJobArn"))
+  {
+    m_autoMLJobArn = jsonValue.GetString("AutoMLJobArn");
+
+  }
+
   if(jsonValue.ValueExists("ModelArtifacts"))
   {
     m_modelArtifacts = jsonValue.GetObject("ModelArtifacts");
@@ -230,6 +236,42 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
   {
     m_billableTimeInSeconds = jsonValue.GetInteger("BillableTimeInSeconds");
 
+  }
+
+  if(jsonValue.ValueExists("DebugHookConfig"))
+  {
+    m_debugHookConfig = jsonValue.GetObject("DebugHookConfig");
+
+  }
+
+  if(jsonValue.ValueExists("ExperimentConfig"))
+  {
+    m_experimentConfig = jsonValue.GetObject("ExperimentConfig");
+
+  }
+
+  if(jsonValue.ValueExists("DebugRuleConfigurations"))
+  {
+    Array<JsonView> debugRuleConfigurationsJsonList = jsonValue.GetArray("DebugRuleConfigurations");
+    for(unsigned debugRuleConfigurationsIndex = 0; debugRuleConfigurationsIndex < debugRuleConfigurationsJsonList.GetLength(); ++debugRuleConfigurationsIndex)
+    {
+      m_debugRuleConfigurations.push_back(debugRuleConfigurationsJsonList[debugRuleConfigurationsIndex].AsObject());
+    }
+  }
+
+  if(jsonValue.ValueExists("TensorBoardOutputConfig"))
+  {
+    m_tensorBoardOutputConfig = jsonValue.GetObject("TensorBoardOutputConfig");
+
+  }
+
+  if(jsonValue.ValueExists("DebugRuleEvaluationStatuses"))
+  {
+    Array<JsonView> debugRuleEvaluationStatusesJsonList = jsonValue.GetArray("DebugRuleEvaluationStatuses");
+    for(unsigned debugRuleEvaluationStatusesIndex = 0; debugRuleEvaluationStatusesIndex < debugRuleEvaluationStatusesJsonList.GetLength(); ++debugRuleEvaluationStatusesIndex)
+    {
+      m_debugRuleEvaluationStatuses.push_back(debugRuleEvaluationStatusesJsonList[debugRuleEvaluationStatusesIndex].AsObject());
+    }
   }
 
 

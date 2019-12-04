@@ -56,7 +56,8 @@ enum class SageMakerErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  RESOURCE_IN_USE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  RESOURCE_IN_USE,
   RESOURCE_LIMIT_EXCEEDED
 };
 namespace SageMakerErrorMapper

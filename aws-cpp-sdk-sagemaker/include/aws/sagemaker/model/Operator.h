@@ -32,7 +32,9 @@ namespace Model
     GreaterThanOrEqualTo,
     LessThan,
     LessThanOrEqualTo,
-    Contains
+    Contains,
+    Exists,
+    NotExists
   };
 
 namespace OperatorMapper

@@ -26,6 +26,9 @@ CreateStateMachineRequest::CreateStateMachineRequest() :
     m_nameHasBeenSet(false),
     m_definitionHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_type(StateMachineType::NOT_SET),
+    m_typeHasBeenSet(false),
+    m_loggingConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -49,6 +52,17 @@ Aws::String CreateStateMachineRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", StateMachineTypeMapper::GetNameForStateMachineType(m_type));
+  }
+
+  if(m_loggingConfigurationHasBeenSet)
+  {
+   payload.WithObject("loggingConfiguration", m_loggingConfiguration.Jsonize());
 
   }
 

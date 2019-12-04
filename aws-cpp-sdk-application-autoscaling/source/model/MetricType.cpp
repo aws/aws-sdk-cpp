@@ -43,6 +43,7 @@ namespace Aws
         static const int ECSServiceAverageMemoryUtilization_HASH = HashingUtils::HashString("ECSServiceAverageMemoryUtilization");
         static const int AppStreamAverageCapacityUtilization_HASH = HashingUtils::HashString("AppStreamAverageCapacityUtilization");
         static const int ComprehendInferenceUtilization_HASH = HashingUtils::HashString("ComprehendInferenceUtilization");
+        static const int LambdaProvisionedConcurrencyUtilization_HASH = HashingUtils::HashString("LambdaProvisionedConcurrencyUtilization");
 
 
         MetricType GetMetricTypeForName(const Aws::String& name)
@@ -100,6 +101,10 @@ namespace Aws
           {
             return MetricType::ComprehendInferenceUtilization;
           }
+          else if (hashCode == LambdaProvisionedConcurrencyUtilization_HASH)
+          {
+            return MetricType::LambdaProvisionedConcurrencyUtilization;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -140,6 +145,8 @@ namespace Aws
             return "AppStreamAverageCapacityUtilization";
           case MetricType::ComprehendInferenceUtilization:
             return "ComprehendInferenceUtilization";
+          case MetricType::LambdaProvisionedConcurrencyUtilization:
+            return "LambdaProvisionedConcurrencyUtilization";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

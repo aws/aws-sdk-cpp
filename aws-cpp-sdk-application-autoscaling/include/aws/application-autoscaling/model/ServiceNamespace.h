@@ -34,7 +34,8 @@ namespace Model
     rds,
     sagemaker,
     custom_resource,
-    comprehend
+    comprehend,
+    lambda
   };
 
 namespace ServiceNamespaceMapper

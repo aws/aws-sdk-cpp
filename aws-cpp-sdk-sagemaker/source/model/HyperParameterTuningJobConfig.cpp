@@ -35,7 +35,8 @@ HyperParameterTuningJobConfig::HyperParameterTuningJobConfig() :
     m_resourceLimitsHasBeenSet(false),
     m_parameterRangesHasBeenSet(false),
     m_trainingJobEarlyStoppingType(TrainingJobEarlyStoppingType::NOT_SET),
-    m_trainingJobEarlyStoppingTypeHasBeenSet(false)
+    m_trainingJobEarlyStoppingTypeHasBeenSet(false),
+    m_tuningJobCompletionCriteriaHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ HyperParameterTuningJobConfig::HyperParameterTuningJobConfig(JsonView jsonValue)
     m_resourceLimitsHasBeenSet(false),
     m_parameterRangesHasBeenSet(false),
     m_trainingJobEarlyStoppingType(TrainingJobEarlyStoppingType::NOT_SET),
-    m_trainingJobEarlyStoppingTypeHasBeenSet(false)
+    m_trainingJobEarlyStoppingTypeHasBeenSet(false),
+    m_tuningJobCompletionCriteriaHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +90,13 @@ HyperParameterTuningJobConfig& HyperParameterTuningJobConfig::operator =(JsonVie
     m_trainingJobEarlyStoppingTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TuningJobCompletionCriteria"))
+  {
+    m_tuningJobCompletionCriteria = jsonValue.GetObject("TuningJobCompletionCriteria");
+
+    m_tuningJobCompletionCriteriaHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -121,6 +130,12 @@ JsonValue HyperParameterTuningJobConfig::Jsonize() const
   if(m_trainingJobEarlyStoppingTypeHasBeenSet)
   {
    payload.WithString("TrainingJobEarlyStoppingType", TrainingJobEarlyStoppingTypeMapper::GetNameForTrainingJobEarlyStoppingType(m_trainingJobEarlyStoppingType));
+  }
+
+  if(m_tuningJobCompletionCriteriaHasBeenSet)
+  {
+   payload.WithObject("TuningJobCompletionCriteria", m_tuningJobCompletionCriteria.Jsonize());
+
   }
 
   return payload;

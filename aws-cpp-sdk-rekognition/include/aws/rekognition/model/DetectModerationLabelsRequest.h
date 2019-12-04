@@ -17,6 +17,7 @@
 #include <aws/rekognition/Rekognition_EXPORTS.h>
 #include <aws/rekognition/RekognitionRequest.h>
 #include <aws/rekognition/model/Image.h>
+#include <aws/rekognition/model/HumanLoopConfig.h>
 #include <utility>
 
 namespace Aws
@@ -141,6 +142,43 @@ namespace Model
      */
     inline DetectModerationLabelsRequest& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
 
+
+    /**
+     * <p>Sets up the configuration for human evaluation, including the FlowDefinition
+     * the image will be sent to.</p>
+     */
+    inline const HumanLoopConfig& GetHumanLoopConfig() const{ return m_humanLoopConfig; }
+
+    /**
+     * <p>Sets up the configuration for human evaluation, including the FlowDefinition
+     * the image will be sent to.</p>
+     */
+    inline bool HumanLoopConfigHasBeenSet() const { return m_humanLoopConfigHasBeenSet; }
+
+    /**
+     * <p>Sets up the configuration for human evaluation, including the FlowDefinition
+     * the image will be sent to.</p>
+     */
+    inline void SetHumanLoopConfig(const HumanLoopConfig& value) { m_humanLoopConfigHasBeenSet = true; m_humanLoopConfig = value; }
+
+    /**
+     * <p>Sets up the configuration for human evaluation, including the FlowDefinition
+     * the image will be sent to.</p>
+     */
+    inline void SetHumanLoopConfig(HumanLoopConfig&& value) { m_humanLoopConfigHasBeenSet = true; m_humanLoopConfig = std::move(value); }
+
+    /**
+     * <p>Sets up the configuration for human evaluation, including the FlowDefinition
+     * the image will be sent to.</p>
+     */
+    inline DetectModerationLabelsRequest& WithHumanLoopConfig(const HumanLoopConfig& value) { SetHumanLoopConfig(value); return *this;}
+
+    /**
+     * <p>Sets up the configuration for human evaluation, including the FlowDefinition
+     * the image will be sent to.</p>
+     */
+    inline DetectModerationLabelsRequest& WithHumanLoopConfig(HumanLoopConfig&& value) { SetHumanLoopConfig(std::move(value)); return *this;}
+
   private:
 
     Image m_image;
@@ -148,6 +186,9 @@ namespace Model
 
     double m_minConfidence;
     bool m_minConfidenceHasBeenSet;
+
+    HumanLoopConfig m_humanLoopConfig;
+    bool m_humanLoopConfigHasBeenSet;
   };
 
 } // namespace Model

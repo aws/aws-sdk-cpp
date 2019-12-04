@@ -34,7 +34,9 @@ static const int EXECUTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("Execu
 static const int ACTIVITY_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ActivityDoesNotExist");
 static const int INVALID_TOKEN_HASH = HashingUtils::HashString("InvalidToken");
 static const int ACTIVITY_WORKER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ActivityWorkerLimitExceeded");
+static const int INVALID_LOGGING_CONFIGURATION_HASH = HashingUtils::HashString("InvalidLoggingConfiguration");
 static const int INVALID_NAME_HASH = HashingUtils::HashString("InvalidName");
+static const int STATE_MACHINE_TYPE_NOT_SUPPORTED_HASH = HashingUtils::HashString("StateMachineTypeNotSupported");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTags");
 static const int TASK_TIMED_OUT_HASH = HashingUtils::HashString("TaskTimedOut");
 static const int STATE_MACHINE_DELETING_HASH = HashingUtils::HashString("StateMachineDeleting");
@@ -78,9 +80,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::ACTIVITY_WORKER_LIMIT_EXCEEDED), false);
   }
+  else if (hashCode == INVALID_LOGGING_CONFIGURATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_LOGGING_CONFIGURATION), false);
+  }
   else if (hashCode == INVALID_NAME_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::INVALID_NAME), false);
+  }
+  else if (hashCode == STATE_MACHINE_TYPE_NOT_SUPPORTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::STATE_MACHINE_TYPE_NOT_SUPPORTED), false);
   }
   else if (hashCode == TOO_MANY_TAGS_HASH)
   {

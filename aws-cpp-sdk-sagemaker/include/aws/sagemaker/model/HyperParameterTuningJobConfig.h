@@ -20,6 +20,7 @@
 #include <aws/sagemaker/model/ResourceLimits.h>
 #include <aws/sagemaker/model/ParameterRanges.h>
 #include <aws/sagemaker/model/TrainingJobEarlyStoppingType.h>
+#include <aws/sagemaker/model/TuningJobCompletionCriteria.h>
 #include <utility>
 
 namespace Aws
@@ -54,7 +55,7 @@ namespace Model
     /**
      * <p>Specifies how hyperparameter tuning chooses the combinations of
      * hyperparameter values to use for the training job it launches. To use the
-     * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
+     * Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search,
      * set it to <code>Random</code>. For information about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
@@ -64,7 +65,7 @@ namespace Model
     /**
      * <p>Specifies how hyperparameter tuning chooses the combinations of
      * hyperparameter values to use for the training job it launches. To use the
-     * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
+     * Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search,
      * set it to <code>Random</code>. For information about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
@@ -74,7 +75,7 @@ namespace Model
     /**
      * <p>Specifies how hyperparameter tuning chooses the combinations of
      * hyperparameter values to use for the training job it launches. To use the
-     * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
+     * Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search,
      * set it to <code>Random</code>. For information about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
@@ -84,7 +85,7 @@ namespace Model
     /**
      * <p>Specifies how hyperparameter tuning chooses the combinations of
      * hyperparameter values to use for the training job it launches. To use the
-     * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
+     * Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search,
      * set it to <code>Random</code>. For information about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
@@ -94,7 +95,7 @@ namespace Model
     /**
      * <p>Specifies how hyperparameter tuning chooses the combinations of
      * hyperparameter values to use for the training job it launches. To use the
-     * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
+     * Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search,
      * set it to <code>Random</code>. For information about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
@@ -104,7 +105,7 @@ namespace Model
     /**
      * <p>Specifies how hyperparameter tuning chooses the combinations of
      * hyperparameter values to use for the training job it launches. To use the
-     * Bayesian search stategy, set this to <code>Bayesian</code>. To randomly search,
+     * Bayesian search strategy, set this to <code>Bayesian</code>. To randomly search,
      * set it to <code>Random</code>. For information about search strategies, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
@@ -301,6 +302,37 @@ namespace Model
      */
     inline HyperParameterTuningJobConfig& WithTrainingJobEarlyStoppingType(TrainingJobEarlyStoppingType&& value) { SetTrainingJobEarlyStoppingType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tuning job's completion criteria.</p>
+     */
+    inline const TuningJobCompletionCriteria& GetTuningJobCompletionCriteria() const{ return m_tuningJobCompletionCriteria; }
+
+    /**
+     * <p>The tuning job's completion criteria.</p>
+     */
+    inline bool TuningJobCompletionCriteriaHasBeenSet() const { return m_tuningJobCompletionCriteriaHasBeenSet; }
+
+    /**
+     * <p>The tuning job's completion criteria.</p>
+     */
+    inline void SetTuningJobCompletionCriteria(const TuningJobCompletionCriteria& value) { m_tuningJobCompletionCriteriaHasBeenSet = true; m_tuningJobCompletionCriteria = value; }
+
+    /**
+     * <p>The tuning job's completion criteria.</p>
+     */
+    inline void SetTuningJobCompletionCriteria(TuningJobCompletionCriteria&& value) { m_tuningJobCompletionCriteriaHasBeenSet = true; m_tuningJobCompletionCriteria = std::move(value); }
+
+    /**
+     * <p>The tuning job's completion criteria.</p>
+     */
+    inline HyperParameterTuningJobConfig& WithTuningJobCompletionCriteria(const TuningJobCompletionCriteria& value) { SetTuningJobCompletionCriteria(value); return *this;}
+
+    /**
+     * <p>The tuning job's completion criteria.</p>
+     */
+    inline HyperParameterTuningJobConfig& WithTuningJobCompletionCriteria(TuningJobCompletionCriteria&& value) { SetTuningJobCompletionCriteria(std::move(value)); return *this;}
+
   private:
 
     HyperParameterTuningJobStrategyType m_strategy;
@@ -317,6 +349,9 @@ namespace Model
 
     TrainingJobEarlyStoppingType m_trainingJobEarlyStoppingType;
     bool m_trainingJobEarlyStoppingTypeHasBeenSet;
+
+    TuningJobCompletionCriteria m_tuningJobCompletionCriteria;
+    bool m_tuningJobCompletionCriteriaHasBeenSet;
   };
 
 } // namespace Model

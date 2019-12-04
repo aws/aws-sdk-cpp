@@ -145,9 +145,21 @@ DescribeTransformJobResult& DescribeTransformJobResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("AutoMLJobArn"))
+  {
+    m_autoMLJobArn = jsonValue.GetString("AutoMLJobArn");
+
+  }
+
   if(jsonValue.ValueExists("DataProcessing"))
   {
     m_dataProcessing = jsonValue.GetObject("DataProcessing");
+
+  }
+
+  if(jsonValue.ValueExists("ExperimentConfig"))
+  {
+    m_experimentConfig = jsonValue.GetObject("ExperimentConfig");
 
   }
 

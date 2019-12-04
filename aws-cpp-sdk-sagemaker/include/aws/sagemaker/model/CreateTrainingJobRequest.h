@@ -25,8 +25,12 @@
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/sagemaker/model/StoppingCondition.h>
 #include <aws/sagemaker/model/CheckpointConfig.h>
+#include <aws/sagemaker/model/DebugHookConfig.h>
+#include <aws/sagemaker/model/TensorBoardOutputConfig.h>
+#include <aws/sagemaker/model/ExperimentConfig.h>
 #include <aws/sagemaker/model/Channel.h>
 #include <aws/sagemaker/model/Tag.h>
+#include <aws/sagemaker/model/DebugRuleConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -1040,6 +1044,104 @@ namespace Model
      */
     inline CreateTrainingJobRequest& WithCheckpointConfig(CheckpointConfig&& value) { SetCheckpointConfig(std::move(value)); return *this;}
 
+
+    
+    inline const DebugHookConfig& GetDebugHookConfig() const{ return m_debugHookConfig; }
+
+    
+    inline bool DebugHookConfigHasBeenSet() const { return m_debugHookConfigHasBeenSet; }
+
+    
+    inline void SetDebugHookConfig(const DebugHookConfig& value) { m_debugHookConfigHasBeenSet = true; m_debugHookConfig = value; }
+
+    
+    inline void SetDebugHookConfig(DebugHookConfig&& value) { m_debugHookConfigHasBeenSet = true; m_debugHookConfig = std::move(value); }
+
+    
+    inline CreateTrainingJobRequest& WithDebugHookConfig(const DebugHookConfig& value) { SetDebugHookConfig(value); return *this;}
+
+    
+    inline CreateTrainingJobRequest& WithDebugHookConfig(DebugHookConfig&& value) { SetDebugHookConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline const Aws::Vector<DebugRuleConfiguration>& GetDebugRuleConfigurations() const{ return m_debugRuleConfigurations; }
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline bool DebugRuleConfigurationsHasBeenSet() const { return m_debugRuleConfigurationsHasBeenSet; }
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline void SetDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations = value; }
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline void SetDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations = std::move(value); }
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline CreateTrainingJobRequest& WithDebugRuleConfigurations(const Aws::Vector<DebugRuleConfiguration>& value) { SetDebugRuleConfigurations(value); return *this;}
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline CreateTrainingJobRequest& WithDebugRuleConfigurations(Aws::Vector<DebugRuleConfiguration>&& value) { SetDebugRuleConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline CreateTrainingJobRequest& AddDebugRuleConfigurations(const DebugRuleConfiguration& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>Configuration information for debugging rules.</p>
+     */
+    inline CreateTrainingJobRequest& AddDebugRuleConfigurations(DebugRuleConfiguration&& value) { m_debugRuleConfigurationsHasBeenSet = true; m_debugRuleConfigurations.push_back(std::move(value)); return *this; }
+
+
+    
+    inline const TensorBoardOutputConfig& GetTensorBoardOutputConfig() const{ return m_tensorBoardOutputConfig; }
+
+    
+    inline bool TensorBoardOutputConfigHasBeenSet() const { return m_tensorBoardOutputConfigHasBeenSet; }
+
+    
+    inline void SetTensorBoardOutputConfig(const TensorBoardOutputConfig& value) { m_tensorBoardOutputConfigHasBeenSet = true; m_tensorBoardOutputConfig = value; }
+
+    
+    inline void SetTensorBoardOutputConfig(TensorBoardOutputConfig&& value) { m_tensorBoardOutputConfigHasBeenSet = true; m_tensorBoardOutputConfig = std::move(value); }
+
+    
+    inline CreateTrainingJobRequest& WithTensorBoardOutputConfig(const TensorBoardOutputConfig& value) { SetTensorBoardOutputConfig(value); return *this;}
+
+    
+    inline CreateTrainingJobRequest& WithTensorBoardOutputConfig(TensorBoardOutputConfig&& value) { SetTensorBoardOutputConfig(std::move(value)); return *this;}
+
+
+    
+    inline const ExperimentConfig& GetExperimentConfig() const{ return m_experimentConfig; }
+
+    
+    inline bool ExperimentConfigHasBeenSet() const { return m_experimentConfigHasBeenSet; }
+
+    
+    inline void SetExperimentConfig(const ExperimentConfig& value) { m_experimentConfigHasBeenSet = true; m_experimentConfig = value; }
+
+    
+    inline void SetExperimentConfig(ExperimentConfig&& value) { m_experimentConfigHasBeenSet = true; m_experimentConfig = std::move(value); }
+
+    
+    inline CreateTrainingJobRequest& WithExperimentConfig(const ExperimentConfig& value) { SetExperimentConfig(value); return *this;}
+
+    
+    inline CreateTrainingJobRequest& WithExperimentConfig(ExperimentConfig&& value) { SetExperimentConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_trainingJobName;
@@ -1083,6 +1185,18 @@ namespace Model
 
     CheckpointConfig m_checkpointConfig;
     bool m_checkpointConfigHasBeenSet;
+
+    DebugHookConfig m_debugHookConfig;
+    bool m_debugHookConfigHasBeenSet;
+
+    Aws::Vector<DebugRuleConfiguration> m_debugRuleConfigurations;
+    bool m_debugRuleConfigurationsHasBeenSet;
+
+    TensorBoardOutputConfig m_tensorBoardOutputConfig;
+    bool m_tensorBoardOutputConfigHasBeenSet;
+
+    ExperimentConfig m_experimentConfig;
+    bool m_experimentConfigHasBeenSet;
   };
 
 } // namespace Model
