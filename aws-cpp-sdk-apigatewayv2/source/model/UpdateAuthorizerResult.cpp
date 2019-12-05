@@ -87,19 +87,16 @@ UpdateAuthorizerResult& UpdateAuthorizerResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("jwtConfiguration"))
+  {
+    m_jwtConfiguration = jsonValue.GetObject("jwtConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
 
-  }
-
-  if(jsonValue.ValueExists("providerArns"))
-  {
-    Array<JsonView> providerArnsJsonList = jsonValue.GetArray("providerArns");
-    for(unsigned providerArnsIndex = 0; providerArnsIndex < providerArnsJsonList.GetLength(); ++providerArnsIndex)
-    {
-      m_providerArns.push_back(providerArnsJsonList[providerArnsIndex].AsString());
-    }
   }
 
 

@@ -26,11 +26,15 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateStageResult::CreateStageResult()
+CreateStageResult::CreateStageResult() : 
+    m_apiGatewayManaged(false),
+    m_autoDeploy(false)
 {
 }
 
-CreateStageResult::CreateStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+CreateStageResult::CreateStageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_apiGatewayManaged(false),
+    m_autoDeploy(false)
 {
   *this = result;
 }
@@ -41,6 +45,18 @@ CreateStageResult& CreateStageResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("accessLogSettings"))
   {
     m_accessLogSettings = jsonValue.GetObject("accessLogSettings");
+
+  }
+
+  if(jsonValue.ValueExists("apiGatewayManaged"))
+  {
+    m_apiGatewayManaged = jsonValue.GetBool("apiGatewayManaged");
+
+  }
+
+  if(jsonValue.ValueExists("autoDeploy"))
+  {
+    m_autoDeploy = jsonValue.GetBool("autoDeploy");
 
   }
 
@@ -71,6 +87,12 @@ CreateStageResult& CreateStageResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
+
+  }
+
+  if(jsonValue.ValueExists("lastDeploymentStatusMessage"))
+  {
+    m_lastDeploymentStatusMessage = jsonValue.GetString("lastDeploymentStatusMessage");
 
   }
 

@@ -17,6 +17,7 @@
 #include <aws/apigatewayv2/ApiGatewayV2_EXPORTS.h>
 #include <aws/apigatewayv2/ApiGatewayV2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/apigatewayv2/model/Cors.h>
 #include <aws/apigatewayv2/model/ProtocolType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -29,6 +30,9 @@ namespace Model
 {
 
   /**
+   * <p>Creates a new Api resource to represent an API.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApiRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAYV2_API CreateApiRequest : public ApiGatewayV2Request
   {
@@ -45,60 +49,192 @@ namespace Model
 
 
     /**
-     * <p>An API key selection expression. See <a
+     * <p>An API key selection expression. Supported only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
      * Key Selection Expressions</a>.</p>
      */
     inline const Aws::String& GetApiKeySelectionExpression() const{ return m_apiKeySelectionExpression; }
 
     /**
-     * <p>An API key selection expression. See <a
+     * <p>An API key selection expression. Supported only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
      * Key Selection Expressions</a>.</p>
      */
     inline bool ApiKeySelectionExpressionHasBeenSet() const { return m_apiKeySelectionExpressionHasBeenSet; }
 
     /**
-     * <p>An API key selection expression. See <a
+     * <p>An API key selection expression. Supported only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
      * Key Selection Expressions</a>.</p>
      */
     inline void SetApiKeySelectionExpression(const Aws::String& value) { m_apiKeySelectionExpressionHasBeenSet = true; m_apiKeySelectionExpression = value; }
 
     /**
-     * <p>An API key selection expression. See <a
+     * <p>An API key selection expression. Supported only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
      * Key Selection Expressions</a>.</p>
      */
     inline void SetApiKeySelectionExpression(Aws::String&& value) { m_apiKeySelectionExpressionHasBeenSet = true; m_apiKeySelectionExpression = std::move(value); }
 
     /**
-     * <p>An API key selection expression. See <a
+     * <p>An API key selection expression. Supported only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
      * Key Selection Expressions</a>.</p>
      */
     inline void SetApiKeySelectionExpression(const char* value) { m_apiKeySelectionExpressionHasBeenSet = true; m_apiKeySelectionExpression.assign(value); }
 
     /**
-     * <p>An API key selection expression. See <a
+     * <p>An API key selection expression. Supported only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
      * Key Selection Expressions</a>.</p>
      */
     inline CreateApiRequest& WithApiKeySelectionExpression(const Aws::String& value) { SetApiKeySelectionExpression(value); return *this;}
 
     /**
-     * <p>An API key selection expression. See <a
+     * <p>An API key selection expression. Supported only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
      * Key Selection Expressions</a>.</p>
      */
     inline CreateApiRequest& WithApiKeySelectionExpression(Aws::String&& value) { SetApiKeySelectionExpression(std::move(value)); return *this;}
 
     /**
-     * <p>An API key selection expression. See <a
+     * <p>An API key selection expression. Supported only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-apikey-selection-expressions">API
      * Key Selection Expressions</a>.</p>
      */
     inline CreateApiRequest& WithApiKeySelectionExpression(const char* value) { SetApiKeySelectionExpression(value); return *this;}
+
+
+    /**
+     * <p>A CORS configuration. Supported only for HTTP APIs. See <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring
+     * CORS</a> for more information.</p>
+     */
+    inline const Cors& GetCorsConfiguration() const{ return m_corsConfiguration; }
+
+    /**
+     * <p>A CORS configuration. Supported only for HTTP APIs. See <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring
+     * CORS</a> for more information.</p>
+     */
+    inline bool CorsConfigurationHasBeenSet() const { return m_corsConfigurationHasBeenSet; }
+
+    /**
+     * <p>A CORS configuration. Supported only for HTTP APIs. See <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring
+     * CORS</a> for more information.</p>
+     */
+    inline void SetCorsConfiguration(const Cors& value) { m_corsConfigurationHasBeenSet = true; m_corsConfiguration = value; }
+
+    /**
+     * <p>A CORS configuration. Supported only for HTTP APIs. See <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring
+     * CORS</a> for more information.</p>
+     */
+    inline void SetCorsConfiguration(Cors&& value) { m_corsConfigurationHasBeenSet = true; m_corsConfiguration = std::move(value); }
+
+    /**
+     * <p>A CORS configuration. Supported only for HTTP APIs. See <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring
+     * CORS</a> for more information.</p>
+     */
+    inline CreateApiRequest& WithCorsConfiguration(const Cors& value) { SetCorsConfiguration(value); return *this;}
+
+    /**
+     * <p>A CORS configuration. Supported only for HTTP APIs. See <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-cors.html">Configuring
+     * CORS</a> for more information.</p>
+     */
+    inline CreateApiRequest& WithCorsConfiguration(Cors&& value) { SetCorsConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This property is part of quick create. It specifies the credentials required
+     * for the integration, if any. For a Lambda integration, three options are
+     * available. To specify an IAM Role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To require that the caller's identity be passed
+     * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
+     * permissions on supported AWS services, specify null. Currently, this property is
+     * not used for HTTP integrations. Supported only for HTTP APIs.</p>
+     */
+    inline const Aws::String& GetCredentialsArn() const{ return m_credentialsArn; }
+
+    /**
+     * <p>This property is part of quick create. It specifies the credentials required
+     * for the integration, if any. For a Lambda integration, three options are
+     * available. To specify an IAM Role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To require that the caller's identity be passed
+     * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
+     * permissions on supported AWS services, specify null. Currently, this property is
+     * not used for HTTP integrations. Supported only for HTTP APIs.</p>
+     */
+    inline bool CredentialsArnHasBeenSet() const { return m_credentialsArnHasBeenSet; }
+
+    /**
+     * <p>This property is part of quick create. It specifies the credentials required
+     * for the integration, if any. For a Lambda integration, three options are
+     * available. To specify an IAM Role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To require that the caller's identity be passed
+     * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
+     * permissions on supported AWS services, specify null. Currently, this property is
+     * not used for HTTP integrations. Supported only for HTTP APIs.</p>
+     */
+    inline void SetCredentialsArn(const Aws::String& value) { m_credentialsArnHasBeenSet = true; m_credentialsArn = value; }
+
+    /**
+     * <p>This property is part of quick create. It specifies the credentials required
+     * for the integration, if any. For a Lambda integration, three options are
+     * available. To specify an IAM Role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To require that the caller's identity be passed
+     * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
+     * permissions on supported AWS services, specify null. Currently, this property is
+     * not used for HTTP integrations. Supported only for HTTP APIs.</p>
+     */
+    inline void SetCredentialsArn(Aws::String&& value) { m_credentialsArnHasBeenSet = true; m_credentialsArn = std::move(value); }
+
+    /**
+     * <p>This property is part of quick create. It specifies the credentials required
+     * for the integration, if any. For a Lambda integration, three options are
+     * available. To specify an IAM Role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To require that the caller's identity be passed
+     * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
+     * permissions on supported AWS services, specify null. Currently, this property is
+     * not used for HTTP integrations. Supported only for HTTP APIs.</p>
+     */
+    inline void SetCredentialsArn(const char* value) { m_credentialsArnHasBeenSet = true; m_credentialsArn.assign(value); }
+
+    /**
+     * <p>This property is part of quick create. It specifies the credentials required
+     * for the integration, if any. For a Lambda integration, three options are
+     * available. To specify an IAM Role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To require that the caller's identity be passed
+     * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
+     * permissions on supported AWS services, specify null. Currently, this property is
+     * not used for HTTP integrations. Supported only for HTTP APIs.</p>
+     */
+    inline CreateApiRequest& WithCredentialsArn(const Aws::String& value) { SetCredentialsArn(value); return *this;}
+
+    /**
+     * <p>This property is part of quick create. It specifies the credentials required
+     * for the integration, if any. For a Lambda integration, three options are
+     * available. To specify an IAM Role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To require that the caller's identity be passed
+     * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
+     * permissions on supported AWS services, specify null. Currently, this property is
+     * not used for HTTP integrations. Supported only for HTTP APIs.</p>
+     */
+    inline CreateApiRequest& WithCredentialsArn(Aws::String&& value) { SetCredentialsArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This property is part of quick create. It specifies the credentials required
+     * for the integration, if any. For a Lambda integration, three options are
+     * available. To specify an IAM Role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To require that the caller's identity be passed
+     * through from the request, specify arn:aws:iam::*:user/ *. To use resource-based
+     * permissions on supported AWS services, specify null. Currently, this property is
+     * not used for HTTP integrations. Supported only for HTTP APIs.</p>
+     */
+    inline CreateApiRequest& WithCredentialsArn(const char* value) { SetCredentialsArn(value); return *this;}
 
 
     /**
@@ -143,22 +279,26 @@ namespace Model
 
 
     /**
-     * <p>Avoid validating models when creating a deployment.</p>
+     * <p>Avoid validating models when creating a deployment. Supported only for
+     * WebSocket APIs.</p>
      */
     inline bool GetDisableSchemaValidation() const{ return m_disableSchemaValidation; }
 
     /**
-     * <p>Avoid validating models when creating a deployment.</p>
+     * <p>Avoid validating models when creating a deployment. Supported only for
+     * WebSocket APIs.</p>
      */
     inline bool DisableSchemaValidationHasBeenSet() const { return m_disableSchemaValidationHasBeenSet; }
 
     /**
-     * <p>Avoid validating models when creating a deployment.</p>
+     * <p>Avoid validating models when creating a deployment. Supported only for
+     * WebSocket APIs.</p>
      */
     inline void SetDisableSchemaValidation(bool value) { m_disableSchemaValidationHasBeenSet = true; m_disableSchemaValidation = value; }
 
     /**
-     * <p>Avoid validating models when creating a deployment.</p>
+     * <p>Avoid validating models when creating a deployment. Supported only for
+     * WebSocket APIs.</p>
      */
     inline CreateApiRequest& WithDisableSchemaValidation(bool value) { SetDisableSchemaValidation(value); return *this;}
 
@@ -205,75 +345,332 @@ namespace Model
 
 
     /**
-     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
+     * <p>The API protocol.</p>
      */
     inline const ProtocolType& GetProtocolType() const{ return m_protocolType; }
 
     /**
-     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
+     * <p>The API protocol.</p>
      */
     inline bool ProtocolTypeHasBeenSet() const { return m_protocolTypeHasBeenSet; }
 
     /**
-     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
+     * <p>The API protocol.</p>
      */
     inline void SetProtocolType(const ProtocolType& value) { m_protocolTypeHasBeenSet = true; m_protocolType = value; }
 
     /**
-     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
+     * <p>The API protocol.</p>
      */
     inline void SetProtocolType(ProtocolType&& value) { m_protocolTypeHasBeenSet = true; m_protocolType = std::move(value); }
 
     /**
-     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
+     * <p>The API protocol.</p>
      */
     inline CreateApiRequest& WithProtocolType(const ProtocolType& value) { SetProtocolType(value); return *this;}
 
     /**
-     * <p>The API protocol: Currently only WEBSOCKET is supported.</p>
+     * <p>The API protocol.</p>
      */
     inline CreateApiRequest& WithProtocolType(ProtocolType&& value) { SetProtocolType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The route selection expression for the API.</p>
+     * <p>This property is part of quick create. If you don't specify a routeKey, a
+     * default route of $default is created. The $default route acts as a catch-all for
+     * any request made to your API, for a particular stage. The $default route key
+     * can't be modified. You can add routes after creating the API, and you can update
+     * the route keys of additional routes. Supported only for HTTP APIs.</p>
+     */
+    inline const Aws::String& GetRouteKey() const{ return m_routeKey; }
+
+    /**
+     * <p>This property is part of quick create. If you don't specify a routeKey, a
+     * default route of $default is created. The $default route acts as a catch-all for
+     * any request made to your API, for a particular stage. The $default route key
+     * can't be modified. You can add routes after creating the API, and you can update
+     * the route keys of additional routes. Supported only for HTTP APIs.</p>
+     */
+    inline bool RouteKeyHasBeenSet() const { return m_routeKeyHasBeenSet; }
+
+    /**
+     * <p>This property is part of quick create. If you don't specify a routeKey, a
+     * default route of $default is created. The $default route acts as a catch-all for
+     * any request made to your API, for a particular stage. The $default route key
+     * can't be modified. You can add routes after creating the API, and you can update
+     * the route keys of additional routes. Supported only for HTTP APIs.</p>
+     */
+    inline void SetRouteKey(const Aws::String& value) { m_routeKeyHasBeenSet = true; m_routeKey = value; }
+
+    /**
+     * <p>This property is part of quick create. If you don't specify a routeKey, a
+     * default route of $default is created. The $default route acts as a catch-all for
+     * any request made to your API, for a particular stage. The $default route key
+     * can't be modified. You can add routes after creating the API, and you can update
+     * the route keys of additional routes. Supported only for HTTP APIs.</p>
+     */
+    inline void SetRouteKey(Aws::String&& value) { m_routeKeyHasBeenSet = true; m_routeKey = std::move(value); }
+
+    /**
+     * <p>This property is part of quick create. If you don't specify a routeKey, a
+     * default route of $default is created. The $default route acts as a catch-all for
+     * any request made to your API, for a particular stage. The $default route key
+     * can't be modified. You can add routes after creating the API, and you can update
+     * the route keys of additional routes. Supported only for HTTP APIs.</p>
+     */
+    inline void SetRouteKey(const char* value) { m_routeKeyHasBeenSet = true; m_routeKey.assign(value); }
+
+    /**
+     * <p>This property is part of quick create. If you don't specify a routeKey, a
+     * default route of $default is created. The $default route acts as a catch-all for
+     * any request made to your API, for a particular stage. The $default route key
+     * can't be modified. You can add routes after creating the API, and you can update
+     * the route keys of additional routes. Supported only for HTTP APIs.</p>
+     */
+    inline CreateApiRequest& WithRouteKey(const Aws::String& value) { SetRouteKey(value); return *this;}
+
+    /**
+     * <p>This property is part of quick create. If you don't specify a routeKey, a
+     * default route of $default is created. The $default route acts as a catch-all for
+     * any request made to your API, for a particular stage. The $default route key
+     * can't be modified. You can add routes after creating the API, and you can update
+     * the route keys of additional routes. Supported only for HTTP APIs.</p>
+     */
+    inline CreateApiRequest& WithRouteKey(Aws::String&& value) { SetRouteKey(std::move(value)); return *this;}
+
+    /**
+     * <p>This property is part of quick create. If you don't specify a routeKey, a
+     * default route of $default is created. The $default route acts as a catch-all for
+     * any request made to your API, for a particular stage. The $default route key
+     * can't be modified. You can add routes after creating the API, and you can update
+     * the route keys of additional routes. Supported only for HTTP APIs.</p>
+     */
+    inline CreateApiRequest& WithRouteKey(const char* value) { SetRouteKey(value); return *this;}
+
+
+    /**
+     * <p>The route selection expression for the API. For HTTP APIs, the
+     * routeSelectionExpression must be ${request.method} ${request.path}. If not
+     * provided, this will be the default for HTTP APIs. This property is required for
+     * WebSocket APIs.</p>
      */
     inline const Aws::String& GetRouteSelectionExpression() const{ return m_routeSelectionExpression; }
 
     /**
-     * <p>The route selection expression for the API.</p>
+     * <p>The route selection expression for the API. For HTTP APIs, the
+     * routeSelectionExpression must be ${request.method} ${request.path}. If not
+     * provided, this will be the default for HTTP APIs. This property is required for
+     * WebSocket APIs.</p>
      */
     inline bool RouteSelectionExpressionHasBeenSet() const { return m_routeSelectionExpressionHasBeenSet; }
 
     /**
-     * <p>The route selection expression for the API.</p>
+     * <p>The route selection expression for the API. For HTTP APIs, the
+     * routeSelectionExpression must be ${request.method} ${request.path}. If not
+     * provided, this will be the default for HTTP APIs. This property is required for
+     * WebSocket APIs.</p>
      */
     inline void SetRouteSelectionExpression(const Aws::String& value) { m_routeSelectionExpressionHasBeenSet = true; m_routeSelectionExpression = value; }
 
     /**
-     * <p>The route selection expression for the API.</p>
+     * <p>The route selection expression for the API. For HTTP APIs, the
+     * routeSelectionExpression must be ${request.method} ${request.path}. If not
+     * provided, this will be the default for HTTP APIs. This property is required for
+     * WebSocket APIs.</p>
      */
     inline void SetRouteSelectionExpression(Aws::String&& value) { m_routeSelectionExpressionHasBeenSet = true; m_routeSelectionExpression = std::move(value); }
 
     /**
-     * <p>The route selection expression for the API.</p>
+     * <p>The route selection expression for the API. For HTTP APIs, the
+     * routeSelectionExpression must be ${request.method} ${request.path}. If not
+     * provided, this will be the default for HTTP APIs. This property is required for
+     * WebSocket APIs.</p>
      */
     inline void SetRouteSelectionExpression(const char* value) { m_routeSelectionExpressionHasBeenSet = true; m_routeSelectionExpression.assign(value); }
 
     /**
-     * <p>The route selection expression for the API.</p>
+     * <p>The route selection expression for the API. For HTTP APIs, the
+     * routeSelectionExpression must be ${request.method} ${request.path}. If not
+     * provided, this will be the default for HTTP APIs. This property is required for
+     * WebSocket APIs.</p>
      */
     inline CreateApiRequest& WithRouteSelectionExpression(const Aws::String& value) { SetRouteSelectionExpression(value); return *this;}
 
     /**
-     * <p>The route selection expression for the API.</p>
+     * <p>The route selection expression for the API. For HTTP APIs, the
+     * routeSelectionExpression must be ${request.method} ${request.path}. If not
+     * provided, this will be the default for HTTP APIs. This property is required for
+     * WebSocket APIs.</p>
      */
     inline CreateApiRequest& WithRouteSelectionExpression(Aws::String&& value) { SetRouteSelectionExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The route selection expression for the API.</p>
+     * <p>The route selection expression for the API. For HTTP APIs, the
+     * routeSelectionExpression must be ${request.method} ${request.path}. If not
+     * provided, this will be the default for HTTP APIs. This property is required for
+     * WebSocket APIs.</p>
      */
     inline CreateApiRequest& WithRouteSelectionExpression(const char* value) { SetRouteSelectionExpression(value); return *this;}
+
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateApiRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateApiRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateApiRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateApiRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateApiRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateApiRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateApiRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateApiRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline CreateApiRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>This property is part of quick create. Quick create produces an API with an
+     * integration, a default catch-all route, and a default stage which is configured
+     * to automatically deploy changes. For HTTP integrations, specify a fully
+     * qualified URL. For Lambda integrations, specify a function ARN. The type of the
+     * integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for
+     * HTTP APIs.</p>
+     */
+    inline const Aws::String& GetTarget() const{ return m_target; }
+
+    /**
+     * <p>This property is part of quick create. Quick create produces an API with an
+     * integration, a default catch-all route, and a default stage which is configured
+     * to automatically deploy changes. For HTTP integrations, specify a fully
+     * qualified URL. For Lambda integrations, specify a function ARN. The type of the
+     * integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for
+     * HTTP APIs.</p>
+     */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+
+    /**
+     * <p>This property is part of quick create. Quick create produces an API with an
+     * integration, a default catch-all route, and a default stage which is configured
+     * to automatically deploy changes. For HTTP integrations, specify a fully
+     * qualified URL. For Lambda integrations, specify a function ARN. The type of the
+     * integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for
+     * HTTP APIs.</p>
+     */
+    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
+
+    /**
+     * <p>This property is part of quick create. Quick create produces an API with an
+     * integration, a default catch-all route, and a default stage which is configured
+     * to automatically deploy changes. For HTTP integrations, specify a fully
+     * qualified URL. For Lambda integrations, specify a function ARN. The type of the
+     * integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for
+     * HTTP APIs.</p>
+     */
+    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
+
+    /**
+     * <p>This property is part of quick create. Quick create produces an API with an
+     * integration, a default catch-all route, and a default stage which is configured
+     * to automatically deploy changes. For HTTP integrations, specify a fully
+     * qualified URL. For Lambda integrations, specify a function ARN. The type of the
+     * integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for
+     * HTTP APIs.</p>
+     */
+    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
+
+    /**
+     * <p>This property is part of quick create. Quick create produces an API with an
+     * integration, a default catch-all route, and a default stage which is configured
+     * to automatically deploy changes. For HTTP integrations, specify a fully
+     * qualified URL. For Lambda integrations, specify a function ARN. The type of the
+     * integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for
+     * HTTP APIs.</p>
+     */
+    inline CreateApiRequest& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
+
+    /**
+     * <p>This property is part of quick create. Quick create produces an API with an
+     * integration, a default catch-all route, and a default stage which is configured
+     * to automatically deploy changes. For HTTP integrations, specify a fully
+     * qualified URL. For Lambda integrations, specify a function ARN. The type of the
+     * integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for
+     * HTTP APIs.</p>
+     */
+    inline CreateApiRequest& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
+
+    /**
+     * <p>This property is part of quick create. Quick create produces an API with an
+     * integration, a default catch-all route, and a default stage which is configured
+     * to automatically deploy changes. For HTTP integrations, specify a fully
+     * qualified URL. For Lambda integrations, specify a function ARN. The type of the
+     * integration will be HTTP_PROXY or AWS_PROXY, respectively. Supported only for
+     * HTTP APIs.</p>
+     */
+    inline CreateApiRequest& WithTarget(const char* value) { SetTarget(value); return *this;}
 
 
     /**
@@ -316,102 +713,16 @@ namespace Model
      */
     inline CreateApiRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with aws:. The tag value
-     * can be up to 256 characters..</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with aws:. The tag value
-     * can be up to 256 characters..</p>
-     */
-    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with aws:. The tag value
-     * can be up to 256 characters..</p>
-     */
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with aws:. The tag value
-     * can be up to 256 characters..</p>
-     */
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with aws:. The tag value
-     * can be up to 256 characters..</p>
-     */
-    inline CreateApiRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with aws:. The tag value
-     * can be up to 256 characters..</p>
-     */
-    inline CreateApiRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with aws:. The tag value
-     * can be up to 256 characters..</p>
-     */
-    inline CreateApiRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with aws:. The tag value
-     * can be up to 256 characters..</p>
-     */
-    inline CreateApiRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with aws:. The tag value
-     * can be up to 256 characters..</p>
-     */
-    inline CreateApiRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with aws:. The tag value
-     * can be up to 256 characters..</p>
-     */
-    inline CreateApiRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with aws:. The tag value
-     * can be up to 256 characters..</p>
-     */
-    inline CreateApiRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with aws:. The tag value
-     * can be up to 256 characters..</p>
-     */
-    inline CreateApiRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with aws:. The tag value
-     * can be up to 256 characters..</p>
-     */
-    inline CreateApiRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
   private:
 
     Aws::String m_apiKeySelectionExpression;
     bool m_apiKeySelectionExpressionHasBeenSet;
+
+    Cors m_corsConfiguration;
+    bool m_corsConfigurationHasBeenSet;
+
+    Aws::String m_credentialsArn;
+    bool m_credentialsArnHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
@@ -425,14 +736,20 @@ namespace Model
     ProtocolType m_protocolType;
     bool m_protocolTypeHasBeenSet;
 
+    Aws::String m_routeKey;
+    bool m_routeKeyHasBeenSet;
+
     Aws::String m_routeSelectionExpression;
     bool m_routeSelectionExpressionHasBeenSet;
 
-    Aws::String m_version;
-    bool m_versionHasBeenSet;
-
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_target;
+    bool m_targetHasBeenSet;
+
+    Aws::String m_version;
+    bool m_versionHasBeenSet;
   };
 
 } // namespace Model

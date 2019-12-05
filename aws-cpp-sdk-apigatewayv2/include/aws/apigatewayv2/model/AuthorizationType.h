@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     NONE,
     AWS_IAM,
-    CUSTOM
+    CUSTOM,
+    JWT
   };
 
 namespace AuthorizationTypeMapper

@@ -34,10 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents a data model for an API. See <a
+   * <p>Represents a data model for an API. Supported only for WebSocket APIs. See <a
    * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/models-mappings.html">Create
    * Models and Mapping Templates for Request and Response
-
    * Mappings</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/Model">AWS
    * API Reference</a></p>
@@ -217,57 +216,49 @@ namespace Model
 
     /**
      * <p>The schema for the model. For application/json models, this should be JSON
-     * schema
- draft 4 model.</p>
+     * schema draft 4 model.</p>
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
 
     /**
      * <p>The schema for the model. For application/json models, this should be JSON
-     * schema
- draft 4 model.</p>
+     * schema draft 4 model.</p>
      */
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
 
     /**
      * <p>The schema for the model. For application/json models, this should be JSON
-     * schema
- draft 4 model.</p>
+     * schema draft 4 model.</p>
      */
     inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
 
     /**
      * <p>The schema for the model. For application/json models, this should be JSON
-     * schema
- draft 4 model.</p>
+     * schema draft 4 model.</p>
      */
     inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
 
     /**
      * <p>The schema for the model. For application/json models, this should be JSON
-     * schema
- draft 4 model.</p>
+     * schema draft 4 model.</p>
      */
     inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
 
     /**
      * <p>The schema for the model. For application/json models, this should be JSON
-     * schema
- draft 4 model.</p>
+     * schema draft 4 model.</p>
      */
     inline Model& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
 
     /**
      * <p>The schema for the model. For application/json models, this should be JSON
-     * schema
- draft 4 model.</p>
+     * schema draft 4 model.</p>
      */
     inline Model& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
 
     /**
      * <p>The schema for the model. For application/json models, this should be JSON
-     * schema
- draft 4 model.</p>
+     * schema draft 4 model.</p>
      */
     inline Model& WithSchema(const char* value) { SetSchema(value); return *this;}
 

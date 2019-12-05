@@ -29,6 +29,8 @@ namespace Model
 {
 
 Route::Route() : 
+    m_apiGatewayManaged(false),
+    m_apiGatewayManagedHasBeenSet(false),
     m_apiKeyRequired(false),
     m_apiKeyRequiredHasBeenSet(false),
     m_authorizationScopesHasBeenSet(false),
@@ -47,6 +49,8 @@ Route::Route() :
 }
 
 Route::Route(JsonView jsonValue) : 
+    m_apiGatewayManaged(false),
+    m_apiGatewayManagedHasBeenSet(false),
     m_apiKeyRequired(false),
     m_apiKeyRequiredHasBeenSet(false),
     m_authorizationScopesHasBeenSet(false),
@@ -67,6 +71,13 @@ Route::Route(JsonView jsonValue) :
 
 Route& Route::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("apiGatewayManaged"))
+  {
+    m_apiGatewayManaged = jsonValue.GetBool("apiGatewayManaged");
+
+    m_apiGatewayManagedHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("apiKeyRequired"))
   {
     m_apiKeyRequired = jsonValue.GetBool("apiKeyRequired");
@@ -166,6 +177,12 @@ Route& Route::operator =(JsonView jsonValue)
 JsonValue Route::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_apiGatewayManagedHasBeenSet)
+  {
+   payload.WithBool("apiGatewayManaged", m_apiGatewayManaged);
+
+  }
 
   if(m_apiKeyRequiredHasBeenSet)
   {

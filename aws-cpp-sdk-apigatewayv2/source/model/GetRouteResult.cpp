@@ -27,12 +27,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetRouteResult::GetRouteResult() : 
+    m_apiGatewayManaged(false),
     m_apiKeyRequired(false),
     m_authorizationType(AuthorizationType::NOT_SET)
 {
 }
 
 GetRouteResult::GetRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_apiGatewayManaged(false),
     m_apiKeyRequired(false),
     m_authorizationType(AuthorizationType::NOT_SET)
 {
@@ -42,6 +44,12 @@ GetRouteResult::GetRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 GetRouteResult& GetRouteResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("apiGatewayManaged"))
+  {
+    m_apiGatewayManaged = jsonValue.GetBool("apiGatewayManaged");
+
+  }
+
   if(jsonValue.ValueExists("apiKeyRequired"))
   {
     m_apiKeyRequired = jsonValue.GetBool("apiKeyRequired");

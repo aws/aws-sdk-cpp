@@ -1,0 +1,82 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/kinesisvideo/KinesisVideo_EXPORTS.h>
+#include <aws/kinesisvideo/model/ChannelInfo.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace KinesisVideo
+{
+namespace Model
+{
+  class AWS_KINESISVIDEO_API DescribeSignalingChannelResult
+  {
+  public:
+    DescribeSignalingChannelResult();
+    DescribeSignalingChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeSignalingChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>A structure that encapsulates the specified signaling channel's metadata and
+     * properties.</p>
+     */
+    inline const ChannelInfo& GetChannelInfo() const{ return m_channelInfo; }
+
+    /**
+     * <p>A structure that encapsulates the specified signaling channel's metadata and
+     * properties.</p>
+     */
+    inline void SetChannelInfo(const ChannelInfo& value) { m_channelInfo = value; }
+
+    /**
+     * <p>A structure that encapsulates the specified signaling channel's metadata and
+     * properties.</p>
+     */
+    inline void SetChannelInfo(ChannelInfo&& value) { m_channelInfo = std::move(value); }
+
+    /**
+     * <p>A structure that encapsulates the specified signaling channel's metadata and
+     * properties.</p>
+     */
+    inline DescribeSignalingChannelResult& WithChannelInfo(const ChannelInfo& value) { SetChannelInfo(value); return *this;}
+
+    /**
+     * <p>A structure that encapsulates the specified signaling channel's metadata and
+     * properties.</p>
+     */
+    inline DescribeSignalingChannelResult& WithChannelInfo(ChannelInfo&& value) { SetChannelInfo(std::move(value)); return *this;}
+
+  private:
+
+    ChannelInfo m_channelInfo;
+  };
+
+} // namespace Model
+} // namespace KinesisVideo
+} // namespace Aws

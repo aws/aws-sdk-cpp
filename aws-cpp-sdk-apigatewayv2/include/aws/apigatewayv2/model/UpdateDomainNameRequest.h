@@ -29,6 +29,9 @@ namespace Model
 {
 
   /**
+   * <p>Updates a DomainName.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDomainNameRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAYV2_API UpdateDomainNameRequest : public ApiGatewayV2Request
   {

@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int WEBSOCKET_HASH = HashingUtils::HashString("WEBSOCKET");
+        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
 
 
         ProtocolType GetProtocolTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == WEBSOCKET_HASH)
           {
             return ProtocolType::WEBSOCKET;
+          }
+          else if (hashCode == HTTP_HASH)
+          {
+            return ProtocolType::HTTP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case ProtocolType::WEBSOCKET:
             return "WEBSOCKET";
+          case ProtocolType::HTTP:
+            return "HTTP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

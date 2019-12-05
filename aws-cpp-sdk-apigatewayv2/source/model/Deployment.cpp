@@ -29,6 +29,8 @@ namespace Model
 {
 
 Deployment::Deployment() : 
+    m_autoDeployed(false),
+    m_autoDeployedHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
     m_deploymentStatus(DeploymentStatus::NOT_SET),
@@ -39,6 +41,8 @@ Deployment::Deployment() :
 }
 
 Deployment::Deployment(JsonView jsonValue) : 
+    m_autoDeployed(false),
+    m_autoDeployedHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
     m_deploymentStatus(DeploymentStatus::NOT_SET),
@@ -51,6 +55,13 @@ Deployment::Deployment(JsonView jsonValue) :
 
 Deployment& Deployment::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("autoDeployed"))
+  {
+    m_autoDeployed = jsonValue.GetBool("autoDeployed");
+
+    m_autoDeployedHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetString("createdDate");
@@ -92,6 +103,12 @@ Deployment& Deployment::operator =(JsonView jsonValue)
 JsonValue Deployment::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_autoDeployedHasBeenSet)
+  {
+   payload.WithBool("autoDeployed", m_autoDeployed);
+
+  }
 
   if(m_createdDateHasBeenSet)
   {

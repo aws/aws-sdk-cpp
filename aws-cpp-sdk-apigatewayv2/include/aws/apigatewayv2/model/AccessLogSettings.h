@@ -90,57 +90,49 @@ namespace Model
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected
-     * $context
- variables. The format must include at least $context.requestId.</p>
+     * $context variables. The format must include at least $context.requestId.</p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected
-     * $context
- variables. The format must include at least $context.requestId.</p>
+     * $context variables. The format must include at least $context.requestId.</p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected
-     * $context
- variables. The format must include at least $context.requestId.</p>
+     * $context variables. The format must include at least $context.requestId.</p>
      */
     inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected
-     * $context
- variables. The format must include at least $context.requestId.</p>
+     * $context variables. The format must include at least $context.requestId.</p>
      */
     inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected
-     * $context
- variables. The format must include at least $context.requestId.</p>
+     * $context variables. The format must include at least $context.requestId.</p>
      */
     inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected
-     * $context
- variables. The format must include at least $context.requestId.</p>
+     * $context variables. The format must include at least $context.requestId.</p>
      */
     inline AccessLogSettings& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected
-     * $context
- variables. The format must include at least $context.requestId.</p>
+     * $context variables. The format must include at least $context.requestId.</p>
      */
     inline AccessLogSettings& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
 
     /**
      * <p>A single line format of the access logs of data, as specified by selected
-     * $context
- variables. The format must include at least $context.requestId.</p>
+     * $context variables. The format must include at least $context.requestId.</p>
      */
     inline AccessLogSettings& WithFormat(const char* value) { SetFormat(value); return *this;}
 

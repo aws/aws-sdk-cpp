@@ -27,6 +27,9 @@ namespace Model
 {
 
   /**
+   * <p>Updates a Deployment.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateDeploymentRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAYV2_API UpdateDeploymentRequest : public ApiGatewayV2Request
   {

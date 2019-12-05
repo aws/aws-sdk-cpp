@@ -24,15 +24,19 @@ using namespace Aws::Utils;
 
 CreateApiRequest::CreateApiRequest() : 
     m_apiKeySelectionExpressionHasBeenSet(false),
+    m_corsConfigurationHasBeenSet(false),
+    m_credentialsArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_disableSchemaValidation(false),
     m_disableSchemaValidationHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protocolType(ProtocolType::NOT_SET),
     m_protocolTypeHasBeenSet(false),
+    m_routeKeyHasBeenSet(false),
     m_routeSelectionExpressionHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_targetHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -43,6 +47,18 @@ Aws::String CreateApiRequest::SerializePayload() const
   if(m_apiKeySelectionExpressionHasBeenSet)
   {
    payload.WithString("apiKeySelectionExpression", m_apiKeySelectionExpression);
+
+  }
+
+  if(m_corsConfigurationHasBeenSet)
+  {
+   payload.WithObject("corsConfiguration", m_corsConfiguration.Jsonize());
+
+  }
+
+  if(m_credentialsArnHasBeenSet)
+  {
+   payload.WithString("credentialsArn", m_credentialsArn);
 
   }
 
@@ -69,15 +85,15 @@ Aws::String CreateApiRequest::SerializePayload() const
    payload.WithString("protocolType", ProtocolTypeMapper::GetNameForProtocolType(m_protocolType));
   }
 
-  if(m_routeSelectionExpressionHasBeenSet)
+  if(m_routeKeyHasBeenSet)
   {
-   payload.WithString("routeSelectionExpression", m_routeSelectionExpression);
+   payload.WithString("routeKey", m_routeKey);
 
   }
 
-  if(m_versionHasBeenSet)
+  if(m_routeSelectionExpressionHasBeenSet)
   {
-   payload.WithString("version", m_version);
+   payload.WithString("routeSelectionExpression", m_routeSelectionExpression);
 
   }
 
@@ -89,6 +105,18 @@ Aws::String CreateApiRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_targetHasBeenSet)
+  {
+   payload.WithString("target", m_target);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("version", m_version);
 
   }
 

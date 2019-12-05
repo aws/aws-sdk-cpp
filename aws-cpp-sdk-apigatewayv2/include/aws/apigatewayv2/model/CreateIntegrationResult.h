@@ -48,6 +48,28 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether an integration is managed by API Gateway. If you created an
+     * API using using quick create, the resulting integration is managed by API
+     * Gateway. You can update a managed integration, but you can't delete it.</p>
+     */
+    inline bool GetApiGatewayManaged() const{ return m_apiGatewayManaged; }
+
+    /**
+     * <p>Specifies whether an integration is managed by API Gateway. If you created an
+     * API using using quick create, the resulting integration is managed by API
+     * Gateway. You can update a managed integration, but you can't delete it.</p>
+     */
+    inline void SetApiGatewayManaged(bool value) { m_apiGatewayManaged = value; }
+
+    /**
+     * <p>Specifies whether an integration is managed by API Gateway. If you created an
+     * API using using quick create, the resulting integration is managed by API
+     * Gateway. You can update a managed integration, but you can't delete it.</p>
+     */
+    inline CreateIntegrationResult& WithApiGatewayManaged(bool value) { SetApiGatewayManaged(value); return *this;}
+
+
+    /**
      * <p>The connection ID.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
@@ -85,252 +107,167 @@ namespace Model
 
     /**
      * <p>The type of the network connection to the integration endpoint. Currently the
-     * only
- valid value is INTERNET, for connections through the public routable
-
+     * only valid value is INTERNET, for connections through the public routable
      * internet.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
 
     /**
      * <p>The type of the network connection to the integration endpoint. Currently the
-     * only
- valid value is INTERNET, for connections through the public routable
-
+     * only valid value is INTERNET, for connections through the public routable
      * internet.</p>
      */
     inline void SetConnectionType(const ConnectionType& value) { m_connectionType = value; }
 
     /**
      * <p>The type of the network connection to the integration endpoint. Currently the
-     * only
- valid value is INTERNET, for connections through the public routable
-
+     * only valid value is INTERNET, for connections through the public routable
      * internet.</p>
      */
     inline void SetConnectionType(ConnectionType&& value) { m_connectionType = std::move(value); }
 
     /**
      * <p>The type of the network connection to the integration endpoint. Currently the
-     * only
- valid value is INTERNET, for connections through the public routable
-
+     * only valid value is INTERNET, for connections through the public routable
      * internet.</p>
      */
     inline CreateIntegrationResult& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
 
     /**
      * <p>The type of the network connection to the integration endpoint. Currently the
-     * only
- valid value is INTERNET, for connections through the public routable
-
+     * only valid value is INTERNET, for connections through the public routable
      * internet.</p>
      */
     inline CreateIntegrationResult& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Specifies how to handle response payload content type conversions. Supported
-
-     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the
- following
-     * behaviors:</p><p>
- CONVERT_TO_BINARY: Converts a response payload from a
-     * Base64-encoded
- string to the corresponding binary blob.</p><p>
-
-     * CONVERT_TO_TEXT: Converts a response payload from a binary blob to a
-
-     * Base64-encoded string.</p><p>If this property is not defined, the response
-     * payload will be passed through from
- the integration response to the route
-     * response or method response without
- modification.</p>
+     * <p>Supported only for WebSocket APIs. Specifies how to handle response payload
+     * content type conversions. Supported values are CONVERT_TO_BINARY and
+     * CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY:
+     * Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary
+     * blob to a Base64-encoded string.</p> <p>If this property is not defined, the
+     * response payload will be passed through from the integration response to the
+     * route response or method response without modification.</p>
      */
     inline const ContentHandlingStrategy& GetContentHandlingStrategy() const{ return m_contentHandlingStrategy; }
 
     /**
-     * <p>Specifies how to handle response payload content type conversions. Supported
-
-     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the
- following
-     * behaviors:</p><p>
- CONVERT_TO_BINARY: Converts a response payload from a
-     * Base64-encoded
- string to the corresponding binary blob.</p><p>
-
-     * CONVERT_TO_TEXT: Converts a response payload from a binary blob to a
-
-     * Base64-encoded string.</p><p>If this property is not defined, the response
-     * payload will be passed through from
- the integration response to the route
-     * response or method response without
- modification.</p>
+     * <p>Supported only for WebSocket APIs. Specifies how to handle response payload
+     * content type conversions. Supported values are CONVERT_TO_BINARY and
+     * CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY:
+     * Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary
+     * blob to a Base64-encoded string.</p> <p>If this property is not defined, the
+     * response payload will be passed through from the integration response to the
+     * route response or method response without modification.</p>
      */
     inline void SetContentHandlingStrategy(const ContentHandlingStrategy& value) { m_contentHandlingStrategy = value; }
 
     /**
-     * <p>Specifies how to handle response payload content type conversions. Supported
-
-     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the
- following
-     * behaviors:</p><p>
- CONVERT_TO_BINARY: Converts a response payload from a
-     * Base64-encoded
- string to the corresponding binary blob.</p><p>
-
-     * CONVERT_TO_TEXT: Converts a response payload from a binary blob to a
-
-     * Base64-encoded string.</p><p>If this property is not defined, the response
-     * payload will be passed through from
- the integration response to the route
-     * response or method response without
- modification.</p>
+     * <p>Supported only for WebSocket APIs. Specifies how to handle response payload
+     * content type conversions. Supported values are CONVERT_TO_BINARY and
+     * CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY:
+     * Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary
+     * blob to a Base64-encoded string.</p> <p>If this property is not defined, the
+     * response payload will be passed through from the integration response to the
+     * route response or method response without modification.</p>
      */
     inline void SetContentHandlingStrategy(ContentHandlingStrategy&& value) { m_contentHandlingStrategy = std::move(value); }
 
     /**
-     * <p>Specifies how to handle response payload content type conversions. Supported
-
-     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the
- following
-     * behaviors:</p><p>
- CONVERT_TO_BINARY: Converts a response payload from a
-     * Base64-encoded
- string to the corresponding binary blob.</p><p>
-
-     * CONVERT_TO_TEXT: Converts a response payload from a binary blob to a
-
-     * Base64-encoded string.</p><p>If this property is not defined, the response
-     * payload will be passed through from
- the integration response to the route
-     * response or method response without
- modification.</p>
+     * <p>Supported only for WebSocket APIs. Specifies how to handle response payload
+     * content type conversions. Supported values are CONVERT_TO_BINARY and
+     * CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY:
+     * Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary
+     * blob to a Base64-encoded string.</p> <p>If this property is not defined, the
+     * response payload will be passed through from the integration response to the
+     * route response or method response without modification.</p>
      */
     inline CreateIntegrationResult& WithContentHandlingStrategy(const ContentHandlingStrategy& value) { SetContentHandlingStrategy(value); return *this;}
 
     /**
-     * <p>Specifies how to handle response payload content type conversions. Supported
-
-     * values are CONVERT_TO_BINARY and CONVERT_TO_TEXT, with the
- following
-     * behaviors:</p><p>
- CONVERT_TO_BINARY: Converts a response payload from a
-     * Base64-encoded
- string to the corresponding binary blob.</p><p>
-
-     * CONVERT_TO_TEXT: Converts a response payload from a binary blob to a
-
-     * Base64-encoded string.</p><p>If this property is not defined, the response
-     * payload will be passed through from
- the integration response to the route
-     * response or method response without
- modification.</p>
+     * <p>Supported only for WebSocket APIs. Specifies how to handle response payload
+     * content type conversions. Supported values are CONVERT_TO_BINARY and
+     * CONVERT_TO_TEXT, with the following behaviors:</p> <p>CONVERT_TO_BINARY:
+     * Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.</p> <p>CONVERT_TO_TEXT: Converts a response payload from a binary
+     * blob to a Base64-encoded string.</p> <p>If this property is not defined, the
+     * response payload will be passed through from the integration response to the
+     * route response or method response without modification.</p>
      */
     inline CreateIntegrationResult& WithContentHandlingStrategy(ContentHandlingStrategy&& value) { SetContentHandlingStrategy(std::move(value)); return *this;}
 
 
     /**
      * <p>Specifies the credentials required for the integration, if any. For AWS
-
      * integrations, three options are available. To specify an IAM Role for API
-     * Gateway to
- assume, use the role's Amazon Resource Name (ARN). To require that
-     * the caller's
- identity be passed through from the request, specify the string
-
-     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported
- AWS
+     * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
+     * the caller's identity be passed through from the request, specify the string
+     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported AWS
      * services, specify null.</p>
      */
     inline const Aws::String& GetCredentialsArn() const{ return m_credentialsArn; }
 
     /**
      * <p>Specifies the credentials required for the integration, if any. For AWS
-
      * integrations, three options are available. To specify an IAM Role for API
-     * Gateway to
- assume, use the role's Amazon Resource Name (ARN). To require that
-     * the caller's
- identity be passed through from the request, specify the string
-
-     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported
- AWS
+     * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
+     * the caller's identity be passed through from the request, specify the string
+     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported AWS
      * services, specify null.</p>
      */
     inline void SetCredentialsArn(const Aws::String& value) { m_credentialsArn = value; }
 
     /**
      * <p>Specifies the credentials required for the integration, if any. For AWS
-
      * integrations, three options are available. To specify an IAM Role for API
-     * Gateway to
- assume, use the role's Amazon Resource Name (ARN). To require that
-     * the caller's
- identity be passed through from the request, specify the string
-
-     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported
- AWS
+     * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
+     * the caller's identity be passed through from the request, specify the string
+     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported AWS
      * services, specify null.</p>
      */
     inline void SetCredentialsArn(Aws::String&& value) { m_credentialsArn = std::move(value); }
 
     /**
      * <p>Specifies the credentials required for the integration, if any. For AWS
-
      * integrations, three options are available. To specify an IAM Role for API
-     * Gateway to
- assume, use the role's Amazon Resource Name (ARN). To require that
-     * the caller's
- identity be passed through from the request, specify the string
-
-     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported
- AWS
+     * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
+     * the caller's identity be passed through from the request, specify the string
+     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported AWS
      * services, specify null.</p>
      */
     inline void SetCredentialsArn(const char* value) { m_credentialsArn.assign(value); }
 
     /**
      * <p>Specifies the credentials required for the integration, if any. For AWS
-
      * integrations, three options are available. To specify an IAM Role for API
-     * Gateway to
- assume, use the role's Amazon Resource Name (ARN). To require that
-     * the caller's
- identity be passed through from the request, specify the string
-
-     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported
- AWS
+     * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
+     * the caller's identity be passed through from the request, specify the string
+     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported AWS
      * services, specify null.</p>
      */
     inline CreateIntegrationResult& WithCredentialsArn(const Aws::String& value) { SetCredentialsArn(value); return *this;}
 
     /**
      * <p>Specifies the credentials required for the integration, if any. For AWS
-
      * integrations, three options are available. To specify an IAM Role for API
-     * Gateway to
- assume, use the role's Amazon Resource Name (ARN). To require that
-     * the caller's
- identity be passed through from the request, specify the string
-
-     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported
- AWS
+     * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
+     * the caller's identity be passed through from the request, specify the string
+     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported AWS
      * services, specify null.</p>
      */
     inline CreateIntegrationResult& WithCredentialsArn(Aws::String&& value) { SetCredentialsArn(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the credentials required for the integration, if any. For AWS
-
      * integrations, three options are available. To specify an IAM Role for API
-     * Gateway to
- assume, use the role's Amazon Resource Name (ARN). To require that
-     * the caller's
- identity be passed through from the request, specify the string
-
-     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported
- AWS
+     * Gateway to assume, use the role's Amazon Resource Name (ARN). To require that
+     * the caller's identity be passed through from the request, specify the string
+     * arn:aws:iam::*:user/ *. To use resource-based permissions on supported AWS
      * services, specify null.</p>
      */
     inline CreateIntegrationResult& WithCredentialsArn(const char* value) { SetCredentialsArn(value); return *this;}
@@ -445,49 +382,56 @@ namespace Model
 
 
     /**
-     * <p>The integration response selection expression for the integration. See <a
+     * <p>The integration response selection expression for the integration. Supported
+     * only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration
      * Response Selection Expressions</a>.</p>
      */
     inline const Aws::String& GetIntegrationResponseSelectionExpression() const{ return m_integrationResponseSelectionExpression; }
 
     /**
-     * <p>The integration response selection expression for the integration. See <a
+     * <p>The integration response selection expression for the integration. Supported
+     * only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration
      * Response Selection Expressions</a>.</p>
      */
     inline void SetIntegrationResponseSelectionExpression(const Aws::String& value) { m_integrationResponseSelectionExpression = value; }
 
     /**
-     * <p>The integration response selection expression for the integration. See <a
+     * <p>The integration response selection expression for the integration. Supported
+     * only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration
      * Response Selection Expressions</a>.</p>
      */
     inline void SetIntegrationResponseSelectionExpression(Aws::String&& value) { m_integrationResponseSelectionExpression = std::move(value); }
 
     /**
-     * <p>The integration response selection expression for the integration. See <a
+     * <p>The integration response selection expression for the integration. Supported
+     * only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration
      * Response Selection Expressions</a>.</p>
      */
     inline void SetIntegrationResponseSelectionExpression(const char* value) { m_integrationResponseSelectionExpression.assign(value); }
 
     /**
-     * <p>The integration response selection expression for the integration. See <a
+     * <p>The integration response selection expression for the integration. Supported
+     * only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration
      * Response Selection Expressions</a>.</p>
      */
     inline CreateIntegrationResult& WithIntegrationResponseSelectionExpression(const Aws::String& value) { SetIntegrationResponseSelectionExpression(value); return *this;}
 
     /**
-     * <p>The integration response selection expression for the integration. See <a
+     * <p>The integration response selection expression for the integration. Supported
+     * only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration
      * Response Selection Expressions</a>.</p>
      */
     inline CreateIntegrationResult& WithIntegrationResponseSelectionExpression(Aws::String&& value) { SetIntegrationResponseSelectionExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The integration response selection expression for the integration. See <a
+     * <p>The integration response selection expression for the integration. Supported
+     * only for WebSocket APIs. See <a
      * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-selection-expressions.html#apigateway-websocket-api-integration-response-selection-expressions">Integration
      * Response Selection Expressions</a>.</p>
      */
@@ -495,172 +439,97 @@ namespace Model
 
 
     /**
-     * <p>The integration type of an integration. One of the following:</p><p>
- AWS:
-     * for integrating the route or method request with an AWS service
- action,
-     * including the Lambda function-invoking action. With the Lambda
-
-     * function-invoking action, this is referred to as the Lambda custom integration.
-     * With
- any other AWS service action, this is known as AWS integration.</p><p>
-
-     * AWS_PROXY: for integrating the route or method request with the Lambda
-
+     * <p>The integration type of an integration. One of the following:</p> <p>AWS: for
+     * integrating the route or method request with an AWS service action, including
+     * the Lambda function-invoking action. With the Lambda function-invoking action,
+     * this is referred to as the Lambda custom integration. With any other AWS service
+     * action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+     * <p>AWS_PROXY: for integrating the route or method request with the Lambda
      * function-invoking action with the client request passed through as-is. This
-
-     * integration is also referred to as Lambda proxy integration.</p><p>
- HTTP: for
-     * integrating the route or method request with an HTTP
- endpoint. This
-
-     * integration is also referred to as the HTTP custom integration.</p><p>
-
-     * HTTP_PROXY: for integrating route or method request with an HTTP
- endpoint, with
-     * the client
- request passed through as-is. This is also referred to as HTTP
-     * proxy
- integration.</p><p>
- MOCK: for integrating the route or method request
-     * with API Gateway as a
- "loopback" endpoint without invoking any backend.</p>
+     * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
+     * integrating the route or method request with an HTTP endpoint. This integration
+     * is also referred to as the HTTP custom integration. Supported only for WebSocket
+     * APIs.</p> <p>HTTP_PROXY: for integrating route or method request with an HTTP
+     * endpoint, with the client request passed through as-is. This is also referred to
+     * as HTTP proxy integration.</p> <p>MOCK: for integrating the route or method
+     * request with API Gateway as a "loopback" endpoint without invoking any backend.
+     * Supported only for WebSocket APIs.</p>
      */
     inline const IntegrationType& GetIntegrationType() const{ return m_integrationType; }
 
     /**
-     * <p>The integration type of an integration. One of the following:</p><p>
- AWS:
-     * for integrating the route or method request with an AWS service
- action,
-     * including the Lambda function-invoking action. With the Lambda
-
-     * function-invoking action, this is referred to as the Lambda custom integration.
-     * With
- any other AWS service action, this is known as AWS integration.</p><p>
-
-     * AWS_PROXY: for integrating the route or method request with the Lambda
-
+     * <p>The integration type of an integration. One of the following:</p> <p>AWS: for
+     * integrating the route or method request with an AWS service action, including
+     * the Lambda function-invoking action. With the Lambda function-invoking action,
+     * this is referred to as the Lambda custom integration. With any other AWS service
+     * action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+     * <p>AWS_PROXY: for integrating the route or method request with the Lambda
      * function-invoking action with the client request passed through as-is. This
-
-     * integration is also referred to as Lambda proxy integration.</p><p>
- HTTP: for
-     * integrating the route or method request with an HTTP
- endpoint. This
-
-     * integration is also referred to as the HTTP custom integration.</p><p>
-
-     * HTTP_PROXY: for integrating route or method request with an HTTP
- endpoint, with
-     * the client
- request passed through as-is. This is also referred to as HTTP
-     * proxy
- integration.</p><p>
- MOCK: for integrating the route or method request
-     * with API Gateway as a
- "loopback" endpoint without invoking any backend.</p>
+     * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
+     * integrating the route or method request with an HTTP endpoint. This integration
+     * is also referred to as the HTTP custom integration. Supported only for WebSocket
+     * APIs.</p> <p>HTTP_PROXY: for integrating route or method request with an HTTP
+     * endpoint, with the client request passed through as-is. This is also referred to
+     * as HTTP proxy integration.</p> <p>MOCK: for integrating the route or method
+     * request with API Gateway as a "loopback" endpoint without invoking any backend.
+     * Supported only for WebSocket APIs.</p>
      */
     inline void SetIntegrationType(const IntegrationType& value) { m_integrationType = value; }
 
     /**
-     * <p>The integration type of an integration. One of the following:</p><p>
- AWS:
-     * for integrating the route or method request with an AWS service
- action,
-     * including the Lambda function-invoking action. With the Lambda
-
-     * function-invoking action, this is referred to as the Lambda custom integration.
-     * With
- any other AWS service action, this is known as AWS integration.</p><p>
-
-     * AWS_PROXY: for integrating the route or method request with the Lambda
-
+     * <p>The integration type of an integration. One of the following:</p> <p>AWS: for
+     * integrating the route or method request with an AWS service action, including
+     * the Lambda function-invoking action. With the Lambda function-invoking action,
+     * this is referred to as the Lambda custom integration. With any other AWS service
+     * action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+     * <p>AWS_PROXY: for integrating the route or method request with the Lambda
      * function-invoking action with the client request passed through as-is. This
-
-     * integration is also referred to as Lambda proxy integration.</p><p>
- HTTP: for
-     * integrating the route or method request with an HTTP
- endpoint. This
-
-     * integration is also referred to as the HTTP custom integration.</p><p>
-
-     * HTTP_PROXY: for integrating route or method request with an HTTP
- endpoint, with
-     * the client
- request passed through as-is. This is also referred to as HTTP
-     * proxy
- integration.</p><p>
- MOCK: for integrating the route or method request
-     * with API Gateway as a
- "loopback" endpoint without invoking any backend.</p>
+     * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
+     * integrating the route or method request with an HTTP endpoint. This integration
+     * is also referred to as the HTTP custom integration. Supported only for WebSocket
+     * APIs.</p> <p>HTTP_PROXY: for integrating route or method request with an HTTP
+     * endpoint, with the client request passed through as-is. This is also referred to
+     * as HTTP proxy integration.</p> <p>MOCK: for integrating the route or method
+     * request with API Gateway as a "loopback" endpoint without invoking any backend.
+     * Supported only for WebSocket APIs.</p>
      */
     inline void SetIntegrationType(IntegrationType&& value) { m_integrationType = std::move(value); }
 
     /**
-     * <p>The integration type of an integration. One of the following:</p><p>
- AWS:
-     * for integrating the route or method request with an AWS service
- action,
-     * including the Lambda function-invoking action. With the Lambda
-
-     * function-invoking action, this is referred to as the Lambda custom integration.
-     * With
- any other AWS service action, this is known as AWS integration.</p><p>
-
-     * AWS_PROXY: for integrating the route or method request with the Lambda
-
+     * <p>The integration type of an integration. One of the following:</p> <p>AWS: for
+     * integrating the route or method request with an AWS service action, including
+     * the Lambda function-invoking action. With the Lambda function-invoking action,
+     * this is referred to as the Lambda custom integration. With any other AWS service
+     * action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+     * <p>AWS_PROXY: for integrating the route or method request with the Lambda
      * function-invoking action with the client request passed through as-is. This
-
-     * integration is also referred to as Lambda proxy integration.</p><p>
- HTTP: for
-     * integrating the route or method request with an HTTP
- endpoint. This
-
-     * integration is also referred to as the HTTP custom integration.</p><p>
-
-     * HTTP_PROXY: for integrating route or method request with an HTTP
- endpoint, with
-     * the client
- request passed through as-is. This is also referred to as HTTP
-     * proxy
- integration.</p><p>
- MOCK: for integrating the route or method request
-     * with API Gateway as a
- "loopback" endpoint without invoking any backend.</p>
+     * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
+     * integrating the route or method request with an HTTP endpoint. This integration
+     * is also referred to as the HTTP custom integration. Supported only for WebSocket
+     * APIs.</p> <p>HTTP_PROXY: for integrating route or method request with an HTTP
+     * endpoint, with the client request passed through as-is. This is also referred to
+     * as HTTP proxy integration.</p> <p>MOCK: for integrating the route or method
+     * request with API Gateway as a "loopback" endpoint without invoking any backend.
+     * Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& WithIntegrationType(const IntegrationType& value) { SetIntegrationType(value); return *this;}
 
     /**
-     * <p>The integration type of an integration. One of the following:</p><p>
- AWS:
-     * for integrating the route or method request with an AWS service
- action,
-     * including the Lambda function-invoking action. With the Lambda
-
-     * function-invoking action, this is referred to as the Lambda custom integration.
-     * With
- any other AWS service action, this is known as AWS integration.</p><p>
-
-     * AWS_PROXY: for integrating the route or method request with the Lambda
-
+     * <p>The integration type of an integration. One of the following:</p> <p>AWS: for
+     * integrating the route or method request with an AWS service action, including
+     * the Lambda function-invoking action. With the Lambda function-invoking action,
+     * this is referred to as the Lambda custom integration. With any other AWS service
+     * action, this is known as AWS integration. Supported only for WebSocket APIs.</p>
+     * <p>AWS_PROXY: for integrating the route or method request with the Lambda
      * function-invoking action with the client request passed through as-is. This
-
-     * integration is also referred to as Lambda proxy integration.</p><p>
- HTTP: for
-     * integrating the route or method request with an HTTP
- endpoint. This
-
-     * integration is also referred to as the HTTP custom integration.</p><p>
-
-     * HTTP_PROXY: for integrating route or method request with an HTTP
- endpoint, with
-     * the client
- request passed through as-is. This is also referred to as HTTP
-     * proxy
- integration.</p><p>
- MOCK: for integrating the route or method request
-     * with API Gateway as a
- "loopback" endpoint without invoking any backend.</p>
+     * integration is also referred to as Lambda proxy integration.</p> <p>HTTP: for
+     * integrating the route or method request with an HTTP endpoint. This integration
+     * is also referred to as the HTTP custom integration. Supported only for WebSocket
+     * APIs.</p> <p>HTTP_PROXY: for integrating route or method request with an HTTP
+     * endpoint, with the client request passed through as-is. This is also referred to
+     * as HTTP proxy integration.</p> <p>MOCK: for integrating the route or method
+     * request with API Gateway as a "loopback" endpoint without invoking any backend.
+     * Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& WithIntegrationType(IntegrationType&& value) { SetIntegrationType(std::move(value)); return *this;}
 
@@ -703,589 +572,516 @@ namespace Model
 
     /**
      * <p>Specifies the pass-through behavior for incoming requests based on the
-
-     * Content-Type header in the request, and the available mapping
- templates
-     * specified as the requestTemplates property on the
- Integration resource. There
-     * are three valid values:
- WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and
- NEVER.</p><p>
-
-     * WHEN_NO_MATCH passes the request body for unmapped content types through
- to the
-     * integration backend without transformation.</p><p>
- NEVER rejects unmapped
-     * content types with an HTTP 415 Unsupported
- Media Type response.</p><p>
-
-     * WHEN_NO_TEMPLATES allows pass-through when the integration has no
- content types
-     * mapped to templates. However, if there is at least one content type
- defined,
-     * unmapped content types will be rejected with the same HTTP 415
- Unsupported
-     * Media Type response.</p>
+     * Content-Type header in the request, and the available mapping templates
+     * specified as the requestTemplates property on the Integration resource. There
+     * are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported
+     * only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for
+     * unmapped content types through to the integration backend without
+     * transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415
+     * Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through
+     * when the integration has no content types mapped to templates. However, if there
+     * is at least one content type defined, unmapped content types will be rejected
+     * with the same HTTP 415 Unsupported Media Type response.</p>
      */
     inline const PassthroughBehavior& GetPassthroughBehavior() const{ return m_passthroughBehavior; }
 
     /**
      * <p>Specifies the pass-through behavior for incoming requests based on the
-
-     * Content-Type header in the request, and the available mapping
- templates
-     * specified as the requestTemplates property on the
- Integration resource. There
-     * are three valid values:
- WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and
- NEVER.</p><p>
-
-     * WHEN_NO_MATCH passes the request body for unmapped content types through
- to the
-     * integration backend without transformation.</p><p>
- NEVER rejects unmapped
-     * content types with an HTTP 415 Unsupported
- Media Type response.</p><p>
-
-     * WHEN_NO_TEMPLATES allows pass-through when the integration has no
- content types
-     * mapped to templates. However, if there is at least one content type
- defined,
-     * unmapped content types will be rejected with the same HTTP 415
- Unsupported
-     * Media Type response.</p>
+     * Content-Type header in the request, and the available mapping templates
+     * specified as the requestTemplates property on the Integration resource. There
+     * are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported
+     * only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for
+     * unmapped content types through to the integration backend without
+     * transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415
+     * Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through
+     * when the integration has no content types mapped to templates. However, if there
+     * is at least one content type defined, unmapped content types will be rejected
+     * with the same HTTP 415 Unsupported Media Type response.</p>
      */
     inline void SetPassthroughBehavior(const PassthroughBehavior& value) { m_passthroughBehavior = value; }
 
     /**
      * <p>Specifies the pass-through behavior for incoming requests based on the
-
-     * Content-Type header in the request, and the available mapping
- templates
-     * specified as the requestTemplates property on the
- Integration resource. There
-     * are three valid values:
- WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and
- NEVER.</p><p>
-
-     * WHEN_NO_MATCH passes the request body for unmapped content types through
- to the
-     * integration backend without transformation.</p><p>
- NEVER rejects unmapped
-     * content types with an HTTP 415 Unsupported
- Media Type response.</p><p>
-
-     * WHEN_NO_TEMPLATES allows pass-through when the integration has no
- content types
-     * mapped to templates. However, if there is at least one content type
- defined,
-     * unmapped content types will be rejected with the same HTTP 415
- Unsupported
-     * Media Type response.</p>
+     * Content-Type header in the request, and the available mapping templates
+     * specified as the requestTemplates property on the Integration resource. There
+     * are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported
+     * only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for
+     * unmapped content types through to the integration backend without
+     * transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415
+     * Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through
+     * when the integration has no content types mapped to templates. However, if there
+     * is at least one content type defined, unmapped content types will be rejected
+     * with the same HTTP 415 Unsupported Media Type response.</p>
      */
     inline void SetPassthroughBehavior(PassthroughBehavior&& value) { m_passthroughBehavior = std::move(value); }
 
     /**
      * <p>Specifies the pass-through behavior for incoming requests based on the
-
-     * Content-Type header in the request, and the available mapping
- templates
-     * specified as the requestTemplates property on the
- Integration resource. There
-     * are three valid values:
- WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and
- NEVER.</p><p>
-
-     * WHEN_NO_MATCH passes the request body for unmapped content types through
- to the
-     * integration backend without transformation.</p><p>
- NEVER rejects unmapped
-     * content types with an HTTP 415 Unsupported
- Media Type response.</p><p>
-
-     * WHEN_NO_TEMPLATES allows pass-through when the integration has no
- content types
-     * mapped to templates. However, if there is at least one content type
- defined,
-     * unmapped content types will be rejected with the same HTTP 415
- Unsupported
-     * Media Type response.</p>
+     * Content-Type header in the request, and the available mapping templates
+     * specified as the requestTemplates property on the Integration resource. There
+     * are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported
+     * only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for
+     * unmapped content types through to the integration backend without
+     * transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415
+     * Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through
+     * when the integration has no content types mapped to templates. However, if there
+     * is at least one content type defined, unmapped content types will be rejected
+     * with the same HTTP 415 Unsupported Media Type response.</p>
      */
     inline CreateIntegrationResult& WithPassthroughBehavior(const PassthroughBehavior& value) { SetPassthroughBehavior(value); return *this;}
 
     /**
      * <p>Specifies the pass-through behavior for incoming requests based on the
-
-     * Content-Type header in the request, and the available mapping
- templates
-     * specified as the requestTemplates property on the
- Integration resource. There
-     * are three valid values:
- WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and
- NEVER.</p><p>
-
-     * WHEN_NO_MATCH passes the request body for unmapped content types through
- to the
-     * integration backend without transformation.</p><p>
- NEVER rejects unmapped
-     * content types with an HTTP 415 Unsupported
- Media Type response.</p><p>
-
-     * WHEN_NO_TEMPLATES allows pass-through when the integration has no
- content types
-     * mapped to templates. However, if there is at least one content type
- defined,
-     * unmapped content types will be rejected with the same HTTP 415
- Unsupported
-     * Media Type response.</p>
+     * Content-Type header in the request, and the available mapping templates
+     * specified as the requestTemplates property on the Integration resource. There
+     * are three valid values: WHEN_NO_MATCH, WHEN_NO_TEMPLATES, and NEVER. Supported
+     * only for WebSocket APIs.</p> <p>WHEN_NO_MATCH passes the request body for
+     * unmapped content types through to the integration backend without
+     * transformation.</p> <p>NEVER rejects unmapped content types with an HTTP 415
+     * Unsupported Media Type response.</p> <p>WHEN_NO_TEMPLATES allows pass-through
+     * when the integration has no content types mapped to templates. However, if there
+     * is at least one content type defined, unmapped content types will be rejected
+     * with the same HTTP 415 Unsupported Media Type response.</p>
      */
     inline CreateIntegrationResult& WithPassthroughBehavior(PassthroughBehavior&& value) { SetPassthroughBehavior(std::move(value)); return *this;}
 
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the
-     * method
- request to the backend. The key is an integration request parameter name
-     * and the
- associated value is a method request parameter value or static value
-     * that must be
- enclosed within single quotes and pre-encoded as required by the
-     * backend. The method
- request parameter value must match the pattern of
+     * <p>Specifies the format of the payload sent to an integration. Required for HTTP
+     * APIs. Currently, the only supported value is 1.0.</p>
+     */
+    inline const Aws::String& GetPayloadFormatVersion() const{ return m_payloadFormatVersion; }
 
-     * method.request.{location}.{name}
- , where 
- {location}
-  is querystring, path,
-     * or header; and 
- {name}
-  must be a valid and unique method request parameter
-     * name.</p>
+    /**
+     * <p>Specifies the format of the payload sent to an integration. Required for HTTP
+     * APIs. Currently, the only supported value is 1.0.</p>
+     */
+    inline void SetPayloadFormatVersion(const Aws::String& value) { m_payloadFormatVersion = value; }
+
+    /**
+     * <p>Specifies the format of the payload sent to an integration. Required for HTTP
+     * APIs. Currently, the only supported value is 1.0.</p>
+     */
+    inline void SetPayloadFormatVersion(Aws::String&& value) { m_payloadFormatVersion = std::move(value); }
+
+    /**
+     * <p>Specifies the format of the payload sent to an integration. Required for HTTP
+     * APIs. Currently, the only supported value is 1.0.</p>
+     */
+    inline void SetPayloadFormatVersion(const char* value) { m_payloadFormatVersion.assign(value); }
+
+    /**
+     * <p>Specifies the format of the payload sent to an integration. Required for HTTP
+     * APIs. Currently, the only supported value is 1.0.</p>
+     */
+    inline CreateIntegrationResult& WithPayloadFormatVersion(const Aws::String& value) { SetPayloadFormatVersion(value); return *this;}
+
+    /**
+     * <p>Specifies the format of the payload sent to an integration. Required for HTTP
+     * APIs. Currently, the only supported value is 1.0.</p>
+     */
+    inline CreateIntegrationResult& WithPayloadFormatVersion(Aws::String&& value) { SetPayloadFormatVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the format of the payload sent to an integration. Required for HTTP
+     * APIs. Currently, the only supported value is 1.0.</p>
+     */
+    inline CreateIntegrationResult& WithPayloadFormatVersion(const char* value) { SetPayloadFormatVersion(value); return *this;}
+
+
+    /**
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the backend. The key is an integration request parameter name and the
+     * associated value is a method request parameter value or static value that must
+     * be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
+     * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
+
+     * , where 
+                  <replaceable>{location}</replaceable>
+               
+     * is querystring, path, or header; and 
+                 
+     * <replaceable>{name}</replaceable>
+                must be a valid and unique
+     * method request parameter name. Supported only for WebSocket APIs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestParameters() const{ return m_requestParameters; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the
-     * method
- request to the backend. The key is an integration request parameter name
-     * and the
- associated value is a method request parameter value or static value
-     * that must be
- enclosed within single quotes and pre-encoded as required by the
-     * backend. The method
- request parameter value must match the pattern of
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the backend. The key is an integration request parameter name and the
+     * associated value is a method request parameter value or static value that must
+     * be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
+     * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * method.request.{location}.{name}
- , where 
- {location}
-  is querystring, path,
-     * or header; and 
- {name}
-  must be a valid and unique method request parameter
-     * name.</p>
+     * , where 
+                  <replaceable>{location}</replaceable>
+               
+     * is querystring, path, or header; and 
+                 
+     * <replaceable>{name}</replaceable>
+                must be a valid and unique
+     * method request parameter name. Supported only for WebSocket APIs.</p>
      */
     inline void SetRequestParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_requestParameters = value; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the
-     * method
- request to the backend. The key is an integration request parameter name
-     * and the
- associated value is a method request parameter value or static value
-     * that must be
- enclosed within single quotes and pre-encoded as required by the
-     * backend. The method
- request parameter value must match the pattern of
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the backend. The key is an integration request parameter name and the
+     * associated value is a method request parameter value or static value that must
+     * be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
+     * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * method.request.{location}.{name}
- , where 
- {location}
-  is querystring, path,
-     * or header; and 
- {name}
-  must be a valid and unique method request parameter
-     * name.</p>
+     * , where 
+                  <replaceable>{location}</replaceable>
+               
+     * is querystring, path, or header; and 
+                 
+     * <replaceable>{name}</replaceable>
+                must be a valid and unique
+     * method request parameter name. Supported only for WebSocket APIs.</p>
      */
     inline void SetRequestParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_requestParameters = std::move(value); }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the
-     * method
- request to the backend. The key is an integration request parameter name
-     * and the
- associated value is a method request parameter value or static value
-     * that must be
- enclosed within single quotes and pre-encoded as required by the
-     * backend. The method
- request parameter value must match the pattern of
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the backend. The key is an integration request parameter name and the
+     * associated value is a method request parameter value or static value that must
+     * be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
+     * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * method.request.{location}.{name}
- , where 
- {location}
-  is querystring, path,
-     * or header; and 
- {name}
-  must be a valid and unique method request parameter
-     * name.</p>
+     * , where 
+                  <replaceable>{location}</replaceable>
+               
+     * is querystring, path, or header; and 
+                 
+     * <replaceable>{name}</replaceable>
+                must be a valid and unique
+     * method request parameter name. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& WithRequestParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestParameters(value); return *this;}
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the
-     * method
- request to the backend. The key is an integration request parameter name
-     * and the
- associated value is a method request parameter value or static value
-     * that must be
- enclosed within single quotes and pre-encoded as required by the
-     * backend. The method
- request parameter value must match the pattern of
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the backend. The key is an integration request parameter name and the
+     * associated value is a method request parameter value or static value that must
+     * be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
+     * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * method.request.{location}.{name}
- , where 
- {location}
-  is querystring, path,
-     * or header; and 
- {name}
-  must be a valid and unique method request parameter
-     * name.</p>
+     * , where 
+                  <replaceable>{location}</replaceable>
+               
+     * is querystring, path, or header; and 
+                 
+     * <replaceable>{name}</replaceable>
+                must be a valid and unique
+     * method request parameter name. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& WithRequestParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the
-     * method
- request to the backend. The key is an integration request parameter name
-     * and the
- associated value is a method request parameter value or static value
-     * that must be
- enclosed within single quotes and pre-encoded as required by the
-     * backend. The method
- request parameter value must match the pattern of
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the backend. The key is an integration request parameter name and the
+     * associated value is a method request parameter value or static value that must
+     * be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
+     * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * method.request.{location}.{name}
- , where 
- {location}
-  is querystring, path,
-     * or header; and 
- {name}
-  must be a valid and unique method request parameter
-     * name.</p>
+     * , where 
+                  <replaceable>{location}</replaceable>
+               
+     * is querystring, path, or header; and 
+                 
+     * <replaceable>{name}</replaceable>
+                must be a valid and unique
+     * method request parameter name. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestParameters(const Aws::String& key, const Aws::String& value) { m_requestParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the
-     * method
- request to the backend. The key is an integration request parameter name
-     * and the
- associated value is a method request parameter value or static value
-     * that must be
- enclosed within single quotes and pre-encoded as required by the
-     * backend. The method
- request parameter value must match the pattern of
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the backend. The key is an integration request parameter name and the
+     * associated value is a method request parameter value or static value that must
+     * be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
+     * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * method.request.{location}.{name}
- , where 
- {location}
-  is querystring, path,
-     * or header; and 
- {name}
-  must be a valid and unique method request parameter
-     * name.</p>
+     * , where 
+                  <replaceable>{location}</replaceable>
+               
+     * is querystring, path, or header; and 
+                 
+     * <replaceable>{name}</replaceable>
+                must be a valid and unique
+     * method request parameter name. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestParameters(Aws::String&& key, const Aws::String& value) { m_requestParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the
-     * method
- request to the backend. The key is an integration request parameter name
-     * and the
- associated value is a method request parameter value or static value
-     * that must be
- enclosed within single quotes and pre-encoded as required by the
-     * backend. The method
- request parameter value must match the pattern of
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the backend. The key is an integration request parameter name and the
+     * associated value is a method request parameter value or static value that must
+     * be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
+     * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * method.request.{location}.{name}
- , where 
- {location}
-  is querystring, path,
-     * or header; and 
- {name}
-  must be a valid and unique method request parameter
-     * name.</p>
+     * , where 
+                  <replaceable>{location}</replaceable>
+               
+     * is querystring, path, or header; and 
+                 
+     * <replaceable>{name}</replaceable>
+                must be a valid and unique
+     * method request parameter name. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestParameters(const Aws::String& key, Aws::String&& value) { m_requestParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the
-     * method
- request to the backend. The key is an integration request parameter name
-     * and the
- associated value is a method request parameter value or static value
-     * that must be
- enclosed within single quotes and pre-encoded as required by the
-     * backend. The method
- request parameter value must match the pattern of
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the backend. The key is an integration request parameter name and the
+     * associated value is a method request parameter value or static value that must
+     * be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
+     * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * method.request.{location}.{name}
- , where 
- {location}
-  is querystring, path,
-     * or header; and 
- {name}
-  must be a valid and unique method request parameter
-     * name.</p>
+     * , where 
+                  <replaceable>{location}</replaceable>
+               
+     * is querystring, path, or header; and 
+                 
+     * <replaceable>{name}</replaceable>
+                must be a valid and unique
+     * method request parameter name. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestParameters(Aws::String&& key, Aws::String&& value) { m_requestParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the
-     * method
- request to the backend. The key is an integration request parameter name
-     * and the
- associated value is a method request parameter value or static value
-     * that must be
- enclosed within single quotes and pre-encoded as required by the
-     * backend. The method
- request parameter value must match the pattern of
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the backend. The key is an integration request parameter name and the
+     * associated value is a method request parameter value or static value that must
+     * be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
+     * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * method.request.{location}.{name}
- , where 
- {location}
-  is querystring, path,
-     * or header; and 
- {name}
-  must be a valid and unique method request parameter
-     * name.</p>
+     * , where 
+                  <replaceable>{location}</replaceable>
+               
+     * is querystring, path, or header; and 
+                 
+     * <replaceable>{name}</replaceable>
+                must be a valid and unique
+     * method request parameter name. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestParameters(const char* key, Aws::String&& value) { m_requestParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the
-     * method
- request to the backend. The key is an integration request parameter name
-     * and the
- associated value is a method request parameter value or static value
-     * that must be
- enclosed within single quotes and pre-encoded as required by the
-     * backend. The method
- request parameter value must match the pattern of
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the backend. The key is an integration request parameter name and the
+     * associated value is a method request parameter value or static value that must
+     * be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
+     * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * method.request.{location}.{name}
- , where 
- {location}
-  is querystring, path,
-     * or header; and 
- {name}
-  must be a valid and unique method request parameter
-     * name.</p>
+     * , where 
+                  <replaceable>{location}</replaceable>
+               
+     * is querystring, path, or header; and 
+                 
+     * <replaceable>{name}</replaceable>
+                must be a valid and unique
+     * method request parameter name. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestParameters(Aws::String&& key, const char* value) { m_requestParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A key-value map specifying request parameters that are passed from the
-     * method
- request to the backend. The key is an integration request parameter name
-     * and the
- associated value is a method request parameter value or static value
-     * that must be
- enclosed within single quotes and pre-encoded as required by the
-     * backend. The method
- request parameter value must match the pattern of
+     * <p>A key-value map specifying request parameters that are passed from the method
+     * request to the backend. The key is an integration request parameter name and the
+     * associated value is a method request parameter value or static value that must
+     * be enclosed within single quotes and pre-encoded as required by the backend. The
+     * method request parameter value must match the pattern of
+     * method.request.<replaceable>{location}</replaceable>.<replaceable>{name}</replaceable>
 
-     * method.request.{location}.{name}
- , where 
- {location}
-  is querystring, path,
-     * or header; and 
- {name}
-  must be a valid and unique method request parameter
-     * name.</p>
+     * , where 
+                  <replaceable>{location}</replaceable>
+               
+     * is querystring, path, or header; and 
+                 
+     * <replaceable>{name}</replaceable>
+                must be a valid and unique
+     * method request parameter name. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestParameters(const char* key, const char* value) { m_requestParameters.emplace(key, value); return *this; }
 
 
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
-     * payload
- based on the value of the Content-Type header sent by the client. The
-     * content type
- value is the key in this map, and the template (as a String) is
-     * the value.</p>
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value. Supported only for WebSocket APIs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestTemplates() const{ return m_requestTemplates; }
 
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
-     * payload
- based on the value of the Content-Type header sent by the client. The
-     * content type
- value is the key in this map, and the template (as a String) is
-     * the value.</p>
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value. Supported only for WebSocket APIs.</p>
      */
     inline void SetRequestTemplates(const Aws::Map<Aws::String, Aws::String>& value) { m_requestTemplates = value; }
 
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
-     * payload
- based on the value of the Content-Type header sent by the client. The
-     * content type
- value is the key in this map, and the template (as a String) is
-     * the value.</p>
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value. Supported only for WebSocket APIs.</p>
      */
     inline void SetRequestTemplates(Aws::Map<Aws::String, Aws::String>&& value) { m_requestTemplates = std::move(value); }
 
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
-     * payload
- based on the value of the Content-Type header sent by the client. The
-     * content type
- value is the key in this map, and the template (as a String) is
-     * the value.</p>
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& WithRequestTemplates(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestTemplates(value); return *this;}
 
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
-     * payload
- based on the value of the Content-Type header sent by the client. The
-     * content type
- value is the key in this map, and the template (as a String) is
-     * the value.</p>
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& WithRequestTemplates(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestTemplates(std::move(value)); return *this;}
 
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
-     * payload
- based on the value of the Content-Type header sent by the client. The
-     * content type
- value is the key in this map, and the template (as a String) is
-     * the value.</p>
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestTemplates(const Aws::String& key, const Aws::String& value) { m_requestTemplates.emplace(key, value); return *this; }
 
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
-     * payload
- based on the value of the Content-Type header sent by the client. The
-     * content type
- value is the key in this map, and the template (as a String) is
-     * the value.</p>
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestTemplates(Aws::String&& key, const Aws::String& value) { m_requestTemplates.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
-     * payload
- based on the value of the Content-Type header sent by the client. The
-     * content type
- value is the key in this map, and the template (as a String) is
-     * the value.</p>
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestTemplates(const Aws::String& key, Aws::String&& value) { m_requestTemplates.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
-     * payload
- based on the value of the Content-Type header sent by the client. The
-     * content type
- value is the key in this map, and the template (as a String) is
-     * the value.</p>
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestTemplates(Aws::String&& key, Aws::String&& value) { m_requestTemplates.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
-     * payload
- based on the value of the Content-Type header sent by the client. The
-     * content type
- value is the key in this map, and the template (as a String) is
-     * the value.</p>
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestTemplates(const char* key, Aws::String&& value) { m_requestTemplates.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
-     * payload
- based on the value of the Content-Type header sent by the client. The
-     * content type
- value is the key in this map, and the template (as a String) is
-     * the value.</p>
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestTemplates(Aws::String&& key, const char* value) { m_requestTemplates.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Represents a map of Velocity templates that are applied on the request
-     * payload
- based on the value of the Content-Type header sent by the client. The
-     * content type
- value is the key in this map, and the template (as a String) is
-     * the value.</p>
+     * payload based on the value of the Content-Type header sent by the client. The
+     * content type value is the key in this map, and the template (as a String) is the
+     * value. Supported only for WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& AddRequestTemplates(const char* key, const char* value) { m_requestTemplates.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The template selection expression for the integration.</p>
+     * <p>The template selection expression for the integration. Supported only for
+     * WebSocket APIs.</p>
      */
     inline const Aws::String& GetTemplateSelectionExpression() const{ return m_templateSelectionExpression; }
 
     /**
-     * <p>The template selection expression for the integration.</p>
+     * <p>The template selection expression for the integration. Supported only for
+     * WebSocket APIs.</p>
      */
     inline void SetTemplateSelectionExpression(const Aws::String& value) { m_templateSelectionExpression = value; }
 
     /**
-     * <p>The template selection expression for the integration.</p>
+     * <p>The template selection expression for the integration. Supported only for
+     * WebSocket APIs.</p>
      */
     inline void SetTemplateSelectionExpression(Aws::String&& value) { m_templateSelectionExpression = std::move(value); }
 
     /**
-     * <p>The template selection expression for the integration.</p>
+     * <p>The template selection expression for the integration. Supported only for
+     * WebSocket APIs.</p>
      */
     inline void SetTemplateSelectionExpression(const char* value) { m_templateSelectionExpression.assign(value); }
 
     /**
-     * <p>The template selection expression for the integration.</p>
+     * <p>The template selection expression for the integration. Supported only for
+     * WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& WithTemplateSelectionExpression(const Aws::String& value) { SetTemplateSelectionExpression(value); return *this;}
 
     /**
-     * <p>The template selection expression for the integration.</p>
+     * <p>The template selection expression for the integration. Supported only for
+     * WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& WithTemplateSelectionExpression(Aws::String&& value) { SetTemplateSelectionExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The template selection expression for the integration.</p>
+     * <p>The template selection expression for the integration. Supported only for
+     * WebSocket APIs.</p>
      */
     inline CreateIntegrationResult& WithTemplateSelectionExpression(const char* value) { SetTemplateSelectionExpression(value); return *this;}
 
 
     /**
      * <p>Custom timeout between 50 and 29,000 milliseconds. The default value is
-     * 29,000
- milliseconds or 29 seconds.</p>
+     * 29,000 milliseconds or 29 seconds for WebSocket APIs. The default value is 5,000
+     * milliseconds, or 5 seconds for HTTP APIs.</p>
      */
     inline int GetTimeoutInMillis() const{ return m_timeoutInMillis; }
 
     /**
      * <p>Custom timeout between 50 and 29,000 milliseconds. The default value is
-     * 29,000
- milliseconds or 29 seconds.</p>
+     * 29,000 milliseconds or 29 seconds for WebSocket APIs. The default value is 5,000
+     * milliseconds, or 5 seconds for HTTP APIs.</p>
      */
     inline void SetTimeoutInMillis(int value) { m_timeoutInMillis = value; }
 
     /**
      * <p>Custom timeout between 50 and 29,000 milliseconds. The default value is
-     * 29,000
- milliseconds or 29 seconds.</p>
+     * 29,000 milliseconds or 29 seconds for WebSocket APIs. The default value is 5,000
+     * milliseconds, or 5 seconds for HTTP APIs.</p>
      */
     inline CreateIntegrationResult& WithTimeoutInMillis(int value) { SetTimeoutInMillis(value); return *this;}
 
   private:
+
+    bool m_apiGatewayManaged;
 
     Aws::String m_connectionId;
 
@@ -1308,6 +1104,8 @@ namespace Model
     Aws::String m_integrationUri;
 
     PassthroughBehavior m_passthroughBehavior;
+
+    Aws::String m_payloadFormatVersion;
 
     Aws::Map<Aws::String, Aws::String> m_requestParameters;
 

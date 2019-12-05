@@ -25,6 +25,8 @@ using namespace Aws::Utils;
 UpdateStageRequest::UpdateStageRequest() : 
     m_accessLogSettingsHasBeenSet(false),
     m_apiIdHasBeenSet(false),
+    m_autoDeploy(false),
+    m_autoDeployHasBeenSet(false),
     m_clientCertificateIdHasBeenSet(false),
     m_defaultRouteSettingsHasBeenSet(false),
     m_deploymentIdHasBeenSet(false),
@@ -42,6 +44,12 @@ Aws::String UpdateStageRequest::SerializePayload() const
   if(m_accessLogSettingsHasBeenSet)
   {
    payload.WithObject("accessLogSettings", m_accessLogSettings.Jsonize());
+
+  }
+
+  if(m_autoDeployHasBeenSet)
+  {
+   payload.WithBool("autoDeploy", m_autoDeploy);
 
   }
 

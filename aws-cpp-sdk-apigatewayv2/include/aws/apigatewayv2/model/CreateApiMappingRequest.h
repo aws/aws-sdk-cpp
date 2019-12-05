@@ -27,6 +27,10 @@ namespace Model
 {
 
   /**
+   * <p>Creates a new ApiMapping resource to represent an API mapping.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/CreateApiMappingRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAYV2_API CreateApiMappingRequest : public ApiGatewayV2Request
   {
@@ -84,42 +88,42 @@ namespace Model
 
 
     /**
-     * 
+     * The API mapping key.
      */
     inline const Aws::String& GetApiMappingKey() const{ return m_apiMappingKey; }
 
     /**
-     * 
+     * The API mapping key.
      */
     inline bool ApiMappingKeyHasBeenSet() const { return m_apiMappingKeyHasBeenSet; }
 
     /**
-     * 
+     * The API mapping key.
      */
     inline void SetApiMappingKey(const Aws::String& value) { m_apiMappingKeyHasBeenSet = true; m_apiMappingKey = value; }
 
     /**
-     * 
+     * The API mapping key.
      */
     inline void SetApiMappingKey(Aws::String&& value) { m_apiMappingKeyHasBeenSet = true; m_apiMappingKey = std::move(value); }
 
     /**
-     * 
+     * The API mapping key.
      */
     inline void SetApiMappingKey(const char* value) { m_apiMappingKeyHasBeenSet = true; m_apiMappingKey.assign(value); }
 
     /**
-     * 
+     * The API mapping key.
      */
     inline CreateApiMappingRequest& WithApiMappingKey(const Aws::String& value) { SetApiMappingKey(value); return *this;}
 
     /**
-     * 
+     * The API mapping key.
      */
     inline CreateApiMappingRequest& WithApiMappingKey(Aws::String&& value) { SetApiMappingKey(std::move(value)); return *this;}
 
     /**
-     * 
+     * The API mapping key.
      */
     inline CreateApiMappingRequest& WithApiMappingKey(const char* value) { SetApiMappingKey(value); return *this;}
 

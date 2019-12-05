@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/apigatewayv2/model/AuthorizerType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/apigatewayv2/model/JWTConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -29,6 +30,9 @@ namespace Model
 {
 
   /**
+   * <p>Updates an Authorizer.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateAuthorizerRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAYV2_API UpdateAuthorizerRequest : public ApiGatewayV2Request
   {
@@ -87,89 +91,65 @@ namespace Model
 
     /**
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
-     * the
- authorizer. To specify an IAM role for API Gateway to assume, use the
-     * role's Amazon
- Resource Name (ARN). To use resource-based permissions on the
-     * Lambda function,
- specify null.</p>
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline const Aws::String& GetAuthorizerCredentialsArn() const{ return m_authorizerCredentialsArn; }
 
     /**
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
-     * the
- authorizer. To specify an IAM role for API Gateway to assume, use the
-     * role's Amazon
- Resource Name (ARN). To use resource-based permissions on the
-     * Lambda function,
- specify null.</p>
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline bool AuthorizerCredentialsArnHasBeenSet() const { return m_authorizerCredentialsArnHasBeenSet; }
 
     /**
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
-     * the
- authorizer. To specify an IAM role for API Gateway to assume, use the
-     * role's Amazon
- Resource Name (ARN). To use resource-based permissions on the
-     * Lambda function,
- specify null.</p>
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline void SetAuthorizerCredentialsArn(const Aws::String& value) { m_authorizerCredentialsArnHasBeenSet = true; m_authorizerCredentialsArn = value; }
 
     /**
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
-     * the
- authorizer. To specify an IAM role for API Gateway to assume, use the
-     * role's Amazon
- Resource Name (ARN). To use resource-based permissions on the
-     * Lambda function,
- specify null.</p>
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline void SetAuthorizerCredentialsArn(Aws::String&& value) { m_authorizerCredentialsArnHasBeenSet = true; m_authorizerCredentialsArn = std::move(value); }
 
     /**
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
-     * the
- authorizer. To specify an IAM role for API Gateway to assume, use the
-     * role's Amazon
- Resource Name (ARN). To use resource-based permissions on the
-     * Lambda function,
- specify null.</p>
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline void SetAuthorizerCredentialsArn(const char* value) { m_authorizerCredentialsArnHasBeenSet = true; m_authorizerCredentialsArn.assign(value); }
 
     /**
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
-     * the
- authorizer. To specify an IAM role for API Gateway to assume, use the
-     * role's Amazon
- Resource Name (ARN). To use resource-based permissions on the
-     * Lambda function,
- specify null.</p>
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline UpdateAuthorizerRequest& WithAuthorizerCredentialsArn(const Aws::String& value) { SetAuthorizerCredentialsArn(value); return *this;}
 
     /**
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
-     * the
- authorizer. To specify an IAM role for API Gateway to assume, use the
-     * role's Amazon
- Resource Name (ARN). To use resource-based permissions on the
-     * Lambda function,
- specify null.</p>
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline UpdateAuthorizerRequest& WithAuthorizerCredentialsArn(Aws::String&& value) { SetAuthorizerCredentialsArn(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the required credentials as an IAM role for API Gateway to invoke
-     * the
- authorizer. To specify an IAM role for API Gateway to assume, use the
-     * role's Amazon
- Resource Name (ARN). To use resource-based permissions on the
-     * Lambda function,
- specify null.</p>
+     * the authorizer. To specify an IAM role for API Gateway to assume, use the role's
+     * Amazon Resource Name (ARN). To use resource-based permissions on the Lambda
+     * function, specify null.</p>
      */
     inline UpdateAuthorizerRequest& WithAuthorizerCredentialsArn(const char* value) { SetAuthorizerCredentialsArn(value); return *this;}
 
@@ -216,596 +196,450 @@ namespace Model
 
 
     /**
-     * <p>The time to live (TTL), in seconds, of cached authorizer results. If it is
-     * zero,
- authorization caching is disabled. If it is greater than zero, API
-     * Gateway will cache
- authorizer responses. If this field is not set, the default
-     * value is 300. The maximum
- value is 3600, or 1 hour.</p>
+     * <p>Authorizer caching is not currently supported. Don't specify this value for
+     * authorizers.</p>
      */
     inline int GetAuthorizerResultTtlInSeconds() const{ return m_authorizerResultTtlInSeconds; }
 
     /**
-     * <p>The time to live (TTL), in seconds, of cached authorizer results. If it is
-     * zero,
- authorization caching is disabled. If it is greater than zero, API
-     * Gateway will cache
- authorizer responses. If this field is not set, the default
-     * value is 300. The maximum
- value is 3600, or 1 hour.</p>
+     * <p>Authorizer caching is not currently supported. Don't specify this value for
+     * authorizers.</p>
      */
     inline bool AuthorizerResultTtlInSecondsHasBeenSet() const { return m_authorizerResultTtlInSecondsHasBeenSet; }
 
     /**
-     * <p>The time to live (TTL), in seconds, of cached authorizer results. If it is
-     * zero,
- authorization caching is disabled. If it is greater than zero, API
-     * Gateway will cache
- authorizer responses. If this field is not set, the default
-     * value is 300. The maximum
- value is 3600, or 1 hour.</p>
+     * <p>Authorizer caching is not currently supported. Don't specify this value for
+     * authorizers.</p>
      */
     inline void SetAuthorizerResultTtlInSeconds(int value) { m_authorizerResultTtlInSecondsHasBeenSet = true; m_authorizerResultTtlInSeconds = value; }
 
     /**
-     * <p>The time to live (TTL), in seconds, of cached authorizer results. If it is
-     * zero,
- authorization caching is disabled. If it is greater than zero, API
-     * Gateway will cache
- authorizer responses. If this field is not set, the default
-     * value is 300. The maximum
- value is 3600, or 1 hour.</p>
+     * <p>Authorizer caching is not currently supported. Don't specify this value for
+     * authorizers.</p>
      */
     inline UpdateAuthorizerRequest& WithAuthorizerResultTtlInSeconds(int value) { SetAuthorizerResultTtlInSeconds(value); return *this;}
 
 
     /**
-     * <p>The authorizer type. Currently the only valid value is REQUEST, for a
- Lambda
-     * function using incoming request parameters.</p>
+     * <p>The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda
+     * function using incoming request parameters. For HTTP APIs, specify JWT to use
+     * JSON Web Tokens.</p>
      */
     inline const AuthorizerType& GetAuthorizerType() const{ return m_authorizerType; }
 
     /**
-     * <p>The authorizer type. Currently the only valid value is REQUEST, for a
- Lambda
-     * function using incoming request parameters.</p>
+     * <p>The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda
+     * function using incoming request parameters. For HTTP APIs, specify JWT to use
+     * JSON Web Tokens.</p>
      */
     inline bool AuthorizerTypeHasBeenSet() const { return m_authorizerTypeHasBeenSet; }
 
     /**
-     * <p>The authorizer type. Currently the only valid value is REQUEST, for a
- Lambda
-     * function using incoming request parameters.</p>
+     * <p>The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda
+     * function using incoming request parameters. For HTTP APIs, specify JWT to use
+     * JSON Web Tokens.</p>
      */
     inline void SetAuthorizerType(const AuthorizerType& value) { m_authorizerTypeHasBeenSet = true; m_authorizerType = value; }
 
     /**
-     * <p>The authorizer type. Currently the only valid value is REQUEST, for a
- Lambda
-     * function using incoming request parameters.</p>
+     * <p>The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda
+     * function using incoming request parameters. For HTTP APIs, specify JWT to use
+     * JSON Web Tokens.</p>
      */
     inline void SetAuthorizerType(AuthorizerType&& value) { m_authorizerTypeHasBeenSet = true; m_authorizerType = std::move(value); }
 
     /**
-     * <p>The authorizer type. Currently the only valid value is REQUEST, for a
- Lambda
-     * function using incoming request parameters.</p>
+     * <p>The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda
+     * function using incoming request parameters. For HTTP APIs, specify JWT to use
+     * JSON Web Tokens.</p>
      */
     inline UpdateAuthorizerRequest& WithAuthorizerType(const AuthorizerType& value) { SetAuthorizerType(value); return *this;}
 
     /**
-     * <p>The authorizer type. Currently the only valid value is REQUEST, for a
- Lambda
-     * function using incoming request parameters.</p>
+     * <p>The authorizer type. For WebSocket APIs, specify REQUEST for a Lambda
+     * function using incoming request parameters. For HTTP APIs, specify JWT to use
+     * JSON Web Tokens.</p>
      */
     inline UpdateAuthorizerRequest& WithAuthorizerType(AuthorizerType&& value) { SetAuthorizerType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). For
- REQUEST authorizers,
-     * this must be a
- well-formed Lambda function URI, for example,
-
-     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations.
-
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
+     * this must be a well-formed Lambda function URI, for example,
+     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
+     * arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
 
-     * arn:aws:apigateway:{region}:lambda:path/{service_api}
- , where {region} is the
-     * same as the region hosting the Lambda
- function, path indicates that the
-     * remaining substring in the URI should be treated as
- the path to the resource,
-     * including the initial /. For Lambda functions,
- this is usually of the form
-
-     * /2015-03-31/functions/[FunctionARN]/invocations.</p>
+     * , where <replaceable></replaceable>{region} is the same as the region hosting
+     * the Lambda function, path indicates that the remaining substring in the URI
+     * should be treated as the path to the resource, including the initial /. For
+     * Lambda functions, this is usually of the form
+     * /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline const Aws::String& GetAuthorizerUri() const{ return m_authorizerUri; }
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). For
- REQUEST authorizers,
-     * this must be a
- well-formed Lambda function URI, for example,
-
-     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations.
-
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
+     * this must be a well-formed Lambda function URI, for example,
+     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
+     * arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
 
-     * arn:aws:apigateway:{region}:lambda:path/{service_api}
- , where {region} is the
-     * same as the region hosting the Lambda
- function, path indicates that the
-     * remaining substring in the URI should be treated as
- the path to the resource,
-     * including the initial /. For Lambda functions,
- this is usually of the form
-
-     * /2015-03-31/functions/[FunctionARN]/invocations.</p>
+     * , where <replaceable></replaceable>{region} is the same as the region hosting
+     * the Lambda function, path indicates that the remaining substring in the URI
+     * should be treated as the path to the resource, including the initial /. For
+     * Lambda functions, this is usually of the form
+     * /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline bool AuthorizerUriHasBeenSet() const { return m_authorizerUriHasBeenSet; }
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). For
- REQUEST authorizers,
-     * this must be a
- well-formed Lambda function URI, for example,
-
-     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations.
-
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
+     * this must be a well-formed Lambda function URI, for example,
+     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
+     * arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
 
-     * arn:aws:apigateway:{region}:lambda:path/{service_api}
- , where {region} is the
-     * same as the region hosting the Lambda
- function, path indicates that the
-     * remaining substring in the URI should be treated as
- the path to the resource,
-     * including the initial /. For Lambda functions,
- this is usually of the form
-
-     * /2015-03-31/functions/[FunctionARN]/invocations.</p>
+     * , where <replaceable></replaceable>{region} is the same as the region hosting
+     * the Lambda function, path indicates that the remaining substring in the URI
+     * should be treated as the path to the resource, including the initial /. For
+     * Lambda functions, this is usually of the form
+     * /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline void SetAuthorizerUri(const Aws::String& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = value; }
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). For
- REQUEST authorizers,
-     * this must be a
- well-formed Lambda function URI, for example,
-
-     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations.
-
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
+     * this must be a well-formed Lambda function URI, for example,
+     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
+     * arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
 
-     * arn:aws:apigateway:{region}:lambda:path/{service_api}
- , where {region} is the
-     * same as the region hosting the Lambda
- function, path indicates that the
-     * remaining substring in the URI should be treated as
- the path to the resource,
-     * including the initial /. For Lambda functions,
- this is usually of the form
-
-     * /2015-03-31/functions/[FunctionARN]/invocations.</p>
+     * , where <replaceable></replaceable>{region} is the same as the region hosting
+     * the Lambda function, path indicates that the remaining substring in the URI
+     * should be treated as the path to the resource, including the initial /. For
+     * Lambda functions, this is usually of the form
+     * /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline void SetAuthorizerUri(Aws::String&& value) { m_authorizerUriHasBeenSet = true; m_authorizerUri = std::move(value); }
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). For
- REQUEST authorizers,
-     * this must be a
- well-formed Lambda function URI, for example,
-
-     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations.
-
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
+     * this must be a well-formed Lambda function URI, for example,
+     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
+     * arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
 
-     * arn:aws:apigateway:{region}:lambda:path/{service_api}
- , where {region} is the
-     * same as the region hosting the Lambda
- function, path indicates that the
-     * remaining substring in the URI should be treated as
- the path to the resource,
-     * including the initial /. For Lambda functions,
- this is usually of the form
-
-     * /2015-03-31/functions/[FunctionARN]/invocations.</p>
+     * , where <replaceable></replaceable>{region} is the same as the region hosting
+     * the Lambda function, path indicates that the remaining substring in the URI
+     * should be treated as the path to the resource, including the initial /. For
+     * Lambda functions, this is usually of the form
+     * /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline void SetAuthorizerUri(const char* value) { m_authorizerUriHasBeenSet = true; m_authorizerUri.assign(value); }
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). For
- REQUEST authorizers,
-     * this must be a
- well-formed Lambda function URI, for example,
-
-     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations.
-
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
+     * this must be a well-formed Lambda function URI, for example,
+     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
+     * arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
 
-     * arn:aws:apigateway:{region}:lambda:path/{service_api}
- , where {region} is the
-     * same as the region hosting the Lambda
- function, path indicates that the
-     * remaining substring in the URI should be treated as
- the path to the resource,
-     * including the initial /. For Lambda functions,
- this is usually of the form
-
-     * /2015-03-31/functions/[FunctionARN]/invocations.</p>
+     * , where <replaceable></replaceable>{region} is the same as the region hosting
+     * the Lambda function, path indicates that the remaining substring in the URI
+     * should be treated as the path to the resource, including the initial /. For
+     * Lambda functions, this is usually of the form
+     * /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline UpdateAuthorizerRequest& WithAuthorizerUri(const Aws::String& value) { SetAuthorizerUri(value); return *this;}
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). For
- REQUEST authorizers,
-     * this must be a
- well-formed Lambda function URI, for example,
-
-     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations.
-
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
+     * this must be a well-formed Lambda function URI, for example,
+     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
+     * arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
 
-     * arn:aws:apigateway:{region}:lambda:path/{service_api}
- , where {region} is the
-     * same as the region hosting the Lambda
- function, path indicates that the
-     * remaining substring in the URI should be treated as
- the path to the resource,
-     * including the initial /. For Lambda functions,
- this is usually of the form
-
-     * /2015-03-31/functions/[FunctionARN]/invocations.</p>
+     * , where <replaceable></replaceable>{region} is the same as the region hosting
+     * the Lambda function, path indicates that the remaining substring in the URI
+     * should be treated as the path to the resource, including the initial /. For
+     * Lambda functions, this is usually of the form
+     * /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline UpdateAuthorizerRequest& WithAuthorizerUri(Aws::String&& value) { SetAuthorizerUri(std::move(value)); return *this;}
 
     /**
-     * <p>The authorizer's Uniform Resource Identifier (URI). For
- REQUEST authorizers,
-     * this must be a
- well-formed Lambda function URI, for example,
-
-     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations.
-
+     * <p>The authorizer's Uniform Resource Identifier (URI). For REQUEST authorizers,
+     * this must be a well-formed Lambda function URI, for example,
+     * arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:<replaceable>{account_id}</replaceable>:function:<replaceable>{lambda_function_name}</replaceable>/invocations.
      * In general, the URI has this form:
+     * arn:aws:apigateway:<replaceable>{region}</replaceable>:lambda:path/<replaceable>{service_api}</replaceable>
 
-     * arn:aws:apigateway:{region}:lambda:path/{service_api}
- , where {region} is the
-     * same as the region hosting the Lambda
- function, path indicates that the
-     * remaining substring in the URI should be treated as
- the path to the resource,
-     * including the initial /. For Lambda functions,
- this is usually of the form
-
-     * /2015-03-31/functions/[FunctionARN]/invocations.</p>
+     * , where <replaceable></replaceable>{region} is the same as the region hosting
+     * the Lambda function, path indicates that the remaining substring in the URI
+     * should be treated as the path to the resource, including the initial /. For
+     * Lambda functions, this is usually of the form
+     * /2015-03-31/functions/[FunctionARN]/invocations. Supported only for REQUEST
+     * authorizers.</p>
      */
     inline UpdateAuthorizerRequest& WithAuthorizerUri(const char* value) { SetAuthorizerUri(value); return *this;}
 
 
     /**
-     * <p>The identity source for which authorization is requested.</p><p>For the
-     * REQUEST authorizer, this is required when authorization
- caching is enabled. The
-     * value is a comma-separated string of one or more mapping
- expressions of the
-     * specified request parameters. For example, if an Auth header, a
- Name query
-     * string parameter are defined as identity sources, this value is
-
-     * $method.request.header.Auth, $method.request.querystring.Name. These
- parameters
-     * will be used to derive the authorization caching key and to perform
- runtime
-     * validation of the REQUEST authorizer by verifying all of the
- identity-related
-     * request parameters are present, not null and non-empty. Only when
- this is true
-     * does the authorizer invoke the authorizer Lambda function, otherwise, it
-
-     * returns a 401 Unauthorized response without calling the Lambda function.
- The
-     * valid value is a string of comma-separated mapping expressions of the specified
-
-     * request parameters. When the authorization caching is not enabled, this property
-     * is
- optional.</p>
+     * <p>The identity source for which authorization is requested.</p> <p>For a
+     * REQUEST authorizer, this is optional. The value is a set of one or more mapping
+     * expressions of the specified request parameters. Currently, the identity source
+     * can be headers, query string parameters, stage variables, and context
+     * parameters. For example, if an Auth header and a Name query string parameter are
+     * defined as identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only
+     * when this is true does the authorizer invoke the authorizer Lambda function.
+     * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
+     * function.</p> <p>For JWT, a single entry that specifies where to extract the
+     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
+     * query parameter-based selections are supported, for example
+     * "$request.header.Authorization".</p>
      */
     inline const Aws::Vector<Aws::String>& GetIdentitySource() const{ return m_identitySource; }
 
     /**
-     * <p>The identity source for which authorization is requested.</p><p>For the
-     * REQUEST authorizer, this is required when authorization
- caching is enabled. The
-     * value is a comma-separated string of one or more mapping
- expressions of the
-     * specified request parameters. For example, if an Auth header, a
- Name query
-     * string parameter are defined as identity sources, this value is
-
-     * $method.request.header.Auth, $method.request.querystring.Name. These
- parameters
-     * will be used to derive the authorization caching key and to perform
- runtime
-     * validation of the REQUEST authorizer by verifying all of the
- identity-related
-     * request parameters are present, not null and non-empty. Only when
- this is true
-     * does the authorizer invoke the authorizer Lambda function, otherwise, it
-
-     * returns a 401 Unauthorized response without calling the Lambda function.
- The
-     * valid value is a string of comma-separated mapping expressions of the specified
-
-     * request parameters. When the authorization caching is not enabled, this property
-     * is
- optional.</p>
+     * <p>The identity source for which authorization is requested.</p> <p>For a
+     * REQUEST authorizer, this is optional. The value is a set of one or more mapping
+     * expressions of the specified request parameters. Currently, the identity source
+     * can be headers, query string parameters, stage variables, and context
+     * parameters. For example, if an Auth header and a Name query string parameter are
+     * defined as identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only
+     * when this is true does the authorizer invoke the authorizer Lambda function.
+     * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
+     * function.</p> <p>For JWT, a single entry that specifies where to extract the
+     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
+     * query parameter-based selections are supported, for example
+     * "$request.header.Authorization".</p>
      */
     inline bool IdentitySourceHasBeenSet() const { return m_identitySourceHasBeenSet; }
 
     /**
-     * <p>The identity source for which authorization is requested.</p><p>For the
-     * REQUEST authorizer, this is required when authorization
- caching is enabled. The
-     * value is a comma-separated string of one or more mapping
- expressions of the
-     * specified request parameters. For example, if an Auth header, a
- Name query
-     * string parameter are defined as identity sources, this value is
-
-     * $method.request.header.Auth, $method.request.querystring.Name. These
- parameters
-     * will be used to derive the authorization caching key and to perform
- runtime
-     * validation of the REQUEST authorizer by verifying all of the
- identity-related
-     * request parameters are present, not null and non-empty. Only when
- this is true
-     * does the authorizer invoke the authorizer Lambda function, otherwise, it
-
-     * returns a 401 Unauthorized response without calling the Lambda function.
- The
-     * valid value is a string of comma-separated mapping expressions of the specified
-
-     * request parameters. When the authorization caching is not enabled, this property
-     * is
- optional.</p>
+     * <p>The identity source for which authorization is requested.</p> <p>For a
+     * REQUEST authorizer, this is optional. The value is a set of one or more mapping
+     * expressions of the specified request parameters. Currently, the identity source
+     * can be headers, query string parameters, stage variables, and context
+     * parameters. For example, if an Auth header and a Name query string parameter are
+     * defined as identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only
+     * when this is true does the authorizer invoke the authorizer Lambda function.
+     * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
+     * function.</p> <p>For JWT, a single entry that specifies where to extract the
+     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
+     * query parameter-based selections are supported, for example
+     * "$request.header.Authorization".</p>
      */
     inline void SetIdentitySource(const Aws::Vector<Aws::String>& value) { m_identitySourceHasBeenSet = true; m_identitySource = value; }
 
     /**
-     * <p>The identity source for which authorization is requested.</p><p>For the
-     * REQUEST authorizer, this is required when authorization
- caching is enabled. The
-     * value is a comma-separated string of one or more mapping
- expressions of the
-     * specified request parameters. For example, if an Auth header, a
- Name query
-     * string parameter are defined as identity sources, this value is
-
-     * $method.request.header.Auth, $method.request.querystring.Name. These
- parameters
-     * will be used to derive the authorization caching key and to perform
- runtime
-     * validation of the REQUEST authorizer by verifying all of the
- identity-related
-     * request parameters are present, not null and non-empty. Only when
- this is true
-     * does the authorizer invoke the authorizer Lambda function, otherwise, it
-
-     * returns a 401 Unauthorized response without calling the Lambda function.
- The
-     * valid value is a string of comma-separated mapping expressions of the specified
-
-     * request parameters. When the authorization caching is not enabled, this property
-     * is
- optional.</p>
+     * <p>The identity source for which authorization is requested.</p> <p>For a
+     * REQUEST authorizer, this is optional. The value is a set of one or more mapping
+     * expressions of the specified request parameters. Currently, the identity source
+     * can be headers, query string parameters, stage variables, and context
+     * parameters. For example, if an Auth header and a Name query string parameter are
+     * defined as identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only
+     * when this is true does the authorizer invoke the authorizer Lambda function.
+     * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
+     * function.</p> <p>For JWT, a single entry that specifies where to extract the
+     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
+     * query parameter-based selections are supported, for example
+     * "$request.header.Authorization".</p>
      */
     inline void SetIdentitySource(Aws::Vector<Aws::String>&& value) { m_identitySourceHasBeenSet = true; m_identitySource = std::move(value); }
 
     /**
-     * <p>The identity source for which authorization is requested.</p><p>For the
-     * REQUEST authorizer, this is required when authorization
- caching is enabled. The
-     * value is a comma-separated string of one or more mapping
- expressions of the
-     * specified request parameters. For example, if an Auth header, a
- Name query
-     * string parameter are defined as identity sources, this value is
-
-     * $method.request.header.Auth, $method.request.querystring.Name. These
- parameters
-     * will be used to derive the authorization caching key and to perform
- runtime
-     * validation of the REQUEST authorizer by verifying all of the
- identity-related
-     * request parameters are present, not null and non-empty. Only when
- this is true
-     * does the authorizer invoke the authorizer Lambda function, otherwise, it
-
-     * returns a 401 Unauthorized response without calling the Lambda function.
- The
-     * valid value is a string of comma-separated mapping expressions of the specified
-
-     * request parameters. When the authorization caching is not enabled, this property
-     * is
- optional.</p>
+     * <p>The identity source for which authorization is requested.</p> <p>For a
+     * REQUEST authorizer, this is optional. The value is a set of one or more mapping
+     * expressions of the specified request parameters. Currently, the identity source
+     * can be headers, query string parameters, stage variables, and context
+     * parameters. For example, if an Auth header and a Name query string parameter are
+     * defined as identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only
+     * when this is true does the authorizer invoke the authorizer Lambda function.
+     * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
+     * function.</p> <p>For JWT, a single entry that specifies where to extract the
+     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
+     * query parameter-based selections are supported, for example
+     * "$request.header.Authorization".</p>
      */
     inline UpdateAuthorizerRequest& WithIdentitySource(const Aws::Vector<Aws::String>& value) { SetIdentitySource(value); return *this;}
 
     /**
-     * <p>The identity source for which authorization is requested.</p><p>For the
-     * REQUEST authorizer, this is required when authorization
- caching is enabled. The
-     * value is a comma-separated string of one or more mapping
- expressions of the
-     * specified request parameters. For example, if an Auth header, a
- Name query
-     * string parameter are defined as identity sources, this value is
-
-     * $method.request.header.Auth, $method.request.querystring.Name. These
- parameters
-     * will be used to derive the authorization caching key and to perform
- runtime
-     * validation of the REQUEST authorizer by verifying all of the
- identity-related
-     * request parameters are present, not null and non-empty. Only when
- this is true
-     * does the authorizer invoke the authorizer Lambda function, otherwise, it
-
-     * returns a 401 Unauthorized response without calling the Lambda function.
- The
-     * valid value is a string of comma-separated mapping expressions of the specified
-
-     * request parameters. When the authorization caching is not enabled, this property
-     * is
- optional.</p>
+     * <p>The identity source for which authorization is requested.</p> <p>For a
+     * REQUEST authorizer, this is optional. The value is a set of one or more mapping
+     * expressions of the specified request parameters. Currently, the identity source
+     * can be headers, query string parameters, stage variables, and context
+     * parameters. For example, if an Auth header and a Name query string parameter are
+     * defined as identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only
+     * when this is true does the authorizer invoke the authorizer Lambda function.
+     * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
+     * function.</p> <p>For JWT, a single entry that specifies where to extract the
+     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
+     * query parameter-based selections are supported, for example
+     * "$request.header.Authorization".</p>
      */
     inline UpdateAuthorizerRequest& WithIdentitySource(Aws::Vector<Aws::String>&& value) { SetIdentitySource(std::move(value)); return *this;}
 
     /**
-     * <p>The identity source for which authorization is requested.</p><p>For the
-     * REQUEST authorizer, this is required when authorization
- caching is enabled. The
-     * value is a comma-separated string of one or more mapping
- expressions of the
-     * specified request parameters. For example, if an Auth header, a
- Name query
-     * string parameter are defined as identity sources, this value is
-
-     * $method.request.header.Auth, $method.request.querystring.Name. These
- parameters
-     * will be used to derive the authorization caching key and to perform
- runtime
-     * validation of the REQUEST authorizer by verifying all of the
- identity-related
-     * request parameters are present, not null and non-empty. Only when
- this is true
-     * does the authorizer invoke the authorizer Lambda function, otherwise, it
-
-     * returns a 401 Unauthorized response without calling the Lambda function.
- The
-     * valid value is a string of comma-separated mapping expressions of the specified
-
-     * request parameters. When the authorization caching is not enabled, this property
-     * is
- optional.</p>
+     * <p>The identity source for which authorization is requested.</p> <p>For a
+     * REQUEST authorizer, this is optional. The value is a set of one or more mapping
+     * expressions of the specified request parameters. Currently, the identity source
+     * can be headers, query string parameters, stage variables, and context
+     * parameters. For example, if an Auth header and a Name query string parameter are
+     * defined as identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only
+     * when this is true does the authorizer invoke the authorizer Lambda function.
+     * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
+     * function.</p> <p>For JWT, a single entry that specifies where to extract the
+     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
+     * query parameter-based selections are supported, for example
+     * "$request.header.Authorization".</p>
      */
     inline UpdateAuthorizerRequest& AddIdentitySource(const Aws::String& value) { m_identitySourceHasBeenSet = true; m_identitySource.push_back(value); return *this; }
 
     /**
-     * <p>The identity source for which authorization is requested.</p><p>For the
-     * REQUEST authorizer, this is required when authorization
- caching is enabled. The
-     * value is a comma-separated string of one or more mapping
- expressions of the
-     * specified request parameters. For example, if an Auth header, a
- Name query
-     * string parameter are defined as identity sources, this value is
-
-     * $method.request.header.Auth, $method.request.querystring.Name. These
- parameters
-     * will be used to derive the authorization caching key and to perform
- runtime
-     * validation of the REQUEST authorizer by verifying all of the
- identity-related
-     * request parameters are present, not null and non-empty. Only when
- this is true
-     * does the authorizer invoke the authorizer Lambda function, otherwise, it
-
-     * returns a 401 Unauthorized response without calling the Lambda function.
- The
-     * valid value is a string of comma-separated mapping expressions of the specified
-
-     * request parameters. When the authorization caching is not enabled, this property
-     * is
- optional.</p>
+     * <p>The identity source for which authorization is requested.</p> <p>For a
+     * REQUEST authorizer, this is optional. The value is a set of one or more mapping
+     * expressions of the specified request parameters. Currently, the identity source
+     * can be headers, query string parameters, stage variables, and context
+     * parameters. For example, if an Auth header and a Name query string parameter are
+     * defined as identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only
+     * when this is true does the authorizer invoke the authorizer Lambda function.
+     * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
+     * function.</p> <p>For JWT, a single entry that specifies where to extract the
+     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
+     * query parameter-based selections are supported, for example
+     * "$request.header.Authorization".</p>
      */
     inline UpdateAuthorizerRequest& AddIdentitySource(Aws::String&& value) { m_identitySourceHasBeenSet = true; m_identitySource.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The identity source for which authorization is requested.</p><p>For the
-     * REQUEST authorizer, this is required when authorization
- caching is enabled. The
-     * value is a comma-separated string of one or more mapping
- expressions of the
-     * specified request parameters. For example, if an Auth header, a
- Name query
-     * string parameter are defined as identity sources, this value is
-
-     * $method.request.header.Auth, $method.request.querystring.Name. These
- parameters
-     * will be used to derive the authorization caching key and to perform
- runtime
-     * validation of the REQUEST authorizer by verifying all of the
- identity-related
-     * request parameters are present, not null and non-empty. Only when
- this is true
-     * does the authorizer invoke the authorizer Lambda function, otherwise, it
-
-     * returns a 401 Unauthorized response without calling the Lambda function.
- The
-     * valid value is a string of comma-separated mapping expressions of the specified
-
-     * request parameters. When the authorization caching is not enabled, this property
-     * is
- optional.</p>
+     * <p>The identity source for which authorization is requested.</p> <p>For a
+     * REQUEST authorizer, this is optional. The value is a set of one or more mapping
+     * expressions of the specified request parameters. Currently, the identity source
+     * can be headers, query string parameters, stage variables, and context
+     * parameters. For example, if an Auth header and a Name query string parameter are
+     * defined as identity sources, this value is route.request.header.Auth,
+     * route.request.querystring.Name. These parameters will be used to perform runtime
+     * validation for Lambda-based authorizers by verifying all of the identity-related
+     * request parameters are present in the request, not null, and non-empty. Only
+     * when this is true does the authorizer invoke the authorizer Lambda function.
+     * Otherwise, it returns a 401 Unauthorized response without calling the Lambda
+     * function.</p> <p>For JWT, a single entry that specifies where to extract the
+     * JSON Web Token (JWT) from inbound requests. Currently only header-based and
+     * query parameter-based selections are supported, for example
+     * "$request.header.Authorization".</p>
      */
     inline UpdateAuthorizerRequest& AddIdentitySource(const char* value) { m_identitySourceHasBeenSet = true; m_identitySource.push_back(value); return *this; }
 
 
     /**
-     * <p>The
- validation expression does not apply to the REQUEST authorizer.</p>
+     * <p>This parameter is not used.</p>
      */
     inline const Aws::String& GetIdentityValidationExpression() const{ return m_identityValidationExpression; }
 
     /**
-     * <p>The
- validation expression does not apply to the REQUEST authorizer.</p>
+     * <p>This parameter is not used.</p>
      */
     inline bool IdentityValidationExpressionHasBeenSet() const { return m_identityValidationExpressionHasBeenSet; }
 
     /**
-     * <p>The
- validation expression does not apply to the REQUEST authorizer.</p>
+     * <p>This parameter is not used.</p>
      */
     inline void SetIdentityValidationExpression(const Aws::String& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = value; }
 
     /**
-     * <p>The
- validation expression does not apply to the REQUEST authorizer.</p>
+     * <p>This parameter is not used.</p>
      */
     inline void SetIdentityValidationExpression(Aws::String&& value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression = std::move(value); }
 
     /**
-     * <p>The
- validation expression does not apply to the REQUEST authorizer.</p>
+     * <p>This parameter is not used.</p>
      */
     inline void SetIdentityValidationExpression(const char* value) { m_identityValidationExpressionHasBeenSet = true; m_identityValidationExpression.assign(value); }
 
     /**
-     * <p>The
- validation expression does not apply to the REQUEST authorizer.</p>
+     * <p>This parameter is not used.</p>
      */
     inline UpdateAuthorizerRequest& WithIdentityValidationExpression(const Aws::String& value) { SetIdentityValidationExpression(value); return *this;}
 
     /**
-     * <p>The
- validation expression does not apply to the REQUEST authorizer.</p>
+     * <p>This parameter is not used.</p>
      */
     inline UpdateAuthorizerRequest& WithIdentityValidationExpression(Aws::String&& value) { SetIdentityValidationExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The
- validation expression does not apply to the REQUEST authorizer.</p>
+     * <p>This parameter is not used.</p>
      */
     inline UpdateAuthorizerRequest& WithIdentityValidationExpression(const char* value) { SetIdentityValidationExpression(value); return *this;}
+
+
+    /**
+     * <p>Represents the configuration of a JWT authorizer. Required for the JWT
+     * authorizer type. Supported only for HTTP APIs.</p>
+     */
+    inline const JWTConfiguration& GetJwtConfiguration() const{ return m_jwtConfiguration; }
+
+    /**
+     * <p>Represents the configuration of a JWT authorizer. Required for the JWT
+     * authorizer type. Supported only for HTTP APIs.</p>
+     */
+    inline bool JwtConfigurationHasBeenSet() const { return m_jwtConfigurationHasBeenSet; }
+
+    /**
+     * <p>Represents the configuration of a JWT authorizer. Required for the JWT
+     * authorizer type. Supported only for HTTP APIs.</p>
+     */
+    inline void SetJwtConfiguration(const JWTConfiguration& value) { m_jwtConfigurationHasBeenSet = true; m_jwtConfiguration = value; }
+
+    /**
+     * <p>Represents the configuration of a JWT authorizer. Required for the JWT
+     * authorizer type. Supported only for HTTP APIs.</p>
+     */
+    inline void SetJwtConfiguration(JWTConfiguration&& value) { m_jwtConfigurationHasBeenSet = true; m_jwtConfiguration = std::move(value); }
+
+    /**
+     * <p>Represents the configuration of a JWT authorizer. Required for the JWT
+     * authorizer type. Supported only for HTTP APIs.</p>
+     */
+    inline UpdateAuthorizerRequest& WithJwtConfiguration(const JWTConfiguration& value) { SetJwtConfiguration(value); return *this;}
+
+    /**
+     * <p>Represents the configuration of a JWT authorizer. Required for the JWT
+     * authorizer type. Supported only for HTTP APIs.</p>
+     */
+    inline UpdateAuthorizerRequest& WithJwtConfiguration(JWTConfiguration&& value) { SetJwtConfiguration(std::move(value)); return *this;}
 
 
     /**
@@ -848,70 +682,6 @@ namespace Model
      */
     inline UpdateAuthorizerRequest& WithName(const char* value) { SetName(value); return *this;}
 
-
-    /**
-     * <p>For
- REQUEST authorizer, this is not
- defined.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetProviderArns() const{ return m_providerArns; }
-
-    /**
-     * <p>For
- REQUEST authorizer, this is not
- defined.</p>
-     */
-    inline bool ProviderArnsHasBeenSet() const { return m_providerArnsHasBeenSet; }
-
-    /**
-     * <p>For
- REQUEST authorizer, this is not
- defined.</p>
-     */
-    inline void SetProviderArns(const Aws::Vector<Aws::String>& value) { m_providerArnsHasBeenSet = true; m_providerArns = value; }
-
-    /**
-     * <p>For
- REQUEST authorizer, this is not
- defined.</p>
-     */
-    inline void SetProviderArns(Aws::Vector<Aws::String>&& value) { m_providerArnsHasBeenSet = true; m_providerArns = std::move(value); }
-
-    /**
-     * <p>For
- REQUEST authorizer, this is not
- defined.</p>
-     */
-    inline UpdateAuthorizerRequest& WithProviderArns(const Aws::Vector<Aws::String>& value) { SetProviderArns(value); return *this;}
-
-    /**
-     * <p>For
- REQUEST authorizer, this is not
- defined.</p>
-     */
-    inline UpdateAuthorizerRequest& WithProviderArns(Aws::Vector<Aws::String>&& value) { SetProviderArns(std::move(value)); return *this;}
-
-    /**
-     * <p>For
- REQUEST authorizer, this is not
- defined.</p>
-     */
-    inline UpdateAuthorizerRequest& AddProviderArns(const Aws::String& value) { m_providerArnsHasBeenSet = true; m_providerArns.push_back(value); return *this; }
-
-    /**
-     * <p>For
- REQUEST authorizer, this is not
- defined.</p>
-     */
-    inline UpdateAuthorizerRequest& AddProviderArns(Aws::String&& value) { m_providerArnsHasBeenSet = true; m_providerArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>For
- REQUEST authorizer, this is not
- defined.</p>
-     */
-    inline UpdateAuthorizerRequest& AddProviderArns(const char* value) { m_providerArnsHasBeenSet = true; m_providerArns.push_back(value); return *this; }
-
   private:
 
     Aws::String m_apiId;
@@ -938,11 +708,11 @@ namespace Model
     Aws::String m_identityValidationExpression;
     bool m_identityValidationExpressionHasBeenSet;
 
+    JWTConfiguration m_jwtConfiguration;
+    bool m_jwtConfigurationHasBeenSet;
+
     Aws::String m_name;
     bool m_nameHasBeenSet;
-
-    Aws::Vector<Aws::String> m_providerArns;
-    bool m_providerArnsHasBeenSet;
   };
 
 } // namespace Model

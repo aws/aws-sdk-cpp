@@ -32,8 +32,8 @@ CreateAuthorizerRequest::CreateAuthorizerRequest() :
     m_authorizerUriHasBeenSet(false),
     m_identitySourceHasBeenSet(false),
     m_identityValidationExpressionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_providerArnsHasBeenSet(false)
+    m_jwtConfigurationHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -81,20 +81,15 @@ Aws::String CreateAuthorizerRequest::SerializePayload() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_jwtConfigurationHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithObject("jwtConfiguration", m_jwtConfiguration.Jsonize());
 
   }
 
-  if(m_providerArnsHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   Array<JsonValue> providerArnsJsonList(m_providerArns.size());
-   for(unsigned providerArnsIndex = 0; providerArnsIndex < providerArnsJsonList.GetLength(); ++providerArnsIndex)
-   {
-     providerArnsJsonList[providerArnsIndex].AsString(m_providerArns[providerArnsIndex]);
-   }
-   payload.WithArray("providerArns", std::move(providerArnsJsonList));
+   payload.WithString("name", m_name);
 
   }
 

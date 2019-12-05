@@ -32,17 +32,19 @@ Api::Api() :
     m_apiEndpointHasBeenSet(false),
     m_apiIdHasBeenSet(false),
     m_apiKeySelectionExpressionHasBeenSet(false),
+    m_corsConfigurationHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_disableSchemaValidation(false),
     m_disableSchemaValidationHasBeenSet(false),
+    m_importInfoHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protocolType(ProtocolType::NOT_SET),
     m_protocolTypeHasBeenSet(false),
     m_routeSelectionExpressionHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_warningsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_warningsHasBeenSet(false)
 {
 }
 
@@ -50,17 +52,19 @@ Api::Api(JsonView jsonValue) :
     m_apiEndpointHasBeenSet(false),
     m_apiIdHasBeenSet(false),
     m_apiKeySelectionExpressionHasBeenSet(false),
+    m_corsConfigurationHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_disableSchemaValidation(false),
     m_disableSchemaValidationHasBeenSet(false),
+    m_importInfoHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_protocolType(ProtocolType::NOT_SET),
     m_protocolTypeHasBeenSet(false),
     m_routeSelectionExpressionHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_warningsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_warningsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +92,13 @@ Api& Api::operator =(JsonView jsonValue)
     m_apiKeySelectionExpressionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("corsConfiguration"))
+  {
+    m_corsConfiguration = jsonValue.GetObject("corsConfiguration");
+
+    m_corsConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetString("createdDate");
@@ -107,6 +118,16 @@ Api& Api::operator =(JsonView jsonValue)
     m_disableSchemaValidation = jsonValue.GetBool("disableSchemaValidation");
 
     m_disableSchemaValidationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("importInfo"))
+  {
+    Array<JsonView> importInfoJsonList = jsonValue.GetArray("importInfo");
+    for(unsigned importInfoIndex = 0; importInfoIndex < importInfoJsonList.GetLength(); ++importInfoIndex)
+    {
+      m_importInfo.push_back(importInfoJsonList[importInfoIndex].AsString());
+    }
+    m_importInfoHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -130,6 +151,16 @@ Api& Api::operator =(JsonView jsonValue)
     m_routeSelectionExpressionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
@@ -145,16 +176,6 @@ Api& Api::operator =(JsonView jsonValue)
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
     }
     m_warningsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("tags"))
-  {
-    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
-      m_tags[tagsItem.first] = tagsItem.second.AsString();
-    }
-    m_tagsHasBeenSet = true;
   }
 
   return *this;
@@ -182,6 +203,12 @@ JsonValue Api::Jsonize() const
 
   }
 
+  if(m_corsConfigurationHasBeenSet)
+  {
+   payload.WithObject("corsConfiguration", m_corsConfiguration.Jsonize());
+
+  }
+
   if(m_createdDateHasBeenSet)
   {
    payload.WithString("createdDate", m_createdDate.ToGmtString(DateFormat::ISO_8601));
@@ -196,6 +223,17 @@ JsonValue Api::Jsonize() const
   if(m_disableSchemaValidationHasBeenSet)
   {
    payload.WithBool("disableSchemaValidation", m_disableSchemaValidation);
+
+  }
+
+  if(m_importInfoHasBeenSet)
+  {
+   Array<JsonValue> importInfoJsonList(m_importInfo.size());
+   for(unsigned importInfoIndex = 0; importInfoIndex < importInfoJsonList.GetLength(); ++importInfoIndex)
+   {
+     importInfoJsonList[importInfoIndex].AsString(m_importInfo[importInfoIndex]);
+   }
+   payload.WithArray("importInfo", std::move(importInfoJsonList));
 
   }
 
@@ -216,6 +254,17 @@ JsonValue Api::Jsonize() const
 
   }
 
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
   if(m_versionHasBeenSet)
   {
    payload.WithString("version", m_version);
@@ -230,17 +279,6 @@ JsonValue Api::Jsonize() const
      warningsJsonList[warningsIndex].AsString(m_warnings[warningsIndex]);
    }
    payload.WithArray("warnings", std::move(warningsJsonList));
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   JsonValue tagsJsonMap;
-   for(auto& tagsItem : m_tags)
-   {
-     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
-   }
-   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

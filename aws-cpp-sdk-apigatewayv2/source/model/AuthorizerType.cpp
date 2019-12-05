@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int REQUEST_HASH = HashingUtils::HashString("REQUEST");
+        static const int JWT_HASH = HashingUtils::HashString("JWT");
 
 
         AuthorizerType GetAuthorizerTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == REQUEST_HASH)
           {
             return AuthorizerType::REQUEST;
+          }
+          else if (hashCode == JWT_HASH)
+          {
+            return AuthorizerType::JWT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case AuthorizerType::REQUEST:
             return "REQUEST";
+          case AuthorizerType::JWT:
+            return "JWT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -44,6 +44,7 @@
 #include <aws/apigatewayv2/model/DeleteApiRequest.h>
 #include <aws/apigatewayv2/model/DeleteApiMappingRequest.h>
 #include <aws/apigatewayv2/model/DeleteAuthorizerRequest.h>
+#include <aws/apigatewayv2/model/DeleteCorsConfigurationRequest.h>
 #include <aws/apigatewayv2/model/DeleteDeploymentRequest.h>
 #include <aws/apigatewayv2/model/DeleteDomainNameRequest.h>
 #include <aws/apigatewayv2/model/DeleteIntegrationRequest.h>
@@ -51,6 +52,7 @@
 #include <aws/apigatewayv2/model/DeleteModelRequest.h>
 #include <aws/apigatewayv2/model/DeleteRouteRequest.h>
 #include <aws/apigatewayv2/model/DeleteRouteResponseRequest.h>
+#include <aws/apigatewayv2/model/DeleteRouteSettingsRequest.h>
 #include <aws/apigatewayv2/model/DeleteStageRequest.h>
 #include <aws/apigatewayv2/model/GetApiRequest.h>
 #include <aws/apigatewayv2/model/GetApiMappingRequest.h>
@@ -76,6 +78,8 @@
 #include <aws/apigatewayv2/model/GetStageRequest.h>
 #include <aws/apigatewayv2/model/GetStagesRequest.h>
 #include <aws/apigatewayv2/model/GetTagsRequest.h>
+#include <aws/apigatewayv2/model/ImportApiRequest.h>
+#include <aws/apigatewayv2/model/ReimportApiRequest.h>
 #include <aws/apigatewayv2/model/TagResourceRequest.h>
 #include <aws/apigatewayv2/model/UntagResourceRequest.h>
 #include <aws/apigatewayv2/model/UpdateApiRequest.h>
@@ -761,6 +765,48 @@ void ApiGatewayV2Client::DeleteAuthorizerAsyncHelper(const DeleteAuthorizerReque
   handler(this, request, DeleteAuthorizer(request), context);
 }
 
+DeleteCorsConfigurationOutcome ApiGatewayV2Client::DeleteCorsConfiguration(const DeleteCorsConfigurationRequest& request) const
+{
+  if (!request.ApiIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCorsConfiguration", "Required field: ApiId, is not set");
+    return DeleteCorsConfigurationOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/apis/";
+  ss << request.GetApiId();
+  ss << "/cors";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteCorsConfigurationOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteCorsConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DeleteCorsConfigurationOutcomeCallable ApiGatewayV2Client::DeleteCorsConfigurationCallable(const DeleteCorsConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteCorsConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteCorsConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayV2Client::DeleteCorsConfigurationAsync(const DeleteCorsConfigurationRequest& request, const DeleteCorsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteCorsConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayV2Client::DeleteCorsConfigurationAsyncHelper(const DeleteCorsConfigurationRequest& request, const DeleteCorsConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteCorsConfiguration(request), context);
+}
+
 DeleteDeploymentOutcome ApiGatewayV2Client::DeleteDeployment(const DeleteDeploymentRequest& request) const
 {
   if (!request.ApiIdHasBeenSet())
@@ -1102,6 +1148,61 @@ void ApiGatewayV2Client::DeleteRouteResponseAsync(const DeleteRouteResponseReque
 void ApiGatewayV2Client::DeleteRouteResponseAsyncHelper(const DeleteRouteResponseRequest& request, const DeleteRouteResponseResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteRouteResponse(request), context);
+}
+
+DeleteRouteSettingsOutcome ApiGatewayV2Client::DeleteRouteSettings(const DeleteRouteSettingsRequest& request) const
+{
+  if (!request.ApiIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRouteSettings", "Required field: ApiId, is not set");
+    return DeleteRouteSettingsOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
+  }
+  if (!request.RouteKeyHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRouteSettings", "Required field: RouteKey, is not set");
+    return DeleteRouteSettingsOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RouteKey]", false));
+  }
+  if (!request.StageNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRouteSettings", "Required field: StageName, is not set");
+    return DeleteRouteSettingsOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StageName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/apis/";
+  ss << request.GetApiId();
+  ss << "/stages/";
+  ss << request.GetStageName();
+  ss << "/routesettings/";
+  ss << request.GetRouteKey();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteRouteSettingsOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteRouteSettingsOutcome(outcome.GetError());
+  }
+}
+
+DeleteRouteSettingsOutcomeCallable ApiGatewayV2Client::DeleteRouteSettingsCallable(const DeleteRouteSettingsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteRouteSettingsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteRouteSettings(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayV2Client::DeleteRouteSettingsAsync(const DeleteRouteSettingsRequest& request, const DeleteRouteSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteRouteSettingsAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayV2Client::DeleteRouteSettingsAsyncHelper(const DeleteRouteSettingsRequest& request, const DeleteRouteSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteRouteSettings(request), context);
 }
 
 DeleteStageOutcome ApiGatewayV2Client::DeleteStage(const DeleteStageRequest& request) const
@@ -2230,6 +2331,82 @@ void ApiGatewayV2Client::GetTagsAsync(const GetTagsRequest& request, const GetTa
 void ApiGatewayV2Client::GetTagsAsyncHelper(const GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetTags(request), context);
+}
+
+ImportApiOutcome ApiGatewayV2Client::ImportApi(const ImportApiRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/apis";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ImportApiOutcome(ImportApiResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ImportApiOutcome(outcome.GetError());
+  }
+}
+
+ImportApiOutcomeCallable ApiGatewayV2Client::ImportApiCallable(const ImportApiRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportApi(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayV2Client::ImportApiAsync(const ImportApiRequest& request, const ImportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportApiAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayV2Client::ImportApiAsyncHelper(const ImportApiRequest& request, const ImportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportApi(request), context);
+}
+
+ReimportApiOutcome ApiGatewayV2Client::ReimportApi(const ReimportApiRequest& request) const
+{
+  if (!request.ApiIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ReimportApi", "Required field: ApiId, is not set");
+    return ReimportApiOutcome(Aws::Client::AWSError<ApiGatewayV2Errors>(ApiGatewayV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v2/apis/";
+  ss << request.GetApiId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ReimportApiOutcome(ReimportApiResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ReimportApiOutcome(outcome.GetError());
+  }
+}
+
+ReimportApiOutcomeCallable ApiGatewayV2Client::ReimportApiCallable(const ReimportApiRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ReimportApiOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ReimportApi(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApiGatewayV2Client::ReimportApiAsync(const ReimportApiRequest& request, const ReimportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ReimportApiAsyncHelper( request, handler, context ); } );
+}
+
+void ApiGatewayV2Client::ReimportApiAsyncHelper(const ReimportApiRequest& request, const ReimportApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ReimportApi(request), context);
 }
 
 TagResourceOutcome ApiGatewayV2Client::TagResource(const TagResourceRequest& request) const

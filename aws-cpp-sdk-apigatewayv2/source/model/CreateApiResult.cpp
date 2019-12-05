@@ -60,6 +60,12 @@ CreateApiResult& CreateApiResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("corsConfiguration"))
+  {
+    m_corsConfiguration = jsonValue.GetObject("corsConfiguration");
+
+  }
+
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetString("createdDate");
@@ -76,6 +82,15 @@ CreateApiResult& CreateApiResult::operator =(const Aws::AmazonWebServiceResult<J
   {
     m_disableSchemaValidation = jsonValue.GetBool("disableSchemaValidation");
 
+  }
+
+  if(jsonValue.ValueExists("importInfo"))
+  {
+    Array<JsonView> importInfoJsonList = jsonValue.GetArray("importInfo");
+    for(unsigned importInfoIndex = 0; importInfoIndex < importInfoJsonList.GetLength(); ++importInfoIndex)
+    {
+      m_importInfo.push_back(importInfoJsonList[importInfoIndex].AsString());
+    }
   }
 
   if(jsonValue.ValueExists("name"))
@@ -96,6 +111,15 @@ CreateApiResult& CreateApiResult::operator =(const Aws::AmazonWebServiceResult<J
 
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+  }
+
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
@@ -108,15 +132,6 @@ CreateApiResult& CreateApiResult::operator =(const Aws::AmazonWebServiceResult<J
     for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
     {
       m_warnings.push_back(warningsJsonList[warningsIndex].AsString());
-    }
-  }
-
-  if(jsonValue.ValueExists("tags"))
-  {
-    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
-    for(auto& tagsItem : tagsJsonMap)
-    {
-      m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
   }
 

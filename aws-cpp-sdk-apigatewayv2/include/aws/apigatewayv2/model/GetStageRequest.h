@@ -84,42 +84,50 @@ namespace Model
 
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline GetStageRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline GetStageRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline GetStageRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 

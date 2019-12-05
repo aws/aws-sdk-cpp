@@ -30,6 +30,9 @@ namespace Model
 {
 
   /**
+   * <p>Updates a Stage.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateStageRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAYV2_API UpdateStageRequest : public ApiGatewayV2Request
   {
@@ -118,6 +121,31 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether updates to an API automatically trigger a new deployment.
+     * The default value is false.</p>
+     */
+    inline bool GetAutoDeploy() const{ return m_autoDeploy; }
+
+    /**
+     * <p>Specifies whether updates to an API automatically trigger a new deployment.
+     * The default value is false.</p>
+     */
+    inline bool AutoDeployHasBeenSet() const { return m_autoDeployHasBeenSet; }
+
+    /**
+     * <p>Specifies whether updates to an API automatically trigger a new deployment.
+     * The default value is false.</p>
+     */
+    inline void SetAutoDeploy(bool value) { m_autoDeployHasBeenSet = true; m_autoDeploy = value; }
+
+    /**
+     * <p>Specifies whether updates to an API automatically trigger a new deployment.
+     * The default value is false.</p>
+     */
+    inline UpdateStageRequest& WithAutoDeploy(bool value) { SetAutoDeploy(value); return *this;}
+
+
+    /**
      * <p>The identifier of a client certificate for a Stage.</p>
      */
     inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
@@ -190,42 +218,50 @@ namespace Model
 
 
     /**
-     * <p>The deployment identifier for the API stage.</p>
+     * <p>The deployment identifier for the API stage. Can't be updated if autoDeploy
+     * is enabled.</p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * <p>The deployment identifier for the API stage.</p>
+     * <p>The deployment identifier for the API stage. Can't be updated if autoDeploy
+     * is enabled.</p>
      */
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
 
     /**
-     * <p>The deployment identifier for the API stage.</p>
+     * <p>The deployment identifier for the API stage. Can't be updated if autoDeploy
+     * is enabled.</p>
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * <p>The deployment identifier for the API stage.</p>
+     * <p>The deployment identifier for the API stage. Can't be updated if autoDeploy
+     * is enabled.</p>
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
-     * <p>The deployment identifier for the API stage.</p>
+     * <p>The deployment identifier for the API stage. Can't be updated if autoDeploy
+     * is enabled.</p>
      */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
     /**
-     * <p>The deployment identifier for the API stage.</p>
+     * <p>The deployment identifier for the API stage. Can't be updated if autoDeploy
+     * is enabled.</p>
      */
     inline UpdateStageRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>The deployment identifier for the API stage.</p>
+     * <p>The deployment identifier for the API stage. Can't be updated if autoDeploy
+     * is enabled.</p>
      */
     inline UpdateStageRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * <p>The deployment identifier for the API stage.</p>
+     * <p>The deployment identifier for the API stage. Can't be updated if autoDeploy
+     * is enabled.</p>
      */
     inline UpdateStageRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
@@ -333,160 +369,142 @@ namespace Model
 
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline UpdateStageRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline UpdateStageRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
 
     /**
-     * <p>The stage name.</p>
+     * <p>The stage name. Stage names can only contain alphanumeric characters,
+     * hyphens, and underscores. Maximum length is 128 characters.</p>
      */
     inline UpdateStageRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
 
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names
- can have
+     * <p>A map that defines the stage variables for a Stage. Variable names can have
      * alphanumeric and underscore characters, and the values must match
-
-     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     * [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStageVariables() const{ return m_stageVariables; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names
- can have
+     * <p>A map that defines the stage variables for a Stage. Variable names can have
      * alphanumeric and underscore characters, and the values must match
-
-     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     * [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.</p>
      */
     inline bool StageVariablesHasBeenSet() const { return m_stageVariablesHasBeenSet; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names
- can have
+     * <p>A map that defines the stage variables for a Stage. Variable names can have
      * alphanumeric and underscore characters, and the values must match
-
-     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     * [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.</p>
      */
     inline void SetStageVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_stageVariablesHasBeenSet = true; m_stageVariables = value; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names
- can have
+     * <p>A map that defines the stage variables for a Stage. Variable names can have
      * alphanumeric and underscore characters, and the values must match
-
-     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     * [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.</p>
      */
     inline void SetStageVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables = std::move(value); }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names
- can have
+     * <p>A map that defines the stage variables for a Stage. Variable names can have
      * alphanumeric and underscore characters, and the values must match
-
-     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     * [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.</p>
      */
     inline UpdateStageRequest& WithStageVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetStageVariables(value); return *this;}
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names
- can have
+     * <p>A map that defines the stage variables for a Stage. Variable names can have
      * alphanumeric and underscore characters, and the values must match
-
-     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     * [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.</p>
      */
     inline UpdateStageRequest& WithStageVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetStageVariables(std::move(value)); return *this;}
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names
- can have
+     * <p>A map that defines the stage variables for a Stage. Variable names can have
      * alphanumeric and underscore characters, and the values must match
-
-     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     * [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.</p>
      */
     inline UpdateStageRequest& AddStageVariables(const Aws::String& key, const Aws::String& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, value); return *this; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names
- can have
+     * <p>A map that defines the stage variables for a Stage. Variable names can have
      * alphanumeric and underscore characters, and the values must match
-
-     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     * [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.</p>
      */
     inline UpdateStageRequest& AddStageVariables(Aws::String&& key, const Aws::String& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names
- can have
+     * <p>A map that defines the stage variables for a Stage. Variable names can have
      * alphanumeric and underscore characters, and the values must match
-
-     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     * [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.</p>
      */
     inline UpdateStageRequest& AddStageVariables(const Aws::String& key, Aws::String&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names
- can have
+     * <p>A map that defines the stage variables for a Stage. Variable names can have
      * alphanumeric and underscore characters, and the values must match
-
-     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     * [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.</p>
      */
     inline UpdateStageRequest& AddStageVariables(Aws::String&& key, Aws::String&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names
- can have
+     * <p>A map that defines the stage variables for a Stage. Variable names can have
      * alphanumeric and underscore characters, and the values must match
-
-     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     * [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.</p>
      */
     inline UpdateStageRequest& AddStageVariables(const char* key, Aws::String&& value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names
- can have
+     * <p>A map that defines the stage variables for a Stage. Variable names can have
      * alphanumeric and underscore characters, and the values must match
-
-     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     * [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.</p>
      */
     inline UpdateStageRequest& AddStageVariables(Aws::String&& key, const char* value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A map that defines the stage variables for a Stage. Variable names
- can have
+     * <p>A map that defines the stage variables for a Stage. Variable names can have
      * alphanumeric and underscore characters, and the values must match
-
-     * [A-Za-z0-9-._~:/?#&=,]+.</p>
+     * [A-Za-z0-9-._~:/?#&amp;=,]+. Supported only for WebSocket APIs.</p>
      */
     inline UpdateStageRequest& AddStageVariables(const char* key, const char* value) { m_stageVariablesHasBeenSet = true; m_stageVariables.emplace(key, value); return *this; }
 
@@ -497,6 +515,9 @@ namespace Model
 
     Aws::String m_apiId;
     bool m_apiIdHasBeenSet;
+
+    bool m_autoDeploy;
+    bool m_autoDeployHasBeenSet;
 
     Aws::String m_clientCertificateId;
     bool m_clientCertificateIdHasBeenSet;

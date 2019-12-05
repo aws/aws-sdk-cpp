@@ -27,6 +27,9 @@ namespace Model
 {
 
   /**
+   * <p>Updates an ApiMapping.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/UpdateApiMappingRequest">AWS
+   * API Reference</a></p>
    */
   class AWS_APIGATEWAYV2_API UpdateApiMappingRequest : public ApiGatewayV2Request
   {

@@ -33,8 +33,7 @@ namespace Model
 
   /**
    * <p>Validation constraints imposed on parameters of a request (path, query
-   * string,
- headers).</p><p><h3>See Also:</h3>   <a
+   * string, headers).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/apigatewayv2-2018-11-29/ParameterConstraints">AWS
    * API Reference</a></p>
    */

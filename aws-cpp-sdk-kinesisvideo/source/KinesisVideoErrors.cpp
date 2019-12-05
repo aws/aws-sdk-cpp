@@ -31,8 +31,9 @@ namespace KinesisVideoErrorMapper
 static const int VERSION_MISMATCH_HASH = HashingUtils::HashString("VersionMismatchException");
 static const int INVALID_DEVICE_HASH = HashingUtils::HashString("InvalidDeviceException");
 static const int TAGS_PER_RESOURCE_EXCEEDED_LIMIT_HASH = HashingUtils::HashString("TagsPerResourceExceededLimitException");
-static const int ACCOUNT_STREAM_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccountStreamLimitExceededException");
 static const int INVALID_RESOURCE_FORMAT_HASH = HashingUtils::HashString("InvalidResourceFormatException");
+static const int ACCOUNT_STREAM_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccountStreamLimitExceededException");
+static const int ACCOUNT_CHANNEL_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("AccountChannelLimitExceededException");
 static const int DEVICE_STREAM_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DeviceStreamLimitExceededException");
 static const int NOT_AUTHORIZED_HASH = HashingUtils::HashString("NotAuthorizedException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
@@ -56,13 +57,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::TAGS_PER_RESOURCE_EXCEEDED_LIMIT), false);
   }
+  else if (hashCode == INVALID_RESOURCE_FORMAT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::INVALID_RESOURCE_FORMAT), false);
+  }
   else if (hashCode == ACCOUNT_STREAM_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::ACCOUNT_STREAM_LIMIT_EXCEEDED), false);
   }
-  else if (hashCode == INVALID_RESOURCE_FORMAT_HASH)
+  else if (hashCode == ACCOUNT_CHANNEL_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::INVALID_RESOURCE_FORMAT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KinesisVideoErrors::ACCOUNT_CHANNEL_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == DEVICE_STREAM_LIMIT_EXCEEDED_HASH)
   {

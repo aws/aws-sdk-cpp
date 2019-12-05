@@ -30,15 +30,24 @@
 #include <aws/kinesisvideo/KinesisVideoClient.h>
 #include <aws/kinesisvideo/KinesisVideoEndpoint.h>
 #include <aws/kinesisvideo/KinesisVideoErrorMarshaller.h>
+#include <aws/kinesisvideo/model/CreateSignalingChannelRequest.h>
 #include <aws/kinesisvideo/model/CreateStreamRequest.h>
+#include <aws/kinesisvideo/model/DeleteSignalingChannelRequest.h>
 #include <aws/kinesisvideo/model/DeleteStreamRequest.h>
+#include <aws/kinesisvideo/model/DescribeSignalingChannelRequest.h>
 #include <aws/kinesisvideo/model/DescribeStreamRequest.h>
 #include <aws/kinesisvideo/model/GetDataEndpointRequest.h>
+#include <aws/kinesisvideo/model/GetSignalingChannelEndpointRequest.h>
+#include <aws/kinesisvideo/model/ListSignalingChannelsRequest.h>
 #include <aws/kinesisvideo/model/ListStreamsRequest.h>
+#include <aws/kinesisvideo/model/ListTagsForResourceRequest.h>
 #include <aws/kinesisvideo/model/ListTagsForStreamRequest.h>
+#include <aws/kinesisvideo/model/TagResourceRequest.h>
 #include <aws/kinesisvideo/model/TagStreamRequest.h>
+#include <aws/kinesisvideo/model/UntagResourceRequest.h>
 #include <aws/kinesisvideo/model/UntagStreamRequest.h>
 #include <aws/kinesisvideo/model/UpdateDataRetentionRequest.h>
+#include <aws/kinesisvideo/model/UpdateSignalingChannelRequest.h>
 #include <aws/kinesisvideo/model/UpdateStreamRequest.h>
 
 using namespace Aws;
@@ -113,6 +122,41 @@ void KinesisVideoClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CreateSignalingChannelOutcome KinesisVideoClient::CreateSignalingChannel(const CreateSignalingChannelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/createSignalingChannel";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateSignalingChannelOutcome(CreateSignalingChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateSignalingChannelOutcome(outcome.GetError());
+  }
+}
+
+CreateSignalingChannelOutcomeCallable KinesisVideoClient::CreateSignalingChannelCallable(const CreateSignalingChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateSignalingChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateSignalingChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::CreateSignalingChannelAsync(const CreateSignalingChannelRequest& request, const CreateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateSignalingChannelAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisVideoClient::CreateSignalingChannelAsyncHelper(const CreateSignalingChannelRequest& request, const CreateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateSignalingChannel(request), context);
+}
+
 CreateStreamOutcome KinesisVideoClient::CreateStream(const CreateStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -148,6 +192,41 @@ void KinesisVideoClient::CreateStreamAsyncHelper(const CreateStreamRequest& requ
   handler(this, request, CreateStream(request), context);
 }
 
+DeleteSignalingChannelOutcome KinesisVideoClient::DeleteSignalingChannel(const DeleteSignalingChannelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/deleteSignalingChannel";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteSignalingChannelOutcome(DeleteSignalingChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteSignalingChannelOutcome(outcome.GetError());
+  }
+}
+
+DeleteSignalingChannelOutcomeCallable KinesisVideoClient::DeleteSignalingChannelCallable(const DeleteSignalingChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSignalingChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSignalingChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::DeleteSignalingChannelAsync(const DeleteSignalingChannelRequest& request, const DeleteSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSignalingChannelAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisVideoClient::DeleteSignalingChannelAsyncHelper(const DeleteSignalingChannelRequest& request, const DeleteSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSignalingChannel(request), context);
+}
+
 DeleteStreamOutcome KinesisVideoClient::DeleteStream(const DeleteStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -181,6 +260,41 @@ void KinesisVideoClient::DeleteStreamAsync(const DeleteStreamRequest& request, c
 void KinesisVideoClient::DeleteStreamAsyncHelper(const DeleteStreamRequest& request, const DeleteStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DeleteStream(request), context);
+}
+
+DescribeSignalingChannelOutcome KinesisVideoClient::DescribeSignalingChannel(const DescribeSignalingChannelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/describeSignalingChannel";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeSignalingChannelOutcome(DescribeSignalingChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeSignalingChannelOutcome(outcome.GetError());
+  }
+}
+
+DescribeSignalingChannelOutcomeCallable KinesisVideoClient::DescribeSignalingChannelCallable(const DescribeSignalingChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeSignalingChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeSignalingChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::DescribeSignalingChannelAsync(const DescribeSignalingChannelRequest& request, const DescribeSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeSignalingChannelAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisVideoClient::DescribeSignalingChannelAsyncHelper(const DescribeSignalingChannelRequest& request, const DescribeSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeSignalingChannel(request), context);
 }
 
 DescribeStreamOutcome KinesisVideoClient::DescribeStream(const DescribeStreamRequest& request) const
@@ -253,6 +367,76 @@ void KinesisVideoClient::GetDataEndpointAsyncHelper(const GetDataEndpointRequest
   handler(this, request, GetDataEndpoint(request), context);
 }
 
+GetSignalingChannelEndpointOutcome KinesisVideoClient::GetSignalingChannelEndpoint(const GetSignalingChannelEndpointRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/getSignalingChannelEndpoint";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetSignalingChannelEndpointOutcome(GetSignalingChannelEndpointResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetSignalingChannelEndpointOutcome(outcome.GetError());
+  }
+}
+
+GetSignalingChannelEndpointOutcomeCallable KinesisVideoClient::GetSignalingChannelEndpointCallable(const GetSignalingChannelEndpointRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetSignalingChannelEndpointOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetSignalingChannelEndpoint(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::GetSignalingChannelEndpointAsync(const GetSignalingChannelEndpointRequest& request, const GetSignalingChannelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetSignalingChannelEndpointAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisVideoClient::GetSignalingChannelEndpointAsyncHelper(const GetSignalingChannelEndpointRequest& request, const GetSignalingChannelEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetSignalingChannelEndpoint(request), context);
+}
+
+ListSignalingChannelsOutcome KinesisVideoClient::ListSignalingChannels(const ListSignalingChannelsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/listSignalingChannels";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListSignalingChannelsOutcome(ListSignalingChannelsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListSignalingChannelsOutcome(outcome.GetError());
+  }
+}
+
+ListSignalingChannelsOutcomeCallable KinesisVideoClient::ListSignalingChannelsCallable(const ListSignalingChannelsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSignalingChannelsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSignalingChannels(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::ListSignalingChannelsAsync(const ListSignalingChannelsRequest& request, const ListSignalingChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSignalingChannelsAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisVideoClient::ListSignalingChannelsAsyncHelper(const ListSignalingChannelsRequest& request, const ListSignalingChannelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSignalingChannels(request), context);
+}
+
 ListStreamsOutcome KinesisVideoClient::ListStreams(const ListStreamsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -286,6 +470,41 @@ void KinesisVideoClient::ListStreamsAsync(const ListStreamsRequest& request, con
 void KinesisVideoClient::ListStreamsAsyncHelper(const ListStreamsRequest& request, const ListStreamsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListStreams(request), context);
+}
+
+ListTagsForResourceOutcome KinesisVideoClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/ListTagsForResource";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForResourceOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForResourceOutcomeCallable KinesisVideoClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisVideoClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
 }
 
 ListTagsForStreamOutcome KinesisVideoClient::ListTagsForStream(const ListTagsForStreamRequest& request) const
@@ -323,6 +542,41 @@ void KinesisVideoClient::ListTagsForStreamAsyncHelper(const ListTagsForStreamReq
   handler(this, request, ListTagsForStream(request), context);
 }
 
+TagResourceOutcome KinesisVideoClient::TagResource(const TagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/TagResource";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable KinesisVideoClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisVideoClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
 TagStreamOutcome KinesisVideoClient::TagStream(const TagStreamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -356,6 +610,41 @@ void KinesisVideoClient::TagStreamAsync(const TagStreamRequest& request, const T
 void KinesisVideoClient::TagStreamAsyncHelper(const TagStreamRequest& request, const TagStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, TagStream(request), context);
+}
+
+UntagResourceOutcome KinesisVideoClient::UntagResource(const UntagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/UntagResource";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable KinesisVideoClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisVideoClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
 }
 
 UntagStreamOutcome KinesisVideoClient::UntagStream(const UntagStreamRequest& request) const
@@ -426,6 +715,41 @@ void KinesisVideoClient::UpdateDataRetentionAsync(const UpdateDataRetentionReque
 void KinesisVideoClient::UpdateDataRetentionAsyncHelper(const UpdateDataRetentionRequest& request, const UpdateDataRetentionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateDataRetention(request), context);
+}
+
+UpdateSignalingChannelOutcome KinesisVideoClient::UpdateSignalingChannel(const UpdateSignalingChannelRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/updateSignalingChannel";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateSignalingChannelOutcome(UpdateSignalingChannelResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateSignalingChannelOutcome(outcome.GetError());
+  }
+}
+
+UpdateSignalingChannelOutcomeCallable KinesisVideoClient::UpdateSignalingChannelCallable(const UpdateSignalingChannelRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateSignalingChannelOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateSignalingChannel(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KinesisVideoClient::UpdateSignalingChannelAsync(const UpdateSignalingChannelRequest& request, const UpdateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateSignalingChannelAsyncHelper( request, handler, context ); } );
+}
+
+void KinesisVideoClient::UpdateSignalingChannelAsyncHelper(const UpdateSignalingChannelRequest& request, const UpdateSignalingChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateSignalingChannel(request), context);
 }
 
 UpdateStreamOutcome KinesisVideoClient::UpdateStream(const UpdateStreamRequest& request) const

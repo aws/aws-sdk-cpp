@@ -38,8 +38,8 @@ Authorizer::Authorizer() :
     m_authorizerUriHasBeenSet(false),
     m_identitySourceHasBeenSet(false),
     m_identityValidationExpressionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_providerArnsHasBeenSet(false)
+    m_jwtConfigurationHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -53,8 +53,8 @@ Authorizer::Authorizer(JsonView jsonValue) :
     m_authorizerUriHasBeenSet(false),
     m_identitySourceHasBeenSet(false),
     m_identityValidationExpressionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_providerArnsHasBeenSet(false)
+    m_jwtConfigurationHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -113,21 +113,18 @@ Authorizer& Authorizer::operator =(JsonView jsonValue)
     m_identityValidationExpressionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("jwtConfiguration"))
+  {
+    m_jwtConfiguration = jsonValue.GetObject("jwtConfiguration");
+
+    m_jwtConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("providerArns"))
-  {
-    Array<JsonView> providerArnsJsonList = jsonValue.GetArray("providerArns");
-    for(unsigned providerArnsIndex = 0; providerArnsIndex < providerArnsJsonList.GetLength(); ++providerArnsIndex)
-    {
-      m_providerArns.push_back(providerArnsJsonList[providerArnsIndex].AsString());
-    }
-    m_providerArnsHasBeenSet = true;
   }
 
   return *this;
@@ -183,20 +180,15 @@ JsonValue Authorizer::Jsonize() const
 
   }
 
-  if(m_nameHasBeenSet)
+  if(m_jwtConfigurationHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   payload.WithObject("jwtConfiguration", m_jwtConfiguration.Jsonize());
 
   }
 
-  if(m_providerArnsHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   Array<JsonValue> providerArnsJsonList(m_providerArns.size());
-   for(unsigned providerArnsIndex = 0; providerArnsIndex < providerArnsJsonList.GetLength(); ++providerArnsIndex)
-   {
-     providerArnsJsonList[providerArnsIndex].AsString(m_providerArns[providerArnsIndex]);
-   }
-   payload.WithArray("providerArns", std::move(providerArnsJsonList));
+   payload.WithString("name", m_name);
 
   }
 

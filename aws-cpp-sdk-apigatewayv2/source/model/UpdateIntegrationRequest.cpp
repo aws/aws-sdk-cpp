@@ -38,6 +38,7 @@ UpdateIntegrationRequest::UpdateIntegrationRequest() :
     m_integrationUriHasBeenSet(false),
     m_passthroughBehavior(PassthroughBehavior::NOT_SET),
     m_passthroughBehaviorHasBeenSet(false),
+    m_payloadFormatVersionHasBeenSet(false),
     m_requestParametersHasBeenSet(false),
     m_requestTemplatesHasBeenSet(false),
     m_templateSelectionExpressionHasBeenSet(false),
@@ -98,6 +99,12 @@ Aws::String UpdateIntegrationRequest::SerializePayload() const
   if(m_passthroughBehaviorHasBeenSet)
   {
    payload.WithString("passthroughBehavior", PassthroughBehaviorMapper::GetNameForPassthroughBehavior(m_passthroughBehavior));
+  }
+
+  if(m_payloadFormatVersionHasBeenSet)
+  {
+   payload.WithString("payloadFormatVersion", m_payloadFormatVersion);
+
   }
 
   if(m_requestParametersHasBeenSet)

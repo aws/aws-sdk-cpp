@@ -125,42 +125,42 @@ namespace Model
 
 
     /**
-     * The integration response ID.
+     * <p>The integration response ID.</p>
      */
     inline const Aws::String& GetIntegrationResponseId() const{ return m_integrationResponseId; }
 
     /**
-     * The integration response ID.
+     * <p>The integration response ID.</p>
      */
     inline bool IntegrationResponseIdHasBeenSet() const { return m_integrationResponseIdHasBeenSet; }
 
     /**
-     * The integration response ID.
+     * <p>The integration response ID.</p>
      */
     inline void SetIntegrationResponseId(const Aws::String& value) { m_integrationResponseIdHasBeenSet = true; m_integrationResponseId = value; }
 
     /**
-     * The integration response ID.
+     * <p>The integration response ID.</p>
      */
     inline void SetIntegrationResponseId(Aws::String&& value) { m_integrationResponseIdHasBeenSet = true; m_integrationResponseId = std::move(value); }
 
     /**
-     * The integration response ID.
+     * <p>The integration response ID.</p>
      */
     inline void SetIntegrationResponseId(const char* value) { m_integrationResponseIdHasBeenSet = true; m_integrationResponseId.assign(value); }
 
     /**
-     * The integration response ID.
+     * <p>The integration response ID.</p>
      */
     inline GetIntegrationResponseRequest& WithIntegrationResponseId(const Aws::String& value) { SetIntegrationResponseId(value); return *this;}
 
     /**
-     * The integration response ID.
+     * <p>The integration response ID.</p>
      */
     inline GetIntegrationResponseRequest& WithIntegrationResponseId(Aws::String&& value) { SetIntegrationResponseId(std::move(value)); return *this;}
 
     /**
-     * The integration response ID.
+     * <p>The integration response ID.</p>
      */
     inline GetIntegrationResponseRequest& WithIntegrationResponseId(const char* value) { SetIntegrationResponseId(value); return *this;}
 

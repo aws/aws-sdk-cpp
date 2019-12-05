@@ -25,11 +25,15 @@ using namespace Aws::Utils;
 UpdateApiRequest::UpdateApiRequest() : 
     m_apiIdHasBeenSet(false),
     m_apiKeySelectionExpressionHasBeenSet(false),
+    m_corsConfigurationHasBeenSet(false),
+    m_credentialsArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_disableSchemaValidation(false),
     m_disableSchemaValidationHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_routeKeyHasBeenSet(false),
     m_routeSelectionExpressionHasBeenSet(false),
+    m_targetHasBeenSet(false),
     m_versionHasBeenSet(false)
 {
 }
@@ -41,6 +45,18 @@ Aws::String UpdateApiRequest::SerializePayload() const
   if(m_apiKeySelectionExpressionHasBeenSet)
   {
    payload.WithString("apiKeySelectionExpression", m_apiKeySelectionExpression);
+
+  }
+
+  if(m_corsConfigurationHasBeenSet)
+  {
+   payload.WithObject("corsConfiguration", m_corsConfiguration.Jsonize());
+
+  }
+
+  if(m_credentialsArnHasBeenSet)
+  {
+   payload.WithString("credentialsArn", m_credentialsArn);
 
   }
 
@@ -62,9 +78,21 @@ Aws::String UpdateApiRequest::SerializePayload() const
 
   }
 
+  if(m_routeKeyHasBeenSet)
+  {
+   payload.WithString("routeKey", m_routeKey);
+
+  }
+
   if(m_routeSelectionExpressionHasBeenSet)
   {
    payload.WithString("routeSelectionExpression", m_routeSelectionExpression);
+
+  }
+
+  if(m_targetHasBeenSet)
+  {
+   payload.WithString("target", m_target);
 
   }
 

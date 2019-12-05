@@ -26,7 +26,8 @@ namespace Model
   enum class ProtocolType
   {
     NOT_SET,
-    WEBSOCKET
+    WEBSOCKET,
+    HTTP
   };
 
 namespace ProtocolTypeMapper

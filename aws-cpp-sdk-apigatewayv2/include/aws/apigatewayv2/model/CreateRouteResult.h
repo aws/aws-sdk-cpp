@@ -47,320 +47,265 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether an API key is required for this route.</p>
+     * <p>Specifies whether a route is managed by API Gateway. If you created an API
+     * using quick create, the $default route is managed by API Gateway. You can't
+     * modify the $default route key.</p>
+     */
+    inline bool GetApiGatewayManaged() const{ return m_apiGatewayManaged; }
+
+    /**
+     * <p>Specifies whether a route is managed by API Gateway. If you created an API
+     * using quick create, the $default route is managed by API Gateway. You can't
+     * modify the $default route key.</p>
+     */
+    inline void SetApiGatewayManaged(bool value) { m_apiGatewayManaged = value; }
+
+    /**
+     * <p>Specifies whether a route is managed by API Gateway. If you created an API
+     * using quick create, the $default route is managed by API Gateway. You can't
+     * modify the $default route key.</p>
+     */
+    inline CreateRouteResult& WithApiGatewayManaged(bool value) { SetApiGatewayManaged(value); return *this;}
+
+
+    /**
+     * <p>Specifies whether an API key is required for this route. Supported only for
+     * WebSocket APIs.</p>
      */
     inline bool GetApiKeyRequired() const{ return m_apiKeyRequired; }
 
     /**
-     * <p>Specifies whether an API key is required for this route.</p>
+     * <p>Specifies whether an API key is required for this route. Supported only for
+     * WebSocket APIs.</p>
      */
     inline void SetApiKeyRequired(bool value) { m_apiKeyRequired = value; }
 
     /**
-     * <p>Specifies whether an API key is required for this route.</p>
+     * <p>Specifies whether an API key is required for this route. Supported only for
+     * WebSocket APIs.</p>
      */
     inline CreateRouteResult& WithApiKeyRequired(bool value) { SetApiKeyRequired(value); return *this;}
 
 
     /**
      * <p>A list of authorization scopes configured on a route. The scopes are used
-     * with a
- COGNITO_USER_POOLS authorizer to authorize the method invocation. The
-     * authorization
- works by matching the route scopes against the scopes parsed from
-     * the access token in
- the incoming request. The method invocation is authorized
-     * if any route scope matches
- a claimed scope in the access token. Otherwise, the
-     * invocation is not authorized.
- When the route scope is configured, the client
-     * must provide an access token instead
- of an identity token for authorization
-     * purposes.</p>
+     * with a JWT authorizer to authorize the method invocation. The authorization
+     * works by matching the route scopes against the scopes parsed from the access
+     * token in the incoming request. The method invocation is authorized if any route
+     * scope matches a claimed scope in the access token. Otherwise, the invocation is
+     * not authorized. When the route scope is configured, the client must provide an
+     * access token instead of an identity token for authorization purposes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuthorizationScopes() const{ return m_authorizationScopes; }
 
     /**
      * <p>A list of authorization scopes configured on a route. The scopes are used
-     * with a
- COGNITO_USER_POOLS authorizer to authorize the method invocation. The
-     * authorization
- works by matching the route scopes against the scopes parsed from
-     * the access token in
- the incoming request. The method invocation is authorized
-     * if any route scope matches
- a claimed scope in the access token. Otherwise, the
-     * invocation is not authorized.
- When the route scope is configured, the client
-     * must provide an access token instead
- of an identity token for authorization
-     * purposes.</p>
+     * with a JWT authorizer to authorize the method invocation. The authorization
+     * works by matching the route scopes against the scopes parsed from the access
+     * token in the incoming request. The method invocation is authorized if any route
+     * scope matches a claimed scope in the access token. Otherwise, the invocation is
+     * not authorized. When the route scope is configured, the client must provide an
+     * access token instead of an identity token for authorization purposes.</p>
      */
     inline void SetAuthorizationScopes(const Aws::Vector<Aws::String>& value) { m_authorizationScopes = value; }
 
     /**
      * <p>A list of authorization scopes configured on a route. The scopes are used
-     * with a
- COGNITO_USER_POOLS authorizer to authorize the method invocation. The
-     * authorization
- works by matching the route scopes against the scopes parsed from
-     * the access token in
- the incoming request. The method invocation is authorized
-     * if any route scope matches
- a claimed scope in the access token. Otherwise, the
-     * invocation is not authorized.
- When the route scope is configured, the client
-     * must provide an access token instead
- of an identity token for authorization
-     * purposes.</p>
+     * with a JWT authorizer to authorize the method invocation. The authorization
+     * works by matching the route scopes against the scopes parsed from the access
+     * token in the incoming request. The method invocation is authorized if any route
+     * scope matches a claimed scope in the access token. Otherwise, the invocation is
+     * not authorized. When the route scope is configured, the client must provide an
+     * access token instead of an identity token for authorization purposes.</p>
      */
     inline void SetAuthorizationScopes(Aws::Vector<Aws::String>&& value) { m_authorizationScopes = std::move(value); }
 
     /**
      * <p>A list of authorization scopes configured on a route. The scopes are used
-     * with a
- COGNITO_USER_POOLS authorizer to authorize the method invocation. The
-     * authorization
- works by matching the route scopes against the scopes parsed from
-     * the access token in
- the incoming request. The method invocation is authorized
-     * if any route scope matches
- a claimed scope in the access token. Otherwise, the
-     * invocation is not authorized.
- When the route scope is configured, the client
-     * must provide an access token instead
- of an identity token for authorization
-     * purposes.</p>
+     * with a JWT authorizer to authorize the method invocation. The authorization
+     * works by matching the route scopes against the scopes parsed from the access
+     * token in the incoming request. The method invocation is authorized if any route
+     * scope matches a claimed scope in the access token. Otherwise, the invocation is
+     * not authorized. When the route scope is configured, the client must provide an
+     * access token instead of an identity token for authorization purposes.</p>
      */
     inline CreateRouteResult& WithAuthorizationScopes(const Aws::Vector<Aws::String>& value) { SetAuthorizationScopes(value); return *this;}
 
     /**
      * <p>A list of authorization scopes configured on a route. The scopes are used
-     * with a
- COGNITO_USER_POOLS authorizer to authorize the method invocation. The
-     * authorization
- works by matching the route scopes against the scopes parsed from
-     * the access token in
- the incoming request. The method invocation is authorized
-     * if any route scope matches
- a claimed scope in the access token. Otherwise, the
-     * invocation is not authorized.
- When the route scope is configured, the client
-     * must provide an access token instead
- of an identity token for authorization
-     * purposes.</p>
+     * with a JWT authorizer to authorize the method invocation. The authorization
+     * works by matching the route scopes against the scopes parsed from the access
+     * token in the incoming request. The method invocation is authorized if any route
+     * scope matches a claimed scope in the access token. Otherwise, the invocation is
+     * not authorized. When the route scope is configured, the client must provide an
+     * access token instead of an identity token for authorization purposes.</p>
      */
     inline CreateRouteResult& WithAuthorizationScopes(Aws::Vector<Aws::String>&& value) { SetAuthorizationScopes(std::move(value)); return *this;}
 
     /**
      * <p>A list of authorization scopes configured on a route. The scopes are used
-     * with a
- COGNITO_USER_POOLS authorizer to authorize the method invocation. The
-     * authorization
- works by matching the route scopes against the scopes parsed from
-     * the access token in
- the incoming request. The method invocation is authorized
-     * if any route scope matches
- a claimed scope in the access token. Otherwise, the
-     * invocation is not authorized.
- When the route scope is configured, the client
-     * must provide an access token instead
- of an identity token for authorization
-     * purposes.</p>
+     * with a JWT authorizer to authorize the method invocation. The authorization
+     * works by matching the route scopes against the scopes parsed from the access
+     * token in the incoming request. The method invocation is authorized if any route
+     * scope matches a claimed scope in the access token. Otherwise, the invocation is
+     * not authorized. When the route scope is configured, the client must provide an
+     * access token instead of an identity token for authorization purposes.</p>
      */
     inline CreateRouteResult& AddAuthorizationScopes(const Aws::String& value) { m_authorizationScopes.push_back(value); return *this; }
 
     /**
      * <p>A list of authorization scopes configured on a route. The scopes are used
-     * with a
- COGNITO_USER_POOLS authorizer to authorize the method invocation. The
-     * authorization
- works by matching the route scopes against the scopes parsed from
-     * the access token in
- the incoming request. The method invocation is authorized
-     * if any route scope matches
- a claimed scope in the access token. Otherwise, the
-     * invocation is not authorized.
- When the route scope is configured, the client
-     * must provide an access token instead
- of an identity token for authorization
-     * purposes.</p>
+     * with a JWT authorizer to authorize the method invocation. The authorization
+     * works by matching the route scopes against the scopes parsed from the access
+     * token in the incoming request. The method invocation is authorized if any route
+     * scope matches a claimed scope in the access token. Otherwise, the invocation is
+     * not authorized. When the route scope is configured, the client must provide an
+     * access token instead of an identity token for authorization purposes.</p>
      */
     inline CreateRouteResult& AddAuthorizationScopes(Aws::String&& value) { m_authorizationScopes.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of authorization scopes configured on a route. The scopes are used
-     * with a
- COGNITO_USER_POOLS authorizer to authorize the method invocation. The
-     * authorization
- works by matching the route scopes against the scopes parsed from
-     * the access token in
- the incoming request. The method invocation is authorized
-     * if any route scope matches
- a claimed scope in the access token. Otherwise, the
-     * invocation is not authorized.
- When the route scope is configured, the client
-     * must provide an access token instead
- of an identity token for authorization
-     * purposes.</p>
+     * with a JWT authorizer to authorize the method invocation. The authorization
+     * works by matching the route scopes against the scopes parsed from the access
+     * token in the incoming request. The method invocation is authorized if any route
+     * scope matches a claimed scope in the access token. Otherwise, the invocation is
+     * not authorized. When the route scope is configured, the client must provide an
+     * access token instead of an identity token for authorization purposes.</p>
      */
     inline CreateRouteResult& AddAuthorizationScopes(const char* value) { m_authorizationScopes.push_back(value); return *this; }
 
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open
- access,
-     * AWS_IAM for using AWS IAM permissions, and CUSTOM
- for using a Lambda
-
-     * authorizer</p>
+     * <p>The authorization type for the route. For WebSocket APIs, valid values are
+     * NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for
+     * using a Lambda authorizer For HTTP APIs, valid values are NONE for open access,
+     * or JWT for using JSON Web Tokens.</p>
      */
     inline const AuthorizationType& GetAuthorizationType() const{ return m_authorizationType; }
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open
- access,
-     * AWS_IAM for using AWS IAM permissions, and CUSTOM
- for using a Lambda
-
-     * authorizer</p>
+     * <p>The authorization type for the route. For WebSocket APIs, valid values are
+     * NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for
+     * using a Lambda authorizer For HTTP APIs, valid values are NONE for open access,
+     * or JWT for using JSON Web Tokens.</p>
      */
     inline void SetAuthorizationType(const AuthorizationType& value) { m_authorizationType = value; }
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open
- access,
-     * AWS_IAM for using AWS IAM permissions, and CUSTOM
- for using a Lambda
-
-     * authorizer</p>
+     * <p>The authorization type for the route. For WebSocket APIs, valid values are
+     * NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for
+     * using a Lambda authorizer For HTTP APIs, valid values are NONE for open access,
+     * or JWT for using JSON Web Tokens.</p>
      */
     inline void SetAuthorizationType(AuthorizationType&& value) { m_authorizationType = std::move(value); }
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open
- access,
-     * AWS_IAM for using AWS IAM permissions, and CUSTOM
- for using a Lambda
-
-     * authorizer</p>
+     * <p>The authorization type for the route. For WebSocket APIs, valid values are
+     * NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for
+     * using a Lambda authorizer For HTTP APIs, valid values are NONE for open access,
+     * or JWT for using JSON Web Tokens.</p>
      */
     inline CreateRouteResult& WithAuthorizationType(const AuthorizationType& value) { SetAuthorizationType(value); return *this;}
 
     /**
-     * <p>The authorization type for the route. Valid values are NONE for open
- access,
-     * AWS_IAM for using AWS IAM permissions, and CUSTOM
- for using a Lambda
-
-     * authorizer</p>
+     * <p>The authorization type for the route. For WebSocket APIs, valid values are
+     * NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for
+     * using a Lambda authorizer For HTTP APIs, valid values are NONE for open access,
+     * or JWT for using JSON Web Tokens.</p>
      */
     inline CreateRouteResult& WithAuthorizationType(AuthorizationType&& value) { SetAuthorizationType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The identifier of the Authorizer resource to be associated with this
- route,
-     * if the authorizationType is CUSTOM
- . The authorizer identifier is generated by
-     * API Gateway
- when you created the authorizer.</p>
+     * <p>The identifier of the Authorizer resource to be associated with this route.
+     * The authorizer identifier is generated by API Gateway when you created the
+     * authorizer.</p>
      */
     inline const Aws::String& GetAuthorizerId() const{ return m_authorizerId; }
 
     /**
-     * <p>The identifier of the Authorizer resource to be associated with this
- route,
-     * if the authorizationType is CUSTOM
- . The authorizer identifier is generated by
-     * API Gateway
- when you created the authorizer.</p>
+     * <p>The identifier of the Authorizer resource to be associated with this route.
+     * The authorizer identifier is generated by API Gateway when you created the
+     * authorizer.</p>
      */
     inline void SetAuthorizerId(const Aws::String& value) { m_authorizerId = value; }
 
     /**
-     * <p>The identifier of the Authorizer resource to be associated with this
- route,
-     * if the authorizationType is CUSTOM
- . The authorizer identifier is generated by
-     * API Gateway
- when you created the authorizer.</p>
+     * <p>The identifier of the Authorizer resource to be associated with this route.
+     * The authorizer identifier is generated by API Gateway when you created the
+     * authorizer.</p>
      */
     inline void SetAuthorizerId(Aws::String&& value) { m_authorizerId = std::move(value); }
 
     /**
-     * <p>The identifier of the Authorizer resource to be associated with this
- route,
-     * if the authorizationType is CUSTOM
- . The authorizer identifier is generated by
-     * API Gateway
- when you created the authorizer.</p>
+     * <p>The identifier of the Authorizer resource to be associated with this route.
+     * The authorizer identifier is generated by API Gateway when you created the
+     * authorizer.</p>
      */
     inline void SetAuthorizerId(const char* value) { m_authorizerId.assign(value); }
 
     /**
-     * <p>The identifier of the Authorizer resource to be associated with this
- route,
-     * if the authorizationType is CUSTOM
- . The authorizer identifier is generated by
-     * API Gateway
- when you created the authorizer.</p>
+     * <p>The identifier of the Authorizer resource to be associated with this route.
+     * The authorizer identifier is generated by API Gateway when you created the
+     * authorizer.</p>
      */
     inline CreateRouteResult& WithAuthorizerId(const Aws::String& value) { SetAuthorizerId(value); return *this;}
 
     /**
-     * <p>The identifier of the Authorizer resource to be associated with this
- route,
-     * if the authorizationType is CUSTOM
- . The authorizer identifier is generated by
-     * API Gateway
- when you created the authorizer.</p>
+     * <p>The identifier of the Authorizer resource to be associated with this route.
+     * The authorizer identifier is generated by API Gateway when you created the
+     * authorizer.</p>
      */
     inline CreateRouteResult& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the Authorizer resource to be associated with this
- route,
-     * if the authorizationType is CUSTOM
- . The authorizer identifier is generated by
-     * API Gateway
- when you created the authorizer.</p>
+     * <p>The identifier of the Authorizer resource to be associated with this route.
+     * The authorizer identifier is generated by API Gateway when you created the
+     * authorizer.</p>
      */
     inline CreateRouteResult& WithAuthorizerId(const char* value) { SetAuthorizerId(value); return *this;}
 
 
     /**
-     * <p>The model selection expression for the route.</p>
+     * <p>The model selection expression for the route. Supported only for WebSocket
+     * APIs.</p>
      */
     inline const Aws::String& GetModelSelectionExpression() const{ return m_modelSelectionExpression; }
 
     /**
-     * <p>The model selection expression for the route.</p>
+     * <p>The model selection expression for the route. Supported only for WebSocket
+     * APIs.</p>
      */
     inline void SetModelSelectionExpression(const Aws::String& value) { m_modelSelectionExpression = value; }
 
     /**
-     * <p>The model selection expression for the route.</p>
+     * <p>The model selection expression for the route. Supported only for WebSocket
+     * APIs.</p>
      */
     inline void SetModelSelectionExpression(Aws::String&& value) { m_modelSelectionExpression = std::move(value); }
 
     /**
-     * <p>The model selection expression for the route.</p>
+     * <p>The model selection expression for the route. Supported only for WebSocket
+     * APIs.</p>
      */
     inline void SetModelSelectionExpression(const char* value) { m_modelSelectionExpression.assign(value); }
 
     /**
-     * <p>The model selection expression for the route.</p>
+     * <p>The model selection expression for the route. Supported only for WebSocket
+     * APIs.</p>
      */
     inline CreateRouteResult& WithModelSelectionExpression(const Aws::String& value) { SetModelSelectionExpression(value); return *this;}
 
     /**
-     * <p>The model selection expression for the route.</p>
+     * <p>The model selection expression for the route. Supported only for WebSocket
+     * APIs.</p>
      */
     inline CreateRouteResult& WithModelSelectionExpression(Aws::String&& value) { SetModelSelectionExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The model selection expression for the route.</p>
+     * <p>The model selection expression for the route. Supported only for WebSocket
+     * APIs.</p>
      */
     inline CreateRouteResult& WithModelSelectionExpression(const char* value) { SetModelSelectionExpression(value); return *this;}
 
@@ -402,118 +347,118 @@ namespace Model
 
 
     /**
-     * <p>The request models for the route.</p>
+     * <p>The request models for the route. Supported only for WebSocket APIs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestModels() const{ return m_requestModels; }
 
     /**
-     * <p>The request models for the route.</p>
+     * <p>The request models for the route. Supported only for WebSocket APIs.</p>
      */
     inline void SetRequestModels(const Aws::Map<Aws::String, Aws::String>& value) { m_requestModels = value; }
 
     /**
-     * <p>The request models for the route.</p>
+     * <p>The request models for the route. Supported only for WebSocket APIs.</p>
      */
     inline void SetRequestModels(Aws::Map<Aws::String, Aws::String>&& value) { m_requestModels = std::move(value); }
 
     /**
-     * <p>The request models for the route.</p>
+     * <p>The request models for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& WithRequestModels(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestModels(value); return *this;}
 
     /**
-     * <p>The request models for the route.</p>
+     * <p>The request models for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& WithRequestModels(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestModels(std::move(value)); return *this;}
 
     /**
-     * <p>The request models for the route.</p>
+     * <p>The request models for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& AddRequestModels(const Aws::String& key, const Aws::String& value) { m_requestModels.emplace(key, value); return *this; }
 
     /**
-     * <p>The request models for the route.</p>
+     * <p>The request models for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& AddRequestModels(Aws::String&& key, const Aws::String& value) { m_requestModels.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The request models for the route.</p>
+     * <p>The request models for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& AddRequestModels(const Aws::String& key, Aws::String&& value) { m_requestModels.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The request models for the route.</p>
+     * <p>The request models for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& AddRequestModels(Aws::String&& key, Aws::String&& value) { m_requestModels.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The request models for the route.</p>
+     * <p>The request models for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& AddRequestModels(const char* key, Aws::String&& value) { m_requestModels.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The request models for the route.</p>
+     * <p>The request models for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& AddRequestModels(Aws::String&& key, const char* value) { m_requestModels.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The request models for the route.</p>
+     * <p>The request models for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& AddRequestModels(const char* key, const char* value) { m_requestModels.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The request parameters for the route.</p>
+     * <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
      */
     inline const Aws::Map<Aws::String, ParameterConstraints>& GetRequestParameters() const{ return m_requestParameters; }
 
     /**
-     * <p>The request parameters for the route.</p>
+     * <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
      */
     inline void SetRequestParameters(const Aws::Map<Aws::String, ParameterConstraints>& value) { m_requestParameters = value; }
 
     /**
-     * <p>The request parameters for the route.</p>
+     * <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
      */
     inline void SetRequestParameters(Aws::Map<Aws::String, ParameterConstraints>&& value) { m_requestParameters = std::move(value); }
 
     /**
-     * <p>The request parameters for the route.</p>
+     * <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& WithRequestParameters(const Aws::Map<Aws::String, ParameterConstraints>& value) { SetRequestParameters(value); return *this;}
 
     /**
-     * <p>The request parameters for the route.</p>
+     * <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& WithRequestParameters(Aws::Map<Aws::String, ParameterConstraints>&& value) { SetRequestParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The request parameters for the route.</p>
+     * <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& AddRequestParameters(const Aws::String& key, const ParameterConstraints& value) { m_requestParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The request parameters for the route.</p>
+     * <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& AddRequestParameters(Aws::String&& key, const ParameterConstraints& value) { m_requestParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The request parameters for the route.</p>
+     * <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& AddRequestParameters(const Aws::String& key, ParameterConstraints&& value) { m_requestParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The request parameters for the route.</p>
+     * <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& AddRequestParameters(Aws::String&& key, ParameterConstraints&& value) { m_requestParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The request parameters for the route.</p>
+     * <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& AddRequestParameters(const char* key, ParameterConstraints&& value) { m_requestParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The request parameters for the route.</p>
+     * <p>The request parameters for the route. Supported only for WebSocket APIs.</p>
      */
     inline CreateRouteResult& AddRequestParameters(const char* key, const ParameterConstraints& value) { m_requestParameters.emplace(key, value); return *this; }
 
@@ -591,37 +536,44 @@ namespace Model
 
 
     /**
-     * <p>The route response selection expression for the route.</p>
+     * <p>The route response selection expression for the route. Supported only for
+     * WebSocket APIs.</p>
      */
     inline const Aws::String& GetRouteResponseSelectionExpression() const{ return m_routeResponseSelectionExpression; }
 
     /**
-     * <p>The route response selection expression for the route.</p>
+     * <p>The route response selection expression for the route. Supported only for
+     * WebSocket APIs.</p>
      */
     inline void SetRouteResponseSelectionExpression(const Aws::String& value) { m_routeResponseSelectionExpression = value; }
 
     /**
-     * <p>The route response selection expression for the route.</p>
+     * <p>The route response selection expression for the route. Supported only for
+     * WebSocket APIs.</p>
      */
     inline void SetRouteResponseSelectionExpression(Aws::String&& value) { m_routeResponseSelectionExpression = std::move(value); }
 
     /**
-     * <p>The route response selection expression for the route.</p>
+     * <p>The route response selection expression for the route. Supported only for
+     * WebSocket APIs.</p>
      */
     inline void SetRouteResponseSelectionExpression(const char* value) { m_routeResponseSelectionExpression.assign(value); }
 
     /**
-     * <p>The route response selection expression for the route.</p>
+     * <p>The route response selection expression for the route. Supported only for
+     * WebSocket APIs.</p>
      */
     inline CreateRouteResult& WithRouteResponseSelectionExpression(const Aws::String& value) { SetRouteResponseSelectionExpression(value); return *this;}
 
     /**
-     * <p>The route response selection expression for the route.</p>
+     * <p>The route response selection expression for the route. Supported only for
+     * WebSocket APIs.</p>
      */
     inline CreateRouteResult& WithRouteResponseSelectionExpression(Aws::String&& value) { SetRouteResponseSelectionExpression(std::move(value)); return *this;}
 
     /**
-     * <p>The route response selection expression for the route.</p>
+     * <p>The route response selection expression for the route. Supported only for
+     * WebSocket APIs.</p>
      */
     inline CreateRouteResult& WithRouteResponseSelectionExpression(const char* value) { SetRouteResponseSelectionExpression(value); return *this;}
 
@@ -662,6 +614,8 @@ namespace Model
     inline CreateRouteResult& WithTarget(const char* value) { SetTarget(value); return *this;}
 
   private:
+
+    bool m_apiGatewayManaged;
 
     bool m_apiKeyRequired;
 

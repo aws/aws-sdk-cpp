@@ -33,6 +33,7 @@ namespace Aws
         static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int AWS_IAM_HASH = HashingUtils::HashString("AWS_IAM");
         static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+        static const int JWT_HASH = HashingUtils::HashString("JWT");
 
 
         AuthorizationType GetAuthorizationTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == CUSTOM_HASH)
           {
             return AuthorizationType::CUSTOM;
+          }
+          else if (hashCode == JWT_HASH)
+          {
+            return AuthorizationType::JWT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "AWS_IAM";
           case AuthorizationType::CUSTOM:
             return "CUSTOM";
+          case AuthorizationType::JWT:
+            return "JWT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

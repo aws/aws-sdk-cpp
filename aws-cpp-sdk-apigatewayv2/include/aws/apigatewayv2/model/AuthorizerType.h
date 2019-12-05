@@ -26,7 +26,8 @@ namespace Model
   enum class AuthorizerType
   {
     NOT_SET,
-    REQUEST
+    REQUEST,
+    JWT
   };
 
 namespace AuthorizerTypeMapper
