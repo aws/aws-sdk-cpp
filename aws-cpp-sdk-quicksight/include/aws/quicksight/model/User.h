@@ -51,42 +51,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource name (ARN) for the user.</p>
+     * <p>The Amazon Resource Name (ARN) for the user.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource name (ARN) for the user.</p>
+     * <p>The Amazon Resource Name (ARN) for the user.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource name (ARN) for the user.</p>
+     * <p>The Amazon Resource Name (ARN) for the user.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource name (ARN) for the user.</p>
+     * <p>The Amazon Resource Name (ARN) for the user.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource name (ARN) for the user.</p>
+     * <p>The Amazon Resource Name (ARN) for the user.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource name (ARN) for the user.</p>
+     * <p>The Amazon Resource Name (ARN) for the user.</p>
      */
     inline User& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource name (ARN) for the user.</p>
+     * <p>The Amazon Resource Name (ARN) for the user.</p>
      */
     inline User& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource name (ARN) for the user.</p>
+     * <p>The Amazon Resource Name (ARN) for the user.</p>
      */
     inline User& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -284,30 +284,30 @@ namespace Model
 
 
     /**
-     * <p>Active status of user. When you create an Amazon QuickSight user that’s not
-     * an IAM user or an AD user, that user is inactive until they sign in and provide
-     * a password.</p>
+     * <p>The active status of user. When you create an Amazon QuickSight user that’s
+     * not an IAM user or an Active Directory user, that user is inactive until they
+     * sign in and provide a password.</p>
      */
     inline bool GetActive() const{ return m_active; }
 
     /**
-     * <p>Active status of user. When you create an Amazon QuickSight user that’s not
-     * an IAM user or an AD user, that user is inactive until they sign in and provide
-     * a password.</p>
+     * <p>The active status of user. When you create an Amazon QuickSight user that’s
+     * not an IAM user or an Active Directory user, that user is inactive until they
+     * sign in and provide a password.</p>
      */
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
 
     /**
-     * <p>Active status of user. When you create an Amazon QuickSight user that’s not
-     * an IAM user or an AD user, that user is inactive until they sign in and provide
-     * a password.</p>
+     * <p>The active status of user. When you create an Amazon QuickSight user that’s
+     * not an IAM user or an Active Directory user, that user is inactive until they
+     * sign in and provide a password.</p>
      */
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
 
     /**
-     * <p>Active status of user. When you create an Amazon QuickSight user that’s not
-     * an IAM user or an AD user, that user is inactive until they sign in and provide
-     * a password.</p>
+     * <p>The active status of user. When you create an Amazon QuickSight user that’s
+     * not an IAM user or an Active Directory user, that user is inactive until they
+     * sign in and provide a password.</p>
      */
     inline User& WithActive(bool value) { SetActive(value); return *this;}
 

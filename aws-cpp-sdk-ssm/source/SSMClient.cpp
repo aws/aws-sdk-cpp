@@ -87,6 +87,7 @@
 #include <aws/ssm/model/DescribePatchPropertiesRequest.h>
 #include <aws/ssm/model/DescribeSessionsRequest.h>
 #include <aws/ssm/model/GetAutomationExecutionRequest.h>
+#include <aws/ssm/model/GetCalendarStateRequest.h>
 #include <aws/ssm/model/GetCommandInvocationRequest.h>
 #include <aws/ssm/model/GetConnectionStatusRequest.h>
 #include <aws/ssm/model/GetDefaultPatchBaselineRequest.h>
@@ -2217,6 +2218,41 @@ void SSMClient::GetAutomationExecutionAsync(const GetAutomationExecutionRequest&
 void SSMClient::GetAutomationExecutionAsyncHelper(const GetAutomationExecutionRequest& request, const GetAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, GetAutomationExecution(request), context);
+}
+
+GetCalendarStateOutcome SSMClient::GetCalendarState(const GetCalendarStateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetCalendarStateOutcome(GetCalendarStateResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetCalendarStateOutcome(outcome.GetError());
+  }
+}
+
+GetCalendarStateOutcomeCallable SSMClient::GetCalendarStateCallable(const GetCalendarStateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetCalendarStateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetCalendarState(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SSMClient::GetCalendarStateAsync(const GetCalendarStateRequest& request, const GetCalendarStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetCalendarStateAsyncHelper( request, handler, context ); } );
+}
+
+void SSMClient::GetCalendarStateAsyncHelper(const GetCalendarStateRequest& request, const GetCalendarStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetCalendarState(request), context);
 }
 
 GetCommandInvocationOutcome SSMClient::GetCommandInvocation(const GetCommandInvocationRequest& request) const

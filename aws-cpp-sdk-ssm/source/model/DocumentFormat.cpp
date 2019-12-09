@@ -32,6 +32,7 @@ namespace Aws
 
         static const int YAML_HASH = HashingUtils::HashString("YAML");
         static const int JSON_HASH = HashingUtils::HashString("JSON");
+        static const int TEXT_HASH = HashingUtils::HashString("TEXT");
 
 
         DocumentFormat GetDocumentFormatForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == JSON_HASH)
           {
             return DocumentFormat::JSON;
+          }
+          else if (hashCode == TEXT_HASH)
+          {
+            return DocumentFormat::TEXT;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "YAML";
           case DocumentFormat::JSON:
             return "JSON";
+          case DocumentFormat::TEXT:
+            return "TEXT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

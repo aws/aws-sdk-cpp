@@ -34,9 +34,10 @@ namespace Model
 {
 
   /**
-   * <p>Redshift parameters. The <code>ClusterId</code> field can be blank if
-   * <code>Host</code> and <code>Port</code> are both set, and the other way
-   * around.</p><p><h3>See Also:</h3>   <a
+   * <p>Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if
+   * <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and
+   * <code>Port</code> fields can be blank if the <code>ClusterId</code> field is
+   * set.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RedshiftParameters">AWS
    * API Reference</a></p>
    */
@@ -50,63 +51,63 @@ namespace Model
 
 
     /**
-     * <p>Host. This can be blank if the <code>ClusterId</code> is provided.</p>
+     * <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
      */
     inline const Aws::String& GetHost() const{ return m_host; }
 
     /**
-     * <p>Host. This can be blank if the <code>ClusterId</code> is provided.</p>
+     * <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
      */
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
 
     /**
-     * <p>Host. This can be blank if the <code>ClusterId</code> is provided.</p>
+     * <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
      */
     inline void SetHost(const Aws::String& value) { m_hostHasBeenSet = true; m_host = value; }
 
     /**
-     * <p>Host. This can be blank if the <code>ClusterId</code> is provided.</p>
+     * <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
      */
     inline void SetHost(Aws::String&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
 
     /**
-     * <p>Host. This can be blank if the <code>ClusterId</code> is provided.</p>
+     * <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
      */
     inline void SetHost(const char* value) { m_hostHasBeenSet = true; m_host.assign(value); }
 
     /**
-     * <p>Host. This can be blank if the <code>ClusterId</code> is provided.</p>
+     * <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
      */
     inline RedshiftParameters& WithHost(const Aws::String& value) { SetHost(value); return *this;}
 
     /**
-     * <p>Host. This can be blank if the <code>ClusterId</code> is provided.</p>
+     * <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
      */
     inline RedshiftParameters& WithHost(Aws::String&& value) { SetHost(std::move(value)); return *this;}
 
     /**
-     * <p>Host. This can be blank if the <code>ClusterId</code> is provided.</p>
+     * <p>Host. This field can be blank if <code>ClusterId</code> is provided.</p>
      */
     inline RedshiftParameters& WithHost(const char* value) { SetHost(value); return *this;}
 
 
     /**
-     * <p>Port. This can be blank if the <code>ClusterId</code> is provided.</p>
+     * <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>Port. This can be blank if the <code>ClusterId</code> is provided.</p>
+     * <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>Port. This can be blank if the <code>ClusterId</code> is provided.</p>
+     * <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>Port. This can be blank if the <code>ClusterId</code> is provided.</p>
+     * <p>Port. This field can be blank if the <code>ClusterId</code> is provided.</p>
      */
     inline RedshiftParameters& WithPort(int value) { SetPort(value); return *this;}
 
@@ -153,50 +154,50 @@ namespace Model
 
 
     /**
-     * <p>Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code>
-     * are provided.</p>
+     * <p>Cluster ID. This field can be blank if the <code>Host</code> and
+     * <code>Port</code> are provided.</p>
      */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
 
     /**
-     * <p>Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code>
-     * are provided.</p>
+     * <p>Cluster ID. This field can be blank if the <code>Host</code> and
+     * <code>Port</code> are provided.</p>
      */
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
 
     /**
-     * <p>Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code>
-     * are provided.</p>
+     * <p>Cluster ID. This field can be blank if the <code>Host</code> and
+     * <code>Port</code> are provided.</p>
      */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
-     * <p>Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code>
-     * are provided.</p>
+     * <p>Cluster ID. This field can be blank if the <code>Host</code> and
+     * <code>Port</code> are provided.</p>
      */
     inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
 
     /**
-     * <p>Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code>
-     * are provided.</p>
+     * <p>Cluster ID. This field can be blank if the <code>Host</code> and
+     * <code>Port</code> are provided.</p>
      */
     inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
 
     /**
-     * <p>Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code>
-     * are provided.</p>
+     * <p>Cluster ID. This field can be blank if the <code>Host</code> and
+     * <code>Port</code> are provided.</p>
      */
     inline RedshiftParameters& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
 
     /**
-     * <p>Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code>
-     * are provided.</p>
+     * <p>Cluster ID. This field can be blank if the <code>Host</code> and
+     * <code>Port</code> are provided.</p>
      */
     inline RedshiftParameters& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
 
     /**
-     * <p>Cluster ID. This can be blank if the <code>Host</code> and <code>Port</code>
-     * are provided.</p>
+     * <p>Cluster ID. This field can be blank if the <code>Host</code> and
+     * <code>Port</code> are provided.</p>
      */
     inline RedshiftParameters& WithClusterId(const char* value) { SetClusterId(value); return *this;}
 

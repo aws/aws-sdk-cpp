@@ -123,86 +123,86 @@ namespace Model
 
     /**
      * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline const Aws::String& GetIngestionArn() const{ return m_ingestionArn; }
 
     /**
      * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline void SetIngestionArn(const Aws::String& value) { m_ingestionArn = value; }
 
     /**
      * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline void SetIngestionArn(Aws::String&& value) { m_ingestionArn = std::move(value); }
 
     /**
      * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline void SetIngestionArn(const char* value) { m_ingestionArn.assign(value); }
 
     /**
      * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline UpdateDataSetResult& WithIngestionArn(const Aws::String& value) { SetIngestionArn(value); return *this;}
 
     /**
      * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline UpdateDataSetResult& WithIngestionArn(Aws::String&& value) { SetIngestionArn(std::move(value)); return *this;}
 
     /**
      * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline UpdateDataSetResult& WithIngestionArn(const char* value) { SetIngestionArn(value); return *this;}
 
 
     /**
      * <p>The ID of the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline const Aws::String& GetIngestionId() const{ return m_ingestionId; }
 
     /**
      * <p>The ID of the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline void SetIngestionId(const Aws::String& value) { m_ingestionId = value; }
 
     /**
      * <p>The ID of the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline void SetIngestionId(Aws::String&& value) { m_ingestionId = std::move(value); }
 
     /**
      * <p>The ID of the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline void SetIngestionId(const char* value) { m_ingestionId.assign(value); }
 
     /**
      * <p>The ID of the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline UpdateDataSetResult& WithIngestionId(const Aws::String& value) { SetIngestionId(value); return *this;}
 
     /**
      * <p>The ID of the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline UpdateDataSetResult& WithIngestionId(Aws::String&& value) { SetIngestionId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the ingestion, which is triggered as a result of dataset creation
-     * if the import mode is SPICE</p>
+     * if the import mode is SPICE.</p>
      */
     inline UpdateDataSetResult& WithIngestionId(const char* value) { SetIngestionId(value); return *this;}
 

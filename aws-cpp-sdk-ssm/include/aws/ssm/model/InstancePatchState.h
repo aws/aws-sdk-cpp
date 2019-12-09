@@ -438,26 +438,22 @@ namespace Model
 
 
     /**
-     * <p>The number of patches installed since the last time the instance was
-     * rebooted.</p>
+     * <p>Reserved for future use.</p>
      */
     inline int GetInstalledPendingRebootCount() const{ return m_installedPendingRebootCount; }
 
     /**
-     * <p>The number of patches installed since the last time the instance was
-     * rebooted.</p>
+     * <p>Reserved for future use.</p>
      */
     inline bool InstalledPendingRebootCountHasBeenSet() const { return m_installedPendingRebootCountHasBeenSet; }
 
     /**
-     * <p>The number of patches installed since the last time the instance was
-     * rebooted.</p>
+     * <p>Reserved for future use.</p>
      */
     inline void SetInstalledPendingRebootCount(int value) { m_installedPendingRebootCountHasBeenSet = true; m_installedPendingRebootCount = value; }
 
     /**
-     * <p>The number of patches installed since the last time the instance was
-     * rebooted.</p>
+     * <p>Reserved for future use.</p>
      */
     inline InstancePatchState& WithInstalledPendingRebootCount(int value) { SetInstalledPendingRebootCount(value); return *this;}
 
@@ -711,123 +707,63 @@ namespace Model
 
 
     /**
-     * <p>The time of the last attempt to patch the instance with <code>NoReboot</code>
-     * specified as the reboot option.</p>
+     * <p>Reserved for future use. </p>
      */
     inline const Aws::Utils::DateTime& GetLastNoRebootInstallOperationTime() const{ return m_lastNoRebootInstallOperationTime; }
 
     /**
-     * <p>The time of the last attempt to patch the instance with <code>NoReboot</code>
-     * specified as the reboot option.</p>
+     * <p>Reserved for future use. </p>
      */
     inline bool LastNoRebootInstallOperationTimeHasBeenSet() const { return m_lastNoRebootInstallOperationTimeHasBeenSet; }
 
     /**
-     * <p>The time of the last attempt to patch the instance with <code>NoReboot</code>
-     * specified as the reboot option.</p>
+     * <p>Reserved for future use. </p>
      */
     inline void SetLastNoRebootInstallOperationTime(const Aws::Utils::DateTime& value) { m_lastNoRebootInstallOperationTimeHasBeenSet = true; m_lastNoRebootInstallOperationTime = value; }
 
     /**
-     * <p>The time of the last attempt to patch the instance with <code>NoReboot</code>
-     * specified as the reboot option.</p>
+     * <p>Reserved for future use. </p>
      */
     inline void SetLastNoRebootInstallOperationTime(Aws::Utils::DateTime&& value) { m_lastNoRebootInstallOperationTimeHasBeenSet = true; m_lastNoRebootInstallOperationTime = std::move(value); }
 
     /**
-     * <p>The time of the last attempt to patch the instance with <code>NoReboot</code>
-     * specified as the reboot option.</p>
+     * <p>Reserved for future use. </p>
      */
     inline InstancePatchState& WithLastNoRebootInstallOperationTime(const Aws::Utils::DateTime& value) { SetLastNoRebootInstallOperationTime(value); return *this;}
 
     /**
-     * <p>The time of the last attempt to patch the instance with <code>NoReboot</code>
-     * specified as the reboot option.</p>
+     * <p>Reserved for future use. </p>
      */
     inline InstancePatchState& WithLastNoRebootInstallOperationTime(Aws::Utils::DateTime&& value) { SetLastNoRebootInstallOperationTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>Indicates the reboot option specified in the patch baseline.</p> <note>
-     * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
-     * attempted for Patch Manager <code>Scan</code> operations.</p> </note> <ul> <li>
-     * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
-     * installed any patches, or if any patches are detected with a status of
-     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
-     * Manager attempts to install missing packages without trying to reboot the
-     * system. Patches installed with this option are assigned a status of
-     * <code>InstalledPendingReboot</code>. These patches might not be in effect until
-     * a reboot is performed.</p> </li> </ul>
+     * <p>Reserved for future use. </p>
      */
     inline const RebootOption& GetRebootOption() const{ return m_rebootOption; }
 
     /**
-     * <p>Indicates the reboot option specified in the patch baseline.</p> <note>
-     * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
-     * attempted for Patch Manager <code>Scan</code> operations.</p> </note> <ul> <li>
-     * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
-     * installed any patches, or if any patches are detected with a status of
-     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
-     * Manager attempts to install missing packages without trying to reboot the
-     * system. Patches installed with this option are assigned a status of
-     * <code>InstalledPendingReboot</code>. These patches might not be in effect until
-     * a reboot is performed.</p> </li> </ul>
+     * <p>Reserved for future use. </p>
      */
     inline bool RebootOptionHasBeenSet() const { return m_rebootOptionHasBeenSet; }
 
     /**
-     * <p>Indicates the reboot option specified in the patch baseline.</p> <note>
-     * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
-     * attempted for Patch Manager <code>Scan</code> operations.</p> </note> <ul> <li>
-     * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
-     * installed any patches, or if any patches are detected with a status of
-     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
-     * Manager attempts to install missing packages without trying to reboot the
-     * system. Patches installed with this option are assigned a status of
-     * <code>InstalledPendingReboot</code>. These patches might not be in effect until
-     * a reboot is performed.</p> </li> </ul>
+     * <p>Reserved for future use. </p>
      */
     inline void SetRebootOption(const RebootOption& value) { m_rebootOptionHasBeenSet = true; m_rebootOption = value; }
 
     /**
-     * <p>Indicates the reboot option specified in the patch baseline.</p> <note>
-     * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
-     * attempted for Patch Manager <code>Scan</code> operations.</p> </note> <ul> <li>
-     * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
-     * installed any patches, or if any patches are detected with a status of
-     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
-     * Manager attempts to install missing packages without trying to reboot the
-     * system. Patches installed with this option are assigned a status of
-     * <code>InstalledPendingReboot</code>. These patches might not be in effect until
-     * a reboot is performed.</p> </li> </ul>
+     * <p>Reserved for future use. </p>
      */
     inline void SetRebootOption(RebootOption&& value) { m_rebootOptionHasBeenSet = true; m_rebootOption = std::move(value); }
 
     /**
-     * <p>Indicates the reboot option specified in the patch baseline.</p> <note>
-     * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
-     * attempted for Patch Manager <code>Scan</code> operations.</p> </note> <ul> <li>
-     * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
-     * installed any patches, or if any patches are detected with a status of
-     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
-     * Manager attempts to install missing packages without trying to reboot the
-     * system. Patches installed with this option are assigned a status of
-     * <code>InstalledPendingReboot</code>. These patches might not be in effect until
-     * a reboot is performed.</p> </li> </ul>
+     * <p>Reserved for future use. </p>
      */
     inline InstancePatchState& WithRebootOption(const RebootOption& value) { SetRebootOption(value); return *this;}
 
     /**
-     * <p>Indicates the reboot option specified in the patch baseline.</p> <note>
-     * <p>Reboot options apply to <code>Install</code> operations only. Reboots are not
-     * attempted for Patch Manager <code>Scan</code> operations.</p> </note> <ul> <li>
-     * <p> <b>RebootIfNeeded</b>: Patch Manager tries to reboot the instance if it
-     * installed any patches, or if any patches are detected with a status of
-     * <code>InstalledPendingReboot</code>.</p> </li> <li> <p> <b>NoReboot</b>: Patch
-     * Manager attempts to install missing packages without trying to reboot the
-     * system. Patches installed with this option are assigned a status of
-     * <code>InstalledPendingReboot</code>. These patches might not be in effect until
-     * a reboot is performed.</p> </li> </ul>
+     * <p>Reserved for future use. </p>
      */
     inline InstancePatchState& WithRebootOption(RebootOption&& value) { SetRebootOption(std::move(value)); return *this;}
 

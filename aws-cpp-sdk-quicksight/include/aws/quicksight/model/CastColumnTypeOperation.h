@@ -122,50 +122,50 @@ namespace Model
 
 
     /**
-     * <p>When casting a column from string to datetime type, you can supply a
-     * QuickSight supported format string to denote the source data format.</p>
+     * <p>When casting a column from string to datetime type, you can supply a string
+     * in a format supported by Amazon QuickSight to denote the source data format.</p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
 
     /**
-     * <p>When casting a column from string to datetime type, you can supply a
-     * QuickSight supported format string to denote the source data format.</p>
+     * <p>When casting a column from string to datetime type, you can supply a string
+     * in a format supported by Amazon QuickSight to denote the source data format.</p>
      */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
-     * <p>When casting a column from string to datetime type, you can supply a
-     * QuickSight supported format string to denote the source data format.</p>
+     * <p>When casting a column from string to datetime type, you can supply a string
+     * in a format supported by Amazon QuickSight to denote the source data format.</p>
      */
     inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
-     * <p>When casting a column from string to datetime type, you can supply a
-     * QuickSight supported format string to denote the source data format.</p>
+     * <p>When casting a column from string to datetime type, you can supply a string
+     * in a format supported by Amazon QuickSight to denote the source data format.</p>
      */
     inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
     /**
-     * <p>When casting a column from string to datetime type, you can supply a
-     * QuickSight supported format string to denote the source data format.</p>
+     * <p>When casting a column from string to datetime type, you can supply a string
+     * in a format supported by Amazon QuickSight to denote the source data format.</p>
      */
     inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
 
     /**
-     * <p>When casting a column from string to datetime type, you can supply a
-     * QuickSight supported format string to denote the source data format.</p>
+     * <p>When casting a column from string to datetime type, you can supply a string
+     * in a format supported by Amazon QuickSight to denote the source data format.</p>
      */
     inline CastColumnTypeOperation& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
 
     /**
-     * <p>When casting a column from string to datetime type, you can supply a
-     * QuickSight supported format string to denote the source data format.</p>
+     * <p>When casting a column from string to datetime type, you can supply a string
+     * in a format supported by Amazon QuickSight to denote the source data format.</p>
      */
     inline CastColumnTypeOperation& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
 
     /**
-     * <p>When casting a column from string to datetime type, you can supply a
-     * QuickSight supported format string to denote the source data format.</p>
+     * <p>When casting a column from string to datetime type, you can supply a string
+     * in a format supported by Amazon QuickSight to denote the source data format.</p>
      */
     inline CastColumnTypeOperation& WithFormat(const char* value) { SetFormat(value); return *this;}
 

@@ -22,6 +22,7 @@
 #include <aws/kafka/model/BrokerSoftwareInfo.h>
 #include <aws/kafka/model/EncryptionInfo.h>
 #include <aws/kafka/model/EnhancedMonitoring.h>
+#include <aws/kafka/model/OpenMonitoring.h>
 #include <aws/kafka/model/ClusterState.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
@@ -590,6 +591,49 @@ namespace Model
 
     /**
      * 
+            <p>Settings for open monitoring using Prometheus.</p>
+         
+     */
+    inline const OpenMonitoring& GetOpenMonitoring() const{ return m_openMonitoring; }
+
+    /**
+     * 
+            <p>Settings for open monitoring using Prometheus.</p>
+         
+     */
+    inline bool OpenMonitoringHasBeenSet() const { return m_openMonitoringHasBeenSet; }
+
+    /**
+     * 
+            <p>Settings for open monitoring using Prometheus.</p>
+         
+     */
+    inline void SetOpenMonitoring(const OpenMonitoring& value) { m_openMonitoringHasBeenSet = true; m_openMonitoring = value; }
+
+    /**
+     * 
+            <p>Settings for open monitoring using Prometheus.</p>
+         
+     */
+    inline void SetOpenMonitoring(OpenMonitoring&& value) { m_openMonitoringHasBeenSet = true; m_openMonitoring = std::move(value); }
+
+    /**
+     * 
+            <p>Settings for open monitoring using Prometheus.</p>
+         
+     */
+    inline ClusterInfo& WithOpenMonitoring(const OpenMonitoring& value) { SetOpenMonitoring(value); return *this;}
+
+    /**
+     * 
+            <p>Settings for open monitoring using Prometheus.</p>
+         
+     */
+    inline ClusterInfo& WithOpenMonitoring(OpenMonitoring&& value) { SetOpenMonitoring(std::move(value)); return *this;}
+
+
+    /**
+     * 
             <p>The number of broker nodes in the cluster.</p>
          
      */
@@ -853,6 +897,9 @@ namespace Model
 
     EnhancedMonitoring m_enhancedMonitoring;
     bool m_enhancedMonitoringHasBeenSet;
+
+    OpenMonitoring m_openMonitoring;
+    bool m_openMonitoringHasBeenSet;
 
     int m_numberOfBrokerNodes;
     bool m_numberOfBrokerNodesHasBeenSet;

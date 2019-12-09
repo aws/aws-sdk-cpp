@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>Active assignments for this user.</p>
+     * <p>The active assignments for this user.</p>
      */
     inline const Aws::Vector<ActiveIAMPolicyAssignment>& GetActiveAssignments() const{ return m_activeAssignments; }
 
     /**
-     * <p>Active assignments for this user.</p>
+     * <p>The active assignments for this user.</p>
      */
     inline void SetActiveAssignments(const Aws::Vector<ActiveIAMPolicyAssignment>& value) { m_activeAssignments = value; }
 
     /**
-     * <p>Active assignments for this user.</p>
+     * <p>The active assignments for this user.</p>
      */
     inline void SetActiveAssignments(Aws::Vector<ActiveIAMPolicyAssignment>&& value) { m_activeAssignments = std::move(value); }
 
     /**
-     * <p>Active assignments for this user.</p>
+     * <p>The active assignments for this user.</p>
      */
     inline ListIAMPolicyAssignmentsForUserResult& WithActiveAssignments(const Aws::Vector<ActiveIAMPolicyAssignment>& value) { SetActiveAssignments(value); return *this;}
 
     /**
-     * <p>Active assignments for this user.</p>
+     * <p>The active assignments for this user.</p>
      */
     inline ListIAMPolicyAssignmentsForUserResult& WithActiveAssignments(Aws::Vector<ActiveIAMPolicyAssignment>&& value) { SetActiveAssignments(std::move(value)); return *this;}
 
     /**
-     * <p>Active assignments for this user.</p>
+     * <p>The active assignments for this user.</p>
      */
     inline ListIAMPolicyAssignmentsForUserResult& AddActiveAssignments(const ActiveIAMPolicyAssignment& value) { m_activeAssignments.push_back(value); return *this; }
 
     /**
-     * <p>Active assignments for this user.</p>
+     * <p>The active assignments for this user.</p>
      */
     inline ListIAMPolicyAssignmentsForUserResult& AddActiveAssignments(ActiveIAMPolicyAssignment&& value) { m_activeAssignments.push_back(std::move(value)); return *this; }
 

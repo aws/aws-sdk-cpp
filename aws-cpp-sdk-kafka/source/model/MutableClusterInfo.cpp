@@ -32,7 +32,10 @@ MutableClusterInfo::MutableClusterInfo() :
     m_brokerEBSVolumeInfoHasBeenSet(false),
     m_configurationInfoHasBeenSet(false),
     m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false)
+    m_numberOfBrokerNodesHasBeenSet(false),
+    m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
+    m_enhancedMonitoringHasBeenSet(false),
+    m_openMonitoringHasBeenSet(false)
 {
 }
 
@@ -40,7 +43,10 @@ MutableClusterInfo::MutableClusterInfo(JsonView jsonValue) :
     m_brokerEBSVolumeInfoHasBeenSet(false),
     m_configurationInfoHasBeenSet(false),
     m_numberOfBrokerNodes(0),
-    m_numberOfBrokerNodesHasBeenSet(false)
+    m_numberOfBrokerNodesHasBeenSet(false),
+    m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
+    m_enhancedMonitoringHasBeenSet(false),
+    m_openMonitoringHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +77,20 @@ MutableClusterInfo& MutableClusterInfo::operator =(JsonView jsonValue)
     m_numberOfBrokerNodesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("enhancedMonitoring"))
+  {
+    m_enhancedMonitoring = EnhancedMonitoringMapper::GetEnhancedMonitoringForName(jsonValue.GetString("enhancedMonitoring"));
+
+    m_enhancedMonitoringHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("openMonitoring"))
+  {
+    m_openMonitoring = jsonValue.GetObject("openMonitoring");
+
+    m_openMonitoringHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -98,6 +118,17 @@ JsonValue MutableClusterInfo::Jsonize() const
   if(m_numberOfBrokerNodesHasBeenSet)
   {
    payload.WithInteger("numberOfBrokerNodes", m_numberOfBrokerNodes);
+
+  }
+
+  if(m_enhancedMonitoringHasBeenSet)
+  {
+   payload.WithString("enhancedMonitoring", EnhancedMonitoringMapper::GetNameForEnhancedMonitoring(m_enhancedMonitoring));
+  }
+
+  if(m_openMonitoringHasBeenSet)
+  {
+   payload.WithObject("openMonitoring", m_openMonitoring.Jsonize());
 
   }
 

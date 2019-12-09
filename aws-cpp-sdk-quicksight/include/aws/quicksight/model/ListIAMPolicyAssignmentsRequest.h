@@ -50,114 +50,114 @@ namespace Model
 
 
     /**
-     * <p>The AWS account ID that contains this IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains these IAM policy assignments.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The AWS account ID that contains this IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains these IAM policy assignments.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS account ID that contains this IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains these IAM policy assignments.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The AWS account ID that contains this IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains these IAM policy assignments.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The AWS account ID that contains this IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains these IAM policy assignments.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The AWS account ID that contains this IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains these IAM policy assignments.</p>
      */
     inline ListIAMPolicyAssignmentsRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The AWS account ID that contains this IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains these IAM policy assignments.</p>
      */
     inline ListIAMPolicyAssignmentsRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS account ID that contains this IAM policy assignment.</p>
+     * <p>The ID of the AWS account that contains these IAM policy assignments.</p>
      */
     inline ListIAMPolicyAssignmentsRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>The status of the assignment.</p>
+     * <p>The status of the assignments.</p>
      */
     inline const AssignmentStatus& GetAssignmentStatus() const{ return m_assignmentStatus; }
 
     /**
-     * <p>The status of the assignment.</p>
+     * <p>The status of the assignments.</p>
      */
     inline bool AssignmentStatusHasBeenSet() const { return m_assignmentStatusHasBeenSet; }
 
     /**
-     * <p>The status of the assignment.</p>
+     * <p>The status of the assignments.</p>
      */
     inline void SetAssignmentStatus(const AssignmentStatus& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = value; }
 
     /**
-     * <p>The status of the assignment.</p>
+     * <p>The status of the assignments.</p>
      */
     inline void SetAssignmentStatus(AssignmentStatus&& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = std::move(value); }
 
     /**
-     * <p>The status of the assignment.</p>
+     * <p>The status of the assignments.</p>
      */
     inline ListIAMPolicyAssignmentsRequest& WithAssignmentStatus(const AssignmentStatus& value) { SetAssignmentStatus(value); return *this;}
 
     /**
-     * <p>The status of the assignment.</p>
+     * <p>The status of the assignments.</p>
      */
     inline ListIAMPolicyAssignmentsRequest& WithAssignmentStatus(AssignmentStatus&& value) { SetAssignmentStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The namespace for this assignment.</p>
+     * <p>The namespace for the assignments.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The namespace for this assignment.</p>
+     * <p>The namespace for the assignments.</p>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
-     * <p>The namespace for this assignment.</p>
+     * <p>The namespace for the assignments.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespace for this assignment.</p>
+     * <p>The namespace for the assignments.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The namespace for this assignment.</p>
+     * <p>The namespace for the assignments.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The namespace for this assignment.</p>
+     * <p>The namespace for the assignments.</p>
      */
     inline ListIAMPolicyAssignmentsRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespace for this assignment.</p>
+     * <p>The namespace for the assignments.</p>
      */
     inline ListIAMPolicyAssignmentsRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The namespace for this assignment.</p>
+     * <p>The namespace for the assignments.</p>
      */
     inline ListIAMPolicyAssignmentsRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 

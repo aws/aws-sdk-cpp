@@ -51,13 +51,12 @@ namespace Model
     /**
      * <p>Identifies the asymmetric CMK that will be used to verify the signature. This
      * must be the same CMK that was used to generate the signature. If you specify a
-     * different CMK, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p> <p>To specify a CMK, use its key ID,
-     * Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
-     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
-     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-     * <li> <p>Key ARN:
+     * different CMK, the signature verification fails.</p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
+     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -70,13 +69,12 @@ namespace Model
     /**
      * <p>Identifies the asymmetric CMK that will be used to verify the signature. This
      * must be the same CMK that was used to generate the signature. If you specify a
-     * different CMK, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p> <p>To specify a CMK, use its key ID,
-     * Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
-     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
-     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-     * <li> <p>Key ARN:
+     * different CMK, the signature verification fails.</p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
+     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -89,13 +87,12 @@ namespace Model
     /**
      * <p>Identifies the asymmetric CMK that will be used to verify the signature. This
      * must be the same CMK that was used to generate the signature. If you specify a
-     * different CMK, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p> <p>To specify a CMK, use its key ID,
-     * Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
-     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
-     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-     * <li> <p>Key ARN:
+     * different CMK, the signature verification fails.</p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
+     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -108,13 +105,12 @@ namespace Model
     /**
      * <p>Identifies the asymmetric CMK that will be used to verify the signature. This
      * must be the same CMK that was used to generate the signature. If you specify a
-     * different CMK, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p> <p>To specify a CMK, use its key ID,
-     * Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
-     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
-     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-     * <li> <p>Key ARN:
+     * different CMK, the signature verification fails.</p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
+     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -127,13 +123,12 @@ namespace Model
     /**
      * <p>Identifies the asymmetric CMK that will be used to verify the signature. This
      * must be the same CMK that was used to generate the signature. If you specify a
-     * different CMK, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p> <p>To specify a CMK, use its key ID,
-     * Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
-     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
-     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-     * <li> <p>Key ARN:
+     * different CMK, the signature verification fails.</p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
+     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -146,13 +141,12 @@ namespace Model
     /**
      * <p>Identifies the asymmetric CMK that will be used to verify the signature. This
      * must be the same CMK that was used to generate the signature. If you specify a
-     * different CMK, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p> <p>To specify a CMK, use its key ID,
-     * Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
-     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
-     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-     * <li> <p>Key ARN:
+     * different CMK, the signature verification fails.</p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
+     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -165,13 +159,12 @@ namespace Model
     /**
      * <p>Identifies the asymmetric CMK that will be used to verify the signature. This
      * must be the same CMK that was used to generate the signature. If you specify a
-     * different CMK, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p> <p>To specify a CMK, use its key ID,
-     * Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
-     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
-     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-     * <li> <p>Key ARN:
+     * different CMK, the signature verification fails.</p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
+     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -184,13 +177,12 @@ namespace Model
     /**
      * <p>Identifies the asymmetric CMK that will be used to verify the signature. This
      * must be the same CMK that was used to generate the signature. If you specify a
-     * different CMK, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p> <p>To specify a CMK, use its key ID,
-     * Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS
-     * account, you must use the key ARN or alias ARN.</p> <p>For example:</p> <ul>
-     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
-     * <li> <p>Key ARN:
+     * different CMK, the signature verification fails.</p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a
+     * different AWS account, you must use the key ARN or alias ARN.</p> <p>For
+     * example:</p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -205,8 +197,7 @@ namespace Model
      * <p>Specifies the message that was signed, or a hash digest of that message.
      * Messages can be 0-4096 bytes. To verify a larger message, provide a hash digest
      * of the message.</p> <p>If the digest of the message specified here is different
-     * from the message digest that was signed, the <code>SignatureValid</code> value
-     * in the response will be <code>False</code>.</p>
+     * from the message digest that was signed, the signature verification fails.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetMessage() const{ return m_message; }
 
@@ -214,8 +205,7 @@ namespace Model
      * <p>Specifies the message that was signed, or a hash digest of that message.
      * Messages can be 0-4096 bytes. To verify a larger message, provide a hash digest
      * of the message.</p> <p>If the digest of the message specified here is different
-     * from the message digest that was signed, the <code>SignatureValid</code> value
-     * in the response will be <code>False</code>.</p>
+     * from the message digest that was signed, the signature verification fails.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
@@ -223,8 +213,7 @@ namespace Model
      * <p>Specifies the message that was signed, or a hash digest of that message.
      * Messages can be 0-4096 bytes. To verify a larger message, provide a hash digest
      * of the message.</p> <p>If the digest of the message specified here is different
-     * from the message digest that was signed, the <code>SignatureValid</code> value
-     * in the response will be <code>False</code>.</p>
+     * from the message digest that was signed, the signature verification fails.</p>
      */
     inline void SetMessage(const Aws::Utils::CryptoBuffer& value) { m_messageHasBeenSet = true; m_message = value; }
 
@@ -232,8 +221,7 @@ namespace Model
      * <p>Specifies the message that was signed, or a hash digest of that message.
      * Messages can be 0-4096 bytes. To verify a larger message, provide a hash digest
      * of the message.</p> <p>If the digest of the message specified here is different
-     * from the message digest that was signed, the <code>SignatureValid</code> value
-     * in the response will be <code>False</code>.</p>
+     * from the message digest that was signed, the signature verification fails.</p>
      */
     inline void SetMessage(Aws::Utils::CryptoBuffer&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
@@ -241,8 +229,7 @@ namespace Model
      * <p>Specifies the message that was signed, or a hash digest of that message.
      * Messages can be 0-4096 bytes. To verify a larger message, provide a hash digest
      * of the message.</p> <p>If the digest of the message specified here is different
-     * from the message digest that was signed, the <code>SignatureValid</code> value
-     * in the response will be <code>False</code>.</p>
+     * from the message digest that was signed, the signature verification fails.</p>
      */
     inline VerifyRequest& WithMessage(const Aws::Utils::CryptoBuffer& value) { SetMessage(value); return *this;}
 
@@ -250,8 +237,7 @@ namespace Model
      * <p>Specifies the message that was signed, or a hash digest of that message.
      * Messages can be 0-4096 bytes. To verify a larger message, provide a hash digest
      * of the message.</p> <p>If the digest of the message specified here is different
-     * from the message digest that was signed, the <code>SignatureValid</code> value
-     * in the response will be <code>False</code>.</p>
+     * from the message digest that was signed, the signature verification fails.</p>
      */
     inline VerifyRequest& WithMessage(Aws::Utils::CryptoBuffer&& value) { SetMessage(std::move(value)); return *this;}
 
@@ -332,43 +318,37 @@ namespace Model
 
     /**
      * <p>The signing algorithm that was used to sign the message. If you submit a
-     * different algorithm, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p>
+     * different algorithm, the signature verification fails.</p>
      */
     inline const SigningAlgorithmSpec& GetSigningAlgorithm() const{ return m_signingAlgorithm; }
 
     /**
      * <p>The signing algorithm that was used to sign the message. If you submit a
-     * different algorithm, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p>
+     * different algorithm, the signature verification fails.</p>
      */
     inline bool SigningAlgorithmHasBeenSet() const { return m_signingAlgorithmHasBeenSet; }
 
     /**
      * <p>The signing algorithm that was used to sign the message. If you submit a
-     * different algorithm, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p>
+     * different algorithm, the signature verification fails.</p>
      */
     inline void SetSigningAlgorithm(const SigningAlgorithmSpec& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
 
     /**
      * <p>The signing algorithm that was used to sign the message. If you submit a
-     * different algorithm, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p>
+     * different algorithm, the signature verification fails.</p>
      */
     inline void SetSigningAlgorithm(SigningAlgorithmSpec&& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = std::move(value); }
 
     /**
      * <p>The signing algorithm that was used to sign the message. If you submit a
-     * different algorithm, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p>
+     * different algorithm, the signature verification fails.</p>
      */
     inline VerifyRequest& WithSigningAlgorithm(const SigningAlgorithmSpec& value) { SetSigningAlgorithm(value); return *this;}
 
     /**
      * <p>The signing algorithm that was used to sign the message. If you submit a
-     * different algorithm, the value of the <code>SignatureValid</code> field in the
-     * response will be <code>False</code>.</p>
+     * different algorithm, the signature verification fails.</p>
      */
     inline VerifyRequest& WithSigningAlgorithm(SigningAlgorithmSpec&& value) { SetSigningAlgorithm(std::move(value)); return *this;}
 

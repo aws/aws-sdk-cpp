@@ -43,89 +43,97 @@ namespace Model
 
 
     /**
-     * <p>AWS account ID that contains the template alias you are describing.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * describing.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>AWS account ID that contains the template alias you are describing.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * describing.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>AWS account ID that contains the template alias you are describing.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * describing.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>AWS account ID that contains the template alias you are describing.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * describing.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>AWS account ID that contains the template alias you are describing.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * describing.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>AWS account ID that contains the template alias you are describing.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * describing.</p>
      */
     inline DescribeTemplateAliasRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>AWS account ID that contains the template alias you are describing.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * describing.</p>
      */
     inline DescribeTemplateAliasRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS account ID that contains the template alias you are describing.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * describing.</p>
      */
     inline DescribeTemplateAliasRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>The ID for the template.</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>The ID for the template.</p>
      */
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>The ID for the template.</p>
      */
     inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>The ID for the template.</p>
      */
     inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>The ID for the template.</p>
      */
     inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>The ID for the template.</p>
      */
     inline DescribeTemplateAliasRequest& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>The ID for the template.</p>
      */
     inline DescribeTemplateAliasRequest& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>The ID for the template.</p>
      */
     inline DescribeTemplateAliasRequest& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
 
 
     /**
-     * <p>The alias of the template that you want to describe. If you provide a
+     * <p>The name of the template alias that you want to describe. If you name a
      * specific alias, you describe the version that the alias points to. You can
      * specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
@@ -134,7 +142,7 @@ namespace Model
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
 
     /**
-     * <p>The alias of the template that you want to describe. If you provide a
+     * <p>The name of the template alias that you want to describe. If you name a
      * specific alias, you describe the version that the alias points to. You can
      * specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
@@ -143,7 +151,7 @@ namespace Model
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
 
     /**
-     * <p>The alias of the template that you want to describe. If you provide a
+     * <p>The name of the template alias that you want to describe. If you name a
      * specific alias, you describe the version that the alias points to. You can
      * specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
@@ -152,7 +160,7 @@ namespace Model
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /**
-     * <p>The alias of the template that you want to describe. If you provide a
+     * <p>The name of the template alias that you want to describe. If you name a
      * specific alias, you describe the version that the alias points to. You can
      * specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
@@ -161,7 +169,7 @@ namespace Model
     inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
 
     /**
-     * <p>The alias of the template that you want to describe. If you provide a
+     * <p>The name of the template alias that you want to describe. If you name a
      * specific alias, you describe the version that the alias points to. You can
      * specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
@@ -170,7 +178,7 @@ namespace Model
     inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
 
     /**
-     * <p>The alias of the template that you want to describe. If you provide a
+     * <p>The name of the template alias that you want to describe. If you name a
      * specific alias, you describe the version that the alias points to. You can
      * specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
@@ -179,7 +187,7 @@ namespace Model
     inline DescribeTemplateAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
 
     /**
-     * <p>The alias of the template that you want to describe. If you provide a
+     * <p>The name of the template alias that you want to describe. If you name a
      * specific alias, you describe the version that the alias points to. You can
      * specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword
@@ -188,7 +196,7 @@ namespace Model
     inline DescribeTemplateAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
-     * <p>The alias of the template that you want to describe. If you provide a
+     * <p>The name of the template alias that you want to describe. If you name a
      * specific alias, you describe the version that the alias points to. You can
      * specify the latest version of the template by providing the keyword
      * <code>$LATEST</code> in the <code>AliasName</code> parameter. The keyword

@@ -91,42 +91,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline Dashboard& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline Dashboard& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline Dashboard& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -204,94 +204,94 @@ namespace Model
 
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this dataset was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this dataset was created.</p>
      */
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this dataset was created.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this dataset was created.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this dataset was created.</p>
      */
     inline Dashboard& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this dataset was created.</p>
      */
     inline Dashboard& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The last time this was published.</p>
+     * <p>The last time that this dataset was published.</p>
      */
     inline const Aws::Utils::DateTime& GetLastPublishedTime() const{ return m_lastPublishedTime; }
 
     /**
-     * <p>The last time this was published.</p>
+     * <p>The last time that this dataset was published.</p>
      */
     inline bool LastPublishedTimeHasBeenSet() const { return m_lastPublishedTimeHasBeenSet; }
 
     /**
-     * <p>The last time this was published.</p>
+     * <p>The last time that this dataset was published.</p>
      */
     inline void SetLastPublishedTime(const Aws::Utils::DateTime& value) { m_lastPublishedTimeHasBeenSet = true; m_lastPublishedTime = value; }
 
     /**
-     * <p>The last time this was published.</p>
+     * <p>The last time that this dataset was published.</p>
      */
     inline void SetLastPublishedTime(Aws::Utils::DateTime&& value) { m_lastPublishedTimeHasBeenSet = true; m_lastPublishedTime = std::move(value); }
 
     /**
-     * <p>The last time this was published.</p>
+     * <p>The last time that this dataset was published.</p>
      */
     inline Dashboard& WithLastPublishedTime(const Aws::Utils::DateTime& value) { SetLastPublishedTime(value); return *this;}
 
     /**
-     * <p>The last time this was published.</p>
+     * <p>The last time that this dataset was published.</p>
      */
     inline Dashboard& WithLastPublishedTime(Aws::Utils::DateTime&& value) { SetLastPublishedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this dataset was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this dataset was updated.</p>
      */
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this dataset was updated.</p>
      */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this dataset was updated.</p>
      */
     inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this dataset was updated.</p>
      */
     inline Dashboard& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this dataset was updated.</p>
      */
     inline Dashboard& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 

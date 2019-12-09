@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>IAM policy assignment Summary.</p><p><h3>See Also:</h3>   <a
+   * <p>IAM policy assignment summary.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/IAMPolicyAssignmentSummary">AWS
    * API Reference</a></p>
    */

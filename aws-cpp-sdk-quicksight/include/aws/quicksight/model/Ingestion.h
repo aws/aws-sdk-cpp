@@ -41,7 +41,7 @@ namespace Model
 {
 
   /**
-   * <p>Information on the SPICE ingestion for a dataset.</p><p><h3>See Also:</h3>  
+   * <p>Information about the SPICE ingestion for a dataset.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Ingestion">AWS
    * API Reference</a></p>
@@ -56,42 +56,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline Ingestion& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline Ingestion& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource name (ARN) of the resource.</p>
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
     inline Ingestion& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -238,74 +238,74 @@ namespace Model
 
 
     /**
-     * <p>The time this ingestion started.</p>
+     * <p>The time that this ingestion started.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The time this ingestion started.</p>
+     * <p>The time that this ingestion started.</p>
      */
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
-     * <p>The time this ingestion started.</p>
+     * <p>The time that this ingestion started.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The time this ingestion started.</p>
+     * <p>The time that this ingestion started.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The time this ingestion started.</p>
+     * <p>The time that this ingestion started.</p>
      */
     inline Ingestion& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The time this ingestion started.</p>
+     * <p>The time that this ingestion started.</p>
      */
     inline Ingestion& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time this ingestion took, measured in seconds.</p>
+     * <p>The time that this ingestion took, measured in seconds.</p>
      */
     inline long long GetIngestionTimeInSeconds() const{ return m_ingestionTimeInSeconds; }
 
     /**
-     * <p>The time this ingestion took, measured in seconds.</p>
+     * <p>The time that this ingestion took, measured in seconds.</p>
      */
     inline bool IngestionTimeInSecondsHasBeenSet() const { return m_ingestionTimeInSecondsHasBeenSet; }
 
     /**
-     * <p>The time this ingestion took, measured in seconds.</p>
+     * <p>The time that this ingestion took, measured in seconds.</p>
      */
     inline void SetIngestionTimeInSeconds(long long value) { m_ingestionTimeInSecondsHasBeenSet = true; m_ingestionTimeInSeconds = value; }
 
     /**
-     * <p>The time this ingestion took, measured in seconds.</p>
+     * <p>The time that this ingestion took, measured in seconds.</p>
      */
     inline Ingestion& WithIngestionTimeInSeconds(long long value) { SetIngestionTimeInSeconds(value); return *this;}
 
 
     /**
-     * <p>Size of the data ingested in bytes.</p>
+     * <p>The size of the data ingested, in bytes.</p>
      */
     inline long long GetIngestionSizeInBytes() const{ return m_ingestionSizeInBytes; }
 
     /**
-     * <p>Size of the data ingested in bytes.</p>
+     * <p>The size of the data ingested, in bytes.</p>
      */
     inline bool IngestionSizeInBytesHasBeenSet() const { return m_ingestionSizeInBytesHasBeenSet; }
 
     /**
-     * <p>Size of the data ingested in bytes.</p>
+     * <p>The size of the data ingested, in bytes.</p>
      */
     inline void SetIngestionSizeInBytes(long long value) { m_ingestionSizeInBytesHasBeenSet = true; m_ingestionSizeInBytes = value; }
 
     /**
-     * <p>Size of the data ingested in bytes.</p>
+     * <p>The size of the data ingested, in bytes.</p>
      */
     inline Ingestion& WithIngestionSizeInBytes(long long value) { SetIngestionSizeInBytes(value); return *this;}
 

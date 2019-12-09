@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>The template structure of the object you want to describe.</p>
+     * <p>The template structure for the object you want to describe.</p>
      */
     inline const Template& GetTemplate() const{ return m_template; }
 
     /**
-     * <p>The template structure of the object you want to describe.</p>
+     * <p>The template structure for the object you want to describe.</p>
      */
     inline void SetTemplate(const Template& value) { m_template = value; }
 
     /**
-     * <p>The template structure of the object you want to describe.</p>
+     * <p>The template structure for the object you want to describe.</p>
      */
     inline void SetTemplate(Template&& value) { m_template = std::move(value); }
 
     /**
-     * <p>The template structure of the object you want to describe.</p>
+     * <p>The template structure for the object you want to describe.</p>
      */
     inline DescribeTemplateResult& WithTemplate(const Template& value) { SetTemplate(value); return *this;}
 
     /**
-     * <p>The template structure of the object you want to describe.</p>
+     * <p>The template structure for the object you want to describe.</p>
      */
     inline DescribeTemplateResult& WithTemplate(Template&& value) { SetTemplate(std::move(value)); return *this;}
 

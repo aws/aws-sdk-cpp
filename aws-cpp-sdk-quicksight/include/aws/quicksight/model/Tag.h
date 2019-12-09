@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>The keys of the key-value pairs for the resource tag or tags assigned to the
-   * resource.</p><p><h3>See Also:</h3>   <a
+   * <p>The key or keys of the key-value pairs for the resource tag or tags assigned
+   * to the resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Tag">AWS API
    * Reference</a></p>
    */

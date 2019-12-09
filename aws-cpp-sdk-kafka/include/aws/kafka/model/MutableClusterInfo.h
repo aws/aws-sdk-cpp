@@ -17,6 +17,8 @@
 #include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafka/model/ConfigurationInfo.h>
+#include <aws/kafka/model/EnhancedMonitoring.h>
+#include <aws/kafka/model/OpenMonitoring.h>
 #include <aws/kafka/model/BrokerEBSVolumeInfo.h>
 #include <utility>
 
@@ -194,6 +196,98 @@ namespace Model
      */
     inline MutableClusterInfo& WithNumberOfBrokerNodes(int value) { SetNumberOfBrokerNodes(value); return *this;}
 
+
+    /**
+     * 
+            <p>Specifies which Apache Kafka metrics Amazon MSK gathers and
+     * sends to Amazon CloudWatch for this cluster.</p>
+         
+     */
+    inline const EnhancedMonitoring& GetEnhancedMonitoring() const{ return m_enhancedMonitoring; }
+
+    /**
+     * 
+            <p>Specifies which Apache Kafka metrics Amazon MSK gathers and
+     * sends to Amazon CloudWatch for this cluster.</p>
+         
+     */
+    inline bool EnhancedMonitoringHasBeenSet() const { return m_enhancedMonitoringHasBeenSet; }
+
+    /**
+     * 
+            <p>Specifies which Apache Kafka metrics Amazon MSK gathers and
+     * sends to Amazon CloudWatch for this cluster.</p>
+         
+     */
+    inline void SetEnhancedMonitoring(const EnhancedMonitoring& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = value; }
+
+    /**
+     * 
+            <p>Specifies which Apache Kafka metrics Amazon MSK gathers and
+     * sends to Amazon CloudWatch for this cluster.</p>
+         
+     */
+    inline void SetEnhancedMonitoring(EnhancedMonitoring&& value) { m_enhancedMonitoringHasBeenSet = true; m_enhancedMonitoring = std::move(value); }
+
+    /**
+     * 
+            <p>Specifies which Apache Kafka metrics Amazon MSK gathers and
+     * sends to Amazon CloudWatch for this cluster.</p>
+         
+     */
+    inline MutableClusterInfo& WithEnhancedMonitoring(const EnhancedMonitoring& value) { SetEnhancedMonitoring(value); return *this;}
+
+    /**
+     * 
+            <p>Specifies which Apache Kafka metrics Amazon MSK gathers and
+     * sends to Amazon CloudWatch for this cluster.</p>
+         
+     */
+    inline MutableClusterInfo& WithEnhancedMonitoring(EnhancedMonitoring&& value) { SetEnhancedMonitoring(std::move(value)); return *this;}
+
+
+    /**
+     * 
+            <p>The settings for open monitoring.</p>
+         
+     */
+    inline const OpenMonitoring& GetOpenMonitoring() const{ return m_openMonitoring; }
+
+    /**
+     * 
+            <p>The settings for open monitoring.</p>
+         
+     */
+    inline bool OpenMonitoringHasBeenSet() const { return m_openMonitoringHasBeenSet; }
+
+    /**
+     * 
+            <p>The settings for open monitoring.</p>
+         
+     */
+    inline void SetOpenMonitoring(const OpenMonitoring& value) { m_openMonitoringHasBeenSet = true; m_openMonitoring = value; }
+
+    /**
+     * 
+            <p>The settings for open monitoring.</p>
+         
+     */
+    inline void SetOpenMonitoring(OpenMonitoring&& value) { m_openMonitoringHasBeenSet = true; m_openMonitoring = std::move(value); }
+
+    /**
+     * 
+            <p>The settings for open monitoring.</p>
+         
+     */
+    inline MutableClusterInfo& WithOpenMonitoring(const OpenMonitoring& value) { SetOpenMonitoring(value); return *this;}
+
+    /**
+     * 
+            <p>The settings for open monitoring.</p>
+         
+     */
+    inline MutableClusterInfo& WithOpenMonitoring(OpenMonitoring&& value) { SetOpenMonitoring(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<BrokerEBSVolumeInfo> m_brokerEBSVolumeInfo;
@@ -204,6 +298,12 @@ namespace Model
 
     int m_numberOfBrokerNodes;
     bool m_numberOfBrokerNodesHasBeenSet;
+
+    EnhancedMonitoring m_enhancedMonitoring;
+    bool m_enhancedMonitoringHasBeenSet;
+
+    OpenMonitoring m_openMonitoring;
+    bool m_openMonitoringHasBeenSet;
   };
 
 } // namespace Model

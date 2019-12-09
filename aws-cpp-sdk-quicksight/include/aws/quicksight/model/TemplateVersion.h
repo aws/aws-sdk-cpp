@@ -53,32 +53,32 @@ namespace Model
 
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this template version was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this template version was created.</p>
      */
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this template version was created.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this template version was created.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this template version was created.</p>
      */
     inline TemplateVersion& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this template version was created.</p>
      */
     inline TemplateVersion& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 

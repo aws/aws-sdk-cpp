@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Information on source file(s) format.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about the format for a source file or files.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UploadSettings">AWS
    * API Reference</a></p>
    */
@@ -102,22 +103,22 @@ namespace Model
 
 
     /**
-     * <p>Whether or not the file(s) has a header row.</p>
+     * <p>Whether the file has a header row, or the files each have a header row.</p>
      */
     inline bool GetContainsHeader() const{ return m_containsHeader; }
 
     /**
-     * <p>Whether or not the file(s) has a header row.</p>
+     * <p>Whether the file has a header row, or the files each have a header row.</p>
      */
     inline bool ContainsHeaderHasBeenSet() const { return m_containsHeaderHasBeenSet; }
 
     /**
-     * <p>Whether or not the file(s) has a header row.</p>
+     * <p>Whether the file has a header row, or the files each have a header row.</p>
      */
     inline void SetContainsHeader(bool value) { m_containsHeaderHasBeenSet = true; m_containsHeader = value; }
 
     /**
-     * <p>Whether or not the file(s) has a header row.</p>
+     * <p>Whether the file has a header row, or the files each have a header row.</p>
      */
     inline UploadSettings& WithContainsHeader(bool value) { SetContainsHeader(value); return *this;}
 

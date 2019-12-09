@@ -59,37 +59,37 @@ namespace Model
 
 
     /**
-     * <p>The Secure Socket Layer (SSL) properties that apply. of the resource.</p>
+     * <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Secure Socket Layer (SSL) properties that apply. of the resource.</p>
+     * <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The Secure Socket Layer (SSL) properties that apply. of the resource.</p>
+     * <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The Secure Socket Layer (SSL) properties that apply. of the resource.</p>
+     * <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The Secure Socket Layer (SSL) properties that apply. of the resource.</p>
+     * <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
      */
     inline DeleteDashboardResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Secure Socket Layer (SSL) properties that apply. of the resource.</p>
+     * <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
      */
     inline DeleteDashboardResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Secure Socket Layer (SSL) properties that apply. of the resource.</p>
+     * <p>The Secure Socket Layer (SSL) properties that apply for the resource.</p>
      */
     inline DeleteDashboardResult& WithArn(const char* value) { SetArn(value); return *this;}
 

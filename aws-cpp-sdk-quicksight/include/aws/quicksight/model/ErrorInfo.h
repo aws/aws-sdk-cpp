@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Error information on a data set SPICE ingestion.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Error information for the SPICE ingestion of a dataset.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ErrorInfo">AWS
    * API Reference</a></p>
    */
@@ -81,42 +81,42 @@ namespace Model
 
 
     /**
-     * <p>Error essage.</p>
+     * <p>Error message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p>Error essage.</p>
+     * <p>Error message.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>Error essage.</p>
+     * <p>Error message.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>Error essage.</p>
+     * <p>Error message.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>Error essage.</p>
+     * <p>Error message.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p>Error essage.</p>
+     * <p>Error message.</p>
      */
     inline ErrorInfo& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>Error essage.</p>
+     * <p>Error message.</p>
      */
     inline ErrorInfo& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Error essage.</p>
+     * <p>Error message.</p>
      */
     inline ErrorInfo& WithMessage(const char* value) { SetMessage(value); return *this;}
 

@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     YAML,
-    JSON
+    JSON,
+    TEXT
   };
 
 namespace DocumentFormatMapper

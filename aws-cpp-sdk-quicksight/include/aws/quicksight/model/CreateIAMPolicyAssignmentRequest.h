@@ -46,50 +46,50 @@ namespace Model
 
 
     /**
-     * <p>The AWS Account ID where you want to assign QuickSight users or groups to an
-     * IAM policy.</p>
+     * <p>The ID of the AWS account where you want to assign an IAM policy to
+     * QuickSight users or groups.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The AWS Account ID where you want to assign QuickSight users or groups to an
-     * IAM policy.</p>
+     * <p>The ID of the AWS account where you want to assign an IAM policy to
+     * QuickSight users or groups.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS Account ID where you want to assign QuickSight users or groups to an
-     * IAM policy.</p>
+     * <p>The ID of the AWS account where you want to assign an IAM policy to
+     * QuickSight users or groups.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The AWS Account ID where you want to assign QuickSight users or groups to an
-     * IAM policy.</p>
+     * <p>The ID of the AWS account where you want to assign an IAM policy to
+     * QuickSight users or groups.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The AWS Account ID where you want to assign QuickSight users or groups to an
-     * IAM policy.</p>
+     * <p>The ID of the AWS account where you want to assign an IAM policy to
+     * QuickSight users or groups.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The AWS Account ID where you want to assign QuickSight users or groups to an
-     * IAM policy.</p>
+     * <p>The ID of the AWS account where you want to assign an IAM policy to
+     * QuickSight users or groups.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The AWS Account ID where you want to assign QuickSight users or groups to an
-     * IAM policy.</p>
+     * <p>The ID of the AWS account where you want to assign an IAM policy to
+     * QuickSight users or groups.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Account ID where you want to assign QuickSight users or groups to an
-     * IAM policy.</p>
+     * <p>The ID of the AWS account where you want to assign an IAM policy to
+     * QuickSight users or groups.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -136,166 +136,184 @@ namespace Model
 
 
     /**
-     * <p>The status of an assignment:</p> <ul> <li> <p>ENABLED - Anything specified in
-     * this assignment is used while creating the data source.</p> </li> <li>
-     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
-     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * <p>The status of the assignment. Possible values are as follows:</p> <ul> <li>
+     * <p> <code>ENABLED</code> - Anything specified in this assignment is used when
+     * creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This
+     * assignment isn't used when creating the data source.</p> </li> <li> <p>
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when
      * creating the data source.</p> </li> </ul>
      */
     inline const AssignmentStatus& GetAssignmentStatus() const{ return m_assignmentStatus; }
 
     /**
-     * <p>The status of an assignment:</p> <ul> <li> <p>ENABLED - Anything specified in
-     * this assignment is used while creating the data source.</p> </li> <li>
-     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
-     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * <p>The status of the assignment. Possible values are as follows:</p> <ul> <li>
+     * <p> <code>ENABLED</code> - Anything specified in this assignment is used when
+     * creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This
+     * assignment isn't used when creating the data source.</p> </li> <li> <p>
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when
      * creating the data source.</p> </li> </ul>
      */
     inline bool AssignmentStatusHasBeenSet() const { return m_assignmentStatusHasBeenSet; }
 
     /**
-     * <p>The status of an assignment:</p> <ul> <li> <p>ENABLED - Anything specified in
-     * this assignment is used while creating the data source.</p> </li> <li>
-     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
-     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * <p>The status of the assignment. Possible values are as follows:</p> <ul> <li>
+     * <p> <code>ENABLED</code> - Anything specified in this assignment is used when
+     * creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This
+     * assignment isn't used when creating the data source.</p> </li> <li> <p>
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when
      * creating the data source.</p> </li> </ul>
      */
     inline void SetAssignmentStatus(const AssignmentStatus& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = value; }
 
     /**
-     * <p>The status of an assignment:</p> <ul> <li> <p>ENABLED - Anything specified in
-     * this assignment is used while creating the data source.</p> </li> <li>
-     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
-     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * <p>The status of the assignment. Possible values are as follows:</p> <ul> <li>
+     * <p> <code>ENABLED</code> - Anything specified in this assignment is used when
+     * creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This
+     * assignment isn't used when creating the data source.</p> </li> <li> <p>
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when
      * creating the data source.</p> </li> </ul>
      */
     inline void SetAssignmentStatus(AssignmentStatus&& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = std::move(value); }
 
     /**
-     * <p>The status of an assignment:</p> <ul> <li> <p>ENABLED - Anything specified in
-     * this assignment is used while creating the data source.</p> </li> <li>
-     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
-     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * <p>The status of the assignment. Possible values are as follows:</p> <ul> <li>
+     * <p> <code>ENABLED</code> - Anything specified in this assignment is used when
+     * creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This
+     * assignment isn't used when creating the data source.</p> </li> <li> <p>
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when
      * creating the data source.</p> </li> </ul>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAssignmentStatus(const AssignmentStatus& value) { SetAssignmentStatus(value); return *this;}
 
     /**
-     * <p>The status of an assignment:</p> <ul> <li> <p>ENABLED - Anything specified in
-     * this assignment is used while creating the data source.</p> </li> <li>
-     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
-     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * <p>The status of the assignment. Possible values are as follows:</p> <ul> <li>
+     * <p> <code>ENABLED</code> - Anything specified in this assignment is used when
+     * creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This
+     * assignment isn't used when creating the data source.</p> </li> <li> <p>
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when
      * creating the data source.</p> </li> </ul>
      */
     inline CreateIAMPolicyAssignmentRequest& WithAssignmentStatus(AssignmentStatus&& value) { SetAssignmentStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>An IAM policy Amazon Resource Name (ARN) that you want to apply to the
-     * QuickSight users and groups specified in this assignment.</p>
+     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
-     * <p>An IAM policy Amazon Resource Name (ARN) that you want to apply to the
-     * QuickSight users and groups specified in this assignment.</p>
+     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     /**
-     * <p>An IAM policy Amazon Resource Name (ARN) that you want to apply to the
-     * QuickSight users and groups specified in this assignment.</p>
+     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
 
     /**
-     * <p>An IAM policy Amazon Resource Name (ARN) that you want to apply to the
-     * QuickSight users and groups specified in this assignment.</p>
+     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
 
     /**
-     * <p>An IAM policy Amazon Resource Name (ARN) that you want to apply to the
-     * QuickSight users and groups specified in this assignment.</p>
+     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
 
     /**
-     * <p>An IAM policy Amazon Resource Name (ARN) that you want to apply to the
-     * QuickSight users and groups specified in this assignment.</p>
+     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>An IAM policy Amazon Resource Name (ARN) that you want to apply to the
-     * QuickSight users and groups specified in this assignment.</p>
+     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>An IAM policy Amazon Resource Name (ARN) that you want to apply to the
-     * QuickSight users and groups specified in this assignment.</p>
+     * <p>The ARN for the IAM policy to apply to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
 
     /**
-     * <p>QuickSight users and/or groups that you want to assign the policy to.</p>
+     * <p>The QuickSight users, groups, or both that you want to assign the policy
+     * to.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetIdentities() const{ return m_identities; }
 
     /**
-     * <p>QuickSight users and/or groups that you want to assign the policy to.</p>
+     * <p>The QuickSight users, groups, or both that you want to assign the policy
+     * to.</p>
      */
     inline bool IdentitiesHasBeenSet() const { return m_identitiesHasBeenSet; }
 
     /**
-     * <p>QuickSight users and/or groups that you want to assign the policy to.</p>
+     * <p>The QuickSight users, groups, or both that you want to assign the policy
+     * to.</p>
      */
     inline void SetIdentities(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_identitiesHasBeenSet = true; m_identities = value; }
 
     /**
-     * <p>QuickSight users and/or groups that you want to assign the policy to.</p>
+     * <p>The QuickSight users, groups, or both that you want to assign the policy
+     * to.</p>
      */
     inline void SetIdentities(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_identitiesHasBeenSet = true; m_identities = std::move(value); }
 
     /**
-     * <p>QuickSight users and/or groups that you want to assign the policy to.</p>
+     * <p>The QuickSight users, groups, or both that you want to assign the policy
+     * to.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithIdentities(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetIdentities(value); return *this;}
 
     /**
-     * <p>QuickSight users and/or groups that you want to assign the policy to.</p>
+     * <p>The QuickSight users, groups, or both that you want to assign the policy
+     * to.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& WithIdentities(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetIdentities(std::move(value)); return *this;}
 
     /**
-     * <p>QuickSight users and/or groups that you want to assign the policy to.</p>
+     * <p>The QuickSight users, groups, or both that you want to assign the policy
+     * to.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& AddIdentities(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_identitiesHasBeenSet = true; m_identities.emplace(key, value); return *this; }
 
     /**
-     * <p>QuickSight users and/or groups that you want to assign the policy to.</p>
+     * <p>The QuickSight users, groups, or both that you want to assign the policy
+     * to.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& AddIdentities(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_identitiesHasBeenSet = true; m_identities.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>QuickSight users and/or groups that you want to assign the policy to.</p>
+     * <p>The QuickSight users, groups, or both that you want to assign the policy
+     * to.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& AddIdentities(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>QuickSight users and/or groups that you want to assign the policy to.</p>
+     * <p>The QuickSight users, groups, or both that you want to assign the policy
+     * to.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& AddIdentities(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>QuickSight users and/or groups that you want to assign the policy to.</p>
+     * <p>The QuickSight users, groups, or both that you want to assign the policy
+     * to.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& AddIdentities(const char* key, Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>QuickSight users and/or groups that you want to assign the policy to.</p>
+     * <p>The QuickSight users, groups, or both that you want to assign the policy
+     * to.</p>
      */
     inline CreateIAMPolicyAssignmentRequest& AddIdentities(const char* key, const Aws::Vector<Aws::String>& value) { m_identitiesHasBeenSet = true; m_identities.emplace(key, value); return *this; }
 

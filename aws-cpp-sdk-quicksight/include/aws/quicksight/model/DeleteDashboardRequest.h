@@ -49,42 +49,50 @@ namespace Model
 
 
     /**
-     * <p>AWS account ID that contains the dashboard you are deleting.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * deleting.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are deleting.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * deleting.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are deleting.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * deleting.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are deleting.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * deleting.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are deleting.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * deleting.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are deleting.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * deleting.</p>
      */
     inline DeleteDashboardRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>AWS account ID that contains the dashboard you are deleting.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * deleting.</p>
      */
     inline DeleteDashboardRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS account ID that contains the dashboard you are deleting.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * deleting.</p>
      */
     inline DeleteDashboardRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -131,26 +139,26 @@ namespace Model
 
 
     /**
-     * <p>The version number of the dashboard. If version number property is provided,
-     * only the specified version of the dashboard is deleted.</p>
+     * <p>The version number of the dashboard. If the version number property is
+     * provided, only the specified version of the dashboard is deleted.</p>
      */
     inline long long GetVersionNumber() const{ return m_versionNumber; }
 
     /**
-     * <p>The version number of the dashboard. If version number property is provided,
-     * only the specified version of the dashboard is deleted.</p>
+     * <p>The version number of the dashboard. If the version number property is
+     * provided, only the specified version of the dashboard is deleted.</p>
      */
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
 
     /**
-     * <p>The version number of the dashboard. If version number property is provided,
-     * only the specified version of the dashboard is deleted.</p>
+     * <p>The version number of the dashboard. If the version number property is
+     * provided, only the specified version of the dashboard is deleted.</p>
      */
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
 
     /**
-     * <p>The version number of the dashboard. If version number property is provided,
-     * only the specified version of the dashboard is deleted.</p>
+     * <p>The version number of the dashboard. If the version number property is
+     * provided, only the specified version of the dashboard is deleted.</p>
      */
     inline DeleteDashboardRequest& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
 

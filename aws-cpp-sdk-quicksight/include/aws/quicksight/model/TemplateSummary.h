@@ -90,49 +90,49 @@ namespace Model
 
 
     /**
-     * <p>The ID of the template. This is unique per AWS Region for each AWS
+     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
      * account.</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
 
     /**
-     * <p>The ID of the template. This is unique per AWS Region for each AWS
+     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
      * account.</p>
      */
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
 
     /**
-     * <p>The ID of the template. This is unique per AWS Region for each AWS
+     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
      * account.</p>
      */
     inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
 
     /**
-     * <p>The ID of the template. This is unique per AWS Region for each AWS
+     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
      * account.</p>
      */
     inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
 
     /**
-     * <p>The ID of the template. This is unique per AWS Region for each AWS
+     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
      * account.</p>
      */
     inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
 
     /**
-     * <p>The ID of the template. This is unique per AWS Region for each AWS
+     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
      * account.</p>
      */
     inline TemplateSummary& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
 
     /**
-     * <p>The ID of the template. This is unique per AWS Region for each AWS
+     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
      * account.</p>
      */
     inline TemplateSummary& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the template. This is unique per AWS Region for each AWS
+     * <p>The ID of the template. This ID is unique per AWS Region for each AWS
      * account.</p>
      */
     inline TemplateSummary& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
@@ -205,63 +205,63 @@ namespace Model
 
 
     /**
-     * <p>The last time this was created.</p>
+     * <p>The last time that this template was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The last time this was created.</p>
+     * <p>The last time that this template was created.</p>
      */
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
-     * <p>The last time this was created.</p>
+     * <p>The last time that this template was created.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The last time this was created.</p>
+     * <p>The last time that this template was created.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The last time this was created.</p>
+     * <p>The last time that this template was created.</p>
      */
     inline TemplateSummary& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The last time this was created.</p>
+     * <p>The last time that this template was created.</p>
      */
     inline TemplateSummary& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this template was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this template was updated.</p>
      */
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this template was updated.</p>
      */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this template was updated.</p>
      */
     inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this template was updated.</p>
      */
     inline TemplateSummary& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this template was updated.</p>
      */
     inline TemplateSummary& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 

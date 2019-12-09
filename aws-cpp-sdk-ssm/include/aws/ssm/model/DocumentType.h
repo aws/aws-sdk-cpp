@@ -33,7 +33,8 @@ namespace Model
     Package,
     ApplicationConfiguration,
     ApplicationConfigurationSchema,
-    DeploymentStrategy
+    DeploymentStrategy,
+    ChangeCalendar
   };
 
 namespace DocumentTypeMapper

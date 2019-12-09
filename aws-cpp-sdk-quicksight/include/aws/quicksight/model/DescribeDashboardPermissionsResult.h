@@ -117,37 +117,37 @@ namespace Model
 
 
     /**
-     * <p>A structure that contains the permissions of the dashboard.</p>
+     * <p>A structure that contains the permissions for the dashboard.</p>
      */
     inline const Aws::Vector<ResourcePermission>& GetPermissions() const{ return m_permissions; }
 
     /**
-     * <p>A structure that contains the permissions of the dashboard.</p>
+     * <p>A structure that contains the permissions for the dashboard.</p>
      */
     inline void SetPermissions(const Aws::Vector<ResourcePermission>& value) { m_permissions = value; }
 
     /**
-     * <p>A structure that contains the permissions of the dashboard.</p>
+     * <p>A structure that contains the permissions for the dashboard.</p>
      */
     inline void SetPermissions(Aws::Vector<ResourcePermission>&& value) { m_permissions = std::move(value); }
 
     /**
-     * <p>A structure that contains the permissions of the dashboard.</p>
+     * <p>A structure that contains the permissions for the dashboard.</p>
      */
     inline DescribeDashboardPermissionsResult& WithPermissions(const Aws::Vector<ResourcePermission>& value) { SetPermissions(value); return *this;}
 
     /**
-     * <p>A structure that contains the permissions of the dashboard.</p>
+     * <p>A structure that contains the permissions for the dashboard.</p>
      */
     inline DescribeDashboardPermissionsResult& WithPermissions(Aws::Vector<ResourcePermission>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>A structure that contains the permissions of the dashboard.</p>
+     * <p>A structure that contains the permissions for the dashboard.</p>
      */
     inline DescribeDashboardPermissionsResult& AddPermissions(const ResourcePermission& value) { m_permissions.push_back(value); return *this; }
 
     /**
-     * <p>A structure that contains the permissions of the dashboard.</p>
+     * <p>A structure that contains the permissions for the dashboard.</p>
      */
     inline DescribeDashboardPermissionsResult& AddPermissions(ResourcePermission&& value) { m_permissions.push_back(std::move(value)); return *this; }
 

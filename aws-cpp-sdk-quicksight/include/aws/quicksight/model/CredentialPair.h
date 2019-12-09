@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The combination of username and password that are used as
+   * <p>The combination of user name and password that are used as
    * credentials.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CredentialPair">AWS
    * API Reference</a></p>
@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>Username.</p>
+     * <p>User name.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
 
     /**
-     * <p>Username.</p>
+     * <p>User name.</p>
      */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
-     * <p>Username.</p>
+     * <p>User name.</p>
      */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
-     * <p>Username.</p>
+     * <p>User name.</p>
      */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
 
     /**
-     * <p>Username.</p>
+     * <p>User name.</p>
      */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
 
     /**
-     * <p>Username.</p>
+     * <p>User name.</p>
      */
     inline CredentialPair& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
 
     /**
-     * <p>Username.</p>
+     * <p>User name.</p>
      */
     inline CredentialPair& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
 
     /**
-     * <p>Username.</p>
+     * <p>User name.</p>
      */
     inline CredentialPair& WithUsername(const char* value) { SetUsername(value); return *this;}
 

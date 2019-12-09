@@ -40,6 +40,7 @@ ClusterInfo::ClusterInfo() :
     m_encryptionInfoHasBeenSet(false),
     m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
     m_enhancedMonitoringHasBeenSet(false),
+    m_openMonitoringHasBeenSet(false),
     m_numberOfBrokerNodes(0),
     m_numberOfBrokerNodesHasBeenSet(false),
     m_state(ClusterState::NOT_SET),
@@ -61,6 +62,7 @@ ClusterInfo::ClusterInfo(JsonView jsonValue) :
     m_encryptionInfoHasBeenSet(false),
     m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
     m_enhancedMonitoringHasBeenSet(false),
+    m_openMonitoringHasBeenSet(false),
     m_numberOfBrokerNodes(0),
     m_numberOfBrokerNodesHasBeenSet(false),
     m_state(ClusterState::NOT_SET),
@@ -141,6 +143,13 @@ ClusterInfo& ClusterInfo::operator =(JsonView jsonValue)
     m_enhancedMonitoring = EnhancedMonitoringMapper::GetEnhancedMonitoringForName(jsonValue.GetString("enhancedMonitoring"));
 
     m_enhancedMonitoringHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("openMonitoring"))
+  {
+    m_openMonitoring = jsonValue.GetObject("openMonitoring");
+
+    m_openMonitoringHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("numberOfBrokerNodes"))
@@ -237,6 +246,12 @@ JsonValue ClusterInfo::Jsonize() const
   if(m_enhancedMonitoringHasBeenSet)
   {
    payload.WithString("enhancedMonitoring", EnhancedMonitoringMapper::GetNameForEnhancedMonitoring(m_enhancedMonitoring));
+  }
+
+  if(m_openMonitoringHasBeenSet)
+  {
+   payload.WithObject("openMonitoring", m_openMonitoring.Jsonize());
+
   }
 
   if(m_numberOfBrokerNodesHasBeenSet)

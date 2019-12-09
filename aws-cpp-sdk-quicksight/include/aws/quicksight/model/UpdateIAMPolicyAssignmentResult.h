@@ -118,145 +118,150 @@ namespace Model
 
 
     /**
-     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
-     * this request.</p>
+     * <p>The ARN for the IAM policy applied to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
 
     /**
-     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
-     * this request.</p>
+     * <p>The ARN for the IAM policy applied to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline void SetPolicyArn(const Aws::String& value) { m_policyArn = value; }
 
     /**
-     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
-     * this request.</p>
+     * <p>The ARN for the IAM policy applied to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline void SetPolicyArn(Aws::String&& value) { m_policyArn = std::move(value); }
 
     /**
-     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
-     * this request.</p>
+     * <p>The ARN for the IAM policy applied to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline void SetPolicyArn(const char* value) { m_policyArn.assign(value); }
 
     /**
-     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
-     * this request.</p>
+     * <p>The ARN for the IAM policy applied to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
 
     /**
-     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
-     * this request.</p>
+     * <p>The ARN for the IAM policy applied to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM policy ARN assigned to the QuickSight users and groups specified in
-     * this request.</p>
+     * <p>The ARN for the IAM policy applied to the QuickSight users and groups
+     * specified in this assignment.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
 
 
     /**
-     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     * <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetIdentities() const{ return m_identities; }
 
     /**
-     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     * <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
      */
     inline void SetIdentities(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_identities = value; }
 
     /**
-     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     * <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
      */
     inline void SetIdentities(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_identities = std::move(value); }
 
     /**
-     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     * <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& WithIdentities(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetIdentities(value); return *this;}
 
     /**
-     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     * <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& WithIdentities(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetIdentities(std::move(value)); return *this;}
 
     /**
-     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     * <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& AddIdentities(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_identities.emplace(key, value); return *this; }
 
     /**
-     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     * <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& AddIdentities(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_identities.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     * <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& AddIdentities(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_identities.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     * <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& AddIdentities(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_identities.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     * <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& AddIdentities(const char* key, Aws::Vector<Aws::String>&& value) { m_identities.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>QuickSight users and/or groups that are assigned to this IAM policy.</p>
+     * <p>The QuickSight users, groups, or both that the IAM policy is assigned to.</p>
      */
     inline UpdateIAMPolicyAssignmentResult& AddIdentities(const char* key, const Aws::Vector<Aws::String>& value) { m_identities.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The status of the assignment:</p> <ul> <li> <p>ENABLED - Anything specified
-     * in this assignment is used while creating the data source.</p> </li> <li>
-     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
-     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * <p>The status of the assignment. Possible values are as follows:</p> <ul> <li>
+     * <p> <code>ENABLED</code> - Anything specified in this assignment is used when
+     * creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This
+     * assignment isn't used when creating the data source.</p> </li> <li> <p>
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when
      * creating the data source.</p> </li> </ul>
      */
     inline const AssignmentStatus& GetAssignmentStatus() const{ return m_assignmentStatus; }
 
     /**
-     * <p>The status of the assignment:</p> <ul> <li> <p>ENABLED - Anything specified
-     * in this assignment is used while creating the data source.</p> </li> <li>
-     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
-     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * <p>The status of the assignment. Possible values are as follows:</p> <ul> <li>
+     * <p> <code>ENABLED</code> - Anything specified in this assignment is used when
+     * creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This
+     * assignment isn't used when creating the data source.</p> </li> <li> <p>
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when
      * creating the data source.</p> </li> </ul>
      */
     inline void SetAssignmentStatus(const AssignmentStatus& value) { m_assignmentStatus = value; }
 
     /**
-     * <p>The status of the assignment:</p> <ul> <li> <p>ENABLED - Anything specified
-     * in this assignment is used while creating the data source.</p> </li> <li>
-     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
-     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * <p>The status of the assignment. Possible values are as follows:</p> <ul> <li>
+     * <p> <code>ENABLED</code> - Anything specified in this assignment is used when
+     * creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This
+     * assignment isn't used when creating the data source.</p> </li> <li> <p>
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when
      * creating the data source.</p> </li> </ul>
      */
     inline void SetAssignmentStatus(AssignmentStatus&& value) { m_assignmentStatus = std::move(value); }
 
     /**
-     * <p>The status of the assignment:</p> <ul> <li> <p>ENABLED - Anything specified
-     * in this assignment is used while creating the data source.</p> </li> <li>
-     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
-     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * <p>The status of the assignment. Possible values are as follows:</p> <ul> <li>
+     * <p> <code>ENABLED</code> - Anything specified in this assignment is used when
+     * creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This
+     * assignment isn't used when creating the data source.</p> </li> <li> <p>
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when
      * creating the data source.</p> </li> </ul>
      */
     inline UpdateIAMPolicyAssignmentResult& WithAssignmentStatus(const AssignmentStatus& value) { SetAssignmentStatus(value); return *this;}
 
     /**
-     * <p>The status of the assignment:</p> <ul> <li> <p>ENABLED - Anything specified
-     * in this assignment is used while creating the data source.</p> </li> <li>
-     * <p>DISABLED - This assignment isn't used while creating the data source.</p>
-     * </li> <li> <p>DRAFT - Assignment is an unfinished draft and isn't used while
+     * <p>The status of the assignment. Possible values are as follows:</p> <ul> <li>
+     * <p> <code>ENABLED</code> - Anything specified in this assignment is used when
+     * creating the data source.</p> </li> <li> <p> <code>DISABLED</code> - This
+     * assignment isn't used when creating the data source.</p> </li> <li> <p>
+     * <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when
      * creating the data source.</p> </li> </ul>
      */
     inline UpdateIAMPolicyAssignmentResult& WithAssignmentStatus(AssignmentStatus&& value) { SetAssignmentStatus(std::move(value)); return *this;}

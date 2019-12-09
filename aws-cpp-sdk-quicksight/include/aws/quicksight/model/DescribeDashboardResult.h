@@ -70,17 +70,17 @@ namespace Model
 
 
     /**
-     * <p>The http status of this request.</p>
+     * <p>The HTTP status of this request.</p>
      */
     inline int GetStatus() const{ return m_status; }
 
     /**
-     * <p>The http status of this request.</p>
+     * <p>The HTTP status of this request.</p>
      */
     inline void SetStatus(int value) { m_status = value; }
 
     /**
-     * <p>The http status of this request.</p>
+     * <p>The HTTP status of this request.</p>
      */
     inline DescribeDashboardResult& WithStatus(int value) { SetStatus(value); return *this;}
 

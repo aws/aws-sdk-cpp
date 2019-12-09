@@ -59,73 +59,73 @@ namespace Model
 
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>An ID for the template associated with the deletion.</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>An ID for the template associated with the deletion.</p>
      */
     inline void SetTemplateId(const Aws::String& value) { m_templateId = value; }
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>An ID for the template associated with the deletion.</p>
      */
     inline void SetTemplateId(Aws::String&& value) { m_templateId = std::move(value); }
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>An ID for the template associated with the deletion.</p>
      */
     inline void SetTemplateId(const char* value) { m_templateId.assign(value); }
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>An ID for the template associated with the deletion.</p>
      */
     inline DeleteTemplateAliasResult& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>An ID for the template associated with the deletion.</p>
      */
     inline DeleteTemplateAliasResult& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>An ID for the template.</p>
+     * <p>An ID for the template associated with the deletion.</p>
      */
     inline DeleteTemplateAliasResult& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
 
 
     /**
-     * <p>The name of the alias.</p>
+     * <p>The name for the template alias.</p>
      */
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
 
     /**
-     * <p>The name of the alias.</p>
+     * <p>The name for the template alias.</p>
      */
     inline void SetAliasName(const Aws::String& value) { m_aliasName = value; }
 
     /**
-     * <p>The name of the alias.</p>
+     * <p>The name for the template alias.</p>
      */
     inline void SetAliasName(Aws::String&& value) { m_aliasName = std::move(value); }
 
     /**
-     * <p>The name of the alias.</p>
+     * <p>The name for the template alias.</p>
      */
     inline void SetAliasName(const char* value) { m_aliasName.assign(value); }
 
     /**
-     * <p>The name of the alias.</p>
+     * <p>The name for the template alias.</p>
      */
     inline DeleteTemplateAliasResult& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
 
     /**
-     * <p>The name of the alias.</p>
+     * <p>The name for the template alias.</p>
      */
     inline DeleteTemplateAliasResult& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the alias.</p>
+     * <p>The name for the template alias.</p>
      */
     inline DeleteTemplateAliasResult& WithAliasName(const char* value) { SetAliasName(value); return *this;}
 

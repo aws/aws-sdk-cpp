@@ -55,42 +55,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource name (ARN) of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline DataSource& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource name (ARN) of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline DataSource& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource name (ARN) of the data source.</p>
+     * <p>The Amazon Resource Name (ARN) of the data source.</p>
      */
     inline DataSource& WithArn(const char* value) { SetArn(value); return *this;}
 
@@ -186,38 +186,38 @@ namespace Model
 
 
     /**
-     * <p>The type of the data source. This indicates which database engine the data
-     * source connects to.</p>
+     * <p>The type of the data source. This type indicates which database engine the
+     * data source connects to.</p>
      */
     inline const DataSourceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the data source. This indicates which database engine the data
-     * source connects to.</p>
+     * <p>The type of the data source. This type indicates which database engine the
+     * data source connects to.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the data source. This indicates which database engine the data
-     * source connects to.</p>
+     * <p>The type of the data source. This type indicates which database engine the
+     * data source connects to.</p>
      */
     inline void SetType(const DataSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the data source. This indicates which database engine the data
-     * source connects to.</p>
+     * <p>The type of the data source. This type indicates which database engine the
+     * data source connects to.</p>
      */
     inline void SetType(DataSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the data source. This indicates which database engine the data
-     * source connects to.</p>
+     * <p>The type of the data source. This type indicates which database engine the
+     * data source connects to.</p>
      */
     inline DataSource& WithType(const DataSourceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the data source. This indicates which database engine the data
-     * source connects to.</p>
+     * <p>The type of the data source. This type indicates which database engine the
+     * data source connects to.</p>
      */
     inline DataSource& WithType(DataSourceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -254,106 +254,106 @@ namespace Model
 
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this data source was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this data source was created.</p>
      */
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this data source was created.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this data source was created.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this data source was created.</p>
      */
     inline DataSource& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this data source was created.</p>
      */
     inline DataSource& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this data source was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this data source was updated.</p>
      */
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this data source was updated.</p>
      */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this data source was updated.</p>
      */
     inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this data source was updated.</p>
      */
     inline DataSource& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
-     * <p>The last time this was updated.</p>
+     * <p>The last time that this data source was updated.</p>
      */
     inline DataSource& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parameters that QuickSight uses to connect to your underlying source.
-     * This is a variant type structure. At most one of the attributes should be
-     * non-null for this structure to be valid.</p>
+     * <p>The parameters that Amazon QuickSight uses to connect to your underlying
+     * source. This is a variant type structure. For this structure to be valid, only
+     * one of the attributes can be non-null.</p>
      */
     inline const DataSourceParameters& GetDataSourceParameters() const{ return m_dataSourceParameters; }
 
     /**
-     * <p>The parameters that QuickSight uses to connect to your underlying source.
-     * This is a variant type structure. At most one of the attributes should be
-     * non-null for this structure to be valid.</p>
+     * <p>The parameters that Amazon QuickSight uses to connect to your underlying
+     * source. This is a variant type structure. For this structure to be valid, only
+     * one of the attributes can be non-null.</p>
      */
     inline bool DataSourceParametersHasBeenSet() const { return m_dataSourceParametersHasBeenSet; }
 
     /**
-     * <p>The parameters that QuickSight uses to connect to your underlying source.
-     * This is a variant type structure. At most one of the attributes should be
-     * non-null for this structure to be valid.</p>
+     * <p>The parameters that Amazon QuickSight uses to connect to your underlying
+     * source. This is a variant type structure. For this structure to be valid, only
+     * one of the attributes can be non-null.</p>
      */
     inline void SetDataSourceParameters(const DataSourceParameters& value) { m_dataSourceParametersHasBeenSet = true; m_dataSourceParameters = value; }
 
     /**
-     * <p>The parameters that QuickSight uses to connect to your underlying source.
-     * This is a variant type structure. At most one of the attributes should be
-     * non-null for this structure to be valid.</p>
+     * <p>The parameters that Amazon QuickSight uses to connect to your underlying
+     * source. This is a variant type structure. For this structure to be valid, only
+     * one of the attributes can be non-null.</p>
      */
     inline void SetDataSourceParameters(DataSourceParameters&& value) { m_dataSourceParametersHasBeenSet = true; m_dataSourceParameters = std::move(value); }
 
     /**
-     * <p>The parameters that QuickSight uses to connect to your underlying source.
-     * This is a variant type structure. At most one of the attributes should be
-     * non-null for this structure to be valid.</p>
+     * <p>The parameters that Amazon QuickSight uses to connect to your underlying
+     * source. This is a variant type structure. For this structure to be valid, only
+     * one of the attributes can be non-null.</p>
      */
     inline DataSource& WithDataSourceParameters(const DataSourceParameters& value) { SetDataSourceParameters(value); return *this;}
 
     /**
-     * <p>The parameters that QuickSight uses to connect to your underlying source.
-     * This is a variant type structure. At most one of the attributes should be
-     * non-null for this structure to be valid.</p>
+     * <p>The parameters that Amazon QuickSight uses to connect to your underlying
+     * source. This is a variant type structure. For this structure to be valid, only
+     * one of the attributes can be non-null.</p>
      */
     inline DataSource& WithDataSourceParameters(DataSourceParameters&& value) { SetDataSourceParameters(std::move(value)); return *this;}
 

@@ -112,32 +112,32 @@ namespace Model
 
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this template version was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this template version was created.</p>
      */
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this template version was created.</p>
      */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this template version was created.</p>
      */
     inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this template version was created.</p>
      */
     inline TemplateVersionSummary& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
 
     /**
-     * <p>The time this was created.</p>
+     * <p>The time that this template version was created.</p>
      */
     inline TemplateVersionSummary& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
 
@@ -174,42 +174,42 @@ namespace Model
 
 
     /**
-     * <p>The desription of the template version.</p>
+     * <p>The description of the template version.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The desription of the template version.</p>
+     * <p>The description of the template version.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The desription of the template version.</p>
+     * <p>The description of the template version.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The desription of the template version.</p>
+     * <p>The description of the template version.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The desription of the template version.</p>
+     * <p>The description of the template version.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The desription of the template version.</p>
+     * <p>The description of the template version.</p>
      */
     inline TemplateVersionSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The desription of the template version.</p>
+     * <p>The description of the template version.</p>
      */
     inline TemplateVersionSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The desription of the template version.</p>
+     * <p>The description of the template version.</p>
      */
     inline TemplateVersionSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 

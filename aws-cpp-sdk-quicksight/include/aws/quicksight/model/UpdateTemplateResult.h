@@ -116,44 +116,44 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the template, including the version
-     * information of the first version.</p>
+     * <p>The ARN for the template, including the version information of the first
+     * version.</p>
      */
     inline const Aws::String& GetVersionArn() const{ return m_versionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the template, including the version
-     * information of the first version.</p>
+     * <p>The ARN for the template, including the version information of the first
+     * version.</p>
      */
     inline void SetVersionArn(const Aws::String& value) { m_versionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the template, including the version
-     * information of the first version.</p>
+     * <p>The ARN for the template, including the version information of the first
+     * version.</p>
      */
     inline void SetVersionArn(Aws::String&& value) { m_versionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the template, including the version
-     * information of the first version.</p>
+     * <p>The ARN for the template, including the version information of the first
+     * version.</p>
      */
     inline void SetVersionArn(const char* value) { m_versionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the template, including the version
-     * information of the first version.</p>
+     * <p>The ARN for the template, including the version information of the first
+     * version.</p>
      */
     inline UpdateTemplateResult& WithVersionArn(const Aws::String& value) { SetVersionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the template, including the version
-     * information of the first version.</p>
+     * <p>The ARN for the template, including the version information of the first
+     * version.</p>
      */
     inline UpdateTemplateResult& WithVersionArn(Aws::String&& value) { SetVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) for the template, including the version
-     * information of the first version.</p>
+     * <p>The ARN for the template, including the version information of the first
+     * version.</p>
      */
     inline UpdateTemplateResult& WithVersionArn(const char* value) { SetVersionArn(value); return *this;}
 

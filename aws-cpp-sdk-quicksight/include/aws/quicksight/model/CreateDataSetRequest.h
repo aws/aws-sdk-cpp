@@ -52,42 +52,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline CreateDataSetRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline CreateDataSetRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Account ID.</p>
+     * <p>The AWS account ID.</p>
      */
     inline CreateDataSetRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -329,32 +329,32 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether or not you want to import the data into SPICE.</p>
+     * <p>Indicates whether you want to import the data into SPICE.</p>
      */
     inline const DataSetImportMode& GetImportMode() const{ return m_importMode; }
 
     /**
-     * <p>Indicates whether or not you want to import the data into SPICE.</p>
+     * <p>Indicates whether you want to import the data into SPICE.</p>
      */
     inline bool ImportModeHasBeenSet() const { return m_importModeHasBeenSet; }
 
     /**
-     * <p>Indicates whether or not you want to import the data into SPICE.</p>
+     * <p>Indicates whether you want to import the data into SPICE.</p>
      */
     inline void SetImportMode(const DataSetImportMode& value) { m_importModeHasBeenSet = true; m_importMode = value; }
 
     /**
-     * <p>Indicates whether or not you want to import the data into SPICE.</p>
+     * <p>Indicates whether you want to import the data into SPICE.</p>
      */
     inline void SetImportMode(DataSetImportMode&& value) { m_importModeHasBeenSet = true; m_importMode = std::move(value); }
 
     /**
-     * <p>Indicates whether or not you want to import the data into SPICE.</p>
+     * <p>Indicates whether you want to import the data into SPICE.</p>
      */
     inline CreateDataSetRequest& WithImportMode(const DataSetImportMode& value) { SetImportMode(value); return *this;}
 
     /**
-     * <p>Indicates whether or not you want to import the data into SPICE.</p>
+     * <p>Indicates whether you want to import the data into SPICE.</p>
      */
     inline CreateDataSetRequest& WithImportMode(DataSetImportMode&& value) { SetImportMode(std::move(value)); return *this;}
 
@@ -450,32 +450,38 @@ namespace Model
 
 
     /**
-     * <p>Row-level security configuration on the data you want to create.</p>
+     * <p>The row-level security configuration for the data that you want to
+     * create.</p>
      */
     inline const RowLevelPermissionDataSet& GetRowLevelPermissionDataSet() const{ return m_rowLevelPermissionDataSet; }
 
     /**
-     * <p>Row-level security configuration on the data you want to create.</p>
+     * <p>The row-level security configuration for the data that you want to
+     * create.</p>
      */
     inline bool RowLevelPermissionDataSetHasBeenSet() const { return m_rowLevelPermissionDataSetHasBeenSet; }
 
     /**
-     * <p>Row-level security configuration on the data you want to create.</p>
+     * <p>The row-level security configuration for the data that you want to
+     * create.</p>
      */
     inline void SetRowLevelPermissionDataSet(const RowLevelPermissionDataSet& value) { m_rowLevelPermissionDataSetHasBeenSet = true; m_rowLevelPermissionDataSet = value; }
 
     /**
-     * <p>Row-level security configuration on the data you want to create.</p>
+     * <p>The row-level security configuration for the data that you want to
+     * create.</p>
      */
     inline void SetRowLevelPermissionDataSet(RowLevelPermissionDataSet&& value) { m_rowLevelPermissionDataSetHasBeenSet = true; m_rowLevelPermissionDataSet = std::move(value); }
 
     /**
-     * <p>Row-level security configuration on the data you want to create.</p>
+     * <p>The row-level security configuration for the data that you want to
+     * create.</p>
      */
     inline CreateDataSetRequest& WithRowLevelPermissionDataSet(const RowLevelPermissionDataSet& value) { SetRowLevelPermissionDataSet(value); return *this;}
 
     /**
-     * <p>Row-level security configuration on the data you want to create.</p>
+     * <p>The row-level security configuration for the data that you want to
+     * create.</p>
      */
     inline CreateDataSetRequest& WithRowLevelPermissionDataSet(RowLevelPermissionDataSet&& value) { SetRowLevelPermissionDataSet(std::move(value)); return *this;}
 

@@ -159,27 +159,27 @@ namespace Model
 
 
     /**
-     * <p>The creation status of the dashboard create request.</p>
+     * <p>The status of the dashboard creation request.</p>
      */
     inline const ResourceStatus& GetCreationStatus() const{ return m_creationStatus; }
 
     /**
-     * <p>The creation status of the dashboard create request.</p>
+     * <p>The status of the dashboard creation request.</p>
      */
     inline void SetCreationStatus(const ResourceStatus& value) { m_creationStatus = value; }
 
     /**
-     * <p>The creation status of the dashboard create request.</p>
+     * <p>The status of the dashboard creation request.</p>
      */
     inline void SetCreationStatus(ResourceStatus&& value) { m_creationStatus = std::move(value); }
 
     /**
-     * <p>The creation status of the dashboard create request.</p>
+     * <p>The status of the dashboard creation request.</p>
      */
     inline CreateDashboardResult& WithCreationStatus(const ResourceStatus& value) { SetCreationStatus(value); return *this;}
 
     /**
-     * <p>The creation status of the dashboard create request.</p>
+     * <p>The status of the dashboard creation request.</p>
      */
     inline CreateDashboardResult& WithCreationStatus(ResourceStatus&& value) { SetCreationStatus(std::move(value)); return *this;}
 

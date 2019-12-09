@@ -49,113 +49,113 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
-     * If you are using cross-account resource sharing, this is the IAM ARN of an
-     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an
+     * IAM ARN. If you are using cross-account resource sharing, this is the IAM ARN of
+     * an account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
-     * If you are using cross-account resource sharing, this is the IAM ARN of an
-     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an
+     * IAM ARN. If you are using cross-account resource sharing, this is the IAM ARN of
+     * an account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
-     * If you are using cross-account resource sharing, this is the IAM ARN of an
-     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an
+     * IAM ARN. If you are using cross-account resource sharing, this is the IAM ARN of
+     * an account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
-     * If you are using cross-account resource sharing, this is the IAM ARN of an
-     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an
+     * IAM ARN. If you are using cross-account resource sharing, this is the IAM ARN of
+     * an account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
-     * If you are using cross-account resource sharing, this is the IAM ARN of an
-     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an
+     * IAM ARN. If you are using cross-account resource sharing, this is the IAM ARN of
+     * an account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
-     * If you are using cross-account resource sharing, this is the IAM ARN of an
-     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an
+     * IAM ARN. If you are using cross-account resource sharing, this is the IAM ARN of
+     * an account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline ResourcePermission& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
-     * If you are using cross-account resource sharing, this is the IAM ARN of an
-     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an
+     * IAM ARN. If you are using cross-account resource sharing, this is the IAM ARN of
+     * an account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline ResourcePermission& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a QuickSight user or group, or an IAM ARN.
-     * If you are using cross-account resource sharing, this is the IAM ARN of an
-     * account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
+     * <p>The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an
+     * IAM ARN. If you are using cross-account resource sharing, this is the IAM ARN of
+     * an account root. Otherwise, it is the ARN of a QuickSight user or group. .</p>
      */
     inline ResourcePermission& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
 
 
     /**
-     * <p>The action to grant or revoke permissions on. For example,
-     * "quicksight:DescribeDashboard".</p>
+     * <p>The action to grant or revoke permissions on, for example
+     * <code>"quicksight:DescribeDashboard"</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
 
     /**
-     * <p>The action to grant or revoke permissions on. For example,
-     * "quicksight:DescribeDashboard".</p>
+     * <p>The action to grant or revoke permissions on, for example
+     * <code>"quicksight:DescribeDashboard"</code>.</p>
      */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
-     * <p>The action to grant or revoke permissions on. For example,
-     * "quicksight:DescribeDashboard".</p>
+     * <p>The action to grant or revoke permissions on, for example
+     * <code>"quicksight:DescribeDashboard"</code>.</p>
      */
     inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
-     * <p>The action to grant or revoke permissions on. For example,
-     * "quicksight:DescribeDashboard".</p>
+     * <p>The action to grant or revoke permissions on, for example
+     * <code>"quicksight:DescribeDashboard"</code>.</p>
      */
     inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
     /**
-     * <p>The action to grant or revoke permissions on. For example,
-     * "quicksight:DescribeDashboard".</p>
+     * <p>The action to grant or revoke permissions on, for example
+     * <code>"quicksight:DescribeDashboard"</code>.</p>
      */
     inline ResourcePermission& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
 
     /**
-     * <p>The action to grant or revoke permissions on. For example,
-     * "quicksight:DescribeDashboard".</p>
+     * <p>The action to grant or revoke permissions on, for example
+     * <code>"quicksight:DescribeDashboard"</code>.</p>
      */
     inline ResourcePermission& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
 
     /**
-     * <p>The action to grant or revoke permissions on. For example,
-     * "quicksight:DescribeDashboard".</p>
+     * <p>The action to grant or revoke permissions on, for example
+     * <code>"quicksight:DescribeDashboard"</code>.</p>
      */
     inline ResourcePermission& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
     /**
-     * <p>The action to grant or revoke permissions on. For example,
-     * "quicksight:DescribeDashboard".</p>
+     * <p>The action to grant or revoke permissions on, for example
+     * <code>"quicksight:DescribeDashboard"</code>.</p>
      */
     inline ResourcePermission& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The action to grant or revoke permissions on. For example,
-     * "quicksight:DescribeDashboard".</p>
+     * <p>The action to grant or revoke permissions on, for example
+     * <code>"quicksight:DescribeDashboard"</code>.</p>
      */
     inline ResourcePermission& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 

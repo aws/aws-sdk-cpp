@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Export to CSV option.</p><p><h3>See Also:</h3>   <a
+   * <p>Export to .csv option.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ExportToCSVOption">AWS
    * API Reference</a></p>
    */

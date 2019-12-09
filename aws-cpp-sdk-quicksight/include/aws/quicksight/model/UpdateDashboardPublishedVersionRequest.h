@@ -43,42 +43,50 @@ namespace Model
 
 
     /**
-     * <p>AWS account ID that contains the dashboard you are updating.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * updating.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are updating.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * updating.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are updating.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * updating.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are updating.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * updating.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are updating.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * updating.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are updating.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * updating.</p>
      */
     inline UpdateDashboardPublishedVersionRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>AWS account ID that contains the dashboard you are updating.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * updating.</p>
      */
     inline UpdateDashboardPublishedVersionRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS account ID that contains the dashboard you are updating.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * updating.</p>
      */
     inline UpdateDashboardPublishedVersionRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 

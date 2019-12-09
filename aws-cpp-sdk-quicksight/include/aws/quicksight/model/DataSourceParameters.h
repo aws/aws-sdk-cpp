@@ -52,9 +52,9 @@ namespace Model
 {
 
   /**
-   * <p>The parameters that QuickSight uses to connect to your underlying source.
-   * This is a variant type structure. At most one of the attributes should be
-   * non-null for this structure to be valid.</p><p><h3>See Also:</h3>   <a
+   * <p>The parameters that Amazon QuickSight uses to connect to your underlying data
+   * source. This is a variant type structure. For this structure to be valid, only
+   * one of the attributes can be non-null.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DataSourceParameters">AWS
    * API Reference</a></p>
    */
@@ -68,94 +68,94 @@ namespace Model
 
 
     /**
-     * <p>Amazon Elasticsearch parameters.</p>
+     * <p>Amazon Elasticsearch Service parameters.</p>
      */
     inline const AmazonElasticsearchParameters& GetAmazonElasticsearchParameters() const{ return m_amazonElasticsearchParameters; }
 
     /**
-     * <p>Amazon Elasticsearch parameters.</p>
+     * <p>Amazon Elasticsearch Service parameters.</p>
      */
     inline bool AmazonElasticsearchParametersHasBeenSet() const { return m_amazonElasticsearchParametersHasBeenSet; }
 
     /**
-     * <p>Amazon Elasticsearch parameters.</p>
+     * <p>Amazon Elasticsearch Service parameters.</p>
      */
     inline void SetAmazonElasticsearchParameters(const AmazonElasticsearchParameters& value) { m_amazonElasticsearchParametersHasBeenSet = true; m_amazonElasticsearchParameters = value; }
 
     /**
-     * <p>Amazon Elasticsearch parameters.</p>
+     * <p>Amazon Elasticsearch Service parameters.</p>
      */
     inline void SetAmazonElasticsearchParameters(AmazonElasticsearchParameters&& value) { m_amazonElasticsearchParametersHasBeenSet = true; m_amazonElasticsearchParameters = std::move(value); }
 
     /**
-     * <p>Amazon Elasticsearch parameters.</p>
+     * <p>Amazon Elasticsearch Service parameters.</p>
      */
     inline DataSourceParameters& WithAmazonElasticsearchParameters(const AmazonElasticsearchParameters& value) { SetAmazonElasticsearchParameters(value); return *this;}
 
     /**
-     * <p>Amazon Elasticsearch parameters.</p>
+     * <p>Amazon Elasticsearch Service parameters.</p>
      */
     inline DataSourceParameters& WithAmazonElasticsearchParameters(AmazonElasticsearchParameters&& value) { SetAmazonElasticsearchParameters(std::move(value)); return *this;}
 
 
     /**
-     * <p>Athena parameters.</p>
+     * <p>Amazon Athena parameters.</p>
      */
     inline const AthenaParameters& GetAthenaParameters() const{ return m_athenaParameters; }
 
     /**
-     * <p>Athena parameters.</p>
+     * <p>Amazon Athena parameters.</p>
      */
     inline bool AthenaParametersHasBeenSet() const { return m_athenaParametersHasBeenSet; }
 
     /**
-     * <p>Athena parameters.</p>
+     * <p>Amazon Athena parameters.</p>
      */
     inline void SetAthenaParameters(const AthenaParameters& value) { m_athenaParametersHasBeenSet = true; m_athenaParameters = value; }
 
     /**
-     * <p>Athena parameters.</p>
+     * <p>Amazon Athena parameters.</p>
      */
     inline void SetAthenaParameters(AthenaParameters&& value) { m_athenaParametersHasBeenSet = true; m_athenaParameters = std::move(value); }
 
     /**
-     * <p>Athena parameters.</p>
+     * <p>Amazon Athena parameters.</p>
      */
     inline DataSourceParameters& WithAthenaParameters(const AthenaParameters& value) { SetAthenaParameters(value); return *this;}
 
     /**
-     * <p>Athena parameters.</p>
+     * <p>Amazon Athena parameters.</p>
      */
     inline DataSourceParameters& WithAthenaParameters(AthenaParameters&& value) { SetAthenaParameters(std::move(value)); return *this;}
 
 
     /**
-     * <p>Aurora MySQL parameters.</p>
+     * <p>Amazon Aurora MySQL parameters.</p>
      */
     inline const AuroraParameters& GetAuroraParameters() const{ return m_auroraParameters; }
 
     /**
-     * <p>Aurora MySQL parameters.</p>
+     * <p>Amazon Aurora MySQL parameters.</p>
      */
     inline bool AuroraParametersHasBeenSet() const { return m_auroraParametersHasBeenSet; }
 
     /**
-     * <p>Aurora MySQL parameters.</p>
+     * <p>Amazon Aurora MySQL parameters.</p>
      */
     inline void SetAuroraParameters(const AuroraParameters& value) { m_auroraParametersHasBeenSet = true; m_auroraParameters = value; }
 
     /**
-     * <p>Aurora MySQL parameters.</p>
+     * <p>Amazon Aurora MySQL parameters.</p>
      */
     inline void SetAuroraParameters(AuroraParameters&& value) { m_auroraParametersHasBeenSet = true; m_auroraParameters = std::move(value); }
 
     /**
-     * <p>Aurora MySQL parameters.</p>
+     * <p>Amazon Aurora MySQL parameters.</p>
      */
     inline DataSourceParameters& WithAuroraParameters(const AuroraParameters& value) { SetAuroraParameters(value); return *this;}
 
     /**
-     * <p>Aurora MySQL parameters.</p>
+     * <p>Amazon Aurora MySQL parameters.</p>
      */
     inline DataSourceParameters& WithAuroraParameters(AuroraParameters&& value) { SetAuroraParameters(std::move(value)); return *this;}
 
@@ -378,63 +378,63 @@ namespace Model
 
 
     /**
-     * <p>RDS parameters.</p>
+     * <p>Amazon RDS parameters.</p>
      */
     inline const RdsParameters& GetRdsParameters() const{ return m_rdsParameters; }
 
     /**
-     * <p>RDS parameters.</p>
+     * <p>Amazon RDS parameters.</p>
      */
     inline bool RdsParametersHasBeenSet() const { return m_rdsParametersHasBeenSet; }
 
     /**
-     * <p>RDS parameters.</p>
+     * <p>Amazon RDS parameters.</p>
      */
     inline void SetRdsParameters(const RdsParameters& value) { m_rdsParametersHasBeenSet = true; m_rdsParameters = value; }
 
     /**
-     * <p>RDS parameters.</p>
+     * <p>Amazon RDS parameters.</p>
      */
     inline void SetRdsParameters(RdsParameters&& value) { m_rdsParametersHasBeenSet = true; m_rdsParameters = std::move(value); }
 
     /**
-     * <p>RDS parameters.</p>
+     * <p>Amazon RDS parameters.</p>
      */
     inline DataSourceParameters& WithRdsParameters(const RdsParameters& value) { SetRdsParameters(value); return *this;}
 
     /**
-     * <p>RDS parameters.</p>
+     * <p>Amazon RDS parameters.</p>
      */
     inline DataSourceParameters& WithRdsParameters(RdsParameters&& value) { SetRdsParameters(std::move(value)); return *this;}
 
 
     /**
-     * <p>Redshift parameters.</p>
+     * <p>Amazon Redshift parameters.</p>
      */
     inline const RedshiftParameters& GetRedshiftParameters() const{ return m_redshiftParameters; }
 
     /**
-     * <p>Redshift parameters.</p>
+     * <p>Amazon Redshift parameters.</p>
      */
     inline bool RedshiftParametersHasBeenSet() const { return m_redshiftParametersHasBeenSet; }
 
     /**
-     * <p>Redshift parameters.</p>
+     * <p>Amazon Redshift parameters.</p>
      */
     inline void SetRedshiftParameters(const RedshiftParameters& value) { m_redshiftParametersHasBeenSet = true; m_redshiftParameters = value; }
 
     /**
-     * <p>Redshift parameters.</p>
+     * <p>Amazon Redshift parameters.</p>
      */
     inline void SetRedshiftParameters(RedshiftParameters&& value) { m_redshiftParametersHasBeenSet = true; m_redshiftParameters = std::move(value); }
 
     /**
-     * <p>Redshift parameters.</p>
+     * <p>Amazon Redshift parameters.</p>
      */
     inline DataSourceParameters& WithRedshiftParameters(const RedshiftParameters& value) { SetRedshiftParameters(value); return *this;}
 
     /**
-     * <p>Redshift parameters.</p>
+     * <p>Amazon Redshift parameters.</p>
      */
     inline DataSourceParameters& WithRedshiftParameters(RedshiftParameters&& value) { SetRedshiftParameters(std::move(value)); return *this;}
 

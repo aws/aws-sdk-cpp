@@ -458,13 +458,13 @@ namespace Model
 
         /**
          * <p>Creates a dashboard from a template. To first create a template, see the
-         * CreateTemplate API.</p> <p>A dashboard is an entity in QuickSight which
-         * identifies Quicksight reports, created from analyses. QuickSight dashboards are
-         * sharable. With the right permissions, you can create scheduled email reports
-         * from them. The <code>CreateDashboard</code>, <code>DescribeDashboard</code> and
-         * <code>ListDashboardsByUser</code> APIs act on the dashboard entity. If you have
-         * the correct permissions, you can create a dashboard from a template that exists
-         * in a different AWS account.</p><p><h3>See Also:</h3>   <a
+         * CreateTemplate API operation.</p> <p>A dashboard is an entity in QuickSight that
+         * identifies QuickSight reports, created from analyses. You can share QuickSight
+         * dashboards. With the right permissions, you can create scheduled email reports
+         * from them. The <code>CreateDashboard</code>, <code>DescribeDashboard</code>, and
+         * <code>ListDashboardsByUser</code> API operations act on the dashboard entity. If
+         * you have the correct permissions, you can create a dashboard from a template
+         * that exists in a different AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDashboard">AWS
          * API Reference</a></p>
          */
@@ -472,13 +472,13 @@ namespace Model
 
         /**
          * <p>Creates a dashboard from a template. To first create a template, see the
-         * CreateTemplate API.</p> <p>A dashboard is an entity in QuickSight which
-         * identifies Quicksight reports, created from analyses. QuickSight dashboards are
-         * sharable. With the right permissions, you can create scheduled email reports
-         * from them. The <code>CreateDashboard</code>, <code>DescribeDashboard</code> and
-         * <code>ListDashboardsByUser</code> APIs act on the dashboard entity. If you have
-         * the correct permissions, you can create a dashboard from a template that exists
-         * in a different AWS account.</p><p><h3>See Also:</h3>   <a
+         * CreateTemplate API operation.</p> <p>A dashboard is an entity in QuickSight that
+         * identifies QuickSight reports, created from analyses. You can share QuickSight
+         * dashboards. With the right permissions, you can create scheduled email reports
+         * from them. The <code>CreateDashboard</code>, <code>DescribeDashboard</code>, and
+         * <code>ListDashboardsByUser</code> API operations act on the dashboard entity. If
+         * you have the correct permissions, you can create a dashboard from a template
+         * that exists in a different AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDashboard">AWS
          * API Reference</a></p>
          *
@@ -488,13 +488,13 @@ namespace Model
 
         /**
          * <p>Creates a dashboard from a template. To first create a template, see the
-         * CreateTemplate API.</p> <p>A dashboard is an entity in QuickSight which
-         * identifies Quicksight reports, created from analyses. QuickSight dashboards are
-         * sharable. With the right permissions, you can create scheduled email reports
-         * from them. The <code>CreateDashboard</code>, <code>DescribeDashboard</code> and
-         * <code>ListDashboardsByUser</code> APIs act on the dashboard entity. If you have
-         * the correct permissions, you can create a dashboard from a template that exists
-         * in a different AWS account.</p><p><h3>See Also:</h3>   <a
+         * CreateTemplate API operation.</p> <p>A dashboard is an entity in QuickSight that
+         * identifies QuickSight reports, created from analyses. You can share QuickSight
+         * dashboards. With the right permissions, you can create scheduled email reports
+         * from them. The <code>CreateDashboard</code>, <code>DescribeDashboard</code>, and
+         * <code>ListDashboardsByUser</code> API operations act on the dashboard entity. If
+         * you have the correct permissions, you can create a dashboard from a template
+         * that exists in a different AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDashboard">AWS
          * API Reference</a></p>
          *
@@ -612,18 +612,20 @@ namespace Model
         virtual void CreateGroupMembershipAsync(const Model::CreateGroupMembershipRequest& request, const CreateGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an assignment with one specified IAM policy Amazon Resource Name
-         * (ARN) and will assigned to specified groups or users of QuickSight. Users and
-         * groups need to be in the same namespace. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates an assignment with one specified IAM policy, identified by its Amazon
+         * Resource Name (ARN). This policy will be assigned to specified groups or users
+         * of Amazon QuickSight. The users and groups need to be in the same namespace.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateIAMPolicyAssignmentOutcome CreateIAMPolicyAssignment(const Model::CreateIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Creates an assignment with one specified IAM policy Amazon Resource Name
-         * (ARN) and will assigned to specified groups or users of QuickSight. Users and
-         * groups need to be in the same namespace. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates an assignment with one specified IAM policy, identified by its Amazon
+         * Resource Name (ARN). This policy will be assigned to specified groups or users
+         * of Amazon QuickSight. The users and groups need to be in the same namespace.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *
@@ -632,9 +634,10 @@ namespace Model
         virtual Model::CreateIAMPolicyAssignmentOutcomeCallable CreateIAMPolicyAssignmentCallable(const Model::CreateIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Creates an assignment with one specified IAM policy Amazon Resource Name
-         * (ARN) and will assigned to specified groups or users of QuickSight. Users and
-         * groups need to be in the same namespace. </p><p><h3>See Also:</h3>   <a
+         * <p>Creates an assignment with one specified IAM policy, identified by its Amazon
+         * Resource Name (ARN). This policy will be assigned to specified groups or users
+         * of Amazon QuickSight. The users and groups need to be in the same namespace.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *
@@ -686,28 +689,28 @@ namespace Model
         virtual void CreateIngestionAsync(const Model::CreateIngestionRequest& request, const CreateIngestionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a template from an existing QuickSight analysis or template. The
-         * resulting template can be used to create a dashboard.</p> <p>A template is an
-         * entity in QuickSight which encapsulates the metadata required to create an
-         * analysis that can be used to create dashboard. It adds a layer of abstraction by
-         * use placeholders to replace the dataset associated with the analysis. You can
-         * use templates to create dashboards by replacing dataset placeholders with
-         * datasets which follow the same schema that was used to create the source
-         * analysis and template.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a template from an existing QuickSight analysis or template. You can
+         * use the resulting template to create a dashboard.</p> <p>A <i>template</i> is an
+         * entity in QuickSight that encapsulates the metadata required to create an
+         * analysis and that you can use to create s dashboard. A template adds a layer of
+         * abstraction by using placeholders to replace the dataset associated with the
+         * analysis. You can use templates to create dashboards by replacing dataset
+         * placeholders with datasets that follow the same schema that was used to create
+         * the source analysis and template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateTemplateOutcome CreateTemplate(const Model::CreateTemplateRequest& request) const;
 
         /**
-         * <p>Creates a template from an existing QuickSight analysis or template. The
-         * resulting template can be used to create a dashboard.</p> <p>A template is an
-         * entity in QuickSight which encapsulates the metadata required to create an
-         * analysis that can be used to create dashboard. It adds a layer of abstraction by
-         * use placeholders to replace the dataset associated with the analysis. You can
-         * use templates to create dashboards by replacing dataset placeholders with
-         * datasets which follow the same schema that was used to create the source
-         * analysis and template.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a template from an existing QuickSight analysis or template. You can
+         * use the resulting template to create a dashboard.</p> <p>A <i>template</i> is an
+         * entity in QuickSight that encapsulates the metadata required to create an
+         * analysis and that you can use to create s dashboard. A template adds a layer of
+         * abstraction by using placeholders to replace the dataset associated with the
+         * analysis. You can use templates to create dashboards by replacing dataset
+         * placeholders with datasets that follow the same schema that was used to create
+         * the source analysis and template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTemplate">AWS
          * API Reference</a></p>
          *
@@ -716,14 +719,14 @@ namespace Model
         virtual Model::CreateTemplateOutcomeCallable CreateTemplateCallable(const Model::CreateTemplateRequest& request) const;
 
         /**
-         * <p>Creates a template from an existing QuickSight analysis or template. The
-         * resulting template can be used to create a dashboard.</p> <p>A template is an
-         * entity in QuickSight which encapsulates the metadata required to create an
-         * analysis that can be used to create dashboard. It adds a layer of abstraction by
-         * use placeholders to replace the dataset associated with the analysis. You can
-         * use templates to create dashboards by replacing dataset placeholders with
-         * datasets which follow the same schema that was used to create the source
-         * analysis and template.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a template from an existing QuickSight analysis or template. You can
+         * use the resulting template to create a dashboard.</p> <p>A <i>template</i> is an
+         * entity in QuickSight that encapsulates the metadata required to create an
+         * analysis and that you can use to create s dashboard. A template adds a layer of
+         * abstraction by using placeholders to replace the dataset associated with the
+         * analysis. You can use templates to create dashboards by replacing dataset
+         * placeholders with datasets that follow the same schema that was used to create
+         * the source analysis and template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTemplate">AWS
          * API Reference</a></p>
          *
@@ -888,14 +891,14 @@ namespace Model
         virtual void DeleteGroupMembershipAsync(const Model::DeleteGroupMembershipRequest& request, const DeleteGroupMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an existing assignment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing IAM policy assignment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteIAMPolicyAssignment">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteIAMPolicyAssignmentOutcome DeleteIAMPolicyAssignment(const Model::DeleteIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Deletes an existing assignment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing IAM policy assignment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *
@@ -904,7 +907,7 @@ namespace Model
         virtual Model::DeleteIAMPolicyAssignmentOutcomeCallable DeleteIAMPolicyAssignmentCallable(const Model::DeleteIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Deletes an existing assignment.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an existing IAM policy assignment.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *
@@ -938,14 +941,18 @@ namespace Model
         virtual void DeleteTemplateAsync(const Model::DeleteTemplateRequest& request, const DeleteTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update template alias of given template.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the item that the specified template alias points to. If you provide
+         * a specific alias, you delete the version of the template that the alias points
+         * to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTemplateAlias">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteTemplateAliasOutcome DeleteTemplateAlias(const Model::DeleteTemplateAliasRequest& request) const;
 
         /**
-         * <p>Update template alias of given template.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the item that the specified template alias points to. If you provide
+         * a specific alias, you delete the version of the template that the alias points
+         * to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTemplateAlias">AWS
          * API Reference</a></p>
          *
@@ -954,7 +961,9 @@ namespace Model
         virtual Model::DeleteTemplateAliasOutcomeCallable DeleteTemplateAliasCallable(const Model::DeleteTemplateAliasRequest& request) const;
 
         /**
-         * <p>Update template alias of given template.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the item that the specified template alias points to. If you provide
+         * a specific alias, you delete the version of the template that the alias points
+         * to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTemplateAlias">AWS
          * API Reference</a></p>
          *
@@ -1047,16 +1056,16 @@ namespace Model
         virtual void DescribeDashboardAsync(const Model::DescribeDashboardRequest& request, const DescribeDashboardResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes read and write permissions on a dashboard.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Describes read and write permissions for a dashboard.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardPermissions">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeDashboardPermissionsOutcome DescribeDashboardPermissions(const Model::DescribeDashboardPermissionsRequest& request) const;
 
         /**
-         * <p>Describes read and write permissions on a dashboard.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Describes read and write permissions for a dashboard.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardPermissions">AWS
          * API Reference</a></p>
          *
@@ -1065,8 +1074,8 @@ namespace Model
         virtual Model::DescribeDashboardPermissionsOutcomeCallable DescribeDashboardPermissionsCallable(const Model::DescribeDashboardPermissionsRequest& request) const;
 
         /**
-         * <p>Describes read and write permissions on a dashboard.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Describes read and write permissions for a dashboard.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboardPermissions">AWS
          * API Reference</a></p>
          *
@@ -1212,7 +1221,7 @@ namespace Model
         virtual void DescribeGroupAsync(const Model::DescribeGroupRequest& request, const DescribeGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes an existing IAMPolicy Assignment by specified assignment
+         * <p>Describes an existing IAM policy assignment, as specified by the assignment
          * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIAMPolicyAssignment">AWS
          * API Reference</a></p>
@@ -1220,7 +1229,7 @@ namespace Model
         virtual Model::DescribeIAMPolicyAssignmentOutcome DescribeIAMPolicyAssignment(const Model::DescribeIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Describes an existing IAMPolicy Assignment by specified assignment
+         * <p>Describes an existing IAM policy assignment, as specified by the assignment
          * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIAMPolicyAssignment">AWS
          * API Reference</a></p>
@@ -1230,7 +1239,7 @@ namespace Model
         virtual Model::DescribeIAMPolicyAssignmentOutcomeCallable DescribeIAMPolicyAssignmentCallable(const Model::DescribeIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Describes an existing IAMPolicy Assignment by specified assignment
+         * <p>Describes an existing IAM policy assignment, as specified by the assignment
          * name.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeIAMPolicyAssignment">AWS
          * API Reference</a></p>
@@ -1290,14 +1299,14 @@ namespace Model
         virtual void DescribeTemplateAsync(const Model::DescribeTemplateRequest& request, const DescribeTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the template aliases of a template.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the template alias for a template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplateAlias">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeTemplateAliasOutcome DescribeTemplateAlias(const Model::DescribeTemplateAliasRequest& request) const;
 
         /**
-         * <p>Describes the template aliases of a template.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the template alias for a template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplateAlias">AWS
          * API Reference</a></p>
          *
@@ -1306,7 +1315,7 @@ namespace Model
         virtual Model::DescribeTemplateAliasOutcomeCallable DescribeTemplateAliasCallable(const Model::DescribeTemplateAliasRequest& request) const;
 
         /**
-         * <p>Describes the template aliases of a template.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the template alias for a template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTemplateAlias">AWS
          * API Reference</a></p>
          *
@@ -1371,34 +1380,32 @@ namespace Model
         virtual void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Generates a server-side embeddable URL and authorization code. Before this
-         * can work properly, first you need to configure the dashboards and user
-         * permissions. For more information, see the Amazon QuickSight User Guide section
-         * on <a
+         * <p>Generates a server-side embeddable URL and authorization code. For this
+         * process to work properly, first configure the dashboards and user permissions.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-         * Amazon QuickSight Dashboards</a> or see the Amazon QuickSight API Reference
-         * section on <a
+         * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or
+         * <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-         * Amazon QuickSight Dashboards</a> .</p> <p>Currently, you can use
-         * <code>GetDashboardEmbedURL</code> only from the server, not from the user’s
-         * browser.</p><p><h3>See Also:</h3>   <a
+         * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API
+         * Reference</i>.</p> <p>Currently, you can use <code>GetDashboardEmbedURL</code>
+         * only from the server, not from the user’s browser.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
          * API Reference</a></p>
          */
         virtual Model::GetDashboardEmbedUrlOutcome GetDashboardEmbedUrl(const Model::GetDashboardEmbedUrlRequest& request) const;
 
         /**
-         * <p>Generates a server-side embeddable URL and authorization code. Before this
-         * can work properly, first you need to configure the dashboards and user
-         * permissions. For more information, see the Amazon QuickSight User Guide section
-         * on <a
+         * <p>Generates a server-side embeddable URL and authorization code. For this
+         * process to work properly, first configure the dashboards and user permissions.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-         * Amazon QuickSight Dashboards</a> or see the Amazon QuickSight API Reference
-         * section on <a
+         * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or
+         * <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-         * Amazon QuickSight Dashboards</a> .</p> <p>Currently, you can use
-         * <code>GetDashboardEmbedURL</code> only from the server, not from the user’s
-         * browser.</p><p><h3>See Also:</h3>   <a
+         * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API
+         * Reference</i>.</p> <p>Currently, you can use <code>GetDashboardEmbedURL</code>
+         * only from the server, not from the user’s browser.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
          * API Reference</a></p>
          *
@@ -1407,17 +1414,16 @@ namespace Model
         virtual Model::GetDashboardEmbedUrlOutcomeCallable GetDashboardEmbedUrlCallable(const Model::GetDashboardEmbedUrlRequest& request) const;
 
         /**
-         * <p>Generates a server-side embeddable URL and authorization code. Before this
-         * can work properly, first you need to configure the dashboards and user
-         * permissions. For more information, see the Amazon QuickSight User Guide section
-         * on <a
+         * <p>Generates a server-side embeddable URL and authorization code. For this
+         * process to work properly, first configure the dashboards and user permissions.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding
-         * Amazon QuickSight Dashboards</a> or see the Amazon QuickSight API Reference
-         * section on <a
+         * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or
+         * <a
          * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-         * Amazon QuickSight Dashboards</a> .</p> <p>Currently, you can use
-         * <code>GetDashboardEmbedURL</code> only from the server, not from the user’s
-         * browser.</p><p><h3>See Also:</h3>   <a
+         * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API
+         * Reference</i>.</p> <p>Currently, you can use <code>GetDashboardEmbedURL</code>
+         * only from the server, not from the user’s browser.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetDashboardEmbedUrl">AWS
          * API Reference</a></p>
          *
@@ -1426,7 +1432,7 @@ namespace Model
         virtual void GetDashboardEmbedUrlAsync(const Model::GetDashboardEmbedUrlRequest& request, const GetDashboardEmbedUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the versions of the dashboards in the Quicksight
+         * <p>Lists all the versions of the dashboards in the QuickSight
          * subscription.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboardVersions">AWS
          * API Reference</a></p>
@@ -1434,7 +1440,7 @@ namespace Model
         virtual Model::ListDashboardVersionsOutcome ListDashboardVersions(const Model::ListDashboardVersionsRequest& request) const;
 
         /**
-         * <p>Lists all the versions of the dashboards in the Quicksight
+         * <p>Lists all the versions of the dashboards in the QuickSight
          * subscription.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboardVersions">AWS
          * API Reference</a></p>
@@ -1444,7 +1450,7 @@ namespace Model
         virtual Model::ListDashboardVersionsOutcomeCallable ListDashboardVersionsCallable(const Model::ListDashboardVersionsRequest& request) const;
 
         /**
-         * <p>Lists all the versions of the dashboards in the Quicksight
+         * <p>Lists all the versions of the dashboards in the QuickSight
          * subscription.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboardVersions">AWS
          * API Reference</a></p>
@@ -1454,14 +1460,14 @@ namespace Model
         virtual void ListDashboardVersionsAsync(const Model::ListDashboardVersionsRequest& request, const ListDashboardVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists dashboards in the AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists dashboards in an AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboards">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDashboardsOutcome ListDashboards(const Model::ListDashboardsRequest& request) const;
 
         /**
-         * <p>Lists dashboards in the AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists dashboards in an AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboards">AWS
          * API Reference</a></p>
          *
@@ -1470,7 +1476,7 @@ namespace Model
         virtual Model::ListDashboardsOutcomeCallable ListDashboardsCallable(const Model::ListDashboardsRequest& request) const;
 
         /**
-         * <p>Lists dashboards in the AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists dashboards in an AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboards">AWS
          * API Reference</a></p>
          *
@@ -1479,8 +1485,8 @@ namespace Model
         virtual void ListDashboardsAsync(const Model::ListDashboardsRequest& request, const ListDashboardsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all of the datasets belonging to this account in an AWS region.</p>
-         * <p>The permissions resource is
+         * <p>Lists all of the datasets belonging to the current AWS account in an AWS
+         * Region.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:region:aws-account-id:dataset/ *</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSets">AWS
@@ -1489,8 +1495,8 @@ namespace Model
         virtual Model::ListDataSetsOutcome ListDataSets(const Model::ListDataSetsRequest& request) const;
 
         /**
-         * <p>Lists all of the datasets belonging to this account in an AWS region.</p>
-         * <p>The permissions resource is
+         * <p>Lists all of the datasets belonging to the current AWS account in an AWS
+         * Region.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:region:aws-account-id:dataset/ *</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSets">AWS
@@ -1501,8 +1507,8 @@ namespace Model
         virtual Model::ListDataSetsOutcomeCallable ListDataSetsCallable(const Model::ListDataSetsRequest& request) const;
 
         /**
-         * <p>Lists all of the datasets belonging to this account in an AWS region.</p>
-         * <p>The permissions resource is
+         * <p>Lists all of the datasets belonging to the current AWS account in an AWS
+         * Region.</p> <p>The permissions resource is
          * <code>arn:aws:quicksight:region:aws-account-id:dataset/ *</code>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDataSets">AWS
@@ -1591,16 +1597,16 @@ namespace Model
         virtual void ListGroupsAsync(const Model::ListGroupsRequest& request, const ListGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists assignments in current QuickSight account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists IAM policy assignments in the current Amazon QuickSight
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignments">AWS
          * API Reference</a></p>
          */
         virtual Model::ListIAMPolicyAssignmentsOutcome ListIAMPolicyAssignments(const Model::ListIAMPolicyAssignmentsRequest& request) const;
 
         /**
-         * <p>Lists assignments in current QuickSight account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists IAM policy assignments in the current Amazon QuickSight
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignments">AWS
          * API Reference</a></p>
          *
@@ -1609,8 +1615,8 @@ namespace Model
         virtual Model::ListIAMPolicyAssignmentsOutcomeCallable ListIAMPolicyAssignmentsCallable(const Model::ListIAMPolicyAssignmentsRequest& request) const;
 
         /**
-         * <p>Lists assignments in current QuickSight account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists IAM policy assignments in the current Amazon QuickSight
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignments">AWS
          * API Reference</a></p>
          *
@@ -1619,8 +1625,8 @@ namespace Model
         virtual void ListIAMPolicyAssignmentsAsync(const Model::ListIAMPolicyAssignmentsRequest& request, const ListIAMPolicyAssignmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the assignments and the Amazon Resource Names (ARNs) for the
-         * associated IAM policies assigned to the specified user and the group or groups
+         * <p>Lists all the IAM policy assignments, including the Amazon Resource Names
+         * (ARNs) for the IAM policies assigned to the specified user and group or groups
          * that the user belongs to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignmentsForUser">AWS
          * API Reference</a></p>
@@ -1628,8 +1634,8 @@ namespace Model
         virtual Model::ListIAMPolicyAssignmentsForUserOutcome ListIAMPolicyAssignmentsForUser(const Model::ListIAMPolicyAssignmentsForUserRequest& request) const;
 
         /**
-         * <p>Lists all the assignments and the Amazon Resource Names (ARNs) for the
-         * associated IAM policies assigned to the specified user and the group or groups
+         * <p>Lists all the IAM policy assignments, including the Amazon Resource Names
+         * (ARNs) for the IAM policies assigned to the specified user and group or groups
          * that the user belongs to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignmentsForUser">AWS
          * API Reference</a></p>
@@ -1639,8 +1645,8 @@ namespace Model
         virtual Model::ListIAMPolicyAssignmentsForUserOutcomeCallable ListIAMPolicyAssignmentsForUserCallable(const Model::ListIAMPolicyAssignmentsForUserRequest& request) const;
 
         /**
-         * <p>Lists all the assignments and the Amazon Resource Names (ARNs) for the
-         * associated IAM policies assigned to the specified user and the group or groups
+         * <p>Lists all the IAM policy assignments, including the Amazon Resource Names
+         * (ARNs) for the IAM policies assigned to the specified user and group or groups
          * that the user belongs to.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListIAMPolicyAssignmentsForUser">AWS
          * API Reference</a></p>
@@ -1728,7 +1734,7 @@ namespace Model
         virtual void ListTemplateAliasesAsync(const Model::ListTemplateAliasesRequest& request, const ListTemplateAliasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the versions of the templates in the Quicksight
+         * <p>Lists all the versions of the templates in the current Amazon QuickSight
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplateVersions">AWS
          * API Reference</a></p>
@@ -1736,7 +1742,7 @@ namespace Model
         virtual Model::ListTemplateVersionsOutcome ListTemplateVersions(const Model::ListTemplateVersionsRequest& request) const;
 
         /**
-         * <p>Lists all the versions of the templates in the Quicksight
+         * <p>Lists all the versions of the templates in the current Amazon QuickSight
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplateVersions">AWS
          * API Reference</a></p>
@@ -1746,7 +1752,7 @@ namespace Model
         virtual Model::ListTemplateVersionsOutcomeCallable ListTemplateVersionsCallable(const Model::ListTemplateVersionsRequest& request) const;
 
         /**
-         * <p>Lists all the versions of the templates in the Quicksight
+         * <p>Lists all the versions of the templates in the current Amazon QuickSight
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplateVersions">AWS
          * API Reference</a></p>
@@ -1756,16 +1762,16 @@ namespace Model
         virtual void ListTemplateVersionsAsync(const Model::ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists all the templates in the QuickSight account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists all the templates in the current Amazon QuickSight
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplates">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTemplatesOutcome ListTemplates(const Model::ListTemplatesRequest& request) const;
 
         /**
-         * <p>Lists all the templates in the QuickSight account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists all the templates in the current Amazon QuickSight
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplates">AWS
          * API Reference</a></p>
          *
@@ -1774,8 +1780,8 @@ namespace Model
         virtual Model::ListTemplatesOutcomeCallable ListTemplatesCallable(const Model::ListTemplatesRequest& request) const;
 
         /**
-         * <p>Lists all the templates in the QuickSight account.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Lists all the templates in the current Amazon QuickSight
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTemplates">AWS
          * API Reference</a></p>
          *
@@ -1966,14 +1972,14 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a dashboard in the AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a dashboard in an AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboard">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDashboardOutcome UpdateDashboard(const Model::UpdateDashboardRequest& request) const;
 
         /**
-         * <p>Updates a dashboard in the AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a dashboard in an AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboard">AWS
          * API Reference</a></p>
          *
@@ -1982,7 +1988,7 @@ namespace Model
         virtual Model::UpdateDashboardOutcomeCallable UpdateDashboardCallable(const Model::UpdateDashboardRequest& request) const;
 
         /**
-         * <p>Updates a dashboard in the AWS account.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a dashboard in an AWS account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDashboard">AWS
          * API Reference</a></p>
          *
@@ -2175,18 +2181,18 @@ namespace Model
         virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing assignment. This operation updates only the optional
-         * parameter or parameters that are specified in the request.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an existing IAM policy assignment. This operation updates only the
+         * optional parameter or parameters that are specified in the
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateIAMPolicyAssignmentOutcome UpdateIAMPolicyAssignment(const Model::UpdateIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Updates an existing assignment. This operation updates only the optional
-         * parameter or parameters that are specified in the request.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an existing IAM policy assignment. This operation updates only the
+         * optional parameter or parameters that are specified in the
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *
@@ -2195,9 +2201,9 @@ namespace Model
         virtual Model::UpdateIAMPolicyAssignmentOutcomeCallable UpdateIAMPolicyAssignmentCallable(const Model::UpdateIAMPolicyAssignmentRequest& request) const;
 
         /**
-         * <p>Updates an existing assignment. This operation updates only the optional
-         * parameter or parameters that are specified in the request.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates an existing IAM policy assignment. This operation updates only the
+         * optional parameter or parameters that are specified in the
+         * request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateIAMPolicyAssignment">AWS
          * API Reference</a></p>
          *
@@ -2206,16 +2212,16 @@ namespace Model
         virtual void UpdateIAMPolicyAssignmentAsync(const Model::UpdateIAMPolicyAssignmentRequest& request, const UpdateIAMPolicyAssignmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates a template from an existing QuickSight analysis.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates a template from an existing Amazon QuickSight analysis or another
+         * template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateTemplateOutcome UpdateTemplate(const Model::UpdateTemplateRequest& request) const;
 
         /**
-         * <p>Updates a template from an existing QuickSight analysis.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates a template from an existing Amazon QuickSight analysis or another
+         * template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplate">AWS
          * API Reference</a></p>
          *
@@ -2224,8 +2230,8 @@ namespace Model
         virtual Model::UpdateTemplateOutcomeCallable UpdateTemplateCallable(const Model::UpdateTemplateRequest& request) const;
 
         /**
-         * <p>Updates a template from an existing QuickSight analysis.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates a template from an existing Amazon QuickSight analysis or another
+         * template.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplate">AWS
          * API Reference</a></p>
          *
@@ -2259,14 +2265,16 @@ namespace Model
         virtual void UpdateTemplateAliasAsync(const Model::UpdateTemplateAliasRequest& request, const UpdateTemplateAliasResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the permissions on a template.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the resource permissions for a template.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplatePermissions">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateTemplatePermissionsOutcome UpdateTemplatePermissions(const Model::UpdateTemplatePermissionsRequest& request) const;
 
         /**
-         * <p>Updates the permissions on a template.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the resource permissions for a template.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplatePermissions">AWS
          * API Reference</a></p>
          *
@@ -2275,7 +2283,8 @@ namespace Model
         virtual Model::UpdateTemplatePermissionsOutcomeCallable UpdateTemplatePermissionsCallable(const Model::UpdateTemplatePermissionsRequest& request) const;
 
         /**
-         * <p>Updates the permissions on a template.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the resource permissions for a template.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTemplatePermissions">AWS
          * API Reference</a></p>
          *

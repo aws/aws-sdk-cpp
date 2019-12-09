@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * <p>Information on rows during a data set SPICE ingestion.</p><p><h3>See
+   * <p>Information about rows for a data set SPICE ingestion.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RowInfo">AWS
    * API Reference</a></p>

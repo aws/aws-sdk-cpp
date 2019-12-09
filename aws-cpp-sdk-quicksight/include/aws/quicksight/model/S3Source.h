@@ -51,73 +51,73 @@ namespace Model
 
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The amazon Resource Name (ARN) for the data source.</p>
      */
     inline const Aws::String& GetDataSourceArn() const{ return m_dataSourceArn; }
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The amazon Resource Name (ARN) for the data source.</p>
      */
     inline bool DataSourceArnHasBeenSet() const { return m_dataSourceArnHasBeenSet; }
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The amazon Resource Name (ARN) for the data source.</p>
      */
     inline void SetDataSourceArn(const Aws::String& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = value; }
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The amazon Resource Name (ARN) for the data source.</p>
      */
     inline void SetDataSourceArn(Aws::String&& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = std::move(value); }
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The amazon Resource Name (ARN) for the data source.</p>
      */
     inline void SetDataSourceArn(const char* value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn.assign(value); }
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The amazon Resource Name (ARN) for the data source.</p>
      */
     inline S3Source& WithDataSourceArn(const Aws::String& value) { SetDataSourceArn(value); return *this;}
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The amazon Resource Name (ARN) for the data source.</p>
      */
     inline S3Source& WithDataSourceArn(Aws::String&& value) { SetDataSourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>Data source ARN.</p>
+     * <p>The amazon Resource Name (ARN) for the data source.</p>
      */
     inline S3Source& WithDataSourceArn(const char* value) { SetDataSourceArn(value); return *this;}
 
 
     /**
-     * <p>Information on the S3 source file(s) format.</p>
+     * <p>Information about the format for the S3 source file or files.</p>
      */
     inline const UploadSettings& GetUploadSettings() const{ return m_uploadSettings; }
 
     /**
-     * <p>Information on the S3 source file(s) format.</p>
+     * <p>Information about the format for the S3 source file or files.</p>
      */
     inline bool UploadSettingsHasBeenSet() const { return m_uploadSettingsHasBeenSet; }
 
     /**
-     * <p>Information on the S3 source file(s) format.</p>
+     * <p>Information about the format for the S3 source file or files.</p>
      */
     inline void SetUploadSettings(const UploadSettings& value) { m_uploadSettingsHasBeenSet = true; m_uploadSettings = value; }
 
     /**
-     * <p>Information on the S3 source file(s) format.</p>
+     * <p>Information about the format for the S3 source file or files.</p>
      */
     inline void SetUploadSettings(UploadSettings&& value) { m_uploadSettingsHasBeenSet = true; m_uploadSettings = std::move(value); }
 
     /**
-     * <p>Information on the S3 source file(s) format.</p>
+     * <p>Information about the format for the S3 source file or files.</p>
      */
     inline S3Source& WithUploadSettings(const UploadSettings& value) { SetUploadSettings(value); return *this;}
 
     /**
-     * <p>Information on the S3 source file(s) format.</p>
+     * <p>Information about the format for the S3 source file or files.</p>
      */
     inline S3Source& WithUploadSettings(UploadSettings&& value) { SetUploadSettings(std::move(value)); return *this;}
 

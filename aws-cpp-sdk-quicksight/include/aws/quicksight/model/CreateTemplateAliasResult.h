@@ -44,27 +44,27 @@ namespace Model
 
 
     /**
-     * <p>Information on the template alias.</p>
+     * <p>Information about the template alias.</p>
      */
     inline const TemplateAlias& GetTemplateAlias() const{ return m_templateAlias; }
 
     /**
-     * <p>Information on the template alias.</p>
+     * <p>Information about the template alias.</p>
      */
     inline void SetTemplateAlias(const TemplateAlias& value) { m_templateAlias = value; }
 
     /**
-     * <p>Information on the template alias.</p>
+     * <p>Information about the template alias.</p>
      */
     inline void SetTemplateAlias(TemplateAlias&& value) { m_templateAlias = std::move(value); }
 
     /**
-     * <p>Information on the template alias.</p>
+     * <p>Information about the template alias.</p>
      */
     inline CreateTemplateAliasResult& WithTemplateAlias(const TemplateAlias& value) { SetTemplateAlias(value); return *this;}
 
     /**
-     * <p>Information on the template alias.</p>
+     * <p>Information about the template alias.</p>
      */
     inline CreateTemplateAliasResult& WithTemplateAlias(TemplateAlias&& value) { SetTemplateAlias(std::move(value)); return *this;}
 

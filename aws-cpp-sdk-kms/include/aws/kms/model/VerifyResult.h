@@ -88,28 +88,31 @@ namespace Model
 
     /**
      * <p>A Boolean value that indicates whether the signature was verified. A value of
-     * True indicates that the <code>Signature</code> was produced by signing the
-     * <code>Message</code> with the specified KeyID and <code>SigningAlgorithm.</code>
-     * A value of False indicates that the message, the algorithm, or the key changed
-     * since the message was signed.</p>
+     * <code>True</code> indicates that the <code>Signature</code> was produced by
+     * signing the <code>Message</code> with the specified <code>KeyID</code> and
+     * <code>SigningAlgorithm.</code> If the signature is not verified, the
+     * <code>Verify</code> operation fails with a
+     * <code>KMSInvalidSignatureException</code> exception. </p>
      */
     inline bool GetSignatureValid() const{ return m_signatureValid; }
 
     /**
      * <p>A Boolean value that indicates whether the signature was verified. A value of
-     * True indicates that the <code>Signature</code> was produced by signing the
-     * <code>Message</code> with the specified KeyID and <code>SigningAlgorithm.</code>
-     * A value of False indicates that the message, the algorithm, or the key changed
-     * since the message was signed.</p>
+     * <code>True</code> indicates that the <code>Signature</code> was produced by
+     * signing the <code>Message</code> with the specified <code>KeyID</code> and
+     * <code>SigningAlgorithm.</code> If the signature is not verified, the
+     * <code>Verify</code> operation fails with a
+     * <code>KMSInvalidSignatureException</code> exception. </p>
      */
     inline void SetSignatureValid(bool value) { m_signatureValid = value; }
 
     /**
      * <p>A Boolean value that indicates whether the signature was verified. A value of
-     * True indicates that the <code>Signature</code> was produced by signing the
-     * <code>Message</code> with the specified KeyID and <code>SigningAlgorithm.</code>
-     * A value of False indicates that the message, the algorithm, or the key changed
-     * since the message was signed.</p>
+     * <code>True</code> indicates that the <code>Signature</code> was produced by
+     * signing the <code>Message</code> with the specified <code>KeyID</code> and
+     * <code>SigningAlgorithm.</code> If the signature is not verified, the
+     * <code>Verify</code> operation fails with a
+     * <code>KMSInvalidSignatureException</code> exception. </p>
      */
     inline VerifyResult& WithSignatureValid(bool value) { SetSignatureValid(value); return *this;}
 

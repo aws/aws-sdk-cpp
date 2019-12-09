@@ -43,42 +43,50 @@ namespace Model
 
 
     /**
-     * <p>AWS account ID that contains the template you are aliasing.</p>
+     * <p>The ID of the AWS account that contains the template that you creating an
+     * alias for.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>AWS account ID that contains the template you are aliasing.</p>
+     * <p>The ID of the AWS account that contains the template that you creating an
+     * alias for.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>AWS account ID that contains the template you are aliasing.</p>
+     * <p>The ID of the AWS account that contains the template that you creating an
+     * alias for.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>AWS account ID that contains the template you are aliasing.</p>
+     * <p>The ID of the AWS account that contains the template that you creating an
+     * alias for.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>AWS account ID that contains the template you are aliasing.</p>
+     * <p>The ID of the AWS account that contains the template that you creating an
+     * alias for.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>AWS account ID that contains the template you are aliasing.</p>
+     * <p>The ID of the AWS account that contains the template that you creating an
+     * alias for.</p>
      */
     inline CreateTemplateAliasRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>AWS account ID that contains the template you are aliasing.</p>
+     * <p>The ID of the AWS account that contains the template that you creating an
+     * alias for.</p>
      */
     inline CreateTemplateAliasRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS account ID that contains the template you are aliasing.</p>
+     * <p>The ID of the AWS account that contains the template that you creating an
+     * alias for.</p>
      */
     inline CreateTemplateAliasRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -126,49 +134,57 @@ namespace Model
 
     /**
      * <p>The name that you want to give to the template alias that you're creating.
-     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
+     * Don't start the alias name with the <code>$</code> character. Alias names that
+     * start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
 
     /**
      * <p>The name that you want to give to the template alias that you're creating.
-     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
+     * Don't start the alias name with the <code>$</code> character. Alias names that
+     * start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
 
     /**
      * <p>The name that you want to give to the template alias that you're creating.
-     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
+     * Don't start the alias name with the <code>$</code> character. Alias names that
+     * start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /**
      * <p>The name that you want to give to the template alias that you're creating.
-     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
+     * Don't start the alias name with the <code>$</code> character. Alias names that
+     * start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
 
     /**
      * <p>The name that you want to give to the template alias that you're creating.
-     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
+     * Don't start the alias name with the <code>$</code> character. Alias names that
+     * start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
 
     /**
      * <p>The name that you want to give to the template alias that you're creating.
-     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
+     * Don't start the alias name with the <code>$</code> character. Alias names that
+     * start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline CreateTemplateAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
 
     /**
      * <p>The name that you want to give to the template alias that you're creating.
-     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
+     * Don't start the alias name with the <code>$</code> character. Alias names that
+     * start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline CreateTemplateAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
      * <p>The name that you want to give to the template alias that you're creating.
-     * Aliases that start with <code>$</code> are reserved by QuickSight. </p>
+     * Don't start the alias name with the <code>$</code> character. Alias names that
+     * start with <code>$</code> are reserved by QuickSight. </p>
      */
     inline CreateTemplateAliasRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
 

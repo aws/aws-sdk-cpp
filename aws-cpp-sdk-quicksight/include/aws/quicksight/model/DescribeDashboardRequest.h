@@ -49,42 +49,50 @@ namespace Model
 
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * describing.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * describing.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * describing.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * describing.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * describing.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * describing.</p>
      */
     inline DescribeDashboardRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * describing.</p>
      */
     inline DescribeDashboardRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're
+     * describing.</p>
      */
     inline DescribeDashboardRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -131,25 +139,25 @@ namespace Model
 
 
     /**
-     * <p>The version number for the dashboard. If version number isn’t passed the
+     * <p>The version number for the dashboard. If a version number isn't passed, the
      * latest published dashboard version is described. </p>
      */
     inline long long GetVersionNumber() const{ return m_versionNumber; }
 
     /**
-     * <p>The version number for the dashboard. If version number isn’t passed the
+     * <p>The version number for the dashboard. If a version number isn't passed, the
      * latest published dashboard version is described. </p>
      */
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
 
     /**
-     * <p>The version number for the dashboard. If version number isn’t passed the
+     * <p>The version number for the dashboard. If a version number isn't passed, the
      * latest published dashboard version is described. </p>
      */
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
 
     /**
-     * <p>The version number for the dashboard. If version number isn’t passed the
+     * <p>The version number for the dashboard. If a version number isn't passed, the
      * latest published dashboard version is described. </p>
      */
     inline DescribeDashboardRequest& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}

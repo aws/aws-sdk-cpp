@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Metadata on a column that is used as the input of a transform
+   * <p>Metadata for a column that is used as the input of a transform
    * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/InputColumn">AWS
    * API Reference</a></p>

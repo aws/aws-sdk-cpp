@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource name (ARN) for the group member (user).</p>
+     * <p>The Amazon Resource Name (ARN) for the group member (user).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource name (ARN) for the group member (user).</p>
+     * <p>The Amazon Resource Name (ARN) for the group member (user).</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource name (ARN) for the group member (user).</p>
+     * <p>The Amazon Resource Name (ARN) for the group member (user).</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource name (ARN) for the group member (user).</p>
+     * <p>The Amazon Resource Name (ARN) for the group member (user).</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource name (ARN) for the group member (user).</p>
+     * <p>The Amazon Resource Name (ARN) for the group member (user).</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource name (ARN) for the group member (user).</p>
+     * <p>The Amazon Resource Name (ARN) for the group member (user).</p>
      */
     inline GroupMember& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource name (ARN) for the group member (user).</p>
+     * <p>The Amazon Resource Name (ARN) for the group member (user).</p>
      */
     inline GroupMember& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource name (ARN) for the group member (user).</p>
+     * <p>The Amazon Resource Name (ARN) for the group member (user).</p>
      */
     inline GroupMember& WithArn(const char* value) { SetArn(value); return *this;}
 

@@ -89,58 +89,58 @@ namespace Model
 
 
     /**
-     * <p>A unique ID to identify a calculated column. During dataset update, if the
+     * <p>A unique ID to identify a calculated column. During a dataset update, if the
      * column ID of a calculated column matches that of an existing calculated column,
-     * QuickSight preserves the existing calculated column.</p>
+     * Amazon QuickSight preserves the existing calculated column.</p>
      */
     inline const Aws::String& GetColumnId() const{ return m_columnId; }
 
     /**
-     * <p>A unique ID to identify a calculated column. During dataset update, if the
+     * <p>A unique ID to identify a calculated column. During a dataset update, if the
      * column ID of a calculated column matches that of an existing calculated column,
-     * QuickSight preserves the existing calculated column.</p>
+     * Amazon QuickSight preserves the existing calculated column.</p>
      */
     inline bool ColumnIdHasBeenSet() const { return m_columnIdHasBeenSet; }
 
     /**
-     * <p>A unique ID to identify a calculated column. During dataset update, if the
+     * <p>A unique ID to identify a calculated column. During a dataset update, if the
      * column ID of a calculated column matches that of an existing calculated column,
-     * QuickSight preserves the existing calculated column.</p>
+     * Amazon QuickSight preserves the existing calculated column.</p>
      */
     inline void SetColumnId(const Aws::String& value) { m_columnIdHasBeenSet = true; m_columnId = value; }
 
     /**
-     * <p>A unique ID to identify a calculated column. During dataset update, if the
+     * <p>A unique ID to identify a calculated column. During a dataset update, if the
      * column ID of a calculated column matches that of an existing calculated column,
-     * QuickSight preserves the existing calculated column.</p>
+     * Amazon QuickSight preserves the existing calculated column.</p>
      */
     inline void SetColumnId(Aws::String&& value) { m_columnIdHasBeenSet = true; m_columnId = std::move(value); }
 
     /**
-     * <p>A unique ID to identify a calculated column. During dataset update, if the
+     * <p>A unique ID to identify a calculated column. During a dataset update, if the
      * column ID of a calculated column matches that of an existing calculated column,
-     * QuickSight preserves the existing calculated column.</p>
+     * Amazon QuickSight preserves the existing calculated column.</p>
      */
     inline void SetColumnId(const char* value) { m_columnIdHasBeenSet = true; m_columnId.assign(value); }
 
     /**
-     * <p>A unique ID to identify a calculated column. During dataset update, if the
+     * <p>A unique ID to identify a calculated column. During a dataset update, if the
      * column ID of a calculated column matches that of an existing calculated column,
-     * QuickSight preserves the existing calculated column.</p>
+     * Amazon QuickSight preserves the existing calculated column.</p>
      */
     inline CalculatedColumn& WithColumnId(const Aws::String& value) { SetColumnId(value); return *this;}
 
     /**
-     * <p>A unique ID to identify a calculated column. During dataset update, if the
+     * <p>A unique ID to identify a calculated column. During a dataset update, if the
      * column ID of a calculated column matches that of an existing calculated column,
-     * QuickSight preserves the existing calculated column.</p>
+     * Amazon QuickSight preserves the existing calculated column.</p>
      */
     inline CalculatedColumn& WithColumnId(Aws::String&& value) { SetColumnId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique ID to identify a calculated column. During dataset update, if the
+     * <p>A unique ID to identify a calculated column. During a dataset update, if the
      * column ID of a calculated column matches that of an existing calculated column,
-     * QuickSight preserves the existing calculated column.</p>
+     * Amazon QuickSight preserves the existing calculated column.</p>
      */
     inline CalculatedColumn& WithColumnId(const char* value) { SetColumnId(value); return *this;}
 

@@ -43,91 +43,91 @@ namespace Model
 
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing permissions
-     * of.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're describing
+     * permissions for.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing permissions
-     * of.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're describing
+     * permissions for.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing permissions
-     * of.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're describing
+     * permissions for.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing permissions
-     * of.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're describing
+     * permissions for.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing permissions
-     * of.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're describing
+     * permissions for.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing permissions
-     * of.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're describing
+     * permissions for.</p>
      */
     inline DescribeDashboardPermissionsRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing permissions
-     * of.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're describing
+     * permissions for.</p>
      */
     inline DescribeDashboardPermissionsRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS account ID that contains the dashboard you are describing permissions
-     * of.</p>
+     * <p>The ID of the AWS account that contains the dashboard that you're describing
+     * permissions for.</p>
      */
     inline DescribeDashboardPermissionsRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline const Aws::String& GetDashboardId() const{ return m_dashboardId; }
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline bool DashboardIdHasBeenSet() const { return m_dashboardIdHasBeenSet; }
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline void SetDashboardId(const Aws::String& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = value; }
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline void SetDashboardId(Aws::String&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::move(value); }
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline void SetDashboardId(const char* value) { m_dashboardIdHasBeenSet = true; m_dashboardId.assign(value); }
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline DescribeDashboardPermissionsRequest& WithDashboardId(const Aws::String& value) { SetDashboardId(value); return *this;}
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline DescribeDashboardPermissionsRequest& WithDashboardId(Aws::String&& value) { SetDashboardId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline DescribeDashboardPermissionsRequest& WithDashboardId(const char* value) { SetDashboardId(value); return *this;}
 

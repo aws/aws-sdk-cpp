@@ -92,83 +92,91 @@ namespace Model
 
 
     /**
-     * <p>The schema name. Applies to certain relational database engines.</p>
+     * <p>The schema name. This name applies to certain relational database
+     * engines.</p>
      */
     inline const Aws::String& GetSchema() const{ return m_schema; }
 
     /**
-     * <p>The schema name. Applies to certain relational database engines.</p>
+     * <p>The schema name. This name applies to certain relational database
+     * engines.</p>
      */
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
 
     /**
-     * <p>The schema name. Applies to certain relational database engines.</p>
+     * <p>The schema name. This name applies to certain relational database
+     * engines.</p>
      */
     inline void SetSchema(const Aws::String& value) { m_schemaHasBeenSet = true; m_schema = value; }
 
     /**
-     * <p>The schema name. Applies to certain relational database engines.</p>
+     * <p>The schema name. This name applies to certain relational database
+     * engines.</p>
      */
     inline void SetSchema(Aws::String&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
 
     /**
-     * <p>The schema name. Applies to certain relational database engines.</p>
+     * <p>The schema name. This name applies to certain relational database
+     * engines.</p>
      */
     inline void SetSchema(const char* value) { m_schemaHasBeenSet = true; m_schema.assign(value); }
 
     /**
-     * <p>The schema name. Applies to certain relational database engines.</p>
+     * <p>The schema name. This name applies to certain relational database
+     * engines.</p>
      */
     inline RelationalTable& WithSchema(const Aws::String& value) { SetSchema(value); return *this;}
 
     /**
-     * <p>The schema name. Applies to certain relational database engines.</p>
+     * <p>The schema name. This name applies to certain relational database
+     * engines.</p>
      */
     inline RelationalTable& WithSchema(Aws::String&& value) { SetSchema(std::move(value)); return *this;}
 
     /**
-     * <p>The schema name. Applies to certain relational database engines.</p>
+     * <p>The schema name. This name applies to certain relational database
+     * engines.</p>
      */
     inline RelationalTable& WithSchema(const char* value) { SetSchema(value); return *this;}
 
 
     /**
-     * <p>Name of the relational table.</p>
+     * <p>The name of the relational table.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the relational table.</p>
+     * <p>The name of the relational table.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Name of the relational table.</p>
+     * <p>The name of the relational table.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name of the relational table.</p>
+     * <p>The name of the relational table.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name of the relational table.</p>
+     * <p>The name of the relational table.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name of the relational table.</p>
+     * <p>The name of the relational table.</p>
      */
     inline RelationalTable& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the relational table.</p>
+     * <p>The name of the relational table.</p>
      */
     inline RelationalTable& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the relational table.</p>
+     * <p>The name of the relational table.</p>
      */
     inline RelationalTable& WithName(const char* value) { SetName(value); return *this;}
 

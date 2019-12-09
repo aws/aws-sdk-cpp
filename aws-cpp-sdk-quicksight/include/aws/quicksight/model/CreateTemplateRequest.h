@@ -96,50 +96,50 @@ namespace Model
 
 
     /**
-     * <p>An ID for the template you want to create. This is unique per AWS region per
-     * AWS account.</p>
+     * <p>An ID for the template that you want to create. This template is unique per
+     * AWS Region in each AWS account.</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
 
     /**
-     * <p>An ID for the template you want to create. This is unique per AWS region per
-     * AWS account.</p>
+     * <p>An ID for the template that you want to create. This template is unique per
+     * AWS Region in each AWS account.</p>
      */
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
 
     /**
-     * <p>An ID for the template you want to create. This is unique per AWS region per
-     * AWS account.</p>
+     * <p>An ID for the template that you want to create. This template is unique per
+     * AWS Region in each AWS account.</p>
      */
     inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
 
     /**
-     * <p>An ID for the template you want to create. This is unique per AWS region per
-     * AWS account.</p>
+     * <p>An ID for the template that you want to create. This template is unique per
+     * AWS Region in each AWS account.</p>
      */
     inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
 
     /**
-     * <p>An ID for the template you want to create. This is unique per AWS region per
-     * AWS account.</p>
+     * <p>An ID for the template that you want to create. This template is unique per
+     * AWS Region in each AWS account.</p>
      */
     inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
 
     /**
-     * <p>An ID for the template you want to create. This is unique per AWS region per
-     * AWS account.</p>
+     * <p>An ID for the template that you want to create. This template is unique per
+     * AWS Region in each AWS account.</p>
      */
     inline CreateTemplateRequest& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
 
     /**
-     * <p>An ID for the template you want to create. This is unique per AWS region per
-     * AWS account.</p>
+     * <p>An ID for the template that you want to create. This template is unique per
+     * AWS Region in each AWS account.</p>
      */
     inline CreateTemplateRequest& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
 
     /**
-     * <p>An ID for the template you want to create. This is unique per AWS region per
-     * AWS account.</p>
+     * <p>An ID for the template that you want to create. This template is unique per
+     * AWS Region in each AWS account.</p>
      */
     inline CreateTemplateRequest& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
 
@@ -228,49 +228,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source entity from which this template
-     * is being created. Templates can be currently created from an analysis or another
-     * template. If the ARN is for an analysis, you must include its dataset
-     * references. </p>
+     * is being created. Currently, you can create a template from an analysis or
+     * another template. If the ARN is for an analysis, include its dataset references.
+     * </p>
      */
     inline const TemplateSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source entity from which this template
-     * is being created. Templates can be currently created from an analysis or another
-     * template. If the ARN is for an analysis, you must include its dataset
-     * references. </p>
+     * is being created. Currently, you can create a template from an analysis or
+     * another template. If the ARN is for an analysis, include its dataset references.
+     * </p>
      */
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source entity from which this template
-     * is being created. Templates can be currently created from an analysis or another
-     * template. If the ARN is for an analysis, you must include its dataset
-     * references. </p>
+     * is being created. Currently, you can create a template from an analysis or
+     * another template. If the ARN is for an analysis, include its dataset references.
+     * </p>
      */
     inline void SetSourceEntity(const TemplateSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source entity from which this template
-     * is being created. Templates can be currently created from an analysis or another
-     * template. If the ARN is for an analysis, you must include its dataset
-     * references. </p>
+     * is being created. Currently, you can create a template from an analysis or
+     * another template. If the ARN is for an analysis, include its dataset references.
+     * </p>
      */
     inline void SetSourceEntity(TemplateSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source entity from which this template
-     * is being created. Templates can be currently created from an analysis or another
-     * template. If the ARN is for an analysis, you must include its dataset
-     * references. </p>
+     * is being created. Currently, you can create a template from an analysis or
+     * another template. If the ARN is for an analysis, include its dataset references.
+     * </p>
      */
     inline CreateTemplateRequest& WithSourceEntity(const TemplateSourceEntity& value) { SetSourceEntity(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source entity from which this template
-     * is being created. Templates can be currently created from an analysis or another
-     * template. If the ARN is for an analysis, you must include its dataset
-     * references. </p>
+     * is being created. Currently, you can create a template from an analysis or
+     * another template. If the ARN is for an analysis, include its dataset references.
+     * </p>
      */
     inline CreateTemplateRequest& WithSourceEntity(TemplateSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
 
@@ -325,66 +325,74 @@ namespace Model
 
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being created. This API
+     * operation creates the first version of the template. Every time
+     * <code>UpdateTemplate</code> is called, a new version is created. Each version of
+     * the template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline const Aws::String& GetVersionDescription() const{ return m_versionDescription; }
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being created. This API
+     * operation creates the first version of the template. Every time
+     * <code>UpdateTemplate</code> is called, a new version is created. Each version of
+     * the template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being created. This API
+     * operation creates the first version of the template. Every time
+     * <code>UpdateTemplate</code> is called, a new version is created. Each version of
+     * the template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being created. This API
+     * operation creates the first version of the template. Every time
+     * <code>UpdateTemplate</code> is called, a new version is created. Each version of
+     * the template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline void SetVersionDescription(Aws::String&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::move(value); }
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being created. This API
+     * operation creates the first version of the template. Every time
+     * <code>UpdateTemplate</code> is called, a new version is created. Each version of
+     * the template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline void SetVersionDescription(const char* value) { m_versionDescriptionHasBeenSet = true; m_versionDescription.assign(value); }
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being created. This API
+     * operation creates the first version of the template. Every time
+     * <code>UpdateTemplate</code> is called, a new version is created. Each version of
+     * the template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline CreateTemplateRequest& WithVersionDescription(const Aws::String& value) { SetVersionDescription(value); return *this;}
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being created. This API
+     * operation creates the first version of the template. Every time
+     * <code>UpdateTemplate</code> is called, a new version is created. Each version of
+     * the template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline CreateTemplateRequest& WithVersionDescription(Aws::String&& value) { SetVersionDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the current template version being created. This API created
-     * the first version of the template. Every time UpdateTemplate is called a new
-     * version is created. Each version of the template maintains a description of the
-     * version in the VersionDescription field.</p>
+     * <p>A description of the current template version being created. This API
+     * operation creates the first version of the template. Every time
+     * <code>UpdateTemplate</code> is called, a new version is created. Each version of
+     * the template maintains a description of the version in the
+     * <code>VersionDescription</code> field.</p>
      */
     inline CreateTemplateRequest& WithVersionDescription(const char* value) { SetVersionDescription(value); return *this;}
 

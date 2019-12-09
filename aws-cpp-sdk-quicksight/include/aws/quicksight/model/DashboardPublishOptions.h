@@ -50,63 +50,63 @@ namespace Model
 
 
     /**
-     * <p>Ad hoc filtering option.</p>
+     * <p>Ad hoc (one-time) filtering option.</p>
      */
     inline const AdHocFilteringOption& GetAdHocFilteringOption() const{ return m_adHocFilteringOption; }
 
     /**
-     * <p>Ad hoc filtering option.</p>
+     * <p>Ad hoc (one-time) filtering option.</p>
      */
     inline bool AdHocFilteringOptionHasBeenSet() const { return m_adHocFilteringOptionHasBeenSet; }
 
     /**
-     * <p>Ad hoc filtering option.</p>
+     * <p>Ad hoc (one-time) filtering option.</p>
      */
     inline void SetAdHocFilteringOption(const AdHocFilteringOption& value) { m_adHocFilteringOptionHasBeenSet = true; m_adHocFilteringOption = value; }
 
     /**
-     * <p>Ad hoc filtering option.</p>
+     * <p>Ad hoc (one-time) filtering option.</p>
      */
     inline void SetAdHocFilteringOption(AdHocFilteringOption&& value) { m_adHocFilteringOptionHasBeenSet = true; m_adHocFilteringOption = std::move(value); }
 
     /**
-     * <p>Ad hoc filtering option.</p>
+     * <p>Ad hoc (one-time) filtering option.</p>
      */
     inline DashboardPublishOptions& WithAdHocFilteringOption(const AdHocFilteringOption& value) { SetAdHocFilteringOption(value); return *this;}
 
     /**
-     * <p>Ad hoc filtering option.</p>
+     * <p>Ad hoc (one-time) filtering option.</p>
      */
     inline DashboardPublishOptions& WithAdHocFilteringOption(AdHocFilteringOption&& value) { SetAdHocFilteringOption(std::move(value)); return *this;}
 
 
     /**
-     * <p>Export to CSV option.</p>
+     * <p>Export to .csv option.</p>
      */
     inline const ExportToCSVOption& GetExportToCSVOption() const{ return m_exportToCSVOption; }
 
     /**
-     * <p>Export to CSV option.</p>
+     * <p>Export to .csv option.</p>
      */
     inline bool ExportToCSVOptionHasBeenSet() const { return m_exportToCSVOptionHasBeenSet; }
 
     /**
-     * <p>Export to CSV option.</p>
+     * <p>Export to .csv option.</p>
      */
     inline void SetExportToCSVOption(const ExportToCSVOption& value) { m_exportToCSVOptionHasBeenSet = true; m_exportToCSVOption = value; }
 
     /**
-     * <p>Export to CSV option.</p>
+     * <p>Export to .csv option.</p>
      */
     inline void SetExportToCSVOption(ExportToCSVOption&& value) { m_exportToCSVOptionHasBeenSet = true; m_exportToCSVOption = std::move(value); }
 
     /**
-     * <p>Export to CSV option.</p>
+     * <p>Export to .csv option.</p>
      */
     inline DashboardPublishOptions& WithExportToCSVOption(const ExportToCSVOption& value) { SetExportToCSVOption(value); return *this;}
 
     /**
-     * <p>Export to CSV option.</p>
+     * <p>Export to .csv option.</p>
      */
     inline DashboardPublishOptions& WithExportToCSVOption(ExportToCSVOption&& value) { SetExportToCSVOption(std::move(value)); return *this;}
 

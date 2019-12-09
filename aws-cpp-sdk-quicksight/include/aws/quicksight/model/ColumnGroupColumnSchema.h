@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>A structure describing the name, datatype, and geographic role of the
+   * <p>A structure describing the name, data type, and geographic role of the
    * columns.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ColumnGroupColumnSchema">AWS
    * API Reference</a></p>

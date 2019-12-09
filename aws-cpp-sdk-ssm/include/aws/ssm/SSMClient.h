@@ -78,6 +78,7 @@
 #include <aws/ssm/model/DescribePatchPropertiesResult.h>
 #include <aws/ssm/model/DescribeSessionsResult.h>
 #include <aws/ssm/model/GetAutomationExecutionResult.h>
+#include <aws/ssm/model/GetCalendarStateResult.h>
 #include <aws/ssm/model/GetCommandInvocationResult.h>
 #include <aws/ssm/model/GetConnectionStatusResult.h>
 #include <aws/ssm/model/GetDefaultPatchBaselineResult.h>
@@ -238,6 +239,7 @@ namespace Model
         class DescribePatchPropertiesRequest;
         class DescribeSessionsRequest;
         class GetAutomationExecutionRequest;
+        class GetCalendarStateRequest;
         class GetCommandInvocationRequest;
         class GetConnectionStatusRequest;
         class GetDefaultPatchBaselineRequest;
@@ -360,6 +362,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribePatchPropertiesResult, Aws::Client::AWSError<SSMErrors>> DescribePatchPropertiesOutcome;
         typedef Aws::Utils::Outcome<DescribeSessionsResult, Aws::Client::AWSError<SSMErrors>> DescribeSessionsOutcome;
         typedef Aws::Utils::Outcome<GetAutomationExecutionResult, Aws::Client::AWSError<SSMErrors>> GetAutomationExecutionOutcome;
+        typedef Aws::Utils::Outcome<GetCalendarStateResult, Aws::Client::AWSError<SSMErrors>> GetCalendarStateOutcome;
         typedef Aws::Utils::Outcome<GetCommandInvocationResult, Aws::Client::AWSError<SSMErrors>> GetCommandInvocationOutcome;
         typedef Aws::Utils::Outcome<GetConnectionStatusResult, Aws::Client::AWSError<SSMErrors>> GetConnectionStatusOutcome;
         typedef Aws::Utils::Outcome<GetDefaultPatchBaselineResult, Aws::Client::AWSError<SSMErrors>> GetDefaultPatchBaselineOutcome;
@@ -482,6 +485,7 @@ namespace Model
         typedef std::future<DescribePatchPropertiesOutcome> DescribePatchPropertiesOutcomeCallable;
         typedef std::future<DescribeSessionsOutcome> DescribeSessionsOutcomeCallable;
         typedef std::future<GetAutomationExecutionOutcome> GetAutomationExecutionOutcomeCallable;
+        typedef std::future<GetCalendarStateOutcome> GetCalendarStateOutcomeCallable;
         typedef std::future<GetCommandInvocationOutcome> GetCommandInvocationOutcomeCallable;
         typedef std::future<GetConnectionStatusOutcome> GetConnectionStatusOutcomeCallable;
         typedef std::future<GetDefaultPatchBaselineOutcome> GetDefaultPatchBaselineOutcomeCallable;
@@ -607,6 +611,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::DescribePatchPropertiesRequest&, const Model::DescribePatchPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePatchPropertiesResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::DescribeSessionsRequest&, const Model::DescribeSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSessionsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetAutomationExecutionRequest&, const Model::GetAutomationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutomationExecutionResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::GetCalendarStateRequest&, const Model::GetCalendarStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCalendarStateResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetCommandInvocationRequest&, const Model::GetCommandInvocationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCommandInvocationResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetConnectionStatusRequest&, const Model::GetConnectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConnectionStatusResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetDefaultPatchBaselineRequest&, const Model::GetDefaultPatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDefaultPatchBaselineResponseReceivedHandler;
@@ -2699,6 +2704,58 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetAutomationExecutionAsync(const Model::GetAutomationExecutionRequest& request, const GetAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Gets the state of the AWS Systems Manager Change Calendar at an optional,
+         * specified time. If you specify a time, <code>GetCalendarState</code> returns the
+         * state of the calendar at a specific time, and returns the next time that the
+         * Change Calendar state will transition. If you do not specify a time,
+         * <code>GetCalendarState</code> assumes the current time. Change Calendar entries
+         * have two possible states: <code>OPEN</code> or <code>CLOSED</code>. For more
+         * information about Systems Manager Change Calendar, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
+         * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCalendarStateOutcome GetCalendarState(const Model::GetCalendarStateRequest& request) const;
+
+        /**
+         * <p>Gets the state of the AWS Systems Manager Change Calendar at an optional,
+         * specified time. If you specify a time, <code>GetCalendarState</code> returns the
+         * state of the calendar at a specific time, and returns the next time that the
+         * Change Calendar state will transition. If you do not specify a time,
+         * <code>GetCalendarState</code> assumes the current time. Change Calendar entries
+         * have two possible states: <code>OPEN</code> or <code>CLOSED</code>. For more
+         * information about Systems Manager Change Calendar, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
+         * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCalendarStateOutcomeCallable GetCalendarStateCallable(const Model::GetCalendarStateRequest& request) const;
+
+        /**
+         * <p>Gets the state of the AWS Systems Manager Change Calendar at an optional,
+         * specified time. If you specify a time, <code>GetCalendarState</code> returns the
+         * state of the calendar at a specific time, and returns the next time that the
+         * Change Calendar state will transition. If you do not specify a time,
+         * <code>GetCalendarState</code> assumes the current time. Change Calendar entries
+         * have two possible states: <code>OPEN</code> or <code>CLOSED</code>. For more
+         * information about Systems Manager Change Calendar, see <a
+         * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
+         * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCalendarState">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCalendarStateAsync(const Model::GetCalendarStateRequest& request, const GetCalendarStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns detailed information about command execution for an invocation or
@@ -5054,6 +5111,7 @@ namespace Model
         void DescribePatchPropertiesAsyncHelper(const Model::DescribePatchPropertiesRequest& request, const DescribePatchPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeSessionsAsyncHelper(const Model::DescribeSessionsRequest& request, const DescribeSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAutomationExecutionAsyncHelper(const Model::GetAutomationExecutionRequest& request, const GetAutomationExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCalendarStateAsyncHelper(const Model::GetCalendarStateRequest& request, const GetCalendarStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCommandInvocationAsyncHelper(const Model::GetCommandInvocationRequest& request, const GetCommandInvocationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConnectionStatusAsyncHelper(const Model::GetConnectionStatusRequest& request, const GetConnectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDefaultPatchBaselineAsyncHelper(const Model::GetDefaultPatchBaselineRequest& request, const GetDefaultPatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

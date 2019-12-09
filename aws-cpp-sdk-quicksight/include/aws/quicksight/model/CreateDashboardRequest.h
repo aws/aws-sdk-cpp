@@ -49,83 +49,83 @@ namespace Model
 
 
     /**
-     * <p>AWS account ID where you want to create the dashboard.</p>
+     * <p>The ID of the AWS account where you want to create the dashboard.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>AWS account ID where you want to create the dashboard.</p>
+     * <p>The ID of the AWS account where you want to create the dashboard.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>AWS account ID where you want to create the dashboard.</p>
+     * <p>The ID of the AWS account where you want to create the dashboard.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>AWS account ID where you want to create the dashboard.</p>
+     * <p>The ID of the AWS account where you want to create the dashboard.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>AWS account ID where you want to create the dashboard.</p>
+     * <p>The ID of the AWS account where you want to create the dashboard.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>AWS account ID where you want to create the dashboard.</p>
+     * <p>The ID of the AWS account where you want to create the dashboard.</p>
      */
     inline CreateDashboardRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>AWS account ID where you want to create the dashboard.</p>
+     * <p>The ID of the AWS account where you want to create the dashboard.</p>
      */
     inline CreateDashboardRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS account ID where you want to create the dashboard.</p>
+     * <p>The ID of the AWS account where you want to create the dashboard.</p>
      */
     inline CreateDashboardRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline const Aws::String& GetDashboardId() const{ return m_dashboardId; }
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline bool DashboardIdHasBeenSet() const { return m_dashboardIdHasBeenSet; }
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline void SetDashboardId(const Aws::String& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = value; }
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline void SetDashboardId(Aws::String&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::move(value); }
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline void SetDashboardId(const char* value) { m_dashboardIdHasBeenSet = true; m_dashboardId.assign(value); }
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline CreateDashboardRequest& WithDashboardId(const Aws::String& value) { SetDashboardId(value); return *this;}
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline CreateDashboardRequest& WithDashboardId(Aws::String&& value) { SetDashboardId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the dashboard, also added to IAM policy.</p>
+     * <p>The ID for the dashboard, also added to the IAM policy.</p>
      */
     inline CreateDashboardRequest& WithDashboardId(const char* value) { SetDashboardId(value); return *this;}
 
@@ -173,107 +173,113 @@ namespace Model
 
     /**
      * <p>A structure that contains the parameters of the dashboard. These are
-     * parameter overrides for a dashboard. A dashboard can have any type of parameters
-     * and some parameters might accept multiple values. You could use the following
-     * structure to override two string parameters that accept multiple values:</p>
+     * parameter overrides for a dashboard. A dashboard can have any type of
+     * parameters, and some parameters might accept multiple values. You can use the
+     * dashboard permissions structure described following to override two string
+     * parameters that accept multiple values. </p>
      */
     inline const Parameters& GetParameters() const{ return m_parameters; }
 
     /**
      * <p>A structure that contains the parameters of the dashboard. These are
-     * parameter overrides for a dashboard. A dashboard can have any type of parameters
-     * and some parameters might accept multiple values. You could use the following
-     * structure to override two string parameters that accept multiple values:</p>
+     * parameter overrides for a dashboard. A dashboard can have any type of
+     * parameters, and some parameters might accept multiple values. You can use the
+     * dashboard permissions structure described following to override two string
+     * parameters that accept multiple values. </p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>A structure that contains the parameters of the dashboard. These are
-     * parameter overrides for a dashboard. A dashboard can have any type of parameters
-     * and some parameters might accept multiple values. You could use the following
-     * structure to override two string parameters that accept multiple values:</p>
+     * parameter overrides for a dashboard. A dashboard can have any type of
+     * parameters, and some parameters might accept multiple values. You can use the
+     * dashboard permissions structure described following to override two string
+     * parameters that accept multiple values. </p>
      */
     inline void SetParameters(const Parameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
      * <p>A structure that contains the parameters of the dashboard. These are
-     * parameter overrides for a dashboard. A dashboard can have any type of parameters
-     * and some parameters might accept multiple values. You could use the following
-     * structure to override two string parameters that accept multiple values:</p>
+     * parameter overrides for a dashboard. A dashboard can have any type of
+     * parameters, and some parameters might accept multiple values. You can use the
+     * dashboard permissions structure described following to override two string
+     * parameters that accept multiple values. </p>
      */
     inline void SetParameters(Parameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
      * <p>A structure that contains the parameters of the dashboard. These are
-     * parameter overrides for a dashboard. A dashboard can have any type of parameters
-     * and some parameters might accept multiple values. You could use the following
-     * structure to override two string parameters that accept multiple values:</p>
+     * parameter overrides for a dashboard. A dashboard can have any type of
+     * parameters, and some parameters might accept multiple values. You can use the
+     * dashboard permissions structure described following to override two string
+     * parameters that accept multiple values. </p>
      */
     inline CreateDashboardRequest& WithParameters(const Parameters& value) { SetParameters(value); return *this;}
 
     /**
      * <p>A structure that contains the parameters of the dashboard. These are
-     * parameter overrides for a dashboard. A dashboard can have any type of parameters
-     * and some parameters might accept multiple values. You could use the following
-     * structure to override two string parameters that accept multiple values:</p>
+     * parameter overrides for a dashboard. A dashboard can have any type of
+     * parameters, and some parameters might accept multiple values. You can use the
+     * dashboard permissions structure described following to override two string
+     * parameters that accept multiple values. </p>
      */
     inline CreateDashboardRequest& WithParameters(Parameters&& value) { SetParameters(std::move(value)); return *this;}
 
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * for granting permissions with principal and action information.</p>
+     * structure for granting permissions with principal and action information.</p>
      */
     inline const Aws::Vector<ResourcePermission>& GetPermissions() const{ return m_permissions; }
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * for granting permissions with principal and action information.</p>
+     * structure for granting permissions with principal and action information.</p>
      */
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * for granting permissions with principal and action information.</p>
+     * structure for granting permissions with principal and action information.</p>
      */
     inline void SetPermissions(const Aws::Vector<ResourcePermission>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * for granting permissions with principal and action information.</p>
+     * structure for granting permissions with principal and action information.</p>
      */
     inline void SetPermissions(Aws::Vector<ResourcePermission>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * for granting permissions with principal and action information.</p>
+     * structure for granting permissions with principal and action information.</p>
      */
     inline CreateDashboardRequest& WithPermissions(const Aws::Vector<ResourcePermission>& value) { SetPermissions(value); return *this;}
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * for granting permissions with principal and action information.</p>
+     * structure for granting permissions with principal and action information.</p>
      */
     inline CreateDashboardRequest& WithPermissions(Aws::Vector<ResourcePermission>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * for granting permissions with principal and action information.</p>
+     * structure for granting permissions with principal and action information.</p>
      */
     inline CreateDashboardRequest& AddPermissions(const ResourcePermission& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
 
     /**
      * <p>A structure that contains the permissions of the dashboard. You can use this
-     * for granting permissions with principal and action information.</p>
+     * structure for granting permissions with principal and action information.</p>
      */
     inline CreateDashboardRequest& AddPermissions(ResourcePermission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Source entity from which the dashboard is created. The souce entity accepts
-     * the Amazon Resource Name (ARN) of the source template or analysis and also
-     * references the replacement datasets for the placeholders set when creating the
-     * template. The replacement datasets need to follow the same schema as the
+     * <p>The source entity from which the dashboard is created. The source entity
+     * accepts the Amazon Resource Name (ARN) of the source template or analysis and
+     * also references the replacement datasets for the placeholders set when creating
+     * the template. The replacement datasets need to follow the same schema as the
      * datasets for which placeholders were created when creating the template. </p>
      * <p>If you are creating a dashboard from a source entity in a different AWS
      * account, use the ARN of the source template.</p>
@@ -281,10 +287,10 @@ namespace Model
     inline const DashboardSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
     /**
-     * <p>Source entity from which the dashboard is created. The souce entity accepts
-     * the Amazon Resource Name (ARN) of the source template or analysis and also
-     * references the replacement datasets for the placeholders set when creating the
-     * template. The replacement datasets need to follow the same schema as the
+     * <p>The source entity from which the dashboard is created. The source entity
+     * accepts the Amazon Resource Name (ARN) of the source template or analysis and
+     * also references the replacement datasets for the placeholders set when creating
+     * the template. The replacement datasets need to follow the same schema as the
      * datasets for which placeholders were created when creating the template. </p>
      * <p>If you are creating a dashboard from a source entity in a different AWS
      * account, use the ARN of the source template.</p>
@@ -292,10 +298,10 @@ namespace Model
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
     /**
-     * <p>Source entity from which the dashboard is created. The souce entity accepts
-     * the Amazon Resource Name (ARN) of the source template or analysis and also
-     * references the replacement datasets for the placeholders set when creating the
-     * template. The replacement datasets need to follow the same schema as the
+     * <p>The source entity from which the dashboard is created. The source entity
+     * accepts the Amazon Resource Name (ARN) of the source template or analysis and
+     * also references the replacement datasets for the placeholders set when creating
+     * the template. The replacement datasets need to follow the same schema as the
      * datasets for which placeholders were created when creating the template. </p>
      * <p>If you are creating a dashboard from a source entity in a different AWS
      * account, use the ARN of the source template.</p>
@@ -303,10 +309,10 @@ namespace Model
     inline void SetSourceEntity(const DashboardSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
     /**
-     * <p>Source entity from which the dashboard is created. The souce entity accepts
-     * the Amazon Resource Name (ARN) of the source template or analysis and also
-     * references the replacement datasets for the placeholders set when creating the
-     * template. The replacement datasets need to follow the same schema as the
+     * <p>The source entity from which the dashboard is created. The source entity
+     * accepts the Amazon Resource Name (ARN) of the source template or analysis and
+     * also references the replacement datasets for the placeholders set when creating
+     * the template. The replacement datasets need to follow the same schema as the
      * datasets for which placeholders were created when creating the template. </p>
      * <p>If you are creating a dashboard from a source entity in a different AWS
      * account, use the ARN of the source template.</p>
@@ -314,10 +320,10 @@ namespace Model
     inline void SetSourceEntity(DashboardSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
     /**
-     * <p>Source entity from which the dashboard is created. The souce entity accepts
-     * the Amazon Resource Name (ARN) of the source template or analysis and also
-     * references the replacement datasets for the placeholders set when creating the
-     * template. The replacement datasets need to follow the same schema as the
+     * <p>The source entity from which the dashboard is created. The source entity
+     * accepts the Amazon Resource Name (ARN) of the source template or analysis and
+     * also references the replacement datasets for the placeholders set when creating
+     * the template. The replacement datasets need to follow the same schema as the
      * datasets for which placeholders were created when creating the template. </p>
      * <p>If you are creating a dashboard from a source entity in a different AWS
      * account, use the ARN of the source template.</p>
@@ -325,10 +331,10 @@ namespace Model
     inline CreateDashboardRequest& WithSourceEntity(const DashboardSourceEntity& value) { SetSourceEntity(value); return *this;}
 
     /**
-     * <p>Source entity from which the dashboard is created. The souce entity accepts
-     * the Amazon Resource Name (ARN) of the source template or analysis and also
-     * references the replacement datasets for the placeholders set when creating the
-     * template. The replacement datasets need to follow the same schema as the
+     * <p>The source entity from which the dashboard is created. The source entity
+     * accepts the Amazon Resource Name (ARN) of the source template or analysis and
+     * also references the replacement datasets for the placeholders set when creating
+     * the template. The replacement datasets need to follow the same schema as the
      * datasets for which placeholders were created when creating the template. </p>
      * <p>If you are creating a dashboard from a source entity in a different AWS
      * account, use the ARN of the source template.</p>
@@ -427,98 +433,110 @@ namespace Model
 
 
     /**
-     * <p>Publishing options when creating dashboard.</p> <ul> <li>
-     * <p>AvailabilityStatus for AdHocFilteringOption - This can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. When This is set to set to
-     * <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default. </p> </li>
-     * <li> <p>AvailabilityStatus for ExportToCSVOption - This can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data
-     * to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by
-     * default. </p> </li> <li> <p>VisibilityState for SheetControlsOption - This can
-     * be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
-     * pane is collapsed by default when set to true. Collapsed by default. </p> </li>
-     * </ul>
+     * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
+     * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
+     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
+     * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
+     * to export data to .csv format isn't enabled when this is set to
+     * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
+     * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
+     * - This visibility state can be either <code>COLLAPSED</code> or
+     * <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
+     * to true. This option is <code>COLLAPSED</code> by default. </p> </li> </ul>
      */
     inline const DashboardPublishOptions& GetDashboardPublishOptions() const{ return m_dashboardPublishOptions; }
 
     /**
-     * <p>Publishing options when creating dashboard.</p> <ul> <li>
-     * <p>AvailabilityStatus for AdHocFilteringOption - This can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. When This is set to set to
-     * <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default. </p> </li>
-     * <li> <p>AvailabilityStatus for ExportToCSVOption - This can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data
-     * to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by
-     * default. </p> </li> <li> <p>VisibilityState for SheetControlsOption - This can
-     * be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
-     * pane is collapsed by default when set to true. Collapsed by default. </p> </li>
-     * </ul>
+     * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
+     * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
+     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
+     * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
+     * to export data to .csv format isn't enabled when this is set to
+     * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
+     * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
+     * - This visibility state can be either <code>COLLAPSED</code> or
+     * <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
+     * to true. This option is <code>COLLAPSED</code> by default. </p> </li> </ul>
      */
     inline bool DashboardPublishOptionsHasBeenSet() const { return m_dashboardPublishOptionsHasBeenSet; }
 
     /**
-     * <p>Publishing options when creating dashboard.</p> <ul> <li>
-     * <p>AvailabilityStatus for AdHocFilteringOption - This can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. When This is set to set to
-     * <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default. </p> </li>
-     * <li> <p>AvailabilityStatus for ExportToCSVOption - This can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data
-     * to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by
-     * default. </p> </li> <li> <p>VisibilityState for SheetControlsOption - This can
-     * be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
-     * pane is collapsed by default when set to true. Collapsed by default. </p> </li>
-     * </ul>
+     * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
+     * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
+     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
+     * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
+     * to export data to .csv format isn't enabled when this is set to
+     * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
+     * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
+     * - This visibility state can be either <code>COLLAPSED</code> or
+     * <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
+     * to true. This option is <code>COLLAPSED</code> by default. </p> </li> </ul>
      */
     inline void SetDashboardPublishOptions(const DashboardPublishOptions& value) { m_dashboardPublishOptionsHasBeenSet = true; m_dashboardPublishOptions = value; }
 
     /**
-     * <p>Publishing options when creating dashboard.</p> <ul> <li>
-     * <p>AvailabilityStatus for AdHocFilteringOption - This can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. When This is set to set to
-     * <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default. </p> </li>
-     * <li> <p>AvailabilityStatus for ExportToCSVOption - This can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data
-     * to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by
-     * default. </p> </li> <li> <p>VisibilityState for SheetControlsOption - This can
-     * be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
-     * pane is collapsed by default when set to true. Collapsed by default. </p> </li>
-     * </ul>
+     * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
+     * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
+     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
+     * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
+     * to export data to .csv format isn't enabled when this is set to
+     * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
+     * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
+     * - This visibility state can be either <code>COLLAPSED</code> or
+     * <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
+     * to true. This option is <code>COLLAPSED</code> by default. </p> </li> </ul>
      */
     inline void SetDashboardPublishOptions(DashboardPublishOptions&& value) { m_dashboardPublishOptionsHasBeenSet = true; m_dashboardPublishOptions = std::move(value); }
 
     /**
-     * <p>Publishing options when creating dashboard.</p> <ul> <li>
-     * <p>AvailabilityStatus for AdHocFilteringOption - This can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. When This is set to set to
-     * <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default. </p> </li>
-     * <li> <p>AvailabilityStatus for ExportToCSVOption - This can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data
-     * to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by
-     * default. </p> </li> <li> <p>VisibilityState for SheetControlsOption - This can
-     * be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
-     * pane is collapsed by default when set to true. Collapsed by default. </p> </li>
-     * </ul>
+     * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
+     * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
+     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
+     * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
+     * to export data to .csv format isn't enabled when this is set to
+     * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
+     * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
+     * - This visibility state can be either <code>COLLAPSED</code> or
+     * <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
+     * to true. This option is <code>COLLAPSED</code> by default. </p> </li> </ul>
      */
     inline CreateDashboardRequest& WithDashboardPublishOptions(const DashboardPublishOptions& value) { SetDashboardPublishOptions(value); return *this;}
 
     /**
-     * <p>Publishing options when creating dashboard.</p> <ul> <li>
-     * <p>AvailabilityStatus for AdHocFilteringOption - This can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. When This is set to set to
-     * <code>DISABLED</code>, QuickSight disables the left filter pane on the published
-     * dashboard, which can be used for AdHoc filtering. Enabled by default. </p> </li>
-     * <li> <p>AvailabilityStatus for ExportToCSVOption - This can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data
-     * to CSV is disabled when this is set to <code>DISABLED</code>. Enabled by
-     * default. </p> </li> <li> <p>VisibilityState for SheetControlsOption - This can
-     * be either <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls
-     * pane is collapsed by default when set to true. Collapsed by default. </p> </li>
-     * </ul>
+     * <p>Options for publishing the dashboard when you create it:</p> <ul> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This
+     * status can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is
+     * set to <code>DISABLED</code>, QuickSight disables the left filter pane on the
+     * published dashboard, which can be used for ad hoc (one-time) filtering. This
+     * option is <code>ENABLED</code> by default. </p> </li> <li> <p>
+     * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
+     * can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option
+     * to export data to .csv format isn't enabled when this is set to
+     * <code>DISABLED</code>. This option is <code>ENABLED</code> by default. </p>
+     * </li> <li> <p> <code>VisibilityState</code> for <code>SheetControlsOption</code>
+     * - This visibility state can be either <code>COLLAPSED</code> or
+     * <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
+     * to true. This option is <code>COLLAPSED</code> by default. </p> </li> </ul>
      */
     inline CreateDashboardRequest& WithDashboardPublishOptions(DashboardPublishOptions&& value) { SetDashboardPublishOptions(std::move(value)); return *this;}
 

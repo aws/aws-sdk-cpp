@@ -58,6 +58,7 @@ static const int CLOUD_HSM_CLUSTER_IN_USE_HASH = HashingUtils::HashString("Cloud
 static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
 static const int KEY_UNAVAILABLE_HASH = HashingUtils::HashString("KeyUnavailableException");
 static const int INVALID_CIPHERTEXT_HASH = HashingUtils::HashString("InvalidCiphertextException");
+static const int K_M_S_INVALID_SIGNATURE_HASH = HashingUtils::HashString("KMSInvalidSignatureException");
 static const int CUSTOM_KEY_STORE_INVALID_STATE_HASH = HashingUtils::HashString("CustomKeyStoreInvalidStateException");
 static const int EXPIRED_IMPORT_TOKEN_HASH = HashingUtils::HashString("ExpiredImportTokenException");
 
@@ -185,6 +186,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_CIPHERTEXT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::INVALID_CIPHERTEXT), false);
+  }
+  else if (hashCode == K_M_S_INVALID_SIGNATURE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KMSErrors::K_M_S_INVALID_SIGNATURE), false);
   }
   else if (hashCode == CUSTOM_KEY_STORE_INVALID_STATE_HASH)
   {

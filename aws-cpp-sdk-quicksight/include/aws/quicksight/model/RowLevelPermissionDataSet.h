@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Row-level security configuration on the dataset.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The row-level security configuration for the dataset.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RowLevelPermissionDataSet">AWS
    * API Reference</a></p>
    */
@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource name (ARN) of the permission dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission dataset.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the permission dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission dataset.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the permission dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission dataset.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the permission dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission dataset.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the permission dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission dataset.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The Amazon Resource name (ARN) of the permission dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission dataset.</p>
      */
     inline RowLevelPermissionDataSet& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource name (ARN) of the permission dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission dataset.</p>
      */
     inline RowLevelPermissionDataSet& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource name (ARN) of the permission dataset.</p>
+     * <p>The Amazon Resource Name (ARN) of the permission dataset.</p>
      */
     inline RowLevelPermissionDataSet& WithArn(const char* value) { SetArn(value); return *this;}
 

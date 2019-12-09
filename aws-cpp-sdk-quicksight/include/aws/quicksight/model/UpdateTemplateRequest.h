@@ -44,42 +44,50 @@ namespace Model
 
 
     /**
-     * <p>AWS account ID that contains the template you are updating.</p>
+     * <p>The ID of the AWS account that contains the template that you're
+     * updating.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>AWS account ID that contains the template you are updating.</p>
+     * <p>The ID of the AWS account that contains the template that you're
+     * updating.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>AWS account ID that contains the template you are updating.</p>
+     * <p>The ID of the AWS account that contains the template that you're
+     * updating.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>AWS account ID that contains the template you are updating.</p>
+     * <p>The ID of the AWS account that contains the template that you're
+     * updating.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>AWS account ID that contains the template you are updating.</p>
+     * <p>The ID of the AWS account that contains the template that you're
+     * updating.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>AWS account ID that contains the template you are updating.</p>
+     * <p>The ID of the AWS account that contains the template that you're
+     * updating.</p>
      */
     inline UpdateTemplateRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>AWS account ID that contains the template you are updating.</p>
+     * <p>The ID of the AWS account that contains the template that you're
+     * updating.</p>
      */
     inline UpdateTemplateRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS account ID that contains the template you are updating.</p>
+     * <p>The ID of the AWS account that contains the template that you're
+     * updating.</p>
      */
     inline UpdateTemplateRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -126,103 +134,103 @@ namespace Model
 
 
     /**
-     * <p>The source QuickSight entity from which this template is being created.
-     * Templates can be currently created from an Analysis or another template.</p>
+     * <p>The source QuickSight entity from which this template is being updated. You
+     * can currently update templates from an Analysis or another template.</p>
      */
     inline const TemplateSourceEntity& GetSourceEntity() const{ return m_sourceEntity; }
 
     /**
-     * <p>The source QuickSight entity from which this template is being created.
-     * Templates can be currently created from an Analysis or another template.</p>
+     * <p>The source QuickSight entity from which this template is being updated. You
+     * can currently update templates from an Analysis or another template.</p>
      */
     inline bool SourceEntityHasBeenSet() const { return m_sourceEntityHasBeenSet; }
 
     /**
-     * <p>The source QuickSight entity from which this template is being created.
-     * Templates can be currently created from an Analysis or another template.</p>
+     * <p>The source QuickSight entity from which this template is being updated. You
+     * can currently update templates from an Analysis or another template.</p>
      */
     inline void SetSourceEntity(const TemplateSourceEntity& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = value; }
 
     /**
-     * <p>The source QuickSight entity from which this template is being created.
-     * Templates can be currently created from an Analysis or another template.</p>
+     * <p>The source QuickSight entity from which this template is being updated. You
+     * can currently update templates from an Analysis or another template.</p>
      */
     inline void SetSourceEntity(TemplateSourceEntity&& value) { m_sourceEntityHasBeenSet = true; m_sourceEntity = std::move(value); }
 
     /**
-     * <p>The source QuickSight entity from which this template is being created.
-     * Templates can be currently created from an Analysis or another template.</p>
+     * <p>The source QuickSight entity from which this template is being updated. You
+     * can currently update templates from an Analysis or another template.</p>
      */
     inline UpdateTemplateRequest& WithSourceEntity(const TemplateSourceEntity& value) { SetSourceEntity(value); return *this;}
 
     /**
-     * <p>The source QuickSight entity from which this template is being created.
-     * Templates can be currently created from an Analysis or another template.</p>
+     * <p>The source QuickSight entity from which this template is being updated. You
+     * can currently update templates from an Analysis or another template.</p>
      */
     inline UpdateTemplateRequest& WithSourceEntity(TemplateSourceEntity&& value) { SetSourceEntity(std::move(value)); return *this;}
 
 
     /**
-     * <p>A description of the current template version being updated. Every time you
-     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
-     * template maintains a description of the version in the
-     * <code>VersionDescription</code> field.</p>
+     * <p>A description of the current template version that is being updated. Every
+     * time you call <code>UpdateTemplate</code>, you create a new version of the
+     * template. Each version of the template maintains a description of the version in
+     * the <code>VersionDescription</code> field.</p>
      */
     inline const Aws::String& GetVersionDescription() const{ return m_versionDescription; }
 
     /**
-     * <p>A description of the current template version being updated. Every time you
-     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
-     * template maintains a description of the version in the
-     * <code>VersionDescription</code> field.</p>
+     * <p>A description of the current template version that is being updated. Every
+     * time you call <code>UpdateTemplate</code>, you create a new version of the
+     * template. Each version of the template maintains a description of the version in
+     * the <code>VersionDescription</code> field.</p>
      */
     inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
 
     /**
-     * <p>A description of the current template version being updated. Every time you
-     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
-     * template maintains a description of the version in the
-     * <code>VersionDescription</code> field.</p>
+     * <p>A description of the current template version that is being updated. Every
+     * time you call <code>UpdateTemplate</code>, you create a new version of the
+     * template. Each version of the template maintains a description of the version in
+     * the <code>VersionDescription</code> field.</p>
      */
     inline void SetVersionDescription(const Aws::String& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = value; }
 
     /**
-     * <p>A description of the current template version being updated. Every time you
-     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
-     * template maintains a description of the version in the
-     * <code>VersionDescription</code> field.</p>
+     * <p>A description of the current template version that is being updated. Every
+     * time you call <code>UpdateTemplate</code>, you create a new version of the
+     * template. Each version of the template maintains a description of the version in
+     * the <code>VersionDescription</code> field.</p>
      */
     inline void SetVersionDescription(Aws::String&& value) { m_versionDescriptionHasBeenSet = true; m_versionDescription = std::move(value); }
 
     /**
-     * <p>A description of the current template version being updated. Every time you
-     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
-     * template maintains a description of the version in the
-     * <code>VersionDescription</code> field.</p>
+     * <p>A description of the current template version that is being updated. Every
+     * time you call <code>UpdateTemplate</code>, you create a new version of the
+     * template. Each version of the template maintains a description of the version in
+     * the <code>VersionDescription</code> field.</p>
      */
     inline void SetVersionDescription(const char* value) { m_versionDescriptionHasBeenSet = true; m_versionDescription.assign(value); }
 
     /**
-     * <p>A description of the current template version being updated. Every time you
-     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
-     * template maintains a description of the version in the
-     * <code>VersionDescription</code> field.</p>
+     * <p>A description of the current template version that is being updated. Every
+     * time you call <code>UpdateTemplate</code>, you create a new version of the
+     * template. Each version of the template maintains a description of the version in
+     * the <code>VersionDescription</code> field.</p>
      */
     inline UpdateTemplateRequest& WithVersionDescription(const Aws::String& value) { SetVersionDescription(value); return *this;}
 
     /**
-     * <p>A description of the current template version being updated. Every time you
-     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
-     * template maintains a description of the version in the
-     * <code>VersionDescription</code> field.</p>
+     * <p>A description of the current template version that is being updated. Every
+     * time you call <code>UpdateTemplate</code>, you create a new version of the
+     * template. Each version of the template maintains a description of the version in
+     * the <code>VersionDescription</code> field.</p>
      */
     inline UpdateTemplateRequest& WithVersionDescription(Aws::String&& value) { SetVersionDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the current template version being updated. Every time you
-     * cal <code>UpdateTemplate</code> you create a new version. Each version of the
-     * template maintains a description of the version in the
-     * <code>VersionDescription</code> field.</p>
+     * <p>A description of the current template version that is being updated. Every
+     * time you call <code>UpdateTemplate</code>, you create a new version of the
+     * template. Each version of the template maintains a description of the version in
+     * the <code>VersionDescription</code> field.</p>
      */
     inline UpdateTemplateRequest& WithVersionDescription(const char* value) { SetVersionDescription(value); return *this;}
 

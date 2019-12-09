@@ -89,42 +89,42 @@ namespace Model
 
 
     /**
-     * <p>Dataset ARN.</p>
+     * <p>Dataset Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetDataSetArn() const{ return m_dataSetArn; }
 
     /**
-     * <p>Dataset ARN.</p>
+     * <p>Dataset Amazon Resource Name (ARN).</p>
      */
     inline bool DataSetArnHasBeenSet() const { return m_dataSetArnHasBeenSet; }
 
     /**
-     * <p>Dataset ARN.</p>
+     * <p>Dataset Amazon Resource Name (ARN).</p>
      */
     inline void SetDataSetArn(const Aws::String& value) { m_dataSetArnHasBeenSet = true; m_dataSetArn = value; }
 
     /**
-     * <p>Dataset ARN.</p>
+     * <p>Dataset Amazon Resource Name (ARN).</p>
      */
     inline void SetDataSetArn(Aws::String&& value) { m_dataSetArnHasBeenSet = true; m_dataSetArn = std::move(value); }
 
     /**
-     * <p>Dataset ARN.</p>
+     * <p>Dataset Amazon Resource Name (ARN).</p>
      */
     inline void SetDataSetArn(const char* value) { m_dataSetArnHasBeenSet = true; m_dataSetArn.assign(value); }
 
     /**
-     * <p>Dataset ARN.</p>
+     * <p>Dataset Amazon Resource Name (ARN).</p>
      */
     inline DataSetReference& WithDataSetArn(const Aws::String& value) { SetDataSetArn(value); return *this;}
 
     /**
-     * <p>Dataset ARN.</p>
+     * <p>Dataset Amazon Resource Name (ARN).</p>
      */
     inline DataSetReference& WithDataSetArn(Aws::String&& value) { SetDataSetArn(std::move(value)); return *this;}
 
     /**
-     * <p>Dataset ARN.</p>
+     * <p>Dataset Amazon Resource Name (ARN).</p>
      */
     inline DataSetReference& WithDataSetArn(const char* value) { SetDataSetArn(value); return *this;}
 

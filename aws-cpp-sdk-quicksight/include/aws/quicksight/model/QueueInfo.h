@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Information on queued dataset SPICE ingestion.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about a queued dataset SPICE ingestion.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/QueueInfo">AWS
    * API Reference</a></p>
    */

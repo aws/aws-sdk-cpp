@@ -48,83 +48,83 @@ namespace Model
 
 
     /**
-     * <p>Name of the column to be renamed.</p>
+     * <p>The name of the column to be renamed.</p>
      */
     inline const Aws::String& GetColumnName() const{ return m_columnName; }
 
     /**
-     * <p>Name of the column to be renamed.</p>
+     * <p>The name of the column to be renamed.</p>
      */
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
 
     /**
-     * <p>Name of the column to be renamed.</p>
+     * <p>The name of the column to be renamed.</p>
      */
     inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
 
     /**
-     * <p>Name of the column to be renamed.</p>
+     * <p>The name of the column to be renamed.</p>
      */
     inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
 
     /**
-     * <p>Name of the column to be renamed.</p>
+     * <p>The name of the column to be renamed.</p>
      */
     inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
 
     /**
-     * <p>Name of the column to be renamed.</p>
+     * <p>The name of the column to be renamed.</p>
      */
     inline RenameColumnOperation& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
 
     /**
-     * <p>Name of the column to be renamed.</p>
+     * <p>The name of the column to be renamed.</p>
      */
     inline RenameColumnOperation& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the column to be renamed.</p>
+     * <p>The name of the column to be renamed.</p>
      */
     inline RenameColumnOperation& WithColumnName(const char* value) { SetColumnName(value); return *this;}
 
 
     /**
-     * <p>New name for the column.</p>
+     * <p>The new name for the column.</p>
      */
     inline const Aws::String& GetNewColumnName() const{ return m_newColumnName; }
 
     /**
-     * <p>New name for the column.</p>
+     * <p>The new name for the column.</p>
      */
     inline bool NewColumnNameHasBeenSet() const { return m_newColumnNameHasBeenSet; }
 
     /**
-     * <p>New name for the column.</p>
+     * <p>The new name for the column.</p>
      */
     inline void SetNewColumnName(const Aws::String& value) { m_newColumnNameHasBeenSet = true; m_newColumnName = value; }
 
     /**
-     * <p>New name for the column.</p>
+     * <p>The new name for the column.</p>
      */
     inline void SetNewColumnName(Aws::String&& value) { m_newColumnNameHasBeenSet = true; m_newColumnName = std::move(value); }
 
     /**
-     * <p>New name for the column.</p>
+     * <p>The new name for the column.</p>
      */
     inline void SetNewColumnName(const char* value) { m_newColumnNameHasBeenSet = true; m_newColumnName.assign(value); }
 
     /**
-     * <p>New name for the column.</p>
+     * <p>The new name for the column.</p>
      */
     inline RenameColumnOperation& WithNewColumnName(const Aws::String& value) { SetNewColumnName(value); return *this;}
 
     /**
-     * <p>New name for the column.</p>
+     * <p>The new name for the column.</p>
      */
     inline RenameColumnOperation& WithNewColumnName(Aws::String&& value) { SetNewColumnName(std::move(value)); return *this;}
 
     /**
-     * <p>New name for the column.</p>
+     * <p>The new name for the column.</p>
      */
     inline RenameColumnOperation& WithNewColumnName(const char* value) { SetNewColumnName(value); return *this;}
 

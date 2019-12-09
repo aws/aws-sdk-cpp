@@ -43,42 +43,50 @@ namespace Model
 
 
     /**
-     * <p>AWS account ID that contains the template aliases you are updating.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * updating.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
 
     /**
-     * <p>AWS account ID that contains the template aliases you are updating.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * updating.</p>
      */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
-     * <p>AWS account ID that contains the template aliases you are updating.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * updating.</p>
      */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
-     * <p>AWS account ID that contains the template aliases you are updating.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * updating.</p>
      */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
 
     /**
-     * <p>AWS account ID that contains the template aliases you are updating.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * updating.</p>
      */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
 
     /**
-     * <p>AWS account ID that contains the template aliases you are updating.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * updating.</p>
      */
     inline UpdateTemplateAliasRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
 
     /**
-     * <p>AWS account ID that contains the template aliases you are updating.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * updating.</p>
      */
     inline UpdateTemplateAliasRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>AWS account ID that contains the template aliases you are updating.</p>
+     * <p>The ID of the AWS account that contains the template alias that you're
+     * updating.</p>
      */
     inline UpdateTemplateAliasRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
 
@@ -125,7 +133,7 @@ namespace Model
 
 
     /**
-     * <p>The alias of the template that you want to update. If you provide a specific
+     * <p>The alias of the template that you want to update. If you name a specific
      * alias, you update the version that the alias points to. You can specify the
      * latest version of the template by providing the keyword <code>$LATEST</code> in
      * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
@@ -134,7 +142,7 @@ namespace Model
     inline const Aws::String& GetAliasName() const{ return m_aliasName; }
 
     /**
-     * <p>The alias of the template that you want to update. If you provide a specific
+     * <p>The alias of the template that you want to update. If you name a specific
      * alias, you update the version that the alias points to. You can specify the
      * latest version of the template by providing the keyword <code>$LATEST</code> in
      * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
@@ -143,7 +151,7 @@ namespace Model
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
 
     /**
-     * <p>The alias of the template that you want to update. If you provide a specific
+     * <p>The alias of the template that you want to update. If you name a specific
      * alias, you update the version that the alias points to. You can specify the
      * latest version of the template by providing the keyword <code>$LATEST</code> in
      * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
@@ -152,7 +160,7 @@ namespace Model
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /**
-     * <p>The alias of the template that you want to update. If you provide a specific
+     * <p>The alias of the template that you want to update. If you name a specific
      * alias, you update the version that the alias points to. You can specify the
      * latest version of the template by providing the keyword <code>$LATEST</code> in
      * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
@@ -161,7 +169,7 @@ namespace Model
     inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
 
     /**
-     * <p>The alias of the template that you want to update. If you provide a specific
+     * <p>The alias of the template that you want to update. If you name a specific
      * alias, you update the version that the alias points to. You can specify the
      * latest version of the template by providing the keyword <code>$LATEST</code> in
      * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
@@ -170,7 +178,7 @@ namespace Model
     inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
 
     /**
-     * <p>The alias of the template that you want to update. If you provide a specific
+     * <p>The alias of the template that you want to update. If you name a specific
      * alias, you update the version that the alias points to. You can specify the
      * latest version of the template by providing the keyword <code>$LATEST</code> in
      * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
@@ -179,7 +187,7 @@ namespace Model
     inline UpdateTemplateAliasRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
 
     /**
-     * <p>The alias of the template that you want to update. If you provide a specific
+     * <p>The alias of the template that you want to update. If you name a specific
      * alias, you update the version that the alias points to. You can specify the
      * latest version of the template by providing the keyword <code>$LATEST</code> in
      * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
@@ -188,7 +196,7 @@ namespace Model
     inline UpdateTemplateAliasRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
 
     /**
-     * <p>The alias of the template that you want to update. If you provide a specific
+     * <p>The alias of the template that you want to update. If you name a specific
      * alias, you update the version that the alias points to. You can specify the
      * latest version of the template by providing the keyword <code>$LATEST</code> in
      * the <code>AliasName</code> parameter. The keyword <code>$PUBLISHED</code>
