@@ -359,6 +359,55 @@ namespace Model
      */
     inline SharePointConfiguration& AddFieldMappings(DataSourceToIndexFieldMapping&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Microsoft SharePoint attribute field that contains the title of the
+     * document.</p>
+     */
+    inline const Aws::String& GetDocumentTitleFieldName() const{ return m_documentTitleFieldName; }
+
+    /**
+     * <p>The Microsoft SharePoint attribute field that contains the title of the
+     * document.</p>
+     */
+    inline bool DocumentTitleFieldNameHasBeenSet() const { return m_documentTitleFieldNameHasBeenSet; }
+
+    /**
+     * <p>The Microsoft SharePoint attribute field that contains the title of the
+     * document.</p>
+     */
+    inline void SetDocumentTitleFieldName(const Aws::String& value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName = value; }
+
+    /**
+     * <p>The Microsoft SharePoint attribute field that contains the title of the
+     * document.</p>
+     */
+    inline void SetDocumentTitleFieldName(Aws::String&& value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName = std::move(value); }
+
+    /**
+     * <p>The Microsoft SharePoint attribute field that contains the title of the
+     * document.</p>
+     */
+    inline void SetDocumentTitleFieldName(const char* value) { m_documentTitleFieldNameHasBeenSet = true; m_documentTitleFieldName.assign(value); }
+
+    /**
+     * <p>The Microsoft SharePoint attribute field that contains the title of the
+     * document.</p>
+     */
+    inline SharePointConfiguration& WithDocumentTitleFieldName(const Aws::String& value) { SetDocumentTitleFieldName(value); return *this;}
+
+    /**
+     * <p>The Microsoft SharePoint attribute field that contains the title of the
+     * document.</p>
+     */
+    inline SharePointConfiguration& WithDocumentTitleFieldName(Aws::String&& value) { SetDocumentTitleFieldName(std::move(value)); return *this;}
+
+    /**
+     * <p>The Microsoft SharePoint attribute field that contains the title of the
+     * document.</p>
+     */
+    inline SharePointConfiguration& WithDocumentTitleFieldName(const char* value) { SetDocumentTitleFieldName(value); return *this;}
+
   private:
 
     SharePointVersion m_sharePointVersion;
@@ -378,6 +427,9 @@ namespace Model
 
     Aws::Vector<DataSourceToIndexFieldMapping> m_fieldMappings;
     bool m_fieldMappingsHasBeenSet;
+
+    Aws::String m_documentTitleFieldName;
+    bool m_documentTitleFieldNameHasBeenSet;
   };
 
 } // namespace Model

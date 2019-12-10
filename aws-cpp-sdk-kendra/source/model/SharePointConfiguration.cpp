@@ -36,7 +36,8 @@ SharePointConfiguration::SharePointConfiguration() :
     m_crawlAttachments(false),
     m_crawlAttachmentsHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
+    m_fieldMappingsHasBeenSet(false),
+    m_documentTitleFieldNameHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ SharePointConfiguration::SharePointConfiguration(JsonView jsonValue) :
     m_crawlAttachments(false),
     m_crawlAttachmentsHasBeenSet(false),
     m_vpcConfigurationHasBeenSet(false),
-    m_fieldMappingsHasBeenSet(false)
+    m_fieldMappingsHasBeenSet(false),
+    m_documentTitleFieldNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +105,13 @@ SharePointConfiguration& SharePointConfiguration::operator =(JsonView jsonValue)
     m_fieldMappingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DocumentTitleFieldName"))
+  {
+    m_documentTitleFieldName = jsonValue.GetString("DocumentTitleFieldName");
+
+    m_documentTitleFieldNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -152,6 +161,12 @@ JsonValue SharePointConfiguration::Jsonize() const
      fieldMappingsJsonList[fieldMappingsIndex].AsObject(m_fieldMappings[fieldMappingsIndex].Jsonize());
    }
    payload.WithArray("FieldMappings", std::move(fieldMappingsJsonList));
+
+  }
+
+  if(m_documentTitleFieldNameHasBeenSet)
+  {
+   payload.WithString("DocumentTitleFieldName", m_documentTitleFieldName);
 
   }
 

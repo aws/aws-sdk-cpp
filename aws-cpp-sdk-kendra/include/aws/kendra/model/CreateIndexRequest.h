@@ -152,38 +152,44 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the KMS key to use to encrypt data indexed by Amazon
-     * Kendra. </p>
+     * <p>The identifier of the AWS KMS customer managed key (CMK) to use to encrypt
+     * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
+     * CMKs.</p>
      */
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
 
     /**
-     * <p>The identifier of the KMS key to use to encrypt data indexed by Amazon
-     * Kendra. </p>
+     * <p>The identifier of the AWS KMS customer managed key (CMK) to use to encrypt
+     * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
+     * CMKs.</p>
      */
     inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
 
     /**
-     * <p>The identifier of the KMS key to use to encrypt data indexed by Amazon
-     * Kendra. </p>
+     * <p>The identifier of the AWS KMS customer managed key (CMK) to use to encrypt
+     * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
+     * CMKs.</p>
      */
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
 
     /**
-     * <p>The identifier of the KMS key to use to encrypt data indexed by Amazon
-     * Kendra. </p>
+     * <p>The identifier of the AWS KMS customer managed key (CMK) to use to encrypt
+     * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
+     * CMKs.</p>
      */
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
 
     /**
-     * <p>The identifier of the KMS key to use to encrypt data indexed by Amazon
-     * Kendra. </p>
+     * <p>The identifier of the AWS KMS customer managed key (CMK) to use to encrypt
+     * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
+     * CMKs.</p>
      */
     inline CreateIndexRequest& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>The identifier of the KMS key to use to encrypt data indexed by Amazon
-     * Kendra. </p>
+     * <p>The identifier of the AWS KMS customer managed key (CMK) to use to encrypt
+     * data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric
+     * CMKs.</p>
      */
     inline CreateIndexRequest& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
 
