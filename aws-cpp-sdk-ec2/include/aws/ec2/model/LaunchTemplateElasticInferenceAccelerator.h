@@ -97,10 +97,38 @@ namespace Model
      */
     inline LaunchTemplateElasticInferenceAccelerator& WithType(const char* value) { SetType(value); return *this;}
 
+
+    /**
+     * <p> The number of elastic inference accelerators of given type to be attached to
+     * the instance. Only positive values allowed. If not specified defaults to 1. </p>
+     */
+    inline int GetCount() const{ return m_count; }
+
+    /**
+     * <p> The number of elastic inference accelerators of given type to be attached to
+     * the instance. Only positive values allowed. If not specified defaults to 1. </p>
+     */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+
+    /**
+     * <p> The number of elastic inference accelerators of given type to be attached to
+     * the instance. Only positive values allowed. If not specified defaults to 1. </p>
+     */
+    inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
+
+    /**
+     * <p> The number of elastic inference accelerators of given type to be attached to
+     * the instance. Only positive values allowed. If not specified defaults to 1. </p>
+     */
+    inline LaunchTemplateElasticInferenceAccelerator& WithCount(int value) { SetCount(value); return *this;}
+
   private:
 
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
+    int m_count;
+    bool m_countHasBeenSet;
   };
 
 } // namespace Model

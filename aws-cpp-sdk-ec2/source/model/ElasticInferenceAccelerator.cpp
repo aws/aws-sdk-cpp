@@ -31,12 +31,16 @@ namespace Model
 {
 
 ElasticInferenceAccelerator::ElasticInferenceAccelerator() : 
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_count(0),
+    m_countHasBeenSet(false)
 {
 }
 
 ElasticInferenceAccelerator::ElasticInferenceAccelerator(const XmlNode& xmlNode) : 
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_count(0),
+    m_countHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -53,6 +57,12 @@ ElasticInferenceAccelerator& ElasticInferenceAccelerator::operator =(const XmlNo
       m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
       m_typeHasBeenSet = true;
     }
+    XmlNode countNode = resultNode.FirstChild("Count");
+    if(!countNode.IsNull())
+    {
+      m_count = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(countNode.GetText()).c_str()).c_str());
+      m_countHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -65,6 +75,11 @@ void ElasticInferenceAccelerator::OutputToStream(Aws::OStream& oStream, const ch
       oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
   }
 
+  if(m_countHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Count=" << m_count << "&";
+  }
+
 }
 
 void ElasticInferenceAccelerator::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -72,6 +87,10 @@ void ElasticInferenceAccelerator::OutputToStream(Aws::OStream& oStream, const ch
   if(m_typeHasBeenSet)
   {
       oStream << location << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
+  }
+  if(m_countHasBeenSet)
+  {
+      oStream << location << ".Count=" << m_count << "&";
   }
 }
 
