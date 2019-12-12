@@ -37,7 +37,7 @@ namespace AccessAnalyzer
 namespace Model
 {
   /**
-   * <p>The resposne to the request.</p><p><h3>See Also:</h3>   <a
+   * <p>The response to the request.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListFindingsResponse">AWS
    * API Reference</a></p>
    */

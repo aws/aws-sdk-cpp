@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>An inline archive rule.</p><p><h3>See Also:</h3>   <a
+   * <p>An criterion statement in an archive rule. Each archive rule may have
+   * multiple criteria.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/InlineArchiveRule">AWS
    * API Reference</a></p>
    */
@@ -50,62 +51,62 @@ namespace Model
 
 
     /**
-     * <p>The criteria for the rule.</p>
+     * <p>The condition and values for a criterion.</p>
      */
     inline const Aws::Map<Aws::String, Criterion>& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>The criteria for the rule.</p>
+     * <p>The condition and values for a criterion.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
-     * <p>The criteria for the rule.</p>
+     * <p>The condition and values for a criterion.</p>
      */
     inline void SetFilter(const Aws::Map<Aws::String, Criterion>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>The criteria for the rule.</p>
+     * <p>The condition and values for a criterion.</p>
      */
     inline void SetFilter(Aws::Map<Aws::String, Criterion>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>The criteria for the rule.</p>
+     * <p>The condition and values for a criterion.</p>
      */
     inline InlineArchiveRule& WithFilter(const Aws::Map<Aws::String, Criterion>& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>The criteria for the rule.</p>
+     * <p>The condition and values for a criterion.</p>
      */
     inline InlineArchiveRule& WithFilter(Aws::Map<Aws::String, Criterion>&& value) { SetFilter(std::move(value)); return *this;}
 
     /**
-     * <p>The criteria for the rule.</p>
+     * <p>The condition and values for a criterion.</p>
      */
     inline InlineArchiveRule& AddFilter(const Aws::String& key, const Criterion& value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
 
     /**
-     * <p>The criteria for the rule.</p>
+     * <p>The condition and values for a criterion.</p>
      */
     inline InlineArchiveRule& AddFilter(Aws::String&& key, const Criterion& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The criteria for the rule.</p>
+     * <p>The condition and values for a criterion.</p>
      */
     inline InlineArchiveRule& AddFilter(const Aws::String& key, Criterion&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The criteria for the rule.</p>
+     * <p>The condition and values for a criterion.</p>
      */
     inline InlineArchiveRule& AddFilter(Aws::String&& key, Criterion&& value) { m_filterHasBeenSet = true; m_filter.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The criteria for the rule.</p>
+     * <p>The condition and values for a criterion.</p>
      */
     inline InlineArchiveRule& AddFilter(const char* key, Criterion&& value) { m_filterHasBeenSet = true; m_filter.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The criteria for the rule.</p>
+     * <p>The condition and values for a criterion.</p>
      */
     inline InlineArchiveRule& AddFilter(const char* key, const Criterion& value) { m_filterHasBeenSet = true; m_filter.emplace(key, value); return *this; }
 

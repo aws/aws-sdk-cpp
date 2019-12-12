@@ -92,42 +92,58 @@ namespace Model
 
 
     /**
-     * <p>Specifies the archive rules to add for the analyzer.</p>
+     * <p>Specifies the archive rules to add for the analyzer. Archive rules
+     * automatically archive findings that meet the criteria you define for the
+     * rule.</p>
      */
     inline const Aws::Vector<InlineArchiveRule>& GetArchiveRules() const{ return m_archiveRules; }
 
     /**
-     * <p>Specifies the archive rules to add for the analyzer.</p>
+     * <p>Specifies the archive rules to add for the analyzer. Archive rules
+     * automatically archive findings that meet the criteria you define for the
+     * rule.</p>
      */
     inline bool ArchiveRulesHasBeenSet() const { return m_archiveRulesHasBeenSet; }
 
     /**
-     * <p>Specifies the archive rules to add for the analyzer.</p>
+     * <p>Specifies the archive rules to add for the analyzer. Archive rules
+     * automatically archive findings that meet the criteria you define for the
+     * rule.</p>
      */
     inline void SetArchiveRules(const Aws::Vector<InlineArchiveRule>& value) { m_archiveRulesHasBeenSet = true; m_archiveRules = value; }
 
     /**
-     * <p>Specifies the archive rules to add for the analyzer.</p>
+     * <p>Specifies the archive rules to add for the analyzer. Archive rules
+     * automatically archive findings that meet the criteria you define for the
+     * rule.</p>
      */
     inline void SetArchiveRules(Aws::Vector<InlineArchiveRule>&& value) { m_archiveRulesHasBeenSet = true; m_archiveRules = std::move(value); }
 
     /**
-     * <p>Specifies the archive rules to add for the analyzer.</p>
+     * <p>Specifies the archive rules to add for the analyzer. Archive rules
+     * automatically archive findings that meet the criteria you define for the
+     * rule.</p>
      */
     inline CreateAnalyzerRequest& WithArchiveRules(const Aws::Vector<InlineArchiveRule>& value) { SetArchiveRules(value); return *this;}
 
     /**
-     * <p>Specifies the archive rules to add for the analyzer.</p>
+     * <p>Specifies the archive rules to add for the analyzer. Archive rules
+     * automatically archive findings that meet the criteria you define for the
+     * rule.</p>
      */
     inline CreateAnalyzerRequest& WithArchiveRules(Aws::Vector<InlineArchiveRule>&& value) { SetArchiveRules(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the archive rules to add for the analyzer.</p>
+     * <p>Specifies the archive rules to add for the analyzer. Archive rules
+     * automatically archive findings that meet the criteria you define for the
+     * rule.</p>
      */
     inline CreateAnalyzerRequest& AddArchiveRules(const InlineArchiveRule& value) { m_archiveRulesHasBeenSet = true; m_archiveRules.push_back(value); return *this; }
 
     /**
-     * <p>Specifies the archive rules to add for the analyzer.</p>
+     * <p>Specifies the archive rules to add for the analyzer. Archive rules
+     * automatically archive findings that meet the criteria you define for the
+     * rule.</p>
      */
     inline CreateAnalyzerRequest& AddArchiveRules(InlineArchiveRule&& value) { m_archiveRulesHasBeenSet = true; m_archiveRules.push_back(std::move(value)); return *this; }
 
@@ -240,38 +256,38 @@ namespace Model
 
 
     /**
-     * <p>The zone of trust for the analyzer. You can create only one analyzer per
-     * account per Region.</p>
+     * <p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can
+     * create only one analyzer per account per Region.</p>
      */
     inline const Type& GetType() const{ return m_type; }
 
     /**
-     * <p>The zone of trust for the analyzer. You can create only one analyzer per
-     * account per Region.</p>
+     * <p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can
+     * create only one analyzer per account per Region.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The zone of trust for the analyzer. You can create only one analyzer per
-     * account per Region.</p>
+     * <p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can
+     * create only one analyzer per account per Region.</p>
      */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The zone of trust for the analyzer. You can create only one analyzer per
-     * account per Region.</p>
+     * <p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can
+     * create only one analyzer per account per Region.</p>
      */
     inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The zone of trust for the analyzer. You can create only one analyzer per
-     * account per Region.</p>
+     * <p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can
+     * create only one analyzer per account per Region.</p>
      */
     inline CreateAnalyzerRequest& WithType(const Type& value) { SetType(value); return *this;}
 
     /**
-     * <p>The zone of trust for the analyzer. You can create only one analyzer per
-     * account per Region.</p>
+     * <p>The type of analyzer to create. Only ACCOUNT analyzers are supported. You can
+     * create only one analyzer per account per Region.</p>
      */
     inline CreateAnalyzerRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
 

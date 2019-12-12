@@ -49,7 +49,7 @@ ArchiveRuleSummary& ArchiveRuleSummary::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("createdAt"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAt = jsonValue.GetString("createdAt");
 
     m_createdAtHasBeenSet = true;
   }
@@ -73,7 +73,7 @@ ArchiveRuleSummary& ArchiveRuleSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("updatedAt"))
   {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_updatedAt = jsonValue.GetString("updatedAt");
 
     m_updatedAtHasBeenSet = true;
   }
@@ -87,7 +87,7 @@ JsonValue ArchiveRuleSummary::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_filterHasBeenSet)
@@ -109,7 +109,7 @@ JsonValue ArchiveRuleSummary::Jsonize() const
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
   }
 
   return payload;

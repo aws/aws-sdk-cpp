@@ -64,7 +64,7 @@ AnalyzerSummary& AnalyzerSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("createdAt"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAt = jsonValue.GetString("createdAt");
 
     m_createdAtHasBeenSet = true;
   }
@@ -78,7 +78,7 @@ AnalyzerSummary& AnalyzerSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("lastResourceAnalyzedAt"))
   {
-    m_lastResourceAnalyzedAt = jsonValue.GetDouble("lastResourceAnalyzedAt");
+    m_lastResourceAnalyzedAt = jsonValue.GetString("lastResourceAnalyzedAt");
 
     m_lastResourceAnalyzedAtHasBeenSet = true;
   }
@@ -122,7 +122,7 @@ JsonValue AnalyzerSummary::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_lastResourceAnalyzedHasBeenSet)
@@ -133,7 +133,7 @@ JsonValue AnalyzerSummary::Jsonize() const
 
   if(m_lastResourceAnalyzedAtHasBeenSet)
   {
-   payload.WithDouble("lastResourceAnalyzedAt", m_lastResourceAnalyzedAt.SecondsWithMSPrecision());
+   payload.WithString("lastResourceAnalyzedAt", m_lastResourceAnalyzedAt.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_nameHasBeenSet)

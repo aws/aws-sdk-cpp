@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>The criteria to use in the filter that defines the rule.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The criteria to use in the filter that defines the archive
+   * rule.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/Criterion">AWS
    * API Reference</a></p>
    */

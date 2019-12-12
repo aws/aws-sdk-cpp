@@ -81,7 +81,7 @@ FindingSummary& FindingSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("analyzedAt"))
   {
-    m_analyzedAt = jsonValue.GetDouble("analyzedAt");
+    m_analyzedAt = jsonValue.GetString("analyzedAt");
 
     m_analyzedAtHasBeenSet = true;
   }
@@ -98,7 +98,7 @@ FindingSummary& FindingSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("createdAt"))
   {
-    m_createdAt = jsonValue.GetDouble("createdAt");
+    m_createdAt = jsonValue.GetString("createdAt");
 
     m_createdAtHasBeenSet = true;
   }
@@ -157,7 +157,7 @@ FindingSummary& FindingSummary::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("updatedAt"))
   {
-    m_updatedAt = jsonValue.GetDouble("updatedAt");
+    m_updatedAt = jsonValue.GetString("updatedAt");
 
     m_updatedAtHasBeenSet = true;
   }
@@ -182,7 +182,7 @@ JsonValue FindingSummary::Jsonize() const
 
   if(m_analyzedAtHasBeenSet)
   {
-   payload.WithDouble("analyzedAt", m_analyzedAt.SecondsWithMSPrecision());
+   payload.WithString("analyzedAt", m_analyzedAt.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_conditionHasBeenSet)
@@ -198,7 +198,7 @@ JsonValue FindingSummary::Jsonize() const
 
   if(m_createdAtHasBeenSet)
   {
-   payload.WithDouble("createdAt", m_createdAt.SecondsWithMSPrecision());
+   payload.WithString("createdAt", m_createdAt.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_errorHasBeenSet)
@@ -248,7 +248,7 @@ JsonValue FindingSummary::Jsonize() const
 
   if(m_updatedAtHasBeenSet)
   {
-   payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+   payload.WithString("updatedAt", m_updatedAt.ToGmtString(DateFormat::ISO_8601));
   }
 
   return payload;

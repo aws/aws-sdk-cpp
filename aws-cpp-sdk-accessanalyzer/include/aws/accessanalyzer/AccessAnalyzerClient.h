@@ -153,7 +153,17 @@ namespace Model
     typedef std::function<void(const AccessAnalyzerClient*, const Model::UpdateFindingsRequest&, const Model::UpdateFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsResponseReceivedHandler;
 
   /**
-   * <p>AWS IAM Access Analyzer API Reference</p>
+   * <p>AWS IAM Access Analyzer helps identify potential resource-access risks by
+   * enabling you to identify any policies that grant access to an external
+   * principal. It does this by using logic-based reasoning to analyze resource-based
+   * policies in your AWS environment. An external principal can be another AWS
+   * account, a root user, an IAM user or role, a federated user, an AWS service, or
+   * an anonymous user. This guide describes the AWS IAM Access Analyzer operations
+   * that you can call programmatically. For general information about Access
+   * Analyzer, see the <a
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS
+   * IAM Access Analyzer section of the IAM User Guide</a>.</p> <p>To start using
+   * Access Analyzer, you first need to create an analyzer.</p>
    */
   class AWS_ACCESSANALYZER_API AccessAnalyzerClient : public Aws::Client::AWSJsonClient
   {
@@ -185,16 +195,14 @@ namespace Model
 
 
         /**
-         * <p>Creates an analyzer with a zone of trust set to your account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an analyzer for your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAnalyzer">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateAnalyzerOutcome CreateAnalyzer(const Model::CreateAnalyzerRequest& request) const;
 
         /**
-         * <p>Creates an analyzer with a zone of trust set to your account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an analyzer for your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAnalyzer">AWS
          * API Reference</a></p>
          *
@@ -203,8 +211,7 @@ namespace Model
         virtual Model::CreateAnalyzerOutcomeCallable CreateAnalyzerCallable(const Model::CreateAnalyzerRequest& request) const;
 
         /**
-         * <p>Creates an analyzer with a zone of trust set to your account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates an analyzer for your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAnalyzer">AWS
          * API Reference</a></p>
          *
@@ -213,16 +220,18 @@ namespace Model
         virtual void CreateAnalyzerAsync(const Model::CreateAnalyzerRequest& request, const CreateAnalyzerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates an archive rule for the specified analyzer.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates an archive rule for the specified analyzer. Archive rules
+         * automatically archive findings that meet the criteria you define when you create
+         * the rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateArchiveRuleOutcome CreateArchiveRule(const Model::CreateArchiveRuleRequest& request) const;
 
         /**
-         * <p>Creates an archive rule for the specified analyzer.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates an archive rule for the specified analyzer. Archive rules
+         * automatically archive findings that meet the criteria you define when you create
+         * the rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">AWS
          * API Reference</a></p>
          *
@@ -231,8 +240,9 @@ namespace Model
         virtual Model::CreateArchiveRuleOutcomeCallable CreateArchiveRuleCallable(const Model::CreateArchiveRuleRequest& request) const;
 
         /**
-         * <p>Creates an archive rule for the specified analyzer.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Creates an archive rule for the specified analyzer. Archive rules
+         * automatically archive findings that meet the criteria you define when you create
+         * the rule.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateArchiveRule">AWS
          * API Reference</a></p>
          *
@@ -300,16 +310,16 @@ namespace Model
         virtual void DeleteArchiveRuleAsync(const Model::DeleteArchiveRuleRequest& request, const DeleteArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about an analyzed resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Retrieves information about a resource that was analyzed.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAnalyzedResource">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAnalyzedResourceOutcome GetAnalyzedResource(const Model::GetAnalyzedResourceRequest& request) const;
 
         /**
-         * <p>Retrieves information about an analyzed resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Retrieves information about a resource that was analyzed.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAnalyzedResource">AWS
          * API Reference</a></p>
          *
@@ -318,8 +328,8 @@ namespace Model
         virtual Model::GetAnalyzedResourceOutcomeCallable GetAnalyzedResourceCallable(const Model::GetAnalyzedResourceRequest& request) const;
 
         /**
-         * <p>Retrieves information about an analyzed resource.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Retrieves information about a resource that was analyzed.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAnalyzedResource">AWS
          * API Reference</a></p>
          *
@@ -409,16 +419,16 @@ namespace Model
         virtual void GetFindingAsync(const Model::GetFindingRequest& request, const GetFindingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a list of resources that have been analyzed.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list of resources of the specified type that have been analyzed
+         * by the specified analyzer..</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAnalyzedResources">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAnalyzedResourcesOutcome ListAnalyzedResources(const Model::ListAnalyzedResourcesRequest& request) const;
 
         /**
-         * <p>Retrieves a list of resources that have been analyzed.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list of resources of the specified type that have been analyzed
+         * by the specified analyzer..</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAnalyzedResources">AWS
          * API Reference</a></p>
          *
@@ -427,8 +437,8 @@ namespace Model
         virtual Model::ListAnalyzedResourcesOutcomeCallable ListAnalyzedResourcesCallable(const Model::ListAnalyzedResourcesRequest& request) const;
 
         /**
-         * <p>Retrieves a list of resources that have been analyzed.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list of resources of the specified type that have been analyzed
+         * by the specified analyzer..</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAnalyzedResources">AWS
          * API Reference</a></p>
          *
@@ -546,7 +556,7 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Starts a scan of the policies applied to the specified
+         * <p>Immediately starts a scan of the policies applied to the specified
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StartResourceScan">AWS
          * API Reference</a></p>
@@ -554,7 +564,7 @@ namespace Model
         virtual Model::StartResourceScanOutcome StartResourceScan(const Model::StartResourceScanRequest& request) const;
 
         /**
-         * <p>Starts a scan of the policies applied to the specified
+         * <p>Immediately starts a scan of the policies applied to the specified
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StartResourceScan">AWS
          * API Reference</a></p>
@@ -564,7 +574,7 @@ namespace Model
         virtual Model::StartResourceScanOutcomeCallable StartResourceScanCallable(const Model::StartResourceScanRequest& request) const;
 
         /**
-         * <p>Starts a scan of the policies applied to the specified
+         * <p>Immediately starts a scan of the policies applied to the specified
          * resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StartResourceScan">AWS
          * API Reference</a></p>
@@ -624,14 +634,16 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the specified archive rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the criteria and values for the specified archive rule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateArchiveRule">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateArchiveRuleOutcome UpdateArchiveRule(const Model::UpdateArchiveRuleRequest& request) const;
 
         /**
-         * <p>Updates the specified archive rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the criteria and values for the specified archive rule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateArchiveRule">AWS
          * API Reference</a></p>
          *
@@ -640,7 +652,8 @@ namespace Model
         virtual Model::UpdateArchiveRuleOutcomeCallable UpdateArchiveRuleCallable(const Model::UpdateArchiveRuleRequest& request) const;
 
         /**
-         * <p>Updates the specified archive rule.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the criteria and values for the specified archive rule.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateArchiveRule">AWS
          * API Reference</a></p>
          *
@@ -649,16 +662,14 @@ namespace Model
         virtual void UpdateArchiveRuleAsync(const Model::UpdateArchiveRuleRequest& request, const UpdateArchiveRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates findings with the new values provided in the request.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the status for the specified findings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateFindings">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateFindingsOutcome UpdateFindings(const Model::UpdateFindingsRequest& request) const;
 
         /**
-         * <p>Updates findings with the new values provided in the request.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the status for the specified findings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateFindings">AWS
          * API Reference</a></p>
          *
@@ -667,8 +678,7 @@ namespace Model
         virtual Model::UpdateFindingsOutcomeCallable UpdateFindingsCallable(const Model::UpdateFindingsRequest& request) const;
 
         /**
-         * <p>Updates findings with the new values provided in the request.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates the status for the specified findings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/UpdateFindings">AWS
          * API Reference</a></p>
          *

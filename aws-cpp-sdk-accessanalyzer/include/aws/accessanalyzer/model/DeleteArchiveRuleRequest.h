@@ -53,42 +53,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the analyzer that was deleted.</p>
+     * <p>The name of the analyzer that associated with the archive rule to delete.</p>
      */
     inline const Aws::String& GetAnalyzerName() const{ return m_analyzerName; }
 
     /**
-     * <p>The name of the analyzer that was deleted.</p>
+     * <p>The name of the analyzer that associated with the archive rule to delete.</p>
      */
     inline bool AnalyzerNameHasBeenSet() const { return m_analyzerNameHasBeenSet; }
 
     /**
-     * <p>The name of the analyzer that was deleted.</p>
+     * <p>The name of the analyzer that associated with the archive rule to delete.</p>
      */
     inline void SetAnalyzerName(const Aws::String& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = value; }
 
     /**
-     * <p>The name of the analyzer that was deleted.</p>
+     * <p>The name of the analyzer that associated with the archive rule to delete.</p>
      */
     inline void SetAnalyzerName(Aws::String&& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = std::move(value); }
 
     /**
-     * <p>The name of the analyzer that was deleted.</p>
+     * <p>The name of the analyzer that associated with the archive rule to delete.</p>
      */
     inline void SetAnalyzerName(const char* value) { m_analyzerNameHasBeenSet = true; m_analyzerName.assign(value); }
 
     /**
-     * <p>The name of the analyzer that was deleted.</p>
+     * <p>The name of the analyzer that associated with the archive rule to delete.</p>
      */
     inline DeleteArchiveRuleRequest& WithAnalyzerName(const Aws::String& value) { SetAnalyzerName(value); return *this;}
 
     /**
-     * <p>The name of the analyzer that was deleted.</p>
+     * <p>The name of the analyzer that associated with the archive rule to delete.</p>
      */
     inline DeleteArchiveRuleRequest& WithAnalyzerName(Aws::String&& value) { SetAnalyzerName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the analyzer that was deleted.</p>
+     * <p>The name of the analyzer that associated with the archive rule to delete.</p>
      */
     inline DeleteArchiveRuleRequest& WithAnalyzerName(const char* value) { SetAnalyzerName(value); return *this;}
 
