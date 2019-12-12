@@ -151,6 +151,9 @@ else()
     set(STATIC_CRT ON)
 endif()
 
+# Add Linker search paths to RPATH so as to fix the problem where some linkers can't find cross-compiled depenpent libraries in customer paths when linking executables.
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH true)
+
 # build third-party targets
 if (BUILD_DEPS)
     # If building third party dependencies, we will move them to the same directory where SDK has been installed during installation.
