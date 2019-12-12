@@ -46,7 +46,7 @@ namespace Aws
          */
         struct TransferManagerConfiguration
         {
-            TransferManagerConfiguration(Aws::Utils::Threading::Executor* executor) : s3Client(nullptr), transferExecutor(executor), transferBufferMaxHeapSize(10 * MB5), bufferSize(MB5)
+            TransferManagerConfiguration(Aws::Utils::Threading::Executor* executor) : s3Client(nullptr), transferExecutor(executor), computeContentMD5(false), transferBufferMaxHeapSize(10 * MB5), bufferSize(MB5)
             {
             }
 
@@ -60,6 +60,12 @@ namespace Aws
              * It is not a bug to use the same executor, but at least be aware that this is how the manager will be used.
              */
             Aws::Utils::Threading::Executor* transferExecutor;
+            /**
+             * When true, TransferManager will calculate the MD5 digest of the content being uploaded.
+             * The digest is sent to S3 via an HTTP header enabling the service to perform integrity checks.
+             * This option is disabled by default.
+             */
+            bool computeContentMD5;
             /**
              * If you have special arguments you want passed to our put object calls, put them here. We will copy the template for each put object call
              * overriding the body stream, bucket, and key. If object metadata is passed through, we will override that as well.
