@@ -41,9 +41,11 @@
 #include <aws/codebuild/model/DeleteProjectRequest.h>
 #include <aws/codebuild/model/DeleteReportRequest.h>
 #include <aws/codebuild/model/DeleteReportGroupRequest.h>
+#include <aws/codebuild/model/DeleteResourcePolicyRequest.h>
 #include <aws/codebuild/model/DeleteSourceCredentialsRequest.h>
 #include <aws/codebuild/model/DeleteWebhookRequest.h>
 #include <aws/codebuild/model/DescribeTestCasesRequest.h>
+#include <aws/codebuild/model/GetResourcePolicyRequest.h>
 #include <aws/codebuild/model/ImportSourceCredentialsRequest.h>
 #include <aws/codebuild/model/InvalidateProjectCacheRequest.h>
 #include <aws/codebuild/model/ListBuildsRequest.h>
@@ -53,7 +55,10 @@
 #include <aws/codebuild/model/ListReportGroupsRequest.h>
 #include <aws/codebuild/model/ListReportsRequest.h>
 #include <aws/codebuild/model/ListReportsForReportGroupRequest.h>
+#include <aws/codebuild/model/ListSharedProjectsRequest.h>
+#include <aws/codebuild/model/ListSharedReportGroupsRequest.h>
 #include <aws/codebuild/model/ListSourceCredentialsRequest.h>
+#include <aws/codebuild/model/PutResourcePolicyRequest.h>
 #include <aws/codebuild/model/StartBuildRequest.h>
 #include <aws/codebuild/model/StopBuildRequest.h>
 #include <aws/codebuild/model/UpdateProjectRequest.h>
@@ -517,6 +522,41 @@ void CodeBuildClient::DeleteReportGroupAsyncHelper(const DeleteReportGroupReques
   handler(this, request, DeleteReportGroup(request), context);
 }
 
+DeleteResourcePolicyOutcome CodeBuildClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteResourcePolicyOutcome(DeleteResourcePolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteResourcePolicyOutcome(outcome.GetError());
+  }
+}
+
+DeleteResourcePolicyOutcomeCallable CodeBuildClient::DeleteResourcePolicyCallable(const DeleteResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::DeleteResourcePolicyAsync(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::DeleteResourcePolicyAsyncHelper(const DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteResourcePolicy(request), context);
+}
+
 DeleteSourceCredentialsOutcome CodeBuildClient::DeleteSourceCredentials(const DeleteSourceCredentialsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -620,6 +660,41 @@ void CodeBuildClient::DescribeTestCasesAsync(const DescribeTestCasesRequest& req
 void CodeBuildClient::DescribeTestCasesAsyncHelper(const DescribeTestCasesRequest& request, const DescribeTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeTestCases(request), context);
+}
+
+GetResourcePolicyOutcome CodeBuildClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetResourcePolicyOutcome(GetResourcePolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetResourcePolicyOutcome(outcome.GetError());
+  }
+}
+
+GetResourcePolicyOutcomeCallable CodeBuildClient::GetResourcePolicyCallable(const GetResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::GetResourcePolicyAsync(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::GetResourcePolicyAsyncHelper(const GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResourcePolicy(request), context);
 }
 
 ImportSourceCredentialsOutcome CodeBuildClient::ImportSourceCredentials(const ImportSourceCredentialsRequest& request) const
@@ -937,6 +1012,76 @@ void CodeBuildClient::ListReportsForReportGroupAsyncHelper(const ListReportsForR
   handler(this, request, ListReportsForReportGroup(request), context);
 }
 
+ListSharedProjectsOutcome CodeBuildClient::ListSharedProjects(const ListSharedProjectsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListSharedProjectsOutcome(ListSharedProjectsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListSharedProjectsOutcome(outcome.GetError());
+  }
+}
+
+ListSharedProjectsOutcomeCallable CodeBuildClient::ListSharedProjectsCallable(const ListSharedProjectsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSharedProjectsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSharedProjects(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::ListSharedProjectsAsync(const ListSharedProjectsRequest& request, const ListSharedProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSharedProjectsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::ListSharedProjectsAsyncHelper(const ListSharedProjectsRequest& request, const ListSharedProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSharedProjects(request), context);
+}
+
+ListSharedReportGroupsOutcome CodeBuildClient::ListSharedReportGroups(const ListSharedReportGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListSharedReportGroupsOutcome(ListSharedReportGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListSharedReportGroupsOutcome(outcome.GetError());
+  }
+}
+
+ListSharedReportGroupsOutcomeCallable CodeBuildClient::ListSharedReportGroupsCallable(const ListSharedReportGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSharedReportGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSharedReportGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::ListSharedReportGroupsAsync(const ListSharedReportGroupsRequest& request, const ListSharedReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSharedReportGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::ListSharedReportGroupsAsyncHelper(const ListSharedReportGroupsRequest& request, const ListSharedReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSharedReportGroups(request), context);
+}
+
 ListSourceCredentialsOutcome CodeBuildClient::ListSourceCredentials(const ListSourceCredentialsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -970,6 +1115,41 @@ void CodeBuildClient::ListSourceCredentialsAsync(const ListSourceCredentialsRequ
 void CodeBuildClient::ListSourceCredentialsAsyncHelper(const ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListSourceCredentials(request), context);
+}
+
+PutResourcePolicyOutcome CodeBuildClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutResourcePolicyOutcome(PutResourcePolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutResourcePolicyOutcome(outcome.GetError());
+  }
+}
+
+PutResourcePolicyOutcomeCallable CodeBuildClient::PutResourcePolicyCallable(const PutResourcePolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutResourcePolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutResourcePolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::PutResourcePolicyAsync(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutResourcePolicyAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::PutResourcePolicyAsyncHelper(const PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutResourcePolicy(request), context);
 }
 
 StartBuildOutcome CodeBuildClient::StartBuild(const StartBuildRequest& request) const

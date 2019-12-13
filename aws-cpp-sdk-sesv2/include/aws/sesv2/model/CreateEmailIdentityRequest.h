@@ -18,6 +18,7 @@
 #include <aws/sesv2/SESV2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sesv2/model/DkimSigningAttributes.h>
 #include <aws/sesv2/model/Tag.h>
 #include <utility>
 
@@ -137,6 +138,67 @@ namespace Model
      */
     inline CreateEmailIdentityRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>If your request includes this object, Amazon SES configures the identity to
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
+     * to the default method, <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+     * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
+     * domain, as opposed to an address.</p>
+     */
+    inline const DkimSigningAttributes& GetDkimSigningAttributes() const{ return m_dkimSigningAttributes; }
+
+    /**
+     * <p>If your request includes this object, Amazon SES configures the identity to
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
+     * to the default method, <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+     * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
+     * domain, as opposed to an address.</p>
+     */
+    inline bool DkimSigningAttributesHasBeenSet() const { return m_dkimSigningAttributesHasBeenSet; }
+
+    /**
+     * <p>If your request includes this object, Amazon SES configures the identity to
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
+     * to the default method, <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+     * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
+     * domain, as opposed to an address.</p>
+     */
+    inline void SetDkimSigningAttributes(const DkimSigningAttributes& value) { m_dkimSigningAttributesHasBeenSet = true; m_dkimSigningAttributes = value; }
+
+    /**
+     * <p>If your request includes this object, Amazon SES configures the identity to
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
+     * to the default method, <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+     * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
+     * domain, as opposed to an address.</p>
+     */
+    inline void SetDkimSigningAttributes(DkimSigningAttributes&& value) { m_dkimSigningAttributesHasBeenSet = true; m_dkimSigningAttributes = std::move(value); }
+
+    /**
+     * <p>If your request includes this object, Amazon SES configures the identity to
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
+     * to the default method, <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+     * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
+     * domain, as opposed to an address.</p>
+     */
+    inline CreateEmailIdentityRequest& WithDkimSigningAttributes(const DkimSigningAttributes& value) { SetDkimSigningAttributes(value); return *this;}
+
+    /**
+     * <p>If your request includes this object, Amazon SES configures the identity to
+     * use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, as opposed
+     * to the default method, <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+     * DKIM</a>.</p> <p>You can only specify this object if the email identity is a
+     * domain, as opposed to an address.</p>
+     */
+    inline CreateEmailIdentityRequest& WithDkimSigningAttributes(DkimSigningAttributes&& value) { SetDkimSigningAttributes(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_emailIdentity;
@@ -144,6 +206,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    DkimSigningAttributes m_dkimSigningAttributes;
+    bool m_dkimSigningAttributesHasBeenSet;
   };
 
 } // namespace Model

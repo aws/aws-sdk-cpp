@@ -258,32 +258,32 @@ namespace Model
 
 
     /**
-     * <p>An object that contains information about your account's suppression
-     * preferences.</p>
+     * <p>An object that contains information about the suppression list preferences
+     * for your account.</p>
      */
     inline const SuppressionOptions& GetSuppressionOptions() const{ return m_suppressionOptions; }
 
     /**
-     * <p>An object that contains information about your account's suppression
-     * preferences.</p>
+     * <p>An object that contains information about the suppression list preferences
+     * for your account.</p>
      */
     inline void SetSuppressionOptions(const SuppressionOptions& value) { m_suppressionOptions = value; }
 
     /**
-     * <p>An object that contains information about your account's suppression
-     * preferences.</p>
+     * <p>An object that contains information about the suppression list preferences
+     * for your account.</p>
      */
     inline void SetSuppressionOptions(SuppressionOptions&& value) { m_suppressionOptions = std::move(value); }
 
     /**
-     * <p>An object that contains information about your account's suppression
-     * preferences.</p>
+     * <p>An object that contains information about the suppression list preferences
+     * for your account.</p>
      */
     inline GetConfigurationSetResult& WithSuppressionOptions(const SuppressionOptions& value) { SetSuppressionOptions(value); return *this;}
 
     /**
-     * <p>An object that contains information about your account's suppression
-     * preferences.</p>
+     * <p>An object that contains information about the suppression list preferences
+     * for your account.</p>
      */
     inline GetConfigurationSetResult& WithSuppressionOptions(SuppressionOptions&& value) { SetSuppressionOptions(std::move(value)); return *this;}
 

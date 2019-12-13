@@ -62,6 +62,7 @@
 #include <aws/sesv2/model/PutDedicatedIpWarmupAttributesResult.h>
 #include <aws/sesv2/model/PutDeliverabilityDashboardOptionResult.h>
 #include <aws/sesv2/model/PutEmailIdentityDkimAttributesResult.h>
+#include <aws/sesv2/model/PutEmailIdentityDkimSigningAttributesResult.h>
 #include <aws/sesv2/model/PutEmailIdentityFeedbackAttributesResult.h>
 #include <aws/sesv2/model/PutEmailIdentityMailFromAttributesResult.h>
 #include <aws/sesv2/model/PutSuppressedDestinationResult.h>
@@ -149,6 +150,7 @@ namespace Model
         class PutDedicatedIpWarmupAttributesRequest;
         class PutDeliverabilityDashboardOptionRequest;
         class PutEmailIdentityDkimAttributesRequest;
+        class PutEmailIdentityDkimSigningAttributesRequest;
         class PutEmailIdentityFeedbackAttributesRequest;
         class PutEmailIdentityMailFromAttributesRequest;
         class PutSuppressedDestinationRequest;
@@ -198,6 +200,7 @@ namespace Model
         typedef Aws::Utils::Outcome<PutDedicatedIpWarmupAttributesResult, Aws::Client::AWSError<SESV2Errors>> PutDedicatedIpWarmupAttributesOutcome;
         typedef Aws::Utils::Outcome<PutDeliverabilityDashboardOptionResult, Aws::Client::AWSError<SESV2Errors>> PutDeliverabilityDashboardOptionOutcome;
         typedef Aws::Utils::Outcome<PutEmailIdentityDkimAttributesResult, Aws::Client::AWSError<SESV2Errors>> PutEmailIdentityDkimAttributesOutcome;
+        typedef Aws::Utils::Outcome<PutEmailIdentityDkimSigningAttributesResult, Aws::Client::AWSError<SESV2Errors>> PutEmailIdentityDkimSigningAttributesOutcome;
         typedef Aws::Utils::Outcome<PutEmailIdentityFeedbackAttributesResult, Aws::Client::AWSError<SESV2Errors>> PutEmailIdentityFeedbackAttributesOutcome;
         typedef Aws::Utils::Outcome<PutEmailIdentityMailFromAttributesResult, Aws::Client::AWSError<SESV2Errors>> PutEmailIdentityMailFromAttributesOutcome;
         typedef Aws::Utils::Outcome<PutSuppressedDestinationResult, Aws::Client::AWSError<SESV2Errors>> PutSuppressedDestinationOutcome;
@@ -247,6 +250,7 @@ namespace Model
         typedef std::future<PutDedicatedIpWarmupAttributesOutcome> PutDedicatedIpWarmupAttributesOutcomeCallable;
         typedef std::future<PutDeliverabilityDashboardOptionOutcome> PutDeliverabilityDashboardOptionOutcomeCallable;
         typedef std::future<PutEmailIdentityDkimAttributesOutcome> PutEmailIdentityDkimAttributesOutcomeCallable;
+        typedef std::future<PutEmailIdentityDkimSigningAttributesOutcome> PutEmailIdentityDkimSigningAttributesOutcomeCallable;
         typedef std::future<PutEmailIdentityFeedbackAttributesOutcome> PutEmailIdentityFeedbackAttributesOutcomeCallable;
         typedef std::future<PutEmailIdentityMailFromAttributesOutcome> PutEmailIdentityMailFromAttributesOutcomeCallable;
         typedef std::future<PutSuppressedDestinationOutcome> PutSuppressedDestinationOutcomeCallable;
@@ -299,6 +303,7 @@ namespace Model
     typedef std::function<void(const SESV2Client*, const Model::PutDedicatedIpWarmupAttributesRequest&, const Model::PutDedicatedIpWarmupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDedicatedIpWarmupAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutDeliverabilityDashboardOptionRequest&, const Model::PutDeliverabilityDashboardOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDeliverabilityDashboardOptionResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutEmailIdentityDkimAttributesRequest&, const Model::PutEmailIdentityDkimAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityDkimAttributesResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::PutEmailIdentityDkimSigningAttributesRequest&, const Model::PutEmailIdentityDkimSigningAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityDkimSigningAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutEmailIdentityFeedbackAttributesRequest&, const Model::PutEmailIdentityFeedbackAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityFeedbackAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutEmailIdentityMailFromAttributesRequest&, const Model::PutEmailIdentityMailFromAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityMailFromAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutSuppressedDestinationRequest&, const Model::PutSuppressedDestinationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutSuppressedDestinationResponseReceivedHandler;
@@ -489,10 +494,10 @@ namespace Model
          * tests can help you predict how your messages will be handled by various email
          * providers around the world. When you perform a predictive inbox placement test,
          * you provide a sample message that contains the content that you plan to send to
-         * your customers. Amazon SES API v2 then sends that message to special email
-         * addresses spread across several major email providers. After about 24 hours, the
-         * test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
-         * operation to view the results of the test.</p><p><h3>See Also:</h3>   <a
+         * your customers. Amazon SES then sends that message to special email addresses
+         * spread across several major email providers. After about 24 hours, the test is
+         * complete, and you can use the <code>GetDeliverabilityTestReport</code> operation
+         * to view the results of the test.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateDeliverabilityTestReport">AWS
          * API Reference</a></p>
          */
@@ -503,10 +508,10 @@ namespace Model
          * tests can help you predict how your messages will be handled by various email
          * providers around the world. When you perform a predictive inbox placement test,
          * you provide a sample message that contains the content that you plan to send to
-         * your customers. Amazon SES API v2 then sends that message to special email
-         * addresses spread across several major email providers. After about 24 hours, the
-         * test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
-         * operation to view the results of the test.</p><p><h3>See Also:</h3>   <a
+         * your customers. Amazon SES then sends that message to special email addresses
+         * spread across several major email providers. After about 24 hours, the test is
+         * complete, and you can use the <code>GetDeliverabilityTestReport</code> operation
+         * to view the results of the test.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateDeliverabilityTestReport">AWS
          * API Reference</a></p>
          *
@@ -519,10 +524,10 @@ namespace Model
          * tests can help you predict how your messages will be handled by various email
          * providers around the world. When you perform a predictive inbox placement test,
          * you provide a sample message that contains the content that you plan to send to
-         * your customers. Amazon SES API v2 then sends that message to special email
-         * addresses spread across several major email providers. After about 24 hours, the
-         * test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
-         * operation to view the results of the test.</p><p><h3>See Also:</h3>   <a
+         * your customers. Amazon SES then sends that message to special email addresses
+         * spread across several major email providers. After about 24 hours, the test is
+         * complete, and you can use the <code>GetDeliverabilityTestReport</code> operation
+         * to view the results of the test.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateDeliverabilityTestReport">AWS
          * API Reference</a></p>
          *
@@ -538,12 +543,21 @@ namespace Model
          * Amazon SES API v2 permission to send email from the identity.</p> <p>When you
          * verify an email address, Amazon SES sends an email to the address. Your email
          * address is verified as soon as you follow the link in the verification email.
-         * </p> <p>When you verify a domain, this operation provides a set of DKIM tokens,
-         * which you can convert into CNAME tokens. You add these CNAME tokens to the DNS
-         * configuration for your domain. Your domain is verified when Amazon SES detects
-         * these records in the DNS configuration for your domain. For some DNS providers,
-         * it can take 72 hours or more to complete the domain verification
-         * process.</p><p><h3>See Also:</h3>   <a
+         * </p> <p>When you verify a domain without specifying the
+         * <code>DkimSigningAttributes</code> object, this operation provides a set of DKIM
+         * tokens. You can convert these tokens into CNAME records, which you then add to
+         * the DNS configuration for your domain. Your domain is verified when Amazon SES
+         * detects these records in the DNS configuration for your domain. This
+         * verification method is known as <a
+         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+         * DKIM</a>.</p> <p>Alternatively, you can perform the verification process by
+         * providing your own public-private key pair. This verification method is known as
+         * Bring Your Own DKIM (BYODKIM). To use BYODKIM, your call to the
+         * <code>CreateEmailIdentity</code> operation has to include the
+         * <code>DkimSigningAttributes</code> object. When you specify this object, you
+         * provide a selector (a component of the DNS record name that identifies the
+         * public key that you want to use for DKIM authentication) and a private
+         * key.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentity">AWS
          * API Reference</a></p>
          */
@@ -557,12 +571,21 @@ namespace Model
          * Amazon SES API v2 permission to send email from the identity.</p> <p>When you
          * verify an email address, Amazon SES sends an email to the address. Your email
          * address is verified as soon as you follow the link in the verification email.
-         * </p> <p>When you verify a domain, this operation provides a set of DKIM tokens,
-         * which you can convert into CNAME tokens. You add these CNAME tokens to the DNS
-         * configuration for your domain. Your domain is verified when Amazon SES detects
-         * these records in the DNS configuration for your domain. For some DNS providers,
-         * it can take 72 hours or more to complete the domain verification
-         * process.</p><p><h3>See Also:</h3>   <a
+         * </p> <p>When you verify a domain without specifying the
+         * <code>DkimSigningAttributes</code> object, this operation provides a set of DKIM
+         * tokens. You can convert these tokens into CNAME records, which you then add to
+         * the DNS configuration for your domain. Your domain is verified when Amazon SES
+         * detects these records in the DNS configuration for your domain. This
+         * verification method is known as <a
+         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+         * DKIM</a>.</p> <p>Alternatively, you can perform the verification process by
+         * providing your own public-private key pair. This verification method is known as
+         * Bring Your Own DKIM (BYODKIM). To use BYODKIM, your call to the
+         * <code>CreateEmailIdentity</code> operation has to include the
+         * <code>DkimSigningAttributes</code> object. When you specify this object, you
+         * provide a selector (a component of the DNS record name that identifies the
+         * public key that you want to use for DKIM authentication) and a private
+         * key.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentity">AWS
          * API Reference</a></p>
          *
@@ -578,12 +601,21 @@ namespace Model
          * Amazon SES API v2 permission to send email from the identity.</p> <p>When you
          * verify an email address, Amazon SES sends an email to the address. Your email
          * address is verified as soon as you follow the link in the verification email.
-         * </p> <p>When you verify a domain, this operation provides a set of DKIM tokens,
-         * which you can convert into CNAME tokens. You add these CNAME tokens to the DNS
-         * configuration for your domain. Your domain is verified when Amazon SES detects
-         * these records in the DNS configuration for your domain. For some DNS providers,
-         * it can take 72 hours or more to complete the domain verification
-         * process.</p><p><h3>See Also:</h3>   <a
+         * </p> <p>When you verify a domain without specifying the
+         * <code>DkimSigningAttributes</code> object, this operation provides a set of DKIM
+         * tokens. You can convert these tokens into CNAME records, which you then add to
+         * the DNS configuration for your domain. Your domain is verified when Amazon SES
+         * detects these records in the DNS configuration for your domain. This
+         * verification method is known as <a
+         * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+         * DKIM</a>.</p> <p>Alternatively, you can perform the verification process by
+         * providing your own public-private key pair. This verification method is known as
+         * Bring Your Own DKIM (BYODKIM). To use BYODKIM, your call to the
+         * <code>CreateEmailIdentity</code> operation has to include the
+         * <code>DkimSigningAttributes</code> object. When you specify this object, you
+         * provide a selector (a component of the DNS record name that identifies the
+         * public key that you want to use for DKIM authentication) and a private
+         * key.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentity">AWS
          * API Reference</a></p>
          *
@@ -725,16 +757,16 @@ namespace Model
         virtual void DeleteEmailIdentityAsync(const Model::DeleteEmailIdentityRequest& request, const DeleteEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used to delete a suppressed email destination from your suppression
-         * list.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes an email address from the suppression list for your
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteSuppressedDestinationOutcome DeleteSuppressedDestination(const Model::DeleteSuppressedDestinationRequest& request) const;
 
         /**
-         * <p>Used to delete a suppressed email destination from your suppression
-         * list.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes an email address from the suppression list for your
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination">AWS
          * API Reference</a></p>
          *
@@ -743,8 +775,8 @@ namespace Model
         virtual Model::DeleteSuppressedDestinationOutcomeCallable DeleteSuppressedDestinationCallable(const Model::DeleteSuppressedDestinationRequest& request) const;
 
         /**
-         * <p>Used to delete a suppressed email destination from your suppression
-         * list.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes an email address from the suppression list for your
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestination">AWS
          * API Reference</a></p>
          *
@@ -962,8 +994,8 @@ namespace Model
          * subscription charge, in addition to any other fees that you accrue by using
          * Amazon SES and other AWS services. For more information about the features and
          * cost of a Deliverability dashboard subscription, see <a
-         * href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
-         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDeliverabilityDashboardOptions">AWS
          * API Reference</a></p>
          */
@@ -978,8 +1010,8 @@ namespace Model
          * subscription charge, in addition to any other fees that you accrue by using
          * Amazon SES and other AWS services. For more information about the features and
          * cost of a Deliverability dashboard subscription, see <a
-         * href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
-         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDeliverabilityDashboardOptions">AWS
          * API Reference</a></p>
          *
@@ -996,8 +1028,8 @@ namespace Model
          * subscription charge, in addition to any other fees that you accrue by using
          * Amazon SES and other AWS services. For more information about the features and
          * cost of a Deliverability dashboard subscription, see <a
-         * href="http://aws.amazon.com/pinpoint/pricing/">Amazon Pinpoint
-         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetDeliverabilityDashboardOptions">AWS
          * API Reference</a></p>
          *
@@ -1124,16 +1156,16 @@ namespace Model
         virtual void GetEmailIdentityAsync(const Model::GetEmailIdentityRequest& request, const GetEmailIdentityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used to fetch a single suppressed email destination from your suppression
-         * list.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a specific email address that's on the
+         * suppression list for your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">AWS
          * API Reference</a></p>
          */
         virtual Model::GetSuppressedDestinationOutcome GetSuppressedDestination(const Model::GetSuppressedDestinationRequest& request) const;
 
         /**
-         * <p>Used to fetch a single suppressed email destination from your suppression
-         * list.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a specific email address that's on the
+         * suppression list for your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">AWS
          * API Reference</a></p>
          *
@@ -1142,8 +1174,8 @@ namespace Model
         virtual Model::GetSuppressedDestinationOutcomeCallable GetSuppressedDestinationCallable(const Model::GetSuppressedDestinationRequest& request) const;
 
         /**
-         * <p>Used to fetch a single suppressed email destination from your suppression
-         * list.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves information about a specific email address that's on the
+         * suppression list for your account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestination">AWS
          * API Reference</a></p>
          *
@@ -1325,16 +1357,16 @@ namespace Model
         virtual void ListEmailIdentitiesAsync(const Model::ListEmailIdentitiesRequest& request, const ListEmailIdentitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Used to fetch a list suppressed email destinations from your suppression
-         * list.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of email addresses that are on the suppression list for your
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListSuppressedDestinationsOutcome ListSuppressedDestinations(const Model::ListSuppressedDestinationsRequest& request) const;
 
         /**
-         * <p>Used to fetch a list suppressed email destinations from your suppression
-         * list.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of email addresses that are on the suppression list for your
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">AWS
          * API Reference</a></p>
          *
@@ -1343,8 +1375,8 @@ namespace Model
         virtual Model::ListSuppressedDestinationsOutcomeCallable ListSuppressedDestinationsCallable(const Model::ListSuppressedDestinationsRequest& request) const;
 
         /**
-         * <p>Used to fetch a list suppressed email destinations from your suppression
-         * list.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves a list of email addresses that are on the suppression list for your
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinations">AWS
          * API Reference</a></p>
          *
@@ -1449,7 +1481,7 @@ namespace Model
         virtual void PutAccountSendingAttributesAsync(const Model::PutAccountSendingAttributesRequest& request, const PutAccountSendingAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Change your account's suppression preferences for your account.</p><p><h3>See
+         * <p>Change the settings for the account-level suppression list.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes">AWS
          * API Reference</a></p>
@@ -1457,7 +1489,7 @@ namespace Model
         virtual Model::PutAccountSuppressionAttributesOutcome PutAccountSuppressionAttributes(const Model::PutAccountSuppressionAttributesRequest& request) const;
 
         /**
-         * <p>Change your account's suppression preferences for your account.</p><p><h3>See
+         * <p>Change the settings for the account-level suppression list.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes">AWS
          * API Reference</a></p>
@@ -1467,7 +1499,7 @@ namespace Model
         virtual Model::PutAccountSuppressionAttributesOutcomeCallable PutAccountSuppressionAttributesCallable(const Model::PutAccountSuppressionAttributesRequest& request) const;
 
         /**
-         * <p>Change your account's suppression preferences for your account.</p><p><h3>See
+         * <p>Change the settings for the account-level suppression list.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributes">AWS
          * API Reference</a></p>
@@ -1567,7 +1599,7 @@ namespace Model
         virtual void PutConfigurationSetSendingOptionsAsync(const Model::PutConfigurationSetSendingOptionsRequest& request, const PutConfigurationSetSendingOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Specify your account's suppression preferences for a configuration
+         * <p>Specify the account suppression list preferences for a configuration
          * set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions">AWS
          * API Reference</a></p>
@@ -1575,7 +1607,7 @@ namespace Model
         virtual Model::PutConfigurationSetSuppressionOptionsOutcome PutConfigurationSetSuppressionOptions(const Model::PutConfigurationSetSuppressionOptionsRequest& request) const;
 
         /**
-         * <p>Specify your account's suppression preferences for a configuration
+         * <p>Specify the account suppression list preferences for a configuration
          * set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions">AWS
          * API Reference</a></p>
@@ -1585,7 +1617,7 @@ namespace Model
         virtual Model::PutConfigurationSetSuppressionOptionsOutcomeCallable PutConfigurationSetSuppressionOptionsCallable(const Model::PutConfigurationSetSuppressionOptionsRequest& request) const;
 
         /**
-         * <p>Specify your account's suppression preferences for a configuration
+         * <p>Specify the account suppression list preferences for a configuration
          * set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutConfigurationSetSuppressionOptions">AWS
          * API Reference</a></p>
@@ -1695,8 +1727,8 @@ namespace Model
          * Deliverability dashboard, you pay a monthly subscription charge, in addition to
          * any other fees that you accrue by using Amazon SES and other AWS services. For
          * more information about the features and cost of a Deliverability dashboard
-         * subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon
-         * Pinpoint Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES
+         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDeliverabilityDashboardOption">AWS
          * API Reference</a></p>
          */
@@ -1710,8 +1742,8 @@ namespace Model
          * Deliverability dashboard, you pay a monthly subscription charge, in addition to
          * any other fees that you accrue by using Amazon SES and other AWS services. For
          * more information about the features and cost of a Deliverability dashboard
-         * subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon
-         * Pinpoint Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES
+         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDeliverabilityDashboardOption">AWS
          * API Reference</a></p>
          *
@@ -1727,8 +1759,8 @@ namespace Model
          * Deliverability dashboard, you pay a monthly subscription charge, in addition to
          * any other fees that you accrue by using Amazon SES and other AWS services. For
          * more information about the features and cost of a Deliverability dashboard
-         * subscription, see <a href="http://aws.amazon.com/pinpoint/pricing/">Amazon
-         * Pinpoint Pricing</a>.</p><p><h3>See Also:</h3>   <a
+         * subscription, see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES
+         * Pricing</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDeliverabilityDashboardOption">AWS
          * API Reference</a></p>
          *
@@ -1763,6 +1795,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void PutEmailIdentityDkimAttributesAsync(const Model::PutEmailIdentityDkimAttributesRequest& request, const PutEmailIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Used to configure or change the DKIM authentication settings for an email
+         * domain identity. You can use this operation to do any of the following:</p> <ul>
+         * <li> <p>Update the signing attributes for an identity that uses Bring Your Own
+         * DKIM (BYODKIM).</p> </li> <li> <p>Change from using no DKIM authentication to
+         * using Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to
+         * using BYODKIM.</p> </li> <li> <p>Change from using Easy DKIM to using
+         * BYODKIM.</p> </li> <li> <p>Change from using BYODKIM to using Easy DKIM.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimSigningAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutEmailIdentityDkimSigningAttributesOutcome PutEmailIdentityDkimSigningAttributes(const Model::PutEmailIdentityDkimSigningAttributesRequest& request) const;
+
+        /**
+         * <p>Used to configure or change the DKIM authentication settings for an email
+         * domain identity. You can use this operation to do any of the following:</p> <ul>
+         * <li> <p>Update the signing attributes for an identity that uses Bring Your Own
+         * DKIM (BYODKIM).</p> </li> <li> <p>Change from using no DKIM authentication to
+         * using Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to
+         * using BYODKIM.</p> </li> <li> <p>Change from using Easy DKIM to using
+         * BYODKIM.</p> </li> <li> <p>Change from using BYODKIM to using Easy DKIM.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimSigningAttributes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutEmailIdentityDkimSigningAttributesOutcomeCallable PutEmailIdentityDkimSigningAttributesCallable(const Model::PutEmailIdentityDkimSigningAttributesRequest& request) const;
+
+        /**
+         * <p>Used to configure or change the DKIM authentication settings for an email
+         * domain identity. You can use this operation to do any of the following:</p> <ul>
+         * <li> <p>Update the signing attributes for an identity that uses Bring Your Own
+         * DKIM (BYODKIM).</p> </li> <li> <p>Change from using no DKIM authentication to
+         * using Easy DKIM.</p> </li> <li> <p>Change from using no DKIM authentication to
+         * using BYODKIM.</p> </li> <li> <p>Change from using Easy DKIM to using
+         * BYODKIM.</p> </li> <li> <p>Change from using BYODKIM to using Easy DKIM.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutEmailIdentityDkimSigningAttributes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutEmailIdentityDkimSigningAttributesAsync(const Model::PutEmailIdentityDkimSigningAttributesRequest& request, const PutEmailIdentityDkimSigningAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Used to enable or disable feedback forwarding for an identity. This setting
@@ -1845,16 +1923,16 @@ namespace Model
         virtual void PutEmailIdentityMailFromAttributesAsync(const Model::PutEmailIdentityMailFromAttributesRequest& request, const PutEmailIdentityMailFromAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Puts (overwrites) an email destination in your suppression
-         * list.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds an email address to the suppression list for your account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination">AWS
          * API Reference</a></p>
          */
         virtual Model::PutSuppressedDestinationOutcome PutSuppressedDestination(const Model::PutSuppressedDestinationRequest& request) const;
 
         /**
-         * <p>Puts (overwrites) an email destination in your suppression
-         * list.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds an email address to the suppression list for your account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination">AWS
          * API Reference</a></p>
          *
@@ -1863,8 +1941,8 @@ namespace Model
         virtual Model::PutSuppressedDestinationOutcomeCallable PutSuppressedDestinationCallable(const Model::PutSuppressedDestinationRequest& request) const;
 
         /**
-         * <p>Puts (overwrites) an email destination in your suppression
-         * list.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds an email address to the suppression list for your account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutSuppressedDestination">AWS
          * API Reference</a></p>
          *
@@ -1876,12 +1954,12 @@ namespace Model
          * <p>Sends an email message. You can use the Amazon SES API v2 to send two types
          * of messages:</p> <ul> <li> <p> <b>Simple</b> – A standard email message. When
          * you create this type of message, you specify the sender, the recipient, and the
-         * message body, and the Amazon SES API v2 assembles the message for you.</p> </li>
-         * <li> <p> <b>Raw</b> – A raw, MIME-formatted email message. When you send this
-         * type of email, you have to specify all of the message headers, as well as the
-         * message body. You can use this message type to send messages that contain
-         * attachments. The message that you specify has to be a valid MIME message.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * message body, and Amazon SES assembles the message for you.</p> </li> <li> <p>
+         * <b>Raw</b> – A raw, MIME-formatted email message. When you send this type of
+         * email, you have to specify all of the message headers, as well as the message
+         * body. You can use this message type to send messages that contain attachments.
+         * The message that you specify has to be a valid MIME message.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendEmail">AWS API
          * Reference</a></p>
          */
@@ -1891,12 +1969,12 @@ namespace Model
          * <p>Sends an email message. You can use the Amazon SES API v2 to send two types
          * of messages:</p> <ul> <li> <p> <b>Simple</b> – A standard email message. When
          * you create this type of message, you specify the sender, the recipient, and the
-         * message body, and the Amazon SES API v2 assembles the message for you.</p> </li>
-         * <li> <p> <b>Raw</b> – A raw, MIME-formatted email message. When you send this
-         * type of email, you have to specify all of the message headers, as well as the
-         * message body. You can use this message type to send messages that contain
-         * attachments. The message that you specify has to be a valid MIME message.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * message body, and Amazon SES assembles the message for you.</p> </li> <li> <p>
+         * <b>Raw</b> – A raw, MIME-formatted email message. When you send this type of
+         * email, you have to specify all of the message headers, as well as the message
+         * body. You can use this message type to send messages that contain attachments.
+         * The message that you specify has to be a valid MIME message.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendEmail">AWS API
          * Reference</a></p>
          *
@@ -1908,12 +1986,12 @@ namespace Model
          * <p>Sends an email message. You can use the Amazon SES API v2 to send two types
          * of messages:</p> <ul> <li> <p> <b>Simple</b> – A standard email message. When
          * you create this type of message, you specify the sender, the recipient, and the
-         * message body, and the Amazon SES API v2 assembles the message for you.</p> </li>
-         * <li> <p> <b>Raw</b> – A raw, MIME-formatted email message. When you send this
-         * type of email, you have to specify all of the message headers, as well as the
-         * message body. You can use this message type to send messages that contain
-         * attachments. The message that you specify has to be a valid MIME message.</p>
-         * </li> </ul><p><h3>See Also:</h3>   <a
+         * message body, and Amazon SES assembles the message for you.</p> </li> <li> <p>
+         * <b>Raw</b> – A raw, MIME-formatted email message. When you send this type of
+         * email, you have to specify all of the message headers, as well as the message
+         * body. You can use this message type to send messages that contain attachments.
+         * The message that you specify has to be a valid MIME message.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendEmail">AWS API
          * Reference</a></p>
          *
@@ -2083,6 +2161,7 @@ namespace Model
         void PutDedicatedIpWarmupAttributesAsyncHelper(const Model::PutDedicatedIpWarmupAttributesRequest& request, const PutDedicatedIpWarmupAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutDeliverabilityDashboardOptionAsyncHelper(const Model::PutDeliverabilityDashboardOptionRequest& request, const PutDeliverabilityDashboardOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEmailIdentityDkimAttributesAsyncHelper(const Model::PutEmailIdentityDkimAttributesRequest& request, const PutEmailIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutEmailIdentityDkimSigningAttributesAsyncHelper(const Model::PutEmailIdentityDkimSigningAttributesRequest& request, const PutEmailIdentityDkimSigningAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEmailIdentityFeedbackAttributesAsyncHelper(const Model::PutEmailIdentityFeedbackAttributesRequest& request, const PutEmailIdentityFeedbackAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEmailIdentityMailFromAttributesAsyncHelper(const Model::PutEmailIdentityMailFromAttributesRequest& request, const PutEmailIdentityMailFromAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutSuppressedDestinationAsyncHelper(const Model::PutSuppressedDestinationRequest& request, const PutSuppressedDestinationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

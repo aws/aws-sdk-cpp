@@ -37,7 +37,7 @@ namespace SESV2
 namespace Model
 {
   /**
-   * <p>A list of suppressed email destinations.</p><p><h3>See Also:</h3>   <a
+   * <p>A list of suppressed email addresses.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinationsResponse">AWS
    * API Reference</a></p>
    */
@@ -93,58 +93,58 @@ namespace Model
 
 
     /**
-     * <p>A token that indicates that there are additional suppressed destinations to
-     * list. To view additional suppressed destinations, issue another request to
-     * <code>ListSuppressedDestinations</code>, and pass this token in the
-     * <code>NextToken</code> parameter.</p>
+     * <p>A token that indicates that there are additional email addresses on the
+     * suppression list for your account. To view additional suppressed addresses,
+     * issue another request to <code>ListSuppressedDestinations</code>, and pass this
+     * token in the <code>NextToken</code> parameter.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token that indicates that there are additional suppressed destinations to
-     * list. To view additional suppressed destinations, issue another request to
-     * <code>ListSuppressedDestinations</code>, and pass this token in the
-     * <code>NextToken</code> parameter.</p>
+     * <p>A token that indicates that there are additional email addresses on the
+     * suppression list for your account. To view additional suppressed addresses,
+     * issue another request to <code>ListSuppressedDestinations</code>, and pass this
+     * token in the <code>NextToken</code> parameter.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A token that indicates that there are additional suppressed destinations to
-     * list. To view additional suppressed destinations, issue another request to
-     * <code>ListSuppressedDestinations</code>, and pass this token in the
-     * <code>NextToken</code> parameter.</p>
+     * <p>A token that indicates that there are additional email addresses on the
+     * suppression list for your account. To view additional suppressed addresses,
+     * issue another request to <code>ListSuppressedDestinations</code>, and pass this
+     * token in the <code>NextToken</code> parameter.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A token that indicates that there are additional suppressed destinations to
-     * list. To view additional suppressed destinations, issue another request to
-     * <code>ListSuppressedDestinations</code>, and pass this token in the
-     * <code>NextToken</code> parameter.</p>
+     * <p>A token that indicates that there are additional email addresses on the
+     * suppression list for your account. To view additional suppressed addresses,
+     * issue another request to <code>ListSuppressedDestinations</code>, and pass this
+     * token in the <code>NextToken</code> parameter.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A token that indicates that there are additional suppressed destinations to
-     * list. To view additional suppressed destinations, issue another request to
-     * <code>ListSuppressedDestinations</code>, and pass this token in the
-     * <code>NextToken</code> parameter.</p>
+     * <p>A token that indicates that there are additional email addresses on the
+     * suppression list for your account. To view additional suppressed addresses,
+     * issue another request to <code>ListSuppressedDestinations</code>, and pass this
+     * token in the <code>NextToken</code> parameter.</p>
      */
     inline ListSuppressedDestinationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token that indicates that there are additional suppressed destinations to
-     * list. To view additional suppressed destinations, issue another request to
-     * <code>ListSuppressedDestinations</code>, and pass this token in the
-     * <code>NextToken</code> parameter.</p>
+     * <p>A token that indicates that there are additional email addresses on the
+     * suppression list for your account. To view additional suppressed addresses,
+     * issue another request to <code>ListSuppressedDestinations</code>, and pass this
+     * token in the <code>NextToken</code> parameter.</p>
      */
     inline ListSuppressedDestinationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token that indicates that there are additional suppressed destinations to
-     * list. To view additional suppressed destinations, issue another request to
-     * <code>ListSuppressedDestinations</code>, and pass this token in the
-     * <code>NextToken</code> parameter.</p>
+     * <p>A token that indicates that there are additional email addresses on the
+     * suppression list for your account. To view additional suppressed addresses,
+     * issue another request to <code>ListSuppressedDestinations</code>, and pass this
+     * token in the <code>NextToken</code> parameter.</p>
      */
     inline ListSuppressedDestinationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

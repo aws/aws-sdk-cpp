@@ -35,8 +35,7 @@ namespace SESV2
 namespace Model
 {
   /**
-   * <p>Information about the suppressed email destination.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>Information about the suppressed email address.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestinationResponse">AWS
    * API Reference</a></p>
    */
@@ -49,27 +48,27 @@ namespace Model
 
 
     /**
-     * <p>An object containing information about the suppressed email destination.</p>
+     * <p>An object containing information about the suppressed email address.</p>
      */
     inline const SuppressedDestination& GetSuppressedDestination() const{ return m_suppressedDestination; }
 
     /**
-     * <p>An object containing information about the suppressed email destination.</p>
+     * <p>An object containing information about the suppressed email address.</p>
      */
     inline void SetSuppressedDestination(const SuppressedDestination& value) { m_suppressedDestination = value; }
 
     /**
-     * <p>An object containing information about the suppressed email destination.</p>
+     * <p>An object containing information about the suppressed email address.</p>
      */
     inline void SetSuppressedDestination(SuppressedDestination&& value) { m_suppressedDestination = std::move(value); }
 
     /**
-     * <p>An object containing information about the suppressed email destination.</p>
+     * <p>An object containing information about the suppressed email address.</p>
      */
     inline GetSuppressedDestinationResult& WithSuppressedDestination(const SuppressedDestination& value) { SetSuppressedDestination(value); return *this;}
 
     /**
-     * <p>An object containing information about the suppressed email destination.</p>
+     * <p>An object containing information about the suppressed email address.</p>
      */
     inline GetSuppressedDestinationResult& WithSuppressedDestination(SuppressedDestination&& value) { SetSuppressedDestination(std::move(value)); return *this;}
 

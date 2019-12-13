@@ -36,8 +36,8 @@ namespace Model
 
   /**
    * <p>Contains information about a dedicated IP address that is associated with
-   * your Amazon SES API v2 account.</p> <p>To learn more about requesting dedicated
-   * IP addresses, see <a
+   * your Amazon SES account.</p> <p>To learn more about requesting dedicated IP
+   * addresses, see <a
    * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/dedicated-ip-case.html">Requesting
    * and Relinquishing Dedicated IP Addresses</a> in the <i>Amazon SES Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a

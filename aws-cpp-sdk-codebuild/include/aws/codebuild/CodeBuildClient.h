@@ -32,9 +32,11 @@
 #include <aws/codebuild/model/DeleteProjectResult.h>
 #include <aws/codebuild/model/DeleteReportResult.h>
 #include <aws/codebuild/model/DeleteReportGroupResult.h>
+#include <aws/codebuild/model/DeleteResourcePolicyResult.h>
 #include <aws/codebuild/model/DeleteSourceCredentialsResult.h>
 #include <aws/codebuild/model/DeleteWebhookResult.h>
 #include <aws/codebuild/model/DescribeTestCasesResult.h>
+#include <aws/codebuild/model/GetResourcePolicyResult.h>
 #include <aws/codebuild/model/ImportSourceCredentialsResult.h>
 #include <aws/codebuild/model/InvalidateProjectCacheResult.h>
 #include <aws/codebuild/model/ListBuildsResult.h>
@@ -44,7 +46,10 @@
 #include <aws/codebuild/model/ListReportGroupsResult.h>
 #include <aws/codebuild/model/ListReportsResult.h>
 #include <aws/codebuild/model/ListReportsForReportGroupResult.h>
+#include <aws/codebuild/model/ListSharedProjectsResult.h>
+#include <aws/codebuild/model/ListSharedReportGroupsResult.h>
 #include <aws/codebuild/model/ListSourceCredentialsResult.h>
+#include <aws/codebuild/model/PutResourcePolicyResult.h>
 #include <aws/codebuild/model/StartBuildResult.h>
 #include <aws/codebuild/model/StopBuildResult.h>
 #include <aws/codebuild/model/UpdateProjectResult.h>
@@ -100,9 +105,11 @@ namespace Model
         class DeleteProjectRequest;
         class DeleteReportRequest;
         class DeleteReportGroupRequest;
+        class DeleteResourcePolicyRequest;
         class DeleteSourceCredentialsRequest;
         class DeleteWebhookRequest;
         class DescribeTestCasesRequest;
+        class GetResourcePolicyRequest;
         class ImportSourceCredentialsRequest;
         class InvalidateProjectCacheRequest;
         class ListBuildsRequest;
@@ -112,7 +119,10 @@ namespace Model
         class ListReportGroupsRequest;
         class ListReportsRequest;
         class ListReportsForReportGroupRequest;
+        class ListSharedProjectsRequest;
+        class ListSharedReportGroupsRequest;
         class ListSourceCredentialsRequest;
+        class PutResourcePolicyRequest;
         class StartBuildRequest;
         class StopBuildRequest;
         class UpdateProjectRequest;
@@ -130,9 +140,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteProjectOutcome;
         typedef Aws::Utils::Outcome<DeleteReportResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteReportOutcome;
         typedef Aws::Utils::Outcome<DeleteReportGroupResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteReportGroupOutcome;
+        typedef Aws::Utils::Outcome<DeleteResourcePolicyResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<DeleteSourceCredentialsResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteSourceCredentialsOutcome;
         typedef Aws::Utils::Outcome<DeleteWebhookResult, Aws::Client::AWSError<CodeBuildErrors>> DeleteWebhookOutcome;
         typedef Aws::Utils::Outcome<DescribeTestCasesResult, Aws::Client::AWSError<CodeBuildErrors>> DescribeTestCasesOutcome;
+        typedef Aws::Utils::Outcome<GetResourcePolicyResult, Aws::Client::AWSError<CodeBuildErrors>> GetResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<ImportSourceCredentialsResult, Aws::Client::AWSError<CodeBuildErrors>> ImportSourceCredentialsOutcome;
         typedef Aws::Utils::Outcome<InvalidateProjectCacheResult, Aws::Client::AWSError<CodeBuildErrors>> InvalidateProjectCacheOutcome;
         typedef Aws::Utils::Outcome<ListBuildsResult, Aws::Client::AWSError<CodeBuildErrors>> ListBuildsOutcome;
@@ -142,7 +154,10 @@ namespace Model
         typedef Aws::Utils::Outcome<ListReportGroupsResult, Aws::Client::AWSError<CodeBuildErrors>> ListReportGroupsOutcome;
         typedef Aws::Utils::Outcome<ListReportsResult, Aws::Client::AWSError<CodeBuildErrors>> ListReportsOutcome;
         typedef Aws::Utils::Outcome<ListReportsForReportGroupResult, Aws::Client::AWSError<CodeBuildErrors>> ListReportsForReportGroupOutcome;
+        typedef Aws::Utils::Outcome<ListSharedProjectsResult, Aws::Client::AWSError<CodeBuildErrors>> ListSharedProjectsOutcome;
+        typedef Aws::Utils::Outcome<ListSharedReportGroupsResult, Aws::Client::AWSError<CodeBuildErrors>> ListSharedReportGroupsOutcome;
         typedef Aws::Utils::Outcome<ListSourceCredentialsResult, Aws::Client::AWSError<CodeBuildErrors>> ListSourceCredentialsOutcome;
+        typedef Aws::Utils::Outcome<PutResourcePolicyResult, Aws::Client::AWSError<CodeBuildErrors>> PutResourcePolicyOutcome;
         typedef Aws::Utils::Outcome<StartBuildResult, Aws::Client::AWSError<CodeBuildErrors>> StartBuildOutcome;
         typedef Aws::Utils::Outcome<StopBuildResult, Aws::Client::AWSError<CodeBuildErrors>> StopBuildOutcome;
         typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<CodeBuildErrors>> UpdateProjectOutcome;
@@ -160,9 +175,11 @@ namespace Model
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
         typedef std::future<DeleteReportOutcome> DeleteReportOutcomeCallable;
         typedef std::future<DeleteReportGroupOutcome> DeleteReportGroupOutcomeCallable;
+        typedef std::future<DeleteResourcePolicyOutcome> DeleteResourcePolicyOutcomeCallable;
         typedef std::future<DeleteSourceCredentialsOutcome> DeleteSourceCredentialsOutcomeCallable;
         typedef std::future<DeleteWebhookOutcome> DeleteWebhookOutcomeCallable;
         typedef std::future<DescribeTestCasesOutcome> DescribeTestCasesOutcomeCallable;
+        typedef std::future<GetResourcePolicyOutcome> GetResourcePolicyOutcomeCallable;
         typedef std::future<ImportSourceCredentialsOutcome> ImportSourceCredentialsOutcomeCallable;
         typedef std::future<InvalidateProjectCacheOutcome> InvalidateProjectCacheOutcomeCallable;
         typedef std::future<ListBuildsOutcome> ListBuildsOutcomeCallable;
@@ -172,7 +189,10 @@ namespace Model
         typedef std::future<ListReportGroupsOutcome> ListReportGroupsOutcomeCallable;
         typedef std::future<ListReportsOutcome> ListReportsOutcomeCallable;
         typedef std::future<ListReportsForReportGroupOutcome> ListReportsForReportGroupOutcomeCallable;
+        typedef std::future<ListSharedProjectsOutcome> ListSharedProjectsOutcomeCallable;
+        typedef std::future<ListSharedReportGroupsOutcome> ListSharedReportGroupsOutcomeCallable;
         typedef std::future<ListSourceCredentialsOutcome> ListSourceCredentialsOutcomeCallable;
+        typedef std::future<PutResourcePolicyOutcome> PutResourcePolicyOutcomeCallable;
         typedef std::future<StartBuildOutcome> StartBuildOutcomeCallable;
         typedef std::future<StopBuildOutcome> StopBuildOutcomeCallable;
         typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
@@ -193,9 +213,11 @@ namespace Model
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteReportRequest&, const Model::DeleteReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReportResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteReportGroupRequest&, const Model::DeleteReportGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReportGroupResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::DeleteResourcePolicyRequest&, const Model::DeleteResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteSourceCredentialsRequest&, const Model::DeleteSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSourceCredentialsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DeleteWebhookRequest&, const Model::DeleteWebhookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWebhookResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::DescribeTestCasesRequest&, const Model::DescribeTestCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTestCasesResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::GetResourcePolicyRequest&, const Model::GetResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ImportSourceCredentialsRequest&, const Model::ImportSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportSourceCredentialsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::InvalidateProjectCacheRequest&, const Model::InvalidateProjectCacheOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvalidateProjectCacheResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListBuildsRequest&, const Model::ListBuildsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListBuildsResponseReceivedHandler;
@@ -205,7 +227,10 @@ namespace Model
     typedef std::function<void(const CodeBuildClient*, const Model::ListReportGroupsRequest&, const Model::ListReportGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportGroupsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListReportsRequest&, const Model::ListReportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListReportsForReportGroupRequest&, const Model::ListReportsForReportGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReportsForReportGroupResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::ListSharedProjectsRequest&, const Model::ListSharedProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSharedProjectsResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::ListSharedReportGroupsRequest&, const Model::ListSharedReportGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSharedReportGroupsResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::ListSourceCredentialsRequest&, const Model::ListSourceCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSourceCredentialsResponseReceivedHandler;
+    typedef std::function<void(const CodeBuildClient*, const Model::PutResourcePolicyRequest&, const Model::PutResourcePolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutResourcePolicyResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::StartBuildRequest&, const Model::StartBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartBuildResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::StopBuildRequest&, const Model::StopBuildOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopBuildResponseReceivedHandler;
     typedef std::function<void(const CodeBuildClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
@@ -233,31 +258,31 @@ namespace Model
    * and where to store the build output. A <i>build environment</i> is a
    * representation of operating system, programming language runtime, and tools that
    * AWS CodeBuild uses to run a build. You can add tags to build projects to help
-   * manage your resources and costs.</p> </li> <li> <p>
-   * <code>BatchGetReportGroups</code>: Returns an array of report groups. </p> </li>
-   * <li> <p> <code>BatchGetReports</code>: Returns an array of reports. </p> </li>
-   * <li> <p> <code>CreateProject</code>: Creates a build project.</p> </li> <li> <p>
-   * <code>CreateReportGroup</code>: Creates a report group. A report group contains
-   * a collection of reports. </p> </li> <li> <p> <code>CreateWebhook</code>: For an
-   * existing AWS CodeBuild build project that has its source code stored in a GitHub
-   * or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source
-   * code every time a code change is pushed to the repository.</p> </li> <li> <p>
+   * manage your resources and costs.</p> </li> <li> <p> <code>CreateProject</code>:
+   * Creates a build project.</p> </li> <li> <p> <code>CreateReportGroup</code>:
+   * Creates a report group. A report group contains a collection of reports. </p>
+   * </li> <li> <p> <code>CreateWebhook</code>: For an existing AWS CodeBuild build
+   * project that has its source code stored in a GitHub or Bitbucket repository,
+   * enables AWS CodeBuild to start rebuilding the source code every time a code
+   * change is pushed to the repository.</p> </li> <li> <p>
    * <code>DeleteProject</code>: Deletes a build project.</p> </li> <li> <p>
    * <code>DeleteReport</code>: Deletes a report. </p> </li> <li> <p>
    * <code>DeleteReportGroup</code>: Deletes a report group. </p> </li> <li> <p>
-   * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub
-   * Enterprise, or Bitbucket source credentials.</p> </li> <li> <p>
-   * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has
-   * its source code stored in a GitHub or Bitbucket repository, stops AWS CodeBuild
-   * from rebuilding the source code every time a code change is pushed to the
-   * repository.</p> </li> <li> <p> <code>DescribeTestCases</code>: Returns a list of
-   * details about test cases for a report. </p> </li> <li> <p>
-   * <code>ImportSourceCredentials</code>: Imports the source repository credentials
-   * for an AWS CodeBuild project that has its source code stored in a GitHub, GitHub
-   * Enterprise, or Bitbucket repository.</p> </li> <li> <p>
-   * <code>InvalidateProjectCache</code>: Resets the cache for a project.</p> </li>
-   * <li> <p> <code>ListBuilds</code>: Gets a list of build IDs, with each build ID
-   * representing a single build.</p> </li> <li> <p>
+   * <code>DeleteResourcePolicy</code>: Deletes a resource policy that is identified
+   * by its resource ARN. </p> </li> <li> <p> <code>DeleteSourceCredentials</code>:
+   * Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.</p>
+   * </li> <li> <p> <code>DeleteWebhook</code>: For an existing AWS CodeBuild build
+   * project that has its source code stored in a GitHub or Bitbucket repository,
+   * stops AWS CodeBuild from rebuilding the source code every time a code change is
+   * pushed to the repository.</p> </li> <li> <p> <code>DescribeTestCases</code>:
+   * Returns a list of details about test cases for a report. </p> </li> <li> <p>
+   * <code>GetResourcePolicy</code>: Gets a resource policy that is identified by its
+   * resource ARN. </p> </li> <li> <p> <code>ImportSourceCredentials</code>: Imports
+   * the source repository credentials for an AWS CodeBuild project that has its
+   * source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.</p>
+   * </li> <li> <p> <code>InvalidateProjectCache</code>: Resets the cache for a
+   * project.</p> </li> <li> <p> <code>ListBuilds</code>: Gets a list of build IDs,
+   * with each build ID representing a single build.</p> </li> <li> <p>
    * <code>ListBuildsForProject</code>: Gets a list of build IDs for the specified
    * build project, with each build ID representing a single build.</p> </li> <li>
    * <p> <code>ListCuratedEnvironmentImages</code>: Gets information about Docker
@@ -269,11 +294,17 @@ namespace Model
    * ARNs for the reports in the current AWS account. </p> </li> <li> <p>
    * <code>ListReportsForReportGroup</code>: Returns a list of ARNs for the reports
    * that belong to a <code>ReportGroup</code>. </p> </li> <li> <p>
+   * <code>ListSharedProjects</code>: Gets a list of ARNs associated with projects
+   * shared with the current AWS account or user.</p> </li> <li> <p>
+   * <code>ListSharedReportGroups</code>: Gets a list of ARNs associated with report
+   * groups shared with the current AWS account or user</p> </li> <li> <p>
    * <code>ListSourceCredentials</code>: Returns a list of
    * <code>SourceCredentialsInfo</code> objects. Each
    * <code>SourceCredentialsInfo</code> object includes the authentication type,
    * token ARN, and type of source provider for one set of credentials.</p> </li>
-   * <li> <p> <code>StartBuild</code>: Starts running a build.</p> </li> <li> <p>
+   * <li> <p> <code>PutResourcePolicy</code>: Stores a resource policy for the ARN of
+   * a <code>Project</code> or <code>ReportGroup</code> object. </p> </li> <li> <p>
+   * <code>StartBuild</code>: Starts running a build.</p> </li> <li> <p>
    * <code>StopBuild</code>: Attempts to stop running a build.</p> </li> <li> <p>
    * <code>UpdateProject</code>: Changes the settings of an existing build
    * project.</p> </li> <li> <p> <code>UpdateReportGroup</code>: Changes a report
@@ -648,6 +679,34 @@ namespace Model
         virtual void DeleteReportGroupAsync(const Model::DeleteReportGroupRequest& request, const DeleteReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Deletes a resource policy that is identified by its resource ARN.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * <p> Deletes a resource policy that is identified by its resource ARN.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * <p> Deletes a resource policy that is identified by its resource ARN.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteResourcePolicyAsync(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteSourceCredentials">AWS
@@ -736,6 +795,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTestCasesAsync(const Model::DescribeTestCasesRequest& request, const DescribeTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Gets a resource policy that is identified by its resource ARN.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * <p> Gets a resource policy that is identified by its resource ARN.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * <p> Gets a resource policy that is identified by its resource ARN.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResourcePolicyAsync(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Imports the source repository credentials for an AWS CodeBuild project that
@@ -990,6 +1077,62 @@ namespace Model
         virtual void ListReportsForReportGroupAsync(const Model::ListReportsForReportGroupRequest& request, const ListReportsForReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Gets a list of projects that are shared with other AWS accounts or users.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedProjects">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSharedProjectsOutcome ListSharedProjects(const Model::ListSharedProjectsRequest& request) const;
+
+        /**
+         * <p> Gets a list of projects that are shared with other AWS accounts or users.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedProjects">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSharedProjectsOutcomeCallable ListSharedProjectsCallable(const Model::ListSharedProjectsRequest& request) const;
+
+        /**
+         * <p> Gets a list of projects that are shared with other AWS accounts or users.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedProjects">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSharedProjectsAsync(const Model::ListSharedProjectsRequest& request, const ListSharedProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Gets a list of report groups that are shared with other AWS accounts or
+         * users. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedReportGroups">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSharedReportGroupsOutcome ListSharedReportGroups(const Model::ListSharedReportGroupsRequest& request) const;
+
+        /**
+         * <p> Gets a list of report groups that are shared with other AWS accounts or
+         * users. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedReportGroups">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListSharedReportGroupsOutcomeCallable ListSharedReportGroupsCallable(const Model::ListSharedReportGroupsRequest& request) const;
+
+        /**
+         * <p> Gets a list of report groups that are shared with other AWS accounts or
+         * users. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSharedReportGroups">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListSharedReportGroupsAsync(const Model::ListSharedReportGroupsRequest& request, const ListSharedReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Returns a list of <code>SourceCredentialsInfo</code> objects. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials">AWS
@@ -1016,6 +1159,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListSourceCredentialsAsync(const Model::ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Stores a resource policy for the ARN of a <code>Project</code> or
+         * <code>ReportGroup</code> object. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * <p> Stores a resource policy for the ARN of a <code>Project</code> or
+         * <code>ReportGroup</code> object. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * <p> Stores a resource policy for the ARN of a <code>Project</code> or
+         * <code>ReportGroup</code> object. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutResourcePolicyAsync(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Starts running a build.</p><p><h3>See Also:</h3>   <a
@@ -1163,9 +1334,11 @@ namespace Model
         void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReportAsyncHelper(const Model::DeleteReportRequest& request, const DeleteReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteReportGroupAsyncHelper(const Model::DeleteReportGroupRequest& request, const DeleteReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteResourcePolicyAsyncHelper(const Model::DeleteResourcePolicyRequest& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSourceCredentialsAsyncHelper(const Model::DeleteSourceCredentialsRequest& request, const DeleteSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteWebhookAsyncHelper(const Model::DeleteWebhookRequest& request, const DeleteWebhookResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTestCasesAsyncHelper(const Model::DescribeTestCasesRequest& request, const DescribeTestCasesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetResourcePolicyAsyncHelper(const Model::GetResourcePolicyRequest& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportSourceCredentialsAsyncHelper(const Model::ImportSourceCredentialsRequest& request, const ImportSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InvalidateProjectCacheAsyncHelper(const Model::InvalidateProjectCacheRequest& request, const InvalidateProjectCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListBuildsAsyncHelper(const Model::ListBuildsRequest& request, const ListBuildsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1175,7 +1348,10 @@ namespace Model
         void ListReportGroupsAsyncHelper(const Model::ListReportGroupsRequest& request, const ListReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListReportsAsyncHelper(const Model::ListReportsRequest& request, const ListReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListReportsForReportGroupAsyncHelper(const Model::ListReportsForReportGroupRequest& request, const ListReportsForReportGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSharedProjectsAsyncHelper(const Model::ListSharedProjectsRequest& request, const ListSharedProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListSharedReportGroupsAsyncHelper(const Model::ListSharedReportGroupsRequest& request, const ListSharedReportGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSourceCredentialsAsyncHelper(const Model::ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutResourcePolicyAsyncHelper(const Model::PutResourcePolicyRequest& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartBuildAsyncHelper(const Model::StartBuildRequest& request, const StartBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopBuildAsyncHelper(const Model::StopBuildRequest& request, const StopBuildResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

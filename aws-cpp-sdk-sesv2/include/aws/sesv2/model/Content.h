@@ -91,73 +91,73 @@ namespace Model
 
     /**
      * <p>The character set for the content. Because of the constraints of the SMTP
-     * protocol, the Amazon SES API v2 uses 7-bit ASCII by default. If the text
-     * includes characters outside of the ASCII range, you have to specify a character
-     * set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>,
-     * or <code>Shift_JIS</code>.</p>
+     * protocol, Amazon SES uses 7-bit ASCII by default. If the text includes
+     * characters outside of the ASCII range, you have to specify a character set. For
+     * example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
+     * <code>Shift_JIS</code>.</p>
      */
     inline const Aws::String& GetCharset() const{ return m_charset; }
 
     /**
      * <p>The character set for the content. Because of the constraints of the SMTP
-     * protocol, the Amazon SES API v2 uses 7-bit ASCII by default. If the text
-     * includes characters outside of the ASCII range, you have to specify a character
-     * set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>,
-     * or <code>Shift_JIS</code>.</p>
+     * protocol, Amazon SES uses 7-bit ASCII by default. If the text includes
+     * characters outside of the ASCII range, you have to specify a character set. For
+     * example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
+     * <code>Shift_JIS</code>.</p>
      */
     inline bool CharsetHasBeenSet() const { return m_charsetHasBeenSet; }
 
     /**
      * <p>The character set for the content. Because of the constraints of the SMTP
-     * protocol, the Amazon SES API v2 uses 7-bit ASCII by default. If the text
-     * includes characters outside of the ASCII range, you have to specify a character
-     * set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>,
-     * or <code>Shift_JIS</code>.</p>
+     * protocol, Amazon SES uses 7-bit ASCII by default. If the text includes
+     * characters outside of the ASCII range, you have to specify a character set. For
+     * example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
+     * <code>Shift_JIS</code>.</p>
      */
     inline void SetCharset(const Aws::String& value) { m_charsetHasBeenSet = true; m_charset = value; }
 
     /**
      * <p>The character set for the content. Because of the constraints of the SMTP
-     * protocol, the Amazon SES API v2 uses 7-bit ASCII by default. If the text
-     * includes characters outside of the ASCII range, you have to specify a character
-     * set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>,
-     * or <code>Shift_JIS</code>.</p>
+     * protocol, Amazon SES uses 7-bit ASCII by default. If the text includes
+     * characters outside of the ASCII range, you have to specify a character set. For
+     * example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
+     * <code>Shift_JIS</code>.</p>
      */
     inline void SetCharset(Aws::String&& value) { m_charsetHasBeenSet = true; m_charset = std::move(value); }
 
     /**
      * <p>The character set for the content. Because of the constraints of the SMTP
-     * protocol, the Amazon SES API v2 uses 7-bit ASCII by default. If the text
-     * includes characters outside of the ASCII range, you have to specify a character
-     * set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>,
-     * or <code>Shift_JIS</code>.</p>
+     * protocol, Amazon SES uses 7-bit ASCII by default. If the text includes
+     * characters outside of the ASCII range, you have to specify a character set. For
+     * example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
+     * <code>Shift_JIS</code>.</p>
      */
     inline void SetCharset(const char* value) { m_charsetHasBeenSet = true; m_charset.assign(value); }
 
     /**
      * <p>The character set for the content. Because of the constraints of the SMTP
-     * protocol, the Amazon SES API v2 uses 7-bit ASCII by default. If the text
-     * includes characters outside of the ASCII range, you have to specify a character
-     * set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>,
-     * or <code>Shift_JIS</code>.</p>
+     * protocol, Amazon SES uses 7-bit ASCII by default. If the text includes
+     * characters outside of the ASCII range, you have to specify a character set. For
+     * example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
+     * <code>Shift_JIS</code>.</p>
      */
     inline Content& WithCharset(const Aws::String& value) { SetCharset(value); return *this;}
 
     /**
      * <p>The character set for the content. Because of the constraints of the SMTP
-     * protocol, the Amazon SES API v2 uses 7-bit ASCII by default. If the text
-     * includes characters outside of the ASCII range, you have to specify a character
-     * set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>,
-     * or <code>Shift_JIS</code>.</p>
+     * protocol, Amazon SES uses 7-bit ASCII by default. If the text includes
+     * characters outside of the ASCII range, you have to specify a character set. For
+     * example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
+     * <code>Shift_JIS</code>.</p>
      */
     inline Content& WithCharset(Aws::String&& value) { SetCharset(std::move(value)); return *this;}
 
     /**
      * <p>The character set for the content. Because of the constraints of the SMTP
-     * protocol, the Amazon SES API v2 uses 7-bit ASCII by default. If the text
-     * includes characters outside of the ASCII range, you have to specify a character
-     * set. For example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>,
-     * or <code>Shift_JIS</code>.</p>
+     * protocol, Amazon SES uses 7-bit ASCII by default. If the text includes
+     * characters outside of the ASCII range, you have to specify a character set. For
+     * example, you could specify <code>UTF-8</code>, <code>ISO-8859-1</code>, or
+     * <code>Shift_JIS</code>.</p>
      */
     inline Content& WithCharset(const char* value) { SetCharset(value); return *this;}
 

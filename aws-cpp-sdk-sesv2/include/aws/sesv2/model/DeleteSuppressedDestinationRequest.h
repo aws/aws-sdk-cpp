@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>A request to delete a suppressed email destination.</p><p><h3>See Also:</h3> 
-   * <a
+   * <p>A request to remove an email address from the suppression list for your
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DeleteSuppressedDestinationRequest">AWS
    * API Reference</a></p>
    */
@@ -47,42 +47,50 @@ namespace Model
 
 
     /**
-     * <p>The suppressed email destination to delete.</p>
+     * <p>The suppressed email destination to remove from the account suppression
+     * list.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
 
     /**
-     * <p>The suppressed email destination to delete.</p>
+     * <p>The suppressed email destination to remove from the account suppression
+     * list.</p>
      */
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
 
     /**
-     * <p>The suppressed email destination to delete.</p>
+     * <p>The suppressed email destination to remove from the account suppression
+     * list.</p>
      */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**
-     * <p>The suppressed email destination to delete.</p>
+     * <p>The suppressed email destination to remove from the account suppression
+     * list.</p>
      */
     inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
 
     /**
-     * <p>The suppressed email destination to delete.</p>
+     * <p>The suppressed email destination to remove from the account suppression
+     * list.</p>
      */
     inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
 
     /**
-     * <p>The suppressed email destination to delete.</p>
+     * <p>The suppressed email destination to remove from the account suppression
+     * list.</p>
      */
     inline DeleteSuppressedDestinationRequest& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
 
     /**
-     * <p>The suppressed email destination to delete.</p>
+     * <p>The suppressed email destination to remove from the account suppression
+     * list.</p>
      */
     inline DeleteSuppressedDestinationRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The suppressed email destination to delete.</p>
+     * <p>The suppressed email destination to remove from the account suppression
+     * list.</p>
      */
     inline DeleteSuppressedDestinationRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 

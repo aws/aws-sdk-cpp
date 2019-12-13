@@ -27,8 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>A request to get a suppressed email destination.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>A request to retrieve information about an email address that's on the
+   * suppression list for your account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/GetSuppressedDestinationRequest">AWS
    * API Reference</a></p>
    */
@@ -47,42 +47,42 @@ namespace Model
 
 
     /**
-     * <p>Email destination to fetch from the suppression list.</p>
+     * <p>The email address that's on the account suppression list.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
 
     /**
-     * <p>Email destination to fetch from the suppression list.</p>
+     * <p>The email address that's on the account suppression list.</p>
      */
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
 
     /**
-     * <p>Email destination to fetch from the suppression list.</p>
+     * <p>The email address that's on the account suppression list.</p>
      */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**
-     * <p>Email destination to fetch from the suppression list.</p>
+     * <p>The email address that's on the account suppression list.</p>
      */
     inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
 
     /**
-     * <p>Email destination to fetch from the suppression list.</p>
+     * <p>The email address that's on the account suppression list.</p>
      */
     inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
 
     /**
-     * <p>Email destination to fetch from the suppression list.</p>
+     * <p>The email address that's on the account suppression list.</p>
      */
     inline GetSuppressedDestinationRequest& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
 
     /**
-     * <p>Email destination to fetch from the suppression list.</p>
+     * <p>The email address that's on the account suppression list.</p>
      */
     inline GetSuppressedDestinationRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
 
     /**
-     * <p>Email destination to fetch from the suppression list.</p>
+     * <p>The email address that's on the account suppression list.</p>
      */
     inline GetSuppressedDestinationRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 

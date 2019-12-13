@@ -255,32 +255,32 @@ namespace Model
 
 
     /**
-     * <p>An object that contains information about your account's suppression
-     * preferences.</p>
+     * <p>An object that contains information about the email address suppression
+     * preferences for your account in the current AWS Region.</p>
      */
     inline const SuppressionAttributes& GetSuppressionAttributes() const{ return m_suppressionAttributes; }
 
     /**
-     * <p>An object that contains information about your account's suppression
-     * preferences.</p>
+     * <p>An object that contains information about the email address suppression
+     * preferences for your account in the current AWS Region.</p>
      */
     inline void SetSuppressionAttributes(const SuppressionAttributes& value) { m_suppressionAttributes = value; }
 
     /**
-     * <p>An object that contains information about your account's suppression
-     * preferences.</p>
+     * <p>An object that contains information about the email address suppression
+     * preferences for your account in the current AWS Region.</p>
      */
     inline void SetSuppressionAttributes(SuppressionAttributes&& value) { m_suppressionAttributes = std::move(value); }
 
     /**
-     * <p>An object that contains information about your account's suppression
-     * preferences.</p>
+     * <p>An object that contains information about the email address suppression
+     * preferences for your account in the current AWS Region.</p>
      */
     inline GetAccountResult& WithSuppressionAttributes(const SuppressionAttributes& value) { SetSuppressionAttributes(value); return *this;}
 
     /**
-     * <p>An object that contains information about your account's suppression
-     * preferences.</p>
+     * <p>An object that contains information about the email address suppression
+     * preferences for your account in the current AWS Region.</p>
      */
     inline GetAccountResult& WithSuppressionAttributes(SuppressionAttributes&& value) { SetSuppressionAttributes(std::move(value)); return *this;}
 

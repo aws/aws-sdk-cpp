@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>A summary for the suppressed email destination.</p><p><h3>See Also:</h3>   <a
+   * <p>A summary that describes the suppressed email address.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SuppressedDestinationSummary">AWS
    * API Reference</a></p>
    */
@@ -50,104 +51,116 @@ namespace Model
 
 
     /**
-     * <p>The suppressed email destination.</p>
+     * <p>The email address that's on the suppression list for your account.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
 
     /**
-     * <p>The suppressed email destination.</p>
+     * <p>The email address that's on the suppression list for your account.</p>
      */
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
 
     /**
-     * <p>The suppressed email destination.</p>
+     * <p>The email address that's on the suppression list for your account.</p>
      */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**
-     * <p>The suppressed email destination.</p>
+     * <p>The email address that's on the suppression list for your account.</p>
      */
     inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
 
     /**
-     * <p>The suppressed email destination.</p>
+     * <p>The email address that's on the suppression list for your account.</p>
      */
     inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
 
     /**
-     * <p>The suppressed email destination.</p>
+     * <p>The email address that's on the suppression list for your account.</p>
      */
     inline SuppressedDestinationSummary& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
 
     /**
-     * <p>The suppressed email destination.</p>
+     * <p>The email address that's on the suppression list for your account.</p>
      */
     inline SuppressedDestinationSummary& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The suppressed email destination.</p>
+     * <p>The email address that's on the suppression list for your account.</p>
      */
     inline SuppressedDestinationSummary& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 
 
     /**
-     * <p>The reason for which the email destination is suppressed.</p>
+     * <p>The reason that the address was added to the suppression list for your
+     * account.</p>
      */
     inline const SuppressionListReason& GetReason() const{ return m_reason; }
 
     /**
-     * <p>The reason for which the email destination is suppressed.</p>
+     * <p>The reason that the address was added to the suppression list for your
+     * account.</p>
      */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
-     * <p>The reason for which the email destination is suppressed.</p>
+     * <p>The reason that the address was added to the suppression list for your
+     * account.</p>
      */
     inline void SetReason(const SuppressionListReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
-     * <p>The reason for which the email destination is suppressed.</p>
+     * <p>The reason that the address was added to the suppression list for your
+     * account.</p>
      */
     inline void SetReason(SuppressionListReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
-     * <p>The reason for which the email destination is suppressed.</p>
+     * <p>The reason that the address was added to the suppression list for your
+     * account.</p>
      */
     inline SuppressedDestinationSummary& WithReason(const SuppressionListReason& value) { SetReason(value); return *this;}
 
     /**
-     * <p>The reason for which the email destination is suppressed.</p>
+     * <p>The reason that the address was added to the suppression list for your
+     * account.</p>
      */
     inline SuppressedDestinationSummary& WithReason(SuppressionListReason&& value) { SetReason(std::move(value)); return *this;}
 
 
     /**
-     * <p>The last time the suppressed destination was updated.</p>
+     * <p>The date and time when the suppressed destination was last updated, shown in
+     * Unix time format.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
 
     /**
-     * <p>The last time the suppressed destination was updated.</p>
+     * <p>The date and time when the suppressed destination was last updated, shown in
+     * Unix time format.</p>
      */
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
 
     /**
-     * <p>The last time the suppressed destination was updated.</p>
+     * <p>The date and time when the suppressed destination was last updated, shown in
+     * Unix time format.</p>
      */
     inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
 
     /**
-     * <p>The last time the suppressed destination was updated.</p>
+     * <p>The date and time when the suppressed destination was last updated, shown in
+     * Unix time format.</p>
      */
     inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
 
     /**
-     * <p>The last time the suppressed destination was updated.</p>
+     * <p>The date and time when the suppressed destination was last updated, shown in
+     * Unix time format.</p>
      */
     inline SuppressedDestinationSummary& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
 
     /**
-     * <p>The last time the suppressed destination was updated.</p>
+     * <p>The date and time when the suppressed destination was last updated, shown in
+     * Unix time format.</p>
      */
     inline SuppressedDestinationSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 

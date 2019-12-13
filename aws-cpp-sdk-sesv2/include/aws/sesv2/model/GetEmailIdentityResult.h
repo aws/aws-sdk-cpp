@@ -144,36 +144,31 @@ namespace Model
 
     /**
      * <p>An object that contains information about the DKIM attributes for the
-     * identity. This object includes the tokens that you use to create the CNAME
-     * records that are required to complete the DKIM verification process.</p>
+     * identity.</p>
      */
     inline const DkimAttributes& GetDkimAttributes() const{ return m_dkimAttributes; }
 
     /**
      * <p>An object that contains information about the DKIM attributes for the
-     * identity. This object includes the tokens that you use to create the CNAME
-     * records that are required to complete the DKIM verification process.</p>
+     * identity.</p>
      */
     inline void SetDkimAttributes(const DkimAttributes& value) { m_dkimAttributes = value; }
 
     /**
      * <p>An object that contains information about the DKIM attributes for the
-     * identity. This object includes the tokens that you use to create the CNAME
-     * records that are required to complete the DKIM verification process.</p>
+     * identity.</p>
      */
     inline void SetDkimAttributes(DkimAttributes&& value) { m_dkimAttributes = std::move(value); }
 
     /**
      * <p>An object that contains information about the DKIM attributes for the
-     * identity. This object includes the tokens that you use to create the CNAME
-     * records that are required to complete the DKIM verification process.</p>
+     * identity.</p>
      */
     inline GetEmailIdentityResult& WithDkimAttributes(const DkimAttributes& value) { SetDkimAttributes(value); return *this;}
 
     /**
      * <p>An object that contains information about the DKIM attributes for the
-     * identity. This object includes the tokens that you use to create the CNAME
-     * records that are required to complete the DKIM verification process.</p>
+     * identity.</p>
      */
     inline GetEmailIdentityResult& WithDkimAttributes(DkimAttributes&& value) { SetDkimAttributes(std::move(value)); return *this;}
 

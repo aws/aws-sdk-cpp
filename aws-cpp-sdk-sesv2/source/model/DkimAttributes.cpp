@@ -33,7 +33,9 @@ DkimAttributes::DkimAttributes() :
     m_signingEnabledHasBeenSet(false),
     m_status(DkimStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_tokensHasBeenSet(false)
+    m_tokensHasBeenSet(false),
+    m_signingAttributesOrigin(DkimSigningAttributesOrigin::NOT_SET),
+    m_signingAttributesOriginHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ DkimAttributes::DkimAttributes(JsonView jsonValue) :
     m_signingEnabledHasBeenSet(false),
     m_status(DkimStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_tokensHasBeenSet(false)
+    m_tokensHasBeenSet(false),
+    m_signingAttributesOrigin(DkimSigningAttributesOrigin::NOT_SET),
+    m_signingAttributesOriginHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -73,6 +77,13 @@ DkimAttributes& DkimAttributes::operator =(JsonView jsonValue)
     m_tokensHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SigningAttributesOrigin"))
+  {
+    m_signingAttributesOrigin = DkimSigningAttributesOriginMapper::GetDkimSigningAttributesOriginForName(jsonValue.GetString("SigningAttributesOrigin"));
+
+    m_signingAttributesOriginHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -100,6 +111,11 @@ JsonValue DkimAttributes::Jsonize() const
    }
    payload.WithArray("Tokens", std::move(tokensJsonList));
 
+  }
+
+  if(m_signingAttributesOriginHasBeenSet)
+  {
+   payload.WithString("SigningAttributesOrigin", DkimSigningAttributesOriginMapper::GetNameForDkimSigningAttributesOrigin(m_signingAttributesOrigin));
   }
 
   return payload;

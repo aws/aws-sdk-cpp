@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>A request to obtain a list of suppressed email destinations.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A request to obtain a list of email destinations that are on the suppression
+   * list for your account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListSuppressedDestinationsRequest">AWS
    * API Reference</a></p>
    */
@@ -56,104 +56,128 @@ namespace Model
 
 
     /**
-     * <p>Filters email destinations suppressed by the given reasons.</p>
+     * <p>The factors that caused the email address to be added to .</p>
      */
     inline const Aws::Vector<SuppressionListReason>& GetReasons() const{ return m_reasons; }
 
     /**
-     * <p>Filters email destinations suppressed by the given reasons.</p>
+     * <p>The factors that caused the email address to be added to .</p>
      */
     inline bool ReasonsHasBeenSet() const { return m_reasonsHasBeenSet; }
 
     /**
-     * <p>Filters email destinations suppressed by the given reasons.</p>
+     * <p>The factors that caused the email address to be added to .</p>
      */
     inline void SetReasons(const Aws::Vector<SuppressionListReason>& value) { m_reasonsHasBeenSet = true; m_reasons = value; }
 
     /**
-     * <p>Filters email destinations suppressed by the given reasons.</p>
+     * <p>The factors that caused the email address to be added to .</p>
      */
     inline void SetReasons(Aws::Vector<SuppressionListReason>&& value) { m_reasonsHasBeenSet = true; m_reasons = std::move(value); }
 
     /**
-     * <p>Filters email destinations suppressed by the given reasons.</p>
+     * <p>The factors that caused the email address to be added to .</p>
      */
     inline ListSuppressedDestinationsRequest& WithReasons(const Aws::Vector<SuppressionListReason>& value) { SetReasons(value); return *this;}
 
     /**
-     * <p>Filters email destinations suppressed by the given reasons.</p>
+     * <p>The factors that caused the email address to be added to .</p>
      */
     inline ListSuppressedDestinationsRequest& WithReasons(Aws::Vector<SuppressionListReason>&& value) { SetReasons(std::move(value)); return *this;}
 
     /**
-     * <p>Filters email destinations suppressed by the given reasons.</p>
+     * <p>The factors that caused the email address to be added to .</p>
      */
     inline ListSuppressedDestinationsRequest& AddReasons(const SuppressionListReason& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(value); return *this; }
 
     /**
-     * <p>Filters email destinations suppressed by the given reasons.</p>
+     * <p>The factors that caused the email address to be added to .</p>
      */
     inline ListSuppressedDestinationsRequest& AddReasons(SuppressionListReason&& value) { m_reasonsHasBeenSet = true; m_reasons.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Filters email destinations suppressed before the given time.</p>
+     * <p>Used to filter the list of suppressed email destinations so that it only
+     * includes addresses that were added to the list after a specific date. The date
+     * that you specify should be in Unix time format.</p>
      */
     inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
 
     /**
-     * <p>Filters email destinations suppressed before the given time.</p>
+     * <p>Used to filter the list of suppressed email destinations so that it only
+     * includes addresses that were added to the list after a specific date. The date
+     * that you specify should be in Unix time format.</p>
      */
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
 
     /**
-     * <p>Filters email destinations suppressed before the given time.</p>
+     * <p>Used to filter the list of suppressed email destinations so that it only
+     * includes addresses that were added to the list after a specific date. The date
+     * that you specify should be in Unix time format.</p>
      */
     inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
-     * <p>Filters email destinations suppressed before the given time.</p>
+     * <p>Used to filter the list of suppressed email destinations so that it only
+     * includes addresses that were added to the list after a specific date. The date
+     * that you specify should be in Unix time format.</p>
      */
     inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
 
     /**
-     * <p>Filters email destinations suppressed before the given time.</p>
+     * <p>Used to filter the list of suppressed email destinations so that it only
+     * includes addresses that were added to the list after a specific date. The date
+     * that you specify should be in Unix time format.</p>
      */
     inline ListSuppressedDestinationsRequest& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
 
     /**
-     * <p>Filters email destinations suppressed before the given time.</p>
+     * <p>Used to filter the list of suppressed email destinations so that it only
+     * includes addresses that were added to the list after a specific date. The date
+     * that you specify should be in Unix time format.</p>
      */
     inline ListSuppressedDestinationsRequest& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>Filters email destinations suppressed after the given time.</p>
+     * <p>Used to filter the list of suppressed email destinations so that it only
+     * includes addresses that were added to the list before a specific date. The date
+     * that you specify should be in Unix time format.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
 
     /**
-     * <p>Filters email destinations suppressed after the given time.</p>
+     * <p>Used to filter the list of suppressed email destinations so that it only
+     * includes addresses that were added to the list before a specific date. The date
+     * that you specify should be in Unix time format.</p>
      */
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
 
     /**
-     * <p>Filters email destinations suppressed after the given time.</p>
+     * <p>Used to filter the list of suppressed email destinations so that it only
+     * includes addresses that were added to the list before a specific date. The date
+     * that you specify should be in Unix time format.</p>
      */
     inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
-     * <p>Filters email destinations suppressed after the given time.</p>
+     * <p>Used to filter the list of suppressed email destinations so that it only
+     * includes addresses that were added to the list before a specific date. The date
+     * that you specify should be in Unix time format.</p>
      */
     inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
 
     /**
-     * <p>Filters email destinations suppressed after the given time.</p>
+     * <p>Used to filter the list of suppressed email destinations so that it only
+     * includes addresses that were added to the list before a specific date. The date
+     * that you specify should be in Unix time format.</p>
      */
     inline ListSuppressedDestinationsRequest& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
 
     /**
-     * <p>Filters email destinations suppressed after the given time.</p>
+     * <p>Used to filter the list of suppressed email destinations so that it only
+     * includes addresses that were added to the list before a specific date. The date
+     * that you specify should be in Unix time format.</p>
      */
     inline ListSuppressedDestinationsRequest& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
 
@@ -161,56 +185,56 @@ namespace Model
     /**
      * <p>A token returned from a previous call to
      * <code>ListSuppressedDestinations</code> to indicate the position in the list of
-     * suppressed email destinations.</p>
+     * suppressed email addresses.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>A token returned from a previous call to
      * <code>ListSuppressedDestinations</code> to indicate the position in the list of
-     * suppressed email destinations.</p>
+     * suppressed email addresses.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A token returned from a previous call to
      * <code>ListSuppressedDestinations</code> to indicate the position in the list of
-     * suppressed email destinations.</p>
+     * suppressed email addresses.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
      * <p>A token returned from a previous call to
      * <code>ListSuppressedDestinations</code> to indicate the position in the list of
-     * suppressed email destinations.</p>
+     * suppressed email addresses.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
      * <p>A token returned from a previous call to
      * <code>ListSuppressedDestinations</code> to indicate the position in the list of
-     * suppressed email destinations.</p>
+     * suppressed email addresses.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
      * <p>A token returned from a previous call to
      * <code>ListSuppressedDestinations</code> to indicate the position in the list of
-     * suppressed email destinations.</p>
+     * suppressed email addresses.</p>
      */
     inline ListSuppressedDestinationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>A token returned from a previous call to
      * <code>ListSuppressedDestinations</code> to indicate the position in the list of
-     * suppressed email destinations.</p>
+     * suppressed email addresses.</p>
      */
     inline ListSuppressedDestinationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>A token returned from a previous call to
      * <code>ListSuppressedDestinations</code> to indicate the position in the list of
-     * suppressed email destinations.</p>
+     * suppressed email addresses.</p>
      */
     inline ListSuppressedDestinationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

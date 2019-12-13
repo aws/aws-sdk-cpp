@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The raw email message.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the raw content of an email message.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/RawMessage">AWS
    * API Reference</a></p>
    */
@@ -53,10 +53,10 @@ namespace Model
      * blank line.</p> </li> <li> <p>All of the required header fields must be present
      * in the message.</p> </li> <li> <p>Each part of a multipart MIME message must be
      * formatted properly.</p> </li> <li> <p>Attachments must be in a file format that
-     * the Amazon SES API v2 supports. </p> </li> <li> <p>The entire message must be
-     * Base64 encoded.</p> </li> <li> <p>If any of the MIME parts in your message
-     * contain content that is outside of the 7-bit ASCII character range, you should
-     * encode that content to ensure that recipients' email clients render the message
+     * the Amazon SES supports.</p> </li> <li> <p>The entire message must be Base64
+     * encoded.</p> </li> <li> <p>If any of the MIME parts in your message contain
+     * content that is outside of the 7-bit ASCII character range, you should encode
+     * that content to ensure that recipients' email clients render the message
      * properly.</p> </li> <li> <p>The length of any single line of text in the message
      * can't exceed 1,000 characters. This restriction is defined in <a
      * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> </ul>
@@ -69,10 +69,10 @@ namespace Model
      * blank line.</p> </li> <li> <p>All of the required header fields must be present
      * in the message.</p> </li> <li> <p>Each part of a multipart MIME message must be
      * formatted properly.</p> </li> <li> <p>Attachments must be in a file format that
-     * the Amazon SES API v2 supports. </p> </li> <li> <p>The entire message must be
-     * Base64 encoded.</p> </li> <li> <p>If any of the MIME parts in your message
-     * contain content that is outside of the 7-bit ASCII character range, you should
-     * encode that content to ensure that recipients' email clients render the message
+     * the Amazon SES supports.</p> </li> <li> <p>The entire message must be Base64
+     * encoded.</p> </li> <li> <p>If any of the MIME parts in your message contain
+     * content that is outside of the 7-bit ASCII character range, you should encode
+     * that content to ensure that recipients' email clients render the message
      * properly.</p> </li> <li> <p>The length of any single line of text in the message
      * can't exceed 1,000 characters. This restriction is defined in <a
      * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> </ul>
@@ -85,10 +85,10 @@ namespace Model
      * blank line.</p> </li> <li> <p>All of the required header fields must be present
      * in the message.</p> </li> <li> <p>Each part of a multipart MIME message must be
      * formatted properly.</p> </li> <li> <p>Attachments must be in a file format that
-     * the Amazon SES API v2 supports. </p> </li> <li> <p>The entire message must be
-     * Base64 encoded.</p> </li> <li> <p>If any of the MIME parts in your message
-     * contain content that is outside of the 7-bit ASCII character range, you should
-     * encode that content to ensure that recipients' email clients render the message
+     * the Amazon SES supports.</p> </li> <li> <p>The entire message must be Base64
+     * encoded.</p> </li> <li> <p>If any of the MIME parts in your message contain
+     * content that is outside of the 7-bit ASCII character range, you should encode
+     * that content to ensure that recipients' email clients render the message
      * properly.</p> </li> <li> <p>The length of any single line of text in the message
      * can't exceed 1,000 characters. This restriction is defined in <a
      * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> </ul>
@@ -101,10 +101,10 @@ namespace Model
      * blank line.</p> </li> <li> <p>All of the required header fields must be present
      * in the message.</p> </li> <li> <p>Each part of a multipart MIME message must be
      * formatted properly.</p> </li> <li> <p>Attachments must be in a file format that
-     * the Amazon SES API v2 supports. </p> </li> <li> <p>The entire message must be
-     * Base64 encoded.</p> </li> <li> <p>If any of the MIME parts in your message
-     * contain content that is outside of the 7-bit ASCII character range, you should
-     * encode that content to ensure that recipients' email clients render the message
+     * the Amazon SES supports.</p> </li> <li> <p>The entire message must be Base64
+     * encoded.</p> </li> <li> <p>If any of the MIME parts in your message contain
+     * content that is outside of the 7-bit ASCII character range, you should encode
+     * that content to ensure that recipients' email clients render the message
      * properly.</p> </li> <li> <p>The length of any single line of text in the message
      * can't exceed 1,000 characters. This restriction is defined in <a
      * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> </ul>
@@ -117,10 +117,10 @@ namespace Model
      * blank line.</p> </li> <li> <p>All of the required header fields must be present
      * in the message.</p> </li> <li> <p>Each part of a multipart MIME message must be
      * formatted properly.</p> </li> <li> <p>Attachments must be in a file format that
-     * the Amazon SES API v2 supports. </p> </li> <li> <p>The entire message must be
-     * Base64 encoded.</p> </li> <li> <p>If any of the MIME parts in your message
-     * contain content that is outside of the 7-bit ASCII character range, you should
-     * encode that content to ensure that recipients' email clients render the message
+     * the Amazon SES supports.</p> </li> <li> <p>The entire message must be Base64
+     * encoded.</p> </li> <li> <p>If any of the MIME parts in your message contain
+     * content that is outside of the 7-bit ASCII character range, you should encode
+     * that content to ensure that recipients' email clients render the message
      * properly.</p> </li> <li> <p>The length of any single line of text in the message
      * can't exceed 1,000 characters. This restriction is defined in <a
      * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> </ul>
@@ -133,10 +133,10 @@ namespace Model
      * blank line.</p> </li> <li> <p>All of the required header fields must be present
      * in the message.</p> </li> <li> <p>Each part of a multipart MIME message must be
      * formatted properly.</p> </li> <li> <p>Attachments must be in a file format that
-     * the Amazon SES API v2 supports. </p> </li> <li> <p>The entire message must be
-     * Base64 encoded.</p> </li> <li> <p>If any of the MIME parts in your message
-     * contain content that is outside of the 7-bit ASCII character range, you should
-     * encode that content to ensure that recipients' email clients render the message
+     * the Amazon SES supports.</p> </li> <li> <p>The entire message must be Base64
+     * encoded.</p> </li> <li> <p>If any of the MIME parts in your message contain
+     * content that is outside of the 7-bit ASCII character range, you should encode
+     * that content to ensure that recipients' email clients render the message
      * properly.</p> </li> <li> <p>The length of any single line of text in the message
      * can't exceed 1,000 characters. This restriction is defined in <a
      * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> </ul>

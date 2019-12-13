@@ -46,47 +46,65 @@ namespace Model
 
 
     /**
-     * <p>The names of the build projects.</p>
+     * <p>The names or ARNs of the build projects. To get information about a project
+     * shared with your AWS account, its ARN must be specified. You cannot specify a
+     * shared project using its name.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
 
     /**
-     * <p>The names of the build projects.</p>
+     * <p>The names or ARNs of the build projects. To get information about a project
+     * shared with your AWS account, its ARN must be specified. You cannot specify a
+     * shared project using its name.</p>
      */
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
 
     /**
-     * <p>The names of the build projects.</p>
+     * <p>The names or ARNs of the build projects. To get information about a project
+     * shared with your AWS account, its ARN must be specified. You cannot specify a
+     * shared project using its name.</p>
      */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
 
     /**
-     * <p>The names of the build projects.</p>
+     * <p>The names or ARNs of the build projects. To get information about a project
+     * shared with your AWS account, its ARN must be specified. You cannot specify a
+     * shared project using its name.</p>
      */
     inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
 
     /**
-     * <p>The names of the build projects.</p>
+     * <p>The names or ARNs of the build projects. To get information about a project
+     * shared with your AWS account, its ARN must be specified. You cannot specify a
+     * shared project using its name.</p>
      */
     inline BatchGetProjectsRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
 
     /**
-     * <p>The names of the build projects.</p>
+     * <p>The names or ARNs of the build projects. To get information about a project
+     * shared with your AWS account, its ARN must be specified. You cannot specify a
+     * shared project using its name.</p>
      */
     inline BatchGetProjectsRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
-     * <p>The names of the build projects.</p>
+     * <p>The names or ARNs of the build projects. To get information about a project
+     * shared with your AWS account, its ARN must be specified. You cannot specify a
+     * shared project using its name.</p>
      */
     inline BatchGetProjectsRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
     /**
-     * <p>The names of the build projects.</p>
+     * <p>The names or ARNs of the build projects. To get information about a project
+     * shared with your AWS account, its ARN must be specified. You cannot specify a
+     * shared project using its name.</p>
      */
     inline BatchGetProjectsRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The names of the build projects.</p>
+     * <p>The names or ARNs of the build projects. To get information about a project
+     * shared with your AWS account, its ARN must be specified. You cannot specify a
+     * shared project using its name.</p>
      */
     inline BatchGetProjectsRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 

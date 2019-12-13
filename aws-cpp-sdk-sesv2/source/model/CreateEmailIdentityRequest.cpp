@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreateEmailIdentityRequest::CreateEmailIdentityRequest() : 
     m_emailIdentityHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_dkimSigningAttributesHasBeenSet(false)
 {
 }
 
@@ -46,6 +47,12 @@ Aws::String CreateEmailIdentityRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_dkimSigningAttributesHasBeenSet)
+  {
+   payload.WithObject("DkimSigningAttributes", m_dkimSigningAttributes.Jsonize());
 
   }
 

@@ -36,11 +36,9 @@ namespace SESV2
 namespace Model
 {
   /**
-   * <p>If the email identity is a domain, this object contains tokens that you can
-   * use to create a set of CNAME records. To sucessfully verify your domain, you
-   * have to add these records to the DNS configuration for your domain.</p> <p>If
-   * the email identity is an email address, this object is empty. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p>If the email identity is a domain, this object contains information about the
+   * DKIM verification status for the domain.</p> <p>If the email identity is an
+   * email address, this object is empty. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/CreateEmailIdentityResponse">AWS
    * API Reference</a></p>
    */
@@ -108,36 +106,31 @@ namespace Model
 
     /**
      * <p>An object that contains information about the DKIM attributes for the
-     * identity. This object includes the tokens that you use to create the CNAME
-     * records that are required to complete the DKIM verification process.</p>
+     * identity.</p>
      */
     inline const DkimAttributes& GetDkimAttributes() const{ return m_dkimAttributes; }
 
     /**
      * <p>An object that contains information about the DKIM attributes for the
-     * identity. This object includes the tokens that you use to create the CNAME
-     * records that are required to complete the DKIM verification process.</p>
+     * identity.</p>
      */
     inline void SetDkimAttributes(const DkimAttributes& value) { m_dkimAttributes = value; }
 
     /**
      * <p>An object that contains information about the DKIM attributes for the
-     * identity. This object includes the tokens that you use to create the CNAME
-     * records that are required to complete the DKIM verification process.</p>
+     * identity.</p>
      */
     inline void SetDkimAttributes(DkimAttributes&& value) { m_dkimAttributes = std::move(value); }
 
     /**
      * <p>An object that contains information about the DKIM attributes for the
-     * identity. This object includes the tokens that you use to create the CNAME
-     * records that are required to complete the DKIM verification process.</p>
+     * identity.</p>
      */
     inline CreateEmailIdentityResult& WithDkimAttributes(const DkimAttributes& value) { SetDkimAttributes(value); return *this;}
 
     /**
      * <p>An object that contains information about the DKIM attributes for the
-     * identity. This object includes the tokens that you use to create the CNAME
-     * records that are required to complete the DKIM verification process.</p>
+     * identity.</p>
      */
     inline CreateEmailIdentityResult& WithDkimAttributes(DkimAttributes&& value) { SetDkimAttributes(std::move(value)); return *this;}
 

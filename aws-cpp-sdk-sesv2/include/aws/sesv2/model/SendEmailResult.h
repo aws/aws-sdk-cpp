@@ -50,64 +50,64 @@ namespace Model
 
     /**
      * <p>A unique identifier for the message that is generated when the message is
-     * accepted.</p> <note> <p>It is possible for the Amazon SES API v2 to accept a
-     * message without sending it. This can happen when the message that you're trying
-     * to send has an attachment contains a virus, or when you send a templated email
-     * that contains invalid personalization content, for example.</p> </note>
+     * accepted.</p> <note> <p>It's possible for Amazon SES to accept a message without
+     * sending it. This can happen when the message that you're trying to send has an
+     * attachment contains a virus, or when you send a templated email that contains
+     * invalid personalization content, for example.</p> </note>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
 
     /**
      * <p>A unique identifier for the message that is generated when the message is
-     * accepted.</p> <note> <p>It is possible for the Amazon SES API v2 to accept a
-     * message without sending it. This can happen when the message that you're trying
-     * to send has an attachment contains a virus, or when you send a templated email
-     * that contains invalid personalization content, for example.</p> </note>
+     * accepted.</p> <note> <p>It's possible for Amazon SES to accept a message without
+     * sending it. This can happen when the message that you're trying to send has an
+     * attachment contains a virus, or when you send a templated email that contains
+     * invalid personalization content, for example.</p> </note>
      */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
 
     /**
      * <p>A unique identifier for the message that is generated when the message is
-     * accepted.</p> <note> <p>It is possible for the Amazon SES API v2 to accept a
-     * message without sending it. This can happen when the message that you're trying
-     * to send has an attachment contains a virus, or when you send a templated email
-     * that contains invalid personalization content, for example.</p> </note>
+     * accepted.</p> <note> <p>It's possible for Amazon SES to accept a message without
+     * sending it. This can happen when the message that you're trying to send has an
+     * attachment contains a virus, or when you send a templated email that contains
+     * invalid personalization content, for example.</p> </note>
      */
     inline void SetMessageId(Aws::String&& value) { m_messageId = std::move(value); }
 
     /**
      * <p>A unique identifier for the message that is generated when the message is
-     * accepted.</p> <note> <p>It is possible for the Amazon SES API v2 to accept a
-     * message without sending it. This can happen when the message that you're trying
-     * to send has an attachment contains a virus, or when you send a templated email
-     * that contains invalid personalization content, for example.</p> </note>
+     * accepted.</p> <note> <p>It's possible for Amazon SES to accept a message without
+     * sending it. This can happen when the message that you're trying to send has an
+     * attachment contains a virus, or when you send a templated email that contains
+     * invalid personalization content, for example.</p> </note>
      */
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
 
     /**
      * <p>A unique identifier for the message that is generated when the message is
-     * accepted.</p> <note> <p>It is possible for the Amazon SES API v2 to accept a
-     * message without sending it. This can happen when the message that you're trying
-     * to send has an attachment contains a virus, or when you send a templated email
-     * that contains invalid personalization content, for example.</p> </note>
+     * accepted.</p> <note> <p>It's possible for Amazon SES to accept a message without
+     * sending it. This can happen when the message that you're trying to send has an
+     * attachment contains a virus, or when you send a templated email that contains
+     * invalid personalization content, for example.</p> </note>
      */
     inline SendEmailResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
 
     /**
      * <p>A unique identifier for the message that is generated when the message is
-     * accepted.</p> <note> <p>It is possible for the Amazon SES API v2 to accept a
-     * message without sending it. This can happen when the message that you're trying
-     * to send has an attachment contains a virus, or when you send a templated email
-     * that contains invalid personalization content, for example.</p> </note>
+     * accepted.</p> <note> <p>It's possible for Amazon SES to accept a message without
+     * sending it. This can happen when the message that you're trying to send has an
+     * attachment contains a virus, or when you send a templated email that contains
+     * invalid personalization content, for example.</p> </note>
      */
     inline SendEmailResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
 
     /**
      * <p>A unique identifier for the message that is generated when the message is
-     * accepted.</p> <note> <p>It is possible for the Amazon SES API v2 to accept a
-     * message without sending it. This can happen when the message that you're trying
-     * to send has an attachment contains a virus, or when you send a templated email
-     * that contains invalid personalization content, for example.</p> </note>
+     * accepted.</p> <note> <p>It's possible for Amazon SES to accept a message without
+     * sending it. This can happen when the message that you're trying to send has an
+     * attachment contains a virus, or when you send a templated email that contains
+     * invalid personalization content, for example.</p> </note>
      */
     inline SendEmailResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
 

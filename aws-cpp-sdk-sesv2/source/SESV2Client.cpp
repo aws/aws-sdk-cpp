@@ -71,6 +71,7 @@
 #include <aws/sesv2/model/PutDedicatedIpWarmupAttributesRequest.h>
 #include <aws/sesv2/model/PutDeliverabilityDashboardOptionRequest.h>
 #include <aws/sesv2/model/PutEmailIdentityDkimAttributesRequest.h>
+#include <aws/sesv2/model/PutEmailIdentityDkimSigningAttributesRequest.h>
 #include <aws/sesv2/model/PutEmailIdentityFeedbackAttributesRequest.h>
 #include <aws/sesv2/model/PutEmailIdentityMailFromAttributesRequest.h>
 #include <aws/sesv2/model/PutSuppressedDestinationRequest.h>
@@ -1770,6 +1771,48 @@ void SESV2Client::PutEmailIdentityDkimAttributesAsync(const PutEmailIdentityDkim
 void SESV2Client::PutEmailIdentityDkimAttributesAsyncHelper(const PutEmailIdentityDkimAttributesRequest& request, const PutEmailIdentityDkimAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, PutEmailIdentityDkimAttributes(request), context);
+}
+
+PutEmailIdentityDkimSigningAttributesOutcome SESV2Client::PutEmailIdentityDkimSigningAttributes(const PutEmailIdentityDkimSigningAttributesRequest& request) const
+{
+  if (!request.EmailIdentityHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutEmailIdentityDkimSigningAttributes", "Required field: EmailIdentity, is not set");
+    return PutEmailIdentityDkimSigningAttributesOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/email/identities/";
+  ss << request.GetEmailIdentity();
+  ss << "/dkim/signing";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutEmailIdentityDkimSigningAttributesOutcome(PutEmailIdentityDkimSigningAttributesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutEmailIdentityDkimSigningAttributesOutcome(outcome.GetError());
+  }
+}
+
+PutEmailIdentityDkimSigningAttributesOutcomeCallable SESV2Client::PutEmailIdentityDkimSigningAttributesCallable(const PutEmailIdentityDkimSigningAttributesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutEmailIdentityDkimSigningAttributesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutEmailIdentityDkimSigningAttributes(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SESV2Client::PutEmailIdentityDkimSigningAttributesAsync(const PutEmailIdentityDkimSigningAttributesRequest& request, const PutEmailIdentityDkimSigningAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutEmailIdentityDkimSigningAttributesAsyncHelper( request, handler, context ); } );
+}
+
+void SESV2Client::PutEmailIdentityDkimSigningAttributesAsyncHelper(const PutEmailIdentityDkimSigningAttributesRequest& request, const PutEmailIdentityDkimSigningAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutEmailIdentityDkimSigningAttributes(request), context);
 }
 
 PutEmailIdentityFeedbackAttributesOutcome SESV2Client::PutEmailIdentityFeedbackAttributes(const PutEmailIdentityFeedbackAttributesRequest& request) const
