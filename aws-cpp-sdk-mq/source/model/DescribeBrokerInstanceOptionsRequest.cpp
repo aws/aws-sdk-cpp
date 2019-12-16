@@ -30,7 +30,8 @@ DescribeBrokerInstanceOptionsRequest::DescribeBrokerInstanceOptionsRequest() :
     m_hostInstanceTypeHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,13 @@ void DescribeBrokerInstanceOptionsRequest::AddQueryStringParameters(URI& uri) co
     {
       ss << m_nextToken;
       uri.AddQueryStringParameter("nextToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_storageTypeHasBeenSet)
+    {
+      ss << m_storageType;
+      uri.AddQueryStringParameter("storageType", ss.str());
       ss.str("");
     }
 

@@ -33,6 +33,9 @@ BrokerInstanceOption::BrokerInstanceOption() :
     m_engineType(EngineType::NOT_SET),
     m_engineTypeHasBeenSet(false),
     m_hostInstanceTypeHasBeenSet(false),
+    m_storageType(BrokerStorageType::NOT_SET),
+    m_storageTypeHasBeenSet(false),
+    m_supportedDeploymentModesHasBeenSet(false),
     m_supportedEngineVersionsHasBeenSet(false)
 {
 }
@@ -42,6 +45,9 @@ BrokerInstanceOption::BrokerInstanceOption(JsonView jsonValue) :
     m_engineType(EngineType::NOT_SET),
     m_engineTypeHasBeenSet(false),
     m_hostInstanceTypeHasBeenSet(false),
+    m_storageType(BrokerStorageType::NOT_SET),
+    m_storageTypeHasBeenSet(false),
+    m_supportedDeploymentModesHasBeenSet(false),
     m_supportedEngineVersionsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -71,6 +77,23 @@ BrokerInstanceOption& BrokerInstanceOption::operator =(JsonView jsonValue)
     m_hostInstanceType = jsonValue.GetString("hostInstanceType");
 
     m_hostInstanceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageType"))
+  {
+    m_storageType = BrokerStorageTypeMapper::GetBrokerStorageTypeForName(jsonValue.GetString("storageType"));
+
+    m_storageTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("supportedDeploymentModes"))
+  {
+    Array<JsonView> supportedDeploymentModesJsonList = jsonValue.GetArray("supportedDeploymentModes");
+    for(unsigned supportedDeploymentModesIndex = 0; supportedDeploymentModesIndex < supportedDeploymentModesJsonList.GetLength(); ++supportedDeploymentModesIndex)
+    {
+      m_supportedDeploymentModes.push_back(DeploymentModeMapper::GetDeploymentModeForName(supportedDeploymentModesJsonList[supportedDeploymentModesIndex].AsString()));
+    }
+    m_supportedDeploymentModesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("supportedEngineVersions"))
@@ -109,6 +132,22 @@ JsonValue BrokerInstanceOption::Jsonize() const
   if(m_hostInstanceTypeHasBeenSet)
   {
    payload.WithString("hostInstanceType", m_hostInstanceType);
+
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+   payload.WithString("storageType", BrokerStorageTypeMapper::GetNameForBrokerStorageType(m_storageType));
+  }
+
+  if(m_supportedDeploymentModesHasBeenSet)
+  {
+   Array<JsonValue> supportedDeploymentModesJsonList(m_supportedDeploymentModes.size());
+   for(unsigned supportedDeploymentModesIndex = 0; supportedDeploymentModesIndex < supportedDeploymentModesJsonList.GetLength(); ++supportedDeploymentModesIndex)
+   {
+     supportedDeploymentModesJsonList[supportedDeploymentModesIndex].AsString(DeploymentModeMapper::GetNameForDeploymentMode(m_supportedDeploymentModes[supportedDeploymentModesIndex]));
+   }
+   payload.WithArray("supportedDeploymentModes", std::move(supportedDeploymentModesJsonList));
 
   }
 

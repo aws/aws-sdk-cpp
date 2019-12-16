@@ -24,6 +24,7 @@
 #include <aws/mq/model/Logs.h>
 #include <aws/mq/model/WeeklyStartTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mq/model/BrokerStorageType.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mq/model/User.h>
 #include <utility>
@@ -530,58 +531,89 @@ namespace Model
 
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
-     * brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections
+     * to brokers.
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
-     * brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections
+     * to brokers.
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
-     * brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections
+     * to brokers.
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
-     * brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections
+     * to brokers.
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
-     * brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections
+     * to brokers.
      */
     inline CreateBrokerRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
-     * brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections
+     * to brokers.
      */
     inline CreateBrokerRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
-     * brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections
+     * to brokers.
      */
     inline CreateBrokerRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
-     * brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections
+     * to brokers.
      */
     inline CreateBrokerRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * The list of security groups (1 minimum, 5 maximum) that authorize connections to
-     * brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorizes connections
+     * to brokers.
      */
     inline CreateBrokerRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+
+
+    /**
+     * The broker's storage type.
+     */
+    inline const BrokerStorageType& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * The broker's storage type.
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * The broker's storage type.
+     */
+    inline void SetStorageType(const BrokerStorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * The broker's storage type.
+     */
+    inline void SetStorageType(BrokerStorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * The broker's storage type.
+     */
+    inline CreateBrokerRequest& WithStorageType(const BrokerStorageType& value) { SetStorageType(value); return *this;}
+
+    /**
+     * The broker's storage type.
+     */
+    inline CreateBrokerRequest& WithStorageType(BrokerStorageType&& value) { SetStorageType(std::move(value)); return *this;}
 
 
     /**
@@ -827,6 +859,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet;
+
+    BrokerStorageType m_storageType;
+    bool m_storageTypeHasBeenSet;
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;

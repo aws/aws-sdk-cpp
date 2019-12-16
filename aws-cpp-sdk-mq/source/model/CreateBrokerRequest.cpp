@@ -41,6 +41,8 @@ CreateBrokerRequest::CreateBrokerRequest() :
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
+    m_storageType(BrokerStorageType::NOT_SET),
+    m_storageTypeHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_usersHasBeenSet(false)
@@ -130,6 +132,11 @@ Aws::String CreateBrokerRequest::SerializePayload() const
    }
    payload.WithArray("securityGroups", std::move(securityGroupsJsonList));
 
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+   payload.WithString("storageType", BrokerStorageTypeMapper::GetNameForBrokerStorageType(m_storageType));
   }
 
   if(m_subnetIdsHasBeenSet)

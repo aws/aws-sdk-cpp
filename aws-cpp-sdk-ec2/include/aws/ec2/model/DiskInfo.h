@@ -50,22 +50,22 @@ namespace Model
 
 
     /**
-     * <p>The size of the disk in GiB.</p>
+     * <p>The size of the disk in GB.</p>
      */
     inline long long GetSizeInGB() const{ return m_sizeInGB; }
 
     /**
-     * <p>The size of the disk in GiB.</p>
+     * <p>The size of the disk in GB.</p>
      */
     inline bool SizeInGBHasBeenSet() const { return m_sizeInGBHasBeenSet; }
 
     /**
-     * <p>The size of the disk in GiB.</p>
+     * <p>The size of the disk in GB.</p>
      */
     inline void SetSizeInGB(long long value) { m_sizeInGBHasBeenSet = true; m_sizeInGB = value; }
 
     /**
-     * <p>The size of the disk in GiB.</p>
+     * <p>The size of the disk in GB.</p>
      */
     inline DiskInfo& WithSizeInGB(long long value) { SetSizeInGB(value); return *this;}
 

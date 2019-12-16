@@ -226,73 +226,73 @@ namespace Model
 
 
     /**
-     * <p> Describes the specific type of entity with category of entities. </p>
+     * <p> Describes the specific type of entity with category of entities.</p>
      */
     inline const EntitySubType& GetType() const{ return m_type; }
 
     /**
-     * <p> Describes the specific type of entity with category of entities. </p>
+     * <p> Describes the specific type of entity with category of entities.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p> Describes the specific type of entity with category of entities. </p>
+     * <p> Describes the specific type of entity with category of entities.</p>
      */
     inline void SetType(const EntitySubType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p> Describes the specific type of entity with category of entities. </p>
+     * <p> Describes the specific type of entity with category of entities.</p>
      */
     inline void SetType(EntitySubType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p> Describes the specific type of entity with category of entities. </p>
+     * <p> Describes the specific type of entity with category of entities.</p>
      */
     inline Entity& WithType(const EntitySubType& value) { SetType(value); return *this;}
 
     /**
-     * <p> Describes the specific type of entity with category of entities. </p>
+     * <p> Describes the specific type of entity with category of entities.</p>
      */
     inline Entity& WithType(EntitySubType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>Contextual information for the entity</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline const Aws::Vector<Trait>& GetTraits() const{ return m_traits; }
 
     /**
-     * <p>Contextual information for the entity</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline bool TraitsHasBeenSet() const { return m_traitsHasBeenSet; }
 
     /**
-     * <p>Contextual information for the entity</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline void SetTraits(const Aws::Vector<Trait>& value) { m_traitsHasBeenSet = true; m_traits = value; }
 
     /**
-     * <p>Contextual information for the entity</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline void SetTraits(Aws::Vector<Trait>&& value) { m_traitsHasBeenSet = true; m_traits = std::move(value); }
 
     /**
-     * <p>Contextual information for the entity</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline Entity& WithTraits(const Aws::Vector<Trait>& value) { SetTraits(value); return *this;}
 
     /**
-     * <p>Contextual information for the entity</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline Entity& WithTraits(Aws::Vector<Trait>&& value) { SetTraits(std::move(value)); return *this;}
 
     /**
-     * <p>Contextual information for the entity</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline Entity& AddTraits(const Trait& value) { m_traitsHasBeenSet = true; m_traits.push_back(value); return *this; }
 
     /**
-     * <p>Contextual information for the entity</p>
+     * <p>Contextual information for the entity.</p>
      */
     inline Entity& AddTraits(Trait&& value) { m_traitsHasBeenSet = true; m_traits.push_back(std::move(value)); return *this; }
 

@@ -203,6 +203,47 @@ namespace Model
      */
     inline DescribeBrokerInstanceOptionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * Filter response by storage type.
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * Filter response by storage type.
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * Filter response by storage type.
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * Filter response by storage type.
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * Filter response by storage type.
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * Filter response by storage type.
+     */
+    inline DescribeBrokerInstanceOptionsRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * Filter response by storage type.
+     */
+    inline DescribeBrokerInstanceOptionsRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * Filter response by storage type.
+     */
+    inline DescribeBrokerInstanceOptionsRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
   private:
 
     Aws::String m_engineType;
@@ -216,6 +257,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet;
   };
 
 } // namespace Model

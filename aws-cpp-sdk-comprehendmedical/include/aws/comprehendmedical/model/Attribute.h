@@ -191,25 +191,25 @@ namespace Model
 
     /**
      * <p> The 0-based character offset in the input text that shows where the
-     * attribute ends. The offset returns the UTF-8 code point in the string. </p>
+     * attribute ends. The offset returns the UTF-8 code point in the string.</p>
      */
     inline int GetEndOffset() const{ return m_endOffset; }
 
     /**
      * <p> The 0-based character offset in the input text that shows where the
-     * attribute ends. The offset returns the UTF-8 code point in the string. </p>
+     * attribute ends. The offset returns the UTF-8 code point in the string.</p>
      */
     inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
 
     /**
      * <p> The 0-based character offset in the input text that shows where the
-     * attribute ends. The offset returns the UTF-8 code point in the string. </p>
+     * attribute ends. The offset returns the UTF-8 code point in the string.</p>
      */
     inline void SetEndOffset(int value) { m_endOffsetHasBeenSet = true; m_endOffset = value; }
 
     /**
      * <p> The 0-based character offset in the input text that shows where the
-     * attribute ends. The offset returns the UTF-8 code point in the string. </p>
+     * attribute ends. The offset returns the UTF-8 code point in the string.</p>
      */
     inline Attribute& WithEndOffset(int value) { SetEndOffset(value); return *this;}
 

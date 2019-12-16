@@ -18,7 +18,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mq/model/EngineType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mq/model/BrokerStorageType.h>
 #include <aws/mq/model/AvailabilityZone.h>
+#include <aws/mq/model/DeploymentMode.h>
 #include <utility>
 
 namespace Aws
@@ -164,6 +166,78 @@ namespace Model
 
 
     /**
+     * The broker's storage type.
+     */
+    inline const BrokerStorageType& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * The broker's storage type.
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * The broker's storage type.
+     */
+    inline void SetStorageType(const BrokerStorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * The broker's storage type.
+     */
+    inline void SetStorageType(BrokerStorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * The broker's storage type.
+     */
+    inline BrokerInstanceOption& WithStorageType(const BrokerStorageType& value) { SetStorageType(value); return *this;}
+
+    /**
+     * The broker's storage type.
+     */
+    inline BrokerInstanceOption& WithStorageType(BrokerStorageType&& value) { SetStorageType(std::move(value)); return *this;}
+
+
+    /**
+     * The list of supported deployment modes.
+     */
+    inline const Aws::Vector<DeploymentMode>& GetSupportedDeploymentModes() const{ return m_supportedDeploymentModes; }
+
+    /**
+     * The list of supported deployment modes.
+     */
+    inline bool SupportedDeploymentModesHasBeenSet() const { return m_supportedDeploymentModesHasBeenSet; }
+
+    /**
+     * The list of supported deployment modes.
+     */
+    inline void SetSupportedDeploymentModes(const Aws::Vector<DeploymentMode>& value) { m_supportedDeploymentModesHasBeenSet = true; m_supportedDeploymentModes = value; }
+
+    /**
+     * The list of supported deployment modes.
+     */
+    inline void SetSupportedDeploymentModes(Aws::Vector<DeploymentMode>&& value) { m_supportedDeploymentModesHasBeenSet = true; m_supportedDeploymentModes = std::move(value); }
+
+    /**
+     * The list of supported deployment modes.
+     */
+    inline BrokerInstanceOption& WithSupportedDeploymentModes(const Aws::Vector<DeploymentMode>& value) { SetSupportedDeploymentModes(value); return *this;}
+
+    /**
+     * The list of supported deployment modes.
+     */
+    inline BrokerInstanceOption& WithSupportedDeploymentModes(Aws::Vector<DeploymentMode>&& value) { SetSupportedDeploymentModes(std::move(value)); return *this;}
+
+    /**
+     * The list of supported deployment modes.
+     */
+    inline BrokerInstanceOption& AddSupportedDeploymentModes(const DeploymentMode& value) { m_supportedDeploymentModesHasBeenSet = true; m_supportedDeploymentModes.push_back(value); return *this; }
+
+    /**
+     * The list of supported deployment modes.
+     */
+    inline BrokerInstanceOption& AddSupportedDeploymentModes(DeploymentMode&& value) { m_supportedDeploymentModesHasBeenSet = true; m_supportedDeploymentModes.push_back(std::move(value)); return *this; }
+
+
+    /**
      * The list of supported engine versions.
      */
     inline const Aws::Vector<Aws::String>& GetSupportedEngineVersions() const{ return m_supportedEngineVersions; }
@@ -218,6 +292,12 @@ namespace Model
 
     Aws::String m_hostInstanceType;
     bool m_hostInstanceTypeHasBeenSet;
+
+    BrokerStorageType m_storageType;
+    bool m_storageTypeHasBeenSet;
+
+    Aws::Vector<DeploymentMode> m_supportedDeploymentModes;
+    bool m_supportedDeploymentModesHasBeenSet;
 
     Aws::Vector<Aws::String> m_supportedEngineVersions;
     bool m_supportedEngineVersionsHasBeenSet;

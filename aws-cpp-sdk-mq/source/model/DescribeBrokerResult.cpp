@@ -31,7 +31,8 @@ DescribeBrokerResult::DescribeBrokerResult() :
     m_brokerState(BrokerState::NOT_SET),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_engineType(EngineType::NOT_SET),
-    m_publiclyAccessible(false)
+    m_publiclyAccessible(false),
+    m_storageType(BrokerStorageType::NOT_SET)
 {
 }
 
@@ -40,7 +41,8 @@ DescribeBrokerResult::DescribeBrokerResult(const Aws::AmazonWebServiceResult<Jso
     m_brokerState(BrokerState::NOT_SET),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_engineType(EngineType::NOT_SET),
-    m_publiclyAccessible(false)
+    m_publiclyAccessible(false),
+    m_storageType(BrokerStorageType::NOT_SET)
 {
   *this = result;
 }
@@ -147,6 +149,12 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("pendingHostInstanceType"))
+  {
+    m_pendingHostInstanceType = jsonValue.GetString("pendingHostInstanceType");
+
+  }
+
   if(jsonValue.ValueExists("pendingSecurityGroups"))
   {
     Array<JsonView> pendingSecurityGroupsJsonList = jsonValue.GetArray("pendingSecurityGroups");
@@ -154,12 +162,6 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
     {
       m_pendingSecurityGroups.push_back(pendingSecurityGroupsJsonList[pendingSecurityGroupsIndex].AsString());
     }
-  }
-
-  if(jsonValue.ValueExists("pendingHostInstanceType"))
-  {
-    m_pendingHostInstanceType = jsonValue.GetString("pendingHostInstanceType");
-
   }
 
   if(jsonValue.ValueExists("publiclyAccessible"))
@@ -175,6 +177,12 @@ DescribeBrokerResult& DescribeBrokerResult::operator =(const Aws::AmazonWebServi
     {
       m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
     }
+  }
+
+  if(jsonValue.ValueExists("storageType"))
+  {
+    m_storageType = BrokerStorageTypeMapper::GetBrokerStorageTypeForName(jsonValue.GetString("storageType"));
+
   }
 
   if(jsonValue.ValueExists("subnetIds"))

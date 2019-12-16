@@ -25,6 +25,8 @@
 #include <aws/comprehendmedical/model/DescribePHIDetectionJobResult.h>
 #include <aws/comprehendmedical/model/DetectEntitiesV2Result.h>
 #include <aws/comprehendmedical/model/DetectPHIResult.h>
+#include <aws/comprehendmedical/model/InferICD10CMResult.h>
+#include <aws/comprehendmedical/model/InferRxNormResult.h>
 #include <aws/comprehendmedical/model/ListEntitiesDetectionV2JobsResult.h>
 #include <aws/comprehendmedical/model/ListPHIDetectionJobsResult.h>
 #include <aws/comprehendmedical/model/StartEntitiesDetectionV2JobResult.h>
@@ -74,6 +76,8 @@ namespace Model
         class DescribePHIDetectionJobRequest;
         class DetectEntitiesV2Request;
         class DetectPHIRequest;
+        class InferICD10CMRequest;
+        class InferRxNormRequest;
         class ListEntitiesDetectionV2JobsRequest;
         class ListPHIDetectionJobsRequest;
         class StartEntitiesDetectionV2JobRequest;
@@ -85,6 +89,8 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribePHIDetectionJobResult, Aws::Client::AWSError<ComprehendMedicalErrors>> DescribePHIDetectionJobOutcome;
         typedef Aws::Utils::Outcome<DetectEntitiesV2Result, Aws::Client::AWSError<ComprehendMedicalErrors>> DetectEntitiesV2Outcome;
         typedef Aws::Utils::Outcome<DetectPHIResult, Aws::Client::AWSError<ComprehendMedicalErrors>> DetectPHIOutcome;
+        typedef Aws::Utils::Outcome<InferICD10CMResult, Aws::Client::AWSError<ComprehendMedicalErrors>> InferICD10CMOutcome;
+        typedef Aws::Utils::Outcome<InferRxNormResult, Aws::Client::AWSError<ComprehendMedicalErrors>> InferRxNormOutcome;
         typedef Aws::Utils::Outcome<ListEntitiesDetectionV2JobsResult, Aws::Client::AWSError<ComprehendMedicalErrors>> ListEntitiesDetectionV2JobsOutcome;
         typedef Aws::Utils::Outcome<ListPHIDetectionJobsResult, Aws::Client::AWSError<ComprehendMedicalErrors>> ListPHIDetectionJobsOutcome;
         typedef Aws::Utils::Outcome<StartEntitiesDetectionV2JobResult, Aws::Client::AWSError<ComprehendMedicalErrors>> StartEntitiesDetectionV2JobOutcome;
@@ -96,6 +102,8 @@ namespace Model
         typedef std::future<DescribePHIDetectionJobOutcome> DescribePHIDetectionJobOutcomeCallable;
         typedef std::future<DetectEntitiesV2Outcome> DetectEntitiesV2OutcomeCallable;
         typedef std::future<DetectPHIOutcome> DetectPHIOutcomeCallable;
+        typedef std::future<InferICD10CMOutcome> InferICD10CMOutcomeCallable;
+        typedef std::future<InferRxNormOutcome> InferRxNormOutcomeCallable;
         typedef std::future<ListEntitiesDetectionV2JobsOutcome> ListEntitiesDetectionV2JobsOutcomeCallable;
         typedef std::future<ListPHIDetectionJobsOutcome> ListPHIDetectionJobsOutcomeCallable;
         typedef std::future<StartEntitiesDetectionV2JobOutcome> StartEntitiesDetectionV2JobOutcomeCallable;
@@ -110,6 +118,8 @@ namespace Model
     typedef std::function<void(const ComprehendMedicalClient*, const Model::DescribePHIDetectionJobRequest&, const Model::DescribePHIDetectionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePHIDetectionJobResponseReceivedHandler;
     typedef std::function<void(const ComprehendMedicalClient*, const Model::DetectEntitiesV2Request&, const Model::DetectEntitiesV2Outcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectEntitiesV2ResponseReceivedHandler;
     typedef std::function<void(const ComprehendMedicalClient*, const Model::DetectPHIRequest&, const Model::DetectPHIOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetectPHIResponseReceivedHandler;
+    typedef std::function<void(const ComprehendMedicalClient*, const Model::InferICD10CMRequest&, const Model::InferICD10CMOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InferICD10CMResponseReceivedHandler;
+    typedef std::function<void(const ComprehendMedicalClient*, const Model::InferRxNormRequest&, const Model::InferRxNormOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InferRxNormResponseReceivedHandler;
     typedef std::function<void(const ComprehendMedicalClient*, const Model::ListEntitiesDetectionV2JobsRequest&, const Model::ListEntitiesDetectionV2JobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEntitiesDetectionV2JobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendMedicalClient*, const Model::ListPHIDetectionJobsRequest&, const Model::ListPHIDetectionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPHIDetectionJobsResponseReceivedHandler;
     typedef std::function<void(const ComprehendMedicalClient*, const Model::StartEntitiesDetectionV2JobRequest&, const Model::StartEntitiesDetectionV2JobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartEntitiesDetectionV2JobResponseReceivedHandler;
@@ -221,8 +231,7 @@ namespace Model
          * the way that some entities are returned in the output. You should use the
          * <code>DetectEntitiesV2</code> operation in all new applications.</p> <p>The
          * <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and
-         * <code>Direction</code> entities as attributes instead of types. It does not
-         * return the <code>Quality</code> or <code>Quantity</code> entities.</p><p><h3>See
+         * <code>Direction</code> entities as attributes instead of types. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectEntitiesV2">AWS
          * API Reference</a></p>
@@ -238,8 +247,7 @@ namespace Model
          * the way that some entities are returned in the output. You should use the
          * <code>DetectEntitiesV2</code> operation in all new applications.</p> <p>The
          * <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and
-         * <code>Direction</code> entities as attributes instead of types. It does not
-         * return the <code>Quality</code> or <code>Quantity</code> entities.</p><p><h3>See
+         * <code>Direction</code> entities as attributes instead of types. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectEntitiesV2">AWS
          * API Reference</a></p>
@@ -257,8 +265,7 @@ namespace Model
          * the way that some entities are returned in the output. You should use the
          * <code>DetectEntitiesV2</code> operation in all new applications.</p> <p>The
          * <code>DetectEntitiesV2</code> operation returns the <code>Acuity</code> and
-         * <code>Direction</code> entities as attributes instead of types. It does not
-         * return the <code>Quality</code> or <code>Quantity</code> entities.</p><p><h3>See
+         * <code>Direction</code> entities as attributes instead of types. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/DetectEntitiesV2">AWS
          * API Reference</a></p>
@@ -297,6 +304,71 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DetectPHIAsync(const Model::DetectPHIRequest& request, const DetectPHIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>InferICD10CM detects medical conditions as entities listed in a patient
+         * record and links those entities to normalized concept identifiers in the
+         * ICD-10-CM knowledge base from the Centers for Disease Control.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::InferICD10CMOutcome InferICD10CM(const Model::InferICD10CMRequest& request) const;
+
+        /**
+         * <p>InferICD10CM detects medical conditions as entities listed in a patient
+         * record and links those entities to normalized concept identifiers in the
+         * ICD-10-CM knowledge base from the Centers for Disease Control.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::InferICD10CMOutcomeCallable InferICD10CMCallable(const Model::InferICD10CMRequest& request) const;
+
+        /**
+         * <p>InferICD10CM detects medical conditions as entities listed in a patient
+         * record and links those entities to normalized concept identifiers in the
+         * ICD-10-CM knowledge base from the Centers for Disease Control.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferICD10CM">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void InferICD10CMAsync(const Model::InferICD10CMRequest& request, const InferICD10CMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>InferRxNorm detects medications as entities listed in a patient record and
+         * links to the normalized concept identifiers in the RxNorm database from the
+         * National Library of Medicine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::InferRxNormOutcome InferRxNorm(const Model::InferRxNormRequest& request) const;
+
+        /**
+         * <p>InferRxNorm detects medications as entities listed in a patient record and
+         * links to the normalized concept identifiers in the RxNorm database from the
+         * National Library of Medicine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::InferRxNormOutcomeCallable InferRxNormCallable(const Model::InferRxNormRequest& request) const;
+
+        /**
+         * <p>InferRxNorm detects medications as entities listed in a patient record and
+         * links to the normalized concept identifiers in the RxNorm database from the
+         * National Library of Medicine.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/comprehendmedical-2018-10-30/InferRxNorm">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void InferRxNormAsync(const Model::InferRxNormRequest& request, const InferRxNormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets a list of medical entity detection jobs that you have
@@ -480,6 +552,8 @@ namespace Model
         void DescribePHIDetectionJobAsyncHelper(const Model::DescribePHIDetectionJobRequest& request, const DescribePHIDetectionJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectEntitiesV2AsyncHelper(const Model::DetectEntitiesV2Request& request, const DetectEntitiesV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DetectPHIAsyncHelper(const Model::DetectPHIRequest& request, const DetectPHIResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void InferICD10CMAsyncHelper(const Model::InferICD10CMRequest& request, const InferICD10CMResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void InferRxNormAsyncHelper(const Model::InferRxNormRequest& request, const InferRxNormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListEntitiesDetectionV2JobsAsyncHelper(const Model::ListEntitiesDetectionV2JobsRequest& request, const ListEntitiesDetectionV2JobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListPHIDetectionJobsAsyncHelper(const Model::ListPHIDetectionJobsRequest& request, const ListPHIDetectionJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartEntitiesDetectionV2JobAsyncHelper(const Model::StartEntitiesDetectionV2JobRequest& request, const StartEntitiesDetectionV2JobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

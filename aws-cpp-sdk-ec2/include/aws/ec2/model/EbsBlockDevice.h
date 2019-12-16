@@ -264,37 +264,49 @@ namespace Model
 
     /**
      * <p>The volume type. If you set the type to <code>io1</code>, you must also
-     * specify the IOPS that the volume supports.</p> <p>Default: <code>gp2</code> </p>
+     * specify the <b>Iops</b> parameter. If you set the type to <code>gp2</code>,
+     * <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you must omit the
+     * <b>Iops</b> parameter.</p> <p>Default: <code>gp2</code> </p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
 
     /**
      * <p>The volume type. If you set the type to <code>io1</code>, you must also
-     * specify the IOPS that the volume supports.</p> <p>Default: <code>gp2</code> </p>
+     * specify the <b>Iops</b> parameter. If you set the type to <code>gp2</code>,
+     * <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you must omit the
+     * <b>Iops</b> parameter.</p> <p>Default: <code>gp2</code> </p>
      */
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
      * <p>The volume type. If you set the type to <code>io1</code>, you must also
-     * specify the IOPS that the volume supports.</p> <p>Default: <code>gp2</code> </p>
+     * specify the <b>Iops</b> parameter. If you set the type to <code>gp2</code>,
+     * <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you must omit the
+     * <b>Iops</b> parameter.</p> <p>Default: <code>gp2</code> </p>
      */
     inline void SetVolumeType(const VolumeType& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
      * <p>The volume type. If you set the type to <code>io1</code>, you must also
-     * specify the IOPS that the volume supports.</p> <p>Default: <code>gp2</code> </p>
+     * specify the <b>Iops</b> parameter. If you set the type to <code>gp2</code>,
+     * <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you must omit the
+     * <b>Iops</b> parameter.</p> <p>Default: <code>gp2</code> </p>
      */
     inline void SetVolumeType(VolumeType&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
 
     /**
      * <p>The volume type. If you set the type to <code>io1</code>, you must also
-     * specify the IOPS that the volume supports.</p> <p>Default: <code>gp2</code> </p>
+     * specify the <b>Iops</b> parameter. If you set the type to <code>gp2</code>,
+     * <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you must omit the
+     * <b>Iops</b> parameter.</p> <p>Default: <code>gp2</code> </p>
      */
     inline EbsBlockDevice& WithVolumeType(const VolumeType& value) { SetVolumeType(value); return *this;}
 
     /**
      * <p>The volume type. If you set the type to <code>io1</code>, you must also
-     * specify the IOPS that the volume supports.</p> <p>Default: <code>gp2</code> </p>
+     * specify the <b>Iops</b> parameter. If you set the type to <code>gp2</code>,
+     * <code>st1</code>, <code>sc1</code>, or <code>standard</code>, you must omit the
+     * <b>Iops</b> parameter.</p> <p>Default: <code>gp2</code> </p>
      */
     inline EbsBlockDevice& WithVolumeType(VolumeType&& value) { SetVolumeType(std::move(value)); return *this;}
 

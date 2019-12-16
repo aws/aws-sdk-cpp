@@ -17,6 +17,7 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/ec2/model/FleetOnDemandAllocationStrategy.h>
+#include <aws/ec2/model/CapacityReservationOptions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -110,6 +111,43 @@ namespace Model
      * specify a value, EC2 Fleet defaults to <code>lowest-price</code>.</p>
      */
     inline OnDemandOptions& WithAllocationStrategy(FleetOnDemandAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
+     * capacity. Only available for fleets of type <code>instant</code>. </p>
+     */
+    inline const CapacityReservationOptions& GetCapacityReservationOptions() const{ return m_capacityReservationOptions; }
+
+    /**
+     * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
+     * capacity. Only available for fleets of type <code>instant</code>. </p>
+     */
+    inline bool CapacityReservationOptionsHasBeenSet() const { return m_capacityReservationOptionsHasBeenSet; }
+
+    /**
+     * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
+     * capacity. Only available for fleets of type <code>instant</code>. </p>
+     */
+    inline void SetCapacityReservationOptions(const CapacityReservationOptions& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = value; }
+
+    /**
+     * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
+     * capacity. Only available for fleets of type <code>instant</code>. </p>
+     */
+    inline void SetCapacityReservationOptions(CapacityReservationOptions&& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = std::move(value); }
+
+    /**
+     * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
+     * capacity. Only available for fleets of type <code>instant</code>. </p>
+     */
+    inline OnDemandOptions& WithCapacityReservationOptions(const CapacityReservationOptions& value) { SetCapacityReservationOptions(value); return *this;}
+
+    /**
+     * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
+     * capacity. Only available for fleets of type <code>instant</code>. </p>
+     */
+    inline OnDemandOptions& WithCapacityReservationOptions(CapacityReservationOptions&& value) { SetCapacityReservationOptions(std::move(value)); return *this;}
 
 
     /**
@@ -239,6 +277,9 @@ namespace Model
 
     FleetOnDemandAllocationStrategy m_allocationStrategy;
     bool m_allocationStrategyHasBeenSet;
+
+    CapacityReservationOptions m_capacityReservationOptions;
+    bool m_capacityReservationOptionsHasBeenSet;
 
     bool m_singleInstanceType;
     bool m_singleInstanceTypeHasBeenSet;

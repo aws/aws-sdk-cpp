@@ -33,6 +33,7 @@ namespace Model
 OnDemandOptionsRequest::OnDemandOptionsRequest() : 
     m_allocationStrategy(FleetOnDemandAllocationStrategy::NOT_SET),
     m_allocationStrategyHasBeenSet(false),
+    m_capacityReservationOptionsHasBeenSet(false),
     m_singleInstanceType(false),
     m_singleInstanceTypeHasBeenSet(false),
     m_singleAvailabilityZone(false),
@@ -46,6 +47,7 @@ OnDemandOptionsRequest::OnDemandOptionsRequest() :
 OnDemandOptionsRequest::OnDemandOptionsRequest(const XmlNode& xmlNode) : 
     m_allocationStrategy(FleetOnDemandAllocationStrategy::NOT_SET),
     m_allocationStrategyHasBeenSet(false),
+    m_capacityReservationOptionsHasBeenSet(false),
     m_singleInstanceType(false),
     m_singleInstanceTypeHasBeenSet(false),
     m_singleAvailabilityZone(false),
@@ -68,6 +70,12 @@ OnDemandOptionsRequest& OnDemandOptionsRequest::operator =(const XmlNode& xmlNod
     {
       m_allocationStrategy = FleetOnDemandAllocationStrategyMapper::GetFleetOnDemandAllocationStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationStrategyNode.GetText()).c_str()).c_str());
       m_allocationStrategyHasBeenSet = true;
+    }
+    XmlNode capacityReservationOptionsNode = resultNode.FirstChild("CapacityReservationOptions");
+    if(!capacityReservationOptionsNode.IsNull())
+    {
+      m_capacityReservationOptions = capacityReservationOptionsNode;
+      m_capacityReservationOptionsHasBeenSet = true;
     }
     XmlNode singleInstanceTypeNode = resultNode.FirstChild("SingleInstanceType");
     if(!singleInstanceTypeNode.IsNull())
@@ -105,6 +113,13 @@ void OnDemandOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* l
       oStream << location << index << locationValue << ".AllocationStrategy=" << FleetOnDemandAllocationStrategyMapper::GetNameForFleetOnDemandAllocationStrategy(m_allocationStrategy) << "&";
   }
 
+  if(m_capacityReservationOptionsHasBeenSet)
+  {
+      Aws::StringStream capacityReservationOptionsLocationAndMemberSs;
+      capacityReservationOptionsLocationAndMemberSs << location << index << locationValue << ".CapacityReservationOptions";
+      m_capacityReservationOptions.OutputToStream(oStream, capacityReservationOptionsLocationAndMemberSs.str().c_str());
+  }
+
   if(m_singleInstanceTypeHasBeenSet)
   {
       oStream << location << index << locationValue << ".SingleInstanceType=" << std::boolalpha << m_singleInstanceType << "&";
@@ -132,6 +147,12 @@ void OnDemandOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* l
   if(m_allocationStrategyHasBeenSet)
   {
       oStream << location << ".AllocationStrategy=" << FleetOnDemandAllocationStrategyMapper::GetNameForFleetOnDemandAllocationStrategy(m_allocationStrategy) << "&";
+  }
+  if(m_capacityReservationOptionsHasBeenSet)
+  {
+      Aws::String capacityReservationOptionsLocationAndMember(location);
+      capacityReservationOptionsLocationAndMember += ".CapacityReservationOptions";
+      m_capacityReservationOptions.OutputToStream(oStream, capacityReservationOptionsLocationAndMember.c_str());
   }
   if(m_singleInstanceTypeHasBeenSet)
   {

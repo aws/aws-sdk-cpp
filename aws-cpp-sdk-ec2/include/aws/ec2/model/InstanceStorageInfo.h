@@ -52,22 +52,22 @@ namespace Model
 
 
     /**
-     * <p>The total size of the disks, in GiB.</p>
+     * <p>The total size of the disks, in GB.</p>
      */
     inline long long GetTotalSizeInGB() const{ return m_totalSizeInGB; }
 
     /**
-     * <p>The total size of the disks, in GiB.</p>
+     * <p>The total size of the disks, in GB.</p>
      */
     inline bool TotalSizeInGBHasBeenSet() const { return m_totalSizeInGBHasBeenSet; }
 
     /**
-     * <p>The total size of the disks, in GiB.</p>
+     * <p>The total size of the disks, in GB.</p>
      */
     inline void SetTotalSizeInGB(long long value) { m_totalSizeInGBHasBeenSet = true; m_totalSizeInGB = value; }
 
     /**
-     * <p>The total size of the disks, in GiB.</p>
+     * <p>The total size of the disks, in GB.</p>
      */
     inline InstanceStorageInfo& WithTotalSizeInGB(long long value) { SetTotalSizeInGB(value); return *this;}
 

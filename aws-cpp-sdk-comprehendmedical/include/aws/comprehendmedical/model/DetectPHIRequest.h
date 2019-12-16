@@ -46,49 +46,49 @@ namespace Model
 
     /**
      * <p> A UTF-8 text string containing the clinical content being examined for PHI
-     * entities. Each string must contain fewer than 20,000 bytes of characters. </p>
+     * entities. Each string must contain fewer than 20,000 bytes of characters.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
 
     /**
      * <p> A UTF-8 text string containing the clinical content being examined for PHI
-     * entities. Each string must contain fewer than 20,000 bytes of characters. </p>
+     * entities. Each string must contain fewer than 20,000 bytes of characters.</p>
      */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
      * <p> A UTF-8 text string containing the clinical content being examined for PHI
-     * entities. Each string must contain fewer than 20,000 bytes of characters. </p>
+     * entities. Each string must contain fewer than 20,000 bytes of characters.</p>
      */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
      * <p> A UTF-8 text string containing the clinical content being examined for PHI
-     * entities. Each string must contain fewer than 20,000 bytes of characters. </p>
+     * entities. Each string must contain fewer than 20,000 bytes of characters.</p>
      */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
 
     /**
      * <p> A UTF-8 text string containing the clinical content being examined for PHI
-     * entities. Each string must contain fewer than 20,000 bytes of characters. </p>
+     * entities. Each string must contain fewer than 20,000 bytes of characters.</p>
      */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
 
     /**
      * <p> A UTF-8 text string containing the clinical content being examined for PHI
-     * entities. Each string must contain fewer than 20,000 bytes of characters. </p>
+     * entities. Each string must contain fewer than 20,000 bytes of characters.</p>
      */
     inline DetectPHIRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
 
     /**
      * <p> A UTF-8 text string containing the clinical content being examined for PHI
-     * entities. Each string must contain fewer than 20,000 bytes of characters. </p>
+     * entities. Each string must contain fewer than 20,000 bytes of characters.</p>
      */
     inline DetectPHIRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
 
     /**
      * <p> A UTF-8 text string containing the clinical content being examined for PHI
-     * entities. Each string must contain fewer than 20,000 bytes of characters. </p>
+     * entities. Each string must contain fewer than 20,000 bytes of characters.</p>
      */
     inline DetectPHIRequest& WithText(const char* value) { SetText(value); return *this;}
 
