@@ -20,7 +20,9 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/model/TargetSelection.h>
 #include <aws/iot/model/AwsJobExecutionsRolloutConfig.h>
+#include <aws/iot/model/AwsJobPresignedUrlConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iot/model/Protocol.h>
 #include <aws/iot/model/OTAUpdateFile.h>
 #include <aws/iot/model/Tag.h>
 #include <utility>
@@ -177,6 +179,63 @@ namespace Model
 
 
     /**
+     * <p>The protocol used to transfer the OTA update image. Valid values are [HTTP],
+     * [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device
+     * can choose the protocol.</p>
+     */
+    inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
+
+    /**
+     * <p>The protocol used to transfer the OTA update image. Valid values are [HTTP],
+     * [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device
+     * can choose the protocol.</p>
+     */
+    inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
+
+    /**
+     * <p>The protocol used to transfer the OTA update image. Valid values are [HTTP],
+     * [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device
+     * can choose the protocol.</p>
+     */
+    inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
+
+    /**
+     * <p>The protocol used to transfer the OTA update image. Valid values are [HTTP],
+     * [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device
+     * can choose the protocol.</p>
+     */
+    inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
+
+    /**
+     * <p>The protocol used to transfer the OTA update image. Valid values are [HTTP],
+     * [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device
+     * can choose the protocol.</p>
+     */
+    inline CreateOTAUpdateRequest& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
+
+    /**
+     * <p>The protocol used to transfer the OTA update image. Valid values are [HTTP],
+     * [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device
+     * can choose the protocol.</p>
+     */
+    inline CreateOTAUpdateRequest& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
+
+    /**
+     * <p>The protocol used to transfer the OTA update image. Valid values are [HTTP],
+     * [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device
+     * can choose the protocol.</p>
+     */
+    inline CreateOTAUpdateRequest& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
+
+    /**
+     * <p>The protocol used to transfer the OTA update image. Valid values are [HTTP],
+     * [MQTT], [HTTP, MQTT]. When both HTTP and MQTT are specified, the target device
+     * can choose the protocol.</p>
+     */
+    inline CreateOTAUpdateRequest& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Specifies whether the update will continue to run (CONTINUOUS), or will be
      * complete after all the things specified as targets have completed the update
      * (SNAPSHOT). If continuous, the update may also be run on a thing when a change
@@ -266,6 +325,37 @@ namespace Model
      * <p>Configuration for the rollout of OTA updates.</p>
      */
     inline CreateOTAUpdateRequest& WithAwsJobExecutionsRolloutConfig(AwsJobExecutionsRolloutConfig&& value) { SetAwsJobExecutionsRolloutConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Configuration information for pre-signed URLs.</p>
+     */
+    inline const AwsJobPresignedUrlConfig& GetAwsJobPresignedUrlConfig() const{ return m_awsJobPresignedUrlConfig; }
+
+    /**
+     * <p>Configuration information for pre-signed URLs.</p>
+     */
+    inline bool AwsJobPresignedUrlConfigHasBeenSet() const { return m_awsJobPresignedUrlConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration information for pre-signed URLs.</p>
+     */
+    inline void SetAwsJobPresignedUrlConfig(const AwsJobPresignedUrlConfig& value) { m_awsJobPresignedUrlConfigHasBeenSet = true; m_awsJobPresignedUrlConfig = value; }
+
+    /**
+     * <p>Configuration information for pre-signed URLs.</p>
+     */
+    inline void SetAwsJobPresignedUrlConfig(AwsJobPresignedUrlConfig&& value) { m_awsJobPresignedUrlConfigHasBeenSet = true; m_awsJobPresignedUrlConfig = std::move(value); }
+
+    /**
+     * <p>Configuration information for pre-signed URLs.</p>
+     */
+    inline CreateOTAUpdateRequest& WithAwsJobPresignedUrlConfig(const AwsJobPresignedUrlConfig& value) { SetAwsJobPresignedUrlConfig(value); return *this;}
+
+    /**
+     * <p>Configuration information for pre-signed URLs.</p>
+     */
+    inline CreateOTAUpdateRequest& WithAwsJobPresignedUrlConfig(AwsJobPresignedUrlConfig&& value) { SetAwsJobPresignedUrlConfig(std::move(value)); return *this;}
 
 
     /**
@@ -467,11 +557,17 @@ namespace Model
     Aws::Vector<Aws::String> m_targets;
     bool m_targetsHasBeenSet;
 
+    Aws::Vector<Protocol> m_protocols;
+    bool m_protocolsHasBeenSet;
+
     TargetSelection m_targetSelection;
     bool m_targetSelectionHasBeenSet;
 
     AwsJobExecutionsRolloutConfig m_awsJobExecutionsRolloutConfig;
     bool m_awsJobExecutionsRolloutConfigHasBeenSet;
+
+    AwsJobPresignedUrlConfig m_awsJobPresignedUrlConfig;
+    bool m_awsJobPresignedUrlConfigHasBeenSet;
 
     Aws::Vector<OTAUpdateFile> m_files;
     bool m_filesHasBeenSet;

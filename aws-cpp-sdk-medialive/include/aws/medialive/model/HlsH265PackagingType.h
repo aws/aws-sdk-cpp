@@ -14,29 +14,28 @@
 */
 
 #pragma once
-#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace KinesisAnalyticsV2
+namespace MediaLive
 {
 namespace Model
 {
-  enum class RuntimeEnvironment
+  enum class HlsH265PackagingType
   {
     NOT_SET,
-    SQL_1_0,
-    FLINK_1_6,
-    FLINK_1_8
+    HEV1,
+    HVC1
   };
 
-namespace RuntimeEnvironmentMapper
+namespace HlsH265PackagingTypeMapper
 {
-AWS_KINESISANALYTICSV2_API RuntimeEnvironment GetRuntimeEnvironmentForName(const Aws::String& name);
+AWS_MEDIALIVE_API HlsH265PackagingType GetHlsH265PackagingTypeForName(const Aws::String& name);
 
-AWS_KINESISANALYTICSV2_API Aws::String GetNameForRuntimeEnvironment(RuntimeEnvironment value);
-} // namespace RuntimeEnvironmentMapper
+AWS_MEDIALIVE_API Aws::String GetNameForHlsH265PackagingType(HlsH265PackagingType value);
+} // namespace HlsH265PackagingTypeMapper
 } // namespace Model
-} // namespace KinesisAnalyticsV2
+} // namespace MediaLive
 } // namespace Aws

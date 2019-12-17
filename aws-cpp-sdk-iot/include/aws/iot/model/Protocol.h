@@ -14,29 +14,28 @@
 */
 
 #pragma once
-#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
+#include <aws/iot/IoT_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace KinesisAnalyticsV2
+namespace IoT
 {
 namespace Model
 {
-  enum class RuntimeEnvironment
+  enum class Protocol
   {
     NOT_SET,
-    SQL_1_0,
-    FLINK_1_6,
-    FLINK_1_8
+    MQTT,
+    HTTP
   };
 
-namespace RuntimeEnvironmentMapper
+namespace ProtocolMapper
 {
-AWS_KINESISANALYTICSV2_API RuntimeEnvironment GetRuntimeEnvironmentForName(const Aws::String& name);
+AWS_IOT_API Protocol GetProtocolForName(const Aws::String& name);
 
-AWS_KINESISANALYTICSV2_API Aws::String GetNameForRuntimeEnvironment(RuntimeEnvironment value);
-} // namespace RuntimeEnvironmentMapper
+AWS_IOT_API Aws::String GetNameForProtocol(Protocol value);
+} // namespace ProtocolMapper
 } // namespace Model
-} // namespace KinesisAnalyticsV2
+} // namespace IoT
 } // namespace Aws

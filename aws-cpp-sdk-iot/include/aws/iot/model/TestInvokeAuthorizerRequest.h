@@ -208,32 +208,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies a test MQTT authorization request.&gt;</p>
+     * <p>Specifies a test MQTT authorization request.</p>
      */
     inline const MqttContext& GetMqttContext() const{ return m_mqttContext; }
 
     /**
-     * <p>Specifies a test MQTT authorization request.&gt;</p>
+     * <p>Specifies a test MQTT authorization request.</p>
      */
     inline bool MqttContextHasBeenSet() const { return m_mqttContextHasBeenSet; }
 
     /**
-     * <p>Specifies a test MQTT authorization request.&gt;</p>
+     * <p>Specifies a test MQTT authorization request.</p>
      */
     inline void SetMqttContext(const MqttContext& value) { m_mqttContextHasBeenSet = true; m_mqttContext = value; }
 
     /**
-     * <p>Specifies a test MQTT authorization request.&gt;</p>
+     * <p>Specifies a test MQTT authorization request.</p>
      */
     inline void SetMqttContext(MqttContext&& value) { m_mqttContextHasBeenSet = true; m_mqttContext = std::move(value); }
 
     /**
-     * <p>Specifies a test MQTT authorization request.&gt;</p>
+     * <p>Specifies a test MQTT authorization request.</p>
      */
     inline TestInvokeAuthorizerRequest& WithMqttContext(const MqttContext& value) { SetMqttContext(value); return *this;}
 
     /**
-     * <p>Specifies a test MQTT authorization request.&gt;</p>
+     * <p>Specifies a test MQTT authorization request.</p>
      */
     inline TestInvokeAuthorizerRequest& WithMqttContext(MqttContext&& value) { SetMqttContext(std::move(value)); return *this;}
 

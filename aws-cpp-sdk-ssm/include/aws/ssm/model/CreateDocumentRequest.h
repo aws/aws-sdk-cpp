@@ -371,38 +371,38 @@ namespace Model
 
 
     /**
-     * <p>Specify the document format for the request. The document format can be
-     * either JSON or YAML. JSON is the default format.</p>
+     * <p>Specify the document format for the request. The document format can be JSON,
+     * YAML, or TEXT. JSON is the default format.</p>
      */
     inline const DocumentFormat& GetDocumentFormat() const{ return m_documentFormat; }
 
     /**
-     * <p>Specify the document format for the request. The document format can be
-     * either JSON or YAML. JSON is the default format.</p>
+     * <p>Specify the document format for the request. The document format can be JSON,
+     * YAML, or TEXT. JSON is the default format.</p>
      */
     inline bool DocumentFormatHasBeenSet() const { return m_documentFormatHasBeenSet; }
 
     /**
-     * <p>Specify the document format for the request. The document format can be
-     * either JSON or YAML. JSON is the default format.</p>
+     * <p>Specify the document format for the request. The document format can be JSON,
+     * YAML, or TEXT. JSON is the default format.</p>
      */
     inline void SetDocumentFormat(const DocumentFormat& value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
 
     /**
-     * <p>Specify the document format for the request. The document format can be
-     * either JSON or YAML. JSON is the default format.</p>
+     * <p>Specify the document format for the request. The document format can be JSON,
+     * YAML, or TEXT. JSON is the default format.</p>
      */
     inline void SetDocumentFormat(DocumentFormat&& value) { m_documentFormatHasBeenSet = true; m_documentFormat = std::move(value); }
 
     /**
-     * <p>Specify the document format for the request. The document format can be
-     * either JSON or YAML. JSON is the default format.</p>
+     * <p>Specify the document format for the request. The document format can be JSON,
+     * YAML, or TEXT. JSON is the default format.</p>
      */
     inline CreateDocumentRequest& WithDocumentFormat(const DocumentFormat& value) { SetDocumentFormat(value); return *this;}
 
     /**
-     * <p>Specify the document format for the request. The document format can be
-     * either JSON or YAML. JSON is the default format.</p>
+     * <p>Specify the document format for the request. The document format can be JSON,
+     * YAML, or TEXT. JSON is the default format.</p>
      */
     inline CreateDocumentRequest& WithDocumentFormat(DocumentFormat&& value) { SetDocumentFormat(std::move(value)); return *this;}
 

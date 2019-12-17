@@ -29,6 +29,7 @@ namespace Model
 {
 
 ScheduleActionSettings::ScheduleActionSettings() : 
+    m_hlsId3SegmentTaggingSettingsHasBeenSet(false),
     m_hlsTimedMetadataSettingsHasBeenSet(false),
     m_inputSwitchSettingsHasBeenSet(false),
     m_pauseStateSettingsHasBeenSet(false),
@@ -41,6 +42,7 @@ ScheduleActionSettings::ScheduleActionSettings() :
 }
 
 ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue) : 
+    m_hlsId3SegmentTaggingSettingsHasBeenSet(false),
     m_hlsTimedMetadataSettingsHasBeenSet(false),
     m_inputSwitchSettingsHasBeenSet(false),
     m_pauseStateSettingsHasBeenSet(false),
@@ -55,6 +57,13 @@ ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue) :
 
 ScheduleActionSettings& ScheduleActionSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("hlsId3SegmentTaggingSettings"))
+  {
+    m_hlsId3SegmentTaggingSettings = jsonValue.GetObject("hlsId3SegmentTaggingSettings");
+
+    m_hlsId3SegmentTaggingSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("hlsTimedMetadataSettings"))
   {
     m_hlsTimedMetadataSettings = jsonValue.GetObject("hlsTimedMetadataSettings");
@@ -117,6 +126,12 @@ ScheduleActionSettings& ScheduleActionSettings::operator =(JsonView jsonValue)
 JsonValue ScheduleActionSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_hlsId3SegmentTaggingSettingsHasBeenSet)
+  {
+   payload.WithObject("hlsId3SegmentTaggingSettings", m_hlsId3SegmentTaggingSettings.Jsonize());
+
+  }
 
   if(m_hlsTimedMetadataSettingsHasBeenSet)
   {

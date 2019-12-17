@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/HlsId3SegmentTaggingScheduleActionSettings.h>
 #include <aws/medialive/model/HlsTimedMetadataScheduleActionSettings.h>
 #include <aws/medialive/model/InputSwitchScheduleActionSettings.h>
 #include <aws/medialive/model/PauseStateScheduleActionSettings.h>
@@ -52,6 +53,37 @@ namespace Model
     ScheduleActionSettings(Aws::Utils::Json::JsonView jsonValue);
     ScheduleActionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Action to insert HLS ID3 segment tagging
+     */
+    inline const HlsId3SegmentTaggingScheduleActionSettings& GetHlsId3SegmentTaggingSettings() const{ return m_hlsId3SegmentTaggingSettings; }
+
+    /**
+     * Action to insert HLS ID3 segment tagging
+     */
+    inline bool HlsId3SegmentTaggingSettingsHasBeenSet() const { return m_hlsId3SegmentTaggingSettingsHasBeenSet; }
+
+    /**
+     * Action to insert HLS ID3 segment tagging
+     */
+    inline void SetHlsId3SegmentTaggingSettings(const HlsId3SegmentTaggingScheduleActionSettings& value) { m_hlsId3SegmentTaggingSettingsHasBeenSet = true; m_hlsId3SegmentTaggingSettings = value; }
+
+    /**
+     * Action to insert HLS ID3 segment tagging
+     */
+    inline void SetHlsId3SegmentTaggingSettings(HlsId3SegmentTaggingScheduleActionSettings&& value) { m_hlsId3SegmentTaggingSettingsHasBeenSet = true; m_hlsId3SegmentTaggingSettings = std::move(value); }
+
+    /**
+     * Action to insert HLS ID3 segment tagging
+     */
+    inline ScheduleActionSettings& WithHlsId3SegmentTaggingSettings(const HlsId3SegmentTaggingScheduleActionSettings& value) { SetHlsId3SegmentTaggingSettings(value); return *this;}
+
+    /**
+     * Action to insert HLS ID3 segment tagging
+     */
+    inline ScheduleActionSettings& WithHlsId3SegmentTaggingSettings(HlsId3SegmentTaggingScheduleActionSettings&& value) { SetHlsId3SegmentTaggingSettings(std::move(value)); return *this;}
 
 
     /**
@@ -302,6 +334,9 @@ namespace Model
     inline ScheduleActionSettings& WithStaticImageDeactivateSettings(StaticImageDeactivateScheduleActionSettings&& value) { SetStaticImageDeactivateSettings(std::move(value)); return *this;}
 
   private:
+
+    HlsId3SegmentTaggingScheduleActionSettings m_hlsId3SegmentTaggingSettings;
+    bool m_hlsId3SegmentTaggingSettingsHasBeenSet;
 
     HlsTimedMetadataScheduleActionSettings m_hlsTimedMetadataSettings;
     bool m_hlsTimedMetadataSettingsHasBeenSet;

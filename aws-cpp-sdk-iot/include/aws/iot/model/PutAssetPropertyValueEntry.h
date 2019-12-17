@@ -109,56 +109,56 @@ namespace Model
 
     /**
      * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline const Aws::String& GetAssetId() const{ return m_assetId; }
 
     /**
      * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
 
     /**
      * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
 
     /**
      * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
 
     /**
      * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline PutAssetPropertyValueEntry& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
 
     /**
      * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline PutAssetPropertyValueEntry& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AWS IoT SiteWise asset. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline PutAssetPropertyValueEntry& WithAssetId(const char* value) { SetAssetId(value); return *this;}
@@ -166,56 +166,56 @@ namespace Model
 
     /**
      * <p>The ID of the asset's property. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline const Aws::String& GetPropertyId() const{ return m_propertyId; }
 
     /**
      * <p>The ID of the asset's property. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline bool PropertyIdHasBeenSet() const { return m_propertyIdHasBeenSet; }
 
     /**
      * <p>The ID of the asset's property. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline void SetPropertyId(const Aws::String& value) { m_propertyIdHasBeenSet = true; m_propertyId = value; }
 
     /**
      * <p>The ID of the asset's property. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline void SetPropertyId(Aws::String&& value) { m_propertyIdHasBeenSet = true; m_propertyId = std::move(value); }
 
     /**
      * <p>The ID of the asset's property. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline void SetPropertyId(const char* value) { m_propertyIdHasBeenSet = true; m_propertyId.assign(value); }
 
     /**
      * <p>The ID of the asset's property. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline PutAssetPropertyValueEntry& WithPropertyId(const Aws::String& value) { SetPropertyId(value); return *this;}
 
     /**
      * <p>The ID of the asset's property. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline PutAssetPropertyValueEntry& WithPropertyId(Aws::String&& value) { SetPropertyId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the asset's property. You must specify either a
-     * <code>propertyAlias</code> or both an <code>analiasId</code> and a
+     * <code>propertyAlias</code> or both an <code>aliasId</code> and a
      * <code>propertyId</code>. Accepts substitution templates.</p>
      */
     inline PutAssetPropertyValueEntry& WithPropertyId(const char* value) { SetPropertyId(value); return *this;}

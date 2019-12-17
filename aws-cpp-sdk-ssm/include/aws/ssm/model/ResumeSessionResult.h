@@ -128,11 +128,11 @@ namespace Model
      * <p> <b>region</b> represents the Region identifier for an AWS Region supported
      * by AWS Systems Manager, such as <code>us-east-2</code> for the US East (Ohio)
      * Region. For a list of supported <b>region</b> values, see the <b>Region</b>
-     * column in the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ssm_region">AWS
-     * Systems Manager table of regions and endpoints</a> in the <i>AWS General
-     * Reference</i>.</p> <p> <b>session-id</b> represents the ID of a Session Manager
-     * session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+     * column in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
+     * Manager Service Endpoints</a> in the <i>AWS General Reference</i>.</p> <p>
+     * <b>session-id</b> represents the ID of a Session Manager session, such as
+     * <code>1a2b3c4dEXAMPLE</code>.</p>
      */
     inline const Aws::String& GetStreamUrl() const{ return m_streamUrl; }
 
@@ -143,11 +143,11 @@ namespace Model
      * <p> <b>region</b> represents the Region identifier for an AWS Region supported
      * by AWS Systems Manager, such as <code>us-east-2</code> for the US East (Ohio)
      * Region. For a list of supported <b>region</b> values, see the <b>Region</b>
-     * column in the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ssm_region">AWS
-     * Systems Manager table of regions and endpoints</a> in the <i>AWS General
-     * Reference</i>.</p> <p> <b>session-id</b> represents the ID of a Session Manager
-     * session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+     * column in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
+     * Manager Service Endpoints</a> in the <i>AWS General Reference</i>.</p> <p>
+     * <b>session-id</b> represents the ID of a Session Manager session, such as
+     * <code>1a2b3c4dEXAMPLE</code>.</p>
      */
     inline void SetStreamUrl(const Aws::String& value) { m_streamUrl = value; }
 
@@ -158,11 +158,11 @@ namespace Model
      * <p> <b>region</b> represents the Region identifier for an AWS Region supported
      * by AWS Systems Manager, such as <code>us-east-2</code> for the US East (Ohio)
      * Region. For a list of supported <b>region</b> values, see the <b>Region</b>
-     * column in the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ssm_region">AWS
-     * Systems Manager table of regions and endpoints</a> in the <i>AWS General
-     * Reference</i>.</p> <p> <b>session-id</b> represents the ID of a Session Manager
-     * session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+     * column in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
+     * Manager Service Endpoints</a> in the <i>AWS General Reference</i>.</p> <p>
+     * <b>session-id</b> represents the ID of a Session Manager session, such as
+     * <code>1a2b3c4dEXAMPLE</code>.</p>
      */
     inline void SetStreamUrl(Aws::String&& value) { m_streamUrl = std::move(value); }
 
@@ -173,11 +173,11 @@ namespace Model
      * <p> <b>region</b> represents the Region identifier for an AWS Region supported
      * by AWS Systems Manager, such as <code>us-east-2</code> for the US East (Ohio)
      * Region. For a list of supported <b>region</b> values, see the <b>Region</b>
-     * column in the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ssm_region">AWS
-     * Systems Manager table of regions and endpoints</a> in the <i>AWS General
-     * Reference</i>.</p> <p> <b>session-id</b> represents the ID of a Session Manager
-     * session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+     * column in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
+     * Manager Service Endpoints</a> in the <i>AWS General Reference</i>.</p> <p>
+     * <b>session-id</b> represents the ID of a Session Manager session, such as
+     * <code>1a2b3c4dEXAMPLE</code>.</p>
      */
     inline void SetStreamUrl(const char* value) { m_streamUrl.assign(value); }
 
@@ -188,11 +188,11 @@ namespace Model
      * <p> <b>region</b> represents the Region identifier for an AWS Region supported
      * by AWS Systems Manager, such as <code>us-east-2</code> for the US East (Ohio)
      * Region. For a list of supported <b>region</b> values, see the <b>Region</b>
-     * column in the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ssm_region">AWS
-     * Systems Manager table of regions and endpoints</a> in the <i>AWS General
-     * Reference</i>.</p> <p> <b>session-id</b> represents the ID of a Session Manager
-     * session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+     * column in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
+     * Manager Service Endpoints</a> in the <i>AWS General Reference</i>.</p> <p>
+     * <b>session-id</b> represents the ID of a Session Manager session, such as
+     * <code>1a2b3c4dEXAMPLE</code>.</p>
      */
     inline ResumeSessionResult& WithStreamUrl(const Aws::String& value) { SetStreamUrl(value); return *this;}
 
@@ -203,11 +203,11 @@ namespace Model
      * <p> <b>region</b> represents the Region identifier for an AWS Region supported
      * by AWS Systems Manager, such as <code>us-east-2</code> for the US East (Ohio)
      * Region. For a list of supported <b>region</b> values, see the <b>Region</b>
-     * column in the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ssm_region">AWS
-     * Systems Manager table of regions and endpoints</a> in the <i>AWS General
-     * Reference</i>.</p> <p> <b>session-id</b> represents the ID of a Session Manager
-     * session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+     * column in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
+     * Manager Service Endpoints</a> in the <i>AWS General Reference</i>.</p> <p>
+     * <b>session-id</b> represents the ID of a Session Manager session, such as
+     * <code>1a2b3c4dEXAMPLE</code>.</p>
      */
     inline ResumeSessionResult& WithStreamUrl(Aws::String&& value) { SetStreamUrl(std::move(value)); return *this;}
 
@@ -218,11 +218,11 @@ namespace Model
      * <p> <b>region</b> represents the Region identifier for an AWS Region supported
      * by AWS Systems Manager, such as <code>us-east-2</code> for the US East (Ohio)
      * Region. For a list of supported <b>region</b> values, see the <b>Region</b>
-     * column in the <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#ssm_region">AWS
-     * Systems Manager table of regions and endpoints</a> in the <i>AWS General
-     * Reference</i>.</p> <p> <b>session-id</b> represents the ID of a Session Manager
-     * session, such as <code>1a2b3c4dEXAMPLE</code>.</p>
+     * column in <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
+     * Manager Service Endpoints</a> in the <i>AWS General Reference</i>.</p> <p>
+     * <b>session-id</b> represents the ID of a Session Manager session, such as
+     * <code>1a2b3c4dEXAMPLE</code>.</p>
      */
     inline ResumeSessionResult& WithStreamUrl(const char* value) { SetStreamUrl(value); return *this;}
 

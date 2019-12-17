@@ -14,29 +14,28 @@
 */
 
 #pragma once
-#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace KinesisAnalyticsV2
+namespace MediaLive
 {
 namespace Model
 {
-  enum class RuntimeEnvironment
+  enum class HlsId3SegmentTaggingState
   {
     NOT_SET,
-    SQL_1_0,
-    FLINK_1_6,
-    FLINK_1_8
+    DISABLED,
+    ENABLED
   };
 
-namespace RuntimeEnvironmentMapper
+namespace HlsId3SegmentTaggingStateMapper
 {
-AWS_KINESISANALYTICSV2_API RuntimeEnvironment GetRuntimeEnvironmentForName(const Aws::String& name);
+AWS_MEDIALIVE_API HlsId3SegmentTaggingState GetHlsId3SegmentTaggingStateForName(const Aws::String& name);
 
-AWS_KINESISANALYTICSV2_API Aws::String GetNameForRuntimeEnvironment(RuntimeEnvironment value);
-} // namespace RuntimeEnvironmentMapper
+AWS_MEDIALIVE_API Aws::String GetNameForHlsId3SegmentTaggingState(HlsId3SegmentTaggingState value);
+} // namespace HlsId3SegmentTaggingStateMapper
 } // namespace Model
-} // namespace KinesisAnalyticsV2
+} // namespace MediaLive
 } // namespace Aws

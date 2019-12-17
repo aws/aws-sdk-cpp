@@ -3290,8 +3290,13 @@ namespace Model
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This field is not valid for containers in tasks
-     * using the Fargate launch type.</p> <p>This parameter maps to
-     * <code>SecurityOpt</code> in the <a
+     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
+     * can be used to reference a credential spec file when configuring a container for
+     * Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
+     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
+     * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3304,16 +3309,20 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note> <note> <p>This parameter is not supported for
-     * Windows containers.</p> </note>
+     * Developer Guide</i>.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetDockerSecurityOptions() const{ return m_dockerSecurityOptions; }
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This field is not valid for containers in tasks
-     * using the Fargate launch type.</p> <p>This parameter maps to
-     * <code>SecurityOpt</code> in the <a
+     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
+     * can be used to reference a credential spec file when configuring a container for
+     * Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
+     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
+     * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3326,16 +3335,20 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note> <note> <p>This parameter is not supported for
-     * Windows containers.</p> </note>
+     * Developer Guide</i>.</p> </note>
      */
     inline bool DockerSecurityOptionsHasBeenSet() const { return m_dockerSecurityOptionsHasBeenSet; }
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This field is not valid for containers in tasks
-     * using the Fargate launch type.</p> <p>This parameter maps to
-     * <code>SecurityOpt</code> in the <a
+     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
+     * can be used to reference a credential spec file when configuring a container for
+     * Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
+     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
+     * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3348,16 +3361,20 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note> <note> <p>This parameter is not supported for
-     * Windows containers.</p> </note>
+     * Developer Guide</i>.</p> </note>
      */
     inline void SetDockerSecurityOptions(const Aws::Vector<Aws::String>& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions = value; }
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This field is not valid for containers in tasks
-     * using the Fargate launch type.</p> <p>This parameter maps to
-     * <code>SecurityOpt</code> in the <a
+     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
+     * can be used to reference a credential spec file when configuring a container for
+     * Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
+     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
+     * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3370,16 +3387,20 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note> <note> <p>This parameter is not supported for
-     * Windows containers.</p> </note>
+     * Developer Guide</i>.</p> </note>
      */
     inline void SetDockerSecurityOptions(Aws::Vector<Aws::String>&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions = std::move(value); }
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This field is not valid for containers in tasks
-     * using the Fargate launch type.</p> <p>This parameter maps to
-     * <code>SecurityOpt</code> in the <a
+     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
+     * can be used to reference a credential spec file when configuring a container for
+     * Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
+     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
+     * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3392,16 +3413,20 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note> <note> <p>This parameter is not supported for
-     * Windows containers.</p> </note>
+     * Developer Guide</i>.</p> </note>
      */
     inline ContainerDefinition& WithDockerSecurityOptions(const Aws::Vector<Aws::String>& value) { SetDockerSecurityOptions(value); return *this;}
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This field is not valid for containers in tasks
-     * using the Fargate launch type.</p> <p>This parameter maps to
-     * <code>SecurityOpt</code> in the <a
+     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
+     * can be used to reference a credential spec file when configuring a container for
+     * Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
+     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
+     * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3414,16 +3439,20 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note> <note> <p>This parameter is not supported for
-     * Windows containers.</p> </note>
+     * Developer Guide</i>.</p> </note>
      */
     inline ContainerDefinition& WithDockerSecurityOptions(Aws::Vector<Aws::String>&& value) { SetDockerSecurityOptions(std::move(value)); return *this;}
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This field is not valid for containers in tasks
-     * using the Fargate launch type.</p> <p>This parameter maps to
-     * <code>SecurityOpt</code> in the <a
+     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
+     * can be used to reference a credential spec file when configuring a container for
+     * Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
+     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
+     * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3436,16 +3465,20 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note> <note> <p>This parameter is not supported for
-     * Windows containers.</p> </note>
+     * Developer Guide</i>.</p> </note>
      */
     inline ContainerDefinition& AddDockerSecurityOptions(const Aws::String& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(value); return *this; }
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This field is not valid for containers in tasks
-     * using the Fargate launch type.</p> <p>This parameter maps to
-     * <code>SecurityOpt</code> in the <a
+     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
+     * can be used to reference a credential spec file when configuring a container for
+     * Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
+     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
+     * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3458,16 +3491,20 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note> <note> <p>This parameter is not supported for
-     * Windows containers.</p> </note>
+     * Developer Guide</i>.</p> </note>
      */
     inline ContainerDefinition& AddDockerSecurityOptions(Aws::String&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of strings to provide custom labels for SELinux and AppArmor
      * multi-level security systems. This field is not valid for containers in tasks
-     * using the Fargate launch type.</p> <p>This parameter maps to
-     * <code>SecurityOpt</code> in the <a
+     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
+     * can be used to reference a credential spec file when configuring a container for
+     * Active Directory authentication. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
+     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
+     * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
      * a container</a> section of the <a
      * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
@@ -3480,8 +3517,7 @@ namespace Model
      * see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
-     * Developer Guide</i>.</p> </note> <note> <p>This parameter is not supported for
-     * Windows containers.</p> </note>
+     * Developer Guide</i>.</p> </note>
      */
     inline ContainerDefinition& AddDockerSecurityOptions(const char* value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(value); return *this; }
 

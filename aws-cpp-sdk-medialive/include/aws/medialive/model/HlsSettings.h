@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/model/AudioOnlyHlsSettings.h>
+#include <aws/medialive/model/Fmp4HlsSettings.h>
 #include <aws/medialive/model/StandardHlsSettings.h>
 #include <utility>
 
@@ -68,6 +69,25 @@ namespace Model
 
 
     
+    inline const Fmp4HlsSettings& GetFmp4HlsSettings() const{ return m_fmp4HlsSettings; }
+
+    
+    inline bool Fmp4HlsSettingsHasBeenSet() const { return m_fmp4HlsSettingsHasBeenSet; }
+
+    
+    inline void SetFmp4HlsSettings(const Fmp4HlsSettings& value) { m_fmp4HlsSettingsHasBeenSet = true; m_fmp4HlsSettings = value; }
+
+    
+    inline void SetFmp4HlsSettings(Fmp4HlsSettings&& value) { m_fmp4HlsSettingsHasBeenSet = true; m_fmp4HlsSettings = std::move(value); }
+
+    
+    inline HlsSettings& WithFmp4HlsSettings(const Fmp4HlsSettings& value) { SetFmp4HlsSettings(value); return *this;}
+
+    
+    inline HlsSettings& WithFmp4HlsSettings(Fmp4HlsSettings&& value) { SetFmp4HlsSettings(std::move(value)); return *this;}
+
+
+    
     inline const StandardHlsSettings& GetStandardHlsSettings() const{ return m_standardHlsSettings; }
 
     
@@ -89,6 +109,9 @@ namespace Model
 
     AudioOnlyHlsSettings m_audioOnlyHlsSettings;
     bool m_audioOnlyHlsSettingsHasBeenSet;
+
+    Fmp4HlsSettings m_fmp4HlsSettings;
+    bool m_fmp4HlsSettingsHasBeenSet;
 
     StandardHlsSettings m_standardHlsSettings;
     bool m_standardHlsSettingsHasBeenSet;

@@ -8288,14 +8288,18 @@ namespace Model
          * Indicates whether your account can launch instances into EC2-Classic and
          * EC2-VPC, or only into EC2-VPC.</p> </li> <li> <p> <code>default-vpc</code>: The
          * ID of the default VPC for your account, or <code>none</code>.</p> </li> <li> <p>
-         * <code>max-instances</code>: The maximum number of On-Demand Instances that you
-         * can run.</p> </li> <li> <p> <code>vpc-max-security-groups-per-interface</code>:
-         * The maximum number of security groups that you can assign to a network
-         * interface.</p> </li> <li> <p> <code>max-elastic-ips</code>: The maximum number
-         * of Elastic IP addresses that you can allocate for use with EC2-Classic. </p>
-         * </li> <li> <p> <code>vpc-max-elastic-ips</code>: The maximum number of Elastic
-         * IP addresses that you can allocate for use with EC2-VPC.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <code>max-instances</code>: This attribute is no longer supported. The returned
+         * value does not reflect your actual vCPU limit for running On-Demand Instances.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-on-demand-instances.html#ec2-on-demand-instances-limits">On-Demand
+         * Instance Limits</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * </li> <li> <p> <code>vpc-max-security-groups-per-interface</code>: The maximum
+         * number of security groups that you can assign to a network interface.</p> </li>
+         * <li> <p> <code>max-elastic-ips</code>: The maximum number of Elastic IP
+         * addresses that you can allocate for use with EC2-Classic. </p> </li> <li> <p>
+         * <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses
+         * that you can allocate for use with EC2-VPC.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">AWS
          * API Reference</a></p>
          */
@@ -8307,14 +8311,18 @@ namespace Model
          * Indicates whether your account can launch instances into EC2-Classic and
          * EC2-VPC, or only into EC2-VPC.</p> </li> <li> <p> <code>default-vpc</code>: The
          * ID of the default VPC for your account, or <code>none</code>.</p> </li> <li> <p>
-         * <code>max-instances</code>: The maximum number of On-Demand Instances that you
-         * can run.</p> </li> <li> <p> <code>vpc-max-security-groups-per-interface</code>:
-         * The maximum number of security groups that you can assign to a network
-         * interface.</p> </li> <li> <p> <code>max-elastic-ips</code>: The maximum number
-         * of Elastic IP addresses that you can allocate for use with EC2-Classic. </p>
-         * </li> <li> <p> <code>vpc-max-elastic-ips</code>: The maximum number of Elastic
-         * IP addresses that you can allocate for use with EC2-VPC.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <code>max-instances</code>: This attribute is no longer supported. The returned
+         * value does not reflect your actual vCPU limit for running On-Demand Instances.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-on-demand-instances.html#ec2-on-demand-instances-limits">On-Demand
+         * Instance Limits</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * </li> <li> <p> <code>vpc-max-security-groups-per-interface</code>: The maximum
+         * number of security groups that you can assign to a network interface.</p> </li>
+         * <li> <p> <code>max-elastic-ips</code>: The maximum number of Elastic IP
+         * addresses that you can allocate for use with EC2-Classic. </p> </li> <li> <p>
+         * <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses
+         * that you can allocate for use with EC2-VPC.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">AWS
          * API Reference</a></p>
          *
@@ -8328,14 +8336,18 @@ namespace Model
          * Indicates whether your account can launch instances into EC2-Classic and
          * EC2-VPC, or only into EC2-VPC.</p> </li> <li> <p> <code>default-vpc</code>: The
          * ID of the default VPC for your account, or <code>none</code>.</p> </li> <li> <p>
-         * <code>max-instances</code>: The maximum number of On-Demand Instances that you
-         * can run.</p> </li> <li> <p> <code>vpc-max-security-groups-per-interface</code>:
-         * The maximum number of security groups that you can assign to a network
-         * interface.</p> </li> <li> <p> <code>max-elastic-ips</code>: The maximum number
-         * of Elastic IP addresses that you can allocate for use with EC2-Classic. </p>
-         * </li> <li> <p> <code>vpc-max-elastic-ips</code>: The maximum number of Elastic
-         * IP addresses that you can allocate for use with EC2-VPC.</p> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * <code>max-instances</code>: This attribute is no longer supported. The returned
+         * value does not reflect your actual vCPU limit for running On-Demand Instances.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-on-demand-instances.html#ec2-on-demand-instances-limits">On-Demand
+         * Instance Limits</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+         * </li> <li> <p> <code>vpc-max-security-groups-per-interface</code>: The maximum
+         * number of security groups that you can assign to a network interface.</p> </li>
+         * <li> <p> <code>max-elastic-ips</code>: The maximum number of Elastic IP
+         * addresses that you can allocate for use with EC2-Classic. </p> </li> <li> <p>
+         * <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses
+         * that you can allocate for use with EC2-VPC.</p> </li> </ul><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">AWS
          * API Reference</a></p>
          *
@@ -9147,7 +9159,7 @@ namespace Model
         virtual void DescribeFleetInstancesAsync(const Model::DescribeFleetInstancesRequest& request, const DescribeFleetInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the specified EC2 Fleets or all your EC2 Fleets.</p><p><h3>See
+         * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
          * API Reference</a></p>
@@ -9155,7 +9167,7 @@ namespace Model
         virtual Model::DescribeFleetsOutcome DescribeFleets(const Model::DescribeFleetsRequest& request) const;
 
         /**
-         * <p>Describes the specified EC2 Fleets or all your EC2 Fleets.</p><p><h3>See
+         * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
          * API Reference</a></p>
@@ -9165,7 +9177,7 @@ namespace Model
         virtual Model::DescribeFleetsOutcomeCallable DescribeFleetsCallable(const Model::DescribeFleetsRequest& request) const;
 
         /**
-         * <p>Describes the specified EC2 Fleets or all your EC2 Fleets.</p><p><h3>See
+         * <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleets">AWS
          * API Reference</a></p>

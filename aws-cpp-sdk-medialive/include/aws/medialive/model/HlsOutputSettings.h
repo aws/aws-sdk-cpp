@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/HlsH265PackagingType.h>
 #include <aws/medialive/model/HlsSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
@@ -46,6 +47,49 @@ namespace Model
     HlsOutputSettings(Aws::Utils::Json::JsonView jsonValue);
     HlsOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Only applicable when this output is referencing an H.265 video
+     * description.
+Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+     */
+    inline const HlsH265PackagingType& GetH265PackagingType() const{ return m_h265PackagingType; }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video
+     * description.
+Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+     */
+    inline bool H265PackagingTypeHasBeenSet() const { return m_h265PackagingTypeHasBeenSet; }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video
+     * description.
+Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+     */
+    inline void SetH265PackagingType(const HlsH265PackagingType& value) { m_h265PackagingTypeHasBeenSet = true; m_h265PackagingType = value; }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video
+     * description.
+Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+     */
+    inline void SetH265PackagingType(HlsH265PackagingType&& value) { m_h265PackagingTypeHasBeenSet = true; m_h265PackagingType = std::move(value); }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video
+     * description.
+Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+     */
+    inline HlsOutputSettings& WithH265PackagingType(const HlsH265PackagingType& value) { SetH265PackagingType(value); return *this;}
+
+    /**
+     * Only applicable when this output is referencing an H.265 video
+     * description.
+Specifies whether MP4 segments should be packaged as HEV1 or HVC1.
+     */
+    inline HlsOutputSettings& WithH265PackagingType(HlsH265PackagingType&& value) { SetH265PackagingType(std::move(value)); return *this;}
 
 
     /**
@@ -175,6 +219,9 @@ namespace Model
     inline HlsOutputSettings& WithSegmentModifier(const char* value) { SetSegmentModifier(value); return *this;}
 
   private:
+
+    HlsH265PackagingType m_h265PackagingType;
+    bool m_h265PackagingTypeHasBeenSet;
 
     HlsSettings m_hlsSettings;
     bool m_hlsSettingsHasBeenSet;

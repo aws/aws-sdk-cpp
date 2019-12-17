@@ -54,43 +54,43 @@ namespace Model
 
     /**
      * <p>The launch templates and overrides that were used for launching the
-     * instances. Any parameters that you specify in the Overrides override the same
-     * parameters in the launch template.</p>
+     * instances. The values that you specify in the Overrides replace the values in
+     * the launch template.</p>
      */
     inline const LaunchTemplateAndOverridesResponse& GetLaunchTemplateAndOverrides() const{ return m_launchTemplateAndOverrides; }
 
     /**
      * <p>The launch templates and overrides that were used for launching the
-     * instances. Any parameters that you specify in the Overrides override the same
-     * parameters in the launch template.</p>
+     * instances. The values that you specify in the Overrides replace the values in
+     * the launch template.</p>
      */
     inline bool LaunchTemplateAndOverridesHasBeenSet() const { return m_launchTemplateAndOverridesHasBeenSet; }
 
     /**
      * <p>The launch templates and overrides that were used for launching the
-     * instances. Any parameters that you specify in the Overrides override the same
-     * parameters in the launch template.</p>
+     * instances. The values that you specify in the Overrides replace the values in
+     * the launch template.</p>
      */
     inline void SetLaunchTemplateAndOverrides(const LaunchTemplateAndOverridesResponse& value) { m_launchTemplateAndOverridesHasBeenSet = true; m_launchTemplateAndOverrides = value; }
 
     /**
      * <p>The launch templates and overrides that were used for launching the
-     * instances. Any parameters that you specify in the Overrides override the same
-     * parameters in the launch template.</p>
+     * instances. The values that you specify in the Overrides replace the values in
+     * the launch template.</p>
      */
     inline void SetLaunchTemplateAndOverrides(LaunchTemplateAndOverridesResponse&& value) { m_launchTemplateAndOverridesHasBeenSet = true; m_launchTemplateAndOverrides = std::move(value); }
 
     /**
      * <p>The launch templates and overrides that were used for launching the
-     * instances. Any parameters that you specify in the Overrides override the same
-     * parameters in the launch template.</p>
+     * instances. The values that you specify in the Overrides replace the values in
+     * the launch template.</p>
      */
     inline CreateFleetError& WithLaunchTemplateAndOverrides(const LaunchTemplateAndOverridesResponse& value) { SetLaunchTemplateAndOverrides(value); return *this;}
 
     /**
      * <p>The launch templates and overrides that were used for launching the
-     * instances. Any parameters that you specify in the Overrides override the same
-     * parameters in the launch template.</p>
+     * instances. The values that you specify in the Overrides replace the values in
+     * the launch template.</p>
      */
     inline CreateFleetError& WithLaunchTemplateAndOverrides(LaunchTemplateAndOverridesResponse&& value) { SetLaunchTemplateAndOverrides(std::move(value)); return *this;}
 
@@ -199,7 +199,7 @@ namespace Model
 
     /**
      * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see ee <a
+     * more information about error messages, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
      * Codes</a>.</p>
      */
@@ -207,7 +207,7 @@ namespace Model
 
     /**
      * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see ee <a
+     * more information about error messages, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
      * Codes</a>.</p>
      */
@@ -215,7 +215,7 @@ namespace Model
 
     /**
      * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see ee <a
+     * more information about error messages, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
      * Codes</a>.</p>
      */
@@ -223,7 +223,7 @@ namespace Model
 
     /**
      * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see ee <a
+     * more information about error messages, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
      * Codes</a>.</p>
      */
@@ -231,7 +231,7 @@ namespace Model
 
     /**
      * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see ee <a
+     * more information about error messages, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
      * Codes</a>.</p>
      */
@@ -239,7 +239,7 @@ namespace Model
 
     /**
      * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see ee <a
+     * more information about error messages, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
      * Codes</a>.</p>
      */
@@ -247,7 +247,7 @@ namespace Model
 
     /**
      * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see ee <a
+     * more information about error messages, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
      * Codes</a>.</p>
      */
@@ -255,7 +255,7 @@ namespace Model
 
     /**
      * <p>The error message that describes why the instance could not be launched. For
-     * more information about error messages, see ee <a
+     * more information about error messages, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html.html">Error
      * Codes</a>.</p>
      */

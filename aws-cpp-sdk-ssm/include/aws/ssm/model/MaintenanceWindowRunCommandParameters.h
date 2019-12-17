@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/CloudWatchOutputConfig.h>
 #include <aws/ssm/model/DocumentHashType.h>
 #include <aws/ssm/model/NotificationConfig.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
@@ -109,6 +110,25 @@ namespace Model
     inline MaintenanceWindowRunCommandParameters& WithComment(const char* value) { SetComment(value); return *this;}
 
 
+    
+    inline const CloudWatchOutputConfig& GetCloudWatchOutputConfig() const{ return m_cloudWatchOutputConfig; }
+
+    
+    inline bool CloudWatchOutputConfigHasBeenSet() const { return m_cloudWatchOutputConfigHasBeenSet; }
+
+    
+    inline void SetCloudWatchOutputConfig(const CloudWatchOutputConfig& value) { m_cloudWatchOutputConfigHasBeenSet = true; m_cloudWatchOutputConfig = value; }
+
+    
+    inline void SetCloudWatchOutputConfig(CloudWatchOutputConfig&& value) { m_cloudWatchOutputConfigHasBeenSet = true; m_cloudWatchOutputConfig = std::move(value); }
+
+    
+    inline MaintenanceWindowRunCommandParameters& WithCloudWatchOutputConfig(const CloudWatchOutputConfig& value) { SetCloudWatchOutputConfig(value); return *this;}
+
+    
+    inline MaintenanceWindowRunCommandParameters& WithCloudWatchOutputConfig(CloudWatchOutputConfig&& value) { SetCloudWatchOutputConfig(std::move(value)); return *this;}
+
+
     /**
      * <p>The SHA-256 or SHA-1 hash created by the system when the document was
      * created. SHA-1 hashes have been deprecated.</p>
@@ -187,6 +207,87 @@ namespace Model
      * <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
      */
     inline MaintenanceWindowRunCommandParameters& WithDocumentHashType(DocumentHashType&& value) { SetDocumentHashType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
+     */
+    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
+     */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
+     */
+    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
+     */
+    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
+     */
+    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
+     */
+    inline MaintenanceWindowRunCommandParameters& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
+     */
+    inline MaintenanceWindowRunCommandParameters& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The SSM document version to use in the request. You can specify $DEFAULT,
+     * $LATEST, or a specific version number. If you run commands by using the AWS CLI,
+     * then you must escape the first two options by using a backslash. If you specify
+     * a version number, then you don't need to use the backslash. For example:</p>
+     * <p>--document-version "\$DEFAULT"</p> <p>--document-version "\$LATEST"</p>
+     * <p>--document-version "3"</p>
+     */
+    inline MaintenanceWindowRunCommandParameters& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
 
 
     /**
@@ -447,11 +548,17 @@ namespace Model
     Aws::String m_comment;
     bool m_commentHasBeenSet;
 
+    CloudWatchOutputConfig m_cloudWatchOutputConfig;
+    bool m_cloudWatchOutputConfigHasBeenSet;
+
     Aws::String m_documentHash;
     bool m_documentHashHasBeenSet;
 
     DocumentHashType m_documentHashType;
     bool m_documentHashTypeHasBeenSet;
+
+    Aws::String m_documentVersion;
+    bool m_documentVersionHasBeenSet;
 
     NotificationConfig m_notificationConfig;
     bool m_notificationConfigHasBeenSet;

@@ -30,12 +30,14 @@ namespace Model
 
 HlsSettings::HlsSettings() : 
     m_audioOnlyHlsSettingsHasBeenSet(false),
+    m_fmp4HlsSettingsHasBeenSet(false),
     m_standardHlsSettingsHasBeenSet(false)
 {
 }
 
 HlsSettings::HlsSettings(JsonView jsonValue) : 
     m_audioOnlyHlsSettingsHasBeenSet(false),
+    m_fmp4HlsSettingsHasBeenSet(false),
     m_standardHlsSettingsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -48,6 +50,13 @@ HlsSettings& HlsSettings::operator =(JsonView jsonValue)
     m_audioOnlyHlsSettings = jsonValue.GetObject("audioOnlyHlsSettings");
 
     m_audioOnlyHlsSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fmp4HlsSettings"))
+  {
+    m_fmp4HlsSettings = jsonValue.GetObject("fmp4HlsSettings");
+
+    m_fmp4HlsSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("standardHlsSettings"))
@@ -67,6 +76,12 @@ JsonValue HlsSettings::Jsonize() const
   if(m_audioOnlyHlsSettingsHasBeenSet)
   {
    payload.WithObject("audioOnlyHlsSettings", m_audioOnlyHlsSettings.Jsonize());
+
+  }
+
+  if(m_fmp4HlsSettingsHasBeenSet)
+  {
+   payload.WithObject("fmp4HlsSettings", m_fmp4HlsSettings.Jsonize());
 
   }
 

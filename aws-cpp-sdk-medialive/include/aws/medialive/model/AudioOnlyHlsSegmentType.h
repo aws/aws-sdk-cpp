@@ -14,29 +14,28 @@
 */
 
 #pragma once
-#include <aws/kinesisanalyticsv2/KinesisAnalyticsV2_EXPORTS.h>
+#include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace KinesisAnalyticsV2
+namespace MediaLive
 {
 namespace Model
 {
-  enum class RuntimeEnvironment
+  enum class AudioOnlyHlsSegmentType
   {
     NOT_SET,
-    SQL_1_0,
-    FLINK_1_6,
-    FLINK_1_8
+    AAC,
+    FMP4
   };
 
-namespace RuntimeEnvironmentMapper
+namespace AudioOnlyHlsSegmentTypeMapper
 {
-AWS_KINESISANALYTICSV2_API RuntimeEnvironment GetRuntimeEnvironmentForName(const Aws::String& name);
+AWS_MEDIALIVE_API AudioOnlyHlsSegmentType GetAudioOnlyHlsSegmentTypeForName(const Aws::String& name);
 
-AWS_KINESISANALYTICSV2_API Aws::String GetNameForRuntimeEnvironment(RuntimeEnvironment value);
-} // namespace RuntimeEnvironmentMapper
+AWS_MEDIALIVE_API Aws::String GetNameForAudioOnlyHlsSegmentType(AudioOnlyHlsSegmentType value);
+} // namespace AudioOnlyHlsSegmentTypeMapper
 } // namespace Model
-} // namespace KinesisAnalyticsV2
+} // namespace MediaLive
 } // namespace Aws

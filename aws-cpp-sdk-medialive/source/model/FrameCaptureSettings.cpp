@@ -30,13 +30,17 @@ namespace Model
 
 FrameCaptureSettings::FrameCaptureSettings() : 
     m_captureInterval(0),
-    m_captureIntervalHasBeenSet(false)
+    m_captureIntervalHasBeenSet(false),
+    m_captureIntervalUnits(FrameCaptureIntervalUnit::NOT_SET),
+    m_captureIntervalUnitsHasBeenSet(false)
 {
 }
 
 FrameCaptureSettings::FrameCaptureSettings(JsonView jsonValue) : 
     m_captureInterval(0),
-    m_captureIntervalHasBeenSet(false)
+    m_captureIntervalHasBeenSet(false),
+    m_captureIntervalUnits(FrameCaptureIntervalUnit::NOT_SET),
+    m_captureIntervalUnitsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +54,13 @@ FrameCaptureSettings& FrameCaptureSettings::operator =(JsonView jsonValue)
     m_captureIntervalHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("captureIntervalUnits"))
+  {
+    m_captureIntervalUnits = FrameCaptureIntervalUnitMapper::GetFrameCaptureIntervalUnitForName(jsonValue.GetString("captureIntervalUnits"));
+
+    m_captureIntervalUnitsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -61,6 +72,11 @@ JsonValue FrameCaptureSettings::Jsonize() const
   {
    payload.WithInteger("captureInterval", m_captureInterval);
 
+  }
+
+  if(m_captureIntervalUnitsHasBeenSet)
+  {
+   payload.WithString("captureIntervalUnits", FrameCaptureIntervalUnitMapper::GetNameForFrameCaptureIntervalUnit(m_captureIntervalUnits));
   }
 
   return payload;

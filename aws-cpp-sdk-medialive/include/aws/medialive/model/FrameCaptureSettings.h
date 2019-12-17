@@ -15,6 +15,8 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/FrameCaptureIntervalUnit.h>
+#include <utility>
 
 namespace Aws
 {
@@ -73,10 +75,44 @@ namespace Model
      */
     inline FrameCaptureSettings& WithCaptureInterval(int value) { SetCaptureInterval(value); return *this;}
 
+
+    /**
+     * Unit for the frame capture interval.
+     */
+    inline const FrameCaptureIntervalUnit& GetCaptureIntervalUnits() const{ return m_captureIntervalUnits; }
+
+    /**
+     * Unit for the frame capture interval.
+     */
+    inline bool CaptureIntervalUnitsHasBeenSet() const { return m_captureIntervalUnitsHasBeenSet; }
+
+    /**
+     * Unit for the frame capture interval.
+     */
+    inline void SetCaptureIntervalUnits(const FrameCaptureIntervalUnit& value) { m_captureIntervalUnitsHasBeenSet = true; m_captureIntervalUnits = value; }
+
+    /**
+     * Unit for the frame capture interval.
+     */
+    inline void SetCaptureIntervalUnits(FrameCaptureIntervalUnit&& value) { m_captureIntervalUnitsHasBeenSet = true; m_captureIntervalUnits = std::move(value); }
+
+    /**
+     * Unit for the frame capture interval.
+     */
+    inline FrameCaptureSettings& WithCaptureIntervalUnits(const FrameCaptureIntervalUnit& value) { SetCaptureIntervalUnits(value); return *this;}
+
+    /**
+     * Unit for the frame capture interval.
+     */
+    inline FrameCaptureSettings& WithCaptureIntervalUnits(FrameCaptureIntervalUnit&& value) { SetCaptureIntervalUnits(std::move(value)); return *this;}
+
   private:
 
     int m_captureInterval;
     bool m_captureIntervalHasBeenSet;
+
+    FrameCaptureIntervalUnit m_captureIntervalUnits;
+    bool m_captureIntervalUnitsHasBeenSet;
   };
 
 } // namespace Model

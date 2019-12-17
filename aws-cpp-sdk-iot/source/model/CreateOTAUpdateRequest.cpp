@@ -26,9 +26,11 @@ CreateOTAUpdateRequest::CreateOTAUpdateRequest() :
     m_otaUpdateIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_targetsHasBeenSet(false),
+    m_protocolsHasBeenSet(false),
     m_targetSelection(TargetSelection::NOT_SET),
     m_targetSelectionHasBeenSet(false),
     m_awsJobExecutionsRolloutConfigHasBeenSet(false),
+    m_awsJobPresignedUrlConfigHasBeenSet(false),
     m_filesHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_additionalParametersHasBeenSet(false),
@@ -57,6 +59,17 @@ Aws::String CreateOTAUpdateRequest::SerializePayload() const
 
   }
 
+  if(m_protocolsHasBeenSet)
+  {
+   Array<JsonValue> protocolsJsonList(m_protocols.size());
+   for(unsigned protocolsIndex = 0; protocolsIndex < protocolsJsonList.GetLength(); ++protocolsIndex)
+   {
+     protocolsJsonList[protocolsIndex].AsString(ProtocolMapper::GetNameForProtocol(m_protocols[protocolsIndex]));
+   }
+   payload.WithArray("protocols", std::move(protocolsJsonList));
+
+  }
+
   if(m_targetSelectionHasBeenSet)
   {
    payload.WithString("targetSelection", TargetSelectionMapper::GetNameForTargetSelection(m_targetSelection));
@@ -65,6 +78,12 @@ Aws::String CreateOTAUpdateRequest::SerializePayload() const
   if(m_awsJobExecutionsRolloutConfigHasBeenSet)
   {
    payload.WithObject("awsJobExecutionsRolloutConfig", m_awsJobExecutionsRolloutConfig.Jsonize());
+
+  }
+
+  if(m_awsJobPresignedUrlConfigHasBeenSet)
+  {
+   payload.WithObject("awsJobPresignedUrlConfig", m_awsJobPresignedUrlConfig.Jsonize());
 
   }
 

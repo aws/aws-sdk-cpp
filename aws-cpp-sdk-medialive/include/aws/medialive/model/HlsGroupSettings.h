@@ -24,6 +24,7 @@
 #include <aws/medialive/model/HlsDirectoryStructure.h>
 #include <aws/medialive/model/HlsEncryptionType.h>
 #include <aws/medialive/model/HlsCdnSettings.h>
+#include <aws/medialive/model/HlsId3SegmentTaggingState.h>
 #include <aws/medialive/model/IFrameOnlyPlaylistType.h>
 #include <aws/medialive/model/InputLossActionForHlsOut.h>
 #include <aws/medialive/model/HlsIvInManifest.h>
@@ -179,6 +180,87 @@ namespace Model
 
 
     /**
+     * Optional. One value per output group.
+
+This field is required only if you are
+     * completing Base URL content A, and the downstream system has notified you that
+     * the media files for pipeline 1 of all outputs are in a location different from
+     * the media files for pipeline 0.
+     */
+    inline const Aws::String& GetBaseUrlContent1() const{ return m_baseUrlContent1; }
+
+    /**
+     * Optional. One value per output group.
+
+This field is required only if you are
+     * completing Base URL content A, and the downstream system has notified you that
+     * the media files for pipeline 1 of all outputs are in a location different from
+     * the media files for pipeline 0.
+     */
+    inline bool BaseUrlContent1HasBeenSet() const { return m_baseUrlContent1HasBeenSet; }
+
+    /**
+     * Optional. One value per output group.
+
+This field is required only if you are
+     * completing Base URL content A, and the downstream system has notified you that
+     * the media files for pipeline 1 of all outputs are in a location different from
+     * the media files for pipeline 0.
+     */
+    inline void SetBaseUrlContent1(const Aws::String& value) { m_baseUrlContent1HasBeenSet = true; m_baseUrlContent1 = value; }
+
+    /**
+     * Optional. One value per output group.
+
+This field is required only if you are
+     * completing Base URL content A, and the downstream system has notified you that
+     * the media files for pipeline 1 of all outputs are in a location different from
+     * the media files for pipeline 0.
+     */
+    inline void SetBaseUrlContent1(Aws::String&& value) { m_baseUrlContent1HasBeenSet = true; m_baseUrlContent1 = std::move(value); }
+
+    /**
+     * Optional. One value per output group.
+
+This field is required only if you are
+     * completing Base URL content A, and the downstream system has notified you that
+     * the media files for pipeline 1 of all outputs are in a location different from
+     * the media files for pipeline 0.
+     */
+    inline void SetBaseUrlContent1(const char* value) { m_baseUrlContent1HasBeenSet = true; m_baseUrlContent1.assign(value); }
+
+    /**
+     * Optional. One value per output group.
+
+This field is required only if you are
+     * completing Base URL content A, and the downstream system has notified you that
+     * the media files for pipeline 1 of all outputs are in a location different from
+     * the media files for pipeline 0.
+     */
+    inline HlsGroupSettings& WithBaseUrlContent1(const Aws::String& value) { SetBaseUrlContent1(value); return *this;}
+
+    /**
+     * Optional. One value per output group.
+
+This field is required only if you are
+     * completing Base URL content A, and the downstream system has notified you that
+     * the media files for pipeline 1 of all outputs are in a location different from
+     * the media files for pipeline 0.
+     */
+    inline HlsGroupSettings& WithBaseUrlContent1(Aws::String&& value) { SetBaseUrlContent1(std::move(value)); return *this;}
+
+    /**
+     * Optional. One value per output group.
+
+This field is required only if you are
+     * completing Base URL content A, and the downstream system has notified you that
+     * the media files for pipeline 1 of all outputs are in a location different from
+     * the media files for pipeline 0.
+     */
+    inline HlsGroupSettings& WithBaseUrlContent1(const char* value) { SetBaseUrlContent1(value); return *this;}
+
+
+    /**
      * A partial URI prefix that will be prepended to each output in the media .m3u8
      * file. Can be used if base manifest is delivered from a different URL than the
      * main .m3u8 file.
@@ -233,6 +315,87 @@ namespace Model
      * main .m3u8 file.
      */
     inline HlsGroupSettings& WithBaseUrlManifest(const char* value) { SetBaseUrlManifest(value); return *this;}
+
+
+    /**
+     * Optional. One value per output group.
+
+Complete this field only if you are
+     * completing Base URL manifest A, and the downstream system has notified you that
+     * the child manifest files for pipeline 1 of all outputs are in a location
+     * different from the child manifest files for pipeline 0.
+     */
+    inline const Aws::String& GetBaseUrlManifest1() const{ return m_baseUrlManifest1; }
+
+    /**
+     * Optional. One value per output group.
+
+Complete this field only if you are
+     * completing Base URL manifest A, and the downstream system has notified you that
+     * the child manifest files for pipeline 1 of all outputs are in a location
+     * different from the child manifest files for pipeline 0.
+     */
+    inline bool BaseUrlManifest1HasBeenSet() const { return m_baseUrlManifest1HasBeenSet; }
+
+    /**
+     * Optional. One value per output group.
+
+Complete this field only if you are
+     * completing Base URL manifest A, and the downstream system has notified you that
+     * the child manifest files for pipeline 1 of all outputs are in a location
+     * different from the child manifest files for pipeline 0.
+     */
+    inline void SetBaseUrlManifest1(const Aws::String& value) { m_baseUrlManifest1HasBeenSet = true; m_baseUrlManifest1 = value; }
+
+    /**
+     * Optional. One value per output group.
+
+Complete this field only if you are
+     * completing Base URL manifest A, and the downstream system has notified you that
+     * the child manifest files for pipeline 1 of all outputs are in a location
+     * different from the child manifest files for pipeline 0.
+     */
+    inline void SetBaseUrlManifest1(Aws::String&& value) { m_baseUrlManifest1HasBeenSet = true; m_baseUrlManifest1 = std::move(value); }
+
+    /**
+     * Optional. One value per output group.
+
+Complete this field only if you are
+     * completing Base URL manifest A, and the downstream system has notified you that
+     * the child manifest files for pipeline 1 of all outputs are in a location
+     * different from the child manifest files for pipeline 0.
+     */
+    inline void SetBaseUrlManifest1(const char* value) { m_baseUrlManifest1HasBeenSet = true; m_baseUrlManifest1.assign(value); }
+
+    /**
+     * Optional. One value per output group.
+
+Complete this field only if you are
+     * completing Base URL manifest A, and the downstream system has notified you that
+     * the child manifest files for pipeline 1 of all outputs are in a location
+     * different from the child manifest files for pipeline 0.
+     */
+    inline HlsGroupSettings& WithBaseUrlManifest1(const Aws::String& value) { SetBaseUrlManifest1(value); return *this;}
+
+    /**
+     * Optional. One value per output group.
+
+Complete this field only if you are
+     * completing Base URL manifest A, and the downstream system has notified you that
+     * the child manifest files for pipeline 1 of all outputs are in a location
+     * different from the child manifest files for pipeline 0.
+     */
+    inline HlsGroupSettings& WithBaseUrlManifest1(Aws::String&& value) { SetBaseUrlManifest1(std::move(value)); return *this;}
+
+    /**
+     * Optional. One value per output group.
+
+Complete this field only if you are
+     * completing Base URL manifest A, and the downstream system has notified you that
+     * the child manifest files for pipeline 1 of all outputs are in a location
+     * different from the child manifest files for pipeline 0.
+     */
+    inline HlsGroupSettings& WithBaseUrlManifest1(const char* value) { SetBaseUrlManifest1(value); return *this;}
 
 
     /**
@@ -646,6 +809,37 @@ omit: Omit any CLOSED-CAPTIONS line
      * Parameters that control interactions with the CDN.
      */
     inline HlsGroupSettings& WithHlsCdnSettings(HlsCdnSettings&& value) { SetHlsCdnSettings(std::move(value)); return *this;}
+
+
+    /**
+     * State of HLS ID3 Segment Tagging
+     */
+    inline const HlsId3SegmentTaggingState& GetHlsId3SegmentTagging() const{ return m_hlsId3SegmentTagging; }
+
+    /**
+     * State of HLS ID3 Segment Tagging
+     */
+    inline bool HlsId3SegmentTaggingHasBeenSet() const { return m_hlsId3SegmentTaggingHasBeenSet; }
+
+    /**
+     * State of HLS ID3 Segment Tagging
+     */
+    inline void SetHlsId3SegmentTagging(const HlsId3SegmentTaggingState& value) { m_hlsId3SegmentTaggingHasBeenSet = true; m_hlsId3SegmentTagging = value; }
+
+    /**
+     * State of HLS ID3 Segment Tagging
+     */
+    inline void SetHlsId3SegmentTagging(HlsId3SegmentTaggingState&& value) { m_hlsId3SegmentTaggingHasBeenSet = true; m_hlsId3SegmentTagging = std::move(value); }
+
+    /**
+     * State of HLS ID3 Segment Tagging
+     */
+    inline HlsGroupSettings& WithHlsId3SegmentTagging(const HlsId3SegmentTaggingState& value) { SetHlsId3SegmentTagging(value); return *this;}
+
+    /**
+     * State of HLS ID3 Segment Tagging
+     */
+    inline HlsGroupSettings& WithHlsId3SegmentTagging(HlsId3SegmentTaggingState&& value) { SetHlsId3SegmentTagging(std::move(value)); return *this;}
 
 
     /**
@@ -1748,8 +1942,14 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
     Aws::String m_baseUrlContent;
     bool m_baseUrlContentHasBeenSet;
 
+    Aws::String m_baseUrlContent1;
+    bool m_baseUrlContent1HasBeenSet;
+
     Aws::String m_baseUrlManifest;
     bool m_baseUrlManifestHasBeenSet;
+
+    Aws::String m_baseUrlManifest1;
+    bool m_baseUrlManifest1HasBeenSet;
 
     Aws::Vector<CaptionLanguageMapping> m_captionLanguageMappings;
     bool m_captionLanguageMappingsHasBeenSet;
@@ -1777,6 +1977,9 @@ SINGLEFILE: Applies only if Mode field is VOD. Emit the program as a
 
     HlsCdnSettings m_hlsCdnSettings;
     bool m_hlsCdnSettingsHasBeenSet;
+
+    HlsId3SegmentTaggingState m_hlsId3SegmentTagging;
+    bool m_hlsId3SegmentTaggingHasBeenSet;
 
     IFrameOnlyPlaylistType m_iFrameOnlyPlaylists;
     bool m_iFrameOnlyPlaylistsHasBeenSet;

@@ -39,7 +39,10 @@ namespace Model
    * Fleet is of type <code>instant</code>.</p> </note> <p>For more information about
    * Capacity Reservations, see <a
    * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html">On-Demand
-   * Capacity Reservations</a> in the <i>Amazon Elastic Compute Cloud User
+   * Capacity Reservations</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+   * For examples of using Capacity Reservations in an EC2 Fleet, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-examples.html">EC2
+   * Fleet Example Configurations</a> in the <i>Amazon Elastic Compute Cloud User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationOptionsRequest">AWS
    * API Reference</a></p>
@@ -60,12 +63,14 @@ namespace Model
      * On-Demand capacity.</p> <p>If you specify
      * <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity
      * Reservations to fulfill On-Demand capacity up to the target On-Demand capacity.
-     * If the number of unused Capacity Reservations is less than the On-Demand target
-     * capacity, the remaining On-Demand target capacity is launched as usual. When
-     * unused Capacity Reservations are used to fulfil On-Demand capacity, the
-     * On-Demand allocation strategy (<code>lowest-price</code> or
-     * <code>prioritized</code>) is applied to them.</p> <p>If you do not specify a
-     * value, the fleet fulfils the On-Demand capacity as usual.</p>
+     * If multiple instance pools have unused Capacity Reservations, the On-Demand
+     * allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is
+     * applied. If the number of unused Capacity Reservations is less than the
+     * On-Demand target capacity, the remaining On-Demand target capacity is launched
+     * according to the On-Demand allocation strategy (<code>lowest-price</code> or
+     * <code>prioritized</code>).</p> <p>If you do not specify a value, the fleet
+     * fulfils the On-Demand capacity according to the chosen On-Demand allocation
+     * strategy.</p>
      */
     inline const FleetCapacityReservationUsageStrategy& GetUsageStrategy() const{ return m_usageStrategy; }
 
@@ -74,12 +79,14 @@ namespace Model
      * On-Demand capacity.</p> <p>If you specify
      * <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity
      * Reservations to fulfill On-Demand capacity up to the target On-Demand capacity.
-     * If the number of unused Capacity Reservations is less than the On-Demand target
-     * capacity, the remaining On-Demand target capacity is launched as usual. When
-     * unused Capacity Reservations are used to fulfil On-Demand capacity, the
-     * On-Demand allocation strategy (<code>lowest-price</code> or
-     * <code>prioritized</code>) is applied to them.</p> <p>If you do not specify a
-     * value, the fleet fulfils the On-Demand capacity as usual.</p>
+     * If multiple instance pools have unused Capacity Reservations, the On-Demand
+     * allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is
+     * applied. If the number of unused Capacity Reservations is less than the
+     * On-Demand target capacity, the remaining On-Demand target capacity is launched
+     * according to the On-Demand allocation strategy (<code>lowest-price</code> or
+     * <code>prioritized</code>).</p> <p>If you do not specify a value, the fleet
+     * fulfils the On-Demand capacity according to the chosen On-Demand allocation
+     * strategy.</p>
      */
     inline bool UsageStrategyHasBeenSet() const { return m_usageStrategyHasBeenSet; }
 
@@ -88,12 +95,14 @@ namespace Model
      * On-Demand capacity.</p> <p>If you specify
      * <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity
      * Reservations to fulfill On-Demand capacity up to the target On-Demand capacity.
-     * If the number of unused Capacity Reservations is less than the On-Demand target
-     * capacity, the remaining On-Demand target capacity is launched as usual. When
-     * unused Capacity Reservations are used to fulfil On-Demand capacity, the
-     * On-Demand allocation strategy (<code>lowest-price</code> or
-     * <code>prioritized</code>) is applied to them.</p> <p>If you do not specify a
-     * value, the fleet fulfils the On-Demand capacity as usual.</p>
+     * If multiple instance pools have unused Capacity Reservations, the On-Demand
+     * allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is
+     * applied. If the number of unused Capacity Reservations is less than the
+     * On-Demand target capacity, the remaining On-Demand target capacity is launched
+     * according to the On-Demand allocation strategy (<code>lowest-price</code> or
+     * <code>prioritized</code>).</p> <p>If you do not specify a value, the fleet
+     * fulfils the On-Demand capacity according to the chosen On-Demand allocation
+     * strategy.</p>
      */
     inline void SetUsageStrategy(const FleetCapacityReservationUsageStrategy& value) { m_usageStrategyHasBeenSet = true; m_usageStrategy = value; }
 
@@ -102,12 +111,14 @@ namespace Model
      * On-Demand capacity.</p> <p>If you specify
      * <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity
      * Reservations to fulfill On-Demand capacity up to the target On-Demand capacity.
-     * If the number of unused Capacity Reservations is less than the On-Demand target
-     * capacity, the remaining On-Demand target capacity is launched as usual. When
-     * unused Capacity Reservations are used to fulfil On-Demand capacity, the
-     * On-Demand allocation strategy (<code>lowest-price</code> or
-     * <code>prioritized</code>) is applied to them.</p> <p>If you do not specify a
-     * value, the fleet fulfils the On-Demand capacity as usual.</p>
+     * If multiple instance pools have unused Capacity Reservations, the On-Demand
+     * allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is
+     * applied. If the number of unused Capacity Reservations is less than the
+     * On-Demand target capacity, the remaining On-Demand target capacity is launched
+     * according to the On-Demand allocation strategy (<code>lowest-price</code> or
+     * <code>prioritized</code>).</p> <p>If you do not specify a value, the fleet
+     * fulfils the On-Demand capacity according to the chosen On-Demand allocation
+     * strategy.</p>
      */
     inline void SetUsageStrategy(FleetCapacityReservationUsageStrategy&& value) { m_usageStrategyHasBeenSet = true; m_usageStrategy = std::move(value); }
 
@@ -116,12 +127,14 @@ namespace Model
      * On-Demand capacity.</p> <p>If you specify
      * <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity
      * Reservations to fulfill On-Demand capacity up to the target On-Demand capacity.
-     * If the number of unused Capacity Reservations is less than the On-Demand target
-     * capacity, the remaining On-Demand target capacity is launched as usual. When
-     * unused Capacity Reservations are used to fulfil On-Demand capacity, the
-     * On-Demand allocation strategy (<code>lowest-price</code> or
-     * <code>prioritized</code>) is applied to them.</p> <p>If you do not specify a
-     * value, the fleet fulfils the On-Demand capacity as usual.</p>
+     * If multiple instance pools have unused Capacity Reservations, the On-Demand
+     * allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is
+     * applied. If the number of unused Capacity Reservations is less than the
+     * On-Demand target capacity, the remaining On-Demand target capacity is launched
+     * according to the On-Demand allocation strategy (<code>lowest-price</code> or
+     * <code>prioritized</code>).</p> <p>If you do not specify a value, the fleet
+     * fulfils the On-Demand capacity according to the chosen On-Demand allocation
+     * strategy.</p>
      */
     inline CapacityReservationOptionsRequest& WithUsageStrategy(const FleetCapacityReservationUsageStrategy& value) { SetUsageStrategy(value); return *this;}
 
@@ -130,12 +143,14 @@ namespace Model
      * On-Demand capacity.</p> <p>If you specify
      * <code>use-capacity-reservations-first</code>, the fleet uses unused Capacity
      * Reservations to fulfill On-Demand capacity up to the target On-Demand capacity.
-     * If the number of unused Capacity Reservations is less than the On-Demand target
-     * capacity, the remaining On-Demand target capacity is launched as usual. When
-     * unused Capacity Reservations are used to fulfil On-Demand capacity, the
-     * On-Demand allocation strategy (<code>lowest-price</code> or
-     * <code>prioritized</code>) is applied to them.</p> <p>If you do not specify a
-     * value, the fleet fulfils the On-Demand capacity as usual.</p>
+     * If multiple instance pools have unused Capacity Reservations, the On-Demand
+     * allocation strategy (<code>lowest-price</code> or <code>prioritized</code>) is
+     * applied. If the number of unused Capacity Reservations is less than the
+     * On-Demand target capacity, the remaining On-Demand target capacity is launched
+     * according to the On-Demand allocation strategy (<code>lowest-price</code> or
+     * <code>prioritized</code>).</p> <p>If you do not specify a value, the fleet
+     * fulfils the On-Demand capacity according to the chosen On-Demand allocation
+     * strategy.</p>
      */
     inline CapacityReservationOptionsRequest& WithUsageStrategy(FleetCapacityReservationUsageStrategy&& value) { SetUsageStrategy(std::move(value)); return *this;}
 

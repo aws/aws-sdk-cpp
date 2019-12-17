@@ -1017,6 +1017,13 @@ CBR: Quality varies,
      * depending on the video complexity. Recommended only if you distribute
 your
      * assets to devices that cannot handle variable bitrates.
+
+Multiplex: This rate
+     * control mode is only supported (and is required) when the video is
+     * being
+delivered to a MediaLive Multiplex in which case the rate control
+     * configuration is controlled
+by the properties within the Multiplex Program.
      */
     inline const H264RateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
 
@@ -1037,6 +1044,13 @@ CBR: Quality varies,
      * depending on the video complexity. Recommended only if you distribute
 your
      * assets to devices that cannot handle variable bitrates.
+
+Multiplex: This rate
+     * control mode is only supported (and is required) when the video is
+     * being
+delivered to a MediaLive Multiplex in which case the rate control
+     * configuration is controlled
+by the properties within the Multiplex Program.
      */
     inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
 
@@ -1057,6 +1071,13 @@ CBR: Quality varies,
      * depending on the video complexity. Recommended only if you distribute
 your
      * assets to devices that cannot handle variable bitrates.
+
+Multiplex: This rate
+     * control mode is only supported (and is required) when the video is
+     * being
+delivered to a MediaLive Multiplex in which case the rate control
+     * configuration is controlled
+by the properties within the Multiplex Program.
      */
     inline void SetRateControlMode(const H264RateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
 
@@ -1077,6 +1098,13 @@ CBR: Quality varies,
      * depending on the video complexity. Recommended only if you distribute
 your
      * assets to devices that cannot handle variable bitrates.
+
+Multiplex: This rate
+     * control mode is only supported (and is required) when the video is
+     * being
+delivered to a MediaLive Multiplex in which case the rate control
+     * configuration is controlled
+by the properties within the Multiplex Program.
      */
     inline void SetRateControlMode(H264RateControlMode&& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = std::move(value); }
 
@@ -1097,6 +1125,13 @@ CBR: Quality varies,
      * depending on the video complexity. Recommended only if you distribute
 your
      * assets to devices that cannot handle variable bitrates.
+
+Multiplex: This rate
+     * control mode is only supported (and is required) when the video is
+     * being
+delivered to a MediaLive Multiplex in which case the rate control
+     * configuration is controlled
+by the properties within the Multiplex Program.
      */
     inline H264Settings& WithRateControlMode(const H264RateControlMode& value) { SetRateControlMode(value); return *this;}
 
@@ -1117,6 +1152,13 @@ CBR: Quality varies,
      * depending on the video complexity. Recommended only if you distribute
 your
      * assets to devices that cannot handle variable bitrates.
+
+Multiplex: This rate
+     * control mode is only supported (and is required) when the video is
+     * being
+delivered to a MediaLive Multiplex in which case the rate control
+     * configuration is controlled
+by the properties within the Multiplex Program.
      */
     inline H264Settings& WithRateControlMode(H264RateControlMode&& value) { SetRateControlMode(std::move(value)); return *this;}
 

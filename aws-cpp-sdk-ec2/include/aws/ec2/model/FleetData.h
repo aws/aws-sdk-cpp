@@ -227,64 +227,64 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline FleetData& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
     inline FleetData& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
@@ -510,7 +510,7 @@ namespace Model
      * <code>requests</code> the target capacity, or also attempts to
      * <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet
      * only places the required requests; it does not attempt to replenish instances if
-     * capacity is diminished, and does not submit requests in alternative capacity
+     * capacity is diminished, and it does not submit requests in alternative capacity
      * pools if capacity is unavailable. To maintain a certain target capacity, EC2
      * Fleet places the required requests to meet this target capacity. It also
      * automatically replenishes any interrupted Spot Instances. Default:
@@ -523,7 +523,7 @@ namespace Model
      * <code>requests</code> the target capacity, or also attempts to
      * <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet
      * only places the required requests; it does not attempt to replenish instances if
-     * capacity is diminished, and does not submit requests in alternative capacity
+     * capacity is diminished, and it does not submit requests in alternative capacity
      * pools if capacity is unavailable. To maintain a certain target capacity, EC2
      * Fleet places the required requests to meet this target capacity. It also
      * automatically replenishes any interrupted Spot Instances. Default:
@@ -536,7 +536,7 @@ namespace Model
      * <code>requests</code> the target capacity, or also attempts to
      * <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet
      * only places the required requests; it does not attempt to replenish instances if
-     * capacity is diminished, and does not submit requests in alternative capacity
+     * capacity is diminished, and it does not submit requests in alternative capacity
      * pools if capacity is unavailable. To maintain a certain target capacity, EC2
      * Fleet places the required requests to meet this target capacity. It also
      * automatically replenishes any interrupted Spot Instances. Default:
@@ -549,7 +549,7 @@ namespace Model
      * <code>requests</code> the target capacity, or also attempts to
      * <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet
      * only places the required requests; it does not attempt to replenish instances if
-     * capacity is diminished, and does not submit requests in alternative capacity
+     * capacity is diminished, and it does not submit requests in alternative capacity
      * pools if capacity is unavailable. To maintain a certain target capacity, EC2
      * Fleet places the required requests to meet this target capacity. It also
      * automatically replenishes any interrupted Spot Instances. Default:
@@ -562,7 +562,7 @@ namespace Model
      * <code>requests</code> the target capacity, or also attempts to
      * <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet
      * only places the required requests; it does not attempt to replenish instances if
-     * capacity is diminished, and does not submit requests in alternative capacity
+     * capacity is diminished, and it does not submit requests in alternative capacity
      * pools if capacity is unavailable. To maintain a certain target capacity, EC2
      * Fleet places the required requests to meet this target capacity. It also
      * automatically replenishes any interrupted Spot Instances. Default:
@@ -575,7 +575,7 @@ namespace Model
      * <code>requests</code> the target capacity, or also attempts to
      * <code>maintain</code> it. If you request a certain target capacity, EC2 Fleet
      * only places the required requests; it does not attempt to replenish instances if
-     * capacity is diminished, and does not submit requests in alternative capacity
+     * capacity is diminished, and it does not submit requests in alternative capacity
      * pools if capacity is unavailable. To maintain a certain target capacity, EC2
      * Fleet places the required requests to meet this target capacity. It also
      * automatically replenishes any interrupted Spot Instances. Default:

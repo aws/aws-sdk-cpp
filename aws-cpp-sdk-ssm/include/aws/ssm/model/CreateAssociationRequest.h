@@ -230,8 +230,10 @@ namespace Model
     /**
      * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. If you use the parameter <code>InstanceId</code>, you cannot use the
-     * parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
+     * documents that use schema version 2.0 or later will fail. In addition, if you
+     * use the parameter <code>InstanceId</code>, you cannot use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
      * parameters, you must use the <code>Targets</code> parameter.</p> </note>
@@ -241,8 +243,10 @@ namespace Model
     /**
      * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. If you use the parameter <code>InstanceId</code>, you cannot use the
-     * parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
+     * documents that use schema version 2.0 or later will fail. In addition, if you
+     * use the parameter <code>InstanceId</code>, you cannot use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
      * parameters, you must use the <code>Targets</code> parameter.</p> </note>
@@ -252,8 +256,10 @@ namespace Model
     /**
      * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. If you use the parameter <code>InstanceId</code>, you cannot use the
-     * parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
+     * documents that use schema version 2.0 or later will fail. In addition, if you
+     * use the parameter <code>InstanceId</code>, you cannot use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
      * parameters, you must use the <code>Targets</code> parameter.</p> </note>
@@ -263,8 +269,10 @@ namespace Model
     /**
      * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. If you use the parameter <code>InstanceId</code>, you cannot use the
-     * parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
+     * documents that use schema version 2.0 or later will fail. In addition, if you
+     * use the parameter <code>InstanceId</code>, you cannot use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
      * parameters, you must use the <code>Targets</code> parameter.</p> </note>
@@ -274,8 +282,10 @@ namespace Model
     /**
      * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. If you use the parameter <code>InstanceId</code>, you cannot use the
-     * parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
+     * documents that use schema version 2.0 or later will fail. In addition, if you
+     * use the parameter <code>InstanceId</code>, you cannot use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
      * parameters, you must use the <code>Targets</code> parameter.</p> </note>
@@ -285,8 +295,10 @@ namespace Model
     /**
      * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. If you use the parameter <code>InstanceId</code>, you cannot use the
-     * parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
+     * documents that use schema version 2.0 or later will fail. In addition, if you
+     * use the parameter <code>InstanceId</code>, you cannot use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
      * parameters, you must use the <code>Targets</code> parameter.</p> </note>
@@ -296,8 +308,10 @@ namespace Model
     /**
      * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. If you use the parameter <code>InstanceId</code>, you cannot use the
-     * parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
+     * documents that use schema version 2.0 or later will fail. In addition, if you
+     * use the parameter <code>InstanceId</code>, you cannot use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
      * parameters, you must use the <code>Targets</code> parameter.</p> </note>
@@ -307,8 +321,10 @@ namespace Model
     /**
      * <p>The instance ID.</p> <note> <p> <code>InstanceId</code> has been deprecated.
      * To specify an instance ID for an association, use the <code>Targets</code>
-     * parameter. If you use the parameter <code>InstanceId</code>, you cannot use the
-     * parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
+     * parameter. Requests that include the parameter <code>InstanceID</code> with SSM
+     * documents that use schema version 2.0 or later will fail. In addition, if you
+     * use the parameter <code>InstanceId</code>, you cannot use the parameters
+     * <code>AssociationName</code>, <code>DocumentVersion</code>,
      * <code>MaxErrors</code>, <code>MaxConcurrency</code>,
      * <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these
      * parameters, you must use the <code>Targets</code> parameter.</p> </note>

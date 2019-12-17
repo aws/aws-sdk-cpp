@@ -58,7 +58,7 @@ namespace Model
      * <code>lowest-price</code>, EC2 Fleet launches instances from the Spot Instance
      * pools with the lowest price. This is the default allocation strategy.</p> <p>If
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
-     * instances from all the Spot Instance pools that you specify.</p> <p>If the
+     * instances from all of the Spot Instance pools that you specify.</p> <p>If the
      * allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches
      * instances from Spot Instance pools with optimal capacity for the number of
      * instances that are launching.</p>
@@ -71,7 +71,7 @@ namespace Model
      * <code>lowest-price</code>, EC2 Fleet launches instances from the Spot Instance
      * pools with the lowest price. This is the default allocation strategy.</p> <p>If
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
-     * instances from all the Spot Instance pools that you specify.</p> <p>If the
+     * instances from all of the Spot Instance pools that you specify.</p> <p>If the
      * allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches
      * instances from Spot Instance pools with optimal capacity for the number of
      * instances that are launching.</p>
@@ -84,7 +84,7 @@ namespace Model
      * <code>lowest-price</code>, EC2 Fleet launches instances from the Spot Instance
      * pools with the lowest price. This is the default allocation strategy.</p> <p>If
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
-     * instances from all the Spot Instance pools that you specify.</p> <p>If the
+     * instances from all of the Spot Instance pools that you specify.</p> <p>If the
      * allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches
      * instances from Spot Instance pools with optimal capacity for the number of
      * instances that are launching.</p>
@@ -97,7 +97,7 @@ namespace Model
      * <code>lowest-price</code>, EC2 Fleet launches instances from the Spot Instance
      * pools with the lowest price. This is the default allocation strategy.</p> <p>If
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
-     * instances from all the Spot Instance pools that you specify.</p> <p>If the
+     * instances from all of the Spot Instance pools that you specify.</p> <p>If the
      * allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches
      * instances from Spot Instance pools with optimal capacity for the number of
      * instances that are launching.</p>
@@ -110,7 +110,7 @@ namespace Model
      * <code>lowest-price</code>, EC2 Fleet launches instances from the Spot Instance
      * pools with the lowest price. This is the default allocation strategy.</p> <p>If
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
-     * instances from all the Spot Instance pools that you specify.</p> <p>If the
+     * instances from all of the Spot Instance pools that you specify.</p> <p>If the
      * allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches
      * instances from Spot Instance pools with optimal capacity for the number of
      * instances that are launching.</p>
@@ -123,7 +123,7 @@ namespace Model
      * <code>lowest-price</code>, EC2 Fleet launches instances from the Spot Instance
      * pools with the lowest price. This is the default allocation strategy.</p> <p>If
      * the allocation strategy is <code>diversified</code>, EC2 Fleet launches
-     * instances from all the Spot Instance pools that you specify.</p> <p>If the
+     * instances from all of the Spot Instance pools that you specify.</p> <p>If the
      * allocation strategy is <code>capacity-optimized</code>, EC2 Fleet launches
      * instances from Spot Instance pools with optimal capacity for the number of
      * instances that are launching.</p>
