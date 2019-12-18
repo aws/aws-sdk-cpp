@@ -1247,7 +1247,7 @@ namespace Model
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
      */
@@ -1258,7 +1258,7 @@ namespace Model
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
      */
@@ -1269,7 +1269,7 @@ namespace Model
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
      */
@@ -1280,7 +1280,7 @@ namespace Model
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
      */
@@ -1291,7 +1291,7 @@ namespace Model
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
      */
@@ -1302,7 +1302,7 @@ namespace Model
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
      */
@@ -1313,7 +1313,7 @@ namespace Model
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
      */
@@ -1324,7 +1324,7 @@ namespace Model
      * requests for an object protected by AWS KMS will fail if not made via SSL or
      * using SigV4. For information about configuring using any of the officially
      * supported AWS SDKs and AWS CLI, see <a
-     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
      */

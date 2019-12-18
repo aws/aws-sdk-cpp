@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/opsworkscm/model/CreateBackupRequest.h>
+#include <aws/opsworkscm/model/ListTagsForResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,47 +22,43 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBackupRequest::CreateBackupRequest() : 
-    m_serverNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+ListTagsForResourceRequest::ListTagsForResourceRequest() : 
+    m_resourceArnHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
-Aws::String CreateBackupRequest::SerializePayload() const
+Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_serverNameHasBeenSet)
+  if(m_resourceArnHasBeenSet)
   {
-   payload.WithString("ServerName", m_serverName);
+   payload.WithString("ResourceArn", m_resourceArn);
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_nextTokenHasBeenSet)
   {
-   payload.WithString("Description", m_description);
+   payload.WithString("NextToken", m_nextToken);
 
   }
 
-  if(m_tagsHasBeenSet)
+  if(m_maxResultsHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
-   {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
-   }
-   payload.WithArray("Tags", std::move(tagsJsonList));
+   payload.WithInteger("MaxResults", m_maxResults);
 
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateBackupRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection ListTagsForResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorksCM_V2016_11_01.CreateBackup"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorksCM_V2016_11_01.ListTagsForResource"));
   return headers;
 
 }

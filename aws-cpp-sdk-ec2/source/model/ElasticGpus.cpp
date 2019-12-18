@@ -37,7 +37,8 @@ ElasticGpus::ElasticGpus() :
     m_elasticGpuHealthHasBeenSet(false),
     m_elasticGpuState(ElasticGpuState::NOT_SET),
     m_elasticGpuStateHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ ElasticGpus::ElasticGpus(const XmlNode& xmlNode) :
     m_elasticGpuHealthHasBeenSet(false),
     m_elasticGpuState(ElasticGpuState::NOT_SET),
     m_elasticGpuStateHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -95,6 +97,18 @@ ElasticGpus& ElasticGpus::operator =(const XmlNode& xmlNode)
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
       m_instanceIdHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -134,6 +148,17 @@ void ElasticGpus::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void ElasticGpus::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -163,6 +188,16 @@ void ElasticGpus::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_instanceIdHasBeenSet)
   {
       oStream << location << ".InstanceId=" << StringUtils::URLEncode(m_instanceId.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

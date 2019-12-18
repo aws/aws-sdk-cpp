@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/opsworkscm/model/EngineAttribute.h>
+#include <aws/opsworkscm/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -76,308 +77,324 @@ namespace Model
 
 
     /**
-     * <p>An optional public endpoint of a server, such as
-     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
-     * DNS record in your preferred DNS service that points the custom domain to the
-     * endpoint that is generated when the server is created (the value of the
-     * CreateServer Endpoint attribute). You cannot access the server by using the
-     * generated <code>Endpoint</code> value if the server is using a custom domain. If
-     * you specify a custom domain, you must also specify values for
+     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
+     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
+     * create a CNAME DNS record in your preferred DNS service that points the custom
+     * domain to the endpoint that is generated when the server is created (the value
+     * of the CreateServer Endpoint attribute). You cannot access the server by using
+     * the generated <code>Endpoint</code> value if the server is using a custom
+     * domain. If you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline const Aws::String& GetCustomDomain() const{ return m_customDomain; }
 
     /**
-     * <p>An optional public endpoint of a server, such as
-     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
-     * DNS record in your preferred DNS service that points the custom domain to the
-     * endpoint that is generated when the server is created (the value of the
-     * CreateServer Endpoint attribute). You cannot access the server by using the
-     * generated <code>Endpoint</code> value if the server is using a custom domain. If
-     * you specify a custom domain, you must also specify values for
+     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
+     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
+     * create a CNAME DNS record in your preferred DNS service that points the custom
+     * domain to the endpoint that is generated when the server is created (the value
+     * of the CreateServer Endpoint attribute). You cannot access the server by using
+     * the generated <code>Endpoint</code> value if the server is using a custom
+     * domain. If you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline bool CustomDomainHasBeenSet() const { return m_customDomainHasBeenSet; }
 
     /**
-     * <p>An optional public endpoint of a server, such as
-     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
-     * DNS record in your preferred DNS service that points the custom domain to the
-     * endpoint that is generated when the server is created (the value of the
-     * CreateServer Endpoint attribute). You cannot access the server by using the
-     * generated <code>Endpoint</code> value if the server is using a custom domain. If
-     * you specify a custom domain, you must also specify values for
+     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
+     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
+     * create a CNAME DNS record in your preferred DNS service that points the custom
+     * domain to the endpoint that is generated when the server is created (the value
+     * of the CreateServer Endpoint attribute). You cannot access the server by using
+     * the generated <code>Endpoint</code> value if the server is using a custom
+     * domain. If you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline void SetCustomDomain(const Aws::String& value) { m_customDomainHasBeenSet = true; m_customDomain = value; }
 
     /**
-     * <p>An optional public endpoint of a server, such as
-     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
-     * DNS record in your preferred DNS service that points the custom domain to the
-     * endpoint that is generated when the server is created (the value of the
-     * CreateServer Endpoint attribute). You cannot access the server by using the
-     * generated <code>Endpoint</code> value if the server is using a custom domain. If
-     * you specify a custom domain, you must also specify values for
+     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
+     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
+     * create a CNAME DNS record in your preferred DNS service that points the custom
+     * domain to the endpoint that is generated when the server is created (the value
+     * of the CreateServer Endpoint attribute). You cannot access the server by using
+     * the generated <code>Endpoint</code> value if the server is using a custom
+     * domain. If you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline void SetCustomDomain(Aws::String&& value) { m_customDomainHasBeenSet = true; m_customDomain = std::move(value); }
 
     /**
-     * <p>An optional public endpoint of a server, such as
-     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
-     * DNS record in your preferred DNS service that points the custom domain to the
-     * endpoint that is generated when the server is created (the value of the
-     * CreateServer Endpoint attribute). You cannot access the server by using the
-     * generated <code>Endpoint</code> value if the server is using a custom domain. If
-     * you specify a custom domain, you must also specify values for
+     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
+     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
+     * create a CNAME DNS record in your preferred DNS service that points the custom
+     * domain to the endpoint that is generated when the server is created (the value
+     * of the CreateServer Endpoint attribute). You cannot access the server by using
+     * the generated <code>Endpoint</code> value if the server is using a custom
+     * domain. If you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline void SetCustomDomain(const char* value) { m_customDomainHasBeenSet = true; m_customDomain.assign(value); }
 
     /**
-     * <p>An optional public endpoint of a server, such as
-     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
-     * DNS record in your preferred DNS service that points the custom domain to the
-     * endpoint that is generated when the server is created (the value of the
-     * CreateServer Endpoint attribute). You cannot access the server by using the
-     * generated <code>Endpoint</code> value if the server is using a custom domain. If
-     * you specify a custom domain, you must also specify values for
+     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
+     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
+     * create a CNAME DNS record in your preferred DNS service that points the custom
+     * domain to the endpoint that is generated when the server is created (the value
+     * of the CreateServer Endpoint attribute). You cannot access the server by using
+     * the generated <code>Endpoint</code> value if the server is using a custom
+     * domain. If you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline CreateServerRequest& WithCustomDomain(const Aws::String& value) { SetCustomDomain(value); return *this;}
 
     /**
-     * <p>An optional public endpoint of a server, such as
-     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
-     * DNS record in your preferred DNS service that points the custom domain to the
-     * endpoint that is generated when the server is created (the value of the
-     * CreateServer Endpoint attribute). You cannot access the server by using the
-     * generated <code>Endpoint</code> value if the server is using a custom domain. If
-     * you specify a custom domain, you must also specify values for
+     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
+     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
+     * create a CNAME DNS record in your preferred DNS service that points the custom
+     * domain to the endpoint that is generated when the server is created (the value
+     * of the CreateServer Endpoint attribute). You cannot access the server by using
+     * the generated <code>Endpoint</code> value if the server is using a custom
+     * domain. If you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline CreateServerRequest& WithCustomDomain(Aws::String&& value) { SetCustomDomain(std::move(value)); return *this;}
 
     /**
-     * <p>An optional public endpoint of a server, such as
-     * <code>https://aws.my-company.com</code>. To access the server, create a CNAME
-     * DNS record in your preferred DNS service that points the custom domain to the
-     * endpoint that is generated when the server is created (the value of the
-     * CreateServer Endpoint attribute). You cannot access the server by using the
-     * generated <code>Endpoint</code> value if the server is using a custom domain. If
-     * you specify a custom domain, you must also specify values for
+     * <p>Supported on servers running Chef Automate 2. An optional public endpoint of
+     * a server, such as <code>https://aws.my-company.com</code>. To access the server,
+     * create a CNAME DNS record in your preferred DNS service that points the custom
+     * domain to the endpoint that is generated when the server is created (the value
+     * of the CreateServer Endpoint attribute). You cannot access the server by using
+     * the generated <code>Endpoint</code> value if the server is using a custom
+     * domain. If you specify a custom domain, you must also specify values for
      * <code>CustomCertificate</code> and <code>CustomPrivateKey</code>.</p>
      */
     inline CreateServerRequest& WithCustomDomain(const char* value) { SetCustomDomain(value); return *this;}
 
 
     /**
-     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
-     * certificate, or a certificate chain. If you specify a custom certificate, you
-     * must also specify values for <code>CustomDomain</code> and
-     * <code>CustomPrivateKey</code>. The following are requirements for the
-     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
-     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
-     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
-     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
-     * upload. A certificate can't be used before its validity period begins (the
-     * certificate's <code>NotBefore</code> date), or after it expires (the
-     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
-     * common name or subject alternative names (SANs), if present, must match the
-     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
-     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
+     * certificate. The value can be be a single, self-signed certificate, or a
+     * certificate chain. If you specify a custom certificate, you must also specify
+     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
+     * following are requirements for the <code>CustomCertificate</code> value:</p>
+     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
+     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
+     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
+     * certificate must be valid at the time of upload. A certificate can't be used
+     * before its validity period begins (the certificate's <code>NotBefore</code>
+     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
+     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
+     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
+     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetCustomCertificate() const{ return m_customCertificate; }
 
     /**
-     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
-     * certificate, or a certificate chain. If you specify a custom certificate, you
-     * must also specify values for <code>CustomDomain</code> and
-     * <code>CustomPrivateKey</code>. The following are requirements for the
-     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
-     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
-     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
-     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
-     * upload. A certificate can't be used before its validity period begins (the
-     * certificate's <code>NotBefore</code> date), or after it expires (the
-     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
-     * common name or subject alternative names (SANs), if present, must match the
-     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
-     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
+     * certificate. The value can be be a single, self-signed certificate, or a
+     * certificate chain. If you specify a custom certificate, you must also specify
+     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
+     * following are requirements for the <code>CustomCertificate</code> value:</p>
+     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
+     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
+     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
+     * certificate must be valid at the time of upload. A certificate can't be used
+     * before its validity period begins (the certificate's <code>NotBefore</code>
+     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
+     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
+     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
+     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
+     * </li> </ul>
      */
     inline bool CustomCertificateHasBeenSet() const { return m_customCertificateHasBeenSet; }
 
     /**
-     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
-     * certificate, or a certificate chain. If you specify a custom certificate, you
-     * must also specify values for <code>CustomDomain</code> and
-     * <code>CustomPrivateKey</code>. The following are requirements for the
-     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
-     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
-     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
-     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
-     * upload. A certificate can't be used before its validity period begins (the
-     * certificate's <code>NotBefore</code> date), or after it expires (the
-     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
-     * common name or subject alternative names (SANs), if present, must match the
-     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
-     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
+     * certificate. The value can be be a single, self-signed certificate, or a
+     * certificate chain. If you specify a custom certificate, you must also specify
+     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
+     * following are requirements for the <code>CustomCertificate</code> value:</p>
+     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
+     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
+     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
+     * certificate must be valid at the time of upload. A certificate can't be used
+     * before its validity period begins (the certificate's <code>NotBefore</code>
+     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
+     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
+     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
+     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
+     * </li> </ul>
      */
     inline void SetCustomCertificate(const Aws::String& value) { m_customCertificateHasBeenSet = true; m_customCertificate = value; }
 
     /**
-     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
-     * certificate, or a certificate chain. If you specify a custom certificate, you
-     * must also specify values for <code>CustomDomain</code> and
-     * <code>CustomPrivateKey</code>. The following are requirements for the
-     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
-     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
-     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
-     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
-     * upload. A certificate can't be used before its validity period begins (the
-     * certificate's <code>NotBefore</code> date), or after it expires (the
-     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
-     * common name or subject alternative names (SANs), if present, must match the
-     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
-     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
+     * certificate. The value can be be a single, self-signed certificate, or a
+     * certificate chain. If you specify a custom certificate, you must also specify
+     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
+     * following are requirements for the <code>CustomCertificate</code> value:</p>
+     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
+     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
+     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
+     * certificate must be valid at the time of upload. A certificate can't be used
+     * before its validity period begins (the certificate's <code>NotBefore</code>
+     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
+     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
+     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
+     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
+     * </li> </ul>
      */
     inline void SetCustomCertificate(Aws::String&& value) { m_customCertificateHasBeenSet = true; m_customCertificate = std::move(value); }
 
     /**
-     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
-     * certificate, or a certificate chain. If you specify a custom certificate, you
-     * must also specify values for <code>CustomDomain</code> and
-     * <code>CustomPrivateKey</code>. The following are requirements for the
-     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
-     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
-     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
-     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
-     * upload. A certificate can't be used before its validity period begins (the
-     * certificate's <code>NotBefore</code> date), or after it expires (the
-     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
-     * common name or subject alternative names (SANs), if present, must match the
-     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
-     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
+     * certificate. The value can be be a single, self-signed certificate, or a
+     * certificate chain. If you specify a custom certificate, you must also specify
+     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
+     * following are requirements for the <code>CustomCertificate</code> value:</p>
+     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
+     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
+     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
+     * certificate must be valid at the time of upload. A certificate can't be used
+     * before its validity period begins (the certificate's <code>NotBefore</code>
+     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
+     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
+     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
+     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
+     * </li> </ul>
      */
     inline void SetCustomCertificate(const char* value) { m_customCertificateHasBeenSet = true; m_customCertificate.assign(value); }
 
     /**
-     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
-     * certificate, or a certificate chain. If you specify a custom certificate, you
-     * must also specify values for <code>CustomDomain</code> and
-     * <code>CustomPrivateKey</code>. The following are requirements for the
-     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
-     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
-     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
-     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
-     * upload. A certificate can't be used before its validity period begins (the
-     * certificate's <code>NotBefore</code> date), or after it expires (the
-     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
-     * common name or subject alternative names (SANs), if present, must match the
-     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
-     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
+     * certificate. The value can be be a single, self-signed certificate, or a
+     * certificate chain. If you specify a custom certificate, you must also specify
+     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
+     * following are requirements for the <code>CustomCertificate</code> value:</p>
+     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
+     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
+     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
+     * certificate must be valid at the time of upload. A certificate can't be used
+     * before its validity period begins (the certificate's <code>NotBefore</code>
+     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
+     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
+     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
+     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
+     * </li> </ul>
      */
     inline CreateServerRequest& WithCustomCertificate(const Aws::String& value) { SetCustomCertificate(value); return *this;}
 
     /**
-     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
-     * certificate, or a certificate chain. If you specify a custom certificate, you
-     * must also specify values for <code>CustomDomain</code> and
-     * <code>CustomPrivateKey</code>. The following are requirements for the
-     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
-     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
-     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
-     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
-     * upload. A certificate can't be used before its validity period begins (the
-     * certificate's <code>NotBefore</code> date), or after it expires (the
-     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
-     * common name or subject alternative names (SANs), if present, must match the
-     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
-     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
+     * certificate. The value can be be a single, self-signed certificate, or a
+     * certificate chain. If you specify a custom certificate, you must also specify
+     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
+     * following are requirements for the <code>CustomCertificate</code> value:</p>
+     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
+     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
+     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
+     * certificate must be valid at the time of upload. A certificate can't be used
+     * before its validity period begins (the certificate's <code>NotBefore</code>
+     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
+     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
+     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
+     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
+     * </li> </ul>
      */
     inline CreateServerRequest& WithCustomCertificate(Aws::String&& value) { SetCustomCertificate(std::move(value)); return *this;}
 
     /**
-     * <p>A PEM-formatted HTTPS certificate. The value can be be a single, self-signed
-     * certificate, or a certificate chain. If you specify a custom certificate, you
-     * must also specify values for <code>CustomDomain</code> and
-     * <code>CustomPrivateKey</code>. The following are requirements for the
-     * <code>CustomCertificate</code> value:</p> <ul> <li> <p>You can provide either a
-     * self-signed, custom certificate, or the full certificate chain.</p> </li> <li>
-     * <p>The certificate must be a valid X509 certificate, or a certificate chain in
-     * PEM format.</p> </li> <li> <p>The certificate must be valid at the time of
-     * upload. A certificate can't be used before its validity period begins (the
-     * certificate's <code>NotBefore</code> date), or after it expires (the
-     * certificate's <code>NotAfter</code> date).</p> </li> <li> <p>The certificate’s
-     * common name or subject alternative names (SANs), if present, must match the
-     * value of <code>CustomDomain</code>.</p> </li> <li> <p>The certificate must match
-     * the value of <code>CustomPrivateKey</code>.</p> </li> </ul>
+     * <p>Supported on servers running Chef Automate 2. A PEM-formatted HTTPS
+     * certificate. The value can be be a single, self-signed certificate, or a
+     * certificate chain. If you specify a custom certificate, you must also specify
+     * values for <code>CustomDomain</code> and <code>CustomPrivateKey</code>. The
+     * following are requirements for the <code>CustomCertificate</code> value:</p>
+     * <ul> <li> <p>You can provide either a self-signed, custom certificate, or the
+     * full certificate chain.</p> </li> <li> <p>The certificate must be a valid X509
+     * certificate, or a certificate chain in PEM format.</p> </li> <li> <p>The
+     * certificate must be valid at the time of upload. A certificate can't be used
+     * before its validity period begins (the certificate's <code>NotBefore</code>
+     * date), or after it expires (the certificate's <code>NotAfter</code> date).</p>
+     * </li> <li> <p>The certificate’s common name or subject alternative names (SANs),
+     * if present, must match the value of <code>CustomDomain</code>.</p> </li> <li>
+     * <p>The certificate must match the value of <code>CustomPrivateKey</code>.</p>
+     * </li> </ul>
      */
     inline CreateServerRequest& WithCustomCertificate(const char* value) { SetCustomCertificate(value); return *this;}
 
 
     /**
-     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
-     * private key must not be encrypted; it cannot be protected by a password or
-     * passphrase. If you specify a custom private key, you must also specify values
-     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
+     * connecting to the server by using HTTPS. The private key must not be encrypted;
+     * it cannot be protected by a password or passphrase. If you specify a custom
+     * private key, you must also specify values for <code>CustomDomain</code> and
+     * <code>CustomCertificate</code>.</p>
      */
     inline const Aws::String& GetCustomPrivateKey() const{ return m_customPrivateKey; }
 
     /**
-     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
-     * private key must not be encrypted; it cannot be protected by a password or
-     * passphrase. If you specify a custom private key, you must also specify values
-     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
+     * connecting to the server by using HTTPS. The private key must not be encrypted;
+     * it cannot be protected by a password or passphrase. If you specify a custom
+     * private key, you must also specify values for <code>CustomDomain</code> and
+     * <code>CustomCertificate</code>.</p>
      */
     inline bool CustomPrivateKeyHasBeenSet() const { return m_customPrivateKeyHasBeenSet; }
 
     /**
-     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
-     * private key must not be encrypted; it cannot be protected by a password or
-     * passphrase. If you specify a custom private key, you must also specify values
-     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
+     * connecting to the server by using HTTPS. The private key must not be encrypted;
+     * it cannot be protected by a password or passphrase. If you specify a custom
+     * private key, you must also specify values for <code>CustomDomain</code> and
+     * <code>CustomCertificate</code>.</p>
      */
     inline void SetCustomPrivateKey(const Aws::String& value) { m_customPrivateKeyHasBeenSet = true; m_customPrivateKey = value; }
 
     /**
-     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
-     * private key must not be encrypted; it cannot be protected by a password or
-     * passphrase. If you specify a custom private key, you must also specify values
-     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
+     * connecting to the server by using HTTPS. The private key must not be encrypted;
+     * it cannot be protected by a password or passphrase. If you specify a custom
+     * private key, you must also specify values for <code>CustomDomain</code> and
+     * <code>CustomCertificate</code>.</p>
      */
     inline void SetCustomPrivateKey(Aws::String&& value) { m_customPrivateKeyHasBeenSet = true; m_customPrivateKey = std::move(value); }
 
     /**
-     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
-     * private key must not be encrypted; it cannot be protected by a password or
-     * passphrase. If you specify a custom private key, you must also specify values
-     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
+     * connecting to the server by using HTTPS. The private key must not be encrypted;
+     * it cannot be protected by a password or passphrase. If you specify a custom
+     * private key, you must also specify values for <code>CustomDomain</code> and
+     * <code>CustomCertificate</code>.</p>
      */
     inline void SetCustomPrivateKey(const char* value) { m_customPrivateKeyHasBeenSet = true; m_customPrivateKey.assign(value); }
 
     /**
-     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
-     * private key must not be encrypted; it cannot be protected by a password or
-     * passphrase. If you specify a custom private key, you must also specify values
-     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
+     * connecting to the server by using HTTPS. The private key must not be encrypted;
+     * it cannot be protected by a password or passphrase. If you specify a custom
+     * private key, you must also specify values for <code>CustomDomain</code> and
+     * <code>CustomCertificate</code>.</p>
      */
     inline CreateServerRequest& WithCustomPrivateKey(const Aws::String& value) { SetCustomPrivateKey(value); return *this;}
 
     /**
-     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
-     * private key must not be encrypted; it cannot be protected by a password or
-     * passphrase. If you specify a custom private key, you must also specify values
-     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
+     * connecting to the server by using HTTPS. The private key must not be encrypted;
+     * it cannot be protected by a password or passphrase. If you specify a custom
+     * private key, you must also specify values for <code>CustomDomain</code> and
+     * <code>CustomCertificate</code>.</p>
      */
     inline CreateServerRequest& WithCustomPrivateKey(Aws::String&& value) { SetCustomPrivateKey(std::move(value)); return *this;}
 
     /**
-     * <p>A private key in PEM format for connecting to the server by using HTTPS. The
-     * private key must not be encrypted; it cannot be protected by a password or
-     * passphrase. If you specify a custom private key, you must also specify values
-     * for <code>CustomDomain</code> and <code>CustomCertificate</code>.</p>
+     * <p>Supported on servers running Chef Automate 2. A private key in PEM format for
+     * connecting to the server by using HTTPS. The private key must not be encrypted;
+     * it cannot be protected by a password or passphrase. If you specify a custom
+     * private key, you must also specify values for <code>CustomDomain</code> and
+     * <code>CustomCertificate</code>.</p>
      */
     inline CreateServerRequest& WithCustomPrivateKey(const char* value) { SetCustomPrivateKey(value); return *this;}
 
@@ -1545,6 +1562,119 @@ namespace Model
 
 
     /**
+     * <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for
+     * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
+     * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
+     * characters, and can contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
+     * value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ :
+     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
+     * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for
+     * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
+     * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
+     * characters, and can contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
+     * value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ :
+     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
+     * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for
+     * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
+     * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
+     * characters, and can contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
+     * value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ :
+     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
+     * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for
+     * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
+     * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
+     * characters, and can contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
+     * value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ :
+     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
+     * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for
+     * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
+     * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
+     * characters, and can contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
+     * value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ :
+     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
+     * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
+     */
+    inline CreateServerRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for
+     * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
+     * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
+     * characters, and can contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
+     * value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ :
+     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
+     * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
+     */
+    inline CreateServerRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for
+     * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
+     * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
+     * characters, and can contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
+     * value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ :
+     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
+     * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
+     */
+    inline CreateServerRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A map that contains tag keys and tag values to attach to an AWS OpsWorks for
+     * Chef Automate or AWS OpsWorks for Puppet Enterprise server.</p> <ul> <li> <p>The
+     * key cannot be empty.</p> </li> <li> <p>The key can be a maximum of 127
+     * characters, and can contain only Unicode letters, numbers, or separators, or the
+     * following special characters: <code>+ - = . _ : /</code> </p> </li> <li> <p>The
+     * value can be a maximum 255 characters, and contain only Unicode letters,
+     * numbers, or separators, or the following special characters: <code>+ - = . _ :
+     * /</code> </p> </li> <li> <p>Leading and trailing white spaces are trimmed from
+     * both the key and value.</p> </li> <li> <p>A maximum of 50 user-applied tags is
+     * allowed for any AWS OpsWorks-CM server.</p> </li> </ul>
+     */
+    inline CreateServerRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p> If you specify this field, AWS OpsWorks CM creates the server by using the
      * backup represented by BackupId. </p>
      */
@@ -1650,6 +1780,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
 
     Aws::String m_backupId;
     bool m_backupIdHasBeenSet;

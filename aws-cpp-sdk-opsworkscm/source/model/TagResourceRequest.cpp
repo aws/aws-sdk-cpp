@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/opsworkscm/model/CreateBackupRequest.h>
+#include <aws/opsworkscm/model/TagResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,26 +22,19 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBackupRequest::CreateBackupRequest() : 
-    m_serverNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
+TagResourceRequest::TagResourceRequest() : 
+    m_resourceArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
-Aws::String CreateBackupRequest::SerializePayload() const
+Aws::String TagResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_serverNameHasBeenSet)
+  if(m_resourceArnHasBeenSet)
   {
-   payload.WithString("ServerName", m_serverName);
-
-  }
-
-  if(m_descriptionHasBeenSet)
-  {
-   payload.WithString("Description", m_description);
+   payload.WithString("ResourceArn", m_resourceArn);
 
   }
 
@@ -59,10 +52,10 @@ Aws::String CreateBackupRequest::SerializePayload() const
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateBackupRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection TagResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorksCM_V2016_11_01.CreateBackup"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorksCM_V2016_11_01.TagResource"));
   return headers;
 
 }

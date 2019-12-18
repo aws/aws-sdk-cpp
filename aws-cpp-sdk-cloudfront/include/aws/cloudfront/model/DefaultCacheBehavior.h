@@ -113,38 +113,38 @@ namespace Model
 
 
     /**
-     * <p>A complex type that specifies how CloudFront handles query strings and
-     * cookies.</p>
+     * <p>A complex type that specifies how CloudFront handles query strings, cookies,
+     * and HTTP headers.</p>
      */
     inline const ForwardedValues& GetForwardedValues() const{ return m_forwardedValues; }
 
     /**
-     * <p>A complex type that specifies how CloudFront handles query strings and
-     * cookies.</p>
+     * <p>A complex type that specifies how CloudFront handles query strings, cookies,
+     * and HTTP headers.</p>
      */
     inline bool ForwardedValuesHasBeenSet() const { return m_forwardedValuesHasBeenSet; }
 
     /**
-     * <p>A complex type that specifies how CloudFront handles query strings and
-     * cookies.</p>
+     * <p>A complex type that specifies how CloudFront handles query strings, cookies,
+     * and HTTP headers.</p>
      */
     inline void SetForwardedValues(const ForwardedValues& value) { m_forwardedValuesHasBeenSet = true; m_forwardedValues = value; }
 
     /**
-     * <p>A complex type that specifies how CloudFront handles query strings and
-     * cookies.</p>
+     * <p>A complex type that specifies how CloudFront handles query strings, cookies,
+     * and HTTP headers.</p>
      */
     inline void SetForwardedValues(ForwardedValues&& value) { m_forwardedValuesHasBeenSet = true; m_forwardedValues = std::move(value); }
 
     /**
-     * <p>A complex type that specifies how CloudFront handles query strings and
-     * cookies.</p>
+     * <p>A complex type that specifies how CloudFront handles query strings, cookies,
+     * and HTTP headers.</p>
      */
     inline DefaultCacheBehavior& WithForwardedValues(const ForwardedValues& value) { SetForwardedValues(value); return *this;}
 
     /**
-     * <p>A complex type that specifies how CloudFront handles query strings and
-     * cookies.</p>
+     * <p>A complex type that specifies how CloudFront handles query strings, cookies,
+     * and HTTP headers.</p>
      */
     inline DefaultCacheBehavior& WithForwardedValues(ForwardedValues&& value) { SetForwardedValues(std::move(value)); return *this;}
 

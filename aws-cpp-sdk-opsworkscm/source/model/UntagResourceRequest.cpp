@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/opsworkscm/model/CreateBackupRequest.h>
+#include <aws/opsworkscm/model/UntagResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,47 +22,40 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBackupRequest::CreateBackupRequest() : 
-    m_serverNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+UntagResourceRequest::UntagResourceRequest() : 
+    m_resourceArnHasBeenSet(false),
+    m_tagKeysHasBeenSet(false)
 {
 }
 
-Aws::String CreateBackupRequest::SerializePayload() const
+Aws::String UntagResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_serverNameHasBeenSet)
+  if(m_resourceArnHasBeenSet)
   {
-   payload.WithString("ServerName", m_serverName);
+   payload.WithString("ResourceArn", m_resourceArn);
 
   }
 
-  if(m_descriptionHasBeenSet)
+  if(m_tagKeysHasBeenSet)
   {
-   payload.WithString("Description", m_description);
-
-  }
-
-  if(m_tagsHasBeenSet)
-  {
-   Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
+   for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
    {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+     tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
    }
-   payload.WithArray("Tags", std::move(tagsJsonList));
+   payload.WithArray("TagKeys", std::move(tagKeysJsonList));
 
   }
 
   return payload.View().WriteReadable();
 }
 
-Aws::Http::HeaderValueCollection CreateBackupRequest::GetRequestSpecificHeaders() const
+Aws::Http::HeaderValueCollection UntagResourceRequest::GetRequestSpecificHeaders() const
 {
   Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorksCM_V2016_11_01.CreateBackup"));
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "OpsWorksCM_V2016_11_01.UntagResource"));
   return headers;
 
 }

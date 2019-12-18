@@ -966,10 +966,10 @@ namespace Model
 
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. For information about configuring using any of the officially
-     * supported AWS SDKs and AWS CLI, see <a
+     * <p>Specifies the ID of the symmetric customer managed AWS KMS CMK to use for
+     * object encryption. All GET and PUT requests for an object protected by AWS KMS
+     * will fail if not made via SSL or using SigV4. For information about configuring
+     * using any of the officially supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
@@ -977,10 +977,10 @@ namespace Model
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. For information about configuring using any of the officially
-     * supported AWS SDKs and AWS CLI, see <a
+     * <p>Specifies the ID of the symmetric customer managed AWS KMS CMK to use for
+     * object encryption. All GET and PUT requests for an object protected by AWS KMS
+     * will fail if not made via SSL or using SigV4. For information about configuring
+     * using any of the officially supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
@@ -988,10 +988,10 @@ namespace Model
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. For information about configuring using any of the officially
-     * supported AWS SDKs and AWS CLI, see <a
+     * <p>Specifies the ID of the symmetric customer managed AWS KMS CMK to use for
+     * object encryption. All GET and PUT requests for an object protected by AWS KMS
+     * will fail if not made via SSL or using SigV4. For information about configuring
+     * using any of the officially supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
@@ -999,10 +999,10 @@ namespace Model
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. For information about configuring using any of the officially
-     * supported AWS SDKs and AWS CLI, see <a
+     * <p>Specifies the ID of the symmetric customer managed AWS KMS CMK to use for
+     * object encryption. All GET and PUT requests for an object protected by AWS KMS
+     * will fail if not made via SSL or using SigV4. For information about configuring
+     * using any of the officially supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
@@ -1010,10 +1010,10 @@ namespace Model
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. For information about configuring using any of the officially
-     * supported AWS SDKs and AWS CLI, see <a
+     * <p>Specifies the ID of the symmetric customer managed AWS KMS CMK to use for
+     * object encryption. All GET and PUT requests for an object protected by AWS KMS
+     * will fail if not made via SSL or using SigV4. For information about configuring
+     * using any of the officially supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
@@ -1021,10 +1021,10 @@ namespace Model
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. For information about configuring using any of the officially
-     * supported AWS SDKs and AWS CLI, see <a
+     * <p>Specifies the ID of the symmetric customer managed AWS KMS CMK to use for
+     * object encryption. All GET and PUT requests for an object protected by AWS KMS
+     * will fail if not made via SSL or using SigV4. For information about configuring
+     * using any of the officially supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
@@ -1032,10 +1032,10 @@ namespace Model
     inline CreateMultipartUploadRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. For information about configuring using any of the officially
-     * supported AWS SDKs and AWS CLI, see <a
+     * <p>Specifies the ID of the symmetric customer managed AWS KMS CMK to use for
+     * object encryption. All GET and PUT requests for an object protected by AWS KMS
+     * will fail if not made via SSL or using SigV4. For information about configuring
+     * using any of the officially supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>
@@ -1043,10 +1043,10 @@ namespace Model
     inline CreateMultipartUploadRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the AWS KMS key ID to use for object encryption. All GET and PUT
-     * requests for an object protected by AWS KMS will fail if not made via SSL or
-     * using SigV4. For information about configuring using any of the officially
-     * supported AWS SDKs and AWS CLI, see <a
+     * <p>Specifies the ID of the symmetric customer managed AWS KMS CMK to use for
+     * object encryption. All GET and PUT requests for an object protected by AWS KMS
+     * will fail if not made via SSL or using SigV4. For information about configuring
+     * using any of the officially supported AWS SDKs and AWS CLI, see <a
      * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
      * the Signature Version in Request Authentication</a> in the <i>Amazon S3
      * Developer Guide</i>.</p>

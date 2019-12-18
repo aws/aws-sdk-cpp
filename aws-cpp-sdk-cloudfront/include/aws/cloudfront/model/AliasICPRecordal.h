@@ -107,8 +107,10 @@ namespace Model
      * to use with China region, a CNAME must have one ICP recordal number associated
      * with it.</p> </li> <li> <p> <b>SUSPENDED</b> indicates that the associated CNAME
      * does not have a valid ICP recordal number.</p> </li> <li> <p> <b>PENDING</b>
-     * indicates that at least one CNAME associated with the distribution does not have
-     * a valid ICP recordal number.</p> </li> </ul>
+     * indicates that CloudFront can't determine the ICP recordal status of the CNAME
+     * associated with the distribution because there was an error in trying to
+     * determine the status. You can try again to see if the error is resolved in which
+     * case CloudFront returns an APPROVED or SUSPENDED status.</p> </li> </ul>
      */
     inline const ICPRecordalStatus& GetICPRecordalStatus() const{ return m_iCPRecordalStatus; }
 
@@ -122,8 +124,10 @@ namespace Model
      * to use with China region, a CNAME must have one ICP recordal number associated
      * with it.</p> </li> <li> <p> <b>SUSPENDED</b> indicates that the associated CNAME
      * does not have a valid ICP recordal number.</p> </li> <li> <p> <b>PENDING</b>
-     * indicates that at least one CNAME associated with the distribution does not have
-     * a valid ICP recordal number.</p> </li> </ul>
+     * indicates that CloudFront can't determine the ICP recordal status of the CNAME
+     * associated with the distribution because there was an error in trying to
+     * determine the status. You can try again to see if the error is resolved in which
+     * case CloudFront returns an APPROVED or SUSPENDED status.</p> </li> </ul>
      */
     inline bool ICPRecordalStatusHasBeenSet() const { return m_iCPRecordalStatusHasBeenSet; }
 
@@ -137,8 +141,10 @@ namespace Model
      * to use with China region, a CNAME must have one ICP recordal number associated
      * with it.</p> </li> <li> <p> <b>SUSPENDED</b> indicates that the associated CNAME
      * does not have a valid ICP recordal number.</p> </li> <li> <p> <b>PENDING</b>
-     * indicates that at least one CNAME associated with the distribution does not have
-     * a valid ICP recordal number.</p> </li> </ul>
+     * indicates that CloudFront can't determine the ICP recordal status of the CNAME
+     * associated with the distribution because there was an error in trying to
+     * determine the status. You can try again to see if the error is resolved in which
+     * case CloudFront returns an APPROVED or SUSPENDED status.</p> </li> </ul>
      */
     inline void SetICPRecordalStatus(const ICPRecordalStatus& value) { m_iCPRecordalStatusHasBeenSet = true; m_iCPRecordalStatus = value; }
 
@@ -152,8 +158,10 @@ namespace Model
      * to use with China region, a CNAME must have one ICP recordal number associated
      * with it.</p> </li> <li> <p> <b>SUSPENDED</b> indicates that the associated CNAME
      * does not have a valid ICP recordal number.</p> </li> <li> <p> <b>PENDING</b>
-     * indicates that at least one CNAME associated with the distribution does not have
-     * a valid ICP recordal number.</p> </li> </ul>
+     * indicates that CloudFront can't determine the ICP recordal status of the CNAME
+     * associated with the distribution because there was an error in trying to
+     * determine the status. You can try again to see if the error is resolved in which
+     * case CloudFront returns an APPROVED or SUSPENDED status.</p> </li> </ul>
      */
     inline void SetICPRecordalStatus(ICPRecordalStatus&& value) { m_iCPRecordalStatusHasBeenSet = true; m_iCPRecordalStatus = std::move(value); }
 
@@ -167,8 +175,10 @@ namespace Model
      * to use with China region, a CNAME must have one ICP recordal number associated
      * with it.</p> </li> <li> <p> <b>SUSPENDED</b> indicates that the associated CNAME
      * does not have a valid ICP recordal number.</p> </li> <li> <p> <b>PENDING</b>
-     * indicates that at least one CNAME associated with the distribution does not have
-     * a valid ICP recordal number.</p> </li> </ul>
+     * indicates that CloudFront can't determine the ICP recordal status of the CNAME
+     * associated with the distribution because there was an error in trying to
+     * determine the status. You can try again to see if the error is resolved in which
+     * case CloudFront returns an APPROVED or SUSPENDED status.</p> </li> </ul>
      */
     inline AliasICPRecordal& WithICPRecordalStatus(const ICPRecordalStatus& value) { SetICPRecordalStatus(value); return *this;}
 
@@ -182,8 +192,10 @@ namespace Model
      * to use with China region, a CNAME must have one ICP recordal number associated
      * with it.</p> </li> <li> <p> <b>SUSPENDED</b> indicates that the associated CNAME
      * does not have a valid ICP recordal number.</p> </li> <li> <p> <b>PENDING</b>
-     * indicates that at least one CNAME associated with the distribution does not have
-     * a valid ICP recordal number.</p> </li> </ul>
+     * indicates that CloudFront can't determine the ICP recordal status of the CNAME
+     * associated with the distribution because there was an error in trying to
+     * determine the status. You can try again to see if the error is resolved in which
+     * case CloudFront returns an APPROVED or SUSPENDED status.</p> </li> </ul>
      */
     inline AliasICPRecordal& WithICPRecordalStatus(ICPRecordalStatus&& value) { SetICPRecordalStatus(std::move(value)); return *this;}
 

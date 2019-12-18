@@ -1290,10 +1290,11 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
-     * <p> If the value of <code>x-amz-server-side-encryption</code> is
-     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
-     * be used for the object. If you specify
+     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
+     * was used for the object.</p> <p> If the value of
+     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
+     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
+     * for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
      * managed CMK in AWS to protect the data.</p>
@@ -1303,10 +1304,11 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
-     * <p> If the value of <code>x-amz-server-side-encryption</code> is
-     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
-     * be used for the object. If you specify
+     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
+     * was used for the object.</p> <p> If the value of
+     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
+     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
+     * for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
      * managed CMK in AWS to protect the data.</p>
@@ -1316,10 +1318,11 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
-     * <p> If the value of <code>x-amz-server-side-encryption</code> is
-     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
-     * be used for the object. If you specify
+     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
+     * was used for the object.</p> <p> If the value of
+     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
+     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
+     * for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
      * managed CMK in AWS to protect the data.</p>
@@ -1329,10 +1332,11 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
-     * <p> If the value of <code>x-amz-server-side-encryption</code> is
-     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
-     * be used for the object. If you specify
+     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
+     * was used for the object.</p> <p> If the value of
+     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
+     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
+     * for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
      * managed CMK in AWS to protect the data.</p>
@@ -1342,10 +1346,11 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
-     * <p> If the value of <code>x-amz-server-side-encryption</code> is
-     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
-     * be used for the object. If you specify
+     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
+     * was used for the object.</p> <p> If the value of
+     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
+     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
+     * for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
      * managed CMK in AWS to protect the data.</p>
@@ -1355,10 +1360,11 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
-     * <p> If the value of <code>x-amz-server-side-encryption</code> is
-     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
-     * be used for the object. If you specify
+     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
+     * was used for the object.</p> <p> If the value of
+     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
+     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
+     * for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
      * managed CMK in AWS to protect the data.</p>
@@ -1368,10 +1374,11 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
-     * <p> If the value of <code>x-amz-server-side-encryption</code> is
-     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
-     * be used for the object. If you specify
+     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
+     * was used for the object.</p> <p> If the value of
+     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
+     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
+     * for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
      * managed CMK in AWS to protect the data.</p>
@@ -1381,10 +1388,11 @@ namespace Model
     /**
      * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
      * <code>aws:kms</code>, this header specifies the ID of the AWS Key Management
-     * Service (AWS KMS) customer master key (CMK) that was used for the object.</p>
-     * <p> If the value of <code>x-amz-server-side-encryption</code> is
-     * <code>aws:kms</code>, this header specifies the ID of the AWS KMS CMK that will
-     * be used for the object. If you specify
+     * Service (AWS KMS) symmetrical customer managed customer master key (CMK) that
+     * was used for the object.</p> <p> If the value of
+     * <code>x-amz-server-side-encryption</code> is <code>aws:kms</code>, this header
+     * specifies the ID of the symmetric customer managed AWS KMS CMK that will be used
+     * for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
      * managed CMK in AWS to protect the data.</p>

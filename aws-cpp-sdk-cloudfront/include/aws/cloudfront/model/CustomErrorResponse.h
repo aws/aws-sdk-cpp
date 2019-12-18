@@ -95,12 +95,10 @@ namespace Model
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
-     * for <code>ResponseCode</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponsePagePath&gt;</code>, in the XML document.</p>
-     * <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you
-     * store custom error pages on an HTTP server and the server starts to return 5xx
-     * errors, CloudFront can't get the files that you want to return to viewers
-     * because the origin server is unavailable.</p>
+     * for <code>ResponseCode</code>.</p> <p>We recommend that you store custom error
+     * pages in an Amazon S3 bucket. If you store custom error pages on an HTTP server
+     * and the server starts to return 5xx errors, CloudFront can't get the files that
+     * you want to return to viewers because the origin server is unavailable.</p>
      */
     inline const Aws::String& GetResponsePagePath() const{ return m_responsePagePath; }
 
@@ -120,12 +118,10 @@ namespace Model
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
-     * for <code>ResponseCode</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponsePagePath&gt;</code>, in the XML document.</p>
-     * <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you
-     * store custom error pages on an HTTP server and the server starts to return 5xx
-     * errors, CloudFront can't get the files that you want to return to viewers
-     * because the origin server is unavailable.</p>
+     * for <code>ResponseCode</code>.</p> <p>We recommend that you store custom error
+     * pages in an Amazon S3 bucket. If you store custom error pages on an HTTP server
+     * and the server starts to return 5xx errors, CloudFront can't get the files that
+     * you want to return to viewers because the origin server is unavailable.</p>
      */
     inline bool ResponsePagePathHasBeenSet() const { return m_responsePagePathHasBeenSet; }
 
@@ -145,12 +141,10 @@ namespace Model
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
-     * for <code>ResponseCode</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponsePagePath&gt;</code>, in the XML document.</p>
-     * <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you
-     * store custom error pages on an HTTP server and the server starts to return 5xx
-     * errors, CloudFront can't get the files that you want to return to viewers
-     * because the origin server is unavailable.</p>
+     * for <code>ResponseCode</code>.</p> <p>We recommend that you store custom error
+     * pages in an Amazon S3 bucket. If you store custom error pages on an HTTP server
+     * and the server starts to return 5xx errors, CloudFront can't get the files that
+     * you want to return to viewers because the origin server is unavailable.</p>
      */
     inline void SetResponsePagePath(const Aws::String& value) { m_responsePagePathHasBeenSet = true; m_responsePagePath = value; }
 
@@ -170,12 +164,10 @@ namespace Model
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
-     * for <code>ResponseCode</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponsePagePath&gt;</code>, in the XML document.</p>
-     * <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you
-     * store custom error pages on an HTTP server and the server starts to return 5xx
-     * errors, CloudFront can't get the files that you want to return to viewers
-     * because the origin server is unavailable.</p>
+     * for <code>ResponseCode</code>.</p> <p>We recommend that you store custom error
+     * pages in an Amazon S3 bucket. If you store custom error pages on an HTTP server
+     * and the server starts to return 5xx errors, CloudFront can't get the files that
+     * you want to return to viewers because the origin server is unavailable.</p>
      */
     inline void SetResponsePagePath(Aws::String&& value) { m_responsePagePathHasBeenSet = true; m_responsePagePath = std::move(value); }
 
@@ -195,12 +187,10 @@ namespace Model
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
-     * for <code>ResponseCode</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponsePagePath&gt;</code>, in the XML document.</p>
-     * <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you
-     * store custom error pages on an HTTP server and the server starts to return 5xx
-     * errors, CloudFront can't get the files that you want to return to viewers
-     * because the origin server is unavailable.</p>
+     * for <code>ResponseCode</code>.</p> <p>We recommend that you store custom error
+     * pages in an Amazon S3 bucket. If you store custom error pages on an HTTP server
+     * and the server starts to return 5xx errors, CloudFront can't get the files that
+     * you want to return to viewers because the origin server is unavailable.</p>
      */
     inline void SetResponsePagePath(const char* value) { m_responsePagePathHasBeenSet = true; m_responsePagePath.assign(value); }
 
@@ -220,12 +210,10 @@ namespace Model
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
-     * for <code>ResponseCode</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponsePagePath&gt;</code>, in the XML document.</p>
-     * <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you
-     * store custom error pages on an HTTP server and the server starts to return 5xx
-     * errors, CloudFront can't get the files that you want to return to viewers
-     * because the origin server is unavailable.</p>
+     * for <code>ResponseCode</code>.</p> <p>We recommend that you store custom error
+     * pages in an Amazon S3 bucket. If you store custom error pages on an HTTP server
+     * and the server starts to return 5xx errors, CloudFront can't get the files that
+     * you want to return to viewers because the origin server is unavailable.</p>
      */
     inline CustomErrorResponse& WithResponsePagePath(const Aws::String& value) { SetResponsePagePath(value); return *this;}
 
@@ -245,12 +233,10 @@ namespace Model
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
-     * for <code>ResponseCode</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponsePagePath&gt;</code>, in the XML document.</p>
-     * <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you
-     * store custom error pages on an HTTP server and the server starts to return 5xx
-     * errors, CloudFront can't get the files that you want to return to viewers
-     * because the origin server is unavailable.</p>
+     * for <code>ResponseCode</code>.</p> <p>We recommend that you store custom error
+     * pages in an Amazon S3 bucket. If you store custom error pages on an HTTP server
+     * and the server starts to return 5xx errors, CloudFront can't get the files that
+     * you want to return to viewers because the origin server is unavailable.</p>
      */
     inline CustomErrorResponse& WithResponsePagePath(Aws::String&& value) { SetResponsePagePath(std::move(value)); return *this;}
 
@@ -270,12 +256,10 @@ namespace Model
      * <code>TargetOriginId</code> specifies the value of the <code>ID</code> element
      * for the origin that contains your custom error pages.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponsePagePath</code>, you must also specify a value
-     * for <code>ResponseCode</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponsePagePath&gt;</code>, in the XML document.</p>
-     * <p>We recommend that you store custom error pages in an Amazon S3 bucket. If you
-     * store custom error pages on an HTTP server and the server starts to return 5xx
-     * errors, CloudFront can't get the files that you want to return to viewers
-     * because the origin server is unavailable.</p>
+     * for <code>ResponseCode</code>.</p> <p>We recommend that you store custom error
+     * pages in an Amazon S3 bucket. If you store custom error pages on an HTTP server
+     * and the server starts to return 5xx errors, CloudFront can't get the files that
+     * you want to return to viewers because the origin server is unavailable.</p>
      */
     inline CustomErrorResponse& WithResponsePagePath(const char* value) { SetResponsePagePath(value); return *this;}
 
@@ -294,8 +278,7 @@ namespace Model
      * might want to return a <code>200</code> status code (OK) and static website so
      * your customers don't know that your website is down.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponseCode</code>, you must also specify a value for
-     * <code>ResponsePagePath</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponseCode&gt;</code>, in the XML document.</p>
+     * <code>ResponsePagePath</code>.</p>
      */
     inline const Aws::String& GetResponseCode() const{ return m_responseCode; }
 
@@ -313,8 +296,7 @@ namespace Model
      * might want to return a <code>200</code> status code (OK) and static website so
      * your customers don't know that your website is down.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponseCode</code>, you must also specify a value for
-     * <code>ResponsePagePath</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponseCode&gt;</code>, in the XML document.</p>
+     * <code>ResponsePagePath</code>.</p>
      */
     inline bool ResponseCodeHasBeenSet() const { return m_responseCodeHasBeenSet; }
 
@@ -332,8 +314,7 @@ namespace Model
      * might want to return a <code>200</code> status code (OK) and static website so
      * your customers don't know that your website is down.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponseCode</code>, you must also specify a value for
-     * <code>ResponsePagePath</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponseCode&gt;</code>, in the XML document.</p>
+     * <code>ResponsePagePath</code>.</p>
      */
     inline void SetResponseCode(const Aws::String& value) { m_responseCodeHasBeenSet = true; m_responseCode = value; }
 
@@ -351,8 +332,7 @@ namespace Model
      * might want to return a <code>200</code> status code (OK) and static website so
      * your customers don't know that your website is down.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponseCode</code>, you must also specify a value for
-     * <code>ResponsePagePath</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponseCode&gt;</code>, in the XML document.</p>
+     * <code>ResponsePagePath</code>.</p>
      */
     inline void SetResponseCode(Aws::String&& value) { m_responseCodeHasBeenSet = true; m_responseCode = std::move(value); }
 
@@ -370,8 +350,7 @@ namespace Model
      * might want to return a <code>200</code> status code (OK) and static website so
      * your customers don't know that your website is down.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponseCode</code>, you must also specify a value for
-     * <code>ResponsePagePath</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponseCode&gt;</code>, in the XML document.</p>
+     * <code>ResponsePagePath</code>.</p>
      */
     inline void SetResponseCode(const char* value) { m_responseCodeHasBeenSet = true; m_responseCode.assign(value); }
 
@@ -389,8 +368,7 @@ namespace Model
      * might want to return a <code>200</code> status code (OK) and static website so
      * your customers don't know that your website is down.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponseCode</code>, you must also specify a value for
-     * <code>ResponsePagePath</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponseCode&gt;</code>, in the XML document.</p>
+     * <code>ResponsePagePath</code>.</p>
      */
     inline CustomErrorResponse& WithResponseCode(const Aws::String& value) { SetResponseCode(value); return *this;}
 
@@ -408,8 +386,7 @@ namespace Model
      * might want to return a <code>200</code> status code (OK) and static website so
      * your customers don't know that your website is down.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponseCode</code>, you must also specify a value for
-     * <code>ResponsePagePath</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponseCode&gt;</code>, in the XML document.</p>
+     * <code>ResponsePagePath</code>.</p>
      */
     inline CustomErrorResponse& WithResponseCode(Aws::String&& value) { SetResponseCode(std::move(value)); return *this;}
 
@@ -427,8 +404,7 @@ namespace Model
      * might want to return a <code>200</code> status code (OK) and static website so
      * your customers don't know that your website is down.</p> </li> </ul> <p>If you
      * specify a value for <code>ResponseCode</code>, you must also specify a value for
-     * <code>ResponsePagePath</code>. If you don't want to specify a value, include an
-     * empty element, <code>&lt;ResponseCode&gt;</code>, in the XML document.</p>
+     * <code>ResponsePagePath</code>.</p>
      */
     inline CustomErrorResponse& WithResponseCode(const char* value) { SetResponseCode(value); return *this;}
 
@@ -437,10 +413,8 @@ namespace Model
      * <p>The minimum amount of time, in seconds, that you want CloudFront to cache the
      * HTTP status code specified in <code>ErrorCode</code>. When this time period has
      * elapsed, CloudFront queries your origin to see whether the problem that caused
-     * the error has been resolved and the requested object is now available.</p> <p>If
-     * you don't want to specify a value, include an empty element,
-     * <code>&lt;ErrorCachingMinTTL&gt;</code>, in the XML document.</p> <p>For more
-     * information, see <a
+     * the error has been resolved and the requested object is now available.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -450,10 +424,8 @@ namespace Model
      * <p>The minimum amount of time, in seconds, that you want CloudFront to cache the
      * HTTP status code specified in <code>ErrorCode</code>. When this time period has
      * elapsed, CloudFront queries your origin to see whether the problem that caused
-     * the error has been resolved and the requested object is now available.</p> <p>If
-     * you don't want to specify a value, include an empty element,
-     * <code>&lt;ErrorCachingMinTTL&gt;</code>, in the XML document.</p> <p>For more
-     * information, see <a
+     * the error has been resolved and the requested object is now available.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -463,10 +435,8 @@ namespace Model
      * <p>The minimum amount of time, in seconds, that you want CloudFront to cache the
      * HTTP status code specified in <code>ErrorCode</code>. When this time period has
      * elapsed, CloudFront queries your origin to see whether the problem that caused
-     * the error has been resolved and the requested object is now available.</p> <p>If
-     * you don't want to specify a value, include an empty element,
-     * <code>&lt;ErrorCachingMinTTL&gt;</code>, in the XML document.</p> <p>For more
-     * information, see <a
+     * the error has been resolved and the requested object is now available.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
@@ -476,10 +446,8 @@ namespace Model
      * <p>The minimum amount of time, in seconds, that you want CloudFront to cache the
      * HTTP status code specified in <code>ErrorCode</code>. When this time period has
      * elapsed, CloudFront queries your origin to see whether the problem that caused
-     * the error has been resolved and the requested object is now available.</p> <p>If
-     * you don't want to specify a value, include an empty element,
-     * <code>&lt;ErrorCachingMinTTL&gt;</code>, in the XML document.</p> <p>For more
-     * information, see <a
+     * the error has been resolved and the requested object is now available.</p>
+     * <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */

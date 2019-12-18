@@ -794,7 +794,7 @@ namespace Aws
          * of server-side encryption that was used to encrypt the source, or even if the
          * source object was not encrypted. For more information about server-side
          * encryption, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
          * Server-Side Encryption</a>.</p> <p>A copy request might return an error when
          * Amazon S3 receives the copy request or while Amazon S3 is copying the files. If
          * the error occurs before the copy operation starts, you receive a standard Amazon
@@ -859,13 +859,19 @@ namespace Aws
          * <code>x-amz-server-side​-encryption</code> </p> </li> <li> <p>
          * <code>x-amz-server-side-encryption-aws-kms-key-id</code> </p> </li> <li> <p>
          * <code>x-amz-server-side-encryption-context</code> </p> </li> </ul> <note> <p>If
-         * you specify <code>x-amz-server-side-encryption:aws:kms</code> but don't provide
-         * <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the
-         * AWS managed customer master key (CMK) in AWS KMS to protect the data.</p>
-         * </note> <important> <p>All GET and PUT requests for an object protected by AWS
-         * KMS fail if you don't make them with SSL or by using SigV4.</p> </important>
-         * <p>For more information about server-side encryption with CMKs stored in AWS KMS
-         * (SSE-KMS), see <a
+         * you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+         * managed CMK in AWS KMS to protect the data. If you want to use a customer
+         * managed AWS KMS CMK, you must provide the
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code> of the symmetric
+         * customer managed CMK. Amazon S3 only supports symmetric CMKs and not asymmetric
+         * CMKs. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+         * Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer
+         * Guide</i>.</p> </note> <important> <p>All GET and PUT requests for an object
+         * protected by AWS KMS fail if you don't make them with SSL or by using SigV4.</p>
+         * </important> <p>For more information about server-side encryption with CMKs
+         * stored in AWS KMS (SSE-KMS), see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
          * Data Using Server-Side Encryption with CMKs stored in KMS</a>.</p> </li> <li>
          * <p>To encrypt the target object using server-side encryption with an encryption
@@ -908,7 +914,7 @@ namespace Aws
          * <p>x-amz-grant-full-control</p> </li> </ul> <p>You specify each grantee as a
          * type=value pair, where the type is one of the following:</p> <ul> <li> <p>
          * <code>emailAddress</code> – if the value specified is the email address of an
-         * AWS account</p> </li> <li> <p> <code>id</code> – if the value specified is the
+         * AWS account</p> </li> <li> <p> <code>id</code> �� if the value specified is the
          * canonical user ID of an AWS account</p> </li> <li> <p> <code>uri</code> – if you
          * are granting permissions to a predefined group</p> </li> </ul> <p>For example,
          * the following <code>x-amz-grant-read</code> header grants the AWS accounts
@@ -970,7 +976,7 @@ namespace Aws
          * of server-side encryption that was used to encrypt the source, or even if the
          * source object was not encrypted. For more information about server-side
          * encryption, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
          * Server-Side Encryption</a>.</p> <p>A copy request might return an error when
          * Amazon S3 receives the copy request or while Amazon S3 is copying the files. If
          * the error occurs before the copy operation starts, you receive a standard Amazon
@@ -1035,13 +1041,19 @@ namespace Aws
          * <code>x-amz-server-side​-encryption</code> </p> </li> <li> <p>
          * <code>x-amz-server-side-encryption-aws-kms-key-id</code> </p> </li> <li> <p>
          * <code>x-amz-server-side-encryption-context</code> </p> </li> </ul> <note> <p>If
-         * you specify <code>x-amz-server-side-encryption:aws:kms</code> but don't provide
-         * <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the
-         * AWS managed customer master key (CMK) in AWS KMS to protect the data.</p>
-         * </note> <important> <p>All GET and PUT requests for an object protected by AWS
-         * KMS fail if you don't make them with SSL or by using SigV4.</p> </important>
-         * <p>For more information about server-side encryption with CMKs stored in AWS KMS
-         * (SSE-KMS), see <a
+         * you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+         * managed CMK in AWS KMS to protect the data. If you want to use a customer
+         * managed AWS KMS CMK, you must provide the
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code> of the symmetric
+         * customer managed CMK. Amazon S3 only supports symmetric CMKs and not asymmetric
+         * CMKs. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+         * Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer
+         * Guide</i>.</p> </note> <important> <p>All GET and PUT requests for an object
+         * protected by AWS KMS fail if you don't make them with SSL or by using SigV4.</p>
+         * </important> <p>For more information about server-side encryption with CMKs
+         * stored in AWS KMS (SSE-KMS), see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
          * Data Using Server-Side Encryption with CMKs stored in KMS</a>.</p> </li> <li>
          * <p>To encrypt the target object using server-side encryption with an encryption
@@ -1084,7 +1096,7 @@ namespace Aws
          * <p>x-amz-grant-full-control</p> </li> </ul> <p>You specify each grantee as a
          * type=value pair, where the type is one of the following:</p> <ul> <li> <p>
          * <code>emailAddress</code> – if the value specified is the email address of an
-         * AWS account</p> </li> <li> <p> <code>id</code> – if the value specified is the
+         * AWS account</p> </li> <li> <p> <code>id</code> �� if the value specified is the
          * canonical user ID of an AWS account</p> </li> <li> <p> <code>uri</code> – if you
          * are granting permissions to a predefined group</p> </li> </ul> <p>For example,
          * the following <code>x-amz-grant-read</code> header grants the AWS accounts
@@ -1148,7 +1160,7 @@ namespace Aws
          * of server-side encryption that was used to encrypt the source, or even if the
          * source object was not encrypted. For more information about server-side
          * encryption, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
          * Server-Side Encryption</a>.</p> <p>A copy request might return an error when
          * Amazon S3 receives the copy request or while Amazon S3 is copying the files. If
          * the error occurs before the copy operation starts, you receive a standard Amazon
@@ -1213,13 +1225,19 @@ namespace Aws
          * <code>x-amz-server-side​-encryption</code> </p> </li> <li> <p>
          * <code>x-amz-server-side-encryption-aws-kms-key-id</code> </p> </li> <li> <p>
          * <code>x-amz-server-side-encryption-context</code> </p> </li> </ul> <note> <p>If
-         * you specify <code>x-amz-server-side-encryption:aws:kms</code> but don't provide
-         * <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the
-         * AWS managed customer master key (CMK) in AWS KMS to protect the data.</p>
-         * </note> <important> <p>All GET and PUT requests for an object protected by AWS
-         * KMS fail if you don't make them with SSL or by using SigV4.</p> </important>
-         * <p>For more information about server-side encryption with CMKs stored in AWS KMS
-         * (SSE-KMS), see <a
+         * you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+         * managed CMK in AWS KMS to protect the data. If you want to use a customer
+         * managed AWS KMS CMK, you must provide the
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code> of the symmetric
+         * customer managed CMK. Amazon S3 only supports symmetric CMKs and not asymmetric
+         * CMKs. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+         * Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer
+         * Guide</i>.</p> </note> <important> <p>All GET and PUT requests for an object
+         * protected by AWS KMS fail if you don't make them with SSL or by using SigV4.</p>
+         * </important> <p>For more information about server-side encryption with CMKs
+         * stored in AWS KMS (SSE-KMS), see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
          * Data Using Server-Side Encryption with CMKs stored in KMS</a>.</p> </li> <li>
          * <p>To encrypt the target object using server-side encryption with an encryption
@@ -1262,7 +1280,7 @@ namespace Aws
          * <p>x-amz-grant-full-control</p> </li> </ul> <p>You specify each grantee as a
          * type=value pair, where the type is one of the following:</p> <ul> <li> <p>
          * <code>emailAddress</code> – if the value specified is the email address of an
-         * AWS account</p> </li> <li> <p> <code>id</code> – if the value specified is the
+         * AWS account</p> </li> <li> <p> <code>id</code> �� if the value specified is the
          * canonical user ID of an AWS account</p> </li> <li> <p> <code>uri</code> – if you
          * are granting permissions to a predefined group</p> </li> </ul> <p>For example,
          * the following <code>x-amz-grant-read</code> header grants the AWS accounts
@@ -1319,7 +1337,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a>.</p> <p>You specify each grantee as a type=value
          * pair, where the type is one of the following:</p> <ul> <li> <p>
-         * <code>emailAddress</code> – if the value specified is the email address of an
+         * <code>emailAddress</code> ��� if the value specified is the email address of an
          * AWS account</p> </li> <li> <p> <code>id</code> – if the value specified is the
          * canonical user ID of an AWS account</p> </li> <li> <p> <code>uri</code> – if you
          * are granting permissions to a predefined group</p> </li> </ul> <p>For example,
@@ -1374,7 +1392,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a>.</p> <p>You specify each grantee as a type=value
          * pair, where the type is one of the following:</p> <ul> <li> <p>
-         * <code>emailAddress</code> – if the value specified is the email address of an
+         * <code>emailAddress</code> ��� if the value specified is the email address of an
          * AWS account</p> </li> <li> <p> <code>id</code> – if the value specified is the
          * canonical user ID of an AWS account</p> </li> <li> <p> <code>uri</code> – if you
          * are granting permissions to a predefined group</p> </li> </ul> <p>For example,
@@ -1431,7 +1449,7 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a>.</p> <p>You specify each grantee as a type=value
          * pair, where the type is one of the following:</p> <ul> <li> <p>
-         * <code>emailAddress</code> – if the value specified is the email address of an
+         * <code>emailAddress</code> ��� if the value specified is the email address of an
          * AWS account</p> </li> <li> <p> <code>id</code> – if the value specified is the
          * canonical user ID of an AWS account</p> </li> <li> <p> <code>uri</code> – if you
          * are granting permissions to a predefined group</p> </li> </ul> <p>For example,
@@ -1527,10 +1545,10 @@ namespace Aws
          * <p>x-amz-server-side-encryption-aws-kms-key-id</p> </li> <li>
          * <p>x-amz-server-side-encryption-context</p> </li> </ul> <note> <p>If you specify
          * <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-         * <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the
-         * AWS managed CMK in AWS KMS to protect the data.</p> </note> <important> <p>All
-         * GET and PUT requests for an object protected by AWS KMS fail if you don't make
-         * them with SSL or by using SigV4.</p> </important> <p>For more information about
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+         * managed CMK in AWS KMS to protect the data.</p> </note> <important> <p>All GET
+         * and PUT requests for an object protected by AWS KMS fail if you don't make them
+         * with SSL or by using SigV4.</p> </important> <p>For more information about
          * server-side encryption with CMKs stored in AWS KMS (SSE-KMS), see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
          * Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.</p> </li>
@@ -1663,10 +1681,10 @@ namespace Aws
          * <p>x-amz-server-side-encryption-aws-kms-key-id</p> </li> <li>
          * <p>x-amz-server-side-encryption-context</p> </li> </ul> <note> <p>If you specify
          * <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-         * <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the
-         * AWS managed CMK in AWS KMS to protect the data.</p> </note> <important> <p>All
-         * GET and PUT requests for an object protected by AWS KMS fail if you don't make
-         * them with SSL or by using SigV4.</p> </important> <p>For more information about
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+         * managed CMK in AWS KMS to protect the data.</p> </note> <important> <p>All GET
+         * and PUT requests for an object protected by AWS KMS fail if you don't make them
+         * with SSL or by using SigV4.</p> </important> <p>For more information about
          * server-side encryption with CMKs stored in AWS KMS (SSE-KMS), see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
          * Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.</p> </li>
@@ -1801,10 +1819,10 @@ namespace Aws
          * <p>x-amz-server-side-encryption-aws-kms-key-id</p> </li> <li>
          * <p>x-amz-server-side-encryption-context</p> </li> </ul> <note> <p>If you specify
          * <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-         * <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the
-         * AWS managed CMK in AWS KMS to protect the data.</p> </note> <important> <p>All
-         * GET and PUT requests for an object protected by AWS KMS fail if you don't make
-         * them with SSL or by using SigV4.</p> </important> <p>For more information about
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+         * managed CMK in AWS KMS to protect the data.</p> </note> <important> <p>All GET
+         * and PUT requests for an object protected by AWS KMS fail if you don't make them
+         * with SSL or by using SigV4.</p> </important> <p>For more information about
          * server-side encryption with CMKs stored in AWS KMS (SSE-KMS), see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
          * Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.</p> </li>
@@ -2657,7 +2675,7 @@ namespace Aws
         /**
          * <p>Removes the entire tag set from the specified object. For more information
          * about managing object tags, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html#MultiFactorAuthenticationDelete">
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">
          * Object Tagging</a>.</p> <p>To use this operation, you must have permission to
          * perform the <code>s3:DeleteObjectTagging</code> action.</p> <p>To delete tags of
          * a specific object version, add the <code>versionId</code> query parameter in the
@@ -2674,7 +2692,7 @@ namespace Aws
         /**
          * <p>Removes the entire tag set from the specified object. For more information
          * about managing object tags, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html#MultiFactorAuthenticationDelete">
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">
          * Object Tagging</a>.</p> <p>To use this operation, you must have permission to
          * perform the <code>s3:DeleteObjectTagging</code> action.</p> <p>To delete tags of
          * a specific object version, add the <code>versionId</code> query parameter in the
@@ -2693,7 +2711,7 @@ namespace Aws
         /**
          * <p>Removes the entire tag set from the specified object. For more information
          * about managing object tags, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html#MultiFactorAuthenticationDelete">
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">
          * Object Tagging</a>.</p> <p>To use this operation, you must have permission to
          * perform the <code>s3:DeleteObjectTagging</code> action.</p> <p>To delete tags of
          * a specific object version, add the <code>versionId</code> query parameter in the
@@ -6169,12 +6187,12 @@ namespace Aws
          * <p>This implementation of the <code>PUT</code> operation uses the
          * <code>encryption</code> subresource to set the default encryption state of an
          * existing bucket.</p> <p>This implementation of the <code>PUT</code> operation
-         * sets default encryption for a buckets using server-side encryption with Amazon
-         * S3-managed keys SSE-S3 or AWS KMS customer master keys (CMKs) (SSE-KMS)
-         * bucket.</p> <important> <p>This operation requires AWS Signature Version 4. For
-         * more information, see <a href="sig-v4-authenticating-requests.html">
-         * Authenticating Requests (AWS Signature Version 4)</a>. </p> </important> <p>To
-         * use this operation, you must have permissions to perform the
+         * sets default encryption for a bucket using server-side encryption with Amazon
+         * S3-managed keys SSE-S3 or AWS KMS customer master keys (CMKs) (SSE-KMS).</p>
+         * <important> <p>This operation requires AWS Signature Version 4. For more
+         * information, see <a href="sig-v4-authenticating-requests.html"> Authenticating
+         * Requests (AWS Signature Version 4)</a>. </p> </important> <p>To use this
+         * operation, you must have permissions to perform the
          * <code>s3:PutEncryptionConfiguration</code> action. The bucket owner has this
          * permission by default. The bucket owner can grant this permission to others. For
          * more information about permissions, see <a
@@ -6194,12 +6212,12 @@ namespace Aws
          * <p>This implementation of the <code>PUT</code> operation uses the
          * <code>encryption</code> subresource to set the default encryption state of an
          * existing bucket.</p> <p>This implementation of the <code>PUT</code> operation
-         * sets default encryption for a buckets using server-side encryption with Amazon
-         * S3-managed keys SSE-S3 or AWS KMS customer master keys (CMKs) (SSE-KMS)
-         * bucket.</p> <important> <p>This operation requires AWS Signature Version 4. For
-         * more information, see <a href="sig-v4-authenticating-requests.html">
-         * Authenticating Requests (AWS Signature Version 4)</a>. </p> </important> <p>To
-         * use this operation, you must have permissions to perform the
+         * sets default encryption for a bucket using server-side encryption with Amazon
+         * S3-managed keys SSE-S3 or AWS KMS customer master keys (CMKs) (SSE-KMS).</p>
+         * <important> <p>This operation requires AWS Signature Version 4. For more
+         * information, see <a href="sig-v4-authenticating-requests.html"> Authenticating
+         * Requests (AWS Signature Version 4)</a>. </p> </important> <p>To use this
+         * operation, you must have permissions to perform the
          * <code>s3:PutEncryptionConfiguration</code> action. The bucket owner has this
          * permission by default. The bucket owner can grant this permission to others. For
          * more information about permissions, see <a
@@ -6221,12 +6239,12 @@ namespace Aws
          * <p>This implementation of the <code>PUT</code> operation uses the
          * <code>encryption</code> subresource to set the default encryption state of an
          * existing bucket.</p> <p>This implementation of the <code>PUT</code> operation
-         * sets default encryption for a buckets using server-side encryption with Amazon
-         * S3-managed keys SSE-S3 or AWS KMS customer master keys (CMKs) (SSE-KMS)
-         * bucket.</p> <important> <p>This operation requires AWS Signature Version 4. For
-         * more information, see <a href="sig-v4-authenticating-requests.html">
-         * Authenticating Requests (AWS Signature Version 4)</a>. </p> </important> <p>To
-         * use this operation, you must have permissions to perform the
+         * sets default encryption for a bucket using server-side encryption with Amazon
+         * S3-managed keys SSE-S3 or AWS KMS customer master keys (CMKs) (SSE-KMS).</p>
+         * <important> <p>This operation requires AWS Signature Version 4. For more
+         * information, see <a href="sig-v4-authenticating-requests.html"> Authenticating
+         * Requests (AWS Signature Version 4)</a>. </p> </important> <p>To use this
+         * operation, you must have permissions to perform the
          * <code>s3:PutEncryptionConfiguration</code> action. The bucket owner has this
          * permission by default. The bucket owner can grant this permission to others. For
          * more information about permissions, see <a
@@ -7595,11 +7613,18 @@ namespace Aws
          * <p>x-amz-server-side-encryption-aws-kms-key-id</p> </li> <li>
          * <p>x-amz-server-side-encryption-context</p> </li> </ul> <note> <p>If you specify
          * <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-         * <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the
-         * AWS managed CMK in AWS KMS to protect the data.</p> </note> <important> <p>All
-         * GET and PUT requests for an object protected by AWS KMS fail if you don't make
-         * them with SSL or by using SigV4.</p> </important> <p>For more information about
-         * server-side encryption with CMKs stored in AWS KMS (SSE-KMS), see <a
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+         * managed CMK in AWS KMS to protect the data. If you want to use a customer
+         * managed AWS KMS CMK, you must provide the
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code> of the symmetric
+         * customer managed CMK. Amazon S3 only supports symmetric CMKs and not asymmetric
+         * CMKs. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+         * Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer
+         * Guide</i>.</p> </note> <important> <p>All GET and PUT requests for an object
+         * protected by AWS KMS fail if you don't make them with SSL or by using SigV4.</p>
+         * </important> <p>For more information about server-side encryption with CMKs
+         * stored in AWS KMS (SSE-KMS), see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
          * Data Using Server-Side Encryption with CMKs stored in AWS</a>.</p> </li> <li>
          * <p>Use customer-provided encryption keys – If you want to manage your own
@@ -7610,14 +7635,13 @@ namespace Aws
          * information about server-side encryption with CMKs stored in KMS (SSE-KMS), see
          * <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-         * Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.</p> </li>
-         * </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
-         * <p>You also can use the following access control–related headers with this
-         * operation. By default, all objects are private. Only the owner has full access
-         * control. When adding a new object, you can grant permissions to individual AWS
-         * accounts or to predefined groups defined by Amazon S3. These permissions are
-         * then added to the Access Control List (ACL) on the object. For more information,
-         * see <a
+         * Data Using Server-Side Encryption with CMKs stored in AWS</a>.</p> </li> </ul>
+         * </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd> <p>You
+         * also can use the following access control–related headers with this operation.
+         * By default, all objects are private. Only the owner has full access control.
+         * When adding a new object, you can grant permissions to individual AWS accounts
+         * or to predefined groups defined by Amazon S3. These permissions are then added
+         * to the Access Control List (ACL) on the object. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
          * ACLs</a>. With this operation, you can grant access permissions using one of the
          * following two methods:</p> <ul> <li> <p>Specify a canned ACL
@@ -7646,7 +7670,7 @@ namespace Aws
          * list of all the Amazon S3 supported Regions and endpoints, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
          * and Endpoints</a> in the AWS General Reference</p> </important> </li> <li> <p>
-         * <code>id</code> – if the value specified is the canonical user ID of an AWS
+         * <code>id</code> �� if the value specified is the canonical user ID of an AWS
          * account</p> </li> <li> <p> <code>uri</code> – if you are granting permissions to
          * a predefined group</p> </li> </ul> <p>For example, the following
          * <code>x-amz-grant-read</code> header grants the AWS accounts identified by email
@@ -7665,11 +7689,18 @@ namespace Aws
          * <li> <p>x-amz-server-side-encryption-aws-kms-key-id</p> </li> <li>
          * <p>x-amz-server-side-encryption-context</p> </li> </ul> <note> <p>If you specify
          * <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-         * <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the
-         * default AWS KMS CMK to protect the data.</p> </note> <important> <p>All GET and
-         * PUT requests for an object protected by AWS KMS fail if you don't make them with
-         * SSL or by using SigV4.</p> </important> <p>For more information about
-         * server-side encryption with CMKs stored in AWS KMS (SSE-KMS), see <a
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+         * managed CMK in AWS KMS to protect the data. If you want to use a customer
+         * managed AWS KMS CMK, you must provide the
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code> of the symmetric
+         * customer managed CMK. Amazon S3 only supports symmetric CMKs and not asymmetric
+         * CMKs. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+         * Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer
+         * Guide</i>.</p> </note> <important> <p>All GET and PUT requests for an object
+         * protected by AWS KMS fail if you don't make them with SSL or by using SigV4.</p>
+         * </important> <p>For more information about server-side encryption with CMKs
+         * stored in AWS KMS (SSE-KMS), see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
          * Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.</p> </li>
          * <li> <p>Use customer-provided encryption keys – If you want to manage your own
@@ -7758,11 +7789,18 @@ namespace Aws
          * <p>x-amz-server-side-encryption-aws-kms-key-id</p> </li> <li>
          * <p>x-amz-server-side-encryption-context</p> </li> </ul> <note> <p>If you specify
          * <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-         * <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the
-         * AWS managed CMK in AWS KMS to protect the data.</p> </note> <important> <p>All
-         * GET and PUT requests for an object protected by AWS KMS fail if you don't make
-         * them with SSL or by using SigV4.</p> </important> <p>For more information about
-         * server-side encryption with CMKs stored in AWS KMS (SSE-KMS), see <a
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+         * managed CMK in AWS KMS to protect the data. If you want to use a customer
+         * managed AWS KMS CMK, you must provide the
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code> of the symmetric
+         * customer managed CMK. Amazon S3 only supports symmetric CMKs and not asymmetric
+         * CMKs. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+         * Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer
+         * Guide</i>.</p> </note> <important> <p>All GET and PUT requests for an object
+         * protected by AWS KMS fail if you don't make them with SSL or by using SigV4.</p>
+         * </important> <p>For more information about server-side encryption with CMKs
+         * stored in AWS KMS (SSE-KMS), see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
          * Data Using Server-Side Encryption with CMKs stored in AWS</a>.</p> </li> <li>
          * <p>Use customer-provided encryption keys – If you want to manage your own
@@ -7773,14 +7811,13 @@ namespace Aws
          * information about server-side encryption with CMKs stored in KMS (SSE-KMS), see
          * <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-         * Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.</p> </li>
-         * </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
-         * <p>You also can use the following access control–related headers with this
-         * operation. By default, all objects are private. Only the owner has full access
-         * control. When adding a new object, you can grant permissions to individual AWS
-         * accounts or to predefined groups defined by Amazon S3. These permissions are
-         * then added to the Access Control List (ACL) on the object. For more information,
-         * see <a
+         * Data Using Server-Side Encryption with CMKs stored in AWS</a>.</p> </li> </ul>
+         * </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd> <p>You
+         * also can use the following access control–related headers with this operation.
+         * By default, all objects are private. Only the owner has full access control.
+         * When adding a new object, you can grant permissions to individual AWS accounts
+         * or to predefined groups defined by Amazon S3. These permissions are then added
+         * to the Access Control List (ACL) on the object. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
          * ACLs</a>. With this operation, you can grant access permissions using one of the
          * following two methods:</p> <ul> <li> <p>Specify a canned ACL
@@ -7809,7 +7846,7 @@ namespace Aws
          * list of all the Amazon S3 supported Regions and endpoints, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
          * and Endpoints</a> in the AWS General Reference</p> </important> </li> <li> <p>
-         * <code>id</code> – if the value specified is the canonical user ID of an AWS
+         * <code>id</code> �� if the value specified is the canonical user ID of an AWS
          * account</p> </li> <li> <p> <code>uri</code> – if you are granting permissions to
          * a predefined group</p> </li> </ul> <p>For example, the following
          * <code>x-amz-grant-read</code> header grants the AWS accounts identified by email
@@ -7828,11 +7865,18 @@ namespace Aws
          * <li> <p>x-amz-server-side-encryption-aws-kms-key-id</p> </li> <li>
          * <p>x-amz-server-side-encryption-context</p> </li> </ul> <note> <p>If you specify
          * <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-         * <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the
-         * default AWS KMS CMK to protect the data.</p> </note> <important> <p>All GET and
-         * PUT requests for an object protected by AWS KMS fail if you don't make them with
-         * SSL or by using SigV4.</p> </important> <p>For more information about
-         * server-side encryption with CMKs stored in AWS KMS (SSE-KMS), see <a
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+         * managed CMK in AWS KMS to protect the data. If you want to use a customer
+         * managed AWS KMS CMK, you must provide the
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code> of the symmetric
+         * customer managed CMK. Amazon S3 only supports symmetric CMKs and not asymmetric
+         * CMKs. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+         * Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer
+         * Guide</i>.</p> </note> <important> <p>All GET and PUT requests for an object
+         * protected by AWS KMS fail if you don't make them with SSL or by using SigV4.</p>
+         * </important> <p>For more information about server-side encryption with CMKs
+         * stored in AWS KMS (SSE-KMS), see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
          * Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.</p> </li>
          * <li> <p>Use customer-provided encryption keys – If you want to manage your own
@@ -7923,11 +7967,18 @@ namespace Aws
          * <p>x-amz-server-side-encryption-aws-kms-key-id</p> </li> <li>
          * <p>x-amz-server-side-encryption-context</p> </li> </ul> <note> <p>If you specify
          * <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-         * <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the
-         * AWS managed CMK in AWS KMS to protect the data.</p> </note> <important> <p>All
-         * GET and PUT requests for an object protected by AWS KMS fail if you don't make
-         * them with SSL or by using SigV4.</p> </important> <p>For more information about
-         * server-side encryption with CMKs stored in AWS KMS (SSE-KMS), see <a
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+         * managed CMK in AWS KMS to protect the data. If you want to use a customer
+         * managed AWS KMS CMK, you must provide the
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code> of the symmetric
+         * customer managed CMK. Amazon S3 only supports symmetric CMKs and not asymmetric
+         * CMKs. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+         * Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer
+         * Guide</i>.</p> </note> <important> <p>All GET and PUT requests for an object
+         * protected by AWS KMS fail if you don't make them with SSL or by using SigV4.</p>
+         * </important> <p>For more information about server-side encryption with CMKs
+         * stored in AWS KMS (SSE-KMS), see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
          * Data Using Server-Side Encryption with CMKs stored in AWS</a>.</p> </li> <li>
          * <p>Use customer-provided encryption keys – If you want to manage your own
@@ -7938,14 +7989,13 @@ namespace Aws
          * information about server-side encryption with CMKs stored in KMS (SSE-KMS), see
          * <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-         * Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.</p> </li>
-         * </ul> </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd>
-         * <p>You also can use the following access control–related headers with this
-         * operation. By default, all objects are private. Only the owner has full access
-         * control. When adding a new object, you can grant permissions to individual AWS
-         * accounts or to predefined groups defined by Amazon S3. These permissions are
-         * then added to the Access Control List (ACL) on the object. For more information,
-         * see <a
+         * Data Using Server-Side Encryption with CMKs stored in AWS</a>.</p> </li> </ul>
+         * </dd> <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd> <p>You
+         * also can use the following access control–related headers with this operation.
+         * By default, all objects are private. Only the owner has full access control.
+         * When adding a new object, you can grant permissions to individual AWS accounts
+         * or to predefined groups defined by Amazon S3. These permissions are then added
+         * to the Access Control List (ACL) on the object. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
          * ACLs</a>. With this operation, you can grant access permissions using one of the
          * following two methods:</p> <ul> <li> <p>Specify a canned ACL
@@ -7974,7 +8024,7 @@ namespace Aws
          * list of all the Amazon S3 supported Regions and endpoints, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
          * and Endpoints</a> in the AWS General Reference</p> </important> </li> <li> <p>
-         * <code>id</code> – if the value specified is the canonical user ID of an AWS
+         * <code>id</code> �� if the value specified is the canonical user ID of an AWS
          * account</p> </li> <li> <p> <code>uri</code> – if you are granting permissions to
          * a predefined group</p> </li> </ul> <p>For example, the following
          * <code>x-amz-grant-read</code> header grants the AWS accounts identified by email
@@ -7993,11 +8043,18 @@ namespace Aws
          * <li> <p>x-amz-server-side-encryption-aws-kms-key-id</p> </li> <li>
          * <p>x-amz-server-side-encryption-context</p> </li> </ul> <note> <p>If you specify
          * <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-         * <code>x-amz-server-side- encryption-aws-kms-key-id</code>, Amazon S3 uses the
-         * default AWS KMS CMK to protect the data.</p> </note> <important> <p>All GET and
-         * PUT requests for an object protected by AWS KMS fail if you don't make them with
-         * SSL or by using SigV4.</p> </important> <p>For more information about
-         * server-side encryption with CMKs stored in AWS KMS (SSE-KMS), see <a
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the AWS
+         * managed CMK in AWS KMS to protect the data. If you want to use a customer
+         * managed AWS KMS CMK, you must provide the
+         * <code>x-amz-server-side-encryption-aws-kms-key-id</code> of the symmetric
+         * customer managed CMK. Amazon S3 only supports symmetric CMKs and not asymmetric
+         * CMKs. For more information, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+         * Symmetric and Asymmetric Keys</a> in the <i>AWS Key Management Service Developer
+         * Guide</i>.</p> </note> <important> <p>All GET and PUT requests for an object
+         * protected by AWS KMS fail if you don't make them with SSL or by using SigV4.</p>
+         * </important> <p>For more information about server-side encryption with CMKs
+         * stored in AWS KMS (SSE-KMS), see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
          * Data Using Server-Side Encryption with CMKs stored in AWS KMS</a>.</p> </li>
          * <li> <p>Use customer-provided encryption keys – If you want to manage your own

@@ -33,8 +33,11 @@
 #include <aws/opsworkscm/model/DescribeServersResult.h>
 #include <aws/opsworkscm/model/DisassociateNodeResult.h>
 #include <aws/opsworkscm/model/ExportServerEngineAttributeResult.h>
+#include <aws/opsworkscm/model/ListTagsForResourceResult.h>
 #include <aws/opsworkscm/model/RestoreServerResult.h>
 #include <aws/opsworkscm/model/StartMaintenanceResult.h>
+#include <aws/opsworkscm/model/TagResourceResult.h>
+#include <aws/opsworkscm/model/UntagResourceResult.h>
 #include <aws/opsworkscm/model/UpdateServerResult.h>
 #include <aws/opsworkscm/model/UpdateServerEngineAttributesResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -88,8 +91,11 @@ namespace Model
         class DescribeServersRequest;
         class DisassociateNodeRequest;
         class ExportServerEngineAttributeRequest;
+        class ListTagsForResourceRequest;
         class RestoreServerRequest;
         class StartMaintenanceRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateServerRequest;
         class UpdateServerEngineAttributesRequest;
 
@@ -105,8 +111,11 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeServersResult, Aws::Client::AWSError<OpsWorksCMErrors>> DescribeServersOutcome;
         typedef Aws::Utils::Outcome<DisassociateNodeResult, Aws::Client::AWSError<OpsWorksCMErrors>> DisassociateNodeOutcome;
         typedef Aws::Utils::Outcome<ExportServerEngineAttributeResult, Aws::Client::AWSError<OpsWorksCMErrors>> ExportServerEngineAttributeOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<OpsWorksCMErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<RestoreServerResult, Aws::Client::AWSError<OpsWorksCMErrors>> RestoreServerOutcome;
         typedef Aws::Utils::Outcome<StartMaintenanceResult, Aws::Client::AWSError<OpsWorksCMErrors>> StartMaintenanceOutcome;
+        typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<OpsWorksCMErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<OpsWorksCMErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateServerResult, Aws::Client::AWSError<OpsWorksCMErrors>> UpdateServerOutcome;
         typedef Aws::Utils::Outcome<UpdateServerEngineAttributesResult, Aws::Client::AWSError<OpsWorksCMErrors>> UpdateServerEngineAttributesOutcome;
 
@@ -122,8 +131,11 @@ namespace Model
         typedef std::future<DescribeServersOutcome> DescribeServersOutcomeCallable;
         typedef std::future<DisassociateNodeOutcome> DisassociateNodeOutcomeCallable;
         typedef std::future<ExportServerEngineAttributeOutcome> ExportServerEngineAttributeOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<RestoreServerOutcome> RestoreServerOutcomeCallable;
         typedef std::future<StartMaintenanceOutcome> StartMaintenanceOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateServerOutcome> UpdateServerOutcomeCallable;
         typedef std::future<UpdateServerEngineAttributesOutcome> UpdateServerEngineAttributesOutcomeCallable;
 } // namespace Model
@@ -142,8 +154,11 @@ namespace Model
     typedef std::function<void(const OpsWorksCMClient*, const Model::DescribeServersRequest&, const Model::DescribeServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServersResponseReceivedHandler;
     typedef std::function<void(const OpsWorksCMClient*, const Model::DisassociateNodeRequest&, const Model::DisassociateNodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateNodeResponseReceivedHandler;
     typedef std::function<void(const OpsWorksCMClient*, const Model::ExportServerEngineAttributeRequest&, const Model::ExportServerEngineAttributeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportServerEngineAttributeResponseReceivedHandler;
+    typedef std::function<void(const OpsWorksCMClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const OpsWorksCMClient*, const Model::RestoreServerRequest&, const Model::RestoreServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreServerResponseReceivedHandler;
     typedef std::function<void(const OpsWorksCMClient*, const Model::StartMaintenanceRequest&, const Model::StartMaintenanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMaintenanceResponseReceivedHandler;
+    typedef std::function<void(const OpsWorksCMClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const OpsWorksCMClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const OpsWorksCMClient*, const Model::UpdateServerRequest&, const Model::UpdateServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServerResponseReceivedHandler;
     typedef std::function<void(const OpsWorksCMClient*, const Model::UpdateServerEngineAttributesRequest&, const Model::UpdateServerEngineAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServerEngineAttributesResponseReceivedHandler;
 
@@ -818,17 +833,52 @@ namespace Model
         virtual void ExportServerEngineAttributeAsync(const Model::ExportServerEngineAttributeRequest& request, const ExportServerEngineAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns a list of tags that are applied to the specified AWS OpsWorks for
+         * Chef Automate or AWS OpsWorks for Puppet Enterprise servers or
+         * backups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of tags that are applied to the specified AWS OpsWorks for
+         * Chef Automate or AWS OpsWorks for Puppet Enterprise servers or
+         * backups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
+
+        /**
+         * <p>Returns a list of tags that are applied to the specified AWS OpsWorks for
+         * Chef Automate or AWS OpsWorks for Puppet Enterprise servers or
+         * backups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ListTagsForResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Restores a backup to a server that is in a <code>CONNECTION_LOST</code>,
          * <code>HEALTHY</code>, <code>RUNNING</code>, <code>UNHEALTHY</code>, or
          * <code>TERMINATED</code> state. When you run RestoreServer, the server's EC2
          * instance is deleted, and a new EC2 instance is configured. RestoreServer
          * maintains the existing server endpoint, so configuration management of the
-         * server's client devices (nodes) should continue to work. </p> <p> This operation
-         * is asynchronous. </p> <p> An <code>InvalidStateException</code> is thrown when
-         * the server is not in a valid state. A <code>ResourceNotFoundException</code> is
-         * thrown when the server does not exist. A <code>ValidationException</code> is
-         * raised when parameters of the request are not valid. </p><p><h3>See Also:</h3>  
-         * <a
+         * server's client devices (nodes) should continue to work. </p> <p>Restoring from
+         * a backup is performed by creating a new EC2 instance. If restoration is
+         * successful, and the server is in a <code>HEALTHY</code> state, AWS OpsWorks CM
+         * switches traffic over to the new instance. After restoration is finished, the
+         * old EC2 instance is maintained in a <code>Running</code> or <code>Stopped</code>
+         * state, but is eventually terminated.</p> <p> This operation is asynchronous.
+         * </p> <p> An <code>InvalidStateException</code> is thrown when the server is not
+         * in a valid state. A <code>ResourceNotFoundException</code> is thrown when the
+         * server does not exist. A <code>ValidationException</code> is raised when
+         * parameters of the request are not valid. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer">AWS
          * API Reference</a></p>
          */
@@ -840,12 +890,16 @@ namespace Model
          * <code>TERMINATED</code> state. When you run RestoreServer, the server's EC2
          * instance is deleted, and a new EC2 instance is configured. RestoreServer
          * maintains the existing server endpoint, so configuration management of the
-         * server's client devices (nodes) should continue to work. </p> <p> This operation
-         * is asynchronous. </p> <p> An <code>InvalidStateException</code> is thrown when
-         * the server is not in a valid state. A <code>ResourceNotFoundException</code> is
-         * thrown when the server does not exist. A <code>ValidationException</code> is
-         * raised when parameters of the request are not valid. </p><p><h3>See Also:</h3>  
-         * <a
+         * server's client devices (nodes) should continue to work. </p> <p>Restoring from
+         * a backup is performed by creating a new EC2 instance. If restoration is
+         * successful, and the server is in a <code>HEALTHY</code> state, AWS OpsWorks CM
+         * switches traffic over to the new instance. After restoration is finished, the
+         * old EC2 instance is maintained in a <code>Running</code> or <code>Stopped</code>
+         * state, but is eventually terminated.</p> <p> This operation is asynchronous.
+         * </p> <p> An <code>InvalidStateException</code> is thrown when the server is not
+         * in a valid state. A <code>ResourceNotFoundException</code> is thrown when the
+         * server does not exist. A <code>ValidationException</code> is raised when
+         * parameters of the request are not valid. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer">AWS
          * API Reference</a></p>
          *
@@ -859,12 +913,16 @@ namespace Model
          * <code>TERMINATED</code> state. When you run RestoreServer, the server's EC2
          * instance is deleted, and a new EC2 instance is configured. RestoreServer
          * maintains the existing server endpoint, so configuration management of the
-         * server's client devices (nodes) should continue to work. </p> <p> This operation
-         * is asynchronous. </p> <p> An <code>InvalidStateException</code> is thrown when
-         * the server is not in a valid state. A <code>ResourceNotFoundException</code> is
-         * thrown when the server does not exist. A <code>ValidationException</code> is
-         * raised when parameters of the request are not valid. </p><p><h3>See Also:</h3>  
-         * <a
+         * server's client devices (nodes) should continue to work. </p> <p>Restoring from
+         * a backup is performed by creating a new EC2 instance. If restoration is
+         * successful, and the server is in a <code>HEALTHY</code> state, AWS OpsWorks CM
+         * switches traffic over to the new instance. After restoration is finished, the
+         * old EC2 instance is maintained in a <code>Running</code> or <code>Stopped</code>
+         * state, but is eventually terminated.</p> <p> This operation is asynchronous.
+         * </p> <p> An <code>InvalidStateException</code> is thrown when the server is not
+         * in a valid state. A <code>ResourceNotFoundException</code> is thrown when the
+         * server does not exist. A <code>ValidationException</code> is raised when
+         * parameters of the request are not valid. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/RestoreServer">AWS
          * API Reference</a></p>
          *
@@ -920,6 +978,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void StartMaintenanceAsync(const Model::StartMaintenanceRequest& request, const StartMaintenanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet
+         * Enterprise server, or to server backups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet
+         * Enterprise server, or to server backups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet
+         * Enterprise server, or to server backups.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes specified tags from an AWS OpsWorks-CM server or
+         * backup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes specified tags from an AWS OpsWorks-CM server or
+         * backup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes specified tags from an AWS OpsWorks-CM server or
+         * backup.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p> Updates settings for a server. </p> <p> This operation is synchronous.
@@ -1020,8 +1134,11 @@ namespace Model
         void DescribeServersAsyncHelper(const Model::DescribeServersRequest& request, const DescribeServersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateNodeAsyncHelper(const Model::DisassociateNodeRequest& request, const DisassociateNodeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportServerEngineAttributeAsyncHelper(const Model::ExportServerEngineAttributeRequest& request, const ExportServerEngineAttributeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RestoreServerAsyncHelper(const Model::RestoreServerRequest& request, const RestoreServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartMaintenanceAsyncHelper(const Model::StartMaintenanceRequest& request, const StartMaintenanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateServerAsyncHelper(const Model::UpdateServerRequest& request, const UpdateServerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateServerEngineAttributesAsyncHelper(const Model::UpdateServerEngineAttributesRequest& request, const UpdateServerEngineAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
