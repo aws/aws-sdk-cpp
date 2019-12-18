@@ -60,6 +60,18 @@ public:
     /// if uninitialized, specializes the type to a Number with specified value
     /// if already specialized to another type then the behavior is undefined
     AttributeValue& SetN(const char* n) { return SetN(Aws::String(n)); }
+    /// if already specialized to a Number, sets the value to this Number
+    /// if uninitialized, specializes the type to a Number with specified value
+    /// if already specialized to another type then the behavior is undefined
+    AttributeValue& SetN(const int nItem) { return SetN(Aws::String(std::to_string(nItem).c_str())); }
+    /// if already specialized to a Number, sets the value to this Number
+    /// if uninitialized, specializes the type to a Number with specified value
+    /// if already specialized to another type then the behavior is undefined
+    AttributeValue& SetN(const float nItem) { return SetN(Aws::String(std::to_string(nItem).c_str())); }
+    /// if already specialized to a Number, sets the value to this Number
+    /// if uninitialized, specializes the type to a Number with specified value
+    /// if already specialized to another type then the behavior is undefined
+    AttributeValue& SetN(const double nItem) { return SetN(Aws::String(std::to_string(nItem).c_str())); }
 
     /// returns the ByteBuffer if the value is specialized to this type, otherwise an empty Buffer
     const Aws::Utils::ByteBuffer GetB() const;

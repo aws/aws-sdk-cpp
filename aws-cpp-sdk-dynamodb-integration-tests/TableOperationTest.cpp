@@ -990,6 +990,41 @@ TEST_F(TableOperationTest, TestAttributeValues)
         EXPECT_EQ("String Value", returnedItemCollection["String"].GetS());
         EXPECT_EQ("1001", returnedItemCollection["Number"].GetN());
     }
+    // Number Value (numeric type)
+    {
+        // Update
+        UpdateItemRequest updateItemRequest;
+        updateItemRequest.SetTableName(attributeValueTestTableName);
+        updateItemRequest.AddKey(HASH_KEY_NAME, hashKey);
+
+        AttributeValue valueAttribute;
+        valueAttribute.SetN(1001);
+
+        AttributeValueUpdate testValueAttribute;
+        testValueAttribute.SetValue(valueAttribute);
+
+        updateItemRequest.AddAttributeUpdates("Number", testValueAttribute);
+
+        UpdateItemOutcome updateOutcome = m_client->UpdateItem(updateItemRequest);
+        ASSERT_TRUE(updateOutcome.IsSuccess());
+
+        // Get
+        GetItemRequest getItemRequest;
+        getItemRequest.AddKey(HASH_KEY_NAME, hashKey);
+        getItemRequest.SetTableName(attributeValueTestTableName);
+
+        Aws::Vector<Aws::String> attributesToGet;
+        attributesToGet.push_back(HASH_KEY_NAME);
+        GetItemOutcome getOutcome = m_client->GetItem(getItemRequest);
+        ASSERT_TRUE(getOutcome.IsSuccess());
+
+        // Parse
+        GetItemResult result = getOutcome.GetResult();
+        auto returnedItemCollection = result.GetItem();
+        EXPECT_EQ("TestValue", returnedItemCollection[HASH_KEY_NAME].GetS());
+        EXPECT_EQ("String Value", returnedItemCollection["String"].GetS());
+        EXPECT_EQ("1001", returnedItemCollection["Number"].GetN());
+    }
 
     // ByteBuffer
     {
