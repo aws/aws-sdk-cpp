@@ -54,10 +54,10 @@ namespace Model
 
 
     /**
-     * <p>Location of the server executable in a custom game build or the name of the
-     * Realtime script file that contains the <code>Init()</code> function. Game builds
-     * and Realtime scripts are installed on instances at the root: </p> <ul> <li>
-     * <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
+     * <p>The location of the server executable in a custom game build or the name of
+     * the Realtime script file that contains the <code>Init()</code> function. Game
+     * builds and Realtime scripts are installed on instances at the root: </p> <ul>
+     * <li> <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
      * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
@@ -65,10 +65,10 @@ namespace Model
     inline const Aws::String& GetLaunchPath() const{ return m_launchPath; }
 
     /**
-     * <p>Location of the server executable in a custom game build or the name of the
-     * Realtime script file that contains the <code>Init()</code> function. Game builds
-     * and Realtime scripts are installed on instances at the root: </p> <ul> <li>
-     * <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
+     * <p>The location of the server executable in a custom game build or the name of
+     * the Realtime script file that contains the <code>Init()</code> function. Game
+     * builds and Realtime scripts are installed on instances at the root: </p> <ul>
+     * <li> <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
      * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
@@ -76,10 +76,10 @@ namespace Model
     inline bool LaunchPathHasBeenSet() const { return m_launchPathHasBeenSet; }
 
     /**
-     * <p>Location of the server executable in a custom game build or the name of the
-     * Realtime script file that contains the <code>Init()</code> function. Game builds
-     * and Realtime scripts are installed on instances at the root: </p> <ul> <li>
-     * <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
+     * <p>The location of the server executable in a custom game build or the name of
+     * the Realtime script file that contains the <code>Init()</code> function. Game
+     * builds and Realtime scripts are installed on instances at the root: </p> <ul>
+     * <li> <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
      * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
@@ -87,10 +87,10 @@ namespace Model
     inline void SetLaunchPath(const Aws::String& value) { m_launchPathHasBeenSet = true; m_launchPath = value; }
 
     /**
-     * <p>Location of the server executable in a custom game build or the name of the
-     * Realtime script file that contains the <code>Init()</code> function. Game builds
-     * and Realtime scripts are installed on instances at the root: </p> <ul> <li>
-     * <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
+     * <p>The location of the server executable in a custom game build or the name of
+     * the Realtime script file that contains the <code>Init()</code> function. Game
+     * builds and Realtime scripts are installed on instances at the root: </p> <ul>
+     * <li> <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
      * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
@@ -98,10 +98,10 @@ namespace Model
     inline void SetLaunchPath(Aws::String&& value) { m_launchPathHasBeenSet = true; m_launchPath = std::move(value); }
 
     /**
-     * <p>Location of the server executable in a custom game build or the name of the
-     * Realtime script file that contains the <code>Init()</code> function. Game builds
-     * and Realtime scripts are installed on instances at the root: </p> <ul> <li>
-     * <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
+     * <p>The location of the server executable in a custom game build or the name of
+     * the Realtime script file that contains the <code>Init()</code> function. Game
+     * builds and Realtime scripts are installed on instances at the root: </p> <ul>
+     * <li> <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
      * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
@@ -109,10 +109,10 @@ namespace Model
     inline void SetLaunchPath(const char* value) { m_launchPathHasBeenSet = true; m_launchPath.assign(value); }
 
     /**
-     * <p>Location of the server executable in a custom game build or the name of the
-     * Realtime script file that contains the <code>Init()</code> function. Game builds
-     * and Realtime scripts are installed on instances at the root: </p> <ul> <li>
-     * <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
+     * <p>The location of the server executable in a custom game build or the name of
+     * the Realtime script file that contains the <code>Init()</code> function. Game
+     * builds and Realtime scripts are installed on instances at the root: </p> <ul>
+     * <li> <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
      * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
@@ -120,10 +120,10 @@ namespace Model
     inline ServerProcess& WithLaunchPath(const Aws::String& value) { SetLaunchPath(value); return *this;}
 
     /**
-     * <p>Location of the server executable in a custom game build or the name of the
-     * Realtime script file that contains the <code>Init()</code> function. Game builds
-     * and Realtime scripts are installed on instances at the root: </p> <ul> <li>
-     * <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
+     * <p>The location of the server executable in a custom game build or the name of
+     * the Realtime script file that contains the <code>Init()</code> function. Game
+     * builds and Realtime scripts are installed on instances at the root: </p> <ul>
+     * <li> <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
      * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
@@ -131,10 +131,10 @@ namespace Model
     inline ServerProcess& WithLaunchPath(Aws::String&& value) { SetLaunchPath(std::move(value)); return *this;}
 
     /**
-     * <p>Location of the server executable in a custom game build or the name of the
-     * Realtime script file that contains the <code>Init()</code> function. Game builds
-     * and Realtime scripts are installed on instances at the root: </p> <ul> <li>
-     * <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
+     * <p>The location of the server executable in a custom game build or the name of
+     * the Realtime script file that contains the <code>Init()</code> function. Game
+     * builds and Realtime scripts are installed on instances at the root: </p> <ul>
+     * <li> <p>Windows (for custom game builds only): <code>C:\game</code>. Example:
      * "<code>C:\game\MyGame\server.exe</code>" </p> </li> <li> <p>Linux:
      * <code>/local/game</code>. Examples: "<code>/local/game/MyGame/server.exe</code>"
      * or "<code>/local/game/MyRealtimeScript.js</code>"</p> </li> </ul>
@@ -143,75 +143,75 @@ namespace Model
 
 
     /**
-     * <p>Optional list of parameters to pass to the server executable or Realtime
+     * <p>An optional list of parameters to pass to the server executable or Realtime
      * script on launch.</p>
      */
     inline const Aws::String& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>Optional list of parameters to pass to the server executable or Realtime
+     * <p>An optional list of parameters to pass to the server executable or Realtime
      * script on launch.</p>
      */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
-     * <p>Optional list of parameters to pass to the server executable or Realtime
+     * <p>An optional list of parameters to pass to the server executable or Realtime
      * script on launch.</p>
      */
     inline void SetParameters(const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>Optional list of parameters to pass to the server executable or Realtime
+     * <p>An optional list of parameters to pass to the server executable or Realtime
      * script on launch.</p>
      */
     inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>Optional list of parameters to pass to the server executable or Realtime
+     * <p>An optional list of parameters to pass to the server executable or Realtime
      * script on launch.</p>
      */
     inline void SetParameters(const char* value) { m_parametersHasBeenSet = true; m_parameters.assign(value); }
 
     /**
-     * <p>Optional list of parameters to pass to the server executable or Realtime
+     * <p>An optional list of parameters to pass to the server executable or Realtime
      * script on launch.</p>
      */
     inline ServerProcess& WithParameters(const Aws::String& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>Optional list of parameters to pass to the server executable or Realtime
+     * <p>An optional list of parameters to pass to the server executable or Realtime
      * script on launch.</p>
      */
     inline ServerProcess& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>Optional list of parameters to pass to the server executable or Realtime
+     * <p>An optional list of parameters to pass to the server executable or Realtime
      * script on launch.</p>
      */
     inline ServerProcess& WithParameters(const char* value) { SetParameters(value); return *this;}
 
 
     /**
-     * <p>Number of server processes using this configuration to run concurrently on an
-     * instance.</p>
+     * <p>The number of server processes that use this configuration to run
+     * concurrently on an instance.</p>
      */
     inline int GetConcurrentExecutions() const{ return m_concurrentExecutions; }
 
     /**
-     * <p>Number of server processes using this configuration to run concurrently on an
-     * instance.</p>
+     * <p>The number of server processes that use this configuration to run
+     * concurrently on an instance.</p>
      */
     inline bool ConcurrentExecutionsHasBeenSet() const { return m_concurrentExecutionsHasBeenSet; }
 
     /**
-     * <p>Number of server processes using this configuration to run concurrently on an
-     * instance.</p>
+     * <p>The number of server processes that use this configuration to run
+     * concurrently on an instance.</p>
      */
     inline void SetConcurrentExecutions(int value) { m_concurrentExecutionsHasBeenSet = true; m_concurrentExecutions = value; }
 
     /**
-     * <p>Number of server processes using this configuration to run concurrently on an
-     * instance.</p>
+     * <p>The number of server processes that use this configuration to run
+     * concurrently on an instance.</p>
      */
     inline ServerProcess& WithConcurrentExecutions(int value) { SetConcurrentExecutions(value); return *this;}
 

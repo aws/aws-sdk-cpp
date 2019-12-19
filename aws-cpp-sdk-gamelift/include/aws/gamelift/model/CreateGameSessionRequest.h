@@ -50,180 +50,188 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet to create a game session in. Each request must
-     * reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to create a game session in. You can use
+     * either the fleet ID or ARN value. Each request must reference either a fleet ID
+     * or alias ID, but not both.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet to create a game session in. Each request must
-     * reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to create a game session in. You can use
+     * either the fleet ID or ARN value. Each request must reference either a fleet ID
+     * or alias ID, but not both.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a fleet to create a game session in. Each request must
-     * reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to create a game session in. You can use
+     * either the fleet ID or ARN value. Each request must reference either a fleet ID
+     * or alias ID, but not both.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet to create a game session in. Each request must
-     * reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to create a game session in. You can use
+     * either the fleet ID or ARN value. Each request must reference either a fleet ID
+     * or alias ID, but not both.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet to create a game session in. Each request must
-     * reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to create a game session in. You can use
+     * either the fleet ID or ARN value. Each request must reference either a fleet ID
+     * or alias ID, but not both.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet to create a game session in. Each request must
-     * reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to create a game session in. You can use
+     * either the fleet ID or ARN value. Each request must reference either a fleet ID
+     * or alias ID, but not both.</p>
      */
     inline CreateGameSessionRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to create a game session in. Each request must
-     * reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to create a game session in. You can use
+     * either the fleet ID or ARN value. Each request must reference either a fleet ID
+     * or alias ID, but not both.</p>
      */
     inline CreateGameSessionRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to create a game session in. Each request must
-     * reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to create a game session in. You can use
+     * either the fleet ID or ARN value. Each request must reference either a fleet ID
+     * or alias ID, but not both.</p>
      */
     inline CreateGameSessionRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to create a game
-     * session in. Each request must reference either a fleet ID or alias ID, but not
-     * both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to create a game
+     * session in. You can use either the alias ID or ARN value. Each request must
+     * reference either a fleet ID or alias ID, but not both.</p>
      */
     inline const Aws::String& GetAliasId() const{ return m_aliasId; }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to create a game
-     * session in. Each request must reference either a fleet ID or alias ID, but not
-     * both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to create a game
+     * session in. You can use either the alias ID or ARN value. Each request must
+     * reference either a fleet ID or alias ID, but not both.</p>
      */
     inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to create a game
-     * session in. Each request must reference either a fleet ID or alias ID, but not
-     * both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to create a game
+     * session in. You can use either the alias ID or ARN value. Each request must
+     * reference either a fleet ID or alias ID, but not both.</p>
      */
     inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to create a game
-     * session in. Each request must reference either a fleet ID or alias ID, but not
-     * both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to create a game
+     * session in. You can use either the alias ID or ARN value. Each request must
+     * reference either a fleet ID or alias ID, but not both.</p>
      */
     inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to create a game
-     * session in. Each request must reference either a fleet ID or alias ID, but not
-     * both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to create a game
+     * session in. You can use either the alias ID or ARN value. Each request must
+     * reference either a fleet ID or alias ID, but not both.</p>
      */
     inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to create a game
-     * session in. Each request must reference either a fleet ID or alias ID, but not
-     * both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to create a game
+     * session in. You can use either the alias ID or ARN value. Each request must
+     * reference either a fleet ID or alias ID, but not both.</p>
      */
     inline CreateGameSessionRequest& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to create a game
-     * session in. Each request must reference either a fleet ID or alias ID, but not
-     * both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to create a game
+     * session in. You can use either the alias ID or ARN value. Each request must
+     * reference either a fleet ID or alias ID, but not both.</p>
      */
     inline CreateGameSessionRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to create a game
-     * session in. Each request must reference either a fleet ID or alias ID, but not
-     * both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to create a game
+     * session in. You can use either the alias ID or ARN value. Each request must
+     * reference either a fleet ID or alias ID, but not both.</p>
      */
     inline CreateGameSessionRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
 
 
     /**
-     * <p>Maximum number of players that can be connected simultaneously to the game
-     * session.</p>
+     * <p>The maximum number of players that can be connected simultaneously to the
+     * game session.</p>
      */
     inline int GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
 
     /**
-     * <p>Maximum number of players that can be connected simultaneously to the game
-     * session.</p>
+     * <p>The maximum number of players that can be connected simultaneously to the
+     * game session.</p>
      */
     inline bool MaximumPlayerSessionCountHasBeenSet() const { return m_maximumPlayerSessionCountHasBeenSet; }
 
     /**
-     * <p>Maximum number of players that can be connected simultaneously to the game
-     * session.</p>
+     * <p>The maximum number of players that can be connected simultaneously to the
+     * game session.</p>
      */
     inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
 
     /**
-     * <p>Maximum number of players that can be connected simultaneously to the game
-     * session.</p>
+     * <p>The maximum number of players that can be connected simultaneously to the
+     * game session.</p>
      */
     inline CreateGameSessionRequest& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
 
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline CreateGameSessionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline CreateGameSessionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline CreateGameSessionRequest& WithName(const char* value) { SetName(value); return *this;}
@@ -303,56 +311,56 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a player or entity creating the game session. This ID
+     * <p>A unique identifier for a player or entity creating the game session. This ID
      * is used to enforce a resource protection policy (if one exists) that limits the
      * number of concurrent active game sessions one player can have.</p>
      */
     inline const Aws::String& GetCreatorId() const{ return m_creatorId; }
 
     /**
-     * <p>Unique identifier for a player or entity creating the game session. This ID
+     * <p>A unique identifier for a player or entity creating the game session. This ID
      * is used to enforce a resource protection policy (if one exists) that limits the
      * number of concurrent active game sessions one player can have.</p>
      */
     inline bool CreatorIdHasBeenSet() const { return m_creatorIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a player or entity creating the game session. This ID
+     * <p>A unique identifier for a player or entity creating the game session. This ID
      * is used to enforce a resource protection policy (if one exists) that limits the
      * number of concurrent active game sessions one player can have.</p>
      */
     inline void SetCreatorId(const Aws::String& value) { m_creatorIdHasBeenSet = true; m_creatorId = value; }
 
     /**
-     * <p>Unique identifier for a player or entity creating the game session. This ID
+     * <p>A unique identifier for a player or entity creating the game session. This ID
      * is used to enforce a resource protection policy (if one exists) that limits the
      * number of concurrent active game sessions one player can have.</p>
      */
     inline void SetCreatorId(Aws::String&& value) { m_creatorIdHasBeenSet = true; m_creatorId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a player or entity creating the game session. This ID
+     * <p>A unique identifier for a player or entity creating the game session. This ID
      * is used to enforce a resource protection policy (if one exists) that limits the
      * number of concurrent active game sessions one player can have.</p>
      */
     inline void SetCreatorId(const char* value) { m_creatorIdHasBeenSet = true; m_creatorId.assign(value); }
 
     /**
-     * <p>Unique identifier for a player or entity creating the game session. This ID
+     * <p>A unique identifier for a player or entity creating the game session. This ID
      * is used to enforce a resource protection policy (if one exists) that limits the
      * number of concurrent active game sessions one player can have.</p>
      */
     inline CreateGameSessionRequest& WithCreatorId(const Aws::String& value) { SetCreatorId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a player or entity creating the game session. This ID
+     * <p>A unique identifier for a player or entity creating the game session. This ID
      * is used to enforce a resource protection policy (if one exists) that limits the
      * number of concurrent active game sessions one player can have.</p>
      */
     inline CreateGameSessionRequest& WithCreatorId(Aws::String&& value) { SetCreatorId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a player or entity creating the game session. This ID
+     * <p>A unique identifier for a player or entity creating the game session. This ID
      * is used to enforce a resource protection policy (if one exists) that limits the
      * number of concurrent active game sessions one player can have.</p>
      */

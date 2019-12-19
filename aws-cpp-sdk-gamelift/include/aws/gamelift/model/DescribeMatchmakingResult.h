@@ -50,37 +50,37 @@ namespace Model
 
 
     /**
-     * <p>Collection of existing matchmaking ticket objects matching the request.</p>
+     * <p>A collection of existing matchmaking ticket objects matching the request.</p>
      */
     inline const Aws::Vector<MatchmakingTicket>& GetTicketList() const{ return m_ticketList; }
 
     /**
-     * <p>Collection of existing matchmaking ticket objects matching the request.</p>
+     * <p>A collection of existing matchmaking ticket objects matching the request.</p>
      */
     inline void SetTicketList(const Aws::Vector<MatchmakingTicket>& value) { m_ticketList = value; }
 
     /**
-     * <p>Collection of existing matchmaking ticket objects matching the request.</p>
+     * <p>A collection of existing matchmaking ticket objects matching the request.</p>
      */
     inline void SetTicketList(Aws::Vector<MatchmakingTicket>&& value) { m_ticketList = std::move(value); }
 
     /**
-     * <p>Collection of existing matchmaking ticket objects matching the request.</p>
+     * <p>A collection of existing matchmaking ticket objects matching the request.</p>
      */
     inline DescribeMatchmakingResult& WithTicketList(const Aws::Vector<MatchmakingTicket>& value) { SetTicketList(value); return *this;}
 
     /**
-     * <p>Collection of existing matchmaking ticket objects matching the request.</p>
+     * <p>A collection of existing matchmaking ticket objects matching the request.</p>
      */
     inline DescribeMatchmakingResult& WithTicketList(Aws::Vector<MatchmakingTicket>&& value) { SetTicketList(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of existing matchmaking ticket objects matching the request.</p>
+     * <p>A collection of existing matchmaking ticket objects matching the request.</p>
      */
     inline DescribeMatchmakingResult& AddTicketList(const MatchmakingTicket& value) { m_ticketList.push_back(value); return *this; }
 
     /**
-     * <p>Collection of existing matchmaking ticket objects matching the request.</p>
+     * <p>A collection of existing matchmaking ticket objects matching the request.</p>
      */
     inline DescribeMatchmakingResult& AddTicketList(MatchmakingTicket&& value) { m_ticketList.push_back(std::move(value)); return *this; }
 

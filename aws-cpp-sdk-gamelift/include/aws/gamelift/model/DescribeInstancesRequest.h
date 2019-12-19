@@ -48,115 +48,123 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet to retrieve instance information for.</p>
+     * <p>A unique identifier for a fleet to retrieve instance information for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet to retrieve instance information for.</p>
+     * <p>A unique identifier for a fleet to retrieve instance information for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a fleet to retrieve instance information for.</p>
+     * <p>A unique identifier for a fleet to retrieve instance information for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet to retrieve instance information for.</p>
+     * <p>A unique identifier for a fleet to retrieve instance information for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet to retrieve instance information for.</p>
+     * <p>A unique identifier for a fleet to retrieve instance information for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet to retrieve instance information for.</p>
+     * <p>A unique identifier for a fleet to retrieve instance information for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline DescribeInstancesRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to retrieve instance information for.</p>
+     * <p>A unique identifier for a fleet to retrieve instance information for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline DescribeInstancesRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to retrieve instance information for.</p>
+     * <p>A unique identifier for a fleet to retrieve instance information for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline DescribeInstancesRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
-     * <p>Unique identifier for an instance to retrieve. Specify an instance ID or
+     * <p>A unique identifier for an instance to retrieve. Specify an instance ID or
      * leave blank to retrieve all instances in the fleet.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>Unique identifier for an instance to retrieve. Specify an instance ID or
+     * <p>A unique identifier for an instance to retrieve. Specify an instance ID or
      * leave blank to retrieve all instances in the fleet.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for an instance to retrieve. Specify an instance ID or
+     * <p>A unique identifier for an instance to retrieve. Specify an instance ID or
      * leave blank to retrieve all instances in the fleet.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>Unique identifier for an instance to retrieve. Specify an instance ID or
+     * <p>A unique identifier for an instance to retrieve. Specify an instance ID or
      * leave blank to retrieve all instances in the fleet.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>Unique identifier for an instance to retrieve. Specify an instance ID or
+     * <p>A unique identifier for an instance to retrieve. Specify an instance ID or
      * leave blank to retrieve all instances in the fleet.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>Unique identifier for an instance to retrieve. Specify an instance ID or
+     * <p>A unique identifier for an instance to retrieve. Specify an instance ID or
      * leave blank to retrieve all instances in the fleet.</p>
      */
     inline DescribeInstancesRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>Unique identifier for an instance to retrieve. Specify an instance ID or
+     * <p>A unique identifier for an instance to retrieve. Specify an instance ID or
      * leave blank to retrieve all instances in the fleet.</p>
      */
     inline DescribeInstancesRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for an instance to retrieve. Specify an instance ID or
+     * <p>A unique identifier for an instance to retrieve. Specify an instance ID or
      * leave blank to retrieve all instances in the fleet.</p>
      */
     inline DescribeInstancesRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline DescribeInstancesRequest& WithLimit(int value) { SetLimit(value); return *this;}

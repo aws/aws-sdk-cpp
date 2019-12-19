@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p>Object that describes the newly created matchmaking rule set.</p>
+     * <p>The newly created matchmaking rule set.</p>
      */
     inline const MatchmakingRuleSet& GetRuleSet() const{ return m_ruleSet; }
 
     /**
-     * <p>Object that describes the newly created matchmaking rule set.</p>
+     * <p>The newly created matchmaking rule set.</p>
      */
     inline void SetRuleSet(const MatchmakingRuleSet& value) { m_ruleSet = value; }
 
     /**
-     * <p>Object that describes the newly created matchmaking rule set.</p>
+     * <p>The newly created matchmaking rule set.</p>
      */
     inline void SetRuleSet(MatchmakingRuleSet&& value) { m_ruleSet = std::move(value); }
 
     /**
-     * <p>Object that describes the newly created matchmaking rule set.</p>
+     * <p>The newly created matchmaking rule set.</p>
      */
     inline CreateMatchmakingRuleSetResult& WithRuleSet(const MatchmakingRuleSet& value) { SetRuleSet(value); return *this;}
 
     /**
-     * <p>Object that describes the newly created matchmaking rule set.</p>
+     * <p>The newly created matchmaking rule set.</p>
      */
     inline CreateMatchmakingRuleSetResult& WithRuleSet(MatchmakingRuleSet&& value) { SetRuleSet(std::move(value)); return *this;}
 

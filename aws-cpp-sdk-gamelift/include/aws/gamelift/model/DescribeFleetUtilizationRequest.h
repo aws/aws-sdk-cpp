@@ -49,83 +49,83 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet(s) to retrieve utilization data for. To request
-     * utilization data for all fleets, leave this parameter empty.</p>
+     * <p>A unique identifier for a fleet(s) to retrieve utilization data for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFleetIds() const{ return m_fleetIds; }
 
     /**
-     * <p>Unique identifier for a fleet(s) to retrieve utilization data for. To request
-     * utilization data for all fleets, leave this parameter empty.</p>
+     * <p>A unique identifier for a fleet(s) to retrieve utilization data for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline bool FleetIdsHasBeenSet() const { return m_fleetIdsHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a fleet(s) to retrieve utilization data for. To request
-     * utilization data for all fleets, leave this parameter empty.</p>
+     * <p>A unique identifier for a fleet(s) to retrieve utilization data for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline void SetFleetIds(const Aws::Vector<Aws::String>& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = value; }
 
     /**
-     * <p>Unique identifier for a fleet(s) to retrieve utilization data for. To request
-     * utilization data for all fleets, leave this parameter empty.</p>
+     * <p>A unique identifier for a fleet(s) to retrieve utilization data for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline void SetFleetIds(Aws::Vector<Aws::String>&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet(s) to retrieve utilization data for. To request
-     * utilization data for all fleets, leave this parameter empty.</p>
+     * <p>A unique identifier for a fleet(s) to retrieve utilization data for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline DescribeFleetUtilizationRequest& WithFleetIds(const Aws::Vector<Aws::String>& value) { SetFleetIds(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet(s) to retrieve utilization data for. To request
-     * utilization data for all fleets, leave this parameter empty.</p>
+     * <p>A unique identifier for a fleet(s) to retrieve utilization data for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline DescribeFleetUtilizationRequest& WithFleetIds(Aws::Vector<Aws::String>&& value) { SetFleetIds(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet(s) to retrieve utilization data for. To request
-     * utilization data for all fleets, leave this parameter empty.</p>
+     * <p>A unique identifier for a fleet(s) to retrieve utilization data for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline DescribeFleetUtilizationRequest& AddFleetIds(const Aws::String& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 
     /**
-     * <p>Unique identifier for a fleet(s) to retrieve utilization data for. To request
-     * utilization data for all fleets, leave this parameter empty.</p>
+     * <p>A unique identifier for a fleet(s) to retrieve utilization data for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline DescribeFleetUtilizationRequest& AddFleetIds(Aws::String&& value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Unique identifier for a fleet(s) to retrieve utilization data for. To request
-     * utilization data for all fleets, leave this parameter empty.</p>
+     * <p>A unique identifier for a fleet(s) to retrieve utilization data for. You can
+     * use either the fleet ID or ARN value.</p>
      */
     inline DescribeFleetUtilizationRequest& AddFleetIds(const char* value) { m_fleetIdsHasBeenSet = true; m_fleetIds.push_back(value); return *this; }
 
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is ignored when the request specifies one or a list of fleet IDs.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is ignored when the request specifies one or a list of fleet IDs.</p>
      */

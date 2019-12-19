@@ -30,6 +30,7 @@ namespace Model
 
 Script::Script() : 
     m_scriptIdHasBeenSet(false),
+    m_scriptArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_sizeOnDisk(0),
@@ -41,6 +42,7 @@ Script::Script() :
 
 Script::Script(JsonView jsonValue) : 
     m_scriptIdHasBeenSet(false),
+    m_scriptArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_sizeOnDisk(0),
@@ -58,6 +60,13 @@ Script& Script::operator =(JsonView jsonValue)
     m_scriptId = jsonValue.GetString("ScriptId");
 
     m_scriptIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ScriptArn"))
+  {
+    m_scriptArn = jsonValue.GetString("ScriptArn");
+
+    m_scriptArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Name"))
@@ -105,6 +114,12 @@ JsonValue Script::Jsonize() const
   if(m_scriptIdHasBeenSet)
   {
    payload.WithString("ScriptId", m_scriptId);
+
+  }
+
+  if(m_scriptArnHasBeenSet)
+  {
+   payload.WithString("ScriptArn", m_scriptArn);
 
   }
 

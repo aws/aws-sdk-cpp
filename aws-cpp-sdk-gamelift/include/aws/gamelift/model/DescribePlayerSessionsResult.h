@@ -51,43 +51,43 @@ namespace Model
 
 
     /**
-     * <p>Collection of objects containing properties for each player session that
+     * <p>A collection of objects containing properties for each player session that
      * matches the request.</p>
      */
     inline const Aws::Vector<PlayerSession>& GetPlayerSessions() const{ return m_playerSessions; }
 
     /**
-     * <p>Collection of objects containing properties for each player session that
+     * <p>A collection of objects containing properties for each player session that
      * matches the request.</p>
      */
     inline void SetPlayerSessions(const Aws::Vector<PlayerSession>& value) { m_playerSessions = value; }
 
     /**
-     * <p>Collection of objects containing properties for each player session that
+     * <p>A collection of objects containing properties for each player session that
      * matches the request.</p>
      */
     inline void SetPlayerSessions(Aws::Vector<PlayerSession>&& value) { m_playerSessions = std::move(value); }
 
     /**
-     * <p>Collection of objects containing properties for each player session that
+     * <p>A collection of objects containing properties for each player session that
      * matches the request.</p>
      */
     inline DescribePlayerSessionsResult& WithPlayerSessions(const Aws::Vector<PlayerSession>& value) { SetPlayerSessions(value); return *this;}
 
     /**
-     * <p>Collection of objects containing properties for each player session that
+     * <p>A collection of objects containing properties for each player session that
      * matches the request.</p>
      */
     inline DescribePlayerSessionsResult& WithPlayerSessions(Aws::Vector<PlayerSession>&& value) { SetPlayerSessions(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of objects containing properties for each player session that
+     * <p>A collection of objects containing properties for each player session that
      * matches the request.</p>
      */
     inline DescribePlayerSessionsResult& AddPlayerSessions(const PlayerSession& value) { m_playerSessions.push_back(value); return *this; }
 
     /**
-     * <p>Collection of objects containing properties for each player session that
+     * <p>A collection of objects containing properties for each player session that
      * matches the request.</p>
      */
     inline DescribePlayerSessionsResult& AddPlayerSessions(PlayerSession&& value) { m_playerSessions.push_back(std::move(value)); return *this; }

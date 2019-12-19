@@ -62,98 +62,98 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for a fleet that is associated with this scaling
      * policy.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for a fleet that is associated with this scaling
      * policy.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for a fleet that is associated with this scaling
      * policy.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for a fleet that is associated with this scaling
      * policy.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for a fleet that is associated with this scaling
      * policy.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for a fleet that is associated with this scaling
      * policy.</p>
      */
     inline ScalingPolicy& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for a fleet that is associated with this scaling
      * policy.</p>
      */
     inline ScalingPolicy& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet that is associated with this scaling
+     * <p>A unique identifier for a fleet that is associated with this scaling
      * policy.</p>
      */
     inline ScalingPolicy& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
-     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * <p>A descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * <p>A descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * <p>A descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * <p>A descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * <p>A descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * <p>A descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
     inline ScalingPolicy& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * <p>A descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
     inline ScalingPolicy& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * <p>A descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
     inline ScalingPolicy& WithName(const char* value) { SetName(value); return *this;}
@@ -290,7 +290,7 @@ namespace Model
 
 
     /**
-     * <p>Type of adjustment to make to a fleet's instance count (see
+     * <p>The type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
      * subtract) the scaling adjustment value from the current instance count. Positive
      * values scale up while negative values scale down.</p> </li> <li> <p>
@@ -302,7 +302,7 @@ namespace Model
     inline const ScalingAdjustmentType& GetScalingAdjustmentType() const{ return m_scalingAdjustmentType; }
 
     /**
-     * <p>Type of adjustment to make to a fleet's instance count (see
+     * <p>The type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
      * subtract) the scaling adjustment value from the current instance count. Positive
      * values scale up while negative values scale down.</p> </li> <li> <p>
@@ -314,7 +314,7 @@ namespace Model
     inline bool ScalingAdjustmentTypeHasBeenSet() const { return m_scalingAdjustmentTypeHasBeenSet; }
 
     /**
-     * <p>Type of adjustment to make to a fleet's instance count (see
+     * <p>The type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
      * subtract) the scaling adjustment value from the current instance count. Positive
      * values scale up while negative values scale down.</p> </li> <li> <p>
@@ -326,7 +326,7 @@ namespace Model
     inline void SetScalingAdjustmentType(const ScalingAdjustmentType& value) { m_scalingAdjustmentTypeHasBeenSet = true; m_scalingAdjustmentType = value; }
 
     /**
-     * <p>Type of adjustment to make to a fleet's instance count (see
+     * <p>The type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
      * subtract) the scaling adjustment value from the current instance count. Positive
      * values scale up while negative values scale down.</p> </li> <li> <p>
@@ -338,7 +338,7 @@ namespace Model
     inline void SetScalingAdjustmentType(ScalingAdjustmentType&& value) { m_scalingAdjustmentTypeHasBeenSet = true; m_scalingAdjustmentType = std::move(value); }
 
     /**
-     * <p>Type of adjustment to make to a fleet's instance count (see
+     * <p>The type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
      * subtract) the scaling adjustment value from the current instance count. Positive
      * values scale up while negative values scale down.</p> </li> <li> <p>
@@ -350,7 +350,7 @@ namespace Model
     inline ScalingPolicy& WithScalingAdjustmentType(const ScalingAdjustmentType& value) { SetScalingAdjustmentType(value); return *this;}
 
     /**
-     * <p>Type of adjustment to make to a fleet's instance count (see
+     * <p>The type of adjustment to make to a fleet's instance count (see
      * <a>FleetCapacity</a>):</p> <ul> <li> <p> <b>ChangeInCapacity</b> -- add (or
      * subtract) the scaling adjustment value from the current instance count. Positive
      * values scale up while negative values scale down.</p> </li> <li> <p>
@@ -627,7 +627,7 @@ namespace Model
 
 
     /**
-     * <p>Type of scaling policy to create. For a target-based policy, set the
+     * <p>The type of scaling policy to create. For a target-based policy, set the
      * parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
      * <i>TargetConfiguration</i>. For a rule-based policy set the following
      * parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
@@ -637,7 +637,7 @@ namespace Model
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
 
     /**
-     * <p>Type of scaling policy to create. For a target-based policy, set the
+     * <p>The type of scaling policy to create. For a target-based policy, set the
      * parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
      * <i>TargetConfiguration</i>. For a rule-based policy set the following
      * parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
@@ -647,7 +647,7 @@ namespace Model
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
-     * <p>Type of scaling policy to create. For a target-based policy, set the
+     * <p>The type of scaling policy to create. For a target-based policy, set the
      * parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
      * <i>TargetConfiguration</i>. For a rule-based policy set the following
      * parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
@@ -657,7 +657,7 @@ namespace Model
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
 
     /**
-     * <p>Type of scaling policy to create. For a target-based policy, set the
+     * <p>The type of scaling policy to create. For a target-based policy, set the
      * parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
      * <i>TargetConfiguration</i>. For a rule-based policy set the following
      * parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
@@ -667,7 +667,7 @@ namespace Model
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
 
     /**
-     * <p>Type of scaling policy to create. For a target-based policy, set the
+     * <p>The type of scaling policy to create. For a target-based policy, set the
      * parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
      * <i>TargetConfiguration</i>. For a rule-based policy set the following
      * parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
@@ -677,7 +677,7 @@ namespace Model
     inline ScalingPolicy& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
 
     /**
-     * <p>Type of scaling policy to create. For a target-based policy, set the
+     * <p>The type of scaling policy to create. For a target-based policy, set the
      * parameter <i>MetricName</i> to 'PercentAvailableGameSessions' and specify a
      * <i>TargetConfiguration</i>. For a rule-based policy set the following
      * parameters: <i>MetricName</i>, <i>ComparisonOperator</i>, <i>Threshold</i>,
@@ -688,32 +688,32 @@ namespace Model
 
 
     /**
-     * <p>Object that contains settings for a target-based scaling policy.</p>
+     * <p>The settings for a target-based scaling policy.</p>
      */
     inline const TargetConfiguration& GetTargetConfiguration() const{ return m_targetConfiguration; }
 
     /**
-     * <p>Object that contains settings for a target-based scaling policy.</p>
+     * <p>The settings for a target-based scaling policy.</p>
      */
     inline bool TargetConfigurationHasBeenSet() const { return m_targetConfigurationHasBeenSet; }
 
     /**
-     * <p>Object that contains settings for a target-based scaling policy.</p>
+     * <p>The settings for a target-based scaling policy.</p>
      */
     inline void SetTargetConfiguration(const TargetConfiguration& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = value; }
 
     /**
-     * <p>Object that contains settings for a target-based scaling policy.</p>
+     * <p>The settings for a target-based scaling policy.</p>
      */
     inline void SetTargetConfiguration(TargetConfiguration&& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = std::move(value); }
 
     /**
-     * <p>Object that contains settings for a target-based scaling policy.</p>
+     * <p>The settings for a target-based scaling policy.</p>
      */
     inline ScalingPolicy& WithTargetConfiguration(const TargetConfiguration& value) { SetTargetConfiguration(value); return *this;}
 
     /**
-     * <p>Object that contains settings for a target-based scaling policy.</p>
+     * <p>The settings for a target-based scaling policy.</p>
      */
     inline ScalingPolicy& WithTargetConfiguration(TargetConfiguration&& value) { SetTargetConfiguration(std::move(value)); return *this;}
 

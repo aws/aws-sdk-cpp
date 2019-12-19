@@ -27,7 +27,8 @@ CreateGameSessionQueueRequest::CreateGameSessionQueueRequest() :
     m_timeoutInSeconds(0),
     m_timeoutInSecondsHasBeenSet(false),
     m_playerLatencyPoliciesHasBeenSet(false),
-    m_destinationsHasBeenSet(false)
+    m_destinationsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,17 @@ Aws::String CreateGameSessionQueueRequest::SerializePayload() const
      destinationsJsonList[destinationsIndex].AsObject(m_destinations[destinationsIndex].Jsonize());
    }
    payload.WithArray("Destinations", std::move(destinationsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

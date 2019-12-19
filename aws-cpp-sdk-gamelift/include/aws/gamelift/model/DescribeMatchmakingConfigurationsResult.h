@@ -51,85 +51,85 @@ namespace Model
 
 
     /**
-     * <p>Collection of requested matchmaking configuration objects.</p>
+     * <p>A collection of requested matchmaking configurations.</p>
      */
     inline const Aws::Vector<MatchmakingConfiguration>& GetConfigurations() const{ return m_configurations; }
 
     /**
-     * <p>Collection of requested matchmaking configuration objects.</p>
+     * <p>A collection of requested matchmaking configurations.</p>
      */
     inline void SetConfigurations(const Aws::Vector<MatchmakingConfiguration>& value) { m_configurations = value; }
 
     /**
-     * <p>Collection of requested matchmaking configuration objects.</p>
+     * <p>A collection of requested matchmaking configurations.</p>
      */
     inline void SetConfigurations(Aws::Vector<MatchmakingConfiguration>&& value) { m_configurations = std::move(value); }
 
     /**
-     * <p>Collection of requested matchmaking configuration objects.</p>
+     * <p>A collection of requested matchmaking configurations.</p>
      */
     inline DescribeMatchmakingConfigurationsResult& WithConfigurations(const Aws::Vector<MatchmakingConfiguration>& value) { SetConfigurations(value); return *this;}
 
     /**
-     * <p>Collection of requested matchmaking configuration objects.</p>
+     * <p>A collection of requested matchmaking configurations.</p>
      */
     inline DescribeMatchmakingConfigurationsResult& WithConfigurations(Aws::Vector<MatchmakingConfiguration>&& value) { SetConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of requested matchmaking configuration objects.</p>
+     * <p>A collection of requested matchmaking configurations.</p>
      */
     inline DescribeMatchmakingConfigurationsResult& AddConfigurations(const MatchmakingConfiguration& value) { m_configurations.push_back(value); return *this; }
 
     /**
-     * <p>Collection of requested matchmaking configuration objects.</p>
+     * <p>A collection of requested matchmaking configurations.</p>
      */
     inline DescribeMatchmakingConfigurationsResult& AddConfigurations(MatchmakingConfiguration&& value) { m_configurations.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline DescribeMatchmakingConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline DescribeMatchmakingConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */

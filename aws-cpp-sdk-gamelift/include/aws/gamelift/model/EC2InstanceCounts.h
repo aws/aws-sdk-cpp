@@ -37,19 +37,11 @@ namespace Model
    * terminating counts are non-zero only if fleet capacity is adjusting to an
    * <a>UpdateFleetCapacity</a> request, or if access to resources is temporarily
    * affected.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-   * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-   * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-   * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-   * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-   * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-   * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-   * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-   * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
-   * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-   * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-   * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-   * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-   * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+   * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>
+   * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a>
+   * </p> </li> <li> <p>Manage fleet actions:</p> <ul> <li> <p>
+   * <a>StartFleetActions</a> </p> </li> <li> <p> <a>StopFleetActions</a> </p> </li>
+   * </ul> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceCounts">AWS
    * API Reference</a></p>
    */
@@ -84,43 +76,43 @@ namespace Model
 
 
     /**
-     * <p>Minimum value allowed for the fleet's instance count.</p>
+     * <p>The minimum value allowed for the fleet's instance count.</p>
      */
     inline int GetMINIMUM() const{ return m_mINIMUM; }
 
     /**
-     * <p>Minimum value allowed for the fleet's instance count.</p>
+     * <p>The minimum value allowed for the fleet's instance count.</p>
      */
     inline bool MINIMUMHasBeenSet() const { return m_mINIMUMHasBeenSet; }
 
     /**
-     * <p>Minimum value allowed for the fleet's instance count.</p>
+     * <p>The minimum value allowed for the fleet's instance count.</p>
      */
     inline void SetMINIMUM(int value) { m_mINIMUMHasBeenSet = true; m_mINIMUM = value; }
 
     /**
-     * <p>Minimum value allowed for the fleet's instance count.</p>
+     * <p>The minimum value allowed for the fleet's instance count.</p>
      */
     inline EC2InstanceCounts& WithMINIMUM(int value) { SetMINIMUM(value); return *this;}
 
 
     /**
-     * <p>Maximum value allowed for the fleet's instance count.</p>
+     * <p>The maximum value allowed for the fleet's instance count.</p>
      */
     inline int GetMAXIMUM() const{ return m_mAXIMUM; }
 
     /**
-     * <p>Maximum value allowed for the fleet's instance count.</p>
+     * <p>The maximum value allowed for the fleet's instance count.</p>
      */
     inline bool MAXIMUMHasBeenSet() const { return m_mAXIMUMHasBeenSet; }
 
     /**
-     * <p>Maximum value allowed for the fleet's instance count.</p>
+     * <p>The maximum value allowed for the fleet's instance count.</p>
      */
     inline void SetMAXIMUM(int value) { m_mAXIMUMHasBeenSet = true; m_mAXIMUM = value; }
 
     /**
-     * <p>Maximum value allowed for the fleet's instance count.</p>
+     * <p>The maximum value allowed for the fleet's instance count.</p>
      */
     inline EC2InstanceCounts& WithMAXIMUM(int value) { SetMAXIMUM(value); return *this;}
 

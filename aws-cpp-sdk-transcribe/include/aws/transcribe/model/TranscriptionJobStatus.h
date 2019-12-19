@@ -26,6 +26,7 @@ namespace Model
   enum class TranscriptionJobStatus
   {
     NOT_SET,
+    QUEUED,
     IN_PROGRESS,
     FAILED,
     COMPLETED

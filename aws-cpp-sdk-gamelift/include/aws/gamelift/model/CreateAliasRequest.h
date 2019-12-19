@@ -18,6 +18,8 @@
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/RoutingStrategy.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/gamelift/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -49,124 +51,235 @@ namespace Model
 
 
     /**
-     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * <p>A descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * <p>A descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * <p>A descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * <p>A descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * <p>A descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * <p>A descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
     inline CreateAliasRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * <p>A descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
     inline CreateAliasRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * <p>A descriptive label that is associated with an alias. Alias names do not need
      * to be unique.</p>
      */
     inline CreateAliasRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Human-readable description of an alias.</p>
+     * <p>A human-readable description of the alias.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>Human-readable description of an alias.</p>
+     * <p>A human-readable description of the alias.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>Human-readable description of an alias.</p>
+     * <p>A human-readable description of the alias.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>Human-readable description of an alias.</p>
+     * <p>A human-readable description of the alias.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>Human-readable description of an alias.</p>
+     * <p>A human-readable description of the alias.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>Human-readable description of an alias.</p>
+     * <p>A human-readable description of the alias.</p>
      */
     inline CreateAliasRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Human-readable description of an alias.</p>
+     * <p>A human-readable description of the alias.</p>
      */
     inline CreateAliasRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Human-readable description of an alias.</p>
+     * <p>A human-readable description of the alias.</p>
      */
     inline CreateAliasRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>Object that specifies the fleet and routing type to use for the alias.</p>
+     * <p>The routing configuration, including routing type and fleet target, for the
+     * alias. </p>
      */
     inline const RoutingStrategy& GetRoutingStrategy() const{ return m_routingStrategy; }
 
     /**
-     * <p>Object that specifies the fleet and routing type to use for the alias.</p>
+     * <p>The routing configuration, including routing type and fleet target, for the
+     * alias. </p>
      */
     inline bool RoutingStrategyHasBeenSet() const { return m_routingStrategyHasBeenSet; }
 
     /**
-     * <p>Object that specifies the fleet and routing type to use for the alias.</p>
+     * <p>The routing configuration, including routing type and fleet target, for the
+     * alias. </p>
      */
     inline void SetRoutingStrategy(const RoutingStrategy& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = value; }
 
     /**
-     * <p>Object that specifies the fleet and routing type to use for the alias.</p>
+     * <p>The routing configuration, including routing type and fleet target, for the
+     * alias. </p>
      */
     inline void SetRoutingStrategy(RoutingStrategy&& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = std::move(value); }
 
     /**
-     * <p>Object that specifies the fleet and routing type to use for the alias.</p>
+     * <p>The routing configuration, including routing type and fleet target, for the
+     * alias. </p>
      */
     inline CreateAliasRequest& WithRoutingStrategy(const RoutingStrategy& value) { SetRoutingStrategy(value); return *this;}
 
     /**
-     * <p>Object that specifies the fleet and routing type to use for the alias.</p>
+     * <p>The routing configuration, including routing type and fleet target, for the
+     * alias. </p>
      */
     inline CreateAliasRequest& WithRoutingStrategy(RoutingStrategy&& value) { SetRoutingStrategy(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of labels to assign to the new alias resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of labels to assign to the new alias resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of labels to assign to the new alias resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of labels to assign to the new alias resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of labels to assign to the new alias resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline CreateAliasRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of labels to assign to the new alias resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline CreateAliasRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of labels to assign to the new alias resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline CreateAliasRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of labels to assign to the new alias resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline CreateAliasRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -178,6 +291,9 @@ namespace Model
 
     RoutingStrategy m_routingStrategy;
     bool m_routingStrategyHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

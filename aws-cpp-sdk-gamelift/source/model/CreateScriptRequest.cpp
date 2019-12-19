@@ -27,7 +27,8 @@ CreateScriptRequest::CreateScriptRequest() :
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_storageLocationHasBeenSet(false),
-    m_zipFileHasBeenSet(false)
+    m_zipFileHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,17 @@ Aws::String CreateScriptRequest::SerializePayload() const
   if(m_zipFileHasBeenSet)
   {
    payload.WithString("ZipFile", HashingUtils::Base64Encode(m_zipFile));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

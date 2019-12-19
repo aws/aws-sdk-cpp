@@ -44,44 +44,44 @@ namespace Model
 
 
     /**
-     * <p>Collection of objects that describe all valid VPC peering operations for the
-     * current AWS account.</p>
+     * <p>A collection of objects that describe all valid VPC peering operations for
+     * the current AWS account.</p>
      */
     inline const Aws::Vector<VpcPeeringAuthorization>& GetVpcPeeringAuthorizations() const{ return m_vpcPeeringAuthorizations; }
 
     /**
-     * <p>Collection of objects that describe all valid VPC peering operations for the
-     * current AWS account.</p>
+     * <p>A collection of objects that describe all valid VPC peering operations for
+     * the current AWS account.</p>
      */
     inline void SetVpcPeeringAuthorizations(const Aws::Vector<VpcPeeringAuthorization>& value) { m_vpcPeeringAuthorizations = value; }
 
     /**
-     * <p>Collection of objects that describe all valid VPC peering operations for the
-     * current AWS account.</p>
+     * <p>A collection of objects that describe all valid VPC peering operations for
+     * the current AWS account.</p>
      */
     inline void SetVpcPeeringAuthorizations(Aws::Vector<VpcPeeringAuthorization>&& value) { m_vpcPeeringAuthorizations = std::move(value); }
 
     /**
-     * <p>Collection of objects that describe all valid VPC peering operations for the
-     * current AWS account.</p>
+     * <p>A collection of objects that describe all valid VPC peering operations for
+     * the current AWS account.</p>
      */
     inline DescribeVpcPeeringAuthorizationsResult& WithVpcPeeringAuthorizations(const Aws::Vector<VpcPeeringAuthorization>& value) { SetVpcPeeringAuthorizations(value); return *this;}
 
     /**
-     * <p>Collection of objects that describe all valid VPC peering operations for the
-     * current AWS account.</p>
+     * <p>A collection of objects that describe all valid VPC peering operations for
+     * the current AWS account.</p>
      */
     inline DescribeVpcPeeringAuthorizationsResult& WithVpcPeeringAuthorizations(Aws::Vector<VpcPeeringAuthorization>&& value) { SetVpcPeeringAuthorizations(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of objects that describe all valid VPC peering operations for the
-     * current AWS account.</p>
+     * <p>A collection of objects that describe all valid VPC peering operations for
+     * the current AWS account.</p>
      */
     inline DescribeVpcPeeringAuthorizationsResult& AddVpcPeeringAuthorizations(const VpcPeeringAuthorization& value) { m_vpcPeeringAuthorizations.push_back(value); return *this; }
 
     /**
-     * <p>Collection of objects that describe all valid VPC peering operations for the
-     * current AWS account.</p>
+     * <p>A collection of objects that describe all valid VPC peering operations for
+     * the current AWS account.</p>
      */
     inline DescribeVpcPeeringAuthorizationsResult& AddVpcPeeringAuthorizations(VpcPeeringAuthorization&& value) { m_vpcPeeringAuthorizations.push_back(std::move(value)); return *this; }
 

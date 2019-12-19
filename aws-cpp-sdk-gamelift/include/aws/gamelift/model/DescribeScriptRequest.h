@@ -45,42 +45,50 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a Realtime script to retrieve properties for.</p>
+     * <p>A unique identifier for a Realtime script to retrieve properties for. You can
+     * use either the script ID or ARN value.</p>
      */
     inline const Aws::String& GetScriptId() const{ return m_scriptId; }
 
     /**
-     * <p>Unique identifier for a Realtime script to retrieve properties for.</p>
+     * <p>A unique identifier for a Realtime script to retrieve properties for. You can
+     * use either the script ID or ARN value.</p>
      */
     inline bool ScriptIdHasBeenSet() const { return m_scriptIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a Realtime script to retrieve properties for.</p>
+     * <p>A unique identifier for a Realtime script to retrieve properties for. You can
+     * use either the script ID or ARN value.</p>
      */
     inline void SetScriptId(const Aws::String& value) { m_scriptIdHasBeenSet = true; m_scriptId = value; }
 
     /**
-     * <p>Unique identifier for a Realtime script to retrieve properties for.</p>
+     * <p>A unique identifier for a Realtime script to retrieve properties for. You can
+     * use either the script ID or ARN value.</p>
      */
     inline void SetScriptId(Aws::String&& value) { m_scriptIdHasBeenSet = true; m_scriptId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a Realtime script to retrieve properties for.</p>
+     * <p>A unique identifier for a Realtime script to retrieve properties for. You can
+     * use either the script ID or ARN value.</p>
      */
     inline void SetScriptId(const char* value) { m_scriptIdHasBeenSet = true; m_scriptId.assign(value); }
 
     /**
-     * <p>Unique identifier for a Realtime script to retrieve properties for.</p>
+     * <p>A unique identifier for a Realtime script to retrieve properties for. You can
+     * use either the script ID or ARN value.</p>
      */
     inline DescribeScriptRequest& WithScriptId(const Aws::String& value) { SetScriptId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a Realtime script to retrieve properties for.</p>
+     * <p>A unique identifier for a Realtime script to retrieve properties for. You can
+     * use either the script ID or ARN value.</p>
      */
     inline DescribeScriptRequest& WithScriptId(Aws::String&& value) { SetScriptId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a Realtime script to retrieve properties for.</p>
+     * <p>A unique identifier for a Realtime script to retrieve properties for. You can
+     * use either the script ID or ARN value.</p>
      */
     inline DescribeScriptRequest& WithScriptId(const char* value) { SetScriptId(value); return *this;}
 

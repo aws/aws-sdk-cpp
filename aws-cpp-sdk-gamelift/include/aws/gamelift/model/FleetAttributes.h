@@ -46,18 +46,10 @@ namespace Model
   /**
    * <p>General properties describing a fleet.</p> <ul> <li> <p> <a>CreateFleet</a>
    * </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a>
-   * </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-   * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-   * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-   * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-   * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-   * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-   * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
-   * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-   * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-   * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-   * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-   * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+   * </p> </li> <li> <p> <a>DescribeFleetAttributes</a> </p> </li> <li> <p>
+   * <a>UpdateFleetAttributes</a> </p> </li> <li> <p>Manage fleet actions:</p> <ul>
+   * <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p> <a>StopFleetActions</a>
+   * </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetAttributes">AWS
    * API Reference</a></p>
    */
@@ -71,83 +63,115 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline FleetAttributes& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline FleetAttributes& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline FleetAttributes& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
-     * <p>Identifier for a fleet that is unique across all regions.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift fleet ARN, the resource ID matches
+     * the <i>FleetId</i> value.</p>
      */
     inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
 
     /**
-     * <p>Identifier for a fleet that is unique across all regions.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift fleet ARN, the resource ID matches
+     * the <i>FleetId</i> value.</p>
      */
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
 
     /**
-     * <p>Identifier for a fleet that is unique across all regions.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift fleet ARN, the resource ID matches
+     * the <i>FleetId</i> value.</p>
      */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
 
     /**
-     * <p>Identifier for a fleet that is unique across all regions.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift fleet ARN, the resource ID matches
+     * the <i>FleetId</i> value.</p>
      */
     inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
 
     /**
-     * <p>Identifier for a fleet that is unique across all regions.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift fleet ARN, the resource ID matches
+     * the <i>FleetId</i> value.</p>
      */
     inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
 
     /**
-     * <p>Identifier for a fleet that is unique across all regions.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift fleet ARN, the resource ID matches
+     * the <i>FleetId</i> value.</p>
      */
     inline FleetAttributes& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
 
     /**
-     * <p>Identifier for a fleet that is unique across all regions.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift fleet ARN, the resource ID matches
+     * the <i>FleetId</i> value.</p>
      */
     inline FleetAttributes& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier for a fleet that is unique across all regions.</p>
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift fleet ARN, the resource ID matches
+     * the <i>FleetId</i> value.</p>
      */
     inline FleetAttributes& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
 
@@ -280,50 +304,50 @@ namespace Model
 
 
     /**
-     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
-     * be unique.</p>
+     * <p>A descriptive label that is associated with a fleet. Fleet names do not need
+     * to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
-     * be unique.</p>
+     * <p>A descriptive label that is associated with a fleet. Fleet names do not need
+     * to be unique.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
-     * be unique.</p>
+     * <p>A descriptive label that is associated with a fleet. Fleet names do not need
+     * to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
-     * be unique.</p>
+     * <p>A descriptive label that is associated with a fleet. Fleet names do not need
+     * to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
-     * be unique.</p>
+     * <p>A descriptive label that is associated with a fleet. Fleet names do not need
+     * to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
-     * be unique.</p>
+     * <p>A descriptive label that is associated with a fleet. Fleet names do not need
+     * to be unique.</p>
      */
     inline FleetAttributes& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
-     * be unique.</p>
+     * <p>A descriptive label that is associated with a fleet. Fleet names do not need
+     * to be unique.</p>
      */
     inline FleetAttributes& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a fleet. Fleet names do not need to
-     * be unique.</p>
+     * <p>A descriptive label that is associated with a fleet. Fleet names do not need
+     * to be unique.</p>
      */
     inline FleetAttributes& WithName(const char* value) { SetName(value); return *this;}
 
@@ -494,85 +518,231 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline const Aws::String& GetBuildId() const{ return m_buildId; }
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline bool BuildIdHasBeenSet() const { return m_buildIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline FleetAttributes& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline FleetAttributes& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline FleetAttributes& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
 
     /**
-     * <p>Unique identifier for a Realtime script.</p>
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift build resource that is deployed on instances in
+     * this fleet. In a GameLift build ARN, the resource ID matches the <i>BuildId</i>
+     * value.</p>
+     */
+    inline const Aws::String& GetBuildArn() const{ return m_buildArn; }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift build resource that is deployed on instances in
+     * this fleet. In a GameLift build ARN, the resource ID matches the <i>BuildId</i>
+     * value.</p>
+     */
+    inline bool BuildArnHasBeenSet() const { return m_buildArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift build resource that is deployed on instances in
+     * this fleet. In a GameLift build ARN, the resource ID matches the <i>BuildId</i>
+     * value.</p>
+     */
+    inline void SetBuildArn(const Aws::String& value) { m_buildArnHasBeenSet = true; m_buildArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift build resource that is deployed on instances in
+     * this fleet. In a GameLift build ARN, the resource ID matches the <i>BuildId</i>
+     * value.</p>
+     */
+    inline void SetBuildArn(Aws::String&& value) { m_buildArnHasBeenSet = true; m_buildArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift build resource that is deployed on instances in
+     * this fleet. In a GameLift build ARN, the resource ID matches the <i>BuildId</i>
+     * value.</p>
+     */
+    inline void SetBuildArn(const char* value) { m_buildArnHasBeenSet = true; m_buildArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift build resource that is deployed on instances in
+     * this fleet. In a GameLift build ARN, the resource ID matches the <i>BuildId</i>
+     * value.</p>
+     */
+    inline FleetAttributes& WithBuildArn(const Aws::String& value) { SetBuildArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift build resource that is deployed on instances in
+     * this fleet. In a GameLift build ARN, the resource ID matches the <i>BuildId</i>
+     * value.</p>
+     */
+    inline FleetAttributes& WithBuildArn(Aws::String&& value) { SetBuildArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift build resource that is deployed on instances in
+     * this fleet. In a GameLift build ARN, the resource ID matches the <i>BuildId</i>
+     * value.</p>
+     */
+    inline FleetAttributes& WithBuildArn(const char* value) { SetBuildArn(value); return *this;}
+
+
+    /**
+     * <p>A unique identifier for a Realtime script.</p>
      */
     inline const Aws::String& GetScriptId() const{ return m_scriptId; }
 
     /**
-     * <p>Unique identifier for a Realtime script.</p>
+     * <p>A unique identifier for a Realtime script.</p>
      */
     inline bool ScriptIdHasBeenSet() const { return m_scriptIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a Realtime script.</p>
+     * <p>A unique identifier for a Realtime script.</p>
      */
     inline void SetScriptId(const Aws::String& value) { m_scriptIdHasBeenSet = true; m_scriptId = value; }
 
     /**
-     * <p>Unique identifier for a Realtime script.</p>
+     * <p>A unique identifier for a Realtime script.</p>
      */
     inline void SetScriptId(Aws::String&& value) { m_scriptIdHasBeenSet = true; m_scriptId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a Realtime script.</p>
+     * <p>A unique identifier for a Realtime script.</p>
      */
     inline void SetScriptId(const char* value) { m_scriptIdHasBeenSet = true; m_scriptId.assign(value); }
 
     /**
-     * <p>Unique identifier for a Realtime script.</p>
+     * <p>A unique identifier for a Realtime script.</p>
      */
     inline FleetAttributes& WithScriptId(const Aws::String& value) { SetScriptId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a Realtime script.</p>
+     * <p>A unique identifier for a Realtime script.</p>
      */
     inline FleetAttributes& WithScriptId(Aws::String&& value) { SetScriptId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a Realtime script.</p>
+     * <p>A unique identifier for a Realtime script.</p>
      */
     inline FleetAttributes& WithScriptId(const char* value) { SetScriptId(value); return *this;}
+
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift script resource that is deployed on instances in
+     * this fleet. In a GameLift script ARN, the resource ID matches the
+     * <i>ScriptId</i> value.</p>
+     */
+    inline const Aws::String& GetScriptArn() const{ return m_scriptArn; }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift script resource that is deployed on instances in
+     * this fleet. In a GameLift script ARN, the resource ID matches the
+     * <i>ScriptId</i> value.</p>
+     */
+    inline bool ScriptArnHasBeenSet() const { return m_scriptArnHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift script resource that is deployed on instances in
+     * this fleet. In a GameLift script ARN, the resource ID matches the
+     * <i>ScriptId</i> value.</p>
+     */
+    inline void SetScriptArn(const Aws::String& value) { m_scriptArnHasBeenSet = true; m_scriptArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift script resource that is deployed on instances in
+     * this fleet. In a GameLift script ARN, the resource ID matches the
+     * <i>ScriptId</i> value.</p>
+     */
+    inline void SetScriptArn(Aws::String&& value) { m_scriptArnHasBeenSet = true; m_scriptArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift script resource that is deployed on instances in
+     * this fleet. In a GameLift script ARN, the resource ID matches the
+     * <i>ScriptId</i> value.</p>
+     */
+    inline void SetScriptArn(const char* value) { m_scriptArnHasBeenSet = true; m_scriptArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift script resource that is deployed on instances in
+     * this fleet. In a GameLift script ARN, the resource ID matches the
+     * <i>ScriptId</i> value.</p>
+     */
+    inline FleetAttributes& WithScriptArn(const Aws::String& value) { SetScriptArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift script resource that is deployed on instances in
+     * this fleet. In a GameLift script ARN, the resource ID matches the
+     * <i>ScriptId</i> value.</p>
+     */
+    inline FleetAttributes& WithScriptArn(Aws::String&& value) { SetScriptArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift script resource that is deployed on instances in
+     * this fleet. In a GameLift script ARN, the resource ID matches the
+     * <i>ScriptId</i> value.</p>
+     */
+    inline FleetAttributes& WithScriptArn(const char* value) { SetScriptArn(value); return *this;}
 
 
     /**
@@ -807,8 +977,8 @@ namespace Model
 
 
     /**
-     * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be
+     * <p>The type of game session protection to set for all new instances started in
+     * the fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be
      * terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b>
      * -- If the game session is in an <code>ACTIVE</code> status, it cannot be
      * terminated during a scale-down event.</p> </li> </ul>
@@ -816,8 +986,8 @@ namespace Model
     inline const ProtectionPolicy& GetNewGameSessionProtectionPolicy() const{ return m_newGameSessionProtectionPolicy; }
 
     /**
-     * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be
+     * <p>The type of game session protection to set for all new instances started in
+     * the fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be
      * terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b>
      * -- If the game session is in an <code>ACTIVE</code> status, it cannot be
      * terminated during a scale-down event.</p> </li> </ul>
@@ -825,8 +995,8 @@ namespace Model
     inline bool NewGameSessionProtectionPolicyHasBeenSet() const { return m_newGameSessionProtectionPolicyHasBeenSet; }
 
     /**
-     * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be
+     * <p>The type of game session protection to set for all new instances started in
+     * the fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be
      * terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b>
      * -- If the game session is in an <code>ACTIVE</code> status, it cannot be
      * terminated during a scale-down event.</p> </li> </ul>
@@ -834,8 +1004,8 @@ namespace Model
     inline void SetNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = value; }
 
     /**
-     * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be
+     * <p>The type of game session protection to set for all new instances started in
+     * the fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be
      * terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b>
      * -- If the game session is in an <code>ACTIVE</code> status, it cannot be
      * terminated during a scale-down event.</p> </li> </ul>
@@ -843,8 +1013,8 @@ namespace Model
     inline void SetNewGameSessionProtectionPolicy(ProtectionPolicy&& value) { m_newGameSessionProtectionPolicyHasBeenSet = true; m_newGameSessionProtectionPolicy = std::move(value); }
 
     /**
-     * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be
+     * <p>The type of game session protection to set for all new instances started in
+     * the fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be
      * terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b>
      * -- If the game session is in an <code>ACTIVE</code> status, it cannot be
      * terminated during a scale-down event.</p> </li> </ul>
@@ -852,8 +1022,8 @@ namespace Model
     inline FleetAttributes& WithNewGameSessionProtectionPolicy(const ProtectionPolicy& value) { SetNewGameSessionProtectionPolicy(value); return *this;}
 
     /**
-     * <p>Type of game session protection to set for all new instances started in the
-     * fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be
+     * <p>The type of game session protection to set for all new instances started in
+     * the fleet.</p> <ul> <li> <p> <b>NoProtection</b> -- The game session can be
      * terminated during a scale-down event.</p> </li> <li> <p> <b>FullProtection</b>
      * -- If the game session is in an <code>ACTIVE</code> status, it cannot be
      * terminated during a scale-down event.</p> </li> </ul>
@@ -1064,126 +1234,138 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
      * services. With an instance role ARN set, any application that runs on an
      * instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN
-     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
-     * AWS Management Console. Learn more about using on-box credentials for your game
-     * servers at <a
+     * processes, and daemons (background processes). Create a role or look up a role's
+     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
+     * the AWS Management Console. Learn more about using on-box credentials for your
+     * game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline const Aws::String& GetInstanceRoleArn() const{ return m_instanceRoleArn; }
 
     /**
-     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
      * services. With an instance role ARN set, any application that runs on an
      * instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN
-     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
-     * AWS Management Console. Learn more about using on-box credentials for your game
-     * servers at <a
+     * processes, and daemons (background processes). Create a role or look up a role's
+     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
+     * the AWS Management Console. Learn more about using on-box credentials for your
+     * game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline bool InstanceRoleArnHasBeenSet() const { return m_instanceRoleArnHasBeenSet; }
 
     /**
-     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
      * services. With an instance role ARN set, any application that runs on an
      * instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN
-     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
-     * AWS Management Console. Learn more about using on-box credentials for your game
-     * servers at <a
+     * processes, and daemons (background processes). Create a role or look up a role's
+     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
+     * the AWS Management Console. Learn more about using on-box credentials for your
+     * game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline void SetInstanceRoleArn(const Aws::String& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = value; }
 
     /**
-     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
      * services. With an instance role ARN set, any application that runs on an
      * instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN
-     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
-     * AWS Management Console. Learn more about using on-box credentials for your game
-     * servers at <a
+     * processes, and daemons (background processes). Create a role or look up a role's
+     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
+     * the AWS Management Console. Learn more about using on-box credentials for your
+     * game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline void SetInstanceRoleArn(Aws::String&& value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn = std::move(value); }
 
     /**
-     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
      * services. With an instance role ARN set, any application that runs on an
      * instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN
-     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
-     * AWS Management Console. Learn more about using on-box credentials for your game
-     * servers at <a
+     * processes, and daemons (background processes). Create a role or look up a role's
+     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
+     * the AWS Management Console. Learn more about using on-box credentials for your
+     * game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline void SetInstanceRoleArn(const char* value) { m_instanceRoleArnHasBeenSet = true; m_instanceRoleArn.assign(value); }
 
     /**
-     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
      * services. With an instance role ARN set, any application that runs on an
      * instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN
-     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
-     * AWS Management Console. Learn more about using on-box credentials for your game
-     * servers at <a
+     * processes, and daemons (background processes). Create a role or look up a role's
+     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
+     * the AWS Management Console. Learn more about using on-box credentials for your
+     * game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(const Aws::String& value) { SetInstanceRoleArn(value); return *this;}
 
     /**
-     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
      * services. With an instance role ARN set, any application that runs on an
      * instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN
-     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
-     * AWS Management Console. Learn more about using on-box credentials for your game
-     * servers at <a
+     * processes, and daemons (background processes). Create a role or look up a role's
+     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
+     * the AWS Management Console. Learn more about using on-box credentials for your
+     * game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(Aws::String&& value) { SetInstanceRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for an AWS IAM role that manages access to your AWS
+     * <p>A unique identifier for an AWS IAM role that manages access to your AWS
      * services. With an instance role ARN set, any application that runs on an
      * instance in this fleet can assume the role, including install scripts, server
-     * processes, daemons (background processes). Create a role or look up a role's ARN
-     * using the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in the
-     * AWS Management Console. Learn more about using on-box credentials for your game
-     * servers at <a
+     * processes, and daemons (background processes). Create a role or look up a role's
+     * ARN from the <a href="https://console.aws.amazon.com/iam/">IAM dashboard</a> in
+     * the AWS Management Console. Learn more about using on-box credentials for your
+     * game servers at <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
      * Access external resources from a game server</a>.</p>
      */
     inline FleetAttributes& WithInstanceRoleArn(const char* value) { SetInstanceRoleArn(value); return *this;}
 
 
-    
+    /**
+     * <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
+     */
     inline const CertificateConfiguration& GetCertificateConfiguration() const{ return m_certificateConfiguration; }
 
-    
+    /**
+     * <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
+     */
     inline bool CertificateConfigurationHasBeenSet() const { return m_certificateConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
+     */
     inline void SetCertificateConfiguration(const CertificateConfiguration& value) { m_certificateConfigurationHasBeenSet = true; m_certificateConfiguration = value; }
 
-    
+    /**
+     * <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
+     */
     inline void SetCertificateConfiguration(CertificateConfiguration&& value) { m_certificateConfigurationHasBeenSet = true; m_certificateConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
+     */
     inline FleetAttributes& WithCertificateConfiguration(const CertificateConfiguration& value) { SetCertificateConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Indicates whether a TLS/SSL certificate was generated for the fleet. </p>
+     */
     inline FleetAttributes& WithCertificateConfiguration(CertificateConfiguration&& value) { SetCertificateConfiguration(std::move(value)); return *this;}
 
   private:
@@ -1218,8 +1400,14 @@ namespace Model
     Aws::String m_buildId;
     bool m_buildIdHasBeenSet;
 
+    Aws::String m_buildArn;
+    bool m_buildArnHasBeenSet;
+
     Aws::String m_scriptId;
     bool m_scriptIdHasBeenSet;
+
+    Aws::String m_scriptArn;
+    bool m_scriptArnHasBeenSet;
 
     Aws::String m_serverLaunchPath;
     bool m_serverLaunchPathHasBeenSet;

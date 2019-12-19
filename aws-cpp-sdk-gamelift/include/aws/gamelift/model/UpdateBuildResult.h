@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p>Object that contains the updated build record.</p>
+     * <p>The updated build record.</p>
      */
     inline const Build& GetBuild() const{ return m_build; }
 
     /**
-     * <p>Object that contains the updated build record.</p>
+     * <p>The updated build record.</p>
      */
     inline void SetBuild(const Build& value) { m_build = value; }
 
     /**
-     * <p>Object that contains the updated build record.</p>
+     * <p>The updated build record.</p>
      */
     inline void SetBuild(Build&& value) { m_build = std::move(value); }
 
     /**
-     * <p>Object that contains the updated build record.</p>
+     * <p>The updated build record.</p>
      */
     inline UpdateBuildResult& WithBuild(const Build& value) { SetBuild(value); return *this;}
 
     /**
-     * <p>Object that contains the updated build record.</p>
+     * <p>The updated build record.</p>
      */
     inline UpdateBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
 

@@ -51,37 +51,37 @@ namespace Model
 
 
     /**
-     * <p>Collection of build records that match the request.</p>
+     * <p>A collection of build records that match the request.</p>
      */
     inline const Aws::Vector<Build>& GetBuilds() const{ return m_builds; }
 
     /**
-     * <p>Collection of build records that match the request.</p>
+     * <p>A collection of build records that match the request.</p>
      */
     inline void SetBuilds(const Aws::Vector<Build>& value) { m_builds = value; }
 
     /**
-     * <p>Collection of build records that match the request.</p>
+     * <p>A collection of build records that match the request.</p>
      */
     inline void SetBuilds(Aws::Vector<Build>&& value) { m_builds = std::move(value); }
 
     /**
-     * <p>Collection of build records that match the request.</p>
+     * <p>A collection of build records that match the request.</p>
      */
     inline ListBuildsResult& WithBuilds(const Aws::Vector<Build>& value) { SetBuilds(value); return *this;}
 
     /**
-     * <p>Collection of build records that match the request.</p>
+     * <p>A collection of build records that match the request.</p>
      */
     inline ListBuildsResult& WithBuilds(Aws::Vector<Build>&& value) { SetBuilds(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of build records that match the request.</p>
+     * <p>A collection of build records that match the request.</p>
      */
     inline ListBuildsResult& AddBuilds(const Build& value) { m_builds.push_back(value); return *this; }
 
     /**
-     * <p>Collection of build records that match the request.</p>
+     * <p>A collection of build records that match the request.</p>
      */
     inline ListBuildsResult& AddBuilds(Build&& value) { m_builds.push_back(std::move(value)); return *this; }
 

@@ -44,37 +44,44 @@ namespace Model
 
 
     /**
-     * <p>A list of recommendations.</p>
+     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * There can be a maximum of 500 items in the list.</p>
      */
     inline const Aws::Vector<PredictedItem>& GetItemList() const{ return m_itemList; }
 
     /**
-     * <p>A list of recommendations.</p>
+     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * There can be a maximum of 500 items in the list.</p>
      */
     inline void SetItemList(const Aws::Vector<PredictedItem>& value) { m_itemList = value; }
 
     /**
-     * <p>A list of recommendations.</p>
+     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * There can be a maximum of 500 items in the list.</p>
      */
     inline void SetItemList(Aws::Vector<PredictedItem>&& value) { m_itemList = std::move(value); }
 
     /**
-     * <p>A list of recommendations.</p>
+     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * There can be a maximum of 500 items in the list.</p>
      */
     inline GetRecommendationsResult& WithItemList(const Aws::Vector<PredictedItem>& value) { SetItemList(value); return *this;}
 
     /**
-     * <p>A list of recommendations.</p>
+     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * There can be a maximum of 500 items in the list.</p>
      */
     inline GetRecommendationsResult& WithItemList(Aws::Vector<PredictedItem>&& value) { SetItemList(std::move(value)); return *this;}
 
     /**
-     * <p>A list of recommendations.</p>
+     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * There can be a maximum of 500 items in the list.</p>
      */
     inline GetRecommendationsResult& AddItemList(const PredictedItem& value) { m_itemList.push_back(value); return *this; }
 
     /**
-     * <p>A list of recommendations.</p>
+     * <p>A list of recommendations sorted in ascending order by prediction score.
+     * There can be a maximum of 500 items in the list.</p>
      */
     inline GetRecommendationsResult& AddItemList(PredictedItem&& value) { m_itemList.push_back(std::move(value)); return *this; }
 

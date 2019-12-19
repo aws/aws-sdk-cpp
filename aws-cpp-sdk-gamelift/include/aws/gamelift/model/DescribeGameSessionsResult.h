@@ -51,43 +51,43 @@ namespace Model
 
 
     /**
-     * <p>Collection of objects containing game session properties for each session
+     * <p>A collection of objects containing game session properties for each session
      * matching the request.</p>
      */
     inline const Aws::Vector<GameSession>& GetGameSessions() const{ return m_gameSessions; }
 
     /**
-     * <p>Collection of objects containing game session properties for each session
+     * <p>A collection of objects containing game session properties for each session
      * matching the request.</p>
      */
     inline void SetGameSessions(const Aws::Vector<GameSession>& value) { m_gameSessions = value; }
 
     /**
-     * <p>Collection of objects containing game session properties for each session
+     * <p>A collection of objects containing game session properties for each session
      * matching the request.</p>
      */
     inline void SetGameSessions(Aws::Vector<GameSession>&& value) { m_gameSessions = std::move(value); }
 
     /**
-     * <p>Collection of objects containing game session properties for each session
+     * <p>A collection of objects containing game session properties for each session
      * matching the request.</p>
      */
     inline DescribeGameSessionsResult& WithGameSessions(const Aws::Vector<GameSession>& value) { SetGameSessions(value); return *this;}
 
     /**
-     * <p>Collection of objects containing game session properties for each session
+     * <p>A collection of objects containing game session properties for each session
      * matching the request.</p>
      */
     inline DescribeGameSessionsResult& WithGameSessions(Aws::Vector<GameSession>&& value) { SetGameSessions(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of objects containing game session properties for each session
+     * <p>A collection of objects containing game session properties for each session
      * matching the request.</p>
      */
     inline DescribeGameSessionsResult& AddGameSessions(const GameSession& value) { m_gameSessions.push_back(value); return *this; }
 
     /**
-     * <p>Collection of objects containing game session properties for each session
+     * <p>A collection of objects containing game session properties for each session
      * matching the request.</p>
      */
     inline DescribeGameSessionsResult& AddGameSessions(GameSession&& value) { m_gameSessions.push_back(std::move(value)); return *this; }

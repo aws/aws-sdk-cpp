@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>Set of properties describing the requested script.</p>
+     * <p>A set of properties describing the requested script.</p>
      */
     inline const Script& GetScript() const{ return m_script; }
 
     /**
-     * <p>Set of properties describing the requested script.</p>
+     * <p>A set of properties describing the requested script.</p>
      */
     inline void SetScript(const Script& value) { m_script = value; }
 
     /**
-     * <p>Set of properties describing the requested script.</p>
+     * <p>A set of properties describing the requested script.</p>
      */
     inline void SetScript(Script&& value) { m_script = std::move(value); }
 
     /**
-     * <p>Set of properties describing the requested script.</p>
+     * <p>A set of properties describing the requested script.</p>
      */
     inline DescribeScriptResult& WithScript(const Script& value) { SetScript(value); return *this;}
 
     /**
-     * <p>Set of properties describing the requested script.</p>
+     * <p>A set of properties describing the requested script.</p>
      */
     inline DescribeScriptResult& WithScript(Script&& value) { SetScript(std::move(value)); return *this;}
 

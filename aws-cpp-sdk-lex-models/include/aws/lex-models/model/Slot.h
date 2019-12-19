@@ -19,6 +19,7 @@
 #include <aws/lex-models/model/SlotConstraint.h>
 #include <aws/lex-models/model/Prompt.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lex-models/model/ObfuscationSetting.h>
 #include <utility>
 
 namespace Aws
@@ -446,6 +447,67 @@ namespace Model
      */
     inline Slot& WithResponseCard(const char* value) { SetResponseCard(value); return *this;}
 
+
+    /**
+     * <p>Determines whether a slot is obfuscated in conversation logs and stored
+     * utterances. When you obfuscate a slot, the value is replaced by the slot name in
+     * curly braces ({}). For example, if the slot name is "full_name", obfuscated
+     * values are replaced with "{full_name}". For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot
+     * Obfuscation </a>. </p>
+     */
+    inline const ObfuscationSetting& GetObfuscationSetting() const{ return m_obfuscationSetting; }
+
+    /**
+     * <p>Determines whether a slot is obfuscated in conversation logs and stored
+     * utterances. When you obfuscate a slot, the value is replaced by the slot name in
+     * curly braces ({}). For example, if the slot name is "full_name", obfuscated
+     * values are replaced with "{full_name}". For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot
+     * Obfuscation </a>. </p>
+     */
+    inline bool ObfuscationSettingHasBeenSet() const { return m_obfuscationSettingHasBeenSet; }
+
+    /**
+     * <p>Determines whether a slot is obfuscated in conversation logs and stored
+     * utterances. When you obfuscate a slot, the value is replaced by the slot name in
+     * curly braces ({}). For example, if the slot name is "full_name", obfuscated
+     * values are replaced with "{full_name}". For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot
+     * Obfuscation </a>. </p>
+     */
+    inline void SetObfuscationSetting(const ObfuscationSetting& value) { m_obfuscationSettingHasBeenSet = true; m_obfuscationSetting = value; }
+
+    /**
+     * <p>Determines whether a slot is obfuscated in conversation logs and stored
+     * utterances. When you obfuscate a slot, the value is replaced by the slot name in
+     * curly braces ({}). For example, if the slot name is "full_name", obfuscated
+     * values are replaced with "{full_name}". For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot
+     * Obfuscation </a>. </p>
+     */
+    inline void SetObfuscationSetting(ObfuscationSetting&& value) { m_obfuscationSettingHasBeenSet = true; m_obfuscationSetting = std::move(value); }
+
+    /**
+     * <p>Determines whether a slot is obfuscated in conversation logs and stored
+     * utterances. When you obfuscate a slot, the value is replaced by the slot name in
+     * curly braces ({}). For example, if the slot name is "full_name", obfuscated
+     * values are replaced with "{full_name}". For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot
+     * Obfuscation </a>. </p>
+     */
+    inline Slot& WithObfuscationSetting(const ObfuscationSetting& value) { SetObfuscationSetting(value); return *this;}
+
+    /**
+     * <p>Determines whether a slot is obfuscated in conversation logs and stored
+     * utterances. When you obfuscate a slot, the value is replaced by the slot name in
+     * curly braces ({}). For example, if the slot name is "full_name", obfuscated
+     * values are replaced with "{full_name}". For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html"> Slot
+     * Obfuscation </a>. </p>
+     */
+    inline Slot& WithObfuscationSetting(ObfuscationSetting&& value) { SetObfuscationSetting(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -474,6 +536,9 @@ namespace Model
 
     Aws::String m_responseCard;
     bool m_responseCardHasBeenSet;
+
+    ObfuscationSetting m_obfuscationSetting;
+    bool m_obfuscationSettingHasBeenSet;
   };
 
 } // namespace Model

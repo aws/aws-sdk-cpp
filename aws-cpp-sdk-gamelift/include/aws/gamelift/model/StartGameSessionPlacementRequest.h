@@ -52,64 +52,64 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier to assign to the new game session placement. This value is
-     * developer-defined. The value must be unique across all regions and cannot be
+     * <p>A unique identifier to assign to the new game session placement. This value
+     * is developer-defined. The value must be unique across all Regions and cannot be
      * reused unless you are resubmitting a canceled or timed-out placement
      * request.</p>
      */
     inline const Aws::String& GetPlacementId() const{ return m_placementId; }
 
     /**
-     * <p>Unique identifier to assign to the new game session placement. This value is
-     * developer-defined. The value must be unique across all regions and cannot be
+     * <p>A unique identifier to assign to the new game session placement. This value
+     * is developer-defined. The value must be unique across all Regions and cannot be
      * reused unless you are resubmitting a canceled or timed-out placement
      * request.</p>
      */
     inline bool PlacementIdHasBeenSet() const { return m_placementIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier to assign to the new game session placement. This value is
-     * developer-defined. The value must be unique across all regions and cannot be
+     * <p>A unique identifier to assign to the new game session placement. This value
+     * is developer-defined. The value must be unique across all Regions and cannot be
      * reused unless you are resubmitting a canceled or timed-out placement
      * request.</p>
      */
     inline void SetPlacementId(const Aws::String& value) { m_placementIdHasBeenSet = true; m_placementId = value; }
 
     /**
-     * <p>Unique identifier to assign to the new game session placement. This value is
-     * developer-defined. The value must be unique across all regions and cannot be
+     * <p>A unique identifier to assign to the new game session placement. This value
+     * is developer-defined. The value must be unique across all Regions and cannot be
      * reused unless you are resubmitting a canceled or timed-out placement
      * request.</p>
      */
     inline void SetPlacementId(Aws::String&& value) { m_placementIdHasBeenSet = true; m_placementId = std::move(value); }
 
     /**
-     * <p>Unique identifier to assign to the new game session placement. This value is
-     * developer-defined. The value must be unique across all regions and cannot be
+     * <p>A unique identifier to assign to the new game session placement. This value
+     * is developer-defined. The value must be unique across all Regions and cannot be
      * reused unless you are resubmitting a canceled or timed-out placement
      * request.</p>
      */
     inline void SetPlacementId(const char* value) { m_placementIdHasBeenSet = true; m_placementId.assign(value); }
 
     /**
-     * <p>Unique identifier to assign to the new game session placement. This value is
-     * developer-defined. The value must be unique across all regions and cannot be
+     * <p>A unique identifier to assign to the new game session placement. This value
+     * is developer-defined. The value must be unique across all Regions and cannot be
      * reused unless you are resubmitting a canceled or timed-out placement
      * request.</p>
      */
     inline StartGameSessionPlacementRequest& WithPlacementId(const Aws::String& value) { SetPlacementId(value); return *this;}
 
     /**
-     * <p>Unique identifier to assign to the new game session placement. This value is
-     * developer-defined. The value must be unique across all regions and cannot be
+     * <p>A unique identifier to assign to the new game session placement. This value
+     * is developer-defined. The value must be unique across all Regions and cannot be
      * reused unless you are resubmitting a canceled or timed-out placement
      * request.</p>
      */
     inline StartGameSessionPlacementRequest& WithPlacementId(Aws::String&& value) { SetPlacementId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier to assign to the new game session placement. This value is
-     * developer-defined. The value must be unique across all regions and cannot be
+     * <p>A unique identifier to assign to the new game session placement. This value
+     * is developer-defined. The value must be unique across all Regions and cannot be
      * reused unless you are resubmitting a canceled or timed-out placement
      * request.</p>
      */
@@ -117,42 +117,50 @@ namespace Model
 
 
     /**
-     * <p>Name of the queue to use to place the new game session.</p>
+     * <p>Name of the queue to use to place the new game session. You can use either
+     * the qieue name or ARN value. </p>
      */
     inline const Aws::String& GetGameSessionQueueName() const{ return m_gameSessionQueueName; }
 
     /**
-     * <p>Name of the queue to use to place the new game session.</p>
+     * <p>Name of the queue to use to place the new game session. You can use either
+     * the qieue name or ARN value. </p>
      */
     inline bool GameSessionQueueNameHasBeenSet() const { return m_gameSessionQueueNameHasBeenSet; }
 
     /**
-     * <p>Name of the queue to use to place the new game session.</p>
+     * <p>Name of the queue to use to place the new game session. You can use either
+     * the qieue name or ARN value. </p>
      */
     inline void SetGameSessionQueueName(const Aws::String& value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName = value; }
 
     /**
-     * <p>Name of the queue to use to place the new game session.</p>
+     * <p>Name of the queue to use to place the new game session. You can use either
+     * the qieue name or ARN value. </p>
      */
     inline void SetGameSessionQueueName(Aws::String&& value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName = std::move(value); }
 
     /**
-     * <p>Name of the queue to use to place the new game session.</p>
+     * <p>Name of the queue to use to place the new game session. You can use either
+     * the qieue name or ARN value. </p>
      */
     inline void SetGameSessionQueueName(const char* value) { m_gameSessionQueueNameHasBeenSet = true; m_gameSessionQueueName.assign(value); }
 
     /**
-     * <p>Name of the queue to use to place the new game session.</p>
+     * <p>Name of the queue to use to place the new game session. You can use either
+     * the qieue name or ARN value. </p>
      */
     inline StartGameSessionPlacementRequest& WithGameSessionQueueName(const Aws::String& value) { SetGameSessionQueueName(value); return *this;}
 
     /**
-     * <p>Name of the queue to use to place the new game session.</p>
+     * <p>Name of the queue to use to place the new game session. You can use either
+     * the qieue name or ARN value. </p>
      */
     inline StartGameSessionPlacementRequest& WithGameSessionQueueName(Aws::String&& value) { SetGameSessionQueueName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the queue to use to place the new game session.</p>
+     * <p>Name of the queue to use to place the new game session. You can use either
+     * the qieue name or ARN value. </p>
      */
     inline StartGameSessionPlacementRequest& WithGameSessionQueueName(const char* value) { SetGameSessionQueueName(value); return *this;}
 
@@ -231,74 +239,74 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of players that can be connected simultaneously to the game
-     * session.</p>
+     * <p>The maximum number of players that can be connected simultaneously to the
+     * game session.</p>
      */
     inline int GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
 
     /**
-     * <p>Maximum number of players that can be connected simultaneously to the game
-     * session.</p>
+     * <p>The maximum number of players that can be connected simultaneously to the
+     * game session.</p>
      */
     inline bool MaximumPlayerSessionCountHasBeenSet() const { return m_maximumPlayerSessionCountHasBeenSet; }
 
     /**
-     * <p>Maximum number of players that can be connected simultaneously to the game
-     * session.</p>
+     * <p>The maximum number of players that can be connected simultaneously to the
+     * game session.</p>
      */
     inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
 
     /**
-     * <p>Maximum number of players that can be connected simultaneously to the game
-     * session.</p>
+     * <p>The maximum number of players that can be connected simultaneously to the
+     * game session.</p>
      */
     inline StartGameSessionPlacementRequest& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
 
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline const Aws::String& GetGameSessionName() const{ return m_gameSessionName; }
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline bool GameSessionNameHasBeenSet() const { return m_gameSessionNameHasBeenSet; }
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline void SetGameSessionName(const Aws::String& value) { m_gameSessionNameHasBeenSet = true; m_gameSessionName = value; }
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline void SetGameSessionName(Aws::String&& value) { m_gameSessionNameHasBeenSet = true; m_gameSessionName = std::move(value); }
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline void SetGameSessionName(const char* value) { m_gameSessionNameHasBeenSet = true; m_gameSessionName.assign(value); }
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline StartGameSessionPlacementRequest& WithGameSessionName(const Aws::String& value) { SetGameSessionName(value); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline StartGameSessionPlacementRequest& WithGameSessionName(Aws::String&& value) { SetGameSessionName(std::move(value)); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a game session. Session names do
+     * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
     inline StartGameSessionPlacementRequest& WithGameSessionName(const char* value) { SetGameSessionName(value); return *this;}
@@ -306,7 +314,7 @@ namespace Model
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS regions. This information is
+     * that a player experiences when connected to AWS Regions. This information is
      * used to try to place the new game session where it can offer the best possible
      * gameplay experience for the players. </p>
      */
@@ -314,7 +322,7 @@ namespace Model
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS regions. This information is
+     * that a player experiences when connected to AWS Regions. This information is
      * used to try to place the new game session where it can offer the best possible
      * gameplay experience for the players. </p>
      */
@@ -322,7 +330,7 @@ namespace Model
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS regions. This information is
+     * that a player experiences when connected to AWS Regions. This information is
      * used to try to place the new game session where it can offer the best possible
      * gameplay experience for the players. </p>
      */
@@ -330,7 +338,7 @@ namespace Model
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS regions. This information is
+     * that a player experiences when connected to AWS Regions. This information is
      * used to try to place the new game session where it can offer the best possible
      * gameplay experience for the players. </p>
      */
@@ -338,7 +346,7 @@ namespace Model
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS regions. This information is
+     * that a player experiences when connected to AWS Regions. This information is
      * used to try to place the new game session where it can offer the best possible
      * gameplay experience for the players. </p>
      */
@@ -346,7 +354,7 @@ namespace Model
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS regions. This information is
+     * that a player experiences when connected to AWS Regions. This information is
      * used to try to place the new game session where it can offer the best possible
      * gameplay experience for the players. </p>
      */
@@ -354,7 +362,7 @@ namespace Model
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS regions. This information is
+     * that a player experiences when connected to AWS Regions. This information is
      * used to try to place the new game session where it can offer the best possible
      * gameplay experience for the players. </p>
      */
@@ -362,7 +370,7 @@ namespace Model
 
     /**
      * <p>Set of values, expressed in milliseconds, indicating the amount of latency
-     * that a player experiences when connected to AWS regions. This information is
+     * that a player experiences when connected to AWS Regions. This information is
      * used to try to place the new game session where it can offer the best possible
      * gameplay experience for the players. </p>
      */

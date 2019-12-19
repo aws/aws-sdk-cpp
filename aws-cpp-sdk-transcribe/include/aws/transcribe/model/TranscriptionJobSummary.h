@@ -125,6 +125,37 @@ namespace Model
 
 
     /**
+     * <p>A timestamp that shows when the job started processing.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>A timestamp that shows when the job started processing.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that shows when the job started processing.</p>
+     */
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>A timestamp that shows when the job started processing.</p>
+     */
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
+
+    /**
+     * <p>A timestamp that shows when the job started processing.</p>
+     */
+    inline TranscriptionJobSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>A timestamp that shows when the job started processing.</p>
+     */
+    inline TranscriptionJobSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>A timestamp that shows when the job was completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
@@ -357,6 +388,9 @@ namespace Model
 
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
+
+    Aws::Utils::DateTime m_startTime;
+    bool m_startTimeHasBeenSet;
 
     Aws::Utils::DateTime m_completionTime;
     bool m_completionTimeHasBeenSet;

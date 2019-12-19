@@ -21,6 +21,7 @@
 #include <aws/dlm/model/RetainRule.h>
 #include <aws/dlm/model/FastRestoreRule.h>
 #include <aws/dlm/model/Tag.h>
+#include <aws/dlm/model/CrossRegionCopyRule.h>
 #include <utility>
 
 namespace Aws
@@ -241,32 +242,32 @@ namespace Model
 
 
     /**
-     * <p>The create rule.</p>
+     * <p>The creation rule.</p>
      */
     inline const CreateRule& GetCreateRule() const{ return m_createRule; }
 
     /**
-     * <p>The create rule.</p>
+     * <p>The creation rule.</p>
      */
     inline bool CreateRuleHasBeenSet() const { return m_createRuleHasBeenSet; }
 
     /**
-     * <p>The create rule.</p>
+     * <p>The creation rule.</p>
      */
     inline void SetCreateRule(const CreateRule& value) { m_createRuleHasBeenSet = true; m_createRule = value; }
 
     /**
-     * <p>The create rule.</p>
+     * <p>The creation rule.</p>
      */
     inline void SetCreateRule(CreateRule&& value) { m_createRuleHasBeenSet = true; m_createRule = std::move(value); }
 
     /**
-     * <p>The create rule.</p>
+     * <p>The creation rule.</p>
      */
     inline Schedule& WithCreateRule(const CreateRule& value) { SetCreateRule(value); return *this;}
 
     /**
-     * <p>The create rule.</p>
+     * <p>The creation rule.</p>
      */
     inline Schedule& WithCreateRule(CreateRule&& value) { SetCreateRule(std::move(value)); return *this;}
 
@@ -303,34 +304,75 @@ namespace Model
 
 
     /**
-     * <p>Enable fast snapshot restore.</p>
+     * <p>The rule for enabling fast snapshot restore.</p>
      */
     inline const FastRestoreRule& GetFastRestoreRule() const{ return m_fastRestoreRule; }
 
     /**
-     * <p>Enable fast snapshot restore.</p>
+     * <p>The rule for enabling fast snapshot restore.</p>
      */
     inline bool FastRestoreRuleHasBeenSet() const { return m_fastRestoreRuleHasBeenSet; }
 
     /**
-     * <p>Enable fast snapshot restore.</p>
+     * <p>The rule for enabling fast snapshot restore.</p>
      */
     inline void SetFastRestoreRule(const FastRestoreRule& value) { m_fastRestoreRuleHasBeenSet = true; m_fastRestoreRule = value; }
 
     /**
-     * <p>Enable fast snapshot restore.</p>
+     * <p>The rule for enabling fast snapshot restore.</p>
      */
     inline void SetFastRestoreRule(FastRestoreRule&& value) { m_fastRestoreRuleHasBeenSet = true; m_fastRestoreRule = std::move(value); }
 
     /**
-     * <p>Enable fast snapshot restore.</p>
+     * <p>The rule for enabling fast snapshot restore.</p>
      */
     inline Schedule& WithFastRestoreRule(const FastRestoreRule& value) { SetFastRestoreRule(value); return *this;}
 
     /**
-     * <p>Enable fast snapshot restore.</p>
+     * <p>The rule for enabling fast snapshot restore.</p>
      */
     inline Schedule& WithFastRestoreRule(FastRestoreRule&& value) { SetFastRestoreRule(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The rule for cross-Region snapshot copies.</p>
+     */
+    inline const Aws::Vector<CrossRegionCopyRule>& GetCrossRegionCopyRules() const{ return m_crossRegionCopyRules; }
+
+    /**
+     * <p>The rule for cross-Region snapshot copies.</p>
+     */
+    inline bool CrossRegionCopyRulesHasBeenSet() const { return m_crossRegionCopyRulesHasBeenSet; }
+
+    /**
+     * <p>The rule for cross-Region snapshot copies.</p>
+     */
+    inline void SetCrossRegionCopyRules(const Aws::Vector<CrossRegionCopyRule>& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules = value; }
+
+    /**
+     * <p>The rule for cross-Region snapshot copies.</p>
+     */
+    inline void SetCrossRegionCopyRules(Aws::Vector<CrossRegionCopyRule>&& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules = std::move(value); }
+
+    /**
+     * <p>The rule for cross-Region snapshot copies.</p>
+     */
+    inline Schedule& WithCrossRegionCopyRules(const Aws::Vector<CrossRegionCopyRule>& value) { SetCrossRegionCopyRules(value); return *this;}
+
+    /**
+     * <p>The rule for cross-Region snapshot copies.</p>
+     */
+    inline Schedule& WithCrossRegionCopyRules(Aws::Vector<CrossRegionCopyRule>&& value) { SetCrossRegionCopyRules(std::move(value)); return *this;}
+
+    /**
+     * <p>The rule for cross-Region snapshot copies.</p>
+     */
+    inline Schedule& AddCrossRegionCopyRules(const CrossRegionCopyRule& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules.push_back(value); return *this; }
+
+    /**
+     * <p>The rule for cross-Region snapshot copies.</p>
+     */
+    inline Schedule& AddCrossRegionCopyRules(CrossRegionCopyRule&& value) { m_crossRegionCopyRulesHasBeenSet = true; m_crossRegionCopyRules.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -354,6 +396,9 @@ namespace Model
 
     FastRestoreRule m_fastRestoreRule;
     bool m_fastRestoreRuleHasBeenSet;
+
+    Aws::Vector<CrossRegionCopyRule> m_crossRegionCopyRules;
+    bool m_crossRegionCopyRulesHasBeenSet;
   };
 
 } // namespace Model

@@ -51,44 +51,44 @@ namespace Model
 
 
     /**
-     * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID.</p>
+     * <p>A collection of objects containing attribute metadata for each requested
+     * fleet ID.</p>
      */
     inline const Aws::Vector<FleetAttributes>& GetFleetAttributes() const{ return m_fleetAttributes; }
 
     /**
-     * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID.</p>
+     * <p>A collection of objects containing attribute metadata for each requested
+     * fleet ID.</p>
      */
     inline void SetFleetAttributes(const Aws::Vector<FleetAttributes>& value) { m_fleetAttributes = value; }
 
     /**
-     * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID.</p>
+     * <p>A collection of objects containing attribute metadata for each requested
+     * fleet ID.</p>
      */
     inline void SetFleetAttributes(Aws::Vector<FleetAttributes>&& value) { m_fleetAttributes = std::move(value); }
 
     /**
-     * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID.</p>
+     * <p>A collection of objects containing attribute metadata for each requested
+     * fleet ID.</p>
      */
     inline DescribeFleetAttributesResult& WithFleetAttributes(const Aws::Vector<FleetAttributes>& value) { SetFleetAttributes(value); return *this;}
 
     /**
-     * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID.</p>
+     * <p>A collection of objects containing attribute metadata for each requested
+     * fleet ID.</p>
      */
     inline DescribeFleetAttributesResult& WithFleetAttributes(Aws::Vector<FleetAttributes>&& value) { SetFleetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID.</p>
+     * <p>A collection of objects containing attribute metadata for each requested
+     * fleet ID.</p>
      */
     inline DescribeFleetAttributesResult& AddFleetAttributes(const FleetAttributes& value) { m_fleetAttributes.push_back(value); return *this; }
 
     /**
-     * <p>Collection of objects containing attribute metadata for each requested fleet
-     * ID.</p>
+     * <p>A collection of objects containing attribute metadata for each requested
+     * fleet ID.</p>
      */
     inline DescribeFleetAttributesResult& AddFleetAttributes(FleetAttributes&& value) { m_fleetAttributes.push_back(std::move(value)); return *this; }
 

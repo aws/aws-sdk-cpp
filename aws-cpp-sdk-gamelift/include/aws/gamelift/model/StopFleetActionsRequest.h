@@ -47,42 +47,50 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet</p>
+     * <p>A unique identifier for a fleet to stop actions on. You can use either the
+     * fleet ID or ARN value.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet</p>
+     * <p>A unique identifier for a fleet to stop actions on. You can use either the
+     * fleet ID or ARN value.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a fleet</p>
+     * <p>A unique identifier for a fleet to stop actions on. You can use either the
+     * fleet ID or ARN value.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet</p>
+     * <p>A unique identifier for a fleet to stop actions on. You can use either the
+     * fleet ID or ARN value.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet</p>
+     * <p>A unique identifier for a fleet to stop actions on. You can use either the
+     * fleet ID or ARN value.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet</p>
+     * <p>A unique identifier for a fleet to stop actions on. You can use either the
+     * fleet ID or ARN value.</p>
      */
     inline StopFleetActionsRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet</p>
+     * <p>A unique identifier for a fleet to stop actions on. You can use either the
+     * fleet ID or ARN value.</p>
      */
     inline StopFleetActionsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet</p>
+     * <p>A unique identifier for a fleet to stop actions on. You can use either the
+     * fleet ID or ARN value.</p>
      */
     inline StopFleetActionsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 

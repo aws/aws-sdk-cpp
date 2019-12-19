@@ -76,128 +76,207 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for a matchmaking rule set</p>
      */
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for a matchmaking rule set</p>
      */
     inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for a matchmaking rule set</p>
      */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for a matchmaking rule set</p>
      */
     inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for a matchmaking rule set</p>
      */
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
 
     /**
-     * <p>Unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for a matchmaking rule set</p>
      */
     inline MatchmakingRuleSet& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
 
     /**
-     * <p>Unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for a matchmaking rule set</p>
      */
     inline MatchmakingRuleSet& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a matchmaking rule set</p>
+     * <p>A unique identifier for a matchmaking rule set</p>
      */
     inline MatchmakingRuleSet& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
 
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. Comments are not
-     * allowed in JSON, but most elements support a description field.</p>
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking rule set resource and uniquely
+     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
+     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     */
+    inline const Aws::String& GetRuleSetArn() const{ return m_ruleSetArn; }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking rule set resource and uniquely
+     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
+     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     */
+    inline bool RuleSetArnHasBeenSet() const { return m_ruleSetArnHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking rule set resource and uniquely
+     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
+     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     */
+    inline void SetRuleSetArn(const Aws::String& value) { m_ruleSetArnHasBeenSet = true; m_ruleSetArn = value; }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking rule set resource and uniquely
+     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
+     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     */
+    inline void SetRuleSetArn(Aws::String&& value) { m_ruleSetArnHasBeenSet = true; m_ruleSetArn = std::move(value); }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking rule set resource and uniquely
+     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
+     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     */
+    inline void SetRuleSetArn(const char* value) { m_ruleSetArnHasBeenSet = true; m_ruleSetArn.assign(value); }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking rule set resource and uniquely
+     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
+     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     */
+    inline MatchmakingRuleSet& WithRuleSetArn(const Aws::String& value) { SetRuleSetArn(value); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking rule set resource and uniquely
+     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
+     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     */
+    inline MatchmakingRuleSet& WithRuleSetArn(Aws::String&& value) { SetRuleSetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift matchmaking rule set resource and uniquely
+     * identifies it. ARNs are unique across all Regions. In a GameLift rule set ARN,
+     * the resource ID matches the <i>RuleSetName</i> value.</p>
+     */
+    inline MatchmakingRuleSet& WithRuleSetArn(const char* value) { SetRuleSetArn(value); return *this;}
+
+
+    /**
+     * <p>A collection of matchmaking rules, formatted as a JSON string. Comments are
+     * not allowed in JSON, but most elements support a description field.</p>
      */
     inline const Aws::String& GetRuleSetBody() const{ return m_ruleSetBody; }
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. Comments are not
-     * allowed in JSON, but most elements support a description field.</p>
+     * <p>A collection of matchmaking rules, formatted as a JSON string. Comments are
+     * not allowed in JSON, but most elements support a description field.</p>
      */
     inline bool RuleSetBodyHasBeenSet() const { return m_ruleSetBodyHasBeenSet; }
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. Comments are not
-     * allowed in JSON, but most elements support a description field.</p>
+     * <p>A collection of matchmaking rules, formatted as a JSON string. Comments are
+     * not allowed in JSON, but most elements support a description field.</p>
      */
     inline void SetRuleSetBody(const Aws::String& value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody = value; }
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. Comments are not
-     * allowed in JSON, but most elements support a description field.</p>
+     * <p>A collection of matchmaking rules, formatted as a JSON string. Comments are
+     * not allowed in JSON, but most elements support a description field.</p>
      */
     inline void SetRuleSetBody(Aws::String&& value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody = std::move(value); }
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. Comments are not
-     * allowed in JSON, but most elements support a description field.</p>
+     * <p>A collection of matchmaking rules, formatted as a JSON string. Comments are
+     * not allowed in JSON, but most elements support a description field.</p>
      */
     inline void SetRuleSetBody(const char* value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody.assign(value); }
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. Comments are not
-     * allowed in JSON, but most elements support a description field.</p>
+     * <p>A collection of matchmaking rules, formatted as a JSON string. Comments are
+     * not allowed in JSON, but most elements support a description field.</p>
      */
     inline MatchmakingRuleSet& WithRuleSetBody(const Aws::String& value) { SetRuleSetBody(value); return *this;}
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. Comments are not
-     * allowed in JSON, but most elements support a description field.</p>
+     * <p>A collection of matchmaking rules, formatted as a JSON string. Comments are
+     * not allowed in JSON, but most elements support a description field.</p>
      */
     inline MatchmakingRuleSet& WithRuleSetBody(Aws::String&& value) { SetRuleSetBody(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of matchmaking rules, formatted as a JSON string. Comments are not
-     * allowed in JSON, but most elements support a description field.</p>
+     * <p>A collection of matchmaking rules, formatted as a JSON string. Comments are
+     * not allowed in JSON, but most elements support a description field.</p>
      */
     inline MatchmakingRuleSet& WithRuleSetBody(const char* value) { SetRuleSetBody(value); return *this;}
 
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>The time stamp indicating when this data object was created. The format is a
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>The time stamp indicating when this data object was created. The format is a
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>The time stamp indicating when this data object was created. The format is a
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>The time stamp indicating when this data object was created. The format is a
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>The time stamp indicating when this data object was created. The format is a
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline MatchmakingRuleSet& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
 
     /**
-     * <p>Time stamp indicating when this data object was created. Format is a number
-     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     * <p>The time stamp indicating when this data object was created. The format is a
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
      */
     inline MatchmakingRuleSet& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
@@ -205,6 +284,9 @@ namespace Model
 
     Aws::String m_ruleSetName;
     bool m_ruleSetNameHasBeenSet;
+
+    Aws::String m_ruleSetArn;
+    bool m_ruleSetArnHasBeenSet;
 
     Aws::String m_ruleSetBody;
     bool m_ruleSetBodyHasBeenSet;

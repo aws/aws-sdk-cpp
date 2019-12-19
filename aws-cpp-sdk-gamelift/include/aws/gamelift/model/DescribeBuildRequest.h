@@ -48,42 +48,50 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a build to retrieve properties for.</p>
+     * <p>A unique identifier for a build to retrieve properties for. You can use
+     * either the build ID or ARN value. </p>
      */
     inline const Aws::String& GetBuildId() const{ return m_buildId; }
 
     /**
-     * <p>Unique identifier for a build to retrieve properties for.</p>
+     * <p>A unique identifier for a build to retrieve properties for. You can use
+     * either the build ID or ARN value. </p>
      */
     inline bool BuildIdHasBeenSet() const { return m_buildIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a build to retrieve properties for.</p>
+     * <p>A unique identifier for a build to retrieve properties for. You can use
+     * either the build ID or ARN value. </p>
      */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
-     * <p>Unique identifier for a build to retrieve properties for.</p>
+     * <p>A unique identifier for a build to retrieve properties for. You can use
+     * either the build ID or ARN value. </p>
      */
     inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a build to retrieve properties for.</p>
+     * <p>A unique identifier for a build to retrieve properties for. You can use
+     * either the build ID or ARN value. </p>
      */
     inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
 
     /**
-     * <p>Unique identifier for a build to retrieve properties for.</p>
+     * <p>A unique identifier for a build to retrieve properties for. You can use
+     * either the build ID or ARN value. </p>
      */
     inline DescribeBuildRequest& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a build to retrieve properties for.</p>
+     * <p>A unique identifier for a build to retrieve properties for. You can use
+     * either the build ID or ARN value. </p>
      */
     inline DescribeBuildRequest& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a build to retrieve properties for.</p>
+     * <p>A unique identifier for a build to retrieve properties for. You can use
+     * either the build ID or ARN value. </p>
      */
     inline DescribeBuildRequest& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 

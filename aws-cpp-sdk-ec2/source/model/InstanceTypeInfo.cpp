@@ -38,7 +38,7 @@ InstanceTypeInfo::InstanceTypeInfo() :
     m_freeTierEligible(false),
     m_freeTierEligibleHasBeenSet(false),
     m_supportedUsageClassesHasBeenSet(false),
-    m_supportedRootDevicesHasBeenSet(false),
+    m_supportedRootDeviceTypesHasBeenSet(false),
     m_bareMetal(false),
     m_bareMetalHasBeenSet(false),
     m_hypervisor(InstanceTypeHypervisor::NOT_SET),
@@ -74,7 +74,7 @@ InstanceTypeInfo::InstanceTypeInfo(const XmlNode& xmlNode) :
     m_freeTierEligible(false),
     m_freeTierEligibleHasBeenSet(false),
     m_supportedUsageClassesHasBeenSet(false),
-    m_supportedRootDevicesHasBeenSet(false),
+    m_supportedRootDeviceTypesHasBeenSet(false),
     m_bareMetal(false),
     m_bareMetalHasBeenSet(false),
     m_hypervisor(InstanceTypeHypervisor::NOT_SET),
@@ -139,17 +139,17 @@ InstanceTypeInfo& InstanceTypeInfo::operator =(const XmlNode& xmlNode)
 
       m_supportedUsageClassesHasBeenSet = true;
     }
-    XmlNode supportedRootDevicesNode = resultNode.FirstChild("supportedRootDevices");
-    if(!supportedRootDevicesNode.IsNull())
+    XmlNode supportedRootDeviceTypesNode = resultNode.FirstChild("supportedRootDeviceTypes");
+    if(!supportedRootDeviceTypesNode.IsNull())
     {
-      XmlNode supportedRootDevicesMember = supportedRootDevicesNode.FirstChild("item");
-      while(!supportedRootDevicesMember.IsNull())
+      XmlNode supportedRootDeviceTypesMember = supportedRootDeviceTypesNode.FirstChild("item");
+      while(!supportedRootDeviceTypesMember.IsNull())
       {
-        m_supportedRootDevices.push_back(RootDeviceTypeMapper::GetRootDeviceTypeForName(StringUtils::Trim(supportedRootDevicesMember.GetText().c_str())));
-        supportedRootDevicesMember = supportedRootDevicesMember.NextNode("item");
+        m_supportedRootDeviceTypes.push_back(RootDeviceTypeMapper::GetRootDeviceTypeForName(StringUtils::Trim(supportedRootDeviceTypesMember.GetText().c_str())));
+        supportedRootDeviceTypesMember = supportedRootDeviceTypesMember.NextNode("item");
       }
 
-      m_supportedRootDevicesHasBeenSet = true;
+      m_supportedRootDeviceTypesHasBeenSet = true;
     }
     XmlNode bareMetalNode = resultNode.FirstChild("bareMetal");
     if(!bareMetalNode.IsNull())
@@ -284,12 +284,12 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
       }
   }
 
-  if(m_supportedRootDevicesHasBeenSet)
+  if(m_supportedRootDeviceTypesHasBeenSet)
   {
-      unsigned supportedRootDevicesIdx = 1;
-      for(auto& item : m_supportedRootDevices)
+      unsigned supportedRootDeviceTypesIdx = 1;
+      for(auto& item : m_supportedRootDeviceTypes)
       {
-        oStream << location << index << locationValue << ".SupportedRootDevices." << supportedRootDevicesIdx++ << "=" << RootDeviceTypeMapper::GetNameForRootDeviceType(item) << "&";
+        oStream << location << index << locationValue << ".SupportedRootDeviceTypes." << supportedRootDeviceTypesIdx++ << "=" << RootDeviceTypeMapper::GetNameForRootDeviceType(item) << "&";
       }
   }
 
@@ -422,12 +422,12 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
         oStream << location << ".SupportedUsageClasses." << supportedUsageClassesIdx++ << "=" << UsageClassTypeMapper::GetNameForUsageClassType(item) << "&";
       }
   }
-  if(m_supportedRootDevicesHasBeenSet)
+  if(m_supportedRootDeviceTypesHasBeenSet)
   {
-      unsigned supportedRootDevicesIdx = 1;
-      for(auto& item : m_supportedRootDevices)
+      unsigned supportedRootDeviceTypesIdx = 1;
+      for(auto& item : m_supportedRootDeviceTypes)
       {
-        oStream << location << ".SupportedRootDevices." << supportedRootDevicesIdx++ << "=" << RootDeviceTypeMapper::GetNameForRootDeviceType(item) << "&";
+        oStream << location << ".SupportedRootDeviceTypes." << supportedRootDeviceTypesIdx++ << "=" << RootDeviceTypeMapper::GetNameForRootDeviceType(item) << "&";
       }
   }
   if(m_bareMetalHasBeenSet)

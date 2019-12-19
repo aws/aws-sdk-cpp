@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p>Object that describes the updated matchmaking configuration.</p>
+     * <p>The updated matchmaking configuration.</p>
      */
     inline const MatchmakingConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>Object that describes the updated matchmaking configuration.</p>
+     * <p>The updated matchmaking configuration.</p>
      */
     inline void SetConfiguration(const MatchmakingConfiguration& value) { m_configuration = value; }
 
     /**
-     * <p>Object that describes the updated matchmaking configuration.</p>
+     * <p>The updated matchmaking configuration.</p>
      */
     inline void SetConfiguration(MatchmakingConfiguration&& value) { m_configuration = std::move(value); }
 
     /**
-     * <p>Object that describes the updated matchmaking configuration.</p>
+     * <p>The updated matchmaking configuration.</p>
      */
     inline UpdateMatchmakingConfigurationResult& WithConfiguration(const MatchmakingConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>Object that describes the updated matchmaking configuration.</p>
+     * <p>The updated matchmaking configuration.</p>
      */
     inline UpdateMatchmakingConfigurationResult& WithConfiguration(MatchmakingConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 

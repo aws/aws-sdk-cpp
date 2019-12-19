@@ -36,19 +36,11 @@ namespace Model
   /**
    * <p>Current status of fleet utilization, including the number of game and player
    * sessions being hosted.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-   * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-   * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-   * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-   * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
-   * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
-   * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
-   * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
-   * </p> </li> </ul> </li> <li> <p>Update fleets:</p> <ul> <li> <p>
-   * <a>UpdateFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetCapacity</a> </p>
-   * </li> <li> <p> <a>UpdateFleetPortSettings</a> </p> </li> <li> <p>
-   * <a>UpdateRuntimeConfiguration</a> </p> </li> </ul> </li> <li> <p>Manage fleet
-   * actions:</p> <ul> <li> <p> <a>StartFleetActions</a> </p> </li> <li> <p>
-   * <a>StopFleetActions</a> </p> </li> </ul> </li> </ul><p><h3>See Also:</h3>   <a
+   * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li> <p>
+   * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>UpdateFleetAttributes</a>
+   * </p> </li> <li> <p>Manage fleet actions:</p> <ul> <li> <p>
+   * <a>StartFleetActions</a> </p> </li> <li> <p> <a>StopFleetActions</a> </p> </li>
+   * </ul> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetUtilization">AWS
    * API Reference</a></p>
    */
@@ -62,42 +54,42 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline FleetUtilization& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline FleetUtilization& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet.</p>
+     * <p>A unique identifier for a fleet.</p>
      */
     inline FleetUtilization& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
@@ -178,26 +170,26 @@ namespace Model
 
 
     /**
-     * <p>Maximum players allowed across all game sessions currently being hosted on
-     * all instances in the fleet.</p>
+     * <p>The maximum number of players allowed across all game sessions currently
+     * being hosted on all instances in the fleet.</p>
      */
     inline int GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
 
     /**
-     * <p>Maximum players allowed across all game sessions currently being hosted on
-     * all instances in the fleet.</p>
+     * <p>The maximum number of players allowed across all game sessions currently
+     * being hosted on all instances in the fleet.</p>
      */
     inline bool MaximumPlayerSessionCountHasBeenSet() const { return m_maximumPlayerSessionCountHasBeenSet; }
 
     /**
-     * <p>Maximum players allowed across all game sessions currently being hosted on
-     * all instances in the fleet.</p>
+     * <p>The maximum number of players allowed across all game sessions currently
+     * being hosted on all instances in the fleet.</p>
      */
     inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
 
     /**
-     * <p>Maximum players allowed across all game sessions currently being hosted on
-     * all instances in the fleet.</p>
+     * <p>The maximum number of players allowed across all game sessions currently
+     * being hosted on all instances in the fleet.</p>
      */
     inline FleetUtilization& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
 

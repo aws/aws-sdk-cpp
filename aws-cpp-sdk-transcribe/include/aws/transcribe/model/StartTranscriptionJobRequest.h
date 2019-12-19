@@ -21,6 +21,7 @@
 #include <aws/transcribe/model/MediaFormat.h>
 #include <aws/transcribe/model/Media.h>
 #include <aws/transcribe/model/Settings.h>
+#include <aws/transcribe/model/JobExecutionSettings.h>
 #include <utility>
 
 namespace Aws
@@ -589,6 +590,55 @@ namespace Model
      */
     inline StartTranscriptionJobRequest& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides information about how a transcription job is executed. Use this
+     * field to indicate that the job can be queued for deferred execution if the
+     * concurrency limit is reached and there are no slots available to immediately run
+     * the job.</p>
+     */
+    inline const JobExecutionSettings& GetJobExecutionSettings() const{ return m_jobExecutionSettings; }
+
+    /**
+     * <p>Provides information about how a transcription job is executed. Use this
+     * field to indicate that the job can be queued for deferred execution if the
+     * concurrency limit is reached and there are no slots available to immediately run
+     * the job.</p>
+     */
+    inline bool JobExecutionSettingsHasBeenSet() const { return m_jobExecutionSettingsHasBeenSet; }
+
+    /**
+     * <p>Provides information about how a transcription job is executed. Use this
+     * field to indicate that the job can be queued for deferred execution if the
+     * concurrency limit is reached and there are no slots available to immediately run
+     * the job.</p>
+     */
+    inline void SetJobExecutionSettings(const JobExecutionSettings& value) { m_jobExecutionSettingsHasBeenSet = true; m_jobExecutionSettings = value; }
+
+    /**
+     * <p>Provides information about how a transcription job is executed. Use this
+     * field to indicate that the job can be queued for deferred execution if the
+     * concurrency limit is reached and there are no slots available to immediately run
+     * the job.</p>
+     */
+    inline void SetJobExecutionSettings(JobExecutionSettings&& value) { m_jobExecutionSettingsHasBeenSet = true; m_jobExecutionSettings = std::move(value); }
+
+    /**
+     * <p>Provides information about how a transcription job is executed. Use this
+     * field to indicate that the job can be queued for deferred execution if the
+     * concurrency limit is reached and there are no slots available to immediately run
+     * the job.</p>
+     */
+    inline StartTranscriptionJobRequest& WithJobExecutionSettings(const JobExecutionSettings& value) { SetJobExecutionSettings(value); return *this;}
+
+    /**
+     * <p>Provides information about how a transcription job is executed. Use this
+     * field to indicate that the job can be queued for deferred execution if the
+     * concurrency limit is reached and there are no slots available to immediately run
+     * the job.</p>
+     */
+    inline StartTranscriptionJobRequest& WithJobExecutionSettings(JobExecutionSettings&& value) { SetJobExecutionSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -614,6 +664,9 @@ namespace Model
 
     Settings m_settings;
     bool m_settingsHasBeenSet;
+
+    JobExecutionSettings m_jobExecutionSettings;
+    bool m_jobExecutionSettingsHasBeenSet;
   };
 
 } // namespace Model

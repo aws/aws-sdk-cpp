@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p>Object that contains the updated game session metadata.</p>
+     * <p>The updated game session metadata.</p>
      */
     inline const GameSession& GetGameSession() const{ return m_gameSession; }
 
     /**
-     * <p>Object that contains the updated game session metadata.</p>
+     * <p>The updated game session metadata.</p>
      */
     inline void SetGameSession(const GameSession& value) { m_gameSession = value; }
 
     /**
-     * <p>Object that contains the updated game session metadata.</p>
+     * <p>The updated game session metadata.</p>
      */
     inline void SetGameSession(GameSession&& value) { m_gameSession = std::move(value); }
 
     /**
-     * <p>Object that contains the updated game session metadata.</p>
+     * <p>The updated game session metadata.</p>
      */
     inline UpdateGameSessionResult& WithGameSession(const GameSession& value) { SetGameSession(value); return *this;}
 
     /**
-     * <p>Object that contains the updated game session metadata.</p>
+     * <p>The updated game session metadata.</p>
      */
     inline UpdateGameSessionResult& WithGameSession(GameSession&& value) { SetGameSession(std::move(value)); return *this;}
 

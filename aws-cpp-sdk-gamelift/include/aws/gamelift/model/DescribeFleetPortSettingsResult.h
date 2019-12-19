@@ -50,37 +50,37 @@ namespace Model
 
 
     /**
-     * <p>Object that contains port settings for the requested fleet ID.</p>
+     * <p>The port settings for the requested fleet ID.</p>
      */
     inline const Aws::Vector<IpPermission>& GetInboundPermissions() const{ return m_inboundPermissions; }
 
     /**
-     * <p>Object that contains port settings for the requested fleet ID.</p>
+     * <p>The port settings for the requested fleet ID.</p>
      */
     inline void SetInboundPermissions(const Aws::Vector<IpPermission>& value) { m_inboundPermissions = value; }
 
     /**
-     * <p>Object that contains port settings for the requested fleet ID.</p>
+     * <p>The port settings for the requested fleet ID.</p>
      */
     inline void SetInboundPermissions(Aws::Vector<IpPermission>&& value) { m_inboundPermissions = std::move(value); }
 
     /**
-     * <p>Object that contains port settings for the requested fleet ID.</p>
+     * <p>The port settings for the requested fleet ID.</p>
      */
     inline DescribeFleetPortSettingsResult& WithInboundPermissions(const Aws::Vector<IpPermission>& value) { SetInboundPermissions(value); return *this;}
 
     /**
-     * <p>Object that contains port settings for the requested fleet ID.</p>
+     * <p>The port settings for the requested fleet ID.</p>
      */
     inline DescribeFleetPortSettingsResult& WithInboundPermissions(Aws::Vector<IpPermission>&& value) { SetInboundPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>Object that contains port settings for the requested fleet ID.</p>
+     * <p>The port settings for the requested fleet ID.</p>
      */
     inline DescribeFleetPortSettingsResult& AddInboundPermissions(const IpPermission& value) { m_inboundPermissions.push_back(value); return *this; }
 
     /**
-     * <p>Object that contains port settings for the requested fleet ID.</p>
+     * <p>The port settings for the requested fleet ID.</p>
      */
     inline DescribeFleetPortSettingsResult& AddInboundPermissions(IpPermission&& value) { m_inboundPermissions.push_back(std::move(value)); return *this; }
 

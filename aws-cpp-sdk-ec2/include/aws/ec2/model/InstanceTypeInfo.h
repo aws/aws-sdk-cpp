@@ -190,44 +190,44 @@ namespace Model
 
 
     /**
-     * <p>Indicates the supported root devices.</p>
+     * <p>Indicates the supported root device types.</p>
      */
-    inline const Aws::Vector<RootDeviceType>& GetSupportedRootDevices() const{ return m_supportedRootDevices; }
+    inline const Aws::Vector<RootDeviceType>& GetSupportedRootDeviceTypes() const{ return m_supportedRootDeviceTypes; }
 
     /**
-     * <p>Indicates the supported root devices.</p>
+     * <p>Indicates the supported root device types.</p>
      */
-    inline bool SupportedRootDevicesHasBeenSet() const { return m_supportedRootDevicesHasBeenSet; }
+    inline bool SupportedRootDeviceTypesHasBeenSet() const { return m_supportedRootDeviceTypesHasBeenSet; }
 
     /**
-     * <p>Indicates the supported root devices.</p>
+     * <p>Indicates the supported root device types.</p>
      */
-    inline void SetSupportedRootDevices(const Aws::Vector<RootDeviceType>& value) { m_supportedRootDevicesHasBeenSet = true; m_supportedRootDevices = value; }
+    inline void SetSupportedRootDeviceTypes(const Aws::Vector<RootDeviceType>& value) { m_supportedRootDeviceTypesHasBeenSet = true; m_supportedRootDeviceTypes = value; }
 
     /**
-     * <p>Indicates the supported root devices.</p>
+     * <p>Indicates the supported root device types.</p>
      */
-    inline void SetSupportedRootDevices(Aws::Vector<RootDeviceType>&& value) { m_supportedRootDevicesHasBeenSet = true; m_supportedRootDevices = std::move(value); }
+    inline void SetSupportedRootDeviceTypes(Aws::Vector<RootDeviceType>&& value) { m_supportedRootDeviceTypesHasBeenSet = true; m_supportedRootDeviceTypes = std::move(value); }
 
     /**
-     * <p>Indicates the supported root devices.</p>
+     * <p>Indicates the supported root device types.</p>
      */
-    inline InstanceTypeInfo& WithSupportedRootDevices(const Aws::Vector<RootDeviceType>& value) { SetSupportedRootDevices(value); return *this;}
+    inline InstanceTypeInfo& WithSupportedRootDeviceTypes(const Aws::Vector<RootDeviceType>& value) { SetSupportedRootDeviceTypes(value); return *this;}
 
     /**
-     * <p>Indicates the supported root devices.</p>
+     * <p>Indicates the supported root device types.</p>
      */
-    inline InstanceTypeInfo& WithSupportedRootDevices(Aws::Vector<RootDeviceType>&& value) { SetSupportedRootDevices(std::move(value)); return *this;}
+    inline InstanceTypeInfo& WithSupportedRootDeviceTypes(Aws::Vector<RootDeviceType>&& value) { SetSupportedRootDeviceTypes(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates the supported root devices.</p>
+     * <p>Indicates the supported root device types.</p>
      */
-    inline InstanceTypeInfo& AddSupportedRootDevices(const RootDeviceType& value) { m_supportedRootDevicesHasBeenSet = true; m_supportedRootDevices.push_back(value); return *this; }
+    inline InstanceTypeInfo& AddSupportedRootDeviceTypes(const RootDeviceType& value) { m_supportedRootDeviceTypesHasBeenSet = true; m_supportedRootDeviceTypes.push_back(value); return *this; }
 
     /**
-     * <p>Indicates the supported root devices.</p>
+     * <p>Indicates the supported root device types.</p>
      */
-    inline InstanceTypeInfo& AddSupportedRootDevices(RootDeviceType&& value) { m_supportedRootDevicesHasBeenSet = true; m_supportedRootDevices.push_back(std::move(value)); return *this; }
+    inline InstanceTypeInfo& AddSupportedRootDeviceTypes(RootDeviceType&& value) { m_supportedRootDeviceTypesHasBeenSet = true; m_supportedRootDeviceTypes.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -714,8 +714,8 @@ namespace Model
     Aws::Vector<UsageClassType> m_supportedUsageClasses;
     bool m_supportedUsageClassesHasBeenSet;
 
-    Aws::Vector<RootDeviceType> m_supportedRootDevices;
-    bool m_supportedRootDevicesHasBeenSet;
+    Aws::Vector<RootDeviceType> m_supportedRootDeviceTypes;
+    bool m_supportedRootDeviceTypesHasBeenSet;
 
     bool m_bareMetal;
     bool m_bareMetalHasBeenSet;

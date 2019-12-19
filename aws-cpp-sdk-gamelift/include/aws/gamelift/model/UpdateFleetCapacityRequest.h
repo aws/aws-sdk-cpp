@@ -48,42 +48,50 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet to update capacity for.</p>
+     * <p>A unique identifier for a fleet to update capacity for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet to update capacity for.</p>
+     * <p>A unique identifier for a fleet to update capacity for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a fleet to update capacity for.</p>
+     * <p>A unique identifier for a fleet to update capacity for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet to update capacity for.</p>
+     * <p>A unique identifier for a fleet to update capacity for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet to update capacity for.</p>
+     * <p>A unique identifier for a fleet to update capacity for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet to update capacity for.</p>
+     * <p>A unique identifier for a fleet to update capacity for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline UpdateFleetCapacityRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to update capacity for.</p>
+     * <p>A unique identifier for a fleet to update capacity for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline UpdateFleetCapacityRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to update capacity for.</p>
+     * <p>A unique identifier for a fleet to update capacity for. You can use either
+     * the fleet ID or ARN value.</p>
      */
     inline UpdateFleetCapacityRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
@@ -110,51 +118,51 @@ namespace Model
 
 
     /**
-     * <p>Minimum value allowed for the fleet's instance count. Default if not set is
-     * 0.</p>
+     * <p>The minimum value allowed for the fleet's instance count. Default if not set
+     * is 0.</p>
      */
     inline int GetMinSize() const{ return m_minSize; }
 
     /**
-     * <p>Minimum value allowed for the fleet's instance count. Default if not set is
-     * 0.</p>
+     * <p>The minimum value allowed for the fleet's instance count. Default if not set
+     * is 0.</p>
      */
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
 
     /**
-     * <p>Minimum value allowed for the fleet's instance count. Default if not set is
-     * 0.</p>
+     * <p>The minimum value allowed for the fleet's instance count. Default if not set
+     * is 0.</p>
      */
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
 
     /**
-     * <p>Minimum value allowed for the fleet's instance count. Default if not set is
-     * 0.</p>
+     * <p>The minimum value allowed for the fleet's instance count. Default if not set
+     * is 0.</p>
      */
     inline UpdateFleetCapacityRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
 
 
     /**
-     * <p>Maximum value allowed for the fleet's instance count. Default if not set is
-     * 1.</p>
+     * <p>The maximum value allowed for the fleet's instance count. Default if not set
+     * is 1.</p>
      */
     inline int GetMaxSize() const{ return m_maxSize; }
 
     /**
-     * <p>Maximum value allowed for the fleet's instance count. Default if not set is
-     * 1.</p>
+     * <p>The maximum value allowed for the fleet's instance count. Default if not set
+     * is 1.</p>
      */
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
 
     /**
-     * <p>Maximum value allowed for the fleet's instance count. Default if not set is
-     * 1.</p>
+     * <p>The maximum value allowed for the fleet's instance count. Default if not set
+     * is 1.</p>
      */
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
 
     /**
-     * <p>Maximum value allowed for the fleet's instance count. Default if not set is
-     * 1.</p>
+     * <p>The maximum value allowed for the fleet's instance count. Default if not set
+     * is 1.</p>
      */
     inline UpdateFleetCapacityRequest& WithMaxSize(int value) { SetMaxSize(value); return *this;}
 

@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CreateMatchmakingRuleSetRequest::CreateMatchmakingRuleSetRequest() : 
     m_nameHasBeenSet(false),
-    m_ruleSetBodyHasBeenSet(false)
+    m_ruleSetBodyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,17 @@ Aws::String CreateMatchmakingRuleSetRequest::SerializePayload() const
   if(m_ruleSetBodyHasBeenSet)
   {
    payload.WithString("RuleSetBody", m_ruleSetBody);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

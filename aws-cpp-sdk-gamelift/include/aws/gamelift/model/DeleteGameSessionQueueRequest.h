@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents the input for a request action.</p><p><h3>See Also:</h3>   <a
+   * <p>Represents the input for a request action. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteGameSessionQueueInput">AWS
    * API Reference</a></p>
    */
@@ -48,50 +48,58 @@ namespace Model
 
 
     /**
-     * <p>Descriptive label that is associated with game session queue. Queue names
-     * must be unique within each region.</p>
+     * <p>A descriptive label that is associated with game session queue. Queue names
+     * must be unique within each Region. You can use either the queue ID or ARN value.
+     * </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label that is associated with game session queue. Queue names
-     * must be unique within each region.</p>
+     * <p>A descriptive label that is associated with game session queue. Queue names
+     * must be unique within each Region. You can use either the queue ID or ARN value.
+     * </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Descriptive label that is associated with game session queue. Queue names
-     * must be unique within each region.</p>
+     * <p>A descriptive label that is associated with game session queue. Queue names
+     * must be unique within each Region. You can use either the queue ID or ARN value.
+     * </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label that is associated with game session queue. Queue names
-     * must be unique within each region.</p>
+     * <p>A descriptive label that is associated with game session queue. Queue names
+     * must be unique within each Region. You can use either the queue ID or ARN value.
+     * </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Descriptive label that is associated with game session queue. Queue names
-     * must be unique within each region.</p>
+     * <p>A descriptive label that is associated with game session queue. Queue names
+     * must be unique within each Region. You can use either the queue ID or ARN value.
+     * </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label that is associated with game session queue. Queue names
-     * must be unique within each region.</p>
+     * <p>A descriptive label that is associated with game session queue. Queue names
+     * must be unique within each Region. You can use either the queue ID or ARN value.
+     * </p>
      */
     inline DeleteGameSessionQueueRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with game session queue. Queue names
-     * must be unique within each region.</p>
+     * <p>A descriptive label that is associated with game session queue. Queue names
+     * must be unique within each Region. You can use either the queue ID or ARN value.
+     * </p>
      */
     inline DeleteGameSessionQueueRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with game session queue. Queue names
-     * must be unique within each region.</p>
+     * <p>A descriptive label that is associated with game session queue. Queue names
+     * must be unique within each Region. You can use either the queue ID or ARN value.
+     * </p>
      */
     inline DeleteGameSessionQueueRequest& WithName(const char* value) { SetName(value); return *this;}
 

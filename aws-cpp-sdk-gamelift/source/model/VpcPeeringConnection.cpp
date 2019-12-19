@@ -30,6 +30,7 @@ namespace Model
 
 VpcPeeringConnection::VpcPeeringConnection() : 
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_ipV4CidrBlockHasBeenSet(false),
     m_vpcPeeringConnectionIdHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -40,6 +41,7 @@ VpcPeeringConnection::VpcPeeringConnection() :
 
 VpcPeeringConnection::VpcPeeringConnection(JsonView jsonValue) : 
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_ipV4CidrBlockHasBeenSet(false),
     m_vpcPeeringConnectionIdHasBeenSet(false),
     m_statusHasBeenSet(false),
@@ -56,6 +58,13 @@ VpcPeeringConnection& VpcPeeringConnection::operator =(JsonView jsonValue)
     m_fleetId = jsonValue.GetString("FleetId");
 
     m_fleetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FleetArn"))
+  {
+    m_fleetArn = jsonValue.GetString("FleetArn");
+
+    m_fleetArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("IpV4CidrBlock"))
@@ -103,6 +112,12 @@ JsonValue VpcPeeringConnection::Jsonize() const
   if(m_fleetIdHasBeenSet)
   {
    payload.WithString("FleetId", m_fleetId);
+
+  }
+
+  if(m_fleetArnHasBeenSet)
+  {
+   payload.WithString("FleetArn", m_fleetArn);
 
   }
 

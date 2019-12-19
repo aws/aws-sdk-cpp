@@ -50,44 +50,37 @@ namespace Model
 
 
     /**
-     * <p>Object that contains the maximum number of instances for the specified
-     * instance type.</p>
+     * <p>The maximum number of instances for the specified instance type.</p>
      */
     inline const Aws::Vector<EC2InstanceLimit>& GetEC2InstanceLimits() const{ return m_eC2InstanceLimits; }
 
     /**
-     * <p>Object that contains the maximum number of instances for the specified
-     * instance type.</p>
+     * <p>The maximum number of instances for the specified instance type.</p>
      */
     inline void SetEC2InstanceLimits(const Aws::Vector<EC2InstanceLimit>& value) { m_eC2InstanceLimits = value; }
 
     /**
-     * <p>Object that contains the maximum number of instances for the specified
-     * instance type.</p>
+     * <p>The maximum number of instances for the specified instance type.</p>
      */
     inline void SetEC2InstanceLimits(Aws::Vector<EC2InstanceLimit>&& value) { m_eC2InstanceLimits = std::move(value); }
 
     /**
-     * <p>Object that contains the maximum number of instances for the specified
-     * instance type.</p>
+     * <p>The maximum number of instances for the specified instance type.</p>
      */
     inline DescribeEC2InstanceLimitsResult& WithEC2InstanceLimits(const Aws::Vector<EC2InstanceLimit>& value) { SetEC2InstanceLimits(value); return *this;}
 
     /**
-     * <p>Object that contains the maximum number of instances for the specified
-     * instance type.</p>
+     * <p>The maximum number of instances for the specified instance type.</p>
      */
     inline DescribeEC2InstanceLimitsResult& WithEC2InstanceLimits(Aws::Vector<EC2InstanceLimit>&& value) { SetEC2InstanceLimits(std::move(value)); return *this;}
 
     /**
-     * <p>Object that contains the maximum number of instances for the specified
-     * instance type.</p>
+     * <p>The maximum number of instances for the specified instance type.</p>
      */
     inline DescribeEC2InstanceLimitsResult& AddEC2InstanceLimits(const EC2InstanceLimit& value) { m_eC2InstanceLimits.push_back(value); return *this; }
 
     /**
-     * <p>Object that contains the maximum number of instances for the specified
-     * instance type.</p>
+     * <p>The maximum number of instances for the specified instance type.</p>
      */
     inline DescribeEC2InstanceLimitsResult& AddEC2InstanceLimits(EC2InstanceLimit&& value) { m_eC2InstanceLimits.push_back(std::move(value)); return *this; }
 

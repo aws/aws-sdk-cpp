@@ -30,6 +30,7 @@ namespace Model
 
 Build::Build() : 
     m_buildIdHasBeenSet(false),
+    m_buildArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_status(BuildStatus::NOT_SET),
@@ -44,6 +45,7 @@ Build::Build() :
 
 Build::Build(JsonView jsonValue) : 
     m_buildIdHasBeenSet(false),
+    m_buildArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
     m_status(BuildStatus::NOT_SET),
@@ -64,6 +66,13 @@ Build& Build::operator =(JsonView jsonValue)
     m_buildId = jsonValue.GetString("BuildId");
 
     m_buildIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BuildArn"))
+  {
+    m_buildArn = jsonValue.GetString("BuildArn");
+
+    m_buildArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Name"))
@@ -118,6 +127,12 @@ JsonValue Build::Jsonize() const
   if(m_buildIdHasBeenSet)
   {
    payload.WithString("BuildId", m_buildId);
+
+  }
+
+  if(m_buildArnHasBeenSet)
+  {
+   payload.WithString("BuildArn", m_buildArn);
 
   }
 

@@ -33,7 +33,8 @@ namespace Model
     CurrentAction,
     StartTimeBefore,
     StartTimeAfter,
-    AutomationType
+    AutomationType,
+    TagKey
   };
 
 namespace AutomationExecutionFilterKeyMapper

@@ -48,140 +48,140 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
-     * fleet.</p>
+     * <p>A unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet. You can use either the fleet ID or ARN value.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
-     * fleet.</p>
+     * <p>A unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet. You can use either the fleet ID or ARN value.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
-     * fleet.</p>
+     * <p>A unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet. You can use either the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
-     * fleet.</p>
+     * <p>A unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet. You can use either the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
-     * fleet.</p>
+     * <p>A unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet. You can use either the fleet ID or ARN value.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
-     * fleet.</p>
+     * <p>A unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet. You can use either the fleet ID or ARN value.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
-     * fleet.</p>
+     * <p>A unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet. You can use either the fleet ID or ARN value.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to retrieve all game sessions active on the
-     * fleet.</p>
+     * <p>A unique identifier for a fleet to retrieve all game sessions active on the
+     * fleet. You can use either the fleet ID or ARN value.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>A unique identifier for the game session to retrieve. </p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>A unique identifier for the game session to retrieve. </p>
      */
     inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>A unique identifier for the game session to retrieve. </p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>A unique identifier for the game session to retrieve. </p>
      */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>A unique identifier for the game session to retrieve. </p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>A unique identifier for the game session to retrieve. </p>
      */
     inline DescribeGameSessionDetailsRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>A unique identifier for the game session to retrieve. </p>
      */
     inline DescribeGameSessionDetailsRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for the game session to retrieve.</p>
+     * <p>A unique identifier for the game session to retrieve. </p>
      */
     inline DescribeGameSessionDetailsRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
-     * sessions for.</p>
+     * <p>A unique identifier for an alias associated with the fleet to retrieve all
+     * game sessions for. You can use either the alias ID or ARN value.</p>
      */
     inline const Aws::String& GetAliasId() const{ return m_aliasId; }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
-     * sessions for.</p>
+     * <p>A unique identifier for an alias associated with the fleet to retrieve all
+     * game sessions for. You can use either the alias ID or ARN value.</p>
      */
     inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
-     * sessions for.</p>
+     * <p>A unique identifier for an alias associated with the fleet to retrieve all
+     * game sessions for. You can use either the alias ID or ARN value.</p>
      */
     inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
-     * sessions for.</p>
+     * <p>A unique identifier for an alias associated with the fleet to retrieve all
+     * game sessions for. You can use either the alias ID or ARN value.</p>
      */
     inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
-     * sessions for.</p>
+     * <p>A unique identifier for an alias associated with the fleet to retrieve all
+     * game sessions for. You can use either the alias ID or ARN value.</p>
      */
     inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
-     * sessions for.</p>
+     * <p>A unique identifier for an alias associated with the fleet to retrieve all
+     * game sessions for. You can use either the alias ID or ARN value.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
-     * sessions for.</p>
+     * <p>A unique identifier for an alias associated with the fleet to retrieve all
+     * game sessions for. You can use either the alias ID or ARN value.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to retrieve all game
-     * sessions for.</p>
+     * <p>A unique identifier for an alias associated with the fleet to retrieve all
+     * game sessions for. You can use either the alias ID or ARN value.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
 
@@ -244,25 +244,25 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline DescribeGameSessionDetailsRequest& WithLimit(int value) { SetLimit(value); return *this;}

@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p>Object that describes the newly updated game session queue.</p>
+     * <p>An object that describes the newly updated game session queue.</p>
      */
     inline const GameSessionQueue& GetGameSessionQueue() const{ return m_gameSessionQueue; }
 
     /**
-     * <p>Object that describes the newly updated game session queue.</p>
+     * <p>An object that describes the newly updated game session queue.</p>
      */
     inline void SetGameSessionQueue(const GameSessionQueue& value) { m_gameSessionQueue = value; }
 
     /**
-     * <p>Object that describes the newly updated game session queue.</p>
+     * <p>An object that describes the newly updated game session queue.</p>
      */
     inline void SetGameSessionQueue(GameSessionQueue&& value) { m_gameSessionQueue = std::move(value); }
 
     /**
-     * <p>Object that describes the newly updated game session queue.</p>
+     * <p>An object that describes the newly updated game session queue.</p>
      */
     inline UpdateGameSessionQueueResult& WithGameSessionQueue(const GameSessionQueue& value) { SetGameSessionQueue(value); return *this;}
 
     /**
-     * <p>Object that describes the newly updated game session queue.</p>
+     * <p>An object that describes the newly updated game session queue.</p>
      */
     inline UpdateGameSessionQueueResult& WithGameSessionQueue(GameSessionQueue&& value) { SetGameSessionQueue(std::move(value)); return *this;}
 

@@ -27,7 +27,8 @@ GetRecommendationsRequest::GetRecommendationsRequest() :
     m_itemIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_numResults(0),
-    m_numResultsHasBeenSet(false)
+    m_numResultsHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,17 @@ Aws::String GetRecommendationsRequest::SerializePayload() const
   if(m_numResultsHasBeenSet)
   {
    payload.WithInteger("numResults", m_numResults);
+
+  }
+
+  if(m_contextHasBeenSet)
+  {
+   JsonValue contextJsonMap;
+   for(auto& contextItem : m_context)
+   {
+     contextJsonMap.WithString(contextItem.first, contextItem.second);
+   }
+   payload.WithObject("context", std::move(contextJsonMap));
 
   }
 

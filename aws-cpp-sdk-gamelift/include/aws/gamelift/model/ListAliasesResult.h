@@ -51,85 +51,85 @@ namespace Model
 
 
     /**
-     * <p>Collection of alias records that match the list request.</p>
+     * <p>A collection of alias resources that match the request parameters.</p>
      */
     inline const Aws::Vector<Alias>& GetAliases() const{ return m_aliases; }
 
     /**
-     * <p>Collection of alias records that match the list request.</p>
+     * <p>A collection of alias resources that match the request parameters.</p>
      */
     inline void SetAliases(const Aws::Vector<Alias>& value) { m_aliases = value; }
 
     /**
-     * <p>Collection of alias records that match the list request.</p>
+     * <p>A collection of alias resources that match the request parameters.</p>
      */
     inline void SetAliases(Aws::Vector<Alias>&& value) { m_aliases = std::move(value); }
 
     /**
-     * <p>Collection of alias records that match the list request.</p>
+     * <p>A collection of alias resources that match the request parameters.</p>
      */
     inline ListAliasesResult& WithAliases(const Aws::Vector<Alias>& value) { SetAliases(value); return *this;}
 
     /**
-     * <p>Collection of alias records that match the list request.</p>
+     * <p>A collection of alias resources that match the request parameters.</p>
      */
     inline ListAliasesResult& WithAliases(Aws::Vector<Alias>&& value) { SetAliases(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of alias records that match the list request.</p>
+     * <p>A collection of alias resources that match the request parameters.</p>
      */
     inline ListAliasesResult& AddAliases(const Alias& value) { m_aliases.push_back(value); return *this; }
 
     /**
-     * <p>Collection of alias records that match the list request.</p>
+     * <p>A collection of alias resources that match the request parameters.</p>
      */
     inline ListAliasesResult& AddAliases(Alias&& value) { m_aliases.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline ListAliasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline ListAliasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */

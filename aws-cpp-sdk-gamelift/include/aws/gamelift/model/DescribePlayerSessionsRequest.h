@@ -48,124 +48,124 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for the game session to retrieve player sessions for.</p>
+     * <p>A unique identifier for the game session to retrieve player sessions for.</p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p>Unique identifier for the game session to retrieve player sessions for.</p>
+     * <p>A unique identifier for the game session to retrieve player sessions for.</p>
      */
     inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for the game session to retrieve player sessions for.</p>
+     * <p>A unique identifier for the game session to retrieve player sessions for.</p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for the game session to retrieve player sessions for.</p>
+     * <p>A unique identifier for the game session to retrieve player sessions for.</p>
      */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
-     * <p>Unique identifier for the game session to retrieve player sessions for.</p>
+     * <p>A unique identifier for the game session to retrieve player sessions for.</p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p>Unique identifier for the game session to retrieve player sessions for.</p>
+     * <p>A unique identifier for the game session to retrieve player sessions for.</p>
      */
     inline DescribePlayerSessionsRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the game session to retrieve player sessions for.</p>
+     * <p>A unique identifier for the game session to retrieve player sessions for.</p>
      */
     inline DescribePlayerSessionsRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for the game session to retrieve player sessions for.</p>
+     * <p>A unique identifier for the game session to retrieve player sessions for.</p>
      */
     inline DescribePlayerSessionsRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 
 
     /**
-     * <p>Unique identifier for a player to retrieve player sessions for.</p>
+     * <p>A unique identifier for a player to retrieve player sessions for.</p>
      */
     inline const Aws::String& GetPlayerId() const{ return m_playerId; }
 
     /**
-     * <p>Unique identifier for a player to retrieve player sessions for.</p>
+     * <p>A unique identifier for a player to retrieve player sessions for.</p>
      */
     inline bool PlayerIdHasBeenSet() const { return m_playerIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a player to retrieve player sessions for.</p>
+     * <p>A unique identifier for a player to retrieve player sessions for.</p>
      */
     inline void SetPlayerId(const Aws::String& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
 
     /**
-     * <p>Unique identifier for a player to retrieve player sessions for.</p>
+     * <p>A unique identifier for a player to retrieve player sessions for.</p>
      */
     inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a player to retrieve player sessions for.</p>
+     * <p>A unique identifier for a player to retrieve player sessions for.</p>
      */
     inline void SetPlayerId(const char* value) { m_playerIdHasBeenSet = true; m_playerId.assign(value); }
 
     /**
-     * <p>Unique identifier for a player to retrieve player sessions for.</p>
+     * <p>A unique identifier for a player to retrieve player sessions for.</p>
      */
     inline DescribePlayerSessionsRequest& WithPlayerId(const Aws::String& value) { SetPlayerId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a player to retrieve player sessions for.</p>
+     * <p>A unique identifier for a player to retrieve player sessions for.</p>
      */
     inline DescribePlayerSessionsRequest& WithPlayerId(Aws::String&& value) { SetPlayerId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a player to retrieve player sessions for.</p>
+     * <p>A unique identifier for a player to retrieve player sessions for.</p>
      */
     inline DescribePlayerSessionsRequest& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
 
 
     /**
-     * <p>Unique identifier for a player session to retrieve.</p>
+     * <p>A unique identifier for a player session to retrieve.</p>
      */
     inline const Aws::String& GetPlayerSessionId() const{ return m_playerSessionId; }
 
     /**
-     * <p>Unique identifier for a player session to retrieve.</p>
+     * <p>A unique identifier for a player session to retrieve.</p>
      */
     inline bool PlayerSessionIdHasBeenSet() const { return m_playerSessionIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a player session to retrieve.</p>
+     * <p>A unique identifier for a player session to retrieve.</p>
      */
     inline void SetPlayerSessionId(const Aws::String& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = value; }
 
     /**
-     * <p>Unique identifier for a player session to retrieve.</p>
+     * <p>A unique identifier for a player session to retrieve.</p>
      */
     inline void SetPlayerSessionId(Aws::String&& value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a player session to retrieve.</p>
+     * <p>A unique identifier for a player session to retrieve.</p>
      */
     inline void SetPlayerSessionId(const char* value) { m_playerSessionIdHasBeenSet = true; m_playerSessionId.assign(value); }
 
     /**
-     * <p>Unique identifier for a player session to retrieve.</p>
+     * <p>A unique identifier for a player session to retrieve.</p>
      */
     inline DescribePlayerSessionsRequest& WithPlayerSessionId(const Aws::String& value) { SetPlayerSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a player session to retrieve.</p>
+     * <p>A unique identifier for a player session to retrieve.</p>
      */
     inline DescribePlayerSessionsRequest& WithPlayerSessionId(Aws::String&& value) { SetPlayerSessionId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a player session to retrieve.</p>
+     * <p>A unique identifier for a player session to retrieve.</p>
      */
     inline DescribePlayerSessionsRequest& WithPlayerSessionId(const char* value) { SetPlayerSessionId(value); return *this;}
 
@@ -276,28 +276,28 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. If a player
      * session ID is specified, this parameter is ignored.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. If a player
      * session ID is specified, this parameter is ignored.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. If a player
      * session ID is specified, this parameter is ignored.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. If a player
      * session ID is specified, this parameter is ignored.</p>
      */

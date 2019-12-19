@@ -51,43 +51,43 @@ namespace Model
 
 
     /**
-     * <p>Collection of objects containing game session properties and the protection
+     * <p>A collection of objects containing game session properties and the protection
      * policy currently in force for each session matching the request.</p>
      */
     inline const Aws::Vector<GameSessionDetail>& GetGameSessionDetails() const{ return m_gameSessionDetails; }
 
     /**
-     * <p>Collection of objects containing game session properties and the protection
+     * <p>A collection of objects containing game session properties and the protection
      * policy currently in force for each session matching the request.</p>
      */
     inline void SetGameSessionDetails(const Aws::Vector<GameSessionDetail>& value) { m_gameSessionDetails = value; }
 
     /**
-     * <p>Collection of objects containing game session properties and the protection
+     * <p>A collection of objects containing game session properties and the protection
      * policy currently in force for each session matching the request.</p>
      */
     inline void SetGameSessionDetails(Aws::Vector<GameSessionDetail>&& value) { m_gameSessionDetails = std::move(value); }
 
     /**
-     * <p>Collection of objects containing game session properties and the protection
+     * <p>A collection of objects containing game session properties and the protection
      * policy currently in force for each session matching the request.</p>
      */
     inline DescribeGameSessionDetailsResult& WithGameSessionDetails(const Aws::Vector<GameSessionDetail>& value) { SetGameSessionDetails(value); return *this;}
 
     /**
-     * <p>Collection of objects containing game session properties and the protection
+     * <p>A collection of objects containing game session properties and the protection
      * policy currently in force for each session matching the request.</p>
      */
     inline DescribeGameSessionDetailsResult& WithGameSessionDetails(Aws::Vector<GameSessionDetail>&& value) { SetGameSessionDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of objects containing game session properties and the protection
+     * <p>A collection of objects containing game session properties and the protection
      * policy currently in force for each session matching the request.</p>
      */
     inline DescribeGameSessionDetailsResult& AddGameSessionDetails(const GameSessionDetail& value) { m_gameSessionDetails.push_back(value); return *this; }
 
     /**
-     * <p>Collection of objects containing game session properties and the protection
+     * <p>A collection of objects containing game session properties and the protection
      * policy currently in force for each session matching the request.</p>
      */
     inline DescribeGameSessionDetailsResult& AddGameSessionDetails(GameSessionDetail&& value) { m_gameSessionDetails.push_back(std::move(value)); return *this; }

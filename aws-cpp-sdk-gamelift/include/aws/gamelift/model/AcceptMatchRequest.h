@@ -50,104 +50,104 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a matchmaking ticket. The ticket must be in status
+     * <p>A unique identifier for a matchmaking ticket. The ticket must be in status
      * <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
      */
     inline const Aws::String& GetTicketId() const{ return m_ticketId; }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket. The ticket must be in status
+     * <p>A unique identifier for a matchmaking ticket. The ticket must be in status
      * <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
      */
     inline bool TicketIdHasBeenSet() const { return m_ticketIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket. The ticket must be in status
+     * <p>A unique identifier for a matchmaking ticket. The ticket must be in status
      * <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
      */
     inline void SetTicketId(const Aws::String& value) { m_ticketIdHasBeenSet = true; m_ticketId = value; }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket. The ticket must be in status
+     * <p>A unique identifier for a matchmaking ticket. The ticket must be in status
      * <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
      */
     inline void SetTicketId(Aws::String&& value) { m_ticketIdHasBeenSet = true; m_ticketId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket. The ticket must be in status
+     * <p>A unique identifier for a matchmaking ticket. The ticket must be in status
      * <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
      */
     inline void SetTicketId(const char* value) { m_ticketIdHasBeenSet = true; m_ticketId.assign(value); }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket. The ticket must be in status
+     * <p>A unique identifier for a matchmaking ticket. The ticket must be in status
      * <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
      */
     inline AcceptMatchRequest& WithTicketId(const Aws::String& value) { SetTicketId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a matchmaking ticket. The ticket must be in status
+     * <p>A unique identifier for a matchmaking ticket. The ticket must be in status
      * <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
      */
     inline AcceptMatchRequest& WithTicketId(Aws::String&& value) { SetTicketId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a matchmaking ticket. The ticket must be in status
+     * <p>A unique identifier for a matchmaking ticket. The ticket must be in status
      * <code>REQUIRES_ACCEPTANCE</code>; otherwise this request will fail.</p>
      */
     inline AcceptMatchRequest& WithTicketId(const char* value) { SetTicketId(value); return *this;}
 
 
     /**
-     * <p>Unique identifier for a player delivering the response. This parameter can
+     * <p>A unique identifier for a player delivering the response. This parameter can
      * include one or multiple player IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPlayerIds() const{ return m_playerIds; }
 
     /**
-     * <p>Unique identifier for a player delivering the response. This parameter can
+     * <p>A unique identifier for a player delivering the response. This parameter can
      * include one or multiple player IDs.</p>
      */
     inline bool PlayerIdsHasBeenSet() const { return m_playerIdsHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a player delivering the response. This parameter can
+     * <p>A unique identifier for a player delivering the response. This parameter can
      * include one or multiple player IDs.</p>
      */
     inline void SetPlayerIds(const Aws::Vector<Aws::String>& value) { m_playerIdsHasBeenSet = true; m_playerIds = value; }
 
     /**
-     * <p>Unique identifier for a player delivering the response. This parameter can
+     * <p>A unique identifier for a player delivering the response. This parameter can
      * include one or multiple player IDs.</p>
      */
     inline void SetPlayerIds(Aws::Vector<Aws::String>&& value) { m_playerIdsHasBeenSet = true; m_playerIds = std::move(value); }
 
     /**
-     * <p>Unique identifier for a player delivering the response. This parameter can
+     * <p>A unique identifier for a player delivering the response. This parameter can
      * include one or multiple player IDs.</p>
      */
     inline AcceptMatchRequest& WithPlayerIds(const Aws::Vector<Aws::String>& value) { SetPlayerIds(value); return *this;}
 
     /**
-     * <p>Unique identifier for a player delivering the response. This parameter can
+     * <p>A unique identifier for a player delivering the response. This parameter can
      * include one or multiple player IDs.</p>
      */
     inline AcceptMatchRequest& WithPlayerIds(Aws::Vector<Aws::String>&& value) { SetPlayerIds(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a player delivering the response. This parameter can
+     * <p>A unique identifier for a player delivering the response. This parameter can
      * include one or multiple player IDs.</p>
      */
     inline AcceptMatchRequest& AddPlayerIds(const Aws::String& value) { m_playerIdsHasBeenSet = true; m_playerIds.push_back(value); return *this; }
 
     /**
-     * <p>Unique identifier for a player delivering the response. This parameter can
+     * <p>A unique identifier for a player delivering the response. This parameter can
      * include one or multiple player IDs.</p>
      */
     inline AcceptMatchRequest& AddPlayerIds(Aws::String&& value) { m_playerIdsHasBeenSet = true; m_playerIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Unique identifier for a player delivering the response. This parameter can
+     * <p>A unique identifier for a player delivering the response. This parameter can
      * include one or multiple player IDs.</p>
      */
     inline AcceptMatchRequest& AddPlayerIds(const char* value) { m_playerIdsHasBeenSet = true; m_playerIds.push_back(value); return *this; }

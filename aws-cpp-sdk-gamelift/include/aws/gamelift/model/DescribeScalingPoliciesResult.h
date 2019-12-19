@@ -51,43 +51,43 @@ namespace Model
 
 
     /**
-     * <p>Collection of objects containing the scaling policies matching the
+     * <p>A collection of objects containing the scaling policies matching the
      * request.</p>
      */
     inline const Aws::Vector<ScalingPolicy>& GetScalingPolicies() const{ return m_scalingPolicies; }
 
     /**
-     * <p>Collection of objects containing the scaling policies matching the
+     * <p>A collection of objects containing the scaling policies matching the
      * request.</p>
      */
     inline void SetScalingPolicies(const Aws::Vector<ScalingPolicy>& value) { m_scalingPolicies = value; }
 
     /**
-     * <p>Collection of objects containing the scaling policies matching the
+     * <p>A collection of objects containing the scaling policies matching the
      * request.</p>
      */
     inline void SetScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { m_scalingPolicies = std::move(value); }
 
     /**
-     * <p>Collection of objects containing the scaling policies matching the
+     * <p>A collection of objects containing the scaling policies matching the
      * request.</p>
      */
     inline DescribeScalingPoliciesResult& WithScalingPolicies(const Aws::Vector<ScalingPolicy>& value) { SetScalingPolicies(value); return *this;}
 
     /**
-     * <p>Collection of objects containing the scaling policies matching the
+     * <p>A collection of objects containing the scaling policies matching the
      * request.</p>
      */
     inline DescribeScalingPoliciesResult& WithScalingPolicies(Aws::Vector<ScalingPolicy>&& value) { SetScalingPolicies(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of objects containing the scaling policies matching the
+     * <p>A collection of objects containing the scaling policies matching the
      * request.</p>
      */
     inline DescribeScalingPoliciesResult& AddScalingPolicies(const ScalingPolicy& value) { m_scalingPolicies.push_back(value); return *this; }
 
     /**
-     * <p>Collection of objects containing the scaling policies matching the
+     * <p>A collection of objects containing the scaling policies matching the
      * request.</p>
      */
     inline DescribeScalingPoliciesResult& AddScalingPolicies(ScalingPolicy&& value) { m_scalingPolicies.push_back(std::move(value)); return *this; }

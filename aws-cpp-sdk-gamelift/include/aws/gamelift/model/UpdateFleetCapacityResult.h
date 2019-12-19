@@ -49,37 +49,37 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for a fleet that was updated.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for a fleet that was updated.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for a fleet that was updated.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for a fleet that was updated.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for a fleet that was updated.</p>
      */
     inline UpdateFleetCapacityResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for a fleet that was updated.</p>
      */
     inline UpdateFleetCapacityResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet that was updated.</p>
+     * <p>A unique identifier for a fleet that was updated.</p>
      */
     inline UpdateFleetCapacityResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 

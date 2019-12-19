@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p>Object that contains the updated alias configuration.</p>
+     * <p>The updated alias resource.</p>
      */
     inline const Alias& GetAlias() const{ return m_alias; }
 
     /**
-     * <p>Object that contains the updated alias configuration.</p>
+     * <p>The updated alias resource.</p>
      */
     inline void SetAlias(const Alias& value) { m_alias = value; }
 
     /**
-     * <p>Object that contains the updated alias configuration.</p>
+     * <p>The updated alias resource.</p>
      */
     inline void SetAlias(Alias&& value) { m_alias = std::move(value); }
 
     /**
-     * <p>Object that contains the updated alias configuration.</p>
+     * <p>The updated alias resource.</p>
      */
     inline UpdateAliasResult& WithAlias(const Alias& value) { SetAlias(value); return *this;}
 
     /**
-     * <p>Object that contains the updated alias configuration.</p>
+     * <p>The updated alias resource.</p>
      */
     inline UpdateAliasResult& WithAlias(Alias&& value) { SetAlias(std::move(value)); return *this;}
 

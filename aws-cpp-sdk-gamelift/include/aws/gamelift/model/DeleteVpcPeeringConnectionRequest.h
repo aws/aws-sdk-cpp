@@ -48,106 +48,114 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet. This value must match the fleet ID referenced
-     * in the VPC peering connection record.</p>
+     * <p>A unique identifier for a fleet. This fleet specified must match the fleet
+     * referenced in the VPC peering connection record. You can use either the fleet ID
+     * or ARN value.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet. This value must match the fleet ID referenced
-     * in the VPC peering connection record.</p>
+     * <p>A unique identifier for a fleet. This fleet specified must match the fleet
+     * referenced in the VPC peering connection record. You can use either the fleet ID
+     * or ARN value.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a fleet. This value must match the fleet ID referenced
-     * in the VPC peering connection record.</p>
+     * <p>A unique identifier for a fleet. This fleet specified must match the fleet
+     * referenced in the VPC peering connection record. You can use either the fleet ID
+     * or ARN value.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet. This value must match the fleet ID referenced
-     * in the VPC peering connection record.</p>
+     * <p>A unique identifier for a fleet. This fleet specified must match the fleet
+     * referenced in the VPC peering connection record. You can use either the fleet ID
+     * or ARN value.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet. This value must match the fleet ID referenced
-     * in the VPC peering connection record.</p>
+     * <p>A unique identifier for a fleet. This fleet specified must match the fleet
+     * referenced in the VPC peering connection record. You can use either the fleet ID
+     * or ARN value.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet. This value must match the fleet ID referenced
-     * in the VPC peering connection record.</p>
+     * <p>A unique identifier for a fleet. This fleet specified must match the fleet
+     * referenced in the VPC peering connection record. You can use either the fleet ID
+     * or ARN value.</p>
      */
     inline DeleteVpcPeeringConnectionRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet. This value must match the fleet ID referenced
-     * in the VPC peering connection record.</p>
+     * <p>A unique identifier for a fleet. This fleet specified must match the fleet
+     * referenced in the VPC peering connection record. You can use either the fleet ID
+     * or ARN value.</p>
      */
     inline DeleteVpcPeeringConnectionRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet. This value must match the fleet ID referenced
-     * in the VPC peering connection record.</p>
+     * <p>A unique identifier for a fleet. This fleet specified must match the fleet
+     * referenced in the VPC peering connection record. You can use either the fleet ID
+     * or ARN value.</p>
      */
     inline DeleteVpcPeeringConnectionRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
-     * <p>Unique identifier for a VPC peering connection. This value is included in the
-     * <a>VpcPeeringConnection</a> object, which can be retrieved by calling
+     * <p>A unique identifier for a VPC peering connection. This value is included in
+     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
      * <a>DescribeVpcPeeringConnections</a>.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
 
     /**
-     * <p>Unique identifier for a VPC peering connection. This value is included in the
-     * <a>VpcPeeringConnection</a> object, which can be retrieved by calling
+     * <p>A unique identifier for a VPC peering connection. This value is included in
+     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
      * <a>DescribeVpcPeeringConnections</a>.</p>
      */
     inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a VPC peering connection. This value is included in the
-     * <a>VpcPeeringConnection</a> object, which can be retrieved by calling
+     * <p>A unique identifier for a VPC peering connection. This value is included in
+     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
      * <a>DescribeVpcPeeringConnections</a>.</p>
      */
     inline void SetVpcPeeringConnectionId(const Aws::String& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
 
     /**
-     * <p>Unique identifier for a VPC peering connection. This value is included in the
-     * <a>VpcPeeringConnection</a> object, which can be retrieved by calling
+     * <p>A unique identifier for a VPC peering connection. This value is included in
+     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
      * <a>DescribeVpcPeeringConnections</a>.</p>
      */
     inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a VPC peering connection. This value is included in the
-     * <a>VpcPeeringConnection</a> object, which can be retrieved by calling
+     * <p>A unique identifier for a VPC peering connection. This value is included in
+     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
      * <a>DescribeVpcPeeringConnections</a>.</p>
      */
     inline void SetVpcPeeringConnectionId(const char* value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId.assign(value); }
 
     /**
-     * <p>Unique identifier for a VPC peering connection. This value is included in the
-     * <a>VpcPeeringConnection</a> object, which can be retrieved by calling
+     * <p>A unique identifier for a VPC peering connection. This value is included in
+     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
      * <a>DescribeVpcPeeringConnections</a>.</p>
      */
     inline DeleteVpcPeeringConnectionRequest& WithVpcPeeringConnectionId(const Aws::String& value) { SetVpcPeeringConnectionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a VPC peering connection. This value is included in the
-     * <a>VpcPeeringConnection</a> object, which can be retrieved by calling
+     * <p>A unique identifier for a VPC peering connection. This value is included in
+     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
      * <a>DescribeVpcPeeringConnections</a>.</p>
      */
     inline DeleteVpcPeeringConnectionRequest& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a VPC peering connection. This value is included in the
-     * <a>VpcPeeringConnection</a> object, which can be retrieved by calling
+     * <p>A unique identifier for a VPC peering connection. This value is included in
+     * the <a>VpcPeeringConnection</a> object, which can be retrieved by calling
      * <a>DescribeVpcPeeringConnections</a>.</p>
      */
     inline DeleteVpcPeeringConnectionRequest& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}

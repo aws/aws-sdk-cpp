@@ -80,6 +80,12 @@ PutBotAliasResult& PutBotAliasResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
+  if(jsonValue.ValueExists("conversationLogs"))
+  {
+    m_conversationLogs = jsonValue.GetObject("conversationLogs");
+
+  }
+
 
 
   return *this;

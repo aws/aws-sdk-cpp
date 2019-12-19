@@ -23,6 +23,7 @@
 #include <aws/transcribe/model/Transcript.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/transcribe/model/Settings.h>
+#include <aws/transcribe/model/JobExecutionSettings.h>
 #include <utility>
 
 namespace Aws
@@ -270,6 +271,37 @@ namespace Model
      * <p>An object that describes the output of the transcription job.</p>
      */
     inline TranscriptionJob& WithTranscript(Transcript&& value) { SetTranscript(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A timestamp that shows with the job was started processing.</p>
+     */
+    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>A timestamp that shows with the job was started processing.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that shows with the job was started processing.</p>
+     */
+    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
+
+    /**
+     * <p>A timestamp that shows with the job was started processing.</p>
+     */
+    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
+
+    /**
+     * <p>A timestamp that shows with the job was started processing.</p>
+     */
+    inline TranscriptionJob& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
+
+    /**
+     * <p>A timestamp that shows with the job was started processing.</p>
+     */
+    inline TranscriptionJob& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
@@ -631,6 +663,37 @@ namespace Model
      */
     inline TranscriptionJob& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Provides information about how a transcription job is executed.</p>
+     */
+    inline const JobExecutionSettings& GetJobExecutionSettings() const{ return m_jobExecutionSettings; }
+
+    /**
+     * <p>Provides information about how a transcription job is executed.</p>
+     */
+    inline bool JobExecutionSettingsHasBeenSet() const { return m_jobExecutionSettingsHasBeenSet; }
+
+    /**
+     * <p>Provides information about how a transcription job is executed.</p>
+     */
+    inline void SetJobExecutionSettings(const JobExecutionSettings& value) { m_jobExecutionSettingsHasBeenSet = true; m_jobExecutionSettings = value; }
+
+    /**
+     * <p>Provides information about how a transcription job is executed.</p>
+     */
+    inline void SetJobExecutionSettings(JobExecutionSettings&& value) { m_jobExecutionSettingsHasBeenSet = true; m_jobExecutionSettings = std::move(value); }
+
+    /**
+     * <p>Provides information about how a transcription job is executed.</p>
+     */
+    inline TranscriptionJob& WithJobExecutionSettings(const JobExecutionSettings& value) { SetJobExecutionSettings(value); return *this;}
+
+    /**
+     * <p>Provides information about how a transcription job is executed.</p>
+     */
+    inline TranscriptionJob& WithJobExecutionSettings(JobExecutionSettings&& value) { SetJobExecutionSettings(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transcriptionJobName;
@@ -654,6 +717,9 @@ namespace Model
     Transcript m_transcript;
     bool m_transcriptHasBeenSet;
 
+    Aws::Utils::DateTime m_startTime;
+    bool m_startTimeHasBeenSet;
+
     Aws::Utils::DateTime m_creationTime;
     bool m_creationTimeHasBeenSet;
 
@@ -665,6 +731,9 @@ namespace Model
 
     Settings m_settings;
     bool m_settingsHasBeenSet;
+
+    JobExecutionSettings m_jobExecutionSettings;
+    bool m_jobExecutionSettingsHasBeenSet;
   };
 
 } // namespace Model

@@ -48,42 +48,42 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline const Aws::String& GetTicketId() const{ return m_ticketId; }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline bool TicketIdHasBeenSet() const { return m_ticketIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline void SetTicketId(const Aws::String& value) { m_ticketIdHasBeenSet = true; m_ticketId = value; }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline void SetTicketId(Aws::String&& value) { m_ticketIdHasBeenSet = true; m_ticketId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline void SetTicketId(const char* value) { m_ticketIdHasBeenSet = true; m_ticketId.assign(value); }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline StopMatchmakingRequest& WithTicketId(const Aws::String& value) { SetTicketId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline StopMatchmakingRequest& WithTicketId(Aws::String&& value) { SetTicketId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline StopMatchmakingRequest& WithTicketId(const char* value) { SetTicketId(value); return *this;}
 

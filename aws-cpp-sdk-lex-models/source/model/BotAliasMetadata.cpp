@@ -35,7 +35,8 @@ BotAliasMetadata::BotAliasMetadata() :
     m_botNameHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_checksumHasBeenSet(false)
+    m_checksumHasBeenSet(false),
+    m_conversationLogsHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ BotAliasMetadata::BotAliasMetadata(JsonView jsonValue) :
     m_botNameHasBeenSet(false),
     m_lastUpdatedDateHasBeenSet(false),
     m_createdDateHasBeenSet(false),
-    m_checksumHasBeenSet(false)
+    m_checksumHasBeenSet(false),
+    m_conversationLogsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -102,6 +104,13 @@ BotAliasMetadata& BotAliasMetadata::operator =(JsonView jsonValue)
     m_checksumHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("conversationLogs"))
+  {
+    m_conversationLogs = jsonValue.GetObject("conversationLogs");
+
+    m_conversationLogsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -146,6 +155,12 @@ JsonValue BotAliasMetadata::Jsonize() const
   if(m_checksumHasBeenSet)
   {
    payload.WithString("checksum", m_checksum);
+
+  }
+
+  if(m_conversationLogsHasBeenSet)
+  {
+   payload.WithObject("conversationLogs", m_conversationLogs.Jsonize());
 
   }
 

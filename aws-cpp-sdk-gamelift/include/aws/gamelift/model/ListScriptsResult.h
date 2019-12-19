@@ -45,85 +45,85 @@ namespace Model
 
 
     /**
-     * <p>Set of properties describing the requested script.</p>
+     * <p>A set of properties describing the requested script.</p>
      */
     inline const Aws::Vector<Script>& GetScripts() const{ return m_scripts; }
 
     /**
-     * <p>Set of properties describing the requested script.</p>
+     * <p>A set of properties describing the requested script.</p>
      */
     inline void SetScripts(const Aws::Vector<Script>& value) { m_scripts = value; }
 
     /**
-     * <p>Set of properties describing the requested script.</p>
+     * <p>A set of properties describing the requested script.</p>
      */
     inline void SetScripts(Aws::Vector<Script>&& value) { m_scripts = std::move(value); }
 
     /**
-     * <p>Set of properties describing the requested script.</p>
+     * <p>A set of properties describing the requested script.</p>
      */
     inline ListScriptsResult& WithScripts(const Aws::Vector<Script>& value) { SetScripts(value); return *this;}
 
     /**
-     * <p>Set of properties describing the requested script.</p>
+     * <p>A set of properties describing the requested script.</p>
      */
     inline ListScriptsResult& WithScripts(Aws::Vector<Script>&& value) { SetScripts(std::move(value)); return *this;}
 
     /**
-     * <p>Set of properties describing the requested script.</p>
+     * <p>A set of properties describing the requested script.</p>
      */
     inline ListScriptsResult& AddScripts(const Script& value) { m_scripts.push_back(value); return *this; }
 
     /**
-     * <p>Set of properties describing the requested script.</p>
+     * <p>A set of properties describing the requested script.</p>
      */
     inline ListScriptsResult& AddScripts(Script&& value) { m_scripts.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline ListScriptsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */
     inline ListScriptsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token that indicates where to resume retrieving results on the next call to
+     * <p>A token that indicates where to resume retrieving results on the next call to
      * this action. If no token is returned, these results represent the end of the
      * list.</p>
      */

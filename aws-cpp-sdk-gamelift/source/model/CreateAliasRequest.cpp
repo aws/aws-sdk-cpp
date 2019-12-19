@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 CreateAliasRequest::CreateAliasRequest() : 
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_routingStrategyHasBeenSet(false)
+    m_routingStrategyHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,17 @@ Aws::String CreateAliasRequest::SerializePayload() const
   if(m_routingStrategyHasBeenSet)
   {
    payload.WithObject("RoutingStrategy", m_routingStrategy.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

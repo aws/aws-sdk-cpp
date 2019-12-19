@@ -44,6 +44,12 @@ ResolveAliasResult& ResolveAliasResult::operator =(const Aws::AmazonWebServiceRe
 
   }
 
+  if(jsonValue.ValueExists("FleetArn"))
+  {
+    m_fleetArn = jsonValue.GetString("FleetArn");
+
+  }
+
 
 
   return *this;

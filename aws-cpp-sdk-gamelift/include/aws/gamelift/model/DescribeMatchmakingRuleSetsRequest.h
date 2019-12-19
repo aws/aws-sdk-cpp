@@ -49,145 +49,145 @@ namespace Model
 
 
     /**
-     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * <p>A list of one or more matchmaking rule set names to retrieve details for.
      * (Note: The rule set name is different from the optional "name" field in the rule
-     * set body.) </p>
+     * set body.) You can use either the rule set name or ARN value. </p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
 
     /**
-     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * <p>A list of one or more matchmaking rule set names to retrieve details for.
      * (Note: The rule set name is different from the optional "name" field in the rule
-     * set body.) </p>
+     * set body.) You can use either the rule set name or ARN value. </p>
      */
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
 
     /**
-     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * <p>A list of one or more matchmaking rule set names to retrieve details for.
      * (Note: The rule set name is different from the optional "name" field in the rule
-     * set body.) </p>
+     * set body.) You can use either the rule set name or ARN value. </p>
      */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
 
     /**
-     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * <p>A list of one or more matchmaking rule set names to retrieve details for.
      * (Note: The rule set name is different from the optional "name" field in the rule
-     * set body.) </p>
+     * set body.) You can use either the rule set name or ARN value. </p>
      */
     inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
 
     /**
-     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * <p>A list of one or more matchmaking rule set names to retrieve details for.
      * (Note: The rule set name is different from the optional "name" field in the rule
-     * set body.) </p>
+     * set body.) You can use either the rule set name or ARN value. </p>
      */
     inline DescribeMatchmakingRuleSetsRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
 
     /**
-     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * <p>A list of one or more matchmaking rule set names to retrieve details for.
      * (Note: The rule set name is different from the optional "name" field in the rule
-     * set body.) </p>
+     * set body.) You can use either the rule set name or ARN value. </p>
      */
     inline DescribeMatchmakingRuleSetsRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
 
     /**
-     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * <p>A list of one or more matchmaking rule set names to retrieve details for.
      * (Note: The rule set name is different from the optional "name" field in the rule
-     * set body.) </p>
+     * set body.) You can use either the rule set name or ARN value. </p>
      */
     inline DescribeMatchmakingRuleSetsRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
     /**
-     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * <p>A list of one or more matchmaking rule set names to retrieve details for.
      * (Note: The rule set name is different from the optional "name" field in the rule
-     * set body.) </p>
+     * set body.) You can use either the rule set name or ARN value. </p>
      */
     inline DescribeMatchmakingRuleSetsRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>List of one or more matchmaking rule set names to retrieve details for.
+     * <p>A list of one or more matchmaking rule set names to retrieve details for.
      * (Note: The rule set name is different from the optional "name" field in the rule
-     * set body.) </p>
+     * set body.) You can use either the rule set name or ARN value. </p>
      */
     inline DescribeMatchmakingRuleSetsRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
 
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
     inline DescribeMatchmakingRuleSetsRequest& WithLimit(int value) { SetLimit(value); return *this;}
 
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this action. To start at the
      * beginning of the result set, do not specify a value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this action. To start at the
      * beginning of the result set, do not specify a value.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this action. To start at the
      * beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this action. To start at the
      * beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this action. To start at the
      * beginning of the result set, do not specify a value.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this action. To start at the
      * beginning of the result set, do not specify a value.</p>
      */
     inline DescribeMatchmakingRuleSetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this action. To start at the
      * beginning of the result set, do not specify a value.</p>
      */
     inline DescribeMatchmakingRuleSetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Token that indicates the start of the next sequential page of results. Use
+     * <p>A token that indicates the start of the next sequential page of results. Use
      * the token that is returned with a previous call to this action. To start at the
      * beginning of the result set, do not specify a value.</p>
      */

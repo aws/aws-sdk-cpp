@@ -30,6 +30,7 @@ namespace Model
 
 MatchmakingRuleSet::MatchmakingRuleSet() : 
     m_ruleSetNameHasBeenSet(false),
+    m_ruleSetArnHasBeenSet(false),
     m_ruleSetBodyHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
 {
@@ -37,6 +38,7 @@ MatchmakingRuleSet::MatchmakingRuleSet() :
 
 MatchmakingRuleSet::MatchmakingRuleSet(JsonView jsonValue) : 
     m_ruleSetNameHasBeenSet(false),
+    m_ruleSetArnHasBeenSet(false),
     m_ruleSetBodyHasBeenSet(false),
     m_creationTimeHasBeenSet(false)
 {
@@ -50,6 +52,13 @@ MatchmakingRuleSet& MatchmakingRuleSet::operator =(JsonView jsonValue)
     m_ruleSetName = jsonValue.GetString("RuleSetName");
 
     m_ruleSetNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RuleSetArn"))
+  {
+    m_ruleSetArn = jsonValue.GetString("RuleSetArn");
+
+    m_ruleSetArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("RuleSetBody"))
@@ -76,6 +85,12 @@ JsonValue MatchmakingRuleSet::Jsonize() const
   if(m_ruleSetNameHasBeenSet)
   {
    payload.WithString("RuleSetName", m_ruleSetName);
+
+  }
+
+  if(m_ruleSetArnHasBeenSet)
+  {
+   payload.WithString("RuleSetArn", m_ruleSetArn);
 
   }
 

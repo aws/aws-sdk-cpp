@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a player to associate with the player session.</p>
+     * <p>A unique identifier for a player to associate with the player session.</p>
      */
     inline const Aws::String& GetPlayerId() const{ return m_playerId; }
 
     /**
-     * <p>Unique identifier for a player to associate with the player session.</p>
+     * <p>A unique identifier for a player to associate with the player session.</p>
      */
     inline bool PlayerIdHasBeenSet() const { return m_playerIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a player to associate with the player session.</p>
+     * <p>A unique identifier for a player to associate with the player session.</p>
      */
     inline void SetPlayerId(const Aws::String& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
 
     /**
-     * <p>Unique identifier for a player to associate with the player session.</p>
+     * <p>A unique identifier for a player to associate with the player session.</p>
      */
     inline void SetPlayerId(Aws::String&& value) { m_playerIdHasBeenSet = true; m_playerId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a player to associate with the player session.</p>
+     * <p>A unique identifier for a player to associate with the player session.</p>
      */
     inline void SetPlayerId(const char* value) { m_playerIdHasBeenSet = true; m_playerId.assign(value); }
 
     /**
-     * <p>Unique identifier for a player to associate with the player session.</p>
+     * <p>A unique identifier for a player to associate with the player session.</p>
      */
     inline DesiredPlayerSession& WithPlayerId(const Aws::String& value) { SetPlayerId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a player to associate with the player session.</p>
+     * <p>A unique identifier for a player to associate with the player session.</p>
      */
     inline DesiredPlayerSession& WithPlayerId(Aws::String&& value) { SetPlayerId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a player to associate with the player session.</p>
+     * <p>A unique identifier for a player to associate with the player session.</p>
      */
     inline DesiredPlayerSession& WithPlayerId(const char* value) { SetPlayerId(value); return *this;}
 

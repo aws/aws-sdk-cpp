@@ -57,42 +57,42 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline const Aws::String& GetTicketId() const{ return m_ticketId; }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline bool TicketIdHasBeenSet() const { return m_ticketIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline void SetTicketId(const Aws::String& value) { m_ticketIdHasBeenSet = true; m_ticketId = value; }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline void SetTicketId(Aws::String&& value) { m_ticketIdHasBeenSet = true; m_ticketId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline void SetTicketId(const char* value) { m_ticketIdHasBeenSet = true; m_ticketId.assign(value); }
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline MatchmakingTicket& WithTicketId(const Aws::String& value) { SetTicketId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline MatchmakingTicket& WithTicketId(Aws::String&& value) { SetTicketId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a matchmaking ticket.</p>
+     * <p>A unique identifier for a matchmaking ticket.</p>
      */
     inline MatchmakingTicket& WithTicketId(const char* value) { SetTicketId(value); return *this;}
 
@@ -152,6 +152,71 @@ namespace Model
      * how a new game session is created for the match.</p>
      */
     inline MatchmakingTicket& WithConfigurationName(const char* value) { SetConfigurationName(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift matchmaking configuration resource that is used
+     * with this ticket.</p>
+     */
+    inline const Aws::String& GetConfigurationArn() const{ return m_configurationArn; }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift matchmaking configuration resource that is used
+     * with this ticket.</p>
+     */
+    inline bool ConfigurationArnHasBeenSet() const { return m_configurationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift matchmaking configuration resource that is used
+     * with this ticket.</p>
+     */
+    inline void SetConfigurationArn(const Aws::String& value) { m_configurationArnHasBeenSet = true; m_configurationArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift matchmaking configuration resource that is used
+     * with this ticket.</p>
+     */
+    inline void SetConfigurationArn(Aws::String&& value) { m_configurationArnHasBeenSet = true; m_configurationArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift matchmaking configuration resource that is used
+     * with this ticket.</p>
+     */
+    inline void SetConfigurationArn(const char* value) { m_configurationArnHasBeenSet = true; m_configurationArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift matchmaking configuration resource that is used
+     * with this ticket.</p>
+     */
+    inline MatchmakingTicket& WithConfigurationArn(const Aws::String& value) { SetConfigurationArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift matchmaking configuration resource that is used
+     * with this ticket.</p>
+     */
+    inline MatchmakingTicket& WithConfigurationArn(Aws::String&& value) { SetConfigurationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift matchmaking configuration resource that is used
+     * with this ticket.</p>
+     */
+    inline MatchmakingTicket& WithConfigurationArn(const char* value) { SetConfigurationArn(value); return *this;}
 
 
     /**
@@ -630,6 +695,9 @@ namespace Model
 
     Aws::String m_configurationName;
     bool m_configurationNameHasBeenSet;
+
+    Aws::String m_configurationArn;
+    bool m_configurationArnHasBeenSet;
 
     MatchmakingConfigurationStatus m_status;
     bool m_statusHasBeenSet;

@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Maximum number of instances allowed based on the Amazon Elastic Compute Cloud
-   * (Amazon EC2) instance type. Instance limits can be retrieved by calling
+   * <p>The maximum number of instances allowed based on the Amazon Elastic Compute
+   * Cloud (Amazon EC2) instance type. Instance limits can be retrieved by calling
    * <a>DescribeEC2InstanceLimits</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceLimit">AWS
    * API Reference</a></p>

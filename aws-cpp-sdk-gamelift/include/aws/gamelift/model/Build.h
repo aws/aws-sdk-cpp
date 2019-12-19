@@ -54,148 +54,221 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline const Aws::String& GetBuildId() const{ return m_buildId; }
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline bool BuildIdHasBeenSet() const { return m_buildIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline void SetBuildId(const Aws::String& value) { m_buildIdHasBeenSet = true; m_buildId = value; }
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline void SetBuildId(Aws::String&& value) { m_buildIdHasBeenSet = true; m_buildId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline void SetBuildId(const char* value) { m_buildIdHasBeenSet = true; m_buildId.assign(value); }
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline Build& WithBuildId(const Aws::String& value) { SetBuildId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline Build& WithBuildId(Aws::String&& value) { SetBuildId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a build.</p>
+     * <p>A unique identifier for a build.</p>
      */
     inline Build& WithBuildId(const char* value) { SetBuildId(value); return *this;}
 
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
+     * the <i>BuildId</i> value.</p>
+     */
+    inline const Aws::String& GetBuildArn() const{ return m_buildArn; }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
+     * the <i>BuildId</i> value.</p>
+     */
+    inline bool BuildArnHasBeenSet() const { return m_buildArnHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
+     * the <i>BuildId</i> value.</p>
+     */
+    inline void SetBuildArn(const Aws::String& value) { m_buildArnHasBeenSet = true; m_buildArn = value; }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
+     * the <i>BuildId</i> value.</p>
+     */
+    inline void SetBuildArn(Aws::String&& value) { m_buildArnHasBeenSet = true; m_buildArn = std::move(value); }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
+     * the <i>BuildId</i> value.</p>
+     */
+    inline void SetBuildArn(const char* value) { m_buildArnHasBeenSet = true; m_buildArn.assign(value); }
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
+     * the <i>BuildId</i> value.</p>
+     */
+    inline Build& WithBuildArn(const Aws::String& value) { SetBuildArn(value); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
+     * the <i>BuildId</i> value.</p>
+     */
+    inline Build& WithBuildArn(Aws::String&& value) { SetBuildArn(std::move(value)); return *this;}
+
+    /**
+     * <p>Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * that is assigned to a GameLift build resource and uniquely identifies it. ARNs
+     * are unique across all Regions. In a GameLift build ARN, the resource ID matches
+     * the <i>BuildId</i> value.</p>
+     */
+    inline Build& WithBuildArn(const char* value) { SetBuildArn(value); return *this;}
+
+
+    /**
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline Build& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline Build& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. It can be set using <a>CreateBuild</a> or <a>UpdateBuild</a>.</p>
      */
     inline Build& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. This value can be set using <a>CreateBuild</a> or
-     * <a>UpdateBuild</a>.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
+     * or <a>UpdateBuild</a>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. This value can be set using <a>CreateBuild</a> or
-     * <a>UpdateBuild</a>.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
+     * or <a>UpdateBuild</a>.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. This value can be set using <a>CreateBuild</a> or
-     * <a>UpdateBuild</a>.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
+     * or <a>UpdateBuild</a>.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. This value can be set using <a>CreateBuild</a> or
-     * <a>UpdateBuild</a>.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
+     * or <a>UpdateBuild</a>.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. This value can be set using <a>CreateBuild</a> or
-     * <a>UpdateBuild</a>.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
+     * or <a>UpdateBuild</a>.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. This value can be set using <a>CreateBuild</a> or
-     * <a>UpdateBuild</a>.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
+     * or <a>UpdateBuild</a>.</p>
      */
     inline Build& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. This value can be set using <a>CreateBuild</a> or
-     * <a>UpdateBuild</a>.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
+     * or <a>UpdateBuild</a>.</p>
      */
     inline Build& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. This value can be set using <a>CreateBuild</a> or
-     * <a>UpdateBuild</a>.</p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. This value can be set using <a>CreateBuild</a>
+     * or <a>UpdateBuild</a>.</p>
      */
     inline Build& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -381,6 +454,9 @@ namespace Model
 
     Aws::String m_buildId;
     bool m_buildIdHasBeenSet;
+
+    Aws::String m_buildArn;
+    bool m_buildArnHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;

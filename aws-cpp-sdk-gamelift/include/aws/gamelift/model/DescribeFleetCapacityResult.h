@@ -51,49 +51,49 @@ namespace Model
 
 
     /**
-     * <p>Collection of objects containing capacity information for each requested
+     * <p>A collection of objects containing capacity information for each requested
      * fleet ID. Leave this parameter empty to retrieve capacity information for all
      * fleets.</p>
      */
     inline const Aws::Vector<FleetCapacity>& GetFleetCapacity() const{ return m_fleetCapacity; }
 
     /**
-     * <p>Collection of objects containing capacity information for each requested
+     * <p>A collection of objects containing capacity information for each requested
      * fleet ID. Leave this parameter empty to retrieve capacity information for all
      * fleets.</p>
      */
     inline void SetFleetCapacity(const Aws::Vector<FleetCapacity>& value) { m_fleetCapacity = value; }
 
     /**
-     * <p>Collection of objects containing capacity information for each requested
+     * <p>A collection of objects containing capacity information for each requested
      * fleet ID. Leave this parameter empty to retrieve capacity information for all
      * fleets.</p>
      */
     inline void SetFleetCapacity(Aws::Vector<FleetCapacity>&& value) { m_fleetCapacity = std::move(value); }
 
     /**
-     * <p>Collection of objects containing capacity information for each requested
+     * <p>A collection of objects containing capacity information for each requested
      * fleet ID. Leave this parameter empty to retrieve capacity information for all
      * fleets.</p>
      */
     inline DescribeFleetCapacityResult& WithFleetCapacity(const Aws::Vector<FleetCapacity>& value) { SetFleetCapacity(value); return *this;}
 
     /**
-     * <p>Collection of objects containing capacity information for each requested
+     * <p>A collection of objects containing capacity information for each requested
      * fleet ID. Leave this parameter empty to retrieve capacity information for all
      * fleets.</p>
      */
     inline DescribeFleetCapacityResult& WithFleetCapacity(Aws::Vector<FleetCapacity>&& value) { SetFleetCapacity(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of objects containing capacity information for each requested
+     * <p>A collection of objects containing capacity information for each requested
      * fleet ID. Leave this parameter empty to retrieve capacity information for all
      * fleets.</p>
      */
     inline DescribeFleetCapacityResult& AddFleetCapacity(const FleetCapacity& value) { m_fleetCapacity.push_back(value); return *this; }
 
     /**
-     * <p>Collection of objects containing capacity information for each requested
+     * <p>A collection of objects containing capacity information for each requested
      * fleet ID. Leave this parameter empty to retrieve capacity information for all
      * fleets.</p>
      */

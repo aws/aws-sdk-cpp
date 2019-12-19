@@ -17,6 +17,7 @@
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lex-models/model/ConversationLogsResponse.h>
 #include <utility>
 
 namespace Aws
@@ -320,6 +321,43 @@ namespace Model
      */
     inline BotAliasMetadata& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
+
+    /**
+     * <p>Settings that determine how Amazon Lex uses conversation logs for the
+     * alias.</p>
+     */
+    inline const ConversationLogsResponse& GetConversationLogs() const{ return m_conversationLogs; }
+
+    /**
+     * <p>Settings that determine how Amazon Lex uses conversation logs for the
+     * alias.</p>
+     */
+    inline bool ConversationLogsHasBeenSet() const { return m_conversationLogsHasBeenSet; }
+
+    /**
+     * <p>Settings that determine how Amazon Lex uses conversation logs for the
+     * alias.</p>
+     */
+    inline void SetConversationLogs(const ConversationLogsResponse& value) { m_conversationLogsHasBeenSet = true; m_conversationLogs = value; }
+
+    /**
+     * <p>Settings that determine how Amazon Lex uses conversation logs for the
+     * alias.</p>
+     */
+    inline void SetConversationLogs(ConversationLogsResponse&& value) { m_conversationLogsHasBeenSet = true; m_conversationLogs = std::move(value); }
+
+    /**
+     * <p>Settings that determine how Amazon Lex uses conversation logs for the
+     * alias.</p>
+     */
+    inline BotAliasMetadata& WithConversationLogs(const ConversationLogsResponse& value) { SetConversationLogs(value); return *this;}
+
+    /**
+     * <p>Settings that determine how Amazon Lex uses conversation logs for the
+     * alias.</p>
+     */
+    inline BotAliasMetadata& WithConversationLogs(ConversationLogsResponse&& value) { SetConversationLogs(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -342,6 +380,9 @@ namespace Model
 
     Aws::String m_checksum;
     bool m_checksumHasBeenSet;
+
+    ConversationLogsResponse m_conversationLogs;
+    bool m_conversationLogsHasBeenSet;
   };
 
 } // namespace Model

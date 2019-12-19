@@ -36,10 +36,10 @@ namespace Model
   /**
    * <p>Set of key-value pairs that contain information about a game session. When
    * included in a game session request, these properties communicate details to be
-   * used when setting up the new game session, such as to specify a game mode,
-   * level, or map. Game properties are passed to the game server process when
-   * initiating a new game session; the server process uses the properties as
-   * appropriate. For more information, see the <a
+   * used when setting up the new game session. For example, a game property might
+   * specify a game mode, level, or map. Game properties are passed to the game
+   * server process when initiating a new game session. For more information, see the
+   * <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create">
    * Amazon GameLift Developer Guide</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameProperty">AWS
@@ -55,83 +55,83 @@ namespace Model
 
 
     /**
-     * <p>Game property identifier.</p>
+     * <p>The game property identifier.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
 
     /**
-     * <p>Game property identifier.</p>
+     * <p>The game property identifier.</p>
      */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
-     * <p>Game property identifier.</p>
+     * <p>The game property identifier.</p>
      */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
-     * <p>Game property identifier.</p>
+     * <p>The game property identifier.</p>
      */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
     /**
-     * <p>Game property identifier.</p>
+     * <p>The game property identifier.</p>
      */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
     /**
-     * <p>Game property identifier.</p>
+     * <p>The game property identifier.</p>
      */
     inline GameProperty& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
     /**
-     * <p>Game property identifier.</p>
+     * <p>The game property identifier.</p>
      */
     inline GameProperty& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
     /**
-     * <p>Game property identifier.</p>
+     * <p>The game property identifier.</p>
      */
     inline GameProperty& WithKey(const char* value) { SetKey(value); return *this;}
 
 
     /**
-     * <p>Game property value.</p>
+     * <p>The game property value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
-     * <p>Game property value.</p>
+     * <p>The game property value.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p>Game property value.</p>
+     * <p>The game property value.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p>Game property value.</p>
+     * <p>The game property value.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
-     * <p>Game property value.</p>
+     * <p>The game property value.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
-     * <p>Game property value.</p>
+     * <p>The game property value.</p>
      */
     inline GameProperty& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
-     * <p>Game property value.</p>
+     * <p>The game property value.</p>
      */
     inline GameProperty& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
-     * <p>Game property value.</p>
+     * <p>The game property value.</p>
      */
     inline GameProperty& WithValue(const char* value) { SetValue(value); return *this;}
 

@@ -51,43 +51,43 @@ namespace Model
 
 
     /**
-     * <p>Collection of objects containing event log entries for the specified
+     * <p>A collection of objects containing event log entries for the specified
      * fleet.</p>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
     /**
-     * <p>Collection of objects containing event log entries for the specified
+     * <p>A collection of objects containing event log entries for the specified
      * fleet.</p>
      */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_events = value; }
 
     /**
-     * <p>Collection of objects containing event log entries for the specified
+     * <p>A collection of objects containing event log entries for the specified
      * fleet.</p>
      */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_events = std::move(value); }
 
     /**
-     * <p>Collection of objects containing event log entries for the specified
+     * <p>A collection of objects containing event log entries for the specified
      * fleet.</p>
      */
     inline DescribeFleetEventsResult& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
     /**
-     * <p>Collection of objects containing event log entries for the specified
+     * <p>A collection of objects containing event log entries for the specified
      * fleet.</p>
      */
     inline DescribeFleetEventsResult& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of objects containing event log entries for the specified
+     * <p>A collection of objects containing event log entries for the specified
      * fleet.</p>
      */
     inline DescribeFleetEventsResult& AddEvents(const Event& value) { m_events.push_back(value); return *this; }
 
     /**
-     * <p>Collection of objects containing event log entries for the specified
+     * <p>A collection of objects containing event log entries for the specified
      * fleet.</p>
      */
     inline DescribeFleetEventsResult& AddEvents(Event&& value) { m_events.push_back(std::move(value)); return *this; }

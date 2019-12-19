@@ -17,6 +17,7 @@
 #include <aws/lex-models/LexModelBuildingService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/lex-models/model/ConversationLogsResponse.h>
 #include <utility>
 
 namespace Aws
@@ -279,6 +280,37 @@ namespace Model
      */
     inline GetBotAliasResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
 
+
+    /**
+     * <p>The settings that determine how Amazon Lex uses conversation logs for the
+     * alias.</p>
+     */
+    inline const ConversationLogsResponse& GetConversationLogs() const{ return m_conversationLogs; }
+
+    /**
+     * <p>The settings that determine how Amazon Lex uses conversation logs for the
+     * alias.</p>
+     */
+    inline void SetConversationLogs(const ConversationLogsResponse& value) { m_conversationLogs = value; }
+
+    /**
+     * <p>The settings that determine how Amazon Lex uses conversation logs for the
+     * alias.</p>
+     */
+    inline void SetConversationLogs(ConversationLogsResponse&& value) { m_conversationLogs = std::move(value); }
+
+    /**
+     * <p>The settings that determine how Amazon Lex uses conversation logs for the
+     * alias.</p>
+     */
+    inline GetBotAliasResult& WithConversationLogs(const ConversationLogsResponse& value) { SetConversationLogs(value); return *this;}
+
+    /**
+     * <p>The settings that determine how Amazon Lex uses conversation logs for the
+     * alias.</p>
+     */
+    inline GetBotAliasResult& WithConversationLogs(ConversationLogsResponse&& value) { SetConversationLogs(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -294,6 +326,8 @@ namespace Model
     Aws::Utils::DateTime m_createdDate;
 
     Aws::String m_checksum;
+
+    ConversationLogsResponse m_conversationLogs;
   };
 
 } // namespace Model

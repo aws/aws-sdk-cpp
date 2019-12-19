@@ -19,6 +19,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/S3Location.h>
 #include <aws/core/utils/Array.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/gamelift/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -47,105 +49,113 @@ namespace Model
 
 
     /**
-     * <p>Descriptive label that is associated with a script. Script names do not need
-     * to be unique. You can use <a>UpdateScript</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a script. Script names do not
+     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
+     * </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label that is associated with a script. Script names do not need
-     * to be unique. You can use <a>UpdateScript</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a script. Script names do not
+     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
+     * </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Descriptive label that is associated with a script. Script names do not need
-     * to be unique. You can use <a>UpdateScript</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a script. Script names do not
+     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
+     * </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label that is associated with a script. Script names do not need
-     * to be unique. You can use <a>UpdateScript</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a script. Script names do not
+     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
+     * </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Descriptive label that is associated with a script. Script names do not need
-     * to be unique. You can use <a>UpdateScript</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a script. Script names do not
+     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
+     * </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label that is associated with a script. Script names do not need
-     * to be unique. You can use <a>UpdateScript</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a script. Script names do not
+     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
+     * </p>
      */
     inline CreateScriptRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a script. Script names do not need
-     * to be unique. You can use <a>UpdateScript</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a script. Script names do not
+     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
+     * </p>
      */
     inline CreateScriptRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a script. Script names do not need
-     * to be unique. You can use <a>UpdateScript</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a script. Script names do not
+     * need to be unique. You can use <a>UpdateScript</a> to change this value later.
+     * </p>
      */
     inline CreateScriptRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
+     * <p>The version that is associated with a build or script. Version strings do not
      * need to be unique. You can use <a>UpdateScript</a> to change this value later.
      * </p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
+     * <p>The version that is associated with a build or script. Version strings do not
      * need to be unique. You can use <a>UpdateScript</a> to change this value later.
      * </p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
+     * <p>The version that is associated with a build or script. Version strings do not
      * need to be unique. You can use <a>UpdateScript</a> to change this value later.
      * </p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
+     * <p>The version that is associated with a build or script. Version strings do not
      * need to be unique. You can use <a>UpdateScript</a> to change this value later.
      * </p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
+     * <p>The version that is associated with a build or script. Version strings do not
      * need to be unique. You can use <a>UpdateScript</a> to change this value later.
      * </p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
+     * <p>The version that is associated with a build or script. Version strings do not
      * need to be unique. You can use <a>UpdateScript</a> to change this value later.
      * </p>
      */
     inline CreateScriptRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
+     * <p>The version that is associated with a build or script. Version strings do not
      * need to be unique. You can use <a>UpdateScript</a> to change this value later.
      * </p>
      */
     inline CreateScriptRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
+     * <p>The version that is associated with a build or script. Version strings do not
      * need to be unique. You can use <a>UpdateScript</a> to change this value later.
      * </p>
      */
@@ -153,137 +163,242 @@ namespace Model
 
 
     /**
-     * <p>Location of the Amazon S3 bucket where a zipped file containing your Realtime
-     * scripts is stored. The storage location must specify the Amazon S3 bucket name,
-     * the zip file name (the "key"), and a role ARN that allows Amazon GameLift to
-     * access the Amazon S3 storage location. The S3 bucket must be in the same region
-     * where you want to create a new script. By default, Amazon GameLift uploads the
-     * latest version of the zip file; if you have S3 object versioning turned on, you
-     * can use the <code>ObjectVersion</code> parameter to specify an earlier version.
-     * </p>
+     * <p>The location of the Amazon S3 bucket where a zipped file containing your
+     * Realtime scripts is stored. The storage location must specify the Amazon S3
+     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
+     * same Region where you want to create a new script. By default, Amazon GameLift
+     * uploads the latest version of the zip file; if you have S3 object versioning
+     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
+     * earlier version. </p>
      */
     inline const S3Location& GetStorageLocation() const{ return m_storageLocation; }
 
     /**
-     * <p>Location of the Amazon S3 bucket where a zipped file containing your Realtime
-     * scripts is stored. The storage location must specify the Amazon S3 bucket name,
-     * the zip file name (the "key"), and a role ARN that allows Amazon GameLift to
-     * access the Amazon S3 storage location. The S3 bucket must be in the same region
-     * where you want to create a new script. By default, Amazon GameLift uploads the
-     * latest version of the zip file; if you have S3 object versioning turned on, you
-     * can use the <code>ObjectVersion</code> parameter to specify an earlier version.
-     * </p>
+     * <p>The location of the Amazon S3 bucket where a zipped file containing your
+     * Realtime scripts is stored. The storage location must specify the Amazon S3
+     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
+     * same Region where you want to create a new script. By default, Amazon GameLift
+     * uploads the latest version of the zip file; if you have S3 object versioning
+     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
+     * earlier version. </p>
      */
     inline bool StorageLocationHasBeenSet() const { return m_storageLocationHasBeenSet; }
 
     /**
-     * <p>Location of the Amazon S3 bucket where a zipped file containing your Realtime
-     * scripts is stored. The storage location must specify the Amazon S3 bucket name,
-     * the zip file name (the "key"), and a role ARN that allows Amazon GameLift to
-     * access the Amazon S3 storage location. The S3 bucket must be in the same region
-     * where you want to create a new script. By default, Amazon GameLift uploads the
-     * latest version of the zip file; if you have S3 object versioning turned on, you
-     * can use the <code>ObjectVersion</code> parameter to specify an earlier version.
-     * </p>
+     * <p>The location of the Amazon S3 bucket where a zipped file containing your
+     * Realtime scripts is stored. The storage location must specify the Amazon S3
+     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
+     * same Region where you want to create a new script. By default, Amazon GameLift
+     * uploads the latest version of the zip file; if you have S3 object versioning
+     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
+     * earlier version. </p>
      */
     inline void SetStorageLocation(const S3Location& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
 
     /**
-     * <p>Location of the Amazon S3 bucket where a zipped file containing your Realtime
-     * scripts is stored. The storage location must specify the Amazon S3 bucket name,
-     * the zip file name (the "key"), and a role ARN that allows Amazon GameLift to
-     * access the Amazon S3 storage location. The S3 bucket must be in the same region
-     * where you want to create a new script. By default, Amazon GameLift uploads the
-     * latest version of the zip file; if you have S3 object versioning turned on, you
-     * can use the <code>ObjectVersion</code> parameter to specify an earlier version.
-     * </p>
+     * <p>The location of the Amazon S3 bucket where a zipped file containing your
+     * Realtime scripts is stored. The storage location must specify the Amazon S3
+     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
+     * same Region where you want to create a new script. By default, Amazon GameLift
+     * uploads the latest version of the zip file; if you have S3 object versioning
+     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
+     * earlier version. </p>
      */
     inline void SetStorageLocation(S3Location&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::move(value); }
 
     /**
-     * <p>Location of the Amazon S3 bucket where a zipped file containing your Realtime
-     * scripts is stored. The storage location must specify the Amazon S3 bucket name,
-     * the zip file name (the "key"), and a role ARN that allows Amazon GameLift to
-     * access the Amazon S3 storage location. The S3 bucket must be in the same region
-     * where you want to create a new script. By default, Amazon GameLift uploads the
-     * latest version of the zip file; if you have S3 object versioning turned on, you
-     * can use the <code>ObjectVersion</code> parameter to specify an earlier version.
-     * </p>
+     * <p>The location of the Amazon S3 bucket where a zipped file containing your
+     * Realtime scripts is stored. The storage location must specify the Amazon S3
+     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
+     * same Region where you want to create a new script. By default, Amazon GameLift
+     * uploads the latest version of the zip file; if you have S3 object versioning
+     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
+     * earlier version. </p>
      */
     inline CreateScriptRequest& WithStorageLocation(const S3Location& value) { SetStorageLocation(value); return *this;}
 
     /**
-     * <p>Location of the Amazon S3 bucket where a zipped file containing your Realtime
-     * scripts is stored. The storage location must specify the Amazon S3 bucket name,
-     * the zip file name (the "key"), and a role ARN that allows Amazon GameLift to
-     * access the Amazon S3 storage location. The S3 bucket must be in the same region
-     * where you want to create a new script. By default, Amazon GameLift uploads the
-     * latest version of the zip file; if you have S3 object versioning turned on, you
-     * can use the <code>ObjectVersion</code> parameter to specify an earlier version.
-     * </p>
+     * <p>The location of the Amazon S3 bucket where a zipped file containing your
+     * Realtime scripts is stored. The storage location must specify the Amazon S3
+     * bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the
+     * same Region where you want to create a new script. By default, Amazon GameLift
+     * uploads the latest version of the zip file; if you have S3 object versioning
+     * turned on, you can use the <code>ObjectVersion</code> parameter to specify an
+     * earlier version. </p>
      */
     inline CreateScriptRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
 
 
     /**
-     * <p>Data object containing your Realtime scripts and dependencies as a zip file.
-     * The zip file can have one or multiple files. Maximum size of a zip file is 5
-     * MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is set
-     * to the zip file name. It must be prepended with the string "fileb://" to
+     * <p>A data object containing your Realtime scripts and dependencies as a zip
+     * file. The zip file can have one or multiple files. Maximum size of a zip file is
+     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
+     * set to the zip file name. It must be prepended with the string "fileb://" to
      * indicate that the file data is a binary object. For example: <code>--zip-file
      * fileb://myRealtimeScript.zip</code>.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetZipFile() const{ return m_zipFile; }
 
     /**
-     * <p>Data object containing your Realtime scripts and dependencies as a zip file.
-     * The zip file can have one or multiple files. Maximum size of a zip file is 5
-     * MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is set
-     * to the zip file name. It must be prepended with the string "fileb://" to
+     * <p>A data object containing your Realtime scripts and dependencies as a zip
+     * file. The zip file can have one or multiple files. Maximum size of a zip file is
+     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
+     * set to the zip file name. It must be prepended with the string "fileb://" to
      * indicate that the file data is a binary object. For example: <code>--zip-file
      * fileb://myRealtimeScript.zip</code>.</p>
      */
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
 
     /**
-     * <p>Data object containing your Realtime scripts and dependencies as a zip file.
-     * The zip file can have one or multiple files. Maximum size of a zip file is 5
-     * MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is set
-     * to the zip file name. It must be prepended with the string "fileb://" to
+     * <p>A data object containing your Realtime scripts and dependencies as a zip
+     * file. The zip file can have one or multiple files. Maximum size of a zip file is
+     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
+     * set to the zip file name. It must be prepended with the string "fileb://" to
      * indicate that the file data is a binary object. For example: <code>--zip-file
      * fileb://myRealtimeScript.zip</code>.</p>
      */
     inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
 
     /**
-     * <p>Data object containing your Realtime scripts and dependencies as a zip file.
-     * The zip file can have one or multiple files. Maximum size of a zip file is 5
-     * MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is set
-     * to the zip file name. It must be prepended with the string "fileb://" to
+     * <p>A data object containing your Realtime scripts and dependencies as a zip
+     * file. The zip file can have one or multiple files. Maximum size of a zip file is
+     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
+     * set to the zip file name. It must be prepended with the string "fileb://" to
      * indicate that the file data is a binary object. For example: <code>--zip-file
      * fileb://myRealtimeScript.zip</code>.</p>
      */
     inline void SetZipFile(Aws::Utils::ByteBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
 
     /**
-     * <p>Data object containing your Realtime scripts and dependencies as a zip file.
-     * The zip file can have one or multiple files. Maximum size of a zip file is 5
-     * MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is set
-     * to the zip file name. It must be prepended with the string "fileb://" to
+     * <p>A data object containing your Realtime scripts and dependencies as a zip
+     * file. The zip file can have one or multiple files. Maximum size of a zip file is
+     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
+     * set to the zip file name. It must be prepended with the string "fileb://" to
      * indicate that the file data is a binary object. For example: <code>--zip-file
      * fileb://myRealtimeScript.zip</code>.</p>
      */
     inline CreateScriptRequest& WithZipFile(const Aws::Utils::ByteBuffer& value) { SetZipFile(value); return *this;}
 
     /**
-     * <p>Data object containing your Realtime scripts and dependencies as a zip file.
-     * The zip file can have one or multiple files. Maximum size of a zip file is 5
-     * MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is set
-     * to the zip file name. It must be prepended with the string "fileb://" to
+     * <p>A data object containing your Realtime scripts and dependencies as a zip
+     * file. The zip file can have one or multiple files. Maximum size of a zip file is
+     * 5 MB.</p> <p>When using the AWS CLI tool to create a script, this parameter is
+     * set to the zip file name. It must be prepended with the string "fileb://" to
      * indicate that the file data is a binary object. For example: <code>--zip-file
      * fileb://myRealtimeScript.zip</code>.</p>
      */
     inline CreateScriptRequest& WithZipFile(Aws::Utils::ByteBuffer&& value) { SetZipFile(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of labels to assign to the new script resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of labels to assign to the new script resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of labels to assign to the new script resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of labels to assign to the new script resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of labels to assign to the new script resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline CreateScriptRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of labels to assign to the new script resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline CreateScriptRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of labels to assign to the new script resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline CreateScriptRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of labels to assign to the new script resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline CreateScriptRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -298,6 +413,9 @@ namespace Model
 
     Aws::Utils::ByteBuffer m_zipFile;
     bool m_zipFileHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -30,6 +30,7 @@ namespace Model
 
 MatchmakingConfiguration::MatchmakingConfiguration() : 
     m_nameHasBeenSet(false),
+    m_configurationArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_gameSessionQueueArnsHasBeenSet(false),
     m_requestTimeoutSeconds(0),
@@ -39,6 +40,7 @@ MatchmakingConfiguration::MatchmakingConfiguration() :
     m_acceptanceRequired(false),
     m_acceptanceRequiredHasBeenSet(false),
     m_ruleSetNameHasBeenSet(false),
+    m_ruleSetArnHasBeenSet(false),
     m_notificationTargetHasBeenSet(false),
     m_additionalPlayerCount(0),
     m_additionalPlayerCountHasBeenSet(false),
@@ -53,6 +55,7 @@ MatchmakingConfiguration::MatchmakingConfiguration() :
 
 MatchmakingConfiguration::MatchmakingConfiguration(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
+    m_configurationArnHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_gameSessionQueueArnsHasBeenSet(false),
     m_requestTimeoutSeconds(0),
@@ -62,6 +65,7 @@ MatchmakingConfiguration::MatchmakingConfiguration(JsonView jsonValue) :
     m_acceptanceRequired(false),
     m_acceptanceRequiredHasBeenSet(false),
     m_ruleSetNameHasBeenSet(false),
+    m_ruleSetArnHasBeenSet(false),
     m_notificationTargetHasBeenSet(false),
     m_additionalPlayerCount(0),
     m_additionalPlayerCountHasBeenSet(false),
@@ -82,6 +86,13 @@ MatchmakingConfiguration& MatchmakingConfiguration::operator =(JsonView jsonValu
     m_name = jsonValue.GetString("Name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConfigurationArn"))
+  {
+    m_configurationArn = jsonValue.GetString("ConfigurationArn");
+
+    m_configurationArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Description"))
@@ -127,6 +138,13 @@ MatchmakingConfiguration& MatchmakingConfiguration::operator =(JsonView jsonValu
     m_ruleSetName = jsonValue.GetString("RuleSetName");
 
     m_ruleSetNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RuleSetArn"))
+  {
+    m_ruleSetArn = jsonValue.GetString("RuleSetArn");
+
+    m_ruleSetArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("NotificationTarget"))
@@ -194,6 +212,12 @@ JsonValue MatchmakingConfiguration::Jsonize() const
 
   }
 
+  if(m_configurationArnHasBeenSet)
+  {
+   payload.WithString("ConfigurationArn", m_configurationArn);
+
+  }
+
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("Description", m_description);
@@ -232,6 +256,12 @@ JsonValue MatchmakingConfiguration::Jsonize() const
   if(m_ruleSetNameHasBeenSet)
   {
    payload.WithString("RuleSetName", m_ruleSetName);
+
+  }
+
+  if(m_ruleSetArnHasBeenSet)
+  {
+   payload.WithString("RuleSetArn", m_ruleSetArn);
 
   }
 

@@ -31,6 +31,7 @@ namespace Model
 MatchmakingTicket::MatchmakingTicket() : 
     m_ticketIdHasBeenSet(false),
     m_configurationNameHasBeenSet(false),
+    m_configurationArnHasBeenSet(false),
     m_status(MatchmakingConfigurationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
@@ -47,6 +48,7 @@ MatchmakingTicket::MatchmakingTicket() :
 MatchmakingTicket::MatchmakingTicket(JsonView jsonValue) : 
     m_ticketIdHasBeenSet(false),
     m_configurationNameHasBeenSet(false),
+    m_configurationArnHasBeenSet(false),
     m_status(MatchmakingConfigurationStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
@@ -75,6 +77,13 @@ MatchmakingTicket& MatchmakingTicket::operator =(JsonView jsonValue)
     m_configurationName = jsonValue.GetString("ConfigurationName");
 
     m_configurationNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConfigurationArn"))
+  {
+    m_configurationArn = jsonValue.GetString("ConfigurationArn");
+
+    m_configurationArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -152,6 +161,12 @@ JsonValue MatchmakingTicket::Jsonize() const
   if(m_configurationNameHasBeenSet)
   {
    payload.WithString("ConfigurationName", m_configurationName);
+
+  }
+
+  if(m_configurationArnHasBeenSet)
+  {
+   payload.WithString("ConfigurationArn", m_configurationArn);
 
   }
 

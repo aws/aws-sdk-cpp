@@ -48,107 +48,115 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet to search for active game sessions. Each
-     * request must reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * use either the fleet ID or ARN value. Each request must reference either a fleet
+     * ID or alias ID, but not both.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet to search for active game sessions. Each
-     * request must reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * use either the fleet ID or ARN value. Each request must reference either a fleet
+     * ID or alias ID, but not both.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a fleet to search for active game sessions. Each
-     * request must reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * use either the fleet ID or ARN value. Each request must reference either a fleet
+     * ID or alias ID, but not both.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet to search for active game sessions. Each
-     * request must reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * use either the fleet ID or ARN value. Each request must reference either a fleet
+     * ID or alias ID, but not both.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet to search for active game sessions. Each
-     * request must reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * use either the fleet ID or ARN value. Each request must reference either a fleet
+     * ID or alias ID, but not both.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet to search for active game sessions. Each
-     * request must reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * use either the fleet ID or ARN value. Each request must reference either a fleet
+     * ID or alias ID, but not both.</p>
      */
     inline SearchGameSessionsRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to search for active game sessions. Each
-     * request must reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * use either the fleet ID or ARN value. Each request must reference either a fleet
+     * ID or alias ID, but not both.</p>
      */
     inline SearchGameSessionsRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet to search for active game sessions. Each
-     * request must reference either a fleet ID or alias ID, but not both.</p>
+     * <p>A unique identifier for a fleet to search for active game sessions. You can
+     * use either the fleet ID or ARN value. Each request must reference either a fleet
+     * ID or alias ID, but not both.</p>
      */
     inline SearchGameSessionsRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to search for active
-     * game sessions. Each request must reference either a fleet ID or alias ID, but
-     * not both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to search for
+     * active game sessions. You can use either the alias ID or ARN value. Each request
+     * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline const Aws::String& GetAliasId() const{ return m_aliasId; }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to search for active
-     * game sessions. Each request must reference either a fleet ID or alias ID, but
-     * not both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to search for
+     * active game sessions. You can use either the alias ID or ARN value. Each request
+     * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to search for active
-     * game sessions. Each request must reference either a fleet ID or alias ID, but
-     * not both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to search for
+     * active game sessions. You can use either the alias ID or ARN value. Each request
+     * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to search for active
-     * game sessions. Each request must reference either a fleet ID or alias ID, but
-     * not both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to search for
+     * active game sessions. You can use either the alias ID or ARN value. Each request
+     * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline void SetAliasId(Aws::String&& value) { m_aliasIdHasBeenSet = true; m_aliasId = std::move(value); }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to search for active
-     * game sessions. Each request must reference either a fleet ID or alias ID, but
-     * not both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to search for
+     * active game sessions. You can use either the alias ID or ARN value. Each request
+     * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline void SetAliasId(const char* value) { m_aliasIdHasBeenSet = true; m_aliasId.assign(value); }
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to search for active
-     * game sessions. Each request must reference either a fleet ID or alias ID, but
-     * not both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to search for
+     * active game sessions. You can use either the alias ID or ARN value. Each request
+     * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline SearchGameSessionsRequest& WithAliasId(const Aws::String& value) { SetAliasId(value); return *this;}
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to search for active
-     * game sessions. Each request must reference either a fleet ID or alias ID, but
-     * not both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to search for
+     * active game sessions. You can use either the alias ID or ARN value. Each request
+     * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline SearchGameSessionsRequest& WithAliasId(Aws::String&& value) { SetAliasId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for an alias associated with the fleet to search for active
-     * game sessions. Each request must reference either a fleet ID or alias ID, but
-     * not both.</p>
+     * <p>A unique identifier for an alias associated with the fleet to search for
+     * active game sessions. You can use either the alias ID or ARN value. Each request
+     * must reference either a fleet ID or alias ID, but not both.</p>
      */
     inline SearchGameSessionsRequest& WithAliasId(const char* value) { SetAliasId(value); return *this;}
 
@@ -548,7 +556,7 @@ namespace Model
 
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. The maximum
      * number of results returned is 20, even if this value is not set or is set higher
      * than 20. </p>
@@ -556,7 +564,7 @@ namespace Model
     inline int GetLimit() const{ return m_limit; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. The maximum
      * number of results returned is 20, even if this value is not set or is set higher
      * than 20. </p>
@@ -564,7 +572,7 @@ namespace Model
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. The maximum
      * number of results returned is 20, even if this value is not set or is set higher
      * than 20. </p>
@@ -572,7 +580,7 @@ namespace Model
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
-     * <p>Maximum number of results to return. Use this parameter with
+     * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages. The maximum
      * number of results returned is 20, even if this value is not set or is set higher
      * than 20. </p>

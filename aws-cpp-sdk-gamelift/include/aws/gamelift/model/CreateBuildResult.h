@@ -51,27 +51,27 @@ namespace Model
 
 
     /**
-     * <p>The newly created build record, including a unique build ID and status. </p>
+     * <p>The newly created build record, including a unique build IDs and status. </p>
      */
     inline const Build& GetBuild() const{ return m_build; }
 
     /**
-     * <p>The newly created build record, including a unique build ID and status. </p>
+     * <p>The newly created build record, including a unique build IDs and status. </p>
      */
     inline void SetBuild(const Build& value) { m_build = value; }
 
     /**
-     * <p>The newly created build record, including a unique build ID and status. </p>
+     * <p>The newly created build record, including a unique build IDs and status. </p>
      */
     inline void SetBuild(Build&& value) { m_build = std::move(value); }
 
     /**
-     * <p>The newly created build record, including a unique build ID and status. </p>
+     * <p>The newly created build record, including a unique build IDs and status. </p>
      */
     inline CreateBuildResult& WithBuild(const Build& value) { SetBuild(value); return *this;}
 
     /**
-     * <p>The newly created build record, including a unique build ID and status. </p>
+     * <p>The newly created build record, including a unique build IDs and status. </p>
      */
     inline CreateBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
 

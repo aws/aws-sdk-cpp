@@ -48,42 +48,42 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for the game session to get logs for.</p>
+     * <p>A unique identifier for the game session to get logs for. </p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
 
     /**
-     * <p>Unique identifier for the game session to get logs for.</p>
+     * <p>A unique identifier for the game session to get logs for. </p>
      */
     inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for the game session to get logs for.</p>
+     * <p>A unique identifier for the game session to get logs for. </p>
      */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
-     * <p>Unique identifier for the game session to get logs for.</p>
+     * <p>A unique identifier for the game session to get logs for. </p>
      */
     inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
 
     /**
-     * <p>Unique identifier for the game session to get logs for.</p>
+     * <p>A unique identifier for the game session to get logs for. </p>
      */
     inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
 
     /**
-     * <p>Unique identifier for the game session to get logs for.</p>
+     * <p>A unique identifier for the game session to get logs for. </p>
      */
     inline GetGameSessionLogUrlRequest& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
 
     /**
-     * <p>Unique identifier for the game session to get logs for.</p>
+     * <p>A unique identifier for the game session to get logs for. </p>
      */
     inline GetGameSessionLogUrlRequest& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for the game session to get logs for.</p>
+     * <p>A unique identifier for the game session to get logs for. </p>
      */
     inline GetGameSessionLogUrlRequest& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
 

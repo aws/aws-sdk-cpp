@@ -51,37 +51,37 @@ namespace Model
 
 
     /**
-     * <p>Collection of objects containing properties for each instance returned.</p>
+     * <p>A collection of objects containing properties for each instance returned.</p>
      */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
 
     /**
-     * <p>Collection of objects containing properties for each instance returned.</p>
+     * <p>A collection of objects containing properties for each instance returned.</p>
      */
     inline void SetInstances(const Aws::Vector<Instance>& value) { m_instances = value; }
 
     /**
-     * <p>Collection of objects containing properties for each instance returned.</p>
+     * <p>A collection of objects containing properties for each instance returned.</p>
      */
     inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = std::move(value); }
 
     /**
-     * <p>Collection of objects containing properties for each instance returned.</p>
+     * <p>A collection of objects containing properties for each instance returned.</p>
      */
     inline DescribeInstancesResult& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
 
     /**
-     * <p>Collection of objects containing properties for each instance returned.</p>
+     * <p>A collection of objects containing properties for each instance returned.</p>
      */
     inline DescribeInstancesResult& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of objects containing properties for each instance returned.</p>
+     * <p>A collection of objects containing properties for each instance returned.</p>
      */
     inline DescribeInstancesResult& AddInstances(const Instance& value) { m_instances.push_back(value); return *this; }
 
     /**
-     * <p>Collection of objects containing properties for each instance returned.</p>
+     * <p>A collection of objects containing properties for each instance returned.</p>
      */
     inline DescribeInstancesResult& AddInstances(Instance&& value) { m_instances.push_back(std::move(value)); return *this; }
 

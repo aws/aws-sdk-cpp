@@ -19,6 +19,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/gamelift/model/S3Location.h>
 #include <aws/gamelift/model/OperatingSystem.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/gamelift/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -50,107 +52,107 @@ namespace Model
 
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline CreateBuildRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline CreateBuildRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Descriptive label that is associated with a build. Build names do not need to
-     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
+     * <p>A descriptive label that is associated with a build. Build names do not need
+     * to be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline CreateBuildRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateBuild</a> to change this
+     * value later. </p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateBuild</a> to change this
+     * value later. </p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateBuild</a> to change this
+     * value later. </p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateBuild</a> to change this
+     * value later. </p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateBuild</a> to change this
+     * value later. </p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateBuild</a> to change this
+     * value later. </p>
      */
     inline CreateBuildRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateBuild</a> to change this
+     * value later. </p>
      */
     inline CreateBuildRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version that is associated with a build or script. Version strings do not
-     * need to be unique. You can use <a>UpdateBuild</a> to change this value later.
-     * </p>
+     * <p>Version information that is associated with a build or script. Version
+     * strings do not need to be unique. You can use <a>UpdateBuild</a> to change this
+     * value later. </p>
      */
     inline CreateBuildRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 
@@ -159,9 +161,9 @@ namespace Model
      * <p>Information indicating where your game build files are stored. Use this
      * parameter only when creating a build with files stored in an Amazon S3 bucket
      * that you own. The storage location must specify an Amazon S3 bucket name and
-     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to
-     * access your Amazon S3 bucket. The S3 bucket must be in the same region that you
-     * want to create a new build in.</p>
+     * key. The location must also specify a role ARN that you set up to allow Amazon
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p>
      */
     inline const S3Location& GetStorageLocation() const{ return m_storageLocation; }
 
@@ -169,9 +171,9 @@ namespace Model
      * <p>Information indicating where your game build files are stored. Use this
      * parameter only when creating a build with files stored in an Amazon S3 bucket
      * that you own. The storage location must specify an Amazon S3 bucket name and
-     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to
-     * access your Amazon S3 bucket. The S3 bucket must be in the same region that you
-     * want to create a new build in.</p>
+     * key. The location must also specify a role ARN that you set up to allow Amazon
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p>
      */
     inline bool StorageLocationHasBeenSet() const { return m_storageLocationHasBeenSet; }
 
@@ -179,9 +181,9 @@ namespace Model
      * <p>Information indicating where your game build files are stored. Use this
      * parameter only when creating a build with files stored in an Amazon S3 bucket
      * that you own. The storage location must specify an Amazon S3 bucket name and
-     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to
-     * access your Amazon S3 bucket. The S3 bucket must be in the same region that you
-     * want to create a new build in.</p>
+     * key. The location must also specify a role ARN that you set up to allow Amazon
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p>
      */
     inline void SetStorageLocation(const S3Location& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
 
@@ -189,9 +191,9 @@ namespace Model
      * <p>Information indicating where your game build files are stored. Use this
      * parameter only when creating a build with files stored in an Amazon S3 bucket
      * that you own. The storage location must specify an Amazon S3 bucket name and
-     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to
-     * access your Amazon S3 bucket. The S3 bucket must be in the same region that you
-     * want to create a new build in.</p>
+     * key. The location must also specify a role ARN that you set up to allow Amazon
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p>
      */
     inline void SetStorageLocation(S3Location&& value) { m_storageLocationHasBeenSet = true; m_storageLocation = std::move(value); }
 
@@ -199,9 +201,9 @@ namespace Model
      * <p>Information indicating where your game build files are stored. Use this
      * parameter only when creating a build with files stored in an Amazon S3 bucket
      * that you own. The storage location must specify an Amazon S3 bucket name and
-     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to
-     * access your Amazon S3 bucket. The S3 bucket must be in the same region that you
-     * want to create a new build in.</p>
+     * key. The location must also specify a role ARN that you set up to allow Amazon
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p>
      */
     inline CreateBuildRequest& WithStorageLocation(const S3Location& value) { SetStorageLocation(value); return *this;}
 
@@ -209,15 +211,15 @@ namespace Model
      * <p>Information indicating where your game build files are stored. Use this
      * parameter only when creating a build with files stored in an Amazon S3 bucket
      * that you own. The storage location must specify an Amazon S3 bucket name and
-     * key, as well as a the ARN for a role that you set up to allow Amazon GameLift to
-     * access your Amazon S3 bucket. The S3 bucket must be in the same region that you
-     * want to create a new build in.</p>
+     * key. The location must also specify a role ARN that you set up to allow Amazon
+     * GameLift to access your Amazon S3 bucket. The S3 bucket and your new build must
+     * be in the same Region.</p>
      */
     inline CreateBuildRequest& WithStorageLocation(S3Location&& value) { SetStorageLocation(std::move(value)); return *this;}
 
 
     /**
-     * <p>Operating system that the game server binaries are built to run on. This
+     * <p>The operating system that the game server binaries are built to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
      * operating system. If an operating system is not specified when creating a build,
@@ -227,7 +229,7 @@ namespace Model
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
 
     /**
-     * <p>Operating system that the game server binaries are built to run on. This
+     * <p>The operating system that the game server binaries are built to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
      * operating system. If an operating system is not specified when creating a build,
@@ -237,7 +239,7 @@ namespace Model
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
 
     /**
-     * <p>Operating system that the game server binaries are built to run on. This
+     * <p>The operating system that the game server binaries are built to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
      * operating system. If an operating system is not specified when creating a build,
@@ -247,7 +249,7 @@ namespace Model
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
-     * <p>Operating system that the game server binaries are built to run on. This
+     * <p>The operating system that the game server binaries are built to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
      * operating system. If an operating system is not specified when creating a build,
@@ -257,7 +259,7 @@ namespace Model
     inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
     /**
-     * <p>Operating system that the game server binaries are built to run on. This
+     * <p>The operating system that the game server binaries are built to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
      * operating system. If an operating system is not specified when creating a build,
@@ -267,7 +269,7 @@ namespace Model
     inline CreateBuildRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
 
     /**
-     * <p>Operating system that the game server binaries are built to run on. This
+     * <p>The operating system that the game server binaries are built to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
      * operating system. If an operating system is not specified when creating a build,
@@ -275,6 +277,111 @@ namespace Model
      * changed later.</p>
      */
     inline CreateBuildRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of labels to assign to the new build resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of labels to assign to the new build resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of labels to assign to the new build resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of labels to assign to the new build resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of labels to assign to the new build resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline CreateBuildRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of labels to assign to the new build resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline CreateBuildRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of labels to assign to the new build resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline CreateBuildRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of labels to assign to the new build resource. Tags are
+     * developer-defined key-value pairs. Tagging AWS resources are useful for resource
+     * management, access management and cost allocation. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging
+     * AWS Resources</a> in the <i>AWS General Reference</i>. Once the resource is
+     * created, you can use <a>TagResource</a>, <a>UntagResource</a>, and
+     * <a>ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit
+     * may be lower than stated. See the AWS General Reference for actual tagging
+     * limits.</p>
+     */
+    inline CreateBuildRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -289,6 +396,9 @@ namespace Model
 
     OperatingSystem m_operatingSystem;
     bool m_operatingSystemHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

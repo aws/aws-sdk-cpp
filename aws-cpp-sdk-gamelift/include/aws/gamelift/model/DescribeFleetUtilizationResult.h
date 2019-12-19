@@ -51,43 +51,43 @@ namespace Model
 
 
     /**
-     * <p>Collection of objects containing utilization information for each requested
+     * <p>A collection of objects containing utilization information for each requested
      * fleet ID.</p>
      */
     inline const Aws::Vector<FleetUtilization>& GetFleetUtilization() const{ return m_fleetUtilization; }
 
     /**
-     * <p>Collection of objects containing utilization information for each requested
+     * <p>A collection of objects containing utilization information for each requested
      * fleet ID.</p>
      */
     inline void SetFleetUtilization(const Aws::Vector<FleetUtilization>& value) { m_fleetUtilization = value; }
 
     /**
-     * <p>Collection of objects containing utilization information for each requested
+     * <p>A collection of objects containing utilization information for each requested
      * fleet ID.</p>
      */
     inline void SetFleetUtilization(Aws::Vector<FleetUtilization>&& value) { m_fleetUtilization = std::move(value); }
 
     /**
-     * <p>Collection of objects containing utilization information for each requested
+     * <p>A collection of objects containing utilization information for each requested
      * fleet ID.</p>
      */
     inline DescribeFleetUtilizationResult& WithFleetUtilization(const Aws::Vector<FleetUtilization>& value) { SetFleetUtilization(value); return *this;}
 
     /**
-     * <p>Collection of objects containing utilization information for each requested
+     * <p>A collection of objects containing utilization information for each requested
      * fleet ID.</p>
      */
     inline DescribeFleetUtilizationResult& WithFleetUtilization(Aws::Vector<FleetUtilization>&& value) { SetFleetUtilization(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of objects containing utilization information for each requested
+     * <p>A collection of objects containing utilization information for each requested
      * fleet ID.</p>
      */
     inline DescribeFleetUtilizationResult& AddFleetUtilization(const FleetUtilization& value) { m_fleetUtilization.push_back(value); return *this; }
 
     /**
-     * <p>Collection of objects containing utilization information for each requested
+     * <p>A collection of objects containing utilization information for each requested
      * fleet ID.</p>
      */
     inline DescribeFleetUtilizationResult& AddFleetUtilization(FleetUtilization&& value) { m_fleetUtilization.push_back(std::move(value)); return *this; }

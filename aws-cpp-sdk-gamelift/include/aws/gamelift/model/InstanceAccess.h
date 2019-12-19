@@ -51,124 +51,124 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for a fleet containing the instance being accessed.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for a fleet containing the instance being accessed.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for a fleet containing the instance being accessed.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for a fleet containing the instance being accessed.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for a fleet containing the instance being accessed.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for a fleet containing the instance being accessed.</p>
      */
     inline InstanceAccess& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for a fleet containing the instance being accessed.</p>
      */
     inline InstanceAccess& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet containing the instance being accessed.</p>
+     * <p>A unique identifier for a fleet containing the instance being accessed.</p>
      */
     inline InstanceAccess& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
-     * <p>Unique identifier for an instance being accessed.</p>
+     * <p>A unique identifier for an instance being accessed.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>Unique identifier for an instance being accessed.</p>
+     * <p>A unique identifier for an instance being accessed.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for an instance being accessed.</p>
+     * <p>A unique identifier for an instance being accessed.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>Unique identifier for an instance being accessed.</p>
+     * <p>A unique identifier for an instance being accessed.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>Unique identifier for an instance being accessed.</p>
+     * <p>A unique identifier for an instance being accessed.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>Unique identifier for an instance being accessed.</p>
+     * <p>A unique identifier for an instance being accessed.</p>
      */
     inline InstanceAccess& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>Unique identifier for an instance being accessed.</p>
+     * <p>A unique identifier for an instance being accessed.</p>
      */
     inline InstanceAccess& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for an instance being accessed.</p>
+     * <p>A unique identifier for an instance being accessed.</p>
      */
     inline InstanceAccess& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline InstanceAccess& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline InstanceAccess& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline InstanceAccess& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 

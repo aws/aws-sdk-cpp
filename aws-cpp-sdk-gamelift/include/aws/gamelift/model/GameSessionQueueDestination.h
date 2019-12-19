@@ -35,8 +35,8 @@ namespace Model
 
   /**
    * <p>Fleet designated in a game session queue. Requests for new game sessions in
-   * the queue are fulfilled by starting a new game session on any destination
-   * configured for a queue. </p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p>
+   * the queue are fulfilled by starting a new game session on any destination that
+   * is configured for a queue. </p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p>
    * </li> <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
    * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
@@ -53,58 +53,58 @@ namespace Model
 
 
     /**
-     * <p>Amazon Resource Name (ARN) assigned to fleet or fleet alias. ARNs, which
-     * include a fleet ID or alias ID and a region name, provide a unique identifier
-     * across all regions. </p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias.
+     * ARNs, which include a fleet ID or alias ID and a Region name, provide a unique
+     * identifier across all Regions. </p>
      */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
 
     /**
-     * <p>Amazon Resource Name (ARN) assigned to fleet or fleet alias. ARNs, which
-     * include a fleet ID or alias ID and a region name, provide a unique identifier
-     * across all regions. </p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias.
+     * ARNs, which include a fleet ID or alias ID and a Region name, provide a unique
+     * identifier across all Regions. </p>
      */
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
 
     /**
-     * <p>Amazon Resource Name (ARN) assigned to fleet or fleet alias. ARNs, which
-     * include a fleet ID or alias ID and a region name, provide a unique identifier
-     * across all regions. </p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias.
+     * ARNs, which include a fleet ID or alias ID and a Region name, provide a unique
+     * identifier across all Regions. </p>
      */
     inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
 
     /**
-     * <p>Amazon Resource Name (ARN) assigned to fleet or fleet alias. ARNs, which
-     * include a fleet ID or alias ID and a region name, provide a unique identifier
-     * across all regions. </p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias.
+     * ARNs, which include a fleet ID or alias ID and a Region name, provide a unique
+     * identifier across all Regions. </p>
      */
     inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) assigned to fleet or fleet alias. ARNs, which
-     * include a fleet ID or alias ID and a region name, provide a unique identifier
-     * across all regions. </p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias.
+     * ARNs, which include a fleet ID or alias ID and a Region name, provide a unique
+     * identifier across all Regions. </p>
      */
     inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
 
     /**
-     * <p>Amazon Resource Name (ARN) assigned to fleet or fleet alias. ARNs, which
-     * include a fleet ID or alias ID and a region name, provide a unique identifier
-     * across all regions. </p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias.
+     * ARNs, which include a fleet ID or alias ID and a Region name, provide a unique
+     * identifier across all Regions. </p>
      */
     inline GameSessionQueueDestination& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) assigned to fleet or fleet alias. ARNs, which
-     * include a fleet ID or alias ID and a region name, provide a unique identifier
-     * across all regions. </p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias.
+     * ARNs, which include a fleet ID or alias ID and a Region name, provide a unique
+     * identifier across all Regions. </p>
      */
     inline GameSessionQueueDestination& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
 
     /**
-     * <p>Amazon Resource Name (ARN) assigned to fleet or fleet alias. ARNs, which
-     * include a fleet ID or alias ID and a region name, provide a unique identifier
-     * across all regions. </p>
+     * <p>The Amazon Resource Name (ARN) that is assigned to fleet or fleet alias.
+     * ARNs, which include a fleet ID or alias ID and a Region name, provide a unique
+     * identifier across all Regions. </p>
      */
     inline GameSessionQueueDestination& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
 

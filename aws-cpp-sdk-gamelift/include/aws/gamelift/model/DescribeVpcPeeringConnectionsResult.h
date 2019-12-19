@@ -50,37 +50,37 @@ namespace Model
 
 
     /**
-     * <p>Collection of VPC peering connection records that match the request.</p>
+     * <p>A collection of VPC peering connection records that match the request.</p>
      */
     inline const Aws::Vector<VpcPeeringConnection>& GetVpcPeeringConnections() const{ return m_vpcPeeringConnections; }
 
     /**
-     * <p>Collection of VPC peering connection records that match the request.</p>
+     * <p>A collection of VPC peering connection records that match the request.</p>
      */
     inline void SetVpcPeeringConnections(const Aws::Vector<VpcPeeringConnection>& value) { m_vpcPeeringConnections = value; }
 
     /**
-     * <p>Collection of VPC peering connection records that match the request.</p>
+     * <p>A collection of VPC peering connection records that match the request.</p>
      */
     inline void SetVpcPeeringConnections(Aws::Vector<VpcPeeringConnection>&& value) { m_vpcPeeringConnections = std::move(value); }
 
     /**
-     * <p>Collection of VPC peering connection records that match the request.</p>
+     * <p>A collection of VPC peering connection records that match the request.</p>
      */
     inline DescribeVpcPeeringConnectionsResult& WithVpcPeeringConnections(const Aws::Vector<VpcPeeringConnection>& value) { SetVpcPeeringConnections(value); return *this;}
 
     /**
-     * <p>Collection of VPC peering connection records that match the request.</p>
+     * <p>A collection of VPC peering connection records that match the request.</p>
      */
     inline DescribeVpcPeeringConnectionsResult& WithVpcPeeringConnections(Aws::Vector<VpcPeeringConnection>&& value) { SetVpcPeeringConnections(std::move(value)); return *this;}
 
     /**
-     * <p>Collection of VPC peering connection records that match the request.</p>
+     * <p>A collection of VPC peering connection records that match the request.</p>
      */
     inline DescribeVpcPeeringConnectionsResult& AddVpcPeeringConnections(const VpcPeeringConnection& value) { m_vpcPeeringConnections.push_back(value); return *this; }
 
     /**
-     * <p>Collection of VPC peering connection records that match the request.</p>
+     * <p>A collection of VPC peering connection records that match the request.</p>
      */
     inline DescribeVpcPeeringConnectionsResult& AddVpcPeeringConnections(VpcPeeringConnection&& value) { m_vpcPeeringConnections.push_back(std::move(value)); return *this; }
 

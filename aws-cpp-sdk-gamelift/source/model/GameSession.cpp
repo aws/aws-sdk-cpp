@@ -32,6 +32,7 @@ GameSession::GameSession() :
     m_gameSessionIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_terminationTimeHasBeenSet(false),
     m_currentPlayerSessionCount(0),
@@ -59,6 +60,7 @@ GameSession::GameSession(JsonView jsonValue) :
     m_gameSessionIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_fleetIdHasBeenSet(false),
+    m_fleetArnHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_terminationTimeHasBeenSet(false),
     m_currentPlayerSessionCount(0),
@@ -104,6 +106,13 @@ GameSession& GameSession::operator =(JsonView jsonValue)
     m_fleetId = jsonValue.GetString("FleetId");
 
     m_fleetIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("FleetArn"))
+  {
+    m_fleetArn = jsonValue.GetString("FleetArn");
+
+    m_fleetArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreationTime"))
@@ -229,6 +238,12 @@ JsonValue GameSession::Jsonize() const
   if(m_fleetIdHasBeenSet)
   {
    payload.WithString("FleetId", m_fleetId);
+
+  }
+
+  if(m_fleetArnHasBeenSet)
+  {
+   payload.WithString("FleetArn", m_fleetArn);
 
   }
 

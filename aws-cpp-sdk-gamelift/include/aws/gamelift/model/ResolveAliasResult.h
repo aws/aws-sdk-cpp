@@ -49,43 +49,95 @@ namespace Model
 
 
     /**
-     * <p>Fleet identifier that is associated with the requested alias.</p>
+     * <p>The fleet identifier that the alias is pointing to.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Fleet identifier that is associated with the requested alias.</p>
+     * <p>The fleet identifier that the alias is pointing to.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
 
     /**
-     * <p>Fleet identifier that is associated with the requested alias.</p>
+     * <p>The fleet identifier that the alias is pointing to.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
 
     /**
-     * <p>Fleet identifier that is associated with the requested alias.</p>
+     * <p>The fleet identifier that the alias is pointing to.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
 
     /**
-     * <p>Fleet identifier that is associated with the requested alias.</p>
+     * <p>The fleet identifier that the alias is pointing to.</p>
      */
     inline ResolveAliasResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Fleet identifier that is associated with the requested alias.</p>
+     * <p>The fleet identifier that the alias is pointing to.</p>
      */
     inline ResolveAliasResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Fleet identifier that is associated with the requested alias.</p>
+     * <p>The fleet identifier that the alias is pointing to.</p>
      */
     inline ResolveAliasResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift fleet resource that this alias points to. </p>
+     */
+    inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift fleet resource that this alias points to. </p>
+     */
+    inline void SetFleetArn(const Aws::String& value) { m_fleetArn = value; }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift fleet resource that this alias points to. </p>
+     */
+    inline void SetFleetArn(Aws::String&& value) { m_fleetArn = std::move(value); }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift fleet resource that this alias points to. </p>
+     */
+    inline void SetFleetArn(const char* value) { m_fleetArn.assign(value); }
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift fleet resource that this alias points to. </p>
+     */
+    inline ResolveAliasResult& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift fleet resource that this alias points to. </p>
+     */
+    inline ResolveAliasResult& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
+
+    /**
+     * <p> The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>)
+     * associated with the GameLift fleet resource that this alias points to. </p>
+     */
+    inline ResolveAliasResult& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
 
   private:
 
     Aws::String m_fleetId;
+
+    Aws::String m_fleetArn;
   };
 
 } // namespace Model

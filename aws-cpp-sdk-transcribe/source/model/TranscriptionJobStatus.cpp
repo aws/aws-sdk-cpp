@@ -30,6 +30,7 @@ namespace Aws
       namespace TranscriptionJobStatusMapper
       {
 
+        static const int QUEUED_HASH = HashingUtils::HashString("QUEUED");
         static const int IN_PROGRESS_HASH = HashingUtils::HashString("IN_PROGRESS");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
@@ -38,7 +39,11 @@ namespace Aws
         TranscriptionJobStatus GetTranscriptionJobStatusForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == IN_PROGRESS_HASH)
+          if (hashCode == QUEUED_HASH)
+          {
+            return TranscriptionJobStatus::QUEUED;
+          }
+          else if (hashCode == IN_PROGRESS_HASH)
           {
             return TranscriptionJobStatus::IN_PROGRESS;
           }
@@ -64,6 +69,8 @@ namespace Aws
         {
           switch(enumValue)
           {
+          case TranscriptionJobStatus::QUEUED:
+            return "QUEUED";
           case TranscriptionJobStatus::IN_PROGRESS:
             return "IN_PROGRESS";
           case TranscriptionJobStatus::FAILED:

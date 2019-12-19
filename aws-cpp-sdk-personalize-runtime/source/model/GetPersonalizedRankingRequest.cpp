@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 GetPersonalizedRankingRequest::GetPersonalizedRankingRequest() : 
     m_campaignArnHasBeenSet(false),
     m_inputListHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_contextHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,17 @@ Aws::String GetPersonalizedRankingRequest::SerializePayload() const
   if(m_userIdHasBeenSet)
   {
    payload.WithString("userId", m_userId);
+
+  }
+
+  if(m_contextHasBeenSet)
+  {
+   JsonValue contextJsonMap;
+   for(auto& contextItem : m_context)
+   {
+     contextJsonMap.WithString(contextItem.first, contextItem.second);
+   }
+   payload.WithObject("context", std::move(contextJsonMap));
 
   }
 

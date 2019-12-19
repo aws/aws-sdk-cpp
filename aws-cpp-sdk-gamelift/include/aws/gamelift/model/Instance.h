@@ -54,150 +54,238 @@ namespace Model
 
 
     /**
-     * <p>Unique identifier for a fleet that the instance is in.</p>
+     * <p>A unique identifier for a fleet that the instance is in.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
 
     /**
-     * <p>Unique identifier for a fleet that the instance is in.</p>
+     * <p>A unique identifier for a fleet that the instance is in.</p>
      */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for a fleet that the instance is in.</p>
+     * <p>A unique identifier for a fleet that the instance is in.</p>
      */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
-     * <p>Unique identifier for a fleet that the instance is in.</p>
+     * <p>A unique identifier for a fleet that the instance is in.</p>
      */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
 
     /**
-     * <p>Unique identifier for a fleet that the instance is in.</p>
+     * <p>A unique identifier for a fleet that the instance is in.</p>
      */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
 
     /**
-     * <p>Unique identifier for a fleet that the instance is in.</p>
+     * <p>A unique identifier for a fleet that the instance is in.</p>
      */
     inline Instance& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet that the instance is in.</p>
+     * <p>A unique identifier for a fleet that the instance is in.</p>
      */
     inline Instance& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for a fleet that the instance is in.</p>
+     * <p>A unique identifier for a fleet that the instance is in.</p>
      */
     inline Instance& WithFleetId(const char* value) { SetFleetId(value); return *this;}
 
 
     /**
-     * <p>Unique identifier for an instance.</p>
+     * <p>A unique identifier for an instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
 
     /**
-     * <p>Unique identifier for an instance.</p>
+     * <p>A unique identifier for an instance.</p>
      */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
-     * <p>Unique identifier for an instance.</p>
+     * <p>A unique identifier for an instance.</p>
      */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
-     * <p>Unique identifier for an instance.</p>
+     * <p>A unique identifier for an instance.</p>
      */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
 
     /**
-     * <p>Unique identifier for an instance.</p>
+     * <p>A unique identifier for an instance.</p>
      */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
 
     /**
-     * <p>Unique identifier for an instance.</p>
+     * <p>A unique identifier for an instance.</p>
      */
     inline Instance& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
 
     /**
-     * <p>Unique identifier for an instance.</p>
+     * <p>A unique identifier for an instance.</p>
      */
     inline Instance& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>Unique identifier for an instance.</p>
+     * <p>A unique identifier for an instance.</p>
      */
     inline Instance& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
 
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline Instance& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline Instance& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>IP address assigned to the instance.</p>
+     * <p>IP address that is assigned to the instance.</p>
      */
     inline Instance& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
 
-    
+    /**
+     * <p>DNS identifier assigned to the instance that is running the game session.
+     * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
+     * <code>&lt;unique identifier&gt;.&lt;region
+     * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
+     * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
+     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
+     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     * the IP address.</p>
+     */
     inline const Aws::String& GetDnsName() const{ return m_dnsName; }
 
-    
+    /**
+     * <p>DNS identifier assigned to the instance that is running the game session.
+     * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
+     * <code>&lt;unique identifier&gt;.&lt;region
+     * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
+     * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
+     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
+     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     * the IP address.</p>
+     */
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
 
-    
+    /**
+     * <p>DNS identifier assigned to the instance that is running the game session.
+     * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
+     * <code>&lt;unique identifier&gt;.&lt;region
+     * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
+     * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
+     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
+     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     * the IP address.</p>
+     */
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
 
-    
+    /**
+     * <p>DNS identifier assigned to the instance that is running the game session.
+     * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
+     * <code>&lt;unique identifier&gt;.&lt;region
+     * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
+     * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
+     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
+     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     * the IP address.</p>
+     */
     inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
 
-    
+    /**
+     * <p>DNS identifier assigned to the instance that is running the game session.
+     * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
+     * <code>&lt;unique identifier&gt;.&lt;region
+     * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
+     * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
+     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
+     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     * the IP address.</p>
+     */
     inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
 
-    
+    /**
+     * <p>DNS identifier assigned to the instance that is running the game session.
+     * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
+     * <code>&lt;unique identifier&gt;.&lt;region
+     * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
+     * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
+     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
+     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     * the IP address.</p>
+     */
     inline Instance& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
 
-    
+    /**
+     * <p>DNS identifier assigned to the instance that is running the game session.
+     * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
+     * <code>&lt;unique identifier&gt;.&lt;region
+     * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
+     * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
+     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
+     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     * the IP address.</p>
+     */
     inline Instance& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>DNS identifier assigned to the instance that is running the game session.
+     * Values have the following format:</p> <ul> <li> <p>TLS-enabled fleets:
+     * <code>&lt;unique identifier&gt;.&lt;region
+     * identifier&gt;.amazongamelift.com</code>.</p> </li> <li> <p>Non-TLS-enabled
+     * fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>. (See
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
+     * EC2 Instance IP Addressing</a>.)</p> </li> </ul> <p>When connecting to a game
+     * session that is running on a TLS-enabled fleet, you must use the DNS name, not
+     * the IP address.</p>
+     */
     inline Instance& WithDnsName(const char* value) { SetDnsName(value); return *this;}
 
 
