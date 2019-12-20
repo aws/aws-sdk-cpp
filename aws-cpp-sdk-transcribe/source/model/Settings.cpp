@@ -39,7 +39,10 @@ Settings::Settings() :
     m_showAlternatives(false),
     m_showAlternativesHasBeenSet(false),
     m_maxAlternatives(0),
-    m_maxAlternativesHasBeenSet(false)
+    m_maxAlternativesHasBeenSet(false),
+    m_vocabularyFilterNameHasBeenSet(false),
+    m_vocabularyFilterMethod(VocabularyFilterMethod::NOT_SET),
+    m_vocabularyFilterMethodHasBeenSet(false)
 {
 }
 
@@ -54,7 +57,10 @@ Settings::Settings(JsonView jsonValue) :
     m_showAlternatives(false),
     m_showAlternativesHasBeenSet(false),
     m_maxAlternatives(0),
-    m_maxAlternativesHasBeenSet(false)
+    m_maxAlternativesHasBeenSet(false),
+    m_vocabularyFilterNameHasBeenSet(false),
+    m_vocabularyFilterMethod(VocabularyFilterMethod::NOT_SET),
+    m_vocabularyFilterMethodHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +109,20 @@ Settings& Settings::operator =(JsonView jsonValue)
     m_maxAlternativesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VocabularyFilterName"))
+  {
+    m_vocabularyFilterName = jsonValue.GetString("VocabularyFilterName");
+
+    m_vocabularyFilterNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("VocabularyFilterMethod"))
+  {
+    m_vocabularyFilterMethod = VocabularyFilterMethodMapper::GetVocabularyFilterMethodForName(jsonValue.GetString("VocabularyFilterMethod"));
+
+    m_vocabularyFilterMethodHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -144,6 +164,17 @@ JsonValue Settings::Jsonize() const
   {
    payload.WithInteger("MaxAlternatives", m_maxAlternatives);
 
+  }
+
+  if(m_vocabularyFilterNameHasBeenSet)
+  {
+   payload.WithString("VocabularyFilterName", m_vocabularyFilterName);
+
+  }
+
+  if(m_vocabularyFilterMethodHasBeenSet)
+  {
+   payload.WithString("VocabularyFilterMethod", VocabularyFilterMethodMapper::GetNameForVocabularyFilterMethod(m_vocabularyFilterMethod));
   }
 
   return payload;

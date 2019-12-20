@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>An object containing information about your device instance.</p>
+     * <p>An object that contains information about your device instance.</p>
      */
     inline const DeviceInstance& GetDeviceInstance() const{ return m_deviceInstance; }
 
     /**
-     * <p>An object containing information about your device instance.</p>
+     * <p>An object that contains information about your device instance.</p>
      */
     inline void SetDeviceInstance(const DeviceInstance& value) { m_deviceInstance = value; }
 
     /**
-     * <p>An object containing information about your device instance.</p>
+     * <p>An object that contains information about your device instance.</p>
      */
     inline void SetDeviceInstance(DeviceInstance&& value) { m_deviceInstance = std::move(value); }
 
     /**
-     * <p>An object containing information about your device instance.</p>
+     * <p>An object that contains information about your device instance.</p>
      */
     inline GetDeviceInstanceResult& WithDeviceInstance(const DeviceInstance& value) { SetDeviceInstance(value); return *this;}
 
     /**
-     * <p>An object containing information about your device instance.</p>
+     * <p>An object that contains information about your device instance.</p>
      */
     inline GetDeviceInstanceResult& WithDeviceInstance(DeviceInstance&& value) { SetDeviceInstance(std::move(value)); return *this;}
 

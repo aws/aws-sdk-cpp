@@ -37,7 +37,8 @@ TemplateResponse::TemplateResponse() :
     m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false)
+    m_templateTypeHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ TemplateResponse::TemplateResponse(JsonView jsonValue) :
     m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false)
+    m_templateTypeHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -116,6 +118,13 @@ TemplateResponse& TemplateResponse::operator =(JsonView jsonValue)
     m_templateTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetString("Version");
+
+    m_versionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -173,6 +182,12 @@ JsonValue TemplateResponse::Jsonize() const
   if(m_templateTypeHasBeenSet)
   {
    payload.WithString("TemplateType", TemplateTypeMapper::GetNameForTemplateType(m_templateType));
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("Version", m_version);
+
   }
 
   return payload;

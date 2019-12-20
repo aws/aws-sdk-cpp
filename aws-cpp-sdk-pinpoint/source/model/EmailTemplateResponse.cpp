@@ -40,7 +40,8 @@ EmailTemplateResponse::EmailTemplateResponse() :
     m_templateNameHasBeenSet(false),
     m_templateType(TemplateType::NOT_SET),
     m_templateTypeHasBeenSet(false),
-    m_textPartHasBeenSet(false)
+    m_textPartHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ EmailTemplateResponse::EmailTemplateResponse(JsonView jsonValue) :
     m_templateNameHasBeenSet(false),
     m_templateType(TemplateType::NOT_SET),
     m_templateTypeHasBeenSet(false),
-    m_textPartHasBeenSet(false)
+    m_textPartHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -143,6 +145,13 @@ EmailTemplateResponse& EmailTemplateResponse::operator =(JsonView jsonValue)
     m_textPartHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetString("Version");
+
+    m_versionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -217,6 +226,12 @@ JsonValue EmailTemplateResponse::Jsonize() const
   if(m_textPartHasBeenSet)
   {
    payload.WithString("TextPart", m_textPart);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("Version", m_version);
 
   }
 

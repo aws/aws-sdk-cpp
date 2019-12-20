@@ -93,104 +93,110 @@ namespace Model
 
 
     /**
-     * <p>A string describing the offering.</p>
+     * <p>A string that describes the offering.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A string describing the offering.</p>
+     * <p>A string that describes the offering.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A string describing the offering.</p>
+     * <p>A string that describes the offering.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A string describing the offering.</p>
+     * <p>A string that describes the offering.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A string describing the offering.</p>
+     * <p>A string that describes the offering.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A string describing the offering.</p>
+     * <p>A string that describes the offering.</p>
      */
     inline Offering& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A string describing the offering.</p>
+     * <p>A string that describes the offering.</p>
      */
     inline Offering& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A string describing the offering.</p>
+     * <p>A string that describes the offering.</p>
      */
     inline Offering& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The type of offering (e.g., "RECURRING") for a device.</p>
+     * <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
      */
     inline const OfferingType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of offering (e.g., "RECURRING") for a device.</p>
+     * <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of offering (e.g., "RECURRING") for a device.</p>
+     * <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
      */
     inline void SetType(const OfferingType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of offering (e.g., "RECURRING") for a device.</p>
+     * <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
      */
     inline void SetType(OfferingType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of offering (e.g., "RECURRING") for a device.</p>
+     * <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
      */
     inline Offering& WithType(const OfferingType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of offering (e.g., "RECURRING") for a device.</p>
+     * <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
      */
     inline Offering& WithType(OfferingType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The platform of the device (e.g., ANDROID or IOS).</p>
+     * <p>The platform of the device (for example, <code>ANDROID</code> or
+     * <code>IOS</code>).</p>
      */
     inline const DevicePlatform& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The platform of the device (e.g., ANDROID or IOS).</p>
+     * <p>The platform of the device (for example, <code>ANDROID</code> or
+     * <code>IOS</code>).</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The platform of the device (e.g., ANDROID or IOS).</p>
+     * <p>The platform of the device (for example, <code>ANDROID</code> or
+     * <code>IOS</code>).</p>
      */
     inline void SetPlatform(const DevicePlatform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The platform of the device (e.g., ANDROID or IOS).</p>
+     * <p>The platform of the device (for example, <code>ANDROID</code> or
+     * <code>IOS</code>).</p>
      */
     inline void SetPlatform(DevicePlatform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The platform of the device (e.g., ANDROID or IOS).</p>
+     * <p>The platform of the device (for example, <code>ANDROID</code> or
+     * <code>IOS</code>).</p>
      */
     inline Offering& WithPlatform(const DevicePlatform& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The platform of the device (e.g., ANDROID or IOS).</p>
+     * <p>The platform of the device (for example, <code>ANDROID</code> or
+     * <code>IOS</code>).</p>
      */
     inline Offering& WithPlatform(DevicePlatform&& value) { SetPlatform(std::move(value)); return *this;}
 

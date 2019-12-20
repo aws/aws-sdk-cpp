@@ -43,27 +43,32 @@ namespace Model
 
 
     /**
-     * <p>An object containing information about your VPC endpoint configuration.</p>
+     * <p>An object that contains information about your VPC endpoint
+     * configuration.</p>
      */
     inline const VPCEConfiguration& GetVpceConfiguration() const{ return m_vpceConfiguration; }
 
     /**
-     * <p>An object containing information about your VPC endpoint configuration.</p>
+     * <p>An object that contains information about your VPC endpoint
+     * configuration.</p>
      */
     inline void SetVpceConfiguration(const VPCEConfiguration& value) { m_vpceConfiguration = value; }
 
     /**
-     * <p>An object containing information about your VPC endpoint configuration.</p>
+     * <p>An object that contains information about your VPC endpoint
+     * configuration.</p>
      */
     inline void SetVpceConfiguration(VPCEConfiguration&& value) { m_vpceConfiguration = std::move(value); }
 
     /**
-     * <p>An object containing information about your VPC endpoint configuration.</p>
+     * <p>An object that contains information about your VPC endpoint
+     * configuration.</p>
      */
     inline CreateVPCEConfigurationResult& WithVpceConfiguration(const VPCEConfiguration& value) { SetVpceConfiguration(value); return *this;}
 
     /**
-     * <p>An object containing information about your VPC endpoint configuration.</p>
+     * <p>An object that contains information about your VPC endpoint
+     * configuration.</p>
      */
     inline CreateVPCEConfigurationResult& WithVpceConfiguration(VPCEConfiguration&& value) { SetVpceConfiguration(std::move(value)); return *this;}
 

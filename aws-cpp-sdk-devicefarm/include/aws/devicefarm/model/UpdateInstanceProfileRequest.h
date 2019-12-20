@@ -194,73 +194,73 @@ namespace Model
 
 
     /**
-     * <p>An array of strings specifying the list of app packages that should not be
-     * cleaned up from the device after a test run is over.</p> <p>The list of packages
-     * is only considered if you set <code>packageCleanup</code> to
+     * <p>An array of strings that specifies the list of app packages that should not
+     * be cleaned up from the device after a test run is over.</p> <p>The list of
+     * packages is only considered if you set <code>packageCleanup</code> to
      * <code>true</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludeAppPackagesFromCleanup() const{ return m_excludeAppPackagesFromCleanup; }
 
     /**
-     * <p>An array of strings specifying the list of app packages that should not be
-     * cleaned up from the device after a test run is over.</p> <p>The list of packages
-     * is only considered if you set <code>packageCleanup</code> to
+     * <p>An array of strings that specifies the list of app packages that should not
+     * be cleaned up from the device after a test run is over.</p> <p>The list of
+     * packages is only considered if you set <code>packageCleanup</code> to
      * <code>true</code>.</p>
      */
     inline bool ExcludeAppPackagesFromCleanupHasBeenSet() const { return m_excludeAppPackagesFromCleanupHasBeenSet; }
 
     /**
-     * <p>An array of strings specifying the list of app packages that should not be
-     * cleaned up from the device after a test run is over.</p> <p>The list of packages
-     * is only considered if you set <code>packageCleanup</code> to
+     * <p>An array of strings that specifies the list of app packages that should not
+     * be cleaned up from the device after a test run is over.</p> <p>The list of
+     * packages is only considered if you set <code>packageCleanup</code> to
      * <code>true</code>.</p>
      */
     inline void SetExcludeAppPackagesFromCleanup(const Aws::Vector<Aws::String>& value) { m_excludeAppPackagesFromCleanupHasBeenSet = true; m_excludeAppPackagesFromCleanup = value; }
 
     /**
-     * <p>An array of strings specifying the list of app packages that should not be
-     * cleaned up from the device after a test run is over.</p> <p>The list of packages
-     * is only considered if you set <code>packageCleanup</code> to
+     * <p>An array of strings that specifies the list of app packages that should not
+     * be cleaned up from the device after a test run is over.</p> <p>The list of
+     * packages is only considered if you set <code>packageCleanup</code> to
      * <code>true</code>.</p>
      */
     inline void SetExcludeAppPackagesFromCleanup(Aws::Vector<Aws::String>&& value) { m_excludeAppPackagesFromCleanupHasBeenSet = true; m_excludeAppPackagesFromCleanup = std::move(value); }
 
     /**
-     * <p>An array of strings specifying the list of app packages that should not be
-     * cleaned up from the device after a test run is over.</p> <p>The list of packages
-     * is only considered if you set <code>packageCleanup</code> to
+     * <p>An array of strings that specifies the list of app packages that should not
+     * be cleaned up from the device after a test run is over.</p> <p>The list of
+     * packages is only considered if you set <code>packageCleanup</code> to
      * <code>true</code>.</p>
      */
     inline UpdateInstanceProfileRequest& WithExcludeAppPackagesFromCleanup(const Aws::Vector<Aws::String>& value) { SetExcludeAppPackagesFromCleanup(value); return *this;}
 
     /**
-     * <p>An array of strings specifying the list of app packages that should not be
-     * cleaned up from the device after a test run is over.</p> <p>The list of packages
-     * is only considered if you set <code>packageCleanup</code> to
+     * <p>An array of strings that specifies the list of app packages that should not
+     * be cleaned up from the device after a test run is over.</p> <p>The list of
+     * packages is only considered if you set <code>packageCleanup</code> to
      * <code>true</code>.</p>
      */
     inline UpdateInstanceProfileRequest& WithExcludeAppPackagesFromCleanup(Aws::Vector<Aws::String>&& value) { SetExcludeAppPackagesFromCleanup(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings specifying the list of app packages that should not be
-     * cleaned up from the device after a test run is over.</p> <p>The list of packages
-     * is only considered if you set <code>packageCleanup</code> to
+     * <p>An array of strings that specifies the list of app packages that should not
+     * be cleaned up from the device after a test run is over.</p> <p>The list of
+     * packages is only considered if you set <code>packageCleanup</code> to
      * <code>true</code>.</p>
      */
     inline UpdateInstanceProfileRequest& AddExcludeAppPackagesFromCleanup(const Aws::String& value) { m_excludeAppPackagesFromCleanupHasBeenSet = true; m_excludeAppPackagesFromCleanup.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings specifying the list of app packages that should not be
-     * cleaned up from the device after a test run is over.</p> <p>The list of packages
-     * is only considered if you set <code>packageCleanup</code> to
+     * <p>An array of strings that specifies the list of app packages that should not
+     * be cleaned up from the device after a test run is over.</p> <p>The list of
+     * packages is only considered if you set <code>packageCleanup</code> to
      * <code>true</code>.</p>
      */
     inline UpdateInstanceProfileRequest& AddExcludeAppPackagesFromCleanup(Aws::String&& value) { m_excludeAppPackagesFromCleanupHasBeenSet = true; m_excludeAppPackagesFromCleanup.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings specifying the list of app packages that should not be
-     * cleaned up from the device after a test run is over.</p> <p>The list of packages
-     * is only considered if you set <code>packageCleanup</code> to
+     * <p>An array of strings that specifies the list of app packages that should not
+     * be cleaned up from the device after a test run is over.</p> <p>The list of
+     * packages is only considered if you set <code>packageCleanup</code> to
      * <code>true</code>.</p>
      */
     inline UpdateInstanceProfileRequest& AddExcludeAppPackagesFromCleanup(const char* value) { m_excludeAppPackagesFromCleanupHasBeenSet = true; m_excludeAppPackagesFromCleanup.push_back(value); return *this; }

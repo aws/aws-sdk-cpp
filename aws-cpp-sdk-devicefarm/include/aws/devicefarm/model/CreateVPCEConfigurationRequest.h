@@ -94,49 +94,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline const Aws::String& GetVpceServiceName() const{ return m_vpceServiceName; }
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline bool VpceServiceNameHasBeenSet() const { return m_vpceServiceNameHasBeenSet; }
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline void SetVpceServiceName(const Aws::String& value) { m_vpceServiceNameHasBeenSet = true; m_vpceServiceName = value; }
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline void SetVpceServiceName(Aws::String&& value) { m_vpceServiceNameHasBeenSet = true; m_vpceServiceName = std::move(value); }
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline void SetVpceServiceName(const char* value) { m_vpceServiceNameHasBeenSet = true; m_vpceServiceName.assign(value); }
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline CreateVPCEConfigurationRequest& WithVpceServiceName(const Aws::String& value) { SetVpceServiceName(value); return *this;}
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline CreateVPCEConfigurationRequest& WithVpceServiceName(Aws::String&& value) { SetVpceServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline CreateVPCEConfigurationRequest& WithVpceServiceName(const char* value) { SetVpceServiceName(value); return *this;}
@@ -192,49 +192,49 @@ namespace Model
 
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline const Aws::String& GetVpceConfigurationDescription() const{ return m_vpceConfigurationDescription; }
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline bool VpceConfigurationDescriptionHasBeenSet() const { return m_vpceConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline void SetVpceConfigurationDescription(const Aws::String& value) { m_vpceConfigurationDescriptionHasBeenSet = true; m_vpceConfigurationDescription = value; }
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline void SetVpceConfigurationDescription(Aws::String&& value) { m_vpceConfigurationDescriptionHasBeenSet = true; m_vpceConfigurationDescription = std::move(value); }
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline void SetVpceConfigurationDescription(const char* value) { m_vpceConfigurationDescriptionHasBeenSet = true; m_vpceConfigurationDescription.assign(value); }
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline CreateVPCEConfigurationRequest& WithVpceConfigurationDescription(const Aws::String& value) { SetVpceConfigurationDescription(value); return *this;}
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline CreateVPCEConfigurationRequest& WithVpceConfigurationDescription(Aws::String&& value) { SetVpceConfigurationDescription(std::move(value)); return *this;}
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline CreateVPCEConfigurationRequest& WithVpceConfigurationDescription(const char* value) { SetVpceConfigurationDescription(value); return *this;}

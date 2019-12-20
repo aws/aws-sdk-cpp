@@ -132,98 +132,98 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition isn't
+     * <p>The unique identifier for the activity to perform if the conditions aren't
      * met.</p>
      */
     inline const Aws::String& GetFalseActivity() const{ return m_falseActivity; }
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition isn't
+     * <p>The unique identifier for the activity to perform if the conditions aren't
      * met.</p>
      */
     inline bool FalseActivityHasBeenSet() const { return m_falseActivityHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition isn't
+     * <p>The unique identifier for the activity to perform if the conditions aren't
      * met.</p>
      */
     inline void SetFalseActivity(const Aws::String& value) { m_falseActivityHasBeenSet = true; m_falseActivity = value; }
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition isn't
+     * <p>The unique identifier for the activity to perform if the conditions aren't
      * met.</p>
      */
     inline void SetFalseActivity(Aws::String&& value) { m_falseActivityHasBeenSet = true; m_falseActivity = std::move(value); }
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition isn't
+     * <p>The unique identifier for the activity to perform if the conditions aren't
      * met.</p>
      */
     inline void SetFalseActivity(const char* value) { m_falseActivityHasBeenSet = true; m_falseActivity.assign(value); }
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition isn't
+     * <p>The unique identifier for the activity to perform if the conditions aren't
      * met.</p>
      */
     inline ConditionalSplitActivity& WithFalseActivity(const Aws::String& value) { SetFalseActivity(value); return *this;}
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition isn't
+     * <p>The unique identifier for the activity to perform if the conditions aren't
      * met.</p>
      */
     inline ConditionalSplitActivity& WithFalseActivity(Aws::String&& value) { SetFalseActivity(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition isn't
+     * <p>The unique identifier for the activity to perform if the conditions aren't
      * met.</p>
      */
     inline ConditionalSplitActivity& WithFalseActivity(const char* value) { SetFalseActivity(value); return *this;}
 
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition is
+     * <p>The unique identifier for the activity to perform if the conditions are
      * met.</p>
      */
     inline const Aws::String& GetTrueActivity() const{ return m_trueActivity; }
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition is
+     * <p>The unique identifier for the activity to perform if the conditions are
      * met.</p>
      */
     inline bool TrueActivityHasBeenSet() const { return m_trueActivityHasBeenSet; }
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition is
+     * <p>The unique identifier for the activity to perform if the conditions are
      * met.</p>
      */
     inline void SetTrueActivity(const Aws::String& value) { m_trueActivityHasBeenSet = true; m_trueActivity = value; }
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition is
+     * <p>The unique identifier for the activity to perform if the conditions are
      * met.</p>
      */
     inline void SetTrueActivity(Aws::String&& value) { m_trueActivityHasBeenSet = true; m_trueActivity = std::move(value); }
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition is
+     * <p>The unique identifier for the activity to perform if the conditions are
      * met.</p>
      */
     inline void SetTrueActivity(const char* value) { m_trueActivityHasBeenSet = true; m_trueActivity.assign(value); }
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition is
+     * <p>The unique identifier for the activity to perform if the conditions are
      * met.</p>
      */
     inline ConditionalSplitActivity& WithTrueActivity(const Aws::String& value) { SetTrueActivity(value); return *this;}
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition is
+     * <p>The unique identifier for the activity to perform if the conditions are
      * met.</p>
      */
     inline ConditionalSplitActivity& WithTrueActivity(Aws::String&& value) { SetTrueActivity(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier for the activity to perform if the condition is
+     * <p>The unique identifier for the activity to perform if the conditions are
      * met.</p>
      */
     inline ConditionalSplitActivity& WithTrueActivity(const char* value) { SetTrueActivity(value); return *this;}

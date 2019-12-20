@@ -43,27 +43,27 @@ namespace Model
 
 
     /**
-     * <p>An object containing information about your instance profile.</p>
+     * <p>An object that contains information about an instance profile.</p>
      */
     inline const InstanceProfile& GetInstanceProfile() const{ return m_instanceProfile; }
 
     /**
-     * <p>An object containing information about your instance profile.</p>
+     * <p>An object that contains information about an instance profile.</p>
      */
     inline void SetInstanceProfile(const InstanceProfile& value) { m_instanceProfile = value; }
 
     /**
-     * <p>An object containing information about your instance profile.</p>
+     * <p>An object that contains information about an instance profile.</p>
      */
     inline void SetInstanceProfile(InstanceProfile&& value) { m_instanceProfile = std::move(value); }
 
     /**
-     * <p>An object containing information about your instance profile.</p>
+     * <p>An object that contains information about an instance profile.</p>
      */
     inline GetInstanceProfileResult& WithInstanceProfile(const InstanceProfile& value) { SetInstanceProfile(value); return *this;}
 
     /**
-     * <p>An object containing information about your instance profile.</p>
+     * <p>An object that contains information about an instance profile.</p>
      */
     inline GetInstanceProfileResult& WithInstanceProfile(InstanceProfile&& value) { SetInstanceProfile(std::move(value)); return *this;}
 

@@ -142,48 +142,48 @@ namespace Model
     /**
      * <p>The last date and time to retrieve data for, as part of an inclusive date
      * range that filters the query results. This value should be in extended ISO 8601
-     * format, for example: 2019-07-19T00:00:00Z for July 19, 2019 and
-     * 2019-07-19T20:00:00Z for 8:00 PM July 19, 2019.</p>
+     * format and use Coordinated Universal Time (UTC), for example:
+     * 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>The last date and time to retrieve data for, as part of an inclusive date
      * range that filters the query results. This value should be in extended ISO 8601
-     * format, for example: 2019-07-19T00:00:00Z for July 19, 2019 and
-     * 2019-07-19T20:00:00Z for 8:00 PM July 19, 2019.</p>
+     * format and use Coordinated Universal Time (UTC), for example:
+     * 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The last date and time to retrieve data for, as part of an inclusive date
      * range that filters the query results. This value should be in extended ISO 8601
-     * format, for example: 2019-07-19T00:00:00Z for July 19, 2019 and
-     * 2019-07-19T20:00:00Z for 8:00 PM July 19, 2019.</p>
+     * format and use Coordinated Universal Time (UTC), for example:
+     * 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The last date and time to retrieve data for, as part of an inclusive date
      * range that filters the query results. This value should be in extended ISO 8601
-     * format, for example: 2019-07-19T00:00:00Z for July 19, 2019 and
-     * 2019-07-19T20:00:00Z for 8:00 PM July 19, 2019.</p>
+     * format and use Coordinated Universal Time (UTC), for example:
+     * 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The last date and time to retrieve data for, as part of an inclusive date
      * range that filters the query results. This value should be in extended ISO 8601
-     * format, for example: 2019-07-19T00:00:00Z for July 19, 2019 and
-     * 2019-07-19T20:00:00Z for 8:00 PM July 19, 2019.</p>
+     * format and use Coordinated Universal Time (UTC), for example:
+     * 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
      */
     inline GetCampaignDateRangeKpiRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>The last date and time to retrieve data for, as part of an inclusive date
      * range that filters the query results. This value should be in extended ISO 8601
-     * format, for example: 2019-07-19T00:00:00Z for July 19, 2019 and
-     * 2019-07-19T20:00:00Z for 8:00 PM July 19, 2019.</p>
+     * format and use Coordinated Universal Time (UTC), for example:
+     * 2019-07-26T20:00:00Z for 8:00 PM UTC July 26, 2019.</p>
      */
     inline GetCampaignDateRangeKpiRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -394,48 +394,54 @@ namespace Model
     /**
      * <p>The first date and time to retrieve data for, as part of an inclusive date
      * range that filters the query results. This value should be in extended ISO 8601
-     * format, for example: 2019-07-15T00:00:00Z for July 15, 2019 and
-     * 2019-07-15T16:00:00Z for 4:00 PM July 15, 2019.</p>
+     * format and use Coordinated Universal Time (UTC), for example:
+     * 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be
+     * fewer than 90 days from the current day.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The first date and time to retrieve data for, as part of an inclusive date
      * range that filters the query results. This value should be in extended ISO 8601
-     * format, for example: 2019-07-15T00:00:00Z for July 15, 2019 and
-     * 2019-07-15T16:00:00Z for 4:00 PM July 15, 2019.</p>
+     * format and use Coordinated Universal Time (UTC), for example:
+     * 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be
+     * fewer than 90 days from the current day.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The first date and time to retrieve data for, as part of an inclusive date
      * range that filters the query results. This value should be in extended ISO 8601
-     * format, for example: 2019-07-15T00:00:00Z for July 15, 2019 and
-     * 2019-07-15T16:00:00Z for 4:00 PM July 15, 2019.</p>
+     * format and use Coordinated Universal Time (UTC), for example:
+     * 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be
+     * fewer than 90 days from the current day.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The first date and time to retrieve data for, as part of an inclusive date
      * range that filters the query results. This value should be in extended ISO 8601
-     * format, for example: 2019-07-15T00:00:00Z for July 15, 2019 and
-     * 2019-07-15T16:00:00Z for 4:00 PM July 15, 2019.</p>
+     * format and use Coordinated Universal Time (UTC), for example:
+     * 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be
+     * fewer than 90 days from the current day.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
      * <p>The first date and time to retrieve data for, as part of an inclusive date
      * range that filters the query results. This value should be in extended ISO 8601
-     * format, for example: 2019-07-15T00:00:00Z for July 15, 2019 and
-     * 2019-07-15T16:00:00Z for 4:00 PM July 15, 2019.</p>
+     * format and use Coordinated Universal Time (UTC), for example:
+     * 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be
+     * fewer than 90 days from the current day.</p>
      */
     inline GetCampaignDateRangeKpiRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
      * <p>The first date and time to retrieve data for, as part of an inclusive date
      * range that filters the query results. This value should be in extended ISO 8601
-     * format, for example: 2019-07-15T00:00:00Z for July 15, 2019 and
-     * 2019-07-15T16:00:00Z for 4:00 PM July 15, 2019.</p>
+     * format and use Coordinated Universal Time (UTC), for example:
+     * 2019-07-19T20:00:00Z for 8:00 PM UTC July 19, 2019. This value should also be
+     * fewer than 90 days from the current day.</p>
      */
     inline GetCampaignDateRangeKpiRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 

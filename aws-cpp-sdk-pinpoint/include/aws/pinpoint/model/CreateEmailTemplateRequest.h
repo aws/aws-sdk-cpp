@@ -43,40 +43,22 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /**
-     * <p>Creates a new message template that you can use in messages that are sent
-     * through the email channel.</p>
-     */
+    
     inline const EmailTemplateRequest& GetEmailTemplateRequest() const{ return m_emailTemplateRequest; }
 
-    /**
-     * <p>Creates a new message template that you can use in messages that are sent
-     * through the email channel.</p>
-     */
+    
     inline bool EmailTemplateRequestHasBeenSet() const { return m_emailTemplateRequestHasBeenSet; }
 
-    /**
-     * <p>Creates a new message template that you can use in messages that are sent
-     * through the email channel.</p>
-     */
+    
     inline void SetEmailTemplateRequest(const EmailTemplateRequest& value) { m_emailTemplateRequestHasBeenSet = true; m_emailTemplateRequest = value; }
 
-    /**
-     * <p>Creates a new message template that you can use in messages that are sent
-     * through the email channel.</p>
-     */
+    
     inline void SetEmailTemplateRequest(EmailTemplateRequest&& value) { m_emailTemplateRequestHasBeenSet = true; m_emailTemplateRequest = std::move(value); }
 
-    /**
-     * <p>Creates a new message template that you can use in messages that are sent
-     * through the email channel.</p>
-     */
+    
     inline CreateEmailTemplateRequest& WithEmailTemplateRequest(const EmailTemplateRequest& value) { SetEmailTemplateRequest(value); return *this;}
 
-    /**
-     * <p>Creates a new message template that you can use in messages that are sent
-     * through the email channel.</p>
-     */
+    
     inline CreateEmailTemplateRequest& WithEmailTemplateRequest(EmailTemplateRequest&& value) { SetEmailTemplateRequest(std::move(value)); return *this;}
 
 

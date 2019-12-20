@@ -224,6 +224,52 @@ namespace Model
      */
     inline DescribePlacementGroupsRequest& AddGroupNames(const char* value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
 
+
+    /**
+     * <p>The IDs of the placement groups.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetGroupIds() const{ return m_groupIds; }
+
+    /**
+     * <p>The IDs of the placement groups.</p>
+     */
+    inline bool GroupIdsHasBeenSet() const { return m_groupIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the placement groups.</p>
+     */
+    inline void SetGroupIds(const Aws::Vector<Aws::String>& value) { m_groupIdsHasBeenSet = true; m_groupIds = value; }
+
+    /**
+     * <p>The IDs of the placement groups.</p>
+     */
+    inline void SetGroupIds(Aws::Vector<Aws::String>&& value) { m_groupIdsHasBeenSet = true; m_groupIds = std::move(value); }
+
+    /**
+     * <p>The IDs of the placement groups.</p>
+     */
+    inline DescribePlacementGroupsRequest& WithGroupIds(const Aws::Vector<Aws::String>& value) { SetGroupIds(value); return *this;}
+
+    /**
+     * <p>The IDs of the placement groups.</p>
+     */
+    inline DescribePlacementGroupsRequest& WithGroupIds(Aws::Vector<Aws::String>&& value) { SetGroupIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of the placement groups.</p>
+     */
+    inline DescribePlacementGroupsRequest& AddGroupIds(const Aws::String& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
+
+    /**
+     * <p>The IDs of the placement groups.</p>
+     */
+    inline DescribePlacementGroupsRequest& AddGroupIds(Aws::String&& value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IDs of the placement groups.</p>
+     */
+    inline DescribePlacementGroupsRequest& AddGroupIds(const char* value) { m_groupIdsHasBeenSet = true; m_groupIds.push_back(value); return *this; }
+
   private:
 
     Aws::Vector<Filter> m_filters;
@@ -234,6 +280,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_groupNames;
     bool m_groupNamesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_groupIds;
+    bool m_groupIdsHasBeenSet;
   };
 
 } // namespace Model

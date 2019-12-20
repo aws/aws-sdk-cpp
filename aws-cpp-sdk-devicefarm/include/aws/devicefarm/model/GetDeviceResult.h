@@ -48,27 +48,27 @@ namespace Model
 
 
     /**
-     * <p>An object containing information about the requested device.</p>
+     * <p>An object that contains information about the requested device.</p>
      */
     inline const Device& GetDevice() const{ return m_device; }
 
     /**
-     * <p>An object containing information about the requested device.</p>
+     * <p>An object that contains information about the requested device.</p>
      */
     inline void SetDevice(const Device& value) { m_device = value; }
 
     /**
-     * <p>An object containing information about the requested device.</p>
+     * <p>An object that contains information about the requested device.</p>
      */
     inline void SetDevice(Device&& value) { m_device = std::move(value); }
 
     /**
-     * <p>An object containing information about the requested device.</p>
+     * <p>An object that contains information about the requested device.</p>
      */
     inline GetDeviceResult& WithDevice(const Device& value) { SetDevice(value); return *this;}
 
     /**
-     * <p>An object containing information about the requested device.</p>
+     * <p>An object that contains information about the requested device.</p>
      */
     inline GetDeviceResult& WithDevice(Device&& value) { SetDevice(std::move(value)); return *this;}
 

@@ -191,32 +191,38 @@ namespace Model
 
 
     /**
-     * <p>The new VPC attachment options.</p>
+     * <p>The new VPC attachment options.</p> <note> <p>You cannot modify the IPv6
+     * options.</p> </note>
      */
     inline const ModifyTransitGatewayVpcAttachmentRequestOptions& GetOptions() const{ return m_options; }
 
     /**
-     * <p>The new VPC attachment options.</p>
+     * <p>The new VPC attachment options.</p> <note> <p>You cannot modify the IPv6
+     * options.</p> </note>
      */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
     /**
-     * <p>The new VPC attachment options.</p>
+     * <p>The new VPC attachment options.</p> <note> <p>You cannot modify the IPv6
+     * options.</p> </note>
      */
     inline void SetOptions(const ModifyTransitGatewayVpcAttachmentRequestOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
-     * <p>The new VPC attachment options.</p>
+     * <p>The new VPC attachment options.</p> <note> <p>You cannot modify the IPv6
+     * options.</p> </note>
      */
     inline void SetOptions(ModifyTransitGatewayVpcAttachmentRequestOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
 
     /**
-     * <p>The new VPC attachment options.</p>
+     * <p>The new VPC attachment options.</p> <note> <p>You cannot modify the IPv6
+     * options.</p> </note>
      */
     inline ModifyTransitGatewayVpcAttachmentRequest& WithOptions(const ModifyTransitGatewayVpcAttachmentRequestOptions& value) { SetOptions(value); return *this;}
 
     /**
-     * <p>The new VPC attachment options.</p>
+     * <p>The new VPC attachment options.</p> <note> <p>You cannot modify the IPv6
+     * options.</p> </note>
      */
     inline ModifyTransitGatewayVpcAttachmentRequest& WithOptions(ModifyTransitGatewayVpcAttachmentRequestOptions&& value) { SetOptions(std::move(value)); return *this;}
 

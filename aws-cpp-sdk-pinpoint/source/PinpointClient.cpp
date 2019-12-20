@@ -105,6 +105,7 @@
 #include <aws/pinpoint/model/GetVoiceTemplateRequest.h>
 #include <aws/pinpoint/model/ListJourneysRequest.h>
 #include <aws/pinpoint/model/ListTagsForResourceRequest.h>
+#include <aws/pinpoint/model/ListTemplateVersionsRequest.h>
 #include <aws/pinpoint/model/ListTemplatesRequest.h>
 #include <aws/pinpoint/model/PhoneNumberValidateRequest.h>
 #include <aws/pinpoint/model/PutEventStreamRequest.h>
@@ -133,6 +134,7 @@
 #include <aws/pinpoint/model/UpdateSegmentRequest.h>
 #include <aws/pinpoint/model/UpdateSmsChannelRequest.h>
 #include <aws/pinpoint/model/UpdateSmsTemplateRequest.h>
+#include <aws/pinpoint/model/UpdateTemplateActiveVersionRequest.h>
 #include <aws/pinpoint/model/UpdateVoiceChannelRequest.h>
 #include <aws/pinpoint/model/UpdateVoiceTemplateRequest.h>
 
@@ -3527,6 +3529,55 @@ void PinpointClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceReq
   handler(this, request, ListTagsForResource(request), context);
 }
 
+ListTemplateVersionsOutcome PinpointClient::ListTemplateVersions(const ListTemplateVersionsRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTemplateVersions", "Required field: TemplateName, is not set");
+    return ListTemplateVersionsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  if (!request.TemplateTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTemplateVersions", "Required field: TemplateType, is not set");
+    return ListTemplateVersionsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/";
+  ss << request.GetTemplateType();
+  ss << "/versions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTemplateVersionsOutcome(ListTemplateVersionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTemplateVersionsOutcome(outcome.GetError());
+  }
+}
+
+ListTemplateVersionsOutcomeCallable PinpointClient::ListTemplateVersionsCallable(const ListTemplateVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTemplateVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTemplateVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::ListTemplateVersionsAsync(const ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTemplateVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::ListTemplateVersionsAsyncHelper(const ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTemplateVersions(request), context);
+}
+
 ListTemplatesOutcome PinpointClient::ListTemplates(const ListTemplatesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -4727,6 +4778,55 @@ void PinpointClient::UpdateSmsTemplateAsync(const UpdateSmsTemplateRequest& requ
 void PinpointClient::UpdateSmsTemplateAsyncHelper(const UpdateSmsTemplateRequest& request, const UpdateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateSmsTemplate(request), context);
+}
+
+UpdateTemplateActiveVersionOutcome PinpointClient::UpdateTemplateActiveVersion(const UpdateTemplateActiveVersionRequest& request) const
+{
+  if (!request.TemplateNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateTemplateActiveVersion", "Required field: TemplateName, is not set");
+    return UpdateTemplateActiveVersionOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateName]", false));
+  }
+  if (!request.TemplateTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateTemplateActiveVersion", "Required field: TemplateType, is not set");
+    return UpdateTemplateActiveVersionOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TemplateType]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/templates/";
+  ss << request.GetTemplateName();
+  ss << "/";
+  ss << request.GetTemplateType();
+  ss << "/active-version";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateTemplateActiveVersionOutcome(UpdateTemplateActiveVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateTemplateActiveVersionOutcome(outcome.GetError());
+  }
+}
+
+UpdateTemplateActiveVersionOutcomeCallable PinpointClient::UpdateTemplateActiveVersionCallable(const UpdateTemplateActiveVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateTemplateActiveVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateTemplateActiveVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UpdateTemplateActiveVersionAsync(const UpdateTemplateActiveVersionRequest& request, const UpdateTemplateActiveVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateTemplateActiveVersionAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UpdateTemplateActiveVersionAsyncHelper(const UpdateTemplateActiveVersionRequest& request, const UpdateTemplateActiveVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateTemplateActiveVersion(request), context);
 }
 
 UpdateVoiceChannelOutcome PinpointClient::UpdateVoiceChannel(const UpdateVoiceChannelRequest& request) const

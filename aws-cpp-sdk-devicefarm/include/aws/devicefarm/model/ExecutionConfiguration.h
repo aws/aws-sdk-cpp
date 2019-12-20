@@ -47,134 +47,134 @@ namespace Model
 
 
     /**
-     * <p>The number of minutes a test run will execute before it times out.</p>
+     * <p>The number of minutes a test run executes before it times out.</p>
      */
     inline int GetJobTimeoutMinutes() const{ return m_jobTimeoutMinutes; }
 
     /**
-     * <p>The number of minutes a test run will execute before it times out.</p>
+     * <p>The number of minutes a test run executes before it times out.</p>
      */
     inline bool JobTimeoutMinutesHasBeenSet() const { return m_jobTimeoutMinutesHasBeenSet; }
 
     /**
-     * <p>The number of minutes a test run will execute before it times out.</p>
+     * <p>The number of minutes a test run executes before it times out.</p>
      */
     inline void SetJobTimeoutMinutes(int value) { m_jobTimeoutMinutesHasBeenSet = true; m_jobTimeoutMinutes = value; }
 
     /**
-     * <p>The number of minutes a test run will execute before it times out.</p>
+     * <p>The number of minutes a test run executes before it times out.</p>
      */
     inline ExecutionConfiguration& WithJobTimeoutMinutes(int value) { SetJobTimeoutMinutes(value); return *this;}
 
 
     /**
-     * <p>True if account cleanup is enabled at the beginning of the test; otherwise,
+     * <p>True if account cleanup is enabled at the beginning of the test. Otherwise,
      * false.</p>
      */
     inline bool GetAccountsCleanup() const{ return m_accountsCleanup; }
 
     /**
-     * <p>True if account cleanup is enabled at the beginning of the test; otherwise,
+     * <p>True if account cleanup is enabled at the beginning of the test. Otherwise,
      * false.</p>
      */
     inline bool AccountsCleanupHasBeenSet() const { return m_accountsCleanupHasBeenSet; }
 
     /**
-     * <p>True if account cleanup is enabled at the beginning of the test; otherwise,
+     * <p>True if account cleanup is enabled at the beginning of the test. Otherwise,
      * false.</p>
      */
     inline void SetAccountsCleanup(bool value) { m_accountsCleanupHasBeenSet = true; m_accountsCleanup = value; }
 
     /**
-     * <p>True if account cleanup is enabled at the beginning of the test; otherwise,
+     * <p>True if account cleanup is enabled at the beginning of the test. Otherwise,
      * false.</p>
      */
     inline ExecutionConfiguration& WithAccountsCleanup(bool value) { SetAccountsCleanup(value); return *this;}
 
 
     /**
-     * <p>True if app package cleanup is enabled at the beginning of the test;
-     * otherwise, false.</p>
+     * <p>True if app package cleanup is enabled at the beginning of the test.
+     * Otherwise, false.</p>
      */
     inline bool GetAppPackagesCleanup() const{ return m_appPackagesCleanup; }
 
     /**
-     * <p>True if app package cleanup is enabled at the beginning of the test;
-     * otherwise, false.</p>
+     * <p>True if app package cleanup is enabled at the beginning of the test.
+     * Otherwise, false.</p>
      */
     inline bool AppPackagesCleanupHasBeenSet() const { return m_appPackagesCleanupHasBeenSet; }
 
     /**
-     * <p>True if app package cleanup is enabled at the beginning of the test;
-     * otherwise, false.</p>
+     * <p>True if app package cleanup is enabled at the beginning of the test.
+     * Otherwise, false.</p>
      */
     inline void SetAppPackagesCleanup(bool value) { m_appPackagesCleanupHasBeenSet = true; m_appPackagesCleanup = value; }
 
     /**
-     * <p>True if app package cleanup is enabled at the beginning of the test;
-     * otherwise, false.</p>
+     * <p>True if app package cleanup is enabled at the beginning of the test.
+     * Otherwise, false.</p>
      */
     inline ExecutionConfiguration& WithAppPackagesCleanup(bool value) { SetAppPackagesCleanup(value); return *this;}
 
 
     /**
-     * <p>Set to true to enable video capture; otherwise, set to false. The default is
+     * <p>Set to true to enable video capture. Otherwise, set to false. The default is
      * true.</p>
      */
     inline bool GetVideoCapture() const{ return m_videoCapture; }
 
     /**
-     * <p>Set to true to enable video capture; otherwise, set to false. The default is
+     * <p>Set to true to enable video capture. Otherwise, set to false. The default is
      * true.</p>
      */
     inline bool VideoCaptureHasBeenSet() const { return m_videoCaptureHasBeenSet; }
 
     /**
-     * <p>Set to true to enable video capture; otherwise, set to false. The default is
+     * <p>Set to true to enable video capture. Otherwise, set to false. The default is
      * true.</p>
      */
     inline void SetVideoCapture(bool value) { m_videoCaptureHasBeenSet = true; m_videoCapture = value; }
 
     /**
-     * <p>Set to true to enable video capture; otherwise, set to false. The default is
+     * <p>Set to true to enable video capture. Otherwise, set to false. The default is
      * true.</p>
      */
     inline ExecutionConfiguration& WithVideoCapture(bool value) { SetVideoCapture(value); return *this;}
 
 
     /**
-     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
-     * your app again. For public devices, Device Farm always signs your apps again and
-     * this parameter has no effect.</p> <p>For more information about how Device Farm
-     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
-     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
+     * your app again. For public devices, Device Farm always signs your apps
+     * again.</p> <p>For more information about how Device Farm re-signs your apps, see
+     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline bool GetSkipAppResign() const{ return m_skipAppResign; }
 
     /**
-     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
-     * your app again. For public devices, Device Farm always signs your apps again and
-     * this parameter has no effect.</p> <p>For more information about how Device Farm
-     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
-     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
+     * your app again. For public devices, Device Farm always signs your apps
+     * again.</p> <p>For more information about how Device Farm re-signs your apps, see
+     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline bool SkipAppResignHasBeenSet() const { return m_skipAppResignHasBeenSet; }
 
     /**
-     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
-     * your app again. For public devices, Device Farm always signs your apps again and
-     * this parameter has no effect.</p> <p>For more information about how Device Farm
-     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
-     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
+     * your app again. For public devices, Device Farm always signs your apps
+     * again.</p> <p>For more information about how Device Farm re-signs your apps, see
+     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline void SetSkipAppResign(bool value) { m_skipAppResignHasBeenSet = true; m_skipAppResign = value; }
 
     /**
-     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
-     * your app again. For public devices, Device Farm always signs your apps again and
-     * this parameter has no effect.</p> <p>For more information about how Device Farm
-     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
-     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
+     * your app again. For public devices, Device Farm always signs your apps
+     * again.</p> <p>For more information about how Device Farm re-signs your apps, see
+     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline ExecutionConfiguration& WithSkipAppResign(bool value) { SetSkipAppResign(value); return *this;}
 

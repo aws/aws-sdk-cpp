@@ -26,6 +26,8 @@
 #include <aws/devicefarm/model/CreateNetworkProfileResult.h>
 #include <aws/devicefarm/model/CreateProjectResult.h>
 #include <aws/devicefarm/model/CreateRemoteAccessSessionResult.h>
+#include <aws/devicefarm/model/CreateTestGridProjectResult.h>
+#include <aws/devicefarm/model/CreateTestGridUrlResult.h>
 #include <aws/devicefarm/model/CreateUploadResult.h>
 #include <aws/devicefarm/model/CreateVPCEConfigurationResult.h>
 #include <aws/devicefarm/model/DeleteDevicePoolResult.h>
@@ -34,6 +36,7 @@
 #include <aws/devicefarm/model/DeleteProjectResult.h>
 #include <aws/devicefarm/model/DeleteRemoteAccessSessionResult.h>
 #include <aws/devicefarm/model/DeleteRunResult.h>
+#include <aws/devicefarm/model/DeleteTestGridProjectResult.h>
 #include <aws/devicefarm/model/DeleteUploadResult.h>
 #include <aws/devicefarm/model/DeleteVPCEConfigurationResult.h>
 #include <aws/devicefarm/model/GetAccountSettingsResult.h>
@@ -50,6 +53,8 @@
 #include <aws/devicefarm/model/GetRunResult.h>
 #include <aws/devicefarm/model/GetSuiteResult.h>
 #include <aws/devicefarm/model/GetTestResult.h>
+#include <aws/devicefarm/model/GetTestGridProjectResult.h>
+#include <aws/devicefarm/model/GetTestGridSessionResult.h>
 #include <aws/devicefarm/model/GetUploadResult.h>
 #include <aws/devicefarm/model/GetVPCEConfigurationResult.h>
 #include <aws/devicefarm/model/InstallToRemoteAccessSessionResult.h>
@@ -69,6 +74,10 @@
 #include <aws/devicefarm/model/ListSamplesResult.h>
 #include <aws/devicefarm/model/ListSuitesResult.h>
 #include <aws/devicefarm/model/ListTagsForResourceResult.h>
+#include <aws/devicefarm/model/ListTestGridProjectsResult.h>
+#include <aws/devicefarm/model/ListTestGridSessionActionsResult.h>
+#include <aws/devicefarm/model/ListTestGridSessionArtifactsResult.h>
+#include <aws/devicefarm/model/ListTestGridSessionsResult.h>
 #include <aws/devicefarm/model/ListTestsResult.h>
 #include <aws/devicefarm/model/ListUniqueProblemsResult.h>
 #include <aws/devicefarm/model/ListUploadsResult.h>
@@ -86,6 +95,7 @@
 #include <aws/devicefarm/model/UpdateInstanceProfileResult.h>
 #include <aws/devicefarm/model/UpdateNetworkProfileResult.h>
 #include <aws/devicefarm/model/UpdateProjectResult.h>
+#include <aws/devicefarm/model/UpdateTestGridProjectResult.h>
 #include <aws/devicefarm/model/UpdateUploadResult.h>
 #include <aws/devicefarm/model/UpdateVPCEConfigurationResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -132,6 +142,8 @@ namespace Model
         class CreateNetworkProfileRequest;
         class CreateProjectRequest;
         class CreateRemoteAccessSessionRequest;
+        class CreateTestGridProjectRequest;
+        class CreateTestGridUrlRequest;
         class CreateUploadRequest;
         class CreateVPCEConfigurationRequest;
         class DeleteDevicePoolRequest;
@@ -140,6 +152,7 @@ namespace Model
         class DeleteProjectRequest;
         class DeleteRemoteAccessSessionRequest;
         class DeleteRunRequest;
+        class DeleteTestGridProjectRequest;
         class DeleteUploadRequest;
         class DeleteVPCEConfigurationRequest;
         class GetAccountSettingsRequest;
@@ -156,6 +169,8 @@ namespace Model
         class GetRunRequest;
         class GetSuiteRequest;
         class GetTestRequest;
+        class GetTestGridProjectRequest;
+        class GetTestGridSessionRequest;
         class GetUploadRequest;
         class GetVPCEConfigurationRequest;
         class InstallToRemoteAccessSessionRequest;
@@ -175,6 +190,10 @@ namespace Model
         class ListSamplesRequest;
         class ListSuitesRequest;
         class ListTagsForResourceRequest;
+        class ListTestGridProjectsRequest;
+        class ListTestGridSessionActionsRequest;
+        class ListTestGridSessionArtifactsRequest;
+        class ListTestGridSessionsRequest;
         class ListTestsRequest;
         class ListUniqueProblemsRequest;
         class ListUploadsRequest;
@@ -192,6 +211,7 @@ namespace Model
         class UpdateInstanceProfileRequest;
         class UpdateNetworkProfileRequest;
         class UpdateProjectRequest;
+        class UpdateTestGridProjectRequest;
         class UpdateUploadRequest;
         class UpdateVPCEConfigurationRequest;
 
@@ -200,6 +220,8 @@ namespace Model
         typedef Aws::Utils::Outcome<CreateNetworkProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateNetworkProfileOutcome;
         typedef Aws::Utils::Outcome<CreateProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateProjectOutcome;
         typedef Aws::Utils::Outcome<CreateRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateRemoteAccessSessionOutcome;
+        typedef Aws::Utils::Outcome<CreateTestGridProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateTestGridProjectOutcome;
+        typedef Aws::Utils::Outcome<CreateTestGridUrlResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateTestGridUrlOutcome;
         typedef Aws::Utils::Outcome<CreateUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateUploadOutcome;
         typedef Aws::Utils::Outcome<CreateVPCEConfigurationResult, Aws::Client::AWSError<DeviceFarmErrors>> CreateVPCEConfigurationOutcome;
         typedef Aws::Utils::Outcome<DeleteDevicePoolResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteDevicePoolOutcome;
@@ -208,6 +230,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeleteProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteProjectOutcome;
         typedef Aws::Utils::Outcome<DeleteRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteRemoteAccessSessionOutcome;
         typedef Aws::Utils::Outcome<DeleteRunResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteRunOutcome;
+        typedef Aws::Utils::Outcome<DeleteTestGridProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteTestGridProjectOutcome;
         typedef Aws::Utils::Outcome<DeleteUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteUploadOutcome;
         typedef Aws::Utils::Outcome<DeleteVPCEConfigurationResult, Aws::Client::AWSError<DeviceFarmErrors>> DeleteVPCEConfigurationOutcome;
         typedef Aws::Utils::Outcome<GetAccountSettingsResult, Aws::Client::AWSError<DeviceFarmErrors>> GetAccountSettingsOutcome;
@@ -224,6 +247,8 @@ namespace Model
         typedef Aws::Utils::Outcome<GetRunResult, Aws::Client::AWSError<DeviceFarmErrors>> GetRunOutcome;
         typedef Aws::Utils::Outcome<GetSuiteResult, Aws::Client::AWSError<DeviceFarmErrors>> GetSuiteOutcome;
         typedef Aws::Utils::Outcome<GetTestResult, Aws::Client::AWSError<DeviceFarmErrors>> GetTestOutcome;
+        typedef Aws::Utils::Outcome<GetTestGridProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> GetTestGridProjectOutcome;
+        typedef Aws::Utils::Outcome<GetTestGridSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> GetTestGridSessionOutcome;
         typedef Aws::Utils::Outcome<GetUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> GetUploadOutcome;
         typedef Aws::Utils::Outcome<GetVPCEConfigurationResult, Aws::Client::AWSError<DeviceFarmErrors>> GetVPCEConfigurationOutcome;
         typedef Aws::Utils::Outcome<InstallToRemoteAccessSessionResult, Aws::Client::AWSError<DeviceFarmErrors>> InstallToRemoteAccessSessionOutcome;
@@ -243,6 +268,10 @@ namespace Model
         typedef Aws::Utils::Outcome<ListSamplesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListSamplesOutcome;
         typedef Aws::Utils::Outcome<ListSuitesResult, Aws::Client::AWSError<DeviceFarmErrors>> ListSuitesOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTestGridProjectsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTestGridProjectsOutcome;
+        typedef Aws::Utils::Outcome<ListTestGridSessionActionsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTestGridSessionActionsOutcome;
+        typedef Aws::Utils::Outcome<ListTestGridSessionArtifactsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTestGridSessionArtifactsOutcome;
+        typedef Aws::Utils::Outcome<ListTestGridSessionsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTestGridSessionsOutcome;
         typedef Aws::Utils::Outcome<ListTestsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListTestsOutcome;
         typedef Aws::Utils::Outcome<ListUniqueProblemsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListUniqueProblemsOutcome;
         typedef Aws::Utils::Outcome<ListUploadsResult, Aws::Client::AWSError<DeviceFarmErrors>> ListUploadsOutcome;
@@ -260,6 +289,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateInstanceProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateInstanceProfileOutcome;
         typedef Aws::Utils::Outcome<UpdateNetworkProfileResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateNetworkProfileOutcome;
         typedef Aws::Utils::Outcome<UpdateProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateProjectOutcome;
+        typedef Aws::Utils::Outcome<UpdateTestGridProjectResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateTestGridProjectOutcome;
         typedef Aws::Utils::Outcome<UpdateUploadResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateUploadOutcome;
         typedef Aws::Utils::Outcome<UpdateVPCEConfigurationResult, Aws::Client::AWSError<DeviceFarmErrors>> UpdateVPCEConfigurationOutcome;
 
@@ -268,6 +298,8 @@ namespace Model
         typedef std::future<CreateNetworkProfileOutcome> CreateNetworkProfileOutcomeCallable;
         typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
         typedef std::future<CreateRemoteAccessSessionOutcome> CreateRemoteAccessSessionOutcomeCallable;
+        typedef std::future<CreateTestGridProjectOutcome> CreateTestGridProjectOutcomeCallable;
+        typedef std::future<CreateTestGridUrlOutcome> CreateTestGridUrlOutcomeCallable;
         typedef std::future<CreateUploadOutcome> CreateUploadOutcomeCallable;
         typedef std::future<CreateVPCEConfigurationOutcome> CreateVPCEConfigurationOutcomeCallable;
         typedef std::future<DeleteDevicePoolOutcome> DeleteDevicePoolOutcomeCallable;
@@ -276,6 +308,7 @@ namespace Model
         typedef std::future<DeleteProjectOutcome> DeleteProjectOutcomeCallable;
         typedef std::future<DeleteRemoteAccessSessionOutcome> DeleteRemoteAccessSessionOutcomeCallable;
         typedef std::future<DeleteRunOutcome> DeleteRunOutcomeCallable;
+        typedef std::future<DeleteTestGridProjectOutcome> DeleteTestGridProjectOutcomeCallable;
         typedef std::future<DeleteUploadOutcome> DeleteUploadOutcomeCallable;
         typedef std::future<DeleteVPCEConfigurationOutcome> DeleteVPCEConfigurationOutcomeCallable;
         typedef std::future<GetAccountSettingsOutcome> GetAccountSettingsOutcomeCallable;
@@ -292,6 +325,8 @@ namespace Model
         typedef std::future<GetRunOutcome> GetRunOutcomeCallable;
         typedef std::future<GetSuiteOutcome> GetSuiteOutcomeCallable;
         typedef std::future<GetTestOutcome> GetTestOutcomeCallable;
+        typedef std::future<GetTestGridProjectOutcome> GetTestGridProjectOutcomeCallable;
+        typedef std::future<GetTestGridSessionOutcome> GetTestGridSessionOutcomeCallable;
         typedef std::future<GetUploadOutcome> GetUploadOutcomeCallable;
         typedef std::future<GetVPCEConfigurationOutcome> GetVPCEConfigurationOutcomeCallable;
         typedef std::future<InstallToRemoteAccessSessionOutcome> InstallToRemoteAccessSessionOutcomeCallable;
@@ -311,6 +346,10 @@ namespace Model
         typedef std::future<ListSamplesOutcome> ListSamplesOutcomeCallable;
         typedef std::future<ListSuitesOutcome> ListSuitesOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<ListTestGridProjectsOutcome> ListTestGridProjectsOutcomeCallable;
+        typedef std::future<ListTestGridSessionActionsOutcome> ListTestGridSessionActionsOutcomeCallable;
+        typedef std::future<ListTestGridSessionArtifactsOutcome> ListTestGridSessionArtifactsOutcomeCallable;
+        typedef std::future<ListTestGridSessionsOutcome> ListTestGridSessionsOutcomeCallable;
         typedef std::future<ListTestsOutcome> ListTestsOutcomeCallable;
         typedef std::future<ListUniqueProblemsOutcome> ListUniqueProblemsOutcomeCallable;
         typedef std::future<ListUploadsOutcome> ListUploadsOutcomeCallable;
@@ -328,6 +367,7 @@ namespace Model
         typedef std::future<UpdateInstanceProfileOutcome> UpdateInstanceProfileOutcomeCallable;
         typedef std::future<UpdateNetworkProfileOutcome> UpdateNetworkProfileOutcomeCallable;
         typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
+        typedef std::future<UpdateTestGridProjectOutcome> UpdateTestGridProjectOutcomeCallable;
         typedef std::future<UpdateUploadOutcome> UpdateUploadOutcomeCallable;
         typedef std::future<UpdateVPCEConfigurationOutcome> UpdateVPCEConfigurationOutcomeCallable;
 } // namespace Model
@@ -339,6 +379,8 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::CreateNetworkProfileRequest&, const Model::CreateNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNetworkProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::CreateRemoteAccessSessionRequest&, const Model::CreateRemoteAccessSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRemoteAccessSessionResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::CreateTestGridProjectRequest&, const Model::CreateTestGridProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTestGridProjectResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::CreateTestGridUrlRequest&, const Model::CreateTestGridUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTestGridUrlResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::CreateUploadRequest&, const Model::CreateUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateUploadResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::CreateVPCEConfigurationRequest&, const Model::CreateVPCEConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVPCEConfigurationResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteDevicePoolRequest&, const Model::DeleteDevicePoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDevicePoolResponseReceivedHandler;
@@ -347,6 +389,7 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteProjectRequest&, const Model::DeleteProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProjectResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteRemoteAccessSessionRequest&, const Model::DeleteRemoteAccessSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRemoteAccessSessionResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteRunRequest&, const Model::DeleteRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRunResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::DeleteTestGridProjectRequest&, const Model::DeleteTestGridProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTestGridProjectResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteUploadRequest&, const Model::DeleteUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUploadResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::DeleteVPCEConfigurationRequest&, const Model::DeleteVPCEConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVPCEConfigurationResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetAccountSettingsRequest&, const Model::GetAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAccountSettingsResponseReceivedHandler;
@@ -363,6 +406,8 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::GetRunRequest&, const Model::GetRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRunResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetSuiteRequest&, const Model::GetSuiteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSuiteResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetTestRequest&, const Model::GetTestOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTestResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::GetTestGridProjectRequest&, const Model::GetTestGridProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTestGridProjectResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::GetTestGridSessionRequest&, const Model::GetTestGridSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTestGridSessionResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetUploadRequest&, const Model::GetUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUploadResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::GetVPCEConfigurationRequest&, const Model::GetVPCEConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVPCEConfigurationResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::InstallToRemoteAccessSessionRequest&, const Model::InstallToRemoteAccessSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InstallToRemoteAccessSessionResponseReceivedHandler;
@@ -382,6 +427,10 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::ListSamplesRequest&, const Model::ListSamplesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSamplesResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListSuitesRequest&, const Model::ListSuitesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSuitesResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::ListTestGridProjectsRequest&, const Model::ListTestGridProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTestGridProjectsResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::ListTestGridSessionActionsRequest&, const Model::ListTestGridSessionActionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTestGridSessionActionsResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::ListTestGridSessionArtifactsRequest&, const Model::ListTestGridSessionArtifactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTestGridSessionArtifactsResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::ListTestGridSessionsRequest&, const Model::ListTestGridSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTestGridSessionsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListTestsRequest&, const Model::ListTestsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTestsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListUniqueProblemsRequest&, const Model::ListUniqueProblemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUniqueProblemsResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::ListUploadsRequest&, const Model::ListUploadsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUploadsResponseReceivedHandler;
@@ -399,13 +448,23 @@ namespace Model
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateInstanceProfileRequest&, const Model::UpdateInstanceProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInstanceProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateNetworkProfileRequest&, const Model::UpdateNetworkProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNetworkProfileResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateProjectRequest&, const Model::UpdateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProjectResponseReceivedHandler;
+    typedef std::function<void(const DeviceFarmClient*, const Model::UpdateTestGridProjectRequest&, const Model::UpdateTestGridProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTestGridProjectResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateUploadRequest&, const Model::UpdateUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUploadResponseReceivedHandler;
     typedef std::function<void(const DeviceFarmClient*, const Model::UpdateVPCEConfigurationRequest&, const Model::UpdateVPCEConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVPCEConfigurationResponseReceivedHandler;
 
   /**
-   * <p>AWS Device Farm is a service that enables mobile app developers to test
-   * Android, iOS, and Fire OS apps on physical phones, tablets, and other devices in
-   * the cloud.</p>
+   * <p>Welcome to the AWS Device Farm API documentation, which contains APIs
+   * for:</p> <ul> <li> <p>Testing on desktop browsers</p> <p> Device Farm makes it
+   * possible for you to test your web applications on desktop browsers using
+   * Selenium. The APIs for desktop browser testing contain <code>TestGrid</code> in
+   * their names. For more information, see <a
+   * href="https://docs.aws.amazon.com/devicefarm/latest/testgrid/">Testing Web
+   * Applications on Selenium with Device Farm</a>.</p> </li> <li> <p>Testing on real
+   * mobile devices</p> <p>Device Farm makes it possible for you to test apps on
+   * physical phones, tablets, and other devices in the cloud. For more information,
+   * see the <a
+   * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/">Device Farm
+   * Developer Guide</a>.</p> </li> </ul>
    */
   class AWS_DEVICEFARM_API DeviceFarmClient : public Aws::Client::AWSJsonClient
   {
@@ -515,14 +574,14 @@ namespace Model
         virtual void CreateNetworkProfileAsync(const Model::CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a new project.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateProjectOutcome CreateProject(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Creates a new project.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">AWS
          * API Reference</a></p>
          *
@@ -531,7 +590,7 @@ namespace Model
         virtual Model::CreateProjectOutcomeCallable CreateProjectCallable(const Model::CreateProjectRequest& request) const;
 
         /**
-         * <p>Creates a new project.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a project.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateProject">AWS
          * API Reference</a></p>
          *
@@ -563,6 +622,62 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateRemoteAccessSessionAsync(const Model::CreateRemoteAccessSessionRequest& request, const CreateRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a Selenium testing project. Projects are used to track
+         * <a>TestGridSession</a> instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTestGridProjectOutcome CreateTestGridProject(const Model::CreateTestGridProjectRequest& request) const;
+
+        /**
+         * <p>Creates a Selenium testing project. Projects are used to track
+         * <a>TestGridSession</a> instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridProject">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTestGridProjectOutcomeCallable CreateTestGridProjectCallable(const Model::CreateTestGridProjectRequest& request) const;
+
+        /**
+         * <p>Creates a Selenium testing project. Projects are used to track
+         * <a>TestGridSession</a> instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridProject">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTestGridProjectAsync(const Model::CreateTestGridProjectRequest& request, const CreateTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a signed, short-term URL that can be passed to a Selenium
+         * <code>RemoteWebDriver</code> constructor.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridUrl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTestGridUrlOutcome CreateTestGridUrl(const Model::CreateTestGridUrlRequest& request) const;
+
+        /**
+         * <p>Creates a signed, short-term URL that can be passed to a Selenium
+         * <code>RemoteWebDriver</code> constructor.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridUrl">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTestGridUrlOutcomeCallable CreateTestGridUrlCallable(const Model::CreateTestGridUrlRequest& request) const;
+
+        /**
+         * <p>Creates a signed, short-term URL that can be passed to a Selenium
+         * <code>RemoteWebDriver</code> constructor.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateTestGridUrl">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTestGridUrlAsync(const Model::CreateTestGridUrlRequest& request, const CreateTestGridUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Uploads an app or test scripts.</p><p><h3>See Also:</h3>   <a
@@ -699,18 +814,16 @@ namespace Model
         virtual void DeleteNetworkProfileAsync(const Model::DeleteNetworkProfileRequest& request, const DeleteNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p>
-         * <b>Note</b> Deleting this resource does not stop an in-progress
-         * run.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p> Deleting
+         * this resource does not stop an in-progress run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteProjectOutcome DeleteProject(const Model::DeleteProjectRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p>
-         * <b>Note</b> Deleting this resource does not stop an in-progress
-         * run.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p> Deleting
+         * this resource does not stop an in-progress run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">AWS
          * API Reference</a></p>
          *
@@ -719,9 +832,8 @@ namespace Model
         virtual Model::DeleteProjectOutcomeCallable DeleteProjectCallable(const Model::DeleteProjectRequest& request) const;
 
         /**
-         * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p>
-         * <b>Note</b> Deleting this resource does not stop an in-progress
-         * run.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an AWS Device Farm project, given the project ARN.</p> <p> Deleting
+         * this resource does not stop an in-progress run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteProject">AWS
          * API Reference</a></p>
          *
@@ -758,16 +870,16 @@ namespace Model
         virtual void DeleteRemoteAccessSessionAsync(const Model::DeleteRemoteAccessSessionRequest& request, const DeleteRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the run, given the run ARN.</p> <p> <b>Note</b> Deleting this
-         * resource does not stop an in-progress run.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the run, given the run ARN.</p> <p> Deleting this resource does not
+         * stop an in-progress run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteRunOutcome DeleteRun(const Model::DeleteRunRequest& request) const;
 
         /**
-         * <p>Deletes the run, given the run ARN.</p> <p> <b>Note</b> Deleting this
-         * resource does not stop an in-progress run.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the run, given the run ARN.</p> <p> Deleting this resource does not
+         * stop an in-progress run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">AWS
          * API Reference</a></p>
          *
@@ -776,14 +888,48 @@ namespace Model
         virtual Model::DeleteRunOutcomeCallable DeleteRunCallable(const Model::DeleteRunRequest& request) const;
 
         /**
-         * <p>Deletes the run, given the run ARN.</p> <p> <b>Note</b> Deleting this
-         * resource does not stop an in-progress run.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the run, given the run ARN.</p> <p> Deleting this resource does not
+         * stop an in-progress run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteRun">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteRunAsync(const Model::DeleteRunRequest& request, const DeleteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> Deletes a Selenium testing project and all content generated under it. </p>
+         * <important> <p>You cannot undo this operation.</p> </important> <note> <p>You
+         * cannot delete a project if it has active sessions.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTestGridProjectOutcome DeleteTestGridProject(const Model::DeleteTestGridProjectRequest& request) const;
+
+        /**
+         * <p> Deletes a Selenium testing project and all content generated under it. </p>
+         * <important> <p>You cannot undo this operation.</p> </important> <note> <p>You
+         * cannot delete a project if it has active sessions.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTestGridProjectOutcomeCallable DeleteTestGridProjectCallable(const Model::DeleteTestGridProjectRequest& request) const;
+
+        /**
+         * <p> Deletes a Selenium testing project and all content generated under it. </p>
+         * <important> <p>You cannot undo this operation.</p> </important> <note> <p>You
+         * cannot delete a project if it has active sessions.</p> </note><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeleteTestGridProject">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTestGridProjectAsync(const Model::DeleteTestGridProjectRequest& request, const DeleteTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes an upload given the upload ARN.</p><p><h3>See Also:</h3>   <a
@@ -839,16 +985,16 @@ namespace Model
         virtual void DeleteVPCEConfigurationAsync(const Model::DeleteVPCEConfigurationRequest& request, const DeleteVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the number of unmetered iOS and/or unmetered Android devices that
-         * have been purchased by the account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the number of unmetered iOS or unmetered Android devices that have
+         * been purchased by the account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAccountSettingsOutcome GetAccountSettings(const Model::GetAccountSettingsRequest& request) const;
 
         /**
-         * <p>Returns the number of unmetered iOS and/or unmetered Android devices that
-         * have been purchased by the account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the number of unmetered iOS or unmetered Android devices that have
+         * been purchased by the account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -857,8 +1003,8 @@ namespace Model
         virtual Model::GetAccountSettingsOutcomeCallable GetAccountSettingsCallable(const Model::GetAccountSettingsRequest& request) const;
 
         /**
-         * <p>Returns the number of unmetered iOS and/or unmetered Android devices that
-         * have been purchased by the account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the number of unmetered iOS or unmetered Android devices that have
+         * been purchased by the account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetAccountSettings">AWS
          * API Reference</a></p>
          *
@@ -892,7 +1038,7 @@ namespace Model
         virtual void GetDeviceAsync(const Model::GetDeviceRequest& request, const GetDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns information about a device instance belonging to a private device
+         * <p>Returns information about a device instance that belongs to a private device
          * fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance">AWS
          * API Reference</a></p>
@@ -900,7 +1046,7 @@ namespace Model
         virtual Model::GetDeviceInstanceOutcome GetDeviceInstance(const Model::GetDeviceInstanceRequest& request) const;
 
         /**
-         * <p>Returns information about a device instance belonging to a private device
+         * <p>Returns information about a device instance that belongs to a private device
          * fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance">AWS
          * API Reference</a></p>
@@ -910,7 +1056,7 @@ namespace Model
         virtual Model::GetDeviceInstanceOutcomeCallable GetDeviceInstanceCallable(const Model::GetDeviceInstanceRequest& request) const;
 
         /**
-         * <p>Returns information about a device instance belonging to a private device
+         * <p>Returns information about a device instance that belongs to a private device
          * fleet.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetDeviceInstance">AWS
          * API Reference</a></p>
@@ -1055,9 +1201,8 @@ namespace Model
          * AWS account. The response indicates how many offerings are currently available
          * and the offerings that will be available in the next period. The API returns a
          * <code>NotEligible</code> error if the user is not permitted to invoke the
-         * operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * operation. If you must be able to invoke this operation, contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus">AWS
          * API Reference</a></p>
@@ -1069,9 +1214,8 @@ namespace Model
          * AWS account. The response indicates how many offerings are currently available
          * and the offerings that will be available in the next period. The API returns a
          * <code>NotEligible</code> error if the user is not permitted to invoke the
-         * operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * operation. If you must be able to invoke this operation, contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus">AWS
          * API Reference</a></p>
@@ -1085,9 +1229,8 @@ namespace Model
          * AWS account. The response indicates how many offerings are currently available
          * and the offerings that will be available in the next period. The API returns a
          * <code>NotEligible</code> error if the user is not permitted to invoke the
-         * operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * operation. If you must be able to invoke this operation, contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetOfferingStatus">AWS
          * API Reference</a></p>
@@ -1223,6 +1366,80 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetTestAsync(const Model::GetTestRequest& request, const GetTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves information about a Selenium testing project.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTestGridProjectOutcome GetTestGridProject(const Model::GetTestGridProjectRequest& request) const;
+
+        /**
+         * <p>Retrieves information about a Selenium testing project.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridProject">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTestGridProjectOutcomeCallable GetTestGridProjectCallable(const Model::GetTestGridProjectRequest& request) const;
+
+        /**
+         * <p>Retrieves information about a Selenium testing project.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridProject">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTestGridProjectAsync(const Model::GetTestGridProjectRequest& request, const GetTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>A session is an instance of a browser created through a
+         * <code>RemoteWebDriver</code> with the URL from
+         * <a>CreateTestGridUrlResult$url</a>. You can use the following to look up
+         * sessions:</p> <ul> <li> <p>The session ARN
+         * (<a>GetTestGridSessionRequest$sessionArn</a>).</p> </li> <li> <p>The project ARN
+         * and a session ID (<a>GetTestGridSessionRequest$projectArn</a> and
+         * <a>GetTestGridSessionRequest$sessionId</a>).</p> </li> </ul> <p/><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetTestGridSessionOutcome GetTestGridSession(const Model::GetTestGridSessionRequest& request) const;
+
+        /**
+         * <p>A session is an instance of a browser created through a
+         * <code>RemoteWebDriver</code> with the URL from
+         * <a>CreateTestGridUrlResult$url</a>. You can use the following to look up
+         * sessions:</p> <ul> <li> <p>The session ARN
+         * (<a>GetTestGridSessionRequest$sessionArn</a>).</p> </li> <li> <p>The project ARN
+         * and a session ID (<a>GetTestGridSessionRequest$projectArn</a> and
+         * <a>GetTestGridSessionRequest$sessionId</a>).</p> </li> </ul> <p/><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridSession">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetTestGridSessionOutcomeCallable GetTestGridSessionCallable(const Model::GetTestGridSessionRequest& request) const;
+
+        /**
+         * <p>A session is an instance of a browser created through a
+         * <code>RemoteWebDriver</code> with the URL from
+         * <a>CreateTestGridUrlResult$url</a>. You can use the following to look up
+         * sessions:</p> <ul> <li> <p>The session ARN
+         * (<a>GetTestGridSessionRequest$sessionArn</a>).</p> </li> <li> <p>The project ARN
+         * and a session ID (<a>GetTestGridSessionRequest$projectArn</a> and
+         * <a>GetTestGridSessionRequest$sessionId</a>).</p> </li> </ul> <p/><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetTestGridSession">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetTestGridSessionAsync(const Model::GetTestGridSessionRequest& request, const GetTestGridSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Gets information about an upload.</p><p><h3>See Also:</h3>   <a
@@ -1498,8 +1715,7 @@ namespace Model
          * <code>NotEligible</code> error if the caller is not permitted to invoke the
          * operation. Contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
-         * Also:</h3>   <a
+         * if you must be able to invoke this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">AWS
          * API Reference</a></p>
          */
@@ -1511,8 +1727,7 @@ namespace Model
          * <code>NotEligible</code> error if the caller is not permitted to invoke the
          * operation. Contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
-         * Also:</h3>   <a
+         * if you must be able to invoke this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">AWS
          * API Reference</a></p>
          *
@@ -1526,8 +1741,7 @@ namespace Model
          * <code>NotEligible</code> error if the caller is not permitted to invoke the
          * operation. Contact <a
          * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
-         * Also:</h3>   <a
+         * if you must be able to invoke this operation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingPromotions">AWS
          * API Reference</a></p>
          *
@@ -1540,9 +1754,8 @@ namespace Model
          * transactions for an AWS account. The list is paginated and ordered by a
          * descending timestamp (most recent transactions are first). The API returns a
          * <code>NotEligible</code> error if the user is not permitted to invoke the
-         * operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * operation. If you must be able to invoke this operation, contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions">AWS
          * API Reference</a></p>
@@ -1554,9 +1767,8 @@ namespace Model
          * transactions for an AWS account. The list is paginated and ordered by a
          * descending timestamp (most recent transactions are first). The API returns a
          * <code>NotEligible</code> error if the user is not permitted to invoke the
-         * operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * operation. If you must be able to invoke this operation, contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions">AWS
          * API Reference</a></p>
@@ -1570,9 +1782,8 @@ namespace Model
          * transactions for an AWS account. The list is paginated and ordered by a
          * descending timestamp (most recent transactions are first). The API returns a
          * <code>NotEligible</code> error if the user is not permitted to invoke the
-         * operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * operation. If you must be able to invoke this operation, contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferingTransactions">AWS
          * API Reference</a></p>
@@ -1585,9 +1796,9 @@ namespace Model
          * <p>Returns a list of products or offerings that the user can manage through the
          * API. Each offering record indicates the recurring price per unit and the
          * frequency for that offering. The API returns a <code>NotEligible</code> error if
-         * the user is not permitted to invoke the operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * the user is not permitted to invoke the operation. If you must be able to invoke
+         * this operation, contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings">AWS
          * API Reference</a></p>
@@ -1598,9 +1809,9 @@ namespace Model
          * <p>Returns a list of products or offerings that the user can manage through the
          * API. Each offering record indicates the recurring price per unit and the
          * frequency for that offering. The API returns a <code>NotEligible</code> error if
-         * the user is not permitted to invoke the operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * the user is not permitted to invoke the operation. If you must be able to invoke
+         * this operation, contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings">AWS
          * API Reference</a></p>
@@ -1613,9 +1824,9 @@ namespace Model
          * <p>Returns a list of products or offerings that the user can manage through the
          * API. Each offering record indicates the recurring price per unit and the
          * frequency for that offering. The API returns a <code>NotEligible</code> error if
-         * the user is not permitted to invoke the operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * the user is not permitted to invoke the operation. If you must be able to invoke
+         * this operation, contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListOfferings">AWS
          * API Reference</a></p>
@@ -1787,6 +1998,118 @@ namespace Model
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets a list of all Selenium testing projects in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridProjects">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTestGridProjectsOutcome ListTestGridProjects(const Model::ListTestGridProjectsRequest& request) const;
+
+        /**
+         * <p>Gets a list of all Selenium testing projects in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridProjects">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTestGridProjectsOutcomeCallable ListTestGridProjectsCallable(const Model::ListTestGridProjectsRequest& request) const;
+
+        /**
+         * <p>Gets a list of all Selenium testing projects in your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridProjects">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTestGridProjectsAsync(const Model::ListTestGridProjectsRequest& request, const ListTestGridProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of the actions taken in a
+         * <a>TestGridSession</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionActions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTestGridSessionActionsOutcome ListTestGridSessionActions(const Model::ListTestGridSessionActionsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the actions taken in a
+         * <a>TestGridSession</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionActions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTestGridSessionActionsOutcomeCallable ListTestGridSessionActionsCallable(const Model::ListTestGridSessionActionsRequest& request) const;
+
+        /**
+         * <p>Returns a list of the actions taken in a
+         * <a>TestGridSession</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionActions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTestGridSessionActionsAsync(const Model::ListTestGridSessionActionsRequest& request, const ListTestGridSessionActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a list of artifacts created during the session.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionArtifacts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTestGridSessionArtifactsOutcome ListTestGridSessionArtifacts(const Model::ListTestGridSessionArtifactsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of artifacts created during the session.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionArtifacts">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTestGridSessionArtifactsOutcomeCallable ListTestGridSessionArtifactsCallable(const Model::ListTestGridSessionArtifactsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of artifacts created during the session.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessionArtifacts">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTestGridSessionArtifactsAsync(const Model::ListTestGridSessionArtifactsRequest& request, const ListTestGridSessionArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a list of sessions for a <a>TestGridProject</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTestGridSessionsOutcome ListTestGridSessions(const Model::ListTestGridSessionsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of sessions for a <a>TestGridProject</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTestGridSessionsOutcomeCallable ListTestGridSessionsCallable(const Model::ListTestGridSessionsRequest& request) const;
+
+        /**
+         * <p>Retrieves a list of sessions for a <a>TestGridProject</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTestGridSessions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTestGridSessionsAsync(const Model::ListTestGridSessionsRequest& request, const ListTestGridSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about tests in a given test suite.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListTests">AWS
@@ -1815,14 +2138,24 @@ namespace Model
         virtual void ListTestsAsync(const Model::ListTestsRequest& request, const ListTestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about unique problems.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about unique problems, such as exceptions or crashes.</p>
+         * <p>Unique problems are defined as a single instance of an error across a run,
+         * job, or suite. For example, if a call in your application consistently raises an
+         * exception (<code>OutOfBoundsException in MyActivity.java:386</code>),
+         * <code>ListUniqueProblems</code> returns a single entry instead of many
+         * individual entries for that exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems">AWS
          * API Reference</a></p>
          */
         virtual Model::ListUniqueProblemsOutcome ListUniqueProblems(const Model::ListUniqueProblemsRequest& request) const;
 
         /**
-         * <p>Gets information about unique problems.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about unique problems, such as exceptions or crashes.</p>
+         * <p>Unique problems are defined as a single instance of an error across a run,
+         * job, or suite. For example, if a call in your application consistently raises an
+         * exception (<code>OutOfBoundsException in MyActivity.java:386</code>),
+         * <code>ListUniqueProblems</code> returns a single entry instead of many
+         * individual entries for that exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems">AWS
          * API Reference</a></p>
          *
@@ -1831,7 +2164,12 @@ namespace Model
         virtual Model::ListUniqueProblemsOutcomeCallable ListUniqueProblemsCallable(const Model::ListUniqueProblemsRequest& request) const;
 
         /**
-         * <p>Gets information about unique problems.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about unique problems, such as exceptions or crashes.</p>
+         * <p>Unique problems are defined as a single instance of an error across a run,
+         * job, or suite. For example, if a call in your application consistently raises an
+         * exception (<code>OutOfBoundsException in MyActivity.java:386</code>),
+         * <code>ListUniqueProblems</code> returns a single entry instead of many
+         * individual entries for that exception.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListUniqueProblems">AWS
          * API Reference</a></p>
          *
@@ -1899,9 +2237,9 @@ namespace Model
          * <p>Immediately purchases offerings for an AWS account. Offerings renew with the
          * latest total purchased quantity for an offering, unless the renewal was
          * overridden. The API returns a <code>NotEligible</code> error if the user is not
-         * permitted to invoke the operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * permitted to invoke the operation. If you must be able to invoke this operation,
+         * contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering">AWS
          * API Reference</a></p>
@@ -1912,9 +2250,9 @@ namespace Model
          * <p>Immediately purchases offerings for an AWS account. Offerings renew with the
          * latest total purchased quantity for an offering, unless the renewal was
          * overridden. The API returns a <code>NotEligible</code> error if the user is not
-         * permitted to invoke the operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * permitted to invoke the operation. If you must be able to invoke this operation,
+         * contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering">AWS
          * API Reference</a></p>
@@ -1927,9 +2265,9 @@ namespace Model
          * <p>Immediately purchases offerings for an AWS account. Offerings renew with the
          * latest total purchased quantity for an offering, unless the renewal was
          * overridden. The API returns a <code>NotEligible</code> error if the user is not
-         * permitted to invoke the operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * permitted to invoke the operation. If you must be able to invoke this operation,
+         * contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOffering">AWS
          * API Reference</a></p>
@@ -1942,9 +2280,8 @@ namespace Model
          * <p>Explicitly sets the quantity of devices to renew for an offering, starting
          * from the <code>effectiveDate</code> of the next period. The API returns a
          * <code>NotEligible</code> error if the user is not permitted to invoke the
-         * operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * operation. If you must be able to invoke this operation, contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering">AWS
          * API Reference</a></p>
@@ -1955,9 +2292,8 @@ namespace Model
          * <p>Explicitly sets the quantity of devices to renew for an offering, starting
          * from the <code>effectiveDate</code> of the next period. The API returns a
          * <code>NotEligible</code> error if the user is not permitted to invoke the
-         * operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * operation. If you must be able to invoke this operation, contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering">AWS
          * API Reference</a></p>
@@ -1970,9 +2306,8 @@ namespace Model
          * <p>Explicitly sets the quantity of devices to renew for an offering, starting
          * from the <code>effectiveDate</code> of the next period. The API returns a
          * <code>NotEligible</code> error if the user is not permitted to invoke the
-         * operation. Please contact <a
-         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
-         * if you believe that you should be able to invoke this operation.</p><p><h3>See
+         * operation. If you must be able to invoke this operation, contact <a
+         * href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOffering">AWS
          * API Reference</a></p>
@@ -2007,11 +2342,10 @@ namespace Model
         virtual void ScheduleRunAsync(const Model::ScheduleRunRequest& request, const ScheduleRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates a stop request for the current job. AWS Device Farm will
-         * immediately stop the job on the device where tests have not started executing,
-         * and you will not be billed for this device. On the device where tests have
-         * started executing, Setup Suite and Teardown Suite tests will run to completion
-         * before stopping execution on the device. You will be billed for Setup, Teardown,
+         * <p>Initiates a stop request for the current job. AWS Device Farm immediately
+         * stops the job on the device where tests have not started. You are not billed for
+         * this device. On the device where tests have started, setup suite and teardown
+         * suite tests run to completion on the device. You are billed for setup, teardown,
          * and any tests that were in progress or already completed.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">AWS
@@ -2020,11 +2354,10 @@ namespace Model
         virtual Model::StopJobOutcome StopJob(const Model::StopJobRequest& request) const;
 
         /**
-         * <p>Initiates a stop request for the current job. AWS Device Farm will
-         * immediately stop the job on the device where tests have not started executing,
-         * and you will not be billed for this device. On the device where tests have
-         * started executing, Setup Suite and Teardown Suite tests will run to completion
-         * before stopping execution on the device. You will be billed for Setup, Teardown,
+         * <p>Initiates a stop request for the current job. AWS Device Farm immediately
+         * stops the job on the device where tests have not started. You are not billed for
+         * this device. On the device where tests have started, setup suite and teardown
+         * suite tests run to completion on the device. You are billed for setup, teardown,
          * and any tests that were in progress or already completed.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">AWS
@@ -2035,11 +2368,10 @@ namespace Model
         virtual Model::StopJobOutcomeCallable StopJobCallable(const Model::StopJobRequest& request) const;
 
         /**
-         * <p>Initiates a stop request for the current job. AWS Device Farm will
-         * immediately stop the job on the device where tests have not started executing,
-         * and you will not be billed for this device. On the device where tests have
-         * started executing, Setup Suite and Teardown Suite tests will run to completion
-         * before stopping execution on the device. You will be billed for Setup, Teardown,
+         * <p>Initiates a stop request for the current job. AWS Device Farm immediately
+         * stops the job on the device where tests have not started. You are not billed for
+         * this device. On the device where tests have started, setup suite and teardown
+         * suite tests run to completion on the device. You are billed for setup, teardown,
          * and any tests that were in progress or already completed.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopJob">AWS
@@ -2075,26 +2407,24 @@ namespace Model
         virtual void StopRemoteAccessSessionAsync(const Model::StopRemoteAccessSessionRequest& request, const StopRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Initiates a stop request for the current test run. AWS Device Farm will
-         * immediately stop the run on devices where tests have not started executing, and
-         * you will not be billed for these devices. On devices where tests have started
-         * executing, Setup Suite and Teardown Suite tests will run to completion before
-         * stopping execution on those devices. You will be billed for Setup, Teardown, and
-         * any tests that were in progress or already completed.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Initiates a stop request for the current test run. AWS Device Farm
+         * immediately stops the run on devices where tests have not started. You are not
+         * billed for these devices. On devices where tests have started executing, setup
+         * suite and teardown suite tests run to completion on those devices. You are
+         * billed for setup, teardown, and any tests that were in progress or already
+         * completed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun">AWS
          * API Reference</a></p>
          */
         virtual Model::StopRunOutcome StopRun(const Model::StopRunRequest& request) const;
 
         /**
-         * <p>Initiates a stop request for the current test run. AWS Device Farm will
-         * immediately stop the run on devices where tests have not started executing, and
-         * you will not be billed for these devices. On devices where tests have started
-         * executing, Setup Suite and Teardown Suite tests will run to completion before
-         * stopping execution on those devices. You will be billed for Setup, Teardown, and
-         * any tests that were in progress or already completed.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Initiates a stop request for the current test run. AWS Device Farm
+         * immediately stops the run on devices where tests have not started. You are not
+         * billed for these devices. On devices where tests have started executing, setup
+         * suite and teardown suite tests run to completion on those devices. You are
+         * billed for setup, teardown, and any tests that were in progress or already
+         * completed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun">AWS
          * API Reference</a></p>
          *
@@ -2103,13 +2433,12 @@ namespace Model
         virtual Model::StopRunOutcomeCallable StopRunCallable(const Model::StopRunRequest& request) const;
 
         /**
-         * <p>Initiates a stop request for the current test run. AWS Device Farm will
-         * immediately stop the run on devices where tests have not started executing, and
-         * you will not be billed for these devices. On devices where tests have started
-         * executing, Setup Suite and Teardown Suite tests will run to completion before
-         * stopping execution on those devices. You will be billed for Setup, Teardown, and
-         * any tests that were in progress or already completed.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Initiates a stop request for the current test run. AWS Device Farm
+         * immediately stops the run on devices where tests have not started. You are not
+         * billed for these devices. On devices where tests have started executing, setup
+         * suite and teardown suite tests run to completion on those devices. You are
+         * billed for setup, teardown, and any tests that were in progress or already
+         * completed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/StopRun">AWS
          * API Reference</a></p>
          *
@@ -2121,7 +2450,7 @@ namespace Model
          * <p>Associates the specified tags to a resource with the specified
          * <code>resourceArn</code>. If existing tags on a resource are not specified in
          * the request parameters, they are not changed. When a resource is deleted, the
-         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+         * tags associated with that resource are also deleted.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagResource">AWS
          * API Reference</a></p>
@@ -2132,7 +2461,7 @@ namespace Model
          * <p>Associates the specified tags to a resource with the specified
          * <code>resourceArn</code>. If existing tags on a resource are not specified in
          * the request parameters, they are not changed. When a resource is deleted, the
-         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+         * tags associated with that resource are also deleted.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagResource">AWS
          * API Reference</a></p>
@@ -2145,7 +2474,7 @@ namespace Model
          * <p>Associates the specified tags to a resource with the specified
          * <code>resourceArn</code>. If existing tags on a resource are not specified in
          * the request parameters, they are not changed. When a resource is deleted, the
-         * tags associated with that resource are deleted as well.</p><p><h3>See Also:</h3>
+         * tags associated with that resource are also deleted.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/TagResource">AWS
          * API Reference</a></p>
@@ -2180,16 +2509,16 @@ namespace Model
         virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates information about an existing private device instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates information about a private device instance.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateDeviceInstanceOutcome UpdateDeviceInstance(const Model::UpdateDeviceInstanceRequest& request) const;
 
         /**
-         * <p>Updates information about an existing private device instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates information about a private device instance.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance">AWS
          * API Reference</a></p>
          *
@@ -2198,8 +2527,8 @@ namespace Model
         virtual Model::UpdateDeviceInstanceOutcomeCallable UpdateDeviceInstanceCallable(const Model::UpdateDeviceInstanceRequest& request) const;
 
         /**
-         * <p>Updates information about an existing private device instance.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Updates information about a private device instance.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateDeviceInstance">AWS
          * API Reference</a></p>
          *
@@ -2267,16 +2596,14 @@ namespace Model
         virtual void UpdateInstanceProfileAsync(const Model::UpdateInstanceProfileRequest& request, const UpdateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates the network profile with specific settings.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Updates the network profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateNetworkProfileOutcome UpdateNetworkProfile(const Model::UpdateNetworkProfileRequest& request) const;
 
         /**
-         * <p>Updates the network profile with specific settings.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Updates the network profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile">AWS
          * API Reference</a></p>
          *
@@ -2285,8 +2612,7 @@ namespace Model
         virtual Model::UpdateNetworkProfileOutcomeCallable UpdateNetworkProfileCallable(const Model::UpdateNetworkProfileRequest& request) const;
 
         /**
-         * <p>Updates the network profile with specific settings.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Updates the network profile.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateNetworkProfile">AWS
          * API Reference</a></p>
          *
@@ -2323,16 +2649,39 @@ namespace Model
         virtual void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Update an uploaded test specification (test spec).</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Change details of a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateTestGridProject">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTestGridProjectOutcome UpdateTestGridProject(const Model::UpdateTestGridProjectRequest& request) const;
+
+        /**
+         * <p>Change details of a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateTestGridProject">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTestGridProjectOutcomeCallable UpdateTestGridProjectCallable(const Model::UpdateTestGridProjectRequest& request) const;
+
+        /**
+         * <p>Change details of a project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateTestGridProject">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTestGridProjectAsync(const Model::UpdateTestGridProjectRequest& request, const UpdateTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Updates an uploaded test spec.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateUploadOutcome UpdateUpload(const Model::UpdateUploadRequest& request) const;
 
         /**
-         * <p>Update an uploaded test specification (test spec).</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates an uploaded test spec.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">AWS
          * API Reference</a></p>
          *
@@ -2341,8 +2690,7 @@ namespace Model
         virtual Model::UpdateUploadOutcomeCallable UpdateUploadCallable(const Model::UpdateUploadRequest& request) const;
 
         /**
-         * <p>Update an uploaded test specification (test spec).</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Updates an uploaded test spec.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateUpload">AWS
          * API Reference</a></p>
          *
@@ -2351,16 +2699,16 @@ namespace Model
         virtual void UpdateUploadAsync(const Model::UpdateUploadRequest& request, const UpdateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates information about an existing Amazon Virtual Private Cloud (VPC)
-         * endpoint configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates information about an Amazon Virtual Private Cloud (VPC) endpoint
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateVPCEConfigurationOutcome UpdateVPCEConfiguration(const Model::UpdateVPCEConfigurationRequest& request) const;
 
         /**
-         * <p>Updates information about an existing Amazon Virtual Private Cloud (VPC)
-         * endpoint configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates information about an Amazon Virtual Private Cloud (VPC) endpoint
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2369,8 +2717,8 @@ namespace Model
         virtual Model::UpdateVPCEConfigurationOutcomeCallable UpdateVPCEConfigurationCallable(const Model::UpdateVPCEConfigurationRequest& request) const;
 
         /**
-         * <p>Updates information about an existing Amazon Virtual Private Cloud (VPC)
-         * endpoint configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates information about an Amazon Virtual Private Cloud (VPC) endpoint
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/UpdateVPCEConfiguration">AWS
          * API Reference</a></p>
          *
@@ -2387,6 +2735,8 @@ namespace Model
         void CreateNetworkProfileAsyncHelper(const Model::CreateNetworkProfileRequest& request, const CreateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateProjectAsyncHelper(const Model::CreateProjectRequest& request, const CreateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateRemoteAccessSessionAsyncHelper(const Model::CreateRemoteAccessSessionRequest& request, const CreateRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateTestGridProjectAsyncHelper(const Model::CreateTestGridProjectRequest& request, const CreateTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateTestGridUrlAsyncHelper(const Model::CreateTestGridUrlRequest& request, const CreateTestGridUrlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateUploadAsyncHelper(const Model::CreateUploadRequest& request, const CreateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateVPCEConfigurationAsyncHelper(const Model::CreateVPCEConfigurationRequest& request, const CreateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDevicePoolAsyncHelper(const Model::DeleteDevicePoolRequest& request, const DeleteDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2395,6 +2745,7 @@ namespace Model
         void DeleteProjectAsyncHelper(const Model::DeleteProjectRequest& request, const DeleteProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRemoteAccessSessionAsyncHelper(const Model::DeleteRemoteAccessSessionRequest& request, const DeleteRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteRunAsyncHelper(const Model::DeleteRunRequest& request, const DeleteRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTestGridProjectAsyncHelper(const Model::DeleteTestGridProjectRequest& request, const DeleteTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUploadAsyncHelper(const Model::DeleteUploadRequest& request, const DeleteUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteVPCEConfigurationAsyncHelper(const Model::DeleteVPCEConfigurationRequest& request, const DeleteVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetAccountSettingsAsyncHelper(const Model::GetAccountSettingsRequest& request, const GetAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2411,6 +2762,8 @@ namespace Model
         void GetRunAsyncHelper(const Model::GetRunRequest& request, const GetRunResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSuiteAsyncHelper(const Model::GetSuiteRequest& request, const GetSuiteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetTestAsyncHelper(const Model::GetTestRequest& request, const GetTestResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetTestGridProjectAsyncHelper(const Model::GetTestGridProjectRequest& request, const GetTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetTestGridSessionAsyncHelper(const Model::GetTestGridSessionRequest& request, const GetTestGridSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetUploadAsyncHelper(const Model::GetUploadRequest& request, const GetUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetVPCEConfigurationAsyncHelper(const Model::GetVPCEConfigurationRequest& request, const GetVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InstallToRemoteAccessSessionAsyncHelper(const Model::InstallToRemoteAccessSessionRequest& request, const InstallToRemoteAccessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2430,6 +2783,10 @@ namespace Model
         void ListSamplesAsyncHelper(const Model::ListSamplesRequest& request, const ListSamplesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListSuitesAsyncHelper(const Model::ListSuitesRequest& request, const ListSuitesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTestGridProjectsAsyncHelper(const Model::ListTestGridProjectsRequest& request, const ListTestGridProjectsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTestGridSessionActionsAsyncHelper(const Model::ListTestGridSessionActionsRequest& request, const ListTestGridSessionActionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTestGridSessionArtifactsAsyncHelper(const Model::ListTestGridSessionArtifactsRequest& request, const ListTestGridSessionArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTestGridSessionsAsyncHelper(const Model::ListTestGridSessionsRequest& request, const ListTestGridSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTestsAsyncHelper(const Model::ListTestsRequest& request, const ListTestsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUniqueProblemsAsyncHelper(const Model::ListUniqueProblemsRequest& request, const ListUniqueProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListUploadsAsyncHelper(const Model::ListUploadsRequest& request, const ListUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2447,6 +2804,7 @@ namespace Model
         void UpdateInstanceProfileAsyncHelper(const Model::UpdateInstanceProfileRequest& request, const UpdateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateNetworkProfileAsyncHelper(const Model::UpdateNetworkProfileRequest& request, const UpdateNetworkProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateProjectAsyncHelper(const Model::UpdateProjectRequest& request, const UpdateProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTestGridProjectAsyncHelper(const Model::UpdateTestGridProjectRequest& request, const UpdateTestGridProjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUploadAsyncHelper(const Model::UpdateUploadRequest& request, const UpdateUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVPCEConfigurationAsyncHelper(const Model::UpdateVPCEConfigurationRequest& request, const UpdateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

@@ -49,31 +49,31 @@ namespace Model
 
 
     /**
-     * <p>A container representing the metadata from the service about the remote
+     * <p>A container that represents the metadata from the service about the remote
      * access session you are stopping.</p>
      */
     inline const RemoteAccessSession& GetRemoteAccessSession() const{ return m_remoteAccessSession; }
 
     /**
-     * <p>A container representing the metadata from the service about the remote
+     * <p>A container that represents the metadata from the service about the remote
      * access session you are stopping.</p>
      */
     inline void SetRemoteAccessSession(const RemoteAccessSession& value) { m_remoteAccessSession = value; }
 
     /**
-     * <p>A container representing the metadata from the service about the remote
+     * <p>A container that represents the metadata from the service about the remote
      * access session you are stopping.</p>
      */
     inline void SetRemoteAccessSession(RemoteAccessSession&& value) { m_remoteAccessSession = std::move(value); }
 
     /**
-     * <p>A container representing the metadata from the service about the remote
+     * <p>A container that represents the metadata from the service about the remote
      * access session you are stopping.</p>
      */
     inline StopRemoteAccessSessionResult& WithRemoteAccessSession(const RemoteAccessSession& value) { SetRemoteAccessSession(value); return *this;}
 
     /**
-     * <p>A container representing the metadata from the service about the remote
+     * <p>A container that represents the metadata from the service about the remote
      * access session you are stopping.</p>
      */
     inline StopRemoteAccessSessionResult& WithRemoteAccessSession(RemoteAccessSession&& value) { SetRemoteAccessSession(std::move(value)); return *this;}

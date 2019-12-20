@@ -142,42 +142,42 @@ namespace Model
 
 
     /**
-     * <p>The date when the message template was created.</p>
+     * <p>The date, in ISO 8601 format, when the message template was created.</p>
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date when the message template was created.</p>
+     * <p>The date, in ISO 8601 format, when the message template was created.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * <p>The date when the message template was created.</p>
+     * <p>The date, in ISO 8601 format, when the message template was created.</p>
      */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The date when the message template was created.</p>
+     * <p>The date, in ISO 8601 format, when the message template was created.</p>
      */
     inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>The date when the message template was created.</p>
+     * <p>The date, in ISO 8601 format, when the message template was created.</p>
      */
     inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
 
     /**
-     * <p>The date when the message template was created.</p>
+     * <p>The date, in ISO 8601 format, when the message template was created.</p>
      */
     inline SMSTemplateResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The date when the message template was created.</p>
+     * <p>The date, in ISO 8601 format, when the message template was created.</p>
      */
     inline SMSTemplateResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
-     * <p>The date when the message template was created.</p>
+     * <p>The date, in ISO 8601 format, when the message template was created.</p>
      */
     inline SMSTemplateResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 
@@ -248,42 +248,50 @@ namespace Model
 
 
     /**
-     * <p>The date when the message template was last modified.</p>
+     * <p>The date, in ISO 8601 format, when the message template was last
+     * modified.</p>
      */
     inline const Aws::String& GetLastModifiedDate() const{ return m_lastModifiedDate; }
 
     /**
-     * <p>The date when the message template was last modified.</p>
+     * <p>The date, in ISO 8601 format, when the message template was last
+     * modified.</p>
      */
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
-     * <p>The date when the message template was last modified.</p>
+     * <p>The date, in ISO 8601 format, when the message template was last
+     * modified.</p>
      */
     inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
-     * <p>The date when the message template was last modified.</p>
+     * <p>The date, in ISO 8601 format, when the message template was last
+     * modified.</p>
      */
     inline void SetLastModifiedDate(Aws::String&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
 
     /**
-     * <p>The date when the message template was last modified.</p>
+     * <p>The date, in ISO 8601 format, when the message template was last
+     * modified.</p>
      */
     inline void SetLastModifiedDate(const char* value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate.assign(value); }
 
     /**
-     * <p>The date when the message template was last modified.</p>
+     * <p>The date, in ISO 8601 format, when the message template was last
+     * modified.</p>
      */
     inline SMSTemplateResponse& WithLastModifiedDate(const Aws::String& value) { SetLastModifiedDate(value); return *this;}
 
     /**
-     * <p>The date when the message template was last modified.</p>
+     * <p>The date, in ISO 8601 format, when the message template was last
+     * modified.</p>
      */
     inline SMSTemplateResponse& WithLastModifiedDate(Aws::String&& value) { SetLastModifiedDate(std::move(value)); return *this;}
 
     /**
-     * <p>The date when the message template was last modified.</p>
+     * <p>The date, in ISO 8601 format, when the message template was last
+     * modified.</p>
      */
     inline SMSTemplateResponse& WithLastModifiedDate(const char* value) { SetLastModifiedDate(value); return *this;}
 
@@ -498,6 +506,63 @@ namespace Model
      */
     inline SMSTemplateResponse& WithTemplateType(TemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The unique identifier, as an integer, for the active version of the message
+     * template, or the version of the template that you specified by using the version
+     * parameter in your request.</p>
+     */
+    inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The unique identifier, as an integer, for the active version of the message
+     * template, or the version of the template that you specified by using the version
+     * parameter in your request.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The unique identifier, as an integer, for the active version of the message
+     * template, or the version of the template that you specified by using the version
+     * parameter in your request.</p>
+     */
+    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
+
+    /**
+     * <p>The unique identifier, as an integer, for the active version of the message
+     * template, or the version of the template that you specified by using the version
+     * parameter in your request.</p>
+     */
+    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
+
+    /**
+     * <p>The unique identifier, as an integer, for the active version of the message
+     * template, or the version of the template that you specified by using the version
+     * parameter in your request.</p>
+     */
+    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
+
+    /**
+     * <p>The unique identifier, as an integer, for the active version of the message
+     * template, or the version of the template that you specified by using the version
+     * parameter in your request.</p>
+     */
+    inline SMSTemplateResponse& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
+
+    /**
+     * <p>The unique identifier, as an integer, for the active version of the message
+     * template, or the version of the template that you specified by using the version
+     * parameter in your request.</p>
+     */
+    inline SMSTemplateResponse& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier, as an integer, for the active version of the message
+     * template, or the version of the template that you specified by using the version
+     * parameter in your request.</p>
+     */
+    inline SMSTemplateResponse& WithVersion(const char* value) { SetVersion(value); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -526,6 +591,9 @@ namespace Model
 
     TemplateType m_templateType;
     bool m_templateTypeHasBeenSet;
+
+    Aws::String m_version;
+    bool m_versionHasBeenSet;
   };
 
 } // namespace Model

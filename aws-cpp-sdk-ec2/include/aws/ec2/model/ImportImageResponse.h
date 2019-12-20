@@ -243,44 +243,44 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to create the encrypted AMI.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to create the encrypted AMI.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to create the encrypted AMI.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to create the encrypted AMI.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to create the encrypted AMI.</p>
      */
     inline ImportImageResponse& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to create the encrypted AMI.</p>
      */
     inline ImportImageResponse& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) that was used to create the encrypted AMI.</p>
+     * <p>The identifier for the symmetric AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that was used to create the encrypted AMI.</p>
      */
     inline ImportImageResponse& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

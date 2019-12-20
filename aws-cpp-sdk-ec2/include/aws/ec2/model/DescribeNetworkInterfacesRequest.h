@@ -784,29 +784,33 @@ namespace Model
 
     /**
      * <p>The maximum number of items to return for this request. The request returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
+     * token that you can specify in a subsequent call to get the next set of results.
+     * You cannot specify this parameter and the network interface IDs parameter in the
+     * same request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of items to return for this request. The request returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
+     * token that you can specify in a subsequent call to get the next set of results.
+     * You cannot specify this parameter and the network interface IDs parameter in the
+     * same request.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return for this request. The request returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
+     * token that you can specify in a subsequent call to get the next set of results.
+     * You cannot specify this parameter and the network interface IDs parameter in the
+     * same request.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of items to return for this request. The request returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p>
+     * token that you can specify in a subsequent call to get the next set of results.
+     * You cannot specify this parameter and the network interface IDs parameter in the
+     * same request.</p>
      */
     inline DescribeNetworkInterfacesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -82,56 +82,47 @@ namespace Model
 
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) included in the VPC endpoint
-     * configuration.</p>
+     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpceConfigurationArns() const{ return m_vpceConfigurationArns; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) included in the VPC endpoint
-     * configuration.</p>
+     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
      */
     inline bool VpceConfigurationArnsHasBeenSet() const { return m_vpceConfigurationArnsHasBeenSet; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) included in the VPC endpoint
-     * configuration.</p>
+     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
      */
     inline void SetVpceConfigurationArns(const Aws::Vector<Aws::String>& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns = value; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) included in the VPC endpoint
-     * configuration.</p>
+     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
      */
     inline void SetVpceConfigurationArns(Aws::Vector<Aws::String>&& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns = std::move(value); }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) included in the VPC endpoint
-     * configuration.</p>
+     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
      */
     inline CreateRemoteAccessSessionConfiguration& WithVpceConfigurationArns(const Aws::Vector<Aws::String>& value) { SetVpceConfigurationArns(value); return *this;}
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) included in the VPC endpoint
-     * configuration.</p>
+     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
      */
     inline CreateRemoteAccessSessionConfiguration& WithVpceConfigurationArns(Aws::Vector<Aws::String>&& value) { SetVpceConfigurationArns(std::move(value)); return *this;}
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) included in the VPC endpoint
-     * configuration.</p>
+     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
      */
     inline CreateRemoteAccessSessionConfiguration& AddVpceConfigurationArns(const Aws::String& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(value); return *this; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) included in the VPC endpoint
-     * configuration.</p>
+     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
      */
     inline CreateRemoteAccessSessionConfiguration& AddVpceConfigurationArns(Aws::String&& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of Amazon Resource Names (ARNs) included in the VPC endpoint
-     * configuration.</p>
+     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
      */
     inline CreateRemoteAccessSessionConfiguration& AddVpceConfigurationArns(const char* value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(value); return *this; }
 

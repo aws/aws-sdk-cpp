@@ -17,6 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -47,6 +49,47 @@ namespace Model
 
     void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
     void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline const Aws::String& GetKeyPairId() const{ return m_keyPairId; }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline bool KeyPairIdHasBeenSet() const { return m_keyPairIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline void SetKeyPairId(const Aws::String& value) { m_keyPairIdHasBeenSet = true; m_keyPairId = value; }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline void SetKeyPairId(Aws::String&& value) { m_keyPairIdHasBeenSet = true; m_keyPairId = std::move(value); }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline void SetKeyPairId(const char* value) { m_keyPairIdHasBeenSet = true; m_keyPairId.assign(value); }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline KeyPairInfo& WithKeyPairId(const Aws::String& value) { SetKeyPairId(value); return *this;}
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline KeyPairInfo& WithKeyPairId(Aws::String&& value) { SetKeyPairId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline KeyPairInfo& WithKeyPairId(const char* value) { SetKeyPairId(value); return *this;}
 
 
     /**
@@ -154,13 +197,60 @@ namespace Model
      */
     inline KeyPairInfo& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline KeyPairInfo& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline KeyPairInfo& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline KeyPairInfo& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags applied to the key pair.</p>
+     */
+    inline KeyPairInfo& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
+
+    Aws::String m_keyPairId;
+    bool m_keyPairIdHasBeenSet;
 
     Aws::String m_keyFingerprint;
     bool m_keyFingerprintHasBeenSet;
 
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

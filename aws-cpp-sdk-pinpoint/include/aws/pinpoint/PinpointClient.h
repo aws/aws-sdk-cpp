@@ -96,6 +96,7 @@
 #include <aws/pinpoint/model/GetVoiceTemplateResult.h>
 #include <aws/pinpoint/model/ListJourneysResult.h>
 #include <aws/pinpoint/model/ListTagsForResourceResult.h>
+#include <aws/pinpoint/model/ListTemplateVersionsResult.h>
 #include <aws/pinpoint/model/ListTemplatesResult.h>
 #include <aws/pinpoint/model/PhoneNumberValidateResult.h>
 #include <aws/pinpoint/model/PutEventStreamResult.h>
@@ -122,6 +123,7 @@
 #include <aws/pinpoint/model/UpdateSegmentResult.h>
 #include <aws/pinpoint/model/UpdateSmsChannelResult.h>
 #include <aws/pinpoint/model/UpdateSmsTemplateResult.h>
+#include <aws/pinpoint/model/UpdateTemplateActiveVersionResult.h>
 #include <aws/pinpoint/model/UpdateVoiceChannelResult.h>
 #include <aws/pinpoint/model/UpdateVoiceTemplateResult.h>
 #include <aws/core/NoResult.h>
@@ -239,6 +241,7 @@ namespace Model
         class GetVoiceTemplateRequest;
         class ListJourneysRequest;
         class ListTagsForResourceRequest;
+        class ListTemplateVersionsRequest;
         class ListTemplatesRequest;
         class PhoneNumberValidateRequest;
         class PutEventStreamRequest;
@@ -267,6 +270,7 @@ namespace Model
         class UpdateSegmentRequest;
         class UpdateSmsChannelRequest;
         class UpdateSmsTemplateRequest;
+        class UpdateTemplateActiveVersionRequest;
         class UpdateVoiceChannelRequest;
         class UpdateVoiceTemplateRequest;
 
@@ -345,6 +349,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetVoiceTemplateResult, Aws::Client::AWSError<PinpointErrors>> GetVoiceTemplateOutcome;
         typedef Aws::Utils::Outcome<ListJourneysResult, Aws::Client::AWSError<PinpointErrors>> ListJourneysOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<PinpointErrors>> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ListTemplateVersionsResult, Aws::Client::AWSError<PinpointErrors>> ListTemplateVersionsOutcome;
         typedef Aws::Utils::Outcome<ListTemplatesResult, Aws::Client::AWSError<PinpointErrors>> ListTemplatesOutcome;
         typedef Aws::Utils::Outcome<PhoneNumberValidateResult, Aws::Client::AWSError<PinpointErrors>> PhoneNumberValidateOutcome;
         typedef Aws::Utils::Outcome<PutEventStreamResult, Aws::Client::AWSError<PinpointErrors>> PutEventStreamOutcome;
@@ -373,6 +378,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateSegmentResult, Aws::Client::AWSError<PinpointErrors>> UpdateSegmentOutcome;
         typedef Aws::Utils::Outcome<UpdateSmsChannelResult, Aws::Client::AWSError<PinpointErrors>> UpdateSmsChannelOutcome;
         typedef Aws::Utils::Outcome<UpdateSmsTemplateResult, Aws::Client::AWSError<PinpointErrors>> UpdateSmsTemplateOutcome;
+        typedef Aws::Utils::Outcome<UpdateTemplateActiveVersionResult, Aws::Client::AWSError<PinpointErrors>> UpdateTemplateActiveVersionOutcome;
         typedef Aws::Utils::Outcome<UpdateVoiceChannelResult, Aws::Client::AWSError<PinpointErrors>> UpdateVoiceChannelOutcome;
         typedef Aws::Utils::Outcome<UpdateVoiceTemplateResult, Aws::Client::AWSError<PinpointErrors>> UpdateVoiceTemplateOutcome;
 
@@ -451,6 +457,7 @@ namespace Model
         typedef std::future<GetVoiceTemplateOutcome> GetVoiceTemplateOutcomeCallable;
         typedef std::future<ListJourneysOutcome> ListJourneysOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<ListTemplateVersionsOutcome> ListTemplateVersionsOutcomeCallable;
         typedef std::future<ListTemplatesOutcome> ListTemplatesOutcomeCallable;
         typedef std::future<PhoneNumberValidateOutcome> PhoneNumberValidateOutcomeCallable;
         typedef std::future<PutEventStreamOutcome> PutEventStreamOutcomeCallable;
@@ -479,6 +486,7 @@ namespace Model
         typedef std::future<UpdateSegmentOutcome> UpdateSegmentOutcomeCallable;
         typedef std::future<UpdateSmsChannelOutcome> UpdateSmsChannelOutcomeCallable;
         typedef std::future<UpdateSmsTemplateOutcome> UpdateSmsTemplateOutcomeCallable;
+        typedef std::future<UpdateTemplateActiveVersionOutcome> UpdateTemplateActiveVersionOutcomeCallable;
         typedef std::future<UpdateVoiceChannelOutcome> UpdateVoiceChannelOutcomeCallable;
         typedef std::future<UpdateVoiceTemplateOutcome> UpdateVoiceTemplateOutcomeCallable;
 } // namespace Model
@@ -560,6 +568,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::GetVoiceTemplateRequest&, const Model::GetVoiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVoiceTemplateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::ListJourneysRequest&, const Model::ListJourneysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJourneysResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::ListTemplateVersionsRequest&, const Model::ListTemplateVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTemplateVersionsResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::ListTemplatesRequest&, const Model::ListTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTemplatesResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::PhoneNumberValidateRequest&, const Model::PhoneNumberValidateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PhoneNumberValidateResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::PutEventStreamRequest&, const Model::PutEventStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEventStreamResponseReceivedHandler;
@@ -588,6 +597,7 @@ namespace Model
     typedef std::function<void(const PinpointClient*, const Model::UpdateSegmentRequest&, const Model::UpdateSegmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSegmentResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateSmsChannelRequest&, const Model::UpdateSmsChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSmsChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateSmsTemplateRequest&, const Model::UpdateSmsTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSmsTemplateResponseReceivedHandler;
+    typedef std::function<void(const PinpointClient*, const Model::UpdateTemplateActiveVersionRequest&, const Model::UpdateTemplateActiveVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateActiveVersionResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateVoiceChannelRequest&, const Model::UpdateVoiceChannelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVoiceChannelResponseReceivedHandler;
     typedef std::function<void(const PinpointClient*, const Model::UpdateVoiceTemplateRequest&, const Model::UpdateVoiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVoiceTemplateResponseReceivedHandler;
 
@@ -677,16 +687,16 @@ namespace Model
         virtual void CreateCampaignAsync(const Model::CreateCampaignRequest& request, const CreateCampaignResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a message template that you can use in messages that are sent through
-         * the email channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a message template for messages that are sent through the email
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateEmailTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateEmailTemplateOutcome CreateEmailTemplate(const Model::CreateEmailTemplateRequest& request) const;
 
         /**
-         * <p>Creates a message template that you can use in messages that are sent through
-         * the email channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a message template for messages that are sent through the email
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateEmailTemplate">AWS
          * API Reference</a></p>
          *
@@ -695,8 +705,8 @@ namespace Model
         virtual Model::CreateEmailTemplateOutcomeCallable CreateEmailTemplateCallable(const Model::CreateEmailTemplateRequest& request) const;
 
         /**
-         * <p>Creates a message template that you can use in messages that are sent through
-         * the email channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a message template for messages that are sent through the email
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateEmailTemplate">AWS
          * API Reference</a></p>
          *
@@ -780,16 +790,16 @@ namespace Model
         virtual void CreateJourneyAsync(const Model::CreateJourneyRequest& request, const CreateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a message template that you can use in messages that are sent through
-         * a push notification channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a message template for messages that are sent through a push
+         * notification channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreatePushTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::CreatePushTemplateOutcome CreatePushTemplate(const Model::CreatePushTemplateRequest& request) const;
 
         /**
-         * <p>Creates a message template that you can use in messages that are sent through
-         * a push notification channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a message template for messages that are sent through a push
+         * notification channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreatePushTemplate">AWS
          * API Reference</a></p>
          *
@@ -798,8 +808,8 @@ namespace Model
         virtual Model::CreatePushTemplateOutcomeCallable CreatePushTemplateCallable(const Model::CreatePushTemplateRequest& request) const;
 
         /**
-         * <p>Creates a message template that you can use in messages that are sent through
-         * a push notification channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a message template for messages that are sent through a push
+         * notification channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreatePushTemplate">AWS
          * API Reference</a></p>
          *
@@ -839,16 +849,16 @@ namespace Model
         virtual void CreateSegmentAsync(const Model::CreateSegmentRequest& request, const CreateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a message template that you can use in messages that are sent through
-         * the SMS channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a message template for messages that are sent through the SMS
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSmsTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateSmsTemplateOutcome CreateSmsTemplate(const Model::CreateSmsTemplateRequest& request) const;
 
         /**
-         * <p>Creates a message template that you can use in messages that are sent through
-         * the SMS channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a message template for messages that are sent through the SMS
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSmsTemplate">AWS
          * API Reference</a></p>
          *
@@ -857,8 +867,8 @@ namespace Model
         virtual Model::CreateSmsTemplateOutcomeCallable CreateSmsTemplateCallable(const Model::CreateSmsTemplateRequest& request) const;
 
         /**
-         * <p>Creates a message template that you can use in messages that are sent through
-         * the SMS channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a message template for messages that are sent through the SMS
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSmsTemplate">AWS
          * API Reference</a></p>
          *
@@ -867,16 +877,16 @@ namespace Model
         virtual void CreateSmsTemplateAsync(const Model::CreateSmsTemplateRequest& request, const CreateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates a message template that you can use in messages that are sent through
-         * the voice channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a message template for messages that are sent through the voice
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateVoiceTemplateOutcome CreateVoiceTemplate(const Model::CreateVoiceTemplateRequest& request) const;
 
         /**
-         * <p>Creates a message template that you can use in messages that are sent through
-         * the voice channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a message template for messages that are sent through the voice
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate">AWS
          * API Reference</a></p>
          *
@@ -885,8 +895,8 @@ namespace Model
         virtual Model::CreateVoiceTemplateOutcomeCallable CreateVoiceTemplateCallable(const Model::CreateVoiceTemplateRequest& request) const;
 
         /**
-         * <p>Creates a message template that you can use in messages that are sent through
-         * the voice channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a message template for messages that are sent through the voice
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateVoiceTemplate">AWS
          * API Reference</a></p>
          *
@@ -1141,16 +1151,16 @@ namespace Model
         virtual void DeleteEmailChannelAsync(const Model::DeleteEmailChannelRequest& request, const DeleteEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a message template that was designed for use in messages that were
-         * sent through the email channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a message template for messages that were sent through the email
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteEmailTemplateOutcome DeleteEmailTemplate(const Model::DeleteEmailTemplateRequest& request) const;
 
         /**
-         * <p>Deletes a message template that was designed for use in messages that were
-         * sent through the email channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a message template for messages that were sent through the email
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailTemplate">AWS
          * API Reference</a></p>
          *
@@ -1159,8 +1169,8 @@ namespace Model
         virtual Model::DeleteEmailTemplateOutcomeCallable DeleteEmailTemplateCallable(const Model::DeleteEmailTemplateRequest& request) const;
 
         /**
-         * <p>Deletes a message template that was designed for use in messages that were
-         * sent through the email channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a message template for messages that were sent through the email
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteEmailTemplate">AWS
          * API Reference</a></p>
          *
@@ -1272,16 +1282,16 @@ namespace Model
         virtual void DeleteJourneyAsync(const Model::DeleteJourneyRequest& request, const DeleteJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a message template that was designed for use in messages that were
-         * sent through a push notification channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a message template for messages that were sent through a push
+         * notification channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeletePushTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::DeletePushTemplateOutcome DeletePushTemplate(const Model::DeletePushTemplateRequest& request) const;
 
         /**
-         * <p>Deletes a message template that was designed for use in messages that were
-         * sent through a push notification channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a message template for messages that were sent through a push
+         * notification channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeletePushTemplate">AWS
          * API Reference</a></p>
          *
@@ -1290,8 +1300,8 @@ namespace Model
         virtual Model::DeletePushTemplateOutcomeCallable DeletePushTemplateCallable(const Model::DeletePushTemplateRequest& request) const;
 
         /**
-         * <p>Deletes a message template that was designed for use in messages that were
-         * sent through a push notification channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a message template for messages that were sent through a push
+         * notification channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeletePushTemplate">AWS
          * API Reference</a></p>
          *
@@ -1353,16 +1363,16 @@ namespace Model
         virtual void DeleteSmsChannelAsync(const Model::DeleteSmsChannelRequest& request, const DeleteSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a message template that was designed for use in messages that were
-         * sent through the SMS channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a message template for messages that were sent through the SMS
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteSmsTemplateOutcome DeleteSmsTemplate(const Model::DeleteSmsTemplateRequest& request) const;
 
         /**
-         * <p>Deletes a message template that was designed for use in messages that were
-         * sent through the SMS channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a message template for messages that were sent through the SMS
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsTemplate">AWS
          * API Reference</a></p>
          *
@@ -1371,8 +1381,8 @@ namespace Model
         virtual Model::DeleteSmsTemplateOutcomeCallable DeleteSmsTemplateCallable(const Model::DeleteSmsTemplateRequest& request) const;
 
         /**
-         * <p>Deletes a message template that was designed for use in messages that were
-         * sent through the SMS channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a message template for messages that were sent through the SMS
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteSmsTemplate">AWS
          * API Reference</a></p>
          *
@@ -1437,16 +1447,16 @@ namespace Model
         virtual void DeleteVoiceChannelAsync(const Model::DeleteVoiceChannelRequest& request, const DeleteVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes a message template that was designed for use in messages that were
-         * sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a message template for messages that were sent through the voice
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteVoiceTemplateOutcome DeleteVoiceTemplate(const Model::DeleteVoiceTemplateRequest& request) const;
 
         /**
-         * <p>Deletes a message template that was designed for use in messages that were
-         * sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a message template for messages that were sent through the voice
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate">AWS
          * API Reference</a></p>
          *
@@ -1455,8 +1465,8 @@ namespace Model
         virtual Model::DeleteVoiceTemplateOutcomeCallable DeleteVoiceTemplateCallable(const Model::DeleteVoiceTemplateRequest& request) const;
 
         /**
-         * <p>Deletes a message template that was designed for use in messages that were
-         * sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a message template for messages that were sent through the voice
+         * channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/DeleteVoiceTemplate">AWS
          * API Reference</a></p>
          *
@@ -1686,16 +1696,16 @@ namespace Model
         virtual void GetApplicationSettingsAsync(const Model::GetApplicationSettingsRequest& request, const GetApplicationSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves information about all of your applications.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves information about all the applications that are associated with
+         * your Amazon Pinpoint account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApps">AWS
          * API Reference</a></p>
          */
         virtual Model::GetAppsOutcome GetApps(const Model::GetAppsRequest& request) const;
 
         /**
-         * <p>Retrieves information about all of your applications.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves information about all the applications that are associated with
+         * your Amazon Pinpoint account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApps">AWS
          * API Reference</a></p>
          *
@@ -1704,8 +1714,8 @@ namespace Model
         virtual Model::GetAppsOutcomeCallable GetAppsCallable(const Model::GetAppsRequest& request) const;
 
         /**
-         * <p>Retrieves information about all of your applications.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves information about all the applications that are associated with
+         * your Amazon Pinpoint account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetApps">AWS
          * API Reference</a></p>
          *
@@ -1969,16 +1979,16 @@ namespace Model
         virtual void GetEmailChannelAsync(const Model::GetEmailChannelRequest& request, const GetEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the content and settings for a message template that you can use in
-         * messages that are sent through the email channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the content and settings of a message template for messages that
+         * are sent through the email channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::GetEmailTemplateOutcome GetEmailTemplate(const Model::GetEmailTemplateRequest& request) const;
 
         /**
-         * <p>Retrieves the content and settings for a message template that you can use in
-         * messages that are sent through the email channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the content and settings of a message template for messages that
+         * are sent through the email channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailTemplate">AWS
          * API Reference</a></p>
          *
@@ -1987,8 +1997,8 @@ namespace Model
         virtual Model::GetEmailTemplateOutcomeCallable GetEmailTemplateCallable(const Model::GetEmailTemplateRequest& request) const;
 
         /**
-         * <p>Retrieves the content and settings for a message template that you can use in
-         * messages that are sent through the email channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the content and settings of a message template for messages that
+         * are sent through the email channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEmailTemplate">AWS
          * API Reference</a></p>
          *
@@ -2305,18 +2315,16 @@ namespace Model
         virtual void GetJourneyExecutionMetricsAsync(const Model::GetJourneyExecutionMetricsRequest& request, const GetJourneyExecutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the content and settings for a message template that you can use in
-         * messages that are sent through a push notification channel.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the content and settings of a message template for messages that
+         * are sent through a push notification channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetPushTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::GetPushTemplateOutcome GetPushTemplate(const Model::GetPushTemplateRequest& request) const;
 
         /**
-         * <p>Retrieves the content and settings for a message template that you can use in
-         * messages that are sent through a push notification channel.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the content and settings of a message template for messages that
+         * are sent through a push notification channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetPushTemplate">AWS
          * API Reference</a></p>
          *
@@ -2325,9 +2333,8 @@ namespace Model
         virtual Model::GetPushTemplateOutcomeCallable GetPushTemplateCallable(const Model::GetPushTemplateRequest& request) const;
 
         /**
-         * <p>Retrieves the content and settings for a message template that you can use in
-         * messages that are sent through a push notification channel.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves the content and settings of a message template for messages that
+         * are sent through a push notification channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetPushTemplate">AWS
          * API Reference</a></p>
          *
@@ -2455,7 +2462,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about the configuration, dimension, and other settings
-         * for all versions of a specific segment that's associated with an
+         * for all the versions of a specific segment that's associated with an
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersions">AWS
          * API Reference</a></p>
@@ -2464,7 +2471,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about the configuration, dimension, and other settings
-         * for all versions of a specific segment that's associated with an
+         * for all the versions of a specific segment that's associated with an
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersions">AWS
          * API Reference</a></p>
@@ -2475,7 +2482,7 @@ namespace Model
 
         /**
          * <p>Retrieves information about the configuration, dimension, and other settings
-         * for all versions of a specific segment that's associated with an
+         * for all the versions of a specific segment that's associated with an
          * application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSegmentVersions">AWS
          * API Reference</a></p>
@@ -2544,16 +2551,16 @@ namespace Model
         virtual void GetSmsChannelAsync(const Model::GetSmsChannelRequest& request, const GetSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the content and settings for a message template that you can use in
-         * messages that are sent through the SMS channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the content and settings of a message template for messages that
+         * are sent through the SMS channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::GetSmsTemplateOutcome GetSmsTemplate(const Model::GetSmsTemplateRequest& request) const;
 
         /**
-         * <p>Retrieves the content and settings for a message template that you can use in
-         * messages that are sent through the SMS channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the content and settings of a message template for messages that
+         * are sent through the SMS channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsTemplate">AWS
          * API Reference</a></p>
          *
@@ -2562,8 +2569,8 @@ namespace Model
         virtual Model::GetSmsTemplateOutcomeCallable GetSmsTemplateCallable(const Model::GetSmsTemplateRequest& request) const;
 
         /**
-         * <p>Retrieves the content and settings for a message template that you can use in
-         * messages that are sent through the SMS channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the content and settings of a message template for messages that
+         * are sent through the SMS channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetSmsTemplate">AWS
          * API Reference</a></p>
          *
@@ -2628,16 +2635,16 @@ namespace Model
         virtual void GetVoiceChannelAsync(const Model::GetVoiceChannelRequest& request, const GetVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the content and settings for a message template that you can use in
-         * messages that are sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the content and settings of a message template for messages that
+         * are sent through the voice channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::GetVoiceTemplateOutcome GetVoiceTemplate(const Model::GetVoiceTemplateRequest& request) const;
 
         /**
-         * <p>Retrieves the content and settings for a message template that you can use in
-         * messages that are sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the content and settings of a message template for messages that
+         * are sent through the voice channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate">AWS
          * API Reference</a></p>
          *
@@ -2646,8 +2653,8 @@ namespace Model
         virtual Model::GetVoiceTemplateOutcomeCallable GetVoiceTemplateCallable(const Model::GetVoiceTemplateRequest& request) const;
 
         /**
-         * <p>Retrieves the content and settings for a message template that you can use in
-         * messages that are sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves the content and settings of a message template for messages that
+         * are sent through the voice channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetVoiceTemplate">AWS
          * API Reference</a></p>
          *
@@ -2716,6 +2723,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves information about all the versions of a specific message
+         * template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplateVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTemplateVersionsOutcome ListTemplateVersions(const Model::ListTemplateVersionsRequest& request) const;
+
+        /**
+         * <p>Retrieves information about all the versions of a specific message
+         * template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplateVersions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListTemplateVersionsOutcomeCallable ListTemplateVersionsCallable(const Model::ListTemplateVersionsRequest& request) const;
+
+        /**
+         * <p>Retrieves information about all the versions of a specific message
+         * template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTemplateVersions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListTemplateVersionsAsync(const Model::ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves information about all the message templates that are associated
@@ -3219,16 +3254,16 @@ namespace Model
         virtual void UpdateEmailChannelAsync(const Model::UpdateEmailChannelRequest& request, const UpdateEmailChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing message template that you can use in messages that are
-         * sent through the email channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing message template for messages that are sent through the
+         * email channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateEmailTemplateOutcome UpdateEmailTemplate(const Model::UpdateEmailTemplateRequest& request) const;
 
         /**
-         * <p>Updates an existing message template that you can use in messages that are
-         * sent through the email channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing message template for messages that are sent through the
+         * email channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailTemplate">AWS
          * API Reference</a></p>
          *
@@ -3237,8 +3272,8 @@ namespace Model
         virtual Model::UpdateEmailTemplateOutcomeCallable UpdateEmailTemplateCallable(const Model::UpdateEmailTemplateRequest& request) const;
 
         /**
-         * <p>Updates an existing message template that you can use in messages that are
-         * sent through the email channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing message template for messages that are sent through the
+         * email channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateEmailTemplate">AWS
          * API Reference</a></p>
          *
@@ -3374,14 +3409,14 @@ namespace Model
         virtual void UpdateJourneyAsync(const Model::UpdateJourneyRequest& request, const UpdateJourneyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Cancels an active journey.</p><p><h3>See Also:</h3>   <a
+         * <p>Cancels (stops) an active journey.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourneyState">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateJourneyStateOutcome UpdateJourneyState(const Model::UpdateJourneyStateRequest& request) const;
 
         /**
-         * <p>Cancels an active journey.</p><p><h3>See Also:</h3>   <a
+         * <p>Cancels (stops) an active journey.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourneyState">AWS
          * API Reference</a></p>
          *
@@ -3390,7 +3425,7 @@ namespace Model
         virtual Model::UpdateJourneyStateOutcomeCallable UpdateJourneyStateCallable(const Model::UpdateJourneyStateRequest& request) const;
 
         /**
-         * <p>Cancels an active journey.</p><p><h3>See Also:</h3>   <a
+         * <p>Cancels (stops) an active journey.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateJourneyState">AWS
          * API Reference</a></p>
          *
@@ -3399,16 +3434,16 @@ namespace Model
         virtual void UpdateJourneyStateAsync(const Model::UpdateJourneyStateRequest& request, const UpdateJourneyStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing message template that you can use in messages that are
-         * sent through a push notification channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing message template for messages that are sent through a
+         * push notification channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdatePushTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdatePushTemplateOutcome UpdatePushTemplate(const Model::UpdatePushTemplateRequest& request) const;
 
         /**
-         * <p>Updates an existing message template that you can use in messages that are
-         * sent through a push notification channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing message template for messages that are sent through a
+         * push notification channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdatePushTemplate">AWS
          * API Reference</a></p>
          *
@@ -3417,8 +3452,8 @@ namespace Model
         virtual Model::UpdatePushTemplateOutcomeCallable UpdatePushTemplateCallable(const Model::UpdatePushTemplateRequest& request) const;
 
         /**
-         * <p>Updates an existing message template that you can use in messages that are
-         * sent through a push notification channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing message template for messages that are sent through a
+         * push notification channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdatePushTemplate">AWS
          * API Reference</a></p>
          *
@@ -3486,16 +3521,16 @@ namespace Model
         virtual void UpdateSmsChannelAsync(const Model::UpdateSmsChannelRequest& request, const UpdateSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing message template that you can use in messages that are
-         * sent through the SMS channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing message template for messages that are sent through the
+         * SMS channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateSmsTemplateOutcome UpdateSmsTemplate(const Model::UpdateSmsTemplateRequest& request) const;
 
         /**
-         * <p>Updates an existing message template that you can use in messages that are
-         * sent through the SMS channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing message template for messages that are sent through the
+         * SMS channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsTemplate">AWS
          * API Reference</a></p>
          *
@@ -3504,14 +3539,42 @@ namespace Model
         virtual Model::UpdateSmsTemplateOutcomeCallable UpdateSmsTemplateCallable(const Model::UpdateSmsTemplateRequest& request) const;
 
         /**
-         * <p>Updates an existing message template that you can use in messages that are
-         * sent through the SMS channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing message template for messages that are sent through the
+         * SMS channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateSmsTemplate">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void UpdateSmsTemplateAsync(const Model::UpdateSmsTemplateRequest& request, const UpdateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Changes the status of a specific version of a message template to
+         * <i>active</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateTemplateActiveVersion">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTemplateActiveVersionOutcome UpdateTemplateActiveVersion(const Model::UpdateTemplateActiveVersionRequest& request) const;
+
+        /**
+         * <p>Changes the status of a specific version of a message template to
+         * <i>active</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateTemplateActiveVersion">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTemplateActiveVersionOutcomeCallable UpdateTemplateActiveVersionCallable(const Model::UpdateTemplateActiveVersionRequest& request) const;
+
+        /**
+         * <p>Changes the status of a specific version of a message template to
+         * <i>active</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateTemplateActiveVersion">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTemplateActiveVersionAsync(const Model::UpdateTemplateActiveVersionRequest& request, const UpdateTemplateActiveVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables the voice channel for an application or updates the status and
@@ -3542,16 +3605,16 @@ namespace Model
         virtual void UpdateVoiceChannelAsync(const Model::UpdateVoiceChannelRequest& request, const UpdateVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Updates an existing message template that you can use in messages that are
-         * sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing message template for messages that are sent through the
+         * voice channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate">AWS
          * API Reference</a></p>
          */
         virtual Model::UpdateVoiceTemplateOutcome UpdateVoiceTemplate(const Model::UpdateVoiceTemplateRequest& request) const;
 
         /**
-         * <p>Updates an existing message template that you can use in messages that are
-         * sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing message template for messages that are sent through the
+         * voice channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate">AWS
          * API Reference</a></p>
          *
@@ -3560,8 +3623,8 @@ namespace Model
         virtual Model::UpdateVoiceTemplateOutcomeCallable UpdateVoiceTemplateCallable(const Model::UpdateVoiceTemplateRequest& request) const;
 
         /**
-         * <p>Updates an existing message template that you can use in messages that are
-         * sent through the voice channel.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates an existing message template for messages that are sent through the
+         * voice channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateVoiceTemplate">AWS
          * API Reference</a></p>
          *
@@ -3648,6 +3711,7 @@ namespace Model
         void GetVoiceTemplateAsyncHelper(const Model::GetVoiceTemplateRequest& request, const GetVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListJourneysAsyncHelper(const Model::ListJourneysRequest& request, const ListJourneysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTemplateVersionsAsyncHelper(const Model::ListTemplateVersionsRequest& request, const ListTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTemplatesAsyncHelper(const Model::ListTemplatesRequest& request, const ListTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PhoneNumberValidateAsyncHelper(const Model::PhoneNumberValidateRequest& request, const PhoneNumberValidateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutEventStreamAsyncHelper(const Model::PutEventStreamRequest& request, const PutEventStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3676,6 +3740,7 @@ namespace Model
         void UpdateSegmentAsyncHelper(const Model::UpdateSegmentRequest& request, const UpdateSegmentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSmsChannelAsyncHelper(const Model::UpdateSmsChannelRequest& request, const UpdateSmsChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSmsTemplateAsyncHelper(const Model::UpdateSmsTemplateRequest& request, const UpdateSmsTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTemplateActiveVersionAsyncHelper(const Model::UpdateTemplateActiveVersionRequest& request, const UpdateTemplateActiveVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVoiceChannelAsyncHelper(const Model::UpdateVoiceChannelRequest& request, const UpdateVoiceChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateVoiceTemplateAsyncHelper(const Model::UpdateVoiceTemplateRequest& request, const UpdateVoiceTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 

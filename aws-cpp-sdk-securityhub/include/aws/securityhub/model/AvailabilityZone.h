@@ -1,0 +1,142 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/securityhub/SecurityHub_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace SecurityHub
+{
+namespace Model
+{
+
+  /**
+   * <p>Information about an Availability Zone.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AvailabilityZone">AWS
+   * API Reference</a></p>
+   */
+  class AWS_SECURITYHUB_API AvailabilityZone
+  {
+  public:
+    AvailabilityZone();
+    AvailabilityZone(Aws::Utils::Json::JsonView jsonValue);
+    AvailabilityZone& operator=(Aws::Utils::Json::JsonView jsonValue);
+    Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
+    inline const Aws::String& GetZoneName() const{ return m_zoneName; }
+
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
+    inline bool ZoneNameHasBeenSet() const { return m_zoneNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
+    inline void SetZoneName(const Aws::String& value) { m_zoneNameHasBeenSet = true; m_zoneName = value; }
+
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
+    inline void SetZoneName(Aws::String&& value) { m_zoneNameHasBeenSet = true; m_zoneName = std::move(value); }
+
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
+    inline void SetZoneName(const char* value) { m_zoneNameHasBeenSet = true; m_zoneName.assign(value); }
+
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
+    inline AvailabilityZone& WithZoneName(const Aws::String& value) { SetZoneName(value); return *this;}
+
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
+    inline AvailabilityZone& WithZoneName(Aws::String&& value) { SetZoneName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the Availability Zone.</p>
+     */
+    inline AvailabilityZone& WithZoneName(const char* value) { SetZoneName(value); return *this;}
+
+
+    /**
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
+     */
+    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
+     */
+    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
+
+    /**
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
+     */
+    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
+
+    /**
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
+     */
+    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
+
+    /**
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
+     */
+    inline AvailabilityZone& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
+
+    /**
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
+     */
+    inline AvailabilityZone& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
+     */
+    inline AvailabilityZone& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+
+  private:
+
+    Aws::String m_zoneName;
+    bool m_zoneNameHasBeenSet;
+
+    Aws::String m_subnetId;
+    bool m_subnetIdHasBeenSet;
+  };
+
+} // namespace Model
+} // namespace SecurityHub
+} // namespace Aws

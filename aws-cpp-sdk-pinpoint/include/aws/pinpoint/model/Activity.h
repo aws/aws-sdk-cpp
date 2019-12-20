@@ -214,43 +214,43 @@ namespace Model
 
     /**
      * <p>The settings for a multivariate split activity. This type of activity sends
-     * participants down one of as many as five paths in a journey, based on conditions
-     * that you specify.</p>
+     * participants down one of as many as five paths (including a default <i>Else</i>
+     * path) in a journey, based on conditions that you specify.</p>
      */
     inline const MultiConditionalSplitActivity& GetMultiCondition() const{ return m_multiCondition; }
 
     /**
      * <p>The settings for a multivariate split activity. This type of activity sends
-     * participants down one of as many as five paths in a journey, based on conditions
-     * that you specify.</p>
+     * participants down one of as many as five paths (including a default <i>Else</i>
+     * path) in a journey, based on conditions that you specify.</p>
      */
     inline bool MultiConditionHasBeenSet() const { return m_multiConditionHasBeenSet; }
 
     /**
      * <p>The settings for a multivariate split activity. This type of activity sends
-     * participants down one of as many as five paths in a journey, based on conditions
-     * that you specify.</p>
+     * participants down one of as many as five paths (including a default <i>Else</i>
+     * path) in a journey, based on conditions that you specify.</p>
      */
     inline void SetMultiCondition(const MultiConditionalSplitActivity& value) { m_multiConditionHasBeenSet = true; m_multiCondition = value; }
 
     /**
      * <p>The settings for a multivariate split activity. This type of activity sends
-     * participants down one of as many as five paths in a journey, based on conditions
-     * that you specify.</p>
+     * participants down one of as many as five paths (including a default <i>Else</i>
+     * path) in a journey, based on conditions that you specify.</p>
      */
     inline void SetMultiCondition(MultiConditionalSplitActivity&& value) { m_multiConditionHasBeenSet = true; m_multiCondition = std::move(value); }
 
     /**
      * <p>The settings for a multivariate split activity. This type of activity sends
-     * participants down one of as many as five paths in a journey, based on conditions
-     * that you specify.</p>
+     * participants down one of as many as five paths (including a default <i>Else</i>
+     * path) in a journey, based on conditions that you specify.</p>
      */
     inline Activity& WithMultiCondition(const MultiConditionalSplitActivity& value) { SetMultiCondition(value); return *this;}
 
     /**
      * <p>The settings for a multivariate split activity. This type of activity sends
-     * participants down one of as many as five paths in a journey, based on conditions
-     * that you specify.</p>
+     * participants down one of as many as five paths (including a default <i>Else</i>
+     * path) in a journey, based on conditions that you specify.</p>
      */
     inline Activity& WithMultiCondition(MultiConditionalSplitActivity&& value) { SetMultiCondition(std::move(value)); return *this;}
 

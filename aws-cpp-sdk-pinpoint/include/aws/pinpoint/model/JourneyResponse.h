@@ -56,74 +56,86 @@ namespace Model
 
 
     /**
-     * <p>The configuration and other settings for the activities that comprise the
-     * journey.</p>
+     * <p>A map that contains a set of Activity objects, one object for each activity
+     * in the journey. For each Activity object, the key is the unique identifier
+     * (string) for an activity and the value is the settings for the activity.</p>
      */
     inline const Aws::Map<Aws::String, Activity>& GetActivities() const{ return m_activities; }
 
     /**
-     * <p>The configuration and other settings for the activities that comprise the
-     * journey.</p>
+     * <p>A map that contains a set of Activity objects, one object for each activity
+     * in the journey. For each Activity object, the key is the unique identifier
+     * (string) for an activity and the value is the settings for the activity.</p>
      */
     inline bool ActivitiesHasBeenSet() const { return m_activitiesHasBeenSet; }
 
     /**
-     * <p>The configuration and other settings for the activities that comprise the
-     * journey.</p>
+     * <p>A map that contains a set of Activity objects, one object for each activity
+     * in the journey. For each Activity object, the key is the unique identifier
+     * (string) for an activity and the value is the settings for the activity.</p>
      */
     inline void SetActivities(const Aws::Map<Aws::String, Activity>& value) { m_activitiesHasBeenSet = true; m_activities = value; }
 
     /**
-     * <p>The configuration and other settings for the activities that comprise the
-     * journey.</p>
+     * <p>A map that contains a set of Activity objects, one object for each activity
+     * in the journey. For each Activity object, the key is the unique identifier
+     * (string) for an activity and the value is the settings for the activity.</p>
      */
     inline void SetActivities(Aws::Map<Aws::String, Activity>&& value) { m_activitiesHasBeenSet = true; m_activities = std::move(value); }
 
     /**
-     * <p>The configuration and other settings for the activities that comprise the
-     * journey.</p>
+     * <p>A map that contains a set of Activity objects, one object for each activity
+     * in the journey. For each Activity object, the key is the unique identifier
+     * (string) for an activity and the value is the settings for the activity.</p>
      */
     inline JourneyResponse& WithActivities(const Aws::Map<Aws::String, Activity>& value) { SetActivities(value); return *this;}
 
     /**
-     * <p>The configuration and other settings for the activities that comprise the
-     * journey.</p>
+     * <p>A map that contains a set of Activity objects, one object for each activity
+     * in the journey. For each Activity object, the key is the unique identifier
+     * (string) for an activity and the value is the settings for the activity.</p>
      */
     inline JourneyResponse& WithActivities(Aws::Map<Aws::String, Activity>&& value) { SetActivities(std::move(value)); return *this;}
 
     /**
-     * <p>The configuration and other settings for the activities that comprise the
-     * journey.</p>
+     * <p>A map that contains a set of Activity objects, one object for each activity
+     * in the journey. For each Activity object, the key is the unique identifier
+     * (string) for an activity and the value is the settings for the activity.</p>
      */
     inline JourneyResponse& AddActivities(const Aws::String& key, const Activity& value) { m_activitiesHasBeenSet = true; m_activities.emplace(key, value); return *this; }
 
     /**
-     * <p>The configuration and other settings for the activities that comprise the
-     * journey.</p>
+     * <p>A map that contains a set of Activity objects, one object for each activity
+     * in the journey. For each Activity object, the key is the unique identifier
+     * (string) for an activity and the value is the settings for the activity.</p>
      */
     inline JourneyResponse& AddActivities(Aws::String&& key, const Activity& value) { m_activitiesHasBeenSet = true; m_activities.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The configuration and other settings for the activities that comprise the
-     * journey.</p>
+     * <p>A map that contains a set of Activity objects, one object for each activity
+     * in the journey. For each Activity object, the key is the unique identifier
+     * (string) for an activity and the value is the settings for the activity.</p>
      */
     inline JourneyResponse& AddActivities(const Aws::String& key, Activity&& value) { m_activitiesHasBeenSet = true; m_activities.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The configuration and other settings for the activities that comprise the
-     * journey.</p>
+     * <p>A map that contains a set of Activity objects, one object for each activity
+     * in the journey. For each Activity object, the key is the unique identifier
+     * (string) for an activity and the value is the settings for the activity.</p>
      */
     inline JourneyResponse& AddActivities(Aws::String&& key, Activity&& value) { m_activitiesHasBeenSet = true; m_activities.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The configuration and other settings for the activities that comprise the
-     * journey.</p>
+     * <p>A map that contains a set of Activity objects, one object for each activity
+     * in the journey. For each Activity object, the key is the unique identifier
+     * (string) for an activity and the value is the settings for the activity.</p>
      */
     inline JourneyResponse& AddActivities(const char* key, Activity&& value) { m_activitiesHasBeenSet = true; m_activities.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The configuration and other settings for the activities that comprise the
-     * journey.</p>
+     * <p>A map that contains a set of Activity objects, one object for each activity
+     * in the journey. For each Activity object, the key is the unique identifier
+     * (string) for an activity and the value is the settings for the activity.</p>
      */
     inline JourneyResponse& AddActivities(const char* key, const Activity& value) { m_activitiesHasBeenSet = true; m_activities.emplace(key, value); return *this; }
 
@@ -647,7 +659,7 @@ namespace Model
      * specified for it. If a journey's status is CLOSED, you can't add participants to
      * it, and no existing participants can enter the journey for the first time.
      * However, any existing participants who are currently waiting to start an
-     * activity may resume the journey.</p></li></ul>
+     * activity may continue the journey.</p></li></ul>
      */
     inline const State& GetState() const{ return m_state; }
 
@@ -668,7 +680,7 @@ namespace Model
      * specified for it. If a journey's status is CLOSED, you can't add participants to
      * it, and no existing participants can enter the journey for the first time.
      * However, any existing participants who are currently waiting to start an
-     * activity may resume the journey.</p></li></ul>
+     * activity may continue the journey.</p></li></ul>
      */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
@@ -689,7 +701,7 @@ namespace Model
      * specified for it. If a journey's status is CLOSED, you can't add participants to
      * it, and no existing participants can enter the journey for the first time.
      * However, any existing participants who are currently waiting to start an
-     * activity may resume the journey.</p></li></ul>
+     * activity may continue the journey.</p></li></ul>
      */
     inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
 
@@ -710,7 +722,7 @@ namespace Model
      * specified for it. If a journey's status is CLOSED, you can't add participants to
      * it, and no existing participants can enter the journey for the first time.
      * However, any existing participants who are currently waiting to start an
-     * activity may resume the journey.</p></li></ul>
+     * activity may continue the journey.</p></li></ul>
      */
     inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
 
@@ -731,7 +743,7 @@ namespace Model
      * specified for it. If a journey's status is CLOSED, you can't add participants to
      * it, and no existing participants can enter the journey for the first time.
      * However, any existing participants who are currently waiting to start an
-     * activity may resume the journey.</p></li></ul>
+     * activity may continue the journey.</p></li></ul>
      */
     inline JourneyResponse& WithState(const State& value) { SetState(value); return *this;}
 
@@ -752,7 +764,7 @@ namespace Model
      * specified for it. If a journey's status is CLOSED, you can't add participants to
      * it, and no existing participants can enter the journey for the first time.
      * However, any existing participants who are currently waiting to start an
-     * activity may resume the journey.</p></li></ul>
+     * activity may continue the journey.</p></li></ul>
      */
     inline JourneyResponse& WithState(State&& value) { SetState(std::move(value)); return *this;}
 

@@ -32,6 +32,7 @@ namespace Aws
 
         static const int SourceUrl_HASH = HashingUtils::HashString("SourceUrl");
         static const int S3FileUrl_HASH = HashingUtils::HashString("S3FileUrl");
+        static const int AttachmentReference_HASH = HashingUtils::HashString("AttachmentReference");
 
 
         AttachmentsSourceKey GetAttachmentsSourceKeyForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == S3FileUrl_HASH)
           {
             return AttachmentsSourceKey::S3FileUrl;
+          }
+          else if (hashCode == AttachmentReference_HASH)
+          {
+            return AttachmentsSourceKey::AttachmentReference;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "SourceUrl";
           case AttachmentsSourceKey::S3FileUrl:
             return "S3FileUrl";
+          case AttachmentsSourceKey::AttachmentReference:
+            return "AttachmentReference";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

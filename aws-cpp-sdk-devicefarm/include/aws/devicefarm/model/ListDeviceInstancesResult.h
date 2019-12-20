@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>An object containing information about your device instances.</p>
+     * <p>An object that contains information about your device instances.</p>
      */
     inline const Aws::Vector<DeviceInstance>& GetDeviceInstances() const{ return m_deviceInstances; }
 
     /**
-     * <p>An object containing information about your device instances.</p>
+     * <p>An object that contains information about your device instances.</p>
      */
     inline void SetDeviceInstances(const Aws::Vector<DeviceInstance>& value) { m_deviceInstances = value; }
 
     /**
-     * <p>An object containing information about your device instances.</p>
+     * <p>An object that contains information about your device instances.</p>
      */
     inline void SetDeviceInstances(Aws::Vector<DeviceInstance>&& value) { m_deviceInstances = std::move(value); }
 
     /**
-     * <p>An object containing information about your device instances.</p>
+     * <p>An object that contains information about your device instances.</p>
      */
     inline ListDeviceInstancesResult& WithDeviceInstances(const Aws::Vector<DeviceInstance>& value) { SetDeviceInstances(value); return *this;}
 
     /**
-     * <p>An object containing information about your device instances.</p>
+     * <p>An object that contains information about your device instances.</p>
      */
     inline ListDeviceInstancesResult& WithDeviceInstances(Aws::Vector<DeviceInstance>&& value) { SetDeviceInstances(std::move(value)); return *this;}
 
     /**
-     * <p>An object containing information about your device instances.</p>
+     * <p>An object that contains information about your device instances.</p>
      */
     inline ListDeviceInstancesResult& AddDeviceInstances(const DeviceInstance& value) { m_deviceInstances.push_back(value); return *this; }
 
     /**
-     * <p>An object containing information about your device instances.</p>
+     * <p>An object that contains information about your device instances.</p>
      */
     inline ListDeviceInstancesResult& AddDeviceInstances(DeviceInstance&& value) { m_deviceInstances.push_back(std::move(value)); return *this; }
 

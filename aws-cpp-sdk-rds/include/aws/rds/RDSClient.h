@@ -1304,7 +1304,7 @@ namespace Aws
          * another. In that case, the AWS Region where you call the
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
          * snapshot copy. </p> <p>For more information about copying snapshots, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
          * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
@@ -1318,7 +1318,7 @@ namespace Aws
          * another. In that case, the AWS Region where you call the
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
          * snapshot copy. </p> <p>For more information about copying snapshots, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
          * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS
@@ -1334,7 +1334,7 @@ namespace Aws
          * another. In that case, the AWS Region where you call the
          * <code>CopyDBSnapshot</code> action is the destination AWS Region for the DB
          * snapshot copy. </p> <p>For more information about copying snapshots, see <a
-         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopyDBSnapshot.html">Copying
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CopySnapshot.html#USER_CopyDBSnapshot">Copying
          * a DB Snapshot</a> in the <i>Amazon RDS User Guide.</i> </p><p><h3>See Also:</h3>
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot">AWS

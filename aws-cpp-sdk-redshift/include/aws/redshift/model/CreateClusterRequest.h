@@ -364,9 +364,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     * <code>dc2.8xlarge</code> </p>
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
 
@@ -376,9 +376,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     * <code>dc2.8xlarge</code> </p>
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
 
@@ -388,9 +388,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     * <code>dc2.8xlarge</code> </p>
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
@@ -400,9 +400,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     * <code>dc2.8xlarge</code> </p>
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
@@ -412,9 +412,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     * <code>dc2.8xlarge</code> </p>
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
 
@@ -424,9 +424,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     * <code>dc2.8xlarge</code> </p>
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline CreateClusterRequest& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
 
@@ -436,9 +436,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     * <code>dc2.8xlarge</code> </p>
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline CreateClusterRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
@@ -448,9 +448,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes">
      * Working with Clusters</a> in the <i>Amazon Redshift Cluster Management
      * Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> |
-     * <code>ds2.8xlarge</code> | <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> |
-     * <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> |
-     * <code>dc2.8xlarge</code> </p>
+     * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline CreateClusterRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 

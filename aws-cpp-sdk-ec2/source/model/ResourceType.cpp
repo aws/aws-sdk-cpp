@@ -41,10 +41,12 @@ namespace Aws
         static const int image_HASH = HashingUtils::HashString("image");
         static const int instance_HASH = HashingUtils::HashString("instance");
         static const int internet_gateway_HASH = HashingUtils::HashString("internet-gateway");
+        static const int key_pair_HASH = HashingUtils::HashString("key-pair");
         static const int launch_template_HASH = HashingUtils::HashString("launch-template");
         static const int natgateway_HASH = HashingUtils::HashString("natgateway");
         static const int network_acl_HASH = HashingUtils::HashString("network-acl");
         static const int network_interface_HASH = HashingUtils::HashString("network-interface");
+        static const int placement_group_HASH = HashingUtils::HashString("placement-group");
         static const int reserved_instances_HASH = HashingUtils::HashString("reserved-instances");
         static const int route_table_HASH = HashingUtils::HashString("route-table");
         static const int security_group_HASH = HashingUtils::HashString("security-group");
@@ -113,6 +115,10 @@ namespace Aws
           {
             return ResourceType::internet_gateway;
           }
+          else if (hashCode == key_pair_HASH)
+          {
+            return ResourceType::key_pair;
+          }
           else if (hashCode == launch_template_HASH)
           {
             return ResourceType::launch_template;
@@ -128,6 +134,10 @@ namespace Aws
           else if (hashCode == network_interface_HASH)
           {
             return ResourceType::network_interface;
+          }
+          else if (hashCode == placement_group_HASH)
+          {
+            return ResourceType::placement_group;
           }
           else if (hashCode == reserved_instances_HASH)
           {
@@ -241,6 +251,8 @@ namespace Aws
             return "instance";
           case ResourceType::internet_gateway:
             return "internet-gateway";
+          case ResourceType::key_pair:
+            return "key-pair";
           case ResourceType::launch_template:
             return "launch-template";
           case ResourceType::natgateway:
@@ -249,6 +261,8 @@ namespace Aws
             return "network-acl";
           case ResourceType::network_interface:
             return "network-interface";
+          case ResourceType::placement_group:
+            return "placement-group";
           case ResourceType::reserved_instances:
             return "reserved-instances";
           case ResourceType::route_table:

@@ -34,9 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents the amount of CPU that an app is using on a physical device.</p>
-   * <p>Note that this does not represent system-wide CPU usage.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents the amount of CPU that an app is using on a physical device. Does
+   * not represent system-wide CPU usage.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CPU">AWS API
    * Reference</a></p>
    */
@@ -91,42 +90,42 @@ namespace Model
 
 
     /**
-     * <p>The CPU's architecture, for example x86 or ARM.</p>
+     * <p>The CPU's architecture (for example, x86 or ARM).</p>
      */
     inline const Aws::String& GetArchitecture() const{ return m_architecture; }
 
     /**
-     * <p>The CPU's architecture, for example x86 or ARM.</p>
+     * <p>The CPU's architecture (for example, x86 or ARM).</p>
      */
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
 
     /**
-     * <p>The CPU's architecture, for example x86 or ARM.</p>
+     * <p>The CPU's architecture (for example, x86 or ARM).</p>
      */
     inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
-     * <p>The CPU's architecture, for example x86 or ARM.</p>
+     * <p>The CPU's architecture (for example, x86 or ARM).</p>
      */
     inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
 
     /**
-     * <p>The CPU's architecture, for example x86 or ARM.</p>
+     * <p>The CPU's architecture (for example, x86 or ARM).</p>
      */
     inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
 
     /**
-     * <p>The CPU's architecture, for example x86 or ARM.</p>
+     * <p>The CPU's architecture (for example, x86 or ARM).</p>
      */
     inline CPU& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
 
     /**
-     * <p>The CPU's architecture, for example x86 or ARM.</p>
+     * <p>The CPU's architecture (for example, x86 or ARM).</p>
      */
     inline CPU& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
 
     /**
-     * <p>The CPU's architecture, for example x86 or ARM.</p>
+     * <p>The CPU's architecture (for example, x86 or ARM).</p>
      */
     inline CPU& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
 

@@ -265,8 +265,8 @@ namespace Model
 
     /**
      * <p>The number of devices that Device Farm can add to your device pool. Device
-     * Farm adds devices that are available and that meet the criteria that you assign
-     * for the <code>rules</code> parameter. Depending on how many devices meet these
+     * Farm adds devices that are available and meet the criteria that you assign for
+     * the <code>rules</code> parameter. Depending on how many devices meet these
      * constraints, your device pool might contain fewer devices than the value for
      * this parameter.</p> <p>By specifying the maximum number of devices, you can
      * control the costs that you incur by running tests.</p>
@@ -275,8 +275,8 @@ namespace Model
 
     /**
      * <p>The number of devices that Device Farm can add to your device pool. Device
-     * Farm adds devices that are available and that meet the criteria that you assign
-     * for the <code>rules</code> parameter. Depending on how many devices meet these
+     * Farm adds devices that are available and meet the criteria that you assign for
+     * the <code>rules</code> parameter. Depending on how many devices meet these
      * constraints, your device pool might contain fewer devices than the value for
      * this parameter.</p> <p>By specifying the maximum number of devices, you can
      * control the costs that you incur by running tests.</p>
@@ -285,8 +285,8 @@ namespace Model
 
     /**
      * <p>The number of devices that Device Farm can add to your device pool. Device
-     * Farm adds devices that are available and that meet the criteria that you assign
-     * for the <code>rules</code> parameter. Depending on how many devices meet these
+     * Farm adds devices that are available and meet the criteria that you assign for
+     * the <code>rules</code> parameter. Depending on how many devices meet these
      * constraints, your device pool might contain fewer devices than the value for
      * this parameter.</p> <p>By specifying the maximum number of devices, you can
      * control the costs that you incur by running tests.</p>
@@ -295,8 +295,8 @@ namespace Model
 
     /**
      * <p>The number of devices that Device Farm can add to your device pool. Device
-     * Farm adds devices that are available and that meet the criteria that you assign
-     * for the <code>rules</code> parameter. Depending on how many devices meet these
+     * Farm adds devices that are available and meet the criteria that you assign for
+     * the <code>rules</code> parameter. Depending on how many devices meet these
      * constraints, your device pool might contain fewer devices than the value for
      * this parameter.</p> <p>By specifying the maximum number of devices, you can
      * control the costs that you incur by running tests.</p>

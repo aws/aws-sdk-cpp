@@ -91,29 +91,29 @@ namespace Model
 
     /**
      * <p>Sets the execution timeout value (in minutes) for a project. All test runs in
-     * this project will use the specified execution timeout value unless overridden
-     * when scheduling a run.</p>
+     * this project use the specified execution timeout value unless overridden when
+     * scheduling a run.</p>
      */
     inline int GetDefaultJobTimeoutMinutes() const{ return m_defaultJobTimeoutMinutes; }
 
     /**
      * <p>Sets the execution timeout value (in minutes) for a project. All test runs in
-     * this project will use the specified execution timeout value unless overridden
-     * when scheduling a run.</p>
+     * this project use the specified execution timeout value unless overridden when
+     * scheduling a run.</p>
      */
     inline bool DefaultJobTimeoutMinutesHasBeenSet() const { return m_defaultJobTimeoutMinutesHasBeenSet; }
 
     /**
      * <p>Sets the execution timeout value (in minutes) for a project. All test runs in
-     * this project will use the specified execution timeout value unless overridden
-     * when scheduling a run.</p>
+     * this project use the specified execution timeout value unless overridden when
+     * scheduling a run.</p>
      */
     inline void SetDefaultJobTimeoutMinutes(int value) { m_defaultJobTimeoutMinutesHasBeenSet = true; m_defaultJobTimeoutMinutes = value; }
 
     /**
      * <p>Sets the execution timeout value (in minutes) for a project. All test runs in
-     * this project will use the specified execution timeout value unless overridden
-     * when scheduling a run.</p>
+     * this project use the specified execution timeout value unless overridden when
+     * scheduling a run.</p>
      */
     inline CreateProjectRequest& WithDefaultJobTimeoutMinutes(int value) { SetDefaultJobTimeoutMinutes(value); return *this;}
 

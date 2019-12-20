@@ -45,6 +45,7 @@ ImportImageTask::ImportImageTask() :
     m_snapshotDetailsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false)
 {
 }
@@ -64,6 +65,7 @@ ImportImageTask::ImportImageTask(const XmlNode& xmlNode) :
     m_snapshotDetailsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -159,6 +161,18 @@ ImportImageTask& ImportImageTask::operator =(const XmlNode& xmlNode)
       m_statusMessage = Aws::Utils::Xml::DecodeEscapedXmlText(statusMessageNode.GetText());
       m_statusMessageHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
     XmlNode licenseSpecificationsNode = resultNode.FirstChild("licenseSpecifications");
     if(!licenseSpecificationsNode.IsNull())
     {
@@ -249,6 +263,17 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
   if(m_licenseSpecificationsHasBeenSet)
   {
       unsigned licenseSpecificationsIdx = 1;
@@ -321,6 +346,16 @@ void ImportImageTask::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_statusMessageHasBeenSet)
   {
       oStream << location << ".StatusMessage=" << StringUtils::URLEncode(m_statusMessage.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
   if(m_licenseSpecificationsHasBeenSet)
   {

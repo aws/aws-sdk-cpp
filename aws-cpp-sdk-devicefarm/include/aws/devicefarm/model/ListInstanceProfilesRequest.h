@@ -45,26 +45,26 @@ namespace Model
 
 
     /**
-     * <p>An integer specifying the maximum number of items you want to return in the
-     * API response.</p>
+     * <p>An integer that specifies the maximum number of items you want to return in
+     * the API response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>An integer specifying the maximum number of items you want to return in the
-     * API response.</p>
+     * <p>An integer that specifies the maximum number of items you want to return in
+     * the API response.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>An integer specifying the maximum number of items you want to return in the
-     * API response.</p>
+     * <p>An integer that specifies the maximum number of items you want to return in
+     * the API response.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>An integer specifying the maximum number of items you want to return in the
-     * API response.</p>
+     * <p>An integer that specifies the maximum number of items you want to return in
+     * the API response.</p>
      */
     inline ListInstanceProfilesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

@@ -35,9 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Contains the run results requested by the device selection configuration as
-   * well as how many devices were returned. For an example of the JSON response
-   * syntax, see <a>ScheduleRun</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains the run results requested by the device selection configuration and
+   * how many devices were returned. For an example of the JSON response syntax, see
+   * <a>ScheduleRun</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeviceSelectionResult">AWS
    * API Reference</a></p>
    */

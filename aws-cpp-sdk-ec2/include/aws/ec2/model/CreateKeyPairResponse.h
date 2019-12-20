@@ -156,6 +156,42 @@ namespace Model
     inline CreateKeyPairResponse& WithKeyName(const char* value) { SetKeyName(value); return *this;}
 
 
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline const Aws::String& GetKeyPairId() const{ return m_keyPairId; }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline void SetKeyPairId(const Aws::String& value) { m_keyPairId = value; }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline void SetKeyPairId(Aws::String&& value) { m_keyPairId = std::move(value); }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline void SetKeyPairId(const char* value) { m_keyPairId.assign(value); }
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline CreateKeyPairResponse& WithKeyPairId(const Aws::String& value) { SetKeyPairId(value); return *this;}
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline CreateKeyPairResponse& WithKeyPairId(Aws::String&& value) { SetKeyPairId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the key pair.</p>
+     */
+    inline CreateKeyPairResponse& WithKeyPairId(const char* value) { SetKeyPairId(value); return *this;}
+
+
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
@@ -178,6 +214,8 @@ namespace Model
     Aws::String m_keyMaterial;
 
     Aws::String m_keyName;
+
+    Aws::String m_keyPairId;
 
     ResponseMetadata m_responseMetadata;
   };

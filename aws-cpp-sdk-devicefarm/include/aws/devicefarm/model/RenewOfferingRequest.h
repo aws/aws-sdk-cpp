@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>A request representing an offering renewal.</p><p><h3>See Also:</h3>   <a
+   * <p>A request that represents an offering renewal.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/RenewOfferingRequest">AWS
    * API Reference</a></p>
    */

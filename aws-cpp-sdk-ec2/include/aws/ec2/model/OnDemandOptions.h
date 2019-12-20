@@ -115,87 +115,91 @@ namespace Model
 
     /**
      * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity. Only available for fleets of type <code>instant</code>. </p>
+     * capacity. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline const CapacityReservationOptions& GetCapacityReservationOptions() const{ return m_capacityReservationOptions; }
 
     /**
      * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity. Only available for fleets of type <code>instant</code>. </p>
+     * capacity. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline bool CapacityReservationOptionsHasBeenSet() const { return m_capacityReservationOptionsHasBeenSet; }
 
     /**
      * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity. Only available for fleets of type <code>instant</code>. </p>
+     * capacity. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline void SetCapacityReservationOptions(const CapacityReservationOptions& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = value; }
 
     /**
      * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity. Only available for fleets of type <code>instant</code>. </p>
+     * capacity. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline void SetCapacityReservationOptions(CapacityReservationOptions&& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = std::move(value); }
 
     /**
      * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity. Only available for fleets of type <code>instant</code>. </p>
+     * capacity. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline OnDemandOptions& WithCapacityReservationOptions(const CapacityReservationOptions& value) { SetCapacityReservationOptions(value); return *this;}
 
     /**
      * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity. Only available for fleets of type <code>instant</code>. </p>
+     * capacity. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline OnDemandOptions& WithCapacityReservationOptions(CapacityReservationOptions&& value) { SetCapacityReservationOptions(std::move(value)); return *this;}
 
 
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
-     * Instances in the fleet.</p>
+     * Instances in the fleet. Supported only for fleets of type
+     * <code>instant</code>.</p>
      */
     inline bool GetSingleInstanceType() const{ return m_singleInstanceType; }
 
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
-     * Instances in the fleet.</p>
+     * Instances in the fleet. Supported only for fleets of type
+     * <code>instant</code>.</p>
      */
     inline bool SingleInstanceTypeHasBeenSet() const { return m_singleInstanceTypeHasBeenSet; }
 
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
-     * Instances in the fleet.</p>
+     * Instances in the fleet. Supported only for fleets of type
+     * <code>instant</code>.</p>
      */
     inline void SetSingleInstanceType(bool value) { m_singleInstanceTypeHasBeenSet = true; m_singleInstanceType = value; }
 
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
-     * Instances in the fleet.</p>
+     * Instances in the fleet. Supported only for fleets of type
+     * <code>instant</code>.</p>
      */
     inline OnDemandOptions& WithSingleInstanceType(bool value) { SetSingleInstanceType(value); return *this;}
 
 
     /**
      * <p>Indicates that the fleet launches all On-Demand Instances into a single
-     * Availability Zone.</p>
+     * Availability Zone. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline bool GetSingleAvailabilityZone() const{ return m_singleAvailabilityZone; }
 
     /**
      * <p>Indicates that the fleet launches all On-Demand Instances into a single
-     * Availability Zone.</p>
+     * Availability Zone. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline bool SingleAvailabilityZoneHasBeenSet() const { return m_singleAvailabilityZoneHasBeenSet; }
 
     /**
      * <p>Indicates that the fleet launches all On-Demand Instances into a single
-     * Availability Zone.</p>
+     * Availability Zone. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline void SetSingleAvailabilityZone(bool value) { m_singleAvailabilityZoneHasBeenSet = true; m_singleAvailabilityZone = value; }
 
     /**
      * <p>Indicates that the fleet launches all On-Demand Instances into a single
-     * Availability Zone.</p>
+     * Availability Zone. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline OnDemandOptions& WithSingleAvailabilityZone(bool value) { SetSingleAvailabilityZone(value); return *this;}
 

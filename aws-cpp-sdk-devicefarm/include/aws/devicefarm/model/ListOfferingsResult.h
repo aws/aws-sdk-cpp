@@ -51,37 +51,37 @@ namespace Model
 
 
     /**
-     * <p>A value representing the list offering results.</p>
+     * <p>A value that represents the list offering results.</p>
      */
     inline const Aws::Vector<Offering>& GetOfferings() const{ return m_offerings; }
 
     /**
-     * <p>A value representing the list offering results.</p>
+     * <p>A value that represents the list offering results.</p>
      */
     inline void SetOfferings(const Aws::Vector<Offering>& value) { m_offerings = value; }
 
     /**
-     * <p>A value representing the list offering results.</p>
+     * <p>A value that represents the list offering results.</p>
      */
     inline void SetOfferings(Aws::Vector<Offering>&& value) { m_offerings = std::move(value); }
 
     /**
-     * <p>A value representing the list offering results.</p>
+     * <p>A value that represents the list offering results.</p>
      */
     inline ListOfferingsResult& WithOfferings(const Aws::Vector<Offering>& value) { SetOfferings(value); return *this;}
 
     /**
-     * <p>A value representing the list offering results.</p>
+     * <p>A value that represents the list offering results.</p>
      */
     inline ListOfferingsResult& WithOfferings(Aws::Vector<Offering>&& value) { SetOfferings(std::move(value)); return *this;}
 
     /**
-     * <p>A value representing the list offering results.</p>
+     * <p>A value that represents the list offering results.</p>
      */
     inline ListOfferingsResult& AddOfferings(const Offering& value) { m_offerings.push_back(value); return *this; }
 
     /**
-     * <p>A value representing the list offering results.</p>
+     * <p>A value that represents the list offering results.</p>
      */
     inline ListOfferingsResult& AddOfferings(Offering&& value) { m_offerings.push_back(std::move(value)); return *this; }
 

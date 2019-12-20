@@ -215,110 +215,110 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that
      * match the selectors in the Fargate profile. For more information, see <a
-     * href="eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
-     * the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+     * Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const Aws::String& GetPodExecutionRoleArn() const{ return m_podExecutionRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that
      * match the selectors in the Fargate profile. For more information, see <a
-     * href="eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
-     * the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+     * Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline bool PodExecutionRoleArnHasBeenSet() const { return m_podExecutionRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that
      * match the selectors in the Fargate profile. For more information, see <a
-     * href="eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
-     * the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+     * Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetPodExecutionRoleArn(const Aws::String& value) { m_podExecutionRoleArnHasBeenSet = true; m_podExecutionRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that
      * match the selectors in the Fargate profile. For more information, see <a
-     * href="eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
-     * the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+     * Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetPodExecutionRoleArn(Aws::String&& value) { m_podExecutionRoleArnHasBeenSet = true; m_podExecutionRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that
      * match the selectors in the Fargate profile. For more information, see <a
-     * href="eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
-     * the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+     * Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline void SetPodExecutionRoleArn(const char* value) { m_podExecutionRoleArnHasBeenSet = true; m_podExecutionRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that
      * match the selectors in the Fargate profile. For more information, see <a
-     * href="eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
-     * the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+     * Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline FargateProfile& WithPodExecutionRoleArn(const Aws::String& value) { SetPodExecutionRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that
      * match the selectors in the Fargate profile. For more information, see <a
-     * href="eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
-     * the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+     * Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline FargateProfile& WithPodExecutionRoleArn(Aws::String&& value) { SetPodExecutionRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the pod execution role to use for pods that
      * match the selectors in the Fargate profile. For more information, see <a
-     * href="eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in
-     * the <i>Amazon EKS User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
+     * Execution Role</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline FargateProfile& WithPodExecutionRoleArn(const char* value) { SetPodExecutionRoleArn(value); return *this;}
 
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into.</p>
+     * <p>The IDs of subnets to launch pods into.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into.</p>
+     * <p>The IDs of subnets to launch pods into.</p>
      */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into.</p>
+     * <p>The IDs of subnets to launch pods into.</p>
      */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into.</p>
+     * <p>The IDs of subnets to launch pods into.</p>
      */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into.</p>
+     * <p>The IDs of subnets to launch pods into.</p>
      */
     inline FargateProfile& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into.</p>
+     * <p>The IDs of subnets to launch pods into.</p>
      */
     inline FargateProfile& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into.</p>
+     * <p>The IDs of subnets to launch pods into.</p>
      */
     inline FargateProfile& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into.</p>
+     * <p>The IDs of subnets to launch pods into.</p>
      */
     inline FargateProfile& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into.</p>
+     * <p>The IDs of subnets to launch pods into.</p>
      */
     inline FargateProfile& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 

@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>A number representing the monetary amount for an offering or
+   * <p>A number that represents the monetary amount for an offering or
    * transaction.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/MonetaryAmount">AWS
    * API Reference</a></p>
@@ -71,37 +71,37 @@ namespace Model
 
     /**
      * <p>The currency code of a monetary amount. For example, <code>USD</code> means
-     * "U.S. dollars."</p>
+     * U.S. dollars.</p>
      */
     inline const CurrencyCode& GetCurrencyCode() const{ return m_currencyCode; }
 
     /**
      * <p>The currency code of a monetary amount. For example, <code>USD</code> means
-     * "U.S. dollars."</p>
+     * U.S. dollars.</p>
      */
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
      * <p>The currency code of a monetary amount. For example, <code>USD</code> means
-     * "U.S. dollars."</p>
+     * U.S. dollars.</p>
      */
     inline void SetCurrencyCode(const CurrencyCode& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /**
      * <p>The currency code of a monetary amount. For example, <code>USD</code> means
-     * "U.S. dollars."</p>
+     * U.S. dollars.</p>
      */
     inline void SetCurrencyCode(CurrencyCode&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
 
     /**
      * <p>The currency code of a monetary amount. For example, <code>USD</code> means
-     * "U.S. dollars."</p>
+     * U.S. dollars.</p>
      */
     inline MonetaryAmount& WithCurrencyCode(const CurrencyCode& value) { SetCurrencyCode(value); return *this;}
 
     /**
      * <p>The currency code of a monetary amount. For example, <code>USD</code> means
-     * "U.S. dollars."</p>
+     * U.S. dollars.</p>
      */
     inline MonetaryAmount& WithCurrencyCode(CurrencyCode&& value) { SetCurrencyCode(std::move(value)); return *this;}
 

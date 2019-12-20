@@ -43,40 +43,22 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
-    /**
-     * <p>Creates a message template that you can use in messages that are sent through
-     * a push notification channel.</p>
-     */
+    
     inline const PushNotificationTemplateRequest& GetPushNotificationTemplateRequest() const{ return m_pushNotificationTemplateRequest; }
 
-    /**
-     * <p>Creates a message template that you can use in messages that are sent through
-     * a push notification channel.</p>
-     */
+    
     inline bool PushNotificationTemplateRequestHasBeenSet() const { return m_pushNotificationTemplateRequestHasBeenSet; }
 
-    /**
-     * <p>Creates a message template that you can use in messages that are sent through
-     * a push notification channel.</p>
-     */
+    
     inline void SetPushNotificationTemplateRequest(const PushNotificationTemplateRequest& value) { m_pushNotificationTemplateRequestHasBeenSet = true; m_pushNotificationTemplateRequest = value; }
 
-    /**
-     * <p>Creates a message template that you can use in messages that are sent through
-     * a push notification channel.</p>
-     */
+    
     inline void SetPushNotificationTemplateRequest(PushNotificationTemplateRequest&& value) { m_pushNotificationTemplateRequestHasBeenSet = true; m_pushNotificationTemplateRequest = std::move(value); }
 
-    /**
-     * <p>Creates a message template that you can use in messages that are sent through
-     * a push notification channel.</p>
-     */
+    
     inline CreatePushTemplateRequest& WithPushNotificationTemplateRequest(const PushNotificationTemplateRequest& value) { SetPushNotificationTemplateRequest(value); return *this;}
 
-    /**
-     * <p>Creates a message template that you can use in messages that are sent through
-     * a push notification channel.</p>
-     */
+    
     inline CreatePushTemplateRequest& WithPushNotificationTemplateRequest(PushNotificationTemplateRequest&& value) { SetPushNotificationTemplateRequest(std::move(value)); return *this;}
 
 

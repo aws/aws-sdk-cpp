@@ -207,50 +207,54 @@ namespace Model
 
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all Spot
-     * Instances in the fleet.</p>
+     * Instances in the fleet. Supported only for fleets of type
+     * <code>instant</code>.</p>
      */
     inline bool GetSingleInstanceType() const{ return m_singleInstanceType; }
 
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all Spot
-     * Instances in the fleet.</p>
+     * Instances in the fleet. Supported only for fleets of type
+     * <code>instant</code>.</p>
      */
     inline bool SingleInstanceTypeHasBeenSet() const { return m_singleInstanceTypeHasBeenSet; }
 
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all Spot
-     * Instances in the fleet.</p>
+     * Instances in the fleet. Supported only for fleets of type
+     * <code>instant</code>.</p>
      */
     inline void SetSingleInstanceType(bool value) { m_singleInstanceTypeHasBeenSet = true; m_singleInstanceType = value; }
 
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all Spot
-     * Instances in the fleet.</p>
+     * Instances in the fleet. Supported only for fleets of type
+     * <code>instant</code>.</p>
      */
     inline SpotOptionsRequest& WithSingleInstanceType(bool value) { SetSingleInstanceType(value); return *this;}
 
 
     /**
      * <p>Indicates that the fleet launches all Spot Instances into a single
-     * Availability Zone.</p>
+     * Availability Zone. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline bool GetSingleAvailabilityZone() const{ return m_singleAvailabilityZone; }
 
     /**
      * <p>Indicates that the fleet launches all Spot Instances into a single
-     * Availability Zone.</p>
+     * Availability Zone. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline bool SingleAvailabilityZoneHasBeenSet() const { return m_singleAvailabilityZoneHasBeenSet; }
 
     /**
      * <p>Indicates that the fleet launches all Spot Instances into a single
-     * Availability Zone.</p>
+     * Availability Zone. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline void SetSingleAvailabilityZone(bool value) { m_singleAvailabilityZoneHasBeenSet = true; m_singleAvailabilityZone = value; }
 
     /**
      * <p>Indicates that the fleet launches all Spot Instances into a single
-     * Availability Zone.</p>
+     * Availability Zone. Supported only for fleets of type <code>instant</code>.</p>
      */
     inline SpotOptionsRequest& WithSingleAvailabilityZone(bool value) { SetSingleAvailabilityZone(value); return *this;}
 

@@ -189,42 +189,42 @@ namespace Model
 
 
     /**
-     * <p>The date, ISO 8601 format, when the campaign was created.</p>
+     * <p>The date, in ISO 8601 format, when the campaign was created.</p>
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
 
     /**
-     * <p>The date, ISO 8601 format, when the campaign was created.</p>
+     * <p>The date, in ISO 8601 format, when the campaign was created.</p>
      */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
-     * <p>The date, ISO 8601 format, when the campaign was created.</p>
+     * <p>The date, in ISO 8601 format, when the campaign was created.</p>
      */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
-     * <p>The date, ISO 8601 format, when the campaign was created.</p>
+     * <p>The date, in ISO 8601 format, when the campaign was created.</p>
      */
     inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
 
     /**
-     * <p>The date, ISO 8601 format, when the campaign was created.</p>
+     * <p>The date, in ISO 8601 format, when the campaign was created.</p>
      */
     inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
 
     /**
-     * <p>The date, ISO 8601 format, when the campaign was created.</p>
+     * <p>The date, in ISO 8601 format, when the campaign was created.</p>
      */
     inline CampaignResponse& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
 
     /**
-     * <p>The date, ISO 8601 format, when the campaign was created.</p>
+     * <p>The date, in ISO 8601 format, when the campaign was created.</p>
      */
     inline CampaignResponse& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
 
     /**
-     * <p>The date, ISO 8601 format, when the campaign was created.</p>
+     * <p>The date, in ISO 8601 format, when the campaign was created.</p>
      */
     inline CampaignResponse& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
 

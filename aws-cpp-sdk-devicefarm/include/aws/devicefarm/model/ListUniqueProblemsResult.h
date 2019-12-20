@@ -54,140 +54,122 @@ namespace Model
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
-     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
-     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
-     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
-     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
-     * <p>STOPPED: A stopped condition.</p> </li> </ul>
+     * <ul> <li> <p>PENDING</p> </li> <li> <p>PASSED</p> </li> <li> <p>WARNED</p> </li>
+     * <li> <p>FAILED</p> </li> <li> <p>SKIPPED</p> </li> <li> <p>ERRORED</p> </li>
+     * <li> <p>STOPPED</p> </li> </ul>
      */
     inline const Aws::Map<ExecutionResult, Aws::Vector<UniqueProblem>>& GetUniqueProblems() const{ return m_uniqueProblems; }
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
-     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
-     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
-     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
-     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
-     * <p>STOPPED: A stopped condition.</p> </li> </ul>
+     * <ul> <li> <p>PENDING</p> </li> <li> <p>PASSED</p> </li> <li> <p>WARNED</p> </li>
+     * <li> <p>FAILED</p> </li> <li> <p>SKIPPED</p> </li> <li> <p>ERRORED</p> </li>
+     * <li> <p>STOPPED</p> </li> </ul>
      */
     inline void SetUniqueProblems(const Aws::Map<ExecutionResult, Aws::Vector<UniqueProblem>>& value) { m_uniqueProblems = value; }
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
-     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
-     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
-     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
-     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
-     * <p>STOPPED: A stopped condition.</p> </li> </ul>
+     * <ul> <li> <p>PENDING</p> </li> <li> <p>PASSED</p> </li> <li> <p>WARNED</p> </li>
+     * <li> <p>FAILED</p> </li> <li> <p>SKIPPED</p> </li> <li> <p>ERRORED</p> </li>
+     * <li> <p>STOPPED</p> </li> </ul>
      */
     inline void SetUniqueProblems(Aws::Map<ExecutionResult, Aws::Vector<UniqueProblem>>&& value) { m_uniqueProblems = std::move(value); }
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
-     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
-     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
-     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
-     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
-     * <p>STOPPED: A stopped condition.</p> </li> </ul>
+     * <ul> <li> <p>PENDING</p> </li> <li> <p>PASSED</p> </li> <li> <p>WARNED</p> </li>
+     * <li> <p>FAILED</p> </li> <li> <p>SKIPPED</p> </li> <li> <p>ERRORED</p> </li>
+     * <li> <p>STOPPED</p> </li> </ul>
      */
     inline ListUniqueProblemsResult& WithUniqueProblems(const Aws::Map<ExecutionResult, Aws::Vector<UniqueProblem>>& value) { SetUniqueProblems(value); return *this;}
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
-     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
-     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
-     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
-     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
-     * <p>STOPPED: A stopped condition.</p> </li> </ul>
+     * <ul> <li> <p>PENDING</p> </li> <li> <p>PASSED</p> </li> <li> <p>WARNED</p> </li>
+     * <li> <p>FAILED</p> </li> <li> <p>SKIPPED</p> </li> <li> <p>ERRORED</p> </li>
+     * <li> <p>STOPPED</p> </li> </ul>
      */
     inline ListUniqueProblemsResult& WithUniqueProblems(Aws::Map<ExecutionResult, Aws::Vector<UniqueProblem>>&& value) { SetUniqueProblems(std::move(value)); return *this;}
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
-     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
-     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
-     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
-     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
-     * <p>STOPPED: A stopped condition.</p> </li> </ul>
+     * <ul> <li> <p>PENDING</p> </li> <li> <p>PASSED</p> </li> <li> <p>WARNED</p> </li>
+     * <li> <p>FAILED</p> </li> <li> <p>SKIPPED</p> </li> <li> <p>ERRORED</p> </li>
+     * <li> <p>STOPPED</p> </li> </ul>
      */
     inline ListUniqueProblemsResult& AddUniqueProblems(const ExecutionResult& key, const Aws::Vector<UniqueProblem>& value) { m_uniqueProblems.emplace(key, value); return *this; }
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
-     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
-     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
-     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
-     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
-     * <p>STOPPED: A stopped condition.</p> </li> </ul>
+     * <ul> <li> <p>PENDING</p> </li> <li> <p>PASSED</p> </li> <li> <p>WARNED</p> </li>
+     * <li> <p>FAILED</p> </li> <li> <p>SKIPPED</p> </li> <li> <p>ERRORED</p> </li>
+     * <li> <p>STOPPED</p> </li> </ul>
      */
     inline ListUniqueProblemsResult& AddUniqueProblems(ExecutionResult&& key, const Aws::Vector<UniqueProblem>& value) { m_uniqueProblems.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
-     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
-     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
-     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
-     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
-     * <p>STOPPED: A stopped condition.</p> </li> </ul>
+     * <ul> <li> <p>PENDING</p> </li> <li> <p>PASSED</p> </li> <li> <p>WARNED</p> </li>
+     * <li> <p>FAILED</p> </li> <li> <p>SKIPPED</p> </li> <li> <p>ERRORED</p> </li>
+     * <li> <p>STOPPED</p> </li> </ul>
      */
     inline ListUniqueProblemsResult& AddUniqueProblems(const ExecutionResult& key, Aws::Vector<UniqueProblem>&& value) { m_uniqueProblems.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Information about the unique problems.</p> <p>Allowed values include:</p>
-     * <ul> <li> <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
-     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
-     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
-     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
-     * <p>STOPPED: A stopped condition.</p> </li> </ul>
+     * <ul> <li> <p>PENDING</p> </li> <li> <p>PASSED</p> </li> <li> <p>WARNED</p> </li>
+     * <li> <p>FAILED</p> </li> <li> <p>SKIPPED</p> </li> <li> <p>ERRORED</p> </li>
+     * <li> <p>STOPPED</p> </li> </ul>
      */
     inline ListUniqueProblemsResult& AddUniqueProblems(ExecutionResult&& key, Aws::Vector<UniqueProblem>&& value) { m_uniqueProblems.emplace(std::move(key), std::move(value)); return *this; }
 
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline ListUniqueProblemsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline ListUniqueProblemsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline ListUniqueProblemsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

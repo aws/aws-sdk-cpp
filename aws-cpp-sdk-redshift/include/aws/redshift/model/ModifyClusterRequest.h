@@ -199,7 +199,8 @@ namespace Model
      * restored. You can use <a>DescribeResize</a> to track the progress of the resize
      * request. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
 
@@ -214,7 +215,8 @@ namespace Model
      * restored. You can use <a>DescribeResize</a> to track the progress of the resize
      * request. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
 
@@ -229,7 +231,8 @@ namespace Model
      * restored. You can use <a>DescribeResize</a> to track the progress of the resize
      * request. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
@@ -244,7 +247,8 @@ namespace Model
      * restored. You can use <a>DescribeResize</a> to track the progress of the resize
      * request. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline void SetNodeType(Aws::String&& value) { m_nodeTypeHasBeenSet = true; m_nodeType = std::move(value); }
 
@@ -259,7 +263,8 @@ namespace Model
      * restored. You can use <a>DescribeResize</a> to track the progress of the resize
      * request. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline void SetNodeType(const char* value) { m_nodeTypeHasBeenSet = true; m_nodeType.assign(value); }
 
@@ -274,7 +279,8 @@ namespace Model
      * restored. You can use <a>DescribeResize</a> to track the progress of the resize
      * request. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline ModifyClusterRequest& WithNodeType(const Aws::String& value) { SetNodeType(value); return *this;}
 
@@ -289,7 +295,8 @@ namespace Model
      * restored. You can use <a>DescribeResize</a> to track the progress of the resize
      * request. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline ModifyClusterRequest& WithNodeType(Aws::String&& value) { SetNodeType(std::move(value)); return *this;}
 
@@ -304,7 +311,8 @@ namespace Model
      * restored. You can use <a>DescribeResize</a> to track the progress of the resize
      * request. </p> <p>Valid Values: <code>ds2.xlarge</code> |
      * <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> |
-     * <code>dc2.large</code> | <code>dc2.8xlarge</code> </p>
+     * <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.16xlarge</code>
+     * </p>
      */
     inline ModifyClusterRequest& WithNodeType(const char* value) { SetNodeType(value); return *this;}
 

@@ -29,12 +29,14 @@ namespace Model
 {
 
 Template::Template() : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
 Template::Template(JsonView jsonValue) : 
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ Template& Template::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetString("Version");
+
+    m_versionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue Template::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
+
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("Version", m_version);
 
   }
 

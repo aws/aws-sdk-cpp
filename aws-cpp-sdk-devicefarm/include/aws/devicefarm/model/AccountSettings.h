@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>A container for account-level settings within AWS Device Farm.</p><p><h3>See
+   * <p>A container for account-level settings in AWS Device Farm.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/AccountSettings">AWS
    * API Reference</a></p>
@@ -191,26 +191,22 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of minutes a test run will execute before it times
-     * out.</p>
+     * <p>The maximum number of minutes a test run executes before it times out.</p>
      */
     inline int GetMaxJobTimeoutMinutes() const{ return m_maxJobTimeoutMinutes; }
 
     /**
-     * <p>The maximum number of minutes a test run will execute before it times
-     * out.</p>
+     * <p>The maximum number of minutes a test run executes before it times out.</p>
      */
     inline bool MaxJobTimeoutMinutesHasBeenSet() const { return m_maxJobTimeoutMinutesHasBeenSet; }
 
     /**
-     * <p>The maximum number of minutes a test run will execute before it times
-     * out.</p>
+     * <p>The maximum number of minutes a test run executes before it times out.</p>
      */
     inline void SetMaxJobTimeoutMinutes(int value) { m_maxJobTimeoutMinutesHasBeenSet = true; m_maxJobTimeoutMinutes = value; }
 
     /**
-     * <p>The maximum number of minutes a test run will execute before it times
-     * out.</p>
+     * <p>The maximum number of minutes a test run executes before it times out.</p>
      */
     inline AccountSettings& WithMaxJobTimeoutMinutes(int value) { SetMaxJobTimeoutMinutes(value); return *this;}
 
@@ -320,63 +316,63 @@ namespace Model
 
 
     /**
-     * <p>The default number of minutes (at the account level) a test run will execute
+     * <p>The default number of minutes (at the account level) a test run executes
      * before it times out. The default value is 150 minutes.</p>
      */
     inline int GetDefaultJobTimeoutMinutes() const{ return m_defaultJobTimeoutMinutes; }
 
     /**
-     * <p>The default number of minutes (at the account level) a test run will execute
+     * <p>The default number of minutes (at the account level) a test run executes
      * before it times out. The default value is 150 minutes.</p>
      */
     inline bool DefaultJobTimeoutMinutesHasBeenSet() const { return m_defaultJobTimeoutMinutesHasBeenSet; }
 
     /**
-     * <p>The default number of minutes (at the account level) a test run will execute
+     * <p>The default number of minutes (at the account level) a test run executes
      * before it times out. The default value is 150 minutes.</p>
      */
     inline void SetDefaultJobTimeoutMinutes(int value) { m_defaultJobTimeoutMinutesHasBeenSet = true; m_defaultJobTimeoutMinutes = value; }
 
     /**
-     * <p>The default number of minutes (at the account level) a test run will execute
+     * <p>The default number of minutes (at the account level) a test run executes
      * before it times out. The default value is 150 minutes.</p>
      */
     inline AccountSettings& WithDefaultJobTimeoutMinutes(int value) { SetDefaultJobTimeoutMinutes(value); return *this;}
 
 
     /**
-     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
-     * your app again. For public devices, Device Farm always signs your apps again and
-     * this parameter has no effect.</p> <p>For more information about how Device Farm
-     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
-     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
+     * your app again. For public devices, Device Farm always signs your apps
+     * again.</p> <p>For more information about how Device Farm re-signs your apps, see
+     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline bool GetSkipAppResign() const{ return m_skipAppResign; }
 
     /**
-     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
-     * your app again. For public devices, Device Farm always signs your apps again and
-     * this parameter has no effect.</p> <p>For more information about how Device Farm
-     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
-     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
+     * your app again. For public devices, Device Farm always signs your apps
+     * again.</p> <p>For more information about how Device Farm re-signs your apps, see
+     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline bool SkipAppResignHasBeenSet() const { return m_skipAppResignHasBeenSet; }
 
     /**
-     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
-     * your app again. For public devices, Device Farm always signs your apps again and
-     * this parameter has no effect.</p> <p>For more information about how Device Farm
-     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
-     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
+     * your app again. For public devices, Device Farm always signs your apps
+     * again.</p> <p>For more information about how Device Farm re-signs your apps, see
+     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline void SetSkipAppResign(bool value) { m_skipAppResignHasBeenSet = true; m_skipAppResign = value; }
 
     /**
-     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
-     * your app again. For public devices, Device Farm always signs your apps again and
-     * this parameter has no effect.</p> <p>For more information about how Device Farm
-     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
-     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     * <p>When set to <code>true</code>, for private devices, Device Farm does not sign
+     * your app again. For public devices, Device Farm always signs your apps
+     * again.</p> <p>For more information about how Device Farm re-signs your apps, see
+     * <a href="https://aws.amazon.com/device-farm/faq/">Do you modify my app?</a> in
+     * the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline AccountSettings& WithSkipAppResign(bool value) { SetSkipAppResign(value); return *this;}
 

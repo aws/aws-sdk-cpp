@@ -46,8 +46,8 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource(s) from which to delete tags.
-     * You can associate tags with the following Device Farm resources:
+     * <p>The Amazon Resource Name (ARN) of the resource or resources from which to
+     * delete tags. You can associate tags with the following Device Farm resources:
      * <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
      * <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
@@ -56,8 +56,8 @@ namespace Model
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource(s) from which to delete tags.
-     * You can associate tags with the following Device Farm resources:
+     * <p>The Amazon Resource Name (ARN) of the resource or resources from which to
+     * delete tags. You can associate tags with the following Device Farm resources:
      * <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
      * <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
@@ -66,8 +66,8 @@ namespace Model
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource(s) from which to delete tags.
-     * You can associate tags with the following Device Farm resources:
+     * <p>The Amazon Resource Name (ARN) of the resource or resources from which to
+     * delete tags. You can associate tags with the following Device Farm resources:
      * <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
      * <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
@@ -76,8 +76,8 @@ namespace Model
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource(s) from which to delete tags.
-     * You can associate tags with the following Device Farm resources:
+     * <p>The Amazon Resource Name (ARN) of the resource or resources from which to
+     * delete tags. You can associate tags with the following Device Farm resources:
      * <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
      * <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
@@ -86,8 +86,8 @@ namespace Model
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource(s) from which to delete tags.
-     * You can associate tags with the following Device Farm resources:
+     * <p>The Amazon Resource Name (ARN) of the resource or resources from which to
+     * delete tags. You can associate tags with the following Device Farm resources:
      * <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
      * <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
@@ -96,8 +96,8 @@ namespace Model
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource(s) from which to delete tags.
-     * You can associate tags with the following Device Farm resources:
+     * <p>The Amazon Resource Name (ARN) of the resource or resources from which to
+     * delete tags. You can associate tags with the following Device Farm resources:
      * <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
      * <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
@@ -106,8 +106,8 @@ namespace Model
     inline UntagResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource(s) from which to delete tags.
-     * You can associate tags with the following Device Farm resources:
+     * <p>The Amazon Resource Name (ARN) of the resource or resources from which to
+     * delete tags. You can associate tags with the following Device Farm resources:
      * <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
      * <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and
@@ -116,8 +116,8 @@ namespace Model
     inline UntagResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the resource(s) from which to delete tags.
-     * You can associate tags with the following Device Farm resources:
+     * <p>The Amazon Resource Name (ARN) of the resource or resources from which to
+     * delete tags. You can associate tags with the following Device Farm resources:
      * <code>PROJECT</code>, <code>RUN</code>, <code>NETWORK_PROFILE</code>,
      * <code>INSTANCE_PROFILE</code>, <code>DEVICE_INSTANCE</code>,
      * <code>SESSION</code>, <code>DEVICE_POOL</code>, <code>DEVICE</code>, and

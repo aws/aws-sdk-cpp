@@ -152,6 +152,52 @@ namespace Model
 
 
     /**
+     * <p>The IDs of the key pairs.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetKeyPairIds() const{ return m_keyPairIds; }
+
+    /**
+     * <p>The IDs of the key pairs.</p>
+     */
+    inline bool KeyPairIdsHasBeenSet() const { return m_keyPairIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the key pairs.</p>
+     */
+    inline void SetKeyPairIds(const Aws::Vector<Aws::String>& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds = value; }
+
+    /**
+     * <p>The IDs of the key pairs.</p>
+     */
+    inline void SetKeyPairIds(Aws::Vector<Aws::String>&& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds = std::move(value); }
+
+    /**
+     * <p>The IDs of the key pairs.</p>
+     */
+    inline DescribeKeyPairsRequest& WithKeyPairIds(const Aws::Vector<Aws::String>& value) { SetKeyPairIds(value); return *this;}
+
+    /**
+     * <p>The IDs of the key pairs.</p>
+     */
+    inline DescribeKeyPairsRequest& WithKeyPairIds(Aws::Vector<Aws::String>&& value) { SetKeyPairIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The IDs of the key pairs.</p>
+     */
+    inline DescribeKeyPairsRequest& AddKeyPairIds(const Aws::String& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds.push_back(value); return *this; }
+
+    /**
+     * <p>The IDs of the key pairs.</p>
+     */
+    inline DescribeKeyPairsRequest& AddKeyPairIds(Aws::String&& value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IDs of the key pairs.</p>
+     */
+    inline DescribeKeyPairsRequest& AddKeyPairIds(const char* value) { m_keyPairIdsHasBeenSet = true; m_keyPairIds.push_back(value); return *this; }
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -190,6 +236,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_keyNames;
     bool m_keyNamesHasBeenSet;
+
+    Aws::Vector<Aws::String> m_keyPairIds;
+    bool m_keyPairIdsHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

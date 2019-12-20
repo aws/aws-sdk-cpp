@@ -37,7 +37,9 @@ PlacementGroup::PlacementGroup() :
     m_strategy(PlacementStrategy::NOT_SET),
     m_strategyHasBeenSet(false),
     m_partitionCount(0),
-    m_partitionCountHasBeenSet(false)
+    m_partitionCountHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ PlacementGroup::PlacementGroup(const XmlNode& xmlNode) :
     m_strategy(PlacementStrategy::NOT_SET),
     m_strategyHasBeenSet(false),
     m_partitionCount(0),
-    m_partitionCountHasBeenSet(false)
+    m_partitionCountHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -83,6 +87,24 @@ PlacementGroup& PlacementGroup::operator =(const XmlNode& xmlNode)
       m_partitionCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionCountNode.GetText()).c_str()).c_str());
       m_partitionCountHasBeenSet = true;
     }
+    XmlNode groupIdNode = resultNode.FirstChild("groupId");
+    if(!groupIdNode.IsNull())
+    {
+      m_groupId = Aws::Utils::Xml::DecodeEscapedXmlText(groupIdNode.GetText());
+      m_groupIdHasBeenSet = true;
+    }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -110,6 +132,22 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".PartitionCount=" << m_partitionCount << "&";
   }
 
+  if(m_groupIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -129,6 +167,20 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_partitionCountHasBeenSet)
   {
       oStream << location << ".PartitionCount=" << m_partitionCount << "&";
+  }
+  if(m_groupIdHasBeenSet)
+  {
+      oStream << location << ".GroupId=" << StringUtils::URLEncode(m_groupId.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

@@ -209,9 +209,9 @@ namespace Model
 
 
     /**
-     * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
+     * <p>An identifier for the symmetric AWS Key Management Service (AWS KMS) customer
+     * master key (CMK) to use when creating the encrypted volume. This parameter is
+     * only required if you want to use a non-default CMK; if this parameter is not
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>To specify
      * a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN.
@@ -225,14 +225,14 @@ namespace Model
      * that the action you call may appear to complete even though you provided an
      * invalid identifier. This action will eventually report failure. </p> <p>The
      * specified CMK must exist in the Region that the snapshot is being copied to.
-     * </p>
+     * </p> <p>Amazon EBS does not support asymmetric CMKs.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
+     * <p>An identifier for the symmetric AWS Key Management Service (AWS KMS) customer
+     * master key (CMK) to use when creating the encrypted volume. This parameter is
+     * only required if you want to use a non-default CMK; if this parameter is not
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>To specify
      * a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN.
@@ -246,14 +246,14 @@ namespace Model
      * that the action you call may appear to complete even though you provided an
      * invalid identifier. This action will eventually report failure. </p> <p>The
      * specified CMK must exist in the Region that the snapshot is being copied to.
-     * </p>
+     * </p> <p>Amazon EBS does not support asymmetric CMKs.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
+     * <p>An identifier for the symmetric AWS Key Management Service (AWS KMS) customer
+     * master key (CMK) to use when creating the encrypted volume. This parameter is
+     * only required if you want to use a non-default CMK; if this parameter is not
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>To specify
      * a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN.
@@ -267,14 +267,14 @@ namespace Model
      * that the action you call may appear to complete even though you provided an
      * invalid identifier. This action will eventually report failure. </p> <p>The
      * specified CMK must exist in the Region that the snapshot is being copied to.
-     * </p>
+     * </p> <p>Amazon EBS does not support asymmetric CMKs.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
+     * <p>An identifier for the symmetric AWS Key Management Service (AWS KMS) customer
+     * master key (CMK) to use when creating the encrypted volume. This parameter is
+     * only required if you want to use a non-default CMK; if this parameter is not
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>To specify
      * a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN.
@@ -288,14 +288,14 @@ namespace Model
      * that the action you call may appear to complete even though you provided an
      * invalid identifier. This action will eventually report failure. </p> <p>The
      * specified CMK must exist in the Region that the snapshot is being copied to.
-     * </p>
+     * </p> <p>Amazon EBS does not support asymmetric CMKs.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
+     * <p>An identifier for the symmetric AWS Key Management Service (AWS KMS) customer
+     * master key (CMK) to use when creating the encrypted volume. This parameter is
+     * only required if you want to use a non-default CMK; if this parameter is not
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>To specify
      * a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN.
@@ -309,14 +309,14 @@ namespace Model
      * that the action you call may appear to complete even though you provided an
      * invalid identifier. This action will eventually report failure. </p> <p>The
      * specified CMK must exist in the Region that the snapshot is being copied to.
-     * </p>
+     * </p> <p>Amazon EBS does not support asymmetric CMKs.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
+     * <p>An identifier for the symmetric AWS Key Management Service (AWS KMS) customer
+     * master key (CMK) to use when creating the encrypted volume. This parameter is
+     * only required if you want to use a non-default CMK; if this parameter is not
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>To specify
      * a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN.
@@ -330,14 +330,14 @@ namespace Model
      * that the action you call may appear to complete even though you provided an
      * invalid identifier. This action will eventually report failure. </p> <p>The
      * specified CMK must exist in the Region that the snapshot is being copied to.
-     * </p>
+     * </p> <p>Amazon EBS does not support asymmetric CMKs.</p>
      */
     inline CopyImageRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
+     * <p>An identifier for the symmetric AWS Key Management Service (AWS KMS) customer
+     * master key (CMK) to use when creating the encrypted volume. This parameter is
+     * only required if you want to use a non-default CMK; if this parameter is not
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>To specify
      * a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN.
@@ -351,14 +351,14 @@ namespace Model
      * that the action you call may appear to complete even though you provided an
      * invalid identifier. This action will eventually report failure. </p> <p>The
      * specified CMK must exist in the Region that the snapshot is being copied to.
-     * </p>
+     * </p> <p>Amazon EBS does not support asymmetric CMKs.</p>
      */
     inline CopyImageRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>An identifier for the AWS Key Management Service (AWS KMS) customer master
-     * key (CMK) to use when creating the encrypted volume. This parameter is only
-     * required if you want to use a non-default CMK; if this parameter is not
+     * <p>An identifier for the symmetric AWS Key Management Service (AWS KMS) customer
+     * master key (CMK) to use when creating the encrypted volume. This parameter is
+     * only required if you want to use a non-default CMK; if this parameter is not
      * specified, the default CMK for EBS is used. If a <code>KmsKeyId</code> is
      * specified, the <code>Encrypted</code> flag must also be set. </p> <p>To specify
      * a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN.
@@ -372,7 +372,7 @@ namespace Model
      * that the action you call may appear to complete even though you provided an
      * invalid identifier. This action will eventually report failure. </p> <p>The
      * specified CMK must exist in the Region that the snapshot is being copied to.
-     * </p>
+     * </p> <p>Amazon EBS does not support asymmetric CMKs.</p>
      */
     inline CopyImageRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

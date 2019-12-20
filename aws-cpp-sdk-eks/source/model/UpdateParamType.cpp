@@ -41,6 +41,7 @@ namespace Aws
         static const int MaxSize_HASH = HashingUtils::HashString("MaxSize");
         static const int MinSize_HASH = HashingUtils::HashString("MinSize");
         static const int ReleaseVersion_HASH = HashingUtils::HashString("ReleaseVersion");
+        static const int PublicAccessCidrs_HASH = HashingUtils::HashString("PublicAccessCidrs");
 
 
         UpdateParamType GetUpdateParamTypeForName(const Aws::String& name)
@@ -90,6 +91,10 @@ namespace Aws
           {
             return UpdateParamType::ReleaseVersion;
           }
+          else if (hashCode == PublicAccessCidrs_HASH)
+          {
+            return UpdateParamType::PublicAccessCidrs;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -126,6 +131,8 @@ namespace Aws
             return "MinSize";
           case UpdateParamType::ReleaseVersion:
             return "ReleaseVersion";
+          case UpdateParamType::PublicAccessCidrs:
+            return "PublicAccessCidrs";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

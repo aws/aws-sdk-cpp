@@ -87,49 +87,49 @@ namespace Model
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline ListJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline ListJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p>If the number of items that are returned is significantly large, this is an
-     * identifier that is also returned, which can be used in a subsequent call to this
+     * identifier that is also returned. It can be used in a subsequent call to this
      * operation to return the next set of items in the list.</p>
      */
     inline ListJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}

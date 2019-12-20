@@ -147,83 +147,91 @@ namespace Model
 
 
     /**
-     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
+     * <p>The manufacturer of the endpoint device, such as apple or samsung.</p>
      */
     inline const Aws::String& GetMake() const{ return m_make; }
 
     /**
-     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
+     * <p>The manufacturer of the endpoint device, such as apple or samsung.</p>
      */
     inline bool MakeHasBeenSet() const { return m_makeHasBeenSet; }
 
     /**
-     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
+     * <p>The manufacturer of the endpoint device, such as apple or samsung.</p>
      */
     inline void SetMake(const Aws::String& value) { m_makeHasBeenSet = true; m_make = value; }
 
     /**
-     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
+     * <p>The manufacturer of the endpoint device, such as apple or samsung.</p>
      */
     inline void SetMake(Aws::String&& value) { m_makeHasBeenSet = true; m_make = std::move(value); }
 
     /**
-     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
+     * <p>The manufacturer of the endpoint device, such as apple or samsung.</p>
      */
     inline void SetMake(const char* value) { m_makeHasBeenSet = true; m_make.assign(value); }
 
     /**
-     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
+     * <p>The manufacturer of the endpoint device, such as apple or samsung.</p>
      */
     inline EndpointDemographic& WithMake(const Aws::String& value) { SetMake(value); return *this;}
 
     /**
-     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
+     * <p>The manufacturer of the endpoint device, such as apple or samsung.</p>
      */
     inline EndpointDemographic& WithMake(Aws::String&& value) { SetMake(std::move(value)); return *this;}
 
     /**
-     * <p>The manufacturer of the endpoint device, such as Apple or Samsung.</p>
+     * <p>The manufacturer of the endpoint device, such as apple or samsung.</p>
      */
     inline EndpointDemographic& WithMake(const char* value) { SetMake(value); return *this;}
 
 
     /**
-     * <p>The model name or number of the endpoint device, such as iPhone.</p>
+     * <p>The model name or number of the endpoint device, such as iPhone or
+     * SM-G900F.</p>
      */
     inline const Aws::String& GetModel() const{ return m_model; }
 
     /**
-     * <p>The model name or number of the endpoint device, such as iPhone.</p>
+     * <p>The model name or number of the endpoint device, such as iPhone or
+     * SM-G900F.</p>
      */
     inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
 
     /**
-     * <p>The model name or number of the endpoint device, such as iPhone.</p>
+     * <p>The model name or number of the endpoint device, such as iPhone or
+     * SM-G900F.</p>
      */
     inline void SetModel(const Aws::String& value) { m_modelHasBeenSet = true; m_model = value; }
 
     /**
-     * <p>The model name or number of the endpoint device, such as iPhone.</p>
+     * <p>The model name or number of the endpoint device, such as iPhone or
+     * SM-G900F.</p>
      */
     inline void SetModel(Aws::String&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
 
     /**
-     * <p>The model name or number of the endpoint device, such as iPhone.</p>
+     * <p>The model name or number of the endpoint device, such as iPhone or
+     * SM-G900F.</p>
      */
     inline void SetModel(const char* value) { m_modelHasBeenSet = true; m_model.assign(value); }
 
     /**
-     * <p>The model name or number of the endpoint device, such as iPhone.</p>
+     * <p>The model name or number of the endpoint device, such as iPhone or
+     * SM-G900F.</p>
      */
     inline EndpointDemographic& WithModel(const Aws::String& value) { SetModel(value); return *this;}
 
     /**
-     * <p>The model name or number of the endpoint device, such as iPhone.</p>
+     * <p>The model name or number of the endpoint device, such as iPhone or
+     * SM-G900F.</p>
      */
     inline EndpointDemographic& WithModel(Aws::String&& value) { SetModel(std::move(value)); return *this;}
 
     /**
-     * <p>The model name or number of the endpoint device, such as iPhone.</p>
+     * <p>The model name or number of the endpoint device, such as iPhone or
+     * SM-G900F.</p>
      */
     inline EndpointDemographic& WithModel(const char* value) { SetModel(value); return *this;}
 
@@ -270,42 +278,42 @@ namespace Model
 
 
     /**
-     * <p>The platform of the endpoint device, such as iOS or Android.</p>
+     * <p>The platform of the endpoint device, such as ios.</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The platform of the endpoint device, such as iOS or Android.</p>
+     * <p>The platform of the endpoint device, such as ios.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The platform of the endpoint device, such as iOS or Android.</p>
+     * <p>The platform of the endpoint device, such as ios.</p>
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The platform of the endpoint device, such as iOS or Android.</p>
+     * <p>The platform of the endpoint device, such as ios.</p>
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The platform of the endpoint device, such as iOS or Android.</p>
+     * <p>The platform of the endpoint device, such as ios.</p>
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
-     * <p>The platform of the endpoint device, such as iOS or Android.</p>
+     * <p>The platform of the endpoint device, such as ios.</p>
      */
     inline EndpointDemographic& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The platform of the endpoint device, such as iOS or Android.</p>
+     * <p>The platform of the endpoint device, such as ios.</p>
      */
     inline EndpointDemographic& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
-     * <p>The platform of the endpoint device, such as iOS or Android.</p>
+     * <p>The platform of the endpoint device, such as ios.</p>
      */
     inline EndpointDemographic& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 

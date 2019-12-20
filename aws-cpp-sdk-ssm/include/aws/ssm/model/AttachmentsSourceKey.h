@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     SourceUrl,
-    S3FileUrl
+    S3FileUrl,
+    AttachmentReference
   };
 
 namespace AttachmentsSourceKeyMapper

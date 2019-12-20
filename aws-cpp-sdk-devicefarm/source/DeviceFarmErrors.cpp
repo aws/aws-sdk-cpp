@@ -35,7 +35,9 @@ static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededEx
 static const int SERVICE_ACCOUNT_HASH = HashingUtils::HashString("ServiceAccountException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int TAG_OPERATION_HASH = HashingUtils::HashString("TagOperationException");
+static const int INTERNAL_SERVICE_HASH = HashingUtils::HashString("InternalServiceException");
 static const int TAG_POLICY_HASH = HashingUtils::HashString("TagPolicyException");
+static const int CANNOT_DELETE_HASH = HashingUtils::HashString("CannotDeleteException");
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
 static const int NOT_ELIGIBLE_HASH = HashingUtils::HashString("NotEligibleException");
 
@@ -72,9 +74,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::TAG_OPERATION), false);
   }
+  else if (hashCode == INTERNAL_SERVICE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::INTERNAL_SERVICE), false);
+  }
   else if (hashCode == TAG_POLICY_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::TAG_POLICY), false);
+  }
+  else if (hashCode == CANNOT_DELETE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(DeviceFarmErrors::CANNOT_DELETE), false);
   }
   else if (hashCode == INVALID_OPERATION_HASH)
   {

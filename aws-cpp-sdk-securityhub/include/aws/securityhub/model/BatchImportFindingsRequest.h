@@ -47,7 +47,7 @@ namespace Model
      * <p>A list of findings to import. To successfully import a finding, it must
      * follow the <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS
-     * Security Finding Format</a>.</p>
+     * Security Finding Format</a>. Maximum of 100 findings per request.</p>
      */
     inline const Aws::Vector<AwsSecurityFinding>& GetFindings() const{ return m_findings; }
 
@@ -55,7 +55,7 @@ namespace Model
      * <p>A list of findings to import. To successfully import a finding, it must
      * follow the <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS
-     * Security Finding Format</a>.</p>
+     * Security Finding Format</a>. Maximum of 100 findings per request.</p>
      */
     inline bool FindingsHasBeenSet() const { return m_findingsHasBeenSet; }
 
@@ -63,7 +63,7 @@ namespace Model
      * <p>A list of findings to import. To successfully import a finding, it must
      * follow the <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS
-     * Security Finding Format</a>.</p>
+     * Security Finding Format</a>. Maximum of 100 findings per request.</p>
      */
     inline void SetFindings(const Aws::Vector<AwsSecurityFinding>& value) { m_findingsHasBeenSet = true; m_findings = value; }
 
@@ -71,7 +71,7 @@ namespace Model
      * <p>A list of findings to import. To successfully import a finding, it must
      * follow the <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS
-     * Security Finding Format</a>.</p>
+     * Security Finding Format</a>. Maximum of 100 findings per request.</p>
      */
     inline void SetFindings(Aws::Vector<AwsSecurityFinding>&& value) { m_findingsHasBeenSet = true; m_findings = std::move(value); }
 
@@ -79,7 +79,7 @@ namespace Model
      * <p>A list of findings to import. To successfully import a finding, it must
      * follow the <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS
-     * Security Finding Format</a>.</p>
+     * Security Finding Format</a>. Maximum of 100 findings per request.</p>
      */
     inline BatchImportFindingsRequest& WithFindings(const Aws::Vector<AwsSecurityFinding>& value) { SetFindings(value); return *this;}
 
@@ -87,7 +87,7 @@ namespace Model
      * <p>A list of findings to import. To successfully import a finding, it must
      * follow the <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS
-     * Security Finding Format</a>.</p>
+     * Security Finding Format</a>. Maximum of 100 findings per request.</p>
      */
     inline BatchImportFindingsRequest& WithFindings(Aws::Vector<AwsSecurityFinding>&& value) { SetFindings(std::move(value)); return *this;}
 
@@ -95,7 +95,7 @@ namespace Model
      * <p>A list of findings to import. To successfully import a finding, it must
      * follow the <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS
-     * Security Finding Format</a>.</p>
+     * Security Finding Format</a>. Maximum of 100 findings per request.</p>
      */
     inline BatchImportFindingsRequest& AddFindings(const AwsSecurityFinding& value) { m_findingsHasBeenSet = true; m_findings.push_back(value); return *this; }
 
@@ -103,7 +103,7 @@ namespace Model
      * <p>A list of findings to import. To successfully import a finding, it must
      * follow the <a
      * href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS
-     * Security Finding Format</a>.</p>
+     * Security Finding Format</a>. Maximum of 100 findings per request.</p>
      */
     inline BatchImportFindingsRequest& AddFindings(AwsSecurityFinding&& value) { m_findingsHasBeenSet = true; m_findings.push_back(std::move(value)); return *this; }
 

@@ -36,7 +36,8 @@ VpcConfigResponse::VpcConfigResponse() :
     m_endpointPublicAccess(false),
     m_endpointPublicAccessHasBeenSet(false),
     m_endpointPrivateAccess(false),
-    m_endpointPrivateAccessHasBeenSet(false)
+    m_endpointPrivateAccessHasBeenSet(false),
+    m_publicAccessCidrsHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ VpcConfigResponse::VpcConfigResponse(JsonView jsonValue) :
     m_endpointPublicAccess(false),
     m_endpointPublicAccessHasBeenSet(false),
     m_endpointPrivateAccess(false),
-    m_endpointPrivateAccessHasBeenSet(false)
+    m_endpointPrivateAccessHasBeenSet(false),
+    m_publicAccessCidrsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -103,6 +105,16 @@ VpcConfigResponse& VpcConfigResponse::operator =(JsonView jsonValue)
     m_endpointPrivateAccessHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("publicAccessCidrs"))
+  {
+    Array<JsonView> publicAccessCidrsJsonList = jsonValue.GetArray("publicAccessCidrs");
+    for(unsigned publicAccessCidrsIndex = 0; publicAccessCidrsIndex < publicAccessCidrsJsonList.GetLength(); ++publicAccessCidrsIndex)
+    {
+      m_publicAccessCidrs.push_back(publicAccessCidrsJsonList[publicAccessCidrsIndex].AsString());
+    }
+    m_publicAccessCidrsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -153,6 +165,17 @@ JsonValue VpcConfigResponse::Jsonize() const
   if(m_endpointPrivateAccessHasBeenSet)
   {
    payload.WithBool("endpointPrivateAccess", m_endpointPrivateAccess);
+
+  }
+
+  if(m_publicAccessCidrsHasBeenSet)
+  {
+   Array<JsonValue> publicAccessCidrsJsonList(m_publicAccessCidrs.size());
+   for(unsigned publicAccessCidrsIndex = 0; publicAccessCidrsIndex < publicAccessCidrsJsonList.GetLength(); ++publicAccessCidrsIndex)
+   {
+     publicAccessCidrsJsonList[publicAccessCidrsIndex].AsString(m_publicAccessCidrs[publicAccessCidrsIndex]);
+   }
+   payload.WithArray("publicAccessCidrs", std::move(publicAccessCidrsJsonList));
 
   }
 

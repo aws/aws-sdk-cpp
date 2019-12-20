@@ -42,7 +42,8 @@ PushNotificationTemplateResponse::PushNotificationTemplateResponse() :
     m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false)
+    m_templateTypeHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ PushNotificationTemplateResponse::PushNotificationTemplateResponse(JsonView json
     m_templateDescriptionHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_templateType(TemplateType::NOT_SET),
-    m_templateTypeHasBeenSet(false)
+    m_templateTypeHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -161,6 +163,13 @@ PushNotificationTemplateResponse& PushNotificationTemplateResponse::operator =(J
     m_templateTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetString("Version");
+
+    m_versionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -248,6 +257,12 @@ JsonValue PushNotificationTemplateResponse::Jsonize() const
   if(m_templateTypeHasBeenSet)
   {
    payload.WithString("TemplateType", TemplateTypeMapper::GetNameForTemplateType(m_templateType));
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("Version", m_version);
+
   }
 
   return payload;

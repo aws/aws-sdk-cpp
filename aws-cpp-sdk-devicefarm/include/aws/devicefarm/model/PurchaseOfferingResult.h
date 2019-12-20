@@ -35,8 +35,8 @@ namespace DeviceFarm
 namespace Model
 {
   /**
-   * <p>The result of the purchase offering (e.g., success or failure).</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>The result of the purchase offering (for example, success or
+   * failure).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/PurchaseOfferingResult">AWS
    * API Reference</a></p>
    */

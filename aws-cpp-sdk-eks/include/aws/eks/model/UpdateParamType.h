@@ -36,7 +36,8 @@ namespace Model
     LabelsToRemove,
     MaxSize,
     MinSize,
-    ReleaseVersion
+    ReleaseVersion,
+    PublicAccessCidrs
   };
 
 namespace UpdateParamTypeMapper

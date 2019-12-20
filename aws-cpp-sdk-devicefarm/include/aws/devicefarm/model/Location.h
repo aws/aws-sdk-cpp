@@ -33,7 +33,7 @@ namespace Model
 
   /**
    * <p>Represents a latitude and longitude pair, expressed in geographic coordinate
-   * system degrees (for example 47.6204, -122.3491).</p> <p>Elevation is currently
+   * system degrees (for example, 47.6204, -122.3491).</p> <p>Elevation is currently
    * not supported.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/Location">AWS
    * API Reference</a></p>

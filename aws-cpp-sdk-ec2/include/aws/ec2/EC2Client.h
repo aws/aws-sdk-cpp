@@ -2549,11 +2549,12 @@ namespace Model
          * address. If the Elastic IP address is already associated with a different
          * instance or a network interface, you get an error unless you allow
          * reassociation. You cannot associate an Elastic IP address with an instance or
-         * network interface that has an existing Elastic IP address.</p> <important>
-         * <p>This is an idempotent operation. If you perform the operation more than once,
-         * Amazon EC2 doesn't return an error, and you may be charged for each time the
-         * Elastic IP address is remapped to the same instance. For more information, see
-         * the <i>Elastic IP Addresses</i> section of <a
+         * network interface that has an existing Elastic IP address.</p> <p>You cannot
+         * associate an Elastic IP address with an interface in a different network border
+         * group.</p> <important> <p>This is an idempotent operation. If you perform the
+         * operation more than once, Amazon EC2 doesn't return an error, and you may be
+         * charged for each time the Elastic IP address is remapped to the same instance.
+         * For more information, see the <i>Elastic IP Addresses</i> section of <a
          * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
          * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">AWS
@@ -2578,11 +2579,12 @@ namespace Model
          * address. If the Elastic IP address is already associated with a different
          * instance or a network interface, you get an error unless you allow
          * reassociation. You cannot associate an Elastic IP address with an instance or
-         * network interface that has an existing Elastic IP address.</p> <important>
-         * <p>This is an idempotent operation. If you perform the operation more than once,
-         * Amazon EC2 doesn't return an error, and you may be charged for each time the
-         * Elastic IP address is remapped to the same instance. For more information, see
-         * the <i>Elastic IP Addresses</i> section of <a
+         * network interface that has an existing Elastic IP address.</p> <p>You cannot
+         * associate an Elastic IP address with an interface in a different network border
+         * group.</p> <important> <p>This is an idempotent operation. If you perform the
+         * operation more than once, Amazon EC2 doesn't return an error, and you may be
+         * charged for each time the Elastic IP address is remapped to the same instance.
+         * For more information, see the <i>Elastic IP Addresses</i> section of <a
          * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
          * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">AWS
@@ -2609,11 +2611,12 @@ namespace Model
          * address. If the Elastic IP address is already associated with a different
          * instance or a network interface, you get an error unless you allow
          * reassociation. You cannot associate an Elastic IP address with an instance or
-         * network interface that has an existing Elastic IP address.</p> <important>
-         * <p>This is an idempotent operation. If you perform the operation more than once,
-         * Amazon EC2 doesn't return an error, and you may be charged for each time the
-         * Elastic IP address is remapped to the same instance. For more information, see
-         * the <i>Elastic IP Addresses</i> section of <a
+         * network interface that has an existing Elastic IP address.</p> <p>You cannot
+         * associate an Elastic IP address with an interface in a different network border
+         * group.</p> <important> <p>This is an idempotent operation. If you perform the
+         * operation more than once, Amazon EC2 doesn't return an error, and you may be
+         * charged for each time the Elastic IP address is remapped to the same instance.
+         * For more information, see the <i>Elastic IP Addresses</i> section of <a
          * href="http://aws.amazon.com/ec2/pricing/">Amazon EC2 Pricing</a>.</p>
          * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateAddress">AWS
@@ -14709,11 +14712,12 @@ namespace Model
          * <p>Changes the default customer master key (CMK) for EBS encryption by default
          * for your account in this Region.</p> <p>AWS creates a unique AWS managed CMK in
          * each Region for use with encryption by default. If you change the default CMK to
-         * a customer managed CMK, it is used instead of the AWS managed CMK. To reset the
-         * default CMK to the AWS managed CMK for EBS, use
-         * <a>ResetEbsDefaultKmsKeyId</a>.</p> <p>If you delete or disable the customer
-         * managed CMK that you specified for use with encryption by default, your
-         * instances will fail to launch.</p> <p>For more information, see <a
+         * a symmetric customer managed CMK, it is used instead of the AWS managed CMK. To
+         * reset the default CMK to the AWS managed CMK for EBS, use
+         * <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric CMKs.</p>
+         * <p>If you delete or disable the customer managed CMK that you specified for use
+         * with encryption by default, your instances will fail to launch.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -14726,11 +14730,12 @@ namespace Model
          * <p>Changes the default customer master key (CMK) for EBS encryption by default
          * for your account in this Region.</p> <p>AWS creates a unique AWS managed CMK in
          * each Region for use with encryption by default. If you change the default CMK to
-         * a customer managed CMK, it is used instead of the AWS managed CMK. To reset the
-         * default CMK to the AWS managed CMK for EBS, use
-         * <a>ResetEbsDefaultKmsKeyId</a>.</p> <p>If you delete or disable the customer
-         * managed CMK that you specified for use with encryption by default, your
-         * instances will fail to launch.</p> <p>For more information, see <a
+         * a symmetric customer managed CMK, it is used instead of the AWS managed CMK. To
+         * reset the default CMK to the AWS managed CMK for EBS, use
+         * <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric CMKs.</p>
+         * <p>If you delete or disable the customer managed CMK that you specified for use
+         * with encryption by default, your instances will fail to launch.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -14745,11 +14750,12 @@ namespace Model
          * <p>Changes the default customer master key (CMK) for EBS encryption by default
          * for your account in this Region.</p> <p>AWS creates a unique AWS managed CMK in
          * each Region for use with encryption by default. If you change the default CMK to
-         * a customer managed CMK, it is used instead of the AWS managed CMK. To reset the
-         * default CMK to the AWS managed CMK for EBS, use
-         * <a>ResetEbsDefaultKmsKeyId</a>.</p> <p>If you delete or disable the customer
-         * managed CMK that you specified for use with encryption by default, your
-         * instances will fail to launch.</p> <p>For more information, see <a
+         * a symmetric customer managed CMK, it is used instead of the AWS managed CMK. To
+         * reset the default CMK to the AWS managed CMK for EBS, use
+         * <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric CMKs.</p>
+         * <p>If you delete or disable the customer managed CMK that you specified for use
+         * with encryption by default, your instances will fail to launch.</p> <p>For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
          * EBS Encryption</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a

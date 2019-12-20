@@ -98,22 +98,38 @@ namespace Model
 
 
     /**
-     * <p>The percentage of participants to send down the activity path.</p>
+     * <p>The percentage of participants to send down the activity path.</p> <p>To
+     * determine which participants are sent down each path, Amazon Pinpoint applies a
+     * probability-based algorithm to the percentages that you specify for the paths.
+     * Therefore, the actual percentage of participants who are sent down a path may
+     * not be equal to the percentage that you specify.</p>
      */
     inline int GetPercentage() const{ return m_percentage; }
 
     /**
-     * <p>The percentage of participants to send down the activity path.</p>
+     * <p>The percentage of participants to send down the activity path.</p> <p>To
+     * determine which participants are sent down each path, Amazon Pinpoint applies a
+     * probability-based algorithm to the percentages that you specify for the paths.
+     * Therefore, the actual percentage of participants who are sent down a path may
+     * not be equal to the percentage that you specify.</p>
      */
     inline bool PercentageHasBeenSet() const { return m_percentageHasBeenSet; }
 
     /**
-     * <p>The percentage of participants to send down the activity path.</p>
+     * <p>The percentage of participants to send down the activity path.</p> <p>To
+     * determine which participants are sent down each path, Amazon Pinpoint applies a
+     * probability-based algorithm to the percentages that you specify for the paths.
+     * Therefore, the actual percentage of participants who are sent down a path may
+     * not be equal to the percentage that you specify.</p>
      */
     inline void SetPercentage(int value) { m_percentageHasBeenSet = true; m_percentage = value; }
 
     /**
-     * <p>The percentage of participants to send down the activity path.</p>
+     * <p>The percentage of participants to send down the activity path.</p> <p>To
+     * determine which participants are sent down each path, Amazon Pinpoint applies a
+     * probability-based algorithm to the percentages that you specify for the paths.
+     * Therefore, the actual percentage of participants who are sent down a path may
+     * not be equal to the percentage that you specify.</p>
      */
     inline RandomSplitEntry& WithPercentage(int value) { SetPercentage(value); return *this;}
 

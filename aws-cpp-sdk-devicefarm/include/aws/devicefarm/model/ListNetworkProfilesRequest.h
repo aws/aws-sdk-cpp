@@ -95,38 +95,38 @@ namespace Model
 
 
     /**
-     * <p>The type of network profile you wish to return information about. Valid
-     * values are listed below.</p>
+     * <p>The type of network profile to return information about. Valid values are
+     * listed here.</p>
      */
     inline const NetworkProfileType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of network profile you wish to return information about. Valid
-     * values are listed below.</p>
+     * <p>The type of network profile to return information about. Valid values are
+     * listed here.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of network profile you wish to return information about. Valid
-     * values are listed below.</p>
+     * <p>The type of network profile to return information about. Valid values are
+     * listed here.</p>
      */
     inline void SetType(const NetworkProfileType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of network profile you wish to return information about. Valid
-     * values are listed below.</p>
+     * <p>The type of network profile to return information about. Valid values are
+     * listed here.</p>
      */
     inline void SetType(NetworkProfileType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of network profile you wish to return information about. Valid
-     * values are listed below.</p>
+     * <p>The type of network profile to return information about. Valid values are
+     * listed here.</p>
      */
     inline ListNetworkProfilesRequest& WithType(const NetworkProfileType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of network profile you wish to return information about. Valid
-     * values are listed below.</p>
+     * <p>The type of network profile to return information about. Valid values are
+     * listed here.</p>
      */
     inline ListNetworkProfilesRequest& WithType(NetworkProfileType&& value) { SetType(std::move(value)); return *this;}
 

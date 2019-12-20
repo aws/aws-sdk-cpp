@@ -210,65 +210,65 @@ namespace Model
 
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into. At this time, Fargate pods
-     * are not assigned public IP addresses, so only private subnets (with no direct
-     * route to an Internet Gateway) are accepted for this parameter.</p>
+     * <p>The IDs of subnets to launch your pods into. At this time, pods running on
+     * Fargate are not assigned public IP addresses, so only private subnets (with no
+     * direct route to an Internet Gateway) are accepted for this parameter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into. At this time, Fargate pods
-     * are not assigned public IP addresses, so only private subnets (with no direct
-     * route to an Internet Gateway) are accepted for this parameter.</p>
+     * <p>The IDs of subnets to launch your pods into. At this time, pods running on
+     * Fargate are not assigned public IP addresses, so only private subnets (with no
+     * direct route to an Internet Gateway) are accepted for this parameter.</p>
      */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into. At this time, Fargate pods
-     * are not assigned public IP addresses, so only private subnets (with no direct
-     * route to an Internet Gateway) are accepted for this parameter.</p>
+     * <p>The IDs of subnets to launch your pods into. At this time, pods running on
+     * Fargate are not assigned public IP addresses, so only private subnets (with no
+     * direct route to an Internet Gateway) are accepted for this parameter.</p>
      */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into. At this time, Fargate pods
-     * are not assigned public IP addresses, so only private subnets (with no direct
-     * route to an Internet Gateway) are accepted for this parameter.</p>
+     * <p>The IDs of subnets to launch your pods into. At this time, pods running on
+     * Fargate are not assigned public IP addresses, so only private subnets (with no
+     * direct route to an Internet Gateway) are accepted for this parameter.</p>
      */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into. At this time, Fargate pods
-     * are not assigned public IP addresses, so only private subnets (with no direct
-     * route to an Internet Gateway) are accepted for this parameter.</p>
+     * <p>The IDs of subnets to launch your pods into. At this time, pods running on
+     * Fargate are not assigned public IP addresses, so only private subnets (with no
+     * direct route to an Internet Gateway) are accepted for this parameter.</p>
      */
     inline CreateFargateProfileRequest& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into. At this time, Fargate pods
-     * are not assigned public IP addresses, so only private subnets (with no direct
-     * route to an Internet Gateway) are accepted for this parameter.</p>
+     * <p>The IDs of subnets to launch your pods into. At this time, pods running on
+     * Fargate are not assigned public IP addresses, so only private subnets (with no
+     * direct route to an Internet Gateway) are accepted for this parameter.</p>
      */
     inline CreateFargateProfileRequest& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into. At this time, Fargate pods
-     * are not assigned public IP addresses, so only private subnets (with no direct
-     * route to an Internet Gateway) are accepted for this parameter.</p>
+     * <p>The IDs of subnets to launch your pods into. At this time, pods running on
+     * Fargate are not assigned public IP addresses, so only private subnets (with no
+     * direct route to an Internet Gateway) are accepted for this parameter.</p>
      */
     inline CreateFargateProfileRequest& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into. At this time, Fargate pods
-     * are not assigned public IP addresses, so only private subnets (with no direct
-     * route to an Internet Gateway) are accepted for this parameter.</p>
+     * <p>The IDs of subnets to launch your pods into. At this time, pods running on
+     * Fargate are not assigned public IP addresses, so only private subnets (with no
+     * direct route to an Internet Gateway) are accepted for this parameter.</p>
      */
     inline CreateFargateProfileRequest& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The IDs of subnets to launch Fargate pods into. At this time, Fargate pods
-     * are not assigned public IP addresses, so only private subnets (with no direct
-     * route to an Internet Gateway) are accepted for this parameter.</p>
+     * <p>The IDs of subnets to launch your pods into. At this time, pods running on
+     * Fargate are not assigned public IP addresses, so only private subnets (with no
+     * direct route to an Internet Gateway) are accepted for this parameter.</p>
      */
     inline CreateFargateProfileRequest& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
 

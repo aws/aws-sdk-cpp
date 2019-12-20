@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/transcribe/TranscribeService_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/transcribe/model/VocabularyFilterMethod.h>
 #include <utility>
 
 namespace Aws
@@ -281,6 +282,112 @@ namespace Model
      */
     inline Settings& WithMaxAlternatives(int value) { SetMaxAlternatives(value); return *this;}
 
+
+    /**
+     * <p>The name of the vocabulary filter to use when transcribing the audio. The
+     * filter that you specify must have the same language code as the transcription
+     * job.</p>
+     */
+    inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
+
+    /**
+     * <p>The name of the vocabulary filter to use when transcribing the audio. The
+     * filter that you specify must have the same language code as the transcription
+     * job.</p>
+     */
+    inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vocabulary filter to use when transcribing the audio. The
+     * filter that you specify must have the same language code as the transcription
+     * job.</p>
+     */
+    inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
+
+    /**
+     * <p>The name of the vocabulary filter to use when transcribing the audio. The
+     * filter that you specify must have the same language code as the transcription
+     * job.</p>
+     */
+    inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
+
+    /**
+     * <p>The name of the vocabulary filter to use when transcribing the audio. The
+     * filter that you specify must have the same language code as the transcription
+     * job.</p>
+     */
+    inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
+
+    /**
+     * <p>The name of the vocabulary filter to use when transcribing the audio. The
+     * filter that you specify must have the same language code as the transcription
+     * job.</p>
+     */
+    inline Settings& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
+
+    /**
+     * <p>The name of the vocabulary filter to use when transcribing the audio. The
+     * filter that you specify must have the same language code as the transcription
+     * job.</p>
+     */
+    inline Settings& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the vocabulary filter to use when transcribing the audio. The
+     * filter that you specify must have the same language code as the transcription
+     * job.</p>
+     */
+    inline Settings& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
+
+
+    /**
+     * <p>Set to <code>mask</code> to remove filtered text from the transcript and
+     * replace it with three asterisks ("***") as placeholder text. Set to
+     * <code>remove</code> to remove filtered text from the transcript without using
+     * placeholder text.</p>
+     */
+    inline const VocabularyFilterMethod& GetVocabularyFilterMethod() const{ return m_vocabularyFilterMethod; }
+
+    /**
+     * <p>Set to <code>mask</code> to remove filtered text from the transcript and
+     * replace it with three asterisks ("***") as placeholder text. Set to
+     * <code>remove</code> to remove filtered text from the transcript without using
+     * placeholder text.</p>
+     */
+    inline bool VocabularyFilterMethodHasBeenSet() const { return m_vocabularyFilterMethodHasBeenSet; }
+
+    /**
+     * <p>Set to <code>mask</code> to remove filtered text from the transcript and
+     * replace it with three asterisks ("***") as placeholder text. Set to
+     * <code>remove</code> to remove filtered text from the transcript without using
+     * placeholder text.</p>
+     */
+    inline void SetVocabularyFilterMethod(const VocabularyFilterMethod& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
+
+    /**
+     * <p>Set to <code>mask</code> to remove filtered text from the transcript and
+     * replace it with three asterisks ("***") as placeholder text. Set to
+     * <code>remove</code> to remove filtered text from the transcript without using
+     * placeholder text.</p>
+     */
+    inline void SetVocabularyFilterMethod(VocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
+
+    /**
+     * <p>Set to <code>mask</code> to remove filtered text from the transcript and
+     * replace it with three asterisks ("***") as placeholder text. Set to
+     * <code>remove</code> to remove filtered text from the transcript without using
+     * placeholder text.</p>
+     */
+    inline Settings& WithVocabularyFilterMethod(const VocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
+
+    /**
+     * <p>Set to <code>mask</code> to remove filtered text from the transcript and
+     * replace it with three asterisks ("***") as placeholder text. Set to
+     * <code>remove</code> to remove filtered text from the transcript without using
+     * placeholder text.</p>
+     */
+    inline Settings& WithVocabularyFilterMethod(VocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_vocabularyName;
@@ -300,6 +407,12 @@ namespace Model
 
     int m_maxAlternatives;
     bool m_maxAlternativesHasBeenSet;
+
+    Aws::String m_vocabularyFilterName;
+    bool m_vocabularyFilterNameHasBeenSet;
+
+    VocabularyFilterMethod m_vocabularyFilterMethod;
+    bool m_vocabularyFilterMethodHasBeenSet;
   };
 
 } // namespace Model

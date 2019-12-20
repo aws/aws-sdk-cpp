@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p> The response information of license configurations.</p><p><h3>See Also:</h3>
-   * <a
+   * <p> The response information for license configurations.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportImageLicenseConfigurationResponse">AWS
    * API Reference</a></p>
    */

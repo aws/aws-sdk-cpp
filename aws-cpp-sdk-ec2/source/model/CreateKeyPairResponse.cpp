@@ -63,6 +63,11 @@ CreateKeyPairResponse& CreateKeyPairResponse::operator =(const Aws::AmazonWebSer
     {
       m_keyName = Aws::Utils::Xml::DecodeEscapedXmlText(keyNameNode.GetText());
     }
+    XmlNode keyPairIdNode = resultNode.FirstChild("keyPairId");
+    if(!keyPairIdNode.IsNull())
+    {
+      m_keyPairId = Aws::Utils::Xml::DecodeEscapedXmlText(keyPairIdNode.GetText());
+    }
   }
 
   if (!rootNode.IsNull()) {

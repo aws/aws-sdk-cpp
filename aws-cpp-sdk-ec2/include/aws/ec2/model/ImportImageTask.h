@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/SnapshotDetail.h>
+#include <aws/ec2/model/Tag.h>
 #include <aws/ec2/model/ImportImageLicenseConfigurationResponse.h>
 #include <utility>
 
@@ -590,50 +591,91 @@ namespace Model
 
 
     /**
-     * <p>The ARNs of the license configurations associated to the import image
-     * task.</p>
+     * <p>Any tags applied to the import image task.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags applied to the import image task.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags applied to the import image task.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Any tags applied to the import image task.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Any tags applied to the import image task.</p>
+     */
+    inline ImportImageTask& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Any tags applied to the import image task.</p>
+     */
+    inline ImportImageTask& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Any tags applied to the import image task.</p>
+     */
+    inline ImportImageTask& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Any tags applied to the import image task.</p>
+     */
+    inline ImportImageTask& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The ARNs of the license configurations that are associated with the import
+     * image task.</p>
      */
     inline const Aws::Vector<ImportImageLicenseConfigurationResponse>& GetLicenseSpecifications() const{ return m_licenseSpecifications; }
 
     /**
-     * <p>The ARNs of the license configurations associated to the import image
-     * task.</p>
+     * <p>The ARNs of the license configurations that are associated with the import
+     * image task.</p>
      */
     inline bool LicenseSpecificationsHasBeenSet() const { return m_licenseSpecificationsHasBeenSet; }
 
     /**
-     * <p>The ARNs of the license configurations associated to the import image
-     * task.</p>
+     * <p>The ARNs of the license configurations that are associated with the import
+     * image task.</p>
      */
     inline void SetLicenseSpecifications(const Aws::Vector<ImportImageLicenseConfigurationResponse>& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = value; }
 
     /**
-     * <p>The ARNs of the license configurations associated to the import image
-     * task.</p>
+     * <p>The ARNs of the license configurations that are associated with the import
+     * image task.</p>
      */
     inline void SetLicenseSpecifications(Aws::Vector<ImportImageLicenseConfigurationResponse>&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = std::move(value); }
 
     /**
-     * <p>The ARNs of the license configurations associated to the import image
-     * task.</p>
+     * <p>The ARNs of the license configurations that are associated with the import
+     * image task.</p>
      */
     inline ImportImageTask& WithLicenseSpecifications(const Aws::Vector<ImportImageLicenseConfigurationResponse>& value) { SetLicenseSpecifications(value); return *this;}
 
     /**
-     * <p>The ARNs of the license configurations associated to the import image
-     * task.</p>
+     * <p>The ARNs of the license configurations that are associated with the import
+     * image task.</p>
      */
     inline ImportImageTask& WithLicenseSpecifications(Aws::Vector<ImportImageLicenseConfigurationResponse>&& value) { SetLicenseSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The ARNs of the license configurations associated to the import image
-     * task.</p>
+     * <p>The ARNs of the license configurations that are associated with the import
+     * image task.</p>
      */
     inline ImportImageTask& AddLicenseSpecifications(const ImportImageLicenseConfigurationResponse& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The ARNs of the license configurations associated to the import image
-     * task.</p>
+     * <p>The ARNs of the license configurations that are associated with the import
+     * image task.</p>
      */
     inline ImportImageTask& AddLicenseSpecifications(ImportImageLicenseConfigurationResponse&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(std::move(value)); return *this; }
 
@@ -677,6 +719,9 @@ namespace Model
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
 
     Aws::Vector<ImportImageLicenseConfigurationResponse> m_licenseSpecifications;
     bool m_licenseSpecificationsHasBeenSet;

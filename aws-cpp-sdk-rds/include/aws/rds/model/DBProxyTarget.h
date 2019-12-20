@@ -147,49 +147,49 @@ namespace Model
 
     /**
      * <p>The DB cluster identifier when the target represents an Aurora DB cluster.
-     * This field is blank when the target represents an </p>
+     * This field is blank when the target represents an RDS DB instance.</p>
      */
     inline const Aws::String& GetTrackedClusterId() const{ return m_trackedClusterId; }
 
     /**
      * <p>The DB cluster identifier when the target represents an Aurora DB cluster.
-     * This field is blank when the target represents an </p>
+     * This field is blank when the target represents an RDS DB instance.</p>
      */
     inline bool TrackedClusterIdHasBeenSet() const { return m_trackedClusterIdHasBeenSet; }
 
     /**
      * <p>The DB cluster identifier when the target represents an Aurora DB cluster.
-     * This field is blank when the target represents an </p>
+     * This field is blank when the target represents an RDS DB instance.</p>
      */
     inline void SetTrackedClusterId(const Aws::String& value) { m_trackedClusterIdHasBeenSet = true; m_trackedClusterId = value; }
 
     /**
      * <p>The DB cluster identifier when the target represents an Aurora DB cluster.
-     * This field is blank when the target represents an </p>
+     * This field is blank when the target represents an RDS DB instance.</p>
      */
     inline void SetTrackedClusterId(Aws::String&& value) { m_trackedClusterIdHasBeenSet = true; m_trackedClusterId = std::move(value); }
 
     /**
      * <p>The DB cluster identifier when the target represents an Aurora DB cluster.
-     * This field is blank when the target represents an </p>
+     * This field is blank when the target represents an RDS DB instance.</p>
      */
     inline void SetTrackedClusterId(const char* value) { m_trackedClusterIdHasBeenSet = true; m_trackedClusterId.assign(value); }
 
     /**
      * <p>The DB cluster identifier when the target represents an Aurora DB cluster.
-     * This field is blank when the target represents an </p>
+     * This field is blank when the target represents an RDS DB instance.</p>
      */
     inline DBProxyTarget& WithTrackedClusterId(const Aws::String& value) { SetTrackedClusterId(value); return *this;}
 
     /**
      * <p>The DB cluster identifier when the target represents an Aurora DB cluster.
-     * This field is blank when the target represents an </p>
+     * This field is blank when the target represents an RDS DB instance.</p>
      */
     inline DBProxyTarget& WithTrackedClusterId(Aws::String&& value) { SetTrackedClusterId(std::move(value)); return *this;}
 
     /**
      * <p>The DB cluster identifier when the target represents an Aurora DB cluster.
-     * This field is blank when the target represents an </p>
+     * This field is blank when the target represents an RDS DB instance.</p>
      */
     inline DBProxyTarget& WithTrackedClusterId(const char* value) { SetTrackedClusterId(value); return *this;}
 

@@ -24,7 +24,8 @@ DescribePlacementGroupsRequest::DescribePlacementGroupsRequest() :
     m_filtersHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
-    m_groupNamesHasBeenSet(false)
+    m_groupNamesHasBeenSet(false),
+    m_groupIdsHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,17 @@ Aws::String DescribePlacementGroupsRequest::SerializePayload() const
       ss << "GroupName." << groupNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       groupNamesCount++;
+    }
+  }
+
+  if(m_groupIdsHasBeenSet)
+  {
+    unsigned groupIdsCount = 1;
+    for(auto& item : m_groupIds)
+    {
+      ss << "GroupId." << groupIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      groupIdsCount++;
     }
   }
 

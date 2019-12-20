@@ -48,27 +48,27 @@ namespace Model
 
 
     /**
-     * <p>An object containing information about the requested job.</p>
+     * <p>An object that contains information about the requested job.</p>
      */
     inline const Job& GetJob() const{ return m_job; }
 
     /**
-     * <p>An object containing information about the requested job.</p>
+     * <p>An object that contains information about the requested job.</p>
      */
     inline void SetJob(const Job& value) { m_job = value; }
 
     /**
-     * <p>An object containing information about the requested job.</p>
+     * <p>An object that contains information about the requested job.</p>
      */
     inline void SetJob(Job&& value) { m_job = std::move(value); }
 
     /**
-     * <p>An object containing information about the requested job.</p>
+     * <p>An object that contains information about the requested job.</p>
      */
     inline GetJobResult& WithJob(const Job& value) { SetJob(value); return *this;}
 
     /**
-     * <p>An object containing information about the requested job.</p>
+     * <p>An object that contains information about the requested job.</p>
      */
     inline GetJobResult& WithJob(Job&& value) { SetJob(std::move(value)); return *this;}
 

@@ -29,18 +29,32 @@ namespace Model
 {
 
 ResourceDetails::ResourceDetails() : 
+    m_awsCloudFrontDistributionHasBeenSet(false),
     m_awsEc2InstanceHasBeenSet(false),
+    m_awsElbv2LoadBalancerHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
     m_awsIamAccessKeyHasBeenSet(false),
+    m_awsIamRoleHasBeenSet(false),
+    m_awsKmsKeyHasBeenSet(false),
+    m_awsLambdaFunctionHasBeenSet(false),
+    m_awsSnsTopicHasBeenSet(false),
+    m_awsSqsQueueHasBeenSet(false),
     m_containerHasBeenSet(false),
     m_otherHasBeenSet(false)
 {
 }
 
 ResourceDetails::ResourceDetails(JsonView jsonValue) : 
+    m_awsCloudFrontDistributionHasBeenSet(false),
     m_awsEc2InstanceHasBeenSet(false),
+    m_awsElbv2LoadBalancerHasBeenSet(false),
     m_awsS3BucketHasBeenSet(false),
     m_awsIamAccessKeyHasBeenSet(false),
+    m_awsIamRoleHasBeenSet(false),
+    m_awsKmsKeyHasBeenSet(false),
+    m_awsLambdaFunctionHasBeenSet(false),
+    m_awsSnsTopicHasBeenSet(false),
+    m_awsSqsQueueHasBeenSet(false),
     m_containerHasBeenSet(false),
     m_otherHasBeenSet(false)
 {
@@ -49,11 +63,25 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
 
 ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("AwsCloudFrontDistribution"))
+  {
+    m_awsCloudFrontDistribution = jsonValue.GetObject("AwsCloudFrontDistribution");
+
+    m_awsCloudFrontDistributionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("AwsEc2Instance"))
   {
     m_awsEc2Instance = jsonValue.GetObject("AwsEc2Instance");
 
     m_awsEc2InstanceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsElbv2LoadBalancer"))
+  {
+    m_awsElbv2LoadBalancer = jsonValue.GetObject("AwsElbv2LoadBalancer");
+
+    m_awsElbv2LoadBalancerHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AwsS3Bucket"))
@@ -68,6 +96,41 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsIamAccessKey = jsonValue.GetObject("AwsIamAccessKey");
 
     m_awsIamAccessKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsIamRole"))
+  {
+    m_awsIamRole = jsonValue.GetObject("AwsIamRole");
+
+    m_awsIamRoleHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsKmsKey"))
+  {
+    m_awsKmsKey = jsonValue.GetObject("AwsKmsKey");
+
+    m_awsKmsKeyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsLambdaFunction"))
+  {
+    m_awsLambdaFunction = jsonValue.GetObject("AwsLambdaFunction");
+
+    m_awsLambdaFunctionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsSnsTopic"))
+  {
+    m_awsSnsTopic = jsonValue.GetObject("AwsSnsTopic");
+
+    m_awsSnsTopicHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsSqsQueue"))
+  {
+    m_awsSqsQueue = jsonValue.GetObject("AwsSqsQueue");
+
+    m_awsSqsQueueHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Container"))
@@ -94,9 +157,21 @@ JsonValue ResourceDetails::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_awsCloudFrontDistributionHasBeenSet)
+  {
+   payload.WithObject("AwsCloudFrontDistribution", m_awsCloudFrontDistribution.Jsonize());
+
+  }
+
   if(m_awsEc2InstanceHasBeenSet)
   {
    payload.WithObject("AwsEc2Instance", m_awsEc2Instance.Jsonize());
+
+  }
+
+  if(m_awsElbv2LoadBalancerHasBeenSet)
+  {
+   payload.WithObject("AwsElbv2LoadBalancer", m_awsElbv2LoadBalancer.Jsonize());
 
   }
 
@@ -109,6 +184,36 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsIamAccessKeyHasBeenSet)
   {
    payload.WithObject("AwsIamAccessKey", m_awsIamAccessKey.Jsonize());
+
+  }
+
+  if(m_awsIamRoleHasBeenSet)
+  {
+   payload.WithObject("AwsIamRole", m_awsIamRole.Jsonize());
+
+  }
+
+  if(m_awsKmsKeyHasBeenSet)
+  {
+   payload.WithObject("AwsKmsKey", m_awsKmsKey.Jsonize());
+
+  }
+
+  if(m_awsLambdaFunctionHasBeenSet)
+  {
+   payload.WithObject("AwsLambdaFunction", m_awsLambdaFunction.Jsonize());
+
+  }
+
+  if(m_awsSnsTopicHasBeenSet)
+  {
+   payload.WithObject("AwsSnsTopic", m_awsSnsTopic.Jsonize());
+
+  }
+
+  if(m_awsSqsQueueHasBeenSet)
+  {
+   payload.WithObject("AwsSqsQueue", m_awsSqsQueue.Jsonize());
 
   }
 

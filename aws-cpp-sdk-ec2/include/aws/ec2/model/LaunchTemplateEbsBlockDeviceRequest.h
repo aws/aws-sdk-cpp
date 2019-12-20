@@ -159,49 +159,49 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
      * encryption.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The ARN of the AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
      * encryption.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The ARN of the AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
      * encryption.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The ARN of the AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
      * encryption.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The ARN of the AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
      * encryption.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The ARN of the AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
      * encryption.</p>
      */
     inline LaunchTemplateEbsBlockDeviceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The ARN of the AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
      * encryption.</p>
      */
     inline LaunchTemplateEbsBlockDeviceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the AWS Key Management Service (AWS KMS) CMK used for
+     * <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
      * encryption.</p>
      */
     inline LaunchTemplateEbsBlockDeviceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}

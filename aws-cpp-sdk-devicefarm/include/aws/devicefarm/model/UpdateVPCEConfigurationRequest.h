@@ -94,196 +94,196 @@ namespace Model
 
 
     /**
-     * <p>The friendly name you give to your VPC endpoint configuration, to manage your
+     * <p>The friendly name you give to your VPC endpoint configuration to manage your
      * configurations more easily.</p>
      */
     inline const Aws::String& GetVpceConfigurationName() const{ return m_vpceConfigurationName; }
 
     /**
-     * <p>The friendly name you give to your VPC endpoint configuration, to manage your
+     * <p>The friendly name you give to your VPC endpoint configuration to manage your
      * configurations more easily.</p>
      */
     inline bool VpceConfigurationNameHasBeenSet() const { return m_vpceConfigurationNameHasBeenSet; }
 
     /**
-     * <p>The friendly name you give to your VPC endpoint configuration, to manage your
+     * <p>The friendly name you give to your VPC endpoint configuration to manage your
      * configurations more easily.</p>
      */
     inline void SetVpceConfigurationName(const Aws::String& value) { m_vpceConfigurationNameHasBeenSet = true; m_vpceConfigurationName = value; }
 
     /**
-     * <p>The friendly name you give to your VPC endpoint configuration, to manage your
+     * <p>The friendly name you give to your VPC endpoint configuration to manage your
      * configurations more easily.</p>
      */
     inline void SetVpceConfigurationName(Aws::String&& value) { m_vpceConfigurationNameHasBeenSet = true; m_vpceConfigurationName = std::move(value); }
 
     /**
-     * <p>The friendly name you give to your VPC endpoint configuration, to manage your
+     * <p>The friendly name you give to your VPC endpoint configuration to manage your
      * configurations more easily.</p>
      */
     inline void SetVpceConfigurationName(const char* value) { m_vpceConfigurationNameHasBeenSet = true; m_vpceConfigurationName.assign(value); }
 
     /**
-     * <p>The friendly name you give to your VPC endpoint configuration, to manage your
+     * <p>The friendly name you give to your VPC endpoint configuration to manage your
      * configurations more easily.</p>
      */
     inline UpdateVPCEConfigurationRequest& WithVpceConfigurationName(const Aws::String& value) { SetVpceConfigurationName(value); return *this;}
 
     /**
-     * <p>The friendly name you give to your VPC endpoint configuration, to manage your
+     * <p>The friendly name you give to your VPC endpoint configuration to manage your
      * configurations more easily.</p>
      */
     inline UpdateVPCEConfigurationRequest& WithVpceConfigurationName(Aws::String&& value) { SetVpceConfigurationName(std::move(value)); return *this;}
 
     /**
-     * <p>The friendly name you give to your VPC endpoint configuration, to manage your
+     * <p>The friendly name you give to your VPC endpoint configuration to manage your
      * configurations more easily.</p>
      */
     inline UpdateVPCEConfigurationRequest& WithVpceConfigurationName(const char* value) { SetVpceConfigurationName(value); return *this;}
 
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline const Aws::String& GetVpceServiceName() const{ return m_vpceServiceName; }
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline bool VpceServiceNameHasBeenSet() const { return m_vpceServiceNameHasBeenSet; }
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline void SetVpceServiceName(const Aws::String& value) { m_vpceServiceNameHasBeenSet = true; m_vpceServiceName = value; }
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline void SetVpceServiceName(Aws::String&& value) { m_vpceServiceNameHasBeenSet = true; m_vpceServiceName = std::move(value); }
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline void SetVpceServiceName(const char* value) { m_vpceServiceNameHasBeenSet = true; m_vpceServiceName.assign(value); }
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline UpdateVPCEConfigurationRequest& WithVpceServiceName(const Aws::String& value) { SetVpceServiceName(value); return *this;}
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline UpdateVPCEConfigurationRequest& WithVpceServiceName(Aws::String&& value) { SetVpceServiceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * <p>The name of the VPC endpoint service running in your AWS account that you
      * want Device Farm to test.</p>
      */
     inline UpdateVPCEConfigurationRequest& WithVpceServiceName(const char* value) { SetVpceServiceName(value); return *this;}
 
 
     /**
-     * <p>The DNS (domain) name used to connect to your private service in your Amazon
-     * VPC. The DNS name must not already be in use on the Internet.</p>
+     * <p>The DNS (domain) name used to connect to your private service in your VPC.
+     * The DNS name must not already be in use on the internet.</p>
      */
     inline const Aws::String& GetServiceDnsName() const{ return m_serviceDnsName; }
 
     /**
-     * <p>The DNS (domain) name used to connect to your private service in your Amazon
-     * VPC. The DNS name must not already be in use on the Internet.</p>
+     * <p>The DNS (domain) name used to connect to your private service in your VPC.
+     * The DNS name must not already be in use on the internet.</p>
      */
     inline bool ServiceDnsNameHasBeenSet() const { return m_serviceDnsNameHasBeenSet; }
 
     /**
-     * <p>The DNS (domain) name used to connect to your private service in your Amazon
-     * VPC. The DNS name must not already be in use on the Internet.</p>
+     * <p>The DNS (domain) name used to connect to your private service in your VPC.
+     * The DNS name must not already be in use on the internet.</p>
      */
     inline void SetServiceDnsName(const Aws::String& value) { m_serviceDnsNameHasBeenSet = true; m_serviceDnsName = value; }
 
     /**
-     * <p>The DNS (domain) name used to connect to your private service in your Amazon
-     * VPC. The DNS name must not already be in use on the Internet.</p>
+     * <p>The DNS (domain) name used to connect to your private service in your VPC.
+     * The DNS name must not already be in use on the internet.</p>
      */
     inline void SetServiceDnsName(Aws::String&& value) { m_serviceDnsNameHasBeenSet = true; m_serviceDnsName = std::move(value); }
 
     /**
-     * <p>The DNS (domain) name used to connect to your private service in your Amazon
-     * VPC. The DNS name must not already be in use on the Internet.</p>
+     * <p>The DNS (domain) name used to connect to your private service in your VPC.
+     * The DNS name must not already be in use on the internet.</p>
      */
     inline void SetServiceDnsName(const char* value) { m_serviceDnsNameHasBeenSet = true; m_serviceDnsName.assign(value); }
 
     /**
-     * <p>The DNS (domain) name used to connect to your private service in your Amazon
-     * VPC. The DNS name must not already be in use on the Internet.</p>
+     * <p>The DNS (domain) name used to connect to your private service in your VPC.
+     * The DNS name must not already be in use on the internet.</p>
      */
     inline UpdateVPCEConfigurationRequest& WithServiceDnsName(const Aws::String& value) { SetServiceDnsName(value); return *this;}
 
     /**
-     * <p>The DNS (domain) name used to connect to your private service in your Amazon
-     * VPC. The DNS name must not already be in use on the Internet.</p>
+     * <p>The DNS (domain) name used to connect to your private service in your VPC.
+     * The DNS name must not already be in use on the internet.</p>
      */
     inline UpdateVPCEConfigurationRequest& WithServiceDnsName(Aws::String&& value) { SetServiceDnsName(std::move(value)); return *this;}
 
     /**
-     * <p>The DNS (domain) name used to connect to your private service in your Amazon
-     * VPC. The DNS name must not already be in use on the Internet.</p>
+     * <p>The DNS (domain) name used to connect to your private service in your VPC.
+     * The DNS name must not already be in use on the internet.</p>
      */
     inline UpdateVPCEConfigurationRequest& WithServiceDnsName(const char* value) { SetServiceDnsName(value); return *this;}
 
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline const Aws::String& GetVpceConfigurationDescription() const{ return m_vpceConfigurationDescription; }
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline bool VpceConfigurationDescriptionHasBeenSet() const { return m_vpceConfigurationDescriptionHasBeenSet; }
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline void SetVpceConfigurationDescription(const Aws::String& value) { m_vpceConfigurationDescriptionHasBeenSet = true; m_vpceConfigurationDescription = value; }
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline void SetVpceConfigurationDescription(Aws::String&& value) { m_vpceConfigurationDescriptionHasBeenSet = true; m_vpceConfigurationDescription = std::move(value); }
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline void SetVpceConfigurationDescription(const char* value) { m_vpceConfigurationDescriptionHasBeenSet = true; m_vpceConfigurationDescription.assign(value); }
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline UpdateVPCEConfigurationRequest& WithVpceConfigurationDescription(const Aws::String& value) { SetVpceConfigurationDescription(value); return *this;}
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline UpdateVPCEConfigurationRequest& WithVpceConfigurationDescription(Aws::String&& value) { SetVpceConfigurationDescription(std::move(value)); return *this;}
 
     /**
-     * <p>An optional description, providing more details about your VPC endpoint
+     * <p>An optional description that provides details about your VPC endpoint
      * configuration.</p>
      */
     inline UpdateVPCEConfigurationRequest& WithVpceConfigurationDescription(const char* value) { SetVpceConfigurationDescription(value); return *this;}

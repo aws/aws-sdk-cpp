@@ -45,43 +45,43 @@ namespace Model
 
 
     /**
-     * <p>An array of <code>VPCEConfiguration</code> objects containing information
+     * <p>An array of <code>VPCEConfiguration</code> objects that contain information
      * about your VPC endpoint configuration.</p>
      */
     inline const Aws::Vector<VPCEConfiguration>& GetVpceConfigurations() const{ return m_vpceConfigurations; }
 
     /**
-     * <p>An array of <code>VPCEConfiguration</code> objects containing information
+     * <p>An array of <code>VPCEConfiguration</code> objects that contain information
      * about your VPC endpoint configuration.</p>
      */
     inline void SetVpceConfigurations(const Aws::Vector<VPCEConfiguration>& value) { m_vpceConfigurations = value; }
 
     /**
-     * <p>An array of <code>VPCEConfiguration</code> objects containing information
+     * <p>An array of <code>VPCEConfiguration</code> objects that contain information
      * about your VPC endpoint configuration.</p>
      */
     inline void SetVpceConfigurations(Aws::Vector<VPCEConfiguration>&& value) { m_vpceConfigurations = std::move(value); }
 
     /**
-     * <p>An array of <code>VPCEConfiguration</code> objects containing information
+     * <p>An array of <code>VPCEConfiguration</code> objects that contain information
      * about your VPC endpoint configuration.</p>
      */
     inline ListVPCEConfigurationsResult& WithVpceConfigurations(const Aws::Vector<VPCEConfiguration>& value) { SetVpceConfigurations(value); return *this;}
 
     /**
-     * <p>An array of <code>VPCEConfiguration</code> objects containing information
+     * <p>An array of <code>VPCEConfiguration</code> objects that contain information
      * about your VPC endpoint configuration.</p>
      */
     inline ListVPCEConfigurationsResult& WithVpceConfigurations(Aws::Vector<VPCEConfiguration>&& value) { SetVpceConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <code>VPCEConfiguration</code> objects containing information
+     * <p>An array of <code>VPCEConfiguration</code> objects that contain information
      * about your VPC endpoint configuration.</p>
      */
     inline ListVPCEConfigurationsResult& AddVpceConfigurations(const VPCEConfiguration& value) { m_vpceConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>An array of <code>VPCEConfiguration</code> objects containing information
+     * <p>An array of <code>VPCEConfiguration</code> objects that contain information
      * about your VPC endpoint configuration.</p>
      */
     inline ListVPCEConfigurationsResult& AddVpceConfigurations(VPCEConfiguration&& value) { m_vpceConfigurations.push_back(std::move(value)); return *this; }

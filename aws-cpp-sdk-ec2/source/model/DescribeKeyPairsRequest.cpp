@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 DescribeKeyPairsRequest::DescribeKeyPairsRequest() : 
     m_filtersHasBeenSet(false),
     m_keyNamesHasBeenSet(false),
+    m_keyPairIdsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -50,6 +51,17 @@ Aws::String DescribeKeyPairsRequest::SerializePayload() const
       ss << "KeyName." << keyNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       keyNamesCount++;
+    }
+  }
+
+  if(m_keyPairIdsHasBeenSet)
+  {
+    unsigned keyPairIdsCount = 1;
+    for(auto& item : m_keyPairIds)
+    {
+      ss << "KeyPairId." << keyPairIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      keyPairIdsCount++;
     }
   }
 

@@ -89,22 +89,22 @@ namespace Model
 
 
     /**
-     * <p>The number of device slots you wish to purchase in an offering request.</p>
+     * <p>The number of device slots to purchase in an offering request.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
-     * <p>The number of device slots you wish to purchase in an offering request.</p>
+     * <p>The number of device slots to purchase in an offering request.</p>
      */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
 
     /**
-     * <p>The number of device slots you wish to purchase in an offering request.</p>
+     * <p>The number of device slots to purchase in an offering request.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
-     * <p>The number of device slots you wish to purchase in an offering request.</p>
+     * <p>The number of device slots to purchase in an offering request.</p>
      */
     inline PurchaseOfferingRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
 

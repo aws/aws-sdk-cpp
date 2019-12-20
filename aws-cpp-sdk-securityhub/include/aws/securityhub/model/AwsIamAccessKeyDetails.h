@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/securityhub/SecurityHub_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/securityhub/model/AwsIamAccessKeyStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -46,47 +46,6 @@ namespace Model
     AwsIamAccessKeyDetails(Aws::Utils::Json::JsonView jsonValue);
     AwsIamAccessKeyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
-     */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
-
-    /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
-     */
-    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-
-    /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
-     */
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-
-    /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
-     */
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-
-    /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
-     */
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-
-    /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
-     */
-    inline AwsIamAccessKeyDetails& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-
-    /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
-     */
-    inline AwsIamAccessKeyDetails& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-
-    /**
-     * <p>The user associated with the IAM access key related to a finding.</p>
-     */
-    inline AwsIamAccessKeyDetails& WithUserName(const char* value) { SetUserName(value); return *this;}
 
 
     /**
@@ -160,16 +119,145 @@ namespace Model
      */
     inline AwsIamAccessKeyDetails& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
 
-  private:
 
-    Aws::String m_userName;
-    bool m_userNameHasBeenSet;
+    /**
+     * <p>The ID of the principal associated with an access key.</p>
+     */
+    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+
+    /**
+     * <p>The ID of the principal associated with an access key.</p>
+     */
+    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the principal associated with an access key.</p>
+     */
+    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
+
+    /**
+     * <p>The ID of the principal associated with an access key.</p>
+     */
+    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
+
+    /**
+     * <p>The ID of the principal associated with an access key.</p>
+     */
+    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
+
+    /**
+     * <p>The ID of the principal associated with an access key.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
+
+    /**
+     * <p>The ID of the principal associated with an access key.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the principal associated with an access key.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+
+
+    /**
+     * <p>The type of principal associated with an access key.</p>
+     */
+    inline const Aws::String& GetPrincipalType() const{ return m_principalType; }
+
+    /**
+     * <p>The type of principal associated with an access key.</p>
+     */
+    inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
+
+    /**
+     * <p>The type of principal associated with an access key.</p>
+     */
+    inline void SetPrincipalType(const Aws::String& value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
+
+    /**
+     * <p>The type of principal associated with an access key.</p>
+     */
+    inline void SetPrincipalType(Aws::String&& value) { m_principalTypeHasBeenSet = true; m_principalType = std::move(value); }
+
+    /**
+     * <p>The type of principal associated with an access key.</p>
+     */
+    inline void SetPrincipalType(const char* value) { m_principalTypeHasBeenSet = true; m_principalType.assign(value); }
+
+    /**
+     * <p>The type of principal associated with an access key.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithPrincipalType(const Aws::String& value) { SetPrincipalType(value); return *this;}
+
+    /**
+     * <p>The type of principal associated with an access key.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithPrincipalType(Aws::String&& value) { SetPrincipalType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of principal associated with an access key.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithPrincipalType(const char* value) { SetPrincipalType(value); return *this;}
+
+
+    /**
+     * <p>The name of the principal.</p>
+     */
+    inline const Aws::String& GetPrincipalName() const{ return m_principalName; }
+
+    /**
+     * <p>The name of the principal.</p>
+     */
+    inline bool PrincipalNameHasBeenSet() const { return m_principalNameHasBeenSet; }
+
+    /**
+     * <p>The name of the principal.</p>
+     */
+    inline void SetPrincipalName(const Aws::String& value) { m_principalNameHasBeenSet = true; m_principalName = value; }
+
+    /**
+     * <p>The name of the principal.</p>
+     */
+    inline void SetPrincipalName(Aws::String&& value) { m_principalNameHasBeenSet = true; m_principalName = std::move(value); }
+
+    /**
+     * <p>The name of the principal.</p>
+     */
+    inline void SetPrincipalName(const char* value) { m_principalNameHasBeenSet = true; m_principalName.assign(value); }
+
+    /**
+     * <p>The name of the principal.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithPrincipalName(const Aws::String& value) { SetPrincipalName(value); return *this;}
+
+    /**
+     * <p>The name of the principal.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithPrincipalName(Aws::String&& value) { SetPrincipalName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the principal.</p>
+     */
+    inline AwsIamAccessKeyDetails& WithPrincipalName(const char* value) { SetPrincipalName(value); return *this;}
+
+  private:
 
     AwsIamAccessKeyStatus m_status;
     bool m_statusHasBeenSet;
 
     Aws::String m_createdAt;
     bool m_createdAtHasBeenSet;
+
+    Aws::String m_principalId;
+    bool m_principalIdHasBeenSet;
+
+    Aws::String m_principalType;
+    bool m_principalTypeHasBeenSet;
+
+    Aws::String m_principalName;
+    bool m_principalNameHasBeenSet;
   };
 
 } // namespace Model

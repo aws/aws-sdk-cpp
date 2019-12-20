@@ -40,6 +40,7 @@ VoiceTemplateResponse::VoiceTemplateResponse() :
     m_templateNameHasBeenSet(false),
     m_templateType(TemplateType::NOT_SET),
     m_templateTypeHasBeenSet(false),
+    m_versionHasBeenSet(false),
     m_voiceIdHasBeenSet(false)
 {
 }
@@ -56,6 +57,7 @@ VoiceTemplateResponse::VoiceTemplateResponse(JsonView jsonValue) :
     m_templateNameHasBeenSet(false),
     m_templateType(TemplateType::NOT_SET),
     m_templateTypeHasBeenSet(false),
+    m_versionHasBeenSet(false),
     m_voiceIdHasBeenSet(false)
 {
   *this = jsonValue;
@@ -136,6 +138,13 @@ VoiceTemplateResponse& VoiceTemplateResponse::operator =(JsonView jsonValue)
     m_templateTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Version"))
+  {
+    m_version = jsonValue.GetString("Version");
+
+    m_versionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("VoiceId"))
   {
     m_voiceId = jsonValue.GetString("VoiceId");
@@ -212,6 +221,12 @@ JsonValue VoiceTemplateResponse::Jsonize() const
   if(m_templateTypeHasBeenSet)
   {
    payload.WithString("TemplateType", TemplateTypeMapper::GetNameForTemplateType(m_templateType));
+  }
+
+  if(m_versionHasBeenSet)
+  {
+   payload.WithString("Version", m_version);
+
   }
 
   if(m_voiceIdHasBeenSet)

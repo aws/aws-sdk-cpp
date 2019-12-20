@@ -262,86 +262,74 @@ namespace Model
 
     /**
      * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
-     * factor.</p> </li> </ul>
+     * <p>PHONE</p> </li> <li> <p>TABLET</p> </li> </ul>
      */
     inline const DeviceFormFactor& GetFormFactor() const{ return m_formFactor; }
 
     /**
      * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
-     * factor.</p> </li> </ul>
+     * <p>PHONE</p> </li> <li> <p>TABLET</p> </li> </ul>
      */
     inline bool FormFactorHasBeenSet() const { return m_formFactorHasBeenSet; }
 
     /**
      * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
-     * factor.</p> </li> </ul>
+     * <p>PHONE</p> </li> <li> <p>TABLET</p> </li> </ul>
      */
     inline void SetFormFactor(const DeviceFormFactor& value) { m_formFactorHasBeenSet = true; m_formFactor = value; }
 
     /**
      * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
-     * factor.</p> </li> </ul>
+     * <p>PHONE</p> </li> <li> <p>TABLET</p> </li> </ul>
      */
     inline void SetFormFactor(DeviceFormFactor&& value) { m_formFactorHasBeenSet = true; m_formFactor = std::move(value); }
 
     /**
      * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
-     * factor.</p> </li> </ul>
+     * <p>PHONE</p> </li> <li> <p>TABLET</p> </li> </ul>
      */
     inline Device& WithFormFactor(const DeviceFormFactor& value) { SetFormFactor(value); return *this;}
 
     /**
      * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
-     * factor.</p> </li> </ul>
+     * <p>PHONE</p> </li> <li> <p>TABLET</p> </li> </ul>
      */
     inline Device& WithFormFactor(DeviceFormFactor&& value) { SetFormFactor(std::move(value)); return *this;}
 
 
     /**
      * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
-     * </li> </ul>
+     * <p>ANDROID</p> </li> <li> <p>IOS</p> </li> </ul>
      */
     inline const DevicePlatform& GetPlatform() const{ return m_platform; }
 
     /**
      * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
-     * </li> </ul>
+     * <p>ANDROID</p> </li> <li> <p>IOS</p> </li> </ul>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
-     * </li> </ul>
+     * <p>ANDROID</p> </li> <li> <p>IOS</p> </li> </ul>
      */
     inline void SetPlatform(const DevicePlatform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
      * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
-     * </li> </ul>
+     * <p>ANDROID</p> </li> <li> <p>IOS</p> </li> </ul>
      */
     inline void SetPlatform(DevicePlatform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
      * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
-     * </li> </ul>
+     * <p>ANDROID</p> </li> <li> <p>IOS</p> </li> </ul>
      */
     inline Device& WithPlatform(const DevicePlatform& value) { SetPlatform(value); return *this;}
 
     /**
      * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
-     * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
-     * </li> </ul>
+     * <p>ANDROID</p> </li> <li> <p>IOS</p> </li> </ul>
      */
     inline Device& WithPlatform(DevicePlatform&& value) { SetPlatform(std::move(value)); return *this;}
 
@@ -641,82 +629,82 @@ namespace Model
 
     /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-     * device.</p> <p> <i>Remote debugging is <a
+     * device.</p> <p>Remote debugging is <a
      * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-     * longer supported</a>.</i> </p>
+     * longer supported</a>.</p>
      */
     inline bool GetRemoteDebugEnabled() const{ return m_remoteDebugEnabled; }
 
     /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-     * device.</p> <p> <i>Remote debugging is <a
+     * device.</p> <p>Remote debugging is <a
      * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-     * longer supported</a>.</i> </p>
+     * longer supported</a>.</p>
      */
     inline bool RemoteDebugEnabledHasBeenSet() const { return m_remoteDebugEnabledHasBeenSet; }
 
     /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-     * device.</p> <p> <i>Remote debugging is <a
+     * device.</p> <p>Remote debugging is <a
      * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-     * longer supported</a>.</i> </p>
+     * longer supported</a>.</p>
      */
     inline void SetRemoteDebugEnabled(bool value) { m_remoteDebugEnabledHasBeenSet = true; m_remoteDebugEnabled = value; }
 
     /**
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
-     * device.</p> <p> <i>Remote debugging is <a
+     * device.</p> <p>Remote debugging is <a
      * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/history.html">no
-     * longer supported</a>.</i> </p>
+     * longer supported</a>.</p>
      */
     inline Device& WithRemoteDebugEnabled(bool value) { SetRemoteDebugEnabled(value); return *this;}
 
 
     /**
-     * <p>The type of fleet to which this device belongs. Possible values for fleet
-     * type are PRIVATE and PUBLIC.</p>
+     * <p>The type of fleet to which this device belongs. Possible values are PRIVATE
+     * and PUBLIC.</p>
      */
     inline const Aws::String& GetFleetType() const{ return m_fleetType; }
 
     /**
-     * <p>The type of fleet to which this device belongs. Possible values for fleet
-     * type are PRIVATE and PUBLIC.</p>
+     * <p>The type of fleet to which this device belongs. Possible values are PRIVATE
+     * and PUBLIC.</p>
      */
     inline bool FleetTypeHasBeenSet() const { return m_fleetTypeHasBeenSet; }
 
     /**
-     * <p>The type of fleet to which this device belongs. Possible values for fleet
-     * type are PRIVATE and PUBLIC.</p>
+     * <p>The type of fleet to which this device belongs. Possible values are PRIVATE
+     * and PUBLIC.</p>
      */
     inline void SetFleetType(const Aws::String& value) { m_fleetTypeHasBeenSet = true; m_fleetType = value; }
 
     /**
-     * <p>The type of fleet to which this device belongs. Possible values for fleet
-     * type are PRIVATE and PUBLIC.</p>
+     * <p>The type of fleet to which this device belongs. Possible values are PRIVATE
+     * and PUBLIC.</p>
      */
     inline void SetFleetType(Aws::String&& value) { m_fleetTypeHasBeenSet = true; m_fleetType = std::move(value); }
 
     /**
-     * <p>The type of fleet to which this device belongs. Possible values for fleet
-     * type are PRIVATE and PUBLIC.</p>
+     * <p>The type of fleet to which this device belongs. Possible values are PRIVATE
+     * and PUBLIC.</p>
      */
     inline void SetFleetType(const char* value) { m_fleetTypeHasBeenSet = true; m_fleetType.assign(value); }
 
     /**
-     * <p>The type of fleet to which this device belongs. Possible values for fleet
-     * type are PRIVATE and PUBLIC.</p>
+     * <p>The type of fleet to which this device belongs. Possible values are PRIVATE
+     * and PUBLIC.</p>
      */
     inline Device& WithFleetType(const Aws::String& value) { SetFleetType(value); return *this;}
 
     /**
-     * <p>The type of fleet to which this device belongs. Possible values for fleet
-     * type are PRIVATE and PUBLIC.</p>
+     * <p>The type of fleet to which this device belongs. Possible values are PRIVATE
+     * and PUBLIC.</p>
      */
     inline Device& WithFleetType(Aws::String&& value) { SetFleetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of fleet to which this device belongs. Possible values for fleet
-     * type are PRIVATE and PUBLIC.</p>
+     * <p>The type of fleet to which this device belongs. Possible values are PRIVATE
+     * and PUBLIC.</p>
      */
     inline Device& WithFleetType(const char* value) { SetFleetType(value); return *this;}
 
@@ -763,79 +751,79 @@ namespace Model
 
 
     /**
-     * <p>The instances belonging to this device.</p>
+     * <p>The instances that belong to this device.</p>
      */
     inline const Aws::Vector<DeviceInstance>& GetInstances() const{ return m_instances; }
 
     /**
-     * <p>The instances belonging to this device.</p>
+     * <p>The instances that belong to this device.</p>
      */
     inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
 
     /**
-     * <p>The instances belonging to this device.</p>
+     * <p>The instances that belong to this device.</p>
      */
     inline void SetInstances(const Aws::Vector<DeviceInstance>& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
     /**
-     * <p>The instances belonging to this device.</p>
+     * <p>The instances that belong to this device.</p>
      */
     inline void SetInstances(Aws::Vector<DeviceInstance>&& value) { m_instancesHasBeenSet = true; m_instances = std::move(value); }
 
     /**
-     * <p>The instances belonging to this device.</p>
+     * <p>The instances that belong to this device.</p>
      */
     inline Device& WithInstances(const Aws::Vector<DeviceInstance>& value) { SetInstances(value); return *this;}
 
     /**
-     * <p>The instances belonging to this device.</p>
+     * <p>The instances that belong to this device.</p>
      */
     inline Device& WithInstances(Aws::Vector<DeviceInstance>&& value) { SetInstances(std::move(value)); return *this;}
 
     /**
-     * <p>The instances belonging to this device.</p>
+     * <p>The instances that belong to this device.</p>
      */
     inline Device& AddInstances(const DeviceInstance& value) { m_instancesHasBeenSet = true; m_instances.push_back(value); return *this; }
 
     /**
-     * <p>The instances belonging to this device.</p>
+     * <p>The instances that belong to this device.</p>
      */
     inline Device& AddInstances(DeviceInstance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Reflects how likely a device will be available for a test run. It is
-     * currently available in the ListDevices and GetDevice API methods.</p>
+     * <p>Indicates how likely a device is available for a test run. Currently
+     * available in the <a>ListDevices</a> and GetDevice API methods.</p>
      */
     inline const DeviceAvailability& GetAvailability() const{ return m_availability; }
 
     /**
-     * <p>Reflects how likely a device will be available for a test run. It is
-     * currently available in the ListDevices and GetDevice API methods.</p>
+     * <p>Indicates how likely a device is available for a test run. Currently
+     * available in the <a>ListDevices</a> and GetDevice API methods.</p>
      */
     inline bool AvailabilityHasBeenSet() const { return m_availabilityHasBeenSet; }
 
     /**
-     * <p>Reflects how likely a device will be available for a test run. It is
-     * currently available in the ListDevices and GetDevice API methods.</p>
+     * <p>Indicates how likely a device is available for a test run. Currently
+     * available in the <a>ListDevices</a> and GetDevice API methods.</p>
      */
     inline void SetAvailability(const DeviceAvailability& value) { m_availabilityHasBeenSet = true; m_availability = value; }
 
     /**
-     * <p>Reflects how likely a device will be available for a test run. It is
-     * currently available in the ListDevices and GetDevice API methods.</p>
+     * <p>Indicates how likely a device is available for a test run. Currently
+     * available in the <a>ListDevices</a> and GetDevice API methods.</p>
      */
     inline void SetAvailability(DeviceAvailability&& value) { m_availabilityHasBeenSet = true; m_availability = std::move(value); }
 
     /**
-     * <p>Reflects how likely a device will be available for a test run. It is
-     * currently available in the ListDevices and GetDevice API methods.</p>
+     * <p>Indicates how likely a device is available for a test run. Currently
+     * available in the <a>ListDevices</a> and GetDevice API methods.</p>
      */
     inline Device& WithAvailability(const DeviceAvailability& value) { SetAvailability(value); return *this;}
 
     /**
-     * <p>Reflects how likely a device will be available for a test run. It is
-     * currently available in the ListDevices and GetDevice API methods.</p>
+     * <p>Indicates how likely a device is available for a test run. Currently
+     * available in the <a>ListDevices</a> and GetDevice API methods.</p>
      */
     inline Device& WithAvailability(DeviceAvailability&& value) { SetAvailability(std::move(value)); return *this;}
 

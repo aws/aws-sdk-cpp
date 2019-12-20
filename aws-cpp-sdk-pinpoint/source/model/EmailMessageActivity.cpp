@@ -31,14 +31,16 @@ namespace Model
 EmailMessageActivity::EmailMessageActivity() : 
     m_messageConfigHasBeenSet(false),
     m_nextActivityHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+    m_templateNameHasBeenSet(false),
+    m_templateVersionHasBeenSet(false)
 {
 }
 
 EmailMessageActivity::EmailMessageActivity(JsonView jsonValue) : 
     m_messageConfigHasBeenSet(false),
     m_nextActivityHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
+    m_templateNameHasBeenSet(false),
+    m_templateVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +68,13 @@ EmailMessageActivity& EmailMessageActivity::operator =(JsonView jsonValue)
     m_templateNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TemplateVersion"))
+  {
+    m_templateVersion = jsonValue.GetString("TemplateVersion");
+
+    m_templateVersionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +97,12 @@ JsonValue EmailMessageActivity::Jsonize() const
   if(m_templateNameHasBeenSet)
   {
    payload.WithString("TemplateName", m_templateName);
+
+  }
+
+  if(m_templateVersionHasBeenSet)
+  {
+   payload.WithString("TemplateVersion", m_templateVersion);
 
   }
 

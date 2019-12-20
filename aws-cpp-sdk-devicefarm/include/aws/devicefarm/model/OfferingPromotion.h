@@ -90,42 +90,42 @@ namespace Model
 
 
     /**
-     * <p>A string describing the offering promotion.</p>
+     * <p>A string that describes the offering promotion.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A string describing the offering promotion.</p>
+     * <p>A string that describes the offering promotion.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A string describing the offering promotion.</p>
+     * <p>A string that describes the offering promotion.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A string describing the offering promotion.</p>
+     * <p>A string that describes the offering promotion.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A string describing the offering promotion.</p>
+     * <p>A string that describes the offering promotion.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A string describing the offering promotion.</p>
+     * <p>A string that describes the offering promotion.</p>
      */
     inline OfferingPromotion& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A string describing the offering promotion.</p>
+     * <p>A string that describes the offering promotion.</p>
      */
     inline OfferingPromotion& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A string describing the offering promotion.</p>
+     * <p>A string that describes the offering promotion.</p>
      */
     inline OfferingPromotion& WithDescription(const char* value) { SetDescription(value); return *this;}
 

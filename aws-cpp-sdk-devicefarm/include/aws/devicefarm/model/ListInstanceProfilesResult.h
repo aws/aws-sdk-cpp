@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>An object containing information about your instance profiles.</p>
+     * <p>An object that contains information about your instance profiles.</p>
      */
     inline const Aws::Vector<InstanceProfile>& GetInstanceProfiles() const{ return m_instanceProfiles; }
 
     /**
-     * <p>An object containing information about your instance profiles.</p>
+     * <p>An object that contains information about your instance profiles.</p>
      */
     inline void SetInstanceProfiles(const Aws::Vector<InstanceProfile>& value) { m_instanceProfiles = value; }
 
     /**
-     * <p>An object containing information about your instance profiles.</p>
+     * <p>An object that contains information about your instance profiles.</p>
      */
     inline void SetInstanceProfiles(Aws::Vector<InstanceProfile>&& value) { m_instanceProfiles = std::move(value); }
 
     /**
-     * <p>An object containing information about your instance profiles.</p>
+     * <p>An object that contains information about your instance profiles.</p>
      */
     inline ListInstanceProfilesResult& WithInstanceProfiles(const Aws::Vector<InstanceProfile>& value) { SetInstanceProfiles(value); return *this;}
 
     /**
-     * <p>An object containing information about your instance profiles.</p>
+     * <p>An object that contains information about your instance profiles.</p>
      */
     inline ListInstanceProfilesResult& WithInstanceProfiles(Aws::Vector<InstanceProfile>&& value) { SetInstanceProfiles(std::move(value)); return *this;}
 
     /**
-     * <p>An object containing information about your instance profiles.</p>
+     * <p>An object that contains information about your instance profiles.</p>
      */
     inline ListInstanceProfilesResult& AddInstanceProfiles(const InstanceProfile& value) { m_instanceProfiles.push_back(value); return *this; }
 
     /**
-     * <p>An object containing information about your instance profiles.</p>
+     * <p>An object that contains information about your instance profiles.</p>
      */
     inline ListInstanceProfilesResult& AddInstanceProfiles(InstanceProfile&& value) { m_instanceProfiles.push_back(std::move(value)); return *this; }
 

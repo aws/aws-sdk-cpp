@@ -52,43 +52,43 @@ namespace Model
 
 
     /**
-     * <p>A container representing the metadata from the service about each remote
+     * <p>A container that represents the metadata from the service about each remote
      * access session you are requesting.</p>
      */
     inline const Aws::Vector<RemoteAccessSession>& GetRemoteAccessSessions() const{ return m_remoteAccessSessions; }
 
     /**
-     * <p>A container representing the metadata from the service about each remote
+     * <p>A container that represents the metadata from the service about each remote
      * access session you are requesting.</p>
      */
     inline void SetRemoteAccessSessions(const Aws::Vector<RemoteAccessSession>& value) { m_remoteAccessSessions = value; }
 
     /**
-     * <p>A container representing the metadata from the service about each remote
+     * <p>A container that represents the metadata from the service about each remote
      * access session you are requesting.</p>
      */
     inline void SetRemoteAccessSessions(Aws::Vector<RemoteAccessSession>&& value) { m_remoteAccessSessions = std::move(value); }
 
     /**
-     * <p>A container representing the metadata from the service about each remote
+     * <p>A container that represents the metadata from the service about each remote
      * access session you are requesting.</p>
      */
     inline ListRemoteAccessSessionsResult& WithRemoteAccessSessions(const Aws::Vector<RemoteAccessSession>& value) { SetRemoteAccessSessions(value); return *this;}
 
     /**
-     * <p>A container representing the metadata from the service about each remote
+     * <p>A container that represents the metadata from the service about each remote
      * access session you are requesting.</p>
      */
     inline ListRemoteAccessSessionsResult& WithRemoteAccessSessions(Aws::Vector<RemoteAccessSession>&& value) { SetRemoteAccessSessions(std::move(value)); return *this;}
 
     /**
-     * <p>A container representing the metadata from the service about each remote
+     * <p>A container that represents the metadata from the service about each remote
      * access session you are requesting.</p>
      */
     inline ListRemoteAccessSessionsResult& AddRemoteAccessSessions(const RemoteAccessSession& value) { m_remoteAccessSessions.push_back(value); return *this; }
 
     /**
-     * <p>A container representing the metadata from the service about each remote
+     * <p>A container that represents the metadata from the service about each remote
      * access session you are requesting.</p>
      */
     inline ListRemoteAccessSessionsResult& AddRemoteAccessSessions(RemoteAccessSession&& value) { m_remoteAccessSessions.push_back(std::move(value)); return *this; }
