@@ -31,7 +31,7 @@ namespace Aws
     {
         static const char DEFAULT_MONITORING_ALLOC_TAG[] = "DefaultMonitoringAllocTag";
         static const int CLIENT_ID_LENGTH_LIMIT = 256;
-        static const int USER_AGENT_LENGHT_LIMIT = 256;
+        static const int USER_AGENT_LENGTH_LIMIT = 256;
         static const int ERROR_MESSAGE_LENGTH_LIMIT = 512;
 
         const char DEFAULT_MONITORING_CLIENT_ID[] = ""; // default to empty;
@@ -56,7 +56,7 @@ namespace Aws
             Aws::Utils::DateTime attemptStartTime;
             int retryCount = 0;
             bool lastAttemptSucceeded = false;
-            bool lastErrorRetriable = false; //dosen't apply if last attempt succeeded.
+            bool lastErrorRetriable = false; //doesn't apply if last attempt succeeded.
             const Aws::Client::HttpResponseOutcome* outcome = nullptr;
         };
 
@@ -75,7 +75,7 @@ namespace Aws
                 .WithString("ClientId", clientId.substr(0, CLIENT_ID_LENGTH_LIMIT))
                 .WithInt64("Timestamp", timestamp.Millis())
                 .WithInteger("Version", version)
-                .WithString("UserAgent", userAgent.substr(0, USER_AGENT_LENGHT_LIMIT));
+                .WithString("UserAgent", userAgent.substr(0, USER_AGENT_LENGTH_LIMIT));
         }
 
         static inline void FillRequiredApiCallFieldsToJson(Json::JsonValue& json,
@@ -125,7 +125,7 @@ namespace Aws
             }
             if (!outcome.IsSuccess())
             {
-                if (outcome.GetError().GetExceptionName().empty()) // Not Aws Excecption
+                if (outcome.GetError().GetExceptionName().empty()) // Not Aws Exception
                 {
                     json.WithString("FinalSdkExceptionMessage", outcome.GetError().GetMessage().substr(0, ERROR_MESSAGE_LENGTH_LIMIT));
                 }
@@ -149,7 +149,7 @@ namespace Aws
         {
             /**
              *No matter request succeeded or not, these fields should be included as long as their requirements
-             *are met. We should be able to access response (so as to access original requeset) if the response has error.
+             *are met. We should be able to access response (so as to access original request) if the response has error.
              */
             if (request->HasAwsSessionToken() && !request->GetAwsSessionToken().empty())
             {
@@ -172,7 +172,7 @@ namespace Aws
 
             if (!outcome.IsSuccess())
             {
-                if (outcome.GetError().GetExceptionName().empty()) // Not Aws Excecption
+                if (outcome.GetError().GetExceptionName().empty()) // Not Aws Exception
                 {
                     json.WithString("SdkExceptionMessage", outcome.GetError().GetMessage().substr(0, ERROR_MESSAGE_LENGTH_LIMIT));
                 }
