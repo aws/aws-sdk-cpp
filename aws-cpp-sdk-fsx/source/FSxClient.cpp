@@ -30,12 +30,15 @@
 #include <aws/fsx/FSxClient.h>
 #include <aws/fsx/FSxEndpoint.h>
 #include <aws/fsx/FSxErrorMarshaller.h>
+#include <aws/fsx/model/CancelDataRepositoryTaskRequest.h>
 #include <aws/fsx/model/CreateBackupRequest.h>
+#include <aws/fsx/model/CreateDataRepositoryTaskRequest.h>
 #include <aws/fsx/model/CreateFileSystemRequest.h>
 #include <aws/fsx/model/CreateFileSystemFromBackupRequest.h>
 #include <aws/fsx/model/DeleteBackupRequest.h>
 #include <aws/fsx/model/DeleteFileSystemRequest.h>
 #include <aws/fsx/model/DescribeBackupsRequest.h>
+#include <aws/fsx/model/DescribeDataRepositoryTasksRequest.h>
 #include <aws/fsx/model/DescribeFileSystemsRequest.h>
 #include <aws/fsx/model/ListTagsForResourceRequest.h>
 #include <aws/fsx/model/TagResourceRequest.h>
@@ -114,6 +117,41 @@ void FSxClient::OverrideEndpoint(const Aws::String& endpoint)
   }
 }
 
+CancelDataRepositoryTaskOutcome FSxClient::CancelDataRepositoryTask(const CancelDataRepositoryTaskRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CancelDataRepositoryTaskOutcome(CancelDataRepositoryTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CancelDataRepositoryTaskOutcome(outcome.GetError());
+  }
+}
+
+CancelDataRepositoryTaskOutcomeCallable FSxClient::CancelDataRepositoryTaskCallable(const CancelDataRepositoryTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CancelDataRepositoryTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CancelDataRepositoryTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::CancelDataRepositoryTaskAsync(const CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CancelDataRepositoryTaskAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::CancelDataRepositoryTaskAsyncHelper(const CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CancelDataRepositoryTask(request), context);
+}
+
 CreateBackupOutcome FSxClient::CreateBackup(const CreateBackupRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -147,6 +185,41 @@ void FSxClient::CreateBackupAsync(const CreateBackupRequest& request, const Crea
 void FSxClient::CreateBackupAsyncHelper(const CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateBackup(request), context);
+}
+
+CreateDataRepositoryTaskOutcome FSxClient::CreateDataRepositoryTask(const CreateDataRepositoryTaskRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateDataRepositoryTaskOutcome(CreateDataRepositoryTaskResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDataRepositoryTaskOutcome(outcome.GetError());
+  }
+}
+
+CreateDataRepositoryTaskOutcomeCallable FSxClient::CreateDataRepositoryTaskCallable(const CreateDataRepositoryTaskRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDataRepositoryTaskOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDataRepositoryTask(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::CreateDataRepositoryTaskAsync(const CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDataRepositoryTaskAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::CreateDataRepositoryTaskAsyncHelper(const CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDataRepositoryTask(request), context);
 }
 
 CreateFileSystemOutcome FSxClient::CreateFileSystem(const CreateFileSystemRequest& request) const
@@ -322,6 +395,41 @@ void FSxClient::DescribeBackupsAsync(const DescribeBackupsRequest& request, cons
 void FSxClient::DescribeBackupsAsyncHelper(const DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeBackups(request), context);
+}
+
+DescribeDataRepositoryTasksOutcome FSxClient::DescribeDataRepositoryTasks(const DescribeDataRepositoryTasksRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeDataRepositoryTasksOutcome(DescribeDataRepositoryTasksResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeDataRepositoryTasksOutcome(outcome.GetError());
+  }
+}
+
+DescribeDataRepositoryTasksOutcomeCallable FSxClient::DescribeDataRepositoryTasksCallable(const DescribeDataRepositoryTasksRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeDataRepositoryTasksOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeDataRepositoryTasks(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void FSxClient::DescribeDataRepositoryTasksAsync(const DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeDataRepositoryTasksAsyncHelper( request, handler, context ); } );
+}
+
+void FSxClient::DescribeDataRepositoryTasksAsyncHelper(const DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeDataRepositoryTasks(request), context);
 }
 
 DescribeFileSystemsOutcome FSxClient::DescribeFileSystems(const DescribeFileSystemsRequest& request) const

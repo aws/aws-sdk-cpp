@@ -367,7 +367,7 @@ namespace Model
          * <p>Amazon Detective is currently in preview.</p> <p>Deletes one or more member
          * accounts from the master account behavior graph. This operation can only be
          * called by a Detective master account. That account cannot use
-         * <code>DeleteMembers</code> to delete their own account from the Morocco graph.
+         * <code>DeleteMembers</code> to delete their own account from the behavior graph.
          * To disable a behavior graph, the master account uses the
          * <code>DeleteGraph</code> API method.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteMembers">AWS
@@ -379,7 +379,7 @@ namespace Model
          * <p>Amazon Detective is currently in preview.</p> <p>Deletes one or more member
          * accounts from the master account behavior graph. This operation can only be
          * called by a Detective master account. That account cannot use
-         * <code>DeleteMembers</code> to delete their own account from the Morocco graph.
+         * <code>DeleteMembers</code> to delete their own account from the behavior graph.
          * To disable a behavior graph, the master account uses the
          * <code>DeleteGraph</code> API method.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteMembers">AWS
@@ -393,7 +393,7 @@ namespace Model
          * <p>Amazon Detective is currently in preview.</p> <p>Deletes one or more member
          * accounts from the master account behavior graph. This operation can only be
          * called by a Detective master account. That account cannot use
-         * <code>DeleteMembers</code> to delete their own account from the Morocco graph.
+         * <code>DeleteMembers</code> to delete their own account from the behavior graph.
          * To disable a behavior graph, the master account uses the
          * <code>DeleteGraph</code> API method.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/DeleteMembers">AWS

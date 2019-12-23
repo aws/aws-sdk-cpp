@@ -32,14 +32,17 @@ static const int INCOMPATIBLE_PARAMETER_HASH = HashingUtils::HashString("Incompa
 static const int INVALID_EXPORT_PATH_HASH = HashingUtils::HashString("InvalidExportPath");
 static const int BACKUP_IN_PROGRESS_HASH = HashingUtils::HashString("BackupInProgress");
 static const int BACKUP_NOT_FOUND_HASH = HashingUtils::HashString("BackupNotFound");
+static const int DATA_REPOSITORY_TASK_NOT_FOUND_HASH = HashingUtils::HashString("DataRepositoryTaskNotFound");
 static const int BACKUP_RESTORING_HASH = HashingUtils::HashString("BackupRestoring");
 static const int SERVICE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ServiceLimitExceeded");
 static const int ACTIVE_DIRECTORY_HASH = HashingUtils::HashString("ActiveDirectoryError");
 static const int FILE_SYSTEM_NOT_FOUND_HASH = HashingUtils::HashString("FileSystemNotFound");
 static const int UNSUPPORTED_OPERATION_HASH = HashingUtils::HashString("UnsupportedOperation");
+static const int DATA_REPOSITORY_TASK_ENDED_HASH = HashingUtils::HashString("DataRepositoryTaskEnded");
 static const int INVALID_NETWORK_SETTINGS_HASH = HashingUtils::HashString("InvalidNetworkSettings");
 static const int NOT_SERVICE_RESOURCE_HASH = HashingUtils::HashString("NotServiceResourceError");
 static const int RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH = HashingUtils::HashString("ResourceDoesNotSupportTagging");
+static const int DATA_REPOSITORY_TASK_EXECUTING_HASH = HashingUtils::HashString("DataRepositoryTaskExecuting");
 static const int INVALID_IMPORT_PATH_HASH = HashingUtils::HashString("InvalidImportPath");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequest");
 static const int MISSING_FILE_SYSTEM_CONFIGURATION_HASH = HashingUtils::HashString("MissingFileSystemConfiguration");
@@ -65,6 +68,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_NOT_FOUND), false);
   }
+  else if (hashCode == DATA_REPOSITORY_TASK_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_TASK_NOT_FOUND), false);
+  }
   else if (hashCode == BACKUP_RESTORING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::BACKUP_RESTORING), false);
@@ -85,6 +92,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::UNSUPPORTED_OPERATION), false);
   }
+  else if (hashCode == DATA_REPOSITORY_TASK_ENDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_TASK_ENDED), false);
+  }
   else if (hashCode == INVALID_NETWORK_SETTINGS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::INVALID_NETWORK_SETTINGS), false);
@@ -96,6 +107,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESOURCE_DOES_NOT_SUPPORT_TAGGING_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::RESOURCE_DOES_NOT_SUPPORT_TAGGING), false);
+  }
+  else if (hashCode == DATA_REPOSITORY_TASK_EXECUTING_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(FSxErrors::DATA_REPOSITORY_TASK_EXECUTING), false);
   }
   else if (hashCode == INVALID_IMPORT_PATH_HASH)
   {

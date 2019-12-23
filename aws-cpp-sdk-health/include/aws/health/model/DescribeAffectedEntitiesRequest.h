@@ -46,38 +46,38 @@ namespace Model
 
 
     /**
-     * <p>Values to narrow the results returned. At least one event ARN is required.
-     * </p>
+     * <p>Values to narrow the results returned. At least one event ARN is
+     * required.</p>
      */
     inline const EntityFilter& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>Values to narrow the results returned. At least one event ARN is required.
-     * </p>
+     * <p>Values to narrow the results returned. At least one event ARN is
+     * required.</p>
      */
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
-     * <p>Values to narrow the results returned. At least one event ARN is required.
-     * </p>
+     * <p>Values to narrow the results returned. At least one event ARN is
+     * required.</p>
      */
     inline void SetFilter(const EntityFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>Values to narrow the results returned. At least one event ARN is required.
-     * </p>
+     * <p>Values to narrow the results returned. At least one event ARN is
+     * required.</p>
      */
     inline void SetFilter(EntityFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>Values to narrow the results returned. At least one event ARN is required.
-     * </p>
+     * <p>Values to narrow the results returned. At least one event ARN is
+     * required.</p>
      */
     inline DescribeAffectedEntitiesRequest& WithFilter(const EntityFilter& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>Values to narrow the results returned. At least one event ARN is required.
-     * </p>
+     * <p>Values to narrow the results returned. At least one event ARN is
+     * required.</p>
      */
     inline DescribeAffectedEntitiesRequest& WithFilter(EntityFilter&& value) { SetFilter(std::move(value)); return *this;}
 

@@ -237,49 +237,57 @@ namespace Model
 
     /**
      * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup's data.</p>
+     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
+     * Lustre does not support KMS encryption.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup's data.</p>
+     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
+     * Lustre does not support KMS encryption.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup's data.</p>
+     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
+     * Lustre does not support KMS encryption.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup's data.</p>
+     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
+     * Lustre does not support KMS encryption.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup's data.</p>
+     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
+     * Lustre does not support KMS encryption.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup's data.</p>
+     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
+     * Lustre does not support KMS encryption.</p>
      */
     inline Backup& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup's data.</p>
+     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
+     * Lustre does not support KMS encryption.</p>
      */
     inline Backup& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the AWS Key Management Service (AWS KMS) key used to encrypt this
-     * backup's data.</p>
+     * backup of the Amazon FSx for Windows file system's data at rest. Amazon FSx for
+     * Lustre does not support KMS encryption.</p>
      */
     inline Backup& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

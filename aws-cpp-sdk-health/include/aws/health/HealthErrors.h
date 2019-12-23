@@ -56,7 +56,8 @@ enum class HealthErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INVALID_PAGINATION_TOKEN= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONCURRENT_MODIFICATION= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INVALID_PAGINATION_TOKEN,
   UNSUPPORTED_LOCALE
 };
 namespace HealthErrorMapper

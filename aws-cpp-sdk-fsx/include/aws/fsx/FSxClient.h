@@ -21,12 +21,15 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/CancelDataRepositoryTaskResult.h>
 #include <aws/fsx/model/CreateBackupResult.h>
+#include <aws/fsx/model/CreateDataRepositoryTaskResult.h>
 #include <aws/fsx/model/CreateFileSystemResult.h>
 #include <aws/fsx/model/CreateFileSystemFromBackupResult.h>
 #include <aws/fsx/model/DeleteBackupResult.h>
 #include <aws/fsx/model/DeleteFileSystemResult.h>
 #include <aws/fsx/model/DescribeBackupsResult.h>
+#include <aws/fsx/model/DescribeDataRepositoryTasksResult.h>
 #include <aws/fsx/model/DescribeFileSystemsResult.h>
 #include <aws/fsx/model/ListTagsForResourceResult.h>
 #include <aws/fsx/model/TagResourceResult.h>
@@ -71,36 +74,45 @@ namespace FSx
 
 namespace Model
 {
+        class CancelDataRepositoryTaskRequest;
         class CreateBackupRequest;
+        class CreateDataRepositoryTaskRequest;
         class CreateFileSystemRequest;
         class CreateFileSystemFromBackupRequest;
         class DeleteBackupRequest;
         class DeleteFileSystemRequest;
         class DescribeBackupsRequest;
+        class DescribeDataRepositoryTasksRequest;
         class DescribeFileSystemsRequest;
         class ListTagsForResourceRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdateFileSystemRequest;
 
+        typedef Aws::Utils::Outcome<CancelDataRepositoryTaskResult, Aws::Client::AWSError<FSxErrors>> CancelDataRepositoryTaskOutcome;
         typedef Aws::Utils::Outcome<CreateBackupResult, Aws::Client::AWSError<FSxErrors>> CreateBackupOutcome;
+        typedef Aws::Utils::Outcome<CreateDataRepositoryTaskResult, Aws::Client::AWSError<FSxErrors>> CreateDataRepositoryTaskOutcome;
         typedef Aws::Utils::Outcome<CreateFileSystemResult, Aws::Client::AWSError<FSxErrors>> CreateFileSystemOutcome;
         typedef Aws::Utils::Outcome<CreateFileSystemFromBackupResult, Aws::Client::AWSError<FSxErrors>> CreateFileSystemFromBackupOutcome;
         typedef Aws::Utils::Outcome<DeleteBackupResult, Aws::Client::AWSError<FSxErrors>> DeleteBackupOutcome;
         typedef Aws::Utils::Outcome<DeleteFileSystemResult, Aws::Client::AWSError<FSxErrors>> DeleteFileSystemOutcome;
         typedef Aws::Utils::Outcome<DescribeBackupsResult, Aws::Client::AWSError<FSxErrors>> DescribeBackupsOutcome;
+        typedef Aws::Utils::Outcome<DescribeDataRepositoryTasksResult, Aws::Client::AWSError<FSxErrors>> DescribeDataRepositoryTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeFileSystemsResult, Aws::Client::AWSError<FSxErrors>> DescribeFileSystemsOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<FSxErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<FSxErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<FSxErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateFileSystemResult, Aws::Client::AWSError<FSxErrors>> UpdateFileSystemOutcome;
 
+        typedef std::future<CancelDataRepositoryTaskOutcome> CancelDataRepositoryTaskOutcomeCallable;
         typedef std::future<CreateBackupOutcome> CreateBackupOutcomeCallable;
+        typedef std::future<CreateDataRepositoryTaskOutcome> CreateDataRepositoryTaskOutcomeCallable;
         typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
         typedef std::future<CreateFileSystemFromBackupOutcome> CreateFileSystemFromBackupOutcomeCallable;
         typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
         typedef std::future<DeleteFileSystemOutcome> DeleteFileSystemOutcomeCallable;
         typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
+        typedef std::future<DescribeDataRepositoryTasksOutcome> DescribeDataRepositoryTasksOutcomeCallable;
         typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -110,12 +122,15 @@ namespace Model
 
   class FSxClient;
 
+    typedef std::function<void(const FSxClient*, const Model::CancelDataRepositoryTaskRequest&, const Model::CancelDataRepositoryTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelDataRepositoryTaskResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateBackupRequest&, const Model::CreateBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateBackupResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::CreateDataRepositoryTaskRequest&, const Model::CreateDataRepositoryTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataRepositoryTaskResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateFileSystemRequest&, const Model::CreateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFileSystemResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::CreateFileSystemFromBackupRequest&, const Model::CreateFileSystemFromBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFileSystemFromBackupResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DeleteBackupRequest&, const Model::DeleteBackupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteBackupResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DeleteFileSystemRequest&, const Model::DeleteFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeBackupsRequest&, const Model::DescribeBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeBackupsResponseReceivedHandler;
+    typedef std::function<void(const FSxClient*, const Model::DescribeDataRepositoryTasksRequest&, const Model::DescribeDataRepositoryTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataRepositoryTasksResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::DescribeFileSystemsRequest&, const Model::DescribeFileSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemsResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const FSxClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
@@ -154,6 +169,49 @@ namespace Model
 
         inline virtual const char* GetServiceClientName() const override { return "FSx"; }
 
+
+        /**
+         * <p>Cancels an existing Amazon FSx for Lustre data repository task if that task
+         * is in either the <code>PENDING</code> or <code>EXECUTING</code> state. When you
+         * cancel a task, Amazon FSx does the following.</p> <ul> <li> <p>Any files that
+         * FSx has already exported are not reverted.</p> </li> <li> <p>FSx continues to
+         * export any files that are "in-flight" when the cancel operation is received.</p>
+         * </li> <li> <p>FSx does not export any files that have not yet been exported.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CancelDataRepositoryTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelDataRepositoryTaskOutcome CancelDataRepositoryTask(const Model::CancelDataRepositoryTaskRequest& request) const;
+
+        /**
+         * <p>Cancels an existing Amazon FSx for Lustre data repository task if that task
+         * is in either the <code>PENDING</code> or <code>EXECUTING</code> state. When you
+         * cancel a task, Amazon FSx does the following.</p> <ul> <li> <p>Any files that
+         * FSx has already exported are not reverted.</p> </li> <li> <p>FSx continues to
+         * export any files that are "in-flight" when the cancel operation is received.</p>
+         * </li> <li> <p>FSx does not export any files that have not yet been exported.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CancelDataRepositoryTask">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelDataRepositoryTaskOutcomeCallable CancelDataRepositoryTaskCallable(const Model::CancelDataRepositoryTaskRequest& request) const;
+
+        /**
+         * <p>Cancels an existing Amazon FSx for Lustre data repository task if that task
+         * is in either the <code>PENDING</code> or <code>EXECUTING</code> state. When you
+         * cancel a task, Amazon FSx does the following.</p> <ul> <li> <p>Any files that
+         * FSx has already exported are not reverted.</p> </li> <li> <p>FSx continues to
+         * export any files that are "in-flight" when the cancel operation is received.</p>
+         * </li> <li> <p>FSx does not export any files that have not yet been exported.</p>
+         * </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CancelDataRepositoryTask">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelDataRepositoryTaskAsync(const Model::CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a backup of an existing Amazon FSx for Windows File Server file
@@ -242,6 +300,70 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateBackupAsync(const Model::CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates an Amazon FSx for Lustre data repository task. You use data
+         * repository tasks to perform bulk operations between your Amazon FSx file system
+         * and its linked data repository. An example of a data repository task is
+         * exporting any data and metadata changes, including POSIX metadata, to files,
+         * directories, and symbolic links (symlinks) from your FSx file system to its
+         * linked data repository. A <code>CreateDataRepositoryTask</code> operation will
+         * fail if a data repository is not linked to the FSx file system. To learn more
+         * about data repository tasks, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using
+         * Data Repository Tasks</a>. To learn more about linking a data repository to your
+         * file system, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/getting-started-step1.html">Step
+         * 1: Create Your Amazon FSx for Lustre File System</a>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateDataRepositoryTaskOutcome CreateDataRepositoryTask(const Model::CreateDataRepositoryTaskRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon FSx for Lustre data repository task. You use data
+         * repository tasks to perform bulk operations between your Amazon FSx file system
+         * and its linked data repository. An example of a data repository task is
+         * exporting any data and metadata changes, including POSIX metadata, to files,
+         * directories, and symbolic links (symlinks) from your FSx file system to its
+         * linked data repository. A <code>CreateDataRepositoryTask</code> operation will
+         * fail if a data repository is not linked to the FSx file system. To learn more
+         * about data repository tasks, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using
+         * Data Repository Tasks</a>. To learn more about linking a data repository to your
+         * file system, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/getting-started-step1.html">Step
+         * 1: Create Your Amazon FSx for Lustre File System</a>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateDataRepositoryTaskOutcomeCallable CreateDataRepositoryTaskCallable(const Model::CreateDataRepositoryTaskRequest& request) const;
+
+        /**
+         * <p>Creates an Amazon FSx for Lustre data repository task. You use data
+         * repository tasks to perform bulk operations between your Amazon FSx file system
+         * and its linked data repository. An example of a data repository task is
+         * exporting any data and metadata changes, including POSIX metadata, to files,
+         * directories, and symbolic links (symlinks) from your FSx file system to its
+         * linked data repository. A <code>CreateDataRepositoryTask</code> operation will
+         * fail if a data repository is not linked to the FSx file system. To learn more
+         * about data repository tasks, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using
+         * Data Repository Tasks</a>. To learn more about linking a data repository to your
+         * file system, see <a
+         * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/getting-started-step1.html">Step
+         * 1: Create Your Amazon FSx for Lustre File System</a>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateDataRepositoryTask">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateDataRepositoryTaskAsync(const Model::CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new, empty Amazon FSx file system.</p> <p>If a file system with the
@@ -485,9 +607,11 @@ namespace Model
          * deletion status by calling the <a>DescribeFileSystems</a> action, which returns
          * a list of file systems in your account. If you pass the file system ID for a
          * deleted file system, the <a>DescribeFileSystems</a> returns a
-         * <code>FileSystemNotFound</code> error.</p> <important> <p>The data in a deleted
-         * file system is also deleted and can't be recovered by any means.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <code>FileSystemNotFound</code> error.</p> <note> <p>Deleting an Amazon FSx for
+         * Lustre file system will fail with a 400 BadRequest if a data repository task is
+         * in a <code>PENDING</code> or <code>EXECUTING</code> state.</p> </note>
+         * <important> <p>The data in a deleted file system is also deleted and can't be
+         * recovered by any means.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">AWS
          * API Reference</a></p>
          */
@@ -504,9 +628,11 @@ namespace Model
          * deletion status by calling the <a>DescribeFileSystems</a> action, which returns
          * a list of file systems in your account. If you pass the file system ID for a
          * deleted file system, the <a>DescribeFileSystems</a> returns a
-         * <code>FileSystemNotFound</code> error.</p> <important> <p>The data in a deleted
-         * file system is also deleted and can't be recovered by any means.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <code>FileSystemNotFound</code> error.</p> <note> <p>Deleting an Amazon FSx for
+         * Lustre file system will fail with a 400 BadRequest if a data repository task is
+         * in a <code>PENDING</code> or <code>EXECUTING</code> state.</p> </note>
+         * <important> <p>The data in a deleted file system is also deleted and can't be
+         * recovered by any means.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">AWS
          * API Reference</a></p>
          *
@@ -525,9 +651,11 @@ namespace Model
          * deletion status by calling the <a>DescribeFileSystems</a> action, which returns
          * a list of file systems in your account. If you pass the file system ID for a
          * deleted file system, the <a>DescribeFileSystems</a> returns a
-         * <code>FileSystemNotFound</code> error.</p> <important> <p>The data in a deleted
-         * file system is also deleted and can't be recovered by any means.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * <code>FileSystemNotFound</code> error.</p> <note> <p>Deleting an Amazon FSx for
+         * Lustre file system will fail with a 400 BadRequest if a data repository task is
+         * in a <code>PENDING</code> or <code>EXECUTING</code> state.</p> </note>
+         * <important> <p>The data in a deleted file system is also deleted and can't be
+         * recovered by any means.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteFileSystem">AWS
          * API Reference</a></p>
          *
@@ -619,6 +747,64 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeBackupsAsync(const Model::DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the description of specific Amazon FSx for Lustre data repository
+         * tasks, if one or more <code>TaskIds</code> values are provided in the request,
+         * or if filters are used in the request. You can use filters to narrow the
+         * response to include just tasks for specific file systems, or tasks in a specific
+         * lifecycle state. Otherwise, it returns all data repository tasks owned by your
+         * AWS account in the AWS Region of the endpoint that you're calling.</p> <p>When
+         * retrieving all tasks, you can paginate the response by using the optional
+         * <code>MaxResults</code> parameter to limit the number of tasks returned in a
+         * response. If more tasks remain, Amazon FSx returns a <code>NextToken</code>
+         * value in the response. In this case, send a later request with the
+         * <code>NextToken</code> request parameter set to the value of
+         * <code>NextToken</code> from the last response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDataRepositoryTasksOutcome DescribeDataRepositoryTasks(const Model::DescribeDataRepositoryTasksRequest& request) const;
+
+        /**
+         * <p>Returns the description of specific Amazon FSx for Lustre data repository
+         * tasks, if one or more <code>TaskIds</code> values are provided in the request,
+         * or if filters are used in the request. You can use filters to narrow the
+         * response to include just tasks for specific file systems, or tasks in a specific
+         * lifecycle state. Otherwise, it returns all data repository tasks owned by your
+         * AWS account in the AWS Region of the endpoint that you're calling.</p> <p>When
+         * retrieving all tasks, you can paginate the response by using the optional
+         * <code>MaxResults</code> parameter to limit the number of tasks returned in a
+         * response. If more tasks remain, Amazon FSx returns a <code>NextToken</code>
+         * value in the response. In this case, send a later request with the
+         * <code>NextToken</code> request parameter set to the value of
+         * <code>NextToken</code> from the last response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeDataRepositoryTasksOutcomeCallable DescribeDataRepositoryTasksCallable(const Model::DescribeDataRepositoryTasksRequest& request) const;
+
+        /**
+         * <p>Returns the description of specific Amazon FSx for Lustre data repository
+         * tasks, if one or more <code>TaskIds</code> values are provided in the request,
+         * or if filters are used in the request. You can use filters to narrow the
+         * response to include just tasks for specific file systems, or tasks in a specific
+         * lifecycle state. Otherwise, it returns all data repository tasks owned by your
+         * AWS account in the AWS Region of the endpoint that you're calling.</p> <p>When
+         * retrieving all tasks, you can paginate the response by using the optional
+         * <code>MaxResults</code> parameter to limit the number of tasks returned in a
+         * response. If more tasks remain, Amazon FSx returns a <code>NextToken</code>
+         * value in the response. In this case, send a later request with the
+         * <code>NextToken</code> request parameter set to the value of
+         * <code>NextToken</code> from the last response.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeDataRepositoryTasks">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeDataRepositoryTasksAsync(const Model::DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of specific Amazon FSx file systems, if a
@@ -866,12 +1052,15 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CancelDataRepositoryTaskAsyncHelper(const Model::CancelDataRepositoryTaskRequest& request, const CancelDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateBackupAsyncHelper(const Model::CreateBackupRequest& request, const CreateBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateDataRepositoryTaskAsyncHelper(const Model::CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFileSystemAsyncHelper(const Model::CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFileSystemFromBackupAsyncHelper(const Model::CreateFileSystemFromBackupRequest& request, const CreateFileSystemFromBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteBackupAsyncHelper(const Model::DeleteBackupRequest& request, const DeleteBackupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFileSystemAsyncHelper(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeBackupsAsyncHelper(const Model::DescribeBackupsRequest& request, const DescribeBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeDataRepositoryTasksAsyncHelper(const Model::DescribeDataRepositoryTasksRequest& request, const DescribeDataRepositoryTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFileSystemsAsyncHelper(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

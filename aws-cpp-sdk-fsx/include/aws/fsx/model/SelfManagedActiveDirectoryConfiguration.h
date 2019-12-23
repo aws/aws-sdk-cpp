@@ -403,7 +403,7 @@ namespace Model
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
      * self-managed AD directory. The IP addresses need to be either in the same VPC
      * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (Iv4) address ranges, as specified in <a
+     * in the private IP version 4 (IPv4) address ranges, as specified in <a
      * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
      * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
      * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
@@ -415,7 +415,7 @@ namespace Model
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
      * self-managed AD directory. The IP addresses need to be either in the same VPC
      * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (Iv4) address ranges, as specified in <a
+     * in the private IP version 4 (IPv4) address ranges, as specified in <a
      * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
      * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
      * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
@@ -427,7 +427,7 @@ namespace Model
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
      * self-managed AD directory. The IP addresses need to be either in the same VPC
      * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (Iv4) address ranges, as specified in <a
+     * in the private IP version 4 (IPv4) address ranges, as specified in <a
      * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
      * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
      * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
@@ -439,7 +439,7 @@ namespace Model
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
      * self-managed AD directory. The IP addresses need to be either in the same VPC
      * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (Iv4) address ranges, as specified in <a
+     * in the private IP version 4 (IPv4) address ranges, as specified in <a
      * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
      * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
      * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
@@ -451,7 +451,7 @@ namespace Model
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
      * self-managed AD directory. The IP addresses need to be either in the same VPC
      * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (Iv4) address ranges, as specified in <a
+     * in the private IP version 4 (IPv4) address ranges, as specified in <a
      * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
      * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
      * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
@@ -463,7 +463,7 @@ namespace Model
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
      * self-managed AD directory. The IP addresses need to be either in the same VPC
      * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (Iv4) address ranges, as specified in <a
+     * in the private IP version 4 (IPv4) address ranges, as specified in <a
      * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
      * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
      * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
@@ -475,7 +475,7 @@ namespace Model
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
      * self-managed AD directory. The IP addresses need to be either in the same VPC
      * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (Iv4) address ranges, as specified in <a
+     * in the private IP version 4 (IPv4) address ranges, as specified in <a
      * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
      * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
      * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
@@ -487,7 +487,7 @@ namespace Model
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
      * self-managed AD directory. The IP addresses need to be either in the same VPC
      * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (Iv4) address ranges, as specified in <a
+     * in the private IP version 4 (IPv4) address ranges, as specified in <a
      * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
      * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
      * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -
@@ -499,7 +499,7 @@ namespace Model
      * <p>A list of up to two IP addresses of DNS servers or domain controllers in the
      * self-managed AD directory. The IP addresses need to be either in the same VPC
      * CIDR range as the one in which your Amazon FSx file system is being created, or
-     * in the private IP version 4 (Iv4) address ranges, as specified in <a
+     * in the private IP version 4 (IPv4) address ranges, as specified in <a
      * href="http://www.faqs.org/rfcs/rfc1918.html">RFC 1918</a>:</p> <ul> <li>
      * <p>10.0.0.0 - 10.255.255.255 (10/8 prefix)</p> </li> <li> <p>172.16.0.0 -
      * 172.31.255.255 (172.16/12 prefix)</p> </li> <li> <p>192.168.0.0 -

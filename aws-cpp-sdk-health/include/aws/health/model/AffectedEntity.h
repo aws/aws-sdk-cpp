@@ -238,28 +238,44 @@ namespace Model
     inline AffectedEntity& WithEntityValue(const char* value) { SetEntityValue(value); return *this;}
 
 
-    
+    /**
+     * <p>The URL of the affected entity.</p>
+     */
     inline const Aws::String& GetEntityUrl() const{ return m_entityUrl; }
 
-    
+    /**
+     * <p>The URL of the affected entity.</p>
+     */
     inline bool EntityUrlHasBeenSet() const { return m_entityUrlHasBeenSet; }
 
-    
+    /**
+     * <p>The URL of the affected entity.</p>
+     */
     inline void SetEntityUrl(const Aws::String& value) { m_entityUrlHasBeenSet = true; m_entityUrl = value; }
 
-    
+    /**
+     * <p>The URL of the affected entity.</p>
+     */
     inline void SetEntityUrl(Aws::String&& value) { m_entityUrlHasBeenSet = true; m_entityUrl = std::move(value); }
 
-    
+    /**
+     * <p>The URL of the affected entity.</p>
+     */
     inline void SetEntityUrl(const char* value) { m_entityUrlHasBeenSet = true; m_entityUrl.assign(value); }
 
-    
+    /**
+     * <p>The URL of the affected entity.</p>
+     */
     inline AffectedEntity& WithEntityUrl(const Aws::String& value) { SetEntityUrl(value); return *this;}
 
-    
+    /**
+     * <p>The URL of the affected entity.</p>
+     */
     inline AffectedEntity& WithEntityUrl(Aws::String&& value) { SetEntityUrl(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The URL of the affected entity.</p>
+     */
     inline AffectedEntity& WithEntityUrl(const char* value) { SetEntityUrl(value); return *this;}
 
 
