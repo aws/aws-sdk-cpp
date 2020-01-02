@@ -877,36 +877,34 @@ namespace Model
         virtual void CloseInstancePublicPortsAsync(const Model::CloseInstancePublicPortsRequest& request, const CloseInstancePublicPortsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Copies a manual instance or disk snapshot as another manual snapshot, or
-         * copies an automatic instance or disk snapshot as a manual snapshot. This
-         * operation can also be used to copy a manual or automatic snapshot of an instance
-         * or a disk from one AWS Region to another in Amazon Lightsail.</p> <p>When
-         * copying a <i>manual snapshot</i>, be sure to define the <code>source
+         * <p>Copies a manual snapshot of an instance or disk as another manual snapshot,
+         * or copies an automatic snapshot of an instance or disk as a manual snapshot.
+         * This operation can also be used to copy a manual or automatic snapshot of an
+         * instance or a disk from one AWS Region to another in Amazon Lightsail.</p>
+         * <p>When copying a <i>manual snapshot</i>, be sure to define the <code>source
          * region</code>, <code>source snapshot name</code>, and <code>target snapshot
          * name</code> parameters.</p> <p>When copying an <i>automatic snapshot</i>, be
          * sure to define the <code>source region</code>, <code>source resource
          * name</code>, <code>target snapshot name</code>, and either the <code>restore
          * date</code> or the <code>use latest restorable auto snapshot</code>
-         * parameters.</p> <note> <p>Database snapshots cannot be copied at this time.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot">AWS
          * API Reference</a></p>
          */
         virtual Model::CopySnapshotOutcome CopySnapshot(const Model::CopySnapshotRequest& request) const;
 
         /**
-         * <p>Copies a manual instance or disk snapshot as another manual snapshot, or
-         * copies an automatic instance or disk snapshot as a manual snapshot. This
-         * operation can also be used to copy a manual or automatic snapshot of an instance
-         * or a disk from one AWS Region to another in Amazon Lightsail.</p> <p>When
-         * copying a <i>manual snapshot</i>, be sure to define the <code>source
+         * <p>Copies a manual snapshot of an instance or disk as another manual snapshot,
+         * or copies an automatic snapshot of an instance or disk as a manual snapshot.
+         * This operation can also be used to copy a manual or automatic snapshot of an
+         * instance or a disk from one AWS Region to another in Amazon Lightsail.</p>
+         * <p>When copying a <i>manual snapshot</i>, be sure to define the <code>source
          * region</code>, <code>source snapshot name</code>, and <code>target snapshot
          * name</code> parameters.</p> <p>When copying an <i>automatic snapshot</i>, be
          * sure to define the <code>source region</code>, <code>source resource
          * name</code>, <code>target snapshot name</code>, and either the <code>restore
          * date</code> or the <code>use latest restorable auto snapshot</code>
-         * parameters.</p> <note> <p>Database snapshots cannot be copied at this time.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot">AWS
          * API Reference</a></p>
          *
@@ -915,18 +913,17 @@ namespace Model
         virtual Model::CopySnapshotOutcomeCallable CopySnapshotCallable(const Model::CopySnapshotRequest& request) const;
 
         /**
-         * <p>Copies a manual instance or disk snapshot as another manual snapshot, or
-         * copies an automatic instance or disk snapshot as a manual snapshot. This
-         * operation can also be used to copy a manual or automatic snapshot of an instance
-         * or a disk from one AWS Region to another in Amazon Lightsail.</p> <p>When
-         * copying a <i>manual snapshot</i>, be sure to define the <code>source
+         * <p>Copies a manual snapshot of an instance or disk as another manual snapshot,
+         * or copies an automatic snapshot of an instance or disk as a manual snapshot.
+         * This operation can also be used to copy a manual or automatic snapshot of an
+         * instance or a disk from one AWS Region to another in Amazon Lightsail.</p>
+         * <p>When copying a <i>manual snapshot</i>, be sure to define the <code>source
          * region</code>, <code>source snapshot name</code>, and <code>target snapshot
          * name</code> parameters.</p> <p>When copying an <i>automatic snapshot</i>, be
          * sure to define the <code>source region</code>, <code>source resource
          * name</code>, <code>target snapshot name</code>, and either the <code>restore
          * date</code> or the <code>use latest restorable auto snapshot</code>
-         * parameters.</p> <note> <p>Database snapshots cannot be copied at this time.</p>
-         * </note><p><h3>See Also:</h3>   <a
+         * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/CopySnapshot">AWS
          * API Reference</a></p>
          *
@@ -1625,16 +1622,20 @@ namespace Model
         virtual void CreateRelationalDatabaseSnapshotAsync(const Model::CreateRelationalDatabaseSnapshotRequest& request, const CreateRelationalDatabaseSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes an automatic snapshot for an instance or disk.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an automatic snapshot of an instance or disk. For more information,
+         * see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAutoSnapshot">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteAutoSnapshotOutcome DeleteAutoSnapshot(const Model::DeleteAutoSnapshotRequest& request) const;
 
         /**
-         * <p>Deletes an automatic snapshot for an instance or disk.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an automatic snapshot of an instance or disk. For more information,
+         * see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAutoSnapshot">AWS
          * API Reference</a></p>
          *
@@ -1643,8 +1644,10 @@ namespace Model
         virtual Model::DeleteAutoSnapshotOutcomeCallable DeleteAutoSnapshotCallable(const Model::DeleteAutoSnapshotRequest& request) const;
 
         /**
-         * <p>Deletes an automatic snapshot for an instance or disk.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Deletes an automatic snapshot of an instance or disk. For more information,
+         * see the <a
+         * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
+         * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DeleteAutoSnapshot">AWS
          * API Reference</a></p>
          *
@@ -2486,8 +2489,8 @@ namespace Model
         virtual void GetActiveNamesAsync(const Model::GetActiveNamesRequest& request, const GetActiveNamesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the available automatic snapshots for the specified resource name.
-         * For more information, see the <a
+         * <p>Returns the available automatic snapshots for an instance or disk. For more
+         * information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAutoSnapshots">AWS
@@ -2496,8 +2499,8 @@ namespace Model
         virtual Model::GetAutoSnapshotsOutcome GetAutoSnapshots(const Model::GetAutoSnapshotsRequest& request) const;
 
         /**
-         * <p>Returns the available automatic snapshots for the specified resource name.
-         * For more information, see the <a
+         * <p>Returns the available automatic snapshots for an instance or disk. For more
+         * information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAutoSnapshots">AWS
@@ -2508,8 +2511,8 @@ namespace Model
         virtual Model::GetAutoSnapshotsOutcomeCallable GetAutoSnapshotsCallable(const Model::GetAutoSnapshotsRequest& request) const;
 
         /**
-         * <p>Returns the available automatic snapshots for the specified resource name.
-         * For more information, see the <a
+         * <p>Returns the available automatic snapshots for an instance or disk. For more
+         * information, see the <a
          * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
          * Dev Guide</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetAutoSnapshots">AWS
@@ -4545,7 +4548,7 @@ namespace Model
          * <p>Allows the update of one or more parameters of a database in Amazon
          * Lightsail.</p> <p>Parameter updates don't cause outages; therefore, their
          * application is not subject to the preferred maintenance window. However, there
-         * are two ways in which paramater updates are applied: <code>dynamic</code> or
+         * are two ways in which parameter updates are applied: <code>dynamic</code> or
          * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply
          * type are applied immediately. Parameters marked with a
          * <code>pending-reboot</code> apply type are applied only after the database is
@@ -4564,7 +4567,7 @@ namespace Model
          * <p>Allows the update of one or more parameters of a database in Amazon
          * Lightsail.</p> <p>Parameter updates don't cause outages; therefore, their
          * application is not subject to the preferred maintenance window. However, there
-         * are two ways in which paramater updates are applied: <code>dynamic</code> or
+         * are two ways in which parameter updates are applied: <code>dynamic</code> or
          * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply
          * type are applied immediately. Parameters marked with a
          * <code>pending-reboot</code> apply type are applied only after the database is
@@ -4585,7 +4588,7 @@ namespace Model
          * <p>Allows the update of one or more parameters of a database in Amazon
          * Lightsail.</p> <p>Parameter updates don't cause outages; therefore, their
          * application is not subject to the preferred maintenance window. However, there
-         * are two ways in which paramater updates are applied: <code>dynamic</code> or
+         * are two ways in which parameter updates are applied: <code>dynamic</code> or
          * <code>pending-reboot</code>. Parameters marked with a <code>dynamic</code> apply
          * type are applied immediately. Parameters marked with a
          * <code>pending-reboot</code> apply type are applied only after the database is

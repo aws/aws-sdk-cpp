@@ -51,42 +51,50 @@ namespace Model
 
 
     /**
-     * <p>The settings for your conversation logs.</p>
+     * <p>The settings for your conversation logs. You can log text, audio, or
+     * both.</p>
      */
     inline const Aws::Vector<LogSettingsResponse>& GetLogSettings() const{ return m_logSettings; }
 
     /**
-     * <p>The settings for your conversation logs.</p>
+     * <p>The settings for your conversation logs. You can log text, audio, or
+     * both.</p>
      */
     inline bool LogSettingsHasBeenSet() const { return m_logSettingsHasBeenSet; }
 
     /**
-     * <p>The settings for your conversation logs.</p>
+     * <p>The settings for your conversation logs. You can log text, audio, or
+     * both.</p>
      */
     inline void SetLogSettings(const Aws::Vector<LogSettingsResponse>& value) { m_logSettingsHasBeenSet = true; m_logSettings = value; }
 
     /**
-     * <p>The settings for your conversation logs.</p>
+     * <p>The settings for your conversation logs. You can log text, audio, or
+     * both.</p>
      */
     inline void SetLogSettings(Aws::Vector<LogSettingsResponse>&& value) { m_logSettingsHasBeenSet = true; m_logSettings = std::move(value); }
 
     /**
-     * <p>The settings for your conversation logs.</p>
+     * <p>The settings for your conversation logs. You can log text, audio, or
+     * both.</p>
      */
     inline ConversationLogsResponse& WithLogSettings(const Aws::Vector<LogSettingsResponse>& value) { SetLogSettings(value); return *this;}
 
     /**
-     * <p>The settings for your conversation logs.</p>
+     * <p>The settings for your conversation logs. You can log text, audio, or
+     * both.</p>
      */
     inline ConversationLogsResponse& WithLogSettings(Aws::Vector<LogSettingsResponse>&& value) { SetLogSettings(std::move(value)); return *this;}
 
     /**
-     * <p>The settings for your conversation logs.</p>
+     * <p>The settings for your conversation logs. You can log text, audio, or
+     * both.</p>
      */
     inline ConversationLogsResponse& AddLogSettings(const LogSettingsResponse& value) { m_logSettingsHasBeenSet = true; m_logSettings.push_back(value); return *this; }
 
     /**
-     * <p>The settings for your conversation logs.</p>
+     * <p>The settings for your conversation logs. You can log text, audio, or
+     * both.</p>
      */
     inline ConversationLogsResponse& AddLogSettings(LogSettingsResponse&& value) { m_logSettingsHasBeenSet = true; m_logSettings.push_back(std::move(value)); return *this; }
 

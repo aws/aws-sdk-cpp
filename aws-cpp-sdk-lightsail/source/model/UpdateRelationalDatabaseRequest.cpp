@@ -36,7 +36,8 @@ UpdateRelationalDatabaseRequest::UpdateRelationalDatabaseRequest() :
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false)
+    m_applyImmediatelyHasBeenSet(false),
+    m_caCertificateIdentifierHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,12 @@ Aws::String UpdateRelationalDatabaseRequest::SerializePayload() const
   if(m_applyImmediatelyHasBeenSet)
   {
    payload.WithBool("applyImmediately", m_applyImmediately);
+
+  }
+
+  if(m_caCertificateIdentifierHasBeenSet)
+  {
+   payload.WithString("caCertificateIdentifier", m_caCertificateIdentifier);
 
   }
 

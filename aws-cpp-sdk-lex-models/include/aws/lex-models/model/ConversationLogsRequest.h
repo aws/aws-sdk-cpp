@@ -101,73 +101,81 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to
-     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating
-     * Conversation Logs</a>.</p>
+     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio
+     * encryption is enabled, this role also provides access permission for the AWS KMS
+     * key used for encrypting audio logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating
+     * an IAM Role and Policy for Conversation Logs</a>.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to
-     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating
-     * Conversation Logs</a>.</p>
+     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio
+     * encryption is enabled, this role also provides access permission for the AWS KMS
+     * key used for encrypting audio logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating
+     * an IAM Role and Policy for Conversation Logs</a>.</p>
      */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to
-     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating
-     * Conversation Logs</a>.</p>
+     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio
+     * encryption is enabled, this role also provides access permission for the AWS KMS
+     * key used for encrypting audio logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating
+     * an IAM Role and Policy for Conversation Logs</a>.</p>
      */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to
-     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating
-     * Conversation Logs</a>.</p>
+     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio
+     * encryption is enabled, this role also provides access permission for the AWS KMS
+     * key used for encrypting audio logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating
+     * an IAM Role and Policy for Conversation Logs</a>.</p>
      */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to
-     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating
-     * Conversation Logs</a>.</p>
+     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio
+     * encryption is enabled, this role also provides access permission for the AWS KMS
+     * key used for encrypting audio logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating
+     * an IAM Role and Policy for Conversation Logs</a>.</p>
      */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to
-     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating
-     * Conversation Logs</a>.</p>
+     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio
+     * encryption is enabled, this role also provides access permission for the AWS KMS
+     * key used for encrypting audio logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating
+     * an IAM Role and Policy for Conversation Logs</a>.</p>
      */
     inline ConversationLogsRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to
-     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating
-     * Conversation Logs</a>.</p>
+     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio
+     * encryption is enabled, this role also provides access permission for the AWS KMS
+     * key used for encrypting audio logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating
+     * an IAM Role and Policy for Conversation Logs</a>.</p>
      */
     inline ConversationLogsRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an IAM role with permission to write to
-     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs.html">Creating
-     * Conversation Logs</a>.</p>
+     * your CloudWatch Logs for text logs and your S3 bucket for audio logs. If audio
+     * encryption is enabled, this role also provides access permission for the AWS KMS
+     * key used for encrypting audio logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/lex/latest/dg/conversation-logs-role-and-policy.html">Creating
+     * an IAM Role and Policy for Conversation Logs</a>.</p>
      */
     inline ConversationLogsRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
 

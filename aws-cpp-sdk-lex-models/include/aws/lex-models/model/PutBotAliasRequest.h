@@ -305,38 +305,32 @@ namespace Model
 
 
     /**
-     * <p>Settings that determine how Amazon Lex uses conversation logs for the
-     * alias.</p>
+     * <p>Settings for conversation logs for the alias.</p>
      */
     inline const ConversationLogsRequest& GetConversationLogs() const{ return m_conversationLogs; }
 
     /**
-     * <p>Settings that determine how Amazon Lex uses conversation logs for the
-     * alias.</p>
+     * <p>Settings for conversation logs for the alias.</p>
      */
     inline bool ConversationLogsHasBeenSet() const { return m_conversationLogsHasBeenSet; }
 
     /**
-     * <p>Settings that determine how Amazon Lex uses conversation logs for the
-     * alias.</p>
+     * <p>Settings for conversation logs for the alias.</p>
      */
     inline void SetConversationLogs(const ConversationLogsRequest& value) { m_conversationLogsHasBeenSet = true; m_conversationLogs = value; }
 
     /**
-     * <p>Settings that determine how Amazon Lex uses conversation logs for the
-     * alias.</p>
+     * <p>Settings for conversation logs for the alias.</p>
      */
     inline void SetConversationLogs(ConversationLogsRequest&& value) { m_conversationLogsHasBeenSet = true; m_conversationLogs = std::move(value); }
 
     /**
-     * <p>Settings that determine how Amazon Lex uses conversation logs for the
-     * alias.</p>
+     * <p>Settings for conversation logs for the alias.</p>
      */
     inline PutBotAliasRequest& WithConversationLogs(const ConversationLogsRequest& value) { SetConversationLogs(value); return *this;}
 
     /**
-     * <p>Settings that determine how Amazon Lex uses conversation logs for the
-     * alias.</p>
+     * <p>Settings for conversation logs for the alias.</p>
      */
     inline PutBotAliasRequest& WithConversationLogs(ConversationLogsRequest&& value) { SetConversationLogs(std::move(value)); return *this;}
 

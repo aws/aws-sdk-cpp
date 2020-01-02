@@ -45,49 +45,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the source resource from which to get automatic snapshot
+     * <p>The name of the source instance or disk from which to get automatic snapshot
      * information.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
     /**
-     * <p>The name of the source resource from which to get automatic snapshot
+     * <p>The name of the source instance or disk from which to get automatic snapshot
      * information.</p>
      */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
     /**
-     * <p>The name of the source resource from which to get automatic snapshot
+     * <p>The name of the source instance or disk from which to get automatic snapshot
      * information.</p>
      */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p>The name of the source resource from which to get automatic snapshot
+     * <p>The name of the source instance or disk from which to get automatic snapshot
      * information.</p>
      */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
-     * <p>The name of the source resource from which to get automatic snapshot
+     * <p>The name of the source instance or disk from which to get automatic snapshot
      * information.</p>
      */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /**
-     * <p>The name of the source resource from which to get automatic snapshot
+     * <p>The name of the source instance or disk from which to get automatic snapshot
      * information.</p>
      */
     inline GetAutoSnapshotsRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p>The name of the source resource from which to get automatic snapshot
+     * <p>The name of the source instance or disk from which to get automatic snapshot
      * information.</p>
      */
     inline GetAutoSnapshotsRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the source resource from which to get automatic snapshot
+     * <p>The name of the source instance or disk from which to get automatic snapshot
      * information.</p>
      */
     inline GetAutoSnapshotsRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}

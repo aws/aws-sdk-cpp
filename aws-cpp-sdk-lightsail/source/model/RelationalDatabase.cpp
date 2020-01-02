@@ -56,7 +56,8 @@ RelationalDatabase::RelationalDatabase() :
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_masterEndpointHasBeenSet(false),
-    m_pendingMaintenanceActionsHasBeenSet(false)
+    m_pendingMaintenanceActionsHasBeenSet(false),
+    m_caCertificateIdentifierHasBeenSet(false)
 {
 }
 
@@ -88,7 +89,8 @@ RelationalDatabase::RelationalDatabase(JsonView jsonValue) :
     m_publiclyAccessible(false),
     m_publiclyAccessibleHasBeenSet(false),
     m_masterEndpointHasBeenSet(false),
-    m_pendingMaintenanceActionsHasBeenSet(false)
+    m_pendingMaintenanceActionsHasBeenSet(false),
+    m_caCertificateIdentifierHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -276,6 +278,13 @@ RelationalDatabase& RelationalDatabase::operator =(JsonView jsonValue)
     m_pendingMaintenanceActionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("caCertificateIdentifier"))
+  {
+    m_caCertificateIdentifier = jsonValue.GetString("caCertificateIdentifier");
+
+    m_caCertificateIdentifierHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -437,6 +446,12 @@ JsonValue RelationalDatabase::Jsonize() const
      pendingMaintenanceActionsJsonList[pendingMaintenanceActionsIndex].AsObject(m_pendingMaintenanceActions[pendingMaintenanceActionsIndex].Jsonize());
    }
    payload.WithArray("pendingMaintenanceActions", std::move(pendingMaintenanceActionsJsonList));
+
+  }
+
+  if(m_caCertificateIdentifierHasBeenSet)
+  {
+   payload.WithString("caCertificateIdentifier", m_caCertificateIdentifier);
 
   }
 

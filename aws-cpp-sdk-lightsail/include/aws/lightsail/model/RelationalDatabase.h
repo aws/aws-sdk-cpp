@@ -1090,6 +1090,47 @@ namespace Model
      */
     inline RelationalDatabase& AddPendingMaintenanceActions(PendingMaintenanceAction&& value) { m_pendingMaintenanceActionsHasBeenSet = true; m_pendingMaintenanceActions.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The certificate associated with the database.</p>
+     */
+    inline const Aws::String& GetCaCertificateIdentifier() const{ return m_caCertificateIdentifier; }
+
+    /**
+     * <p>The certificate associated with the database.</p>
+     */
+    inline bool CaCertificateIdentifierHasBeenSet() const { return m_caCertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The certificate associated with the database.</p>
+     */
+    inline void SetCaCertificateIdentifier(const Aws::String& value) { m_caCertificateIdentifierHasBeenSet = true; m_caCertificateIdentifier = value; }
+
+    /**
+     * <p>The certificate associated with the database.</p>
+     */
+    inline void SetCaCertificateIdentifier(Aws::String&& value) { m_caCertificateIdentifierHasBeenSet = true; m_caCertificateIdentifier = std::move(value); }
+
+    /**
+     * <p>The certificate associated with the database.</p>
+     */
+    inline void SetCaCertificateIdentifier(const char* value) { m_caCertificateIdentifierHasBeenSet = true; m_caCertificateIdentifier.assign(value); }
+
+    /**
+     * <p>The certificate associated with the database.</p>
+     */
+    inline RelationalDatabase& WithCaCertificateIdentifier(const Aws::String& value) { SetCaCertificateIdentifier(value); return *this;}
+
+    /**
+     * <p>The certificate associated with the database.</p>
+     */
+    inline RelationalDatabase& WithCaCertificateIdentifier(Aws::String&& value) { SetCaCertificateIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>The certificate associated with the database.</p>
+     */
+    inline RelationalDatabase& WithCaCertificateIdentifier(const char* value) { SetCaCertificateIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -1166,6 +1207,9 @@ namespace Model
 
     Aws::Vector<PendingMaintenanceAction> m_pendingMaintenanceActions;
     bool m_pendingMaintenanceActionsHasBeenSet;
+
+    Aws::String m_caCertificateIdentifier;
+    bool m_caCertificateIdentifierHasBeenSet;
   };
 
 } // namespace Model

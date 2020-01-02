@@ -36,7 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Settings used to configure conversation logs.</p><p><h3>See Also:</h3>   <a
+   * <p>Settings used to configure delivery mode and destination for conversation
+   * logs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/LogSettingsRequest">AWS
    * API Reference</a></p>
    */

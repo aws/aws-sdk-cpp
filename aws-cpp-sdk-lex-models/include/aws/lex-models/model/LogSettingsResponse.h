@@ -210,58 +210,58 @@ namespace Model
 
 
     /**
-     * <p>The resource prefix of the S3 object or CloudWatch Logs log entry where logs
-     * are delivered. For both S3 and CloudWatch Logs, the prefix is:</p> <p>
-     * <code>aws/lex/bot-name/bot-alias/bot-version</code> </p>
+     * <p>The resource prefix is the first part of the S3 object key within the S3
+     * bucket that you specified to contain audio logs. For CloudWatch Logs it is the
+     * prefix of the log stream name within the log group that you specified. </p>
      */
     inline const Aws::String& GetResourcePrefix() const{ return m_resourcePrefix; }
 
     /**
-     * <p>The resource prefix of the S3 object or CloudWatch Logs log entry where logs
-     * are delivered. For both S3 and CloudWatch Logs, the prefix is:</p> <p>
-     * <code>aws/lex/bot-name/bot-alias/bot-version</code> </p>
+     * <p>The resource prefix is the first part of the S3 object key within the S3
+     * bucket that you specified to contain audio logs. For CloudWatch Logs it is the
+     * prefix of the log stream name within the log group that you specified. </p>
      */
     inline bool ResourcePrefixHasBeenSet() const { return m_resourcePrefixHasBeenSet; }
 
     /**
-     * <p>The resource prefix of the S3 object or CloudWatch Logs log entry where logs
-     * are delivered. For both S3 and CloudWatch Logs, the prefix is:</p> <p>
-     * <code>aws/lex/bot-name/bot-alias/bot-version</code> </p>
+     * <p>The resource prefix is the first part of the S3 object key within the S3
+     * bucket that you specified to contain audio logs. For CloudWatch Logs it is the
+     * prefix of the log stream name within the log group that you specified. </p>
      */
     inline void SetResourcePrefix(const Aws::String& value) { m_resourcePrefixHasBeenSet = true; m_resourcePrefix = value; }
 
     /**
-     * <p>The resource prefix of the S3 object or CloudWatch Logs log entry where logs
-     * are delivered. For both S3 and CloudWatch Logs, the prefix is:</p> <p>
-     * <code>aws/lex/bot-name/bot-alias/bot-version</code> </p>
+     * <p>The resource prefix is the first part of the S3 object key within the S3
+     * bucket that you specified to contain audio logs. For CloudWatch Logs it is the
+     * prefix of the log stream name within the log group that you specified. </p>
      */
     inline void SetResourcePrefix(Aws::String&& value) { m_resourcePrefixHasBeenSet = true; m_resourcePrefix = std::move(value); }
 
     /**
-     * <p>The resource prefix of the S3 object or CloudWatch Logs log entry where logs
-     * are delivered. For both S3 and CloudWatch Logs, the prefix is:</p> <p>
-     * <code>aws/lex/bot-name/bot-alias/bot-version</code> </p>
+     * <p>The resource prefix is the first part of the S3 object key within the S3
+     * bucket that you specified to contain audio logs. For CloudWatch Logs it is the
+     * prefix of the log stream name within the log group that you specified. </p>
      */
     inline void SetResourcePrefix(const char* value) { m_resourcePrefixHasBeenSet = true; m_resourcePrefix.assign(value); }
 
     /**
-     * <p>The resource prefix of the S3 object or CloudWatch Logs log entry where logs
-     * are delivered. For both S3 and CloudWatch Logs, the prefix is:</p> <p>
-     * <code>aws/lex/bot-name/bot-alias/bot-version</code> </p>
+     * <p>The resource prefix is the first part of the S3 object key within the S3
+     * bucket that you specified to contain audio logs. For CloudWatch Logs it is the
+     * prefix of the log stream name within the log group that you specified. </p>
      */
     inline LogSettingsResponse& WithResourcePrefix(const Aws::String& value) { SetResourcePrefix(value); return *this;}
 
     /**
-     * <p>The resource prefix of the S3 object or CloudWatch Logs log entry where logs
-     * are delivered. For both S3 and CloudWatch Logs, the prefix is:</p> <p>
-     * <code>aws/lex/bot-name/bot-alias/bot-version</code> </p>
+     * <p>The resource prefix is the first part of the S3 object key within the S3
+     * bucket that you specified to contain audio logs. For CloudWatch Logs it is the
+     * prefix of the log stream name within the log group that you specified. </p>
      */
     inline LogSettingsResponse& WithResourcePrefix(Aws::String&& value) { SetResourcePrefix(std::move(value)); return *this;}
 
     /**
-     * <p>The resource prefix of the S3 object or CloudWatch Logs log entry where logs
-     * are delivered. For both S3 and CloudWatch Logs, the prefix is:</p> <p>
-     * <code>aws/lex/bot-name/bot-alias/bot-version</code> </p>
+     * <p>The resource prefix is the first part of the S3 object key within the S3
+     * bucket that you specified to contain audio logs. For CloudWatch Logs it is the
+     * prefix of the log stream name within the log group that you specified. </p>
      */
     inline LogSettingsResponse& WithResourcePrefix(const char* value) { SetResourcePrefix(value); return *this;}
 

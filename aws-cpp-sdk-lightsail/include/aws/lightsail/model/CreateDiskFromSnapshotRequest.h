@@ -90,73 +90,73 @@ namespace Model
 
     /**
      * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>This parameter cannot be defined together
-     * with the <code>source disk name</code> parameter. The <code>disk snapshot
-     * name</code> and <code>source disk name</code> parameters are mutually
-     * exclusive.</p>
+     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
+     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
+     * mutually exclusive.</p> </li> </ul>
      */
     inline const Aws::String& GetDiskSnapshotName() const{ return m_diskSnapshotName; }
 
     /**
      * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>This parameter cannot be defined together
-     * with the <code>source disk name</code> parameter. The <code>disk snapshot
-     * name</code> and <code>source disk name</code> parameters are mutually
-     * exclusive.</p>
+     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
+     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
+     * mutually exclusive.</p> </li> </ul>
      */
     inline bool DiskSnapshotNameHasBeenSet() const { return m_diskSnapshotNameHasBeenSet; }
 
     /**
      * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>This parameter cannot be defined together
-     * with the <code>source disk name</code> parameter. The <code>disk snapshot
-     * name</code> and <code>source disk name</code> parameters are mutually
-     * exclusive.</p>
+     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
+     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
+     * mutually exclusive.</p> </li> </ul>
      */
     inline void SetDiskSnapshotName(const Aws::String& value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName = value; }
 
     /**
      * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>This parameter cannot be defined together
-     * with the <code>source disk name</code> parameter. The <code>disk snapshot
-     * name</code> and <code>source disk name</code> parameters are mutually
-     * exclusive.</p>
+     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
+     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
+     * mutually exclusive.</p> </li> </ul>
      */
     inline void SetDiskSnapshotName(Aws::String&& value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName = std::move(value); }
 
     /**
      * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>This parameter cannot be defined together
-     * with the <code>source disk name</code> parameter. The <code>disk snapshot
-     * name</code> and <code>source disk name</code> parameters are mutually
-     * exclusive.</p>
+     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
+     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
+     * mutually exclusive.</p> </li> </ul>
      */
     inline void SetDiskSnapshotName(const char* value) { m_diskSnapshotNameHasBeenSet = true; m_diskSnapshotName.assign(value); }
 
     /**
      * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>This parameter cannot be defined together
-     * with the <code>source disk name</code> parameter. The <code>disk snapshot
-     * name</code> and <code>source disk name</code> parameters are mutually
-     * exclusive.</p>
+     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
+     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
+     * mutually exclusive.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithDiskSnapshotName(const Aws::String& value) { SetDiskSnapshotName(value); return *this;}
 
     /**
      * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>This parameter cannot be defined together
-     * with the <code>source disk name</code> parameter. The <code>disk snapshot
-     * name</code> and <code>source disk name</code> parameters are mutually
-     * exclusive.</p>
+     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
+     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
+     * mutually exclusive.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithDiskSnapshotName(Aws::String&& value) { SetDiskSnapshotName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
-     * create the new storage disk.</p> <p>This parameter cannot be defined together
-     * with the <code>source disk name</code> parameter. The <code>disk snapshot
-     * name</code> and <code>source disk name</code> parameters are mutually
-     * exclusive.</p>
+     * create the new storage disk.</p> <p>Constraint:</p> <ul> <li> <p>This parameter
+     * cannot be defined together with the <code>source disk name</code> parameter. The
+     * <code>disk snapshot name</code> and <code>source disk name</code> parameters are
+     * mutually exclusive.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithDiskSnapshotName(const char* value) { SetDiskSnapshotName(value); return *this;}
 
@@ -355,267 +355,267 @@ namespace Model
 
     /**
      * <p>The name of the source disk from which the source automatic snapshot was
-     * created.</p> <p>This parameter cannot be defined together with the <code>disk
-     * snapshot name</code> parameter. The <code>source disk name</code> and <code>disk
-     * snapshot name</code> parameters are mutually exclusive.</p> <note> <p>Define
-     * this parameter only when creating a new disk from an automatic snapshot. For
-     * more information, see the <a
+     * created.</p> <p>Constraints:</p> <ul> <li> <p>This parameter cannot be defined
+     * together with the <code>disk snapshot name</code> parameter. The <code>source
+     * disk name</code> and <code>disk snapshot name</code> parameters are mutually
+     * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
+     * from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceDiskName() const{ return m_sourceDiskName; }
 
     /**
      * <p>The name of the source disk from which the source automatic snapshot was
-     * created.</p> <p>This parameter cannot be defined together with the <code>disk
-     * snapshot name</code> parameter. The <code>source disk name</code> and <code>disk
-     * snapshot name</code> parameters are mutually exclusive.</p> <note> <p>Define
-     * this parameter only when creating a new disk from an automatic snapshot. For
-     * more information, see the <a
+     * created.</p> <p>Constraints:</p> <ul> <li> <p>This parameter cannot be defined
+     * together with the <code>disk snapshot name</code> parameter. The <code>source
+     * disk name</code> and <code>disk snapshot name</code> parameters are mutually
+     * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
+     * from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline bool SourceDiskNameHasBeenSet() const { return m_sourceDiskNameHasBeenSet; }
 
     /**
      * <p>The name of the source disk from which the source automatic snapshot was
-     * created.</p> <p>This parameter cannot be defined together with the <code>disk
-     * snapshot name</code> parameter. The <code>source disk name</code> and <code>disk
-     * snapshot name</code> parameters are mutually exclusive.</p> <note> <p>Define
-     * this parameter only when creating a new disk from an automatic snapshot. For
-     * more information, see the <a
+     * created.</p> <p>Constraints:</p> <ul> <li> <p>This parameter cannot be defined
+     * together with the <code>disk snapshot name</code> parameter. The <code>source
+     * disk name</code> and <code>disk snapshot name</code> parameters are mutually
+     * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
+     * from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline void SetSourceDiskName(const Aws::String& value) { m_sourceDiskNameHasBeenSet = true; m_sourceDiskName = value; }
 
     /**
      * <p>The name of the source disk from which the source automatic snapshot was
-     * created.</p> <p>This parameter cannot be defined together with the <code>disk
-     * snapshot name</code> parameter. The <code>source disk name</code> and <code>disk
-     * snapshot name</code> parameters are mutually exclusive.</p> <note> <p>Define
-     * this parameter only when creating a new disk from an automatic snapshot. For
-     * more information, see the <a
+     * created.</p> <p>Constraints:</p> <ul> <li> <p>This parameter cannot be defined
+     * together with the <code>disk snapshot name</code> parameter. The <code>source
+     * disk name</code> and <code>disk snapshot name</code> parameters are mutually
+     * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
+     * from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline void SetSourceDiskName(Aws::String&& value) { m_sourceDiskNameHasBeenSet = true; m_sourceDiskName = std::move(value); }
 
     /**
      * <p>The name of the source disk from which the source automatic snapshot was
-     * created.</p> <p>This parameter cannot be defined together with the <code>disk
-     * snapshot name</code> parameter. The <code>source disk name</code> and <code>disk
-     * snapshot name</code> parameters are mutually exclusive.</p> <note> <p>Define
-     * this parameter only when creating a new disk from an automatic snapshot. For
-     * more information, see the <a
+     * created.</p> <p>Constraints:</p> <ul> <li> <p>This parameter cannot be defined
+     * together with the <code>disk snapshot name</code> parameter. The <code>source
+     * disk name</code> and <code>disk snapshot name</code> parameters are mutually
+     * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
+     * from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline void SetSourceDiskName(const char* value) { m_sourceDiskNameHasBeenSet = true; m_sourceDiskName.assign(value); }
 
     /**
      * <p>The name of the source disk from which the source automatic snapshot was
-     * created.</p> <p>This parameter cannot be defined together with the <code>disk
-     * snapshot name</code> parameter. The <code>source disk name</code> and <code>disk
-     * snapshot name</code> parameters are mutually exclusive.</p> <note> <p>Define
-     * this parameter only when creating a new disk from an automatic snapshot. For
-     * more information, see the <a
+     * created.</p> <p>Constraints:</p> <ul> <li> <p>This parameter cannot be defined
+     * together with the <code>disk snapshot name</code> parameter. The <code>source
+     * disk name</code> and <code>disk snapshot name</code> parameters are mutually
+     * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
+     * from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithSourceDiskName(const Aws::String& value) { SetSourceDiskName(value); return *this;}
 
     /**
      * <p>The name of the source disk from which the source automatic snapshot was
-     * created.</p> <p>This parameter cannot be defined together with the <code>disk
-     * snapshot name</code> parameter. The <code>source disk name</code> and <code>disk
-     * snapshot name</code> parameters are mutually exclusive.</p> <note> <p>Define
-     * this parameter only when creating a new disk from an automatic snapshot. For
-     * more information, see the <a
+     * created.</p> <p>Constraints:</p> <ul> <li> <p>This parameter cannot be defined
+     * together with the <code>disk snapshot name</code> parameter. The <code>source
+     * disk name</code> and <code>disk snapshot name</code> parameters are mutually
+     * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
+     * from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithSourceDiskName(Aws::String&& value) { SetSourceDiskName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the source disk from which the source automatic snapshot was
-     * created.</p> <p>This parameter cannot be defined together with the <code>disk
-     * snapshot name</code> parameter. The <code>source disk name</code> and <code>disk
-     * snapshot name</code> parameters are mutually exclusive.</p> <note> <p>Define
-     * this parameter only when creating a new disk from an automatic snapshot. For
-     * more information, see the <a
+     * created.</p> <p>Constraints:</p> <ul> <li> <p>This parameter cannot be defined
+     * together with the <code>disk snapshot name</code> parameter. The <code>source
+     * disk name</code> and <code>disk snapshot name</code> parameters are mutually
+     * exclusive.</p> </li> <li> <p>Define this parameter only when creating a new disk
+     * from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithSourceDiskName(const char* value) { SetSourceDiskName(value); return *this;}
 
 
     /**
-     * <p>The date of the automatic snapshot to use for the new disk.</p> <p>Use the
-     * <code>get auto snapshots</code> operation to identify the dates of the available
-     * automatic snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
+     * <p>The date of the automatic snapshot to use for the new disk. Use the <code>get
+     * auto snapshots</code> operation to identify the dates of the available automatic
+     * snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
      * <code>YYYY-MM-DD</code> format.</p> </li> <li> <p>This parameter cannot be
      * defined together with the <code>use latest restorable auto snapshot</code>
      * parameter. The <code>restore date</code> and <code>use latest restorable auto
-     * snapshot</code> parameters are mutually exclusive.</p> </li> </ul> <note>
-     * <p>Define this parameter only when creating a new disk from an automatic
-     * snapshot. For more information, see the <a
+     * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
+     * parameter only when creating a new disk from an automatic snapshot. For more
+     * information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline const Aws::String& GetRestoreDate() const{ return m_restoreDate; }
 
     /**
-     * <p>The date of the automatic snapshot to use for the new disk.</p> <p>Use the
-     * <code>get auto snapshots</code> operation to identify the dates of the available
-     * automatic snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
+     * <p>The date of the automatic snapshot to use for the new disk. Use the <code>get
+     * auto snapshots</code> operation to identify the dates of the available automatic
+     * snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
      * <code>YYYY-MM-DD</code> format.</p> </li> <li> <p>This parameter cannot be
      * defined together with the <code>use latest restorable auto snapshot</code>
      * parameter. The <code>restore date</code> and <code>use latest restorable auto
-     * snapshot</code> parameters are mutually exclusive.</p> </li> </ul> <note>
-     * <p>Define this parameter only when creating a new disk from an automatic
-     * snapshot. For more information, see the <a
+     * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
+     * parameter only when creating a new disk from an automatic snapshot. For more
+     * information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline bool RestoreDateHasBeenSet() const { return m_restoreDateHasBeenSet; }
 
     /**
-     * <p>The date of the automatic snapshot to use for the new disk.</p> <p>Use the
-     * <code>get auto snapshots</code> operation to identify the dates of the available
-     * automatic snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
+     * <p>The date of the automatic snapshot to use for the new disk. Use the <code>get
+     * auto snapshots</code> operation to identify the dates of the available automatic
+     * snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
      * <code>YYYY-MM-DD</code> format.</p> </li> <li> <p>This parameter cannot be
      * defined together with the <code>use latest restorable auto snapshot</code>
      * parameter. The <code>restore date</code> and <code>use latest restorable auto
-     * snapshot</code> parameters are mutually exclusive.</p> </li> </ul> <note>
-     * <p>Define this parameter only when creating a new disk from an automatic
-     * snapshot. For more information, see the <a
+     * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
+     * parameter only when creating a new disk from an automatic snapshot. For more
+     * information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline void SetRestoreDate(const Aws::String& value) { m_restoreDateHasBeenSet = true; m_restoreDate = value; }
 
     /**
-     * <p>The date of the automatic snapshot to use for the new disk.</p> <p>Use the
-     * <code>get auto snapshots</code> operation to identify the dates of the available
-     * automatic snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
+     * <p>The date of the automatic snapshot to use for the new disk. Use the <code>get
+     * auto snapshots</code> operation to identify the dates of the available automatic
+     * snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
      * <code>YYYY-MM-DD</code> format.</p> </li> <li> <p>This parameter cannot be
      * defined together with the <code>use latest restorable auto snapshot</code>
      * parameter. The <code>restore date</code> and <code>use latest restorable auto
-     * snapshot</code> parameters are mutually exclusive.</p> </li> </ul> <note>
-     * <p>Define this parameter only when creating a new disk from an automatic
-     * snapshot. For more information, see the <a
+     * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
+     * parameter only when creating a new disk from an automatic snapshot. For more
+     * information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline void SetRestoreDate(Aws::String&& value) { m_restoreDateHasBeenSet = true; m_restoreDate = std::move(value); }
 
     /**
-     * <p>The date of the automatic snapshot to use for the new disk.</p> <p>Use the
-     * <code>get auto snapshots</code> operation to identify the dates of the available
-     * automatic snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
+     * <p>The date of the automatic snapshot to use for the new disk. Use the <code>get
+     * auto snapshots</code> operation to identify the dates of the available automatic
+     * snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
      * <code>YYYY-MM-DD</code> format.</p> </li> <li> <p>This parameter cannot be
      * defined together with the <code>use latest restorable auto snapshot</code>
      * parameter. The <code>restore date</code> and <code>use latest restorable auto
-     * snapshot</code> parameters are mutually exclusive.</p> </li> </ul> <note>
-     * <p>Define this parameter only when creating a new disk from an automatic
-     * snapshot. For more information, see the <a
+     * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
+     * parameter only when creating a new disk from an automatic snapshot. For more
+     * information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline void SetRestoreDate(const char* value) { m_restoreDateHasBeenSet = true; m_restoreDate.assign(value); }
 
     /**
-     * <p>The date of the automatic snapshot to use for the new disk.</p> <p>Use the
-     * <code>get auto snapshots</code> operation to identify the dates of the available
-     * automatic snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
+     * <p>The date of the automatic snapshot to use for the new disk. Use the <code>get
+     * auto snapshots</code> operation to identify the dates of the available automatic
+     * snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
      * <code>YYYY-MM-DD</code> format.</p> </li> <li> <p>This parameter cannot be
      * defined together with the <code>use latest restorable auto snapshot</code>
      * parameter. The <code>restore date</code> and <code>use latest restorable auto
-     * snapshot</code> parameters are mutually exclusive.</p> </li> </ul> <note>
-     * <p>Define this parameter only when creating a new disk from an automatic
-     * snapshot. For more information, see the <a
+     * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
+     * parameter only when creating a new disk from an automatic snapshot. For more
+     * information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithRestoreDate(const Aws::String& value) { SetRestoreDate(value); return *this;}
 
     /**
-     * <p>The date of the automatic snapshot to use for the new disk.</p> <p>Use the
-     * <code>get auto snapshots</code> operation to identify the dates of the available
-     * automatic snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
+     * <p>The date of the automatic snapshot to use for the new disk. Use the <code>get
+     * auto snapshots</code> operation to identify the dates of the available automatic
+     * snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
      * <code>YYYY-MM-DD</code> format.</p> </li> <li> <p>This parameter cannot be
      * defined together with the <code>use latest restorable auto snapshot</code>
      * parameter. The <code>restore date</code> and <code>use latest restorable auto
-     * snapshot</code> parameters are mutually exclusive.</p> </li> </ul> <note>
-     * <p>Define this parameter only when creating a new disk from an automatic
-     * snapshot. For more information, see the <a
+     * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
+     * parameter only when creating a new disk from an automatic snapshot. For more
+     * information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithRestoreDate(Aws::String&& value) { SetRestoreDate(std::move(value)); return *this;}
 
     /**
-     * <p>The date of the automatic snapshot to use for the new disk.</p> <p>Use the
-     * <code>get auto snapshots</code> operation to identify the dates of the available
-     * automatic snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
+     * <p>The date of the automatic snapshot to use for the new disk. Use the <code>get
+     * auto snapshots</code> operation to identify the dates of the available automatic
+     * snapshots.</p> <p>Constraints:</p> <ul> <li> <p>Must be specified in
      * <code>YYYY-MM-DD</code> format.</p> </li> <li> <p>This parameter cannot be
      * defined together with the <code>use latest restorable auto snapshot</code>
      * parameter. The <code>restore date</code> and <code>use latest restorable auto
-     * snapshot</code> parameters are mutually exclusive.</p> </li> </ul> <note>
-     * <p>Define this parameter only when creating a new disk from an automatic
-     * snapshot. For more information, see the <a
+     * snapshot</code> parameters are mutually exclusive.</p> </li> <li> <p>Define this
+     * parameter only when creating a new disk from an automatic snapshot. For more
+     * information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithRestoreDate(const char* value) { SetRestoreDate(value); return *this;}
 
 
     /**
      * <p>A Boolean value to indicate whether to use the latest available automatic
-     * snapshot.</p> <p>This parameter cannot be defined together with the
-     * <code>restore date</code> parameter. The <code>use latest restorable auto
-     * snapshot</code> and <code>restore date</code> parameters are mutually
-     * exclusive.</p> <note> <p>Define this parameter only when creating a new disk
-     * from an automatic snapshot. For more information, see the <a
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>This parameter cannot be defined
+     * together with the <code>restore date</code> parameter. The <code>use latest
+     * restorable auto snapshot</code> and <code>restore date</code> parameters are
+     * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
+     * new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline bool GetUseLatestRestorableAutoSnapshot() const{ return m_useLatestRestorableAutoSnapshot; }
 
     /**
      * <p>A Boolean value to indicate whether to use the latest available automatic
-     * snapshot.</p> <p>This parameter cannot be defined together with the
-     * <code>restore date</code> parameter. The <code>use latest restorable auto
-     * snapshot</code> and <code>restore date</code> parameters are mutually
-     * exclusive.</p> <note> <p>Define this parameter only when creating a new disk
-     * from an automatic snapshot. For more information, see the <a
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>This parameter cannot be defined
+     * together with the <code>restore date</code> parameter. The <code>use latest
+     * restorable auto snapshot</code> and <code>restore date</code> parameters are
+     * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
+     * new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline bool UseLatestRestorableAutoSnapshotHasBeenSet() const { return m_useLatestRestorableAutoSnapshotHasBeenSet; }
 
     /**
      * <p>A Boolean value to indicate whether to use the latest available automatic
-     * snapshot.</p> <p>This parameter cannot be defined together with the
-     * <code>restore date</code> parameter. The <code>use latest restorable auto
-     * snapshot</code> and <code>restore date</code> parameters are mutually
-     * exclusive.</p> <note> <p>Define this parameter only when creating a new disk
-     * from an automatic snapshot. For more information, see the <a
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>This parameter cannot be defined
+     * together with the <code>restore date</code> parameter. The <code>use latest
+     * restorable auto snapshot</code> and <code>restore date</code> parameters are
+     * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
+     * new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline void SetUseLatestRestorableAutoSnapshot(bool value) { m_useLatestRestorableAutoSnapshotHasBeenSet = true; m_useLatestRestorableAutoSnapshot = value; }
 
     /**
      * <p>A Boolean value to indicate whether to use the latest available automatic
-     * snapshot.</p> <p>This parameter cannot be defined together with the
-     * <code>restore date</code> parameter. The <code>use latest restorable auto
-     * snapshot</code> and <code>restore date</code> parameters are mutually
-     * exclusive.</p> <note> <p>Define this parameter only when creating a new disk
-     * from an automatic snapshot. For more information, see the <a
+     * snapshot.</p> <p>Constraints:</p> <ul> <li> <p>This parameter cannot be defined
+     * together with the <code>restore date</code> parameter. The <code>use latest
+     * restorable auto snapshot</code> and <code>restore date</code> parameters are
+     * mutually exclusive.</p> </li> <li> <p>Define this parameter only when creating a
+     * new disk from an automatic snapshot. For more information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail
-     * Dev Guide</a>.</p> </note>
+     * Dev Guide</a>.</p> </li> </ul>
      */
     inline CreateDiskFromSnapshotRequest& WithUseLatestRestorableAutoSnapshot(bool value) { SetUseLatestRestorableAutoSnapshot(value); return *this;}
 

@@ -484,6 +484,47 @@ namespace Model
      */
     inline UpdateRelationalDatabaseRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
 
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the database.</p>
+     */
+    inline const Aws::String& GetCaCertificateIdentifier() const{ return m_caCertificateIdentifier; }
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the database.</p>
+     */
+    inline bool CaCertificateIdentifierHasBeenSet() const { return m_caCertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the database.</p>
+     */
+    inline void SetCaCertificateIdentifier(const Aws::String& value) { m_caCertificateIdentifierHasBeenSet = true; m_caCertificateIdentifier = value; }
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the database.</p>
+     */
+    inline void SetCaCertificateIdentifier(Aws::String&& value) { m_caCertificateIdentifierHasBeenSet = true; m_caCertificateIdentifier = std::move(value); }
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the database.</p>
+     */
+    inline void SetCaCertificateIdentifier(const char* value) { m_caCertificateIdentifierHasBeenSet = true; m_caCertificateIdentifier.assign(value); }
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the database.</p>
+     */
+    inline UpdateRelationalDatabaseRequest& WithCaCertificateIdentifier(const Aws::String& value) { SetCaCertificateIdentifier(value); return *this;}
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the database.</p>
+     */
+    inline UpdateRelationalDatabaseRequest& WithCaCertificateIdentifier(Aws::String&& value) { SetCaCertificateIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates the certificate that needs to be associated with the database.</p>
+     */
+    inline UpdateRelationalDatabaseRequest& WithCaCertificateIdentifier(const char* value) { SetCaCertificateIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_relationalDatabaseName;
@@ -512,6 +553,9 @@ namespace Model
 
     bool m_applyImmediately;
     bool m_applyImmediatelyHasBeenSet;
+
+    Aws::String m_caCertificateIdentifier;
+    bool m_caCertificateIdentifierHasBeenSet;
   };
 
 } // namespace Model
