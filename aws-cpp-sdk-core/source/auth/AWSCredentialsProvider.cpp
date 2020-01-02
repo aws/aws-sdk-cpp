@@ -467,7 +467,7 @@ AWSCredentials Aws::Auth::GetCredentialsFromProcess(const Aws::String& process)
     }
     else
     {
-        credentials.SetExpiration(std::chrono::time_point<std::chrono::system_clock>::max());
+        credentials.SetExpiration((std::chrono::time_point<std::chrono::system_clock>::max)());
     }
 
     AWS_LOGSTREAM_DEBUG(PROFILE_LOG_TAG, "Successfully pulled credentials from process credential with AccessKey: " << accessKey << ", Expiration:" << credentialsView.GetString("Expiration"));
