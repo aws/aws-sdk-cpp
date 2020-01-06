@@ -50,7 +50,8 @@ VpcEndpoint::VpcEndpoint() :
     m_dnsEntriesHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
+    m_ownerIdHasBeenSet(false),
+    m_lastErrorHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode) :
     m_dnsEntriesHasBeenSet(false),
     m_creationTimestampHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
+    m_ownerIdHasBeenSet(false),
+    m_lastErrorHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -217,6 +219,12 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
       m_ownerId = Aws::Utils::Xml::DecodeEscapedXmlText(ownerIdNode.GetText());
       m_ownerIdHasBeenSet = true;
     }
+    XmlNode lastErrorNode = resultNode.FirstChild("lastError");
+    if(!lastErrorNode.IsNull())
+    {
+      m_lastError = lastErrorNode;
+      m_lastErrorHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -334,6 +342,13 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
 
+  if(m_lastErrorHasBeenSet)
+  {
+      Aws::StringStream lastErrorLocationAndMemberSs;
+      lastErrorLocationAndMemberSs << location << index << locationValue << ".LastError";
+      m_lastError.OutputToStream(oStream, lastErrorLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -431,6 +446,12 @@ void VpcEndpoint::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_ownerIdHasBeenSet)
   {
       oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+  if(m_lastErrorHasBeenSet)
+  {
+      Aws::String lastErrorLocationAndMember(location);
+      lastErrorLocationAndMember += ".LastError";
+      m_lastError.OutputToStream(oStream, lastErrorLocationAndMember.c_str());
   }
 }
 

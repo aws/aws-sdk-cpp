@@ -349,6 +349,7 @@
 #include <aws/ec2/model/SearchTransitGatewayMulticastGroupsResponse.h>
 #include <aws/ec2/model/SearchTransitGatewayRoutesResponse.h>
 #include <aws/ec2/model/StartInstancesResponse.h>
+#include <aws/ec2/model/StartVpcEndpointServicePrivateDnsVerificationResponse.h>
 #include <aws/ec2/model/StopInstancesResponse.h>
 #include <aws/ec2/model/TerminateClientVpnConnectionsResponse.h>
 #include <aws/ec2/model/TerminateInstancesResponse.h>
@@ -790,6 +791,7 @@ namespace Model
         class SearchTransitGatewayRoutesRequest;
         class SendDiagnosticInterruptRequest;
         class StartInstancesRequest;
+        class StartVpcEndpointServicePrivateDnsVerificationRequest;
         class StopInstancesRequest;
         class TerminateClientVpnConnectionsRequest;
         class TerminateInstancesRequest;
@@ -1187,6 +1189,7 @@ namespace Model
         typedef Aws::Utils::Outcome<SearchTransitGatewayRoutesResponse, Aws::Client::AWSError<EC2Errors>> SearchTransitGatewayRoutesOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EC2Errors>> SendDiagnosticInterruptOutcome;
         typedef Aws::Utils::Outcome<StartInstancesResponse, Aws::Client::AWSError<EC2Errors>> StartInstancesOutcome;
+        typedef Aws::Utils::Outcome<StartVpcEndpointServicePrivateDnsVerificationResponse, Aws::Client::AWSError<EC2Errors>> StartVpcEndpointServicePrivateDnsVerificationOutcome;
         typedef Aws::Utils::Outcome<StopInstancesResponse, Aws::Client::AWSError<EC2Errors>> StopInstancesOutcome;
         typedef Aws::Utils::Outcome<TerminateClientVpnConnectionsResponse, Aws::Client::AWSError<EC2Errors>> TerminateClientVpnConnectionsOutcome;
         typedef Aws::Utils::Outcome<TerminateInstancesResponse, Aws::Client::AWSError<EC2Errors>> TerminateInstancesOutcome;
@@ -1584,6 +1587,7 @@ namespace Model
         typedef std::future<SearchTransitGatewayRoutesOutcome> SearchTransitGatewayRoutesOutcomeCallable;
         typedef std::future<SendDiagnosticInterruptOutcome> SendDiagnosticInterruptOutcomeCallable;
         typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
+        typedef std::future<StartVpcEndpointServicePrivateDnsVerificationOutcome> StartVpcEndpointServicePrivateDnsVerificationOutcomeCallable;
         typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
         typedef std::future<TerminateClientVpnConnectionsOutcome> TerminateClientVpnConnectionsOutcomeCallable;
         typedef std::future<TerminateInstancesOutcome> TerminateInstancesOutcomeCallable;
@@ -1984,6 +1988,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::SearchTransitGatewayRoutesRequest&, const Model::SearchTransitGatewayRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchTransitGatewayRoutesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::SendDiagnosticInterruptRequest&, const Model::SendDiagnosticInterruptOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendDiagnosticInterruptResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::StartInstancesRequest&, const Model::StartInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartInstancesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::StartVpcEndpointServicePrivateDnsVerificationRequest&, const Model::StartVpcEndpointServicePrivateDnsVerificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartVpcEndpointServicePrivateDnsVerificationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::StopInstancesRequest&, const Model::StopInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::TerminateClientVpnConnectionsRequest&, const Model::TerminateClientVpnConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateClientVpnConnectionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::TerminateInstancesRequest&, const Model::TerminateInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateInstancesResponseReceivedHandler;
@@ -6277,13 +6282,13 @@ namespace Model
         /**
          * <p>Creates a VPC endpoint for a specified service. An endpoint enables you to
          * create a private connection between your VPC and the service. The service may be
-         * provided by AWS, an AWS Marketplace partner, or another AWS account. For more
+         * provided by AWS, an AWS Marketplace Partner, or another AWS account. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
          * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>A
          * <code>gateway</code> endpoint serves as a target for a route in your route table
          * for traffic destined for the AWS service. You can specify an endpoint policy to
-         * attach to the endpoint that will control access to the service from your VPC.
+         * attach to the endpoint, which will control access to the service from your VPC.
          * You can also specify the VPC route tables that use the endpoint.</p> <p>An
          * <code>interface</code> endpoint is a network interface in your subnet that
          * serves as an endpoint for communicating with the specified service. You can
@@ -6299,13 +6304,13 @@ namespace Model
         /**
          * <p>Creates a VPC endpoint for a specified service. An endpoint enables you to
          * create a private connection between your VPC and the service. The service may be
-         * provided by AWS, an AWS Marketplace partner, or another AWS account. For more
+         * provided by AWS, an AWS Marketplace Partner, or another AWS account. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
          * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>A
          * <code>gateway</code> endpoint serves as a target for a route in your route table
          * for traffic destined for the AWS service. You can specify an endpoint policy to
-         * attach to the endpoint that will control access to the service from your VPC.
+         * attach to the endpoint, which will control access to the service from your VPC.
          * You can also specify the VPC route tables that use the endpoint.</p> <p>An
          * <code>interface</code> endpoint is a network interface in your subnet that
          * serves as an endpoint for communicating with the specified service. You can
@@ -6323,13 +6328,13 @@ namespace Model
         /**
          * <p>Creates a VPC endpoint for a specified service. An endpoint enables you to
          * create a private connection between your VPC and the service. The service may be
-         * provided by AWS, an AWS Marketplace partner, or another AWS account. For more
+         * provided by AWS, an AWS Marketplace Partner, or another AWS account. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC
          * Endpoints</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p> <p>A
          * <code>gateway</code> endpoint serves as a target for a route in your route table
          * for traffic destined for the AWS service. You can specify an endpoint policy to
-         * attach to the endpoint that will control access to the service from your VPC.
+         * attach to the endpoint, which will control access to the service from your VPC.
          * You can also specify the VPC route tables that use the endpoint.</p> <p>An
          * <code>interface</code> endpoint is a network interface in your subnet that
          * serves as an endpoint for communicating with the specified service. You can
@@ -6398,7 +6403,11 @@ namespace Model
          * service. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
          * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p>If you set the private DNS name, you must prove that you own the private
+         * DNS domain name. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
+         * Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual
+         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration">AWS
          * API Reference</a></p>
          */
@@ -6412,7 +6421,11 @@ namespace Model
          * service. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
          * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p>If you set the private DNS name, you must prove that you own the private
+         * DNS domain name. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
+         * Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual
+         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration">AWS
          * API Reference</a></p>
          *
@@ -6428,7 +6441,11 @@ namespace Model
          * service. For more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">VPC
          * Endpoint Services</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p>If you set the private DNS name, you must prove that you own the private
+         * DNS domain name. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
+         * Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual
+         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVpcEndpointServiceConfiguration">AWS
          * API Reference</a></p>
          *
@@ -16177,7 +16194,12 @@ namespace Model
          * <p>Modifies the attributes of your VPC endpoint service configuration. You can
          * change the Network Load Balancers for your service, and you can specify whether
          * acceptance is required for requests to connect to your endpoint service through
-         * an interface VPC endpoint.</p><p><h3>See Also:</h3>   <a
+         * an interface VPC endpoint.</p> <p>If you set or modify the private DNS name, you
+         * must prove that you own the private DNS domain name. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
+         * Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual
+         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration">AWS
          * API Reference</a></p>
          */
@@ -16187,7 +16209,12 @@ namespace Model
          * <p>Modifies the attributes of your VPC endpoint service configuration. You can
          * change the Network Load Balancers for your service, and you can specify whether
          * acceptance is required for requests to connect to your endpoint service through
-         * an interface VPC endpoint.</p><p><h3>See Also:</h3>   <a
+         * an interface VPC endpoint.</p> <p>If you set or modify the private DNS name, you
+         * must prove that you own the private DNS domain name. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
+         * Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual
+         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration">AWS
          * API Reference</a></p>
          *
@@ -16199,7 +16226,12 @@ namespace Model
          * <p>Modifies the attributes of your VPC endpoint service configuration. You can
          * change the Network Load Balancers for your service, and you can specify whether
          * acceptance is required for requests to connect to your endpoint service through
-         * an interface VPC endpoint.</p><p><h3>See Also:</h3>   <a
+         * an interface VPC endpoint.</p> <p>If you set or modify the private DNS name, you
+         * must prove that you own the private DNS domain name. For more information, see
+         * <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-services-dns-validation.html">VPC
+         * Endpoint Service Private DNS Name Verification</a> in the <i>Amazon Virtual
+         * Private Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointServiceConfiguration">AWS
          * API Reference</a></p>
          *
@@ -18599,6 +18631,52 @@ namespace Model
         virtual void StartInstancesAsync(const Model::StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Initiates the verification process to prove that the service provider owns
+         * the private DNS name domain for the endpoint service.</p> <p>The service
+         * provider must successfully perform the verification before the consumer can use
+         * the name to access the service.</p> <p>Before the service provider runs this
+         * command, they must add a record to the DNS server. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record">Adding
+         * a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartVpcEndpointServicePrivateDnsVerification">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartVpcEndpointServicePrivateDnsVerificationOutcome StartVpcEndpointServicePrivateDnsVerification(const Model::StartVpcEndpointServicePrivateDnsVerificationRequest& request) const;
+
+        /**
+         * <p>Initiates the verification process to prove that the service provider owns
+         * the private DNS name domain for the endpoint service.</p> <p>The service
+         * provider must successfully perform the verification before the consumer can use
+         * the name to access the service.</p> <p>Before the service provider runs this
+         * command, they must add a record to the DNS server. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record">Adding
+         * a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartVpcEndpointServicePrivateDnsVerification">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartVpcEndpointServicePrivateDnsVerificationOutcomeCallable StartVpcEndpointServicePrivateDnsVerificationCallable(const Model::StartVpcEndpointServicePrivateDnsVerificationRequest& request) const;
+
+        /**
+         * <p>Initiates the verification process to prove that the service provider owns
+         * the private DNS name domain for the endpoint service.</p> <p>The service
+         * provider must successfully perform the verification before the consumer can use
+         * the name to access the service.</p> <p>Before the service provider runs this
+         * command, they must add a record to the DNS server. For more information, see <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/ndpoint-services-dns-validation.html#add-dns-txt-record">Adding
+         * a TXT Record to Your Domain's DNS Server </a> in the <i>Amazon VPC User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/StartVpcEndpointServicePrivateDnsVerification">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartVpcEndpointServicePrivateDnsVerificationAsync(const Model::StartVpcEndpointServicePrivateDnsVerificationRequest& request, const StartVpcEndpointServicePrivateDnsVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Stops an Amazon EBS-backed instance.</p> <p>You can use the Stop action to
          * hibernate an instance if the instance is <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#enabling-hibernation">enabled
@@ -19460,6 +19538,7 @@ namespace Model
         void SearchTransitGatewayRoutesAsyncHelper(const Model::SearchTransitGatewayRoutesRequest& request, const SearchTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendDiagnosticInterruptAsyncHelper(const Model::SendDiagnosticInterruptRequest& request, const SendDiagnosticInterruptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartInstancesAsyncHelper(const Model::StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartVpcEndpointServicePrivateDnsVerificationAsyncHelper(const Model::StartVpcEndpointServicePrivateDnsVerificationRequest& request, const StartVpcEndpointServicePrivateDnsVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopInstancesAsyncHelper(const Model::StopInstancesRequest& request, const StopInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateClientVpnConnectionsAsyncHelper(const Model::TerminateClientVpnConnectionsRequest& request, const TerminateClientVpnConnectionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TerminateInstancesAsyncHelper(const Model::TerminateInstancesRequest& request, const TerminateInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

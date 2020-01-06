@@ -23,6 +23,7 @@
 #include <aws/comprehend/model/DocumentClassifierOutputDataConfig.h>
 #include <aws/comprehend/model/ClassifierMetadata.h>
 #include <aws/comprehend/model/VpcConfig.h>
+#include <aws/comprehend/model/DocumentClassifierMode.h>
 #include <utility>
 
 namespace Aws
@@ -694,6 +695,55 @@ namespace Model
      */
     inline DocumentClassifierProperties& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates the mode in which the specific classifier was trained. This also
+     * indicates the format of input documents and the format of the confusion matrix.
+     * Each classifier can only be trained in one mode and this cannot be changed once
+     * the classifier is trained.</p>
+     */
+    inline const DocumentClassifierMode& GetMode() const{ return m_mode; }
+
+    /**
+     * <p>Indicates the mode in which the specific classifier was trained. This also
+     * indicates the format of input documents and the format of the confusion matrix.
+     * Each classifier can only be trained in one mode and this cannot be changed once
+     * the classifier is trained.</p>
+     */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * <p>Indicates the mode in which the specific classifier was trained. This also
+     * indicates the format of input documents and the format of the confusion matrix.
+     * Each classifier can only be trained in one mode and this cannot be changed once
+     * the classifier is trained.</p>
+     */
+    inline void SetMode(const DocumentClassifierMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+
+    /**
+     * <p>Indicates the mode in which the specific classifier was trained. This also
+     * indicates the format of input documents and the format of the confusion matrix.
+     * Each classifier can only be trained in one mode and this cannot be changed once
+     * the classifier is trained.</p>
+     */
+    inline void SetMode(DocumentClassifierMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+
+    /**
+     * <p>Indicates the mode in which the specific classifier was trained. This also
+     * indicates the format of input documents and the format of the confusion matrix.
+     * Each classifier can only be trained in one mode and this cannot be changed once
+     * the classifier is trained.</p>
+     */
+    inline DocumentClassifierProperties& WithMode(const DocumentClassifierMode& value) { SetMode(value); return *this;}
+
+    /**
+     * <p>Indicates the mode in which the specific classifier was trained. This also
+     * indicates the format of input documents and the format of the confusion matrix.
+     * Each classifier can only be trained in one mode and this cannot be changed once
+     * the classifier is trained.</p>
+     */
+    inline DocumentClassifierProperties& WithMode(DocumentClassifierMode&& value) { SetMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_documentClassifierArn;
@@ -737,6 +787,9 @@ namespace Model
 
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
+    DocumentClassifierMode m_mode;
+    bool m_modeHasBeenSet;
   };
 
 } // namespace Model

@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateOriginEndpointRequest::UpdateOriginEndpointRequest() : 
+    m_authorizationHasBeenSet(false),
     m_cmafPackageHasBeenSet(false),
     m_dashPackageHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -43,6 +44,12 @@ UpdateOriginEndpointRequest::UpdateOriginEndpointRequest() :
 Aws::String UpdateOriginEndpointRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_authorizationHasBeenSet)
+  {
+   payload.WithObject("authorization", m_authorization.Jsonize());
+
+  }
 
   if(m_cmafPackageHasBeenSet)
   {

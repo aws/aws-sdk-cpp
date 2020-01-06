@@ -417,6 +417,7 @@
 #include <aws/ec2/model/SearchTransitGatewayRoutesRequest.h>
 #include <aws/ec2/model/SendDiagnosticInterruptRequest.h>
 #include <aws/ec2/model/StartInstancesRequest.h>
+#include <aws/ec2/model/StartVpcEndpointServicePrivateDnsVerificationRequest.h>
 #include <aws/ec2/model/StopInstancesRequest.h>
 #include <aws/ec2/model/TerminateClientVpnConnectionsRequest.h>
 #include <aws/ec2/model/TerminateInstancesRequest.h>
@@ -14043,6 +14044,41 @@ void EC2Client::StartInstancesAsync(const StartInstancesRequest& request, const 
 void EC2Client::StartInstancesAsyncHelper(const StartInstancesRequest& request, const StartInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartInstances(request), context);
+}
+
+StartVpcEndpointServicePrivateDnsVerificationOutcome EC2Client::StartVpcEndpointServicePrivateDnsVerification(const StartVpcEndpointServicePrivateDnsVerificationRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return StartVpcEndpointServicePrivateDnsVerificationOutcome(StartVpcEndpointServicePrivateDnsVerificationResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return StartVpcEndpointServicePrivateDnsVerificationOutcome(outcome.GetError());
+  }
+}
+
+StartVpcEndpointServicePrivateDnsVerificationOutcomeCallable EC2Client::StartVpcEndpointServicePrivateDnsVerificationCallable(const StartVpcEndpointServicePrivateDnsVerificationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartVpcEndpointServicePrivateDnsVerificationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartVpcEndpointServicePrivateDnsVerification(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::StartVpcEndpointServicePrivateDnsVerificationAsync(const StartVpcEndpointServicePrivateDnsVerificationRequest& request, const StartVpcEndpointServicePrivateDnsVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartVpcEndpointServicePrivateDnsVerificationAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::StartVpcEndpointServicePrivateDnsVerificationAsyncHelper(const StartVpcEndpointServicePrivateDnsVerificationRequest& request, const StartVpcEndpointServicePrivateDnsVerificationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartVpcEndpointServicePrivateDnsVerification(request), context);
 }
 
 StopInstancesOutcome EC2Client::StopInstances(const StopInstancesRequest& request) const

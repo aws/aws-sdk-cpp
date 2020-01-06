@@ -122,25 +122,87 @@ namespace Model
 
 
     /**
-     * <p>Indicate whether requests to create an endpoint to your service must be
+     * <p>The private DNS name to assign to the endpoint service.</p>
+     */
+    inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
+
+    /**
+     * <p>The private DNS name to assign to the endpoint service.</p>
+     */
+    inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
+
+    /**
+     * <p>The private DNS name to assign to the endpoint service.</p>
+     */
+    inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
+
+    /**
+     * <p>The private DNS name to assign to the endpoint service.</p>
+     */
+    inline void SetPrivateDnsName(Aws::String&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = std::move(value); }
+
+    /**
+     * <p>The private DNS name to assign to the endpoint service.</p>
+     */
+    inline void SetPrivateDnsName(const char* value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName.assign(value); }
+
+    /**
+     * <p>The private DNS name to assign to the endpoint service.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
+
+    /**
+     * <p>The private DNS name to assign to the endpoint service.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithPrivateDnsName(Aws::String&& value) { SetPrivateDnsName(std::move(value)); return *this;}
+
+    /**
+     * <p>The private DNS name to assign to the endpoint service.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
+
+
+    /**
+     * <p>Removes the private DNS name of the endpoint service.</p>
+     */
+    inline bool GetRemovePrivateDnsName() const{ return m_removePrivateDnsName; }
+
+    /**
+     * <p>Removes the private DNS name of the endpoint service.</p>
+     */
+    inline bool RemovePrivateDnsNameHasBeenSet() const { return m_removePrivateDnsNameHasBeenSet; }
+
+    /**
+     * <p>Removes the private DNS name of the endpoint service.</p>
+     */
+    inline void SetRemovePrivateDnsName(bool value) { m_removePrivateDnsNameHasBeenSet = true; m_removePrivateDnsName = value; }
+
+    /**
+     * <p>Removes the private DNS name of the endpoint service.</p>
+     */
+    inline ModifyVpcEndpointServiceConfigurationRequest& WithRemovePrivateDnsName(bool value) { SetRemovePrivateDnsName(value); return *this;}
+
+
+    /**
+     * <p>Indicates whether requests to create an endpoint to your service must be
      * accepted.</p>
      */
     inline bool GetAcceptanceRequired() const{ return m_acceptanceRequired; }
 
     /**
-     * <p>Indicate whether requests to create an endpoint to your service must be
+     * <p>Indicates whether requests to create an endpoint to your service must be
      * accepted.</p>
      */
     inline bool AcceptanceRequiredHasBeenSet() const { return m_acceptanceRequiredHasBeenSet; }
 
     /**
-     * <p>Indicate whether requests to create an endpoint to your service must be
+     * <p>Indicates whether requests to create an endpoint to your service must be
      * accepted.</p>
      */
     inline void SetAcceptanceRequired(bool value) { m_acceptanceRequiredHasBeenSet = true; m_acceptanceRequired = value; }
 
     /**
-     * <p>Indicate whether requests to create an endpoint to your service must be
+     * <p>Indicates whether requests to create an endpoint to your service must be
      * accepted.</p>
      */
     inline ModifyVpcEndpointServiceConfigurationRequest& WithAcceptanceRequired(bool value) { SetAcceptanceRequired(value); return *this;}
@@ -262,6 +324,12 @@ namespace Model
 
     Aws::String m_serviceId;
     bool m_serviceIdHasBeenSet;
+
+    Aws::String m_privateDnsName;
+    bool m_privateDnsNameHasBeenSet;
+
+    bool m_removePrivateDnsName;
+    bool m_removePrivateDnsNameHasBeenSet;
 
     bool m_acceptanceRequired;
     bool m_acceptanceRequiredHasBeenSet;

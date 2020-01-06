@@ -17,6 +17,7 @@
 #include <aws/comprehend/Comprehend_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/comprehend/model/DocumentClass.h>
+#include <aws/comprehend/model/DocumentLabel.h>
 #include <utility>
 
 namespace Aws
@@ -99,9 +100,75 @@ namespace Model
      */
     inline ClassifyDocumentResult& AddClasses(DocumentClass&& value) { m_classes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The labels used the document being analyzed. These are used for multi-label
+     * trained models. Individual labels represent different categories that are
+     * related in some manner and are not multually exclusive. For example, a movie can
+     * be just an action movie, or it can be an action movie, a science fiction movie,
+     * and a comedy, all at the same time. </p>
+     */
+    inline const Aws::Vector<DocumentLabel>& GetLabels() const{ return m_labels; }
+
+    /**
+     * <p>The labels used the document being analyzed. These are used for multi-label
+     * trained models. Individual labels represent different categories that are
+     * related in some manner and are not multually exclusive. For example, a movie can
+     * be just an action movie, or it can be an action movie, a science fiction movie,
+     * and a comedy, all at the same time. </p>
+     */
+    inline void SetLabels(const Aws::Vector<DocumentLabel>& value) { m_labels = value; }
+
+    /**
+     * <p>The labels used the document being analyzed. These are used for multi-label
+     * trained models. Individual labels represent different categories that are
+     * related in some manner and are not multually exclusive. For example, a movie can
+     * be just an action movie, or it can be an action movie, a science fiction movie,
+     * and a comedy, all at the same time. </p>
+     */
+    inline void SetLabels(Aws::Vector<DocumentLabel>&& value) { m_labels = std::move(value); }
+
+    /**
+     * <p>The labels used the document being analyzed. These are used for multi-label
+     * trained models. Individual labels represent different categories that are
+     * related in some manner and are not multually exclusive. For example, a movie can
+     * be just an action movie, or it can be an action movie, a science fiction movie,
+     * and a comedy, all at the same time. </p>
+     */
+    inline ClassifyDocumentResult& WithLabels(const Aws::Vector<DocumentLabel>& value) { SetLabels(value); return *this;}
+
+    /**
+     * <p>The labels used the document being analyzed. These are used for multi-label
+     * trained models. Individual labels represent different categories that are
+     * related in some manner and are not multually exclusive. For example, a movie can
+     * be just an action movie, or it can be an action movie, a science fiction movie,
+     * and a comedy, all at the same time. </p>
+     */
+    inline ClassifyDocumentResult& WithLabels(Aws::Vector<DocumentLabel>&& value) { SetLabels(std::move(value)); return *this;}
+
+    /**
+     * <p>The labels used the document being analyzed. These are used for multi-label
+     * trained models. Individual labels represent different categories that are
+     * related in some manner and are not multually exclusive. For example, a movie can
+     * be just an action movie, or it can be an action movie, a science fiction movie,
+     * and a comedy, all at the same time. </p>
+     */
+    inline ClassifyDocumentResult& AddLabels(const DocumentLabel& value) { m_labels.push_back(value); return *this; }
+
+    /**
+     * <p>The labels used the document being analyzed. These are used for multi-label
+     * trained models. Individual labels represent different categories that are
+     * related in some manner and are not multually exclusive. For example, a movie can
+     * be just an action movie, or it can be an action movie, a science fiction movie,
+     * and a comedy, all at the same time. </p>
+     */
+    inline ClassifyDocumentResult& AddLabels(DocumentLabel&& value) { m_labels.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<DocumentClass> m_classes;
+
+    Aws::Vector<DocumentLabel> m_labels;
   };
 
 } // namespace Model

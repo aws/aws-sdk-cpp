@@ -24,6 +24,9 @@ ModifyVpcEndpointServiceConfigurationRequest::ModifyVpcEndpointServiceConfigurat
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_serviceIdHasBeenSet(false),
+    m_privateDnsNameHasBeenSet(false),
+    m_removePrivateDnsName(false),
+    m_removePrivateDnsNameHasBeenSet(false),
     m_acceptanceRequired(false),
     m_acceptanceRequiredHasBeenSet(false),
     m_addNetworkLoadBalancerArnsHasBeenSet(false),
@@ -43,6 +46,16 @@ Aws::String ModifyVpcEndpointServiceConfigurationRequest::SerializePayload() con
   if(m_serviceIdHasBeenSet)
   {
     ss << "ServiceId=" << StringUtils::URLEncode(m_serviceId.c_str()) << "&";
+  }
+
+  if(m_privateDnsNameHasBeenSet)
+  {
+    ss << "PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
+  }
+
+  if(m_removePrivateDnsNameHasBeenSet)
+  {
+    ss << "RemovePrivateDnsName=" << std::boolalpha << m_removePrivateDnsName << "&";
   }
 
   if(m_acceptanceRequiredHasBeenSet)

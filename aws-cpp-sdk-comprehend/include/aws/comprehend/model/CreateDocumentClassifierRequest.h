@@ -22,6 +22,7 @@
 #include <aws/comprehend/model/DocumentClassifierOutputDataConfig.h>
 #include <aws/comprehend/model/LanguageCode.h>
 #include <aws/comprehend/model/VpcConfig.h>
+#include <aws/comprehend/model/DocumentClassifierMode.h>
 #include <aws/comprehend/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -523,6 +524,67 @@ namespace Model
      */
     inline CreateDocumentClassifierRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates the mode in which the classifier will be trained. The classifier
+     * can be trained in multi-class mode, which identifies one and only one class for
+     * each document, or multi-label mode, which identifies one or more labels for each
+     * document. In multi-label mode, multiple labels for an individual document are
+     * separated by a delimiter. The default delimiter between labels is a pipe
+     * (|).</p>
+     */
+    inline const DocumentClassifierMode& GetMode() const{ return m_mode; }
+
+    /**
+     * <p>Indicates the mode in which the classifier will be trained. The classifier
+     * can be trained in multi-class mode, which identifies one and only one class for
+     * each document, or multi-label mode, which identifies one or more labels for each
+     * document. In multi-label mode, multiple labels for an individual document are
+     * separated by a delimiter. The default delimiter between labels is a pipe
+     * (|).</p>
+     */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * <p>Indicates the mode in which the classifier will be trained. The classifier
+     * can be trained in multi-class mode, which identifies one and only one class for
+     * each document, or multi-label mode, which identifies one or more labels for each
+     * document. In multi-label mode, multiple labels for an individual document are
+     * separated by a delimiter. The default delimiter between labels is a pipe
+     * (|).</p>
+     */
+    inline void SetMode(const DocumentClassifierMode& value) { m_modeHasBeenSet = true; m_mode = value; }
+
+    /**
+     * <p>Indicates the mode in which the classifier will be trained. The classifier
+     * can be trained in multi-class mode, which identifies one and only one class for
+     * each document, or multi-label mode, which identifies one or more labels for each
+     * document. In multi-label mode, multiple labels for an individual document are
+     * separated by a delimiter. The default delimiter between labels is a pipe
+     * (|).</p>
+     */
+    inline void SetMode(DocumentClassifierMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
+
+    /**
+     * <p>Indicates the mode in which the classifier will be trained. The classifier
+     * can be trained in multi-class mode, which identifies one and only one class for
+     * each document, or multi-label mode, which identifies one or more labels for each
+     * document. In multi-label mode, multiple labels for an individual document are
+     * separated by a delimiter. The default delimiter between labels is a pipe
+     * (|).</p>
+     */
+    inline CreateDocumentClassifierRequest& WithMode(const DocumentClassifierMode& value) { SetMode(value); return *this;}
+
+    /**
+     * <p>Indicates the mode in which the classifier will be trained. The classifier
+     * can be trained in multi-class mode, which identifies one and only one class for
+     * each document, or multi-label mode, which identifies one or more labels for each
+     * document. In multi-label mode, multiple labels for an individual document are
+     * separated by a delimiter. The default delimiter between labels is a pipe
+     * (|).</p>
+     */
+    inline CreateDocumentClassifierRequest& WithMode(DocumentClassifierMode&& value) { SetMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_documentClassifierName;
@@ -551,6 +613,9 @@ namespace Model
 
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet;
+
+    DocumentClassifierMode m_mode;
+    bool m_modeHasBeenSet;
   };
 
 } // namespace Model

@@ -21,6 +21,7 @@
 #include <aws/ec2/model/State.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/ec2/model/LastError.h>
 #include <aws/ec2/model/SecurityGroupIdentifier.h>
 #include <aws/ec2/model/DnsEntry.h>
 #include <aws/ec2/model/Tag.h>
@@ -384,50 +385,50 @@ namespace Model
 
 
     /**
-     * <p>(Interface endpoint) Information about the security groups associated with
-     * the network interface.</p>
+     * <p>(Interface endpoint) Information about the security groups that are
+     * associated with the network interface.</p>
      */
     inline const Aws::Vector<SecurityGroupIdentifier>& GetGroups() const{ return m_groups; }
 
     /**
-     * <p>(Interface endpoint) Information about the security groups associated with
-     * the network interface.</p>
+     * <p>(Interface endpoint) Information about the security groups that are
+     * associated with the network interface.</p>
      */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
-     * <p>(Interface endpoint) Information about the security groups associated with
-     * the network interface.</p>
+     * <p>(Interface endpoint) Information about the security groups that are
+     * associated with the network interface.</p>
      */
     inline void SetGroups(const Aws::Vector<SecurityGroupIdentifier>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * <p>(Interface endpoint) Information about the security groups associated with
-     * the network interface.</p>
+     * <p>(Interface endpoint) Information about the security groups that are
+     * associated with the network interface.</p>
      */
     inline void SetGroups(Aws::Vector<SecurityGroupIdentifier>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * <p>(Interface endpoint) Information about the security groups associated with
-     * the network interface.</p>
+     * <p>(Interface endpoint) Information about the security groups that are
+     * associated with the network interface.</p>
      */
     inline VpcEndpoint& WithGroups(const Aws::Vector<SecurityGroupIdentifier>& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>(Interface endpoint) Information about the security groups associated with
-     * the network interface.</p>
+     * <p>(Interface endpoint) Information about the security groups that are
+     * associated with the network interface.</p>
      */
     inline VpcEndpoint& WithGroups(Aws::Vector<SecurityGroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>(Interface endpoint) Information about the security groups associated with
-     * the network interface.</p>
+     * <p>(Interface endpoint) Information about the security groups that are
+     * associated with the network interface.</p>
      */
     inline VpcEndpoint& AddGroups(const SecurityGroupIdentifier& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * <p>(Interface endpoint) Information about the security groups associated with
-     * the network interface.</p>
+     * <p>(Interface endpoint) Information about the security groups that are
+     * associated with the network interface.</p>
      */
     inline VpcEndpoint& AddGroups(SecurityGroupIdentifier&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
@@ -566,32 +567,32 @@ namespace Model
 
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The date and time that the VPC endpoint was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The date and time that the VPC endpoint was created.</p>
      */
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The date and time that the VPC endpoint was created.</p>
      */
     inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The date and time that the VPC endpoint was created.</p>
      */
     inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The date and time that the VPC endpoint was created.</p>
      */
     inline VpcEndpoint& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The date and time that the VPC endpoint was created.</p>
      */
     inline VpcEndpoint& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 
@@ -677,6 +678,37 @@ namespace Model
      */
     inline VpcEndpoint& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 
+
+    /**
+     * <p>The last error that occurred for VPC endpoint.</p>
+     */
+    inline const LastError& GetLastError() const{ return m_lastError; }
+
+    /**
+     * <p>The last error that occurred for VPC endpoint.</p>
+     */
+    inline bool LastErrorHasBeenSet() const { return m_lastErrorHasBeenSet; }
+
+    /**
+     * <p>The last error that occurred for VPC endpoint.</p>
+     */
+    inline void SetLastError(const LastError& value) { m_lastErrorHasBeenSet = true; m_lastError = value; }
+
+    /**
+     * <p>The last error that occurred for VPC endpoint.</p>
+     */
+    inline void SetLastError(LastError&& value) { m_lastErrorHasBeenSet = true; m_lastError = std::move(value); }
+
+    /**
+     * <p>The last error that occurred for VPC endpoint.</p>
+     */
+    inline VpcEndpoint& WithLastError(const LastError& value) { SetLastError(value); return *this;}
+
+    /**
+     * <p>The last error that occurred for VPC endpoint.</p>
+     */
+    inline VpcEndpoint& WithLastError(LastError&& value) { SetLastError(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_vpcEndpointId;
@@ -726,6 +758,9 @@ namespace Model
 
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet;
+
+    LastError m_lastError;
+    bool m_lastErrorHasBeenSet;
   };
 
 } // namespace Model

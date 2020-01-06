@@ -25,6 +25,7 @@ CreateVpcEndpointServiceConfigurationRequest::CreateVpcEndpointServiceConfigurat
     m_dryRunHasBeenSet(false),
     m_acceptanceRequired(false),
     m_acceptanceRequiredHasBeenSet(false),
+    m_privateDnsNameHasBeenSet(false),
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_clientTokenHasBeenSet(false)
 {
@@ -42,6 +43,11 @@ Aws::String CreateVpcEndpointServiceConfigurationRequest::SerializePayload() con
   if(m_acceptanceRequiredHasBeenSet)
   {
     ss << "AcceptanceRequired=" << std::boolalpha << m_acceptanceRequired << "&";
+  }
+
+  if(m_privateDnsNameHasBeenSet)
+  {
+    ss << "PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
   }
 
   if(m_networkLoadBalancerArnsHasBeenSet)

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/model/DnsNameState.h>
 #include <aws/ec2/model/ServiceTypeDetail.h>
 #include <aws/ec2/model/Tag.h>
 #include <utility>
@@ -396,25 +397,25 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the service manages it's VPC endpoints. Management of the
+     * <p>Indicates whether the service manages its VPC endpoints. Management of the
      * service VPC endpoints using the VPC endpoint API is restricted.</p>
      */
     inline bool GetManagesVpcEndpoints() const{ return m_managesVpcEndpoints; }
 
     /**
-     * <p>Indicates whether the service manages it's VPC endpoints. Management of the
+     * <p>Indicates whether the service manages its VPC endpoints. Management of the
      * service VPC endpoints using the VPC endpoint API is restricted.</p>
      */
     inline bool ManagesVpcEndpointsHasBeenSet() const { return m_managesVpcEndpointsHasBeenSet; }
 
     /**
-     * <p>Indicates whether the service manages it's VPC endpoints. Management of the
+     * <p>Indicates whether the service manages its VPC endpoints. Management of the
      * service VPC endpoints using the VPC endpoint API is restricted.</p>
      */
     inline void SetManagesVpcEndpoints(bool value) { m_managesVpcEndpointsHasBeenSet = true; m_managesVpcEndpoints = value; }
 
     /**
-     * <p>Indicates whether the service manages it's VPC endpoints. Management of the
+     * <p>Indicates whether the service manages its VPC endpoints. Management of the
      * service VPC endpoints using the VPC endpoint API is restricted.</p>
      */
     inline ServiceDetail& WithManagesVpcEndpoints(bool value) { SetManagesVpcEndpoints(value); return *this;}
@@ -460,6 +461,49 @@ namespace Model
      */
     inline ServiceDetail& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The verification state of the VPC endpoint service.</p> <p>Consumers of the
+     * endpoint service cannot use the private name when the state is not
+     * <code>verified</code>.</p>
+     */
+    inline const DnsNameState& GetPrivateDnsNameVerificationState() const{ return m_privateDnsNameVerificationState; }
+
+    /**
+     * <p>The verification state of the VPC endpoint service.</p> <p>Consumers of the
+     * endpoint service cannot use the private name when the state is not
+     * <code>verified</code>.</p>
+     */
+    inline bool PrivateDnsNameVerificationStateHasBeenSet() const { return m_privateDnsNameVerificationStateHasBeenSet; }
+
+    /**
+     * <p>The verification state of the VPC endpoint service.</p> <p>Consumers of the
+     * endpoint service cannot use the private name when the state is not
+     * <code>verified</code>.</p>
+     */
+    inline void SetPrivateDnsNameVerificationState(const DnsNameState& value) { m_privateDnsNameVerificationStateHasBeenSet = true; m_privateDnsNameVerificationState = value; }
+
+    /**
+     * <p>The verification state of the VPC endpoint service.</p> <p>Consumers of the
+     * endpoint service cannot use the private name when the state is not
+     * <code>verified</code>.</p>
+     */
+    inline void SetPrivateDnsNameVerificationState(DnsNameState&& value) { m_privateDnsNameVerificationStateHasBeenSet = true; m_privateDnsNameVerificationState = std::move(value); }
+
+    /**
+     * <p>The verification state of the VPC endpoint service.</p> <p>Consumers of the
+     * endpoint service cannot use the private name when the state is not
+     * <code>verified</code>.</p>
+     */
+    inline ServiceDetail& WithPrivateDnsNameVerificationState(const DnsNameState& value) { SetPrivateDnsNameVerificationState(value); return *this;}
+
+    /**
+     * <p>The verification state of the VPC endpoint service.</p> <p>Consumers of the
+     * endpoint service cannot use the private name when the state is not
+     * <code>verified</code>.</p>
+     */
+    inline ServiceDetail& WithPrivateDnsNameVerificationState(DnsNameState&& value) { SetPrivateDnsNameVerificationState(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceName;
@@ -494,6 +538,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    DnsNameState m_privateDnsNameVerificationState;
+    bool m_privateDnsNameVerificationStateHasBeenSet;
   };
 
 } // namespace Model

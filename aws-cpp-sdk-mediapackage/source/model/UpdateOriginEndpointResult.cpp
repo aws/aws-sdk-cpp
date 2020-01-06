@@ -50,6 +50,12 @@ UpdateOriginEndpointResult& UpdateOriginEndpointResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("authorization"))
+  {
+    m_authorization = jsonValue.GetObject("authorization");
+
+  }
+
   if(jsonValue.ValueExists("channelId"))
   {
     m_channelId = jsonValue.GetString("channelId");

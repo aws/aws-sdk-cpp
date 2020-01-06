@@ -124,7 +124,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of SNS topic for the
+     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
      * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
      * ID of the notification.</p> </li> <li> <p>
      * <code>connection-notification-state</code> - The state of the notification
@@ -138,7 +138,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of SNS topic for the
+     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
      * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
      * ID of the notification.</p> </li> <li> <p>
      * <code>connection-notification-state</code> - The state of the notification
@@ -152,7 +152,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of SNS topic for the
+     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
      * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
      * ID of the notification.</p> </li> <li> <p>
      * <code>connection-notification-state</code> - The state of the notification
@@ -166,7 +166,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of SNS topic for the
+     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
      * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
      * ID of the notification.</p> </li> <li> <p>
      * <code>connection-notification-state</code> - The state of the notification
@@ -180,7 +180,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of SNS topic for the
+     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
      * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
      * ID of the notification.</p> </li> <li> <p>
      * <code>connection-notification-state</code> - The state of the notification
@@ -194,7 +194,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of SNS topic for the
+     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
      * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
      * ID of the notification.</p> </li> <li> <p>
      * <code>connection-notification-state</code> - The state of the notification
@@ -208,7 +208,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of SNS topic for the
+     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
      * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
      * ID of the notification.</p> </li> <li> <p>
      * <code>connection-notification-state</code> - The state of the notification
@@ -222,7 +222,7 @@ namespace Model
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
-     * <code>connection-notification-arn</code> - The ARN of SNS topic for the
+     * <code>connection-notification-arn</code> - The ARN of the SNS topic for the
      * notification.</p> </li> <li> <p> <code>connection-notification-id</code> - The
      * ID of the notification.</p> </li> <li> <p>
      * <code>connection-notification-state</code> - The state of the notification

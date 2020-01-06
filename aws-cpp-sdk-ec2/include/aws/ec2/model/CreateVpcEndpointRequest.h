@@ -427,64 +427,64 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline CreateVpcEndpointRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline CreateVpcEndpointRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
@@ -492,10 +492,10 @@ namespace Model
 
 
     /**
-     * <p>(Interface endpoint) Indicate whether to associate a private hosted zone with
-     * the specified VPC. The private hosted zone contains a record set for the default
-     * public DNS name for the service for the Region (for example,
-     * <code>kinesis.us-east-1.amazonaws.com</code>) which resolves to the private IP
+     * <p>(Interface endpoint) Indicates whether to associate a private hosted zone
+     * with the specified VPC. The private hosted zone contains a record set for the
+     * default public DNS name for the service for the Region (for example,
+     * <code>kinesis.us-east-1.amazonaws.com</code>), which resolves to the private IP
      * addresses of the endpoint network interfaces in the VPC. This enables you to
      * make requests to the default public DNS name for the service instead of the
      * public DNS names that are automatically generated by the VPC endpoint
@@ -507,10 +507,10 @@ namespace Model
     inline bool GetPrivateDnsEnabled() const{ return m_privateDnsEnabled; }
 
     /**
-     * <p>(Interface endpoint) Indicate whether to associate a private hosted zone with
-     * the specified VPC. The private hosted zone contains a record set for the default
-     * public DNS name for the service for the Region (for example,
-     * <code>kinesis.us-east-1.amazonaws.com</code>) which resolves to the private IP
+     * <p>(Interface endpoint) Indicates whether to associate a private hosted zone
+     * with the specified VPC. The private hosted zone contains a record set for the
+     * default public DNS name for the service for the Region (for example,
+     * <code>kinesis.us-east-1.amazonaws.com</code>), which resolves to the private IP
      * addresses of the endpoint network interfaces in the VPC. This enables you to
      * make requests to the default public DNS name for the service instead of the
      * public DNS names that are automatically generated by the VPC endpoint
@@ -522,10 +522,10 @@ namespace Model
     inline bool PrivateDnsEnabledHasBeenSet() const { return m_privateDnsEnabledHasBeenSet; }
 
     /**
-     * <p>(Interface endpoint) Indicate whether to associate a private hosted zone with
-     * the specified VPC. The private hosted zone contains a record set for the default
-     * public DNS name for the service for the Region (for example,
-     * <code>kinesis.us-east-1.amazonaws.com</code>) which resolves to the private IP
+     * <p>(Interface endpoint) Indicates whether to associate a private hosted zone
+     * with the specified VPC. The private hosted zone contains a record set for the
+     * default public DNS name for the service for the Region (for example,
+     * <code>kinesis.us-east-1.amazonaws.com</code>), which resolves to the private IP
      * addresses of the endpoint network interfaces in the VPC. This enables you to
      * make requests to the default public DNS name for the service instead of the
      * public DNS names that are automatically generated by the VPC endpoint
@@ -537,10 +537,10 @@ namespace Model
     inline void SetPrivateDnsEnabled(bool value) { m_privateDnsEnabledHasBeenSet = true; m_privateDnsEnabled = value; }
 
     /**
-     * <p>(Interface endpoint) Indicate whether to associate a private hosted zone with
-     * the specified VPC. The private hosted zone contains a record set for the default
-     * public DNS name for the service for the Region (for example,
-     * <code>kinesis.us-east-1.amazonaws.com</code>) which resolves to the private IP
+     * <p>(Interface endpoint) Indicates whether to associate a private hosted zone
+     * with the specified VPC. The private hosted zone contains a record set for the
+     * default public DNS name for the service for the Region (for example,
+     * <code>kinesis.us-east-1.amazonaws.com</code>), which resolves to the private IP
      * addresses of the endpoint network interfaces in the VPC. This enables you to
      * make requests to the default public DNS name for the service instead of the
      * public DNS names that are automatically generated by the VPC endpoint

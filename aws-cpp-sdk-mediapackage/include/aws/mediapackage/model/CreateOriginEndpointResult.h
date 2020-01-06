@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage/model/Authorization.h>
 #include <aws/mediapackage/model/CmafPackage.h>
 #include <aws/mediapackage/model/DashPackage.h>
 #include <aws/mediapackage/model/HlsPackage.h>
@@ -83,6 +84,22 @@ namespace Model
      * The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
      */
     inline CreateOriginEndpointResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    
+    inline const Authorization& GetAuthorization() const{ return m_authorization; }
+
+    
+    inline void SetAuthorization(const Authorization& value) { m_authorization = value; }
+
+    
+    inline void SetAuthorization(Authorization&& value) { m_authorization = std::move(value); }
+
+    
+    inline CreateOriginEndpointResult& WithAuthorization(const Authorization& value) { SetAuthorization(value); return *this;}
+
+    
+    inline CreateOriginEndpointResult& WithAuthorization(Authorization&& value) { SetAuthorization(std::move(value)); return *this;}
 
 
     /**
@@ -528,6 +545,8 @@ If not
   private:
 
     Aws::String m_arn;
+
+    Authorization m_authorization;
 
     Aws::String m_channelId;
 

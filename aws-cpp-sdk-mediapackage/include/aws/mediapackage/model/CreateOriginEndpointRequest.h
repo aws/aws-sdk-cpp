@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/mediapackage/MediaPackageRequest.h>
+#include <aws/mediapackage/model/Authorization.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediapackage/model/CmafPackageCreateOrUpdateParameters.h>
 #include <aws/mediapackage/model/DashPackage.h>
@@ -51,6 +52,25 @@ namespace Model
     inline virtual const char* GetServiceRequestName() const override { return "CreateOriginEndpoint"; }
 
     Aws::String SerializePayload() const override;
+
+
+    
+    inline const Authorization& GetAuthorization() const{ return m_authorization; }
+
+    
+    inline bool AuthorizationHasBeenSet() const { return m_authorizationHasBeenSet; }
+
+    
+    inline void SetAuthorization(const Authorization& value) { m_authorizationHasBeenSet = true; m_authorization = value; }
+
+    
+    inline void SetAuthorization(Authorization&& value) { m_authorizationHasBeenSet = true; m_authorization = std::move(value); }
+
+    
+    inline CreateOriginEndpointRequest& WithAuthorization(const Authorization& value) { SetAuthorization(value); return *this;}
+
+    
+    inline CreateOriginEndpointRequest& WithAuthorization(Authorization&& value) { SetAuthorization(std::move(value)); return *this;}
 
 
     /**
@@ -583,6 +603,9 @@ If not
     inline CreateOriginEndpointRequest& AddWhitelist(const char* value) { m_whitelistHasBeenSet = true; m_whitelist.push_back(value); return *this; }
 
   private:
+
+    Authorization m_authorization;
+    bool m_authorizationHasBeenSet;
 
     Aws::String m_channelId;
     bool m_channelIdHasBeenSet;

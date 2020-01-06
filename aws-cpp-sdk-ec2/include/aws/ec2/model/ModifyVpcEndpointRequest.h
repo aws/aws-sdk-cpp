@@ -529,25 +529,25 @@ namespace Model
 
 
     /**
-     * <p>(Interface endpoint) Indicate whether a private hosted zone is associated
+     * <p>(Interface endpoint) Indicates whether a private hosted zone is associated
      * with the VPC.</p>
      */
     inline bool GetPrivateDnsEnabled() const{ return m_privateDnsEnabled; }
 
     /**
-     * <p>(Interface endpoint) Indicate whether a private hosted zone is associated
+     * <p>(Interface endpoint) Indicates whether a private hosted zone is associated
      * with the VPC.</p>
      */
     inline bool PrivateDnsEnabledHasBeenSet() const { return m_privateDnsEnabledHasBeenSet; }
 
     /**
-     * <p>(Interface endpoint) Indicate whether a private hosted zone is associated
+     * <p>(Interface endpoint) Indicates whether a private hosted zone is associated
      * with the VPC.</p>
      */
     inline void SetPrivateDnsEnabled(bool value) { m_privateDnsEnabledHasBeenSet = true; m_privateDnsEnabled = value; }
 
     /**
-     * <p>(Interface endpoint) Indicate whether a private hosted zone is associated
+     * <p>(Interface endpoint) Indicates whether a private hosted zone is associated
      * with the VPC.</p>
      */
     inline ModifyVpcEndpointRequest& WithPrivateDnsEnabled(bool value) { SetPrivateDnsEnabled(value); return *this;}

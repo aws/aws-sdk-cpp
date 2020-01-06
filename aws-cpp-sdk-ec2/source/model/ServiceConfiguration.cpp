@@ -44,6 +44,7 @@ ServiceConfiguration::ServiceConfiguration() :
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
+    m_privateDnsNameConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -62,6 +63,7 @@ ServiceConfiguration::ServiceConfiguration(const XmlNode& xmlNode) :
     m_networkLoadBalancerArnsHasBeenSet(false),
     m_baseEndpointDnsNamesHasBeenSet(false),
     m_privateDnsNameHasBeenSet(false),
+    m_privateDnsNameConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -157,6 +159,12 @@ ServiceConfiguration& ServiceConfiguration::operator =(const XmlNode& xmlNode)
       m_privateDnsName = Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameNode.GetText());
       m_privateDnsNameHasBeenSet = true;
     }
+    XmlNode privateDnsNameConfigurationNode = resultNode.FirstChild("privateDnsNameConfiguration");
+    if(!privateDnsNameConfigurationNode.IsNull())
+    {
+      m_privateDnsNameConfiguration = privateDnsNameConfigurationNode;
+      m_privateDnsNameConfigurationHasBeenSet = true;
+    }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
@@ -244,6 +252,13 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
       oStream << location << index << locationValue << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
   }
 
+  if(m_privateDnsNameConfigurationHasBeenSet)
+  {
+      Aws::StringStream privateDnsNameConfigurationLocationAndMemberSs;
+      privateDnsNameConfigurationLocationAndMemberSs << location << index << locationValue << ".PrivateDnsNameConfiguration";
+      m_privateDnsNameConfiguration.OutputToStream(oStream, privateDnsNameConfigurationLocationAndMemberSs.str().c_str());
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -316,6 +331,12 @@ void ServiceConfiguration::OutputToStream(Aws::OStream& oStream, const char* loc
   if(m_privateDnsNameHasBeenSet)
   {
       oStream << location << ".PrivateDnsName=" << StringUtils::URLEncode(m_privateDnsName.c_str()) << "&";
+  }
+  if(m_privateDnsNameConfigurationHasBeenSet)
+  {
+      Aws::String privateDnsNameConfigurationLocationAndMember(location);
+      privateDnsNameConfigurationLocationAndMember += ".PrivateDnsNameConfiguration";
+      m_privateDnsNameConfiguration.OutputToStream(oStream, privateDnsNameConfigurationLocationAndMember.c_str());
   }
   if(m_tagsHasBeenSet)
   {

@@ -33,7 +33,9 @@ CreateDocumentClassifierRequest::CreateDocumentClassifierRequest() :
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_mode(DocumentClassifierMode::NOT_SET),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -97,6 +99,11 @@ Aws::String CreateDocumentClassifierRequest::SerializePayload() const
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
 
+  }
+
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("Mode", DocumentClassifierModeMapper::GetNameForDocumentClassifierMode(m_mode));
   }
 
   return payload.View().WriteReadable();

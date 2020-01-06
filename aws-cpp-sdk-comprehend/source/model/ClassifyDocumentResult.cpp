@@ -47,6 +47,15 @@ ClassifyDocumentResult& ClassifyDocumentResult::operator =(const Aws::AmazonWebS
     }
   }
 
+  if(jsonValue.ValueExists("Labels"))
+  {
+    Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
+    for(unsigned labelsIndex = 0; labelsIndex < labelsJsonList.GetLength(); ++labelsIndex)
+    {
+      m_labels.push_back(labelsJsonList[labelsIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

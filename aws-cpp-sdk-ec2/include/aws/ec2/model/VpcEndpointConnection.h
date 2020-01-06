@@ -209,32 +209,32 @@ namespace Model
 
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The date and time that the VPC endpoint was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimestamp() const{ return m_creationTimestamp; }
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The date and time that the VPC endpoint was created.</p>
      */
     inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The date and time that the VPC endpoint was created.</p>
      */
     inline void SetCreationTimestamp(const Aws::Utils::DateTime& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = value; }
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The date and time that the VPC endpoint was created.</p>
      */
     inline void SetCreationTimestamp(Aws::Utils::DateTime&& value) { m_creationTimestampHasBeenSet = true; m_creationTimestamp = std::move(value); }
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The date and time that the VPC endpoint was created.</p>
      */
     inline VpcEndpointConnection& WithCreationTimestamp(const Aws::Utils::DateTime& value) { SetCreationTimestamp(value); return *this;}
 
     /**
-     * <p>The date and time the VPC endpoint was created.</p>
+     * <p>The date and time that the VPC endpoint was created.</p>
      */
     inline VpcEndpointConnection& WithCreationTimestamp(Aws::Utils::DateTime&& value) { SetCreationTimestamp(std::move(value)); return *this;}
 

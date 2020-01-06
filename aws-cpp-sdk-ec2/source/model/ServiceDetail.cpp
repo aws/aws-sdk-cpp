@@ -44,7 +44,9 @@ ServiceDetail::ServiceDetail() :
     m_acceptanceRequiredHasBeenSet(false),
     m_managesVpcEndpoints(false),
     m_managesVpcEndpointsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_privateDnsNameVerificationState(DnsNameState::NOT_SET),
+    m_privateDnsNameVerificationStateHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ ServiceDetail::ServiceDetail(const XmlNode& xmlNode) :
     m_acceptanceRequiredHasBeenSet(false),
     m_managesVpcEndpoints(false),
     m_managesVpcEndpointsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_privateDnsNameVerificationState(DnsNameState::NOT_SET),
+    m_privateDnsNameVerificationStateHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -163,6 +167,12 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode privateDnsNameVerificationStateNode = resultNode.FirstChild("privateDnsNameVerificationState");
+    if(!privateDnsNameVerificationStateNode.IsNull())
+    {
+      m_privateDnsNameVerificationState = DnsNameStateMapper::GetDnsNameStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameVerificationStateNode.GetText()).c_str()).c_str());
+      m_privateDnsNameVerificationStateHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -245,6 +255,11 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location, 
       }
   }
 
+  if(m_privateDnsNameVerificationStateHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PrivateDnsNameVerificationState=" << DnsNameStateMapper::GetNameForDnsNameState(m_privateDnsNameVerificationState) << "&";
+  }
+
 }
 
 void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -312,6 +327,10 @@ void ServiceDetail::OutputToStream(Aws::OStream& oStream, const char* location) 
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_privateDnsNameVerificationStateHasBeenSet)
+  {
+      oStream << location << ".PrivateDnsNameVerificationState=" << DnsNameStateMapper::GetNameForDnsNameState(m_privateDnsNameVerificationState) << "&";
   }
 }
 

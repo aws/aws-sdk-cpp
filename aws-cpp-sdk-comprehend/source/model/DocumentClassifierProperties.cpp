@@ -44,7 +44,9 @@ DocumentClassifierProperties::DocumentClassifierProperties() :
     m_classifierMetadataHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_mode(DocumentClassifierMode::NOT_SET),
+    m_modeHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ DocumentClassifierProperties::DocumentClassifierProperties(JsonView jsonValue) :
     m_classifierMetadataHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
+    m_vpcConfigHasBeenSet(false),
+    m_mode(DocumentClassifierMode::NOT_SET),
+    m_modeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -169,6 +173,13 @@ DocumentClassifierProperties& DocumentClassifierProperties::operator =(JsonView 
     m_vpcConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Mode"))
+  {
+    m_mode = DocumentClassifierModeMapper::GetDocumentClassifierModeForName(jsonValue.GetString("Mode"));
+
+    m_modeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -252,6 +263,11 @@ JsonValue DocumentClassifierProperties::Jsonize() const
   {
    payload.WithObject("VpcConfig", m_vpcConfig.Jsonize());
 
+  }
+
+  if(m_modeHasBeenSet)
+  {
+   payload.WithString("Mode", DocumentClassifierModeMapper::GetNameForDocumentClassifierMode(m_mode));
   }
 
   return payload;

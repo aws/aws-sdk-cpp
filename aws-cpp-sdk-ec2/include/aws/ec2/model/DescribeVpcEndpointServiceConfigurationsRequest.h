@@ -268,7 +268,7 @@ namespace Model
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results of the initial request can be seen by sending another request
      * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000
      * results are returned.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
@@ -277,7 +277,7 @@ namespace Model
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results of the initial request can be seen by sending another request
      * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000
      * results are returned.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
@@ -286,7 +286,7 @@ namespace Model
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results of the initial request can be seen by sending another request
      * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000
      * results are returned.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
@@ -295,7 +295,7 @@ namespace Model
      * <p>The maximum number of results to return for the request in a single page. The
      * remaining results of the initial request can be seen by sending another request
      * with the returned <code>NextToken</code> value. This value can be between 5 and
-     * 1000; if <code>MaxResults</code> is given a value larger than 1000, only 1000
+     * 1,000; if <code>MaxResults</code> is given a value larger than 1,000, only 1,000
      * results are returned.</p>
      */
     inline DescribeVpcEndpointServiceConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}

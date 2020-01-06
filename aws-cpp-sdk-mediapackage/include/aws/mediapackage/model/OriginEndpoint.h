@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage/model/Authorization.h>
 #include <aws/mediapackage/model/CmafPackage.h>
 #include <aws/mediapackage/model/DashPackage.h>
 #include <aws/mediapackage/model/HlsPackage.h>
@@ -93,6 +94,25 @@ namespace Model
      * The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
      */
     inline OriginEndpoint& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    
+    inline const Authorization& GetAuthorization() const{ return m_authorization; }
+
+    
+    inline bool AuthorizationHasBeenSet() const { return m_authorizationHasBeenSet; }
+
+    
+    inline void SetAuthorization(const Authorization& value) { m_authorizationHasBeenSet = true; m_authorization = value; }
+
+    
+    inline void SetAuthorization(Authorization&& value) { m_authorizationHasBeenSet = true; m_authorization = std::move(value); }
+
+    
+    inline OriginEndpoint& WithAuthorization(const Authorization& value) { SetAuthorization(value); return *this;}
+
+    
+    inline OriginEndpoint& WithAuthorization(Authorization&& value) { SetAuthorization(std::move(value)); return *this;}
 
 
     /**
@@ -613,6 +633,9 @@ If not
 
     Aws::String m_arn;
     bool m_arnHasBeenSet;
+
+    Authorization m_authorization;
+    bool m_authorizationHasBeenSet;
 
     Aws::String m_channelId;
     bool m_channelIdHasBeenSet;

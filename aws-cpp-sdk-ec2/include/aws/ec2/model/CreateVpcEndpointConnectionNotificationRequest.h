@@ -122,42 +122,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the endpoint. </p>
+     * <p>The ID of the endpoint.</p>
      */
     inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
 
     /**
-     * <p>The ID of the endpoint. </p>
+     * <p>The ID of the endpoint.</p>
      */
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
 
     /**
-     * <p>The ID of the endpoint. </p>
+     * <p>The ID of the endpoint.</p>
      */
     inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
 
     /**
-     * <p>The ID of the endpoint. </p>
+     * <p>The ID of the endpoint.</p>
      */
     inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
 
     /**
-     * <p>The ID of the endpoint. </p>
+     * <p>The ID of the endpoint.</p>
      */
     inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
 
     /**
-     * <p>The ID of the endpoint. </p>
+     * <p>The ID of the endpoint.</p>
      */
     inline CreateVpcEndpointConnectionNotificationRequest& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
 
     /**
-     * <p>The ID of the endpoint. </p>
+     * <p>The ID of the endpoint.</p>
      */
     inline CreateVpcEndpointConnectionNotificationRequest& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the endpoint. </p>
+     * <p>The ID of the endpoint.</p>
      */
     inline CreateVpcEndpointConnectionNotificationRequest& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
 
@@ -268,64 +268,64 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline CreateVpcEndpointConnectionNotificationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */
     inline CreateVpcEndpointConnectionNotificationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request. For more information, see <a
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a>.</p>
      */

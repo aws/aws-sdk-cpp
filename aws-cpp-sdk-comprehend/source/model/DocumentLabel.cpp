@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/comprehend/model/DocumentClassifierInputDataConfig.h>
+#include <aws/comprehend/model/DocumentLabel.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -28,51 +28,53 @@ namespace Comprehend
 namespace Model
 {
 
-DocumentClassifierInputDataConfig::DocumentClassifierInputDataConfig() : 
-    m_s3UriHasBeenSet(false),
-    m_labelDelimiterHasBeenSet(false)
+DocumentLabel::DocumentLabel() : 
+    m_nameHasBeenSet(false),
+    m_score(0.0),
+    m_scoreHasBeenSet(false)
 {
 }
 
-DocumentClassifierInputDataConfig::DocumentClassifierInputDataConfig(JsonView jsonValue) : 
-    m_s3UriHasBeenSet(false),
-    m_labelDelimiterHasBeenSet(false)
+DocumentLabel::DocumentLabel(JsonView jsonValue) : 
+    m_nameHasBeenSet(false),
+    m_score(0.0),
+    m_scoreHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
-DocumentClassifierInputDataConfig& DocumentClassifierInputDataConfig::operator =(JsonView jsonValue)
+DocumentLabel& DocumentLabel::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("S3Uri"))
+  if(jsonValue.ValueExists("Name"))
   {
-    m_s3Uri = jsonValue.GetString("S3Uri");
+    m_name = jsonValue.GetString("Name");
 
-    m_s3UriHasBeenSet = true;
+    m_nameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("LabelDelimiter"))
+  if(jsonValue.ValueExists("Score"))
   {
-    m_labelDelimiter = jsonValue.GetString("LabelDelimiter");
+    m_score = jsonValue.GetDouble("Score");
 
-    m_labelDelimiterHasBeenSet = true;
+    m_scoreHasBeenSet = true;
   }
 
   return *this;
 }
 
-JsonValue DocumentClassifierInputDataConfig::Jsonize() const
+JsonValue DocumentLabel::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_s3UriHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("S3Uri", m_s3Uri);
+   payload.WithString("Name", m_name);
 
   }
 
-  if(m_labelDelimiterHasBeenSet)
+  if(m_scoreHasBeenSet)
   {
-   payload.WithString("LabelDelimiter", m_labelDelimiter);
+   payload.WithDouble("Score", m_score);
 
   }
 
