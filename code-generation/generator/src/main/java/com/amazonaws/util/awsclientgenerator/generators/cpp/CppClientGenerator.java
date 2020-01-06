@@ -368,7 +368,6 @@ public abstract class CppClientGenerator implements ClientGenerator {
         if (serviceModel.getServiceName().equals("budgets") ||
             serviceModel.getServiceName().equals("cloudfront") ||
             serviceModel.getServiceName().equals("importexport") ||
-            serviceModel.getServiceName().equals("route53") ||
             serviceModel.getServiceName().equals("waf"))
         {
             serviceModel.getMetadata().setGlobalEndpoint(serviceModel.getServiceName() + ".amazonaws.com");
@@ -378,11 +377,22 @@ public abstract class CppClientGenerator implements ClientGenerator {
             endpoints.put("cn-northwest-1", "iam.cn-north-1.amazonaws.com.cn");
             endpoints.put("us-gov-east-1", "iam.us-gov.amazonaws.com");
             endpoints.put("us-gov-west-1", "iam.us-gov.amazonaws.com");
+            endpoints.put("us-iso-east-1", "iam.us-iso-east-1.c2s.ic.gov");
+            endpoints.put("us-isob-east-1", "iam.us-isob-east-1.sc2s.sgov.gov");
             serviceModel.getMetadata().setGlobalEndpoint("iam.amazonaws.com");
+
+        } else if (serviceModel.getServiceName().equals("kms")) {
+            endpoints.put("us-iso-east-1", "kms-fips.us-iso-east-1.c2s.ic.gov");
+            endpoints.put("us-isob-east-1", "kms-fips.us-isob-east-1.sc2s.sgov.gov");
 
         } else if (serviceModel.getServiceName().equals("organizations")) {
             endpoints.put("us-gov-west-1", "organizations.us-gov-west-1.amazonaws.com");
             serviceModel.getMetadata().setGlobalEndpoint("organizations.us-east-1.amazonaws.com");
+
+        } else if (serviceModel.getServiceName().equals("route53")) {
+            endpoints.put("us-gov-west-1", "route53.us-gov.amazonaws.com");
+            endpoints.put("us-iso-east-1", "route53.c2s.ic.gov");
+            serviceModel.getMetadata().setGlobalEndpoint("route53.amazonaws.com");
 
         } else if (serviceModel.getServiceName().equals("sts")) {
              serviceModel.getMetadata().setGlobalEndpoint(null);
