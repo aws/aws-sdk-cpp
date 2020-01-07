@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -69,9 +69,9 @@ namespace {
 
 static const char BASE_KINESIS_STREAM_NAME[] = "AWSNativeSDKIntegrationTest";
 static const char BASE_SIMPLE_FUNCTION[] = "TestSimple";
-static const char BASE_HANDLED_ERROR_FUNCTION[] = "TestHandledError";
+static const char BASE_UNHANDLED_ERROR_FUNCTION[] = "TestUnhandledError";
 static const char SIMPLE_FUNCTION_CODE[] = RESOURCES_DIR "/succeed.zip";
-static const char HANDLED_ERROR_FUNCTION_CODE[] = RESOURCES_DIR "/handled.zip";
+static const char UNHANDLED_ERROR_FUNCTION_CODE[] = RESOURCES_DIR "/unhandled.zip";
 static const char ALLOCATION_TAG[] = "FunctionTest";
 static const char BASE_IAM_ROLE_NAME[] = "AWSNativeSDKLambdaIntegrationTestRole";
 
@@ -110,7 +110,7 @@ protected:
 
     void TearDown()
     {
-        DeleteFunction(BuildResourceName(BASE_SIMPLE_FUNCTION)); 
+        DeleteFunction(BuildResourceName(BASE_SIMPLE_FUNCTION));
     }
 
     static void SetUpTestCase()
@@ -169,8 +169,8 @@ protected:
 
             auto functions = listFunctionsOutcome.GetResult().GetFunctions();
 
-            auto iter = std::find_if(functions.cbegin(), 
-                                     functions.cend(), 
+            auto iter = std::find_if(functions.cbegin(),
+                                     functions.cend(),
                                      [=](const FunctionConfiguration& function){ return function.GetFunctionName() == functionName; });
 
             switch(status)
@@ -190,7 +190,7 @@ protected:
                 break;
             }
 
-            std::this_thread::sleep_for(std::chrono::seconds(1));	    
+            std::this_thread::sleep_for(std::chrono::seconds(1));
         }
     }
 
@@ -199,33 +199,33 @@ protected:
         DeleteFunctionRequest deleteFunctionRequest;
         deleteFunctionRequest.SetFunctionName(functionName);
         bool done = false;
-        while(!done)    
-        {    
-            DeleteFunctionOutcome deleteFunctionOutcome = m_client->DeleteFunction(deleteFunctionRequest);    
-            if (deleteFunctionOutcome.IsSuccess())    
-            {    
-                done = true;    
-            }    
-            else    
-            {    
-                //Look at the specific error, from here:  http://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html    
-                //Some we will want to handle by aborting, others we can continue to spin on.    
-                auto errCode = deleteFunctionOutcome.GetError().GetErrorType();    
-                switch (errCode)    
-                {    
-                    case LambdaErrors::RESOURCE_NOT_FOUND:    
-                        //The function was already deleted or not present.    
-                        done = true;    
-                        break;    
-                    case LambdaErrors::TOO_MANY_REQUESTS:    
-                        //This is OK; Keep spinning.    
-                        break;    
-                    default:    
-                        //Something bad happened, and we can't commit to this being successful.    
-                        FAIL();    
-                        break;    
-                }    
-            }    
+        while(!done)
+        {
+            DeleteFunctionOutcome deleteFunctionOutcome = m_client->DeleteFunction(deleteFunctionRequest);
+            if (deleteFunctionOutcome.IsSuccess())
+            {
+                done = true;
+            }
+            else
+            {
+                //Look at the specific error, from here:  http://docs.aws.amazon.com/lambda/latest/dg/API_DeleteFunction.html
+                //Some we will want to handle by aborting, others we can continue to spin on.
+                auto errCode = deleteFunctionOutcome.GetError().GetErrorType();
+                switch (errCode)
+                {
+                    case LambdaErrors::RESOURCE_NOT_FOUND:
+                        //The function was already deleted or not present.
+                        done = true;
+                        break;
+                    case LambdaErrors::TOO_MANY_REQUESTS:
+                        //This is OK; Keep spinning.
+                        break;
+                    default:
+                        //Something bad happened, and we can't commit to this being successful.
+                        FAIL();
+                        break;
+                }
+            }
         }
     }
 
@@ -248,14 +248,14 @@ protected:
 
         functionCode.SetZipFile(Aws::Utils::ByteBuffer((unsigned char*)buffer.str().c_str(), buffer.str().length()));
         createFunctionRequest.SetCode(functionCode);
-        createFunctionRequest.SetRuntime(Aws::Lambda::Model::Runtime::nodejs8_10);
+        createFunctionRequest.SetRuntime(Aws::Lambda::Model::Runtime::nodejs12_x);
 
         CreateFunctionOutcome createFunctionOutcome = m_client->CreateFunction(createFunctionRequest);
         ASSERT_TRUE(createFunctionOutcome.IsSuccess());
         ASSERT_EQ(functionName,createFunctionOutcome.GetResult().GetFunctionName());
         ASSERT_EQ("test.handler",createFunctionOutcome.GetResult().GetHandler());
         ASSERT_EQ(roleARN,createFunctionOutcome.GetResult().GetRole());
-        ASSERT_EQ(Aws::Lambda::Model::Runtime::nodejs8_10, createFunctionOutcome.GetResult().GetRuntime());
+        ASSERT_EQ(Aws::Lambda::Model::Runtime::nodejs12_x, createFunctionOutcome.GetResult().GetRuntime());
         functionArnMapping[functionName] = createFunctionOutcome.GetResult().GetFunctionArn();
 
         WaitForFunctionStatus(functionName, ResourceStatusType::READY);
@@ -298,7 +298,7 @@ TEST_F(FunctionTest, TestGetFunction)
     EXPECT_TRUE(getFunctionOutcome.IsSuccess());
 
     GetFunctionResult getFunctionResult = getFunctionOutcome.GetResult();
-    EXPECT_EQ(Runtime::nodejs8_10, getFunctionResult.GetConfiguration().GetRuntime());
+    EXPECT_EQ(Runtime::nodejs12_x, getFunctionResult.GetConfiguration().GetRuntime());
     EXPECT_EQ("test.handler",getFunctionResult.GetConfiguration().GetHandler());
     EXPECT_EQ(simpleFunctionName,getFunctionResult.GetConfiguration().GetFunctionName());
     //Just see that is looks like an aws url
@@ -312,11 +312,11 @@ TEST_F(FunctionTest, TestGetFunctionConfiguration)
 
     GetFunctionConfigurationRequest getFunctionConfigurationRequest;
     getFunctionConfigurationRequest.SetFunctionName(simpleFunctionName);
-    GetFunctionConfigurationOutcome getFunctionConfigurationOutcome = m_client->GetFunctionConfiguration(getFunctionConfigurationRequest); 
+    GetFunctionConfigurationOutcome getFunctionConfigurationOutcome = m_client->GetFunctionConfiguration(getFunctionConfigurationRequest);
     EXPECT_TRUE(getFunctionConfigurationOutcome.IsSuccess());
 
     GetFunctionConfigurationResult getFunctionConfigurationResult = getFunctionConfigurationOutcome.GetResult();
-    EXPECT_EQ(Runtime::nodejs8_10, getFunctionConfigurationResult.GetRuntime());
+    EXPECT_EQ(Runtime::nodejs12_x, getFunctionConfigurationResult.GetRuntime());
     EXPECT_EQ("test.handler",getFunctionConfigurationResult.GetHandler());
     EXPECT_EQ(simpleFunctionName,getFunctionConfigurationResult.GetFunctionName());
 }
@@ -400,12 +400,12 @@ TEST_F(FunctionTest, TestInvokeSync)
 }
 
 
-TEST_F(FunctionTest, TestInvokeSyncHandledFunctionError)
+TEST_F(FunctionTest, TestInvokeSyncUnhandledFunctionError)
 {
-    CreateFunction(BuildResourceName(BASE_HANDLED_ERROR_FUNCTION), HANDLED_ERROR_FUNCTION_CODE);
+    CreateFunction(BuildResourceName(BASE_UNHANDLED_ERROR_FUNCTION), UNHANDLED_ERROR_FUNCTION_CODE);
 
     InvokeRequest invokeRequest;
-    invokeRequest.SetFunctionName(BuildResourceName(BASE_HANDLED_ERROR_FUNCTION));
+    invokeRequest.SetFunctionName(BuildResourceName(BASE_UNHANDLED_ERROR_FUNCTION));
     invokeRequest.SetInvocationType(InvocationType::RequestResponse);
     invokeRequest.SetContentType("application/javascript");
     invokeRequest.SetLogType(LogType::Tail);
@@ -422,9 +422,9 @@ TEST_F(FunctionTest, TestInvokeSyncHandledFunctionError)
     EXPECT_EQ(200,result.GetStatusCode());
 
     //This is the same as the last test, but we should have a FunctionError
-    EXPECT_EQ("Handled", result.GetFunctionError());
+    EXPECT_EQ("Unhandled", result.GetFunctionError());
 
-    DeleteFunction(BuildResourceName(BASE_HANDLED_ERROR_FUNCTION));
+    DeleteFunction(BuildResourceName(BASE_UNHANDLED_ERROR_FUNCTION));
 }
 
 TEST_F(FunctionTest, TestPermissions)
@@ -464,7 +464,7 @@ TEST_F(FunctionTest, TestPermissions)
     auto removePermissionOutcome = m_client->RemovePermission(removePermissionRequest);
     EXPECT_TRUE(removePermissionOutcome.IsSuccess());
 
-    
+
     auto getRemovedPolicyOutcome = m_client->GetPolicy(getPolicyRequest);
     //lambda used to return an empty string here, now it doesn't but we aren't entirely sure if this is the expected behavior
     //or a regression. For now just handle both gracefully.
@@ -481,7 +481,7 @@ TEST_F(FunctionTest, TestPermissions)
     }
 }
 
-TEST_F(FunctionTest, TestEventSources) 
+TEST_F(FunctionTest, TestEventSources)
 {
     Aws::String simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
 
