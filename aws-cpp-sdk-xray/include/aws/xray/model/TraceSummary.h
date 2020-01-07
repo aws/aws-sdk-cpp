@@ -169,43 +169,43 @@ namespace Model
 
 
     /**
-     * <p>One or more of the segment documents has a 500 series error.</p>
+     * <p>The root segment document has a 500 series error.</p>
      */
     inline bool GetHasFault() const{ return m_hasFault; }
 
     /**
-     * <p>One or more of the segment documents has a 500 series error.</p>
+     * <p>The root segment document has a 500 series error.</p>
      */
     inline bool HasFaultHasBeenSet() const { return m_hasFaultHasBeenSet; }
 
     /**
-     * <p>One or more of the segment documents has a 500 series error.</p>
+     * <p>The root segment document has a 500 series error.</p>
      */
     inline void SetHasFault(bool value) { m_hasFaultHasBeenSet = true; m_hasFault = value; }
 
     /**
-     * <p>One or more of the segment documents has a 500 series error.</p>
+     * <p>The root segment document has a 500 series error.</p>
      */
     inline TraceSummary& WithHasFault(bool value) { SetHasFault(value); return *this;}
 
 
     /**
-     * <p>One or more of the segment documents has a 400 series error.</p>
+     * <p>The root segment document has a 400 series error.</p>
      */
     inline bool GetHasError() const{ return m_hasError; }
 
     /**
-     * <p>One or more of the segment documents has a 400 series error.</p>
+     * <p>The root segment document has a 400 series error.</p>
      */
     inline bool HasErrorHasBeenSet() const { return m_hasErrorHasBeenSet; }
 
     /**
-     * <p>One or more of the segment documents has a 400 series error.</p>
+     * <p>The root segment document has a 400 series error.</p>
      */
     inline void SetHasError(bool value) { m_hasErrorHasBeenSet = true; m_hasError = value; }
 
     /**
-     * <p>One or more of the segment documents has a 400 series error.</p>
+     * <p>The root segment document has a 400 series error.</p>
      */
     inline TraceSummary& WithHasError(bool value) { SetHasError(value); return *this;}
 

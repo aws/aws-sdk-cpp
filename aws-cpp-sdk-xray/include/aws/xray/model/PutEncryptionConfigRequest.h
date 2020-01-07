@@ -47,9 +47,9 @@ namespace Model
      * <p>An AWS KMS customer master key (CMK) in one of the following formats:</p>
      * <ul> <li> <p> <b>Alias</b> - The name of the key. For example,
      * <code>alias/MyKey</code>.</p> </li> <li> <p> <b>Key ID</b> - The KMS key ID of
-     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.</p>
-     * </li> <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or
-     * alias. For example,
+     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS
+     * X-Ray does not support asymmetric CMKs.</p> </li> <li> <p> <b>ARN</b> - The full
+     * Amazon Resource Name of the key ID or alias. For example,
      * <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
      * Use this format to specify a key in a different account.</p> </li> </ul> <p>Omit
      * this key if you set <code>Type</code> to <code>NONE</code>.</p>
@@ -60,9 +60,9 @@ namespace Model
      * <p>An AWS KMS customer master key (CMK) in one of the following formats:</p>
      * <ul> <li> <p> <b>Alias</b> - The name of the key. For example,
      * <code>alias/MyKey</code>.</p> </li> <li> <p> <b>Key ID</b> - The KMS key ID of
-     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.</p>
-     * </li> <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or
-     * alias. For example,
+     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS
+     * X-Ray does not support asymmetric CMKs.</p> </li> <li> <p> <b>ARN</b> - The full
+     * Amazon Resource Name of the key ID or alias. For example,
      * <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
      * Use this format to specify a key in a different account.</p> </li> </ul> <p>Omit
      * this key if you set <code>Type</code> to <code>NONE</code>.</p>
@@ -73,9 +73,9 @@ namespace Model
      * <p>An AWS KMS customer master key (CMK) in one of the following formats:</p>
      * <ul> <li> <p> <b>Alias</b> - The name of the key. For example,
      * <code>alias/MyKey</code>.</p> </li> <li> <p> <b>Key ID</b> - The KMS key ID of
-     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.</p>
-     * </li> <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or
-     * alias. For example,
+     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS
+     * X-Ray does not support asymmetric CMKs.</p> </li> <li> <p> <b>ARN</b> - The full
+     * Amazon Resource Name of the key ID or alias. For example,
      * <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
      * Use this format to specify a key in a different account.</p> </li> </ul> <p>Omit
      * this key if you set <code>Type</code> to <code>NONE</code>.</p>
@@ -86,9 +86,9 @@ namespace Model
      * <p>An AWS KMS customer master key (CMK) in one of the following formats:</p>
      * <ul> <li> <p> <b>Alias</b> - The name of the key. For example,
      * <code>alias/MyKey</code>.</p> </li> <li> <p> <b>Key ID</b> - The KMS key ID of
-     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.</p>
-     * </li> <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or
-     * alias. For example,
+     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS
+     * X-Ray does not support asymmetric CMKs.</p> </li> <li> <p> <b>ARN</b> - The full
+     * Amazon Resource Name of the key ID or alias. For example,
      * <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
      * Use this format to specify a key in a different account.</p> </li> </ul> <p>Omit
      * this key if you set <code>Type</code> to <code>NONE</code>.</p>
@@ -99,9 +99,9 @@ namespace Model
      * <p>An AWS KMS customer master key (CMK) in one of the following formats:</p>
      * <ul> <li> <p> <b>Alias</b> - The name of the key. For example,
      * <code>alias/MyKey</code>.</p> </li> <li> <p> <b>Key ID</b> - The KMS key ID of
-     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.</p>
-     * </li> <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or
-     * alias. For example,
+     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS
+     * X-Ray does not support asymmetric CMKs.</p> </li> <li> <p> <b>ARN</b> - The full
+     * Amazon Resource Name of the key ID or alias. For example,
      * <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
      * Use this format to specify a key in a different account.</p> </li> </ul> <p>Omit
      * this key if you set <code>Type</code> to <code>NONE</code>.</p>
@@ -112,9 +112,9 @@ namespace Model
      * <p>An AWS KMS customer master key (CMK) in one of the following formats:</p>
      * <ul> <li> <p> <b>Alias</b> - The name of the key. For example,
      * <code>alias/MyKey</code>.</p> </li> <li> <p> <b>Key ID</b> - The KMS key ID of
-     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.</p>
-     * </li> <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or
-     * alias. For example,
+     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS
+     * X-Ray does not support asymmetric CMKs.</p> </li> <li> <p> <b>ARN</b> - The full
+     * Amazon Resource Name of the key ID or alias. For example,
      * <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
      * Use this format to specify a key in a different account.</p> </li> </ul> <p>Omit
      * this key if you set <code>Type</code> to <code>NONE</code>.</p>
@@ -125,9 +125,9 @@ namespace Model
      * <p>An AWS KMS customer master key (CMK) in one of the following formats:</p>
      * <ul> <li> <p> <b>Alias</b> - The name of the key. For example,
      * <code>alias/MyKey</code>.</p> </li> <li> <p> <b>Key ID</b> - The KMS key ID of
-     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.</p>
-     * </li> <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or
-     * alias. For example,
+     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS
+     * X-Ray does not support asymmetric CMKs.</p> </li> <li> <p> <b>ARN</b> - The full
+     * Amazon Resource Name of the key ID or alias. For example,
      * <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
      * Use this format to specify a key in a different account.</p> </li> </ul> <p>Omit
      * this key if you set <code>Type</code> to <code>NONE</code>.</p>
@@ -138,9 +138,9 @@ namespace Model
      * <p>An AWS KMS customer master key (CMK) in one of the following formats:</p>
      * <ul> <li> <p> <b>Alias</b> - The name of the key. For example,
      * <code>alias/MyKey</code>.</p> </li> <li> <p> <b>Key ID</b> - The KMS key ID of
-     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.</p>
-     * </li> <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or
-     * alias. For example,
+     * the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. AWS
+     * X-Ray does not support asymmetric CMKs.</p> </li> <li> <p> <b>ARN</b> - The full
+     * Amazon Resource Name of the key ID or alias. For example,
      * <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>.
      * Use this format to specify a key in a different account.</p> </li> </ul> <p>Omit
      * this key if you set <code>Type</code> to <code>NONE</code>.</p>

@@ -1149,6 +1149,95 @@ namespace Model
 
 
     /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     * overrides the one specified in the build project. The CMK key encrypts the build
+     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * the build output artifacts if your service role has permission to that key. </p>
+     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
+     * </code>).</p>
+     */
+    inline const Aws::String& GetEncryptionKeyOverride() const{ return m_encryptionKeyOverride; }
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     * overrides the one specified in the build project. The CMK key encrypts the build
+     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * the build output artifacts if your service role has permission to that key. </p>
+     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
+     * </code>).</p>
+     */
+    inline bool EncryptionKeyOverrideHasBeenSet() const { return m_encryptionKeyOverrideHasBeenSet; }
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     * overrides the one specified in the build project. The CMK key encrypts the build
+     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * the build output artifacts if your service role has permission to that key. </p>
+     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
+     * </code>).</p>
+     */
+    inline void SetEncryptionKeyOverride(const Aws::String& value) { m_encryptionKeyOverrideHasBeenSet = true; m_encryptionKeyOverride = value; }
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     * overrides the one specified in the build project. The CMK key encrypts the build
+     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * the build output artifacts if your service role has permission to that key. </p>
+     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
+     * </code>).</p>
+     */
+    inline void SetEncryptionKeyOverride(Aws::String&& value) { m_encryptionKeyOverrideHasBeenSet = true; m_encryptionKeyOverride = std::move(value); }
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     * overrides the one specified in the build project. The CMK key encrypts the build
+     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * the build output artifacts if your service role has permission to that key. </p>
+     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
+     * </code>).</p>
+     */
+    inline void SetEncryptionKeyOverride(const char* value) { m_encryptionKeyOverrideHasBeenSet = true; m_encryptionKeyOverride.assign(value); }
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     * overrides the one specified in the build project. The CMK key encrypts the build
+     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * the build output artifacts if your service role has permission to that key. </p>
+     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
+     * </code>).</p>
+     */
+    inline StartBuildRequest& WithEncryptionKeyOverride(const Aws::String& value) { SetEncryptionKeyOverride(value); return *this;}
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     * overrides the one specified in the build project. The CMK key encrypts the build
+     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * the build output artifacts if your service role has permission to that key. </p>
+     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
+     * </code>).</p>
+     */
+    inline StartBuildRequest& WithEncryptionKeyOverride(Aws::String&& value) { SetEncryptionKeyOverride(std::move(value)); return *this;}
+
+    /**
+     * <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that
+     * overrides the one specified in the build project. The CMK key encrypts the build
+     * output artifacts.</p> <note> <p> You can use a cross-account KMS key to encrypt
+     * the build output artifacts if your service role has permission to that key. </p>
+     * </note> <p>You can specify either the Amazon Resource Name (ARN) of the CMK or,
+     * if available, the CMK's alias (using the format <code>alias/<i>alias-name</i>
+     * </code>).</p>
+     */
+    inline StartBuildRequest& WithEncryptionKeyOverride(const char* value) { SetEncryptionKeyOverride(value); return *this;}
+
+
+    /**
      * <p>A unique, case sensitive identifier you provide to ensure the idempotency of
      * the StartBuild request. The token is included in the StartBuild request and is
      * valid for 12 hours. If you repeat the StartBuild request with the same token,
@@ -1426,6 +1515,9 @@ namespace Model
 
     int m_queuedTimeoutInMinutesOverride;
     bool m_queuedTimeoutInMinutesOverrideHasBeenSet;
+
+    Aws::String m_encryptionKeyOverride;
+    bool m_encryptionKeyOverrideHasBeenSet;
 
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;

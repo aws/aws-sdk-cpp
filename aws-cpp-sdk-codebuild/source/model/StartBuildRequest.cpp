@@ -56,6 +56,7 @@ StartBuildRequest::StartBuildRequest() :
     m_timeoutInMinutesOverrideHasBeenSet(false),
     m_queuedTimeoutInMinutesOverride(0),
     m_queuedTimeoutInMinutesOverrideHasBeenSet(false),
+    m_encryptionKeyOverrideHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false),
     m_logsConfigOverrideHasBeenSet(false),
     m_registryCredentialOverrideHasBeenSet(false),
@@ -226,6 +227,12 @@ Aws::String StartBuildRequest::SerializePayload() const
   if(m_queuedTimeoutInMinutesOverrideHasBeenSet)
   {
    payload.WithInteger("queuedTimeoutInMinutesOverride", m_queuedTimeoutInMinutesOverride);
+
+  }
+
+  if(m_encryptionKeyOverrideHasBeenSet)
+  {
+   payload.WithString("encryptionKeyOverride", m_encryptionKeyOverride);
 
   }
 

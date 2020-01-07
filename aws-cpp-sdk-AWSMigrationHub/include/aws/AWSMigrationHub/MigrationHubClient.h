@@ -30,6 +30,7 @@
 #include <aws/AWSMigrationHub/model/DisassociateCreatedArtifactResult.h>
 #include <aws/AWSMigrationHub/model/DisassociateDiscoveredResourceResult.h>
 #include <aws/AWSMigrationHub/model/ImportMigrationTaskResult.h>
+#include <aws/AWSMigrationHub/model/ListApplicationStatesResult.h>
 #include <aws/AWSMigrationHub/model/ListCreatedArtifactsResult.h>
 #include <aws/AWSMigrationHub/model/ListDiscoveredResourcesResult.h>
 #include <aws/AWSMigrationHub/model/ListMigrationTasksResult.h>
@@ -85,6 +86,7 @@ namespace Model
         class DisassociateCreatedArtifactRequest;
         class DisassociateDiscoveredResourceRequest;
         class ImportMigrationTaskRequest;
+        class ListApplicationStatesRequest;
         class ListCreatedArtifactsRequest;
         class ListDiscoveredResourcesRequest;
         class ListMigrationTasksRequest;
@@ -102,6 +104,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateCreatedArtifactResult, Aws::Client::AWSError<MigrationHubErrors>> DisassociateCreatedArtifactOutcome;
         typedef Aws::Utils::Outcome<DisassociateDiscoveredResourceResult, Aws::Client::AWSError<MigrationHubErrors>> DisassociateDiscoveredResourceOutcome;
         typedef Aws::Utils::Outcome<ImportMigrationTaskResult, Aws::Client::AWSError<MigrationHubErrors>> ImportMigrationTaskOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationStatesResult, Aws::Client::AWSError<MigrationHubErrors>> ListApplicationStatesOutcome;
         typedef Aws::Utils::Outcome<ListCreatedArtifactsResult, Aws::Client::AWSError<MigrationHubErrors>> ListCreatedArtifactsOutcome;
         typedef Aws::Utils::Outcome<ListDiscoveredResourcesResult, Aws::Client::AWSError<MigrationHubErrors>> ListDiscoveredResourcesOutcome;
         typedef Aws::Utils::Outcome<ListMigrationTasksResult, Aws::Client::AWSError<MigrationHubErrors>> ListMigrationTasksOutcome;
@@ -119,6 +122,7 @@ namespace Model
         typedef std::future<DisassociateCreatedArtifactOutcome> DisassociateCreatedArtifactOutcomeCallable;
         typedef std::future<DisassociateDiscoveredResourceOutcome> DisassociateDiscoveredResourceOutcomeCallable;
         typedef std::future<ImportMigrationTaskOutcome> ImportMigrationTaskOutcomeCallable;
+        typedef std::future<ListApplicationStatesOutcome> ListApplicationStatesOutcomeCallable;
         typedef std::future<ListCreatedArtifactsOutcome> ListCreatedArtifactsOutcomeCallable;
         typedef std::future<ListDiscoveredResourcesOutcome> ListDiscoveredResourcesOutcomeCallable;
         typedef std::future<ListMigrationTasksOutcome> ListMigrationTasksOutcomeCallable;
@@ -139,6 +143,7 @@ namespace Model
     typedef std::function<void(const MigrationHubClient*, const Model::DisassociateCreatedArtifactRequest&, const Model::DisassociateCreatedArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateCreatedArtifactResponseReceivedHandler;
     typedef std::function<void(const MigrationHubClient*, const Model::DisassociateDiscoveredResourceRequest&, const Model::DisassociateDiscoveredResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateDiscoveredResourceResponseReceivedHandler;
     typedef std::function<void(const MigrationHubClient*, const Model::ImportMigrationTaskRequest&, const Model::ImportMigrationTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportMigrationTaskResponseReceivedHandler;
+    typedef std::function<void(const MigrationHubClient*, const Model::ListApplicationStatesRequest&, const Model::ListApplicationStatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationStatesResponseReceivedHandler;
     typedef std::function<void(const MigrationHubClient*, const Model::ListCreatedArtifactsRequest&, const Model::ListCreatedArtifactsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCreatedArtifactsResponseReceivedHandler;
     typedef std::function<void(const MigrationHubClient*, const Model::ListDiscoveredResourcesRequest&, const Model::ListDiscoveredResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDiscoveredResourcesResponseReceivedHandler;
     typedef std::function<void(const MigrationHubClient*, const Model::ListMigrationTasksRequest&, const Model::ListMigrationTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMigrationTasksResponseReceivedHandler;
@@ -551,6 +556,37 @@ namespace Model
         virtual void ImportMigrationTaskAsync(const Model::ImportMigrationTaskRequest& request, const ImportMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists all the migration statuses for your applications. If you use the
+         * optional <code>ApplicationIds</code> parameter, only the migration statuses for
+         * those applications will be returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListApplicationStates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationStatesOutcome ListApplicationStates(const Model::ListApplicationStatesRequest& request) const;
+
+        /**
+         * <p>Lists all the migration statuses for your applications. If you use the
+         * optional <code>ApplicationIds</code> parameter, only the migration statuses for
+         * those applications will be returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListApplicationStates">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListApplicationStatesOutcomeCallable ListApplicationStatesCallable(const Model::ListApplicationStatesRequest& request) const;
+
+        /**
+         * <p>Lists all the migration statuses for your applications. If you use the
+         * optional <code>ApplicationIds</code> parameter, only the migration statuses for
+         * those applications will be returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/AWSMigrationHub-2017-05-31/ListApplicationStates">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListApplicationStatesAsync(const Model::ListApplicationStatesRequest& request, const ListApplicationStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the created artifacts attached to a given migration task in an update
          * stream. This API has the following traits:</p> <ul> <li> <p>Gets the list of the
          * created artifacts while migration is taking place.</p> </li> <li> <p>Shows the
@@ -849,6 +885,7 @@ namespace Model
         void DisassociateCreatedArtifactAsyncHelper(const Model::DisassociateCreatedArtifactRequest& request, const DisassociateCreatedArtifactResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateDiscoveredResourceAsyncHelper(const Model::DisassociateDiscoveredResourceRequest& request, const DisassociateDiscoveredResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportMigrationTaskAsyncHelper(const Model::ImportMigrationTaskRequest& request, const ImportMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListApplicationStatesAsyncHelper(const Model::ListApplicationStatesRequest& request, const ListApplicationStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListCreatedArtifactsAsyncHelper(const Model::ListCreatedArtifactsRequest& request, const ListCreatedArtifactsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDiscoveredResourcesAsyncHelper(const Model::ListDiscoveredResourcesRequest& request, const ListDiscoveredResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListMigrationTasksAsyncHelper(const Model::ListMigrationTasksRequest& request, const ListMigrationTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

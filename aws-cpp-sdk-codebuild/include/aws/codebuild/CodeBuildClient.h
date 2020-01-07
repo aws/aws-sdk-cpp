@@ -258,13 +258,15 @@ namespace Model
    * and where to store the build output. A <i>build environment</i> is a
    * representation of operating system, programming language runtime, and tools that
    * AWS CodeBuild uses to run a build. You can add tags to build projects to help
-   * manage your resources and costs.</p> </li> <li> <p> <code>CreateProject</code>:
-   * Creates a build project.</p> </li> <li> <p> <code>CreateReportGroup</code>:
-   * Creates a report group. A report group contains a collection of reports. </p>
-   * </li> <li> <p> <code>CreateWebhook</code>: For an existing AWS CodeBuild build
-   * project that has its source code stored in a GitHub or Bitbucket repository,
-   * enables AWS CodeBuild to start rebuilding the source code every time a code
-   * change is pushed to the repository.</p> </li> <li> <p>
+   * manage your resources and costs.</p> </li> <li> <p>
+   * <code>BatchGetReportGroups</code>: Returns an array of report groups. </p> </li>
+   * <li> <p> <code>BatchGetReports</code>: Returns an array of reports. </p> </li>
+   * <li> <p> <code>CreateProject</code>: Creates a build project.</p> </li> <li> <p>
+   * <code>CreateReportGroup</code>: Creates a report group. A report group contains
+   * a collection of reports. </p> </li> <li> <p> <code>CreateWebhook</code>: For an
+   * existing AWS CodeBuild build project that has its source code stored in a GitHub
+   * or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source
+   * code every time a code change is pushed to the repository.</p> </li> <li> <p>
    * <code>DeleteProject</code>: Deletes a build project.</p> </li> <li> <p>
    * <code>DeleteReport</code>: Deletes a report. </p> </li> <li> <p>
    * <code>DeleteReportGroup</code>: Deletes a report group. </p> </li> <li> <p>

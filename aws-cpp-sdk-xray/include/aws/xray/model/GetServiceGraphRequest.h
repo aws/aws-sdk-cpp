@@ -188,42 +188,42 @@ namespace Model
 
 
     /**
-     * <p>Pagination token. Not used.</p>
+     * <p>Pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Pagination token. Not used.</p>
+     * <p>Pagination token.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>Pagination token. Not used.</p>
+     * <p>Pagination token.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>Pagination token. Not used.</p>
+     * <p>Pagination token.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>Pagination token. Not used.</p>
+     * <p>Pagination token.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>Pagination token. Not used.</p>
+     * <p>Pagination token.</p>
      */
     inline GetServiceGraphRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Pagination token. Not used.</p>
+     * <p>Pagination token.</p>
      */
     inline GetServiceGraphRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Pagination token. Not used.</p>
+     * <p>Pagination token.</p>
      */
     inline GetServiceGraphRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

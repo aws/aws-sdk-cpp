@@ -46,43 +46,43 @@ namespace Model
 
 
     /**
-     * <p>Trace IDs and metadata for traces that were found in the specified time
+     * <p>Trace IDs and annotations for traces that were found in the specified time
      * frame.</p>
      */
     inline const Aws::Vector<TraceSummary>& GetTraceSummaries() const{ return m_traceSummaries; }
 
     /**
-     * <p>Trace IDs and metadata for traces that were found in the specified time
+     * <p>Trace IDs and annotations for traces that were found in the specified time
      * frame.</p>
      */
     inline void SetTraceSummaries(const Aws::Vector<TraceSummary>& value) { m_traceSummaries = value; }
 
     /**
-     * <p>Trace IDs and metadata for traces that were found in the specified time
+     * <p>Trace IDs and annotations for traces that were found in the specified time
      * frame.</p>
      */
     inline void SetTraceSummaries(Aws::Vector<TraceSummary>&& value) { m_traceSummaries = std::move(value); }
 
     /**
-     * <p>Trace IDs and metadata for traces that were found in the specified time
+     * <p>Trace IDs and annotations for traces that were found in the specified time
      * frame.</p>
      */
     inline GetTraceSummariesResult& WithTraceSummaries(const Aws::Vector<TraceSummary>& value) { SetTraceSummaries(value); return *this;}
 
     /**
-     * <p>Trace IDs and metadata for traces that were found in the specified time
+     * <p>Trace IDs and annotations for traces that were found in the specified time
      * frame.</p>
      */
     inline GetTraceSummariesResult& WithTraceSummaries(Aws::Vector<TraceSummary>&& value) { SetTraceSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>Trace IDs and metadata for traces that were found in the specified time
+     * <p>Trace IDs and annotations for traces that were found in the specified time
      * frame.</p>
      */
     inline GetTraceSummariesResult& AddTraceSummaries(const TraceSummary& value) { m_traceSummaries.push_back(value); return *this; }
 
     /**
-     * <p>Trace IDs and metadata for traces that were found in the specified time
+     * <p>Trace IDs and annotations for traces that were found in the specified time
      * frame.</p>
      */
     inline GetTraceSummariesResult& AddTraceSummaries(TraceSummary&& value) { m_traceSummaries.push_back(std::move(value)); return *this; }

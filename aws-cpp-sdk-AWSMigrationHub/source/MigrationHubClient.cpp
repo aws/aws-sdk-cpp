@@ -39,6 +39,7 @@
 #include <aws/AWSMigrationHub/model/DisassociateCreatedArtifactRequest.h>
 #include <aws/AWSMigrationHub/model/DisassociateDiscoveredResourceRequest.h>
 #include <aws/AWSMigrationHub/model/ImportMigrationTaskRequest.h>
+#include <aws/AWSMigrationHub/model/ListApplicationStatesRequest.h>
 #include <aws/AWSMigrationHub/model/ListCreatedArtifactsRequest.h>
 #include <aws/AWSMigrationHub/model/ListDiscoveredResourcesRequest.h>
 #include <aws/AWSMigrationHub/model/ListMigrationTasksRequest.h>
@@ -432,6 +433,41 @@ void MigrationHubClient::ImportMigrationTaskAsync(const ImportMigrationTaskReque
 void MigrationHubClient::ImportMigrationTaskAsyncHelper(const ImportMigrationTaskRequest& request, const ImportMigrationTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ImportMigrationTask(request), context);
+}
+
+ListApplicationStatesOutcome MigrationHubClient::ListApplicationStates(const ListApplicationStatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListApplicationStatesOutcome(ListApplicationStatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListApplicationStatesOutcome(outcome.GetError());
+  }
+}
+
+ListApplicationStatesOutcomeCallable MigrationHubClient::ListApplicationStatesCallable(const ListApplicationStatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListApplicationStatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListApplicationStates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MigrationHubClient::ListApplicationStatesAsync(const ListApplicationStatesRequest& request, const ListApplicationStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListApplicationStatesAsyncHelper( request, handler, context ); } );
+}
+
+void MigrationHubClient::ListApplicationStatesAsyncHelper(const ListApplicationStatesRequest& request, const ListApplicationStatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListApplicationStates(request), context);
 }
 
 ListCreatedArtifactsOutcome MigrationHubClient::ListCreatedArtifacts(const ListCreatedArtifactsRequest& request) const
