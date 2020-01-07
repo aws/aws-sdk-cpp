@@ -107,7 +107,7 @@ namespace Aws
 
             bool StreamPayloadToRequest(const HttpRequest& request, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter) const;
             void LogRequestInternalFailure() const;
-            void BuildSuccessResponse(const Aws::Http::HttpRequest& request, std::shared_ptr<Aws::Http::HttpResponse>& response, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter) const;
+            bool BuildSuccessResponse(const Aws::Http::HttpRequest& request, std::shared_ptr<Aws::Http::HttpResponse>& response, void* hHttpRequest, Aws::Utils::RateLimits::RateLimiterInterface* readLimiter) const;
             void AddHeadersToRequest(const HttpRequest& request, void* hHttpRequest) const;
 
             void* m_openHandle;

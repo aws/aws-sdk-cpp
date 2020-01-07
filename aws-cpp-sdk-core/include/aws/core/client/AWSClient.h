@@ -255,7 +255,7 @@ namespace Aws
             }
 
             /**
-             * Gets the corresonding signer from the signers map by name.
+             * Gets the corresponding signer from the signers map by name.
              */
             Aws::Client::AWSAuthSigner* GetSignerByName(const char* name) const;
         protected:

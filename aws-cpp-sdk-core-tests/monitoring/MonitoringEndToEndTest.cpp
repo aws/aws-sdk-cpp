@@ -40,7 +40,7 @@ static const char URI_STRING[] = "http://domain.com/something";
 
 static std::queue<AWSError<CoreErrors>> errorQueue;
 
-class MockServiceClient: public  MockAWSClient 
+class MockServiceClient: public  MockAWSClient
 {
 public:
     MockServiceClient(const Aws::String serviceName, const ClientConfiguration& config):
@@ -49,7 +49,7 @@ public:
     inline const char* GetServiceClientName() const override {return m_serviceName.c_str(); }
 
 protected:
-    AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<HttpResponse>& response) const override 
+    AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<HttpResponse>& response) const override
     {
         if (errorQueue.size() > 0)
         {
@@ -58,7 +58,7 @@ protected:
             return err;
         }
 
-        if (!response)
+        if (response->HasClientError())
         {
             auto err = AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
             err.SetResponseCode(HttpResponseCode::INTERNAL_SERVER_ERROR);
@@ -121,7 +121,7 @@ protected:
         Aws::Environment::SetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_CLIENT_ID, "CppCSMTest", 1);
         Aws::Environment::SetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_HOST, "127.0.0.1", 1);
         Aws::Environment::SetEnv(DefaultMonitoring::DEFAULT_CSM_ENVIRONMENT_VAR_PORT, "6666", 1);
-        
+
         Aws::Monitoring::CleanupMonitoring();
         std::vector<MonitoringFactoryCreateFunction> factoryFunctions;
         Aws::Monitoring::InitMonitoring(factoryFunctions);
@@ -226,7 +226,7 @@ protected:
         ASSERT_STREQ(region.c_str(), json.View().GetString("Region").c_str());
         ASSERT_TRUE(json.View().ValueExists("MaxRetriesExceeded"));
         ASSERT_EQ(maxRetriesExceeded, json.View().GetInteger("MaxRetriesExceeded"));
-        
+
         ASSERT_TRUE(json.View().ValueExists("FinalHttpStatusCode"));
         ASSERT_EQ(static_cast<int>(responseCode), json.View().GetInteger("FinalHttpStatusCode"));
     }
@@ -317,7 +317,7 @@ TEST_F(MonitoringEndToEndTestSuite, TestMockDynamoDbTwoAttemptsFailedThenSucceed
     Aws::Utils::Json::JsonValue attemptFail(results[0]);
     Aws::Utils::Json::JsonValue attemptSuccess(results[1]);
     Aws::Utils::Json::JsonValue api(results[2]);
-    
+
     // 7 common items in CommonAssert + 5 attempt required items for attempt in AttemptAssert + 1 AwsException + 1 AwsExceptionMessage
     ASSERT_EQ(14u, attemptFail.View().GetAllObjects().size());
     DefaultMonitoringCommonAssert(attemptFail, request.GetServiceRequestName(), "ApiCallAttempt");

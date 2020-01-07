@@ -29,7 +29,9 @@
 #include <climits>
 
 #include <cassert>
-
+#ifdef __APPLE__
+#include <mach-o/dyld.h>
+#endif
 namespace Aws
 {
 namespace FileSystem
@@ -80,7 +82,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
                 {
                     Aws::String entryName = dirEntry->d_name;
                     if(entryName != ".." && entryName != ".")
-                    {                        
+                    {
                         entry = ParseFileInfo(dirEntry, true);
                         invalidEntry = false;
                     }
@@ -125,9 +127,9 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
                 entry.path = m_directoryEntry.path;
                 entry.relativePath = m_directoryEntry.relativePath;
             }
-            
+
             AWS_LOGSTREAM_TRACE(FILE_SYSTEM_UTILS_LOG_TAG, "Calling stat on path " << entry.path);
-            
+
             struct stat dirInfo;
             if(!lstat(entry.path.c_str(), &dirInfo))
             {
@@ -155,7 +157,7 @@ static const char* FILE_SYSTEM_UTILS_LOG_TAG = "FileSystemUtils";
                 AWS_LOGSTREAM_ERROR(FILE_SYSTEM_UTILS_LOG_TAG, "Failed to stat file path " << entry.path << " with error code " << errno);
             }
 
-            return entry; 
+            return entry;
         }
 
         DIR* m_dir;
@@ -272,19 +274,22 @@ Aws::String CreateTempFilePath()
 Aws::String GetExecutableDirectory()
 {
     char dest[PATH_MAX];
-    size_t destSize = sizeof(dest);
-    memset(dest, 0, destSize);
-
-    if(readlink("/proc/self/exe", dest, destSize))
+    memset(dest, 0, PATH_MAX);
+#ifdef __APPLE__
+    uint32_t destSize = PATH_MAX;
+    if (_NSGetExecutablePath(dest, &destSize) == 0)
+#else
+    size_t destSize = PATH_MAX;
+    if (readlink("/proc/self/exe", dest, destSize))
+#endif
     {
         Aws::String executablePath(dest);
         auto lastSlash = executablePath.find_last_of('/');
         if(lastSlash != std::string::npos)
         {
             return executablePath.substr(0, lastSlash);
-        }    
-    }    
-
+        }
+    }
     return "./";
 }
 

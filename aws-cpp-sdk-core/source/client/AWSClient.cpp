@@ -287,8 +287,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
 
 static bool DoesResponseGenerateError(const std::shared_ptr<HttpResponse>& response)
 {
-    if (!response) return true;
-
+    if (response->HasClientError()) return true;
     int responseCode = static_cast<int>(response->GetResponseCode());
     return responseCode < SUCCESS_RESPONSE_MIN || responseCode > SUCCESS_RESPONSE_MAX;
 
@@ -379,7 +378,7 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
 }
 
 StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& uri, Http::HttpMethod method,
-        const char* signerName, const char* requestName, const char* signerRegionOverride) const
+    const char* signerName, const char* requestName, const char* signerRegionOverride) const
 {
     HttpResponseOutcome httpResponseOutcome = AttemptExhaustively(uri, method, signerName, requestName, signerRegionOverride);
     if (httpResponseOutcome.IsSuccess())
@@ -772,12 +771,10 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     const std::shared_ptr<Aws::Http::HttpResponse>& httpResponse) const
 {
     AWSError<CoreErrors> error;
-    if (!httpResponse)
+    if (httpResponse->HasClientError())
     {
-        error = AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
-        error.SetResponseCode(HttpResponseCode::REQUEST_NOT_MADE);
-        AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
-        return error;
+        bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
+        error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
     }
     else if (!httpResponse->GetResponseBody() || httpResponse->GetResponseBody().tellp() < 1)
     {
@@ -797,6 +794,11 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
 
     error.SetResponseHeaders(httpResponse->GetHeaders());
     error.SetResponseCode(httpResponse->GetResponseCode());
+    auto ip = httpResponse->GetOriginatingRequest().GetResolvedRemoteHost();
+    if (!ip.empty())
+    {
+        error.SetMessage(error.GetMessage() + " with address : " + ip);
+    }
     AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
     return error;
 }
@@ -870,14 +872,12 @@ XmlOutcome AWSXMLClient::MakeRequest(const Aws::Http::URI& uri,
 AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::HttpResponse>& httpResponse) const
 {
     AWSError<CoreErrors> error;
-    if (!httpResponse)
+    if (httpResponse->HasClientError())
     {
-        error = AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
-        AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
-        return error;
+        bool retryable = httpResponse->GetClientErrorType() == CoreErrors::NETWORK_CONNECTION ? true : false;
+        error = AWSError<CoreErrors>(httpResponse->GetClientErrorType(), "", httpResponse->GetClientErrorMessage(), retryable);
     }
-
-    if (httpResponse->GetResponseBody().tellp() < 1)
+    else if (httpResponse->GetResponseBody().tellp() < 1)
     {
         auto responseCode = httpResponse->GetResponseCode();
         auto errorCode = GuessBodylessErrorType(responseCode);
@@ -903,6 +903,11 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
 
     error.SetResponseHeaders(httpResponse->GetHeaders());
     error.SetResponseCode(httpResponse->GetResponseCode());
+    auto ip = httpResponse->GetOriginatingRequest().GetResolvedRemoteHost();
+    if (!ip.empty())
+    {
+        error.SetMessage(error.GetMessage() + " with address : " + ip);
+    }
     AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
     return error;
 }

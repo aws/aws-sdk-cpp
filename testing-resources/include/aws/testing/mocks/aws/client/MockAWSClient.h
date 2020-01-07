@@ -63,7 +63,7 @@ public:
         {
             return false;
         }
-        if(DefaultRetryStrategy::ShouldRetry(error, attemptedRetries)) 
+        if(DefaultRetryStrategy::ShouldRetry(error, attemptedRetries))
         {
             m_attemptedRetries = attemptedRetries + 1;
             return true;
@@ -80,9 +80,9 @@ private:
 class MockAWSClient : AWSClient
 {
 public:
-    MockAWSClient(const ClientConfiguration& config) : AWSClient(config, 
-            Aws::MakeShared<AWSAuthV4Signer>("MockAWSClient", 
-                Aws::MakeShared<Aws::Auth::SimpleAWSCredentialsProvider>("MockAWSClient", GetMockAccessKey(), 
+    MockAWSClient(const ClientConfiguration& config) : AWSClient(config,
+            Aws::MakeShared<AWSAuthV4Signer>("MockAWSClient",
+                Aws::MakeShared<Aws::Auth::SimpleAWSCredentialsProvider>("MockAWSClient", GetMockAccessKey(),
                     GetMockSecretAccessKey()), "service", config.region.empty() ? Aws::Region::US_EAST_1 : config.region), nullptr) ,
         m_countedRetryStrategy(std::static_pointer_cast<CountedRetryStrategy>(config.retryStrategy)) { }
 
@@ -109,7 +109,7 @@ protected:
     std::shared_ptr<CountedRetryStrategy> m_countedRetryStrategy;
     AWSError<CoreErrors> BuildAWSError(const std::shared_ptr<HttpResponse>& response) const override
     {
-        if (!response)
+        if (response->HasClientError())
         {
             auto err = AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
             err.SetResponseCode(HttpResponseCode::INTERNAL_SERVER_ERROR);

@@ -1,12 +1,12 @@
 /*
   * Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-  * 
+  *
   * Licensed under the Apache License, Version 2.0 (the "License").
   * You may not use this file except in compliance with the License.
   * A copy of the License is located at
-  * 
+  *
   *  http://aws.amazon.com/apache2.0
-  * 
+  *
   * or in the "license" file accompanying this file. This file is distributed
   * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
   * express or implied. See the License for the specific language governing
@@ -19,29 +19,30 @@
 #include <aws/core/http/HttpClient.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
+#include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
 #include <aws/core/utils/UnreferencedParam.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSQueue.h>
 
-static const char* MockHttpAllocationTag = "MockHttp";
+static const char MockHttpAllocationTag[] = "MockHttp";
 
 class MockHttpClient : public Aws::Http::HttpClient
 {
 public:
     std::shared_ptr<Aws::Http::HttpResponse> MakeRequest(Aws::Http::HttpRequest& request,
-                                                         Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr, 
+                                                         Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
                                                          Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override
     {
         AWS_UNREFERENCED_PARAM(request);
         AWS_UNREFERENCED_PARAM(readLimiter);
         AWS_UNREFERENCED_PARAM(writeLimiter);
         assert(false); // should not use this overload. It's deprecated
-        return nullptr;
+        return Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(MockHttpAllocationTag, request);
     }
 
     std::shared_ptr<Aws::Http::HttpResponse> MakeRequest(const std::shared_ptr<Aws::Http::HttpRequest>& request,
-                                                         Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr, 
+                                                         Aws::Utils::RateLimits::RateLimiterInterface* readLimiter = nullptr,
                                                          Aws::Utils::RateLimits::RateLimiterInterface* writeLimiter = nullptr) const override
     {
         AWS_UNREFERENCED_PARAM(readLimiter);
@@ -60,7 +61,7 @@ public:
             }
             return responseToUse;
         }
-        return nullptr;
+        return Aws::MakeShared<Aws::Http::Standard::StandardHttpResponse>(MockHttpAllocationTag, request);
     }
 
     const Aws::Http::Standard::StandardHttpRequest& GetMostRecentHttpRequest() const { return m_requestsMade.back(); }

@@ -137,14 +137,14 @@ AmazonWebServiceResult<Aws::String> AWSHttpResourceClient::GetResourceWithAWSWeb
     {
         std::shared_ptr<HttpResponse> response(m_httpClient->MakeRequest(httpRequest));
 
-        if (response && response->GetResponseCode() == HttpResponseCode::OK)
+        if (response->GetResponseCode() == HttpResponseCode::OK)
         {
             Aws::IStreamBufIterator eos;
-            return {Aws::String(Aws::IStreamBufIterator(response->GetResponseBody()), eos), response ? response->GetHeaders() : HeaderValueCollection(), HttpResponseCode::OK};
+            return {Aws::String(Aws::IStreamBufIterator(response->GetResponseBody()), eos), response->GetHeaders(), HttpResponseCode::OK};
         }
 
         const Aws::Client::AWSError<Aws::Client::CoreErrors> error = [this, &response]() {
-            if (!response || response->GetResponseBody().tellp() < 1)
+            if (response->HasClientError() || response->GetResponseBody().tellp() < 1)
             {
                 AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Http request to retrieve credentials failed");
                 return AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, true); // Retryable
@@ -166,7 +166,7 @@ AmazonWebServiceResult<Aws::String> AWSHttpResourceClient::GetResourceWithAWSWeb
         if (!m_retryStrategy->ShouldRetry(error, retries))
         {
             AWS_LOGSTREAM_ERROR(m_logtag.c_str(), "Can not retrive resource from " << httpRequest->GetURIString());
-            return {{}, response ? response->GetHeaders() : HeaderValueCollection(), error.GetResponseCode()};
+            return {{}, response->GetHeaders(), error.GetResponseCode()};
         }
         auto sleepMillis = m_retryStrategy->CalculateDelayBeforeNextRetry(error, retries);
         AWS_LOGSTREAM_WARN(m_logtag.c_str(), "Request failed, now waiting " << sleepMillis << " ms before attempting again.");

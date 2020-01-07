@@ -1,12 +1,12 @@
 #
 # Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License").
 # You may not use this file except in compliance with the License.
 # A copy of the License is located at
-# 
+#
 #  http://aws.amazon.com/apache2.0
-# 
+#
 # or in the "license" file accompanying this file. This file is distributed
 # on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
 # express or implied. See the License for the specific language governing
@@ -73,6 +73,7 @@ option(ENABLE_ADDRESS_SANITIZER "Flags to enable/disable Address Sanitizer for g
 option(BYPASS_DEFAULT_PROXY "Bypass the machine's default proxy settings when using IXmlHttpRequest2" ON)
 option(BUILD_DEPS "Build third-party dependencies" ON)
 option(ENABLE_CURL_LOGGING "If enabled, Curl's internal log will be piped to SDK's logger" OFF)
+option(ENABLE_HTTP_CLIENT_TESTING "If enabled, corresponding http client test suites will be built and run" OFF)
 option(ENABLE_VIRTUAL_OPERATIONS "This option usually works with REGENERATE_CLIENTS. \
                                 If enabled when doing code generation, operation related functions in service clients will be marked as virtual. \
                                 If disabled when doing code generation, virtual will not be added to operation functions and service client class will be marked as final. \
@@ -119,7 +120,7 @@ endif()
 
 set(PYTHON_CMD "python")
 
-# CMAKE_MODULE_PATH is a CMAKE variable. It contains a list of paths 
+# CMAKE_MODULE_PATH is a CMAKE variable. It contains a list of paths
 # which could be used to search CMAKE modules by "include()" or "find_package()", but the default value is empty.
 # Add cmake dir to search list
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")

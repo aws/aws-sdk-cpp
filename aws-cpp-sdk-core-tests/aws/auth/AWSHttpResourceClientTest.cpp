@@ -272,13 +272,18 @@ namespace
         ASSERT_EQ(1u, mockHttpClient->GetAllRequestsMade().size());
     }
 
-    TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithSuccessResponseAfterOneNullResponse)
+    TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithSuccessResponseAfterOneClientError)
     {
-        mockHttpClient->AddResponseToReturn(nullptr);
-
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                                                                  HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+
+        std::shared_ptr<StandardHttpResponse> response1 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        //response code is REQUEST_NOT_MADE, indicates error, and we set this as client error.
+        response1->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+        response1->SetClientErrorMessage("Mock Client Error");
+        mockHttpClient->AddResponseToReturn(response1);
+
         std::shared_ptr<StandardHttpResponse> response2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
         response2->SetResponseCode(HttpResponseCode::OK);
         response2->GetResponseBody() << "{ \"Resource\": \"TestResource\" }";
@@ -294,16 +299,18 @@ namespace
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
         ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("{ \"Resource\": \"TestResource\" }", result);
-        // 1 initial request + 1 retry
         ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
     }
 
-    TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithBadRequestResponseAfterOneNullResponse)
+    TEST_F(AWSHttpResourceClientTest, TestAWSHttpResourceClientWithBadRequestResponseAfterOneResponseError)
     {
         // This mocked URI is used to initiate http response and has nothing to do with the requested URI actually sent out.
         std::shared_ptr<HttpRequest> request = CreateHttpRequest(URI("http://www.uri.com/path/to/res"),
                                                                  HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
-        mockHttpClient->AddResponseToReturn(nullptr);
+
+        std::shared_ptr<StandardHttpResponse> response1 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
+        //response code is REQUEST_NOT_MADE, indicates error, and we set this as unparsable error.
+        mockHttpClient->AddResponseToReturn(response1);
 
         auto response2 = Aws::MakeShared<StandardHttpResponse>(ALLOCATION_TAG, (*request));
         response2->SetResponseCode(HttpResponseCode::BAD_REQUEST);
@@ -320,7 +327,6 @@ namespace
         ASSERT_EQ("/path/to/res", mockRequest.GetUri().GetPath());
         ASSERT_EQ(Aws::Http::HttpMethod::HTTP_GET, mockRequest.GetMethod());
         ASSERT_EQ("", result);
-        // 1 initial request + 1 retry
         ASSERT_EQ(2u, mockHttpClient->GetAllRequestsMade().size());
     }
 

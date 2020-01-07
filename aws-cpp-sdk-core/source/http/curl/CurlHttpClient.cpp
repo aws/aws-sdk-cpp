@@ -613,13 +613,17 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
         bool shouldContinueRequest = ContinueRequest(request);
         if (curlResponseCode != CURLE_OK && shouldContinueRequest)
         {
-            response = nullptr;
+            response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);
+            Aws::StringStream ss;
+            ss << "curlCode: " << curlResponseCode << ", " << curl_easy_strerror(curlResponseCode);
+            response->SetClientErrorMessage(ss.str());
             AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Curl returned error code " << curlResponseCode
                     << " - " << curl_easy_strerror(curlResponseCode));
         }
         else if(!shouldContinueRequest)
         {
-            response->SetResponseCode(HttpResponseCode::REQUEST_NOT_MADE);
+            response->SetClientErrorType(CoreErrors::USER_CANCELLED);
+            response->SetClientErrorMessage("Request cancelled by user's continuation handler");
         }
         else
         {
@@ -646,7 +650,8 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
                 AWS_LOGSTREAM_TRACE(CURL_HTTP_CLIENT_TAG, "Response body length: " << numBytesResponseReceived);
                 if (StringUtils::ConvertToInt64(contentLength.c_str()) != numBytesResponseReceived)
                 {
-                    response = nullptr;
+                    response->SetClientErrorType(CoreErrors::NETWORK_CONNECTION);
+                    response->SetClientErrorMessage("Response body length doesn't match the content-length header.");
                     AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Response body length doesn't match the content-length header.");
                 }
             }
@@ -688,10 +693,7 @@ void CurlHttpClient::MakeRequestInternal(HttpRequest& request,
             m_curlHandleContainer.ReleaseCurlHandle(connectionHandle);
         }
         //go ahead and flush the response body stream
-        if(response)
-        {
-            response->GetResponseBody().flush();
-        }
+        response->GetResponseBody().flush();
         request.AddRequestMetric(GetHttpClientMetricNameByType(HttpClientMetricsType::RequestLatency), (DateTime::Now() - startTransmissionTime).count());
     }
 

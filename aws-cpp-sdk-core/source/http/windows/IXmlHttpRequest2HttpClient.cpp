@@ -28,7 +28,7 @@ namespace Aws
     namespace Http
     {
         static const char* CLASS_TAG = "IXmlHttpRequest2HttpClient";
-        
+
         using namespace Microsoft::WRL;
 
         /**
@@ -41,7 +41,7 @@ namespace Aws
                  * Init an instance of this class with stream to read or write from, the http client instance, the request that contains this stream,
                  * the response (only for Write mode), and the ratelimiter to use. Ratelimiter can be nullptr.
                  */
-                IOStreamSequentialStream(Aws::IOStream& stream, const HttpClient& client,  const HttpRequest& request, 
+                IOStreamSequentialStream(Aws::IOStream& stream, const HttpClient& client,  const HttpRequest& request,
                             HttpRequestComHandle requestHandle, HttpResponse* response, Aws::Utils::RateLimits::RateLimiterInterface* rateLimiter)
                     : m_stream(stream), m_client(client), m_request(request), m_requestHandle(requestHandle), m_rateLimiter(rateLimiter), m_response(response) {}
 
@@ -89,7 +89,7 @@ namespace Aws
                 }
 
                 HRESULT STDMETHODCALLTYPE Write(void const* pv, ULONG cb, ULONG* pcbWritten) override
-                {        
+                {
                     if (!m_client.ContinueRequest(m_request) || !m_client.IsRequestProcessingEnabled())
                     {
                         m_requestHandle->Abort();
@@ -123,14 +123,14 @@ namespace Aws
 
                     if (written < cb)
                     {
-                        AWS_LOGSTREAM_WARN(CLASS_TAG, "Wrote " << written 
+                        AWS_LOGSTREAM_WARN(CLASS_TAG, "Wrote " << written
                             << " bytes to the response stream. Which was less than requested. Failing the stream.");
                         return STG_E_CANTSAVE;
                     }
 
                     return S_OK;
-                } 
-                
+                }
+
                 HRESULT STDMETHODCALLTYPE GetTypeInfoCount(unsigned int FAR*) override { return E_NOTIMPL; }
                 HRESULT STDMETHODCALLTYPE GetTypeInfo(unsigned int, LCID, ITypeInfo FAR* FAR*) override { return E_NOTIMPL; }
                 HRESULT STDMETHODCALLTYPE GetIDsOfNames(REFIID, OLECHAR FAR* FAR*, unsigned int, LCID, DISPID FAR*) override { return DISP_E_UNKNOWNNAME; }
@@ -148,7 +148,7 @@ namespace Aws
         };
 
         /**
-         * Callbacks for the http client. Handles lifecycle management for the client. 
+         * Callbacks for the http client. Handles lifecycle management for the client.
          */
         class IXmlHttpRequest2HttpClientCallbacks : public RuntimeClass<RuntimeClassFlags<ClassicCom>, IXMLHTTPRequest2Callback>
         {
@@ -156,7 +156,7 @@ namespace Aws
                 /**
                  * Initialize callbacks with a response to fill in. If allow redirects will be used when a redirect is detected.
                  */
-                IXmlHttpRequest2HttpClientCallbacks(HttpResponse& response, bool allowRedirects) : 
+                IXmlHttpRequest2HttpClientCallbacks(HttpResponse& response, bool allowRedirects) :
                     m_response(response), m_allowRedirects(allowRedirects), m_isFinished(false) {}
 
                 /**
@@ -185,7 +185,7 @@ namespace Aws
                     {
                         m_response.SetResponseCode(HttpResponseCode::CLIENT_CLOSED_TO_REQUEST);
                     }
-                    
+
 #ifdef PLATFORM_WINDOWS
                     _com_error err(res);
                     LPCTSTR errMsg = err.ErrorMessage();
@@ -197,18 +197,18 @@ namespace Aws
 #endif // PLATFORM_WINDOWS
 
                     m_isFinished = true;
-                    m_completionSignal.notify_all();                    
+                    m_completionSignal.notify_all();
                     return S_OK;
                 }
 
                 /**
-                 * The beginning of the response has been recieved from the server. This method will set the response code and fill in the 
+                 * The beginning of the response has been received from the server. This method will set the response code and fill in the
                  * response headers.
                  */
                 HRESULT STDMETHODCALLTYPE OnHeadersAvailable(IXMLHTTPRequest2 *pXHR, DWORD dwStatus, const WCHAR*) override
                 {
                     m_response.SetResponseCode(static_cast<HttpResponseCode>(dwStatus));
-                    AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Response recieved with code " << dwStatus);
+                    AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Response received with code " << dwStatus);
                     if (pXHR)
                     {
                         wchar_t* headers = nullptr;
@@ -226,7 +226,7 @@ namespace Aws
                                     m_response.AddHeader(Aws::Utils::StringUtils::Trim(keyValue[0].c_str()), Aws::Utils::StringUtils::Trim(keyValue[1].c_str()));
                                 }
                             }
-                        }                        
+                        }
                     }
 
                     return S_OK;
@@ -274,7 +274,7 @@ namespace Aws
                 bool m_allowRedirects;
                 std::condition_variable m_completionSignal;
                 std::mutex m_completionMutex;
-                std::atomic<bool> m_isFinished;                
+                std::atomic<bool> m_isFinished;
         };
 
         void IXmlHttpRequest2HttpClient::InitCOM()
@@ -291,7 +291,7 @@ namespace Aws
 #else
             CoCreateInstance(CLSID_FreeThreadedXMLHTTP60, nullptr, CLSCTX_SERVER, IID_PPV_ARGS(&handle));
 #endif // PLATFORM_WINDOWS
-            m_resourceManager.Release(handle);   
+            m_resourceManager.Release(handle);
         }
 
         IXmlHttpRequest2HttpClient::IXmlHttpRequest2HttpClient(const Aws::Client::ClientConfiguration& clientConfig) :
@@ -299,7 +299,7 @@ namespace Aws
             m_followRedirects(clientConfig.followRedirects), m_verifySSL(clientConfig.verifySSL), m_totalTimeoutMs(clientConfig.requestTimeoutMs + clientConfig.connectTimeoutMs)
         {
             //user defined proxy not supported on this interface, this has to come from the default settings.
-            assert(clientConfig.proxyHost.empty());           
+            assert(clientConfig.proxyHost.empty());
             AWS_LOGSTREAM_INFO(CLASS_TAG, "Initializing client with pool size of " << clientConfig.maxConnections);
 
             for (unsigned int i = 0; i < m_poolSize; ++i)
@@ -314,7 +314,7 @@ namespace Aws
 #endif
                                                     IID_PPV_ARGS(&handle));
                 if (!FAILED(hrResult))
-                {                                
+                {
                     m_resourceManager.PutResource(handle);
                 }
                 else
@@ -330,7 +330,7 @@ namespace Aws
             //we don't actually need to do anything with these.
             //just make sure they are dereferenced. The comptr destructor
             //will handle the release calls.
-            m_resourceManager.ShutdownAndWait(m_poolSize);            
+            m_resourceManager.ShutdownAndWait(m_poolSize);
         }
 
         std::shared_ptr<HttpResponse> IXmlHttpRequest2HttpClient::MakeRequest(HttpRequest& request,
@@ -358,7 +358,7 @@ namespace Aws
         {
             auto uri = request.GetUri();
             auto fullUriString = uri.GetURIString();
-            AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Making " << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod()) 
+            AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Making " << HttpMethodMapper::GetNameForHttpMethod(request.GetMethod())
                         << " request to url: " << fullUriString);
 
             auto url = Aws::Utils::StringUtils::ToWString(fullUriString.c_str());
@@ -366,18 +366,21 @@ namespace Aws
             auto proxyUserNameStr = Aws::Utils::StringUtils::ToWString(m_proxyUserName.c_str());
             auto proxyPasswordStr = Aws::Utils::StringUtils::ToWString(m_proxyPassword.c_str());
 
-            auto requestHandle = m_resourceManager.Acquire();     
-            
+            auto requestHandle = m_resourceManager.Acquire();
+
             ComPtr<IXmlHttpRequest2HttpClientCallbacks> callbacks = Make<IXmlHttpRequest2HttpClientCallbacks>(*response, m_followRedirects);
-                
+
             HRESULT hrResult = requestHandle->Open(methodStr.c_str(), url.c_str(), callbacks.Get(), nullptr, nullptr, proxyUserNameStr.c_str(), proxyPasswordStr.c_str());
             FillClientSettings(requestHandle);
 
             if (FAILED(hrResult))
             {
-                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error opening http request with status code " << hrResult);
+                Aws::StringStream ss;
+                ss << "Error opening http request with status code " << hrResult;
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, ss.str());
                 AWS_LOGSTREAM_DEBUG(CLASS_TAG, "The http request is: " << uri.GetURIString());
-                response = nullptr;
+                response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+                response->SetClientErrorMessage(ss.str());
                 ReturnHandleToResourceManager();
                 return;
             }
@@ -391,9 +394,12 @@ namespace Aws
 
                 if (FAILED(hrResult))
                 {
-                    AWS_LOGSTREAM_ERROR(CLASS_TAG, "Error setting http header " << header.first << " With status code: " << hrResult);
+                    Aws::StringStream ss;
+                    ss << "Error setting http header " << header.first << " With status code: " << hrResult;
+                    AWS_LOGSTREAM_ERROR(CLASS_TAG, ss.str());
                     AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Corresponding header's value is: " << header.second);
-                    response = nullptr;
+                    response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+                    response->SetClientErrorMessage(ss.str());
                     ReturnHandleToResourceManager();
                     return;
                 }
@@ -402,13 +408,13 @@ namespace Aws
             if (writeLimiter)
             {
                 writeLimiter->ApplyAndPayForCost(request.GetSize());
-            }            
-                        
-            ComPtr<IOStreamSequentialStream> responseStream = Make<IOStreamSequentialStream>(response->GetResponseBody(), *this, request, 
+            }
+
+            ComPtr<IOStreamSequentialStream> responseStream = Make<IOStreamSequentialStream>(response->GetResponseBody(), *this, request,
                             requestHandle, response.get(), writeLimiter);
 
             requestHandle->SetCustomResponseStream(responseStream.Get());
-                     
+
             ComPtr<IOStreamSequentialStream> requestStream(nullptr);
             ULONGLONG streamLength(0);
 
@@ -423,10 +429,13 @@ namespace Aws
             callbacks->WaitUntilFinished();
             if (FAILED(hrResult) || response->GetResponseCode() == Http::HttpResponseCode::REQUEST_NOT_MADE)
             {
-                AWS_LOGSTREAM_ERROR(CLASS_TAG, "Request finished with response code: " << static_cast<int>(response->GetResponseCode()));
-                response = nullptr;
+                Aws::StringStream ss;
+                ss << "Request finished with response code: " << static_cast<int>(response->GetResponseCode());
+                AWS_LOGSTREAM_ERROR(CLASS_TAG, ss.str());
+                response->SetClientErrorType(Aws::Client::CoreErrors::NETWORK_CONNECTION);
+                response->SetClientErrorMessage(ss.str());
             }
-            else 
+            else
             {
                 response->GetResponseBody().flush();
                 AWS_LOGSTREAM_DEBUG(CLASS_TAG, "Request finished with response code: " << static_cast<int>(response->GetResponseCode()));
@@ -436,7 +445,7 @@ namespace Aws
 
         void IXmlHttpRequest2HttpClient::FillClientSettings(const HttpRequestComHandle& handle) const
         {
-            AWS_LOGSTREAM_TRACE(CLASS_TAG, "Setting up request handle with verifySSL = " << m_verifySSL 
+            AWS_LOGSTREAM_TRACE(CLASS_TAG, "Setting up request handle with verifySSL = " << m_verifySSL
                             << " ,follow redirects = " << m_followRedirects << " and timeout = " << m_totalTimeoutMs);
             handle->SetProperty(XHR_PROP_NO_DEFAULT_HEADERS, TRUE);
             handle->SetProperty(XHR_PROP_REPORT_REDIRECT_STATUS, m_followRedirects);
@@ -447,11 +456,11 @@ namespace Aws
             // These appear to not be defined for win8, but it should be safe to set them unconditionally, they just won't
             // have an affect
             // XHR_PROP_ONDATA_THRESHOLD = 0x9
-            // XHR_PROP_ONDATA_NEVER = (uint64_t) -1   
+            // XHR_PROP_ONDATA_NEVER = (uint64_t) -1
             handle->SetProperty(static_cast<XHR_PROPERTY>(0x9), static_cast<uint64_t>(-1));
 
 #ifdef PLATFORM_WINDOWS
-            handle->SetProperty(XHR_PROP_IGNORE_CERT_ERRORS, !m_verifySSL); 
+            handle->SetProperty(XHR_PROP_IGNORE_CERT_ERRORS, !m_verifySSL);
 #endif // PLATFORM_WINDOWS
         }
     }
