@@ -108,58 +108,82 @@ namespace Model
 
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
-     * line item, then the first rule to match is used to determine that Cost Category
-     * value. </p>
+     * <p> <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and
+     * nested expressions. Currently the only dimensions supported is
+     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
+     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
+     * order. If there are multiple rules that match the line item, then the first rule
+     * to match is used to determine that Cost Category value. </p>
      */
     inline const Aws::Vector<CostCategoryRule>& GetRules() const{ return m_rules; }
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
-     * line item, then the first rule to match is used to determine that Cost Category
-     * value. </p>
+     * <p> <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and
+     * nested expressions. Currently the only dimensions supported is
+     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
+     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
+     * order. If there are multiple rules that match the line item, then the first rule
+     * to match is used to determine that Cost Category value. </p>
      */
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
-     * line item, then the first rule to match is used to determine that Cost Category
-     * value. </p>
+     * <p> <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and
+     * nested expressions. Currently the only dimensions supported is
+     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
+     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
+     * order. If there are multiple rules that match the line item, then the first rule
+     * to match is used to determine that Cost Category value. </p>
      */
     inline void SetRules(const Aws::Vector<CostCategoryRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
-     * line item, then the first rule to match is used to determine that Cost Category
-     * value. </p>
+     * <p> <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and
+     * nested expressions. Currently the only dimensions supported is
+     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
+     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
+     * order. If there are multiple rules that match the line item, then the first rule
+     * to match is used to determine that Cost Category value. </p>
      */
     inline void SetRules(Aws::Vector<CostCategoryRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
-     * line item, then the first rule to match is used to determine that Cost Category
-     * value. </p>
+     * <p> <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and
+     * nested expressions. Currently the only dimensions supported is
+     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
+     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
+     * order. If there are multiple rules that match the line item, then the first rule
+     * to match is used to determine that Cost Category value. </p>
      */
     inline UpdateCostCategoryDefinitionRequest& WithRules(const Aws::Vector<CostCategoryRule>& value) { SetRules(value); return *this;}
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
-     * line item, then the first rule to match is used to determine that Cost Category
-     * value. </p>
+     * <p> <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and
+     * nested expressions. Currently the only dimensions supported is
+     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
+     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
+     * order. If there are multiple rules that match the line item, then the first rule
+     * to match is used to determine that Cost Category value. </p>
      */
     inline UpdateCostCategoryDefinitionRequest& WithRules(Aws::Vector<CostCategoryRule>&& value) { SetRules(std::move(value)); return *this;}
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
-     * line item, then the first rule to match is used to determine that Cost Category
-     * value. </p>
+     * <p> <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and
+     * nested expressions. Currently the only dimensions supported is
+     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
+     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
+     * order. If there are multiple rules that match the line item, then the first rule
+     * to match is used to determine that Cost Category value. </p>
      */
     inline UpdateCostCategoryDefinitionRequest& AddRules(const CostCategoryRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
 
     /**
-     * <p> Rules are processed in order. If there are multiple rules that match the
-     * line item, then the first rule to match is used to determine that Cost Category
-     * value. </p>
+     * <p> <code>UpdateCostCategoryDefinition</code> supports dimensions, Tags, and
+     * nested expressions. Currently the only dimensions supported is
+     * <code>LINKED_ACCOUNT</code>.</p> <p>Root level <code>OR</code> is not supported.
+     * We recommend you create a separate rule instead.</p> <p>Rules are processed in
+     * order. If there are multiple rules that match the line item, then the first rule
+     * to match is used to determine that Cost Category value. </p>
      */
     inline UpdateCostCategoryDefinitionRequest& AddRules(CostCategoryRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
 

@@ -89,43 +89,43 @@ namespace Model
 
     /**
      * <p> If the response to the ListTerminologies was truncated, the NextToken
-     * fetches the next group of custom terminologies. </p>
+     * fetches the next group of custom terminologies.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
      * <p> If the response to the ListTerminologies was truncated, the NextToken
-     * fetches the next group of custom terminologies. </p>
+     * fetches the next group of custom terminologies.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
      * <p> If the response to the ListTerminologies was truncated, the NextToken
-     * fetches the next group of custom terminologies. </p>
+     * fetches the next group of custom terminologies.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
      * <p> If the response to the ListTerminologies was truncated, the NextToken
-     * fetches the next group of custom terminologies. </p>
+     * fetches the next group of custom terminologies.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
      * <p> If the response to the ListTerminologies was truncated, the NextToken
-     * fetches the next group of custom terminologies. </p>
+     * fetches the next group of custom terminologies.</p>
      */
     inline ListTerminologiesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
      * <p> If the response to the ListTerminologies was truncated, the NextToken
-     * fetches the next group of custom terminologies. </p>
+     * fetches the next group of custom terminologies.</p>
      */
     inline ListTerminologiesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
      * <p> If the response to the ListTerminologies was truncated, the NextToken
-     * fetches the next group of custom terminologies. </p>
+     * fetches the next group of custom terminologies.</p>
      */
     inline ListTerminologiesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

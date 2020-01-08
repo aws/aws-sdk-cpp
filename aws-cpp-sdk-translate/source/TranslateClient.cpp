@@ -31,9 +31,13 @@
 #include <aws/translate/TranslateEndpoint.h>
 #include <aws/translate/TranslateErrorMarshaller.h>
 #include <aws/translate/model/DeleteTerminologyRequest.h>
+#include <aws/translate/model/DescribeTextTranslationJobRequest.h>
 #include <aws/translate/model/GetTerminologyRequest.h>
 #include <aws/translate/model/ImportTerminologyRequest.h>
 #include <aws/translate/model/ListTerminologiesRequest.h>
+#include <aws/translate/model/ListTextTranslationJobsRequest.h>
+#include <aws/translate/model/StartTextTranslationJobRequest.h>
+#include <aws/translate/model/StopTextTranslationJobRequest.h>
 #include <aws/translate/model/TranslateTextRequest.h>
 
 using namespace Aws;
@@ -143,6 +147,41 @@ void TranslateClient::DeleteTerminologyAsyncHelper(const DeleteTerminologyReques
   handler(this, request, DeleteTerminology(request), context);
 }
 
+DescribeTextTranslationJobOutcome TranslateClient::DescribeTextTranslationJob(const DescribeTextTranslationJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeTextTranslationJobOutcome(DescribeTextTranslationJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeTextTranslationJobOutcome(outcome.GetError());
+  }
+}
+
+DescribeTextTranslationJobOutcomeCallable TranslateClient::DescribeTextTranslationJobCallable(const DescribeTextTranslationJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeTextTranslationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeTextTranslationJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranslateClient::DescribeTextTranslationJobAsync(const DescribeTextTranslationJobRequest& request, const DescribeTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeTextTranslationJobAsyncHelper( request, handler, context ); } );
+}
+
+void TranslateClient::DescribeTextTranslationJobAsyncHelper(const DescribeTextTranslationJobRequest& request, const DescribeTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeTextTranslationJob(request), context);
+}
+
 GetTerminologyOutcome TranslateClient::GetTerminology(const GetTerminologyRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -246,6 +285,111 @@ void TranslateClient::ListTerminologiesAsync(const ListTerminologiesRequest& req
 void TranslateClient::ListTerminologiesAsyncHelper(const ListTerminologiesRequest& request, const ListTerminologiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTerminologies(request), context);
+}
+
+ListTextTranslationJobsOutcome TranslateClient::ListTextTranslationJobs(const ListTextTranslationJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTextTranslationJobsOutcome(ListTextTranslationJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTextTranslationJobsOutcome(outcome.GetError());
+  }
+}
+
+ListTextTranslationJobsOutcomeCallable TranslateClient::ListTextTranslationJobsCallable(const ListTextTranslationJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTextTranslationJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTextTranslationJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranslateClient::ListTextTranslationJobsAsync(const ListTextTranslationJobsRequest& request, const ListTextTranslationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTextTranslationJobsAsyncHelper( request, handler, context ); } );
+}
+
+void TranslateClient::ListTextTranslationJobsAsyncHelper(const ListTextTranslationJobsRequest& request, const ListTextTranslationJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTextTranslationJobs(request), context);
+}
+
+StartTextTranslationJobOutcome TranslateClient::StartTextTranslationJob(const StartTextTranslationJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartTextTranslationJobOutcome(StartTextTranslationJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartTextTranslationJobOutcome(outcome.GetError());
+  }
+}
+
+StartTextTranslationJobOutcomeCallable TranslateClient::StartTextTranslationJobCallable(const StartTextTranslationJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartTextTranslationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartTextTranslationJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranslateClient::StartTextTranslationJobAsync(const StartTextTranslationJobRequest& request, const StartTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartTextTranslationJobAsyncHelper( request, handler, context ); } );
+}
+
+void TranslateClient::StartTextTranslationJobAsyncHelper(const StartTextTranslationJobRequest& request, const StartTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartTextTranslationJob(request), context);
+}
+
+StopTextTranslationJobOutcome TranslateClient::StopTextTranslationJob(const StopTextTranslationJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopTextTranslationJobOutcome(StopTextTranslationJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopTextTranslationJobOutcome(outcome.GetError());
+  }
+}
+
+StopTextTranslationJobOutcomeCallable TranslateClient::StopTextTranslationJobCallable(const StopTextTranslationJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopTextTranslationJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopTextTranslationJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void TranslateClient::StopTextTranslationJobAsync(const StopTextTranslationJobRequest& request, const StopTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopTextTranslationJobAsyncHelper( request, handler, context ); } );
+}
+
+void TranslateClient::StopTextTranslationJobAsyncHelper(const StopTextTranslationJobRequest& request, const StopTextTranslationJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopTextTranslationJob(request), context);
 }
 
 TranslateTextOutcome TranslateClient::TranslateText(const TranslateTextRequest& request) const

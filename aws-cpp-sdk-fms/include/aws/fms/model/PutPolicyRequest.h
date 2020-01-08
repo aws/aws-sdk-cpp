@@ -17,6 +17,8 @@
 #include <aws/fms/FMS_EXPORTS.h>
 #include <aws/fms/FMSRequest.h>
 #include <aws/fms/model/Policy.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/fms/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -74,10 +76,54 @@ namespace Model
      */
     inline PutPolicyRequest& WithPolicy(Policy&& value) { SetPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags to add to the AWS resource.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
+    /**
+     * <p>The tags to add to the AWS resource.</p>
+     */
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+
+    /**
+     * <p>The tags to add to the AWS resource.</p>
+     */
+    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+
+    /**
+     * <p>The tags to add to the AWS resource.</p>
+     */
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
+
+    /**
+     * <p>The tags to add to the AWS resource.</p>
+     */
+    inline PutPolicyRequest& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+
+    /**
+     * <p>The tags to add to the AWS resource.</p>
+     */
+    inline PutPolicyRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to add to the AWS resource.</p>
+     */
+    inline PutPolicyRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to add to the AWS resource.</p>
+     */
+    inline PutPolicyRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+
   private:
 
     Policy m_policy;
     bool m_policyHasBeenSet;
+
+    Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet;
   };
 
 } // namespace Model

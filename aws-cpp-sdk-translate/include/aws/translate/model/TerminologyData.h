@@ -50,32 +50,44 @@ namespace Model
 
 
     /**
-     * <p>The file containing the custom terminology data.</p>
+     * <p>The file containing the custom terminology data. Your version of the AWS SDK
+     * performs a Base64-encoding on this field before sending a request to the AWS
+     * service. Users of the SDK should not perform Base64-encoding themselves.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetFile() const{ return m_file; }
 
     /**
-     * <p>The file containing the custom terminology data.</p>
+     * <p>The file containing the custom terminology data. Your version of the AWS SDK
+     * performs a Base64-encoding on this field before sending a request to the AWS
+     * service. Users of the SDK should not perform Base64-encoding themselves.</p>
      */
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
 
     /**
-     * <p>The file containing the custom terminology data.</p>
+     * <p>The file containing the custom terminology data. Your version of the AWS SDK
+     * performs a Base64-encoding on this field before sending a request to the AWS
+     * service. Users of the SDK should not perform Base64-encoding themselves.</p>
      */
     inline void SetFile(const Aws::Utils::CryptoBuffer& value) { m_fileHasBeenSet = true; m_file = value; }
 
     /**
-     * <p>The file containing the custom terminology data.</p>
+     * <p>The file containing the custom terminology data. Your version of the AWS SDK
+     * performs a Base64-encoding on this field before sending a request to the AWS
+     * service. Users of the SDK should not perform Base64-encoding themselves.</p>
      */
     inline void SetFile(Aws::Utils::CryptoBuffer&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
 
     /**
-     * <p>The file containing the custom terminology data.</p>
+     * <p>The file containing the custom terminology data. Your version of the AWS SDK
+     * performs a Base64-encoding on this field before sending a request to the AWS
+     * service. Users of the SDK should not perform Base64-encoding themselves.</p>
      */
     inline TerminologyData& WithFile(const Aws::Utils::CryptoBuffer& value) { SetFile(value); return *this;}
 
     /**
-     * <p>The file containing the custom terminology data.</p>
+     * <p>The file containing the custom terminology data. Your version of the AWS SDK
+     * performs a Base64-encoding on this field before sending a request to the AWS
+     * service. Users of the SDK should not perform Base64-encoding themselves.</p>
      */
     inline TerminologyData& WithFile(Aws::Utils::CryptoBuffer&& value) { SetFile(std::move(value)); return *this;}
 

@@ -1,0 +1,264 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#include <aws/translate/model/TextTranslationJobProperties.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Translate
+{
+namespace Model
+{
+
+TextTranslationJobProperties::TextTranslationJobProperties() : 
+    m_jobIdHasBeenSet(false),
+    m_jobNameHasBeenSet(false),
+    m_jobStatus(JobStatus::NOT_SET),
+    m_jobStatusHasBeenSet(false),
+    m_jobDetailsHasBeenSet(false),
+    m_sourceLanguageCodeHasBeenSet(false),
+    m_targetLanguageCodesHasBeenSet(false),
+    m_terminologyNamesHasBeenSet(false),
+    m_messageHasBeenSet(false),
+    m_submittedTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_inputDataConfigHasBeenSet(false),
+    m_outputDataConfigHasBeenSet(false),
+    m_dataAccessRoleArnHasBeenSet(false)
+{
+}
+
+TextTranslationJobProperties::TextTranslationJobProperties(JsonView jsonValue) : 
+    m_jobIdHasBeenSet(false),
+    m_jobNameHasBeenSet(false),
+    m_jobStatus(JobStatus::NOT_SET),
+    m_jobStatusHasBeenSet(false),
+    m_jobDetailsHasBeenSet(false),
+    m_sourceLanguageCodeHasBeenSet(false),
+    m_targetLanguageCodesHasBeenSet(false),
+    m_terminologyNamesHasBeenSet(false),
+    m_messageHasBeenSet(false),
+    m_submittedTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_inputDataConfigHasBeenSet(false),
+    m_outputDataConfigHasBeenSet(false),
+    m_dataAccessRoleArnHasBeenSet(false)
+{
+  *this = jsonValue;
+}
+
+TextTranslationJobProperties& TextTranslationJobProperties::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("JobId"))
+  {
+    m_jobId = jsonValue.GetString("JobId");
+
+    m_jobIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobName"))
+  {
+    m_jobName = jsonValue.GetString("JobName");
+
+    m_jobNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobStatus"))
+  {
+    m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
+
+    m_jobStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("JobDetails"))
+  {
+    m_jobDetails = jsonValue.GetObject("JobDetails");
+
+    m_jobDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SourceLanguageCode"))
+  {
+    m_sourceLanguageCode = jsonValue.GetString("SourceLanguageCode");
+
+    m_sourceLanguageCodeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TargetLanguageCodes"))
+  {
+    Array<JsonView> targetLanguageCodesJsonList = jsonValue.GetArray("TargetLanguageCodes");
+    for(unsigned targetLanguageCodesIndex = 0; targetLanguageCodesIndex < targetLanguageCodesJsonList.GetLength(); ++targetLanguageCodesIndex)
+    {
+      m_targetLanguageCodes.push_back(targetLanguageCodesJsonList[targetLanguageCodesIndex].AsString());
+    }
+    m_targetLanguageCodesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TerminologyNames"))
+  {
+    Array<JsonView> terminologyNamesJsonList = jsonValue.GetArray("TerminologyNames");
+    for(unsigned terminologyNamesIndex = 0; terminologyNamesIndex < terminologyNamesJsonList.GetLength(); ++terminologyNamesIndex)
+    {
+      m_terminologyNames.push_back(terminologyNamesJsonList[terminologyNamesIndex].AsString());
+    }
+    m_terminologyNamesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Message"))
+  {
+    m_message = jsonValue.GetString("Message");
+
+    m_messageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SubmittedTime"))
+  {
+    m_submittedTime = jsonValue.GetDouble("SubmittedTime");
+
+    m_submittedTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndTime"))
+  {
+    m_endTime = jsonValue.GetDouble("EndTime");
+
+    m_endTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InputDataConfig"))
+  {
+    m_inputDataConfig = jsonValue.GetObject("InputDataConfig");
+
+    m_inputDataConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("OutputDataConfig"))
+  {
+    m_outputDataConfig = jsonValue.GetObject("OutputDataConfig");
+
+    m_outputDataConfigHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataAccessRoleArn"))
+  {
+    m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
+
+    m_dataAccessRoleArnHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue TextTranslationJobProperties::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_jobIdHasBeenSet)
+  {
+   payload.WithString("JobId", m_jobId);
+
+  }
+
+  if(m_jobNameHasBeenSet)
+  {
+   payload.WithString("JobName", m_jobName);
+
+  }
+
+  if(m_jobStatusHasBeenSet)
+  {
+   payload.WithString("JobStatus", JobStatusMapper::GetNameForJobStatus(m_jobStatus));
+  }
+
+  if(m_jobDetailsHasBeenSet)
+  {
+   payload.WithObject("JobDetails", m_jobDetails.Jsonize());
+
+  }
+
+  if(m_sourceLanguageCodeHasBeenSet)
+  {
+   payload.WithString("SourceLanguageCode", m_sourceLanguageCode);
+
+  }
+
+  if(m_targetLanguageCodesHasBeenSet)
+  {
+   Array<JsonValue> targetLanguageCodesJsonList(m_targetLanguageCodes.size());
+   for(unsigned targetLanguageCodesIndex = 0; targetLanguageCodesIndex < targetLanguageCodesJsonList.GetLength(); ++targetLanguageCodesIndex)
+   {
+     targetLanguageCodesJsonList[targetLanguageCodesIndex].AsString(m_targetLanguageCodes[targetLanguageCodesIndex]);
+   }
+   payload.WithArray("TargetLanguageCodes", std::move(targetLanguageCodesJsonList));
+
+  }
+
+  if(m_terminologyNamesHasBeenSet)
+  {
+   Array<JsonValue> terminologyNamesJsonList(m_terminologyNames.size());
+   for(unsigned terminologyNamesIndex = 0; terminologyNamesIndex < terminologyNamesJsonList.GetLength(); ++terminologyNamesIndex)
+   {
+     terminologyNamesJsonList[terminologyNamesIndex].AsString(m_terminologyNames[terminologyNamesIndex]);
+   }
+   payload.WithArray("TerminologyNames", std::move(terminologyNamesJsonList));
+
+  }
+
+  if(m_messageHasBeenSet)
+  {
+   payload.WithString("Message", m_message);
+
+  }
+
+  if(m_submittedTimeHasBeenSet)
+  {
+   payload.WithDouble("SubmittedTime", m_submittedTime.SecondsWithMSPrecision());
+  }
+
+  if(m_endTimeHasBeenSet)
+  {
+   payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if(m_inputDataConfigHasBeenSet)
+  {
+   payload.WithObject("InputDataConfig", m_inputDataConfig.Jsonize());
+
+  }
+
+  if(m_outputDataConfigHasBeenSet)
+  {
+   payload.WithObject("OutputDataConfig", m_outputDataConfig.Jsonize());
+
+  }
+
+  if(m_dataAccessRoleArnHasBeenSet)
+  {
+   payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace Translate
+} // namespace Aws

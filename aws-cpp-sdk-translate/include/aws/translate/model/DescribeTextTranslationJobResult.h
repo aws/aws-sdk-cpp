@@ -1,0 +1,82 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#pragma once
+#include <aws/translate/Translate_EXPORTS.h>
+#include <aws/translate/model/TextTranslationJobProperties.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace Translate
+{
+namespace Model
+{
+  class AWS_TRANSLATE_API DescribeTextTranslationJobResult
+  {
+  public:
+    DescribeTextTranslationJobResult();
+    DescribeTextTranslationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    DescribeTextTranslationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>An object that contains the properties associated with an asynchronous batch
+     * translation job.</p>
+     */
+    inline const TextTranslationJobProperties& GetTextTranslationJobProperties() const{ return m_textTranslationJobProperties; }
+
+    /**
+     * <p>An object that contains the properties associated with an asynchronous batch
+     * translation job.</p>
+     */
+    inline void SetTextTranslationJobProperties(const TextTranslationJobProperties& value) { m_textTranslationJobProperties = value; }
+
+    /**
+     * <p>An object that contains the properties associated with an asynchronous batch
+     * translation job.</p>
+     */
+    inline void SetTextTranslationJobProperties(TextTranslationJobProperties&& value) { m_textTranslationJobProperties = std::move(value); }
+
+    /**
+     * <p>An object that contains the properties associated with an asynchronous batch
+     * translation job.</p>
+     */
+    inline DescribeTextTranslationJobResult& WithTextTranslationJobProperties(const TextTranslationJobProperties& value) { SetTextTranslationJobProperties(value); return *this;}
+
+    /**
+     * <p>An object that contains the properties associated with an asynchronous batch
+     * translation job.</p>
+     */
+    inline DescribeTextTranslationJobResult& WithTextTranslationJobProperties(TextTranslationJobProperties&& value) { SetTextTranslationJobProperties(std::move(value)); return *this;}
+
+  private:
+
+    TextTranslationJobProperties m_textTranslationJobProperties;
+  };
+
+} // namespace Model
+} // namespace Translate
+} // namespace Aws

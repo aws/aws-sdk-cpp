@@ -33,6 +33,7 @@ static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServer
 static const int DETECTED_LANGUAGE_LOW_CONFIDENCE_HASH = HashingUtils::HashString("DetectedLanguageLowConfidenceException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int TOO_MANY_REQUESTS_HASH = HashingUtils::HashString("TooManyRequestsException");
+static const int INVALID_FILTER_HASH = HashingUtils::HashString("InvalidFilterException");
 static const int TEXT_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TextSizeLimitExceededException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
@@ -60,6 +61,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == TOO_MANY_REQUESTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::TOO_MANY_REQUESTS), false);
+  }
+  else if (hashCode == INVALID_FILTER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(TranslateErrors::INVALID_FILTER), false);
   }
   else if (hashCode == TEXT_SIZE_LIMIT_EXCEEDED_HASH)
   {

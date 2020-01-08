@@ -45,73 +45,73 @@ namespace Model
 
 
     /**
-     * <p>The the translated text. The maximum length of this text is 5kb.</p>
+     * <p>The translated text.</p>
      */
     inline const Aws::String& GetTranslatedText() const{ return m_translatedText; }
 
     /**
-     * <p>The the translated text. The maximum length of this text is 5kb.</p>
+     * <p>The translated text.</p>
      */
     inline void SetTranslatedText(const Aws::String& value) { m_translatedText = value; }
 
     /**
-     * <p>The the translated text. The maximum length of this text is 5kb.</p>
+     * <p>The translated text.</p>
      */
     inline void SetTranslatedText(Aws::String&& value) { m_translatedText = std::move(value); }
 
     /**
-     * <p>The the translated text. The maximum length of this text is 5kb.</p>
+     * <p>The translated text.</p>
      */
     inline void SetTranslatedText(const char* value) { m_translatedText.assign(value); }
 
     /**
-     * <p>The the translated text. The maximum length of this text is 5kb.</p>
+     * <p>The translated text.</p>
      */
     inline TranslateTextResult& WithTranslatedText(const Aws::String& value) { SetTranslatedText(value); return *this;}
 
     /**
-     * <p>The the translated text. The maximum length of this text is 5kb.</p>
+     * <p>The translated text.</p>
      */
     inline TranslateTextResult& WithTranslatedText(Aws::String&& value) { SetTranslatedText(std::move(value)); return *this;}
 
     /**
-     * <p>The the translated text. The maximum length of this text is 5kb.</p>
+     * <p>The translated text.</p>
      */
     inline TranslateTextResult& WithTranslatedText(const char* value) { SetTranslatedText(value); return *this;}
 
 
     /**
-     * <p>The language code for the language of the source text. </p>
+     * <p>The language code for the language of the source text.</p>
      */
     inline const Aws::String& GetSourceLanguageCode() const{ return m_sourceLanguageCode; }
 
     /**
-     * <p>The language code for the language of the source text. </p>
+     * <p>The language code for the language of the source text.</p>
      */
     inline void SetSourceLanguageCode(const Aws::String& value) { m_sourceLanguageCode = value; }
 
     /**
-     * <p>The language code for the language of the source text. </p>
+     * <p>The language code for the language of the source text.</p>
      */
     inline void SetSourceLanguageCode(Aws::String&& value) { m_sourceLanguageCode = std::move(value); }
 
     /**
-     * <p>The language code for the language of the source text. </p>
+     * <p>The language code for the language of the source text.</p>
      */
     inline void SetSourceLanguageCode(const char* value) { m_sourceLanguageCode.assign(value); }
 
     /**
-     * <p>The language code for the language of the source text. </p>
+     * <p>The language code for the language of the source text.</p>
      */
     inline TranslateTextResult& WithSourceLanguageCode(const Aws::String& value) { SetSourceLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code for the language of the source text. </p>
+     * <p>The language code for the language of the source text.</p>
      */
     inline TranslateTextResult& WithSourceLanguageCode(Aws::String&& value) { SetSourceLanguageCode(std::move(value)); return *this;}
 
     /**
-     * <p>The language code for the language of the source text. </p>
+     * <p>The language code for the language of the source text.</p>
      */
     inline TranslateTextResult& WithSourceLanguageCode(const char* value) { SetSourceLanguageCode(value); return *this;}
 

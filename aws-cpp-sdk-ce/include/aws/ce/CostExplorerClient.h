@@ -204,9 +204,9 @@ namespace Model
 
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Creates a new Cost Category with the
          * requested name and rules.</p><p><h3>See Also:</h3>   <a
@@ -216,9 +216,9 @@ namespace Model
         virtual Model::CreateCostCategoryDefinitionOutcome CreateCostCategoryDefinition(const Model::CreateCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Creates a new Cost Category with the
          * requested name and rules.</p><p><h3>See Also:</h3>   <a
@@ -230,9 +230,9 @@ namespace Model
         virtual Model::CreateCostCategoryDefinitionOutcomeCallable CreateCostCategoryDefinitionCallable(const Model::CreateCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Creates a new Cost Category with the
          * requested name and rules.</p><p><h3>See Also:</h3>   <a
@@ -244,9 +244,9 @@ namespace Model
         virtual void CreateCostCategoryDefinitionAsync(const Model::CreateCostCategoryDefinitionRequest& request, const CreateCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Deletes a Cost Category. Expenses from this
          * month going forward will no longer be categorized with this Cost
@@ -257,9 +257,9 @@ namespace Model
         virtual Model::DeleteCostCategoryDefinitionOutcome DeleteCostCategoryDefinition(const Model::DeleteCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Deletes a Cost Category. Expenses from this
          * month going forward will no longer be categorized with this Cost
@@ -272,9 +272,9 @@ namespace Model
         virtual Model::DeleteCostCategoryDefinitionOutcomeCallable DeleteCostCategoryDefinitionCallable(const Model::DeleteCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Deletes a Cost Category. Expenses from this
          * month going forward will no longer be categorized with this Cost
@@ -287,9 +287,9 @@ namespace Model
         virtual void DeleteCostCategoryDefinitionAsync(const Model::DeleteCostCategoryDefinitionRequest& request, const DeleteCostCategoryDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN, rules, definition,
          * and effective dates of a Cost Category that's defined in the account.</p> <p>You
@@ -304,9 +304,9 @@ namespace Model
         virtual Model::DescribeCostCategoryDefinitionOutcome DescribeCostCategoryDefinition(const Model::DescribeCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN, rules, definition,
          * and effective dates of a Cost Category that's defined in the account.</p> <p>You
@@ -323,9 +323,9 @@ namespace Model
         virtual Model::DescribeCostCategoryDefinitionOutcomeCallable DescribeCostCategoryDefinitionCallable(const Model::DescribeCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN, rules, definition,
          * and effective dates of a Cost Category that's defined in the account.</p> <p>You
@@ -956,9 +956,9 @@ namespace Model
         virtual void GetUsageForecastAsync(const Model::GetUsageForecastRequest& request, const GetUsageForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN and effective dates
          * of all Cost Categories defined in the account. You have the option to use
@@ -973,9 +973,9 @@ namespace Model
         virtual Model::ListCostCategoryDefinitionsOutcome ListCostCategoryDefinitions(const Model::ListCostCategoryDefinitionsRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN and effective dates
          * of all Cost Categories defined in the account. You have the option to use
@@ -992,9 +992,9 @@ namespace Model
         virtual Model::ListCostCategoryDefinitionsOutcomeCallable ListCostCategoryDefinitionsCallable(const Model::ListCostCategoryDefinitionsRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Returns the name, ARN and effective dates
          * of all Cost Categories defined in the account. You have the option to use
@@ -1011,9 +1011,9 @@ namespace Model
         virtual void ListCostCategoryDefinitionsAsync(const Model::ListCostCategoryDefinitionsRequest& request, const ListCostCategoryDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Updates an existing Cost Category. Changes
          * made to the Cost Category rules will be used to categorize the current month’s
@@ -1025,9 +1025,9 @@ namespace Model
         virtual Model::UpdateCostCategoryDefinitionOutcome UpdateCostCategoryDefinition(const Model::UpdateCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Updates an existing Cost Category. Changes
          * made to the Cost Category rules will be used to categorize the current month’s
@@ -1041,9 +1041,9 @@ namespace Model
         virtual Model::UpdateCostCategoryDefinitionOutcomeCallable UpdateCostCategoryDefinitionCallable(const Model::UpdateCostCategoryDefinitionRequest& request) const;
 
         /**
-         * <important> <p> <i> <b>Cost Category is in preview release for AWS Billing and
-         * Cost Management and is subject to change. Your use of Cost Categories is subject
-         * to the Beta Service Participation terms of the <a
+         * <important> <p> <i> <b>Cost Category is in public beta for AWS Billing and Cost
+         * Management and is subject to change. Your use of Cost Categories is subject to
+         * the Beta Service Participation terms of the <a
          * href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> (Section
          * 1.10).</b> </i> </p> </important> <p>Updates an existing Cost Category. Changes
          * made to the Cost Category rules will be used to categorize the current month’s
