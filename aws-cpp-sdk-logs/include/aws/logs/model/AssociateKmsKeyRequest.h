@@ -87,65 +87,81 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * Symmetric and Asymmetric Keys</a>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * Symmetric and Asymmetric Keys</a>.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * Symmetric and Asymmetric Keys</a>.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * Symmetric and Asymmetric Keys</a>.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * Symmetric and Asymmetric Keys</a>.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * Symmetric and Asymmetric Keys</a>.</p>
      */
     inline AssociateKmsKeyRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * Symmetric and Asymmetric Keys</a>.</p>
      */
     inline AssociateKmsKeyRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
-     * For more information, see <a
+     * This must be a symmetric CMK. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     * Resource Names - AWS Key Management Service (AWS KMS)</a>.</p>
+     * Resource Names - AWS Key Management Service (AWS KMS)</a> and <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
+     * Symmetric and Asymmetric Keys</a>.</p>
      */
     inline AssociateKmsKeyRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
