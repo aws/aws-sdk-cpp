@@ -28,6 +28,8 @@ using namespace Aws::Http;
 ListUsersRequest::ListUsersRequest() : 
     m_accountIdHasBeenSet(false),
     m_userEmailHasBeenSet(false),
+    m_userType(UserType::NOT_SET),
+    m_userTypeHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false)
@@ -46,6 +48,13 @@ void ListUsersRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_userEmail;
       uri.AddQueryStringParameter("user-email", ss.str());
+      ss.str("");
+    }
+
+    if(m_userTypeHasBeenSet)
+    {
+      ss << UserTypeMapper::GetNameForUserType(m_userType);
+      uri.AddQueryStringParameter("user-type", ss.str());
       ss.str("");
     }
 

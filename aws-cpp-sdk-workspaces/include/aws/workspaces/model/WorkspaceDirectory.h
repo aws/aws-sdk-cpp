@@ -608,37 +608,37 @@ namespace Model
 
     /**
      * <p>The devices and operating systems that users can use to access
-     * Workspaces.</p>
+     * WorkSpaces.</p>
      */
     inline const WorkspaceAccessProperties& GetWorkspaceAccessProperties() const{ return m_workspaceAccessProperties; }
 
     /**
      * <p>The devices and operating systems that users can use to access
-     * Workspaces.</p>
+     * WorkSpaces.</p>
      */
     inline bool WorkspaceAccessPropertiesHasBeenSet() const { return m_workspaceAccessPropertiesHasBeenSet; }
 
     /**
      * <p>The devices and operating systems that users can use to access
-     * Workspaces.</p>
+     * WorkSpaces.</p>
      */
     inline void SetWorkspaceAccessProperties(const WorkspaceAccessProperties& value) { m_workspaceAccessPropertiesHasBeenSet = true; m_workspaceAccessProperties = value; }
 
     /**
      * <p>The devices and operating systems that users can use to access
-     * Workspaces.</p>
+     * WorkSpaces.</p>
      */
     inline void SetWorkspaceAccessProperties(WorkspaceAccessProperties&& value) { m_workspaceAccessPropertiesHasBeenSet = true; m_workspaceAccessProperties = std::move(value); }
 
     /**
      * <p>The devices and operating systems that users can use to access
-     * Workspaces.</p>
+     * WorkSpaces.</p>
      */
     inline WorkspaceDirectory& WithWorkspaceAccessProperties(const WorkspaceAccessProperties& value) { SetWorkspaceAccessProperties(value); return *this;}
 
     /**
      * <p>The devices and operating systems that users can use to access
-     * Workspaces.</p>
+     * WorkSpaces.</p>
      */
     inline WorkspaceDirectory& WithWorkspaceAccessProperties(WorkspaceAccessProperties&& value) { SetWorkspaceAccessProperties(std::move(value)); return *this;}
 

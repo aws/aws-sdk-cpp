@@ -49,43 +49,55 @@ namespace Model
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your SFTP server. With a VPC endpoint, your SFTP server isn't accessible over
-     * the public internet.</p>
+     * your SFTP server. With a VPC endpoint, you can restrict access to your SFTP
+     * server to resources only within your VPC. To control incoming internet traffic,
+     * you will need to associate one or more Elastic IP addresses with your server's
+     * endpoint. </p>
      */
     inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your SFTP server. With a VPC endpoint, your SFTP server isn't accessible over
-     * the public internet.</p>
+     * your SFTP server. With a VPC endpoint, you can restrict access to your SFTP
+     * server to resources only within your VPC. To control incoming internet traffic,
+     * you will need to associate one or more Elastic IP addresses with your server's
+     * endpoint. </p>
      */
     inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your SFTP server. With a VPC endpoint, your SFTP server isn't accessible over
-     * the public internet.</p>
+     * your SFTP server. With a VPC endpoint, you can restrict access to your SFTP
+     * server to resources only within your VPC. To control incoming internet traffic,
+     * you will need to associate one or more Elastic IP addresses with your server's
+     * endpoint. </p>
      */
     inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your SFTP server. With a VPC endpoint, your SFTP server isn't accessible over
-     * the public internet.</p>
+     * your SFTP server. With a VPC endpoint, you can restrict access to your SFTP
+     * server to resources only within your VPC. To control incoming internet traffic,
+     * you will need to associate one or more Elastic IP addresses with your server's
+     * endpoint. </p>
      */
     inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your SFTP server. With a VPC endpoint, your SFTP server isn't accessible over
-     * the public internet.</p>
+     * your SFTP server. With a VPC endpoint, you can restrict access to your SFTP
+     * server to resources only within your VPC. To control incoming internet traffic,
+     * you will need to associate one or more Elastic IP addresses with your server's
+     * endpoint. </p>
      */
     inline UpdateServerRequest& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
 
     /**
      * <p>The virtual private cloud (VPC) endpoint settings that are configured for
-     * your SFTP server. With a VPC endpoint, your SFTP server isn't accessible over
-     * the public internet.</p>
+     * your SFTP server. With a VPC endpoint, you can restrict access to your SFTP
+     * server to resources only within your VPC. To control incoming internet traffic,
+     * you will need to associate one or more Elastic IP addresses with your server's
+     * endpoint. </p>
      */
     inline UpdateServerRequest& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
 

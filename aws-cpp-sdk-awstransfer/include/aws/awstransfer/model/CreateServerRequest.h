@@ -51,87 +51,105 @@ namespace Model
 
 
     /**
-     * <p>The virtual private cloud (VPC) endpoint settings that you want to configure
-     * for your SFTP server. This parameter is required when you specify a value for
-     * the <code>EndpointType</code> parameter.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your SFTP server. With a VPC endpoint, you can restrict access to your SFTP
+     * server to resources only within your VPC. To control incoming internet traffic,
+     * you will need to invoke the <code>UpdateServer</code> API and attach an Elastic
+     * IP to your server's endpoint. </p>
      */
     inline const EndpointDetails& GetEndpointDetails() const{ return m_endpointDetails; }
 
     /**
-     * <p>The virtual private cloud (VPC) endpoint settings that you want to configure
-     * for your SFTP server. This parameter is required when you specify a value for
-     * the <code>EndpointType</code> parameter.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your SFTP server. With a VPC endpoint, you can restrict access to your SFTP
+     * server to resources only within your VPC. To control incoming internet traffic,
+     * you will need to invoke the <code>UpdateServer</code> API and attach an Elastic
+     * IP to your server's endpoint. </p>
      */
     inline bool EndpointDetailsHasBeenSet() const { return m_endpointDetailsHasBeenSet; }
 
     /**
-     * <p>The virtual private cloud (VPC) endpoint settings that you want to configure
-     * for your SFTP server. This parameter is required when you specify a value for
-     * the <code>EndpointType</code> parameter.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your SFTP server. With a VPC endpoint, you can restrict access to your SFTP
+     * server to resources only within your VPC. To control incoming internet traffic,
+     * you will need to invoke the <code>UpdateServer</code> API and attach an Elastic
+     * IP to your server's endpoint. </p>
      */
     inline void SetEndpointDetails(const EndpointDetails& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = value; }
 
     /**
-     * <p>The virtual private cloud (VPC) endpoint settings that you want to configure
-     * for your SFTP server. This parameter is required when you specify a value for
-     * the <code>EndpointType</code> parameter.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your SFTP server. With a VPC endpoint, you can restrict access to your SFTP
+     * server to resources only within your VPC. To control incoming internet traffic,
+     * you will need to invoke the <code>UpdateServer</code> API and attach an Elastic
+     * IP to your server's endpoint. </p>
      */
     inline void SetEndpointDetails(EndpointDetails&& value) { m_endpointDetailsHasBeenSet = true; m_endpointDetails = std::move(value); }
 
     /**
-     * <p>The virtual private cloud (VPC) endpoint settings that you want to configure
-     * for your SFTP server. This parameter is required when you specify a value for
-     * the <code>EndpointType</code> parameter.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your SFTP server. With a VPC endpoint, you can restrict access to your SFTP
+     * server to resources only within your VPC. To control incoming internet traffic,
+     * you will need to invoke the <code>UpdateServer</code> API and attach an Elastic
+     * IP to your server's endpoint. </p>
      */
     inline CreateServerRequest& WithEndpointDetails(const EndpointDetails& value) { SetEndpointDetails(value); return *this;}
 
     /**
-     * <p>The virtual private cloud (VPC) endpoint settings that you want to configure
-     * for your SFTP server. This parameter is required when you specify a value for
-     * the <code>EndpointType</code> parameter.</p>
+     * <p>The virtual private cloud (VPC) endpoint settings that are configured for
+     * your SFTP server. With a VPC endpoint, you can restrict access to your SFTP
+     * server to resources only within your VPC. To control incoming internet traffic,
+     * you will need to invoke the <code>UpdateServer</code> API and attach an Elastic
+     * IP to your server's endpoint. </p>
      */
     inline CreateServerRequest& WithEndpointDetails(EndpointDetails&& value) { SetEndpointDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>The type of VPC endpoint that you want your SFTP server to connect to. If you
-     * connect to a VPC endpoint, your SFTP server isn't accessible over the public
-     * internet.</p>
+     * <p>The type of VPC endpoint that you want your SFTP server to connect to. You
+     * can choose to connect to the public internet or a virtual private cloud (VPC)
+     * endpoint. With a VPC endpoint, you can restrict access to your SFTP server and
+     * resources only within your VPC.</p>
      */
     inline const EndpointType& GetEndpointType() const{ return m_endpointType; }
 
     /**
-     * <p>The type of VPC endpoint that you want your SFTP server to connect to. If you
-     * connect to a VPC endpoint, your SFTP server isn't accessible over the public
-     * internet.</p>
+     * <p>The type of VPC endpoint that you want your SFTP server to connect to. You
+     * can choose to connect to the public internet or a virtual private cloud (VPC)
+     * endpoint. With a VPC endpoint, you can restrict access to your SFTP server and
+     * resources only within your VPC.</p>
      */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
     /**
-     * <p>The type of VPC endpoint that you want your SFTP server to connect to. If you
-     * connect to a VPC endpoint, your SFTP server isn't accessible over the public
-     * internet.</p>
+     * <p>The type of VPC endpoint that you want your SFTP server to connect to. You
+     * can choose to connect to the public internet or a virtual private cloud (VPC)
+     * endpoint. With a VPC endpoint, you can restrict access to your SFTP server and
+     * resources only within your VPC.</p>
      */
     inline void SetEndpointType(const EndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
-     * <p>The type of VPC endpoint that you want your SFTP server to connect to. If you
-     * connect to a VPC endpoint, your SFTP server isn't accessible over the public
-     * internet.</p>
+     * <p>The type of VPC endpoint that you want your SFTP server to connect to. You
+     * can choose to connect to the public internet or a virtual private cloud (VPC)
+     * endpoint. With a VPC endpoint, you can restrict access to your SFTP server and
+     * resources only within your VPC.</p>
      */
     inline void SetEndpointType(EndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
-     * <p>The type of VPC endpoint that you want your SFTP server to connect to. If you
-     * connect to a VPC endpoint, your SFTP server isn't accessible over the public
-     * internet.</p>
+     * <p>The type of VPC endpoint that you want your SFTP server to connect to. You
+     * can choose to connect to the public internet or a virtual private cloud (VPC)
+     * endpoint. With a VPC endpoint, you can restrict access to your SFTP server and
+     * resources only within your VPC.</p>
      */
     inline CreateServerRequest& WithEndpointType(const EndpointType& value) { SetEndpointType(value); return *this;}
 
     /**
-     * <p>The type of VPC endpoint that you want your SFTP server to connect to. If you
-     * connect to a VPC endpoint, your SFTP server isn't accessible over the public
-     * internet.</p>
+     * <p>The type of VPC endpoint that you want your SFTP server to connect to. You
+     * can choose to connect to the public internet or a virtual private cloud (VPC)
+     * endpoint. With a VPC endpoint, you can restrict access to your SFTP server and
+     * resources only within your VPC.</p>
      */
     inline CreateServerRequest& WithEndpointType(EndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
 

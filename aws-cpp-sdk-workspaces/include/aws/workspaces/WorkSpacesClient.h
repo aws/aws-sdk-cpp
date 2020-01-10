@@ -45,6 +45,7 @@
 #include <aws/workspaces/model/DisassociateIpGroupsResult.h>
 #include <aws/workspaces/model/ImportWorkspaceImageResult.h>
 #include <aws/workspaces/model/ListAvailableManagementCidrRangesResult.h>
+#include <aws/workspaces/model/MigrateWorkspaceResult.h>
 #include <aws/workspaces/model/ModifyAccountResult.h>
 #include <aws/workspaces/model/ModifyClientPropertiesResult.h>
 #include <aws/workspaces/model/ModifySelfservicePermissionsResult.h>
@@ -124,6 +125,7 @@ namespace Model
         class DisassociateIpGroupsRequest;
         class ImportWorkspaceImageRequest;
         class ListAvailableManagementCidrRangesRequest;
+        class MigrateWorkspaceRequest;
         class ModifyAccountRequest;
         class ModifyClientPropertiesRequest;
         class ModifySelfservicePermissionsRequest;
@@ -165,6 +167,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DisassociateIpGroupsResult, Aws::Client::AWSError<WorkSpacesErrors>> DisassociateIpGroupsOutcome;
         typedef Aws::Utils::Outcome<ImportWorkspaceImageResult, Aws::Client::AWSError<WorkSpacesErrors>> ImportWorkspaceImageOutcome;
         typedef Aws::Utils::Outcome<ListAvailableManagementCidrRangesResult, Aws::Client::AWSError<WorkSpacesErrors>> ListAvailableManagementCidrRangesOutcome;
+        typedef Aws::Utils::Outcome<MigrateWorkspaceResult, Aws::Client::AWSError<WorkSpacesErrors>> MigrateWorkspaceOutcome;
         typedef Aws::Utils::Outcome<ModifyAccountResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyAccountOutcome;
         typedef Aws::Utils::Outcome<ModifyClientPropertiesResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifyClientPropertiesOutcome;
         typedef Aws::Utils::Outcome<ModifySelfservicePermissionsResult, Aws::Client::AWSError<WorkSpacesErrors>> ModifySelfservicePermissionsOutcome;
@@ -206,6 +209,7 @@ namespace Model
         typedef std::future<DisassociateIpGroupsOutcome> DisassociateIpGroupsOutcomeCallable;
         typedef std::future<ImportWorkspaceImageOutcome> ImportWorkspaceImageOutcomeCallable;
         typedef std::future<ListAvailableManagementCidrRangesOutcome> ListAvailableManagementCidrRangesOutcomeCallable;
+        typedef std::future<MigrateWorkspaceOutcome> MigrateWorkspaceOutcomeCallable;
         typedef std::future<ModifyAccountOutcome> ModifyAccountOutcomeCallable;
         typedef std::future<ModifyClientPropertiesOutcome> ModifyClientPropertiesOutcomeCallable;
         typedef std::future<ModifySelfservicePermissionsOutcome> ModifySelfservicePermissionsOutcomeCallable;
@@ -250,6 +254,7 @@ namespace Model
     typedef std::function<void(const WorkSpacesClient*, const Model::DisassociateIpGroupsRequest&, const Model::DisassociateIpGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateIpGroupsResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ImportWorkspaceImageRequest&, const Model::ImportWorkspaceImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportWorkspaceImageResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ListAvailableManagementCidrRangesRequest&, const Model::ListAvailableManagementCidrRangesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAvailableManagementCidrRangesResponseReceivedHandler;
+    typedef std::function<void(const WorkSpacesClient*, const Model::MigrateWorkspaceRequest&, const Model::MigrateWorkspaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > MigrateWorkspaceResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyAccountRequest&, const Model::ModifyAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyAccountResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifyClientPropertiesRequest&, const Model::ModifyClientPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyClientPropertiesResponseReceivedHandler;
     typedef std::function<void(const WorkSpacesClient*, const Model::ModifySelfservicePermissionsRequest&, const Model::ModifySelfservicePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifySelfservicePermissionsResponseReceivedHandler;
@@ -1043,6 +1048,64 @@ namespace Model
         virtual void ListAvailableManagementCidrRangesAsync(const Model::ListAvailableManagementCidrRangesRequest& request, const ListAvailableManagementCidrRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Migrates a WorkSpace from one operating system or bundle type to another,
+         * while retaining the data on the user volume.</p> <p>The migration process
+         * recreates the WorkSpace by using a new root volume from the target bundle image
+         * and the user volume from the last available snapshot of the original WorkSpace.
+         * During migration, the original <code>D:\Users\%USERNAME%</code> user profile
+         * folder is renamed to <code>D:\Users\%USERNAME%MMddyyTHHmmss%.NotMigrated</code>.
+         * A new <code>D:\Users\%USERNAME%\</code> folder is generated by the new OS.
+         * Certain files in the old user profile are moved to the new user profile.</p>
+         * <p>For available migration scenarios, details about what happens during
+         * migration, and best practices, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html">Migrate
+         * a WorkSpace</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/MigrateWorkspace">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::MigrateWorkspaceOutcome MigrateWorkspace(const Model::MigrateWorkspaceRequest& request) const;
+
+        /**
+         * <p>Migrates a WorkSpace from one operating system or bundle type to another,
+         * while retaining the data on the user volume.</p> <p>The migration process
+         * recreates the WorkSpace by using a new root volume from the target bundle image
+         * and the user volume from the last available snapshot of the original WorkSpace.
+         * During migration, the original <code>D:\Users\%USERNAME%</code> user profile
+         * folder is renamed to <code>D:\Users\%USERNAME%MMddyyTHHmmss%.NotMigrated</code>.
+         * A new <code>D:\Users\%USERNAME%\</code> folder is generated by the new OS.
+         * Certain files in the old user profile are moved to the new user profile.</p>
+         * <p>For available migration scenarios, details about what happens during
+         * migration, and best practices, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html">Migrate
+         * a WorkSpace</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/MigrateWorkspace">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::MigrateWorkspaceOutcomeCallable MigrateWorkspaceCallable(const Model::MigrateWorkspaceRequest& request) const;
+
+        /**
+         * <p>Migrates a WorkSpace from one operating system or bundle type to another,
+         * while retaining the data on the user volume.</p> <p>The migration process
+         * recreates the WorkSpace by using a new root volume from the target bundle image
+         * and the user volume from the last available snapshot of the original WorkSpace.
+         * During migration, the original <code>D:\Users\%USERNAME%</code> user profile
+         * folder is renamed to <code>D:\Users\%USERNAME%MMddyyTHHmmss%.NotMigrated</code>.
+         * A new <code>D:\Users\%USERNAME%\</code> folder is generated by the new OS.
+         * Certain files in the old user profile are moved to the new user profile.</p>
+         * <p>For available migration scenarios, details about what happens during
+         * migration, and best practices, see <a
+         * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html">Migrate
+         * a WorkSpace</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/MigrateWorkspace">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void MigrateWorkspaceAsync(const Model::MigrateWorkspaceRequest& request, const MigrateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies the configuration of Bring Your Own License (BYOL) for the specified
          * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyAccount">AWS
@@ -1137,7 +1200,7 @@ namespace Model
 
         /**
          * <p>Specifies which devices and operating systems users can use to access their
-         * Workspaces. For more information, see <a
+         * WorkSpaces. For more information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access">
          * Control Device Access</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceAccessProperties">AWS
@@ -1147,7 +1210,7 @@ namespace Model
 
         /**
          * <p>Specifies which devices and operating systems users can use to access their
-         * Workspaces. For more information, see <a
+         * WorkSpaces. For more information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access">
          * Control Device Access</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceAccessProperties">AWS
@@ -1159,7 +1222,7 @@ namespace Model
 
         /**
          * <p>Specifies which devices and operating systems users can use to access their
-         * Workspaces. For more information, see <a
+         * WorkSpaces. For more information, see <a
          * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access">
          * Control Device Access</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyWorkspaceAccessProperties">AWS
@@ -1617,6 +1680,7 @@ namespace Model
         void DisassociateIpGroupsAsyncHelper(const Model::DisassociateIpGroupsRequest& request, const DisassociateIpGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportWorkspaceImageAsyncHelper(const Model::ImportWorkspaceImageRequest& request, const ImportWorkspaceImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAvailableManagementCidrRangesAsyncHelper(const Model::ListAvailableManagementCidrRangesRequest& request, const ListAvailableManagementCidrRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void MigrateWorkspaceAsyncHelper(const Model::MigrateWorkspaceRequest& request, const MigrateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyAccountAsyncHelper(const Model::ModifyAccountRequest& request, const ModifyAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyClientPropertiesAsyncHelper(const Model::ModifyClientPropertiesRequest& request, const ModifyClientPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifySelfservicePermissionsAsyncHelper(const Model::ModifySelfservicePermissionsRequest& request, const ModifySelfservicePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

@@ -100,6 +100,7 @@
 #include <aws/rds/model/FailoverDBClusterResult.h>
 #include <aws/rds/model/ImportInstallationMediaResult.h>
 #include <aws/rds/model/ListTagsForResourceResult.h>
+#include <aws/rds/model/ModifyCertificatesResult.h>
 #include <aws/rds/model/ModifyCurrentDBClusterCapacityResult.h>
 #include <aws/rds/model/ModifyDBClusterResult.h>
 #include <aws/rds/model/ModifyDBClusterEndpointResult.h>
@@ -267,6 +268,7 @@ namespace Aws
         class FailoverDBClusterRequest;
         class ImportInstallationMediaRequest;
         class ListTagsForResourceRequest;
+        class ModifyCertificatesRequest;
         class ModifyCurrentDBClusterCapacityRequest;
         class ModifyDBClusterRequest;
         class ModifyDBClusterEndpointRequest;
@@ -394,6 +396,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<FailoverDBClusterResult, Aws::Client::AWSError<RDSErrors>> FailoverDBClusterOutcome;
         typedef Aws::Utils::Outcome<ImportInstallationMediaResult, Aws::Client::AWSError<RDSErrors>> ImportInstallationMediaOutcome;
         typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<RDSErrors>> ListTagsForResourceOutcome;
+        typedef Aws::Utils::Outcome<ModifyCertificatesResult, Aws::Client::AWSError<RDSErrors>> ModifyCertificatesOutcome;
         typedef Aws::Utils::Outcome<ModifyCurrentDBClusterCapacityResult, Aws::Client::AWSError<RDSErrors>> ModifyCurrentDBClusterCapacityOutcome;
         typedef Aws::Utils::Outcome<ModifyDBClusterResult, Aws::Client::AWSError<RDSErrors>> ModifyDBClusterOutcome;
         typedef Aws::Utils::Outcome<ModifyDBClusterEndpointResult, Aws::Client::AWSError<RDSErrors>> ModifyDBClusterEndpointOutcome;
@@ -521,6 +524,7 @@ namespace Aws
         typedef std::future<FailoverDBClusterOutcome> FailoverDBClusterOutcomeCallable;
         typedef std::future<ImportInstallationMediaOutcome> ImportInstallationMediaOutcomeCallable;
         typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
+        typedef std::future<ModifyCertificatesOutcome> ModifyCertificatesOutcomeCallable;
         typedef std::future<ModifyCurrentDBClusterCapacityOutcome> ModifyCurrentDBClusterCapacityOutcomeCallable;
         typedef std::future<ModifyDBClusterOutcome> ModifyDBClusterOutcomeCallable;
         typedef std::future<ModifyDBClusterEndpointOutcome> ModifyDBClusterEndpointOutcomeCallable;
@@ -651,6 +655,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::FailoverDBClusterRequest&, const Model::FailoverDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > FailoverDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ImportInstallationMediaRequest&, const Model::ImportInstallationMediaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportInstallationMediaResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::ModifyCertificatesRequest&, const Model::ModifyCertificatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCertificatesResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyCurrentDBClusterCapacityRequest&, const Model::ModifyCurrentDBClusterCapacityOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyCurrentDBClusterCapacityResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyDBClusterRequest&, const Model::ModifyDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::ModifyDBClusterEndpointRequest&, const Model::ModifyDBClusterEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyDBClusterEndpointResponseReceivedHandler;
@@ -3047,8 +3052,8 @@ namespace Aws
          * pagination.</p> <p>For more information on Amazon Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
-         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * <p>This operation can also return information for Amazon Neptune DB instances
+         * and Amazon DocumentDB instances.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          */
@@ -3059,8 +3064,8 @@ namespace Aws
          * pagination.</p> <p>For more information on Amazon Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
-         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * <p>This operation can also return information for Amazon Neptune DB instances
+         * and Amazon DocumentDB instances.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          *
@@ -3073,8 +3078,8 @@ namespace Aws
          * pagination.</p> <p>For more information on Amazon Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What Is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide.</i> </p> <note>
-         * <p>This action only applies to Aurora DB clusters.</p> </note><p><h3>See
-         * Also:</h3>   <a
+         * <p>This operation can also return information for Amazon Neptune DB instances
+         * and Amazon DocumentDB instances.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBClusters">AWS
          * API Reference</a></p>
          *
@@ -3149,7 +3154,9 @@ namespace Aws
 
         /**
          * <p>Returns information about provisioned RDS instances. This API supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * pagination.</p> <note> <p>This operation can also return information for Amazon
+         * Neptune DB instances and Amazon DocumentDB instances.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          */
@@ -3157,7 +3164,9 @@ namespace Aws
 
         /**
          * <p>Returns information about provisioned RDS instances. This API supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * pagination.</p> <note> <p>This operation can also return information for Amazon
+         * Neptune DB instances and Amazon DocumentDB instances.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          *
@@ -3167,7 +3176,9 @@ namespace Aws
 
         /**
          * <p>Returns information about provisioned RDS instances. This API supports
-         * pagination.</p><p><h3>See Also:</h3>   <a
+         * pagination.</p> <note> <p>This operation can also return information for Amazon
+         * Neptune DB instances and Amazon DocumentDB instances.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBInstances">AWS
          * API Reference</a></p>
          *
@@ -4133,6 +4144,94 @@ namespace Aws
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Override the system-default Secure Sockets Layer/Transport Layer Security
+         * (SSL/TLS) certificate for Amazon RDS for new DB instances, or remove the
+         * override.</p> <p>By using this operation, you can specify an RDS-approved
+         * SSL/TLS certificate for new DB instances that is different from the default
+         * certificate provided by RDS. You can also use this operation to remove the
+         * override, so that new DB instances use the default certificate provided by
+         * RDS.</p> <p>You might need to override the default certificate in the following
+         * situations:</p> <ul> <li> <p>You already migrated your applications to support
+         * the latest certificate authority (CA) certificate, but the new CA certificate is
+         * not yet the RDS default CA certificate for the specified AWS Region.</p> </li>
+         * <li> <p>RDS has already moved to a new default CA certificate for the specified
+         * AWS Region, but you are still in the process of supporting the new CA
+         * certificate. In this case, you temporarily need additional time to finish your
+         * application changes.</p> </li> </ul> <p>For more information about rotating your
+         * SSL/TLS certificate for RDS DB engines, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+         * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon RDS User Guide</i>.</p>
+         * <p>For more information about rotating your SSL/TLS certificate for Aurora DB
+         * engines, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+         * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCertificates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ModifyCertificatesOutcome ModifyCertificates(const Model::ModifyCertificatesRequest& request) const;
+
+        /**
+         * <p>Override the system-default Secure Sockets Layer/Transport Layer Security
+         * (SSL/TLS) certificate for Amazon RDS for new DB instances, or remove the
+         * override.</p> <p>By using this operation, you can specify an RDS-approved
+         * SSL/TLS certificate for new DB instances that is different from the default
+         * certificate provided by RDS. You can also use this operation to remove the
+         * override, so that new DB instances use the default certificate provided by
+         * RDS.</p> <p>You might need to override the default certificate in the following
+         * situations:</p> <ul> <li> <p>You already migrated your applications to support
+         * the latest certificate authority (CA) certificate, but the new CA certificate is
+         * not yet the RDS default CA certificate for the specified AWS Region.</p> </li>
+         * <li> <p>RDS has already moved to a new default CA certificate for the specified
+         * AWS Region, but you are still in the process of supporting the new CA
+         * certificate. In this case, you temporarily need additional time to finish your
+         * application changes.</p> </li> </ul> <p>For more information about rotating your
+         * SSL/TLS certificate for RDS DB engines, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+         * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon RDS User Guide</i>.</p>
+         * <p>For more information about rotating your SSL/TLS certificate for Aurora DB
+         * engines, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+         * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCertificates">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ModifyCertificatesOutcomeCallable ModifyCertificatesCallable(const Model::ModifyCertificatesRequest& request) const;
+
+        /**
+         * <p>Override the system-default Secure Sockets Layer/Transport Layer Security
+         * (SSL/TLS) certificate for Amazon RDS for new DB instances, or remove the
+         * override.</p> <p>By using this operation, you can specify an RDS-approved
+         * SSL/TLS certificate for new DB instances that is different from the default
+         * certificate provided by RDS. You can also use this operation to remove the
+         * override, so that new DB instances use the default certificate provided by
+         * RDS.</p> <p>You might need to override the default certificate in the following
+         * situations:</p> <ul> <li> <p>You already migrated your applications to support
+         * the latest certificate authority (CA) certificate, but the new CA certificate is
+         * not yet the RDS default CA certificate for the specified AWS Region.</p> </li>
+         * <li> <p>RDS has already moved to a new default CA certificate for the specified
+         * AWS Region, but you are still in the process of supporting the new CA
+         * certificate. In this case, you temporarily need additional time to finish your
+         * application changes.</p> </li> </ul> <p>For more information about rotating your
+         * SSL/TLS certificate for RDS DB engines, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+         * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon RDS User Guide</i>.</p>
+         * <p>For more information about rotating your SSL/TLS certificate for Aurora DB
+         * engines, see <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL-certificate-rotation.html">
+         * Rotating Your SSL/TLS Certificate</a> in the <i>Amazon Aurora User
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyCertificates">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ModifyCertificatesAsync(const Model::ModifyCertificatesRequest& request, const ModifyCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Set the capacity of an Aurora Serverless DB cluster to a specific value.</p>
@@ -6100,6 +6199,7 @@ namespace Aws
         void FailoverDBClusterAsyncHelper(const Model::FailoverDBClusterRequest& request, const FailoverDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ImportInstallationMediaAsyncHelper(const Model::ImportInstallationMediaRequest& request, const ImportInstallationMediaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ModifyCertificatesAsyncHelper(const Model::ModifyCertificatesRequest& request, const ModifyCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyCurrentDBClusterCapacityAsyncHelper(const Model::ModifyCurrentDBClusterCapacityRequest& request, const ModifyCurrentDBClusterCapacityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBClusterAsyncHelper(const Model::ModifyDBClusterRequest& request, const ModifyDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyDBClusterEndpointAsyncHelper(const Model::ModifyDBClusterEndpointRequest& request, const ModifyDBClusterEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

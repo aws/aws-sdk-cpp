@@ -26,7 +26,8 @@ DescribeEgressOnlyInternetGatewaysRequest::DescribeEgressOnlyInternetGatewaysReq
     m_egressOnlyInternetGatewayIdsHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ Aws::String DescribeEgressOnlyInternetGatewaysRequest::SerializePayload() const
   if(m_nextTokenHasBeenSet)
   {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+  }
+
+  if(m_filtersHasBeenSet)
+  {
+    unsigned filtersCount = 1;
+    for(auto& item : m_filters)
+    {
+      item.OutputToStream(ss, "Filter.", filtersCount, "");
+      filtersCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

@@ -129,7 +129,10 @@ namespace Model
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> // KMS Key Alias </p> <p> <code> "alias/ExampleAlias"</code>
+     * </p> </li> <li> <p> // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias</p>
+     * <p> <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p>
+     * </li> </ul>
      */
     inline const Aws::String& GetVolumeKmsKeyId() const{ return m_volumeKmsKeyId; }
 
@@ -141,7 +144,10 @@ namespace Model
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> // KMS Key Alias </p> <p> <code> "alias/ExampleAlias"</code>
+     * </p> </li> <li> <p> // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias</p>
+     * <p> <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p>
+     * </li> </ul>
      */
     inline bool VolumeKmsKeyIdHasBeenSet() const { return m_volumeKmsKeyIdHasBeenSet; }
 
@@ -153,7 +159,10 @@ namespace Model
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> // KMS Key Alias </p> <p> <code> "alias/ExampleAlias"</code>
+     * </p> </li> <li> <p> // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias</p>
+     * <p> <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p>
+     * </li> </ul>
      */
     inline void SetVolumeKmsKeyId(const Aws::String& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = value; }
 
@@ -165,7 +174,10 @@ namespace Model
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> // KMS Key Alias </p> <p> <code> "alias/ExampleAlias"</code>
+     * </p> </li> <li> <p> // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias</p>
+     * <p> <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p>
+     * </li> </ul>
      */
     inline void SetVolumeKmsKeyId(Aws::String&& value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId = std::move(value); }
 
@@ -177,7 +189,10 @@ namespace Model
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> // KMS Key Alias </p> <p> <code> "alias/ExampleAlias"</code>
+     * </p> </li> <li> <p> // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias</p>
+     * <p> <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p>
+     * </li> </ul>
      */
     inline void SetVolumeKmsKeyId(const char* value) { m_volumeKmsKeyIdHasBeenSet = true; m_volumeKmsKeyId.assign(value); }
 
@@ -189,7 +204,10 @@ namespace Model
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> // KMS Key Alias </p> <p> <code> "alias/ExampleAlias"</code>
+     * </p> </li> <li> <p> // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias</p>
+     * <p> <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p>
+     * </li> </ul>
      */
     inline TransformResources& WithVolumeKmsKeyId(const Aws::String& value) { SetVolumeKmsKeyId(value); return *this;}
 
@@ -201,7 +219,10 @@ namespace Model
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> // KMS Key Alias </p> <p> <code> "alias/ExampleAlias"</code>
+     * </p> </li> <li> <p> // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias</p>
+     * <p> <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p>
+     * </li> </ul>
      */
     inline TransformResources& WithVolumeKmsKeyId(Aws::String&& value) { SetVolumeKmsKeyId(std::move(value)); return *this;}
 
@@ -213,7 +234,10 @@ namespace Model
      * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> </p> </li> <li> <p>// Amazon
      * Resource Name (ARN) of a KMS Key</p> <p>
      * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
-     * </p> </li> </ul>
+     * </p> </li> <li> <p> // KMS Key Alias </p> <p> <code> "alias/ExampleAlias"</code>
+     * </p> </li> <li> <p> // Amazon Resource Name (ARN) (ARN) of a KMS Key Alias</p>
+     * <p> <code> "arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> </p>
+     * </li> </ul>
      */
     inline TransformResources& WithVolumeKmsKeyId(const char* value) { SetVolumeKmsKeyId(value); return *this;}
 

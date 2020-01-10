@@ -36,12 +36,15 @@ User::User() :
     m_displayNameHasBeenSet(false),
     m_licenseType(License::NOT_SET),
     m_licenseTypeHasBeenSet(false),
+    m_userType(UserType::NOT_SET),
+    m_userTypeHasBeenSet(false),
     m_userRegistrationStatus(RegistrationStatus::NOT_SET),
     m_userRegistrationStatusHasBeenSet(false),
     m_userInvitationStatus(InviteStatus::NOT_SET),
     m_userInvitationStatusHasBeenSet(false),
     m_registeredOnHasBeenSet(false),
     m_invitedOnHasBeenSet(false),
+    m_alexaForBusinessMetadataHasBeenSet(false),
     m_personalPINHasBeenSet(false)
 {
 }
@@ -54,12 +57,15 @@ User::User(JsonView jsonValue) :
     m_displayNameHasBeenSet(false),
     m_licenseType(License::NOT_SET),
     m_licenseTypeHasBeenSet(false),
+    m_userType(UserType::NOT_SET),
+    m_userTypeHasBeenSet(false),
     m_userRegistrationStatus(RegistrationStatus::NOT_SET),
     m_userRegistrationStatusHasBeenSet(false),
     m_userInvitationStatus(InviteStatus::NOT_SET),
     m_userInvitationStatusHasBeenSet(false),
     m_registeredOnHasBeenSet(false),
     m_invitedOnHasBeenSet(false),
+    m_alexaForBusinessMetadataHasBeenSet(false),
     m_personalPINHasBeenSet(false)
 {
   *this = jsonValue;
@@ -109,6 +115,13 @@ User& User::operator =(JsonView jsonValue)
     m_licenseTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UserType"))
+  {
+    m_userType = UserTypeMapper::GetUserTypeForName(jsonValue.GetString("UserType"));
+
+    m_userTypeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("UserRegistrationStatus"))
   {
     m_userRegistrationStatus = RegistrationStatusMapper::GetRegistrationStatusForName(jsonValue.GetString("UserRegistrationStatus"));
@@ -135,6 +148,13 @@ User& User::operator =(JsonView jsonValue)
     m_invitedOn = jsonValue.GetString("InvitedOn");
 
     m_invitedOnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AlexaForBusinessMetadata"))
+  {
+    m_alexaForBusinessMetadata = jsonValue.GetObject("AlexaForBusinessMetadata");
+
+    m_alexaForBusinessMetadataHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("PersonalPIN"))
@@ -186,6 +206,11 @@ JsonValue User::Jsonize() const
    payload.WithString("LicenseType", LicenseMapper::GetNameForLicense(m_licenseType));
   }
 
+  if(m_userTypeHasBeenSet)
+  {
+   payload.WithString("UserType", UserTypeMapper::GetNameForUserType(m_userType));
+  }
+
   if(m_userRegistrationStatusHasBeenSet)
   {
    payload.WithString("UserRegistrationStatus", RegistrationStatusMapper::GetNameForRegistrationStatus(m_userRegistrationStatus));
@@ -204,6 +229,12 @@ JsonValue User::Jsonize() const
   if(m_invitedOnHasBeenSet)
   {
    payload.WithString("InvitedOn", m_invitedOn.ToGmtString(DateFormat::ISO_8601));
+  }
+
+  if(m_alexaForBusinessMetadataHasBeenSet)
+  {
+   payload.WithObject("AlexaForBusinessMetadata", m_alexaForBusinessMetadata.Jsonize());
+
   }
 
   if(m_personalPINHasBeenSet)

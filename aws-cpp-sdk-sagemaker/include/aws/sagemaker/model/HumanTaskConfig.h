@@ -2161,32 +2161,32 @@ namespace Model
     /**
      * <p>The length of time that a task remains available for labeling by human
      * workers. <b>If you choose the Amazon Mechanical Turk workforce, the maximum is
-     * 12 hours (43200)</b>. For private and vendor workforces, the maximum is as
-     * listed.</p>
+     * 12 hours (43200)</b>. The default value is 864000 seconds (1 day). For private
+     * and vendor workforces, the maximum is as listed.</p>
      */
     inline int GetTaskAvailabilityLifetimeInSeconds() const{ return m_taskAvailabilityLifetimeInSeconds; }
 
     /**
      * <p>The length of time that a task remains available for labeling by human
      * workers. <b>If you choose the Amazon Mechanical Turk workforce, the maximum is
-     * 12 hours (43200)</b>. For private and vendor workforces, the maximum is as
-     * listed.</p>
+     * 12 hours (43200)</b>. The default value is 864000 seconds (1 day). For private
+     * and vendor workforces, the maximum is as listed.</p>
      */
     inline bool TaskAvailabilityLifetimeInSecondsHasBeenSet() const { return m_taskAvailabilityLifetimeInSecondsHasBeenSet; }
 
     /**
      * <p>The length of time that a task remains available for labeling by human
      * workers. <b>If you choose the Amazon Mechanical Turk workforce, the maximum is
-     * 12 hours (43200)</b>. For private and vendor workforces, the maximum is as
-     * listed.</p>
+     * 12 hours (43200)</b>. The default value is 864000 seconds (1 day). For private
+     * and vendor workforces, the maximum is as listed.</p>
      */
     inline void SetTaskAvailabilityLifetimeInSeconds(int value) { m_taskAvailabilityLifetimeInSecondsHasBeenSet = true; m_taskAvailabilityLifetimeInSeconds = value; }
 
     /**
      * <p>The length of time that a task remains available for labeling by human
      * workers. <b>If you choose the Amazon Mechanical Turk workforce, the maximum is
-     * 12 hours (43200)</b>. For private and vendor workforces, the maximum is as
-     * listed.</p>
+     * 12 hours (43200)</b>. The default value is 864000 seconds (1 day). For private
+     * and vendor workforces, the maximum is as listed.</p>
      */
     inline HumanTaskConfig& WithTaskAvailabilityLifetimeInSeconds(int value) { SetTaskAvailabilityLifetimeInSeconds(value); return *this;}
 
@@ -2194,28 +2194,28 @@ namespace Model
     /**
      * <p>Defines the maximum number of data objects that can be labeled by human
      * workers at the same time. Also referred to as batch size. Each object may have
-     * more than one worker at one time.</p>
+     * more than one worker at one time. The default value is 1000 objects.</p>
      */
     inline int GetMaxConcurrentTaskCount() const{ return m_maxConcurrentTaskCount; }
 
     /**
      * <p>Defines the maximum number of data objects that can be labeled by human
      * workers at the same time. Also referred to as batch size. Each object may have
-     * more than one worker at one time.</p>
+     * more than one worker at one time. The default value is 1000 objects.</p>
      */
     inline bool MaxConcurrentTaskCountHasBeenSet() const { return m_maxConcurrentTaskCountHasBeenSet; }
 
     /**
      * <p>Defines the maximum number of data objects that can be labeled by human
      * workers at the same time. Also referred to as batch size. Each object may have
-     * more than one worker at one time.</p>
+     * more than one worker at one time. The default value is 1000 objects.</p>
      */
     inline void SetMaxConcurrentTaskCount(int value) { m_maxConcurrentTaskCountHasBeenSet = true; m_maxConcurrentTaskCount = value; }
 
     /**
      * <p>Defines the maximum number of data objects that can be labeled by human
      * workers at the same time. Also referred to as batch size. Each object may have
-     * more than one worker at one time.</p>
+     * more than one worker at one time. The default value is 1000 objects.</p>
      */
     inline HumanTaskConfig& WithMaxConcurrentTaskCount(int value) { SetMaxConcurrentTaskCount(value); return *this;}
 

@@ -34,7 +34,8 @@ LocalGateway::LocalGateway() :
     m_localGatewayIdHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ LocalGateway::LocalGateway(const XmlNode& xmlNode) :
     m_localGatewayIdHasBeenSet(false),
     m_outpostArnHasBeenSet(false),
     m_ownerIdHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -77,6 +79,18 @@ LocalGateway& LocalGateway::operator =(const XmlNode& xmlNode)
       m_state = Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText());
       m_stateHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -104,6 +118,17 @@ void LocalGateway::OutputToStream(Aws::OStream& oStream, const char* location, u
       oStream << location << index << locationValue << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void LocalGateway::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -123,6 +148,16 @@ void LocalGateway::OutputToStream(Aws::OStream& oStream, const char* location) c
   if(m_stateHasBeenSet)
   {
       oStream << location << ".State=" << StringUtils::URLEncode(m_state.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

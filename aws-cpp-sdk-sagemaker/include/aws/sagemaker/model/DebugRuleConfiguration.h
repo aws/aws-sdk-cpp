@@ -99,49 +99,49 @@ namespace Model
 
 
     /**
-     * <p>Path to local storage location for rules. Defaults to
+     * <p>Path to local storage location for output of rules. Defaults to
      * <code>/opt/ml/processing/output/rule/</code>.</p>
      */
     inline const Aws::String& GetLocalPath() const{ return m_localPath; }
 
     /**
-     * <p>Path to local storage location for rules. Defaults to
+     * <p>Path to local storage location for output of rules. Defaults to
      * <code>/opt/ml/processing/output/rule/</code>.</p>
      */
     inline bool LocalPathHasBeenSet() const { return m_localPathHasBeenSet; }
 
     /**
-     * <p>Path to local storage location for rules. Defaults to
+     * <p>Path to local storage location for output of rules. Defaults to
      * <code>/opt/ml/processing/output/rule/</code>.</p>
      */
     inline void SetLocalPath(const Aws::String& value) { m_localPathHasBeenSet = true; m_localPath = value; }
 
     /**
-     * <p>Path to local storage location for rules. Defaults to
+     * <p>Path to local storage location for output of rules. Defaults to
      * <code>/opt/ml/processing/output/rule/</code>.</p>
      */
     inline void SetLocalPath(Aws::String&& value) { m_localPathHasBeenSet = true; m_localPath = std::move(value); }
 
     /**
-     * <p>Path to local storage location for rules. Defaults to
+     * <p>Path to local storage location for output of rules. Defaults to
      * <code>/opt/ml/processing/output/rule/</code>.</p>
      */
     inline void SetLocalPath(const char* value) { m_localPathHasBeenSet = true; m_localPath.assign(value); }
 
     /**
-     * <p>Path to local storage location for rules. Defaults to
+     * <p>Path to local storage location for output of rules. Defaults to
      * <code>/opt/ml/processing/output/rule/</code>.</p>
      */
     inline DebugRuleConfiguration& WithLocalPath(const Aws::String& value) { SetLocalPath(value); return *this;}
 
     /**
-     * <p>Path to local storage location for rules. Defaults to
+     * <p>Path to local storage location for output of rules. Defaults to
      * <code>/opt/ml/processing/output/rule/</code>.</p>
      */
     inline DebugRuleConfiguration& WithLocalPath(Aws::String&& value) { SetLocalPath(std::move(value)); return *this;}
 
     /**
-     * <p>Path to local storage location for rules. Defaults to
+     * <p>Path to local storage location for output of rules. Defaults to
      * <code>/opt/ml/processing/output/rule/</code>.</p>
      */
     inline DebugRuleConfiguration& WithLocalPath(const char* value) { SetLocalPath(value); return *this;}
@@ -261,25 +261,25 @@ namespace Model
 
 
     /**
-     * <p>The size, in GB, of the ML storage volume attached to the notebook
+     * <p>The size, in GB, of the ML storage volume attached to the processing
      * instance.</p>
      */
     inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
 
     /**
-     * <p>The size, in GB, of the ML storage volume attached to the notebook
+     * <p>The size, in GB, of the ML storage volume attached to the processing
      * instance.</p>
      */
     inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
 
     /**
-     * <p>The size, in GB, of the ML storage volume attached to the notebook
+     * <p>The size, in GB, of the ML storage volume attached to the processing
      * instance.</p>
      */
     inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
 
     /**
-     * <p>The size, in GB, of the ML storage volume attached to the notebook
+     * <p>The size, in GB, of the ML storage volume attached to the processing
      * instance.</p>
      */
     inline DebugRuleConfiguration& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}

@@ -867,8 +867,7 @@ namespace Model
      * training. If you enable network isolation for training jobs that are configured
      * to use a VPC, Amazon SageMaker downloads and uploads customer data and model
      * artifacts through the specified VPC, but the training container does not have
-     * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
-     * not support network isolation.</p> </note>
+     * network access.</p>
      */
     inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
 
@@ -878,8 +877,7 @@ namespace Model
      * training. If you enable network isolation for training jobs that are configured
      * to use a VPC, Amazon SageMaker downloads and uploads customer data and model
      * artifacts through the specified VPC, but the training container does not have
-     * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
-     * not support network isolation.</p> </note>
+     * network access.</p>
      */
     inline bool EnableNetworkIsolationHasBeenSet() const { return m_enableNetworkIsolationHasBeenSet; }
 
@@ -889,8 +887,7 @@ namespace Model
      * training. If you enable network isolation for training jobs that are configured
      * to use a VPC, Amazon SageMaker downloads and uploads customer data and model
      * artifacts through the specified VPC, but the training container does not have
-     * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
-     * not support network isolation.</p> </note>
+     * network access.</p>
      */
     inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolationHasBeenSet = true; m_enableNetworkIsolation = value; }
 
@@ -900,8 +897,7 @@ namespace Model
      * training. If you enable network isolation for training jobs that are configured
      * to use a VPC, Amazon SageMaker downloads and uploads customer data and model
      * artifacts through the specified VPC, but the training container does not have
-     * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
-     * not support network isolation.</p> </note>
+     * network access.</p>
      */
     inline CreateTrainingJobRequest& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
 

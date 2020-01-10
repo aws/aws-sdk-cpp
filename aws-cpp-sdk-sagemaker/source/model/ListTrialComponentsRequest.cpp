@@ -23,6 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListTrialComponentsRequest::ListTrialComponentsRequest() : 
+    m_experimentNameHasBeenSet(false),
+    m_trialNameHasBeenSet(false),
     m_sourceArnHasBeenSet(false),
     m_createdAfterHasBeenSet(false),
     m_createdBeforeHasBeenSet(false),
@@ -39,6 +41,18 @@ ListTrialComponentsRequest::ListTrialComponentsRequest() :
 Aws::String ListTrialComponentsRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_experimentNameHasBeenSet)
+  {
+   payload.WithString("ExperimentName", m_experimentName);
+
+  }
+
+  if(m_trialNameHasBeenSet)
+  {
+   payload.WithString("TrialName", m_trialName);
+
+  }
 
   if(m_sourceArnHasBeenSet)
   {

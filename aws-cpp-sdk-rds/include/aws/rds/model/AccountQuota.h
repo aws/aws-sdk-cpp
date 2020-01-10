@@ -60,16 +60,18 @@ namespace Model
    * instance in the account. Other DB instances in the account might have a lower
    * number of associated IAM roles.</p> </li> <li> <p> <code>DBInstances</code> -
    * The number of DB instances per account. The used value is the count of the DB
-   * instances in the account.</p> </li> <li> <p> <code>DBParameterGroups</code> -
-   * The number of DB parameter groups per account, excluding default parameter
-   * groups. The used value is the count of nondefault DB parameter groups in the
-   * account.</p> </li> <li> <p> <code>DBSecurityGroups</code> - The number of DB
-   * security groups (not VPC security groups) per account, excluding the default
-   * security group. The used value is the count of nondefault DB security groups in
-   * the account.</p> </li> <li> <p> <code>DBSubnetGroups</code> - The number of DB
-   * subnet groups per account. The used value is the count of the DB subnet groups
-   * in the account.</p> </li> <li> <p> <code>EventSubscriptions</code> - The number
-   * of event subscriptions per account. The used value is the count of the event
+   * instances in the account.</p> <p>Amazon RDS DB instances, Amazon Aurora DB
+   * instances, Amazon Neptune instances, and Amazon DocumentDB instances apply to
+   * this quota.</p> </li> <li> <p> <code>DBParameterGroups</code> - The number of DB
+   * parameter groups per account, excluding default parameter groups. The used value
+   * is the count of nondefault DB parameter groups in the account.</p> </li> <li>
+   * <p> <code>DBSecurityGroups</code> - The number of DB security groups (not VPC
+   * security groups) per account, excluding the default security group. The used
+   * value is the count of nondefault DB security groups in the account.</p> </li>
+   * <li> <p> <code>DBSubnetGroups</code> - The number of DB subnet groups per
+   * account. The used value is the count of the DB subnet groups in the account.</p>
+   * </li> <li> <p> <code>EventSubscriptions</code> - The number of event
+   * subscriptions per account. The used value is the count of the event
    * subscriptions in the account.</p> </li> <li> <p> <code>ManualSnapshots</code> -
    * The number of manual DB snapshots per account. The used value is the count of
    * the manual DB snapshots in the account.</p> </li> <li> <p>
@@ -86,10 +88,11 @@ namespace Model
    * group. The used value is highest number of subnets for a DB subnet group in the
    * account. Other DB subnet groups in the account might have a lower number of
    * subnets.</p> </li> </ul> <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html">Limits</a>
-   * in the <i>Amazon RDS User Guide</i> and <a
-   * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html">Limits</a>
-   * in the <i>Amazon Aurora User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html">Quotas
+   * for Amazon RDS</a> in the <i>Amazon RDS User Guide</i> and <a
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html">Quotas
+   * for Amazon Aurora</a> in the <i>Amazon Aurora User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AccountQuota">AWS
    * API Reference</a></p>
    */

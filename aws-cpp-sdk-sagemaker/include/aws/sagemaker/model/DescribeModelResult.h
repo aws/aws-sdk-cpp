@@ -302,22 +302,19 @@ namespace Model
 
     /**
      * <p>If <code>True</code>, no inbound or outbound network calls can be made to or
-     * from the model container.</p> <note> <p>The Semantic Segmentation built-in
-     * algorithm does not support network isolation.</p> </note>
+     * from the model container.</p>
      */
     inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
 
     /**
      * <p>If <code>True</code>, no inbound or outbound network calls can be made to or
-     * from the model container.</p> <note> <p>The Semantic Segmentation built-in
-     * algorithm does not support network isolation.</p> </note>
+     * from the model container.</p>
      */
     inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolation = value; }
 
     /**
      * <p>If <code>True</code>, no inbound or outbound network calls can be made to or
-     * from the model container.</p> <note> <p>The Semantic Segmentation built-in
-     * algorithm does not support network isolation.</p> </note>
+     * from the model container.</p>
      */
     inline DescribeModelResult& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
 

@@ -48,6 +48,120 @@ namespace Model
 
 
     /**
+     * <p>A filter that returns only components that are part of the specified
+     * experiment. If you specify <code>ExperimentName</code>, you can't specify
+     * <code>TrialName</code>.</p>
+     */
+    inline const Aws::String& GetExperimentName() const{ return m_experimentName; }
+
+    /**
+     * <p>A filter that returns only components that are part of the specified
+     * experiment. If you specify <code>ExperimentName</code>, you can't specify
+     * <code>TrialName</code>.</p>
+     */
+    inline bool ExperimentNameHasBeenSet() const { return m_experimentNameHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only components that are part of the specified
+     * experiment. If you specify <code>ExperimentName</code>, you can't specify
+     * <code>TrialName</code>.</p>
+     */
+    inline void SetExperimentName(const Aws::String& value) { m_experimentNameHasBeenSet = true; m_experimentName = value; }
+
+    /**
+     * <p>A filter that returns only components that are part of the specified
+     * experiment. If you specify <code>ExperimentName</code>, you can't specify
+     * <code>TrialName</code>.</p>
+     */
+    inline void SetExperimentName(Aws::String&& value) { m_experimentNameHasBeenSet = true; m_experimentName = std::move(value); }
+
+    /**
+     * <p>A filter that returns only components that are part of the specified
+     * experiment. If you specify <code>ExperimentName</code>, you can't specify
+     * <code>TrialName</code>.</p>
+     */
+    inline void SetExperimentName(const char* value) { m_experimentNameHasBeenSet = true; m_experimentName.assign(value); }
+
+    /**
+     * <p>A filter that returns only components that are part of the specified
+     * experiment. If you specify <code>ExperimentName</code>, you can't specify
+     * <code>TrialName</code>.</p>
+     */
+    inline ListTrialComponentsRequest& WithExperimentName(const Aws::String& value) { SetExperimentName(value); return *this;}
+
+    /**
+     * <p>A filter that returns only components that are part of the specified
+     * experiment. If you specify <code>ExperimentName</code>, you can't specify
+     * <code>TrialName</code>.</p>
+     */
+    inline ListTrialComponentsRequest& WithExperimentName(Aws::String&& value) { SetExperimentName(std::move(value)); return *this;}
+
+    /**
+     * <p>A filter that returns only components that are part of the specified
+     * experiment. If you specify <code>ExperimentName</code>, you can't specify
+     * <code>TrialName</code>.</p>
+     */
+    inline ListTrialComponentsRequest& WithExperimentName(const char* value) { SetExperimentName(value); return *this;}
+
+
+    /**
+     * <p>A filter that returns only components that are part of the specified trial.
+     * If you specify <code>TrialName</code>, you can't specify
+     * <code>ExperimentName</code>.</p>
+     */
+    inline const Aws::String& GetTrialName() const{ return m_trialName; }
+
+    /**
+     * <p>A filter that returns only components that are part of the specified trial.
+     * If you specify <code>TrialName</code>, you can't specify
+     * <code>ExperimentName</code>.</p>
+     */
+    inline bool TrialNameHasBeenSet() const { return m_trialNameHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only components that are part of the specified trial.
+     * If you specify <code>TrialName</code>, you can't specify
+     * <code>ExperimentName</code>.</p>
+     */
+    inline void SetTrialName(const Aws::String& value) { m_trialNameHasBeenSet = true; m_trialName = value; }
+
+    /**
+     * <p>A filter that returns only components that are part of the specified trial.
+     * If you specify <code>TrialName</code>, you can't specify
+     * <code>ExperimentName</code>.</p>
+     */
+    inline void SetTrialName(Aws::String&& value) { m_trialNameHasBeenSet = true; m_trialName = std::move(value); }
+
+    /**
+     * <p>A filter that returns only components that are part of the specified trial.
+     * If you specify <code>TrialName</code>, you can't specify
+     * <code>ExperimentName</code>.</p>
+     */
+    inline void SetTrialName(const char* value) { m_trialNameHasBeenSet = true; m_trialName.assign(value); }
+
+    /**
+     * <p>A filter that returns only components that are part of the specified trial.
+     * If you specify <code>TrialName</code>, you can't specify
+     * <code>ExperimentName</code>.</p>
+     */
+    inline ListTrialComponentsRequest& WithTrialName(const Aws::String& value) { SetTrialName(value); return *this;}
+
+    /**
+     * <p>A filter that returns only components that are part of the specified trial.
+     * If you specify <code>TrialName</code>, you can't specify
+     * <code>ExperimentName</code>.</p>
+     */
+    inline ListTrialComponentsRequest& WithTrialName(Aws::String&& value) { SetTrialName(std::move(value)); return *this;}
+
+    /**
+     * <p>A filter that returns only components that are part of the specified trial.
+     * If you specify <code>TrialName</code>, you can't specify
+     * <code>ExperimentName</code>.</p>
+     */
+    inline ListTrialComponentsRequest& WithTrialName(const char* value) { SetTrialName(value); return *this;}
+
+
+    /**
      * <p>A filter that returns only components that have the specified source Amazon
      * Resource Name (ARN).</p>
      */
@@ -227,22 +341,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of components to return in the response.</p>
+     * <p>The maximum number of components to return in the response. The default value
+     * is 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of components to return in the response.</p>
+     * <p>The maximum number of components to return in the response. The default value
+     * is 10.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of components to return in the response.</p>
+     * <p>The maximum number of components to return in the response. The default value
+     * is 10.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of components to return in the response.</p>
+     * <p>The maximum number of components to return in the response. The default value
+     * is 10.</p>
      */
     inline ListTrialComponentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -304,6 +422,12 @@ namespace Model
     inline ListTrialComponentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:
+
+    Aws::String m_experimentName;
+    bool m_experimentNameHasBeenSet;
+
+    Aws::String m_trialName;
+    bool m_trialNameHasBeenSet;
 
     Aws::String m_sourceArn;
     bool m_sourceArnHasBeenSet;

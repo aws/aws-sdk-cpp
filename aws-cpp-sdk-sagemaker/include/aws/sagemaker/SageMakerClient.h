@@ -2282,13 +2282,12 @@ namespace Model
          * trials, and trial components are automatically tracked, logged, and indexed.
          * When you use the AWS SDK for Python (Boto), you must use the logging APIs
          * provided by the SDK.</p> <p>You can add tags to a trial component and then use
-         * the <a>Search</a> API to search for the tags.</p> <note> <p>You can create a
-         * trial component through a direct call to the <code>CreateTrialComponent</code>
-         * API. However, you can't specify the <code>Source</code> property of the
-         * component in the request, therefore, the component isn't associated with an
-         * Amazon SageMaker job. You must use Amazon SageMaker Studio, the Amazon SageMaker
-         * Python SDK, or the AWS SDK for Python (Boto) to create the component with a
-         * valid <code>Source</code> property.</p> </note><p><h3>See Also:</h3>   <a
+         * the <a>Search</a> API to search for the tags.</p> <note> <p>
+         * <code>CreateTrialComponent</code> can only be invoked from within an Amazon
+         * SageMaker managed environment. This includes Amazon SageMaker training jobs,
+         * processing jobs, transform jobs, and Amazon SageMaker notebooks. A call to
+         * <code>CreateTrialComponent</code> from outside one of these environments results
+         * in an error.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
          * API Reference</a></p>
          */
@@ -2303,13 +2302,12 @@ namespace Model
          * trials, and trial components are automatically tracked, logged, and indexed.
          * When you use the AWS SDK for Python (Boto), you must use the logging APIs
          * provided by the SDK.</p> <p>You can add tags to a trial component and then use
-         * the <a>Search</a> API to search for the tags.</p> <note> <p>You can create a
-         * trial component through a direct call to the <code>CreateTrialComponent</code>
-         * API. However, you can't specify the <code>Source</code> property of the
-         * component in the request, therefore, the component isn't associated with an
-         * Amazon SageMaker job. You must use Amazon SageMaker Studio, the Amazon SageMaker
-         * Python SDK, or the AWS SDK for Python (Boto) to create the component with a
-         * valid <code>Source</code> property.</p> </note><p><h3>See Also:</h3>   <a
+         * the <a>Search</a> API to search for the tags.</p> <note> <p>
+         * <code>CreateTrialComponent</code> can only be invoked from within an Amazon
+         * SageMaker managed environment. This includes Amazon SageMaker training jobs,
+         * processing jobs, transform jobs, and Amazon SageMaker notebooks. A call to
+         * <code>CreateTrialComponent</code> from outside one of these environments results
+         * in an error.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
          * API Reference</a></p>
          *
@@ -2326,13 +2324,12 @@ namespace Model
          * trials, and trial components are automatically tracked, logged, and indexed.
          * When you use the AWS SDK for Python (Boto), you must use the logging APIs
          * provided by the SDK.</p> <p>You can add tags to a trial component and then use
-         * the <a>Search</a> API to search for the tags.</p> <note> <p>You can create a
-         * trial component through a direct call to the <code>CreateTrialComponent</code>
-         * API. However, you can't specify the <code>Source</code> property of the
-         * component in the request, therefore, the component isn't associated with an
-         * Amazon SageMaker job. You must use Amazon SageMaker Studio, the Amazon SageMaker
-         * Python SDK, or the AWS SDK for Python (Boto) to create the component with a
-         * valid <code>Source</code> property.</p> </note><p><h3>See Also:</h3>   <a
+         * the <a>Search</a> API to search for the tags.</p> <note> <p>
+         * <code>CreateTrialComponent</code> can only be invoked from within an Amazon
+         * SageMaker managed environment. This includes Amazon SageMaker training jobs,
+         * processing jobs, transform jobs, and Amazon SageMaker notebooks. A call to
+         * <code>CreateTrialComponent</code> from outside one of these environments results
+         * in an error.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
          * API Reference</a></p>
          *
@@ -4675,7 +4672,7 @@ namespace Model
          * objects are returned as a list of <code>SearchResult</code> objects in the
          * response. You can sort the search results by any resource property in a
          * ascending or descending order.</p> <p>You can query against the following value
-         * types: numerical, text, Booleans, and timestamps.</p><p><h3>See Also:</h3>   <a
+         * types: numeric, text, Boolean, and timestamp.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Search">AWS
          * API Reference</a></p>
          */
@@ -4686,7 +4683,7 @@ namespace Model
          * objects are returned as a list of <code>SearchResult</code> objects in the
          * response. You can sort the search results by any resource property in a
          * ascending or descending order.</p> <p>You can query against the following value
-         * types: numerical, text, Booleans, and timestamps.</p><p><h3>See Also:</h3>   <a
+         * types: numeric, text, Boolean, and timestamp.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Search">AWS
          * API Reference</a></p>
          *
@@ -4699,7 +4696,7 @@ namespace Model
          * objects are returned as a list of <code>SearchResult</code> objects in the
          * response. You can sort the search results by any resource property in a
          * ascending or descending order.</p> <p>You can query against the following value
-         * types: numerical, text, Booleans, and timestamps.</p><p><h3>See Also:</h3>   <a
+         * types: numeric, text, Boolean, and timestamp.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Search">AWS
          * API Reference</a></p>
          *

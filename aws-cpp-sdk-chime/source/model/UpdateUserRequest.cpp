@@ -26,7 +26,10 @@ UpdateUserRequest::UpdateUserRequest() :
     m_accountIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_licenseType(License::NOT_SET),
-    m_licenseTypeHasBeenSet(false)
+    m_licenseTypeHasBeenSet(false),
+    m_userType(UserType::NOT_SET),
+    m_userTypeHasBeenSet(false),
+    m_alexaForBusinessMetadataHasBeenSet(false)
 {
 }
 
@@ -37,6 +40,17 @@ Aws::String UpdateUserRequest::SerializePayload() const
   if(m_licenseTypeHasBeenSet)
   {
    payload.WithString("LicenseType", LicenseMapper::GetNameForLicense(m_licenseType));
+  }
+
+  if(m_userTypeHasBeenSet)
+  {
+   payload.WithString("UserType", UserTypeMapper::GetNameForUserType(m_userType));
+  }
+
+  if(m_alexaForBusinessMetadataHasBeenSet)
+  {
+   payload.WithObject("AlexaForBusinessMetadata", m_alexaForBusinessMetadata.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

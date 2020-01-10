@@ -27,6 +27,7 @@ namespace Model
   {
     NOT_SET,
     TENSORFLOW,
+    KERAS,
     MXNET,
     ONNX,
     PYTORCH,

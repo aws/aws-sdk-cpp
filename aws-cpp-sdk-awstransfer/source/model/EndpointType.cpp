@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int PUBLIC__HASH = HashingUtils::HashString("PUBLIC");
+        static const int VPC_HASH = HashingUtils::HashString("VPC");
         static const int VPC_ENDPOINT_HASH = HashingUtils::HashString("VPC_ENDPOINT");
 
 
@@ -40,6 +41,10 @@ namespace Aws
           if (hashCode == PUBLIC__HASH)
           {
             return EndpointType::PUBLIC_;
+          }
+          else if (hashCode == VPC_HASH)
+          {
+            return EndpointType::VPC;
           }
           else if (hashCode == VPC_ENDPOINT_HASH)
           {
@@ -61,6 +66,8 @@ namespace Aws
           {
           case EndpointType::PUBLIC_:
             return "PUBLIC";
+          case EndpointType::VPC:
+            return "VPC";
           case EndpointType::VPC_ENDPOINT:
             return "VPC_ENDPOINT";
           default:

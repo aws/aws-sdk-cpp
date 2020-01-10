@@ -50,42 +50,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the tensor collection.</p>
+     * <p>The name of the tensor collection. The name must be unique relative to other
+     * rule configuration names.</p>
      */
     inline const Aws::String& GetCollectionName() const{ return m_collectionName; }
 
     /**
-     * <p>The name of the tensor collection.</p>
+     * <p>The name of the tensor collection. The name must be unique relative to other
+     * rule configuration names.</p>
      */
     inline bool CollectionNameHasBeenSet() const { return m_collectionNameHasBeenSet; }
 
     /**
-     * <p>The name of the tensor collection.</p>
+     * <p>The name of the tensor collection. The name must be unique relative to other
+     * rule configuration names.</p>
      */
     inline void SetCollectionName(const Aws::String& value) { m_collectionNameHasBeenSet = true; m_collectionName = value; }
 
     /**
-     * <p>The name of the tensor collection.</p>
+     * <p>The name of the tensor collection. The name must be unique relative to other
+     * rule configuration names.</p>
      */
     inline void SetCollectionName(Aws::String&& value) { m_collectionNameHasBeenSet = true; m_collectionName = std::move(value); }
 
     /**
-     * <p>The name of the tensor collection.</p>
+     * <p>The name of the tensor collection. The name must be unique relative to other
+     * rule configuration names.</p>
      */
     inline void SetCollectionName(const char* value) { m_collectionNameHasBeenSet = true; m_collectionName.assign(value); }
 
     /**
-     * <p>The name of the tensor collection.</p>
+     * <p>The name of the tensor collection. The name must be unique relative to other
+     * rule configuration names.</p>
      */
     inline CollectionConfiguration& WithCollectionName(const Aws::String& value) { SetCollectionName(value); return *this;}
 
     /**
-     * <p>The name of the tensor collection.</p>
+     * <p>The name of the tensor collection. The name must be unique relative to other
+     * rule configuration names.</p>
      */
     inline CollectionConfiguration& WithCollectionName(Aws::String&& value) { SetCollectionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the tensor collection.</p>
+     * <p>The name of the tensor collection. The name must be unique relative to other
+     * rule configuration names.</p>
      */
     inline CollectionConfiguration& WithCollectionName(const char* value) { SetCollectionName(value); return *this;}
 

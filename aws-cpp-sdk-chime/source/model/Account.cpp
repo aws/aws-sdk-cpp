@@ -37,7 +37,8 @@ Account::Account() :
     m_createdTimestampHasBeenSet(false),
     m_defaultLicense(License::NOT_SET),
     m_defaultLicenseHasBeenSet(false),
-    m_supportedLicensesHasBeenSet(false)
+    m_supportedLicensesHasBeenSet(false),
+    m_signinDelegateGroupsHasBeenSet(false)
 {
 }
 
@@ -50,7 +51,8 @@ Account::Account(JsonView jsonValue) :
     m_createdTimestampHasBeenSet(false),
     m_defaultLicense(License::NOT_SET),
     m_defaultLicenseHasBeenSet(false),
-    m_supportedLicensesHasBeenSet(false)
+    m_supportedLicensesHasBeenSet(false),
+    m_signinDelegateGroupsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -109,6 +111,16 @@ Account& Account::operator =(JsonView jsonValue)
     m_supportedLicensesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SigninDelegateGroups"))
+  {
+    Array<JsonView> signinDelegateGroupsJsonList = jsonValue.GetArray("SigninDelegateGroups");
+    for(unsigned signinDelegateGroupsIndex = 0; signinDelegateGroupsIndex < signinDelegateGroupsJsonList.GetLength(); ++signinDelegateGroupsIndex)
+    {
+      m_signinDelegateGroups.push_back(signinDelegateGroupsJsonList[signinDelegateGroupsIndex].AsObject());
+    }
+    m_signinDelegateGroupsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -157,6 +169,17 @@ JsonValue Account::Jsonize() const
      supportedLicensesJsonList[supportedLicensesIndex].AsString(LicenseMapper::GetNameForLicense(m_supportedLicenses[supportedLicensesIndex]));
    }
    payload.WithArray("SupportedLicenses", std::move(supportedLicensesJsonList));
+
+  }
+
+  if(m_signinDelegateGroupsHasBeenSet)
+  {
+   Array<JsonValue> signinDelegateGroupsJsonList(m_signinDelegateGroups.size());
+   for(unsigned signinDelegateGroupsIndex = 0; signinDelegateGroupsIndex < signinDelegateGroupsJsonList.GetLength(); ++signinDelegateGroupsIndex)
+   {
+     signinDelegateGroupsJsonList[signinDelegateGroupsIndex].AsObject(m_signinDelegateGroups[signinDelegateGroupsIndex].Jsonize());
+   }
+   payload.WithArray("SigninDelegateGroups", std::move(signinDelegateGroupsJsonList));
 
   }
 

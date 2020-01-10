@@ -33,14 +33,16 @@ namespace Model
 LocalGatewayVirtualInterfaceGroup::LocalGatewayVirtualInterfaceGroup() : 
     m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
     m_localGatewayVirtualInterfaceIdsHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false)
+    m_localGatewayIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
 LocalGatewayVirtualInterfaceGroup::LocalGatewayVirtualInterfaceGroup(const XmlNode& xmlNode) : 
     m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
     m_localGatewayVirtualInterfaceIdsHasBeenSet(false),
-    m_localGatewayIdHasBeenSet(false)
+    m_localGatewayIdHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -75,6 +77,18 @@ LocalGatewayVirtualInterfaceGroup& LocalGatewayVirtualInterfaceGroup::operator =
       m_localGatewayId = Aws::Utils::Xml::DecodeEscapedXmlText(localGatewayIdNode.GetText());
       m_localGatewayIdHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -101,6 +115,17 @@ void LocalGatewayVirtualInterfaceGroup::OutputToStream(Aws::OStream& oStream, co
       oStream << location << index << locationValue << ".LocalGatewayId=" << StringUtils::URLEncode(m_localGatewayId.c_str()) << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void LocalGatewayVirtualInterfaceGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -120,6 +145,16 @@ void LocalGatewayVirtualInterfaceGroup::OutputToStream(Aws::OStream& oStream, co
   if(m_localGatewayIdHasBeenSet)
   {
       oStream << location << ".LocalGatewayId=" << StringUtils::URLEncode(m_localGatewayId.c_str()) << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

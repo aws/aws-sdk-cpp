@@ -18,6 +18,7 @@
 #include <aws/chime/ChimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime/model/UserType.h>
 #include <utility>
 
 namespace Aws
@@ -129,6 +130,37 @@ namespace Model
      */
     inline InviteUsersRequest& AddUserEmailList(const char* value) { m_userEmailListHasBeenSet = true; m_userEmailList.push_back(value); return *this; }
 
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline const UserType& GetUserType() const{ return m_userType; }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline void SetUserType(const UserType& value) { m_userTypeHasBeenSet = true; m_userType = value; }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline void SetUserType(UserType&& value) { m_userTypeHasBeenSet = true; m_userType = std::move(value); }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline InviteUsersRequest& WithUserType(const UserType& value) { SetUserType(value); return *this;}
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline InviteUsersRequest& WithUserType(UserType&& value) { SetUserType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -136,6 +168,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_userEmailList;
     bool m_userEmailListHasBeenSet;
+
+    UserType m_userType;
+    bool m_userTypeHasBeenSet;
   };
 
 } // namespace Model

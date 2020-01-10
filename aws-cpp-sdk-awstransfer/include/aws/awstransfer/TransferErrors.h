@@ -56,7 +56,8 @@ enum class TransferErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  INTERNAL_SERVICE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  INTERNAL_SERVICE,
   INVALID_NEXT_TOKEN,
   INVALID_REQUEST,
   RESOURCE_EXISTS

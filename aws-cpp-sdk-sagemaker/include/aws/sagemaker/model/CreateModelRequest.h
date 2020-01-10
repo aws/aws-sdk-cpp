@@ -422,29 +422,25 @@ namespace Model
 
     /**
      * <p>Isolates the model container. No inbound or outbound network calls can be
-     * made to or from the model container.</p> <note> <p>The Semantic Segmentation
-     * built-in algorithm does not support network isolation.</p> </note>
+     * made to or from the model container.</p>
      */
     inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
 
     /**
      * <p>Isolates the model container. No inbound or outbound network calls can be
-     * made to or from the model container.</p> <note> <p>The Semantic Segmentation
-     * built-in algorithm does not support network isolation.</p> </note>
+     * made to or from the model container.</p>
      */
     inline bool EnableNetworkIsolationHasBeenSet() const { return m_enableNetworkIsolationHasBeenSet; }
 
     /**
      * <p>Isolates the model container. No inbound or outbound network calls can be
-     * made to or from the model container.</p> <note> <p>The Semantic Segmentation
-     * built-in algorithm does not support network isolation.</p> </note>
+     * made to or from the model container.</p>
      */
     inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolationHasBeenSet = true; m_enableNetworkIsolation = value; }
 
     /**
      * <p>Isolates the model container. No inbound or outbound network calls can be
-     * made to or from the model container.</p> <note> <p>The Semantic Segmentation
-     * built-in algorithm does not support network isolation.</p> </note>
+     * made to or from the model container.</p>
      */
     inline CreateModelRequest& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
 

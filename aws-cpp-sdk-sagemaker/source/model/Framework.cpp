@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int TENSORFLOW_HASH = HashingUtils::HashString("TENSORFLOW");
+        static const int KERAS_HASH = HashingUtils::HashString("KERAS");
         static const int MXNET_HASH = HashingUtils::HashString("MXNET");
         static const int ONNX_HASH = HashingUtils::HashString("ONNX");
         static const int PYTORCH_HASH = HashingUtils::HashString("PYTORCH");
@@ -43,6 +44,10 @@ namespace Aws
           if (hashCode == TENSORFLOW_HASH)
           {
             return Framework::TENSORFLOW;
+          }
+          else if (hashCode == KERAS_HASH)
+          {
+            return Framework::KERAS;
           }
           else if (hashCode == MXNET_HASH)
           {
@@ -76,6 +81,8 @@ namespace Aws
           {
           case Framework::TENSORFLOW:
             return "TENSORFLOW";
+          case Framework::KERAS:
+            return "KERAS";
           case Framework::MXNET:
             return "MXNET";
           case Framework::ONNX:

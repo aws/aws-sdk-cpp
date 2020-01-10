@@ -54,6 +54,7 @@
 #include <aws/workspaces/model/DisassociateIpGroupsRequest.h>
 #include <aws/workspaces/model/ImportWorkspaceImageRequest.h>
 #include <aws/workspaces/model/ListAvailableManagementCidrRangesRequest.h>
+#include <aws/workspaces/model/MigrateWorkspaceRequest.h>
 #include <aws/workspaces/model/ModifyAccountRequest.h>
 #include <aws/workspaces/model/ModifyClientPropertiesRequest.h>
 #include <aws/workspaces/model/ModifySelfservicePermissionsRequest.h>
@@ -981,6 +982,41 @@ void WorkSpacesClient::ListAvailableManagementCidrRangesAsync(const ListAvailabl
 void WorkSpacesClient::ListAvailableManagementCidrRangesAsyncHelper(const ListAvailableManagementCidrRangesRequest& request, const ListAvailableManagementCidrRangesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListAvailableManagementCidrRanges(request), context);
+}
+
+MigrateWorkspaceOutcome WorkSpacesClient::MigrateWorkspace(const MigrateWorkspaceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return MigrateWorkspaceOutcome(MigrateWorkspaceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return MigrateWorkspaceOutcome(outcome.GetError());
+  }
+}
+
+MigrateWorkspaceOutcomeCallable WorkSpacesClient::MigrateWorkspaceCallable(const MigrateWorkspaceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< MigrateWorkspaceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->MigrateWorkspace(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkSpacesClient::MigrateWorkspaceAsync(const MigrateWorkspaceRequest& request, const MigrateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->MigrateWorkspaceAsyncHelper( request, handler, context ); } );
+}
+
+void WorkSpacesClient::MigrateWorkspaceAsyncHelper(const MigrateWorkspaceRequest& request, const MigrateWorkspaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, MigrateWorkspace(request), context);
 }
 
 ModifyAccountOutcome WorkSpacesClient::ModifyAccount(const ModifyAccountRequest& request) const

@@ -116,6 +116,7 @@
 #include <aws/rds/model/FailoverDBClusterRequest.h>
 #include <aws/rds/model/ImportInstallationMediaRequest.h>
 #include <aws/rds/model/ListTagsForResourceRequest.h>
+#include <aws/rds/model/ModifyCertificatesRequest.h>
 #include <aws/rds/model/ModifyCurrentDBClusterCapacityRequest.h>
 #include <aws/rds/model/ModifyDBClusterRequest.h>
 #include <aws/rds/model/ModifyDBClusterEndpointRequest.h>
@@ -3248,6 +3249,41 @@ void RDSClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& reque
 void RDSClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListTagsForResource(request), context);
+}
+
+ModifyCertificatesOutcome RDSClient::ModifyCertificates(const ModifyCertificatesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return ModifyCertificatesOutcome(ModifyCertificatesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ModifyCertificatesOutcome(outcome.GetError());
+  }
+}
+
+ModifyCertificatesOutcomeCallable RDSClient::ModifyCertificatesCallable(const ModifyCertificatesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ModifyCertificatesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ModifyCertificates(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void RDSClient::ModifyCertificatesAsync(const ModifyCertificatesRequest& request, const ModifyCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ModifyCertificatesAsyncHelper( request, handler, context ); } );
+}
+
+void RDSClient::ModifyCertificatesAsyncHelper(const ModifyCertificatesRequest& request, const ModifyCertificatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ModifyCertificates(request), context);
 }
 
 ModifyCurrentDBClusterCapacityOutcome RDSClient::ModifyCurrentDBClusterCapacity(const ModifyCurrentDBClusterCapacityRequest& request) const

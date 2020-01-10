@@ -40,7 +40,8 @@ LocalGatewayVirtualInterface::LocalGatewayVirtualInterface() :
     m_localBgpAsn(0),
     m_localBgpAsnHasBeenSet(false),
     m_peerBgpAsn(0),
-    m_peerBgpAsnHasBeenSet(false)
+    m_peerBgpAsnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ LocalGatewayVirtualInterface::LocalGatewayVirtualInterface(const XmlNode& xmlNod
     m_localBgpAsn(0),
     m_localBgpAsnHasBeenSet(false),
     m_peerBgpAsn(0),
-    m_peerBgpAsnHasBeenSet(false)
+    m_peerBgpAsnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -107,6 +109,18 @@ LocalGatewayVirtualInterface& LocalGatewayVirtualInterface::operator =(const Xml
       m_peerBgpAsn = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(peerBgpAsnNode.GetText()).c_str()).c_str());
       m_peerBgpAsnHasBeenSet = true;
     }
+    XmlNode tagsNode = resultNode.FirstChild("tagSet");
+    if(!tagsNode.IsNull())
+    {
+      XmlNode tagsMember = tagsNode.FirstChild("item");
+      while(!tagsMember.IsNull())
+      {
+        m_tags.push_back(tagsMember);
+        tagsMember = tagsMember.NextNode("item");
+      }
+
+      m_tagsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -149,6 +163,17 @@ void LocalGatewayVirtualInterface::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << index << locationValue << ".PeerBgpAsn=" << m_peerBgpAsn << "&";
   }
 
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location << index << locationValue << ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
+  }
+
 }
 
 void LocalGatewayVirtualInterface::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -180,6 +205,16 @@ void LocalGatewayVirtualInterface::OutputToStream(Aws::OStream& oStream, const c
   if(m_peerBgpAsnHasBeenSet)
   {
       oStream << location << ".PeerBgpAsn=" << m_peerBgpAsn << "&";
+  }
+  if(m_tagsHasBeenSet)
+  {
+      unsigned tagsIdx = 1;
+      for(auto& item : m_tags)
+      {
+        Aws::StringStream tagsSs;
+        tagsSs << location <<  ".TagSet." << tagsIdx++;
+        item.OutputToStream(oStream, tagsSs.str().c_str());
+      }
   }
 }
 

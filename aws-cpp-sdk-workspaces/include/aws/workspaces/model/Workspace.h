@@ -460,42 +460,50 @@ namespace Model
 
 
     /**
-     * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
+     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
+     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
      */
     inline const Aws::String& GetVolumeEncryptionKey() const{ return m_volumeEncryptionKey; }
 
     /**
-     * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
+     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
+     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
      */
     inline bool VolumeEncryptionKeyHasBeenSet() const { return m_volumeEncryptionKeyHasBeenSet; }
 
     /**
-     * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
+     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
+     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
      */
     inline void SetVolumeEncryptionKey(const Aws::String& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = value; }
 
     /**
-     * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
+     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
+     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
      */
     inline void SetVolumeEncryptionKey(Aws::String&& value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey = std::move(value); }
 
     /**
-     * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
+     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
+     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
      */
     inline void SetVolumeEncryptionKey(const char* value) { m_volumeEncryptionKeyHasBeenSet = true; m_volumeEncryptionKey.assign(value); }
 
     /**
-     * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
+     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
+     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
      */
     inline Workspace& WithVolumeEncryptionKey(const Aws::String& value) { SetVolumeEncryptionKey(value); return *this;}
 
     /**
-     * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
+     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
+     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
      */
     inline Workspace& WithVolumeEncryptionKey(Aws::String&& value) { SetVolumeEncryptionKey(std::move(value)); return *this;}
 
     /**
-     * <p>The KMS key used to encrypt data stored on your WorkSpace.</p>
+     * <p>The symmetric AWS KMS customer master key (CMK) used to encrypt data stored
+     * on your WorkSpace. Amazon WorkSpaces does not support asymmetric CMKs.</p>
      */
     inline Workspace& WithVolumeEncryptionKey(const char* value) { SetVolumeEncryptionKey(value); return *this;}
 

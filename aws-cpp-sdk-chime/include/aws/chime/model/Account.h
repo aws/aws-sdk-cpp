@@ -20,6 +20,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/chime/model/License.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime/model/SigninDelegateGroup.h>
 #include <utility>
 
 namespace Aws
@@ -332,6 +333,47 @@ namespace Model
      */
     inline Account& AddSupportedLicenses(License&& value) { m_supportedLicensesHasBeenSet = true; m_supportedLicenses.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The sign-in delegate groups associated with the account.</p>
+     */
+    inline const Aws::Vector<SigninDelegateGroup>& GetSigninDelegateGroups() const{ return m_signinDelegateGroups; }
+
+    /**
+     * <p>The sign-in delegate groups associated with the account.</p>
+     */
+    inline bool SigninDelegateGroupsHasBeenSet() const { return m_signinDelegateGroupsHasBeenSet; }
+
+    /**
+     * <p>The sign-in delegate groups associated with the account.</p>
+     */
+    inline void SetSigninDelegateGroups(const Aws::Vector<SigninDelegateGroup>& value) { m_signinDelegateGroupsHasBeenSet = true; m_signinDelegateGroups = value; }
+
+    /**
+     * <p>The sign-in delegate groups associated with the account.</p>
+     */
+    inline void SetSigninDelegateGroups(Aws::Vector<SigninDelegateGroup>&& value) { m_signinDelegateGroupsHasBeenSet = true; m_signinDelegateGroups = std::move(value); }
+
+    /**
+     * <p>The sign-in delegate groups associated with the account.</p>
+     */
+    inline Account& WithSigninDelegateGroups(const Aws::Vector<SigninDelegateGroup>& value) { SetSigninDelegateGroups(value); return *this;}
+
+    /**
+     * <p>The sign-in delegate groups associated with the account.</p>
+     */
+    inline Account& WithSigninDelegateGroups(Aws::Vector<SigninDelegateGroup>&& value) { SetSigninDelegateGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>The sign-in delegate groups associated with the account.</p>
+     */
+    inline Account& AddSigninDelegateGroups(const SigninDelegateGroup& value) { m_signinDelegateGroupsHasBeenSet = true; m_signinDelegateGroups.push_back(value); return *this; }
+
+    /**
+     * <p>The sign-in delegate groups associated with the account.</p>
+     */
+    inline Account& AddSigninDelegateGroups(SigninDelegateGroup&& value) { m_signinDelegateGroupsHasBeenSet = true; m_signinDelegateGroups.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_awsAccountId;
@@ -354,6 +396,9 @@ namespace Model
 
     Aws::Vector<License> m_supportedLicenses;
     bool m_supportedLicensesHasBeenSet;
+
+    Aws::Vector<SigninDelegateGroup> m_signinDelegateGroups;
+    bool m_signinDelegateGroupsHasBeenSet;
   };
 
 } // namespace Model

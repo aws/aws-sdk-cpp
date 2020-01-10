@@ -33,6 +33,7 @@
 #include <aws/chime/model/AssociatePhoneNumberWithUserRequest.h>
 #include <aws/chime/model/AssociatePhoneNumbersWithVoiceConnectorRequest.h>
 #include <aws/chime/model/AssociatePhoneNumbersWithVoiceConnectorGroupRequest.h>
+#include <aws/chime/model/AssociateSigninDelegateGroupsWithAccountRequest.h>
 #include <aws/chime/model/BatchCreateAttendeeRequest.h>
 #include <aws/chime/model/BatchCreateRoomMembershipRequest.h>
 #include <aws/chime/model/BatchDeletePhoneNumberRequest.h>
@@ -47,6 +48,7 @@
 #include <aws/chime/model/CreatePhoneNumberOrderRequest.h>
 #include <aws/chime/model/CreateRoomRequest.h>
 #include <aws/chime/model/CreateRoomMembershipRequest.h>
+#include <aws/chime/model/CreateUserRequest.h>
 #include <aws/chime/model/CreateVoiceConnectorRequest.h>
 #include <aws/chime/model/CreateVoiceConnectorGroupRequest.h>
 #include <aws/chime/model/DeleteAccountRequest.h>
@@ -65,6 +67,7 @@
 #include <aws/chime/model/DisassociatePhoneNumberFromUserRequest.h>
 #include <aws/chime/model/DisassociatePhoneNumbersFromVoiceConnectorRequest.h>
 #include <aws/chime/model/DisassociatePhoneNumbersFromVoiceConnectorGroupRequest.h>
+#include <aws/chime/model/DisassociateSigninDelegateGroupsFromAccountRequest.h>
 #include <aws/chime/model/GetAccountRequest.h>
 #include <aws/chime/model/GetAccountSettingsRequest.h>
 #include <aws/chime/model/GetAttendeeRequest.h>
@@ -326,6 +329,49 @@ void ChimeClient::AssociatePhoneNumbersWithVoiceConnectorGroupAsync(const Associ
 void ChimeClient::AssociatePhoneNumbersWithVoiceConnectorGroupAsyncHelper(const AssociatePhoneNumbersWithVoiceConnectorGroupRequest& request, const AssociatePhoneNumbersWithVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, AssociatePhoneNumbersWithVoiceConnectorGroup(request), context);
+}
+
+AssociateSigninDelegateGroupsWithAccountOutcome ChimeClient::AssociateSigninDelegateGroupsWithAccount(const AssociateSigninDelegateGroupsWithAccountRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateSigninDelegateGroupsWithAccount", "Required field: AccountId, is not set");
+    return AssociateSigninDelegateGroupsWithAccountOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAccountId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?operation=associate-signin-delegate-groups");
+  uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AssociateSigninDelegateGroupsWithAccountOutcome(AssociateSigninDelegateGroupsWithAccountResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AssociateSigninDelegateGroupsWithAccountOutcome(outcome.GetError());
+  }
+}
+
+AssociateSigninDelegateGroupsWithAccountOutcomeCallable ChimeClient::AssociateSigninDelegateGroupsWithAccountCallable(const AssociateSigninDelegateGroupsWithAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AssociateSigninDelegateGroupsWithAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AssociateSigninDelegateGroupsWithAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::AssociateSigninDelegateGroupsWithAccountAsync(const AssociateSigninDelegateGroupsWithAccountRequest& request, const AssociateSigninDelegateGroupsWithAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AssociateSigninDelegateGroupsWithAccountAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::AssociateSigninDelegateGroupsWithAccountAsyncHelper(const AssociateSigninDelegateGroupsWithAccountRequest& request, const AssociateSigninDelegateGroupsWithAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AssociateSigninDelegateGroupsWithAccount(request), context);
 }
 
 BatchCreateAttendeeOutcome ChimeClient::BatchCreateAttendee(const BatchCreateAttendeeRequest& request) const
@@ -905,6 +951,50 @@ void ChimeClient::CreateRoomMembershipAsync(const CreateRoomMembershipRequest& r
 void ChimeClient::CreateRoomMembershipAsyncHelper(const CreateRoomMembershipRequest& request, const CreateRoomMembershipResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, CreateRoomMembership(request), context);
+}
+
+CreateUserOutcome ChimeClient::CreateUser(const CreateUserRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateUser", "Required field: AccountId, is not set");
+    return CreateUserOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAccountId();
+  ss << "/users";
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?operation=create");
+  uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateUserOutcome(CreateUserResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateUserOutcome(outcome.GetError());
+  }
+}
+
+CreateUserOutcomeCallable ChimeClient::CreateUserCallable(const CreateUserRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateUserOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateUser(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateUserAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::CreateUserAsyncHelper(const CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateUser(request), context);
 }
 
 CreateVoiceConnectorOutcome ChimeClient::CreateVoiceConnector(const CreateVoiceConnectorRequest& request) const
@@ -1686,6 +1776,49 @@ void ChimeClient::DisassociatePhoneNumbersFromVoiceConnectorGroupAsync(const Dis
 void ChimeClient::DisassociatePhoneNumbersFromVoiceConnectorGroupAsyncHelper(const DisassociatePhoneNumbersFromVoiceConnectorGroupRequest& request, const DisassociatePhoneNumbersFromVoiceConnectorGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DisassociatePhoneNumbersFromVoiceConnectorGroup(request), context);
+}
+
+DisassociateSigninDelegateGroupsFromAccountOutcome ChimeClient::DisassociateSigninDelegateGroupsFromAccount(const DisassociateSigninDelegateGroupsFromAccountRequest& request) const
+{
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateSigninDelegateGroupsFromAccount", "Required field: AccountId, is not set");
+    return DisassociateSigninDelegateGroupsFromAccountOutcome(Aws::Client::AWSError<ChimeErrors>(ChimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/accounts/";
+  ss << request.GetAccountId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  ss.str("?operation=disassociate-signin-delegate-groups");
+  uri.SetQueryString(ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DisassociateSigninDelegateGroupsFromAccountOutcome(DisassociateSigninDelegateGroupsFromAccountResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DisassociateSigninDelegateGroupsFromAccountOutcome(outcome.GetError());
+  }
+}
+
+DisassociateSigninDelegateGroupsFromAccountOutcomeCallable ChimeClient::DisassociateSigninDelegateGroupsFromAccountCallable(const DisassociateSigninDelegateGroupsFromAccountRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DisassociateSigninDelegateGroupsFromAccountOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DisassociateSigninDelegateGroupsFromAccount(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ChimeClient::DisassociateSigninDelegateGroupsFromAccountAsync(const DisassociateSigninDelegateGroupsFromAccountRequest& request, const DisassociateSigninDelegateGroupsFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DisassociateSigninDelegateGroupsFromAccountAsyncHelper( request, handler, context ); } );
+}
+
+void ChimeClient::DisassociateSigninDelegateGroupsFromAccountAsyncHelper(const DisassociateSigninDelegateGroupsFromAccountRequest& request, const DisassociateSigninDelegateGroupsFromAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DisassociateSigninDelegateGroupsFromAccount(request), context);
 }
 
 GetAccountOutcome ChimeClient::GetAccount(const GetAccountRequest& request) const

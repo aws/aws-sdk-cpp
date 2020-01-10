@@ -17,6 +17,7 @@
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/chime/ChimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/chime/model/UserType.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +132,37 @@ namespace Model
 
 
     /**
+     * <p>The user type.</p>
+     */
+    inline const UserType& GetUserType() const{ return m_userType; }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline void SetUserType(const UserType& value) { m_userTypeHasBeenSet = true; m_userType = value; }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline void SetUserType(UserType&& value) { m_userTypeHasBeenSet = true; m_userType = std::move(value); }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline ListUsersRequest& WithUserType(const UserType& value) { SetUserType(value); return *this;}
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline ListUsersRequest& WithUserType(UserType&& value) { SetUserType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The maximum number of results to return in a single call. Defaults to
      * 100.</p>
      */
@@ -202,6 +234,9 @@ namespace Model
 
     Aws::String m_userEmail;
     bool m_userEmailHasBeenSet;
+
+    UserType m_userType;
+    bool m_userTypeHasBeenSet;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;

@@ -36,7 +36,10 @@ Certificate::Certificate() :
     m_thumbprintHasBeenSet(false),
     m_validFromHasBeenSet(false),
     m_validTillHasBeenSet(false),
-    m_certificateArnHasBeenSet(false)
+    m_certificateArnHasBeenSet(false),
+    m_customerOverride(false),
+    m_customerOverrideHasBeenSet(false),
+    m_customerOverrideValidTillHasBeenSet(false)
 {
 }
 
@@ -46,7 +49,10 @@ Certificate::Certificate(const XmlNode& xmlNode) :
     m_thumbprintHasBeenSet(false),
     m_validFromHasBeenSet(false),
     m_validTillHasBeenSet(false),
-    m_certificateArnHasBeenSet(false)
+    m_certificateArnHasBeenSet(false),
+    m_customerOverride(false),
+    m_customerOverrideHasBeenSet(false),
+    m_customerOverrideValidTillHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -93,6 +99,18 @@ Certificate& Certificate::operator =(const XmlNode& xmlNode)
       m_certificateArn = Aws::Utils::Xml::DecodeEscapedXmlText(certificateArnNode.GetText());
       m_certificateArnHasBeenSet = true;
     }
+    XmlNode customerOverrideNode = resultNode.FirstChild("CustomerOverride");
+    if(!customerOverrideNode.IsNull())
+    {
+      m_customerOverride = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(customerOverrideNode.GetText()).c_str()).c_str());
+      m_customerOverrideHasBeenSet = true;
+    }
+    XmlNode customerOverrideValidTillNode = resultNode.FirstChild("CustomerOverrideValidTill");
+    if(!customerOverrideValidTillNode.IsNull())
+    {
+      m_customerOverrideValidTill = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(customerOverrideValidTillNode.GetText()).c_str()).c_str(), DateFormat::ISO_8601);
+      m_customerOverrideValidTillHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -130,6 +148,16 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location, un
       oStream << location << index << locationValue << ".CertificateArn=" << StringUtils::URLEncode(m_certificateArn.c_str()) << "&";
   }
 
+  if(m_customerOverrideHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomerOverride=" << std::boolalpha << m_customerOverride << "&";
+  }
+
+  if(m_customerOverrideValidTillHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".CustomerOverrideValidTill=" << StringUtils::URLEncode(m_customerOverrideValidTill.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void Certificate::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -157,6 +185,14 @@ void Certificate::OutputToStream(Aws::OStream& oStream, const char* location) co
   if(m_certificateArnHasBeenSet)
   {
       oStream << location << ".CertificateArn=" << StringUtils::URLEncode(m_certificateArn.c_str()) << "&";
+  }
+  if(m_customerOverrideHasBeenSet)
+  {
+      oStream << location << ".CustomerOverride=" << std::boolalpha << m_customerOverride << "&";
+  }
+  if(m_customerOverrideValidTillHasBeenSet)
+  {
+      oStream << location << ".CustomerOverrideValidTill=" << StringUtils::URLEncode(m_customerOverrideValidTill.ToGmtString(DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

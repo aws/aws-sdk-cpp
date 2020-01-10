@@ -362,7 +362,8 @@ namespace Model
         /**
          * <p>Describes the server that you specify by passing the <code>ServerId</code>
          * parameter.</p> <p>The response contains a description of the server's
-         * properties.</p><p><h3>See Also:</h3>   <a
+         * properties. When you set <code>EndpointType</code> to VPC, the response will
+         * contain the <code>EndpointDetails</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer">AWS
          * API Reference</a></p>
          */
@@ -371,7 +372,8 @@ namespace Model
         /**
          * <p>Describes the server that you specify by passing the <code>ServerId</code>
          * parameter.</p> <p>The response contains a description of the server's
-         * properties.</p><p><h3>See Also:</h3>   <a
+         * properties. When you set <code>EndpointType</code> to VPC, the response will
+         * contain the <code>EndpointDetails</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer">AWS
          * API Reference</a></p>
          *
@@ -382,7 +384,8 @@ namespace Model
         /**
          * <p>Describes the server that you specify by passing the <code>ServerId</code>
          * parameter.</p> <p>The response contains a description of the server's
-         * properties.</p><p><h3>See Also:</h3>   <a
+         * properties. When you set <code>EndpointType</code> to VPC, the response will
+         * contain the <code>EndpointDetails</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeServer">AWS
          * API Reference</a></p>
          *

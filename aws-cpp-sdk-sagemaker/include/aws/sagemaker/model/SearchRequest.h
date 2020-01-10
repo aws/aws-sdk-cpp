@@ -48,38 +48,32 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon SageMaker resource to search for. Currently, the only
-     * valid <code>Resource</code> value is <code>TrainingJob</code>.</p>
+     * <p>The name of the Amazon SageMaker resource to search for.</p>
      */
     inline const ResourceType& GetResource() const{ return m_resource; }
 
     /**
-     * <p>The name of the Amazon SageMaker resource to search for. Currently, the only
-     * valid <code>Resource</code> value is <code>TrainingJob</code>.</p>
+     * <p>The name of the Amazon SageMaker resource to search for.</p>
      */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
-     * <p>The name of the Amazon SageMaker resource to search for. Currently, the only
-     * valid <code>Resource</code> value is <code>TrainingJob</code>.</p>
+     * <p>The name of the Amazon SageMaker resource to search for.</p>
      */
     inline void SetResource(const ResourceType& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>The name of the Amazon SageMaker resource to search for. Currently, the only
-     * valid <code>Resource</code> value is <code>TrainingJob</code>.</p>
+     * <p>The name of the Amazon SageMaker resource to search for.</p>
      */
     inline void SetResource(ResourceType&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>The name of the Amazon SageMaker resource to search for. Currently, the only
-     * valid <code>Resource</code> value is <code>TrainingJob</code>.</p>
+     * <p>The name of the Amazon SageMaker resource to search for.</p>
      */
     inline SearchRequest& WithResource(const ResourceType& value) { SetResource(value); return *this;}
 
     /**
-     * <p>The name of the Amazon SageMaker resource to search for. Currently, the only
-     * valid <code>Resource</code> value is <code>TrainingJob</code>.</p>
+     * <p>The name of the Amazon SageMaker resource to search for.</p>
      */
     inline SearchRequest& WithResource(ResourceType&& value) { SetResource(std::move(value)); return *this;}
 

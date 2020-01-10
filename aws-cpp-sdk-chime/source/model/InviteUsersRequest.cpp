@@ -24,7 +24,9 @@ using namespace Aws::Utils;
 
 InviteUsersRequest::InviteUsersRequest() : 
     m_accountIdHasBeenSet(false),
-    m_userEmailListHasBeenSet(false)
+    m_userEmailListHasBeenSet(false),
+    m_userType(UserType::NOT_SET),
+    m_userTypeHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,11 @@ Aws::String InviteUsersRequest::SerializePayload() const
    }
    payload.WithArray("UserEmailList", std::move(userEmailListJsonList));
 
+  }
+
+  if(m_userTypeHasBeenSet)
+  {
+   payload.WithString("UserType", UserTypeMapper::GetNameForUserType(m_userType));
   }
 
   return payload.View().WriteReadable();

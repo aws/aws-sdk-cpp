@@ -422,9 +422,12 @@ namespace Model
      * <code>true</code>. The default is <code>false</code> and time-series metrics
      * aren't generated except in the following cases:</p> <ul> <li> <p>You use one of
      * the Amazon SageMaker built-in algorithms</p> </li> <li> <p>You use one of the
-     * following prebuilt Amazon SageMaker Docker images:</p> <ul> <li>
-     * <p>Tensorflow</p> </li> <li> <p>MXNet</p> </li> <li> <p>PyTorch</p> </li> </ul>
-     * </li> <li> <p>You specify at least one <a>MetricDefinition</a> </p> </li> </ul>
+     * following <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt
+     * Amazon SageMaker Docker Images</a>:</p> <ul> <li> <p>Tensorflow (version &gt;=
+     * 1.15)</p> </li> <li> <p>MXNet (version &gt;= 1.6)</p> </li> <li> <p>PyTorch
+     * (version &gt;= 1.3)</p> </li> </ul> </li> <li> <p>You specify at least one
+     * <a>MetricDefinition</a> </p> </li> </ul>
      */
     inline bool GetEnableSageMakerMetricsTimeSeries() const{ return m_enableSageMakerMetricsTimeSeries; }
 
@@ -433,9 +436,12 @@ namespace Model
      * <code>true</code>. The default is <code>false</code> and time-series metrics
      * aren't generated except in the following cases:</p> <ul> <li> <p>You use one of
      * the Amazon SageMaker built-in algorithms</p> </li> <li> <p>You use one of the
-     * following prebuilt Amazon SageMaker Docker images:</p> <ul> <li>
-     * <p>Tensorflow</p> </li> <li> <p>MXNet</p> </li> <li> <p>PyTorch</p> </li> </ul>
-     * </li> <li> <p>You specify at least one <a>MetricDefinition</a> </p> </li> </ul>
+     * following <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt
+     * Amazon SageMaker Docker Images</a>:</p> <ul> <li> <p>Tensorflow (version &gt;=
+     * 1.15)</p> </li> <li> <p>MXNet (version &gt;= 1.6)</p> </li> <li> <p>PyTorch
+     * (version &gt;= 1.3)</p> </li> </ul> </li> <li> <p>You specify at least one
+     * <a>MetricDefinition</a> </p> </li> </ul>
      */
     inline bool EnableSageMakerMetricsTimeSeriesHasBeenSet() const { return m_enableSageMakerMetricsTimeSeriesHasBeenSet; }
 
@@ -444,9 +450,12 @@ namespace Model
      * <code>true</code>. The default is <code>false</code> and time-series metrics
      * aren't generated except in the following cases:</p> <ul> <li> <p>You use one of
      * the Amazon SageMaker built-in algorithms</p> </li> <li> <p>You use one of the
-     * following prebuilt Amazon SageMaker Docker images:</p> <ul> <li>
-     * <p>Tensorflow</p> </li> <li> <p>MXNet</p> </li> <li> <p>PyTorch</p> </li> </ul>
-     * </li> <li> <p>You specify at least one <a>MetricDefinition</a> </p> </li> </ul>
+     * following <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt
+     * Amazon SageMaker Docker Images</a>:</p> <ul> <li> <p>Tensorflow (version &gt;=
+     * 1.15)</p> </li> <li> <p>MXNet (version &gt;= 1.6)</p> </li> <li> <p>PyTorch
+     * (version &gt;= 1.3)</p> </li> </ul> </li> <li> <p>You specify at least one
+     * <a>MetricDefinition</a> </p> </li> </ul>
      */
     inline void SetEnableSageMakerMetricsTimeSeries(bool value) { m_enableSageMakerMetricsTimeSeriesHasBeenSet = true; m_enableSageMakerMetricsTimeSeries = value; }
 
@@ -455,9 +464,12 @@ namespace Model
      * <code>true</code>. The default is <code>false</code> and time-series metrics
      * aren't generated except in the following cases:</p> <ul> <li> <p>You use one of
      * the Amazon SageMaker built-in algorithms</p> </li> <li> <p>You use one of the
-     * following prebuilt Amazon SageMaker Docker images:</p> <ul> <li>
-     * <p>Tensorflow</p> </li> <li> <p>MXNet</p> </li> <li> <p>PyTorch</p> </li> </ul>
-     * </li> <li> <p>You specify at least one <a>MetricDefinition</a> </p> </li> </ul>
+     * following <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html">Prebuilt
+     * Amazon SageMaker Docker Images</a>:</p> <ul> <li> <p>Tensorflow (version &gt;=
+     * 1.15)</p> </li> <li> <p>MXNet (version &gt;= 1.6)</p> </li> <li> <p>PyTorch
+     * (version &gt;= 1.3)</p> </li> </ul> </li> <li> <p>You specify at least one
+     * <a>MetricDefinition</a> </p> </li> </ul>
      */
     inline AlgorithmSpecification& WithEnableSageMakerMetricsTimeSeries(bool value) { SetEnableSageMakerMetricsTimeSeries(value); return *this;}
 

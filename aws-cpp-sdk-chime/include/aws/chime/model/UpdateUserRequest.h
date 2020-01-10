@@ -18,6 +18,8 @@
 #include <aws/chime/ChimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime/model/License.h>
+#include <aws/chime/model/UserType.h>
+#include <aws/chime/model/AlexaForBusinessMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -161,6 +163,68 @@ namespace Model
      */
     inline UpdateUserRequest& WithLicenseType(License&& value) { SetLicenseType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline const UserType& GetUserType() const{ return m_userType; }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline void SetUserType(const UserType& value) { m_userTypeHasBeenSet = true; m_userType = value; }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline void SetUserType(UserType&& value) { m_userTypeHasBeenSet = true; m_userType = std::move(value); }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline UpdateUserRequest& WithUserType(const UserType& value) { SetUserType(value); return *this;}
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline UpdateUserRequest& WithUserType(UserType&& value) { SetUserType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Alexa for Business metadata.</p>
+     */
+    inline const AlexaForBusinessMetadata& GetAlexaForBusinessMetadata() const{ return m_alexaForBusinessMetadata; }
+
+    /**
+     * <p>The Alexa for Business metadata.</p>
+     */
+    inline bool AlexaForBusinessMetadataHasBeenSet() const { return m_alexaForBusinessMetadataHasBeenSet; }
+
+    /**
+     * <p>The Alexa for Business metadata.</p>
+     */
+    inline void SetAlexaForBusinessMetadata(const AlexaForBusinessMetadata& value) { m_alexaForBusinessMetadataHasBeenSet = true; m_alexaForBusinessMetadata = value; }
+
+    /**
+     * <p>The Alexa for Business metadata.</p>
+     */
+    inline void SetAlexaForBusinessMetadata(AlexaForBusinessMetadata&& value) { m_alexaForBusinessMetadataHasBeenSet = true; m_alexaForBusinessMetadata = std::move(value); }
+
+    /**
+     * <p>The Alexa for Business metadata.</p>
+     */
+    inline UpdateUserRequest& WithAlexaForBusinessMetadata(const AlexaForBusinessMetadata& value) { SetAlexaForBusinessMetadata(value); return *this;}
+
+    /**
+     * <p>The Alexa for Business metadata.</p>
+     */
+    inline UpdateUserRequest& WithAlexaForBusinessMetadata(AlexaForBusinessMetadata&& value) { SetAlexaForBusinessMetadata(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_accountId;
@@ -171,6 +235,12 @@ namespace Model
 
     License m_licenseType;
     bool m_licenseTypeHasBeenSet;
+
+    UserType m_userType;
+    bool m_userTypeHasBeenSet;
+
+    AlexaForBusinessMetadata m_alexaForBusinessMetadata;
+    bool m_alexaForBusinessMetadataHasBeenSet;
   };
 
 } // namespace Model

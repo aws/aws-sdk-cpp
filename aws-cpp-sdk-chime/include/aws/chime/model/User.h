@@ -17,9 +17,11 @@
 #include <aws/chime/Chime_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime/model/License.h>
+#include <aws/chime/model/UserType.h>
 #include <aws/chime/model/RegistrationStatus.h>
 #include <aws/chime/model/InviteStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/chime/model/AlexaForBusinessMetadata.h>
 #include <utility>
 
 namespace Aws
@@ -288,6 +290,37 @@ namespace Model
 
 
     /**
+     * <p>The user type.</p>
+     */
+    inline const UserType& GetUserType() const{ return m_userType; }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline void SetUserType(const UserType& value) { m_userTypeHasBeenSet = true; m_userType = value; }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline void SetUserType(UserType&& value) { m_userTypeHasBeenSet = true; m_userType = std::move(value); }
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline User& WithUserType(const UserType& value) { SetUserType(value); return *this;}
+
+    /**
+     * <p>The user type.</p>
+     */
+    inline User& WithUserType(UserType&& value) { SetUserType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The user registration status.</p>
      */
     inline const RegistrationStatus& GetUserRegistrationStatus() const{ return m_userRegistrationStatus; }
@@ -418,6 +451,37 @@ namespace Model
 
 
     /**
+     * <p>The Alexa for Business metadata.</p>
+     */
+    inline const AlexaForBusinessMetadata& GetAlexaForBusinessMetadata() const{ return m_alexaForBusinessMetadata; }
+
+    /**
+     * <p>The Alexa for Business metadata.</p>
+     */
+    inline bool AlexaForBusinessMetadataHasBeenSet() const { return m_alexaForBusinessMetadataHasBeenSet; }
+
+    /**
+     * <p>The Alexa for Business metadata.</p>
+     */
+    inline void SetAlexaForBusinessMetadata(const AlexaForBusinessMetadata& value) { m_alexaForBusinessMetadataHasBeenSet = true; m_alexaForBusinessMetadata = value; }
+
+    /**
+     * <p>The Alexa for Business metadata.</p>
+     */
+    inline void SetAlexaForBusinessMetadata(AlexaForBusinessMetadata&& value) { m_alexaForBusinessMetadataHasBeenSet = true; m_alexaForBusinessMetadata = std::move(value); }
+
+    /**
+     * <p>The Alexa for Business metadata.</p>
+     */
+    inline User& WithAlexaForBusinessMetadata(const AlexaForBusinessMetadata& value) { SetAlexaForBusinessMetadata(value); return *this;}
+
+    /**
+     * <p>The Alexa for Business metadata.</p>
+     */
+    inline User& WithAlexaForBusinessMetadata(AlexaForBusinessMetadata&& value) { SetAlexaForBusinessMetadata(std::move(value)); return *this;}
+
+
+    /**
      * <p>The user's personal meeting PIN.</p>
      */
     inline const Aws::String& GetPersonalPIN() const{ return m_personalPIN; }
@@ -477,6 +541,9 @@ namespace Model
     License m_licenseType;
     bool m_licenseTypeHasBeenSet;
 
+    UserType m_userType;
+    bool m_userTypeHasBeenSet;
+
     RegistrationStatus m_userRegistrationStatus;
     bool m_userRegistrationStatusHasBeenSet;
 
@@ -488,6 +555,9 @@ namespace Model
 
     Aws::Utils::DateTime m_invitedOn;
     bool m_invitedOnHasBeenSet;
+
+    AlexaForBusinessMetadata m_alexaForBusinessMetadata;
+    bool m_alexaForBusinessMetadataHasBeenSet;
 
     Aws::String m_personalPIN;
     bool m_personalPINHasBeenSet;

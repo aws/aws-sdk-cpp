@@ -66,49 +66,49 @@ namespace Model
 
     /**
      * <p>The name of the property to use in the nested filters. The value must match a
-     * listed property name, such as <code>InputDataConfig</code> .</p>
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline const Aws::String& GetNestedPropertyName() const{ return m_nestedPropertyName; }
 
     /**
      * <p>The name of the property to use in the nested filters. The value must match a
-     * listed property name, such as <code>InputDataConfig</code> .</p>
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline bool NestedPropertyNameHasBeenSet() const { return m_nestedPropertyNameHasBeenSet; }
 
     /**
      * <p>The name of the property to use in the nested filters. The value must match a
-     * listed property name, such as <code>InputDataConfig</code> .</p>
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline void SetNestedPropertyName(const Aws::String& value) { m_nestedPropertyNameHasBeenSet = true; m_nestedPropertyName = value; }
 
     /**
      * <p>The name of the property to use in the nested filters. The value must match a
-     * listed property name, such as <code>InputDataConfig</code> .</p>
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline void SetNestedPropertyName(Aws::String&& value) { m_nestedPropertyNameHasBeenSet = true; m_nestedPropertyName = std::move(value); }
 
     /**
      * <p>The name of the property to use in the nested filters. The value must match a
-     * listed property name, such as <code>InputDataConfig</code> .</p>
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline void SetNestedPropertyName(const char* value) { m_nestedPropertyNameHasBeenSet = true; m_nestedPropertyName.assign(value); }
 
     /**
      * <p>The name of the property to use in the nested filters. The value must match a
-     * listed property name, such as <code>InputDataConfig</code> .</p>
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline NestedFilters& WithNestedPropertyName(const Aws::String& value) { SetNestedPropertyName(value); return *this;}
 
     /**
      * <p>The name of the property to use in the nested filters. The value must match a
-     * listed property name, such as <code>InputDataConfig</code> .</p>
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline NestedFilters& WithNestedPropertyName(Aws::String&& value) { SetNestedPropertyName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the property to use in the nested filters. The value must match a
-     * listed property name, such as <code>InputDataConfig</code> .</p>
+     * listed property name, such as <code>InputDataConfig</code>.</p>
      */
     inline NestedFilters& WithNestedPropertyName(const char* value) { SetNestedPropertyName(value); return *this;}
 

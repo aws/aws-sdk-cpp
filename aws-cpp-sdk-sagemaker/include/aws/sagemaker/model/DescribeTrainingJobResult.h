@@ -1140,8 +1140,7 @@ namespace Model
      * <code>True</code>. If you enable network isolation for training jobs that are
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data
      * and model artifacts through the specified VPC, but the training container does
-     * not have network access.</p> <note> <p>The Semantic Segmentation built-in
-     * algorithm does not support network isolation.</p> </note>
+     * not have network access.</p>
      */
     inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
 
@@ -1151,8 +1150,7 @@ namespace Model
      * <code>True</code>. If you enable network isolation for training jobs that are
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data
      * and model artifacts through the specified VPC, but the training container does
-     * not have network access.</p> <note> <p>The Semantic Segmentation built-in
-     * algorithm does not support network isolation.</p> </note>
+     * not have network access.</p>
      */
     inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolation = value; }
 
@@ -1162,8 +1160,7 @@ namespace Model
      * <code>True</code>. If you enable network isolation for training jobs that are
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data
      * and model artifacts through the specified VPC, but the training container does
-     * not have network access.</p> <note> <p>The Semantic Segmentation built-in
-     * algorithm does not support network isolation.</p> </note>
+     * not have network access.</p>
      */
     inline DescribeTrainingJobResult& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
 
