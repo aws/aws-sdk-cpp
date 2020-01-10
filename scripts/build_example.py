@@ -62,6 +62,7 @@ def BuildExample(platform, cpuArchitecture, buildDir, buildType, sdkInstallDir, 
     os.chdir(buildDir)
     
     cmake_call = "cmake" + buildEnvironment[ platform ][ "generator_param" ][ cpuArchitecture ]
+    cmake_call = cmake_call + " -DBUILD_SHARED_LIBS=ON"
     cmake_call = cmake_call + " -DCMAKE_BUILD_TYPE=" + buildType
     cmake_call = cmake_call + " -DCMAKE_PREFIX_PATH=" + sdkInstallDir
     cmake_call = cmake_call + " -DAWSSDK_ROOT_DIR=" + sdkInstallDir
