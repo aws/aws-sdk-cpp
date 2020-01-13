@@ -45,8 +45,8 @@ namespace Model
 
     /**
      * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
      * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
      * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
      * System</p> </li> </ul>
@@ -55,8 +55,8 @@ namespace Model
 
     /**
      * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
      * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
      * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
      * System</p> </li> </ul>
@@ -65,8 +65,8 @@ namespace Model
 
     /**
      * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
      * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
      * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
      * System</p> </li> </ul>
@@ -75,8 +75,8 @@ namespace Model
 
     /**
      * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
      * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
      * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
      * System</p> </li> </ul>
@@ -85,8 +85,8 @@ namespace Model
 
     /**
      * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
      * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
      * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
      * System</p> </li> </ul>
@@ -95,8 +95,8 @@ namespace Model
 
     /**
      * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
      * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
      * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
      * System</p> </li> </ul>
@@ -105,8 +105,8 @@ namespace Model
 
     /**
      * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
      * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
      * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
      * System</p> </li> </ul>
@@ -115,8 +115,8 @@ namespace Model
 
     /**
      * <p>Contains a string with the supported AWS resource types:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
+     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage
+     * Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
      * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
      * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
      * System</p> </li> </ul>

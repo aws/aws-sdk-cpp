@@ -30,7 +30,8 @@ DescribeMountTargetsRequest::DescribeMountTargetsRequest() :
     m_maxItemsHasBeenSet(false),
     m_markerHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
-    m_mountTargetIdHasBeenSet(false)
+    m_mountTargetIdHasBeenSet(false),
+    m_accessPointIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,13 @@ void DescribeMountTargetsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_mountTargetId;
       uri.AddQueryStringParameter("MountTargetId", ss.str());
+      ss.str("");
+    }
+
+    if(m_accessPointIdHasBeenSet)
+    {
+      ss << m_accessPointId;
+      uri.AddQueryStringParameter("AccessPointId", ss.str());
       ss.str("");
     }
 

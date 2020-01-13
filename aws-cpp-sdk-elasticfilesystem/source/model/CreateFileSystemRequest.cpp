@@ -23,7 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateFileSystemRequest::CreateFileSystemRequest() : 
-    m_creationTokenHasBeenSet(false),
+    m_creationToken(Aws::Utils::UUID::RandomUUID()),
+    m_creationTokenHasBeenSet(true),
     m_performanceMode(PerformanceMode::NOT_SET),
     m_performanceModeHasBeenSet(false),
     m_encrypted(false),

@@ -13,39 +13,38 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/elasticfilesystem/model/DeleteTagsRequest.h>
+#include <aws/backup/model/DescribeCopyJobResult.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
 
 #include <utility>
 
-using namespace Aws::EFS::Model;
+using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
+using namespace Aws;
 
-DeleteTagsRequest::DeleteTagsRequest() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
+DescribeCopyJobResult::DescribeCopyJobResult()
 {
 }
 
-Aws::String DeleteTagsRequest::SerializePayload() const
+DescribeCopyJobResult::DescribeCopyJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
-  JsonValue payload;
+  *this = result;
+}
 
-  if(m_tagKeysHasBeenSet)
+DescribeCopyJobResult& DescribeCopyJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("CopyJob"))
   {
-   Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
-   for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
-   {
-     tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
-   }
-   payload.WithArray("TagKeys", std::move(tagKeysJsonList));
+    m_copyJob = jsonValue.GetObject("CopyJob");
 
   }
 
-  return payload.View().WriteReadable();
+
+
+  return *this;
 }
-
-
-
-

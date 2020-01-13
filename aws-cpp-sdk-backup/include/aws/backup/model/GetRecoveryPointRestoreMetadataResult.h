@@ -130,74 +130,86 @@ namespace Model
 
 
     /**
-     * <p>A set of metadata key-value pairs that lists the metadata key-value pairs
-     * that are required to restore the recovery point.</p>
+     * <p>The set of metadata key-value pairs that describes the original configuration
+     * of the backed-up resource. These values vary depending on the service that is
+     * being restored.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRestoreMetadata() const{ return m_restoreMetadata; }
 
     /**
-     * <p>A set of metadata key-value pairs that lists the metadata key-value pairs
-     * that are required to restore the recovery point.</p>
+     * <p>The set of metadata key-value pairs that describes the original configuration
+     * of the backed-up resource. These values vary depending on the service that is
+     * being restored.</p>
      */
     inline void SetRestoreMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_restoreMetadata = value; }
 
     /**
-     * <p>A set of metadata key-value pairs that lists the metadata key-value pairs
-     * that are required to restore the recovery point.</p>
+     * <p>The set of metadata key-value pairs that describes the original configuration
+     * of the backed-up resource. These values vary depending on the service that is
+     * being restored.</p>
      */
     inline void SetRestoreMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_restoreMetadata = std::move(value); }
 
     /**
-     * <p>A set of metadata key-value pairs that lists the metadata key-value pairs
-     * that are required to restore the recovery point.</p>
+     * <p>The set of metadata key-value pairs that describes the original configuration
+     * of the backed-up resource. These values vary depending on the service that is
+     * being restored.</p>
      */
     inline GetRecoveryPointRestoreMetadataResult& WithRestoreMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetRestoreMetadata(value); return *this;}
 
     /**
-     * <p>A set of metadata key-value pairs that lists the metadata key-value pairs
-     * that are required to restore the recovery point.</p>
+     * <p>The set of metadata key-value pairs that describes the original configuration
+     * of the backed-up resource. These values vary depending on the service that is
+     * being restored.</p>
      */
     inline GetRecoveryPointRestoreMetadataResult& WithRestoreMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetRestoreMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>A set of metadata key-value pairs that lists the metadata key-value pairs
-     * that are required to restore the recovery point.</p>
+     * <p>The set of metadata key-value pairs that describes the original configuration
+     * of the backed-up resource. These values vary depending on the service that is
+     * being restored.</p>
      */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const Aws::String& key, const Aws::String& value) { m_restoreMetadata.emplace(key, value); return *this; }
 
     /**
-     * <p>A set of metadata key-value pairs that lists the metadata key-value pairs
-     * that are required to restore the recovery point.</p>
+     * <p>The set of metadata key-value pairs that describes the original configuration
+     * of the backed-up resource. These values vary depending on the service that is
+     * being restored.</p>
      */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(Aws::String&& key, const Aws::String& value) { m_restoreMetadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A set of metadata key-value pairs that lists the metadata key-value pairs
-     * that are required to restore the recovery point.</p>
+     * <p>The set of metadata key-value pairs that describes the original configuration
+     * of the backed-up resource. These values vary depending on the service that is
+     * being restored.</p>
      */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const Aws::String& key, Aws::String&& value) { m_restoreMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A set of metadata key-value pairs that lists the metadata key-value pairs
-     * that are required to restore the recovery point.</p>
+     * <p>The set of metadata key-value pairs that describes the original configuration
+     * of the backed-up resource. These values vary depending on the service that is
+     * being restored.</p>
      */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(Aws::String&& key, Aws::String&& value) { m_restoreMetadata.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A set of metadata key-value pairs that lists the metadata key-value pairs
-     * that are required to restore the recovery point.</p>
+     * <p>The set of metadata key-value pairs that describes the original configuration
+     * of the backed-up resource. These values vary depending on the service that is
+     * being restored.</p>
      */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const char* key, Aws::String&& value) { m_restoreMetadata.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A set of metadata key-value pairs that lists the metadata key-value pairs
-     * that are required to restore the recovery point.</p>
+     * <p>The set of metadata key-value pairs that describes the original configuration
+     * of the backed-up resource. These values vary depending on the service that is
+     * being restored.</p>
      */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(Aws::String&& key, const char* value) { m_restoreMetadata.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A set of metadata key-value pairs that lists the metadata key-value pairs
-     * that are required to restore the recovery point.</p>
+     * <p>The set of metadata key-value pairs that describes the original configuration
+     * of the backed-up resource. These values vary depending on the service that is
+     * being restored.</p>
      */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const char* key, const char* value) { m_restoreMetadata.emplace(key, value); return *this; }
 

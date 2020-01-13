@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/elasticfilesystem/model/CreateTagsRequest.h>
+#include <aws/elasticfilesystem/model/UntagResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -22,24 +22,24 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTagsRequest::CreateTagsRequest() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+UntagResourceRequest::UntagResourceRequest() : 
+    m_resourceIdHasBeenSet(false),
+    m_tagKeysHasBeenSet(false)
 {
 }
 
-Aws::String CreateTagsRequest::SerializePayload() const
+Aws::String UntagResourceRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_tagsHasBeenSet)
+  if(m_tagKeysHasBeenSet)
   {
-   Array<JsonValue> tagsJsonList(m_tags.size());
-   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
+   for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
    {
-     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+     tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
    }
-   payload.WithArray("Tags", std::move(tagsJsonList));
+   payload.WithArray("TagKeys", std::move(tagKeysJsonList));
 
   }
 

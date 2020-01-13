@@ -13,7 +13,7 @@
 * permissions and limitations under the License.
 */
 
-#include <aws/elasticfilesystem/model/DescribeTagsRequest.h>
+#include <aws/elasticfilesystem/model/ListTagsForResourceRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -25,33 +25,33 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeTagsRequest::DescribeTagsRequest() : 
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false)
+ListTagsForResourceRequest::ListTagsForResourceRequest() : 
+    m_resourceIdHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false)
 {
 }
 
-Aws::String DescribeTagsRequest::SerializePayload() const
+Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
   return {};
 }
 
-void DescribeTagsRequest::AddQueryStringParameters(URI& uri) const
+void ListTagsForResourceRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_maxItemsHasBeenSet)
+    if(m_maxResultsHasBeenSet)
     {
-      ss << m_maxItems;
-      uri.AddQueryStringParameter("MaxItems", ss.str());
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("MaxResults", ss.str());
       ss.str("");
     }
 
-    if(m_markerHasBeenSet)
+    if(m_nextTokenHasBeenSet)
     {
-      ss << m_marker;
-      uri.AddQueryStringParameter("Marker", ss.str());
+      ss << m_nextToken;
+      uri.AddQueryStringParameter("NextToken", ss.str());
       ss.str("");
     }
 

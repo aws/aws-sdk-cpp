@@ -209,89 +209,49 @@ namespace Model
 
     /**
      * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>. Idempotency tokens time out after one hour.
-     * Therefore, if you call <code>StartBackupJob</code> multiple times with the same
-     * idempotency token within one hour, AWS Backup recognizes that you are requesting
-     * only one backup job and initiates only one. If you change the idempotency token
-     * for each call, AWS Backup recognizes that you are requesting to start multiple
-     * backups.</p>
+     * <code>StartBackupJob</code>.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
 
     /**
      * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>. Idempotency tokens time out after one hour.
-     * Therefore, if you call <code>StartBackupJob</code> multiple times with the same
-     * idempotency token within one hour, AWS Backup recognizes that you are requesting
-     * only one backup job and initiates only one. If you change the idempotency token
-     * for each call, AWS Backup recognizes that you are requesting to start multiple
-     * backups.</p>
+     * <code>StartBackupJob</code>.</p>
      */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
      * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>. Idempotency tokens time out after one hour.
-     * Therefore, if you call <code>StartBackupJob</code> multiple times with the same
-     * idempotency token within one hour, AWS Backup recognizes that you are requesting
-     * only one backup job and initiates only one. If you change the idempotency token
-     * for each call, AWS Backup recognizes that you are requesting to start multiple
-     * backups.</p>
+     * <code>StartBackupJob</code>.</p>
      */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
      * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>. Idempotency tokens time out after one hour.
-     * Therefore, if you call <code>StartBackupJob</code> multiple times with the same
-     * idempotency token within one hour, AWS Backup recognizes that you are requesting
-     * only one backup job and initiates only one. If you change the idempotency token
-     * for each call, AWS Backup recognizes that you are requesting to start multiple
-     * backups.</p>
+     * <code>StartBackupJob</code>.</p>
      */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
 
     /**
      * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>. Idempotency tokens time out after one hour.
-     * Therefore, if you call <code>StartBackupJob</code> multiple times with the same
-     * idempotency token within one hour, AWS Backup recognizes that you are requesting
-     * only one backup job and initiates only one. If you change the idempotency token
-     * for each call, AWS Backup recognizes that you are requesting to start multiple
-     * backups.</p>
+     * <code>StartBackupJob</code>.</p>
      */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
 
     /**
      * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>. Idempotency tokens time out after one hour.
-     * Therefore, if you call <code>StartBackupJob</code> multiple times with the same
-     * idempotency token within one hour, AWS Backup recognizes that you are requesting
-     * only one backup job and initiates only one. If you change the idempotency token
-     * for each call, AWS Backup recognizes that you are requesting to start multiple
-     * backups.</p>
+     * <code>StartBackupJob</code>.</p>
      */
     inline StartBackupJobRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
 
     /**
      * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>. Idempotency tokens time out after one hour.
-     * Therefore, if you call <code>StartBackupJob</code> multiple times with the same
-     * idempotency token within one hour, AWS Backup recognizes that you are requesting
-     * only one backup job and initiates only one. If you change the idempotency token
-     * for each call, AWS Backup recognizes that you are requesting to start multiple
-     * backups.</p>
+     * <code>StartBackupJob</code>.</p>
      */
     inline StartBackupJobRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
 
     /**
      * <p>A customer chosen string that can be used to distinguish between calls to
-     * <code>StartBackupJob</code>. Idempotency tokens time out after one hour.
-     * Therefore, if you call <code>StartBackupJob</code> multiple times with the same
-     * idempotency token within one hour, AWS Backup recognizes that you are requesting
-     * only one backup job and initiates only one. If you change the idempotency token
-     * for each call, AWS Backup recognizes that you are requesting to start multiple
-     * backups.</p>
+     * <code>StartBackupJob</code>.</p>
      */
     inline StartBackupJobRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 

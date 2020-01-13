@@ -33,8 +33,12 @@ namespace Model
 
   /**
    * <p>Contains an array of <code>Transition</code> objects specifying how long in
-   * days before a recovery point transitions to cold storage or is
-   * deleted.</p><p><h3>See Also:</h3>   <a
+   * days before a recovery point transitions to cold storage or is deleted.</p>
+   * <p>Backups transitioned to cold storage must be stored in cold storage for a
+   * minimum of 90 days. Therefore, on the console, the “expire after days” setting
+   * must be 90 days greater than the “transition to cold after days” setting. The
+   * “transition to cold after days” setting cannot be changed after a backup has
+   * been transitioned to cold. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/Lifecycle">AWS
    * API Reference</a></p>
    */
@@ -74,25 +78,25 @@ namespace Model
 
     /**
      * <p>Specifies the number of days after creation that a recovery point is deleted.
-     * Must be greater than <code>MoveToColdStorageAfterDays</code>.</p>
+     * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
      */
     inline long long GetDeleteAfterDays() const{ return m_deleteAfterDays; }
 
     /**
      * <p>Specifies the number of days after creation that a recovery point is deleted.
-     * Must be greater than <code>MoveToColdStorageAfterDays</code>.</p>
+     * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
      */
     inline bool DeleteAfterDaysHasBeenSet() const { return m_deleteAfterDaysHasBeenSet; }
 
     /**
      * <p>Specifies the number of days after creation that a recovery point is deleted.
-     * Must be greater than <code>MoveToColdStorageAfterDays</code>.</p>
+     * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
      */
     inline void SetDeleteAfterDays(long long value) { m_deleteAfterDaysHasBeenSet = true; m_deleteAfterDays = value; }
 
     /**
      * <p>Specifies the number of days after creation that a recovery point is deleted.
-     * Must be greater than <code>MoveToColdStorageAfterDays</code>.</p>
+     * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.</p>
      */
     inline Lifecycle& WithDeleteAfterDays(long long value) { SetDeleteAfterDays(value); return *this;}
 

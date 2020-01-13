@@ -149,121 +149,112 @@ namespace Model
 
 
     /**
-     * <p>An array of strings that either contain Amazon Resource Names (ARNs) or match
-     * patterns such as "<code>arn:aws:ec2:us-east-1:123456789012:volume/ *</code>" of
-     * resources to assign to a backup plan.</p>
+     * <p>An array of strings that contain Amazon Resource Names (ARNs) of resources to
+     * assign to a backup plan.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
 
     /**
-     * <p>An array of strings that either contain Amazon Resource Names (ARNs) or match
-     * patterns such as "<code>arn:aws:ec2:us-east-1:123456789012:volume/ *</code>" of
-     * resources to assign to a backup plan.</p>
+     * <p>An array of strings that contain Amazon Resource Names (ARNs) of resources to
+     * assign to a backup plan.</p>
      */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
-     * <p>An array of strings that either contain Amazon Resource Names (ARNs) or match
-     * patterns such as "<code>arn:aws:ec2:us-east-1:123456789012:volume/ *</code>" of
-     * resources to assign to a backup plan.</p>
+     * <p>An array of strings that contain Amazon Resource Names (ARNs) of resources to
+     * assign to a backup plan.</p>
      */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
-     * <p>An array of strings that either contain Amazon Resource Names (ARNs) or match
-     * patterns such as "<code>arn:aws:ec2:us-east-1:123456789012:volume/ *</code>" of
-     * resources to assign to a backup plan.</p>
+     * <p>An array of strings that contain Amazon Resource Names (ARNs) of resources to
+     * assign to a backup plan.</p>
      */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
 
     /**
-     * <p>An array of strings that either contain Amazon Resource Names (ARNs) or match
-     * patterns such as "<code>arn:aws:ec2:us-east-1:123456789012:volume/ *</code>" of
-     * resources to assign to a backup plan.</p>
+     * <p>An array of strings that contain Amazon Resource Names (ARNs) of resources to
+     * assign to a backup plan.</p>
      */
     inline BackupSelection& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
 
     /**
-     * <p>An array of strings that either contain Amazon Resource Names (ARNs) or match
-     * patterns such as "<code>arn:aws:ec2:us-east-1:123456789012:volume/ *</code>" of
-     * resources to assign to a backup plan.</p>
+     * <p>An array of strings that contain Amazon Resource Names (ARNs) of resources to
+     * assign to a backup plan.</p>
      */
     inline BackupSelection& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
 
     /**
-     * <p>An array of strings that either contain Amazon Resource Names (ARNs) or match
-     * patterns such as "<code>arn:aws:ec2:us-east-1:123456789012:volume/ *</code>" of
-     * resources to assign to a backup plan.</p>
+     * <p>An array of strings that contain Amazon Resource Names (ARNs) of resources to
+     * assign to a backup plan.</p>
      */
     inline BackupSelection& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
     /**
-     * <p>An array of strings that either contain Amazon Resource Names (ARNs) or match
-     * patterns such as "<code>arn:aws:ec2:us-east-1:123456789012:volume/ *</code>" of
-     * resources to assign to a backup plan.</p>
+     * <p>An array of strings that contain Amazon Resource Names (ARNs) of resources to
+     * assign to a backup plan.</p>
      */
     inline BackupSelection& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>An array of strings that either contain Amazon Resource Names (ARNs) or match
-     * patterns such as "<code>arn:aws:ec2:us-east-1:123456789012:volume/ *</code>" of
-     * resources to assign to a backup plan.</p>
+     * <p>An array of strings that contain Amazon Resource Names (ARNs) of resources to
+     * assign to a backup plan.</p>
      */
     inline BackupSelection& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
 
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline const Aws::Vector<Condition>& GetListOfTags() const{ return m_listOfTags; }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline bool ListOfTagsHasBeenSet() const { return m_listOfTagsHasBeenSet; }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline void SetListOfTags(const Aws::Vector<Condition>& value) { m_listOfTagsHasBeenSet = true; m_listOfTags = value; }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline void SetListOfTags(Aws::Vector<Condition>&& value) { m_listOfTagsHasBeenSet = true; m_listOfTags = std::move(value); }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline BackupSelection& WithListOfTags(const Aws::Vector<Condition>& value) { SetListOfTags(value); return *this;}
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline BackupSelection& WithListOfTags(Aws::Vector<Condition>&& value) { SetListOfTags(std::move(value)); return *this;}
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline BackupSelection& AddListOfTags(const Condition& value) { m_listOfTagsHasBeenSet = true; m_listOfTags.push_back(value); return *this; }
 
     /**
      * <p>An array of conditions used to specify a set of resources to assign to a
-     * backup plan; for example, <code>"StringEquals": {"ec2:ResourceTag/Department":
+     * backup plan; for example, <code>"STRINGEQUALS": {"ec2:ResourceTag/Department":
      * "accounting"</code>.</p>
      */
     inline BackupSelection& AddListOfTags(Condition&& value) { m_listOfTagsHasBeenSet = true; m_listOfTags.push_back(std::move(value)); return *this; }

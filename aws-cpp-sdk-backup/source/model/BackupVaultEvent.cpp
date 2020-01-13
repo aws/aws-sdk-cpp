@@ -32,8 +32,16 @@ namespace Aws
 
         static const int BACKUP_JOB_STARTED_HASH = HashingUtils::HashString("BACKUP_JOB_STARTED");
         static const int BACKUP_JOB_COMPLETED_HASH = HashingUtils::HashString("BACKUP_JOB_COMPLETED");
+        static const int BACKUP_JOB_SUCCESSFUL_HASH = HashingUtils::HashString("BACKUP_JOB_SUCCESSFUL");
+        static const int BACKUP_JOB_FAILED_HASH = HashingUtils::HashString("BACKUP_JOB_FAILED");
+        static const int BACKUP_JOB_EXPIRED_HASH = HashingUtils::HashString("BACKUP_JOB_EXPIRED");
         static const int RESTORE_JOB_STARTED_HASH = HashingUtils::HashString("RESTORE_JOB_STARTED");
         static const int RESTORE_JOB_COMPLETED_HASH = HashingUtils::HashString("RESTORE_JOB_COMPLETED");
+        static const int RESTORE_JOB_SUCCESSFUL_HASH = HashingUtils::HashString("RESTORE_JOB_SUCCESSFUL");
+        static const int RESTORE_JOB_FAILED_HASH = HashingUtils::HashString("RESTORE_JOB_FAILED");
+        static const int COPY_JOB_STARTED_HASH = HashingUtils::HashString("COPY_JOB_STARTED");
+        static const int COPY_JOB_SUCCESSFUL_HASH = HashingUtils::HashString("COPY_JOB_SUCCESSFUL");
+        static const int COPY_JOB_FAILED_HASH = HashingUtils::HashString("COPY_JOB_FAILED");
         static const int RECOVERY_POINT_MODIFIED_HASH = HashingUtils::HashString("RECOVERY_POINT_MODIFIED");
         static const int BACKUP_PLAN_CREATED_HASH = HashingUtils::HashString("BACKUP_PLAN_CREATED");
         static const int BACKUP_PLAN_MODIFIED_HASH = HashingUtils::HashString("BACKUP_PLAN_MODIFIED");
@@ -50,6 +58,18 @@ namespace Aws
           {
             return BackupVaultEvent::BACKUP_JOB_COMPLETED;
           }
+          else if (hashCode == BACKUP_JOB_SUCCESSFUL_HASH)
+          {
+            return BackupVaultEvent::BACKUP_JOB_SUCCESSFUL;
+          }
+          else if (hashCode == BACKUP_JOB_FAILED_HASH)
+          {
+            return BackupVaultEvent::BACKUP_JOB_FAILED;
+          }
+          else if (hashCode == BACKUP_JOB_EXPIRED_HASH)
+          {
+            return BackupVaultEvent::BACKUP_JOB_EXPIRED;
+          }
           else if (hashCode == RESTORE_JOB_STARTED_HASH)
           {
             return BackupVaultEvent::RESTORE_JOB_STARTED;
@@ -57,6 +77,26 @@ namespace Aws
           else if (hashCode == RESTORE_JOB_COMPLETED_HASH)
           {
             return BackupVaultEvent::RESTORE_JOB_COMPLETED;
+          }
+          else if (hashCode == RESTORE_JOB_SUCCESSFUL_HASH)
+          {
+            return BackupVaultEvent::RESTORE_JOB_SUCCESSFUL;
+          }
+          else if (hashCode == RESTORE_JOB_FAILED_HASH)
+          {
+            return BackupVaultEvent::RESTORE_JOB_FAILED;
+          }
+          else if (hashCode == COPY_JOB_STARTED_HASH)
+          {
+            return BackupVaultEvent::COPY_JOB_STARTED;
+          }
+          else if (hashCode == COPY_JOB_SUCCESSFUL_HASH)
+          {
+            return BackupVaultEvent::COPY_JOB_SUCCESSFUL;
+          }
+          else if (hashCode == COPY_JOB_FAILED_HASH)
+          {
+            return BackupVaultEvent::COPY_JOB_FAILED;
           }
           else if (hashCode == RECOVERY_POINT_MODIFIED_HASH)
           {
@@ -88,10 +128,26 @@ namespace Aws
             return "BACKUP_JOB_STARTED";
           case BackupVaultEvent::BACKUP_JOB_COMPLETED:
             return "BACKUP_JOB_COMPLETED";
+          case BackupVaultEvent::BACKUP_JOB_SUCCESSFUL:
+            return "BACKUP_JOB_SUCCESSFUL";
+          case BackupVaultEvent::BACKUP_JOB_FAILED:
+            return "BACKUP_JOB_FAILED";
+          case BackupVaultEvent::BACKUP_JOB_EXPIRED:
+            return "BACKUP_JOB_EXPIRED";
           case BackupVaultEvent::RESTORE_JOB_STARTED:
             return "RESTORE_JOB_STARTED";
           case BackupVaultEvent::RESTORE_JOB_COMPLETED:
             return "RESTORE_JOB_COMPLETED";
+          case BackupVaultEvent::RESTORE_JOB_SUCCESSFUL:
+            return "RESTORE_JOB_SUCCESSFUL";
+          case BackupVaultEvent::RESTORE_JOB_FAILED:
+            return "RESTORE_JOB_FAILED";
+          case BackupVaultEvent::COPY_JOB_STARTED:
+            return "COPY_JOB_STARTED";
+          case BackupVaultEvent::COPY_JOB_SUCCESSFUL:
+            return "COPY_JOB_SUCCESSFUL";
+          case BackupVaultEvent::COPY_JOB_FAILED:
+            return "COPY_JOB_FAILED";
           case BackupVaultEvent::RECOVERY_POINT_MODIFIED:
             return "RECOVERY_POINT_MODIFIED";
           case BackupVaultEvent::BACKUP_PLAN_CREATED:

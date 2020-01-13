@@ -53,33 +53,29 @@ namespace Model
 
     /**
      * <p>(Optional) Specifies the maximum number of file systems to return in the
-     * response (integer). Currently, this number is automatically set to 10, and other
-     * values are ignored. The response is paginated at 10 per page if you have more
-     * than 10 file systems. </p>
+     * response (integer). This number is automatically set to 100. The response is
+     * paginated at 100 per page if you have more than 100 file systems. </p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
 
     /**
      * <p>(Optional) Specifies the maximum number of file systems to return in the
-     * response (integer). Currently, this number is automatically set to 10, and other
-     * values are ignored. The response is paginated at 10 per page if you have more
-     * than 10 file systems. </p>
+     * response (integer). This number is automatically set to 100. The response is
+     * paginated at 100 per page if you have more than 100 file systems. </p>
      */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>(Optional) Specifies the maximum number of file systems to return in the
-     * response (integer). Currently, this number is automatically set to 10, and other
-     * values are ignored. The response is paginated at 10 per page if you have more
-     * than 10 file systems. </p>
+     * response (integer). This number is automatically set to 100. The response is
+     * paginated at 100 per page if you have more than 100 file systems. </p>
      */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
      * <p>(Optional) Specifies the maximum number of file systems to return in the
-     * response (integer). Currently, this number is automatically set to 10, and other
-     * values are ignored. The response is paginated at 10 per page if you have more
-     * than 10 file systems. </p>
+     * response (integer). This number is automatically set to 100. The response is
+     * paginated at 100 per page if you have more than 100 file systems. </p>
      */
     inline DescribeFileSystemsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
 

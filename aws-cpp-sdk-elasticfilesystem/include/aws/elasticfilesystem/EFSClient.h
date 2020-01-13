@@ -21,13 +21,17 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticfilesystem/model/CreateAccessPointResult.h>
 #include <aws/elasticfilesystem/model/CreateFileSystemResult.h>
 #include <aws/elasticfilesystem/model/CreateMountTargetResult.h>
+#include <aws/elasticfilesystem/model/DescribeAccessPointsResult.h>
+#include <aws/elasticfilesystem/model/DescribeFileSystemPolicyResult.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemsResult.h>
 #include <aws/elasticfilesystem/model/DescribeLifecycleConfigurationResult.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetSecurityGroupsResult.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetsResult.h>
-#include <aws/elasticfilesystem/model/DescribeTagsResult.h>
+#include <aws/elasticfilesystem/model/ListTagsForResourceResult.h>
+#include <aws/elasticfilesystem/model/PutFileSystemPolicyResult.h>
 #include <aws/elasticfilesystem/model/PutLifecycleConfigurationResult.h>
 #include <aws/elasticfilesystem/model/UpdateFileSystemResult.h>
 #include <aws/core/NoResult.h>
@@ -70,67 +74,91 @@ namespace EFS
 
 namespace Model
 {
+        class CreateAccessPointRequest;
         class CreateFileSystemRequest;
         class CreateMountTargetRequest;
-        class CreateTagsRequest;
+        class DeleteAccessPointRequest;
         class DeleteFileSystemRequest;
+        class DeleteFileSystemPolicyRequest;
         class DeleteMountTargetRequest;
-        class DeleteTagsRequest;
+        class DescribeAccessPointsRequest;
+        class DescribeFileSystemPolicyRequest;
         class DescribeFileSystemsRequest;
         class DescribeLifecycleConfigurationRequest;
         class DescribeMountTargetSecurityGroupsRequest;
         class DescribeMountTargetsRequest;
-        class DescribeTagsRequest;
+        class ListTagsForResourceRequest;
         class ModifyMountTargetSecurityGroupsRequest;
+        class PutFileSystemPolicyRequest;
         class PutLifecycleConfigurationRequest;
+        class TagResourceRequest;
+        class UntagResourceRequest;
         class UpdateFileSystemRequest;
 
+        typedef Aws::Utils::Outcome<CreateAccessPointResult, Aws::Client::AWSError<EFSErrors>> CreateAccessPointOutcome;
         typedef Aws::Utils::Outcome<CreateFileSystemResult, Aws::Client::AWSError<EFSErrors>> CreateFileSystemOutcome;
         typedef Aws::Utils::Outcome<CreateMountTargetResult, Aws::Client::AWSError<EFSErrors>> CreateMountTargetOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> CreateTagsOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteAccessPointOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteFileSystemOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteFileSystemPolicyOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteMountTargetOutcome;
-        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> DeleteTagsOutcome;
+        typedef Aws::Utils::Outcome<DescribeAccessPointsResult, Aws::Client::AWSError<EFSErrors>> DescribeAccessPointsOutcome;
+        typedef Aws::Utils::Outcome<DescribeFileSystemPolicyResult, Aws::Client::AWSError<EFSErrors>> DescribeFileSystemPolicyOutcome;
         typedef Aws::Utils::Outcome<DescribeFileSystemsResult, Aws::Client::AWSError<EFSErrors>> DescribeFileSystemsOutcome;
         typedef Aws::Utils::Outcome<DescribeLifecycleConfigurationResult, Aws::Client::AWSError<EFSErrors>> DescribeLifecycleConfigurationOutcome;
         typedef Aws::Utils::Outcome<DescribeMountTargetSecurityGroupsResult, Aws::Client::AWSError<EFSErrors>> DescribeMountTargetSecurityGroupsOutcome;
         typedef Aws::Utils::Outcome<DescribeMountTargetsResult, Aws::Client::AWSError<EFSErrors>> DescribeMountTargetsOutcome;
-        typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<EFSErrors>> DescribeTagsOutcome;
+        typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Client::AWSError<EFSErrors>> ListTagsForResourceOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> ModifyMountTargetSecurityGroupsOutcome;
+        typedef Aws::Utils::Outcome<PutFileSystemPolicyResult, Aws::Client::AWSError<EFSErrors>> PutFileSystemPolicyOutcome;
         typedef Aws::Utils::Outcome<PutLifecycleConfigurationResult, Aws::Client::AWSError<EFSErrors>> PutLifecycleConfigurationOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<EFSErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateFileSystemResult, Aws::Client::AWSError<EFSErrors>> UpdateFileSystemOutcome;
 
+        typedef std::future<CreateAccessPointOutcome> CreateAccessPointOutcomeCallable;
         typedef std::future<CreateFileSystemOutcome> CreateFileSystemOutcomeCallable;
         typedef std::future<CreateMountTargetOutcome> CreateMountTargetOutcomeCallable;
-        typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
+        typedef std::future<DeleteAccessPointOutcome> DeleteAccessPointOutcomeCallable;
         typedef std::future<DeleteFileSystemOutcome> DeleteFileSystemOutcomeCallable;
+        typedef std::future<DeleteFileSystemPolicyOutcome> DeleteFileSystemPolicyOutcomeCallable;
         typedef std::future<DeleteMountTargetOutcome> DeleteMountTargetOutcomeCallable;
-        typedef std::future<DeleteTagsOutcome> DeleteTagsOutcomeCallable;
+        typedef std::future<DescribeAccessPointsOutcome> DescribeAccessPointsOutcomeCallable;
+        typedef std::future<DescribeFileSystemPolicyOutcome> DescribeFileSystemPolicyOutcomeCallable;
         typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
         typedef std::future<DescribeLifecycleConfigurationOutcome> DescribeLifecycleConfigurationOutcomeCallable;
         typedef std::future<DescribeMountTargetSecurityGroupsOutcome> DescribeMountTargetSecurityGroupsOutcomeCallable;
         typedef std::future<DescribeMountTargetsOutcome> DescribeMountTargetsOutcomeCallable;
-        typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
+        typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
         typedef std::future<ModifyMountTargetSecurityGroupsOutcome> ModifyMountTargetSecurityGroupsOutcomeCallable;
+        typedef std::future<PutFileSystemPolicyOutcome> PutFileSystemPolicyOutcomeCallable;
         typedef std::future<PutLifecycleConfigurationOutcome> PutLifecycleConfigurationOutcomeCallable;
+        typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateFileSystemOutcome> UpdateFileSystemOutcomeCallable;
 } // namespace Model
 
   class EFSClient;
 
+    typedef std::function<void(const EFSClient*, const Model::CreateAccessPointRequest&, const Model::CreateAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAccessPointResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::CreateFileSystemRequest&, const Model::CreateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFileSystemResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::CreateMountTargetRequest&, const Model::CreateMountTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMountTargetResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::DeleteAccessPointRequest&, const Model::DeleteAccessPointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccessPointResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DeleteFileSystemRequest&, const Model::DeleteFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::DeleteFileSystemPolicyRequest&, const Model::DeleteFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFileSystemPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DeleteMountTargetRequest&, const Model::DeleteMountTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteMountTargetResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DeleteTagsRequest&, const Model::DeleteTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTagsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::DescribeAccessPointsRequest&, const Model::DescribeAccessPointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccessPointsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::DescribeFileSystemPolicyRequest&, const Model::DescribeFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeFileSystemsRequest&, const Model::DescribeFileSystemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFileSystemsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeLifecycleConfigurationRequest&, const Model::DescribeLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLifecycleConfigurationResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeMountTargetSecurityGroupsRequest&, const Model::DescribeMountTargetSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMountTargetSecurityGroupsResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::DescribeMountTargetsRequest&, const Model::DescribeMountTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeMountTargetsResponseReceivedHandler;
-    typedef std::function<void(const EFSClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::ModifyMountTargetSecurityGroupsRequest&, const Model::ModifyMountTargetSecurityGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ModifyMountTargetSecurityGroupsResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::PutFileSystemPolicyRequest&, const Model::PutFileSystemPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutFileSystemPolicyResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::PutLifecycleConfigurationRequest&, const Model::PutLifecycleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutLifecycleConfigurationResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const EFSClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const EFSClient*, const Model::UpdateFileSystemRequest&, const Model::UpdateFileSystemOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFileSystemResponseReceivedHandler;
 
   /**
@@ -171,6 +199,61 @@ namespace Model
 
         inline virtual const char* GetServiceClientName() const override { return "EFS"; }
 
+
+        /**
+         * <p>Creates an EFS access point. An access point is an application-specific view
+         * into an EFS file system that applies an operating system user and group, and a
+         * file system path, to any file system request made through the access point. The
+         * operating system user and group override any identity information provided by
+         * the NFS client. The file system path is exposed as the access point's root
+         * directory. Applications using the access point can only access data in its own
+         * directory and below. To learn more, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
+         * a File System Using EFS Access Points</a>.</p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAccessPointOutcome CreateAccessPoint(const Model::CreateAccessPointRequest& request) const;
+
+        /**
+         * <p>Creates an EFS access point. An access point is an application-specific view
+         * into an EFS file system that applies an operating system user and group, and a
+         * file system path, to any file system request made through the access point. The
+         * operating system user and group override any identity information provided by
+         * the NFS client. The file system path is exposed as the access point's root
+         * directory. Applications using the access point can only access data in its own
+         * directory and below. To learn more, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
+         * a File System Using EFS Access Points</a>.</p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateAccessPointOutcomeCallable CreateAccessPointCallable(const Model::CreateAccessPointRequest& request) const;
+
+        /**
+         * <p>Creates an EFS access point. An access point is an application-specific view
+         * into an EFS file system that applies an operating system user and group, and a
+         * file system path, to any file system request made through the access point. The
+         * operating system user and group override any identity information provided by
+         * the NFS client. The file system path is exposed as the access point's root
+         * directory. Applications using the access point can only access data in its own
+         * directory and below. To learn more, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting
+         * a File System Using EFS Access Points</a>.</p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:CreateAccessPoint</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateAccessPointAsync(const Model::CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new, empty file system. The operation requires a creation token in
@@ -553,47 +636,44 @@ namespace Model
         virtual void CreateMountTargetAsync(const Model::CreateMountTargetRequest& request, const CreateMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Creates or overwrites tags associated with a file system. Each tag is a
-         * key-value pair. If a tag key specified in the request already exists on the file
-         * system, this operation overwrites its value with the value provided in the
-         * request. If you add the <code>Name</code> tag to your file system, Amazon EFS
-         * returns it in the response to the <a>DescribeFileSystems</a> operation. </p>
-         * <p>This operation requires permission for the
-         * <code>elasticfilesystem:CreateTags</code> action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">AWS
+         * <p>Deletes the specified access point. After deletion is complete, new clients
+         * can no longer connect to the access points. Clients connected to the access
+         * point at the time of deletion will continue to function until they terminate
+         * their connection.</p> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:DeleteAccessPoint</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteAccessPoint">AWS
          * API Reference</a></p>
          */
-        virtual Model::CreateTagsOutcome CreateTags(const Model::CreateTagsRequest& request) const;
+        virtual Model::DeleteAccessPointOutcome DeleteAccessPoint(const Model::DeleteAccessPointRequest& request) const;
 
         /**
-         * <p>Creates or overwrites tags associated with a file system. Each tag is a
-         * key-value pair. If a tag key specified in the request already exists on the file
-         * system, this operation overwrites its value with the value provided in the
-         * request. If you add the <code>Name</code> tag to your file system, Amazon EFS
-         * returns it in the response to the <a>DescribeFileSystems</a> operation. </p>
-         * <p>This operation requires permission for the
-         * <code>elasticfilesystem:CreateTags</code> action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">AWS
+         * <p>Deletes the specified access point. After deletion is complete, new clients
+         * can no longer connect to the access points. Clients connected to the access
+         * point at the time of deletion will continue to function until they terminate
+         * their connection.</p> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:DeleteAccessPoint</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteAccessPoint">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::CreateTagsOutcomeCallable CreateTagsCallable(const Model::CreateTagsRequest& request) const;
+        virtual Model::DeleteAccessPointOutcomeCallable DeleteAccessPointCallable(const Model::DeleteAccessPointRequest& request) const;
 
         /**
-         * <p>Creates or overwrites tags associated with a file system. Each tag is a
-         * key-value pair. If a tag key specified in the request already exists on the file
-         * system, this operation overwrites its value with the value provided in the
-         * request. If you add the <code>Name</code> tag to your file system, Amazon EFS
-         * returns it in the response to the <a>DescribeFileSystems</a> operation. </p>
-         * <p>This operation requires permission for the
-         * <code>elasticfilesystem:CreateTags</code> action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateTags">AWS
+         * <p>Deletes the specified access point. After deletion is complete, new clients
+         * can no longer connect to the access points. Clients connected to the access
+         * point at the time of deletion will continue to function until they terminate
+         * their connection.</p> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:DeleteAccessPoint</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteAccessPoint">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void CreateTagsAsync(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DeleteAccessPointAsync(const Model::DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a file system, permanently severing access to its contents. Upon
@@ -658,6 +738,49 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DeleteFileSystemAsync(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes the <code>FileSystemPolicy</code> for the specified file system. The
+         * default <code>FileSystemPolicy</code> goes into effect once the existing policy
+         * is deleted. For more information about the default file system policy, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+         * Resource-based Policies with EFS</a>.</p> <p>This operation requires permissions
+         * for the <code>elasticfilesystem:DeleteFileSystemPolicy</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystemPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFileSystemPolicyOutcome DeleteFileSystemPolicy(const Model::DeleteFileSystemPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the <code>FileSystemPolicy</code> for the specified file system. The
+         * default <code>FileSystemPolicy</code> goes into effect once the existing policy
+         * is deleted. For more information about the default file system policy, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+         * Resource-based Policies with EFS</a>.</p> <p>This operation requires permissions
+         * for the <code>elasticfilesystem:DeleteFileSystemPolicy</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystemPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFileSystemPolicyOutcomeCallable DeleteFileSystemPolicyCallable(const Model::DeleteFileSystemPolicyRequest& request) const;
+
+        /**
+         * <p>Deletes the <code>FileSystemPolicy</code> for the specified file system. The
+         * default <code>FileSystemPolicy</code> goes into effect once the existing policy
+         * is deleted. For more information about the default file system policy, see <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+         * Resource-based Policies with EFS</a>.</p> <p>This operation requires permissions
+         * for the <code>elasticfilesystem:DeleteFileSystemPolicy</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteFileSystemPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFileSystemPolicyAsync(const Model::DeleteFileSystemPolicyRequest& request, const DeleteFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes the specified mount target.</p> <p>This operation forcibly breaks any
@@ -736,47 +859,81 @@ namespace Model
         virtual void DeleteMountTargetAsync(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified tags from a file system. If the <code>DeleteTags</code>
-         * request includes a tag key that doesn't exist, Amazon EFS ignores it and doesn't
-         * cause an error. For more information about tags and related restrictions, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
-         * Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
-         * <p>This operation requires permissions for the
-         * <code>elasticfilesystem:DeleteTags</code> action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">AWS
+         * <p>Returns the description of a specific Amazon EFS access point if the
+         * <code>AccessPointId</code> is provided. If you provide an EFS
+         * <code>FileSystemId</code>, it returns descriptions of all access points for that
+         * file system. You can provide either an <code>AccessPointId</code> or a
+         * <code>FileSystemId</code> in the request, but not both. </p> <p>This operation
+         * requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccessPoints">AWS
          * API Reference</a></p>
          */
-        virtual Model::DeleteTagsOutcome DeleteTags(const Model::DeleteTagsRequest& request) const;
+        virtual Model::DescribeAccessPointsOutcome DescribeAccessPoints(const Model::DescribeAccessPointsRequest& request) const;
 
         /**
-         * <p>Deletes the specified tags from a file system. If the <code>DeleteTags</code>
-         * request includes a tag key that doesn't exist, Amazon EFS ignores it and doesn't
-         * cause an error. For more information about tags and related restrictions, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
-         * Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
-         * <p>This operation requires permissions for the
-         * <code>elasticfilesystem:DeleteTags</code> action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">AWS
+         * <p>Returns the description of a specific Amazon EFS access point if the
+         * <code>AccessPointId</code> is provided. If you provide an EFS
+         * <code>FileSystemId</code>, it returns descriptions of all access points for that
+         * file system. You can provide either an <code>AccessPointId</code> or a
+         * <code>FileSystemId</code> in the request, but not both. </p> <p>This operation
+         * requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccessPoints">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::DeleteTagsOutcomeCallable DeleteTagsCallable(const Model::DeleteTagsRequest& request) const;
+        virtual Model::DescribeAccessPointsOutcomeCallable DescribeAccessPointsCallable(const Model::DescribeAccessPointsRequest& request) const;
 
         /**
-         * <p>Deletes the specified tags from a file system. If the <code>DeleteTags</code>
-         * request includes a tag key that doesn't exist, Amazon EFS ignores it and doesn't
-         * cause an error. For more information about tags and related restrictions, see <a
-         * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
-         * Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
-         * <p>This operation requires permissions for the
-         * <code>elasticfilesystem:DeleteTags</code> action.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DeleteTags">AWS
+         * <p>Returns the description of a specific Amazon EFS access point if the
+         * <code>AccessPointId</code> is provided. If you provide an EFS
+         * <code>FileSystemId</code>, it returns descriptions of all access points for that
+         * file system. You can provide either an <code>AccessPointId</code> or a
+         * <code>FileSystemId</code> in the request, but not both. </p> <p>This operation
+         * requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeAccessPoints">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void DeleteTagsAsync(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void DescribeAccessPointsAsync(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns the <code>FileSystemPolicy</code> for the specified EFS file
+         * system.</p> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:DescribeFileSystemPolicy</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystemPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFileSystemPolicyOutcome DescribeFileSystemPolicy(const Model::DescribeFileSystemPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the <code>FileSystemPolicy</code> for the specified EFS file
+         * system.</p> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:DescribeFileSystemPolicy</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystemPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeFileSystemPolicyOutcomeCallable DescribeFileSystemPolicyCallable(const Model::DescribeFileSystemPolicyRequest& request) const;
+
+        /**
+         * <p>Returns the <code>FileSystemPolicy</code> for the specified EFS file
+         * system.</p> <p>This operation requires permissions for the
+         * <code>elasticfilesystem:DescribeFileSystemPolicy</code> action.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeFileSystemPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeFileSystemPolicyAsync(const Model::DescribeFileSystemPolicyRequest& request, const DescribeFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Returns the description of a specific Amazon EFS file system if either the
@@ -1005,44 +1162,38 @@ namespace Model
         virtual void DescribeMountTargetsAsync(const Model::DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Returns the tags associated with a file system. The order of tags returned in
-         * the response of one <code>DescribeTags</code> call and the order of tags
-         * returned across the responses of a multiple-call iteration (when using
-         * pagination) is unspecified. </p> <p> This operation requires permissions for the
-         * <code>elasticfilesystem:DescribeTags</code> action. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">AWS
+         * <p>Lists all tags for a top-level EFS resource. You must provide the ID of the
+         * resource that you want to retrieve the tags for.</p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:DescribeAccessPoints</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ListTagsForResource">AWS
          * API Reference</a></p>
          */
-        virtual Model::DescribeTagsOutcome DescribeTags(const Model::DescribeTagsRequest& request) const;
+        virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns the tags associated with a file system. The order of tags returned in
-         * the response of one <code>DescribeTags</code> call and the order of tags
-         * returned across the responses of a multiple-call iteration (when using
-         * pagination) is unspecified. </p> <p> This operation requires permissions for the
-         * <code>elasticfilesystem:DescribeTags</code> action. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">AWS
+         * <p>Lists all tags for a top-level EFS resource. You must provide the ID of the
+         * resource that you want to retrieve the tags for.</p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:DescribeAccessPoints</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ListTagsForResource">AWS
          * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
-        virtual Model::DescribeTagsOutcomeCallable DescribeTagsCallable(const Model::DescribeTagsRequest& request) const;
+        virtual Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const Model::ListTagsForResourceRequest& request) const;
 
         /**
-         * <p>Returns the tags associated with a file system. The order of tags returned in
-         * the response of one <code>DescribeTags</code> call and the order of tags
-         * returned across the responses of a multiple-call iteration (when using
-         * pagination) is unspecified. </p> <p> This operation requires permissions for the
-         * <code>elasticfilesystem:DescribeTags</code> action. </p><p><h3>See Also:</h3>  
-         * <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/DescribeTags">AWS
+         * <p>Lists all tags for a top-level EFS resource. You must provide the ID of the
+         * resource that you want to retrieve the tags for.</p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:DescribeAccessPoints</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/ListTagsForResource">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        virtual void DescribeTagsAsync(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+        virtual void ListTagsForResourceAsync(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the set of security groups in effect for a mount target.</p> <p>When
@@ -1101,6 +1252,61 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ModifyMountTargetSecurityGroupsAsync(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file
+         * system. A file system policy is an IAM resource-based policy and can contain
+         * multiple policy statements. A file system always has exactly one file system
+         * policy, which can be the default policy or an explicit policy set or updated
+         * using this API operation. When an explicit policy is set, it overrides the
+         * default policy. For more information about the default file system policy, see
+         * <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+         * Resource-based Policies with EFS</a>. </p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutFileSystemPolicyOutcome PutFileSystemPolicy(const Model::PutFileSystemPolicyRequest& request) const;
+
+        /**
+         * <p>Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file
+         * system. A file system policy is an IAM resource-based policy and can contain
+         * multiple policy statements. A file system always has exactly one file system
+         * policy, which can be the default policy or an explicit policy set or updated
+         * using this API operation. When an explicit policy is set, it overrides the
+         * default policy. For more information about the default file system policy, see
+         * <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+         * Resource-based Policies with EFS</a>. </p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutFileSystemPolicyOutcomeCallable PutFileSystemPolicyCallable(const Model::PutFileSystemPolicyRequest& request) const;
+
+        /**
+         * <p>Applies an Amazon EFS <code>FileSystemPolicy</code> to an Amazon EFS file
+         * system. A file system policy is an IAM resource-based policy and can contain
+         * multiple policy statements. A file system always has exactly one file system
+         * policy, which can be the default policy or an explicit policy set or updated
+         * using this API operation. When an explicit policy is set, it overrides the
+         * default policy. For more information about the default file system policy, see
+         * <a
+         * href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+         * Resource-based Policies with EFS</a>. </p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:PutFileSystemPolicy</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/PutFileSystemPolicy">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutFileSystemPolicyAsync(const Model::PutFileSystemPolicyRequest& request, const PutFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Enables lifecycle management by creating a new
@@ -1191,6 +1397,74 @@ namespace Model
         virtual void PutLifecycleConfigurationAsync(const Model::PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a tag for an EFS resource. You can create tags for EFS file systems
+         * and access points using this API operation.</p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:TagResource</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/TagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Creates a tag for an EFS resource. You can create tags for EFS file systems
+         * and access points using this API operation.</p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:TagResource</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TagResourceOutcomeCallable TagResourceCallable(const Model::TagResourceRequest& request) const;
+
+        /**
+         * <p>Creates a tag for an EFS resource. You can create tags for EFS file systems
+         * and access points using this API operation.</p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:TagResource</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/TagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Removes tags from an EFS resource. You can remove tags from EFS file systems
+         * and access points using this API operation.</p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:UntagResource</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UntagResource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from an EFS resource. You can remove tags from EFS file systems
+         * and access points using this API operation.</p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:UntagResource</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UntagResourceOutcomeCallable UntagResourceCallable(const Model::UntagResourceRequest& request) const;
+
+        /**
+         * <p>Removes tags from an EFS resource. You can remove tags from EFS file systems
+         * and access points using this API operation.</p> <p>This operation requires
+         * permissions for the <code>elasticfilesystem:UntagResource</code>
+         * action.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UntagResource">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UntagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates the throughput mode or the amount of provisioned throughput of an
          * existing file system.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystem">AWS
@@ -1222,19 +1496,25 @@ namespace Model
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
+        void CreateAccessPointAsyncHelper(const Model::CreateAccessPointRequest& request, const CreateAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateFileSystemAsyncHelper(const Model::CreateFileSystemRequest& request, const CreateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateMountTargetAsyncHelper(const Model::CreateMountTargetRequest& request, const CreateMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void CreateTagsAsyncHelper(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteAccessPointAsyncHelper(const Model::DeleteAccessPointRequest& request, const DeleteAccessPointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteFileSystemAsyncHelper(const Model::DeleteFileSystemRequest& request, const DeleteFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFileSystemPolicyAsyncHelper(const Model::DeleteFileSystemPolicyRequest& request, const DeleteFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteMountTargetAsyncHelper(const Model::DeleteMountTargetRequest& request, const DeleteMountTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DeleteTagsAsyncHelper(const Model::DeleteTagsRequest& request, const DeleteTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeAccessPointsAsyncHelper(const Model::DescribeAccessPointsRequest& request, const DescribeAccessPointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeFileSystemPolicyAsyncHelper(const Model::DescribeFileSystemPolicyRequest& request, const DescribeFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeFileSystemsAsyncHelper(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLifecycleConfigurationAsyncHelper(const Model::DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMountTargetSecurityGroupsAsyncHelper(const Model::DescribeMountTargetSecurityGroupsRequest& request, const DescribeMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeMountTargetsAsyncHelper(const Model::DescribeMountTargetsRequest& request, const DescribeMountTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
-        void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListTagsForResourceAsyncHelper(const Model::ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ModifyMountTargetSecurityGroupsAsyncHelper(const Model::ModifyMountTargetSecurityGroupsRequest& request, const ModifyMountTargetSecurityGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutFileSystemPolicyAsyncHelper(const Model::PutFileSystemPolicyRequest& request, const PutFileSystemPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutLifecycleConfigurationAsyncHelper(const Model::PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFileSystemAsyncHelper(const Model::UpdateFileSystemRequest& request, const UpdateFileSystemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

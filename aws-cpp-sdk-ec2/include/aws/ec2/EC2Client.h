@@ -18693,9 +18693,9 @@ namespace Model
          * charges you for another full instance hour even if you are still within the same
          * 60-minute period when it was stopped. Every time you start your Linux instance,
          * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter
-         * charges per second for instance usage.</p> <p>You can't start, stop, or
-         * hibernate Spot Instances, and you can't stop or hibernate instance store-backed
-         * instances. For information about using hibernation for Spot Instances, see <a
+         * charges per second for instance usage.</p> <p>You can't hibernate Spot
+         * Instances, and you can't stop or hibernate instance store-backed instances. For
+         * information about using hibernation for Spot Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
          * Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You
@@ -18741,9 +18741,9 @@ namespace Model
          * charges you for another full instance hour even if you are still within the same
          * 60-minute period when it was stopped. Every time you start your Linux instance,
          * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter
-         * charges per second for instance usage.</p> <p>You can't start, stop, or
-         * hibernate Spot Instances, and you can't stop or hibernate instance store-backed
-         * instances. For information about using hibernation for Spot Instances, see <a
+         * charges per second for instance usage.</p> <p>You can't hibernate Spot
+         * Instances, and you can't stop or hibernate instance store-backed instances. For
+         * information about using hibernation for Spot Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
          * Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You
@@ -18791,9 +18791,9 @@ namespace Model
          * charges you for another full instance hour even if you are still within the same
          * 60-minute period when it was stopped. Every time you start your Linux instance,
          * Amazon EC2 charges a one-minute minimum for instance usage, and thereafter
-         * charges per second for instance usage.</p> <p>You can't start, stop, or
-         * hibernate Spot Instances, and you can't stop or hibernate instance store-backed
-         * instances. For information about using hibernation for Spot Instances, see <a
+         * charges per second for instance usage.</p> <p>You can't hibernate Spot
+         * Instances, and you can't stop or hibernate instance store-backed instances. For
+         * information about using hibernation for Spot Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html#hibernate-spot-instances">Hibernating
          * Interrupted Spot Instances</a> in the <i>Amazon Elastic Compute Cloud User
          * Guide</i>.</p> <p>When you stop or hibernate an instance, we shut it down. You

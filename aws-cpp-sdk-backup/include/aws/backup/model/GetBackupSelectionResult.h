@@ -46,46 +46,31 @@ namespace Model
 
     /**
      * <p>Specifies the body of a request to assign a set of resources to a backup
-     * plan.</p> <p>It includes an array of resources, an optional array of patterns to
-     * exclude resources, an optional role to provide access to the AWS service that
-     * the resource belongs to, and an optional array of tags used to identify a set of
-     * resources.</p>
+     * plan.</p>
      */
     inline const BackupSelection& GetBackupSelection() const{ return m_backupSelection; }
 
     /**
      * <p>Specifies the body of a request to assign a set of resources to a backup
-     * plan.</p> <p>It includes an array of resources, an optional array of patterns to
-     * exclude resources, an optional role to provide access to the AWS service that
-     * the resource belongs to, and an optional array of tags used to identify a set of
-     * resources.</p>
+     * plan.</p>
      */
     inline void SetBackupSelection(const BackupSelection& value) { m_backupSelection = value; }
 
     /**
      * <p>Specifies the body of a request to assign a set of resources to a backup
-     * plan.</p> <p>It includes an array of resources, an optional array of patterns to
-     * exclude resources, an optional role to provide access to the AWS service that
-     * the resource belongs to, and an optional array of tags used to identify a set of
-     * resources.</p>
+     * plan.</p>
      */
     inline void SetBackupSelection(BackupSelection&& value) { m_backupSelection = std::move(value); }
 
     /**
      * <p>Specifies the body of a request to assign a set of resources to a backup
-     * plan.</p> <p>It includes an array of resources, an optional array of patterns to
-     * exclude resources, an optional role to provide access to the AWS service that
-     * the resource belongs to, and an optional array of tags used to identify a set of
-     * resources.</p>
+     * plan.</p>
      */
     inline GetBackupSelectionResult& WithBackupSelection(const BackupSelection& value) { SetBackupSelection(value); return *this;}
 
     /**
      * <p>Specifies the body of a request to assign a set of resources to a backup
-     * plan.</p> <p>It includes an array of resources, an optional array of patterns to
-     * exclude resources, an optional role to provide access to the AWS service that
-     * the resource belongs to, and an optional array of tags used to identify a set of
-     * resources.</p>
+     * plan.</p>
      */
     inline GetBackupSelectionResult& WithBackupSelection(BackupSelection&& value) { SetBackupSelection(std::move(value)); return *this;}
 

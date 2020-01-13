@@ -82,6 +82,18 @@ CreateMountTargetResult& CreateMountTargetResult::operator =(const Aws::AmazonWe
 
   }
 
+  if(jsonValue.ValueExists("AvailabilityZoneId"))
+  {
+    m_availabilityZoneId = jsonValue.GetString("AvailabilityZoneId");
+
+  }
+
+  if(jsonValue.ValueExists("AvailabilityZoneName"))
+  {
+    m_availabilityZoneName = jsonValue.GetString("AvailabilityZoneName");
+
+  }
+
 
 
   return *this;

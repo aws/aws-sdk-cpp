@@ -38,7 +38,8 @@ BackupRule::BackupRule() :
     m_completionWindowMinutesHasBeenSet(false),
     m_lifecycleHasBeenSet(false),
     m_recoveryPointTagsHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_copyActionsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ BackupRule::BackupRule(JsonView jsonValue) :
     m_completionWindowMinutesHasBeenSet(false),
     m_lifecycleHasBeenSet(false),
     m_recoveryPointTagsHasBeenSet(false),
-    m_ruleIdHasBeenSet(false)
+    m_ruleIdHasBeenSet(false),
+    m_copyActionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +120,16 @@ BackupRule& BackupRule::operator =(JsonView jsonValue)
     m_ruleIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CopyActions"))
+  {
+    Array<JsonView> copyActionsJsonList = jsonValue.GetArray("CopyActions");
+    for(unsigned copyActionsIndex = 0; copyActionsIndex < copyActionsJsonList.GetLength(); ++copyActionsIndex)
+    {
+      m_copyActions.push_back(copyActionsJsonList[copyActionsIndex].AsObject());
+    }
+    m_copyActionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -175,6 +187,17 @@ JsonValue BackupRule::Jsonize() const
   if(m_ruleIdHasBeenSet)
   {
    payload.WithString("RuleId", m_ruleId);
+
+  }
+
+  if(m_copyActionsHasBeenSet)
+  {
+   Array<JsonValue> copyActionsJsonList(m_copyActions.size());
+   for(unsigned copyActionsIndex = 0; copyActionsIndex < copyActionsJsonList.GetLength(); ++copyActionsIndex)
+   {
+     copyActionsJsonList[copyActionsIndex].AsObject(m_copyActions[copyActionsIndex].Jsonize());
+   }
+   payload.WithArray("CopyActions", std::move(copyActionsJsonList));
 
   }
 

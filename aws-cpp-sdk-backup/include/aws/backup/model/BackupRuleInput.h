@@ -18,6 +18,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/backup/model/Lifecycle.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/backup/model/CopyAction.h>
 #include <utility>
 
 namespace Aws
@@ -388,6 +390,55 @@ namespace Model
      */
     inline BackupRuleInput& AddRecoveryPointTags(const char* key, const char* value) { m_recoveryPointTagsHasBeenSet = true; m_recoveryPointTags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>An array of <code>CopyAction</code> objects, which contains the details of
+     * the copy operation.</p>
+     */
+    inline const Aws::Vector<CopyAction>& GetCopyActions() const{ return m_copyActions; }
+
+    /**
+     * <p>An array of <code>CopyAction</code> objects, which contains the details of
+     * the copy operation.</p>
+     */
+    inline bool CopyActionsHasBeenSet() const { return m_copyActionsHasBeenSet; }
+
+    /**
+     * <p>An array of <code>CopyAction</code> objects, which contains the details of
+     * the copy operation.</p>
+     */
+    inline void SetCopyActions(const Aws::Vector<CopyAction>& value) { m_copyActionsHasBeenSet = true; m_copyActions = value; }
+
+    /**
+     * <p>An array of <code>CopyAction</code> objects, which contains the details of
+     * the copy operation.</p>
+     */
+    inline void SetCopyActions(Aws::Vector<CopyAction>&& value) { m_copyActionsHasBeenSet = true; m_copyActions = std::move(value); }
+
+    /**
+     * <p>An array of <code>CopyAction</code> objects, which contains the details of
+     * the copy operation.</p>
+     */
+    inline BackupRuleInput& WithCopyActions(const Aws::Vector<CopyAction>& value) { SetCopyActions(value); return *this;}
+
+    /**
+     * <p>An array of <code>CopyAction</code> objects, which contains the details of
+     * the copy operation.</p>
+     */
+    inline BackupRuleInput& WithCopyActions(Aws::Vector<CopyAction>&& value) { SetCopyActions(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <code>CopyAction</code> objects, which contains the details of
+     * the copy operation.</p>
+     */
+    inline BackupRuleInput& AddCopyActions(const CopyAction& value) { m_copyActionsHasBeenSet = true; m_copyActions.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <code>CopyAction</code> objects, which contains the details of
+     * the copy operation.</p>
+     */
+    inline BackupRuleInput& AddCopyActions(CopyAction&& value) { m_copyActionsHasBeenSet = true; m_copyActions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_ruleName;
@@ -410,6 +461,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_recoveryPointTags;
     bool m_recoveryPointTagsHasBeenSet;
+
+    Aws::Vector<CopyAction> m_copyActions;
+    bool m_copyActionsHasBeenSet;
   };
 
 } // namespace Model

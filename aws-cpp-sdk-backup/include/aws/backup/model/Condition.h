@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>Contains an array of triplets made up of a condition type (such as
-   * <code>StringEquals</code>), a key, and a value. Conditions are used to filter
+   * <code>STRINGEQUALS</code>), a key, and a value. Conditions are used to filter
    * resources in a selection that is assigned to a backup plan.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/Condition">AWS
@@ -52,37 +52,37 @@ namespace Model
 
 
     /**
-     * <p>An operation, such as <code>StringEquals</code>, that is applied to a
+     * <p>An operation, such as <code>STRINGEQUALS</code>, that is applied to a
      * key-value pair used to filter resources in a selection.</p>
      */
     inline const ConditionType& GetConditionType() const{ return m_conditionType; }
 
     /**
-     * <p>An operation, such as <code>StringEquals</code>, that is applied to a
+     * <p>An operation, such as <code>STRINGEQUALS</code>, that is applied to a
      * key-value pair used to filter resources in a selection.</p>
      */
     inline bool ConditionTypeHasBeenSet() const { return m_conditionTypeHasBeenSet; }
 
     /**
-     * <p>An operation, such as <code>StringEquals</code>, that is applied to a
+     * <p>An operation, such as <code>STRINGEQUALS</code>, that is applied to a
      * key-value pair used to filter resources in a selection.</p>
      */
     inline void SetConditionType(const ConditionType& value) { m_conditionTypeHasBeenSet = true; m_conditionType = value; }
 
     /**
-     * <p>An operation, such as <code>StringEquals</code>, that is applied to a
+     * <p>An operation, such as <code>STRINGEQUALS</code>, that is applied to a
      * key-value pair used to filter resources in a selection.</p>
      */
     inline void SetConditionType(ConditionType&& value) { m_conditionTypeHasBeenSet = true; m_conditionType = std::move(value); }
 
     /**
-     * <p>An operation, such as <code>StringEquals</code>, that is applied to a
+     * <p>An operation, such as <code>STRINGEQUALS</code>, that is applied to a
      * key-value pair used to filter resources in a selection.</p>
      */
     inline Condition& WithConditionType(const ConditionType& value) { SetConditionType(value); return *this;}
 
     /**
-     * <p>An operation, such as <code>StringEquals</code>, that is applied to a
+     * <p>An operation, such as <code>STRINGEQUALS</code>, that is applied to a
      * key-value pair used to filter resources in a selection.</p>
      */
     inline Condition& WithConditionType(ConditionType&& value) { SetConditionType(std::move(value)); return *this;}

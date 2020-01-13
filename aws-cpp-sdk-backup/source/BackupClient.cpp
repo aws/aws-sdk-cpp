@@ -41,6 +41,7 @@
 #include <aws/backup/model/DeleteRecoveryPointRequest.h>
 #include <aws/backup/model/DescribeBackupJobRequest.h>
 #include <aws/backup/model/DescribeBackupVaultRequest.h>
+#include <aws/backup/model/DescribeCopyJobRequest.h>
 #include <aws/backup/model/DescribeProtectedResourceRequest.h>
 #include <aws/backup/model/DescribeRecoveryPointRequest.h>
 #include <aws/backup/model/DescribeRestoreJobRequest.h>
@@ -58,6 +59,7 @@
 #include <aws/backup/model/ListBackupPlansRequest.h>
 #include <aws/backup/model/ListBackupSelectionsRequest.h>
 #include <aws/backup/model/ListBackupVaultsRequest.h>
+#include <aws/backup/model/ListCopyJobsRequest.h>
 #include <aws/backup/model/ListProtectedResourcesRequest.h>
 #include <aws/backup/model/ListRecoveryPointsByBackupVaultRequest.h>
 #include <aws/backup/model/ListRecoveryPointsByResourceRequest.h>
@@ -66,6 +68,7 @@
 #include <aws/backup/model/PutBackupVaultAccessPolicyRequest.h>
 #include <aws/backup/model/PutBackupVaultNotificationsRequest.h>
 #include <aws/backup/model/StartBackupJobRequest.h>
+#include <aws/backup/model/StartCopyJobRequest.h>
 #include <aws/backup/model/StartRestoreJobRequest.h>
 #include <aws/backup/model/StopBackupJobRequest.h>
 #include <aws/backup/model/TagResourceRequest.h>
@@ -605,6 +608,47 @@ void BackupClient::DescribeBackupVaultAsync(const DescribeBackupVaultRequest& re
 void BackupClient::DescribeBackupVaultAsyncHelper(const DescribeBackupVaultRequest& request, const DescribeBackupVaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeBackupVault(request), context);
+}
+
+DescribeCopyJobOutcome BackupClient::DescribeCopyJob(const DescribeCopyJobRequest& request) const
+{
+  if (!request.CopyJobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeCopyJob", "Required field: CopyJobId, is not set");
+    return DescribeCopyJobOutcome(Aws::Client::AWSError<BackupErrors>(BackupErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CopyJobId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/copy-jobs/";
+  ss << request.GetCopyJobId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeCopyJobOutcome(DescribeCopyJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeCopyJobOutcome(outcome.GetError());
+  }
+}
+
+DescribeCopyJobOutcomeCallable BackupClient::DescribeCopyJobCallable(const DescribeCopyJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeCopyJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeCopyJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::DescribeCopyJobAsync(const DescribeCopyJobRequest& request, const DescribeCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeCopyJobAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::DescribeCopyJobAsyncHelper(const DescribeCopyJobRequest& request, const DescribeCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeCopyJob(request), context);
 }
 
 DescribeProtectedResourceOutcome BackupClient::DescribeProtectedResource(const DescribeProtectedResourceRequest& request) const
@@ -1336,6 +1380,41 @@ void BackupClient::ListBackupVaultsAsyncHelper(const ListBackupVaultsRequest& re
   handler(this, request, ListBackupVaults(request), context);
 }
 
+ListCopyJobsOutcome BackupClient::ListCopyJobs(const ListCopyJobsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/copy-jobs/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListCopyJobsOutcome(ListCopyJobsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListCopyJobsOutcome(outcome.GetError());
+  }
+}
+
+ListCopyJobsOutcomeCallable BackupClient::ListCopyJobsCallable(const ListCopyJobsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListCopyJobsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListCopyJobs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::ListCopyJobsAsync(const ListCopyJobsRequest& request, const ListCopyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListCopyJobsAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::ListCopyJobsAsyncHelper(const ListCopyJobsRequest& request, const ListCopyJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListCopyJobs(request), context);
+}
+
 ListProtectedResourcesOutcome BackupClient::ListProtectedResources(const ListProtectedResourcesRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -1649,6 +1728,41 @@ void BackupClient::StartBackupJobAsync(const StartBackupJobRequest& request, con
 void BackupClient::StartBackupJobAsyncHelper(const StartBackupJobRequest& request, const StartBackupJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartBackupJob(request), context);
+}
+
+StartCopyJobOutcome BackupClient::StartCopyJob(const StartCopyJobRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/copy-jobs";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StartCopyJobOutcome(StartCopyJobResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StartCopyJobOutcome(outcome.GetError());
+  }
+}
+
+StartCopyJobOutcomeCallable BackupClient::StartCopyJobCallable(const StartCopyJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StartCopyJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StartCopyJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void BackupClient::StartCopyJobAsync(const StartCopyJobRequest& request, const StartCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StartCopyJobAsyncHelper( request, handler, context ); } );
+}
+
+void BackupClient::StartCopyJobAsyncHelper(const StartCopyJobRequest& request, const StartCopyJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StartCopyJob(request), context);
 }
 
 StartRestoreJobOutcome BackupClient::StartRestoreJob(const StartRestoreJobRequest& request) const

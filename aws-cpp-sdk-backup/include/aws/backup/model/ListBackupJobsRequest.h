@@ -345,81 +345,81 @@ namespace Model
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
+     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
+     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
+     * Gateway</p> </li> </ul>
      */
     inline const Aws::String& GetByResourceType() const{ return m_byResourceType; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
+     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
+     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
+     * Gateway</p> </li> </ul>
      */
     inline bool ByResourceTypeHasBeenSet() const { return m_byResourceTypeHasBeenSet; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
+     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
+     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
+     * Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(const Aws::String& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = value; }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
+     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
+     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
+     * Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(Aws::String&& value) { m_byResourceTypeHasBeenSet = true; m_byResourceType = std::move(value); }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
+     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
+     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
+     * Gateway</p> </li> </ul>
      */
     inline void SetByResourceType(const char* value) { m_byResourceTypeHasBeenSet = true; m_byResourceType.assign(value); }
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
+     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
+     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
+     * Gateway</p> </li> </ul>
      */
     inline ListBackupJobsRequest& WithByResourceType(const Aws::String& value) { SetByResourceType(value); return *this;}
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
+     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
+     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
+     * Gateway</p> </li> </ul>
      */
     inline ListBackupJobsRequest& WithByResourceType(Aws::String&& value) { SetByResourceType(std::move(value)); return *this;}
 
     /**
      * <p>Returns only backup jobs for the specified resources:</p> <ul> <li> <p>
-     * <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p>
-     * <code>SGW</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for
-     * Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for
-     * Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File
-     * System</p> </li> </ul>
+     * <code>DynamoDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EBS</code>
+     * for Amazon Elastic Block Store</p> </li> <li> <p> <code>EFS</code> for Amazon
+     * Elastic File System</p> </li> <li> <p> <code>RDS</code> for Amazon Relational
+     * Database Service</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage
+     * Gateway</p> </li> </ul>
      */
     inline ListBackupJobsRequest& WithByResourceType(const char* value) { SetByResourceType(value); return *this;}
 
