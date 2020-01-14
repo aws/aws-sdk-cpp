@@ -59,7 +59,8 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData() :
     m_cpuOptionsHasBeenSet(false),
     m_capacityReservationSpecificationHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false),
-    m_hibernationOptionsHasBeenSet(false)
+    m_hibernationOptionsHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
 }
 
@@ -92,7 +93,8 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData(const XmlNode& xmlNode) :
     m_cpuOptionsHasBeenSet(false),
     m_capacityReservationSpecificationHasBeenSet(false),
     m_licenseSpecificationsHasBeenSet(false),
-    m_hibernationOptionsHasBeenSet(false)
+    m_hibernationOptionsHasBeenSet(false),
+    m_metadataOptionsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -301,6 +303,12 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
       m_hibernationOptions = hibernationOptionsNode;
       m_hibernationOptionsHasBeenSet = true;
     }
+    XmlNode metadataOptionsNode = resultNode.FirstChild("metadataOptions");
+    if(!metadataOptionsNode.IsNull())
+    {
+      m_metadataOptions = metadataOptionsNode;
+      m_metadataOptionsHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -493,6 +501,13 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       m_hibernationOptions.OutputToStream(oStream, hibernationOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_metadataOptionsHasBeenSet)
+  {
+      Aws::StringStream metadataOptionsLocationAndMemberSs;
+      metadataOptionsLocationAndMemberSs << location << index << locationValue << ".MetadataOptions";
+      m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -656,6 +671,12 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       Aws::String hibernationOptionsLocationAndMember(location);
       hibernationOptionsLocationAndMember += ".HibernationOptions";
       m_hibernationOptions.OutputToStream(oStream, hibernationOptionsLocationAndMember.c_str());
+  }
+  if(m_metadataOptionsHasBeenSet)
+  {
+      Aws::String metadataOptionsLocationAndMember(location);
+      metadataOptionsLocationAndMember += ".MetadataOptions";
+      m_metadataOptions.OutputToStream(oStream, metadataOptionsLocationAndMember.c_str());
   }
 }
 

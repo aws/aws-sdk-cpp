@@ -187,7 +187,7 @@ namespace Model
      * in GHz.</p> </li> <li> <p> <code>vcpu-info.default-cores</code> - The default
      * number of cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-threads-per-core</code> - The default number of threads
-     * per core for the instance type.</p> </li> <li> <p>
+     * per cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the
      * instance type.</p> </li> </ul>
      */
@@ -241,7 +241,7 @@ namespace Model
      * in GHz.</p> </li> <li> <p> <code>vcpu-info.default-cores</code> - The default
      * number of cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-threads-per-core</code> - The default number of threads
-     * per core for the instance type.</p> </li> <li> <p>
+     * per cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the
      * instance type.</p> </li> </ul>
      */
@@ -295,7 +295,7 @@ namespace Model
      * in GHz.</p> </li> <li> <p> <code>vcpu-info.default-cores</code> - The default
      * number of cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-threads-per-core</code> - The default number of threads
-     * per core for the instance type.</p> </li> <li> <p>
+     * per cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the
      * instance type.</p> </li> </ul>
      */
@@ -349,7 +349,7 @@ namespace Model
      * in GHz.</p> </li> <li> <p> <code>vcpu-info.default-cores</code> - The default
      * number of cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-threads-per-core</code> - The default number of threads
-     * per core for the instance type.</p> </li> <li> <p>
+     * per cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the
      * instance type.</p> </li> </ul>
      */
@@ -403,7 +403,7 @@ namespace Model
      * in GHz.</p> </li> <li> <p> <code>vcpu-info.default-cores</code> - The default
      * number of cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-threads-per-core</code> - The default number of threads
-     * per core for the instance type.</p> </li> <li> <p>
+     * per cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the
      * instance type.</p> </li> </ul>
      */
@@ -457,7 +457,7 @@ namespace Model
      * in GHz.</p> </li> <li> <p> <code>vcpu-info.default-cores</code> - The default
      * number of cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-threads-per-core</code> - The default number of threads
-     * per core for the instance type.</p> </li> <li> <p>
+     * per cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the
      * instance type.</p> </li> </ul>
      */
@@ -511,7 +511,7 @@ namespace Model
      * in GHz.</p> </li> <li> <p> <code>vcpu-info.default-cores</code> - The default
      * number of cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-threads-per-core</code> - The default number of threads
-     * per core for the instance type.</p> </li> <li> <p>
+     * per cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the
      * instance type.</p> </li> </ul>
      */
@@ -565,7 +565,7 @@ namespace Model
      * in GHz.</p> </li> <li> <p> <code>vcpu-info.default-cores</code> - The default
      * number of cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-threads-per-core</code> - The default number of threads
-     * per core for the instance type.</p> </li> <li> <p>
+     * per cores for the instance type.</p> </li> <li> <p>
      * <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the
      * instance type.</p> </li> </ul>
      */

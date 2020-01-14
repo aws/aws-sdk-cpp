@@ -348,6 +348,31 @@ namespace Model
      */
     inline LaunchTemplatePlacementRequest& WithHostResourceGroupArn(const char* value) { SetHostResourceGroupArn(value); return *this;}
 
+
+    /**
+     * <p>The number of the partition the instance should launch in. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p>
+     */
+    inline int GetPartitionNumber() const{ return m_partitionNumber; }
+
+    /**
+     * <p>The number of the partition the instance should launch in. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p>
+     */
+    inline bool PartitionNumberHasBeenSet() const { return m_partitionNumberHasBeenSet; }
+
+    /**
+     * <p>The number of the partition the instance should launch in. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p>
+     */
+    inline void SetPartitionNumber(int value) { m_partitionNumberHasBeenSet = true; m_partitionNumber = value; }
+
+    /**
+     * <p>The number of the partition the instance should launch in. Valid only if the
+     * placement group strategy is set to <code>partition</code>.</p>
+     */
+    inline LaunchTemplatePlacementRequest& WithPartitionNumber(int value) { SetPartitionNumber(value); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
@@ -370,6 +395,9 @@ namespace Model
 
     Aws::String m_hostResourceGroupArn;
     bool m_hostResourceGroupArnHasBeenSet;
+
+    int m_partitionNumber;
+    bool m_partitionNumberHasBeenSet;
   };
 
 } // namespace Model

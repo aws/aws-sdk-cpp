@@ -38,7 +38,9 @@ LaunchTemplatePlacement::LaunchTemplatePlacement() :
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
     m_spreadDomainHasBeenSet(false),
-    m_hostResourceGroupArnHasBeenSet(false)
+    m_hostResourceGroupArnHasBeenSet(false),
+    m_partitionNumber(0),
+    m_partitionNumberHasBeenSet(false)
 {
 }
 
@@ -50,7 +52,9 @@ LaunchTemplatePlacement::LaunchTemplatePlacement(const XmlNode& xmlNode) :
     m_tenancy(Tenancy::NOT_SET),
     m_tenancyHasBeenSet(false),
     m_spreadDomainHasBeenSet(false),
-    m_hostResourceGroupArnHasBeenSet(false)
+    m_hostResourceGroupArnHasBeenSet(false),
+    m_partitionNumber(0),
+    m_partitionNumberHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -103,6 +107,12 @@ LaunchTemplatePlacement& LaunchTemplatePlacement::operator =(const XmlNode& xmlN
       m_hostResourceGroupArn = Aws::Utils::Xml::DecodeEscapedXmlText(hostResourceGroupArnNode.GetText());
       m_hostResourceGroupArnHasBeenSet = true;
     }
+    XmlNode partitionNumberNode = resultNode.FirstChild("partitionNumber");
+    if(!partitionNumberNode.IsNull())
+    {
+      m_partitionNumber = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionNumberNode.GetText()).c_str()).c_str());
+      m_partitionNumberHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -145,6 +155,11 @@ void LaunchTemplatePlacement::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".HostResourceGroupArn=" << StringUtils::URLEncode(m_hostResourceGroupArn.c_str()) << "&";
   }
 
+  if(m_partitionNumberHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PartitionNumber=" << m_partitionNumber << "&";
+  }
+
 }
 
 void LaunchTemplatePlacement::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -176,6 +191,10 @@ void LaunchTemplatePlacement::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_hostResourceGroupArnHasBeenSet)
   {
       oStream << location << ".HostResourceGroupArn=" << StringUtils::URLEncode(m_hostResourceGroupArn.c_str()) << "&";
+  }
+  if(m_partitionNumberHasBeenSet)
+  {
+      oStream << location << ".PartitionNumber=" << m_partitionNumber << "&";
   }
 }
 
