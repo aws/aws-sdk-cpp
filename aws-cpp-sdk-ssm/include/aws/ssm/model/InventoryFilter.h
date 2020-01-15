@@ -156,38 +156,32 @@ namespace Model
 
 
     /**
-     * <p>The type of filter. Valid values include the following:
-     * "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"</p>
+     * <p>The type of filter.</p>
      */
     inline const InventoryQueryOperatorType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of filter. Valid values include the following:
-     * "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"</p>
+     * <p>The type of filter.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of filter. Valid values include the following:
-     * "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"</p>
+     * <p>The type of filter.</p>
      */
     inline void SetType(const InventoryQueryOperatorType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of filter. Valid values include the following:
-     * "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"</p>
+     * <p>The type of filter.</p>
      */
     inline void SetType(InventoryQueryOperatorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of filter. Valid values include the following:
-     * "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"</p>
+     * <p>The type of filter.</p>
      */
     inline InventoryFilter& WithType(const InventoryQueryOperatorType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of filter. Valid values include the following:
-     * "Equal"|"NotEqual"|"BeginWith"|"LessThan"|"GreaterThan"</p>
+     * <p>The type of filter.</p>
      */
     inline InventoryFilter& WithType(InventoryQueryOperatorType&& value) { SetType(std::move(value)); return *this;}
 

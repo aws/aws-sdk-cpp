@@ -90,42 +90,82 @@ namespace Model
 
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>destination-cidr</code> - The CIDR of the route destination.</p>
+     * </li> <li> <p> <code>origin</code> - How the route was associated with the
+     * Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p> </li>
+     * <li> <p> <code>target-subnet</code> - The ID of the subnet through which traffic
+     * is routed.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>destination-cidr</code> - The CIDR of the route destination.</p>
+     * </li> <li> <p> <code>origin</code> - How the route was associated with the
+     * Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p> </li>
+     * <li> <p> <code>target-subnet</code> - The ID of the subnet through which traffic
+     * is routed.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>destination-cidr</code> - The CIDR of the route destination.</p>
+     * </li> <li> <p> <code>origin</code> - How the route was associated with the
+     * Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p> </li>
+     * <li> <p> <code>target-subnet</code> - The ID of the subnet through which traffic
+     * is routed.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>destination-cidr</code> - The CIDR of the route destination.</p>
+     * </li> <li> <p> <code>origin</code> - How the route was associated with the
+     * Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p> </li>
+     * <li> <p> <code>target-subnet</code> - The ID of the subnet through which traffic
+     * is routed.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>destination-cidr</code> - The CIDR of the route destination.</p>
+     * </li> <li> <p> <code>origin</code> - How the route was associated with the
+     * Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p> </li>
+     * <li> <p> <code>target-subnet</code> - The ID of the subnet through which traffic
+     * is routed.</p> </li> </ul>
      */
     inline DescribeClientVpnRoutesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>destination-cidr</code> - The CIDR of the route destination.</p>
+     * </li> <li> <p> <code>origin</code> - How the route was associated with the
+     * Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p> </li>
+     * <li> <p> <code>target-subnet</code> - The ID of the subnet through which traffic
+     * is routed.</p> </li> </ul>
      */
     inline DescribeClientVpnRoutesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>destination-cidr</code> - The CIDR of the route destination.</p>
+     * </li> <li> <p> <code>origin</code> - How the route was associated with the
+     * Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p> </li>
+     * <li> <p> <code>target-subnet</code> - The ID of the subnet through which traffic
+     * is routed.</p> </li> </ul>
      */
     inline DescribeClientVpnRoutesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>destination-cidr</code> - The CIDR of the route destination.</p>
+     * </li> <li> <p> <code>origin</code> - How the route was associated with the
+     * Client VPN endpoint (<code>associate</code> | <code>add-route</code>).</p> </li>
+     * <li> <p> <code>target-subnet</code> - The ID of the subnet through which traffic
+     * is routed.</p> </li> </ul>
      */
     inline DescribeClientVpnRoutesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

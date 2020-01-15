@@ -328,44 +328,32 @@ namespace Model
 
 
     /**
-     * <p>The type of document to create. Valid document types include:
-     * <code>Command</code>, <code>Policy</code>, <code>Automation</code>,
-     * <code>Session</code>, and <code>Package</code>.</p>
+     * <p>The type of document to create.</p>
      */
     inline const DocumentType& GetDocumentType() const{ return m_documentType; }
 
     /**
-     * <p>The type of document to create. Valid document types include:
-     * <code>Command</code>, <code>Policy</code>, <code>Automation</code>,
-     * <code>Session</code>, and <code>Package</code>.</p>
+     * <p>The type of document to create.</p>
      */
     inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
 
     /**
-     * <p>The type of document to create. Valid document types include:
-     * <code>Command</code>, <code>Policy</code>, <code>Automation</code>,
-     * <code>Session</code>, and <code>Package</code>.</p>
+     * <p>The type of document to create.</p>
      */
     inline void SetDocumentType(const DocumentType& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
 
     /**
-     * <p>The type of document to create. Valid document types include:
-     * <code>Command</code>, <code>Policy</code>, <code>Automation</code>,
-     * <code>Session</code>, and <code>Package</code>.</p>
+     * <p>The type of document to create.</p>
      */
     inline void SetDocumentType(DocumentType&& value) { m_documentTypeHasBeenSet = true; m_documentType = std::move(value); }
 
     /**
-     * <p>The type of document to create. Valid document types include:
-     * <code>Command</code>, <code>Policy</code>, <code>Automation</code>,
-     * <code>Session</code>, and <code>Package</code>.</p>
+     * <p>The type of document to create.</p>
      */
     inline CreateDocumentRequest& WithDocumentType(const DocumentType& value) { SetDocumentType(value); return *this;}
 
     /**
-     * <p>The type of document to create. Valid document types include:
-     * <code>Command</code>, <code>Policy</code>, <code>Automation</code>,
-     * <code>Session</code>, and <code>Package</code>.</p>
+     * <p>The type of document to create.</p>
      */
     inline CreateDocumentRequest& WithDocumentType(DocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
 

@@ -206,42 +206,74 @@ namespace Model
 
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>association-id</code> - The ID of the association.</p> </li> <li>
+     * <p> <code>target-network-id</code> - The ID of the subnet specified as the
+     * target network.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in
+     * which the target network is located.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>association-id</code> - The ID of the association.</p> </li> <li>
+     * <p> <code>target-network-id</code> - The ID of the subnet specified as the
+     * target network.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in
+     * which the target network is located.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>association-id</code> - The ID of the association.</p> </li> <li>
+     * <p> <code>target-network-id</code> - The ID of the subnet specified as the
+     * target network.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in
+     * which the target network is located.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>association-id</code> - The ID of the association.</p> </li> <li>
+     * <p> <code>target-network-id</code> - The ID of the subnet specified as the
+     * target network.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in
+     * which the target network is located.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>association-id</code> - The ID of the association.</p> </li> <li>
+     * <p> <code>target-network-id</code> - The ID of the subnet specified as the
+     * target network.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in
+     * which the target network is located.</p> </li> </ul>
      */
     inline DescribeClientVpnTargetNetworksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>association-id</code> - The ID of the association.</p> </li> <li>
+     * <p> <code>target-network-id</code> - The ID of the subnet specified as the
+     * target network.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in
+     * which the target network is located.</p> </li> </ul>
      */
     inline DescribeClientVpnTargetNetworksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>association-id</code> - The ID of the association.</p> </li> <li>
+     * <p> <code>target-network-id</code> - The ID of the subnet specified as the
+     * target network.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in
+     * which the target network is located.</p> </li> </ul>
      */
     inline DescribeClientVpnTargetNetworksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>association-id</code> - The ID of the association.</p> </li> <li>
+     * <p> <code>target-network-id</code> - The ID of the subnet specified as the
+     * target network.</p> </li> <li> <p> <code>vpc-id</code> - The ID of the VPC in
+     * which the target network is located.</p> </li> </ul>
      */
     inline DescribeClientVpnTargetNetworksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

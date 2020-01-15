@@ -164,42 +164,82 @@ namespace Model
 
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>description</code> - The description of the authorization
+     * rule.</p> </li> <li> <p> <code>destination-cidr</code> - The CIDR of the network
+     * to which the authorization rule applies.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the Active Directory group to which the
+     * authorization rule grants access.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>description</code> - The description of the authorization
+     * rule.</p> </li> <li> <p> <code>destination-cidr</code> - The CIDR of the network
+     * to which the authorization rule applies.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the Active Directory group to which the
+     * authorization rule grants access.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>description</code> - The description of the authorization
+     * rule.</p> </li> <li> <p> <code>destination-cidr</code> - The CIDR of the network
+     * to which the authorization rule applies.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the Active Directory group to which the
+     * authorization rule grants access.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>description</code> - The description of the authorization
+     * rule.</p> </li> <li> <p> <code>destination-cidr</code> - The CIDR of the network
+     * to which the authorization rule applies.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the Active Directory group to which the
+     * authorization rule grants access.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>description</code> - The description of the authorization
+     * rule.</p> </li> <li> <p> <code>destination-cidr</code> - The CIDR of the network
+     * to which the authorization rule applies.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the Active Directory group to which the
+     * authorization rule grants access.</p> </li> </ul>
      */
     inline DescribeClientVpnAuthorizationRulesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>description</code> - The description of the authorization
+     * rule.</p> </li> <li> <p> <code>destination-cidr</code> - The CIDR of the network
+     * to which the authorization rule applies.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the Active Directory group to which the
+     * authorization rule grants access.</p> </li> </ul>
      */
     inline DescribeClientVpnAuthorizationRulesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>description</code> - The description of the authorization
+     * rule.</p> </li> <li> <p> <code>destination-cidr</code> - The CIDR of the network
+     * to which the authorization rule applies.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the Active Directory group to which the
+     * authorization rule grants access.</p> </li> </ul>
      */
     inline DescribeClientVpnAuthorizationRulesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters. Filter names and values are case-sensitive.</p>
+     * <p>One or more filters. Filter names and values are case-sensitive.</p> <ul>
+     * <li> <p> <code>description</code> - The description of the authorization
+     * rule.</p> </li> <li> <p> <code>destination-cidr</code> - The CIDR of the network
+     * to which the authorization rule applies.</p> </li> <li> <p>
+     * <code>group-id</code> - The ID of the Active Directory group to which the
+     * authorization rule grants access.</p> </li> </ul>
      */
     inline DescribeClientVpnAuthorizationRulesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

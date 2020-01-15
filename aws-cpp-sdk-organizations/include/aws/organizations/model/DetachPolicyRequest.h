@@ -48,8 +48,8 @@ namespace Model
      * <p>The unique identifier (ID) of the policy you want to detach. You can get the
      * ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy
-     * ID string requires "p-" followed by from 8 to 128 lowercase letters or
-     * digits.</p>
+     * ID string requires "p-" followed by from 8 to 128 lowercase or uppercase
+     * letters, digits, or the underscore character (_).</p>
      */
     inline const Aws::String& GetPolicyId() const{ return m_policyId; }
 
@@ -57,8 +57,8 @@ namespace Model
      * <p>The unique identifier (ID) of the policy you want to detach. You can get the
      * ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy
-     * ID string requires "p-" followed by from 8 to 128 lowercase letters or
-     * digits.</p>
+     * ID string requires "p-" followed by from 8 to 128 lowercase or uppercase
+     * letters, digits, or the underscore character (_).</p>
      */
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
 
@@ -66,8 +66,8 @@ namespace Model
      * <p>The unique identifier (ID) of the policy you want to detach. You can get the
      * ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy
-     * ID string requires "p-" followed by from 8 to 128 lowercase letters or
-     * digits.</p>
+     * ID string requires "p-" followed by from 8 to 128 lowercase or uppercase
+     * letters, digits, or the underscore character (_).</p>
      */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
@@ -75,8 +75,8 @@ namespace Model
      * <p>The unique identifier (ID) of the policy you want to detach. You can get the
      * ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy
-     * ID string requires "p-" followed by from 8 to 128 lowercase letters or
-     * digits.</p>
+     * ID string requires "p-" followed by from 8 to 128 lowercase or uppercase
+     * letters, digits, or the underscore character (_).</p>
      */
     inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
 
@@ -84,8 +84,8 @@ namespace Model
      * <p>The unique identifier (ID) of the policy you want to detach. You can get the
      * ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy
-     * ID string requires "p-" followed by from 8 to 128 lowercase letters or
-     * digits.</p>
+     * ID string requires "p-" followed by from 8 to 128 lowercase or uppercase
+     * letters, digits, or the underscore character (_).</p>
      */
     inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
 
@@ -93,8 +93,8 @@ namespace Model
      * <p>The unique identifier (ID) of the policy you want to detach. You can get the
      * ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy
-     * ID string requires "p-" followed by from 8 to 128 lowercase letters or
-     * digits.</p>
+     * ID string requires "p-" followed by from 8 to 128 lowercase or uppercase
+     * letters, digits, or the underscore character (_).</p>
      */
     inline DetachPolicyRequest& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
 
@@ -102,8 +102,8 @@ namespace Model
      * <p>The unique identifier (ID) of the policy you want to detach. You can get the
      * ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy
-     * ID string requires "p-" followed by from 8 to 128 lowercase letters or
-     * digits.</p>
+     * ID string requires "p-" followed by from 8 to 128 lowercase or uppercase
+     * letters, digits, or the underscore character (_).</p>
      */
     inline DetachPolicyRequest& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
 
@@ -111,8 +111,8 @@ namespace Model
      * <p>The unique identifier (ID) of the policy you want to detach. You can get the
      * ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
      * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy
-     * ID string requires "p-" followed by from 8 to 128 lowercase letters or
-     * digits.</p>
+     * ID string requires "p-" followed by from 8 to 128 lowercase or uppercase
+     * letters, digits, or the underscore character (_).</p>
      */
     inline DetachPolicyRequest& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
 

@@ -210,82 +210,42 @@ namespace Model
 
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>The block device mapping.</p>
      */
     inline const Aws::Vector<LaunchTemplateBlockDeviceMappingRequest>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>The block device mapping.</p>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>The block device mapping.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<LaunchTemplateBlockDeviceMappingRequest>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>The block device mapping.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<LaunchTemplateBlockDeviceMappingRequest>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>The block device mapping.</p>
      */
     inline RequestLaunchTemplateData& WithBlockDeviceMappings(const Aws::Vector<LaunchTemplateBlockDeviceMappingRequest>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>The block device mapping.</p>
      */
     inline RequestLaunchTemplateData& WithBlockDeviceMappings(Aws::Vector<LaunchTemplateBlockDeviceMappingRequest>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>The block device mapping.</p>
      */
     inline RequestLaunchTemplateData& AddBlockDeviceMappings(const LaunchTemplateBlockDeviceMappingRequest& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>The block device mapping.</p> <important> <p>Supplying both a snapshot ID and
-     * an encryption value as arguments for block-device mapping results in an error.
-     * This is because only blank volumes can be encrypted on start, and these are not
-     * created from a snapshot. If a snapshot is the basis for the volume, it contains
-     * data by definition and its encryption status cannot be changed using this
-     * action.</p> </important>
+     * <p>The block device mapping.</p>
      */
     inline RequestLaunchTemplateData& AddBlockDeviceMappings(LaunchTemplateBlockDeviceMappingRequest&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 

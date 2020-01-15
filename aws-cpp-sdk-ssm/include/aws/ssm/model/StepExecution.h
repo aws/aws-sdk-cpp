@@ -307,38 +307,32 @@ namespace Model
 
 
     /**
-     * <p>The execution status for this step. Valid values include: Pending,
-     * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
+     * <p>The execution status for this step.</p>
      */
     inline const AutomationExecutionStatus& GetStepStatus() const{ return m_stepStatus; }
 
     /**
-     * <p>The execution status for this step. Valid values include: Pending,
-     * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
+     * <p>The execution status for this step.</p>
      */
     inline bool StepStatusHasBeenSet() const { return m_stepStatusHasBeenSet; }
 
     /**
-     * <p>The execution status for this step. Valid values include: Pending,
-     * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
+     * <p>The execution status for this step.</p>
      */
     inline void SetStepStatus(const AutomationExecutionStatus& value) { m_stepStatusHasBeenSet = true; m_stepStatus = value; }
 
     /**
-     * <p>The execution status for this step. Valid values include: Pending,
-     * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
+     * <p>The execution status for this step.</p>
      */
     inline void SetStepStatus(AutomationExecutionStatus&& value) { m_stepStatusHasBeenSet = true; m_stepStatus = std::move(value); }
 
     /**
-     * <p>The execution status for this step. Valid values include: Pending,
-     * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
+     * <p>The execution status for this step.</p>
      */
     inline StepExecution& WithStepStatus(const AutomationExecutionStatus& value) { SetStepStatus(value); return *this;}
 
     /**
-     * <p>The execution status for this step. Valid values include: Pending,
-     * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
+     * <p>The execution status for this step.</p>
      */
     inline StepExecution& WithStepStatus(AutomationExecutionStatus&& value) { SetStepStatus(std::move(value)); return *this;}
 

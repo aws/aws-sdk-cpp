@@ -49,171 +49,211 @@ namespace Model
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
      * <p>A user-defined description of the resource that you want to register with
-     * Amazon EC2. </p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * Systems Manager. </p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * <p>The name of the registered, managed instance as it will appear in the Systems
+     * Manager console or when you use the AWS command line tools to list Systems
+     * Manager resources.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline const Aws::String& GetDefaultInstanceName() const{ return m_defaultInstanceName; }
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * <p>The name of the registered, managed instance as it will appear in the Systems
+     * Manager console or when you use the AWS command line tools to list Systems
+     * Manager resources.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline bool DefaultInstanceNameHasBeenSet() const { return m_defaultInstanceNameHasBeenSet; }
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * <p>The name of the registered, managed instance as it will appear in the Systems
+     * Manager console or when you use the AWS command line tools to list Systems
+     * Manager resources.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline void SetDefaultInstanceName(const Aws::String& value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName = value; }
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * <p>The name of the registered, managed instance as it will appear in the Systems
+     * Manager console or when you use the AWS command line tools to list Systems
+     * Manager resources.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline void SetDefaultInstanceName(Aws::String&& value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName = std::move(value); }
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * <p>The name of the registered, managed instance as it will appear in the Systems
+     * Manager console or when you use the AWS command line tools to list Systems
+     * Manager resources.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline void SetDefaultInstanceName(const char* value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName.assign(value); }
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * <p>The name of the registered, managed instance as it will appear in the Systems
+     * Manager console or when you use the AWS command line tools to list Systems
+     * Manager resources.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDefaultInstanceName(const Aws::String& value) { SetDefaultInstanceName(value); return *this;}
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * <p>The name of the registered, managed instance as it will appear in the Systems
+     * Manager console or when you use the AWS command line tools to list Systems
+     * Manager resources.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDefaultInstanceName(Aws::String&& value) { SetDefaultInstanceName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the registered, managed instance as it will appear in the Amazon
-     * EC2 console or when you use the AWS command line tools to list EC2
-     * resources.</p> <important> <p>Do not enter personally identifiable information
-     * in this field.</p> </important>
+     * <p>The name of the registered, managed instance as it will appear in the Systems
+     * Manager console or when you use the AWS command line tools to list Systems
+     * Manager resources.</p> <important> <p>Do not enter personally identifiable
+     * information in this field.</p> </important>
      */
     inline CreateActivationRequest& WithDefaultInstanceName(const char* value) { SetDefaultInstanceName(value); return *this;}
 
 
     /**
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
-     * to the managed instance. </p>
+     * to the managed instance. This IAM role must provide AssumeRole permissions for
+     * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline const Aws::String& GetIamRole() const{ return m_iamRole; }
 
     /**
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
-     * to the managed instance. </p>
+     * to the managed instance. This IAM role must provide AssumeRole permissions for
+     * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
 
     /**
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
-     * to the managed instance. </p>
+     * to the managed instance. This IAM role must provide AssumeRole permissions for
+     * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline void SetIamRole(const Aws::String& value) { m_iamRoleHasBeenSet = true; m_iamRole = value; }
 
     /**
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
-     * to the managed instance. </p>
+     * to the managed instance. This IAM role must provide AssumeRole permissions for
+     * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline void SetIamRole(Aws::String&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::move(value); }
 
     /**
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
-     * to the managed instance. </p>
+     * to the managed instance. This IAM role must provide AssumeRole permissions for
+     * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline void SetIamRole(const char* value) { m_iamRoleHasBeenSet = true; m_iamRole.assign(value); }
 
     /**
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
-     * to the managed instance. </p>
+     * to the managed instance. This IAM role must provide AssumeRole permissions for
+     * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline CreateActivationRequest& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
 
     /**
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
-     * to the managed instance. </p>
+     * to the managed instance. This IAM role must provide AssumeRole permissions for
+     * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline CreateActivationRequest& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Identity and Access Management (IAM) role that you want to assign
-     * to the managed instance. </p>
+     * to the managed instance. This IAM role must provide AssumeRole permissions for
+     * the Systems Manager service principal <code>ssm.amazonaws.com</code>. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+     * an IAM Service Role for a Hybrid Environment</a> in the <i>AWS Systems Manager
+     * User Guide</i>.</p>
      */
     inline CreateActivationRequest& WithIamRole(const char* value) { SetIamRole(value); return *this;}
 

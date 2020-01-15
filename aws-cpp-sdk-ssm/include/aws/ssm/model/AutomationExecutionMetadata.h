@@ -179,69 +179,63 @@ namespace Model
 
 
     /**
-     * <p>The status of the execution. Valid values include: Running, Succeeded,
-     * Failed, Timed out, or Cancelled.</p>
+     * <p>The status of the execution.</p>
      */
     inline const AutomationExecutionStatus& GetAutomationExecutionStatus() const{ return m_automationExecutionStatus; }
 
     /**
-     * <p>The status of the execution. Valid values include: Running, Succeeded,
-     * Failed, Timed out, or Cancelled.</p>
+     * <p>The status of the execution.</p>
      */
     inline bool AutomationExecutionStatusHasBeenSet() const { return m_automationExecutionStatusHasBeenSet; }
 
     /**
-     * <p>The status of the execution. Valid values include: Running, Succeeded,
-     * Failed, Timed out, or Cancelled.</p>
+     * <p>The status of the execution.</p>
      */
     inline void SetAutomationExecutionStatus(const AutomationExecutionStatus& value) { m_automationExecutionStatusHasBeenSet = true; m_automationExecutionStatus = value; }
 
     /**
-     * <p>The status of the execution. Valid values include: Running, Succeeded,
-     * Failed, Timed out, or Cancelled.</p>
+     * <p>The status of the execution.</p>
      */
     inline void SetAutomationExecutionStatus(AutomationExecutionStatus&& value) { m_automationExecutionStatusHasBeenSet = true; m_automationExecutionStatus = std::move(value); }
 
     /**
-     * <p>The status of the execution. Valid values include: Running, Succeeded,
-     * Failed, Timed out, or Cancelled.</p>
+     * <p>The status of the execution.</p>
      */
     inline AutomationExecutionMetadata& WithAutomationExecutionStatus(const AutomationExecutionStatus& value) { SetAutomationExecutionStatus(value); return *this;}
 
     /**
-     * <p>The status of the execution. Valid values include: Running, Succeeded,
-     * Failed, Timed out, or Cancelled.</p>
+     * <p>The status of the execution.</p>
      */
     inline AutomationExecutionMetadata& WithAutomationExecutionStatus(AutomationExecutionStatus&& value) { SetAutomationExecutionStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time the execution started.&gt;</p>
+     * <p>The time the execution started.</p>
      */
     inline const Aws::Utils::DateTime& GetExecutionStartTime() const{ return m_executionStartTime; }
 
     /**
-     * <p>The time the execution started.&gt;</p>
+     * <p>The time the execution started.</p>
      */
     inline bool ExecutionStartTimeHasBeenSet() const { return m_executionStartTimeHasBeenSet; }
 
     /**
-     * <p>The time the execution started.&gt;</p>
+     * <p>The time the execution started.</p>
      */
     inline void SetExecutionStartTime(const Aws::Utils::DateTime& value) { m_executionStartTimeHasBeenSet = true; m_executionStartTime = value; }
 
     /**
-     * <p>The time the execution started.&gt;</p>
+     * <p>The time the execution started.</p>
      */
     inline void SetExecutionStartTime(Aws::Utils::DateTime&& value) { m_executionStartTimeHasBeenSet = true; m_executionStartTime = std::move(value); }
 
     /**
-     * <p>The time the execution started.&gt;</p>
+     * <p>The time the execution started.</p>
      */
     inline AutomationExecutionMetadata& WithExecutionStartTime(const Aws::Utils::DateTime& value) { SetExecutionStartTime(value); return *this;}
 
     /**
-     * <p>The time the execution started.&gt;</p>
+     * <p>The time the execution started.</p>
      */
     inline AutomationExecutionMetadata& WithExecutionStartTime(Aws::Utils::DateTime&& value) { SetExecutionStartTime(std::move(value)); return *this;}
 

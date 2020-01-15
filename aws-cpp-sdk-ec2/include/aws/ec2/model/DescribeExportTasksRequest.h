@@ -94,28 +94,44 @@ namespace Model
     inline DescribeExportTasksRequest& AddExportTaskIds(const char* value) { m_exportTaskIdsHasBeenSet = true; m_exportTaskIds.push_back(value); return *this; }
 
 
-    
+    /**
+     * <p>the filters for the export tasks.</p>
+     */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
-    
+    /**
+     * <p>the filters for the export tasks.</p>
+     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
-    
+    /**
+     * <p>the filters for the export tasks.</p>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
-    
+    /**
+     * <p>the filters for the export tasks.</p>
+     */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
-    
+    /**
+     * <p>the filters for the export tasks.</p>
+     */
     inline DescribeExportTasksRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
-    
+    /**
+     * <p>the filters for the export tasks.</p>
+     */
     inline DescribeExportTasksRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>the filters for the export tasks.</p>
+     */
     inline DescribeExportTasksRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
-    
+    /**
+     * <p>the filters for the export tasks.</p>
+     */
     inline DescribeExportTasksRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
   private:

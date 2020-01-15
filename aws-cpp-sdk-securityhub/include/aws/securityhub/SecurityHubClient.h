@@ -36,6 +36,7 @@
 #include <aws/securityhub/model/DescribeActionTargetsResult.h>
 #include <aws/securityhub/model/DescribeHubResult.h>
 #include <aws/securityhub/model/DescribeProductsResult.h>
+#include <aws/securityhub/model/DescribeStandardsControlsResult.h>
 #include <aws/securityhub/model/DisableImportFindingsForProductResult.h>
 #include <aws/securityhub/model/DisableSecurityHubResult.h>
 #include <aws/securityhub/model/DisassociateFromMasterAccountResult.h>
@@ -59,6 +60,7 @@
 #include <aws/securityhub/model/UpdateActionTargetResult.h>
 #include <aws/securityhub/model/UpdateFindingsResult.h>
 #include <aws/securityhub/model/UpdateInsightResult.h>
+#include <aws/securityhub/model/UpdateStandardsControlResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -113,6 +115,7 @@ namespace Model
         class DescribeActionTargetsRequest;
         class DescribeHubRequest;
         class DescribeProductsRequest;
+        class DescribeStandardsControlsRequest;
         class DisableImportFindingsForProductRequest;
         class DisableSecurityHubRequest;
         class DisassociateFromMasterAccountRequest;
@@ -136,6 +139,7 @@ namespace Model
         class UpdateActionTargetRequest;
         class UpdateFindingsRequest;
         class UpdateInsightRequest;
+        class UpdateStandardsControlRequest;
 
         typedef Aws::Utils::Outcome<AcceptInvitationResult, Aws::Client::AWSError<SecurityHubErrors>> AcceptInvitationOutcome;
         typedef Aws::Utils::Outcome<BatchDisableStandardsResult, Aws::Client::AWSError<SecurityHubErrors>> BatchDisableStandardsOutcome;
@@ -152,6 +156,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeActionTargetsResult, Aws::Client::AWSError<SecurityHubErrors>> DescribeActionTargetsOutcome;
         typedef Aws::Utils::Outcome<DescribeHubResult, Aws::Client::AWSError<SecurityHubErrors>> DescribeHubOutcome;
         typedef Aws::Utils::Outcome<DescribeProductsResult, Aws::Client::AWSError<SecurityHubErrors>> DescribeProductsOutcome;
+        typedef Aws::Utils::Outcome<DescribeStandardsControlsResult, Aws::Client::AWSError<SecurityHubErrors>> DescribeStandardsControlsOutcome;
         typedef Aws::Utils::Outcome<DisableImportFindingsForProductResult, Aws::Client::AWSError<SecurityHubErrors>> DisableImportFindingsForProductOutcome;
         typedef Aws::Utils::Outcome<DisableSecurityHubResult, Aws::Client::AWSError<SecurityHubErrors>> DisableSecurityHubOutcome;
         typedef Aws::Utils::Outcome<DisassociateFromMasterAccountResult, Aws::Client::AWSError<SecurityHubErrors>> DisassociateFromMasterAccountOutcome;
@@ -175,6 +180,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateActionTargetResult, Aws::Client::AWSError<SecurityHubErrors>> UpdateActionTargetOutcome;
         typedef Aws::Utils::Outcome<UpdateFindingsResult, Aws::Client::AWSError<SecurityHubErrors>> UpdateFindingsOutcome;
         typedef Aws::Utils::Outcome<UpdateInsightResult, Aws::Client::AWSError<SecurityHubErrors>> UpdateInsightOutcome;
+        typedef Aws::Utils::Outcome<UpdateStandardsControlResult, Aws::Client::AWSError<SecurityHubErrors>> UpdateStandardsControlOutcome;
 
         typedef std::future<AcceptInvitationOutcome> AcceptInvitationOutcomeCallable;
         typedef std::future<BatchDisableStandardsOutcome> BatchDisableStandardsOutcomeCallable;
@@ -191,6 +197,7 @@ namespace Model
         typedef std::future<DescribeActionTargetsOutcome> DescribeActionTargetsOutcomeCallable;
         typedef std::future<DescribeHubOutcome> DescribeHubOutcomeCallable;
         typedef std::future<DescribeProductsOutcome> DescribeProductsOutcomeCallable;
+        typedef std::future<DescribeStandardsControlsOutcome> DescribeStandardsControlsOutcomeCallable;
         typedef std::future<DisableImportFindingsForProductOutcome> DisableImportFindingsForProductOutcomeCallable;
         typedef std::future<DisableSecurityHubOutcome> DisableSecurityHubOutcomeCallable;
         typedef std::future<DisassociateFromMasterAccountOutcome> DisassociateFromMasterAccountOutcomeCallable;
@@ -214,6 +221,7 @@ namespace Model
         typedef std::future<UpdateActionTargetOutcome> UpdateActionTargetOutcomeCallable;
         typedef std::future<UpdateFindingsOutcome> UpdateFindingsOutcomeCallable;
         typedef std::future<UpdateInsightOutcome> UpdateInsightOutcomeCallable;
+        typedef std::future<UpdateStandardsControlOutcome> UpdateStandardsControlOutcomeCallable;
 } // namespace Model
 
   class SecurityHubClient;
@@ -233,6 +241,7 @@ namespace Model
     typedef std::function<void(const SecurityHubClient*, const Model::DescribeActionTargetsRequest&, const Model::DescribeActionTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeActionTargetsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DescribeHubRequest&, const Model::DescribeHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeHubResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DescribeProductsRequest&, const Model::DescribeProductsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProductsResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::DescribeStandardsControlsRequest&, const Model::DescribeStandardsControlsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeStandardsControlsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DisableImportFindingsForProductRequest&, const Model::DisableImportFindingsForProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableImportFindingsForProductResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DisableSecurityHubRequest&, const Model::DisableSecurityHubOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableSecurityHubResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::DisassociateFromMasterAccountRequest&, const Model::DisassociateFromMasterAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateFromMasterAccountResponseReceivedHandler;
@@ -256,6 +265,7 @@ namespace Model
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateActionTargetRequest&, const Model::UpdateActionTargetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateActionTargetResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateFindingsRequest&, const Model::UpdateFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFindingsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::UpdateInsightRequest&, const Model::UpdateInsightOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateInsightResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::UpdateStandardsControlRequest&, const Model::UpdateStandardsControlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateStandardsControlResponseReceivedHandler;
 
   /**
    * <p>Security Hub provides you with a comprehensive view of the security state of
@@ -819,6 +829,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeProductsAsync(const Model::DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns a list of compliance standards controls.</p> <p>For each control, the
+         * results include information about whether it is currently enabled, the severity,
+         * and a link to remediation information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeStandardsControlsOutcome DescribeStandardsControls(const Model::DescribeStandardsControlsRequest& request) const;
+
+        /**
+         * <p>Returns a list of compliance standards controls.</p> <p>For each control, the
+         * results include information about whether it is currently enabled, the severity,
+         * and a link to remediation information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeStandardsControlsOutcomeCallable DescribeStandardsControlsCallable(const Model::DescribeStandardsControlsRequest& request) const;
+
+        /**
+         * <p>Returns a list of compliance standards controls.</p> <p>For each control, the
+         * results include information about whether it is currently enabled, the severity,
+         * and a link to remediation information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandardsControls">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeStandardsControlsAsync(const Model::DescribeStandardsControlsRequest& request, const DescribeStandardsControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables the integration of the specified product with Security Hub. Findings
@@ -1527,6 +1568,34 @@ namespace Model
          */
         virtual void UpdateInsightAsync(const Model::UpdateInsightRequest& request, const UpdateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Used to control whether an individual compliance standard control is enabled
+         * or disabled.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateStandardsControlOutcome UpdateStandardsControl(const Model::UpdateStandardsControlRequest& request) const;
+
+        /**
+         * <p>Used to control whether an individual compliance standard control is enabled
+         * or disabled.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateStandardsControlOutcomeCallable UpdateStandardsControlCallable(const Model::UpdateStandardsControlRequest& request) const;
+
+        /**
+         * <p>Used to control whether an individual compliance standard control is enabled
+         * or disabled.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateStandardsControl">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateStandardsControlAsync(const Model::UpdateStandardsControlRequest& request, const UpdateStandardsControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
 
       void OverrideEndpoint(const Aws::String& endpoint);
     private:
@@ -1546,6 +1615,7 @@ namespace Model
         void DescribeActionTargetsAsyncHelper(const Model::DescribeActionTargetsRequest& request, const DescribeActionTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeHubAsyncHelper(const Model::DescribeHubRequest& request, const DescribeHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeProductsAsyncHelper(const Model::DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeStandardsControlsAsyncHelper(const Model::DescribeStandardsControlsRequest& request, const DescribeStandardsControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableImportFindingsForProductAsyncHelper(const Model::DisableImportFindingsForProductRequest& request, const DisableImportFindingsForProductResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableSecurityHubAsyncHelper(const Model::DisableSecurityHubRequest& request, const DisableSecurityHubResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateFromMasterAccountAsyncHelper(const Model::DisassociateFromMasterAccountRequest& request, const DisassociateFromMasterAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1569,6 +1639,7 @@ namespace Model
         void UpdateActionTargetAsyncHelper(const Model::UpdateActionTargetRequest& request, const UpdateActionTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateFindingsAsyncHelper(const Model::UpdateFindingsRequest& request, const UpdateFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateInsightAsyncHelper(const Model::UpdateInsightRequest& request, const UpdateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateStandardsControlAsyncHelper(const Model::UpdateStandardsControlRequest& request, const UpdateStandardsControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
       Aws::String m_configScheme;

@@ -92,17 +92,23 @@ namespace Model
 
 
     /**
-     * <p>Reserved for future use. </p>
+     * <p>The number of instances with patches installed by Patch Manager that have not
+     * been rebooted after the patch installation. The status of these instances is
+     * NON_COMPLIANT.</p>
      */
     inline int GetInstancesWithInstalledPendingRebootPatches() const{ return m_instancesWithInstalledPendingRebootPatches; }
 
     /**
-     * <p>Reserved for future use. </p>
+     * <p>The number of instances with patches installed by Patch Manager that have not
+     * been rebooted after the patch installation. The status of these instances is
+     * NON_COMPLIANT.</p>
      */
     inline void SetInstancesWithInstalledPendingRebootPatches(int value) { m_instancesWithInstalledPendingRebootPatches = value; }
 
     /**
-     * <p>Reserved for future use. </p>
+     * <p>The number of instances with patches installed by Patch Manager that have not
+     * been rebooted after the patch installation. The status of these instances is
+     * NON_COMPLIANT.</p>
      */
     inline DescribePatchGroupStateResult& WithInstancesWithInstalledPendingRebootPatches(int value) { SetInstancesWithInstalledPendingRebootPatches(value); return *this;}
 

@@ -45,6 +45,7 @@
 #include <aws/securityhub/model/DescribeActionTargetsRequest.h>
 #include <aws/securityhub/model/DescribeHubRequest.h>
 #include <aws/securityhub/model/DescribeProductsRequest.h>
+#include <aws/securityhub/model/DescribeStandardsControlsRequest.h>
 #include <aws/securityhub/model/DisableImportFindingsForProductRequest.h>
 #include <aws/securityhub/model/DisableSecurityHubRequest.h>
 #include <aws/securityhub/model/DisassociateFromMasterAccountRequest.h>
@@ -68,6 +69,7 @@
 #include <aws/securityhub/model/UpdateActionTargetRequest.h>
 #include <aws/securityhub/model/UpdateFindingsRequest.h>
 #include <aws/securityhub/model/UpdateInsightRequest.h>
+#include <aws/securityhub/model/UpdateStandardsControlRequest.h>
 
 using namespace Aws;
 using namespace Aws::Auth;
@@ -676,6 +678,47 @@ void SecurityHubClient::DescribeProductsAsync(const DescribeProductsRequest& req
 void SecurityHubClient::DescribeProductsAsyncHelper(const DescribeProductsRequest& request, const DescribeProductsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, DescribeProducts(request), context);
+}
+
+DescribeStandardsControlsOutcome SecurityHubClient::DescribeStandardsControls(const DescribeStandardsControlsRequest& request) const
+{
+  if (!request.StandardsSubscriptionArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeStandardsControls", "Required field: StandardsSubscriptionArn, is not set");
+    return DescribeStandardsControlsOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StandardsSubscriptionArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/standards/controls/";
+  ss << request.GetStandardsSubscriptionArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeStandardsControlsOutcome(DescribeStandardsControlsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeStandardsControlsOutcome(outcome.GetError());
+  }
+}
+
+DescribeStandardsControlsOutcomeCallable SecurityHubClient::DescribeStandardsControlsCallable(const DescribeStandardsControlsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeStandardsControlsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeStandardsControls(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::DescribeStandardsControlsAsync(const DescribeStandardsControlsRequest& request, const DescribeStandardsControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeStandardsControlsAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::DescribeStandardsControlsAsyncHelper(const DescribeStandardsControlsRequest& request, const DescribeStandardsControlsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeStandardsControls(request), context);
 }
 
 DisableImportFindingsForProductOutcome SecurityHubClient::DisableImportFindingsForProduct(const DisableImportFindingsForProductRequest& request) const
@@ -1528,5 +1571,46 @@ void SecurityHubClient::UpdateInsightAsync(const UpdateInsightRequest& request, 
 void SecurityHubClient::UpdateInsightAsyncHelper(const UpdateInsightRequest& request, const UpdateInsightResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateInsight(request), context);
+}
+
+UpdateStandardsControlOutcome SecurityHubClient::UpdateStandardsControl(const UpdateStandardsControlRequest& request) const
+{
+  if (!request.StandardsControlArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateStandardsControl", "Required field: StandardsControlArn, is not set");
+    return UpdateStandardsControlOutcome(Aws::Client::AWSError<SecurityHubErrors>(SecurityHubErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StandardsControlArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/standards/control/";
+  ss << request.GetStandardsControlArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateStandardsControlOutcome(UpdateStandardsControlResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateStandardsControlOutcome(outcome.GetError());
+  }
+}
+
+UpdateStandardsControlOutcomeCallable SecurityHubClient::UpdateStandardsControlCallable(const UpdateStandardsControlRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateStandardsControlOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateStandardsControl(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SecurityHubClient::UpdateStandardsControlAsync(const UpdateStandardsControlRequest& request, const UpdateStandardsControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateStandardsControlAsyncHelper( request, handler, context ); } );
+}
+
+void SecurityHubClient::UpdateStandardsControlAsyncHelper(const UpdateStandardsControlRequest& request, const UpdateStandardsControlResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateStandardsControl(request), context);
 }
 

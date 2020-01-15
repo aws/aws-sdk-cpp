@@ -867,26 +867,38 @@ namespace Model
         virtual void CancelMaintenanceWindowExecutionAsync(const Model::CancelMaintenanceWindowExecutionRequest& request, const CancelMaintenanceWindowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Registers your on-premises server or virtual machine with Amazon EC2 so that
-         * you can manage these resources using Run Command. An on-premises server or
-         * virtual machine that has been registered with EC2 is called a managed instance.
-         * For more information about activations, see <a
+         * <p>Generates an activation code and activation ID you can use to register your
+         * on-premises server or virtual machine (VM) with Systems Manager. Registering
+         * these machines with Systems Manager makes it possible to manage them using
+         * Systems Manager capabilities. You use the activation code and ID when installing
+         * SSM Agent on machines in your hybrid environment. For more information about
+         * requirements for managing on-premises instances and VMs using Systems Manager,
+         * see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-         * Up AWS Systems Manager for Hybrid Environments</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * Up AWS Systems Manager for Hybrid Environments</a> in the <i>AWS Systems Manager
+         * User Guide</i>. </p> <note> <p>On-premises servers or VMs that are registered
+         * with Systems Manager and Amazon EC2 instances that you manage with Systems
+         * Manager are all called <i>managed instances</i>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          */
         virtual Model::CreateActivationOutcome CreateActivation(const Model::CreateActivationRequest& request) const;
 
         /**
-         * <p>Registers your on-premises server or virtual machine with Amazon EC2 so that
-         * you can manage these resources using Run Command. An on-premises server or
-         * virtual machine that has been registered with EC2 is called a managed instance.
-         * For more information about activations, see <a
+         * <p>Generates an activation code and activation ID you can use to register your
+         * on-premises server or virtual machine (VM) with Systems Manager. Registering
+         * these machines with Systems Manager makes it possible to manage them using
+         * Systems Manager capabilities. You use the activation code and ID when installing
+         * SSM Agent on machines in your hybrid environment. For more information about
+         * requirements for managing on-premises instances and VMs using Systems Manager,
+         * see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-         * Up AWS Systems Manager for Hybrid Environments</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * Up AWS Systems Manager for Hybrid Environments</a> in the <i>AWS Systems Manager
+         * User Guide</i>. </p> <note> <p>On-premises servers or VMs that are registered
+         * with Systems Manager and Amazon EC2 instances that you manage with Systems
+         * Manager are all called <i>managed instances</i>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          *
@@ -895,13 +907,19 @@ namespace Model
         virtual Model::CreateActivationOutcomeCallable CreateActivationCallable(const Model::CreateActivationRequest& request) const;
 
         /**
-         * <p>Registers your on-premises server or virtual machine with Amazon EC2 so that
-         * you can manage these resources using Run Command. An on-premises server or
-         * virtual machine that has been registered with EC2 is called a managed instance.
-         * For more information about activations, see <a
+         * <p>Generates an activation code and activation ID you can use to register your
+         * on-premises server or virtual machine (VM) with Systems Manager. Registering
+         * these machines with Systems Manager makes it possible to manage them using
+         * Systems Manager capabilities. You use the activation code and ID when installing
+         * SSM Agent on machines in your hybrid environment. For more information about
+         * requirements for managing on-premises instances and VMs using Systems Manager,
+         * see <a
          * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting
-         * Up AWS Systems Manager for Hybrid Environments</a>.</p><p><h3>See Also:</h3>  
-         * <a
+         * Up AWS Systems Manager for Hybrid Environments</a> in the <i>AWS Systems Manager
+         * User Guide</i>. </p> <note> <p>On-premises servers or VMs that are registered
+         * with Systems Manager and Amazon EC2 instances that you manage with Systems
+         * Manager are all called <i>managed instances</i>.</p> </note><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateActivation">AWS
          * API Reference</a></p>
          *
@@ -3549,16 +3567,18 @@ namespace Model
         virtual void ListAssociationVersionsAsync(const Model::ListAssociationVersionsRequest& request, const ListAssociationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the associations for the specified Systems Manager document or
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns all State Manager associations in the current AWS account and Region.
+         * You can limit the results to a specific State Manager association document or
+         * instance by specifying a filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
          * API Reference</a></p>
          */
         virtual Model::ListAssociationsOutcome ListAssociations(const Model::ListAssociationsRequest& request) const;
 
         /**
-         * <p>Lists the associations for the specified Systems Manager document or
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns all State Manager associations in the current AWS account and Region.
+         * You can limit the results to a specific State Manager association document or
+         * instance by specifying a filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
          * API Reference</a></p>
          *
@@ -3567,8 +3587,9 @@ namespace Model
         virtual Model::ListAssociationsOutcomeCallable ListAssociationsCallable(const Model::ListAssociationsRequest& request) const;
 
         /**
-         * <p>Lists the associations for the specified Systems Manager document or
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns all State Manager associations in the current AWS account and Region.
+         * You can limit the results to a specific State Manager association document or
+         * instance by specifying a filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListAssociations">AWS
          * API Reference</a></p>
          *
@@ -3735,16 +3756,18 @@ namespace Model
         virtual void ListDocumentVersionsAsync(const Model::ListDocumentVersionsRequest& request, const ListDocumentVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes one or more of your Systems Manager documents.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns all Systems Manager (SSM) documents in the current AWS account and
+         * Region. You can limit the results of this request by using a
+         * filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">AWS
          * API Reference</a></p>
          */
         virtual Model::ListDocumentsOutcome ListDocuments(const Model::ListDocumentsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your Systems Manager documents.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns all Systems Manager (SSM) documents in the current AWS account and
+         * Region. You can limit the results of this request by using a
+         * filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">AWS
          * API Reference</a></p>
          *
@@ -3753,8 +3776,9 @@ namespace Model
         virtual Model::ListDocumentsOutcomeCallable ListDocumentsCallable(const Model::ListDocumentsRequest& request) const;
 
         /**
-         * <p>Describes one or more of your Systems Manager documents.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns all Systems Manager (SSM) documents in the current AWS account and
+         * Region. You can limit the results of this request by using a
+         * filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocuments">AWS
          * API Reference</a></p>
          *
