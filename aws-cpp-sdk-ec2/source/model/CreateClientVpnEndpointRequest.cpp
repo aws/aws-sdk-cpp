@@ -28,6 +28,8 @@ CreateClientVpnEndpointRequest::CreateClientVpnEndpointRequest() :
     m_dnsServersHasBeenSet(false),
     m_transportProtocol(TransportProtocol::NOT_SET),
     m_transportProtocolHasBeenSet(false),
+    m_vpnPort(0),
+    m_vpnPortHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_splitTunnel(false),
     m_splitTunnelHasBeenSet(false),
@@ -82,6 +84,11 @@ Aws::String CreateClientVpnEndpointRequest::SerializePayload() const
   if(m_transportProtocolHasBeenSet)
   {
     ss << "TransportProtocol=" << TransportProtocolMapper::GetNameForTransportProtocol(m_transportProtocol) << "&";
+  }
+
+  if(m_vpnPortHasBeenSet)
+  {
+    ss << "VpnPort=" << m_vpnPort << "&";
   }
 
   if(m_descriptionHasBeenSet)

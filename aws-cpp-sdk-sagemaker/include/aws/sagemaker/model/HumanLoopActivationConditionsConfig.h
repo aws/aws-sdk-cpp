@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Defines under what conditions SageMaker creates a human loop.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Defines under what conditions SageMaker creates a human loop. Used within
+   * .</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/HumanLoopActivationConditionsConfig">AWS
    * API Reference</a></p>
    */

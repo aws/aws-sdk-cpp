@@ -35,6 +35,12 @@ namespace Aws
         static const int ml_m4_4xlarge_HASH = HashingUtils::HashString("ml.m4.4xlarge");
         static const int ml_m4_10xlarge_HASH = HashingUtils::HashString("ml.m4.10xlarge");
         static const int ml_m4_16xlarge_HASH = HashingUtils::HashString("ml.m4.16xlarge");
+        static const int ml_g4dn_xlarge_HASH = HashingUtils::HashString("ml.g4dn.xlarge");
+        static const int ml_g4dn_2xlarge_HASH = HashingUtils::HashString("ml.g4dn.2xlarge");
+        static const int ml_g4dn_4xlarge_HASH = HashingUtils::HashString("ml.g4dn.4xlarge");
+        static const int ml_g4dn_8xlarge_HASH = HashingUtils::HashString("ml.g4dn.8xlarge");
+        static const int ml_g4dn_12xlarge_HASH = HashingUtils::HashString("ml.g4dn.12xlarge");
+        static const int ml_g4dn_16xlarge_HASH = HashingUtils::HashString("ml.g4dn.16xlarge");
         static const int ml_m5_large_HASH = HashingUtils::HashString("ml.m5.large");
         static const int ml_m5_xlarge_HASH = HashingUtils::HashString("ml.m5.xlarge");
         static const int ml_m5_2xlarge_HASH = HashingUtils::HashString("ml.m5.2xlarge");
@@ -81,6 +87,30 @@ namespace Aws
           else if (hashCode == ml_m4_16xlarge_HASH)
           {
             return TrainingInstanceType::ml_m4_16xlarge;
+          }
+          else if (hashCode == ml_g4dn_xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_g4dn_xlarge;
+          }
+          else if (hashCode == ml_g4dn_2xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_g4dn_2xlarge;
+          }
+          else if (hashCode == ml_g4dn_4xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_g4dn_4xlarge;
+          }
+          else if (hashCode == ml_g4dn_8xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_g4dn_8xlarge;
+          }
+          else if (hashCode == ml_g4dn_12xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_g4dn_12xlarge;
+          }
+          else if (hashCode == ml_g4dn_16xlarge_HASH)
+          {
+            return TrainingInstanceType::ml_g4dn_16xlarge;
           }
           else if (hashCode == ml_m5_large_HASH)
           {
@@ -194,6 +224,18 @@ namespace Aws
             return "ml.m4.10xlarge";
           case TrainingInstanceType::ml_m4_16xlarge:
             return "ml.m4.16xlarge";
+          case TrainingInstanceType::ml_g4dn_xlarge:
+            return "ml.g4dn.xlarge";
+          case TrainingInstanceType::ml_g4dn_2xlarge:
+            return "ml.g4dn.2xlarge";
+          case TrainingInstanceType::ml_g4dn_4xlarge:
+            return "ml.g4dn.4xlarge";
+          case TrainingInstanceType::ml_g4dn_8xlarge:
+            return "ml.g4dn.8xlarge";
+          case TrainingInstanceType::ml_g4dn_12xlarge:
+            return "ml.g4dn.12xlarge";
+          case TrainingInstanceType::ml_g4dn_16xlarge:
+            return "ml.g4dn.16xlarge";
           case TrainingInstanceType::ml_m5_large:
             return "ml.m5.large";
           case TrainingInstanceType::ml_m5_xlarge:

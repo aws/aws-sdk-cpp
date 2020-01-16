@@ -45,6 +45,8 @@ ClientVpnEndpoint::ClientVpnEndpoint() :
     m_vpnProtocolHasBeenSet(false),
     m_transportProtocol(TransportProtocol::NOT_SET),
     m_transportProtocolHasBeenSet(false),
+    m_vpnPort(0),
+    m_vpnPortHasBeenSet(false),
     m_serverCertificateArnHasBeenSet(false),
     m_authenticationOptionsHasBeenSet(false),
     m_connectionLogOptionsHasBeenSet(false),
@@ -67,6 +69,8 @@ ClientVpnEndpoint::ClientVpnEndpoint(const XmlNode& xmlNode) :
     m_vpnProtocolHasBeenSet(false),
     m_transportProtocol(TransportProtocol::NOT_SET),
     m_transportProtocolHasBeenSet(false),
+    m_vpnPort(0),
+    m_vpnPortHasBeenSet(false),
     m_serverCertificateArnHasBeenSet(false),
     m_authenticationOptionsHasBeenSet(false),
     m_connectionLogOptionsHasBeenSet(false),
@@ -152,6 +156,12 @@ ClientVpnEndpoint& ClientVpnEndpoint::operator =(const XmlNode& xmlNode)
     {
       m_transportProtocol = TransportProtocolMapper::GetTransportProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transportProtocolNode.GetText()).c_str()).c_str());
       m_transportProtocolHasBeenSet = true;
+    }
+    XmlNode vpnPortNode = resultNode.FirstChild("vpnPort");
+    if(!vpnPortNode.IsNull())
+    {
+      m_vpnPort = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(vpnPortNode.GetText()).c_str()).c_str());
+      m_vpnPortHasBeenSet = true;
     }
     XmlNode serverCertificateArnNode = resultNode.FirstChild("serverCertificateArn");
     if(!serverCertificateArnNode.IsNull())
@@ -257,6 +267,11 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
       oStream << location << index << locationValue << ".TransportProtocol=" << TransportProtocolMapper::GetNameForTransportProtocol(m_transportProtocol) << "&";
   }
 
+  if(m_vpnPortHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".VpnPort=" << m_vpnPort << "&";
+  }
+
   if(m_serverCertificateArnHasBeenSet)
   {
       oStream << location << index << locationValue << ".ServerCertificateArn=" << StringUtils::URLEncode(m_serverCertificateArn.c_str()) << "&";
@@ -344,6 +359,10 @@ void ClientVpnEndpoint::OutputToStream(Aws::OStream& oStream, const char* locati
   if(m_transportProtocolHasBeenSet)
   {
       oStream << location << ".TransportProtocol=" << TransportProtocolMapper::GetNameForTransportProtocol(m_transportProtocol) << "&";
+  }
+  if(m_vpnPortHasBeenSet)
+  {
+      oStream << location << ".VpnPort=" << m_vpnPort << "&";
   }
   if(m_serverCertificateArnHasBeenSet)
   {

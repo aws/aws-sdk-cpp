@@ -81,6 +81,7 @@
 #include <aws/sagemaker/model/DescribeTrialResult.h>
 #include <aws/sagemaker/model/DescribeTrialComponentResult.h>
 #include <aws/sagemaker/model/DescribeUserProfileResult.h>
+#include <aws/sagemaker/model/DescribeWorkforceResult.h>
 #include <aws/sagemaker/model/DescribeWorkteamResult.h>
 #include <aws/sagemaker/model/DisassociateTrialComponentResult.h>
 #include <aws/sagemaker/model/GetSearchSuggestionsResult.h>
@@ -128,6 +129,7 @@
 #include <aws/sagemaker/model/UpdateTrialResult.h>
 #include <aws/sagemaker/model/UpdateTrialComponentResult.h>
 #include <aws/sagemaker/model/UpdateUserProfileResult.h>
+#include <aws/sagemaker/model/UpdateWorkforceResult.h>
 #include <aws/sagemaker/model/UpdateWorkteamResult.h>
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
@@ -241,6 +243,7 @@ namespace Model
         class DescribeTrialRequest;
         class DescribeTrialComponentRequest;
         class DescribeUserProfileRequest;
+        class DescribeWorkforceRequest;
         class DescribeWorkteamRequest;
         class DisassociateTrialComponentRequest;
         class GetSearchSuggestionsRequest;
@@ -299,6 +302,7 @@ namespace Model
         class UpdateTrialRequest;
         class UpdateTrialComponentRequest;
         class UpdateUserProfileRequest;
+        class UpdateWorkforceRequest;
         class UpdateWorkteamRequest;
 
         typedef Aws::Utils::Outcome<AddTagsResult, Aws::Client::AWSError<SageMakerErrors>> AddTagsOutcome;
@@ -373,6 +377,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeTrialResult, Aws::Client::AWSError<SageMakerErrors>> DescribeTrialOutcome;
         typedef Aws::Utils::Outcome<DescribeTrialComponentResult, Aws::Client::AWSError<SageMakerErrors>> DescribeTrialComponentOutcome;
         typedef Aws::Utils::Outcome<DescribeUserProfileResult, Aws::Client::AWSError<SageMakerErrors>> DescribeUserProfileOutcome;
+        typedef Aws::Utils::Outcome<DescribeWorkforceResult, Aws::Client::AWSError<SageMakerErrors>> DescribeWorkforceOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkteamResult, Aws::Client::AWSError<SageMakerErrors>> DescribeWorkteamOutcome;
         typedef Aws::Utils::Outcome<DisassociateTrialComponentResult, Aws::Client::AWSError<SageMakerErrors>> DisassociateTrialComponentOutcome;
         typedef Aws::Utils::Outcome<GetSearchSuggestionsResult, Aws::Client::AWSError<SageMakerErrors>> GetSearchSuggestionsOutcome;
@@ -431,6 +436,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateTrialResult, Aws::Client::AWSError<SageMakerErrors>> UpdateTrialOutcome;
         typedef Aws::Utils::Outcome<UpdateTrialComponentResult, Aws::Client::AWSError<SageMakerErrors>> UpdateTrialComponentOutcome;
         typedef Aws::Utils::Outcome<UpdateUserProfileResult, Aws::Client::AWSError<SageMakerErrors>> UpdateUserProfileOutcome;
+        typedef Aws::Utils::Outcome<UpdateWorkforceResult, Aws::Client::AWSError<SageMakerErrors>> UpdateWorkforceOutcome;
         typedef Aws::Utils::Outcome<UpdateWorkteamResult, Aws::Client::AWSError<SageMakerErrors>> UpdateWorkteamOutcome;
 
         typedef std::future<AddTagsOutcome> AddTagsOutcomeCallable;
@@ -505,6 +511,7 @@ namespace Model
         typedef std::future<DescribeTrialOutcome> DescribeTrialOutcomeCallable;
         typedef std::future<DescribeTrialComponentOutcome> DescribeTrialComponentOutcomeCallable;
         typedef std::future<DescribeUserProfileOutcome> DescribeUserProfileOutcomeCallable;
+        typedef std::future<DescribeWorkforceOutcome> DescribeWorkforceOutcomeCallable;
         typedef std::future<DescribeWorkteamOutcome> DescribeWorkteamOutcomeCallable;
         typedef std::future<DisassociateTrialComponentOutcome> DisassociateTrialComponentOutcomeCallable;
         typedef std::future<GetSearchSuggestionsOutcome> GetSearchSuggestionsOutcomeCallable;
@@ -563,6 +570,7 @@ namespace Model
         typedef std::future<UpdateTrialOutcome> UpdateTrialOutcomeCallable;
         typedef std::future<UpdateTrialComponentOutcome> UpdateTrialComponentOutcomeCallable;
         typedef std::future<UpdateUserProfileOutcome> UpdateUserProfileOutcomeCallable;
+        typedef std::future<UpdateWorkforceOutcome> UpdateWorkforceOutcomeCallable;
         typedef std::future<UpdateWorkteamOutcome> UpdateWorkteamOutcomeCallable;
 } // namespace Model
 
@@ -640,6 +648,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::DescribeTrialRequest&, const Model::DescribeTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrialResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeTrialComponentRequest&, const Model::DescribeTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeUserProfileRequest&, const Model::DescribeUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserProfileResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::DescribeWorkforceRequest&, const Model::DescribeWorkforceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkforceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DescribeWorkteamRequest&, const Model::DescribeWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkteamResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::DisassociateTrialComponentRequest&, const Model::DisassociateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::GetSearchSuggestionsRequest&, const Model::GetSearchSuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSearchSuggestionsResponseReceivedHandler;
@@ -698,6 +707,7 @@ namespace Model
     typedef std::function<void(const SageMakerClient*, const Model::UpdateTrialRequest&, const Model::UpdateTrialOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrialResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateTrialComponentRequest&, const Model::UpdateTrialComponentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTrialComponentResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateUserProfileRequest&, const Model::UpdateUserProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserProfileResponseReceivedHandler;
+    typedef std::function<void(const SageMakerClient*, const Model::UpdateWorkforceRequest&, const Model::UpdateWorkforceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkforceResponseReceivedHandler;
     typedef std::function<void(const SageMakerClient*, const Model::UpdateWorkteamRequest&, const Model::UpdateWorkteamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkteamResponseReceivedHandler;
 
   /**
@@ -3670,6 +3680,46 @@ namespace Model
         virtual void DescribeUserProfileAsync(const Model::DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Lists private workforce information, including workforce name, Amazon
+         * Resource Name (ARN), and, if applicable, allowed IP address ranges (<a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>).
+         * Allowable IP address ranges are the IP addresses that workers can use to access
+         * tasks. </p> <important> <p>This operation applies only to private
+         * workforces.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeWorkforce">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWorkforceOutcome DescribeWorkforce(const Model::DescribeWorkforceRequest& request) const;
+
+        /**
+         * <p>Lists private workforce information, including workforce name, Amazon
+         * Resource Name (ARN), and, if applicable, allowed IP address ranges (<a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>).
+         * Allowable IP address ranges are the IP addresses that workers can use to access
+         * tasks. </p> <important> <p>This operation applies only to private
+         * workforces.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeWorkforce">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeWorkforceOutcomeCallable DescribeWorkforceCallable(const Model::DescribeWorkforceRequest& request) const;
+
+        /**
+         * <p>Lists private workforce information, including workforce name, Amazon
+         * Resource Name (ARN), and, if applicable, allowed IP address ranges (<a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>).
+         * Allowable IP address ranges are the IP addresses that workers can use to access
+         * tasks. </p> <important> <p>This operation applies only to private
+         * workforces.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeWorkforce">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeWorkforceAsync(const Model::DescribeWorkforceRequest& request, const DescribeWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets information about a specific work team. You can see information such as
          * the create date, the last updated date, membership information, and the work
          * team's Amazon Resource Name (ARN).</p><p><h3>See Also:</h3>   <a
@@ -4519,18 +4569,24 @@ namespace Model
         virtual void ListTransformJobsAsync(const Model::ListTransformJobsRequest& request, const ListTransformJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Lists the trial components in your account. You can filter the list to show
-         * only components that were created in a specific time range. You can sort the
-         * list by trial component name or creation time.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the trial components in your account. You can sort the list by trial
+         * component name or creation time. You can filter the list to show only components
+         * that were created in a specific time range. You can also filter on one of the
+         * following:</p> <ul> <li> <p> <code>ExperimentName</code> </p> </li> <li> <p>
+         * <code>SourceArn</code> </p> </li> <li> <p> <code>TrialName</code> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrialComponents">AWS
          * API Reference</a></p>
          */
         virtual Model::ListTrialComponentsOutcome ListTrialComponents(const Model::ListTrialComponentsRequest& request) const;
 
         /**
-         * <p>Lists the trial components in your account. You can filter the list to show
-         * only components that were created in a specific time range. You can sort the
-         * list by trial component name or creation time.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the trial components in your account. You can sort the list by trial
+         * component name or creation time. You can filter the list to show only components
+         * that were created in a specific time range. You can also filter on one of the
+         * following:</p> <ul> <li> <p> <code>ExperimentName</code> </p> </li> <li> <p>
+         * <code>SourceArn</code> </p> </li> <li> <p> <code>TrialName</code> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrialComponents">AWS
          * API Reference</a></p>
          *
@@ -4539,9 +4595,12 @@ namespace Model
         virtual Model::ListTrialComponentsOutcomeCallable ListTrialComponentsCallable(const Model::ListTrialComponentsRequest& request) const;
 
         /**
-         * <p>Lists the trial components in your account. You can filter the list to show
-         * only components that were created in a specific time range. You can sort the
-         * list by trial component name or creation time.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists the trial components in your account. You can sort the list by trial
+         * component name or creation time. You can filter the list to show only components
+         * that were created in a specific time range. You can also filter on one of the
+         * following:</p> <ul> <li> <p> <code>ExperimentName</code> </p> </li> <li> <p>
+         * <code>SourceArn</code> </p> </li> <li> <p> <code>TrialName</code> </p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrialComponents">AWS
          * API Reference</a></p>
          *
@@ -5447,6 +5506,61 @@ namespace Model
         virtual void UpdateUserProfileAsync(const Model::UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Restricts access to tasks assigned to workers in the specified workforce to
+         * those within specific ranges of IP addresses. You specify allowed IP addresses
+         * by creating a list of up to four <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.</p>
+         * <p>By default, a workforce isn't restricted to specific IP addresses. If you
+         * specify a range of IP addresses, workers who attempt to access tasks using any
+         * IP address outside the specified range are denied access and get a <code>Not
+         * Found</code> error message on the worker portal. After restricting access with
+         * this operation, you can see the allowed IP values for a private workforce with
+         * the operation.</p> <important> <p>This operation applies only to private
+         * workforces.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkforce">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateWorkforceOutcome UpdateWorkforce(const Model::UpdateWorkforceRequest& request) const;
+
+        /**
+         * <p>Restricts access to tasks assigned to workers in the specified workforce to
+         * those within specific ranges of IP addresses. You specify allowed IP addresses
+         * by creating a list of up to four <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.</p>
+         * <p>By default, a workforce isn't restricted to specific IP addresses. If you
+         * specify a range of IP addresses, workers who attempt to access tasks using any
+         * IP address outside the specified range are denied access and get a <code>Not
+         * Found</code> error message on the worker portal. After restricting access with
+         * this operation, you can see the allowed IP values for a private workforce with
+         * the operation.</p> <important> <p>This operation applies only to private
+         * workforces.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkforce">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateWorkforceOutcomeCallable UpdateWorkforceCallable(const Model::UpdateWorkforceRequest& request) const;
+
+        /**
+         * <p>Restricts access to tasks assigned to workers in the specified workforce to
+         * those within specific ranges of IP addresses. You specify allowed IP addresses
+         * by creating a list of up to four <a
+         * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>.</p>
+         * <p>By default, a workforce isn't restricted to specific IP addresses. If you
+         * specify a range of IP addresses, workers who attempt to access tasks using any
+         * IP address outside the specified range are denied access and get a <code>Not
+         * Found</code> error message on the worker portal. After restricting access with
+         * this operation, you can see the allowed IP values for a private workforce with
+         * the operation.</p> <important> <p>This operation applies only to private
+         * workforces.</p> </important><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkforce">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateWorkforceAsync(const Model::UpdateWorkforceRequest& request, const UpdateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates an existing work team with new member definitions or
          * description.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkteam">AWS
@@ -5550,6 +5664,7 @@ namespace Model
         void DescribeTrialAsyncHelper(const Model::DescribeTrialRequest& request, const DescribeTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTrialComponentAsyncHelper(const Model::DescribeTrialComponentRequest& request, const DescribeTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserProfileAsyncHelper(const Model::DescribeUserProfileRequest& request, const DescribeUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeWorkforceAsyncHelper(const Model::DescribeWorkforceRequest& request, const DescribeWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkteamAsyncHelper(const Model::DescribeWorkteamRequest& request, const DescribeWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateTrialComponentAsyncHelper(const Model::DisassociateTrialComponentRequest& request, const DisassociateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSearchSuggestionsAsyncHelper(const Model::GetSearchSuggestionsRequest& request, const GetSearchSuggestionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -5608,6 +5723,7 @@ namespace Model
         void UpdateTrialAsyncHelper(const Model::UpdateTrialRequest& request, const UpdateTrialResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTrialComponentAsyncHelper(const Model::UpdateTrialComponentRequest& request, const UpdateTrialComponentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateUserProfileAsyncHelper(const Model::UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateWorkforceAsyncHelper(const Model::UpdateWorkforceRequest& request, const UpdateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateWorkteamAsyncHelper(const Model::UpdateWorkteamRequest& request, const UpdateWorkteamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;

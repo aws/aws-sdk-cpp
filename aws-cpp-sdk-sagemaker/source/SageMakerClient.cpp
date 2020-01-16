@@ -102,6 +102,7 @@
 #include <aws/sagemaker/model/DescribeTrialRequest.h>
 #include <aws/sagemaker/model/DescribeTrialComponentRequest.h>
 #include <aws/sagemaker/model/DescribeUserProfileRequest.h>
+#include <aws/sagemaker/model/DescribeWorkforceRequest.h>
 #include <aws/sagemaker/model/DescribeWorkteamRequest.h>
 #include <aws/sagemaker/model/DisassociateTrialComponentRequest.h>
 #include <aws/sagemaker/model/GetSearchSuggestionsRequest.h>
@@ -160,6 +161,7 @@
 #include <aws/sagemaker/model/UpdateTrialRequest.h>
 #include <aws/sagemaker/model/UpdateTrialComponentRequest.h>
 #include <aws/sagemaker/model/UpdateUserProfileRequest.h>
+#include <aws/sagemaker/model/UpdateWorkforceRequest.h>
 #include <aws/sagemaker/model/UpdateWorkteamRequest.h>
 
 using namespace Aws;
@@ -2754,6 +2756,41 @@ void SageMakerClient::DescribeUserProfileAsyncHelper(const DescribeUserProfileRe
   handler(this, request, DescribeUserProfile(request), context);
 }
 
+DescribeWorkforceOutcome SageMakerClient::DescribeWorkforce(const DescribeWorkforceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeWorkforceOutcome(DescribeWorkforceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeWorkforceOutcome(outcome.GetError());
+  }
+}
+
+DescribeWorkforceOutcomeCallable SageMakerClient::DescribeWorkforceCallable(const DescribeWorkforceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeWorkforceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeWorkforce(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::DescribeWorkforceAsync(const DescribeWorkforceRequest& request, const DescribeWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeWorkforceAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::DescribeWorkforceAsyncHelper(const DescribeWorkforceRequest& request, const DescribeWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeWorkforce(request), context);
+}
+
 DescribeWorkteamOutcome SageMakerClient::DescribeWorkteam(const DescribeWorkteamRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -4782,6 +4819,41 @@ void SageMakerClient::UpdateUserProfileAsync(const UpdateUserProfileRequest& req
 void SageMakerClient::UpdateUserProfileAsyncHelper(const UpdateUserProfileRequest& request, const UpdateUserProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, UpdateUserProfile(request), context);
+}
+
+UpdateWorkforceOutcome SageMakerClient::UpdateWorkforce(const UpdateWorkforceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateWorkforceOutcome(UpdateWorkforceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateWorkforceOutcome(outcome.GetError());
+  }
+}
+
+UpdateWorkforceOutcomeCallable SageMakerClient::UpdateWorkforceCallable(const UpdateWorkforceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateWorkforceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateWorkforce(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void SageMakerClient::UpdateWorkforceAsync(const UpdateWorkforceRequest& request, const UpdateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateWorkforceAsyncHelper( request, handler, context ); } );
+}
+
+void SageMakerClient::UpdateWorkforceAsyncHelper(const UpdateWorkforceRequest& request, const UpdateWorkforceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateWorkforce(request), context);
 }
 
 UpdateWorkteamOutcome SageMakerClient::UpdateWorkteam(const UpdateWorkteamRequest& request) const

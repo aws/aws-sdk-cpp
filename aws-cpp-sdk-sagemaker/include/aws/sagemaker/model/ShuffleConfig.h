@@ -38,14 +38,15 @@ namespace Model
    * the S3 object references in the <code>ManifestFile</code> is shuffled. If you
    * use <code>AugmentedManifestFile</code>, the order of the JSON lines in the
    * <code>AugmentedManifestFile</code> is shuffled. The shuffling order is
-   * determined using the <code>Seed</code> value.</p> <p>For Pipe input mode,
-   * shuffling is done at the start of every epoch. With large datasets, this ensures
-   * that the order of the training data is different for each epoch, and it helps
-   * reduce bias and possible overfitting. In a multi-node training job when
-   * <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code>
-   * of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the
-   * content sent to a particular node on the first epoch might be sent to a
-   * different node on the second epoch.</p><p><h3>See Also:</h3>   <a
+   * determined using the <code>Seed</code> value.</p> <p>For Pipe input mode, when
+   * <code>ShuffleConfig</code> is specified shuffling is done at the start of every
+   * epoch. With large datasets, this ensures that the order of the training data is
+   * different for each epoch, and it helps reduce bias and possible overfitting. In
+   * a multi-node training job when <code>ShuffleConfig</code> is combined with
+   * <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>, the data is
+   * shuffled across nodes so that the content sent to a particular node on the first
+   * epoch might be sent to a different node on the second epoch.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ShuffleConfig">AWS
    * API Reference</a></p>
    */

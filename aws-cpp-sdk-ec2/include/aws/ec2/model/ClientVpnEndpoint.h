@@ -495,6 +495,27 @@ namespace Model
 
 
     /**
+     * <p>The port number for the Client VPN endpoint.</p>
+     */
+    inline int GetVpnPort() const{ return m_vpnPort; }
+
+    /**
+     * <p>The port number for the Client VPN endpoint.</p>
+     */
+    inline bool VpnPortHasBeenSet() const { return m_vpnPortHasBeenSet; }
+
+    /**
+     * <p>The port number for the Client VPN endpoint.</p>
+     */
+    inline void SetVpnPort(int value) { m_vpnPortHasBeenSet = true; m_vpnPort = value; }
+
+    /**
+     * <p>The port number for the Client VPN endpoint.</p>
+     */
+    inline ClientVpnEndpoint& WithVpnPort(int value) { SetVpnPort(value); return *this;}
+
+
+    /**
      * <p>The ARN of the server certificate.</p>
      */
     inline const Aws::String& GetServerCertificateArn() const{ return m_serverCertificateArn; }
@@ -695,6 +716,9 @@ namespace Model
 
     TransportProtocol m_transportProtocol;
     bool m_transportProtocolHasBeenSet;
+
+    int m_vpnPort;
+    bool m_vpnPortHasBeenSet;
 
     Aws::String m_serverCertificateArn;
     bool m_serverCertificateArnHasBeenSet;

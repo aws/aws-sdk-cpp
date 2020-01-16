@@ -25,6 +25,8 @@ ModifyClientVpnEndpointRequest::ModifyClientVpnEndpointRequest() :
     m_serverCertificateArnHasBeenSet(false),
     m_connectionLogOptionsHasBeenSet(false),
     m_dnsServersHasBeenSet(false),
+    m_vpnPort(0),
+    m_vpnPortHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_splitTunnel(false),
     m_splitTunnelHasBeenSet(false),
@@ -55,6 +57,11 @@ Aws::String ModifyClientVpnEndpointRequest::SerializePayload() const
   if(m_dnsServersHasBeenSet)
   {
     m_dnsServers.OutputToStream(ss, "DnsServers");
+  }
+
+  if(m_vpnPortHasBeenSet)
+  {
+    ss << "VpnPort=" << m_vpnPort << "&";
   }
 
   if(m_descriptionHasBeenSet)

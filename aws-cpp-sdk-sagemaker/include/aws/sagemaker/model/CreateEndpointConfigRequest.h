@@ -242,13 +242,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
      * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
      * compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be any of the
-     * following formats: </p> <ul> <li> <p>// KMS Key ID </p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab" </code> </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) (ARN) of a KMS Key </p>
-     * <p>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
-     * </li> <li> <p>// KMS Key Alias</p> <p>"alias/ExampleAlias" </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) of a KMS Key Alias </p> <p>
-     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias" </code> </p> </li>
+     * following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
      * </ul> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code>
      * requests. For more information, refer to the AWS Key Management Service
@@ -276,13 +275,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
      * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
      * compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be any of the
-     * following formats: </p> <ul> <li> <p>// KMS Key ID </p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab" </code> </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) (ARN) of a KMS Key </p>
-     * <p>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
-     * </li> <li> <p>// KMS Key Alias</p> <p>"alias/ExampleAlias" </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) of a KMS Key Alias </p> <p>
-     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias" </code> </p> </li>
+     * following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
      * </ul> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code>
      * requests. For more information, refer to the AWS Key Management Service
@@ -310,13 +308,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
      * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
      * compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be any of the
-     * following formats: </p> <ul> <li> <p>// KMS Key ID </p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab" </code> </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) (ARN) of a KMS Key </p>
-     * <p>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
-     * </li> <li> <p>// KMS Key Alias</p> <p>"alias/ExampleAlias" </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) of a KMS Key Alias </p> <p>
-     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias" </code> </p> </li>
+     * following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
      * </ul> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code>
      * requests. For more information, refer to the AWS Key Management Service
@@ -344,13 +341,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
      * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
      * compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be any of the
-     * following formats: </p> <ul> <li> <p>// KMS Key ID </p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab" </code> </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) (ARN) of a KMS Key </p>
-     * <p>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
-     * </li> <li> <p>// KMS Key Alias</p> <p>"alias/ExampleAlias" </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) of a KMS Key Alias </p> <p>
-     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias" </code> </p> </li>
+     * following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
      * </ul> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code>
      * requests. For more information, refer to the AWS Key Management Service
@@ -378,13 +374,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
      * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
      * compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be any of the
-     * following formats: </p> <ul> <li> <p>// KMS Key ID </p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab" </code> </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) (ARN) of a KMS Key </p>
-     * <p>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
-     * </li> <li> <p>// KMS Key Alias</p> <p>"alias/ExampleAlias" </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) of a KMS Key Alias </p> <p>
-     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias" </code> </p> </li>
+     * following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
      * </ul> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code>
      * requests. For more information, refer to the AWS Key Management Service
@@ -412,13 +407,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
      * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
      * compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be any of the
-     * following formats: </p> <ul> <li> <p>// KMS Key ID </p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab" </code> </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) (ARN) of a KMS Key </p>
-     * <p>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
-     * </li> <li> <p>// KMS Key Alias</p> <p>"alias/ExampleAlias" </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) of a KMS Key Alias </p> <p>
-     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias" </code> </p> </li>
+     * following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
      * </ul> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code>
      * requests. For more information, refer to the AWS Key Management Service
@@ -446,13 +440,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
      * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
      * compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be any of the
-     * following formats: </p> <ul> <li> <p>// KMS Key ID </p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab" </code> </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) (ARN) of a KMS Key </p>
-     * <p>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
-     * </li> <li> <p>// KMS Key Alias</p> <p>"alias/ExampleAlias" </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) of a KMS Key Alias </p> <p>
-     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias" </code> </p> </li>
+     * following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
      * </ul> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code>
      * requests. For more information, refer to the AWS Key Management Service
@@ -480,13 +473,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
      * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
      * compute instance that hosts the endpoint.</p> <p>The KmsKeyId can be any of the
-     * following formats: </p> <ul> <li> <p>// KMS Key ID </p> <p>
-     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab" </code> </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) (ARN) of a KMS Key </p>
-     * <p>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</p>
-     * </li> <li> <p>// KMS Key Alias</p> <p>"alias/ExampleAlias" </p> </li> <li> <p>//
-     * Amazon Resource Name (ARN) of a KMS Key Alias </p> <p>
-     * <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias" </code> </p> </li>
+     * following formats: </p> <ul> <li> <p>Key ID:
+     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+     * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
+     * <p>Alias name ARN:
+     * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
      * </ul> <p>The KMS key policy must grant permission to the IAM role that you
      * specify in your <code>CreateEndpoint</code>, <code>UpdateEndpoint</code>
      * requests. For more information, refer to the AWS Key Management Service

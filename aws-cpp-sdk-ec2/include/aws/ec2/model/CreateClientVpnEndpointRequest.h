@@ -394,6 +394,35 @@ namespace Model
 
 
     /**
+     * <p>The port number to assign to the Client VPN endpoint for TCP and UDP
+     * traffic.</p> <p>Valid Values: <code>443</code> | <code>1194</code> </p>
+     * <p>Default Value: <code>443</code> </p>
+     */
+    inline int GetVpnPort() const{ return m_vpnPort; }
+
+    /**
+     * <p>The port number to assign to the Client VPN endpoint for TCP and UDP
+     * traffic.</p> <p>Valid Values: <code>443</code> | <code>1194</code> </p>
+     * <p>Default Value: <code>443</code> </p>
+     */
+    inline bool VpnPortHasBeenSet() const { return m_vpnPortHasBeenSet; }
+
+    /**
+     * <p>The port number to assign to the Client VPN endpoint for TCP and UDP
+     * traffic.</p> <p>Valid Values: <code>443</code> | <code>1194</code> </p>
+     * <p>Default Value: <code>443</code> </p>
+     */
+    inline void SetVpnPort(int value) { m_vpnPortHasBeenSet = true; m_vpnPort = value; }
+
+    /**
+     * <p>The port number to assign to the Client VPN endpoint for TCP and UDP
+     * traffic.</p> <p>Valid Values: <code>443</code> | <code>1194</code> </p>
+     * <p>Default Value: <code>443</code> </p>
+     */
+    inline CreateClientVpnEndpointRequest& WithVpnPort(int value) { SetVpnPort(value); return *this;}
+
+
+    /**
      * <p>A brief description of the Client VPN endpoint.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -632,6 +661,9 @@ namespace Model
 
     TransportProtocol m_transportProtocol;
     bool m_transportProtocolHasBeenSet;
+
+    int m_vpnPort;
+    bool m_vpnPortHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

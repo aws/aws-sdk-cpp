@@ -49,163 +49,171 @@ namespace Model
 
     /**
      * <p>A filter that returns only components that are part of the specified
-     * experiment. If you specify <code>ExperimentName</code>, you can't specify
-     * <code>TrialName</code>.</p>
+     * experiment. If you specify <code>ExperimentName</code>, you can't filter by
+     * <code>SourceArn</code> or <code>TrialName</code>.</p>
      */
     inline const Aws::String& GetExperimentName() const{ return m_experimentName; }
 
     /**
      * <p>A filter that returns only components that are part of the specified
-     * experiment. If you specify <code>ExperimentName</code>, you can't specify
-     * <code>TrialName</code>.</p>
+     * experiment. If you specify <code>ExperimentName</code>, you can't filter by
+     * <code>SourceArn</code> or <code>TrialName</code>.</p>
      */
     inline bool ExperimentNameHasBeenSet() const { return m_experimentNameHasBeenSet; }
 
     /**
      * <p>A filter that returns only components that are part of the specified
-     * experiment. If you specify <code>ExperimentName</code>, you can't specify
-     * <code>TrialName</code>.</p>
+     * experiment. If you specify <code>ExperimentName</code>, you can't filter by
+     * <code>SourceArn</code> or <code>TrialName</code>.</p>
      */
     inline void SetExperimentName(const Aws::String& value) { m_experimentNameHasBeenSet = true; m_experimentName = value; }
 
     /**
      * <p>A filter that returns only components that are part of the specified
-     * experiment. If you specify <code>ExperimentName</code>, you can't specify
-     * <code>TrialName</code>.</p>
+     * experiment. If you specify <code>ExperimentName</code>, you can't filter by
+     * <code>SourceArn</code> or <code>TrialName</code>.</p>
      */
     inline void SetExperimentName(Aws::String&& value) { m_experimentNameHasBeenSet = true; m_experimentName = std::move(value); }
 
     /**
      * <p>A filter that returns only components that are part of the specified
-     * experiment. If you specify <code>ExperimentName</code>, you can't specify
-     * <code>TrialName</code>.</p>
+     * experiment. If you specify <code>ExperimentName</code>, you can't filter by
+     * <code>SourceArn</code> or <code>TrialName</code>.</p>
      */
     inline void SetExperimentName(const char* value) { m_experimentNameHasBeenSet = true; m_experimentName.assign(value); }
 
     /**
      * <p>A filter that returns only components that are part of the specified
-     * experiment. If you specify <code>ExperimentName</code>, you can't specify
-     * <code>TrialName</code>.</p>
+     * experiment. If you specify <code>ExperimentName</code>, you can't filter by
+     * <code>SourceArn</code> or <code>TrialName</code>.</p>
      */
     inline ListTrialComponentsRequest& WithExperimentName(const Aws::String& value) { SetExperimentName(value); return *this;}
 
     /**
      * <p>A filter that returns only components that are part of the specified
-     * experiment. If you specify <code>ExperimentName</code>, you can't specify
-     * <code>TrialName</code>.</p>
+     * experiment. If you specify <code>ExperimentName</code>, you can't filter by
+     * <code>SourceArn</code> or <code>TrialName</code>.</p>
      */
     inline ListTrialComponentsRequest& WithExperimentName(Aws::String&& value) { SetExperimentName(std::move(value)); return *this;}
 
     /**
      * <p>A filter that returns only components that are part of the specified
-     * experiment. If you specify <code>ExperimentName</code>, you can't specify
-     * <code>TrialName</code>.</p>
+     * experiment. If you specify <code>ExperimentName</code>, you can't filter by
+     * <code>SourceArn</code> or <code>TrialName</code>.</p>
      */
     inline ListTrialComponentsRequest& WithExperimentName(const char* value) { SetExperimentName(value); return *this;}
 
 
     /**
      * <p>A filter that returns only components that are part of the specified trial.
-     * If you specify <code>TrialName</code>, you can't specify
-     * <code>ExperimentName</code>.</p>
+     * If you specify <code>TrialName</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>SourceArn</code>.</p>
      */
     inline const Aws::String& GetTrialName() const{ return m_trialName; }
 
     /**
      * <p>A filter that returns only components that are part of the specified trial.
-     * If you specify <code>TrialName</code>, you can't specify
-     * <code>ExperimentName</code>.</p>
+     * If you specify <code>TrialName</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>SourceArn</code>.</p>
      */
     inline bool TrialNameHasBeenSet() const { return m_trialNameHasBeenSet; }
 
     /**
      * <p>A filter that returns only components that are part of the specified trial.
-     * If you specify <code>TrialName</code>, you can't specify
-     * <code>ExperimentName</code>.</p>
+     * If you specify <code>TrialName</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>SourceArn</code>.</p>
      */
     inline void SetTrialName(const Aws::String& value) { m_trialNameHasBeenSet = true; m_trialName = value; }
 
     /**
      * <p>A filter that returns only components that are part of the specified trial.
-     * If you specify <code>TrialName</code>, you can't specify
-     * <code>ExperimentName</code>.</p>
+     * If you specify <code>TrialName</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>SourceArn</code>.</p>
      */
     inline void SetTrialName(Aws::String&& value) { m_trialNameHasBeenSet = true; m_trialName = std::move(value); }
 
     /**
      * <p>A filter that returns only components that are part of the specified trial.
-     * If you specify <code>TrialName</code>, you can't specify
-     * <code>ExperimentName</code>.</p>
+     * If you specify <code>TrialName</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>SourceArn</code>.</p>
      */
     inline void SetTrialName(const char* value) { m_trialNameHasBeenSet = true; m_trialName.assign(value); }
 
     /**
      * <p>A filter that returns only components that are part of the specified trial.
-     * If you specify <code>TrialName</code>, you can't specify
-     * <code>ExperimentName</code>.</p>
+     * If you specify <code>TrialName</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>SourceArn</code>.</p>
      */
     inline ListTrialComponentsRequest& WithTrialName(const Aws::String& value) { SetTrialName(value); return *this;}
 
     /**
      * <p>A filter that returns only components that are part of the specified trial.
-     * If you specify <code>TrialName</code>, you can't specify
-     * <code>ExperimentName</code>.</p>
+     * If you specify <code>TrialName</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>SourceArn</code>.</p>
      */
     inline ListTrialComponentsRequest& WithTrialName(Aws::String&& value) { SetTrialName(std::move(value)); return *this;}
 
     /**
      * <p>A filter that returns only components that are part of the specified trial.
-     * If you specify <code>TrialName</code>, you can't specify
-     * <code>ExperimentName</code>.</p>
+     * If you specify <code>TrialName</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>SourceArn</code>.</p>
      */
     inline ListTrialComponentsRequest& WithTrialName(const char* value) { SetTrialName(value); return *this;}
 
 
     /**
      * <p>A filter that returns only components that have the specified source Amazon
-     * Resource Name (ARN).</p>
+     * Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>TrialName</code>.</p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
 
     /**
      * <p>A filter that returns only components that have the specified source Amazon
-     * Resource Name (ARN).</p>
+     * Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>TrialName</code>.</p>
      */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
 
     /**
      * <p>A filter that returns only components that have the specified source Amazon
-     * Resource Name (ARN).</p>
+     * Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>TrialName</code>.</p>
      */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
      * <p>A filter that returns only components that have the specified source Amazon
-     * Resource Name (ARN).</p>
+     * Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>TrialName</code>.</p>
      */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
 
     /**
      * <p>A filter that returns only components that have the specified source Amazon
-     * Resource Name (ARN).</p>
+     * Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>TrialName</code>.</p>
      */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
 
     /**
      * <p>A filter that returns only components that have the specified source Amazon
-     * Resource Name (ARN).</p>
+     * Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>TrialName</code>.</p>
      */
     inline ListTrialComponentsRequest& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
 
     /**
      * <p>A filter that returns only components that have the specified source Amazon
-     * Resource Name (ARN).</p>
+     * Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>TrialName</code>.</p>
      */
     inline ListTrialComponentsRequest& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
 
     /**
      * <p>A filter that returns only components that have the specified source Amazon
-     * Resource Name (ARN).</p>
+     * Resource Name (ARN). If you specify <code>SourceArn</code>, you can't filter by
+     * <code>ExperimentName</code> or <code>TrialName</code>.</p>
      */
     inline ListTrialComponentsRequest& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
 
