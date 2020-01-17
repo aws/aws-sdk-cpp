@@ -73,7 +73,9 @@ CreateDBInstanceRequest::CreateDBInstanceRequest() :
     m_enablePerformanceInsights(false),
     m_enablePerformanceInsightsHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_enableCloudwatchLogsExportsHasBeenSet(false)
+    m_enableCloudwatchLogsExportsHasBeenSet(false),
+    m_deletionProtection(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -307,6 +309,11 @@ Aws::String CreateDBInstanceRequest::SerializePayload() const
           << StringUtils::URLEncode(item.c_str()) << "&";
       enableCloudwatchLogsExportsCount++;
     }
+  }
+
+  if(m_deletionProtectionHasBeenSet)
+  {
+    ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 
   ss << "Version=2014-10-31";

@@ -101,6 +101,47 @@ namespace Model
 
 
     /**
+     * Ignore this setting unless compliance to the CTTS box version specification
+     * matters in your workflow. Specify a value of 1 to set your CTTS box version to 1
+     * and make your output compliant with the specification. When you specify a value
+     * of 1, you must also set CSLG atom (cslgAtom) to the value INCLUDE. Keep the
+     * default value 0 to set your CTTS box version to 0. This can provide backward
+     * compatibility for some players and packagers.
+     */
+    inline int GetCttsVersion() const{ return m_cttsVersion; }
+
+    /**
+     * Ignore this setting unless compliance to the CTTS box version specification
+     * matters in your workflow. Specify a value of 1 to set your CTTS box version to 1
+     * and make your output compliant with the specification. When you specify a value
+     * of 1, you must also set CSLG atom (cslgAtom) to the value INCLUDE. Keep the
+     * default value 0 to set your CTTS box version to 0. This can provide backward
+     * compatibility for some players and packagers.
+     */
+    inline bool CttsVersionHasBeenSet() const { return m_cttsVersionHasBeenSet; }
+
+    /**
+     * Ignore this setting unless compliance to the CTTS box version specification
+     * matters in your workflow. Specify a value of 1 to set your CTTS box version to 1
+     * and make your output compliant with the specification. When you specify a value
+     * of 1, you must also set CSLG atom (cslgAtom) to the value INCLUDE. Keep the
+     * default value 0 to set your CTTS box version to 0. This can provide backward
+     * compatibility for some players and packagers.
+     */
+    inline void SetCttsVersion(int value) { m_cttsVersionHasBeenSet = true; m_cttsVersion = value; }
+
+    /**
+     * Ignore this setting unless compliance to the CTTS box version specification
+     * matters in your workflow. Specify a value of 1 to set your CTTS box version to 1
+     * and make your output compliant with the specification. When you specify a value
+     * of 1, you must also set CSLG atom (cslgAtom) to the value INCLUDE. Keep the
+     * default value 0 to set your CTTS box version to 0. This can provide backward
+     * compatibility for some players and packagers.
+     */
+    inline Mp4Settings& WithCttsVersion(int value) { SetCttsVersion(value); return *this;}
+
+
+    /**
      * Inserts a free-space box immediately after the moov box.
      */
     inline const Mp4FreeSpaceBox& GetFreeSpaceBox() const{ return m_freeSpaceBox; }
@@ -226,6 +267,9 @@ namespace Model
 
     Mp4CslgAtom m_cslgAtom;
     bool m_cslgAtomHasBeenSet;
+
+    int m_cttsVersion;
+    bool m_cttsVersionHasBeenSet;
 
     Mp4FreeSpaceBox m_freeSpaceBox;
     bool m_freeSpaceBoxHasBeenSet;

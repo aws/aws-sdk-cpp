@@ -458,114 +458,42 @@ namespace Model
 
 
     /**
-     * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter doesn't result in an outage
-     * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not
-     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
-     * option group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter doesn't result in an outage
-     * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not
-     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
-     * option group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
-     * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter doesn't result in an outage
-     * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not
-     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
-     * option group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter doesn't result in an outage
-     * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not
-     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
-     * option group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
-     * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter doesn't result in an outage
-     * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not
-     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
-     * option group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter doesn't result in an outage
-     * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not
-     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
-     * option group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline ModifyDBClusterRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter doesn't result in an outage
-     * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not
-     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
-     * option group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline ModifyDBClusterRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>A value that indicates that the DB cluster should be associated with the
-     * specified option group. Changing this parameter doesn't result in an outage
-     * except in the following case, and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request. If the parameter change results in an option
-     * group that enables OEM, this change can cause a brief (sub-second) period during
-     * which new connections are rejected but existing connections are not
-     * interrupted.</p> <p>Permanent options can't be removed from an option group. The
-     * option group can't be removed from a DB cluster once it is associated with a DB
-     * cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline ModifyDBClusterRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -815,76 +743,105 @@ namespace Model
 
 
     /**
-     * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine. Currently, setting this parameter
+     * has no effect. To upgrade your database engine to the most recent release, use
+     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
+     * versions, see <a>CreateDBInstance</a>, or call
+     * <a>DescribeDBEngineVersions</a>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine. Currently, setting this parameter
+     * has no effect. To upgrade your database engine to the most recent release, use
+     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
+     * versions, see <a>CreateDBInstance</a>, or call
+     * <a>DescribeDBEngineVersions</a>.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine. Currently, setting this parameter
+     * has no effect. To upgrade your database engine to the most recent release, use
+     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
+     * versions, see <a>CreateDBInstance</a>, or call
+     * <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine. Currently, setting this parameter
+     * has no effect. To upgrade your database engine to the most recent release, use
+     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
+     * versions, see <a>CreateDBInstance</a>, or call
+     * <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine. Currently, setting this parameter
+     * has no effect. To upgrade your database engine to the most recent release, use
+     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
+     * versions, see <a>CreateDBInstance</a>, or call
+     * <a>DescribeDBEngineVersions</a>.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine. Currently, setting this parameter
+     * has no effect. To upgrade your database engine to the most recent release, use
+     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
+     * versions, see <a>CreateDBInstance</a>, or call
+     * <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine. Currently, setting this parameter
+     * has no effect. To upgrade your database engine to the most recent release, use
+     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
+     * versions, see <a>CreateDBInstance</a>, or call
+     * <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the database engine to which you want to upgrade.
-     * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless the ApplyImmediately parameter is set to
-     * true.</p> <p>For a list of valid engine versions, see <a>CreateDBInstance</a>,
-     * or call <a>DescribeDBEngineVersions</a>.</p>
+     * <p>The version number of the database engine. Currently, setting this parameter
+     * has no effect. To upgrade your database engine to the most recent release, use
+     * the <a>ApplyPendingMaintenanceAction</a> API.</p> <p>For a list of valid engine
+     * versions, see <a>CreateDBInstance</a>, or call
+     * <a>DescribeDBEngineVersions</a>.</p>
      */
     inline ModifyDBClusterRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
+     */
+    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
+     */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
+     */
+    inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+
+    /**
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
+     */
+    inline ModifyDBClusterRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
   private:
 
@@ -929,6 +886,9 @@ namespace Model
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet;
+
+    bool m_deletionProtection;
+    bool m_deletionProtectionHasBeenSet;
   };
 
 } // namespace Model

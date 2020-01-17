@@ -93,7 +93,9 @@ DBInstance::DBInstance() :
     m_performanceInsightsEnabled(false),
     m_performanceInsightsEnabledHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_enabledCloudwatchLogsExportsHasBeenSet(false)
+    m_enabledCloudwatchLogsExportsHasBeenSet(false),
+    m_deletionProtection(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -160,7 +162,9 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_performanceInsightsEnabled(false),
     m_performanceInsightsEnabledHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_enabledCloudwatchLogsExportsHasBeenSet(false)
+    m_enabledCloudwatchLogsExportsHasBeenSet(false),
+    m_deletionProtection(false),
+    m_deletionProtectionHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -531,6 +535,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
 
       m_enabledCloudwatchLogsExportsHasBeenSet = true;
     }
+    XmlNode deletionProtectionNode = resultNode.FirstChild("DeletionProtection");
+    if(!deletionProtectionNode.IsNull())
+    {
+      m_deletionProtection = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionProtectionNode.GetText()).c_str()).c_str());
+      m_deletionProtectionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -847,6 +857,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       }
   }
 
+  if(m_deletionProtectionHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1108,6 +1123,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       {
         oStream << location << ".EnabledCloudwatchLogsExports.member." << enabledCloudwatchLogsExportsIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_deletionProtectionHasBeenSet)
+  {
+      oStream << location << ".DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 }
 

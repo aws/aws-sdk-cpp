@@ -135,7 +135,7 @@ namespace Model
   /**
    * <p>For more information about AWS CloudHSM, see <a
    * href="http://aws.amazon.com/cloudhsm/">AWS CloudHSM</a> and the <a
-   * href="http://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User
+   * href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/">AWS CloudHSM User
    * Guide</a>.</p>
    */
   class AWS_CLOUDHSMV2_API CloudHSMV2Client : public Aws::Client::AWSJsonClient
@@ -250,8 +250,8 @@ namespace Model
 
         /**
          * <p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7
-         * days after the DeleteBackup request. For more information on restoring a backup,
-         * see <a>RestoreBackup</a> </p><p><h3>See Also:</h3>   <a
+         * days after the DeleteBackup request is made. For more information on restoring a
+         * backup, see <a>RestoreBackup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup">AWS
          * API Reference</a></p>
          */
@@ -259,8 +259,8 @@ namespace Model
 
         /**
          * <p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7
-         * days after the DeleteBackup request. For more information on restoring a backup,
-         * see <a>RestoreBackup</a> </p><p><h3>See Also:</h3>   <a
+         * days after the DeleteBackup request is made. For more information on restoring a
+         * backup, see <a>RestoreBackup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup">AWS
          * API Reference</a></p>
          *
@@ -270,8 +270,8 @@ namespace Model
 
         /**
          * <p>Deletes a specified AWS CloudHSM backup. A backup can be restored up to 7
-         * days after the DeleteBackup request. For more information on restoring a backup,
-         * see <a>RestoreBackup</a> </p><p><h3>See Also:</h3>   <a
+         * days after the DeleteBackup request is made. For more information on restoring a
+         * backup, see <a>RestoreBackup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteBackup">AWS
          * API Reference</a></p>
          *
@@ -515,7 +515,7 @@ namespace Model
 
         /**
          * <p>Restores a specified AWS CloudHSM backup that is in the
-         * <code>PENDING_DELETION</code> state. For more information on deleting a backup,
+         * <code>PENDING_DELETION</code> state. For mor information on deleting a backup,
          * see <a>DeleteBackup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup">AWS
          * API Reference</a></p>
@@ -524,7 +524,7 @@ namespace Model
 
         /**
          * <p>Restores a specified AWS CloudHSM backup that is in the
-         * <code>PENDING_DELETION</code> state. For more information on deleting a backup,
+         * <code>PENDING_DELETION</code> state. For mor information on deleting a backup,
          * see <a>DeleteBackup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup">AWS
          * API Reference</a></p>
@@ -535,7 +535,7 @@ namespace Model
 
         /**
          * <p>Restores a specified AWS CloudHSM backup that is in the
-         * <code>PENDING_DELETION</code> state. For more information on deleting a backup,
+         * <code>PENDING_DELETION</code> state. For mor information on deleting a backup,
          * see <a>DeleteBackup</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/RestoreBackup">AWS
          * API Reference</a></p>

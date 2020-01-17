@@ -483,42 +483,42 @@ namespace Model
 
 
     /**
-     * <p>The name of the option group to use for the restored DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p>The name of the option group to use for the restored DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
-     * <p>The name of the option group to use for the restored DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p>The name of the option group to use for the restored DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
-     * <p>The name of the option group to use for the restored DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p>The name of the option group to use for the restored DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p>The name of the option group to use for the restored DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the option group to use for the restored DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline RestoreDBClusterFromSnapshotRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -879,6 +879,35 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
+
+    /**
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
+     */
+    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
+     */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
+     */
+    inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+
+    /**
+     * <p>A value that indicates whether the DB cluster has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -925,6 +954,9 @@ namespace Model
 
     Aws::String m_dBClusterParameterGroupName;
     bool m_dBClusterParameterGroupNameHasBeenSet;
+
+    bool m_deletionProtection;
+    bool m_deletionProtectionHasBeenSet;
   };
 
 } // namespace Model

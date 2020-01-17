@@ -310,50 +310,58 @@ namespace Model
 
 
     /**
-     * <p>The source type of the events returned the Amazon Redshift event
-     * notification, such as cluster, or cluster-snapshot.</p>
+     * <p>The source type of the events returned by the Amazon Redshift event
+     * notification, such as cluster, cluster-snapshot, cluster-parameter-group,
+     * cluster-security-group, or scheduled-action. </p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
     /**
-     * <p>The source type of the events returned the Amazon Redshift event
-     * notification, such as cluster, or cluster-snapshot.</p>
+     * <p>The source type of the events returned by the Amazon Redshift event
+     * notification, such as cluster, cluster-snapshot, cluster-parameter-group,
+     * cluster-security-group, or scheduled-action. </p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
-     * <p>The source type of the events returned the Amazon Redshift event
-     * notification, such as cluster, or cluster-snapshot.</p>
+     * <p>The source type of the events returned by the Amazon Redshift event
+     * notification, such as cluster, cluster-snapshot, cluster-parameter-group,
+     * cluster-security-group, or scheduled-action. </p>
      */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
-     * <p>The source type of the events returned the Amazon Redshift event
-     * notification, such as cluster, or cluster-snapshot.</p>
+     * <p>The source type of the events returned by the Amazon Redshift event
+     * notification, such as cluster, cluster-snapshot, cluster-parameter-group,
+     * cluster-security-group, or scheduled-action. </p>
      */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
-     * <p>The source type of the events returned the Amazon Redshift event
-     * notification, such as cluster, or cluster-snapshot.</p>
+     * <p>The source type of the events returned by the Amazon Redshift event
+     * notification, such as cluster, cluster-snapshot, cluster-parameter-group,
+     * cluster-security-group, or scheduled-action. </p>
      */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
     /**
-     * <p>The source type of the events returned the Amazon Redshift event
-     * notification, such as cluster, or cluster-snapshot.</p>
+     * <p>The source type of the events returned by the Amazon Redshift event
+     * notification, such as cluster, cluster-snapshot, cluster-parameter-group,
+     * cluster-security-group, or scheduled-action. </p>
      */
     inline EventSubscription& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
     /**
-     * <p>The source type of the events returned the Amazon Redshift event
-     * notification, such as cluster, or cluster-snapshot.</p>
+     * <p>The source type of the events returned by the Amazon Redshift event
+     * notification, such as cluster, cluster-snapshot, cluster-parameter-group,
+     * cluster-security-group, or scheduled-action. </p>
      */
     inline EventSubscription& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The source type of the events returned the Amazon Redshift event
-     * notification, such as cluster, or cluster-snapshot.</p>
+     * <p>The source type of the events returned by the Amazon Redshift event
+     * notification, such as cluster, cluster-snapshot, cluster-parameter-group,
+     * cluster-security-group, or scheduled-action. </p>
      */
     inline EventSubscription& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 

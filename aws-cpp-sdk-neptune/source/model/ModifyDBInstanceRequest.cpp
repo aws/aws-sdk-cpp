@@ -68,7 +68,9 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_enablePerformanceInsights(false),
     m_enablePerformanceInsightsHasBeenSet(false),
     m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_cloudwatchLogsExportConfigurationHasBeenSet(false)
+    m_cloudwatchLogsExportConfigurationHasBeenSet(false),
+    m_deletionProtection(false),
+    m_deletionProtectionHasBeenSet(false)
 {
 }
 
@@ -261,6 +263,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_cloudwatchLogsExportConfigurationHasBeenSet)
   {
     m_cloudwatchLogsExportConfiguration.OutputToStream(ss, "CloudwatchLogsExportConfiguration");
+  }
+
+  if(m_deletionProtectionHasBeenSet)
+  {
+    ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
   }
 
   ss << "Version=2014-10-31";

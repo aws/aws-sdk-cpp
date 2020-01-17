@@ -31,14 +31,16 @@ namespace Model
 Volume::Volume() : 
     m_nameHasBeenSet(false),
     m_hostHasBeenSet(false),
-    m_dockerVolumeConfigurationHasBeenSet(false)
+    m_dockerVolumeConfigurationHasBeenSet(false),
+    m_efsVolumeConfigurationHasBeenSet(false)
 {
 }
 
 Volume::Volume(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_hostHasBeenSet(false),
-    m_dockerVolumeConfigurationHasBeenSet(false)
+    m_dockerVolumeConfigurationHasBeenSet(false),
+    m_efsVolumeConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +68,13 @@ Volume& Volume::operator =(JsonView jsonValue)
     m_dockerVolumeConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("efsVolumeConfiguration"))
+  {
+    m_efsVolumeConfiguration = jsonValue.GetObject("efsVolumeConfiguration");
+
+    m_efsVolumeConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -88,6 +97,12 @@ JsonValue Volume::Jsonize() const
   if(m_dockerVolumeConfigurationHasBeenSet)
   {
    payload.WithObject("dockerVolumeConfiguration", m_dockerVolumeConfiguration.Jsonize());
+
+  }
+
+  if(m_efsVolumeConfigurationHasBeenSet)
+  {
+   payload.WithObject("efsVolumeConfiguration", m_efsVolumeConfiguration.Jsonize());
 
   }
 

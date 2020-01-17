@@ -848,20 +848,30 @@ namespace Model
         virtual void DeleteAttributesAsync(const Model::DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deletes the specified cluster. You must deregister all container instances
-         * from this cluster before you may delete it. You can list the container instances
-         * in a cluster with <a>ListContainerInstances</a> and deregister them with
-         * <a>DeregisterContainerInstance</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified cluster. The cluster will transition to the
+         * <code>INACTIVE</code> state. Clusters with an <code>INACTIVE</code> status may
+         * remain discoverable in your account for a period of time. However, this behavior
+         * is subject to change in the future, so you should not rely on
+         * <code>INACTIVE</code> clusters persisting.</p> <p>You must deregister all
+         * container instances from this cluster before you may delete it. You can list the
+         * container instances in a cluster with <a>ListContainerInstances</a> and
+         * deregister them with <a>DeregisterContainerInstance</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">AWS
          * API Reference</a></p>
          */
         virtual Model::DeleteClusterOutcome DeleteCluster(const Model::DeleteClusterRequest& request) const;
 
         /**
-         * <p>Deletes the specified cluster. You must deregister all container instances
-         * from this cluster before you may delete it. You can list the container instances
-         * in a cluster with <a>ListContainerInstances</a> and deregister them with
-         * <a>DeregisterContainerInstance</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified cluster. The cluster will transition to the
+         * <code>INACTIVE</code> state. Clusters with an <code>INACTIVE</code> status may
+         * remain discoverable in your account for a period of time. However, this behavior
+         * is subject to change in the future, so you should not rely on
+         * <code>INACTIVE</code> clusters persisting.</p> <p>You must deregister all
+         * container instances from this cluster before you may delete it. You can list the
+         * container instances in a cluster with <a>ListContainerInstances</a> and
+         * deregister them with <a>DeregisterContainerInstance</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">AWS
          * API Reference</a></p>
          *
@@ -870,10 +880,15 @@ namespace Model
         virtual Model::DeleteClusterOutcomeCallable DeleteClusterCallable(const Model::DeleteClusterRequest& request) const;
 
         /**
-         * <p>Deletes the specified cluster. You must deregister all container instances
-         * from this cluster before you may delete it. You can list the container instances
-         * in a cluster with <a>ListContainerInstances</a> and deregister them with
-         * <a>DeregisterContainerInstance</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified cluster. The cluster will transition to the
+         * <code>INACTIVE</code> state. Clusters with an <code>INACTIVE</code> status may
+         * remain discoverable in your account for a period of time. However, this behavior
+         * is subject to change in the future, so you should not rely on
+         * <code>INACTIVE</code> clusters persisting.</p> <p>You must deregister all
+         * container instances from this cluster before you may delete it. You can list the
+         * container instances in a cluster with <a>ListContainerInstances</a> and
+         * deregister them with <a>DeregisterContainerInstance</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">AWS
          * API Reference</a></p>
          *

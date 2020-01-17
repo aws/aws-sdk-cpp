@@ -281,16 +281,28 @@ namespace Model
     inline DescribeBackupsRequest& AddFilters(const char* key, const Aws::Vector<Aws::String>& value) { m_filtersHasBeenSet = true; m_filters.emplace(key, value); return *this; }
 
 
-    
+    /**
+     * <p>Designates whether or not to sort the return backups by ascending
+     * chronological order of generation.</p>
+     */
     inline bool GetSortAscending() const{ return m_sortAscending; }
 
-    
+    /**
+     * <p>Designates whether or not to sort the return backups by ascending
+     * chronological order of generation.</p>
+     */
     inline bool SortAscendingHasBeenSet() const { return m_sortAscendingHasBeenSet; }
 
-    
+    /**
+     * <p>Designates whether or not to sort the return backups by ascending
+     * chronological order of generation.</p>
+     */
     inline void SetSortAscending(bool value) { m_sortAscendingHasBeenSet = true; m_sortAscending = value; }
 
-    
+    /**
+     * <p>Designates whether or not to sort the return backups by ascending
+     * chronological order of generation.</p>
+     */
     inline DescribeBackupsRequest& WithSortAscending(bool value) { SetSortAscending(value); return *this;}
 
   private:

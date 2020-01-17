@@ -43,7 +43,8 @@ Cluster::Cluster() :
     m_stateMessageHasBeenSet(false),
     m_subnetMappingHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_certificatesHasBeenSet(false)
+    m_certificatesHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ Cluster::Cluster(JsonView jsonValue) :
     m_stateMessageHasBeenSet(false),
     m_subnetMappingHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_certificatesHasBeenSet(false)
+    m_certificatesHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -166,6 +168,16 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     m_certificatesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TagList"))
+  {
+    Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
+    for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
+    {
+      m_tagList.push_back(tagListJsonList[tagListIndex].AsObject());
+    }
+    m_tagListHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -255,6 +267,17 @@ JsonValue Cluster::Jsonize() const
   if(m_certificatesHasBeenSet)
   {
    payload.WithObject("Certificates", m_certificates.Jsonize());
+
+  }
+
+  if(m_tagListHasBeenSet)
+  {
+   Array<JsonValue> tagListJsonList(m_tagList.size());
+   for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
+   {
+     tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());
+   }
+   payload.WithArray("TagList", std::move(tagListJsonList));
 
   }
 

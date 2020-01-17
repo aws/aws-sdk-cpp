@@ -815,7 +815,7 @@ namespace Model
      * specific Availability Zone, then you might want the cluster to be provisioned in
      * the same zone in order to decrease network latency.</p> <p>Default: A random,
      * system-chosen Availability Zone in the region that is specified by the
-     * endpoint.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
+     * endpoint.</p> <p>Example: <code>us-east-2d</code> </p> <p>Constraint: The
      * specified Availability Zone must be in the same region as the current
      * endpoint.</p>
      */
@@ -827,7 +827,7 @@ namespace Model
      * specific Availability Zone, then you might want the cluster to be provisioned in
      * the same zone in order to decrease network latency.</p> <p>Default: A random,
      * system-chosen Availability Zone in the region that is specified by the
-     * endpoint.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
+     * endpoint.</p> <p>Example: <code>us-east-2d</code> </p> <p>Constraint: The
      * specified Availability Zone must be in the same region as the current
      * endpoint.</p>
      */
@@ -839,7 +839,7 @@ namespace Model
      * specific Availability Zone, then you might want the cluster to be provisioned in
      * the same zone in order to decrease network latency.</p> <p>Default: A random,
      * system-chosen Availability Zone in the region that is specified by the
-     * endpoint.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
+     * endpoint.</p> <p>Example: <code>us-east-2d</code> </p> <p>Constraint: The
      * specified Availability Zone must be in the same region as the current
      * endpoint.</p>
      */
@@ -851,7 +851,7 @@ namespace Model
      * specific Availability Zone, then you might want the cluster to be provisioned in
      * the same zone in order to decrease network latency.</p> <p>Default: A random,
      * system-chosen Availability Zone in the region that is specified by the
-     * endpoint.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
+     * endpoint.</p> <p>Example: <code>us-east-2d</code> </p> <p>Constraint: The
      * specified Availability Zone must be in the same region as the current
      * endpoint.</p>
      */
@@ -863,7 +863,7 @@ namespace Model
      * specific Availability Zone, then you might want the cluster to be provisioned in
      * the same zone in order to decrease network latency.</p> <p>Default: A random,
      * system-chosen Availability Zone in the region that is specified by the
-     * endpoint.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
+     * endpoint.</p> <p>Example: <code>us-east-2d</code> </p> <p>Constraint: The
      * specified Availability Zone must be in the same region as the current
      * endpoint.</p>
      */
@@ -875,7 +875,7 @@ namespace Model
      * specific Availability Zone, then you might want the cluster to be provisioned in
      * the same zone in order to decrease network latency.</p> <p>Default: A random,
      * system-chosen Availability Zone in the region that is specified by the
-     * endpoint.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
+     * endpoint.</p> <p>Example: <code>us-east-2d</code> </p> <p>Constraint: The
      * specified Availability Zone must be in the same region as the current
      * endpoint.</p>
      */
@@ -887,7 +887,7 @@ namespace Model
      * specific Availability Zone, then you might want the cluster to be provisioned in
      * the same zone in order to decrease network latency.</p> <p>Default: A random,
      * system-chosen Availability Zone in the region that is specified by the
-     * endpoint.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
+     * endpoint.</p> <p>Example: <code>us-east-2d</code> </p> <p>Constraint: The
      * specified Availability Zone must be in the same region as the current
      * endpoint.</p>
      */
@@ -899,7 +899,7 @@ namespace Model
      * specific Availability Zone, then you might want the cluster to be provisioned in
      * the same zone in order to decrease network latency.</p> <p>Default: A random,
      * system-chosen Availability Zone in the region that is specified by the
-     * endpoint.</p> <p>Example: <code>us-east-1d</code> </p> <p>Constraint: The
+     * endpoint.</p> <p>Example: <code>us-east-2d</code> </p> <p>Constraint: The
      * specified Availability Zone must be in the same region as the current
      * endpoint.</p>
      */

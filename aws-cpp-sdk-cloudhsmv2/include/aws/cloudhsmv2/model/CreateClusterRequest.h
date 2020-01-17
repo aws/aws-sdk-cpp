@@ -18,6 +18,7 @@
 #include <aws/cloudhsmv2/CloudHSMV2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cloudhsmv2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -232,6 +233,31 @@ namespace Model
      */
     inline CreateClusterRequest& WithSourceBackupId(const char* value) { SetSourceBackupId(value); return *this;}
 
+
+    
+    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
+    
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+
+    
+    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+
+    
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
+
+    
+    inline CreateClusterRequest& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+
+    
+    inline CreateClusterRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
+
+    
+    inline CreateClusterRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+
+    
+    inline CreateClusterRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;
@@ -242,6 +268,9 @@ namespace Model
 
     Aws::String m_sourceBackupId;
     bool m_sourceBackupIdHasBeenSet;
+
+    Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet;
   };
 
 } // namespace Model

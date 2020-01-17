@@ -59,7 +59,9 @@ CmafGroupSettings::CmafGroupSettings() :
     m_writeDashManifest(CmafWriteDASHManifest::NOT_SET),
     m_writeDashManifestHasBeenSet(false),
     m_writeHlsManifest(CmafWriteHLSManifest::NOT_SET),
-    m_writeHlsManifestHasBeenSet(false)
+    m_writeHlsManifestHasBeenSet(false),
+    m_writeSegmentTimelineInRepresentation(CmafWriteSegmentTimelineInRepresentation::NOT_SET),
+    m_writeSegmentTimelineInRepresentationHasBeenSet(false)
 {
 }
 
@@ -94,7 +96,9 @@ CmafGroupSettings::CmafGroupSettings(JsonView jsonValue) :
     m_writeDashManifest(CmafWriteDASHManifest::NOT_SET),
     m_writeDashManifestHasBeenSet(false),
     m_writeHlsManifest(CmafWriteHLSManifest::NOT_SET),
-    m_writeHlsManifestHasBeenSet(false)
+    m_writeHlsManifestHasBeenSet(false),
+    m_writeSegmentTimelineInRepresentation(CmafWriteSegmentTimelineInRepresentation::NOT_SET),
+    m_writeSegmentTimelineInRepresentationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -230,6 +234,13 @@ CmafGroupSettings& CmafGroupSettings::operator =(JsonView jsonValue)
     m_writeHlsManifestHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("writeSegmentTimelineInRepresentation"))
+  {
+    m_writeSegmentTimelineInRepresentation = CmafWriteSegmentTimelineInRepresentationMapper::GetCmafWriteSegmentTimelineInRepresentationForName(jsonValue.GetString("writeSegmentTimelineInRepresentation"));
+
+    m_writeSegmentTimelineInRepresentationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -339,6 +350,11 @@ JsonValue CmafGroupSettings::Jsonize() const
   if(m_writeHlsManifestHasBeenSet)
   {
    payload.WithString("writeHlsManifest", CmafWriteHLSManifestMapper::GetNameForCmafWriteHLSManifest(m_writeHlsManifest));
+  }
+
+  if(m_writeSegmentTimelineInRepresentationHasBeenSet)
+  {
+   payload.WithString("writeSegmentTimelineInRepresentation", CmafWriteSegmentTimelineInRepresentationMapper::GetNameForCmafWriteSegmentTimelineInRepresentation(m_writeSegmentTimelineInRepresentation));
   }
 
   return payload;

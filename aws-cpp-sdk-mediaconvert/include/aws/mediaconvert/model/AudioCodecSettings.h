@@ -22,6 +22,7 @@
 #include <aws/mediaconvert/model/Eac3AtmosSettings.h>
 #include <aws/mediaconvert/model/Eac3Settings.h>
 #include <aws/mediaconvert/model/Mp2Settings.h>
+#include <aws/mediaconvert/model/Mp3Settings.h>
 #include <aws/mediaconvert/model/WavSettings.h>
 #include <utility>
 
@@ -46,8 +47,9 @@ namespace Model
    * depending on the value that you choose for Audio codec (Codec). For each codec
    * enum that you choose, define the corresponding settings object. The following
    * lists the codec enum, settings object pairs. * AAC, AacSettings * MP2,
-   * Mp2Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3,
-   * Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings<p><h3>See Also:</h3>   <a
+   * Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3,
+   * Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -344,6 +346,43 @@ namespace Model
 
 
     /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * MP3.
+     */
+    inline const Mp3Settings& GetMp3Settings() const{ return m_mp3Settings; }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * MP3.
+     */
+    inline bool Mp3SettingsHasBeenSet() const { return m_mp3SettingsHasBeenSet; }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * MP3.
+     */
+    inline void SetMp3Settings(const Mp3Settings& value) { m_mp3SettingsHasBeenSet = true; m_mp3Settings = value; }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * MP3.
+     */
+    inline void SetMp3Settings(Mp3Settings&& value) { m_mp3SettingsHasBeenSet = true; m_mp3Settings = std::move(value); }
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * MP3.
+     */
+    inline AudioCodecSettings& WithMp3Settings(const Mp3Settings& value) { SetMp3Settings(value); return *this;}
+
+    /**
+     * Required when you set Codec, under AudioDescriptions>CodecSettings, to the value
+     * MP3.
+     */
+    inline AudioCodecSettings& WithMp3Settings(Mp3Settings&& value) { SetMp3Settings(std::move(value)); return *this;}
+
+
+    /**
      * Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the
      * value WAV.
      */
@@ -401,6 +440,9 @@ namespace Model
 
     Mp2Settings m_mp2Settings;
     bool m_mp2SettingsHasBeenSet;
+
+    Mp3Settings m_mp3Settings;
+    bool m_mp3SettingsHasBeenSet;
 
     WavSettings m_wavSettings;
     bool m_wavSettingsHasBeenSet;

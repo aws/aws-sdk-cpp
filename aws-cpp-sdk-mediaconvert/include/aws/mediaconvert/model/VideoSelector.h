@@ -52,56 +52,62 @@ namespace Model
 
 
     /**
-     * Ignore this setting unless this input is a QuickTime animation. Specify which
-     * part of this input MediaConvert uses for your outputs. Leave this setting set to
-     * DISCARD in order to delete the alpha channel and preserve the video. Use
-     * REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to
-     * the luma channel of your outputs.
+     * Ignore this setting unless this input is a QuickTime animation with an alpha
+     * channel. Use this setting to create separate Key and Fill outputs. In each
+     * output, specify which part of the input MediaConvert uses. Leave this setting at
+     * the default value DISCARD to delete the alpha channel and preserve the video.
+     * Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the
+     * luma channel of your outputs.
      */
     inline const AlphaBehavior& GetAlphaBehavior() const{ return m_alphaBehavior; }
 
     /**
-     * Ignore this setting unless this input is a QuickTime animation. Specify which
-     * part of this input MediaConvert uses for your outputs. Leave this setting set to
-     * DISCARD in order to delete the alpha channel and preserve the video. Use
-     * REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to
-     * the luma channel of your outputs.
+     * Ignore this setting unless this input is a QuickTime animation with an alpha
+     * channel. Use this setting to create separate Key and Fill outputs. In each
+     * output, specify which part of the input MediaConvert uses. Leave this setting at
+     * the default value DISCARD to delete the alpha channel and preserve the video.
+     * Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the
+     * luma channel of your outputs.
      */
     inline bool AlphaBehaviorHasBeenSet() const { return m_alphaBehaviorHasBeenSet; }
 
     /**
-     * Ignore this setting unless this input is a QuickTime animation. Specify which
-     * part of this input MediaConvert uses for your outputs. Leave this setting set to
-     * DISCARD in order to delete the alpha channel and preserve the video. Use
-     * REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to
-     * the luma channel of your outputs.
+     * Ignore this setting unless this input is a QuickTime animation with an alpha
+     * channel. Use this setting to create separate Key and Fill outputs. In each
+     * output, specify which part of the input MediaConvert uses. Leave this setting at
+     * the default value DISCARD to delete the alpha channel and preserve the video.
+     * Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the
+     * luma channel of your outputs.
      */
     inline void SetAlphaBehavior(const AlphaBehavior& value) { m_alphaBehaviorHasBeenSet = true; m_alphaBehavior = value; }
 
     /**
-     * Ignore this setting unless this input is a QuickTime animation. Specify which
-     * part of this input MediaConvert uses for your outputs. Leave this setting set to
-     * DISCARD in order to delete the alpha channel and preserve the video. Use
-     * REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to
-     * the luma channel of your outputs.
+     * Ignore this setting unless this input is a QuickTime animation with an alpha
+     * channel. Use this setting to create separate Key and Fill outputs. In each
+     * output, specify which part of the input MediaConvert uses. Leave this setting at
+     * the default value DISCARD to delete the alpha channel and preserve the video.
+     * Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the
+     * luma channel of your outputs.
      */
     inline void SetAlphaBehavior(AlphaBehavior&& value) { m_alphaBehaviorHasBeenSet = true; m_alphaBehavior = std::move(value); }
 
     /**
-     * Ignore this setting unless this input is a QuickTime animation. Specify which
-     * part of this input MediaConvert uses for your outputs. Leave this setting set to
-     * DISCARD in order to delete the alpha channel and preserve the video. Use
-     * REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to
-     * the luma channel of your outputs.
+     * Ignore this setting unless this input is a QuickTime animation with an alpha
+     * channel. Use this setting to create separate Key and Fill outputs. In each
+     * output, specify which part of the input MediaConvert uses. Leave this setting at
+     * the default value DISCARD to delete the alpha channel and preserve the video.
+     * Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the
+     * luma channel of your outputs.
      */
     inline VideoSelector& WithAlphaBehavior(const AlphaBehavior& value) { SetAlphaBehavior(value); return *this;}
 
     /**
-     * Ignore this setting unless this input is a QuickTime animation. Specify which
-     * part of this input MediaConvert uses for your outputs. Leave this setting set to
-     * DISCARD in order to delete the alpha channel and preserve the video. Use
-     * REMAP_TO_LUMA for this setting to delete the video and map the alpha channel to
-     * the luma channel of your outputs.
+     * Ignore this setting unless this input is a QuickTime animation with an alpha
+     * channel. Use this setting to create separate Key and Fill outputs. In each
+     * output, specify which part of the input MediaConvert uses. Leave this setting at
+     * the default value DISCARD to delete the alpha channel and preserve the video.
+     * Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the
+     * luma channel of your outputs.
      */
     inline VideoSelector& WithAlphaBehavior(AlphaBehavior&& value) { SetAlphaBehavior(std::move(value)); return *this;}
 

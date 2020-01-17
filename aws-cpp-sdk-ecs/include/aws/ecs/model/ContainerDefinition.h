@@ -480,27 +480,19 @@ namespace Model
      * determine the number of CPU units that are available per EC2 instance type by
      * multiplying the vCPUs listed for that instance type on the <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail
-     * page by 1,024.</p> </note> <p>For example, if you run a single-container task on
-     * a single-core instance type with 512 CPU units specified for that container, and
+     * page by 1,024.</p> </note> <p>Linux containers share unallocated CPU units with
+     * other containers on the container instance with the same ratio as their
+     * allocated amount. For example, if you run a single-container task on a
+     * single-core instance type with 512 CPU units specified for that container, and
      * that is the only task running on the container instance, that container could
      * use the full 1,024 CPU unit share at any given time. However, if you launched
      * another copy of the same task on that container instance, each task would be
      * guaranteed a minimum of 512 CPU units when needed, and each container could
      * float to higher CPU usage if the other container was not using it, but if both
      * tasks were 100% active all of the time, they would be limited to 512 CPU
-     * units.</p> <p>Linux containers share unallocated CPU units with other containers
-     * on the container instance with the same ratio as their allocated amount. For
-     * example, if you run a single-container task on a single-core instance type with
-     * 512 CPU units specified for that container, and that is the only task running on
-     * the container instance, that container could use the full 1,024 CPU unit share
-     * at any given time. However, if you launched another copy of the same task on
-     * that container instance, each task would be guaranteed a minimum of 512 CPU
-     * units when needed, and each container could float to higher CPU usage if the
-     * other container was not using it, but if both tasks were 100% active all of the
-     * time, they would be limited to 512 CPU units.</p> <p>On Linux container
-     * instances, the Docker daemon on the container instance uses the CPU value to
-     * calculate the relative CPU share ratios for running containers. For more
-     * information, see <a
+     * units.</p> <p>On Linux container instances, the Docker daemon on the container
+     * instance uses the CPU value to calculate the relative CPU share ratios for
+     * running containers. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
      * value that the Linux kernel allows is 2. However, the CPU parameter is not
@@ -532,27 +524,19 @@ namespace Model
      * determine the number of CPU units that are available per EC2 instance type by
      * multiplying the vCPUs listed for that instance type on the <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail
-     * page by 1,024.</p> </note> <p>For example, if you run a single-container task on
-     * a single-core instance type with 512 CPU units specified for that container, and
+     * page by 1,024.</p> </note> <p>Linux containers share unallocated CPU units with
+     * other containers on the container instance with the same ratio as their
+     * allocated amount. For example, if you run a single-container task on a
+     * single-core instance type with 512 CPU units specified for that container, and
      * that is the only task running on the container instance, that container could
      * use the full 1,024 CPU unit share at any given time. However, if you launched
      * another copy of the same task on that container instance, each task would be
      * guaranteed a minimum of 512 CPU units when needed, and each container could
      * float to higher CPU usage if the other container was not using it, but if both
      * tasks were 100% active all of the time, they would be limited to 512 CPU
-     * units.</p> <p>Linux containers share unallocated CPU units with other containers
-     * on the container instance with the same ratio as their allocated amount. For
-     * example, if you run a single-container task on a single-core instance type with
-     * 512 CPU units specified for that container, and that is the only task running on
-     * the container instance, that container could use the full 1,024 CPU unit share
-     * at any given time. However, if you launched another copy of the same task on
-     * that container instance, each task would be guaranteed a minimum of 512 CPU
-     * units when needed, and each container could float to higher CPU usage if the
-     * other container was not using it, but if both tasks were 100% active all of the
-     * time, they would be limited to 512 CPU units.</p> <p>On Linux container
-     * instances, the Docker daemon on the container instance uses the CPU value to
-     * calculate the relative CPU share ratios for running containers. For more
-     * information, see <a
+     * units.</p> <p>On Linux container instances, the Docker daemon on the container
+     * instance uses the CPU value to calculate the relative CPU share ratios for
+     * running containers. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
      * value that the Linux kernel allows is 2. However, the CPU parameter is not
@@ -584,27 +568,19 @@ namespace Model
      * determine the number of CPU units that are available per EC2 instance type by
      * multiplying the vCPUs listed for that instance type on the <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail
-     * page by 1,024.</p> </note> <p>For example, if you run a single-container task on
-     * a single-core instance type with 512 CPU units specified for that container, and
+     * page by 1,024.</p> </note> <p>Linux containers share unallocated CPU units with
+     * other containers on the container instance with the same ratio as their
+     * allocated amount. For example, if you run a single-container task on a
+     * single-core instance type with 512 CPU units specified for that container, and
      * that is the only task running on the container instance, that container could
      * use the full 1,024 CPU unit share at any given time. However, if you launched
      * another copy of the same task on that container instance, each task would be
      * guaranteed a minimum of 512 CPU units when needed, and each container could
      * float to higher CPU usage if the other container was not using it, but if both
      * tasks were 100% active all of the time, they would be limited to 512 CPU
-     * units.</p> <p>Linux containers share unallocated CPU units with other containers
-     * on the container instance with the same ratio as their allocated amount. For
-     * example, if you run a single-container task on a single-core instance type with
-     * 512 CPU units specified for that container, and that is the only task running on
-     * the container instance, that container could use the full 1,024 CPU unit share
-     * at any given time. However, if you launched another copy of the same task on
-     * that container instance, each task would be guaranteed a minimum of 512 CPU
-     * units when needed, and each container could float to higher CPU usage if the
-     * other container was not using it, but if both tasks were 100% active all of the
-     * time, they would be limited to 512 CPU units.</p> <p>On Linux container
-     * instances, the Docker daemon on the container instance uses the CPU value to
-     * calculate the relative CPU share ratios for running containers. For more
-     * information, see <a
+     * units.</p> <p>On Linux container instances, the Docker daemon on the container
+     * instance uses the CPU value to calculate the relative CPU share ratios for
+     * running containers. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
      * value that the Linux kernel allows is 2. However, the CPU parameter is not
@@ -636,27 +612,19 @@ namespace Model
      * determine the number of CPU units that are available per EC2 instance type by
      * multiplying the vCPUs listed for that instance type on the <a
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instances</a> detail
-     * page by 1,024.</p> </note> <p>For example, if you run a single-container task on
-     * a single-core instance type with 512 CPU units specified for that container, and
+     * page by 1,024.</p> </note> <p>Linux containers share unallocated CPU units with
+     * other containers on the container instance with the same ratio as their
+     * allocated amount. For example, if you run a single-container task on a
+     * single-core instance type with 512 CPU units specified for that container, and
      * that is the only task running on the container instance, that container could
      * use the full 1,024 CPU unit share at any given time. However, if you launched
      * another copy of the same task on that container instance, each task would be
      * guaranteed a minimum of 512 CPU units when needed, and each container could
      * float to higher CPU usage if the other container was not using it, but if both
      * tasks were 100% active all of the time, they would be limited to 512 CPU
-     * units.</p> <p>Linux containers share unallocated CPU units with other containers
-     * on the container instance with the same ratio as their allocated amount. For
-     * example, if you run a single-container task on a single-core instance type with
-     * 512 CPU units specified for that container, and that is the only task running on
-     * the container instance, that container could use the full 1,024 CPU unit share
-     * at any given time. However, if you launched another copy of the same task on
-     * that container instance, each task would be guaranteed a minimum of 512 CPU
-     * units when needed, and each container could float to higher CPU usage if the
-     * other container was not using it, but if both tasks were 100% active all of the
-     * time, they would be limited to 512 CPU units.</p> <p>On Linux container
-     * instances, the Docker daemon on the container instance uses the CPU value to
-     * calculate the relative CPU share ratios for running containers. For more
-     * information, see <a
+     * units.</p> <p>On Linux container instances, the Docker daemon on the container
+     * instance uses the CPU value to calculate the relative CPU share ratios for
+     * running containers. For more information, see <a
      * href="https://docs.docker.com/engine/reference/run/#cpu-share-constraint">CPU
      * share constraint</a> in the Docker documentation. The minimum valid CPU share
      * value that the Linux kernel allows is 2. However, the CPU parameter is not

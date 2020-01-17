@@ -461,42 +461,42 @@ namespace Model
 
 
     /**
-     * <p>A list of job names or IDs on which this job depends.</p>
+     * <p>A list of job IDs on which this job depends.</p>
      */
     inline const Aws::Vector<JobDependency>& GetDependsOn() const{ return m_dependsOn; }
 
     /**
-     * <p>A list of job names or IDs on which this job depends.</p>
+     * <p>A list of job IDs on which this job depends.</p>
      */
     inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
 
     /**
-     * <p>A list of job names or IDs on which this job depends.</p>
+     * <p>A list of job IDs on which this job depends.</p>
      */
     inline void SetDependsOn(const Aws::Vector<JobDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
 
     /**
-     * <p>A list of job names or IDs on which this job depends.</p>
+     * <p>A list of job IDs on which this job depends.</p>
      */
     inline void SetDependsOn(Aws::Vector<JobDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
 
     /**
-     * <p>A list of job names or IDs on which this job depends.</p>
+     * <p>A list of job IDs on which this job depends.</p>
      */
     inline JobDetail& WithDependsOn(const Aws::Vector<JobDependency>& value) { SetDependsOn(value); return *this;}
 
     /**
-     * <p>A list of job names or IDs on which this job depends.</p>
+     * <p>A list of job IDs on which this job depends.</p>
      */
     inline JobDetail& WithDependsOn(Aws::Vector<JobDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
 
     /**
-     * <p>A list of job names or IDs on which this job depends.</p>
+     * <p>A list of job IDs on which this job depends.</p>
      */
     inline JobDetail& AddDependsOn(const JobDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
 
     /**
-     * <p>A list of job names or IDs on which this job depends.</p>
+     * <p>A list of job IDs on which this job depends.</p>
      */
     inline JobDetail& AddDependsOn(JobDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
 

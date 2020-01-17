@@ -163,50 +163,42 @@ namespace Model
 
 
     /**
-     * <p>If present, specifies the name of the character set that this cluster is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline const Aws::String& GetCharacterSetName() const{ return m_characterSetName; }
 
     /**
-     * <p>If present, specifies the name of the character set that this cluster is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool CharacterSetNameHasBeenSet() const { return m_characterSetNameHasBeenSet; }
 
     /**
-     * <p>If present, specifies the name of the character set that this cluster is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetCharacterSetName(const Aws::String& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
 
     /**
-     * <p>If present, specifies the name of the character set that this cluster is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::move(value); }
 
     /**
-     * <p>If present, specifies the name of the character set that this cluster is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetCharacterSetName(const char* value) { m_characterSetNameHasBeenSet = true; m_characterSetName.assign(value); }
 
     /**
-     * <p>If present, specifies the name of the character set that this cluster is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBCluster& WithCharacterSetName(const Aws::String& value) { SetCharacterSetName(value); return *this;}
 
     /**
-     * <p>If present, specifies the name of the character set that this cluster is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBCluster& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(std::move(value)); return *this;}
 
     /**
-     * <p>If present, specifies the name of the character set that this cluster is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBCluster& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
 
@@ -887,42 +879,42 @@ namespace Model
 
 
     /**
-     * <p>Provides the list of option group memberships for this DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline const Aws::Vector<DBClusterOptionGroupStatus>& GetDBClusterOptionGroupMemberships() const{ return m_dBClusterOptionGroupMemberships; }
 
     /**
-     * <p>Provides the list of option group memberships for this DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool DBClusterOptionGroupMembershipsHasBeenSet() const { return m_dBClusterOptionGroupMembershipsHasBeenSet; }
 
     /**
-     * <p>Provides the list of option group memberships for this DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetDBClusterOptionGroupMemberships(const Aws::Vector<DBClusterOptionGroupStatus>& value) { m_dBClusterOptionGroupMembershipsHasBeenSet = true; m_dBClusterOptionGroupMemberships = value; }
 
     /**
-     * <p>Provides the list of option group memberships for this DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetDBClusterOptionGroupMemberships(Aws::Vector<DBClusterOptionGroupStatus>&& value) { m_dBClusterOptionGroupMembershipsHasBeenSet = true; m_dBClusterOptionGroupMemberships = std::move(value); }
 
     /**
-     * <p>Provides the list of option group memberships for this DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBCluster& WithDBClusterOptionGroupMemberships(const Aws::Vector<DBClusterOptionGroupStatus>& value) { SetDBClusterOptionGroupMemberships(value); return *this;}
 
     /**
-     * <p>Provides the list of option group memberships for this DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBCluster& WithDBClusterOptionGroupMemberships(Aws::Vector<DBClusterOptionGroupStatus>&& value) { SetDBClusterOptionGroupMemberships(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the list of option group memberships for this DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBCluster& AddDBClusterOptionGroupMemberships(const DBClusterOptionGroupStatus& value) { m_dBClusterOptionGroupMembershipsHasBeenSet = true; m_dBClusterOptionGroupMemberships.push_back(value); return *this; }
 
     /**
-     * <p>Provides the list of option group memberships for this DB cluster.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBCluster& AddDBClusterOptionGroupMemberships(DBClusterOptionGroupStatus&& value) { m_dBClusterOptionGroupMembershipsHasBeenSet = true; m_dBClusterOptionGroupMemberships.push_back(std::move(value)); return *this; }
 
@@ -1650,6 +1642,31 @@ namespace Model
      */
     inline DBCluster& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
 
+
+    /**
+     * <p>Indicates if the DB cluster has deletion protection enabled. The database
+     * can't be deleted when deletion protection is enabled. </p>
+     */
+    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p>Indicates if the DB cluster has deletion protection enabled. The database
+     * can't be deleted when deletion protection is enabled. </p>
+     */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+
+    /**
+     * <p>Indicates if the DB cluster has deletion protection enabled. The database
+     * can't be deleted when deletion protection is enabled. </p>
+     */
+    inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+
+    /**
+     * <p>Indicates if the DB cluster has deletion protection enabled. The database
+     * can't be deleted when deletion protection is enabled. </p>
+     */
+    inline DBCluster& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -1759,6 +1776,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
     bool m_enabledCloudwatchLogsExportsHasBeenSet;
+
+    bool m_deletionProtection;
+    bool m_deletionProtectionHasBeenSet;
   };
 
 } // namespace Model

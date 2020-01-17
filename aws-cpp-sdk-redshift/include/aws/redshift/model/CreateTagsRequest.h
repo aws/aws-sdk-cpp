@@ -54,49 +54,49 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
-     * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
+     * example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
     /**
      * <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
-     * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
+     * example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
      */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
-     * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
+     * example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
      */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
-     * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
+     * example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
      */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
-     * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
+     * example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
      */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
-     * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
+     * example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
      */
     inline CreateTagsRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
-     * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
+     * example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
      */
     inline CreateTagsRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) to which you want to add the tag or tags. For
-     * example, <code>arn:aws:redshift:us-east-1:123456789:cluster:t1</code>. </p>
+     * example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. </p>
      */
     inline CreateTagsRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 

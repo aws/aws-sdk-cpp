@@ -479,14 +479,16 @@ namespace Model
         virtual void DeleteJobQueueAsync(const Model::DeleteJobQueueRequest& request, const DeleteJobQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Deregisters an AWS Batch job definition.</p><p><h3>See Also:</h3>   <a
+         * <p>Deregisters an AWS Batch job definition. Job definitions will be permanently
+         * deleted after 180 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">AWS
          * API Reference</a></p>
          */
         virtual Model::DeregisterJobDefinitionOutcome DeregisterJobDefinition(const Model::DeregisterJobDefinitionRequest& request) const;
 
         /**
-         * <p>Deregisters an AWS Batch job definition.</p><p><h3>See Also:</h3>   <a
+         * <p>Deregisters an AWS Batch job definition. Job definitions will be permanently
+         * deleted after 180 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">AWS
          * API Reference</a></p>
          *
@@ -495,7 +497,8 @@ namespace Model
         virtual Model::DeregisterJobDefinitionOutcomeCallable DeregisterJobDefinitionCallable(const Model::DeregisterJobDefinitionRequest& request) const;
 
         /**
-         * <p>Deregisters an AWS Batch job definition.</p><p><h3>See Also:</h3>   <a
+         * <p>Deregisters an AWS Batch job definition. Job definitions will be permanently
+         * deleted after 180 days.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DeregisterJobDefinition">AWS
          * API Reference</a></p>
          *

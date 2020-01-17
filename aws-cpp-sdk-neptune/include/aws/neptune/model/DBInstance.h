@@ -1156,91 +1156,83 @@ namespace Model
 
 
     /**
-     * <p>Provides the list of option group memberships for this DB instance.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline const Aws::Vector<OptionGroupMembership>& GetOptionGroupMemberships() const{ return m_optionGroupMemberships; }
 
     /**
-     * <p>Provides the list of option group memberships for this DB instance.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool OptionGroupMembershipsHasBeenSet() const { return m_optionGroupMembershipsHasBeenSet; }
 
     /**
-     * <p>Provides the list of option group memberships for this DB instance.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupMemberships(const Aws::Vector<OptionGroupMembership>& value) { m_optionGroupMembershipsHasBeenSet = true; m_optionGroupMemberships = value; }
 
     /**
-     * <p>Provides the list of option group memberships for this DB instance.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupMemberships(Aws::Vector<OptionGroupMembership>&& value) { m_optionGroupMembershipsHasBeenSet = true; m_optionGroupMemberships = std::move(value); }
 
     /**
-     * <p>Provides the list of option group memberships for this DB instance.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBInstance& WithOptionGroupMemberships(const Aws::Vector<OptionGroupMembership>& value) { SetOptionGroupMemberships(value); return *this;}
 
     /**
-     * <p>Provides the list of option group memberships for this DB instance.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBInstance& WithOptionGroupMemberships(Aws::Vector<OptionGroupMembership>&& value) { SetOptionGroupMemberships(std::move(value)); return *this;}
 
     /**
-     * <p>Provides the list of option group memberships for this DB instance.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBInstance& AddOptionGroupMemberships(const OptionGroupMembership& value) { m_optionGroupMembershipsHasBeenSet = true; m_optionGroupMemberships.push_back(value); return *this; }
 
     /**
-     * <p>Provides the list of option group memberships for this DB instance.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBInstance& AddOptionGroupMemberships(OptionGroupMembership&& value) { m_optionGroupMembershipsHasBeenSet = true; m_optionGroupMemberships.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>If present, specifies the name of the character set that this instance is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline const Aws::String& GetCharacterSetName() const{ return m_characterSetName; }
 
     /**
-     * <p>If present, specifies the name of the character set that this instance is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool CharacterSetNameHasBeenSet() const { return m_characterSetNameHasBeenSet; }
 
     /**
-     * <p>If present, specifies the name of the character set that this instance is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetCharacterSetName(const Aws::String& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
 
     /**
-     * <p>If present, specifies the name of the character set that this instance is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::move(value); }
 
     /**
-     * <p>If present, specifies the name of the character set that this instance is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetCharacterSetName(const char* value) { m_characterSetNameHasBeenSet = true; m_characterSetName.assign(value); }
 
     /**
-     * <p>If present, specifies the name of the character set that this instance is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBInstance& WithCharacterSetName(const Aws::String& value) { SetCharacterSetName(value); return *this;}
 
     /**
-     * <p>If present, specifies the name of the character set that this instance is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBInstance& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(std::move(value)); return *this;}
 
     /**
-     * <p>If present, specifies the name of the character set that this instance is
-     * associated with.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBInstance& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
 
@@ -2001,83 +1993,63 @@ namespace Model
 
 
     /**
-     * <p>True if Performance Insights is enabled for the DB instance, and otherwise
-     * false.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool GetPerformanceInsightsEnabled() const{ return m_performanceInsightsEnabled; }
 
     /**
-     * <p>True if Performance Insights is enabled for the DB instance, and otherwise
-     * false.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool PerformanceInsightsEnabledHasBeenSet() const { return m_performanceInsightsEnabledHasBeenSet; }
 
     /**
-     * <p>True if Performance Insights is enabled for the DB instance, and otherwise
-     * false.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetPerformanceInsightsEnabled(bool value) { m_performanceInsightsEnabledHasBeenSet = true; m_performanceInsightsEnabled = value; }
 
     /**
-     * <p>True if Performance Insights is enabled for the DB instance, and otherwise
-     * false.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBInstance& WithPerformanceInsightsEnabled(bool value) { SetPerformanceInsightsEnabled(value); return *this;}
 
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBInstance& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBInstance& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline DBInstance& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -2135,6 +2107,31 @@ namespace Model
      * CloudWatch Logs.</p>
      */
     inline DBInstance& AddEnabledCloudwatchLogsExports(const char* value) { m_enabledCloudwatchLogsExportsHasBeenSet = true; m_enabledCloudwatchLogsExports.push_back(value); return *this; }
+
+
+    /**
+     * <p>Indicates if the DB instance has deletion protection enabled. The database
+     * can't be deleted when deletion protection is enabled. </p>
+     */
+    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p>Indicates if the DB instance has deletion protection enabled. The database
+     * can't be deleted when deletion protection is enabled. </p>
+     */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+
+    /**
+     * <p>Indicates if the DB instance has deletion protection enabled. The database
+     * can't be deleted when deletion protection is enabled. </p>
+     */
+    inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+
+    /**
+     * <p>Indicates if the DB instance has deletion protection enabled. The database
+     * can't be deleted when deletion protection is enabled. </p>
+     */
+    inline DBInstance& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
   private:
 
@@ -2290,6 +2287,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_enabledCloudwatchLogsExports;
     bool m_enabledCloudwatchLogsExportsHasBeenSet;
+
+    bool m_deletionProtection;
+    bool m_deletionProtectionHasBeenSet;
   };
 
 } // namespace Model

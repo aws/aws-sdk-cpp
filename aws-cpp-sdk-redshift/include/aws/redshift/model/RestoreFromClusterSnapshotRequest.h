@@ -269,56 +269,56 @@ namespace Model
     /**
      * <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Example:
-     * <code>us-east-1a</code> </p>
+     * <code>us-east-2a</code> </p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
      * <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Example:
-     * <code>us-east-1a</code> </p>
+     * <code>us-east-2a</code> </p>
      */
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Example:
-     * <code>us-east-1a</code> </p>
+     * <code>us-east-2a</code> </p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
      * <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Example:
-     * <code>us-east-1a</code> </p>
+     * <code>us-east-2a</code> </p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
      * <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Example:
-     * <code>us-east-1a</code> </p>
+     * <code>us-east-2a</code> </p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
      * <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Example:
-     * <code>us-east-1a</code> </p>
+     * <code>us-east-2a</code> </p>
      */
     inline RestoreFromClusterSnapshotRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
      * <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Example:
-     * <code>us-east-1a</code> </p>
+     * <code>us-east-2a</code> </p>
      */
     inline RestoreFromClusterSnapshotRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon EC2 Availability Zone in which to restore the cluster.</p>
      * <p>Default: A random, system-chosen Availability Zone.</p> <p>Example:
-     * <code>us-east-1a</code> </p>
+     * <code>us-east-2a</code> </p>
      */
     inline RestoreFromClusterSnapshotRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

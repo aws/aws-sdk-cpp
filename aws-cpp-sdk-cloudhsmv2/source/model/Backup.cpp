@@ -38,7 +38,8 @@ Backup::Backup() :
     m_sourceRegionHasBeenSet(false),
     m_sourceBackupHasBeenSet(false),
     m_sourceClusterHasBeenSet(false),
-    m_deleteTimestampHasBeenSet(false)
+    m_deleteTimestampHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Backup::Backup(JsonView jsonValue) :
     m_sourceRegionHasBeenSet(false),
     m_sourceBackupHasBeenSet(false),
     m_sourceClusterHasBeenSet(false),
-    m_deleteTimestampHasBeenSet(false)
+    m_deleteTimestampHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +124,16 @@ Backup& Backup::operator =(JsonView jsonValue)
     m_deleteTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TagList"))
+  {
+    Array<JsonView> tagListJsonList = jsonValue.GetArray("TagList");
+    for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
+    {
+      m_tagList.push_back(tagListJsonList[tagListIndex].AsObject());
+    }
+    m_tagListHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -177,6 +189,17 @@ JsonValue Backup::Jsonize() const
   if(m_deleteTimestampHasBeenSet)
   {
    payload.WithDouble("DeleteTimestamp", m_deleteTimestamp.SecondsWithMSPrecision());
+  }
+
+  if(m_tagListHasBeenSet)
+  {
+   Array<JsonValue> tagListJsonList(m_tagList.size());
+   for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
+   {
+     tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());
+   }
+   payload.WithArray("TagList", std::move(tagListJsonList));
+
   }
 
   return payload;

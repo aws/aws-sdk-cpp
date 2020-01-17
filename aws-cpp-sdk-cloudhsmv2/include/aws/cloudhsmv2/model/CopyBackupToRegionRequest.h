@@ -17,6 +17,8 @@
 #include <aws/cloudhsmv2/CloudHSMV2_EXPORTS.h>
 #include <aws/cloudhsmv2/CloudHSMV2Request.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/cloudhsmv2/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -125,6 +127,31 @@ namespace Model
      */
     inline CopyBackupToRegionRequest& WithBackupId(const char* value) { SetBackupId(value); return *this;}
 
+
+    
+    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
+    
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+
+    
+    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
+
+    
+    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
+
+    
+    inline CopyBackupToRegionRequest& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
+
+    
+    inline CopyBackupToRegionRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
+
+    
+    inline CopyBackupToRegionRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
+
+    
+    inline CopyBackupToRegionRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_destinationRegion;
@@ -132,6 +159,9 @@ namespace Model
 
     Aws::String m_backupId;
     bool m_backupIdHasBeenSet;
+
+    Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet;
   };
 
 } // namespace Model

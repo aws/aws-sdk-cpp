@@ -24,7 +24,8 @@ using namespace Aws::Utils;
 
 CopyBackupToRegionRequest::CopyBackupToRegionRequest() : 
     m_destinationRegionHasBeenSet(false),
-    m_backupIdHasBeenSet(false)
+    m_backupIdHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -41,6 +42,17 @@ Aws::String CopyBackupToRegionRequest::SerializePayload() const
   if(m_backupIdHasBeenSet)
   {
    payload.WithString("BackupId", m_backupId);
+
+  }
+
+  if(m_tagListHasBeenSet)
+  {
+   Array<JsonValue> tagListJsonList(m_tagList.size());
+   for(unsigned tagListIndex = 0; tagListIndex < tagListJsonList.GetLength(); ++tagListIndex)
+   {
+     tagListJsonList[tagListIndex].AsObject(m_tagList[tagListIndex].Jsonize());
+   }
+   payload.WithArray("TagList", std::move(tagListJsonList));
 
   }
 

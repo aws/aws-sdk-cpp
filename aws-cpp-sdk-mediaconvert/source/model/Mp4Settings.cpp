@@ -31,6 +31,8 @@ namespace Model
 Mp4Settings::Mp4Settings() : 
     m_cslgAtom(Mp4CslgAtom::NOT_SET),
     m_cslgAtomHasBeenSet(false),
+    m_cttsVersion(0),
+    m_cttsVersionHasBeenSet(false),
     m_freeSpaceBox(Mp4FreeSpaceBox::NOT_SET),
     m_freeSpaceBoxHasBeenSet(false),
     m_moovPlacement(Mp4MoovPlacement::NOT_SET),
@@ -42,6 +44,8 @@ Mp4Settings::Mp4Settings() :
 Mp4Settings::Mp4Settings(JsonView jsonValue) : 
     m_cslgAtom(Mp4CslgAtom::NOT_SET),
     m_cslgAtomHasBeenSet(false),
+    m_cttsVersion(0),
+    m_cttsVersionHasBeenSet(false),
     m_freeSpaceBox(Mp4FreeSpaceBox::NOT_SET),
     m_freeSpaceBoxHasBeenSet(false),
     m_moovPlacement(Mp4MoovPlacement::NOT_SET),
@@ -58,6 +62,13 @@ Mp4Settings& Mp4Settings::operator =(JsonView jsonValue)
     m_cslgAtom = Mp4CslgAtomMapper::GetMp4CslgAtomForName(jsonValue.GetString("cslgAtom"));
 
     m_cslgAtomHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cttsVersion"))
+  {
+    m_cttsVersion = jsonValue.GetInteger("cttsVersion");
+
+    m_cttsVersionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("freeSpaceBox"))
@@ -91,6 +102,12 @@ JsonValue Mp4Settings::Jsonize() const
   if(m_cslgAtomHasBeenSet)
   {
    payload.WithString("cslgAtom", Mp4CslgAtomMapper::GetNameForMp4CslgAtom(m_cslgAtom));
+  }
+
+  if(m_cttsVersionHasBeenSet)
+  {
+   payload.WithInteger("cttsVersion", m_cttsVersion);
+
   }
 
   if(m_freeSpaceBoxHasBeenSet)

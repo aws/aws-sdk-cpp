@@ -969,42 +969,50 @@ namespace Model
 
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. Currently, setting this
+     * parameter has no effect.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. Currently, setting this
+     * parameter has no effect.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. Currently, setting this
+     * parameter has no effect.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. Currently, setting this
+     * parameter has no effect.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. Currently, setting this
+     * parameter has no effect.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. Currently, setting this
+     * parameter has no effect.</p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. Currently, setting this
+     * parameter has no effect.</p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version number of the database engine to use.</p>
+     * <p>The version number of the database engine to use. Currently, setting this
+     * parameter has no effect.</p>
      */
     inline CreateDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -1117,123 +1125,83 @@ namespace Model
 
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified option
-     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified
-     * CharacterSet.</p> <p>Not applicable. The character set is managed by the DB
-     * cluster. For more information, see <a>CreateDBCluster</a>.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline const Aws::String& GetCharacterSetName() const{ return m_characterSetName; }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified
-     * CharacterSet.</p> <p>Not applicable. The character set is managed by the DB
-     * cluster. For more information, see <a>CreateDBCluster</a>.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool CharacterSetNameHasBeenSet() const { return m_characterSetNameHasBeenSet; }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified
-     * CharacterSet.</p> <p>Not applicable. The character set is managed by the DB
-     * cluster. For more information, see <a>CreateDBCluster</a>.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetCharacterSetName(const Aws::String& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified
-     * CharacterSet.</p> <p>Not applicable. The character set is managed by the DB
-     * cluster. For more information, see <a>CreateDBCluster</a>.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::move(value); }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified
-     * CharacterSet.</p> <p>Not applicable. The character set is managed by the DB
-     * cluster. For more information, see <a>CreateDBCluster</a>.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetCharacterSetName(const char* value) { m_characterSetNameHasBeenSet = true; m_characterSetName.assign(value); }
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified
-     * CharacterSet.</p> <p>Not applicable. The character set is managed by the DB
-     * cluster. For more information, see <a>CreateDBCluster</a>.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline CreateDBInstanceRequest& WithCharacterSetName(const Aws::String& value) { SetCharacterSetName(value); return *this;}
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified
-     * CharacterSet.</p> <p>Not applicable. The character set is managed by the DB
-     * cluster. For more information, see <a>CreateDBCluster</a>.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline CreateDBInstanceRequest& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(std::move(value)); return *this;}
 
     /**
-     * <p>Indicates that the DB instance should be associated with the specified
-     * CharacterSet.</p> <p>Not applicable. The character set is managed by the DB
-     * cluster. For more information, see <a>CreateDBCluster</a>.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline CreateDBInstanceRequest& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
 
@@ -1954,83 +1922,63 @@ namespace Model
 
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise
-     * false.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise
-     * false.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise
-     * false.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
-     * <p>True to enable Performance Insights for the DB instance, and otherwise
-     * false.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline CreateDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
-     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-     * alias for the KMS encryption key.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -2088,6 +2036,47 @@ namespace Model
      * Logs.</p>
      */
     inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+
+
+    /**
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p> <p>You can enable or disable
+     * deletion protection for the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when
+     * deletion protection is enabled for the DB cluster. </p>
+     */
+    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p> <p>You can enable or disable
+     * deletion protection for the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when
+     * deletion protection is enabled for the DB cluster. </p>
+     */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p> <p>You can enable or disable
+     * deletion protection for the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when
+     * deletion protection is enabled for the DB cluster. </p>
+     */
+    inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+
+    /**
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p> <p>You can enable or disable
+     * deletion protection for the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>. DB instances in a DB cluster can be deleted even when
+     * deletion protection is enabled for the DB cluster. </p>
+     */
+    inline CreateDBInstanceRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
   private:
 
@@ -2213,6 +2202,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
     bool m_enableCloudwatchLogsExportsHasBeenSet;
+
+    bool m_deletionProtection;
+    bool m_deletionProtectionHasBeenSet;
   };
 
 } // namespace Model

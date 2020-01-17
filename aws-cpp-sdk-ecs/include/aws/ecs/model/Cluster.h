@@ -171,66 +171,146 @@ namespace Model
 
 
     /**
-     * <p>The status of the cluster. The valid values are <code>ACTIVE</code> or
-     * <code>INACTIVE</code>. <code>ACTIVE</code> indicates that you can register
-     * container instances with the cluster and the associated instances can accept
-     * tasks.</p>
+     * <p>The status of the cluster. The following are the possible states that will be
+     * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
+     * and if applicable you can register container instances with the cluster.</p>
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * associated with it and the resources needed for the capacity provider are being
+     * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
+     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
+     * in your account for a period of time. However, this behavior is subject to
+     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
+     * persisting.</p> </dd> </dl>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The status of the cluster. The valid values are <code>ACTIVE</code> or
-     * <code>INACTIVE</code>. <code>ACTIVE</code> indicates that you can register
-     * container instances with the cluster and the associated instances can accept
-     * tasks.</p>
+     * <p>The status of the cluster. The following are the possible states that will be
+     * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
+     * and if applicable you can register container instances with the cluster.</p>
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * associated with it and the resources needed for the capacity provider are being
+     * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
+     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
+     * in your account for a period of time. However, this behavior is subject to
+     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
+     * persisting.</p> </dd> </dl>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The status of the cluster. The valid values are <code>ACTIVE</code> or
-     * <code>INACTIVE</code>. <code>ACTIVE</code> indicates that you can register
-     * container instances with the cluster and the associated instances can accept
-     * tasks.</p>
+     * <p>The status of the cluster. The following are the possible states that will be
+     * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
+     * and if applicable you can register container instances with the cluster.</p>
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * associated with it and the resources needed for the capacity provider are being
+     * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
+     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
+     * in your account for a period of time. However, this behavior is subject to
+     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
+     * persisting.</p> </dd> </dl>
      */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The status of the cluster. The valid values are <code>ACTIVE</code> or
-     * <code>INACTIVE</code>. <code>ACTIVE</code> indicates that you can register
-     * container instances with the cluster and the associated instances can accept
-     * tasks.</p>
+     * <p>The status of the cluster. The following are the possible states that will be
+     * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
+     * and if applicable you can register container instances with the cluster.</p>
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * associated with it and the resources needed for the capacity provider are being
+     * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
+     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
+     * in your account for a period of time. However, this behavior is subject to
+     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
+     * persisting.</p> </dd> </dl>
      */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>The status of the cluster. The valid values are <code>ACTIVE</code> or
-     * <code>INACTIVE</code>. <code>ACTIVE</code> indicates that you can register
-     * container instances with the cluster and the associated instances can accept
-     * tasks.</p>
+     * <p>The status of the cluster. The following are the possible states that will be
+     * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
+     * and if applicable you can register container instances with the cluster.</p>
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * associated with it and the resources needed for the capacity provider are being
+     * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
+     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
+     * in your account for a period of time. However, this behavior is subject to
+     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
+     * persisting.</p> </dd> </dl>
      */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
 
     /**
-     * <p>The status of the cluster. The valid values are <code>ACTIVE</code> or
-     * <code>INACTIVE</code>. <code>ACTIVE</code> indicates that you can register
-     * container instances with the cluster and the associated instances can accept
-     * tasks.</p>
+     * <p>The status of the cluster. The following are the possible states that will be
+     * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
+     * and if applicable you can register container instances with the cluster.</p>
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * associated with it and the resources needed for the capacity provider are being
+     * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
+     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
+     * in your account for a period of time. However, this behavior is subject to
+     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
+     * persisting.</p> </dd> </dl>
      */
     inline Cluster& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The status of the cluster. The valid values are <code>ACTIVE</code> or
-     * <code>INACTIVE</code>. <code>ACTIVE</code> indicates that you can register
-     * container instances with the cluster and the associated instances can accept
-     * tasks.</p>
+     * <p>The status of the cluster. The following are the possible states that will be
+     * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
+     * and if applicable you can register container instances with the cluster.</p>
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * associated with it and the resources needed for the capacity provider are being
+     * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
+     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
+     * in your account for a period of time. However, this behavior is subject to
+     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
+     * persisting.</p> </dd> </dl>
      */
     inline Cluster& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
 
     /**
-     * <p>The status of the cluster. The valid values are <code>ACTIVE</code> or
-     * <code>INACTIVE</code>. <code>ACTIVE</code> indicates that you can register
-     * container instances with the cluster and the associated instances can accept
-     * tasks.</p>
+     * <p>The status of the cluster. The following are the possible states that will be
+     * returned.</p> <dl> <dt>ACTIVE</dt> <dd> <p>The cluster is ready to accept tasks
+     * and if applicable you can register container instances with the cluster.</p>
+     * </dd> <dt>PROVISIONING</dt> <dd> <p>The cluster has capacity providers
+     * associated with it and the resources needed for the capacity provider are being
+     * created.</p> </dd> <dt>DEPROVISIONING</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * are being deleted.</p> </dd> <dt>FAILED</dt> <dd> <p>The cluster has capacity
+     * providers associated with it and the resources needed for the capacity provider
+     * have failed to create.</p> </dd> <dt>INACTIVE</dt> <dd> <p>The cluster has been
+     * deleted. Clusters with an <code>INACTIVE</code> status may remain discoverable
+     * in your account for a period of time. However, this behavior is subject to
+     * change in the future, so you should not rely on <code>INACTIVE</code> clusters
+     * persisting.</p> </dd> </dl>
      */
     inline Cluster& WithStatus(const char* value) { SetStatus(value); return *this;}
 

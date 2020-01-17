@@ -52,56 +52,56 @@ namespace Model
     /**
      * <p>The source type, such as cluster or parameter group, to which the described
      * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
-     * cluster-parameter-group, and cluster-security-group.</p>
+     * cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
     /**
      * <p>The source type, such as cluster or parameter group, to which the described
      * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
-     * cluster-parameter-group, and cluster-security-group.</p>
+     * cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
     /**
      * <p>The source type, such as cluster or parameter group, to which the described
      * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
-     * cluster-parameter-group, and cluster-security-group.</p>
+     * cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
      */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
      * <p>The source type, such as cluster or parameter group, to which the described
      * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
-     * cluster-parameter-group, and cluster-security-group.</p>
+     * cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
      */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
     /**
      * <p>The source type, such as cluster or parameter group, to which the described
      * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
-     * cluster-parameter-group, and cluster-security-group.</p>
+     * cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
      */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
     /**
      * <p>The source type, such as cluster or parameter group, to which the described
      * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
-     * cluster-parameter-group, and cluster-security-group.</p>
+     * cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
      */
     inline DescribeEventCategoriesRequest& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
     /**
      * <p>The source type, such as cluster or parameter group, to which the described
      * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
-     * cluster-parameter-group, and cluster-security-group.</p>
+     * cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
      */
     inline DescribeEventCategoriesRequest& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
     /**
      * <p>The source type, such as cluster or parameter group, to which the described
      * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
-     * cluster-parameter-group, and cluster-security-group.</p>
+     * cluster-parameter-group, cluster-security-group, and scheduled-action.</p>
      */
     inline DescribeEventCategoriesRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 

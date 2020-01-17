@@ -32,6 +32,7 @@ namespace Aws
 
         static const int AAC_HASH = HashingUtils::HashString("AAC");
         static const int MP2_HASH = HashingUtils::HashString("MP2");
+        static const int MP3_HASH = HashingUtils::HashString("MP3");
         static const int WAV_HASH = HashingUtils::HashString("WAV");
         static const int AIFF_HASH = HashingUtils::HashString("AIFF");
         static const int AC3_HASH = HashingUtils::HashString("AC3");
@@ -50,6 +51,10 @@ namespace Aws
           else if (hashCode == MP2_HASH)
           {
             return AudioCodec::MP2;
+          }
+          else if (hashCode == MP3_HASH)
+          {
+            return AudioCodec::MP3;
           }
           else if (hashCode == WAV_HASH)
           {
@@ -93,6 +98,8 @@ namespace Aws
             return "AAC";
           case AudioCodec::MP2:
             return "MP2";
+          case AudioCodec::MP3:
+            return "MP3";
           case AudioCodec::WAV:
             return "WAV";
           case AudioCodec::AIFF:

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/model/HostVolumeProperties.h>
 #include <aws/ecs/model/DockerVolumeConfiguration.h>
+#include <aws/ecs/model/EFSVolumeConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -220,7 +221,7 @@ namespace Model
      * <p>This parameter is specified when you are using Docker volumes. Docker volumes
      * are only supported when you are using the EC2 launch type. Windows containers
      * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify a <code>host</code> instead.</p>
+     * specify the <code>host</code> parameter instead.</p>
      */
     inline const DockerVolumeConfiguration& GetDockerVolumeConfiguration() const{ return m_dockerVolumeConfiguration; }
 
@@ -228,7 +229,7 @@ namespace Model
      * <p>This parameter is specified when you are using Docker volumes. Docker volumes
      * are only supported when you are using the EC2 launch type. Windows containers
      * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify a <code>host</code> instead.</p>
+     * specify the <code>host</code> parameter instead.</p>
      */
     inline bool DockerVolumeConfigurationHasBeenSet() const { return m_dockerVolumeConfigurationHasBeenSet; }
 
@@ -236,7 +237,7 @@ namespace Model
      * <p>This parameter is specified when you are using Docker volumes. Docker volumes
      * are only supported when you are using the EC2 launch type. Windows containers
      * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify a <code>host</code> instead.</p>
+     * specify the <code>host</code> parameter instead.</p>
      */
     inline void SetDockerVolumeConfiguration(const DockerVolumeConfiguration& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = value; }
 
@@ -244,7 +245,7 @@ namespace Model
      * <p>This parameter is specified when you are using Docker volumes. Docker volumes
      * are only supported when you are using the EC2 launch type. Windows containers
      * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify a <code>host</code> instead.</p>
+     * specify the <code>host</code> parameter instead.</p>
      */
     inline void SetDockerVolumeConfiguration(DockerVolumeConfiguration&& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = std::move(value); }
 
@@ -252,7 +253,7 @@ namespace Model
      * <p>This parameter is specified when you are using Docker volumes. Docker volumes
      * are only supported when you are using the EC2 launch type. Windows containers
      * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify a <code>host</code> instead.</p>
+     * specify the <code>host</code> parameter instead.</p>
      */
     inline Volume& WithDockerVolumeConfiguration(const DockerVolumeConfiguration& value) { SetDockerVolumeConfiguration(value); return *this;}
 
@@ -260,9 +261,88 @@ namespace Model
      * <p>This parameter is specified when you are using Docker volumes. Docker volumes
      * are only supported when you are using the EC2 launch type. Windows containers
      * only support the use of the <code>local</code> driver. To use bind mounts,
-     * specify a <code>host</code> instead.</p>
+     * specify the <code>host</code> parameter instead.</p>
      */
     inline Volume& WithDockerVolumeConfiguration(DockerVolumeConfiguration&& value) { SetDockerVolumeConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>This parameter is specified when you are using an Amazon Elastic File System
+     * (Amazon EFS) file storage. Amazon EFS file systems are only supported when you
+     * are using the EC2 launch type.</p> <important> <p>
+     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as
+     * defined by and subject to the Beta Service Participation Service Terms located
+     * at <a
+     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
+     * ("Beta Terms"). These Beta Terms apply to your participation in this preview of
+     * <code>EFSVolumeConfiguration</code>.</p> </important>
+     */
+    inline const EFSVolumeConfiguration& GetEfsVolumeConfiguration() const{ return m_efsVolumeConfiguration; }
+
+    /**
+     * <p>This parameter is specified when you are using an Amazon Elastic File System
+     * (Amazon EFS) file storage. Amazon EFS file systems are only supported when you
+     * are using the EC2 launch type.</p> <important> <p>
+     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as
+     * defined by and subject to the Beta Service Participation Service Terms located
+     * at <a
+     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
+     * ("Beta Terms"). These Beta Terms apply to your participation in this preview of
+     * <code>EFSVolumeConfiguration</code>.</p> </important>
+     */
+    inline bool EfsVolumeConfigurationHasBeenSet() const { return m_efsVolumeConfigurationHasBeenSet; }
+
+    /**
+     * <p>This parameter is specified when you are using an Amazon Elastic File System
+     * (Amazon EFS) file storage. Amazon EFS file systems are only supported when you
+     * are using the EC2 launch type.</p> <important> <p>
+     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as
+     * defined by and subject to the Beta Service Participation Service Terms located
+     * at <a
+     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
+     * ("Beta Terms"). These Beta Terms apply to your participation in this preview of
+     * <code>EFSVolumeConfiguration</code>.</p> </important>
+     */
+    inline void SetEfsVolumeConfiguration(const EFSVolumeConfiguration& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = value; }
+
+    /**
+     * <p>This parameter is specified when you are using an Amazon Elastic File System
+     * (Amazon EFS) file storage. Amazon EFS file systems are only supported when you
+     * are using the EC2 launch type.</p> <important> <p>
+     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as
+     * defined by and subject to the Beta Service Participation Service Terms located
+     * at <a
+     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
+     * ("Beta Terms"). These Beta Terms apply to your participation in this preview of
+     * <code>EFSVolumeConfiguration</code>.</p> </important>
+     */
+    inline void SetEfsVolumeConfiguration(EFSVolumeConfiguration&& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = std::move(value); }
+
+    /**
+     * <p>This parameter is specified when you are using an Amazon Elastic File System
+     * (Amazon EFS) file storage. Amazon EFS file systems are only supported when you
+     * are using the EC2 launch type.</p> <important> <p>
+     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as
+     * defined by and subject to the Beta Service Participation Service Terms located
+     * at <a
+     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
+     * ("Beta Terms"). These Beta Terms apply to your participation in this preview of
+     * <code>EFSVolumeConfiguration</code>.</p> </important>
+     */
+    inline Volume& WithEfsVolumeConfiguration(const EFSVolumeConfiguration& value) { SetEfsVolumeConfiguration(value); return *this;}
+
+    /**
+     * <p>This parameter is specified when you are using an Amazon Elastic File System
+     * (Amazon EFS) file storage. Amazon EFS file systems are only supported when you
+     * are using the EC2 launch type.</p> <important> <p>
+     * <code>EFSVolumeConfiguration</code> remains in preview and is a Beta Service as
+     * defined by and subject to the Beta Service Participation Service Terms located
+     * at <a
+     * href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a>
+     * ("Beta Terms"). These Beta Terms apply to your participation in this preview of
+     * <code>EFSVolumeConfiguration</code>.</p> </important>
+     */
+    inline Volume& WithEfsVolumeConfiguration(EFSVolumeConfiguration&& value) { SetEfsVolumeConfiguration(std::move(value)); return *this;}
 
   private:
 
@@ -274,6 +354,9 @@ namespace Model
 
     DockerVolumeConfiguration m_dockerVolumeConfiguration;
     bool m_dockerVolumeConfigurationHasBeenSet;
+
+    EFSVolumeConfiguration m_efsVolumeConfiguration;
+    bool m_efsVolumeConfigurationHasBeenSet;
   };
 
 } // namespace Model

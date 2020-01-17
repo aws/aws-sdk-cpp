@@ -29,6 +29,7 @@ namespace Model
 {
 
 ContainerSettings::ContainerSettings() : 
+    m_cmfcSettingsHasBeenSet(false),
     m_container(ContainerType::NOT_SET),
     m_containerHasBeenSet(false),
     m_f4vSettingsHasBeenSet(false),
@@ -41,6 +42,7 @@ ContainerSettings::ContainerSettings() :
 }
 
 ContainerSettings::ContainerSettings(JsonView jsonValue) : 
+    m_cmfcSettingsHasBeenSet(false),
     m_container(ContainerType::NOT_SET),
     m_containerHasBeenSet(false),
     m_f4vSettingsHasBeenSet(false),
@@ -55,6 +57,13 @@ ContainerSettings::ContainerSettings(JsonView jsonValue) :
 
 ContainerSettings& ContainerSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("cmfcSettings"))
+  {
+    m_cmfcSettings = jsonValue.GetObject("cmfcSettings");
+
+    m_cmfcSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("container"))
   {
     m_container = ContainerTypeMapper::GetContainerTypeForName(jsonValue.GetString("container"));
@@ -110,6 +119,12 @@ ContainerSettings& ContainerSettings::operator =(JsonView jsonValue)
 JsonValue ContainerSettings::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_cmfcSettingsHasBeenSet)
+  {
+   payload.WithObject("cmfcSettings", m_cmfcSettings.Jsonize());
+
+  }
 
   if(m_containerHasBeenSet)
   {

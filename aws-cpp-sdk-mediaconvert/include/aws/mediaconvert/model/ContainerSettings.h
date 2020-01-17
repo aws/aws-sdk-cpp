@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/CmfcSettings.h>
 #include <aws/mediaconvert/model/ContainerType.h>
 #include <aws/mediaconvert/model/F4vSettings.h>
 #include <aws/mediaconvert/model/M2tsSettings.h>
@@ -51,6 +52,37 @@ namespace Model
     ContainerSettings(Aws::Utils::Json::JsonView jsonValue);
     ContainerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Settings for MP4 segments in CMAF
+     */
+    inline const CmfcSettings& GetCmfcSettings() const{ return m_cmfcSettings; }
+
+    /**
+     * Settings for MP4 segments in CMAF
+     */
+    inline bool CmfcSettingsHasBeenSet() const { return m_cmfcSettingsHasBeenSet; }
+
+    /**
+     * Settings for MP4 segments in CMAF
+     */
+    inline void SetCmfcSettings(const CmfcSettings& value) { m_cmfcSettingsHasBeenSet = true; m_cmfcSettings = value; }
+
+    /**
+     * Settings for MP4 segments in CMAF
+     */
+    inline void SetCmfcSettings(CmfcSettings&& value) { m_cmfcSettingsHasBeenSet = true; m_cmfcSettings = std::move(value); }
+
+    /**
+     * Settings for MP4 segments in CMAF
+     */
+    inline ContainerSettings& WithCmfcSettings(const CmfcSettings& value) { SetCmfcSettings(value); return *this;}
+
+    /**
+     * Settings for MP4 segments in CMAF
+     */
+    inline ContainerSettings& WithCmfcSettings(CmfcSettings&& value) { SetCmfcSettings(std::move(value)); return *this;}
 
 
     /**
@@ -336,6 +368,9 @@ namespace Model
     inline ContainerSettings& WithMpdSettings(MpdSettings&& value) { SetMpdSettings(std::move(value)); return *this;}
 
   private:
+
+    CmfcSettings m_cmfcSettings;
+    bool m_cmfcSettingsHasBeenSet;
 
     ContainerType m_container;
     bool m_containerHasBeenSet;

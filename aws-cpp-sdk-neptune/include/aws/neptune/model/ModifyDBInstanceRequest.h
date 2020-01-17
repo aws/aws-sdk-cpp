@@ -911,98 +911,58 @@ namespace Model
 
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
-     * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
-     * nondefault DB parameter group is currently in use, a new DB parameter group in
-     * the DB parameter group family for the new engine version must be specified. The
-     * new DB parameter group can be the default for that DB parameter group
-     * family.</p>
+     * <p>The version number of the database engine to upgrade to. Currently, setting
+     * this parameter has no effect. To upgrade your database engine to the most recent
+     * release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
-     * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
-     * nondefault DB parameter group is currently in use, a new DB parameter group in
-     * the DB parameter group family for the new engine version must be specified. The
-     * new DB parameter group can be the default for that DB parameter group
-     * family.</p>
+     * <p>The version number of the database engine to upgrade to. Currently, setting
+     * this parameter has no effect. To upgrade your database engine to the most recent
+     * release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
-     * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
-     * nondefault DB parameter group is currently in use, a new DB parameter group in
-     * the DB parameter group family for the new engine version must be specified. The
-     * new DB parameter group can be the default for that DB parameter group
-     * family.</p>
+     * <p>The version number of the database engine to upgrade to. Currently, setting
+     * this parameter has no effect. To upgrade your database engine to the most recent
+     * release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
-     * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
-     * nondefault DB parameter group is currently in use, a new DB parameter group in
-     * the DB parameter group family for the new engine version must be specified. The
-     * new DB parameter group can be the default for that DB parameter group
-     * family.</p>
+     * <p>The version number of the database engine to upgrade to. Currently, setting
+     * this parameter has no effect. To upgrade your database engine to the most recent
+     * release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
-     * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
-     * nondefault DB parameter group is currently in use, a new DB parameter group in
-     * the DB parameter group family for the new engine version must be specified. The
-     * new DB parameter group can be the default for that DB parameter group
-     * family.</p>
+     * <p>The version number of the database engine to upgrade to. Currently, setting
+     * this parameter has no effect. To upgrade your database engine to the most recent
+     * release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
-     * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
-     * nondefault DB parameter group is currently in use, a new DB parameter group in
-     * the DB parameter group family for the new engine version must be specified. The
-     * new DB parameter group can be the default for that DB parameter group
-     * family.</p>
+     * <p>The version number of the database engine to upgrade to. Currently, setting
+     * this parameter has no effect. To upgrade your database engine to the most recent
+     * release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
-     * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
-     * nondefault DB parameter group is currently in use, a new DB parameter group in
-     * the DB parameter group family for the new engine version must be specified. The
-     * new DB parameter group can be the default for that DB parameter group
-     * family.</p>
+     * <p>The version number of the database engine to upgrade to. Currently, setting
+     * this parameter has no effect. To upgrade your database engine to the most recent
+     * release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * <p> The version number of the database engine to upgrade to. Changing this
-     * parameter results in an outage and the change is applied during the next
-     * maintenance window unless the <code>ApplyImmediately</code> parameter is set to
-     * <code>true</code> for this request.</p> <p>For major version upgrades, if a
-     * nondefault DB parameter group is currently in use, a new DB parameter group in
-     * the DB parameter group family for the new engine version must be specified. The
-     * new DB parameter group can be the default for that DB parameter group
-     * family.</p>
+     * <p>The version number of the database engine to upgrade to. Currently, setting
+     * this parameter has no effect. To upgrade your database engine to the most recent
+     * release, use the <a>ApplyPendingMaintenanceAction</a> API.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -1010,36 +970,28 @@ namespace Model
     /**
      * <p>Indicates that major version upgrades are allowed. Changing this parameter
      * doesn't result in an outage and the change is asynchronously applied as soon as
-     * possible.</p> <p>Constraints: This parameter must be set to true when specifying
-     * a value for the EngineVersion parameter that is a different major version than
-     * the DB instance's current version.</p>
+     * possible.</p>
      */
     inline bool GetAllowMajorVersionUpgrade() const{ return m_allowMajorVersionUpgrade; }
 
     /**
      * <p>Indicates that major version upgrades are allowed. Changing this parameter
      * doesn't result in an outage and the change is asynchronously applied as soon as
-     * possible.</p> <p>Constraints: This parameter must be set to true when specifying
-     * a value for the EngineVersion parameter that is a different major version than
-     * the DB instance's current version.</p>
+     * possible.</p>
      */
     inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
 
     /**
      * <p>Indicates that major version upgrades are allowed. Changing this parameter
      * doesn't result in an outage and the change is asynchronously applied as soon as
-     * possible.</p> <p>Constraints: This parameter must be set to true when specifying
-     * a value for the EngineVersion parameter that is a different major version than
-     * the DB instance's current version.</p>
+     * possible.</p>
      */
     inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
 
     /**
      * <p>Indicates that major version upgrades are allowed. Changing this parameter
      * doesn't result in an outage and the change is asynchronously applied as soon as
-     * possible.</p> <p>Constraints: This parameter must be set to true when specifying
-     * a value for the EngineVersion parameter that is a different major version than
-     * the DB instance's current version.</p>
+     * possible.</p>
      */
     inline ModifyDBInstanceRequest& WithAllowMajorVersionUpgrade(bool value) { SetAllowMajorVersionUpgrade(value); return *this;}
 
@@ -1164,114 +1116,42 @@ namespace Model
 
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
-     * for this request. If the parameter change results in an option group that
-     * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.</p>
-     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * can't be removed from an option group, and that option group can't be removed
-     * from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
-     * for this request. If the parameter change results in an option group that
-     * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.</p>
-     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * can't be removed from an option group, and that option group can't be removed
-     * from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
-     * for this request. If the parameter change results in an option group that
-     * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.</p>
-     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * can't be removed from an option group, and that option group can't be removed
-     * from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
-     * for this request. If the parameter change results in an option group that
-     * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.</p>
-     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * can't be removed from an option group, and that option group can't be removed
-     * from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
-     * for this request. If the parameter change results in an option group that
-     * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.</p>
-     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * can't be removed from an option group, and that option group can't be removed
-     * from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
-     * for this request. If the parameter change results in an option group that
-     * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.</p>
-     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * can't be removed from an option group, and that option group can't be removed
-     * from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline ModifyDBInstanceRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
-     * for this request. If the parameter change results in an option group that
-     * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.</p>
-     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * can't be removed from an option group, and that option group can't be removed
-     * from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline ModifyDBInstanceRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
-     * <p> Indicates that the DB instance should be associated with the specified
-     * option group. Changing this parameter doesn't result in an outage except in the
-     * following case and the change is applied during the next maintenance window
-     * unless the <code>ApplyImmediately</code> parameter is set to <code>true</code>
-     * for this request. If the parameter change results in an option group that
-     * enables OEM, this change can cause a brief (sub-second) period during which new
-     * connections are rejected but existing connections are not interrupted.</p>
-     * <p>Permanent options, such as the TDE option for Oracle Advanced Security TDE,
-     * can't be removed from an option group, and that option group can't be removed
-     * from a DB instance once it is associated with a DB instance</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline ModifyDBInstanceRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 
@@ -1886,63 +1766,63 @@ namespace Model
 
 
     /**
-     * <p>Not supported.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
 
     /**
-     * <p>Not supported.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
     /**
-     * <p>Not supported.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
 
     /**
-     * <p>Not supported.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline ModifyDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
 
 
     /**
-     * <p>Not supported.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
 
     /**
-     * <p>Not supported.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>Not supported.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
 
     /**
-     * <p>Not supported.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
 
     /**
-     * <p>Not supported.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
 
     /**
-     * <p>Not supported.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
     /**
-     * <p>Not supported.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>Not supported.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline ModifyDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
 
@@ -1982,6 +1862,35 @@ namespace Model
      * CloudWatch Logs for a specific DB instance or DB cluster.</p>
      */
     inline ModifyDBInstanceRequest& WithCloudwatchLogsExportConfiguration(CloudwatchLogsExportConfiguration&& value) { SetCloudwatchLogsExportConfiguration(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
+     */
+    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+
+    /**
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
+     */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
+     */
+    inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
+
+    /**
+     * <p>A value that indicates whether the DB instance has deletion protection
+     * enabled. The database can't be deleted when deletion protection is enabled. By
+     * default, deletion protection is disabled. </p>
+     */
+    inline ModifyDBInstanceRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
   private:
 
@@ -2089,6 +1998,9 @@ namespace Model
 
     CloudwatchLogsExportConfiguration m_cloudwatchLogsExportConfiguration;
     bool m_cloudwatchLogsExportConfigurationHasBeenSet;
+
+    bool m_deletionProtection;
+    bool m_deletionProtectionHasBeenSet;
   };
 
 } // namespace Model

@@ -541,32 +541,38 @@ namespace Model
 
 
     /**
-     * <p>Specifies the CloudWatch logs to be exported.</p>
+     * <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending
+     * changes to which CloudWatch logs are enabled and which are disabled.</p>
      */
     inline const PendingCloudwatchLogsExports& GetPendingCloudwatchLogsExports() const{ return m_pendingCloudwatchLogsExports; }
 
     /**
-     * <p>Specifies the CloudWatch logs to be exported.</p>
+     * <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending
+     * changes to which CloudWatch logs are enabled and which are disabled.</p>
      */
     inline bool PendingCloudwatchLogsExportsHasBeenSet() const { return m_pendingCloudwatchLogsExportsHasBeenSet; }
 
     /**
-     * <p>Specifies the CloudWatch logs to be exported.</p>
+     * <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending
+     * changes to which CloudWatch logs are enabled and which are disabled.</p>
      */
     inline void SetPendingCloudwatchLogsExports(const PendingCloudwatchLogsExports& value) { m_pendingCloudwatchLogsExportsHasBeenSet = true; m_pendingCloudwatchLogsExports = value; }
 
     /**
-     * <p>Specifies the CloudWatch logs to be exported.</p>
+     * <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending
+     * changes to which CloudWatch logs are enabled and which are disabled.</p>
      */
     inline void SetPendingCloudwatchLogsExports(PendingCloudwatchLogsExports&& value) { m_pendingCloudwatchLogsExportsHasBeenSet = true; m_pendingCloudwatchLogsExports = std::move(value); }
 
     /**
-     * <p>Specifies the CloudWatch logs to be exported.</p>
+     * <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending
+     * changes to which CloudWatch logs are enabled and which are disabled.</p>
      */
     inline PendingModifiedValues& WithPendingCloudwatchLogsExports(const PendingCloudwatchLogsExports& value) { SetPendingCloudwatchLogsExports(value); return *this;}
 
     /**
-     * <p>Specifies the CloudWatch logs to be exported.</p>
+     * <p>This <code>PendingCloudwatchLogsExports</code> structure specifies pending
+     * changes to which CloudWatch logs are enabled and which are disabled.</p>
      */
     inline PendingModifiedValues& WithPendingCloudwatchLogsExports(PendingCloudwatchLogsExports&& value) { SetPendingCloudwatchLogsExports(std::move(value)); return *this;}
 

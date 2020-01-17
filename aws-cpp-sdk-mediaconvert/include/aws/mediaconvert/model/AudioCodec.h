@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     AAC,
     MP2,
+    MP3,
     WAV,
     AIFF,
     AC3,

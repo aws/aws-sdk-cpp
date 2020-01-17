@@ -146,7 +146,8 @@ namespace Model
      * parameter to cluster. If this value is not specified, events are returned for
      * all Amazon Redshift objects in your AWS account. You must specify a source type
      * in order to specify source IDs.</p> <p>Valid values: cluster,
-     * cluster-parameter-group, cluster-security-group, and cluster-snapshot.</p>
+     * cluster-parameter-group, cluster-security-group, cluster-snapshot, and
+     * scheduled-action.</p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
 
@@ -156,7 +157,8 @@ namespace Model
      * parameter to cluster. If this value is not specified, events are returned for
      * all Amazon Redshift objects in your AWS account. You must specify a source type
      * in order to specify source IDs.</p> <p>Valid values: cluster,
-     * cluster-parameter-group, cluster-security-group, and cluster-snapshot.</p>
+     * cluster-parameter-group, cluster-security-group, cluster-snapshot, and
+     * scheduled-action.</p>
      */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
 
@@ -166,7 +168,8 @@ namespace Model
      * parameter to cluster. If this value is not specified, events are returned for
      * all Amazon Redshift objects in your AWS account. You must specify a source type
      * in order to specify source IDs.</p> <p>Valid values: cluster,
-     * cluster-parameter-group, cluster-security-group, and cluster-snapshot.</p>
+     * cluster-parameter-group, cluster-security-group, cluster-snapshot, and
+     * scheduled-action.</p>
      */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
@@ -176,7 +179,8 @@ namespace Model
      * parameter to cluster. If this value is not specified, events are returned for
      * all Amazon Redshift objects in your AWS account. You must specify a source type
      * in order to specify source IDs.</p> <p>Valid values: cluster,
-     * cluster-parameter-group, cluster-security-group, and cluster-snapshot.</p>
+     * cluster-parameter-group, cluster-security-group, cluster-snapshot, and
+     * scheduled-action.</p>
      */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
 
@@ -186,7 +190,8 @@ namespace Model
      * parameter to cluster. If this value is not specified, events are returned for
      * all Amazon Redshift objects in your AWS account. You must specify a source type
      * in order to specify source IDs.</p> <p>Valid values: cluster,
-     * cluster-parameter-group, cluster-security-group, and cluster-snapshot.</p>
+     * cluster-parameter-group, cluster-security-group, cluster-snapshot, and
+     * scheduled-action.</p>
      */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
 
@@ -196,7 +201,8 @@ namespace Model
      * parameter to cluster. If this value is not specified, events are returned for
      * all Amazon Redshift objects in your AWS account. You must specify a source type
      * in order to specify source IDs.</p> <p>Valid values: cluster,
-     * cluster-parameter-group, cluster-security-group, and cluster-snapshot.</p>
+     * cluster-parameter-group, cluster-security-group, cluster-snapshot, and
+     * scheduled-action.</p>
      */
     inline ModifyEventSubscriptionRequest& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
 
@@ -206,7 +212,8 @@ namespace Model
      * parameter to cluster. If this value is not specified, events are returned for
      * all Amazon Redshift objects in your AWS account. You must specify a source type
      * in order to specify source IDs.</p> <p>Valid values: cluster,
-     * cluster-parameter-group, cluster-security-group, and cluster-snapshot.</p>
+     * cluster-parameter-group, cluster-security-group, cluster-snapshot, and
+     * scheduled-action.</p>
      */
     inline ModifyEventSubscriptionRequest& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
 
@@ -216,7 +223,8 @@ namespace Model
      * parameter to cluster. If this value is not specified, events are returned for
      * all Amazon Redshift objects in your AWS account. You must specify a source type
      * in order to specify source IDs.</p> <p>Valid values: cluster,
-     * cluster-parameter-group, cluster-security-group, and cluster-snapshot.</p>
+     * cluster-parameter-group, cluster-security-group, cluster-snapshot, and
+     * scheduled-action.</p>
      */
     inline ModifyEventSubscriptionRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
 

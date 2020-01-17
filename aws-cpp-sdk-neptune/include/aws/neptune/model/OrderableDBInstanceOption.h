@@ -451,22 +451,22 @@ namespace Model
 
 
     /**
-     * <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool GetSupportsPerformanceInsights() const{ return m_supportsPerformanceInsights; }
 
     /**
-     * <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline bool SupportsPerformanceInsightsHasBeenSet() const { return m_supportsPerformanceInsightsHasBeenSet; }
 
     /**
-     * <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline void SetSupportsPerformanceInsights(bool value) { m_supportsPerformanceInsightsHasBeenSet = true; m_supportsPerformanceInsights = value; }
 
     /**
-     * <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+     * <p> <i>(Not supported by Neptune)</i> </p>
      */
     inline OrderableDBInstanceOption& WithSupportsPerformanceInsights(bool value) { SetSupportsPerformanceInsights(value); return *this;}
 
