@@ -61,11 +61,21 @@ endif()
 
 
 # Compute the default installation root relative to this file.
-# from prefix/lib/cmake/AWSSDK/xx.cmake to prefix
+# from prefix/AWSSDK_INSTALL_LIBDIR/cmake/AWSSDK/xx.cmake to prefix
+# AWSSDK_INSTALL_LIBDIR might be some/complicated/dir/
 get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${CMAKE_CURRENT_LIST_FILE}" PATH)
 get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
 get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
-get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
+# AWSSDK_DEFAULT_ROOT_DIR now ends in AWSSDK_INSTALL_LIBDIR with no trailing
+# slash. string(REGEX REPLACE) won't work if the directory contains special
+# characters like +, so remove each part of that path one by one.
+set(AWSSDK_INSTALL_LIBDIR_TMP "${AWSSDK_INSTALL_LIBDIR}")
+# while not a directory root, like C:/ or /, or an empty path
+while (NOT AWSSDK_INSTALL_LIBDIR_TMP MATCHES "^((.:)?/)?$")
+    get_filename_component(AWSSDK_INSTALL_LIBDIR_TMP "${AWSSDK_INSTALL_LIBDIR_TMP}" PATH)
+    get_filename_component(AWSSDK_DEFAULT_ROOT_DIR "${AWSSDK_DEFAULT_ROOT_DIR}" PATH)
+endwhile()
+unset(AWSSDK_INSTALL_LIBDIR_TMP)
 get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
 
 set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
@@ -98,10 +108,20 @@ if (NOT AWSSDK_CORE_HEADER_FILE)
 endif()
 
 # based on core header file path, inspects the actual AWSSDK_ROOT_DIR
+# remove aws/core/Aws.h
+# Same as before, AWSSDK_INSTALL_INCLUDEDIR might be /some/complicated/path,
+# so loop to get rid of it.
 get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_CORE_HEADER_FILE}" PATH)
 get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
 get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
-get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
+set(AWSSDK_INSTALL_INCLUDEDIR_TMP "${AWSSDK_INSTALL_INCLUDEDIR}")
+# while not a directory root, like C:/ or /, or an empty path
+while (NOT AWSSDK_INSTALL_INCLUDEDIR_TMP MATCHES "^((.:)?/)?$")
+    get_filename_component(AWSSDK_INSTALL_INCLUDEDIR_TMP "${AWSSDK_INSTALL_INCLUDEDIR_TMP}" PATH)
+    get_filename_component(AWSSDK_ROOT_DIR "${AWSSDK_ROOT_DIR}" PATH)
+endwhile()
+unset(AWSSDK_INSTALL_INCLUDEDIR_TMP)
+
 
 if (NOT AWSSDK_ROOT_DIR)
     message(FATAL_ERROR "AWSSDK_ROOT_DIR is not set or can't be calculated from the path of core header file")
