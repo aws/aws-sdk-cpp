@@ -24,6 +24,8 @@ CreateVpcRequest::CreateVpcRequest() :
     m_cidrBlockHasBeenSet(false),
     m_amazonProvidedIpv6CidrBlock(false),
     m_amazonProvidedIpv6CidrBlockHasBeenSet(false),
+    m_ipv6PoolHasBeenSet(false),
+    m_ipv6CidrBlockHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_instanceTenancy(Tenancy::NOT_SET),
@@ -44,6 +46,16 @@ Aws::String CreateVpcRequest::SerializePayload() const
   if(m_amazonProvidedIpv6CidrBlockHasBeenSet)
   {
     ss << "AmazonProvidedIpv6CidrBlock=" << std::boolalpha << m_amazonProvidedIpv6CidrBlock << "&";
+  }
+
+  if(m_ipv6PoolHasBeenSet)
+  {
+    ss << "Ipv6Pool=" << StringUtils::URLEncode(m_ipv6Pool.c_str()) << "&";
+  }
+
+  if(m_ipv6CidrBlockHasBeenSet)
+  {
+    ss << "Ipv6CidrBlock=" << StringUtils::URLEncode(m_ipv6CidrBlock.c_str()) << "&";
   }
 
   if(m_dryRunHasBeenSet)

@@ -23,6 +23,8 @@ using namespace Aws::Utils;
 ProvisionByoipCidrRequest::ProvisionByoipCidrRequest() : 
     m_cidrHasBeenSet(false),
     m_cidrAuthorizationContextHasBeenSet(false),
+    m_publiclyAdvertisable(false),
+    m_publiclyAdvertisableHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
@@ -41,6 +43,11 @@ Aws::String ProvisionByoipCidrRequest::SerializePayload() const
   if(m_cidrAuthorizationContextHasBeenSet)
   {
     m_cidrAuthorizationContext.OutputToStream(ss, "CidrAuthorizationContext");
+  }
+
+  if(m_publiclyAdvertisableHasBeenSet)
+  {
+    ss << "PubliclyAdvertisable=" << std::boolalpha << m_publiclyAdvertisable << "&";
   }
 
   if(m_descriptionHasBeenSet)

@@ -62,6 +62,8 @@ namespace Model
      * ID of a set of DHCP options.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address
+     * pool from which the IPv6 CIDR block is allocated.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
@@ -95,6 +97,8 @@ namespace Model
      * ID of a set of DHCP options.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address
+     * pool from which the IPv6 CIDR block is allocated.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
@@ -128,6 +132,8 @@ namespace Model
      * ID of a set of DHCP options.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address
+     * pool from which the IPv6 CIDR block is allocated.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
@@ -161,6 +167,8 @@ namespace Model
      * ID of a set of DHCP options.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address
+     * pool from which the IPv6 CIDR block is allocated.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
@@ -194,6 +202,8 @@ namespace Model
      * ID of a set of DHCP options.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address
+     * pool from which the IPv6 CIDR block is allocated.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
@@ -227,6 +237,8 @@ namespace Model
      * ID of a set of DHCP options.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address
+     * pool from which the IPv6 CIDR block is allocated.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
@@ -260,6 +272,8 @@ namespace Model
      * ID of a set of DHCP options.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address
+     * pool from which the IPv6 CIDR block is allocated.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block
@@ -293,6 +307,8 @@ namespace Model
      * ID of a set of DHCP options.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.ipv6-cidr-block</code> - An IPv6 CIDR block
      * associated with the VPC.</p> </li> <li> <p>
+     * <code>ipv6-cidr-block-association.ipv6-pool</code> - The ID of the IPv6 address
+     * pool from which the IPv6 CIDR block is allocated.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.association-id</code> - The association ID for
      * an IPv6 CIDR block associated with the VPC.</p> </li> <li> <p>
      * <code>ipv6-cidr-block-association.state</code> - The state of an IPv6 CIDR block

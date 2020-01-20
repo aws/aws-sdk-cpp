@@ -512,7 +512,9 @@ namespace Model
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
          * Discard records older than the specified age.</p> </li> <li> <p>
          * <code>MaximumRetryAttempts</code> - Discard records after the specified number
-         * of retries.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
+         * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
          * API Reference</a></p>
          */
@@ -535,7 +537,9 @@ namespace Model
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
          * Discard records older than the specified age.</p> </li> <li> <p>
          * <code>MaximumRetryAttempts</code> - Discard records after the specified number
-         * of retries.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
+         * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
          * API Reference</a></p>
          *
@@ -560,7 +564,9 @@ namespace Model
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
          * Discard records older than the specified age.</p> </li> <li> <p>
          * <code>MaximumRetryAttempts</code> - Discard records after the specified number
-         * of retries.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
+         * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
          * API Reference</a></p>
          *
@@ -2142,7 +2148,9 @@ namespace Model
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
          * Discard records older than the specified age.</p> </li> <li> <p>
          * <code>MaximumRetryAttempts</code> - Discard records after the specified number
-         * of retries.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
+         * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
          * API Reference</a></p>
          */
@@ -2158,7 +2166,9 @@ namespace Model
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
          * Discard records older than the specified age.</p> </li> <li> <p>
          * <code>MaximumRetryAttempts</code> - Discard records after the specified number
-         * of retries.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
+         * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
          * API Reference</a></p>
          *
@@ -2176,7 +2186,9 @@ namespace Model
          * or Amazon SNS topic.</p> </li> <li> <p> <code>MaximumRecordAgeInSeconds</code> -
          * Discard records older than the specified age.</p> </li> <li> <p>
          * <code>MaximumRetryAttempts</code> - Discard records after the specified number
-         * of retries.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * of retries.</p> </li> <li> <p> <code>ParallelizationFactor</code> - Process
+         * multiple batches from each shard concurrently.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
          * API Reference</a></p>
          *

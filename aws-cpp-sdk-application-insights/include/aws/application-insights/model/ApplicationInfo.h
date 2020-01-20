@@ -205,49 +205,65 @@ namespace Model
 
     /**
      * <p>The issues on the user side that block Application Insights from successfully
-     * monitoring an application.</p>
+     * monitoring an application. Example remarks include:</p> <ul> <li>
+     * <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li> <li>
+     * <p>“Configuring application, detected 1 Unconfigured Components”</p> </li> </ul>
      */
     inline const Aws::String& GetRemarks() const{ return m_remarks; }
 
     /**
      * <p>The issues on the user side that block Application Insights from successfully
-     * monitoring an application.</p>
+     * monitoring an application. Example remarks include:</p> <ul> <li>
+     * <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li> <li>
+     * <p>“Configuring application, detected 1 Unconfigured Components”</p> </li> </ul>
      */
     inline bool RemarksHasBeenSet() const { return m_remarksHasBeenSet; }
 
     /**
      * <p>The issues on the user side that block Application Insights from successfully
-     * monitoring an application.</p>
+     * monitoring an application. Example remarks include:</p> <ul> <li>
+     * <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li> <li>
+     * <p>“Configuring application, detected 1 Unconfigured Components”</p> </li> </ul>
      */
     inline void SetRemarks(const Aws::String& value) { m_remarksHasBeenSet = true; m_remarks = value; }
 
     /**
      * <p>The issues on the user side that block Application Insights from successfully
-     * monitoring an application.</p>
+     * monitoring an application. Example remarks include:</p> <ul> <li>
+     * <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li> <li>
+     * <p>“Configuring application, detected 1 Unconfigured Components”</p> </li> </ul>
      */
     inline void SetRemarks(Aws::String&& value) { m_remarksHasBeenSet = true; m_remarks = std::move(value); }
 
     /**
      * <p>The issues on the user side that block Application Insights from successfully
-     * monitoring an application.</p>
+     * monitoring an application. Example remarks include:</p> <ul> <li>
+     * <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li> <li>
+     * <p>“Configuring application, detected 1 Unconfigured Components”</p> </li> </ul>
      */
     inline void SetRemarks(const char* value) { m_remarksHasBeenSet = true; m_remarks.assign(value); }
 
     /**
      * <p>The issues on the user side that block Application Insights from successfully
-     * monitoring an application.</p>
+     * monitoring an application. Example remarks include:</p> <ul> <li>
+     * <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li> <li>
+     * <p>“Configuring application, detected 1 Unconfigured Components”</p> </li> </ul>
      */
     inline ApplicationInfo& WithRemarks(const Aws::String& value) { SetRemarks(value); return *this;}
 
     /**
      * <p>The issues on the user side that block Application Insights from successfully
-     * monitoring an application.</p>
+     * monitoring an application. Example remarks include:</p> <ul> <li>
+     * <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li> <li>
+     * <p>“Configuring application, detected 1 Unconfigured Components”</p> </li> </ul>
      */
     inline ApplicationInfo& WithRemarks(Aws::String&& value) { SetRemarks(std::move(value)); return *this;}
 
     /**
      * <p>The issues on the user side that block Application Insights from successfully
-     * monitoring an application.</p>
+     * monitoring an application. Example remarks include:</p> <ul> <li>
+     * <p>“Configuring application, detected 1 Errors, 3 Warnings”</p> </li> <li>
+     * <p>“Configuring application, detected 1 Unconfigured Components”</p> </li> </ul>
      */
     inline ApplicationInfo& WithRemarks(const char* value) { SetRemarks(value); return *this;}
 

@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/monitoring/model/AnomalyDetectorConfiguration.h>
+#include <aws/monitoring/model/AnomalyDetectorStateValue.h>
 #include <aws/monitoring/model/Dimension.h>
 #include <utility>
 
@@ -260,6 +261,43 @@ namespace Model
      */
     inline AnomalyDetector& WithConfiguration(AnomalyDetectorConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The current status of the anomaly detector's training. The possible values
+     * are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
+     */
+    inline const AnomalyDetectorStateValue& GetStateValue() const{ return m_stateValue; }
+
+    /**
+     * <p>The current status of the anomaly detector's training. The possible values
+     * are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
+     */
+    inline bool StateValueHasBeenSet() const { return m_stateValueHasBeenSet; }
+
+    /**
+     * <p>The current status of the anomaly detector's training. The possible values
+     * are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
+     */
+    inline void SetStateValue(const AnomalyDetectorStateValue& value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
+
+    /**
+     * <p>The current status of the anomaly detector's training. The possible values
+     * are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
+     */
+    inline void SetStateValue(AnomalyDetectorStateValue&& value) { m_stateValueHasBeenSet = true; m_stateValue = std::move(value); }
+
+    /**
+     * <p>The current status of the anomaly detector's training. The possible values
+     * are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
+     */
+    inline AnomalyDetector& WithStateValue(const AnomalyDetectorStateValue& value) { SetStateValue(value); return *this;}
+
+    /**
+     * <p>The current status of the anomaly detector's training. The possible values
+     * are <code>TRAINED | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> </p>
+     */
+    inline AnomalyDetector& WithStateValue(AnomalyDetectorStateValue&& value) { SetStateValue(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_namespace;
@@ -276,6 +314,9 @@ namespace Model
 
     AnomalyDetectorConfiguration m_configuration;
     bool m_configurationHasBeenSet;
+
+    AnomalyDetectorStateValue m_stateValue;
+    bool m_stateValueHasBeenSet;
   };
 
 } // namespace Model

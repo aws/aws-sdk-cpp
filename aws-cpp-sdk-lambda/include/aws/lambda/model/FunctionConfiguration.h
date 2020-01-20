@@ -928,32 +928,38 @@ namespace Model
 
 
     /**
-     * <p>The status of the last update that was performed on the function.</p>
+     * <p>The status of the last update that was performed on the function. This is
+     * first set to <code>Successful</code> after function creation completes.</p>
      */
     inline const LastUpdateStatus& GetLastUpdateStatus() const{ return m_lastUpdateStatus; }
 
     /**
-     * <p>The status of the last update that was performed on the function.</p>
+     * <p>The status of the last update that was performed on the function. This is
+     * first set to <code>Successful</code> after function creation completes.</p>
      */
     inline bool LastUpdateStatusHasBeenSet() const { return m_lastUpdateStatusHasBeenSet; }
 
     /**
-     * <p>The status of the last update that was performed on the function.</p>
+     * <p>The status of the last update that was performed on the function. This is
+     * first set to <code>Successful</code> after function creation completes.</p>
      */
     inline void SetLastUpdateStatus(const LastUpdateStatus& value) { m_lastUpdateStatusHasBeenSet = true; m_lastUpdateStatus = value; }
 
     /**
-     * <p>The status of the last update that was performed on the function.</p>
+     * <p>The status of the last update that was performed on the function. This is
+     * first set to <code>Successful</code> after function creation completes.</p>
      */
     inline void SetLastUpdateStatus(LastUpdateStatus&& value) { m_lastUpdateStatusHasBeenSet = true; m_lastUpdateStatus = std::move(value); }
 
     /**
-     * <p>The status of the last update that was performed on the function.</p>
+     * <p>The status of the last update that was performed on the function. This is
+     * first set to <code>Successful</code> after function creation completes.</p>
      */
     inline FunctionConfiguration& WithLastUpdateStatus(const LastUpdateStatus& value) { SetLastUpdateStatus(value); return *this;}
 
     /**
-     * <p>The status of the last update that was performed on the function.</p>
+     * <p>The status of the last update that was performed on the function. This is
+     * first set to <code>Successful</code> after function creation completes.</p>
      */
     inline FunctionConfiguration& WithLastUpdateStatus(LastUpdateStatus&& value) { SetLastUpdateStatus(std::move(value)); return *this;}
 

@@ -37,6 +37,7 @@
 #include <aws/application-insights/model/DescribeProblemObservationsResult.h>
 #include <aws/application-insights/model/ListApplicationsResult.h>
 #include <aws/application-insights/model/ListComponentsResult.h>
+#include <aws/application-insights/model/ListConfigurationHistoryResult.h>
 #include <aws/application-insights/model/ListLogPatternSetsResult.h>
 #include <aws/application-insights/model/ListLogPatternsResult.h>
 #include <aws/application-insights/model/ListProblemsResult.h>
@@ -102,6 +103,7 @@ namespace Model
         class DescribeProblemObservationsRequest;
         class ListApplicationsRequest;
         class ListComponentsRequest;
+        class ListConfigurationHistoryRequest;
         class ListLogPatternSetsRequest;
         class ListLogPatternsRequest;
         class ListProblemsRequest;
@@ -129,6 +131,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeProblemObservationsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> DescribeProblemObservationsOutcome;
         typedef Aws::Utils::Outcome<ListApplicationsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListApplicationsOutcome;
         typedef Aws::Utils::Outcome<ListComponentsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListComponentsOutcome;
+        typedef Aws::Utils::Outcome<ListConfigurationHistoryResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListConfigurationHistoryOutcome;
         typedef Aws::Utils::Outcome<ListLogPatternSetsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListLogPatternSetsOutcome;
         typedef Aws::Utils::Outcome<ListLogPatternsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListLogPatternsOutcome;
         typedef Aws::Utils::Outcome<ListProblemsResult, Aws::Client::AWSError<ApplicationInsightsErrors>> ListProblemsOutcome;
@@ -156,6 +159,7 @@ namespace Model
         typedef std::future<DescribeProblemObservationsOutcome> DescribeProblemObservationsOutcomeCallable;
         typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
         typedef std::future<ListComponentsOutcome> ListComponentsOutcomeCallable;
+        typedef std::future<ListConfigurationHistoryOutcome> ListConfigurationHistoryOutcomeCallable;
         typedef std::future<ListLogPatternSetsOutcome> ListLogPatternSetsOutcomeCallable;
         typedef std::future<ListLogPatternsOutcome> ListLogPatternsOutcomeCallable;
         typedef std::future<ListProblemsOutcome> ListProblemsOutcomeCallable;
@@ -186,6 +190,7 @@ namespace Model
     typedef std::function<void(const ApplicationInsightsClient*, const Model::DescribeProblemObservationsRequest&, const Model::DescribeProblemObservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeProblemObservationsResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListComponentsRequest&, const Model::ListComponentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListComponentsResponseReceivedHandler;
+    typedef std::function<void(const ApplicationInsightsClient*, const Model::ListConfigurationHistoryRequest&, const Model::ListConfigurationHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListConfigurationHistoryResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListLogPatternSetsRequest&, const Model::ListLogPatternSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLogPatternSetsResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListLogPatternsRequest&, const Model::ListLogPatternsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLogPatternsResponseReceivedHandler;
     typedef std::function<void(const ApplicationInsightsClient*, const Model::ListProblemsRequest&, const Model::ListProblemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProblemsResponseReceivedHandler;
@@ -688,6 +693,46 @@ namespace Model
         virtual void ListComponentsAsync(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> Lists the INFO, WARN, and ERROR events for periodic configuration updates
+         * performed by Application Insights. Examples of events represented are: </p> <ul>
+         * <li> <p>INFO: creating a new alarm or updating an alarm threshold.</p> </li>
+         * <li> <p>WARN: alarm not created due to insufficient data points used to predict
+         * thresholds.</p> </li> <li> <p>ERROR: alarm not created due to permission errors
+         * or exceeding quotas. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListConfigurationHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListConfigurationHistoryOutcome ListConfigurationHistory(const Model::ListConfigurationHistoryRequest& request) const;
+
+        /**
+         * <p> Lists the INFO, WARN, and ERROR events for periodic configuration updates
+         * performed by Application Insights. Examples of events represented are: </p> <ul>
+         * <li> <p>INFO: creating a new alarm or updating an alarm threshold.</p> </li>
+         * <li> <p>WARN: alarm not created due to insufficient data points used to predict
+         * thresholds.</p> </li> <li> <p>ERROR: alarm not created due to permission errors
+         * or exceeding quotas. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListConfigurationHistory">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListConfigurationHistoryOutcomeCallable ListConfigurationHistoryCallable(const Model::ListConfigurationHistoryRequest& request) const;
+
+        /**
+         * <p> Lists the INFO, WARN, and ERROR events for periodic configuration updates
+         * performed by Application Insights. Examples of events represented are: </p> <ul>
+         * <li> <p>INFO: creating a new alarm or updating an alarm threshold.</p> </li>
+         * <li> <p>WARN: alarm not created due to insufficient data points used to predict
+         * thresholds.</p> </li> <li> <p>ERROR: alarm not created due to permission errors
+         * or exceeding quotas. </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListConfigurationHistory">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListConfigurationHistoryAsync(const Model::ListConfigurationHistoryRequest& request, const ListConfigurationHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists the log pattern sets in the specific application.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/ListLogPatternSets">AWS
@@ -1020,6 +1065,7 @@ namespace Model
         void DescribeProblemObservationsAsyncHelper(const Model::DescribeProblemObservationsRequest& request, const DescribeProblemObservationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListComponentsAsyncHelper(const Model::ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListConfigurationHistoryAsyncHelper(const Model::ListConfigurationHistoryRequest& request, const ListConfigurationHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLogPatternSetsAsyncHelper(const Model::ListLogPatternSetsRequest& request, const ListLogPatternSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListLogPatternsAsyncHelper(const Model::ListLogPatternsRequest& request, const ListLogPatternsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListProblemsAsyncHelper(const Model::ListProblemsRequest& request, const ListProblemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

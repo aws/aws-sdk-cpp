@@ -31,14 +31,16 @@ namespace Model
 DeviceStatusInfo::DeviceStatusInfo() : 
     m_deviceStatusDetailsHasBeenSet(false),
     m_connectionStatus(ConnectionStatus::NOT_SET),
-    m_connectionStatusHasBeenSet(false)
+    m_connectionStatusHasBeenSet(false),
+    m_connectionStatusUpdatedTimeHasBeenSet(false)
 {
 }
 
 DeviceStatusInfo::DeviceStatusInfo(JsonView jsonValue) : 
     m_deviceStatusDetailsHasBeenSet(false),
     m_connectionStatus(ConnectionStatus::NOT_SET),
-    m_connectionStatusHasBeenSet(false)
+    m_connectionStatusHasBeenSet(false),
+    m_connectionStatusUpdatedTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -62,6 +64,13 @@ DeviceStatusInfo& DeviceStatusInfo::operator =(JsonView jsonValue)
     m_connectionStatusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ConnectionStatusUpdatedTime"))
+  {
+    m_connectionStatusUpdatedTime = jsonValue.GetDouble("ConnectionStatusUpdatedTime");
+
+    m_connectionStatusUpdatedTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -83,6 +92,11 @@ JsonValue DeviceStatusInfo::Jsonize() const
   if(m_connectionStatusHasBeenSet)
   {
    payload.WithString("ConnectionStatus", ConnectionStatusMapper::GetNameForConnectionStatus(m_connectionStatus));
+  }
+
+  if(m_connectionStatusUpdatedTimeHasBeenSet)
+  {
+   payload.WithDouble("ConnectionStatusUpdatedTime", m_connectionStatusUpdatedTime.SecondsWithMSPrecision());
   }
 
   return payload;

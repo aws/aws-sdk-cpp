@@ -236,9 +236,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
      * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>This parameter tells AWS KMS the <code>kmsuser</code>
-     * account password; it does not change the password in the AWS CloudHSM
-     * cluster.</p>
+     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
+     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
+     * <code>kmsuser</code> account password; it does not change the password in the
+     * AWS CloudHSM cluster.</p>
      */
     inline const Aws::String& GetKeyStorePassword() const{ return m_keyStorePassword; }
 
@@ -247,9 +248,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
      * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>This parameter tells AWS KMS the <code>kmsuser</code>
-     * account password; it does not change the password in the AWS CloudHSM
-     * cluster.</p>
+     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
+     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
+     * <code>kmsuser</code> account password; it does not change the password in the
+     * AWS CloudHSM cluster.</p>
      */
     inline bool KeyStorePasswordHasBeenSet() const { return m_keyStorePasswordHasBeenSet; }
 
@@ -258,9 +260,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
      * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>This parameter tells AWS KMS the <code>kmsuser</code>
-     * account password; it does not change the password in the AWS CloudHSM
-     * cluster.</p>
+     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
+     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
+     * <code>kmsuser</code> account password; it does not change the password in the
+     * AWS CloudHSM cluster.</p>
      */
     inline void SetKeyStorePassword(const Aws::String& value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword = value; }
 
@@ -269,9 +272,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
      * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>This parameter tells AWS KMS the <code>kmsuser</code>
-     * account password; it does not change the password in the AWS CloudHSM
-     * cluster.</p>
+     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
+     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
+     * <code>kmsuser</code> account password; it does not change the password in the
+     * AWS CloudHSM cluster.</p>
      */
     inline void SetKeyStorePassword(Aws::String&& value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword = std::move(value); }
 
@@ -280,9 +284,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
      * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>This parameter tells AWS KMS the <code>kmsuser</code>
-     * account password; it does not change the password in the AWS CloudHSM
-     * cluster.</p>
+     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
+     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
+     * <code>kmsuser</code> account password; it does not change the password in the
+     * AWS CloudHSM cluster.</p>
      */
     inline void SetKeyStorePassword(const char* value) { m_keyStorePasswordHasBeenSet = true; m_keyStorePassword.assign(value); }
 
@@ -291,9 +296,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
      * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>This parameter tells AWS KMS the <code>kmsuser</code>
-     * account password; it does not change the password in the AWS CloudHSM
-     * cluster.</p>
+     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
+     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
+     * <code>kmsuser</code> account password; it does not change the password in the
+     * AWS CloudHSM cluster.</p>
      */
     inline CreateCustomKeyStoreRequest& WithKeyStorePassword(const Aws::String& value) { SetKeyStorePassword(value); return *this;}
 
@@ -302,9 +308,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
      * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>This parameter tells AWS KMS the <code>kmsuser</code>
-     * account password; it does not change the password in the AWS CloudHSM
-     * cluster.</p>
+     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
+     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
+     * <code>kmsuser</code> account password; it does not change the password in the
+     * AWS CloudHSM cluster.</p>
      */
     inline CreateCustomKeyStoreRequest& WithKeyStorePassword(Aws::String&& value) { SetKeyStorePassword(std::move(value)); return *this;}
 
@@ -313,9 +320,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
      * <code>kmsuser</code> crypto user (CU) account</a> in the specified AWS CloudHSM
      * cluster. AWS KMS logs into the cluster as this user to manage key material on
-     * your behalf.</p> <p>This parameter tells AWS KMS the <code>kmsuser</code>
-     * account password; it does not change the password in the AWS CloudHSM
-     * cluster.</p>
+     * your behalf.</p> <p>The password must be a string of 7 to 32 characters. Its
+     * value is case sensitive.</p> <p>This parameter tells AWS KMS the
+     * <code>kmsuser</code> account password; it does not change the password in the
+     * AWS CloudHSM cluster.</p>
      */
     inline CreateCustomKeyStoreRequest& WithKeyStorePassword(const char* value) { SetKeyStorePassword(value); return *this;}
 

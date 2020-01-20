@@ -194,93 +194,129 @@ namespace Model
 
 
     /**
-     * <p>Specifies the message that was signed, or a hash digest of that message.
-     * Messages can be 0-4096 bytes. To verify a larger message, provide a hash digest
-     * of the message.</p> <p>If the digest of the message specified here is different
-     * from the message digest that was signed, the signature verification fails.</p>
+     * <p>Specifies the message that was signed. You can submit a raw message of up to
+     * 4096 bytes, or a hash digest of the message. If you submit a digest, use the
+     * <code>MessageType</code> parameter with a value of <code>DIGEST</code>.</p>
+     * <p>If the message specified here is different from the message that was signed,
+     * the signature verification fails. A message and its hash digest are considered
+     * to be the same message.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetMessage() const{ return m_message; }
 
     /**
-     * <p>Specifies the message that was signed, or a hash digest of that message.
-     * Messages can be 0-4096 bytes. To verify a larger message, provide a hash digest
-     * of the message.</p> <p>If the digest of the message specified here is different
-     * from the message digest that was signed, the signature verification fails.</p>
+     * <p>Specifies the message that was signed. You can submit a raw message of up to
+     * 4096 bytes, or a hash digest of the message. If you submit a digest, use the
+     * <code>MessageType</code> parameter with a value of <code>DIGEST</code>.</p>
+     * <p>If the message specified here is different from the message that was signed,
+     * the signature verification fails. A message and its hash digest are considered
+     * to be the same message.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p>Specifies the message that was signed, or a hash digest of that message.
-     * Messages can be 0-4096 bytes. To verify a larger message, provide a hash digest
-     * of the message.</p> <p>If the digest of the message specified here is different
-     * from the message digest that was signed, the signature verification fails.</p>
+     * <p>Specifies the message that was signed. You can submit a raw message of up to
+     * 4096 bytes, or a hash digest of the message. If you submit a digest, use the
+     * <code>MessageType</code> parameter with a value of <code>DIGEST</code>.</p>
+     * <p>If the message specified here is different from the message that was signed,
+     * the signature verification fails. A message and its hash digest are considered
+     * to be the same message.</p>
      */
     inline void SetMessage(const Aws::Utils::CryptoBuffer& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p>Specifies the message that was signed, or a hash digest of that message.
-     * Messages can be 0-4096 bytes. To verify a larger message, provide a hash digest
-     * of the message.</p> <p>If the digest of the message specified here is different
-     * from the message digest that was signed, the signature verification fails.</p>
+     * <p>Specifies the message that was signed. You can submit a raw message of up to
+     * 4096 bytes, or a hash digest of the message. If you submit a digest, use the
+     * <code>MessageType</code> parameter with a value of <code>DIGEST</code>.</p>
+     * <p>If the message specified here is different from the message that was signed,
+     * the signature verification fails. A message and its hash digest are considered
+     * to be the same message.</p>
      */
     inline void SetMessage(Aws::Utils::CryptoBuffer&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p>Specifies the message that was signed, or a hash digest of that message.
-     * Messages can be 0-4096 bytes. To verify a larger message, provide a hash digest
-     * of the message.</p> <p>If the digest of the message specified here is different
-     * from the message digest that was signed, the signature verification fails.</p>
+     * <p>Specifies the message that was signed. You can submit a raw message of up to
+     * 4096 bytes, or a hash digest of the message. If you submit a digest, use the
+     * <code>MessageType</code> parameter with a value of <code>DIGEST</code>.</p>
+     * <p>If the message specified here is different from the message that was signed,
+     * the signature verification fails. A message and its hash digest are considered
+     * to be the same message.</p>
      */
     inline VerifyRequest& WithMessage(const Aws::Utils::CryptoBuffer& value) { SetMessage(value); return *this;}
 
     /**
-     * <p>Specifies the message that was signed, or a hash digest of that message.
-     * Messages can be 0-4096 bytes. To verify a larger message, provide a hash digest
-     * of the message.</p> <p>If the digest of the message specified here is different
-     * from the message digest that was signed, the signature verification fails.</p>
+     * <p>Specifies the message that was signed. You can submit a raw message of up to
+     * 4096 bytes, or a hash digest of the message. If you submit a digest, use the
+     * <code>MessageType</code> parameter with a value of <code>DIGEST</code>.</p>
+     * <p>If the message specified here is different from the message that was signed,
+     * the signature verification fails. A message and its hash digest are considered
+     * to be the same message.</p>
      */
     inline VerifyRequest& WithMessage(Aws::Utils::CryptoBuffer&& value) { SetMessage(std::move(value)); return *this;}
 
 
     /**
      * <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a
-     * message or message digest. To indicate a message, enter <code>RAW</code>. To
-     * indicate a message digest, enter <code>DIGEST</code>.</p>
+     * message or message digest. The default value, RAW, indicates a message. To
+     * indicate a message digest, enter <code>DIGEST</code>.</p> <important> <p>Use the
+     * <code>DIGEST</code> value only when the value of the <code>Message</code>
+     * parameter is a message digest. If you use the <code>DIGEST</code> value with a
+     * raw message, the security of the verification operation can be compromised.</p>
+     * </important>
      */
     inline const MessageType& GetMessageType() const{ return m_messageType; }
 
     /**
      * <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a
-     * message or message digest. To indicate a message, enter <code>RAW</code>. To
-     * indicate a message digest, enter <code>DIGEST</code>.</p>
+     * message or message digest. The default value, RAW, indicates a message. To
+     * indicate a message digest, enter <code>DIGEST</code>.</p> <important> <p>Use the
+     * <code>DIGEST</code> value only when the value of the <code>Message</code>
+     * parameter is a message digest. If you use the <code>DIGEST</code> value with a
+     * raw message, the security of the verification operation can be compromised.</p>
+     * </important>
      */
     inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
 
     /**
      * <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a
-     * message or message digest. To indicate a message, enter <code>RAW</code>. To
-     * indicate a message digest, enter <code>DIGEST</code>.</p>
+     * message or message digest. The default value, RAW, indicates a message. To
+     * indicate a message digest, enter <code>DIGEST</code>.</p> <important> <p>Use the
+     * <code>DIGEST</code> value only when the value of the <code>Message</code>
+     * parameter is a message digest. If you use the <code>DIGEST</code> value with a
+     * raw message, the security of the verification operation can be compromised.</p>
+     * </important>
      */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
      * <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a
-     * message or message digest. To indicate a message, enter <code>RAW</code>. To
-     * indicate a message digest, enter <code>DIGEST</code>.</p>
+     * message or message digest. The default value, RAW, indicates a message. To
+     * indicate a message digest, enter <code>DIGEST</code>.</p> <important> <p>Use the
+     * <code>DIGEST</code> value only when the value of the <code>Message</code>
+     * parameter is a message digest. If you use the <code>DIGEST</code> value with a
+     * raw message, the security of the verification operation can be compromised.</p>
+     * </important>
      */
     inline void SetMessageType(MessageType&& value) { m_messageTypeHasBeenSet = true; m_messageType = std::move(value); }
 
     /**
      * <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a
-     * message or message digest. To indicate a message, enter <code>RAW</code>. To
-     * indicate a message digest, enter <code>DIGEST</code>.</p>
+     * message or message digest. The default value, RAW, indicates a message. To
+     * indicate a message digest, enter <code>DIGEST</code>.</p> <important> <p>Use the
+     * <code>DIGEST</code> value only when the value of the <code>Message</code>
+     * parameter is a message digest. If you use the <code>DIGEST</code> value with a
+     * raw message, the security of the verification operation can be compromised.</p>
+     * </important>
      */
     inline VerifyRequest& WithMessageType(const MessageType& value) { SetMessageType(value); return *this;}
 
     /**
      * <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a
-     * message or message digest. To indicate a message, enter <code>RAW</code>. To
-     * indicate a message digest, enter <code>DIGEST</code>.</p>
+     * message or message digest. The default value, RAW, indicates a message. To
+     * indicate a message digest, enter <code>DIGEST</code>.</p> <important> <p>Use the
+     * <code>DIGEST</code> value only when the value of the <code>Message</code>
+     * parameter is a message digest. If you use the <code>DIGEST</code> value with a
+     * raw message, the security of the verification operation can be compromised.</p>
+     * </important>
      */
     inline VerifyRequest& WithMessageType(MessageType&& value) { SetMessageType(std::move(value)); return *this;}
 

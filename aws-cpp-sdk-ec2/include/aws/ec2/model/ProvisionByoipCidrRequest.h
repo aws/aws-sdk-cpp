@@ -48,58 +48,66 @@ namespace Model
   public:
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
+     * <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific
+     * IPv4 prefix that you can specify is /24. The most specific IPv6 prefix you can
+     * specify is /56. The address range cannot overlap with another address range that
+     * you've brought to this or another Region.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
+     * <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific
+     * IPv4 prefix that you can specify is /24. The most specific IPv6 prefix you can
+     * specify is /56. The address range cannot overlap with another address range that
+     * you've brought to this or another Region.</p>
      */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
+     * <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific
+     * IPv4 prefix that you can specify is /24. The most specific IPv6 prefix you can
+     * specify is /56. The address range cannot overlap with another address range that
+     * you've brought to this or another Region.</p>
      */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
+     * <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific
+     * IPv4 prefix that you can specify is /24. The most specific IPv6 prefix you can
+     * specify is /56. The address range cannot overlap with another address range that
+     * you've brought to this or another Region.</p>
      */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
+     * <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific
+     * IPv4 prefix that you can specify is /24. The most specific IPv6 prefix you can
+     * specify is /56. The address range cannot overlap with another address range that
+     * you've brought to this or another Region.</p>
      */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
+     * <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific
+     * IPv4 prefix that you can specify is /24. The most specific IPv6 prefix you can
+     * specify is /56. The address range cannot overlap with another address range that
+     * you've brought to this or another Region.</p>
      */
     inline ProvisionByoipCidrRequest& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
+     * <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific
+     * IPv4 prefix that you can specify is /24. The most specific IPv6 prefix you can
+     * specify is /56. The address range cannot overlap with another address range that
+     * you've brought to this or another Region.</p>
      */
     inline ProvisionByoipCidrRequest& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The most specific prefix
-     * that you can specify is /24. The address range cannot overlap with another
-     * address range that you've brought to this or another Region.</p>
+     * <p>The public IPv4 or IPv6 address range, in CIDR notation. The most specific
+     * IPv4 prefix that you can specify is /24. The most specific IPv6 prefix you can
+     * specify is /56. The address range cannot overlap with another address range that
+     * you've brought to this or another Region.</p>
      */
     inline ProvisionByoipCidrRequest& WithCidr(const char* value) { SetCidr(value); return *this;}
 
@@ -139,6 +147,31 @@ namespace Model
      * IP address range to Amazon using BYOIP.</p>
      */
     inline ProvisionByoipCidrRequest& WithCidrAuthorizationContext(CidrAuthorizationContext&& value) { SetCidrAuthorizationContext(std::move(value)); return *this;}
+
+
+    /**
+     * <p>(IPv6 only) Indicate whether the address range will be publicly advertised to
+     * the internet.</p> <p>Default: true</p>
+     */
+    inline bool GetPubliclyAdvertisable() const{ return m_publiclyAdvertisable; }
+
+    /**
+     * <p>(IPv6 only) Indicate whether the address range will be publicly advertised to
+     * the internet.</p> <p>Default: true</p>
+     */
+    inline bool PubliclyAdvertisableHasBeenSet() const { return m_publiclyAdvertisableHasBeenSet; }
+
+    /**
+     * <p>(IPv6 only) Indicate whether the address range will be publicly advertised to
+     * the internet.</p> <p>Default: true</p>
+     */
+    inline void SetPubliclyAdvertisable(bool value) { m_publiclyAdvertisableHasBeenSet = true; m_publiclyAdvertisable = value; }
+
+    /**
+     * <p>(IPv6 only) Indicate whether the address range will be publicly advertised to
+     * the internet.</p> <p>Default: true</p>
+     */
+    inline ProvisionByoipCidrRequest& WithPubliclyAdvertisable(bool value) { SetPubliclyAdvertisable(value); return *this;}
 
 
     /**
@@ -221,6 +254,9 @@ namespace Model
 
     CidrAuthorizationContext m_cidrAuthorizationContext;
     bool m_cidrAuthorizationContextHasBeenSet;
+
+    bool m_publiclyAdvertisable;
+    bool m_publiclyAdvertisableHasBeenSet;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet;

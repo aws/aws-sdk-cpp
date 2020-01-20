@@ -44,27 +44,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the address pool.</p>
+     * <p>Information about the address range.</p>
      */
     inline const ByoipCidr& GetByoipCidr() const{ return m_byoipCidr; }
 
     /**
-     * <p>Information about the address pool.</p>
+     * <p>Information about the address range.</p>
      */
     inline void SetByoipCidr(const ByoipCidr& value) { m_byoipCidr = value; }
 
     /**
-     * <p>Information about the address pool.</p>
+     * <p>Information about the address range.</p>
      */
     inline void SetByoipCidr(ByoipCidr&& value) { m_byoipCidr = std::move(value); }
 
     /**
-     * <p>Information about the address pool.</p>
+     * <p>Information about the address range.</p>
      */
     inline ProvisionByoipCidrResponse& WithByoipCidr(const ByoipCidr& value) { SetByoipCidr(value); return *this;}
 
     /**
-     * <p>Information about the address pool.</p>
+     * <p>Information about the address range.</p>
      */
     inline ProvisionByoipCidrResponse& WithByoipCidr(ByoipCidr&& value) { SetByoipCidr(std::move(value)); return *this;}
 

@@ -29,7 +29,10 @@ namespace Model
     EniLimitExceeded,
     InsufficientRolePermissions,
     InvalidConfiguration,
-    InternalError
+    InternalError,
+    SubnetOutOfIPAddresses,
+    InvalidSubnet,
+    InvalidSecurityGroup
   };
 
 namespace LastUpdateStatusReasonCodeMapper

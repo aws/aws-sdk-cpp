@@ -181,6 +181,7 @@
 #include <aws/ec2/model/DescribeInstanceTypesResponse.h>
 #include <aws/ec2/model/DescribeInstancesResponse.h>
 #include <aws/ec2/model/DescribeInternetGatewaysResponse.h>
+#include <aws/ec2/model/DescribeIpv6PoolsResponse.h>
 #include <aws/ec2/model/DescribeKeyPairsResponse.h>
 #include <aws/ec2/model/DescribeLaunchTemplateVersionsResponse.h>
 #include <aws/ec2/model/DescribeLaunchTemplatesResponse.h>
@@ -269,6 +270,7 @@
 #include <aws/ec2/model/ExportClientVpnClientConfigurationResponse.h>
 #include <aws/ec2/model/ExportImageResponse.h>
 #include <aws/ec2/model/ExportTransitGatewayRoutesResponse.h>
+#include <aws/ec2/model/GetAssociatedIpv6PoolCidrsResponse.h>
 #include <aws/ec2/model/GetCapacityReservationUsageResponse.h>
 #include <aws/ec2/model/GetCoipPoolUsageResponse.h>
 #include <aws/ec2/model/GetConsoleOutputResponse.h>
@@ -594,6 +596,7 @@ namespace Model
         class DescribeInstanceTypesRequest;
         class DescribeInstancesRequest;
         class DescribeInternetGatewaysRequest;
+        class DescribeIpv6PoolsRequest;
         class DescribeKeyPairsRequest;
         class DescribeLaunchTemplateVersionsRequest;
         class DescribeLaunchTemplatesRequest;
@@ -690,6 +693,7 @@ namespace Model
         class ExportClientVpnClientConfigurationRequest;
         class ExportImageRequest;
         class ExportTransitGatewayRoutesRequest;
+        class GetAssociatedIpv6PoolCidrsRequest;
         class GetCapacityReservationUsageRequest;
         class GetCoipPoolUsageRequest;
         class GetConsoleOutputRequest;
@@ -992,6 +996,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeInstanceTypesResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstanceTypesOutcome;
         typedef Aws::Utils::Outcome<DescribeInstancesResponse, Aws::Client::AWSError<EC2Errors>> DescribeInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeInternetGatewaysResponse, Aws::Client::AWSError<EC2Errors>> DescribeInternetGatewaysOutcome;
+        typedef Aws::Utils::Outcome<DescribeIpv6PoolsResponse, Aws::Client::AWSError<EC2Errors>> DescribeIpv6PoolsOutcome;
         typedef Aws::Utils::Outcome<DescribeKeyPairsResponse, Aws::Client::AWSError<EC2Errors>> DescribeKeyPairsOutcome;
         typedef Aws::Utils::Outcome<DescribeLaunchTemplateVersionsResponse, Aws::Client::AWSError<EC2Errors>> DescribeLaunchTemplateVersionsOutcome;
         typedef Aws::Utils::Outcome<DescribeLaunchTemplatesResponse, Aws::Client::AWSError<EC2Errors>> DescribeLaunchTemplatesOutcome;
@@ -1088,6 +1093,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ExportClientVpnClientConfigurationResponse, Aws::Client::AWSError<EC2Errors>> ExportClientVpnClientConfigurationOutcome;
         typedef Aws::Utils::Outcome<ExportImageResponse, Aws::Client::AWSError<EC2Errors>> ExportImageOutcome;
         typedef Aws::Utils::Outcome<ExportTransitGatewayRoutesResponse, Aws::Client::AWSError<EC2Errors>> ExportTransitGatewayRoutesOutcome;
+        typedef Aws::Utils::Outcome<GetAssociatedIpv6PoolCidrsResponse, Aws::Client::AWSError<EC2Errors>> GetAssociatedIpv6PoolCidrsOutcome;
         typedef Aws::Utils::Outcome<GetCapacityReservationUsageResponse, Aws::Client::AWSError<EC2Errors>> GetCapacityReservationUsageOutcome;
         typedef Aws::Utils::Outcome<GetCoipPoolUsageResponse, Aws::Client::AWSError<EC2Errors>> GetCoipPoolUsageOutcome;
         typedef Aws::Utils::Outcome<GetConsoleOutputResponse, Aws::Client::AWSError<EC2Errors>> GetConsoleOutputOutcome;
@@ -1390,6 +1396,7 @@ namespace Model
         typedef std::future<DescribeInstanceTypesOutcome> DescribeInstanceTypesOutcomeCallable;
         typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
         typedef std::future<DescribeInternetGatewaysOutcome> DescribeInternetGatewaysOutcomeCallable;
+        typedef std::future<DescribeIpv6PoolsOutcome> DescribeIpv6PoolsOutcomeCallable;
         typedef std::future<DescribeKeyPairsOutcome> DescribeKeyPairsOutcomeCallable;
         typedef std::future<DescribeLaunchTemplateVersionsOutcome> DescribeLaunchTemplateVersionsOutcomeCallable;
         typedef std::future<DescribeLaunchTemplatesOutcome> DescribeLaunchTemplatesOutcomeCallable;
@@ -1486,6 +1493,7 @@ namespace Model
         typedef std::future<ExportClientVpnClientConfigurationOutcome> ExportClientVpnClientConfigurationOutcomeCallable;
         typedef std::future<ExportImageOutcome> ExportImageOutcomeCallable;
         typedef std::future<ExportTransitGatewayRoutesOutcome> ExportTransitGatewayRoutesOutcomeCallable;
+        typedef std::future<GetAssociatedIpv6PoolCidrsOutcome> GetAssociatedIpv6PoolCidrsOutcomeCallable;
         typedef std::future<GetCapacityReservationUsageOutcome> GetCapacityReservationUsageOutcomeCallable;
         typedef std::future<GetCoipPoolUsageOutcome> GetCoipPoolUsageOutcomeCallable;
         typedef std::future<GetConsoleOutputOutcome> GetConsoleOutputOutcomeCallable;
@@ -1791,6 +1799,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::DescribeInstanceTypesRequest&, const Model::DescribeInstanceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstanceTypesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInstancesRequest&, const Model::DescribeInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstancesResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeInternetGatewaysRequest&, const Model::DescribeInternetGatewaysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInternetGatewaysResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::DescribeIpv6PoolsRequest&, const Model::DescribeIpv6PoolsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpv6PoolsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeKeyPairsRequest&, const Model::DescribeKeyPairsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeKeyPairsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeLaunchTemplateVersionsRequest&, const Model::DescribeLaunchTemplateVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLaunchTemplateVersionsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::DescribeLaunchTemplatesRequest&, const Model::DescribeLaunchTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLaunchTemplatesResponseReceivedHandler;
@@ -1887,6 +1896,7 @@ namespace Model
     typedef std::function<void(const EC2Client*, const Model::ExportClientVpnClientConfigurationRequest&, const Model::ExportClientVpnClientConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportClientVpnClientConfigurationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ExportImageRequest&, const Model::ExportImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ExportTransitGatewayRoutesRequest&, const Model::ExportTransitGatewayRoutesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportTransitGatewayRoutesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetAssociatedIpv6PoolCidrsRequest&, const Model::GetAssociatedIpv6PoolCidrsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAssociatedIpv6PoolCidrsResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetCapacityReservationUsageRequest&, const Model::GetCapacityReservationUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCapacityReservationUsageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetCoipPoolUsageRequest&, const Model::GetCoipPoolUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCoipPoolUsageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetConsoleOutputRequest&, const Model::GetConsoleOutputOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsoleOutputResponseReceivedHandler;
@@ -2211,34 +2221,36 @@ namespace Model
         virtual void AcceptVpcPeeringConnectionAsync(const Model::AcceptVpcPeeringConnectionRequest& request, const AcceptVpcPeeringConnectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Advertises an IPv4 address range that is provisioned for use with your AWS
-         * resources through bring your own IP addresses (BYOIP).</p> <p>You can perform
-         * this operation at most once every 10 seconds, even if you specify different
-         * address ranges each time.</p> <p>We recommend that you stop advertising the
-         * BYOIP CIDR from other locations when you advertise it from AWS. To minimize down
-         * time, you can configure your AWS resources to use an address from a BYOIP CIDR
-         * before it is advertised, and then simultaneously stop advertising it from the
-         * current location and start advertising it through AWS.</p> <p>It can take a few
-         * minutes before traffic to the specified addresses starts routing to AWS because
-         * of BGP propagation delays.</p> <p>To stop advertising the BYOIP CIDR, use
-         * <a>WithdrawByoipCidr</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Advertises an IPv4 or IPv6 address range that is provisioned for use with
+         * your AWS resources through bring your own IP addresses (BYOIP).</p> <p>You can
+         * perform this operation at most once every 10 seconds, even if you specify
+         * different address ranges each time.</p> <p>We recommend that you stop
+         * advertising the BYOIP CIDR from other locations when you advertise it from AWS.
+         * To minimize down time, you can configure your AWS resources to use an address
+         * from a BYOIP CIDR before it is advertised, and then simultaneously stop
+         * advertising it from the current location and start advertising it through
+         * AWS.</p> <p>It can take a few minutes before traffic to the specified addresses
+         * starts routing to AWS because of BGP propagation delays.</p> <p>To stop
+         * advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr">AWS
          * API Reference</a></p>
          */
         virtual Model::AdvertiseByoipCidrOutcome AdvertiseByoipCidr(const Model::AdvertiseByoipCidrRequest& request) const;
 
         /**
-         * <p>Advertises an IPv4 address range that is provisioned for use with your AWS
-         * resources through bring your own IP addresses (BYOIP).</p> <p>You can perform
-         * this operation at most once every 10 seconds, even if you specify different
-         * address ranges each time.</p> <p>We recommend that you stop advertising the
-         * BYOIP CIDR from other locations when you advertise it from AWS. To minimize down
-         * time, you can configure your AWS resources to use an address from a BYOIP CIDR
-         * before it is advertised, and then simultaneously stop advertising it from the
-         * current location and start advertising it through AWS.</p> <p>It can take a few
-         * minutes before traffic to the specified addresses starts routing to AWS because
-         * of BGP propagation delays.</p> <p>To stop advertising the BYOIP CIDR, use
-         * <a>WithdrawByoipCidr</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Advertises an IPv4 or IPv6 address range that is provisioned for use with
+         * your AWS resources through bring your own IP addresses (BYOIP).</p> <p>You can
+         * perform this operation at most once every 10 seconds, even if you specify
+         * different address ranges each time.</p> <p>We recommend that you stop
+         * advertising the BYOIP CIDR from other locations when you advertise it from AWS.
+         * To minimize down time, you can configure your AWS resources to use an address
+         * from a BYOIP CIDR before it is advertised, and then simultaneously stop
+         * advertising it from the current location and start advertising it through
+         * AWS.</p> <p>It can take a few minutes before traffic to the specified addresses
+         * starts routing to AWS because of BGP propagation delays.</p> <p>To stop
+         * advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr">AWS
          * API Reference</a></p>
          *
@@ -2247,17 +2259,18 @@ namespace Model
         virtual Model::AdvertiseByoipCidrOutcomeCallable AdvertiseByoipCidrCallable(const Model::AdvertiseByoipCidrRequest& request) const;
 
         /**
-         * <p>Advertises an IPv4 address range that is provisioned for use with your AWS
-         * resources through bring your own IP addresses (BYOIP).</p> <p>You can perform
-         * this operation at most once every 10 seconds, even if you specify different
-         * address ranges each time.</p> <p>We recommend that you stop advertising the
-         * BYOIP CIDR from other locations when you advertise it from AWS. To minimize down
-         * time, you can configure your AWS resources to use an address from a BYOIP CIDR
-         * before it is advertised, and then simultaneously stop advertising it from the
-         * current location and start advertising it through AWS.</p> <p>It can take a few
-         * minutes before traffic to the specified addresses starts routing to AWS because
-         * of BGP propagation delays.</p> <p>To stop advertising the BYOIP CIDR, use
-         * <a>WithdrawByoipCidr</a>.</p><p><h3>See Also:</h3>   <a
+         * <p>Advertises an IPv4 or IPv6 address range that is provisioned for use with
+         * your AWS resources through bring your own IP addresses (BYOIP).</p> <p>You can
+         * perform this operation at most once every 10 seconds, even if you specify
+         * different address ranges each time.</p> <p>We recommend that you stop
+         * advertising the BYOIP CIDR from other locations when you advertise it from AWS.
+         * To minimize down time, you can configure your AWS resources to use an address
+         * from a BYOIP CIDR before it is advertised, and then simultaneously stop
+         * advertising it from the current location and start advertising it through
+         * AWS.</p> <p>It can take a few minutes before traffic to the specified addresses
+         * starts routing to AWS because of BGP propagation delays.</p> <p>To stop
+         * advertising the BYOIP CIDR, use <a>WithdrawByoipCidr</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AdvertiseByoipCidr">AWS
          * API Reference</a></p>
          *
@@ -2904,9 +2917,11 @@ namespace Model
 
         /**
          * <p>Associates a CIDR block with your VPC. You can associate a secondary IPv4
-         * CIDR block, or you can associate an Amazon-provided IPv6 CIDR block. The IPv6
-         * CIDR block size is fixed at /56.</p> <p>For more information about associating
-         * CIDR blocks with your VPC and applicable restrictions, see <a
+         * CIDR block, an Amazon-provided IPv6 CIDR block, or an IPv6 CIDR block from an
+         * IPv6 address pool that you provisioned through bring your own IP addresses (<a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
+         * The IPv6 CIDR block size is fixed at /56.</p> <p>For more information about
+         * associating CIDR blocks with your VPC and applicable restrictions, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
          * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2917,9 +2932,11 @@ namespace Model
 
         /**
          * <p>Associates a CIDR block with your VPC. You can associate a secondary IPv4
-         * CIDR block, or you can associate an Amazon-provided IPv6 CIDR block. The IPv6
-         * CIDR block size is fixed at /56.</p> <p>For more information about associating
-         * CIDR blocks with your VPC and applicable restrictions, see <a
+         * CIDR block, an Amazon-provided IPv6 CIDR block, or an IPv6 CIDR block from an
+         * IPv6 address pool that you provisioned through bring your own IP addresses (<a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
+         * The IPv6 CIDR block size is fixed at /56.</p> <p>For more information about
+         * associating CIDR blocks with your VPC and applicable restrictions, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
          * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2932,9 +2949,11 @@ namespace Model
 
         /**
          * <p>Associates a CIDR block with your VPC. You can associate a secondary IPv4
-         * CIDR block, or you can associate an Amazon-provided IPv6 CIDR block. The IPv6
-         * CIDR block size is fixed at /56.</p> <p>For more information about associating
-         * CIDR blocks with your VPC and applicable restrictions, see <a
+         * CIDR block, an Amazon-provided IPv6 CIDR block, or an IPv6 CIDR block from an
+         * IPv6 address pool that you provisioned through bring your own IP addresses (<a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).
+         * The IPv6 CIDR block size is fixed at /56.</p> <p>For more information about
+         * associating CIDR blocks with your VPC and applicable restrictions, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC
          * and Subnet Sizing</a> in the <i>Amazon Virtual Private Cloud User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -6204,12 +6223,14 @@ namespace Model
          * your VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-         * <p>You can optionally request an Amazon-provided IPv6 CIDR block for the VPC.
-         * The IPv6 CIDR block uses a /56 prefix length, and is allocated from Amazon's
-         * pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.</p> <p>By
-         * default, each instance you launch in the VPC has the default DHCP options, which
-         * include only a default DNS server that we provide (AmazonProvidedDNS). For more
-         * information, see <a
+         * <p>You can optionally request an IPv6 CIDR block for the VPC. You can request an
+         * Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6 addresses, or an IPv6
+         * CIDR block from an IPv6 address pool that you provisioned through bring your own
+         * IP addresses (<a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).</p>
+         * <p>By default, each instance you launch in the VPC has the default DHCP options,
+         * which include only a default DNS server that we provide (AmazonProvidedDNS). For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
@@ -6230,12 +6251,14 @@ namespace Model
          * your VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-         * <p>You can optionally request an Amazon-provided IPv6 CIDR block for the VPC.
-         * The IPv6 CIDR block uses a /56 prefix length, and is allocated from Amazon's
-         * pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.</p> <p>By
-         * default, each instance you launch in the VPC has the default DHCP options, which
-         * include only a default DNS server that we provide (AmazonProvidedDNS). For more
-         * information, see <a
+         * <p>You can optionally request an IPv6 CIDR block for the VPC. You can request an
+         * Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6 addresses, or an IPv6
+         * CIDR block from an IPv6 address pool that you provisioned through bring your own
+         * IP addresses (<a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).</p>
+         * <p>By default, each instance you launch in the VPC has the default DHCP options,
+         * which include only a default DNS server that we provide (AmazonProvidedDNS). For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
@@ -6258,12 +6281,14 @@ namespace Model
          * your VPC, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your
          * VPC and Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-         * <p>You can optionally request an Amazon-provided IPv6 CIDR block for the VPC.
-         * The IPv6 CIDR block uses a /56 prefix length, and is allocated from Amazon's
-         * pool of IPv6 addresses. You cannot choose the IPv6 range for your VPC.</p> <p>By
-         * default, each instance you launch in the VPC has the default DHCP options, which
-         * include only a default DNS server that we provide (AmazonProvidedDNS). For more
-         * information, see <a
+         * <p>You can optionally request an IPv6 CIDR block for the VPC. You can request an
+         * Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6 addresses, or an IPv6
+         * CIDR block from an IPv6 address pool that you provisioned through bring your own
+         * IP addresses (<a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).</p>
+         * <p>By default, each instance you launch in the VPC has the default DHCP options,
+         * which include only a default DNS server that we provide (AmazonProvidedDNS). For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
          * Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
          * <p>You can specify the instance tenancy value for the VPC when you create it.
@@ -8584,7 +8609,8 @@ namespace Model
          * <p>Describes the IP address ranges that were specified in calls to
          * <a>ProvisionByoipCidr</a>.</p> <p>To describe the address pools that were
          * created when you provisioned the address ranges, use
-         * <a>DescribePublicIpv4Pools</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">AWS
          * API Reference</a></p>
          */
@@ -8594,7 +8620,8 @@ namespace Model
          * <p>Describes the IP address ranges that were specified in calls to
          * <a>ProvisionByoipCidr</a>.</p> <p>To describe the address pools that were
          * created when you provisioned the address ranges, use
-         * <a>DescribePublicIpv4Pools</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">AWS
          * API Reference</a></p>
          *
@@ -8606,7 +8633,8 @@ namespace Model
          * <p>Describes the IP address ranges that were specified in calls to
          * <a>ProvisionByoipCidr</a>.</p> <p>To describe the address pools that were
          * created when you provisioned the address ranges, use
-         * <a>DescribePublicIpv4Pools</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>DescribePublicIpv4Pools</a> or <a>DescribeIpv6Pools</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeByoipCidrs">AWS
          * API Reference</a></p>
          *
@@ -10125,6 +10153,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeInternetGatewaysAsync(const Model::DescribeInternetGatewaysRequest& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes your IPv6 address pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpv6Pools">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeIpv6PoolsOutcome DescribeIpv6Pools(const Model::DescribeIpv6PoolsRequest& request) const;
+
+        /**
+         * <p>Describes your IPv6 address pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpv6Pools">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeIpv6PoolsOutcomeCallable DescribeIpv6PoolsCallable(const Model::DescribeIpv6PoolsRequest& request) const;
+
+        /**
+         * <p>Describes your IPv6 address pools.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpv6Pools">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeIpv6PoolsAsync(const Model::DescribeIpv6PoolsRequest& request, const DescribeIpv6PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes the specified key pairs or all of your key pairs.</p> <p>For more
@@ -13781,6 +13834,34 @@ namespace Model
         virtual void ExportTransitGatewayRoutesAsync(const Model::ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Gets information about the IPv6 CIDR block associations for a specified IPv6
+         * address pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedIpv6PoolCidrs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetAssociatedIpv6PoolCidrsOutcome GetAssociatedIpv6PoolCidrs(const Model::GetAssociatedIpv6PoolCidrsRequest& request) const;
+
+        /**
+         * <p>Gets information about the IPv6 CIDR block associations for a specified IPv6
+         * address pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedIpv6PoolCidrs">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetAssociatedIpv6PoolCidrsOutcomeCallable GetAssociatedIpv6PoolCidrsCallable(const Model::GetAssociatedIpv6PoolCidrsRequest& request) const;
+
+        /**
+         * <p>Gets information about the IPv6 CIDR block associations for a specified IPv6
+         * address pool.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAssociatedIpv6PoolCidrs">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetAssociatedIpv6PoolCidrsAsync(const Model::GetAssociatedIpv6PoolCidrsRequest& request, const GetAssociatedIpv6PoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Gets usage information about a Capacity Reservation. If the Capacity
          * Reservation is shared, it shows usage information for the Capacity Reservation
          * owner and each AWS account that is currently using the shared capacity. If the
@@ -16668,9 +16749,9 @@ namespace Model
         virtual void MoveAddressToVpcAsync(const Model::MoveAddressToVpcRequest& request, const MoveAddressToVpcResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Provisions an address range for use with your AWS resources through bring
-         * your own IP addresses (BYOIP) and creates a corresponding address pool. After
-         * the address range is provisioned, it is ready to be advertised using
+         * <p>Provisions an IPv4 or IPv6 address range for use with your AWS resources
+         * through bring your own IP addresses (BYOIP) and creates a corresponding address
+         * pool. After the address range is provisioned, it is ready to be advertised using
          * <a>AdvertiseByoipCidr</a>.</p> <p>AWS verifies that you own the address range
          * and are authorized to advertise it. You must ensure that the address range is
          * registered to you and that you created an RPKI ROA to authorize Amazon ASNs
@@ -16681,18 +16762,18 @@ namespace Model
          * the call returns immediately, but the address range is not ready to use until
          * its status changes from <code>pending-provision</code> to
          * <code>provisioned</code>. To monitor the status of an address range, use
-         * <a>DescribeByoipCidrs</a>. To allocate an Elastic IP address from your address
-         * pool, use <a>AllocateAddress</a> with either the specific address from the
-         * address pool or the ID of the address pool.</p><p><h3>See Also:</h3>   <a
+         * <a>DescribeByoipCidrs</a>. To allocate an Elastic IP address from your IPv4
+         * address pool, use <a>AllocateAddress</a> with either the specific address from
+         * the address pool or the ID of the address pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">AWS
          * API Reference</a></p>
          */
         virtual Model::ProvisionByoipCidrOutcome ProvisionByoipCidr(const Model::ProvisionByoipCidrRequest& request) const;
 
         /**
-         * <p>Provisions an address range for use with your AWS resources through bring
-         * your own IP addresses (BYOIP) and creates a corresponding address pool. After
-         * the address range is provisioned, it is ready to be advertised using
+         * <p>Provisions an IPv4 or IPv6 address range for use with your AWS resources
+         * through bring your own IP addresses (BYOIP) and creates a corresponding address
+         * pool. After the address range is provisioned, it is ready to be advertised using
          * <a>AdvertiseByoipCidr</a>.</p> <p>AWS verifies that you own the address range
          * and are authorized to advertise it. You must ensure that the address range is
          * registered to you and that you created an RPKI ROA to authorize Amazon ASNs
@@ -16703,9 +16784,9 @@ namespace Model
          * the call returns immediately, but the address range is not ready to use until
          * its status changes from <code>pending-provision</code> to
          * <code>provisioned</code>. To monitor the status of an address range, use
-         * <a>DescribeByoipCidrs</a>. To allocate an Elastic IP address from your address
-         * pool, use <a>AllocateAddress</a> with either the specific address from the
-         * address pool or the ID of the address pool.</p><p><h3>See Also:</h3>   <a
+         * <a>DescribeByoipCidrs</a>. To allocate an Elastic IP address from your IPv4
+         * address pool, use <a>AllocateAddress</a> with either the specific address from
+         * the address pool or the ID of the address pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">AWS
          * API Reference</a></p>
          *
@@ -16714,9 +16795,9 @@ namespace Model
         virtual Model::ProvisionByoipCidrOutcomeCallable ProvisionByoipCidrCallable(const Model::ProvisionByoipCidrRequest& request) const;
 
         /**
-         * <p>Provisions an address range for use with your AWS resources through bring
-         * your own IP addresses (BYOIP) and creates a corresponding address pool. After
-         * the address range is provisioned, it is ready to be advertised using
+         * <p>Provisions an IPv4 or IPv6 address range for use with your AWS resources
+         * through bring your own IP addresses (BYOIP) and creates a corresponding address
+         * pool. After the address range is provisioned, it is ready to be advertised using
          * <a>AdvertiseByoipCidr</a>.</p> <p>AWS verifies that you own the address range
          * and are authorized to advertise it. You must ensure that the address range is
          * registered to you and that you created an RPKI ROA to authorize Amazon ASNs
@@ -16727,9 +16808,9 @@ namespace Model
          * the call returns immediately, but the address range is not ready to use until
          * its status changes from <code>pending-provision</code> to
          * <code>provisioned</code>. To monitor the status of an address range, use
-         * <a>DescribeByoipCidrs</a>. To allocate an Elastic IP address from your address
-         * pool, use <a>AllocateAddress</a> with either the specific address from the
-         * address pool or the ID of the address pool.</p><p><h3>See Also:</h3>   <a
+         * <a>DescribeByoipCidrs</a>. To allocate an Elastic IP address from your IPv4
+         * address pool, use <a>AllocateAddress</a> with either the specific address from
+         * the address pool or the ID of the address pool.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ProvisionByoipCidr">AWS
          * API Reference</a></p>
          *
@@ -19111,7 +19192,7 @@ namespace Model
         virtual void UpdateSecurityGroupRuleDescriptionsIngressAsync(const Model::UpdateSecurityGroupRuleDescriptionsIngressRequest& request, const UpdateSecurityGroupRuleDescriptionsIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stops advertising an IPv4 address range that is provisioned as an address
+         * <p>Stops advertising an address range that is provisioned as an address
          * pool.</p> <p>You can perform this operation at most once every 10 seconds, even
          * if you specify different address ranges each time.</p> <p>It can take a few
          * minutes before traffic to the specified addresses stops routing to AWS because
@@ -19122,7 +19203,7 @@ namespace Model
         virtual Model::WithdrawByoipCidrOutcome WithdrawByoipCidr(const Model::WithdrawByoipCidrRequest& request) const;
 
         /**
-         * <p>Stops advertising an IPv4 address range that is provisioned as an address
+         * <p>Stops advertising an address range that is provisioned as an address
          * pool.</p> <p>You can perform this operation at most once every 10 seconds, even
          * if you specify different address ranges each time.</p> <p>It can take a few
          * minutes before traffic to the specified addresses stops routing to AWS because
@@ -19135,7 +19216,7 @@ namespace Model
         virtual Model::WithdrawByoipCidrOutcomeCallable WithdrawByoipCidrCallable(const Model::WithdrawByoipCidrRequest& request) const;
 
         /**
-         * <p>Stops advertising an IPv4 address range that is provisioned as an address
+         * <p>Stops advertising an address range that is provisioned as an address
          * pool.</p> <p>You can perform this operation at most once every 10 seconds, even
          * if you specify different address ranges each time.</p> <p>It can take a few
          * minutes before traffic to the specified addresses stops routing to AWS because
@@ -19341,6 +19422,7 @@ namespace Model
         void DescribeInstanceTypesAsyncHelper(const Model::DescribeInstanceTypesRequest& request, const DescribeInstanceTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstancesAsyncHelper(const Model::DescribeInstancesRequest& request, const DescribeInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInternetGatewaysAsyncHelper(const Model::DescribeInternetGatewaysRequest& request, const DescribeInternetGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeIpv6PoolsAsyncHelper(const Model::DescribeIpv6PoolsRequest& request, const DescribeIpv6PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeKeyPairsAsyncHelper(const Model::DescribeKeyPairsRequest& request, const DescribeKeyPairsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLaunchTemplateVersionsAsyncHelper(const Model::DescribeLaunchTemplateVersionsRequest& request, const DescribeLaunchTemplateVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeLaunchTemplatesAsyncHelper(const Model::DescribeLaunchTemplatesRequest& request, const DescribeLaunchTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -19437,6 +19519,7 @@ namespace Model
         void ExportClientVpnClientConfigurationAsyncHelper(const Model::ExportClientVpnClientConfigurationRequest& request, const ExportClientVpnClientConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportImageAsyncHelper(const Model::ExportImageRequest& request, const ExportImageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ExportTransitGatewayRoutesAsyncHelper(const Model::ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetAssociatedIpv6PoolCidrsAsyncHelper(const Model::GetAssociatedIpv6PoolCidrsRequest& request, const GetAssociatedIpv6PoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCapacityReservationUsageAsyncHelper(const Model::GetCapacityReservationUsageRequest& request, const GetCapacityReservationUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCoipPoolUsageAsyncHelper(const Model::GetCoipPoolUsageRequest& request, const GetCoipPoolUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetConsoleOutputAsyncHelper(const Model::GetConsoleOutputRequest& request, const GetConsoleOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

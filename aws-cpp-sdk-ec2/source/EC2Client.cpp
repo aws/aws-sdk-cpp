@@ -220,6 +220,7 @@
 #include <aws/ec2/model/DescribeInstanceTypesRequest.h>
 #include <aws/ec2/model/DescribeInstancesRequest.h>
 #include <aws/ec2/model/DescribeInternetGatewaysRequest.h>
+#include <aws/ec2/model/DescribeIpv6PoolsRequest.h>
 #include <aws/ec2/model/DescribeKeyPairsRequest.h>
 #include <aws/ec2/model/DescribeLaunchTemplateVersionsRequest.h>
 #include <aws/ec2/model/DescribeLaunchTemplatesRequest.h>
@@ -316,6 +317,7 @@
 #include <aws/ec2/model/ExportClientVpnClientConfigurationRequest.h>
 #include <aws/ec2/model/ExportImageRequest.h>
 #include <aws/ec2/model/ExportTransitGatewayRoutesRequest.h>
+#include <aws/ec2/model/GetAssociatedIpv6PoolCidrsRequest.h>
 #include <aws/ec2/model/GetCapacityReservationUsageRequest.h>
 #include <aws/ec2/model/GetCoipPoolUsageRequest.h>
 #include <aws/ec2/model/GetConsoleOutputRequest.h>
@@ -7151,6 +7153,41 @@ void EC2Client::DescribeInternetGatewaysAsyncHelper(const DescribeInternetGatewa
   handler(this, request, DescribeInternetGateways(request), context);
 }
 
+DescribeIpv6PoolsOutcome EC2Client::DescribeIpv6Pools(const DescribeIpv6PoolsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return DescribeIpv6PoolsOutcome(DescribeIpv6PoolsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeIpv6PoolsOutcome(outcome.GetError());
+  }
+}
+
+DescribeIpv6PoolsOutcomeCallable EC2Client::DescribeIpv6PoolsCallable(const DescribeIpv6PoolsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeIpv6PoolsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeIpv6Pools(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::DescribeIpv6PoolsAsync(const DescribeIpv6PoolsRequest& request, const DescribeIpv6PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeIpv6PoolsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::DescribeIpv6PoolsAsyncHelper(const DescribeIpv6PoolsRequest& request, const DescribeIpv6PoolsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeIpv6Pools(request), context);
+}
+
 DescribeKeyPairsOutcome EC2Client::DescribeKeyPairs(const DescribeKeyPairsRequest& request) const
 {
   Aws::Http::URI uri = m_uri;
@@ -10509,6 +10546,41 @@ void EC2Client::ExportTransitGatewayRoutesAsync(const ExportTransitGatewayRoutes
 void EC2Client::ExportTransitGatewayRoutesAsyncHelper(const ExportTransitGatewayRoutesRequest& request, const ExportTransitGatewayRoutesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ExportTransitGatewayRoutes(request), context);
+}
+
+GetAssociatedIpv6PoolCidrsOutcome EC2Client::GetAssociatedIpv6PoolCidrs(const GetAssociatedIpv6PoolCidrsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  XmlOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST);
+  if(outcome.IsSuccess())
+  {
+    return GetAssociatedIpv6PoolCidrsOutcome(GetAssociatedIpv6PoolCidrsResponse(outcome.GetResult()));
+  }
+  else
+  {
+    return GetAssociatedIpv6PoolCidrsOutcome(outcome.GetError());
+  }
+}
+
+GetAssociatedIpv6PoolCidrsOutcomeCallable EC2Client::GetAssociatedIpv6PoolCidrsCallable(const GetAssociatedIpv6PoolCidrsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetAssociatedIpv6PoolCidrsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetAssociatedIpv6PoolCidrs(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EC2Client::GetAssociatedIpv6PoolCidrsAsync(const GetAssociatedIpv6PoolCidrsRequest& request, const GetAssociatedIpv6PoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetAssociatedIpv6PoolCidrsAsyncHelper( request, handler, context ); } );
+}
+
+void EC2Client::GetAssociatedIpv6PoolCidrsAsyncHelper(const GetAssociatedIpv6PoolCidrsRequest& request, const GetAssociatedIpv6PoolCidrsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetAssociatedIpv6PoolCidrs(request), context);
 }
 
 GetCapacityReservationUsageOutcome EC2Client::GetCapacityReservationUsage(const GetCapacityReservationUsageRequest& request) const

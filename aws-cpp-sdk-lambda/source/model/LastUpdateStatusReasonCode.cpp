@@ -34,6 +34,9 @@ namespace Aws
         static const int InsufficientRolePermissions_HASH = HashingUtils::HashString("InsufficientRolePermissions");
         static const int InvalidConfiguration_HASH = HashingUtils::HashString("InvalidConfiguration");
         static const int InternalError_HASH = HashingUtils::HashString("InternalError");
+        static const int SubnetOutOfIPAddresses_HASH = HashingUtils::HashString("SubnetOutOfIPAddresses");
+        static const int InvalidSubnet_HASH = HashingUtils::HashString("InvalidSubnet");
+        static const int InvalidSecurityGroup_HASH = HashingUtils::HashString("InvalidSecurityGroup");
 
 
         LastUpdateStatusReasonCode GetLastUpdateStatusReasonCodeForName(const Aws::String& name)
@@ -54,6 +57,18 @@ namespace Aws
           else if (hashCode == InternalError_HASH)
           {
             return LastUpdateStatusReasonCode::InternalError;
+          }
+          else if (hashCode == SubnetOutOfIPAddresses_HASH)
+          {
+            return LastUpdateStatusReasonCode::SubnetOutOfIPAddresses;
+          }
+          else if (hashCode == InvalidSubnet_HASH)
+          {
+            return LastUpdateStatusReasonCode::InvalidSubnet;
+          }
+          else if (hashCode == InvalidSecurityGroup_HASH)
+          {
+            return LastUpdateStatusReasonCode::InvalidSecurityGroup;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +92,12 @@ namespace Aws
             return "InvalidConfiguration";
           case LastUpdateStatusReasonCode::InternalError:
             return "InternalError";
+          case LastUpdateStatusReasonCode::SubnetOutOfIPAddresses:
+            return "SubnetOutOfIPAddresses";
+          case LastUpdateStatusReasonCode::InvalidSubnet:
+            return "InvalidSubnet";
+          case LastUpdateStatusReasonCode::InvalidSecurityGroup:
+            return "InvalidSecurityGroup";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

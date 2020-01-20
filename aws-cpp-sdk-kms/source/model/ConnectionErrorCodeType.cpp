@@ -36,6 +36,8 @@ namespace Aws
         static const int INTERNAL_ERROR_HASH = HashingUtils::HashString("INTERNAL_ERROR");
         static const int INSUFFICIENT_CLOUDHSM_HSMS_HASH = HashingUtils::HashString("INSUFFICIENT_CLOUDHSM_HSMS");
         static const int USER_LOCKED_OUT_HASH = HashingUtils::HashString("USER_LOCKED_OUT");
+        static const int USER_NOT_FOUND_HASH = HashingUtils::HashString("USER_NOT_FOUND");
+        static const int USER_LOGGED_IN_HASH = HashingUtils::HashString("USER_LOGGED_IN");
 
 
         ConnectionErrorCodeType GetConnectionErrorCodeTypeForName(const Aws::String& name)
@@ -65,6 +67,14 @@ namespace Aws
           {
             return ConnectionErrorCodeType::USER_LOCKED_OUT;
           }
+          else if (hashCode == USER_NOT_FOUND_HASH)
+          {
+            return ConnectionErrorCodeType::USER_NOT_FOUND;
+          }
+          else if (hashCode == USER_LOGGED_IN_HASH)
+          {
+            return ConnectionErrorCodeType::USER_LOGGED_IN;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +101,10 @@ namespace Aws
             return "INSUFFICIENT_CLOUDHSM_HSMS";
           case ConnectionErrorCodeType::USER_LOCKED_OUT:
             return "USER_LOCKED_OUT";
+          case ConnectionErrorCodeType::USER_NOT_FOUND:
+            return "USER_NOT_FOUND";
+          case ConnectionErrorCodeType::USER_LOGGED_IN:
+            return "USER_LOGGED_IN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

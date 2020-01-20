@@ -46,6 +46,7 @@
 #include <aws/application-insights/model/DescribeProblemObservationsRequest.h>
 #include <aws/application-insights/model/ListApplicationsRequest.h>
 #include <aws/application-insights/model/ListComponentsRequest.h>
+#include <aws/application-insights/model/ListConfigurationHistoryRequest.h>
 #include <aws/application-insights/model/ListLogPatternSetsRequest.h>
 #include <aws/application-insights/model/ListLogPatternsRequest.h>
 #include <aws/application-insights/model/ListProblemsRequest.h>
@@ -687,6 +688,41 @@ void ApplicationInsightsClient::ListComponentsAsync(const ListComponentsRequest&
 void ApplicationInsightsClient::ListComponentsAsyncHelper(const ListComponentsRequest& request, const ListComponentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListComponents(request), context);
+}
+
+ListConfigurationHistoryOutcome ApplicationInsightsClient::ListConfigurationHistory(const ListConfigurationHistoryRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListConfigurationHistoryOutcome(ListConfigurationHistoryResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListConfigurationHistoryOutcome(outcome.GetError());
+  }
+}
+
+ListConfigurationHistoryOutcomeCallable ApplicationInsightsClient::ListConfigurationHistoryCallable(const ListConfigurationHistoryRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListConfigurationHistoryOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConfigurationHistory(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ApplicationInsightsClient::ListConfigurationHistoryAsync(const ListConfigurationHistoryRequest& request, const ListConfigurationHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListConfigurationHistoryAsyncHelper( request, handler, context ); } );
+}
+
+void ApplicationInsightsClient::ListConfigurationHistoryAsyncHelper(const ListConfigurationHistoryRequest& request, const ListConfigurationHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListConfigurationHistory(request), context);
 }
 
 ListLogPatternSetsOutcome ApplicationInsightsClient::ListLogPatternSets(const ListLogPatternSetsRequest& request) const

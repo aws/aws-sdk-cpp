@@ -219,11 +219,12 @@ namespace Model
 
     /**
      * <p>Specifies the CMK that encrypts the private key in the data key pair. You
-     * must specify a symmetric CMK. You cannot use an asymmetric CMK. </p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * must specify a symmetric CMK. You cannot use an asymmetric CMK. To get the type
+     * of your CMK, use the <a>DescribeKey</a> operation. </p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -235,11 +236,12 @@ namespace Model
 
     /**
      * <p>Specifies the CMK that encrypts the private key in the data key pair. You
-     * must specify a symmetric CMK. You cannot use an asymmetric CMK. </p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * must specify a symmetric CMK. You cannot use an asymmetric CMK. To get the type
+     * of your CMK, use the <a>DescribeKey</a> operation. </p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -251,11 +253,12 @@ namespace Model
 
     /**
      * <p>Specifies the CMK that encrypts the private key in the data key pair. You
-     * must specify a symmetric CMK. You cannot use an asymmetric CMK. </p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * must specify a symmetric CMK. You cannot use an asymmetric CMK. To get the type
+     * of your CMK, use the <a>DescribeKey</a> operation. </p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -267,11 +270,12 @@ namespace Model
 
     /**
      * <p>Specifies the CMK that encrypts the private key in the data key pair. You
-     * must specify a symmetric CMK. You cannot use an asymmetric CMK. </p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * must specify a symmetric CMK. You cannot use an asymmetric CMK. To get the type
+     * of your CMK, use the <a>DescribeKey</a> operation. </p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -283,11 +287,12 @@ namespace Model
 
     /**
      * <p>Specifies the CMK that encrypts the private key in the data key pair. You
-     * must specify a symmetric CMK. You cannot use an asymmetric CMK. </p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * must specify a symmetric CMK. You cannot use an asymmetric CMK. To get the type
+     * of your CMK, use the <a>DescribeKey</a> operation. </p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -299,11 +304,12 @@ namespace Model
 
     /**
      * <p>Specifies the CMK that encrypts the private key in the data key pair. You
-     * must specify a symmetric CMK. You cannot use an asymmetric CMK. </p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * must specify a symmetric CMK. You cannot use an asymmetric CMK. To get the type
+     * of your CMK, use the <a>DescribeKey</a> operation. </p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -315,11 +321,12 @@ namespace Model
 
     /**
      * <p>Specifies the CMK that encrypts the private key in the data key pair. You
-     * must specify a symmetric CMK. You cannot use an asymmetric CMK. </p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * must specify a symmetric CMK. You cannot use an asymmetric CMK. To get the type
+     * of your CMK, use the <a>DescribeKey</a> operation. </p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
@@ -331,11 +338,12 @@ namespace Model
 
     /**
      * <p>Specifies the CMK that encrypts the private key in the data key pair. You
-     * must specify a symmetric CMK. You cannot use an asymmetric CMK. </p> <p>To
-     * specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias
-     * ARN. When using an alias name, prefix it with <code>"alias/"</code>.</p> <p>For
-     * example:</p> <ul> <li> <p>Key ID:
-     * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
+     * must specify a symmetric CMK. You cannot use an asymmetric CMK. To get the type
+     * of your CMK, use the <a>DescribeKey</a> operation. </p> <p>To specify a CMK, use
+     * its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
+     * alias name, prefix it with <code>"alias/"</code>.</p> <p>For example:</p> <ul>
+     * <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li>
+     * <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
      * </p> </li> <li> <p>Alias name: <code>alias/ExampleAlias</code> </p> </li> <li>
      * <p>Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>

@@ -126,6 +126,112 @@ namespace Model
 
 
     /**
+     * <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR
+     * block.</p>
+     */
+    inline const Aws::String& GetIpv6Pool() const{ return m_ipv6Pool; }
+
+    /**
+     * <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR
+     * block.</p>
+     */
+    inline bool Ipv6PoolHasBeenSet() const { return m_ipv6PoolHasBeenSet; }
+
+    /**
+     * <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR
+     * block.</p>
+     */
+    inline void SetIpv6Pool(const Aws::String& value) { m_ipv6PoolHasBeenSet = true; m_ipv6Pool = value; }
+
+    /**
+     * <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR
+     * block.</p>
+     */
+    inline void SetIpv6Pool(Aws::String&& value) { m_ipv6PoolHasBeenSet = true; m_ipv6Pool = std::move(value); }
+
+    /**
+     * <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR
+     * block.</p>
+     */
+    inline void SetIpv6Pool(const char* value) { m_ipv6PoolHasBeenSet = true; m_ipv6Pool.assign(value); }
+
+    /**
+     * <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR
+     * block.</p>
+     */
+    inline CreateVpcRequest& WithIpv6Pool(const Aws::String& value) { SetIpv6Pool(value); return *this;}
+
+    /**
+     * <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR
+     * block.</p>
+     */
+    inline CreateVpcRequest& WithIpv6Pool(Aws::String&& value) { SetIpv6Pool(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of an IPv6 address pool from which to allocate the IPv6 CIDR
+     * block.</p>
+     */
+    inline CreateVpcRequest& WithIpv6Pool(const char* value) { SetIpv6Pool(value); return *this;}
+
+
+    /**
+     * <p>The IPv6 CIDR block from the IPv6 address pool. You must also specify
+     * <code>Ipv6Pool</code> in the request.</p> <p>To let Amazon choose the IPv6 CIDR
+     * block for you, omit this parameter.</p>
+     */
+    inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
+
+    /**
+     * <p>The IPv6 CIDR block from the IPv6 address pool. You must also specify
+     * <code>Ipv6Pool</code> in the request.</p> <p>To let Amazon choose the IPv6 CIDR
+     * block for you, omit this parameter.</p>
+     */
+    inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv6 CIDR block from the IPv6 address pool. You must also specify
+     * <code>Ipv6Pool</code> in the request.</p> <p>To let Amazon choose the IPv6 CIDR
+     * block for you, omit this parameter.</p>
+     */
+    inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
+
+    /**
+     * <p>The IPv6 CIDR block from the IPv6 address pool. You must also specify
+     * <code>Ipv6Pool</code> in the request.</p> <p>To let Amazon choose the IPv6 CIDR
+     * block for you, omit this parameter.</p>
+     */
+    inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
+
+    /**
+     * <p>The IPv6 CIDR block from the IPv6 address pool. You must also specify
+     * <code>Ipv6Pool</code> in the request.</p> <p>To let Amazon choose the IPv6 CIDR
+     * block for you, omit this parameter.</p>
+     */
+    inline void SetIpv6CidrBlock(const char* value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock.assign(value); }
+
+    /**
+     * <p>The IPv6 CIDR block from the IPv6 address pool. You must also specify
+     * <code>Ipv6Pool</code> in the request.</p> <p>To let Amazon choose the IPv6 CIDR
+     * block for you, omit this parameter.</p>
+     */
+    inline CreateVpcRequest& WithIpv6CidrBlock(const Aws::String& value) { SetIpv6CidrBlock(value); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR block from the IPv6 address pool. You must also specify
+     * <code>Ipv6Pool</code> in the request.</p> <p>To let Amazon choose the IPv6 CIDR
+     * block for you, omit this parameter.</p>
+     */
+    inline CreateVpcRequest& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
+
+    /**
+     * <p>The IPv6 CIDR block from the IPv6 address pool. You must also specify
+     * <code>Ipv6Pool</code> in the request.</p> <p>To let Amazon choose the IPv6 CIDR
+     * block for you, omit this parameter.</p>
+     */
+    inline CreateVpcRequest& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
+
+
+    /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
      * required permissions, the error response is <code>DryRunOperation</code>.
@@ -308,6 +414,12 @@ namespace Model
 
     bool m_amazonProvidedIpv6CidrBlock;
     bool m_amazonProvidedIpv6CidrBlockHasBeenSet;
+
+    Aws::String m_ipv6Pool;
+    bool m_ipv6PoolHasBeenSet;
+
+    Aws::String m_ipv6CidrBlock;
+    bool m_ipv6CidrBlockHasBeenSet;
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet;

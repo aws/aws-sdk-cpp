@@ -192,8 +192,10 @@ namespace Model
      * KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
-     * is 32 kilobytes (32768 bytes).</p>
+     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy cannot
+     * exceed 32 kilobytes (32768 bytes). For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource
+     * Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
@@ -215,8 +217,10 @@ namespace Model
      * KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
-     * is 32 kilobytes (32768 bytes).</p>
+     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy cannot
+     * exceed 32 kilobytes (32768 bytes). For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource
+     * Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
@@ -238,8 +242,10 @@ namespace Model
      * KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
-     * is 32 kilobytes (32768 bytes).</p>
+     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy cannot
+     * exceed 32 kilobytes (32768 bytes). For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource
+     * Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
@@ -261,8 +267,10 @@ namespace Model
      * KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
-     * is 32 kilobytes (32768 bytes).</p>
+     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy cannot
+     * exceed 32 kilobytes (32768 bytes). For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource
+     * Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
@@ -284,8 +292,10 @@ namespace Model
      * KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
-     * is 32 kilobytes (32768 bytes).</p>
+     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy cannot
+     * exceed 32 kilobytes (32768 bytes). For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource
+     * Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
@@ -307,8 +317,10 @@ namespace Model
      * KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
-     * is 32 kilobytes (32768 bytes).</p>
+     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy cannot
+     * exceed 32 kilobytes (32768 bytes). For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource
+     * Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline PutKeyPolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
@@ -330,8 +342,10 @@ namespace Model
      * KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
-     * is 32 kilobytes (32768 bytes).</p>
+     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy cannot
+     * exceed 32 kilobytes (32768 bytes). For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource
+     * Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline PutKeyPolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
@@ -353,8 +367,10 @@ namespace Model
      * KMS. For more information, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
      * that I make are not always immediately visible</a> in the <i>AWS Identity and
-     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy size limit
-     * is 32 kilobytes (32768 bytes).</p>
+     * Access Management User Guide</i>.</p> </li> </ul> <p>The key policy cannot
+     * exceed 32 kilobytes (32768 bytes). For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource
+     * Quotas</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
      */
     inline PutKeyPolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

@@ -437,18 +437,20 @@ namespace Model
          * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
          * operation. To add HSMs to the cluster, use the <a
          * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
-         * operation.</p> <p>The connection process can take an extended amount of time to
-         * complete; up to 20 minutes. This operation starts the connection process, but it
-         * does not wait for it to complete. When it succeeds, this operation quickly
-         * returns an HTTP 200 response and a JSON object with no properties. However, this
-         * response does not indicate that the custom key store is connected. To get the
-         * connection state of the custom key store, use the <a>DescribeCustomKeyStores</a>
-         * operation.</p> <p>During the connection process, AWS KMS finds the AWS CloudHSM
-         * cluster that is associated with the custom key store, creates the connection
-         * infrastructure, connects to the cluster, logs into the AWS CloudHSM client as
-         * the <a
+         * operation. Also, the <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-         * <code>kmsuser</code> crypto user</a> (CU), and rotates its password.</p> <p>The
+         * <code>kmsuser</code> crypto user</a> (CU) must not be logged into the cluster.
+         * This prevents AWS KMS from using this account to log in.</p> <p>The connection
+         * process can take an extended amount of time to complete; up to 20 minutes. This
+         * operation starts the connection process, but it does not wait for it to
+         * complete. When it succeeds, this operation quickly returns an HTTP 200 response
+         * and a JSON object with no properties. However, this response does not indicate
+         * that the custom key store is connected. To get the connection state of the
+         * custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+         * <p>During the connection process, AWS KMS finds the AWS CloudHSM cluster that is
+         * associated with the custom key store, creates the connection infrastructure,
+         * connects to the cluster, logs into the AWS CloudHSM client as the
+         * <code>kmsuser</code> CU, and rotates its password.</p> <p>The
          * <code>ConnectCustomKeyStore</code> operation might fail for various reasons. To
          * find the reason, use the <a>DescribeCustomKeyStores</a> operation and see the
          * <code>ConnectionErrorCode</code> in the response. For help interpreting the
@@ -478,18 +480,20 @@ namespace Model
          * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
          * operation. To add HSMs to the cluster, use the <a
          * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
-         * operation.</p> <p>The connection process can take an extended amount of time to
-         * complete; up to 20 minutes. This operation starts the connection process, but it
-         * does not wait for it to complete. When it succeeds, this operation quickly
-         * returns an HTTP 200 response and a JSON object with no properties. However, this
-         * response does not indicate that the custom key store is connected. To get the
-         * connection state of the custom key store, use the <a>DescribeCustomKeyStores</a>
-         * operation.</p> <p>During the connection process, AWS KMS finds the AWS CloudHSM
-         * cluster that is associated with the custom key store, creates the connection
-         * infrastructure, connects to the cluster, logs into the AWS CloudHSM client as
-         * the <a
+         * operation. Also, the <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-         * <code>kmsuser</code> crypto user</a> (CU), and rotates its password.</p> <p>The
+         * <code>kmsuser</code> crypto user</a> (CU) must not be logged into the cluster.
+         * This prevents AWS KMS from using this account to log in.</p> <p>The connection
+         * process can take an extended amount of time to complete; up to 20 minutes. This
+         * operation starts the connection process, but it does not wait for it to
+         * complete. When it succeeds, this operation quickly returns an HTTP 200 response
+         * and a JSON object with no properties. However, this response does not indicate
+         * that the custom key store is connected. To get the connection state of the
+         * custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+         * <p>During the connection process, AWS KMS finds the AWS CloudHSM cluster that is
+         * associated with the custom key store, creates the connection infrastructure,
+         * connects to the cluster, logs into the AWS CloudHSM client as the
+         * <code>kmsuser</code> CU, and rotates its password.</p> <p>The
          * <code>ConnectCustomKeyStore</code> operation might fail for various reasons. To
          * find the reason, use the <a>DescribeCustomKeyStores</a> operation and see the
          * <code>ConnectionErrorCode</code> in the response. For help interpreting the
@@ -521,18 +525,20 @@ namespace Model
          * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a>
          * operation. To add HSMs to the cluster, use the <a
          * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a>
-         * operation.</p> <p>The connection process can take an extended amount of time to
-         * complete; up to 20 minutes. This operation starts the connection process, but it
-         * does not wait for it to complete. When it succeeds, this operation quickly
-         * returns an HTTP 200 response and a JSON object with no properties. However, this
-         * response does not indicate that the custom key store is connected. To get the
-         * connection state of the custom key store, use the <a>DescribeCustomKeyStores</a>
-         * operation.</p> <p>During the connection process, AWS KMS finds the AWS CloudHSM
-         * cluster that is associated with the custom key store, creates the connection
-         * infrastructure, connects to the cluster, logs into the AWS CloudHSM client as
-         * the <a
+         * operation. Also, the <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
-         * <code>kmsuser</code> crypto user</a> (CU), and rotates its password.</p> <p>The
+         * <code>kmsuser</code> crypto user</a> (CU) must not be logged into the cluster.
+         * This prevents AWS KMS from using this account to log in.</p> <p>The connection
+         * process can take an extended amount of time to complete; up to 20 minutes. This
+         * operation starts the connection process, but it does not wait for it to
+         * complete. When it succeeds, this operation quickly returns an HTTP 200 response
+         * and a JSON object with no properties. However, this response does not indicate
+         * that the custom key store is connected. To get the connection state of the
+         * custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+         * <p>During the connection process, AWS KMS finds the AWS CloudHSM cluster that is
+         * associated with the custom key store, creates the connection infrastructure,
+         * connects to the cluster, logs into the AWS CloudHSM client as the
+         * <code>kmsuser</code> CU, and rotates its password.</p> <p>The
          * <code>ConnectCustomKeyStore</code> operation might fail for various reasons. To
          * find the reason, use the <a>DescribeCustomKeyStores</a> operation and see the
          * <code>ConnectionErrorCode</code> in the response. For help interpreting the
@@ -1004,7 +1010,9 @@ namespace Model
          * symmetric CMK to encrypt and decrypt small amounts of data, but they are
          * typically used to generate <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
-         * keys</a> or data key pairs. For details, see <a>GenerateDataKey</a> and
+         * keys</a> and <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-key-pairs">data
+         * keys pairs</a>. For details, see <a>GenerateDataKey</a> and
          * <a>GenerateDataKeyPair</a>.</p> </li> <li> <p> <b>Asymmetric CMKs</b> can
          * contain an RSA key pair or an Elliptic Curve (ECC) key pair. The private key in
          * an asymmetric CMK never leaves AWS KMS unencrypted. However, you can use the
@@ -1064,7 +1072,9 @@ namespace Model
          * symmetric CMK to encrypt and decrypt small amounts of data, but they are
          * typically used to generate <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
-         * keys</a> or data key pairs. For details, see <a>GenerateDataKey</a> and
+         * keys</a> and <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-key-pairs">data
+         * keys pairs</a>. For details, see <a>GenerateDataKey</a> and
          * <a>GenerateDataKeyPair</a>.</p> </li> <li> <p> <b>Asymmetric CMKs</b> can
          * contain an RSA key pair or an Elliptic Curve (ECC) key pair. The private key in
          * an asymmetric CMK never leaves AWS KMS unencrypted. However, you can use the
@@ -1126,7 +1136,9 @@ namespace Model
          * symmetric CMK to encrypt and decrypt small amounts of data, but they are
          * typically used to generate <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data
-         * keys</a> or data key pairs. For details, see <a>GenerateDataKey</a> and
+         * keys</a> and <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-key-pairs">data
+         * keys pairs</a>. For details, see <a>GenerateDataKey</a> and
          * <a>GenerateDataKeyPair</a>.</p> </li> <li> <p> <b>Asymmetric CMKs</b> can
          * contain an RSA key pair or an Elliptic Curve (ECC) key pair. The private key in
          * an asymmetric CMK never leaves AWS KMS unencrypted. However, you can use the
@@ -2233,7 +2245,8 @@ namespace Model
          * bytes in the key are not related to the caller or CMK that is used to encrypt
          * the data key.</p> <p>To generate a data key, specify the symmetric CMK that will
          * be used to encrypt the data key. You cannot use an asymmetric CMK to generate
-         * data keys.</p> <p>You must also specify the length of the data key. Use either
+         * data keys. To get the type of your CMK, use the <a>DescribeKey</a>
+         * operation.</p> <p>You must also specify the length of the data key. Use either
          * the <code>KeySpec</code> or <code>NumberOfBytes</code> parameters (but not
          * both). For 128-bit and 256-bit data keys, use the <code>KeySpec</code>
          * parameter. </p> <p>If the operation succeeds, the plaintext copy of the data key
@@ -2280,7 +2293,8 @@ namespace Model
          * bytes in the key are not related to the caller or CMK that is used to encrypt
          * the data key.</p> <p>To generate a data key, specify the symmetric CMK that will
          * be used to encrypt the data key. You cannot use an asymmetric CMK to generate
-         * data keys.</p> <p>You must also specify the length of the data key. Use either
+         * data keys. To get the type of your CMK, use the <a>DescribeKey</a>
+         * operation.</p> <p>You must also specify the length of the data key. Use either
          * the <code>KeySpec</code> or <code>NumberOfBytes</code> parameters (but not
          * both). For 128-bit and 256-bit data keys, use the <code>KeySpec</code>
          * parameter. </p> <p>If the operation succeeds, the plaintext copy of the data key
@@ -2329,7 +2343,8 @@ namespace Model
          * bytes in the key are not related to the caller or CMK that is used to encrypt
          * the data key.</p> <p>To generate a data key, specify the symmetric CMK that will
          * be used to encrypt the data key. You cannot use an asymmetric CMK to generate
-         * data keys.</p> <p>You must also specify the length of the data key. Use either
+         * data keys. To get the type of your CMK, use the <a>DescribeKey</a>
+         * operation.</p> <p>You must also specify the length of the data key. Use either
          * the <code>KeySpec</code> or <code>NumberOfBytes</code> parameters (but not
          * both). For 128-bit and 256-bit data keys, use the <code>KeySpec</code>
          * parameter. </p> <p>If the operation succeeds, the plaintext copy of the data key
@@ -2621,13 +2636,8 @@ namespace Model
          * or CMK that is used to encrypt the private key.</p> <p>To generate a data key,
          * you must specify the symmetric customer master key (CMK) that is used to encrypt
          * the data key. You cannot use an asymmetric CMK to generate a data key. To get
-         * the type of your CMK, use the <code>KeySpec</code> field in the
-         * <a>DescribeKey</a> response. You must also specify the length of the data key
-         * using either the <code>KeySpec</code> or <code>NumberOfBytes</code> field (but
-         * not both). For common key lengths (128-bit and 256-bit symmetric keys), use the
-         * <code>KeySpec</code> parameter. </p> <p>If the operation succeeds, you will find
-         * the plaintext copy of the data key in the <code>Plaintext</code> field of the
-         * response, and the encrypted copy of the data key in the
+         * the type of your CMK, use the <a>DescribeKey</a> operation.</p> <p>If the
+         * operation succeeds, you will find the encrypted copy of the data key in the
          * <code>CiphertextBlob</code> field.</p> <p>You can use the optional encryption
          * context to add additional security to the encryption operation. If you specify
          * an <code>EncryptionContext</code>, you must specify the same encryption context
@@ -2668,13 +2678,8 @@ namespace Model
          * or CMK that is used to encrypt the private key.</p> <p>To generate a data key,
          * you must specify the symmetric customer master key (CMK) that is used to encrypt
          * the data key. You cannot use an asymmetric CMK to generate a data key. To get
-         * the type of your CMK, use the <code>KeySpec</code> field in the
-         * <a>DescribeKey</a> response. You must also specify the length of the data key
-         * using either the <code>KeySpec</code> or <code>NumberOfBytes</code> field (but
-         * not both). For common key lengths (128-bit and 256-bit symmetric keys), use the
-         * <code>KeySpec</code> parameter. </p> <p>If the operation succeeds, you will find
-         * the plaintext copy of the data key in the <code>Plaintext</code> field of the
-         * response, and the encrypted copy of the data key in the
+         * the type of your CMK, use the <a>DescribeKey</a> operation.</p> <p>If the
+         * operation succeeds, you will find the encrypted copy of the data key in the
          * <code>CiphertextBlob</code> field.</p> <p>You can use the optional encryption
          * context to add additional security to the encryption operation. If you specify
          * an <code>EncryptionContext</code>, you must specify the same encryption context
@@ -2717,13 +2722,8 @@ namespace Model
          * or CMK that is used to encrypt the private key.</p> <p>To generate a data key,
          * you must specify the symmetric customer master key (CMK) that is used to encrypt
          * the data key. You cannot use an asymmetric CMK to generate a data key. To get
-         * the type of your CMK, use the <code>KeySpec</code> field in the
-         * <a>DescribeKey</a> response. You must also specify the length of the data key
-         * using either the <code>KeySpec</code> or <code>NumberOfBytes</code> field (but
-         * not both). For common key lengths (128-bit and 256-bit symmetric keys), use the
-         * <code>KeySpec</code> parameter. </p> <p>If the operation succeeds, you will find
-         * the plaintext copy of the data key in the <code>Plaintext</code> field of the
-         * response, and the encrypted copy of the data key in the
+         * the type of your CMK, use the <a>DescribeKey</a> operation.</p> <p>If the
+         * operation succeeds, you will find the encrypted copy of the data key in the
          * <code>CiphertextBlob</code> field.</p> <p>You can use the optional encryption
          * context to add additional security to the encryption operation. If you specify
          * an <code>EncryptionContext</code>, you must specify the same encryption context
@@ -3296,7 +3296,7 @@ namespace Model
          * AWS has created but has not yet associated with a CMK. Aliases that AWS creates
          * in your account, including predefined aliases, do not count against your <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
-         * KMS aliases limit</a>.</p><p><h3>See Also:</h3>   <a
+         * KMS aliases quota</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">AWS API
          * Reference</a></p>
          */
@@ -3317,7 +3317,7 @@ namespace Model
          * AWS has created but has not yet associated with a CMK. Aliases that AWS creates
          * in your account, including predefined aliases, do not count against your <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
-         * KMS aliases limit</a>.</p><p><h3>See Also:</h3>   <a
+         * KMS aliases quota</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">AWS API
          * Reference</a></p>
          *
@@ -3340,7 +3340,7 @@ namespace Model
          * AWS has created but has not yet associated with a CMK. Aliases that AWS creates
          * in your account, including predefined aliases, do not count against your <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">AWS
-         * KMS aliases limit</a>.</p><p><h3>See Also:</h3>   <a
+         * KMS aliases quota</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/ListAliases">AWS API
          * Reference</a></p>
          *

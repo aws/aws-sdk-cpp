@@ -74,71 +74,43 @@ namespace Model
 
     /**
      * <p>If present, indicates that an error occurred during function execution.
-     * Details about the error are included in the response payload.</p> <ul> <li> <p>
-     * <code>Handled</code> - The runtime caught an error thrown by the function and
-     * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime didn't handle the error. For example, the function ran out of memory
-     * or timed out.</p> </li> </ul>
+     * Details about the error are included in the response payload.</p>
      */
     inline const Aws::String& GetFunctionError() const{ return m_functionError; }
 
     /**
      * <p>If present, indicates that an error occurred during function execution.
-     * Details about the error are included in the response payload.</p> <ul> <li> <p>
-     * <code>Handled</code> - The runtime caught an error thrown by the function and
-     * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime didn't handle the error. For example, the function ran out of memory
-     * or timed out.</p> </li> </ul>
+     * Details about the error are included in the response payload.</p>
      */
     inline void SetFunctionError(const Aws::String& value) { m_functionError = value; }
 
     /**
      * <p>If present, indicates that an error occurred during function execution.
-     * Details about the error are included in the response payload.</p> <ul> <li> <p>
-     * <code>Handled</code> - The runtime caught an error thrown by the function and
-     * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime didn't handle the error. For example, the function ran out of memory
-     * or timed out.</p> </li> </ul>
+     * Details about the error are included in the response payload.</p>
      */
     inline void SetFunctionError(Aws::String&& value) { m_functionError = std::move(value); }
 
     /**
      * <p>If present, indicates that an error occurred during function execution.
-     * Details about the error are included in the response payload.</p> <ul> <li> <p>
-     * <code>Handled</code> - The runtime caught an error thrown by the function and
-     * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime didn't handle the error. For example, the function ran out of memory
-     * or timed out.</p> </li> </ul>
+     * Details about the error are included in the response payload.</p>
      */
     inline void SetFunctionError(const char* value) { m_functionError.assign(value); }
 
     /**
      * <p>If present, indicates that an error occurred during function execution.
-     * Details about the error are included in the response payload.</p> <ul> <li> <p>
-     * <code>Handled</code> - The runtime caught an error thrown by the function and
-     * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime didn't handle the error. For example, the function ran out of memory
-     * or timed out.</p> </li> </ul>
+     * Details about the error are included in the response payload.</p>
      */
     inline InvokeResult& WithFunctionError(const Aws::String& value) { SetFunctionError(value); return *this;}
 
     /**
      * <p>If present, indicates that an error occurred during function execution.
-     * Details about the error are included in the response payload.</p> <ul> <li> <p>
-     * <code>Handled</code> - The runtime caught an error thrown by the function and
-     * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime didn't handle the error. For example, the function ran out of memory
-     * or timed out.</p> </li> </ul>
+     * Details about the error are included in the response payload.</p>
      */
     inline InvokeResult& WithFunctionError(Aws::String&& value) { SetFunctionError(std::move(value)); return *this;}
 
     /**
      * <p>If present, indicates that an error occurred during function execution.
-     * Details about the error are included in the response payload.</p> <ul> <li> <p>
-     * <code>Handled</code> - The runtime caught an error thrown by the function and
-     * formatted it into a JSON document.</p> </li> <li> <p> <code>Unhandled</code> -
-     * The runtime didn't handle the error. For example, the function ran out of memory
-     * or timed out.</p> </li> </ul>
+     * Details about the error are included in the response payload.</p>
      */
     inline InvokeResult& WithFunctionError(const char* value) { SetFunctionError(value); return *this;}
 

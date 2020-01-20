@@ -47,50 +47,50 @@ namespace Model
   public:
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The prefix must be the same
-     * prefix that you specified when you provisioned the address range.</p>
+     * <p>The address range, in CIDR notation. The prefix must be the same prefix that
+     * you specified when you provisioned the address range.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The prefix must be the same
-     * prefix that you specified when you provisioned the address range.</p>
+     * <p>The address range, in CIDR notation. The prefix must be the same prefix that
+     * you specified when you provisioned the address range.</p>
      */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The prefix must be the same
-     * prefix that you specified when you provisioned the address range.</p>
+     * <p>The address range, in CIDR notation. The prefix must be the same prefix that
+     * you specified when you provisioned the address range.</p>
      */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The prefix must be the same
-     * prefix that you specified when you provisioned the address range.</p>
+     * <p>The address range, in CIDR notation. The prefix must be the same prefix that
+     * you specified when you provisioned the address range.</p>
      */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The prefix must be the same
-     * prefix that you specified when you provisioned the address range.</p>
+     * <p>The address range, in CIDR notation. The prefix must be the same prefix that
+     * you specified when you provisioned the address range.</p>
      */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The prefix must be the same
-     * prefix that you specified when you provisioned the address range.</p>
+     * <p>The address range, in CIDR notation. The prefix must be the same prefix that
+     * you specified when you provisioned the address range.</p>
      */
     inline DeprovisionByoipCidrRequest& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The prefix must be the same
-     * prefix that you specified when you provisioned the address range.</p>
+     * <p>The address range, in CIDR notation. The prefix must be the same prefix that
+     * you specified when you provisioned the address range.</p>
      */
     inline DeprovisionByoipCidrRequest& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
 
     /**
-     * <p>The public IPv4 address range, in CIDR notation. The prefix must be the same
-     * prefix that you specified when you provisioned the address range.</p>
+     * <p>The address range, in CIDR notation. The prefix must be the same prefix that
+     * you specified when you provisioned the address range.</p>
      */
     inline DeprovisionByoipCidrRequest& WithCidr(const char* value) { SetCidr(value); return *this;}
 

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/alexaforbusiness/model/DeviceStatus.h>
 #include <aws/alexaforbusiness/model/DeviceStatusInfo.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -520,6 +521,37 @@ namespace Model
      */
     inline DeviceData& WithDeviceStatusInfo(DeviceStatusInfo&& value) { SetDeviceStatusInfo(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The time (in epoch) when the device data was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>The time (in epoch) when the device data was created.</p>
+     */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The time (in epoch) when the device data was created.</p>
+     */
+    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
+
+    /**
+     * <p>The time (in epoch) when the device data was created.</p>
+     */
+    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
+
+    /**
+     * <p>The time (in epoch) when the device data was created.</p>
+     */
+    inline DeviceData& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
+
+    /**
+     * <p>The time (in epoch) when the device data was created.</p>
+     */
+    inline DeviceData& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_deviceArn;
@@ -557,6 +589,9 @@ namespace Model
 
     DeviceStatusInfo m_deviceStatusInfo;
     bool m_deviceStatusInfoHasBeenSet;
+
+    Aws::Utils::DateTime m_createdTime;
+    bool m_createdTimeHasBeenSet;
   };
 
 } // namespace Model

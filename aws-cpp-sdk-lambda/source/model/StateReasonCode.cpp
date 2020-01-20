@@ -38,6 +38,8 @@ namespace Aws
         static const int InvalidConfiguration_HASH = HashingUtils::HashString("InvalidConfiguration");
         static const int InternalError_HASH = HashingUtils::HashString("InternalError");
         static const int SubnetOutOfIPAddresses_HASH = HashingUtils::HashString("SubnetOutOfIPAddresses");
+        static const int InvalidSubnet_HASH = HashingUtils::HashString("InvalidSubnet");
+        static const int InvalidSecurityGroup_HASH = HashingUtils::HashString("InvalidSecurityGroup");
 
 
         StateReasonCode GetStateReasonCodeForName(const Aws::String& name)
@@ -75,6 +77,14 @@ namespace Aws
           {
             return StateReasonCode::SubnetOutOfIPAddresses;
           }
+          else if (hashCode == InvalidSubnet_HASH)
+          {
+            return StateReasonCode::InvalidSubnet;
+          }
+          else if (hashCode == InvalidSecurityGroup_HASH)
+          {
+            return StateReasonCode::InvalidSecurityGroup;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -105,6 +115,10 @@ namespace Aws
             return "InternalError";
           case StateReasonCode::SubnetOutOfIPAddresses:
             return "SubnetOutOfIPAddresses";
+          case StateReasonCode::InvalidSubnet:
+            return "InvalidSubnet";
+          case StateReasonCode::InvalidSecurityGroup:
+            return "InvalidSecurityGroup";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

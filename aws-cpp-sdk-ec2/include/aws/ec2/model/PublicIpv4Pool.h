@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an address pool.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes an IPv4 address pool.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PublicIpv4Pool">AWS
    * API Reference</a></p>
    */
@@ -52,42 +52,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the IPv4 address pool.</p>
+     * <p>The ID of the address pool.</p>
      */
     inline const Aws::String& GetPoolId() const{ return m_poolId; }
 
     /**
-     * <p>The ID of the IPv4 address pool.</p>
+     * <p>The ID of the address pool.</p>
      */
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
 
     /**
-     * <p>The ID of the IPv4 address pool.</p>
+     * <p>The ID of the address pool.</p>
      */
     inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
 
     /**
-     * <p>The ID of the IPv4 address pool.</p>
+     * <p>The ID of the address pool.</p>
      */
     inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
 
     /**
-     * <p>The ID of the IPv4 address pool.</p>
+     * <p>The ID of the address pool.</p>
      */
     inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
 
     /**
-     * <p>The ID of the IPv4 address pool.</p>
+     * <p>The ID of the address pool.</p>
      */
     inline PublicIpv4Pool& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
 
     /**
-     * <p>The ID of the IPv4 address pool.</p>
+     * <p>The ID of the address pool.</p>
      */
     inline PublicIpv4Pool& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the IPv4 address pool.</p>
+     * <p>The ID of the address pool.</p>
      */
     inline PublicIpv4Pool& WithPoolId(const char* value) { SetPoolId(value); return *this;}
 

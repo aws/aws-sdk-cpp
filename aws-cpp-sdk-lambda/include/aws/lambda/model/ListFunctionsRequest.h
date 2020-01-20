@@ -51,57 +51,73 @@ namespace Model
 
     /**
      * <p>For Lambda@Edge functions, the AWS Region of the master function. For
-     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
-     * <code>FunctionVersion</code> to <code>ALL</code>.</p>
+     * example, <code>us-east-1</code> filters the list of functions to only include
+     * Lambda@Edge functions replicated from a master function in US East (N.
+     * Virginia). If specified, you must set <code>FunctionVersion</code> to
+     * <code>ALL</code>.</p>
      */
     inline const Aws::String& GetMasterRegion() const{ return m_masterRegion; }
 
     /**
      * <p>For Lambda@Edge functions, the AWS Region of the master function. For
-     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
-     * <code>FunctionVersion</code> to <code>ALL</code>.</p>
+     * example, <code>us-east-1</code> filters the list of functions to only include
+     * Lambda@Edge functions replicated from a master function in US East (N.
+     * Virginia). If specified, you must set <code>FunctionVersion</code> to
+     * <code>ALL</code>.</p>
      */
     inline bool MasterRegionHasBeenSet() const { return m_masterRegionHasBeenSet; }
 
     /**
      * <p>For Lambda@Edge functions, the AWS Region of the master function. For
-     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
-     * <code>FunctionVersion</code> to <code>ALL</code>.</p>
+     * example, <code>us-east-1</code> filters the list of functions to only include
+     * Lambda@Edge functions replicated from a master function in US East (N.
+     * Virginia). If specified, you must set <code>FunctionVersion</code> to
+     * <code>ALL</code>.</p>
      */
     inline void SetMasterRegion(const Aws::String& value) { m_masterRegionHasBeenSet = true; m_masterRegion = value; }
 
     /**
      * <p>For Lambda@Edge functions, the AWS Region of the master function. For
-     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
-     * <code>FunctionVersion</code> to <code>ALL</code>.</p>
+     * example, <code>us-east-1</code> filters the list of functions to only include
+     * Lambda@Edge functions replicated from a master function in US East (N.
+     * Virginia). If specified, you must set <code>FunctionVersion</code> to
+     * <code>ALL</code>.</p>
      */
     inline void SetMasterRegion(Aws::String&& value) { m_masterRegionHasBeenSet = true; m_masterRegion = std::move(value); }
 
     /**
      * <p>For Lambda@Edge functions, the AWS Region of the master function. For
-     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
-     * <code>FunctionVersion</code> to <code>ALL</code>.</p>
+     * example, <code>us-east-1</code> filters the list of functions to only include
+     * Lambda@Edge functions replicated from a master function in US East (N.
+     * Virginia). If specified, you must set <code>FunctionVersion</code> to
+     * <code>ALL</code>.</p>
      */
     inline void SetMasterRegion(const char* value) { m_masterRegionHasBeenSet = true; m_masterRegion.assign(value); }
 
     /**
      * <p>For Lambda@Edge functions, the AWS Region of the master function. For
-     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
-     * <code>FunctionVersion</code> to <code>ALL</code>.</p>
+     * example, <code>us-east-1</code> filters the list of functions to only include
+     * Lambda@Edge functions replicated from a master function in US East (N.
+     * Virginia). If specified, you must set <code>FunctionVersion</code> to
+     * <code>ALL</code>.</p>
      */
     inline ListFunctionsRequest& WithMasterRegion(const Aws::String& value) { SetMasterRegion(value); return *this;}
 
     /**
      * <p>For Lambda@Edge functions, the AWS Region of the master function. For
-     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
-     * <code>FunctionVersion</code> to <code>ALL</code>.</p>
+     * example, <code>us-east-1</code> filters the list of functions to only include
+     * Lambda@Edge functions replicated from a master function in US East (N.
+     * Virginia). If specified, you must set <code>FunctionVersion</code> to
+     * <code>ALL</code>.</p>
      */
     inline ListFunctionsRequest& WithMasterRegion(Aws::String&& value) { SetMasterRegion(std::move(value)); return *this;}
 
     /**
      * <p>For Lambda@Edge functions, the AWS Region of the master function. For
-     * example, <code>us-east-2</code> or <code>ALL</code>. If specified, you must set
-     * <code>FunctionVersion</code> to <code>ALL</code>.</p>
+     * example, <code>us-east-1</code> filters the list of functions to only include
+     * Lambda@Edge functions replicated from a master function in US East (N.
+     * Virginia). If specified, you must set <code>FunctionVersion</code> to
+     * <code>ALL</code>.</p>
      */
     inline ListFunctionsRequest& WithMasterRegion(const char* value) { SetMasterRegion(value); return *this;}
 

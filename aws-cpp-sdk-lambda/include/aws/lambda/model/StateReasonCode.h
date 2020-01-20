@@ -33,7 +33,9 @@ namespace Model
     InsufficientRolePermissions,
     InvalidConfiguration,
     InternalError,
-    SubnetOutOfIPAddresses
+    SubnetOutOfIPAddresses,
+    InvalidSubnet,
+    InvalidSecurityGroup
   };
 
 namespace StateReasonCodeMapper

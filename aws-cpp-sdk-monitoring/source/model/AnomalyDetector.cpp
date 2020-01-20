@@ -35,7 +35,9 @@ AnomalyDetector::AnomalyDetector() :
     m_metricNameHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_statHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_stateValue(AnomalyDetectorStateValue::NOT_SET),
+    m_stateValueHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ AnomalyDetector::AnomalyDetector(const XmlNode& xmlNode) :
     m_metricNameHasBeenSet(false),
     m_dimensionsHasBeenSet(false),
     m_statHasBeenSet(false),
-    m_configurationHasBeenSet(false)
+    m_configurationHasBeenSet(false),
+    m_stateValue(AnomalyDetectorStateValue::NOT_SET),
+    m_stateValueHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -91,6 +95,12 @@ AnomalyDetector& AnomalyDetector::operator =(const XmlNode& xmlNode)
       m_configuration = configurationNode;
       m_configurationHasBeenSet = true;
     }
+    XmlNode stateValueNode = resultNode.FirstChild("StateValue");
+    if(!stateValueNode.IsNull())
+    {
+      m_stateValue = AnomalyDetectorStateValueMapper::GetAnomalyDetectorStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()).c_str());
+      m_stateValueHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -131,6 +141,11 @@ void AnomalyDetector::OutputToStream(Aws::OStream& oStream, const char* location
       m_configuration.OutputToStream(oStream, configurationLocationAndMemberSs.str().c_str());
   }
 
+  if(m_stateValueHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".StateValue=" << AnomalyDetectorStateValueMapper::GetNameForAnomalyDetectorStateValue(m_stateValue) << "&";
+  }
+
 }
 
 void AnomalyDetector::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -162,6 +177,10 @@ void AnomalyDetector::OutputToStream(Aws::OStream& oStream, const char* location
       Aws::String configurationLocationAndMember(location);
       configurationLocationAndMember += ".Configuration";
       m_configuration.OutputToStream(oStream, configurationLocationAndMember.c_str());
+  }
+  if(m_stateValueHasBeenSet)
+  {
+      oStream << location << ".StateValue=" << AnomalyDetectorStateValueMapper::GetNameForAnomalyDetectorStateValue(m_stateValue) << "&";
   }
 }
 
