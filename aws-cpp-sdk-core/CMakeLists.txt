@@ -481,13 +481,13 @@ endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>)
+    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
 
 if (EXTERNAL_DEPS_INCLUDE_DIRS)
     foreach(DIR IN LISTS EXTERNAL_DEPS_INCLUDE_DIRS)
         target_include_directories(${PROJECT_NAME} PUBLIC
             $<BUILD_INTERFACE:${DIR}>
-            $<INSTALL_INTERFACE:include>)
+            $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
     endforeach()
 endif()
 
