@@ -32,6 +32,8 @@ namespace Aws
 
         static const int InProgress_HASH = HashingUtils::HashString("InProgress");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
+        static const int Stopped_HASH = HashingUtils::HashString("Stopped");
+        static const int Stopping_HASH = HashingUtils::HashString("Stopping");
         static const int Succeeded_HASH = HashingUtils::HashString("Succeeded");
 
 
@@ -45,6 +47,14 @@ namespace Aws
           else if (hashCode == Failed_HASH)
           {
             return StageExecutionStatus::Failed;
+          }
+          else if (hashCode == Stopped_HASH)
+          {
+            return StageExecutionStatus::Stopped;
+          }
+          else if (hashCode == Stopping_HASH)
+          {
+            return StageExecutionStatus::Stopping;
           }
           else if (hashCode == Succeeded_HASH)
           {
@@ -68,6 +78,10 @@ namespace Aws
             return "InProgress";
           case StageExecutionStatus::Failed:
             return "Failed";
+          case StageExecutionStatus::Stopped:
+            return "Stopped";
+          case StageExecutionStatus::Stopping:
+            return "Stopping";
           case StageExecutionStatus::Succeeded:
             return "Succeeded";
           default:

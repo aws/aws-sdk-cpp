@@ -63,6 +63,7 @@
 #include <aws/codepipeline/model/RegisterWebhookWithThirdPartyRequest.h>
 #include <aws/codepipeline/model/RetryStageExecutionRequest.h>
 #include <aws/codepipeline/model/StartPipelineExecutionRequest.h>
+#include <aws/codepipeline/model/StopPipelineExecutionRequest.h>
 #include <aws/codepipeline/model/TagResourceRequest.h>
 #include <aws/codepipeline/model/UntagResourceRequest.h>
 #include <aws/codepipeline/model/UpdatePipelineRequest.h>
@@ -1292,6 +1293,41 @@ void CodePipelineClient::StartPipelineExecutionAsync(const StartPipelineExecutio
 void CodePipelineClient::StartPipelineExecutionAsyncHelper(const StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, StartPipelineExecution(request), context);
+}
+
+StopPipelineExecutionOutcome CodePipelineClient::StopPipelineExecution(const StopPipelineExecutionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return StopPipelineExecutionOutcome(StopPipelineExecutionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return StopPipelineExecutionOutcome(outcome.GetError());
+  }
+}
+
+StopPipelineExecutionOutcomeCallable CodePipelineClient::StopPipelineExecutionCallable(const StopPipelineExecutionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< StopPipelineExecutionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->StopPipelineExecution(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodePipelineClient::StopPipelineExecutionAsync(const StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->StopPipelineExecutionAsyncHelper( request, handler, context ); } );
+}
+
+void CodePipelineClient::StopPipelineExecutionAsyncHelper(const StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, StopPipelineExecution(request), context);
 }
 
 TagResourceOutcome CodePipelineClient::TagResource(const TagResourceRequest& request) const

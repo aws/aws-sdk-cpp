@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Sends information about the detector model instance and the event which
+   * <p>Sends information about the detector model instance and the event that
    * triggered the action to an Amazon SQS queue.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/SqsAction">AWS
    * API Reference</a></p>
@@ -49,42 +49,42 @@ namespace Model
 
 
     /**
-     * <p>The URL of the Amazon SQS queue where the data is written.</p>
+     * <p>The URL of the SQS queue where the data is written.</p>
      */
     inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
 
     /**
-     * <p>The URL of the Amazon SQS queue where the data is written.</p>
+     * <p>The URL of the SQS queue where the data is written.</p>
      */
     inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
 
     /**
-     * <p>The URL of the Amazon SQS queue where the data is written.</p>
+     * <p>The URL of the SQS queue where the data is written.</p>
      */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
-     * <p>The URL of the Amazon SQS queue where the data is written.</p>
+     * <p>The URL of the SQS queue where the data is written.</p>
      */
     inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
 
     /**
-     * <p>The URL of the Amazon SQS queue where the data is written.</p>
+     * <p>The URL of the SQS queue where the data is written.</p>
      */
     inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
 
     /**
-     * <p>The URL of the Amazon SQS queue where the data is written.</p>
+     * <p>The URL of the SQS queue where the data is written.</p>
      */
     inline SqsAction& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
 
     /**
-     * <p>The URL of the Amazon SQS queue where the data is written.</p>
+     * <p>The URL of the SQS queue where the data is written.</p>
      */
     inline SqsAction& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the Amazon SQS queue where the data is written.</p>
+     * <p>The URL of the SQS queue where the data is written.</p>
      */
     inline SqsAction& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
 

@@ -34,8 +34,9 @@ namespace Model
 {
 
   /**
-   * <p>Sends an IoT Events input, passing in information about the detector model
-   * instance and the event which triggered the action.</p><p><h3>See Also:</h3>   <a
+   * <p>Sends an AWS IoT Events input, passing in information about the detector
+   * model instance and the event that triggered the action.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/IotEventsAction">AWS
    * API Reference</a></p>
    */

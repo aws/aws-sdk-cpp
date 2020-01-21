@@ -37,6 +37,7 @@ namespace Aws
         static const int pending_deprovision_HASH = HashingUtils::HashString("pending-deprovision");
         static const int pending_provision_HASH = HashingUtils::HashString("pending-provision");
         static const int provisioned_HASH = HashingUtils::HashString("provisioned");
+        static const int provisioned_not_publicly_advertisable_HASH = HashingUtils::HashString("provisioned-not-publicly-advertisable");
 
 
         ByoipCidrState GetByoipCidrStateForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return ByoipCidrState::provisioned;
           }
+          else if (hashCode == provisioned_not_publicly_advertisable_HASH)
+          {
+            return ByoipCidrState::provisioned_not_publicly_advertisable;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +103,8 @@ namespace Aws
             return "pending-provision";
           case ByoipCidrState::provisioned:
             return "provisioned";
+          case ByoipCidrState::provisioned_not_publicly_advertisable:
+            return "provisioned-not-publicly-advertisable";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

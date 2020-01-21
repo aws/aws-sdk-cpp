@@ -28,6 +28,7 @@ namespace CodePipeline
 namespace CodePipelineErrorMapper
 {
 
+static const int DUPLICATED_STOP_REQUEST_HASH = HashingUtils::HashString("DuplicatedStopRequestException");
 static const int INVALID_NONCE_HASH = HashingUtils::HashString("InvalidNonceException");
 static const int INVALID_CLIENT_TOKEN_HASH = HashingUtils::HashString("InvalidClientTokenException");
 static const int NOT_LATEST_PIPELINE_EXECUTION_HASH = HashingUtils::HashString("NotLatestPipelineExecutionException");
@@ -50,6 +51,7 @@ static const int JOB_NOT_FOUND_HASH = HashingUtils::HashString("JobNotFoundExcep
 static const int INVALID_JOB_HASH = HashingUtils::HashString("InvalidJobException");
 static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
 static const int INVALID_JOB_STATE_HASH = HashingUtils::HashString("InvalidJobStateException");
+static const int PIPELINE_EXECUTION_NOT_STOPPABLE_HASH = HashingUtils::HashString("PipelineExecutionNotStoppableException");
 static const int PIPELINE_EXECUTION_NOT_FOUND_HASH = HashingUtils::HashString("PipelineExecutionNotFoundException");
 static const int INVALID_WEBHOOK_AUTHENTICATION_PARAMETERS_HASH = HashingUtils::HashString("InvalidWebhookAuthenticationParametersException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
@@ -64,7 +66,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == INVALID_NONCE_HASH)
+  if (hashCode == DUPLICATED_STOP_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::DUPLICATED_STOP_REQUEST), false);
+  }
+  else if (hashCode == INVALID_NONCE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_NONCE), false);
   }
@@ -151,6 +157,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_JOB_STATE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::INVALID_JOB_STATE), false);
+  }
+  else if (hashCode == PIPELINE_EXECUTION_NOT_STOPPABLE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CodePipelineErrors::PIPELINE_EXECUTION_NOT_STOPPABLE), false);
   }
   else if (hashCode == PIPELINE_EXECUTION_NOT_FOUND_HASH)
   {

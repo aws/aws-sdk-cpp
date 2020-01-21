@@ -293,48 +293,48 @@ namespace Model
     /**
      * <p>Represents an AWS session credentials object. These credentials are temporary
      * credentials that are issued by AWS Secure Token Service (STS). They can be used
-     * to access input and output artifacts in the Amazon S3 bucket used to store
-     * artifact for the pipeline in AWS CodePipeline. </p>
+     * to access input and output artifacts in the S3 bucket used to store artifact for
+     * the pipeline in AWS CodePipeline. </p>
      */
     inline const AWSSessionCredentials& GetArtifactCredentials() const{ return m_artifactCredentials; }
 
     /**
      * <p>Represents an AWS session credentials object. These credentials are temporary
      * credentials that are issued by AWS Secure Token Service (STS). They can be used
-     * to access input and output artifacts in the Amazon S3 bucket used to store
-     * artifact for the pipeline in AWS CodePipeline. </p>
+     * to access input and output artifacts in the S3 bucket used to store artifact for
+     * the pipeline in AWS CodePipeline. </p>
      */
     inline bool ArtifactCredentialsHasBeenSet() const { return m_artifactCredentialsHasBeenSet; }
 
     /**
      * <p>Represents an AWS session credentials object. These credentials are temporary
      * credentials that are issued by AWS Secure Token Service (STS). They can be used
-     * to access input and output artifacts in the Amazon S3 bucket used to store
-     * artifact for the pipeline in AWS CodePipeline. </p>
+     * to access input and output artifacts in the S3 bucket used to store artifact for
+     * the pipeline in AWS CodePipeline. </p>
      */
     inline void SetArtifactCredentials(const AWSSessionCredentials& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = value; }
 
     /**
      * <p>Represents an AWS session credentials object. These credentials are temporary
      * credentials that are issued by AWS Secure Token Service (STS). They can be used
-     * to access input and output artifacts in the Amazon S3 bucket used to store
-     * artifact for the pipeline in AWS CodePipeline. </p>
+     * to access input and output artifacts in the S3 bucket used to store artifact for
+     * the pipeline in AWS CodePipeline. </p>
      */
     inline void SetArtifactCredentials(AWSSessionCredentials&& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = std::move(value); }
 
     /**
      * <p>Represents an AWS session credentials object. These credentials are temporary
      * credentials that are issued by AWS Secure Token Service (STS). They can be used
-     * to access input and output artifacts in the Amazon S3 bucket used to store
-     * artifact for the pipeline in AWS CodePipeline. </p>
+     * to access input and output artifacts in the S3 bucket used to store artifact for
+     * the pipeline in AWS CodePipeline. </p>
      */
     inline ThirdPartyJobData& WithArtifactCredentials(const AWSSessionCredentials& value) { SetArtifactCredentials(value); return *this;}
 
     /**
      * <p>Represents an AWS session credentials object. These credentials are temporary
      * credentials that are issued by AWS Secure Token Service (STS). They can be used
-     * to access input and output artifacts in the Amazon S3 bucket used to store
-     * artifact for the pipeline in AWS CodePipeline. </p>
+     * to access input and output artifacts in the S3 bucket used to store artifact for
+     * the pipeline in AWS CodePipeline. </p>
      */
     inline ThirdPartyJobData& WithArtifactCredentials(AWSSessionCredentials&& value) { SetArtifactCredentials(std::move(value)); return *this;}
 

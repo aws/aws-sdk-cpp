@@ -37,8 +37,9 @@ namespace Model
   /**
    * <p>A filter that can use conditional operators.</p> <p>For more information
    * about filters, see <a
-   * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/discovery-api-queries.html">Querying
-   * Discovered Configuration Items</a>. </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html">Querying
+   * Discovered Configuration Items</a> in the <i>AWS Application Discovery Service
+   * User Guide</i>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/Filter">AWS
    * API Reference</a></p>
    */

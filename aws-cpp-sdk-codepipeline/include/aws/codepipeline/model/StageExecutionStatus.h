@@ -28,6 +28,8 @@ namespace Model
     NOT_SET,
     InProgress,
     Failed,
+    Stopped,
+    Stopping,
     Succeeded
   };
 

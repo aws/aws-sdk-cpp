@@ -27,6 +27,7 @@ namespace Model
   {
     NOT_SET,
     InProgress,
+    Abandoned,
     Succeeded,
     Failed
   };

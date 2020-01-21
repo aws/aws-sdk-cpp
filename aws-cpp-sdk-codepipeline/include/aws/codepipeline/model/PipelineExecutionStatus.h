@@ -27,6 +27,8 @@ namespace Model
   {
     NOT_SET,
     InProgress,
+    Stopped,
+    Stopping,
     Succeeded,
     Superseded,
     Failed

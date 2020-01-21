@@ -35,7 +35,8 @@ PipelineExecutionSummary::PipelineExecutionSummary() :
     m_startTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_sourceRevisionsHasBeenSet(false),
-    m_triggerHasBeenSet(false)
+    m_triggerHasBeenSet(false),
+    m_stopTriggerHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ PipelineExecutionSummary::PipelineExecutionSummary(JsonView jsonValue) :
     m_startTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
     m_sourceRevisionsHasBeenSet(false),
-    m_triggerHasBeenSet(false)
+    m_triggerHasBeenSet(false),
+    m_stopTriggerHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +100,13 @@ PipelineExecutionSummary& PipelineExecutionSummary::operator =(JsonView jsonValu
     m_triggerHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stopTrigger"))
+  {
+    m_stopTrigger = jsonValue.GetObject("stopTrigger");
+
+    m_stopTriggerHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +149,12 @@ JsonValue PipelineExecutionSummary::Jsonize() const
   if(m_triggerHasBeenSet)
   {
    payload.WithObject("trigger", m_trigger.Jsonize());
+
+  }
+
+  if(m_stopTriggerHasBeenSet)
+  {
+   payload.WithObject("stopTrigger", m_stopTrigger.Jsonize());
 
   }
 

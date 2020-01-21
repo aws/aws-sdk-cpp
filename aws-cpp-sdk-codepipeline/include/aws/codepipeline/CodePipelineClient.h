@@ -46,6 +46,7 @@
 #include <aws/codepipeline/model/RegisterWebhookWithThirdPartyResult.h>
 #include <aws/codepipeline/model/RetryStageExecutionResult.h>
 #include <aws/codepipeline/model/StartPipelineExecutionResult.h>
+#include <aws/codepipeline/model/StopPipelineExecutionResult.h>
 #include <aws/codepipeline/model/TagResourceResult.h>
 #include <aws/codepipeline/model/UntagResourceResult.h>
 #include <aws/codepipeline/model/UpdatePipelineResult.h>
@@ -122,6 +123,7 @@ namespace Model
         class RegisterWebhookWithThirdPartyRequest;
         class RetryStageExecutionRequest;
         class StartPipelineExecutionRequest;
+        class StopPipelineExecutionRequest;
         class TagResourceRequest;
         class UntagResourceRequest;
         class UpdatePipelineRequest;
@@ -159,6 +161,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RegisterWebhookWithThirdPartyResult, Aws::Client::AWSError<CodePipelineErrors>> RegisterWebhookWithThirdPartyOutcome;
         typedef Aws::Utils::Outcome<RetryStageExecutionResult, Aws::Client::AWSError<CodePipelineErrors>> RetryStageExecutionOutcome;
         typedef Aws::Utils::Outcome<StartPipelineExecutionResult, Aws::Client::AWSError<CodePipelineErrors>> StartPipelineExecutionOutcome;
+        typedef Aws::Utils::Outcome<StopPipelineExecutionResult, Aws::Client::AWSError<CodePipelineErrors>> StopPipelineExecutionOutcome;
         typedef Aws::Utils::Outcome<TagResourceResult, Aws::Client::AWSError<CodePipelineErrors>> TagResourceOutcome;
         typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Client::AWSError<CodePipelineErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdatePipelineResult, Aws::Client::AWSError<CodePipelineErrors>> UpdatePipelineOutcome;
@@ -196,6 +199,7 @@ namespace Model
         typedef std::future<RegisterWebhookWithThirdPartyOutcome> RegisterWebhookWithThirdPartyOutcomeCallable;
         typedef std::future<RetryStageExecutionOutcome> RetryStageExecutionOutcomeCallable;
         typedef std::future<StartPipelineExecutionOutcome> StartPipelineExecutionOutcomeCallable;
+        typedef std::future<StopPipelineExecutionOutcome> StopPipelineExecutionOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdatePipelineOutcome> UpdatePipelineOutcomeCallable;
@@ -236,6 +240,7 @@ namespace Model
     typedef std::function<void(const CodePipelineClient*, const Model::RegisterWebhookWithThirdPartyRequest&, const Model::RegisterWebhookWithThirdPartyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterWebhookWithThirdPartyResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::RetryStageExecutionRequest&, const Model::RetryStageExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetryStageExecutionResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::StartPipelineExecutionRequest&, const Model::StartPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartPipelineExecutionResponseReceivedHandler;
+    typedef std::function<void(const CodePipelineClient*, const Model::StopPipelineExecutionRequest&, const Model::StopPipelineExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopPipelineExecutionResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const CodePipelineClient*, const Model::UpdatePipelineRequest&, const Model::UpdatePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePipelineResponseReceivedHandler;
@@ -267,17 +272,19 @@ namespace Model
    * <a>ListPipelineExecutions</a>, which gets a summary of the most recent
    * executions for a pipeline.</p> </li> <li> <p> <a>StartPipelineExecution</a>,
    * which runs the most recent revision of an artifact through the pipeline.</p>
-   * </li> <li> <p> <a>UpdatePipeline</a>, which updates a pipeline with edits or
-   * changes to the structure of the pipeline.</p> </li> </ul> <p>Pipelines include
-   * <i>stages</i>. Each stage contains one or more actions that must complete before
-   * the next stage begins. A stage results in success or failure. If a stage fails,
-   * the pipeline stops at that stage and remains stopped until either a new version
-   * of an artifact appears in the source location, or a user takes action to rerun
-   * the most recent artifact through the pipeline. You can call
-   * <a>GetPipelineState</a>, which displays the status of a pipeline, including the
-   * status of stages in the pipeline, or <a>GetPipeline</a>, which returns the
-   * entire structure of the pipeline, including the stages of that pipeline. For
-   * more information about the structure of stages and actions, see <a
+   * </li> <li> <p> <a>StopPipelineExecution</a>, which stops the specified pipeline
+   * execution from continuing through the pipeline.</p> </li> <li> <p>
+   * <a>UpdatePipeline</a>, which updates a pipeline with edits or changes to the
+   * structure of the pipeline.</p> </li> </ul> <p>Pipelines include <i>stages</i>.
+   * Each stage contains one or more actions that must complete before the next stage
+   * begins. A stage results in success or failure. If a stage fails, the pipeline
+   * stops at that stage and remains stopped until either a new version of an
+   * artifact appears in the source location, or a user takes action to rerun the
+   * most recent artifact through the pipeline. You can call <a>GetPipelineState</a>,
+   * which displays the status of a pipeline, including the status of stages in the
+   * pipeline, or <a>GetPipeline</a>, which returns the entire structure of the
+   * pipeline, including the stages of that pipeline. For more information about the
+   * structure of stages and actions, see <a
    * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS
    * CodePipeline Pipeline Structure Reference</a>.</p> <p>Pipeline stages include
    * <i>actions</i> that are categorized into categories such as source or build
@@ -671,9 +678,9 @@ namespace Model
         /**
          * <p>Returns information about a job. Used for custom actions only.</p>
          * <important> <p>When this API is called, AWS CodePipeline returns temporary
-         * credentials for the Amazon S3 bucket used to store artifacts for the pipeline,
-         * if the action requires access to that Amazon S3 bucket for input or output
-         * artifacts. This API also returns any secret values defined for the action.</p>
+         * credentials for the S3 bucket used to store artifacts for the pipeline, if the
+         * action requires access to that S3 bucket for input or output artifacts. This API
+         * also returns any secret values defined for the action.</p>
          * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">AWS
          * API Reference</a></p>
@@ -683,9 +690,9 @@ namespace Model
         /**
          * <p>Returns information about a job. Used for custom actions only.</p>
          * <important> <p>When this API is called, AWS CodePipeline returns temporary
-         * credentials for the Amazon S3 bucket used to store artifacts for the pipeline,
-         * if the action requires access to that Amazon S3 bucket for input or output
-         * artifacts. This API also returns any secret values defined for the action.</p>
+         * credentials for the S3 bucket used to store artifacts for the pipeline, if the
+         * action requires access to that S3 bucket for input or output artifacts. This API
+         * also returns any secret values defined for the action.</p>
          * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">AWS
          * API Reference</a></p>
@@ -697,9 +704,9 @@ namespace Model
         /**
          * <p>Returns information about a job. Used for custom actions only.</p>
          * <important> <p>When this API is called, AWS CodePipeline returns temporary
-         * credentials for the Amazon S3 bucket used to store artifacts for the pipeline,
-         * if the action requires access to that Amazon S3 bucket for input or output
-         * artifacts. This API also returns any secret values defined for the action.</p>
+         * credentials for the S3 bucket used to store artifacts for the pipeline, if the
+         * action requires access to that S3 bucket for input or output artifacts. This API
+         * also returns any secret values defined for the action.</p>
          * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetJobDetails">AWS
          * API Reference</a></p>
@@ -810,10 +817,10 @@ namespace Model
         /**
          * <p>Requests the details of a job for a third party action. Used for partner
          * actions only.</p> <important> <p>When this API is called, AWS CodePipeline
-         * returns temporary credentials for the Amazon S3 bucket used to store artifacts
-         * for the pipeline, if the action requires access to that Amazon S3 bucket for
-         * input or output artifacts. This API also returns any secret values defined for
-         * the action.</p> </important><p><h3>See Also:</h3>   <a
+         * returns temporary credentials for the S3 bucket used to store artifacts for the
+         * pipeline, if the action requires access to that S3 bucket for input or output
+         * artifacts. This API also returns any secret values defined for the action.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">AWS
          * API Reference</a></p>
          */
@@ -822,10 +829,10 @@ namespace Model
         /**
          * <p>Requests the details of a job for a third party action. Used for partner
          * actions only.</p> <important> <p>When this API is called, AWS CodePipeline
-         * returns temporary credentials for the Amazon S3 bucket used to store artifacts
-         * for the pipeline, if the action requires access to that Amazon S3 bucket for
-         * input or output artifacts. This API also returns any secret values defined for
-         * the action.</p> </important><p><h3>See Also:</h3>   <a
+         * returns temporary credentials for the S3 bucket used to store artifacts for the
+         * pipeline, if the action requires access to that S3 bucket for input or output
+         * artifacts. This API also returns any secret values defined for the action.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">AWS
          * API Reference</a></p>
          *
@@ -836,10 +843,10 @@ namespace Model
         /**
          * <p>Requests the details of a job for a third party action. Used for partner
          * actions only.</p> <important> <p>When this API is called, AWS CodePipeline
-         * returns temporary credentials for the Amazon S3 bucket used to store artifacts
-         * for the pipeline, if the action requires access to that Amazon S3 bucket for
-         * input or output artifacts. This API also returns any secret values defined for
-         * the action.</p> </important><p><h3>See Also:</h3>   <a
+         * returns temporary credentials for the S3 bucket used to store artifacts for the
+         * pipeline, if the action requires access to that S3 bucket for input or output
+         * artifacts. This API also returns any secret values defined for the action.</p>
+         * </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">AWS
          * API Reference</a></p>
          *
@@ -1024,10 +1031,10 @@ namespace Model
          * owner field. If the action type contains "AWS" or "ThirdParty" in the owner
          * field, the <code>PollForJobs</code> action returns an error.</p> <important>
          * <p>When this API is called, AWS CodePipeline returns temporary credentials for
-         * the Amazon S3 bucket used to store artifacts for the pipeline, if the action
-         * requires access to that Amazon S3 bucket for input or output artifacts. This API
-         * also returns any secret values defined for the action.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * the S3 bucket used to store artifacts for the pipeline, if the action requires
+         * access to that S3 bucket for input or output artifacts. This API also returns
+         * any secret values defined for the action.</p> </important><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">AWS
          * API Reference</a></p>
          */
@@ -1039,10 +1046,10 @@ namespace Model
          * owner field. If the action type contains "AWS" or "ThirdParty" in the owner
          * field, the <code>PollForJobs</code> action returns an error.</p> <important>
          * <p>When this API is called, AWS CodePipeline returns temporary credentials for
-         * the Amazon S3 bucket used to store artifacts for the pipeline, if the action
-         * requires access to that Amazon S3 bucket for input or output artifacts. This API
-         * also returns any secret values defined for the action.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * the S3 bucket used to store artifacts for the pipeline, if the action requires
+         * access to that S3 bucket for input or output artifacts. This API also returns
+         * any secret values defined for the action.</p> </important><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">AWS
          * API Reference</a></p>
          *
@@ -1056,10 +1063,10 @@ namespace Model
          * owner field. If the action type contains "AWS" or "ThirdParty" in the owner
          * field, the <code>PollForJobs</code> action returns an error.</p> <important>
          * <p>When this API is called, AWS CodePipeline returns temporary credentials for
-         * the Amazon S3 bucket used to store artifacts for the pipeline, if the action
-         * requires access to that Amazon S3 bucket for input or output artifacts. This API
-         * also returns any secret values defined for the action.</p>
-         * </important><p><h3>See Also:</h3>   <a
+         * the S3 bucket used to store artifacts for the pipeline, if the action requires
+         * access to that S3 bucket for input or output artifacts. This API also returns
+         * any secret values defined for the action.</p> </important><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForJobs">AWS
          * API Reference</a></p>
          *
@@ -1070,10 +1077,9 @@ namespace Model
         /**
          * <p>Determines whether there are any third party jobs for a job worker to act on.
          * Used for partner actions only.</p> <important> <p>When this API is called, AWS
-         * CodePipeline returns temporary credentials for the Amazon S3 bucket used to
-         * store artifacts for the pipeline, if the action requires access to that Amazon
-         * S3 bucket for input or output artifacts.</p> </important><p><h3>See Also:</h3>  
-         * <a
+         * CodePipeline returns temporary credentials for the S3 bucket used to store
+         * artifacts for the pipeline, if the action requires access to that S3 bucket for
+         * input or output artifacts.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">AWS
          * API Reference</a></p>
          */
@@ -1082,10 +1088,9 @@ namespace Model
         /**
          * <p>Determines whether there are any third party jobs for a job worker to act on.
          * Used for partner actions only.</p> <important> <p>When this API is called, AWS
-         * CodePipeline returns temporary credentials for the Amazon S3 bucket used to
-         * store artifacts for the pipeline, if the action requires access to that Amazon
-         * S3 bucket for input or output artifacts.</p> </important><p><h3>See Also:</h3>  
-         * <a
+         * CodePipeline returns temporary credentials for the S3 bucket used to store
+         * artifacts for the pipeline, if the action requires access to that S3 bucket for
+         * input or output artifacts.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">AWS
          * API Reference</a></p>
          *
@@ -1096,10 +1101,9 @@ namespace Model
         /**
          * <p>Determines whether there are any third party jobs for a job worker to act on.
          * Used for partner actions only.</p> <important> <p>When this API is called, AWS
-         * CodePipeline returns temporary credentials for the Amazon S3 bucket used to
-         * store artifacts for the pipeline, if the action requires access to that Amazon
-         * S3 bucket for input or output artifacts.</p> </important><p><h3>See Also:</h3>  
-         * <a
+         * CodePipeline returns temporary credentials for the S3 bucket used to store
+         * artifacts for the pipeline, if the action requires access to that S3 bucket for
+         * input or output artifacts.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/PollForThirdPartyJobs">AWS
          * API Reference</a></p>
          *
@@ -1415,6 +1419,46 @@ namespace Model
         virtual void StartPipelineExecutionAsync(const Model::StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Stops the specified pipeline execution. You choose to either stop the
+         * pipeline execution by completing in-progress actions without starting subsequent
+         * actions, or by abandoning in-progress actions. While completing or abandoning
+         * in-progress actions, the pipeline execution is in a <code>Stopping</code> state.
+         * After all in-progress actions are completed or abandoned, the pipeline execution
+         * is in a <code>Stopped</code> state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StopPipelineExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StopPipelineExecutionOutcome StopPipelineExecution(const Model::StopPipelineExecutionRequest& request) const;
+
+        /**
+         * <p>Stops the specified pipeline execution. You choose to either stop the
+         * pipeline execution by completing in-progress actions without starting subsequent
+         * actions, or by abandoning in-progress actions. While completing or abandoning
+         * in-progress actions, the pipeline execution is in a <code>Stopping</code> state.
+         * After all in-progress actions are completed or abandoned, the pipeline execution
+         * is in a <code>Stopped</code> state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StopPipelineExecution">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StopPipelineExecutionOutcomeCallable StopPipelineExecutionCallable(const Model::StopPipelineExecutionRequest& request) const;
+
+        /**
+         * <p>Stops the specified pipeline execution. You choose to either stop the
+         * pipeline execution by completing in-progress actions without starting subsequent
+         * actions, or by abandoning in-progress actions. While completing or abandoning
+         * in-progress actions, the pipeline execution is in a <code>Stopping</code> state.
+         * After all in-progress actions are completed or abandoned, the pipeline execution
+         * is in a <code>Stopped</code> state.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/StopPipelineExecution">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StopPipelineExecutionAsync(const Model::StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Adds to or modifies the tags of the given resource. Tags are metadata that
          * can be used to manage a resource. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/TagResource">AWS
@@ -1538,6 +1582,7 @@ namespace Model
         void RegisterWebhookWithThirdPartyAsyncHelper(const Model::RegisterWebhookWithThirdPartyRequest& request, const RegisterWebhookWithThirdPartyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RetryStageExecutionAsyncHelper(const Model::RetryStageExecutionRequest& request, const RetryStageExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartPipelineExecutionAsyncHelper(const Model::StartPipelineExecutionRequest& request, const StartPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StopPipelineExecutionAsyncHelper(const Model::StopPipelineExecutionRequest& request, const StopPipelineExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePipelineAsyncHelper(const Model::UpdatePipelineRequest& request, const UpdatePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

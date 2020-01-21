@@ -32,7 +32,8 @@ namespace Model
     failed_provision,
     pending_deprovision,
     pending_provision,
-    provisioned
+    provisioned,
+    provisioned_not_publicly_advertisable
   };
 
 namespace ByoipCidrStateMapper

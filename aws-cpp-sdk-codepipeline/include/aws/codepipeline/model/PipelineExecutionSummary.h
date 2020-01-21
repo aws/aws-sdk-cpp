@@ -20,6 +20,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/codepipeline/model/ExecutionTrigger.h>
+#include <aws/codepipeline/model/StopExecutionTrigger.h>
 #include <aws/codepipeline/model/SourceRevision.h>
 #include <utility>
 
@@ -95,67 +96,127 @@ namespace Model
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The
-     * pipeline execution was completed successfully. </p> </li> <li> <p>Superseded:
-     * While this pipeline execution was waiting for the next stage to be completed, a
-     * newer pipeline execution advanced and continued through the pipeline instead.
-     * </p> </li> <li> <p>Failed: The pipeline execution was not completed
-     * successfully.</p> </li> </ul>
+     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
+     * execution was manually stopped. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+     * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
+     * request to be manually stopped. Depending on the selected stop mode, the
+     * execution is either completing or abandoning in-progress actions. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+     * Executions</a>.</p> </li> <li> <p>Succeeded: The pipeline execution was
+     * completed successfully. </p> </li> <li> <p>Superseded: While this pipeline
+     * execution was waiting for the next stage to be completed, a newer pipeline
+     * execution advanced and continued through the pipeline instead. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded
+     * Executions</a>.</p> </li> <li> <p>Failed: The pipeline execution was not
+     * completed successfully.</p> </li> </ul>
      */
     inline const PipelineExecutionStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The
-     * pipeline execution was completed successfully. </p> </li> <li> <p>Superseded:
-     * While this pipeline execution was waiting for the next stage to be completed, a
-     * newer pipeline execution advanced and continued through the pipeline instead.
-     * </p> </li> <li> <p>Failed: The pipeline execution was not completed
-     * successfully.</p> </li> </ul>
+     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
+     * execution was manually stopped. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+     * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
+     * request to be manually stopped. Depending on the selected stop mode, the
+     * execution is either completing or abandoning in-progress actions. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+     * Executions</a>.</p> </li> <li> <p>Succeeded: The pipeline execution was
+     * completed successfully. </p> </li> <li> <p>Superseded: While this pipeline
+     * execution was waiting for the next stage to be completed, a newer pipeline
+     * execution advanced and continued through the pipeline instead. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded
+     * Executions</a>.</p> </li> <li> <p>Failed: The pipeline execution was not
+     * completed successfully.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The
-     * pipeline execution was completed successfully. </p> </li> <li> <p>Superseded:
-     * While this pipeline execution was waiting for the next stage to be completed, a
-     * newer pipeline execution advanced and continued through the pipeline instead.
-     * </p> </li> <li> <p>Failed: The pipeline execution was not completed
-     * successfully.</p> </li> </ul>
+     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
+     * execution was manually stopped. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+     * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
+     * request to be manually stopped. Depending on the selected stop mode, the
+     * execution is either completing or abandoning in-progress actions. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+     * Executions</a>.</p> </li> <li> <p>Succeeded: The pipeline execution was
+     * completed successfully. </p> </li> <li> <p>Superseded: While this pipeline
+     * execution was waiting for the next stage to be completed, a newer pipeline
+     * execution advanced and continued through the pipeline instead. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded
+     * Executions</a>.</p> </li> <li> <p>Failed: The pipeline execution was not
+     * completed successfully.</p> </li> </ul>
      */
     inline void SetStatus(const PipelineExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The
-     * pipeline execution was completed successfully. </p> </li> <li> <p>Superseded:
-     * While this pipeline execution was waiting for the next stage to be completed, a
-     * newer pipeline execution advanced and continued through the pipeline instead.
-     * </p> </li> <li> <p>Failed: The pipeline execution was not completed
-     * successfully.</p> </li> </ul>
+     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
+     * execution was manually stopped. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+     * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
+     * request to be manually stopped. Depending on the selected stop mode, the
+     * execution is either completing or abandoning in-progress actions. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+     * Executions</a>.</p> </li> <li> <p>Succeeded: The pipeline execution was
+     * completed successfully. </p> </li> <li> <p>Superseded: While this pipeline
+     * execution was waiting for the next stage to be completed, a newer pipeline
+     * execution advanced and continued through the pipeline instead. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded
+     * Executions</a>.</p> </li> <li> <p>Failed: The pipeline execution was not
+     * completed successfully.</p> </li> </ul>
      */
     inline void SetStatus(PipelineExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The
-     * pipeline execution was completed successfully. </p> </li> <li> <p>Superseded:
-     * While this pipeline execution was waiting for the next stage to be completed, a
-     * newer pipeline execution advanced and continued through the pipeline instead.
-     * </p> </li> <li> <p>Failed: The pipeline execution was not completed
-     * successfully.</p> </li> </ul>
+     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
+     * execution was manually stopped. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+     * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
+     * request to be manually stopped. Depending on the selected stop mode, the
+     * execution is either completing or abandoning in-progress actions. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+     * Executions</a>.</p> </li> <li> <p>Succeeded: The pipeline execution was
+     * completed successfully. </p> </li> <li> <p>Superseded: While this pipeline
+     * execution was waiting for the next stage to be completed, a newer pipeline
+     * execution advanced and continued through the pipeline instead. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded
+     * Executions</a>.</p> </li> <li> <p>Failed: The pipeline execution was not
+     * completed successfully.</p> </li> </ul>
      */
     inline PipelineExecutionSummary& WithStatus(const PipelineExecutionStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
-     * pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The
-     * pipeline execution was completed successfully. </p> </li> <li> <p>Superseded:
-     * While this pipeline execution was waiting for the next stage to be completed, a
-     * newer pipeline execution advanced and continued through the pipeline instead.
-     * </p> </li> <li> <p>Failed: The pipeline execution was not completed
-     * successfully.</p> </li> </ul>
+     * pipeline execution is currently running.</p> </li> <li> <p>Stopped: The pipeline
+     * execution was manually stopped. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+     * Executions</a>.</p> </li> <li> <p>Stopping: The pipeline execution received a
+     * request to be manually stopped. Depending on the selected stop mode, the
+     * execution is either completing or abandoning in-progress actions. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-executions-stopped">Stopped
+     * Executions</a>.</p> </li> <li> <p>Succeeded: The pipeline execution was
+     * completed successfully. </p> </li> <li> <p>Superseded: While this pipeline
+     * execution was waiting for the next stage to be completed, a newer pipeline
+     * execution advanced and continued through the pipeline instead. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts.html#concepts-superseded">Superseded
+     * Executions</a>.</p> </li> <li> <p>Failed: The pipeline execution was not
+     * completed successfully.</p> </li> </ul>
      */
     inline PipelineExecutionSummary& WithStatus(PipelineExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -313,6 +374,37 @@ namespace Model
      */
     inline PipelineExecutionSummary& WithTrigger(ExecutionTrigger&& value) { SetTrigger(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The interaction that stopped a pipeline execution.</p>
+     */
+    inline const StopExecutionTrigger& GetStopTrigger() const{ return m_stopTrigger; }
+
+    /**
+     * <p>The interaction that stopped a pipeline execution.</p>
+     */
+    inline bool StopTriggerHasBeenSet() const { return m_stopTriggerHasBeenSet; }
+
+    /**
+     * <p>The interaction that stopped a pipeline execution.</p>
+     */
+    inline void SetStopTrigger(const StopExecutionTrigger& value) { m_stopTriggerHasBeenSet = true; m_stopTrigger = value; }
+
+    /**
+     * <p>The interaction that stopped a pipeline execution.</p>
+     */
+    inline void SetStopTrigger(StopExecutionTrigger&& value) { m_stopTriggerHasBeenSet = true; m_stopTrigger = std::move(value); }
+
+    /**
+     * <p>The interaction that stopped a pipeline execution.</p>
+     */
+    inline PipelineExecutionSummary& WithStopTrigger(const StopExecutionTrigger& value) { SetStopTrigger(value); return *this;}
+
+    /**
+     * <p>The interaction that stopped a pipeline execution.</p>
+     */
+    inline PipelineExecutionSummary& WithStopTrigger(StopExecutionTrigger&& value) { SetStopTrigger(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_pipelineExecutionId;
@@ -332,6 +424,9 @@ namespace Model
 
     ExecutionTrigger m_trigger;
     bool m_triggerHasBeenSet;
+
+    StopExecutionTrigger m_stopTrigger;
+    bool m_stopTriggerHasBeenSet;
   };
 
 } // namespace Model

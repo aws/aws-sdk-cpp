@@ -81,32 +81,32 @@ namespace Model
 
 
     /**
-     * <p>The Amazon S3 bucket that contains the artifact.</p>
+     * <p>The S3 bucket that contains the artifact.</p>
      */
     inline const S3ArtifactLocation& GetS3Location() const{ return m_s3Location; }
 
     /**
-     * <p>The Amazon S3 bucket that contains the artifact.</p>
+     * <p>The S3 bucket that contains the artifact.</p>
      */
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
 
     /**
-     * <p>The Amazon S3 bucket that contains the artifact.</p>
+     * <p>The S3 bucket that contains the artifact.</p>
      */
     inline void SetS3Location(const S3ArtifactLocation& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
 
     /**
-     * <p>The Amazon S3 bucket that contains the artifact.</p>
+     * <p>The S3 bucket that contains the artifact.</p>
      */
     inline void SetS3Location(S3ArtifactLocation&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
 
     /**
-     * <p>The Amazon S3 bucket that contains the artifact.</p>
+     * <p>The S3 bucket that contains the artifact.</p>
      */
     inline ArtifactLocation& WithS3Location(const S3ArtifactLocation& value) { SetS3Location(value); return *this;}
 
     /**
-     * <p>The Amazon S3 bucket that contains the artifact.</p>
+     * <p>The S3 bucket that contains the artifact.</p>
      */
     inline ArtifactLocation& WithS3Location(S3ArtifactLocation&& value) { SetS3Location(std::move(value)); return *this;}
 

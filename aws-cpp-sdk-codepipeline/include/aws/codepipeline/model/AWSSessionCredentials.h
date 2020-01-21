@@ -36,8 +36,8 @@ namespace Model
   /**
    * <p>Represents an AWS session credentials object. These credentials are temporary
    * credentials that are issued by AWS Secure Token Service (STS). They can be used
-   * to access input and output artifacts in the Amazon S3 bucket used to store
-   * artifact for the pipeline in AWS CodePipeline.</p><p><h3>See Also:</h3>   <a
+   * to access input and output artifacts in the S3 bucket used to store artifact for
+   * the pipeline in AWS CodePipeline.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/AWSSessionCredentials">AWS
    * API Reference</a></p>
    */
