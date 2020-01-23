@@ -151,10 +151,11 @@ namespace Model
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyInputList() const{ return m_policyInputList; }
 
@@ -164,10 +165,11 @@ namespace Model
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline bool PolicyInputListHasBeenSet() const { return m_policyInputListHasBeenSet; }
 
@@ -177,10 +179,11 @@ namespace Model
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline void SetPolicyInputList(const Aws::Vector<Aws::String>& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
 
@@ -190,10 +193,11 @@ namespace Model
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = std::move(value); }
 
@@ -203,10 +207,11 @@ namespace Model
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPolicyInputList(value); return *this;}
 
@@ -216,10 +221,11 @@ namespace Model
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(std::move(value)); return *this;}
 
@@ -229,10 +235,11 @@ namespace Model
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& AddPolicyInputList(const Aws::String& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
 
@@ -242,10 +249,11 @@ namespace Model
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(std::move(value)); return *this; }
 
@@ -255,12 +263,230 @@ namespace Model
      * of an IAM policy.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
+
+
+    /**
+     * <p>The IAM permissions boundary policy to simulate. The permissions boundary
+     * sets the maximum permissions that the entity can have. You can input only one
+     * permissions boundary when you pass a policy to this operation. An IAM entity can
+     * only have one permissions boundary in effect at a time. For example, if a
+     * permissions boundary is attached to an entity and you pass in a different
+     * permissions boundary policy using this parameter, then the new permission
+     * boundary policy is used for the simulation. For more information about
+     * permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * is specified as a string containing the complete, valid JSON text of a
+     * permissions boundary policy.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     */
+    inline const Aws::Vector<Aws::String>& GetPermissionsBoundaryPolicyInputList() const{ return m_permissionsBoundaryPolicyInputList; }
+
+    /**
+     * <p>The IAM permissions boundary policy to simulate. The permissions boundary
+     * sets the maximum permissions that the entity can have. You can input only one
+     * permissions boundary when you pass a policy to this operation. An IAM entity can
+     * only have one permissions boundary in effect at a time. For example, if a
+     * permissions boundary is attached to an entity and you pass in a different
+     * permissions boundary policy using this parameter, then the new permission
+     * boundary policy is used for the simulation. For more information about
+     * permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * is specified as a string containing the complete, valid JSON text of a
+     * permissions boundary policy.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     */
+    inline bool PermissionsBoundaryPolicyInputListHasBeenSet() const { return m_permissionsBoundaryPolicyInputListHasBeenSet; }
+
+    /**
+     * <p>The IAM permissions boundary policy to simulate. The permissions boundary
+     * sets the maximum permissions that the entity can have. You can input only one
+     * permissions boundary when you pass a policy to this operation. An IAM entity can
+     * only have one permissions boundary in effect at a time. For example, if a
+     * permissions boundary is attached to an entity and you pass in a different
+     * permissions boundary policy using this parameter, then the new permission
+     * boundary policy is used for the simulation. For more information about
+     * permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * is specified as a string containing the complete, valid JSON text of a
+     * permissions boundary policy.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     */
+    inline void SetPermissionsBoundaryPolicyInputList(const Aws::Vector<Aws::String>& value) { m_permissionsBoundaryPolicyInputListHasBeenSet = true; m_permissionsBoundaryPolicyInputList = value; }
+
+    /**
+     * <p>The IAM permissions boundary policy to simulate. The permissions boundary
+     * sets the maximum permissions that the entity can have. You can input only one
+     * permissions boundary when you pass a policy to this operation. An IAM entity can
+     * only have one permissions boundary in effect at a time. For example, if a
+     * permissions boundary is attached to an entity and you pass in a different
+     * permissions boundary policy using this parameter, then the new permission
+     * boundary policy is used for the simulation. For more information about
+     * permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * is specified as a string containing the complete, valid JSON text of a
+     * permissions boundary policy.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     */
+    inline void SetPermissionsBoundaryPolicyInputList(Aws::Vector<Aws::String>&& value) { m_permissionsBoundaryPolicyInputListHasBeenSet = true; m_permissionsBoundaryPolicyInputList = std::move(value); }
+
+    /**
+     * <p>The IAM permissions boundary policy to simulate. The permissions boundary
+     * sets the maximum permissions that the entity can have. You can input only one
+     * permissions boundary when you pass a policy to this operation. An IAM entity can
+     * only have one permissions boundary in effect at a time. For example, if a
+     * permissions boundary is attached to an entity and you pass in a different
+     * permissions boundary policy using this parameter, then the new permission
+     * boundary policy is used for the simulation. For more information about
+     * permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * is specified as a string containing the complete, valid JSON text of a
+     * permissions boundary policy.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     */
+    inline SimulatePrincipalPolicyRequest& WithPermissionsBoundaryPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPermissionsBoundaryPolicyInputList(value); return *this;}
+
+    /**
+     * <p>The IAM permissions boundary policy to simulate. The permissions boundary
+     * sets the maximum permissions that the entity can have. You can input only one
+     * permissions boundary when you pass a policy to this operation. An IAM entity can
+     * only have one permissions boundary in effect at a time. For example, if a
+     * permissions boundary is attached to an entity and you pass in a different
+     * permissions boundary policy using this parameter, then the new permission
+     * boundary policy is used for the simulation. For more information about
+     * permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * is specified as a string containing the complete, valid JSON text of a
+     * permissions boundary policy.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     */
+    inline SimulatePrincipalPolicyRequest& WithPermissionsBoundaryPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPermissionsBoundaryPolicyInputList(std::move(value)); return *this;}
+
+    /**
+     * <p>The IAM permissions boundary policy to simulate. The permissions boundary
+     * sets the maximum permissions that the entity can have. You can input only one
+     * permissions boundary when you pass a policy to this operation. An IAM entity can
+     * only have one permissions boundary in effect at a time. For example, if a
+     * permissions boundary is attached to an entity and you pass in a different
+     * permissions boundary policy using this parameter, then the new permission
+     * boundary policy is used for the simulation. For more information about
+     * permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * is specified as a string containing the complete, valid JSON text of a
+     * permissions boundary policy.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     */
+    inline SimulatePrincipalPolicyRequest& AddPermissionsBoundaryPolicyInputList(const Aws::String& value) { m_permissionsBoundaryPolicyInputListHasBeenSet = true; m_permissionsBoundaryPolicyInputList.push_back(value); return *this; }
+
+    /**
+     * <p>The IAM permissions boundary policy to simulate. The permissions boundary
+     * sets the maximum permissions that the entity can have. You can input only one
+     * permissions boundary when you pass a policy to this operation. An IAM entity can
+     * only have one permissions boundary in effect at a time. For example, if a
+     * permissions boundary is attached to an entity and you pass in a different
+     * permissions boundary policy using this parameter, then the new permission
+     * boundary policy is used for the simulation. For more information about
+     * permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * is specified as a string containing the complete, valid JSON text of a
+     * permissions boundary policy.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     */
+    inline SimulatePrincipalPolicyRequest& AddPermissionsBoundaryPolicyInputList(Aws::String&& value) { m_permissionsBoundaryPolicyInputListHasBeenSet = true; m_permissionsBoundaryPolicyInputList.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The IAM permissions boundary policy to simulate. The permissions boundary
+     * sets the maximum permissions that the entity can have. You can input only one
+     * permissions boundary when you pass a policy to this operation. An IAM entity can
+     * only have one permissions boundary in effect at a time. For example, if a
+     * permissions boundary is attached to an entity and you pass in a different
+     * permissions boundary policy using this parameter, then the new permission
+     * boundary policy is used for the simulation. For more information about
+     * permissions boundaries, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+     * Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input
+     * is specified as a string containing the complete, valid JSON text of a
+     * permissions boundary policy.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
+     * parameter is a string of characters consisting of the following:</p> <ul> <li>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
+     */
+    inline SimulatePrincipalPolicyRequest& AddPermissionsBoundaryPolicyInputList(const char* value) { m_permissionsBoundaryPolicyInputListHasBeenSet = true; m_permissionsBoundaryPolicyInputList.push_back(value); return *this; }
 
 
     /**
@@ -478,11 +704,12 @@ namespace Model
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
 
@@ -492,11 +719,12 @@ namespace Model
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline bool ResourcePolicyHasBeenSet() const { return m_resourcePolicyHasBeenSet; }
 
@@ -506,11 +734,12 @@ namespace Model
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = value; }
 
@@ -520,11 +749,12 @@ namespace Model
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = std::move(value); }
 
@@ -534,11 +764,12 @@ namespace Model
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline void SetResourcePolicy(const char* value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy.assign(value); }
 
@@ -548,11 +779,12 @@ namespace Model
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
 
@@ -562,11 +794,12 @@ namespace Model
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
 
@@ -576,11 +809,12 @@ namespace Model
      * You can include only one resource-based policy in a simulation.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline SimulatePrincipalPolicyRequest& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
 
@@ -1277,6 +1511,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_policyInputList;
     bool m_policyInputListHasBeenSet;
+
+    Aws::Vector<Aws::String> m_permissionsBoundaryPolicyInputList;
+    bool m_permissionsBoundaryPolicyInputListHasBeenSet;
 
     Aws::Vector<Aws::String> m_actionNames;
     bool m_actionNamesHasBeenSet;

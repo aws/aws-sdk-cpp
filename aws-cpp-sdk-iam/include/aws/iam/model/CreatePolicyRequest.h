@@ -119,9 +119,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -133,9 +133,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
@@ -147,9 +147,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -161,9 +161,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
@@ -175,9 +175,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
@@ -189,9 +189,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline CreatePolicyRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
@@ -203,9 +203,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline CreatePolicyRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
@@ -217,9 +217,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline CreatePolicyRequest& WithPath(const char* value) { SetPath(value); return *this;}
 
@@ -232,11 +232,12 @@ namespace Model
      * before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
@@ -248,11 +249,12 @@ namespace Model
      * before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
 
@@ -264,11 +266,12 @@ namespace Model
      * before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
@@ -280,11 +283,12 @@ namespace Model
      * before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
 
@@ -296,11 +300,12 @@ namespace Model
      * before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
@@ -312,11 +317,12 @@ namespace Model
      * before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline CreatePolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
@@ -328,11 +334,12 @@ namespace Model
      * before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline CreatePolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
@@ -344,11 +351,12 @@ namespace Model
      * before submitting it to IAM.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
      * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character (\u0020)
-     * through the end of the ASCII character range</p> </li> <li> <p>The printable
-     * characters in the Basic Latin and Latin-1 Supplement character set (through
-     * \u00FF)</p> </li> <li> <p>The special characters tab (\u0009), line feed
-     * (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * <p>Any printable ASCII character ranging from the space character
+     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
+     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
+     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
+     * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline CreatePolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 

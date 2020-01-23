@@ -35,6 +35,8 @@ static const int SUBSCRIPTION_CATEGORY_NOT_FOUND_FAULT_HASH = HashingUtils::Hash
 static const int D_B_SECURITY_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBSecurityGroupAlreadyExists");
 static const int INVALID_D_B_SUBNET_GROUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBSubnetGroupStateFault");
 static const int D_B_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupQuotaExceeded");
+static const int EXPORT_TASK_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ExportTaskNotFound");
+static const int IAM_ROLE_MISSING_PERMISSIONS_FAULT_HASH = HashingUtils::HashString("IamRoleMissingPermissions");
 static const int D_B_INSTANCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBInstanceNotFound");
 static const int OPTION_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("OptionGroupQuotaExceededFault");
 static const int D_B_LOG_FILE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBLogFileNotFoundFault");
@@ -44,6 +46,7 @@ static const int INVALID_SUBNET_HASH = HashingUtils::HashString("InvalidSubnet")
 static const int D_B_PROXY_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBProxyQuotaExceededFault");
 static const int D_B_PARAMETER_GROUP_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBParameterGroupQuotaExceeded");
 static const int D_B_CLUSTER_ROLE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterRoleAlreadyExists");
+static const int INVALID_EXPORT_TASK_STATE_FAULT_HASH = HashingUtils::HashString("InvalidExportTaskStateFault");
 static const int INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientStorageClusterCapacity");
 static const int D_B_SUBNET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupNotFoundFault");
 static const int D_B_SECURITY_GROUP_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("DBSecurityGroupNotSupported");
@@ -102,20 +105,24 @@ static const int INVALID_EVENT_SUBSCRIPTION_STATE_FAULT_HASH = HashingUtils::Has
 static const int D_B_INSTANCE_AUTOMATED_BACKUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBInstanceAutomatedBackupNotFound");
 static const int D_B_CLUSTER_ENDPOINT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBClusterEndpointAlreadyExistsFault");
 static const int D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupAlreadyExists");
+static const int INVALID_EXPORT_SOURCE_STATE_FAULT_HASH = HashingUtils::HashString("InvalidExportSourceState");
 static const int EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("EventSubscriptionQuotaExceeded");
 static const int D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBInstanceAlreadyExists");
+static const int INVALID_EXPORT_ONLY_FAULT_HASH = HashingUtils::HashString("InvalidExportOnly");
 static const int CUSTOM_AVAILABILITY_ZONE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("CustomAvailabilityZoneAlreadyExists");
 static const int D_B_SECURITY_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSecurityGroupNotFound");
 static const int INVALID_D_B_CLUSTER_SNAPSHOT_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBClusterSnapshotStateFault");
 static const int D_B_INSTANCE_ROLE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("DBInstanceRoleQuotaExceeded");
 static const int GLOBAL_CLUSTER_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("GlobalClusterNotFoundFault");
 static const int PROVISIONED_IOPS_NOT_AVAILABLE_IN_A_Z_FAULT_HASH = HashingUtils::HashString("ProvisionedIopsNotAvailableInAZFault");
+static const int IAM_ROLE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("IamRoleNotFound");
 static const int GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("GlobalClusterQuotaExceededFault");
 static const int RESOURCE_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("ResourceNotFoundFault");
 static const int INVALID_D_B_INSTANCE_AUTOMATED_BACKUP_STATE_FAULT_HASH = HashingUtils::HashString("InvalidDBInstanceAutomatedBackupState");
 static const int INSUFFICIENT_D_B_INSTANCE_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientDBInstanceCapacity");
 static const int RESERVED_D_B_INSTANCE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("ReservedDBInstanceQuotaExceeded");
 static const int RESERVED_D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ReservedDBInstanceAlreadyExists");
+static const int EXPORT_TASK_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("ExportTaskAlreadyExists");
 static const int D_B_PROXY_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBProxyAlreadyExistsFault");
 static const int CUSTOM_AVAILABILITY_ZONE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("CustomAvailabilityZoneQuotaExceeded");
 static const int INSTANCE_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("InstanceQuotaExceeded");
@@ -167,6 +174,14 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_SUBNET_GROUP_QUOTA_EXCEEDED_FAULT), false);
   }
+  else if (hashCode == EXPORT_TASK_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::EXPORT_TASK_NOT_FOUND_FAULT), false);
+  }
+  else if (hashCode == IAM_ROLE_MISSING_PERMISSIONS_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::IAM_ROLE_MISSING_PERMISSIONS_FAULT), false);
+  }
   else if (hashCode == D_B_INSTANCE_NOT_FOUND_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_INSTANCE_NOT_FOUND_FAULT), false);
@@ -202,6 +217,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == D_B_CLUSTER_ROLE_ALREADY_EXISTS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_CLUSTER_ROLE_ALREADY_EXISTS_FAULT), false);
+  }
+  else if (hashCode == INVALID_EXPORT_TASK_STATE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_EXPORT_TASK_STATE_FAULT), false);
   }
   else if (hashCode == INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT_HASH)
   {
@@ -435,6 +454,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_SUBNET_GROUP_ALREADY_EXISTS_FAULT), false);
   }
+  else if (hashCode == INVALID_EXPORT_SOURCE_STATE_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_EXPORT_SOURCE_STATE_FAULT), false);
+  }
   else if (hashCode == EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::EVENT_SUBSCRIPTION_QUOTA_EXCEEDED_FAULT), false);
@@ -442,6 +465,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_INSTANCE_ALREADY_EXISTS_FAULT), false);
+  }
+  else if (hashCode == INVALID_EXPORT_ONLY_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_EXPORT_ONLY_FAULT), false);
   }
   else if (hashCode == CUSTOM_AVAILABILITY_ZONE_ALREADY_EXISTS_FAULT_HASH)
   {
@@ -467,6 +494,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::PROVISIONED_IOPS_NOT_AVAILABLE_IN_A_Z_FAULT), false);
   }
+  else if (hashCode == IAM_ROLE_NOT_FOUND_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::IAM_ROLE_NOT_FOUND_FAULT), false);
+  }
   else if (hashCode == GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::GLOBAL_CLUSTER_QUOTA_EXCEEDED_FAULT), false);
@@ -490,6 +521,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESERVED_D_B_INSTANCE_ALREADY_EXISTS_FAULT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::RESERVED_D_B_INSTANCE_ALREADY_EXISTS_FAULT), false);
+  }
+  else if (hashCode == EXPORT_TASK_ALREADY_EXISTS_FAULT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::EXPORT_TASK_ALREADY_EXISTS_FAULT), false);
   }
   else if (hashCode == D_B_PROXY_ALREADY_EXISTS_FAULT_HASH)
   {

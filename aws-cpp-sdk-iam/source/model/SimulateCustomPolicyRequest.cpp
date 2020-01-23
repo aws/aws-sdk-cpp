@@ -22,6 +22,7 @@ using namespace Aws::Utils;
 
 SimulateCustomPolicyRequest::SimulateCustomPolicyRequest() : 
     m_policyInputListHasBeenSet(false),
+    m_permissionsBoundaryPolicyInputListHasBeenSet(false),
     m_actionNamesHasBeenSet(false),
     m_resourceArnsHasBeenSet(false),
     m_resourcePolicyHasBeenSet(false),
@@ -47,6 +48,17 @@ Aws::String SimulateCustomPolicyRequest::SerializePayload() const
       ss << "PolicyInputList.member." << policyInputListCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       policyInputListCount++;
+    }
+  }
+
+  if(m_permissionsBoundaryPolicyInputListHasBeenSet)
+  {
+    unsigned permissionsBoundaryPolicyInputListCount = 1;
+    for(auto& item : m_permissionsBoundaryPolicyInputList)
+    {
+      ss << "PermissionsBoundaryPolicyInputList.member." << permissionsBoundaryPolicyInputListCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      permissionsBoundaryPolicyInputListCount++;
     }
   }
 

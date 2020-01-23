@@ -146,9 +146,9 @@ namespace Model
      * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
      * itself or a string that must begin and end with forward slashes. In addition, it
-     * can contain any ASCII character from the ! (\u0021) through the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL
+     * character (<code>\u007F</code>), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline const Aws::String& GetPathPrefix() const{ return m_pathPrefix; }
 
@@ -158,9 +158,9 @@ namespace Model
      * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
      * itself or a string that must begin and end with forward slashes. In addition, it
-     * can contain any ASCII character from the ! (\u0021) through the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL
+     * character (<code>\u007F</code>), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline bool PathPrefixHasBeenSet() const { return m_pathPrefixHasBeenSet; }
 
@@ -170,9 +170,9 @@ namespace Model
      * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
      * itself or a string that must begin and end with forward slashes. In addition, it
-     * can contain any ASCII character from the ! (\u0021) through the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL
+     * character (<code>\u007F</code>), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(const Aws::String& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
 
@@ -182,9 +182,9 @@ namespace Model
      * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
      * itself or a string that must begin and end with forward slashes. In addition, it
-     * can contain any ASCII character from the ! (\u0021) through the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL
+     * character (<code>\u007F</code>), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = std::move(value); }
 
@@ -194,9 +194,9 @@ namespace Model
      * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
      * itself or a string that must begin and end with forward slashes. In addition, it
-     * can contain any ASCII character from the ! (\u0021) through the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL
+     * character (<code>\u007F</code>), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline void SetPathPrefix(const char* value) { m_pathPrefixHasBeenSet = true; m_pathPrefix.assign(value); }
 
@@ -206,9 +206,9 @@ namespace Model
      * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
      * itself or a string that must begin and end with forward slashes. In addition, it
-     * can contain any ASCII character from the ! (\u0021) through the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL
+     * character (<code>\u007F</code>), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline ListPoliciesRequest& WithPathPrefix(const Aws::String& value) { SetPathPrefix(value); return *this;}
 
@@ -218,9 +218,9 @@ namespace Model
      * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
      * itself or a string that must begin and end with forward slashes. In addition, it
-     * can contain any ASCII character from the ! (\u0021) through the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL
+     * character (<code>\u007F</code>), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline ListPoliciesRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(std::move(value)); return *this;}
 
@@ -230,9 +230,9 @@ namespace Model
      * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of either a forward slash (/) by
      * itself or a string that must begin and end with forward slashes. In addition, it
-     * can contain any ASCII character from the ! (\u0021) through the DEL character
-     * (\u007F), including most punctuation characters, digits, and upper and
-     * lowercased letters.</p>
+     * can contain any ASCII character from the ! (<code>\u0021</code>) through the DEL
+     * character (<code>\u007F</code>), including most punctuation characters, digits,
+     * and upper and lowercased letters.</p>
      */
     inline ListPoliciesRequest& WithPathPrefix(const char* value) { SetPathPrefix(value); return *this;}
 

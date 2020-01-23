@@ -1340,8 +1340,8 @@ namespace Model
          * the following:</p> <ul> <li> <p>The URL of the OIDC identity provider (IdP) to
          * trust</p> </li> <li> <p>A list of client IDs (also known as audiences) that
          * identify the application or applications that are allowed to authenticate using
-         * the OIDC provider</p> </li> <li> <p>A list of thumbprints of the server
-         * certificate(s) that the IdP uses</p> </li> </ul> <p>You get all of this
+         * the OIDC provider</p> </li> <li> <p>A list of thumbprints of one or more server
+         * certificates that the IdP uses</p> </li> </ul> <p>You get all of this
          * information from the OIDC IdP that you want to use to access AWS.</p> <note>
          * <p>The trust for the OIDC provider is derived from the IAM provider that this
          * operation creates. Therefore, it is best to limit access to the
@@ -1361,8 +1361,8 @@ namespace Model
          * the following:</p> <ul> <li> <p>The URL of the OIDC identity provider (IdP) to
          * trust</p> </li> <li> <p>A list of client IDs (also known as audiences) that
          * identify the application or applications that are allowed to authenticate using
-         * the OIDC provider</p> </li> <li> <p>A list of thumbprints of the server
-         * certificate(s) that the IdP uses</p> </li> </ul> <p>You get all of this
+         * the OIDC provider</p> </li> <li> <p>A list of thumbprints of one or more server
+         * certificates that the IdP uses</p> </li> </ul> <p>You get all of this
          * information from the OIDC IdP that you want to use to access AWS.</p> <note>
          * <p>The trust for the OIDC provider is derived from the IAM provider that this
          * operation creates. Therefore, it is best to limit access to the
@@ -1384,8 +1384,8 @@ namespace Model
          * the following:</p> <ul> <li> <p>The URL of the OIDC identity provider (IdP) to
          * trust</p> </li> <li> <p>A list of client IDs (also known as audiences) that
          * identify the application or applications that are allowed to authenticate using
-         * the OIDC provider</p> </li> <li> <p>A list of thumbprints of the server
-         * certificate(s) that the IdP uses</p> </li> </ul> <p>You get all of this
+         * the OIDC provider</p> </li> <li> <p>A list of thumbprints of one or more server
+         * certificates that the IdP uses</p> </li> </ul> <p>You get all of this
          * information from the OIDC IdP that you want to use to access AWS.</p> <note>
          * <p>The trust for the OIDC provider is derived from the IAM provider that this
          * operation creates. Therefore, it is best to limit access to the
@@ -6827,12 +6827,12 @@ namespace Model
          * effective permissions. The policies are provided as strings.</p> <p>The
          * simulation does not perform the API operations; it only checks the authorization
          * to determine if the simulated policies allow or deny the operations.</p> <p>If
-         * you want to simulate existing policies attached to an IAM user, group, or role,
-         * use <a>SimulatePrincipalPolicy</a> instead.</p> <p>Context keys are variables
-         * maintained by AWS and its services that provide details about the context of an
-         * API query request. You can use the <code>Condition</code> element of an IAM
-         * policy to evaluate context keys. To get the list of context keys that the
-         * policies require for correct simulation, use
+         * you want to simulate existing policies that are attached to an IAM user, group,
+         * or role, use <a>SimulatePrincipalPolicy</a> instead.</p> <p>Context keys are
+         * variables that are maintained by AWS and its services and which provide details
+         * about the context of an API query request. You can use the
+         * <code>Condition</code> element of an IAM policy to evaluate context keys. To get
+         * the list of context keys that the policies require for correct simulation, use
          * <a>GetContextKeysForCustomPolicy</a>.</p> <p>If the output is long, you can use
          * <code>MaxItems</code> and <code>Marker</code> parameters to paginate the
          * results.</p><p><h3>See Also:</h3>   <a
@@ -6847,12 +6847,12 @@ namespace Model
          * effective permissions. The policies are provided as strings.</p> <p>The
          * simulation does not perform the API operations; it only checks the authorization
          * to determine if the simulated policies allow or deny the operations.</p> <p>If
-         * you want to simulate existing policies attached to an IAM user, group, or role,
-         * use <a>SimulatePrincipalPolicy</a> instead.</p> <p>Context keys are variables
-         * maintained by AWS and its services that provide details about the context of an
-         * API query request. You can use the <code>Condition</code> element of an IAM
-         * policy to evaluate context keys. To get the list of context keys that the
-         * policies require for correct simulation, use
+         * you want to simulate existing policies that are attached to an IAM user, group,
+         * or role, use <a>SimulatePrincipalPolicy</a> instead.</p> <p>Context keys are
+         * variables that are maintained by AWS and its services and which provide details
+         * about the context of an API query request. You can use the
+         * <code>Condition</code> element of an IAM policy to evaluate context keys. To get
+         * the list of context keys that the policies require for correct simulation, use
          * <a>GetContextKeysForCustomPolicy</a>.</p> <p>If the output is long, you can use
          * <code>MaxItems</code> and <code>Marker</code> parameters to paginate the
          * results.</p><p><h3>See Also:</h3>   <a
@@ -6869,12 +6869,12 @@ namespace Model
          * effective permissions. The policies are provided as strings.</p> <p>The
          * simulation does not perform the API operations; it only checks the authorization
          * to determine if the simulated policies allow or deny the operations.</p> <p>If
-         * you want to simulate existing policies attached to an IAM user, group, or role,
-         * use <a>SimulatePrincipalPolicy</a> instead.</p> <p>Context keys are variables
-         * maintained by AWS and its services that provide details about the context of an
-         * API query request. You can use the <code>Condition</code> element of an IAM
-         * policy to evaluate context keys. To get the list of context keys that the
-         * policies require for correct simulation, use
+         * you want to simulate existing policies that are attached to an IAM user, group,
+         * or role, use <a>SimulatePrincipalPolicy</a> instead.</p> <p>Context keys are
+         * variables that are maintained by AWS and its services and which provide details
+         * about the context of an API query request. You can use the
+         * <code>Condition</code> element of an IAM policy to evaluate context keys. To get
+         * the list of context keys that the policies require for correct simulation, use
          * <a>GetContextKeysForCustomPolicy</a>.</p> <p>If the output is long, you can use
          * <code>MaxItems</code> and <code>Marker</code> parameters to paginate the
          * results.</p><p><h3>See Also:</h3>   <a

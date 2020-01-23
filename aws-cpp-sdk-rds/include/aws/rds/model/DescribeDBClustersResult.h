@@ -52,43 +52,43 @@ namespace Model
 
 
     /**
-     * <p>A pagination token that can be used in a subsequent DescribeDBClusters
+     * <p>A pagination token that can be used in a later DescribeDBClusters
      * request.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
     /**
-     * <p>A pagination token that can be used in a subsequent DescribeDBClusters
+     * <p>A pagination token that can be used in a later DescribeDBClusters
      * request.</p>
      */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
     /**
-     * <p>A pagination token that can be used in a subsequent DescribeDBClusters
+     * <p>A pagination token that can be used in a later DescribeDBClusters
      * request.</p>
      */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
     /**
-     * <p>A pagination token that can be used in a subsequent DescribeDBClusters
+     * <p>A pagination token that can be used in a later DescribeDBClusters
      * request.</p>
      */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
     /**
-     * <p>A pagination token that can be used in a subsequent DescribeDBClusters
+     * <p>A pagination token that can be used in a later DescribeDBClusters
      * request.</p>
      */
     inline DescribeDBClustersResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
     /**
-     * <p>A pagination token that can be used in a subsequent DescribeDBClusters
+     * <p>A pagination token that can be used in a later DescribeDBClusters
      * request.</p>
      */
     inline DescribeDBClustersResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
     /**
-     * <p>A pagination token that can be used in a subsequent DescribeDBClusters
+     * <p>A pagination token that can be used in a later DescribeDBClusters
      * request.</p>
      */
     inline DescribeDBClustersResult& WithMarker(const char* value) { SetMarker(value); return *this;}

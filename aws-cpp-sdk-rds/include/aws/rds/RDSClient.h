@@ -26,6 +26,7 @@
 #include <aws/rds/model/ApplyPendingMaintenanceActionResult.h>
 #include <aws/rds/model/AuthorizeDBSecurityGroupIngressResult.h>
 #include <aws/rds/model/BacktrackDBClusterResult.h>
+#include <aws/rds/model/CancelExportTaskResult.h>
 #include <aws/rds/model/CopyDBClusterParameterGroupResult.h>
 #include <aws/rds/model/CopyDBClusterSnapshotResult.h>
 #include <aws/rds/model/CopyDBParameterGroupResult.h>
@@ -86,6 +87,7 @@
 #include <aws/rds/model/DescribeEventCategoriesResult.h>
 #include <aws/rds/model/DescribeEventSubscriptionsResult.h>
 #include <aws/rds/model/DescribeEventsResult.h>
+#include <aws/rds/model/DescribeExportTasksResult.h>
 #include <aws/rds/model/DescribeGlobalClustersResult.h>
 #include <aws/rds/model/DescribeInstallationMediaResult.h>
 #include <aws/rds/model/DescribeOptionGroupOptionsResult.h>
@@ -135,6 +137,7 @@
 #include <aws/rds/model/StartActivityStreamResult.h>
 #include <aws/rds/model/StartDBClusterResult.h>
 #include <aws/rds/model/StartDBInstanceResult.h>
+#include <aws/rds/model/StartExportTaskResult.h>
 #include <aws/rds/model/StopActivityStreamResult.h>
 #include <aws/rds/model/StopDBClusterResult.h>
 #include <aws/rds/model/StopDBInstanceResult.h>
@@ -189,6 +192,7 @@ namespace Aws
         class ApplyPendingMaintenanceActionRequest;
         class AuthorizeDBSecurityGroupIngressRequest;
         class BacktrackDBClusterRequest;
+        class CancelExportTaskRequest;
         class CopyDBClusterParameterGroupRequest;
         class CopyDBClusterSnapshotRequest;
         class CopyDBParameterGroupRequest;
@@ -254,6 +258,7 @@ namespace Aws
         class DescribeEventCategoriesRequest;
         class DescribeEventSubscriptionsRequest;
         class DescribeEventsRequest;
+        class DescribeExportTasksRequest;
         class DescribeGlobalClustersRequest;
         class DescribeInstallationMediaRequest;
         class DescribeOptionGroupOptionsRequest;
@@ -306,6 +311,7 @@ namespace Aws
         class StartActivityStreamRequest;
         class StartDBClusterRequest;
         class StartDBInstanceRequest;
+        class StartExportTaskRequest;
         class StopActivityStreamRequest;
         class StopDBClusterRequest;
         class StopDBInstanceRequest;
@@ -317,6 +323,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<ApplyPendingMaintenanceActionResult, Aws::Client::AWSError<RDSErrors>> ApplyPendingMaintenanceActionOutcome;
         typedef Aws::Utils::Outcome<AuthorizeDBSecurityGroupIngressResult, Aws::Client::AWSError<RDSErrors>> AuthorizeDBSecurityGroupIngressOutcome;
         typedef Aws::Utils::Outcome<BacktrackDBClusterResult, Aws::Client::AWSError<RDSErrors>> BacktrackDBClusterOutcome;
+        typedef Aws::Utils::Outcome<CancelExportTaskResult, Aws::Client::AWSError<RDSErrors>> CancelExportTaskOutcome;
         typedef Aws::Utils::Outcome<CopyDBClusterParameterGroupResult, Aws::Client::AWSError<RDSErrors>> CopyDBClusterParameterGroupOutcome;
         typedef Aws::Utils::Outcome<CopyDBClusterSnapshotResult, Aws::Client::AWSError<RDSErrors>> CopyDBClusterSnapshotOutcome;
         typedef Aws::Utils::Outcome<CopyDBParameterGroupResult, Aws::Client::AWSError<RDSErrors>> CopyDBParameterGroupOutcome;
@@ -382,6 +389,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<DescribeEventCategoriesResult, Aws::Client::AWSError<RDSErrors>> DescribeEventCategoriesOutcome;
         typedef Aws::Utils::Outcome<DescribeEventSubscriptionsResult, Aws::Client::AWSError<RDSErrors>> DescribeEventSubscriptionsOutcome;
         typedef Aws::Utils::Outcome<DescribeEventsResult, Aws::Client::AWSError<RDSErrors>> DescribeEventsOutcome;
+        typedef Aws::Utils::Outcome<DescribeExportTasksResult, Aws::Client::AWSError<RDSErrors>> DescribeExportTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeGlobalClustersResult, Aws::Client::AWSError<RDSErrors>> DescribeGlobalClustersOutcome;
         typedef Aws::Utils::Outcome<DescribeInstallationMediaResult, Aws::Client::AWSError<RDSErrors>> DescribeInstallationMediaOutcome;
         typedef Aws::Utils::Outcome<DescribeOptionGroupOptionsResult, Aws::Client::AWSError<RDSErrors>> DescribeOptionGroupOptionsOutcome;
@@ -434,6 +442,7 @@ namespace Aws
         typedef Aws::Utils::Outcome<StartActivityStreamResult, Aws::Client::AWSError<RDSErrors>> StartActivityStreamOutcome;
         typedef Aws::Utils::Outcome<StartDBClusterResult, Aws::Client::AWSError<RDSErrors>> StartDBClusterOutcome;
         typedef Aws::Utils::Outcome<StartDBInstanceResult, Aws::Client::AWSError<RDSErrors>> StartDBInstanceOutcome;
+        typedef Aws::Utils::Outcome<StartExportTaskResult, Aws::Client::AWSError<RDSErrors>> StartExportTaskOutcome;
         typedef Aws::Utils::Outcome<StopActivityStreamResult, Aws::Client::AWSError<RDSErrors>> StopActivityStreamOutcome;
         typedef Aws::Utils::Outcome<StopDBClusterResult, Aws::Client::AWSError<RDSErrors>> StopDBClusterOutcome;
         typedef Aws::Utils::Outcome<StopDBInstanceResult, Aws::Client::AWSError<RDSErrors>> StopDBInstanceOutcome;
@@ -445,6 +454,7 @@ namespace Aws
         typedef std::future<ApplyPendingMaintenanceActionOutcome> ApplyPendingMaintenanceActionOutcomeCallable;
         typedef std::future<AuthorizeDBSecurityGroupIngressOutcome> AuthorizeDBSecurityGroupIngressOutcomeCallable;
         typedef std::future<BacktrackDBClusterOutcome> BacktrackDBClusterOutcomeCallable;
+        typedef std::future<CancelExportTaskOutcome> CancelExportTaskOutcomeCallable;
         typedef std::future<CopyDBClusterParameterGroupOutcome> CopyDBClusterParameterGroupOutcomeCallable;
         typedef std::future<CopyDBClusterSnapshotOutcome> CopyDBClusterSnapshotOutcomeCallable;
         typedef std::future<CopyDBParameterGroupOutcome> CopyDBParameterGroupOutcomeCallable;
@@ -510,6 +520,7 @@ namespace Aws
         typedef std::future<DescribeEventCategoriesOutcome> DescribeEventCategoriesOutcomeCallable;
         typedef std::future<DescribeEventSubscriptionsOutcome> DescribeEventSubscriptionsOutcomeCallable;
         typedef std::future<DescribeEventsOutcome> DescribeEventsOutcomeCallable;
+        typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
         typedef std::future<DescribeGlobalClustersOutcome> DescribeGlobalClustersOutcomeCallable;
         typedef std::future<DescribeInstallationMediaOutcome> DescribeInstallationMediaOutcomeCallable;
         typedef std::future<DescribeOptionGroupOptionsOutcome> DescribeOptionGroupOptionsOutcomeCallable;
@@ -562,6 +573,7 @@ namespace Aws
         typedef std::future<StartActivityStreamOutcome> StartActivityStreamOutcomeCallable;
         typedef std::future<StartDBClusterOutcome> StartDBClusterOutcomeCallable;
         typedef std::future<StartDBInstanceOutcome> StartDBInstanceOutcomeCallable;
+        typedef std::future<StartExportTaskOutcome> StartExportTaskOutcomeCallable;
         typedef std::future<StopActivityStreamOutcome> StopActivityStreamOutcomeCallable;
         typedef std::future<StopDBClusterOutcome> StopDBClusterOutcomeCallable;
         typedef std::future<StopDBInstanceOutcome> StopDBInstanceOutcomeCallable;
@@ -576,6 +588,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::ApplyPendingMaintenanceActionRequest&, const Model::ApplyPendingMaintenanceActionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ApplyPendingMaintenanceActionResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::AuthorizeDBSecurityGroupIngressRequest&, const Model::AuthorizeDBSecurityGroupIngressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AuthorizeDBSecurityGroupIngressResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::BacktrackDBClusterRequest&, const Model::BacktrackDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BacktrackDBClusterResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::CancelExportTaskRequest&, const Model::CancelExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelExportTaskResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CopyDBClusterParameterGroupRequest&, const Model::CopyDBClusterParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDBClusterParameterGroupResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CopyDBClusterSnapshotRequest&, const Model::CopyDBClusterSnapshotOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDBClusterSnapshotResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::CopyDBParameterGroupRequest&, const Model::CopyDBParameterGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyDBParameterGroupResponseReceivedHandler;
@@ -641,6 +654,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::DescribeEventCategoriesRequest&, const Model::DescribeEventCategoriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventCategoriesResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeEventSubscriptionsRequest&, const Model::DescribeEventSubscriptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventSubscriptionsResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeEventsRequest&, const Model::DescribeEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEventsResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeGlobalClustersRequest&, const Model::DescribeGlobalClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeGlobalClustersResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeInstallationMediaRequest&, const Model::DescribeInstallationMediaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInstallationMediaResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::DescribeOptionGroupOptionsRequest&, const Model::DescribeOptionGroupOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeOptionGroupOptionsResponseReceivedHandler;
@@ -693,6 +707,7 @@ namespace Aws
     typedef std::function<void(const RDSClient*, const Model::StartActivityStreamRequest&, const Model::StartActivityStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartActivityStreamResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StartDBClusterRequest&, const Model::StartDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StartDBInstanceRequest&, const Model::StartDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDBInstanceResponseReceivedHandler;
+    typedef std::function<void(const RDSClient*, const Model::StartExportTaskRequest&, const Model::StartExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExportTaskResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StopActivityStreamRequest&, const Model::StopActivityStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopActivityStreamResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StopDBClusterRequest&, const Model::StopDBClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBClusterResponseReceivedHandler;
     typedef std::function<void(const RDSClient*, const Model::StopDBInstanceRequest&, const Model::StopDBInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDBInstanceResponseReceivedHandler;
@@ -714,14 +729,13 @@ namespace Aws
    * Amazon Web Services, there are no up-front investments, and you pay only for the
    * resources you use.</p> <p>This interface reference for Amazon RDS contains
    * documentation for a programming or command line interface you can use to manage
-   * Amazon RDS. Note that Amazon RDS is asynchronous, which means that some
-   * interfaces might require techniques such as polling or callback functions to
-   * determine when a command has been applied. In this reference, the parameter
-   * descriptions indicate whether a command is applied immediately, on the next
-   * instance reboot, or during the maintenance window. The reference structure is as
-   * follows, and we list following some related topics from the user guide.</p> <p>
-   * <b>Amazon RDS API Reference</b> </p> <ul> <li> <p>For the alphabetical list of
-   * API actions, see <a
+   * Amazon RDS. Amazon RDS is asynchronous, which means that some interfaces might
+   * require techniques such as polling or callback functions to determine when a
+   * command has been applied. In this reference, the parameter descriptions indicate
+   * whether a command is applied immediately, on the next instance reboot, or during
+   * the maintenance window. The reference structure is as follows, and we list
+   * following some related topics from the user guide.</p> <p> <b>Amazon RDS API
+   * Reference</b> </p> <ul> <li> <p>For the alphabetical list of API actions, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html">API
    * Actions</a>.</p> </li> <li> <p>For the alphabetical list of data types, see <a
    * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Types.html">Data
@@ -1046,6 +1060,37 @@ namespace Aws
         virtual void BacktrackDBClusterAsync(const Model::BacktrackDBClusterRequest& request, const BacktrackDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Cancels an export task in progress that is exporting a snapshot to Amazon S3.
+         * Any data that has already been written to the S3 bucket isn't removed.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelExportTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelExportTaskOutcome CancelExportTask(const Model::CancelExportTaskRequest& request) const;
+
+        /**
+         * <p>Cancels an export task in progress that is exporting a snapshot to Amazon S3.
+         * Any data that has already been written to the S3 bucket isn't removed.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelExportTask">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CancelExportTaskOutcomeCallable CancelExportTaskCallable(const Model::CancelExportTaskRequest& request) const;
+
+        /**
+         * <p>Cancels an export task in progress that is exporting a snapshot to Amazon S3.
+         * Any data that has already been written to the S3 bucket isn't removed.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CancelExportTask">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CancelExportTaskAsync(const Model::CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Copies the specified DB cluster parameter group.</p> <note> <p>This action
          * only applies to Aurora DB clusters.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBClusterParameterGroup">AWS
@@ -1097,7 +1142,7 @@ namespace Aws
          * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
          * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
          * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-         * snapshot will be created in.</p> </li> <li> <p>
+         * snapshot is to be created in.</p> </li> <li> <p>
          * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
          * identifier for the encrypted DB cluster snapshot to be copied. This identifier
          * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -1164,7 +1209,7 @@ namespace Aws
          * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
          * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
          * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-         * snapshot will be created in.</p> </li> <li> <p>
+         * snapshot is to be created in.</p> </li> <li> <p>
          * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
          * identifier for the encrypted DB cluster snapshot to be copied. This identifier
          * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -1233,7 +1278,7 @@ namespace Aws
          * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
          * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
          * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-         * snapshot will be created in.</p> </li> <li> <p>
+         * snapshot is to be created in.</p> </li> <li> <p>
          * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
          * identifier for the encrypted DB cluster snapshot to be copied. This identifier
          * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -1922,7 +1967,7 @@ namespace Aws
 
         /**
          * <p>Creates an RDS event notification subscription. This action requires a topic
-         * ARN (Amazon Resource Name) created by either the RDS console, the SNS console,
+         * Amazon Resource Name (ARN) created by either the RDS console, the SNS console,
          * or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS
          * and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You
          * can specify the type of source (SourceType) you want to be notified of, provide
@@ -1934,7 +1979,7 @@ namespace Aws
          * SourceIdentifier = myDBInstance1, you are notified of all the db-instance events
          * for the specified source. If you specify a SourceType but do not specify a
          * SourceIdentifier, you receive notice of the events for that source type for all
-         * your RDS sources. If you do not specify either the SourceType nor the
+         * your RDS sources. If you don't specify either the SourceType or the
          * SourceIdentifier, you are notified of events generated from all RDS sources
          * belonging to your customer account.</p> <note> <p>RDS event notification is only
          * available for unencrypted SNS topics. If you specify an encrypted SNS topic,
@@ -1947,7 +1992,7 @@ namespace Aws
 
         /**
          * <p>Creates an RDS event notification subscription. This action requires a topic
-         * ARN (Amazon Resource Name) created by either the RDS console, the SNS console,
+         * Amazon Resource Name (ARN) created by either the RDS console, the SNS console,
          * or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS
          * and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You
          * can specify the type of source (SourceType) you want to be notified of, provide
@@ -1959,7 +2004,7 @@ namespace Aws
          * SourceIdentifier = myDBInstance1, you are notified of all the db-instance events
          * for the specified source. If you specify a SourceType but do not specify a
          * SourceIdentifier, you receive notice of the events for that source type for all
-         * your RDS sources. If you do not specify either the SourceType nor the
+         * your RDS sources. If you don't specify either the SourceType or the
          * SourceIdentifier, you are notified of events generated from all RDS sources
          * belonging to your customer account.</p> <note> <p>RDS event notification is only
          * available for unencrypted SNS topics. If you specify an encrypted SNS topic,
@@ -1974,7 +2019,7 @@ namespace Aws
 
         /**
          * <p>Creates an RDS event notification subscription. This action requires a topic
-         * ARN (Amazon Resource Name) created by either the RDS console, the SNS console,
+         * Amazon Resource Name (ARN) created by either the RDS console, the SNS console,
          * or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS
          * and subscribe to the topic. The ARN is displayed in the SNS console.</p> <p>You
          * can specify the type of source (SourceType) you want to be notified of, provide
@@ -1986,7 +2031,7 @@ namespace Aws
          * SourceIdentifier = myDBInstance1, you are notified of all the db-instance events
          * for the specified source. If you specify a SourceType but do not specify a
          * SourceIdentifier, you receive notice of the events for that source type for all
-         * your RDS sources. If you do not specify either the SourceType nor the
+         * your RDS sources. If you don't specify either the SourceType or the
          * SourceIdentifier, you are notified of events generated from all RDS sources
          * belonging to your customer account.</p> <note> <p>RDS event notification is only
          * available for unencrypted SNS topics. If you specify an encrypted SNS topic,
@@ -2287,8 +2332,8 @@ namespace Aws
          * a final DB snapshot the status of the Amazon RDS DB instance is
          * <code>deleting</code> until the DB snapshot is created. The API action
          * <code>DescribeDBInstance</code> is used to monitor the status of this operation.
-         * The action can't be canceled or reverted once submitted. </p> <p>Note that when
-         * a DB instance is in a failure state and has a status of <code>failed</code>,
+         * The action can't be canceled or reverted once submitted. </p> <p>When a DB
+         * instance is in a failure state and has a status of <code>failed</code>,
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when you skip creation of the final snapshot with the
          * <code>SkipFinalSnapshot</code> parameter.</p> <p>If the specified DB instance is
@@ -2313,8 +2358,8 @@ namespace Aws
          * a final DB snapshot the status of the Amazon RDS DB instance is
          * <code>deleting</code> until the DB snapshot is created. The API action
          * <code>DescribeDBInstance</code> is used to monitor the status of this operation.
-         * The action can't be canceled or reverted once submitted. </p> <p>Note that when
-         * a DB instance is in a failure state and has a status of <code>failed</code>,
+         * The action can't be canceled or reverted once submitted. </p> <p>When a DB
+         * instance is in a failure state and has a status of <code>failed</code>,
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when you skip creation of the final snapshot with the
          * <code>SkipFinalSnapshot</code> parameter.</p> <p>If the specified DB instance is
@@ -2341,8 +2386,8 @@ namespace Aws
          * a final DB snapshot the status of the Amazon RDS DB instance is
          * <code>deleting</code> until the DB snapshot is created. The API action
          * <code>DescribeDBInstance</code> is used to monitor the status of this operation.
-         * The action can't be canceled or reverted once submitted. </p> <p>Note that when
-         * a DB instance is in a failure state and has a status of <code>failed</code>,
+         * The action can't be canceled or reverted once submitted. </p> <p>When a DB
+         * instance is in a failure state and has a status of <code>failed</code>,
          * <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can
          * only delete it when you skip creation of the final snapshot with the
          * <code>SkipFinalSnapshot</code> parameter.</p> <p>If the specified DB instance is
@@ -3700,6 +3745,34 @@ namespace Aws
         virtual void DescribeEventsAsync(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Returns information about a snapshot export to Amazon S3. This API operation
+         * supports pagination. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeExportTasks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeExportTasksOutcome DescribeExportTasks(const Model::DescribeExportTasksRequest& request) const;
+
+        /**
+         * <p>Returns information about a snapshot export to Amazon S3. This API operation
+         * supports pagination. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeExportTasks">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeExportTasksOutcomeCallable DescribeExportTasksCallable(const Model::DescribeExportTasksRequest& request) const;
+
+        /**
+         * <p>Returns information about a snapshot export to Amazon S3. This API operation
+         * supports pagination. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeExportTasks">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeExportTasksAsync(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p> Returns information about Aurora global database clusters. This API supports
          * pagination. </p> <p> For more information on Amazon Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
@@ -4147,8 +4220,8 @@ namespace Aws
 
         /**
          * <p>Override the system-default Secure Sockets Layer/Transport Layer Security
-         * (SSL/TLS) certificate for Amazon RDS for new DB instances, or remove the
-         * override.</p> <p>By using this operation, you can specify an RDS-approved
+         * (SSL/TLS) certificate for Amazon RDS for new DB instances temporarily, or remove
+         * the override.</p> <p>By using this operation, you can specify an RDS-approved
          * SSL/TLS certificate for new DB instances that is different from the default
          * certificate provided by RDS. You can also use this operation to remove the
          * override, so that new DB instances use the default certificate provided by
@@ -4175,8 +4248,8 @@ namespace Aws
 
         /**
          * <p>Override the system-default Secure Sockets Layer/Transport Layer Security
-         * (SSL/TLS) certificate for Amazon RDS for new DB instances, or remove the
-         * override.</p> <p>By using this operation, you can specify an RDS-approved
+         * (SSL/TLS) certificate for Amazon RDS for new DB instances temporarily, or remove
+         * the override.</p> <p>By using this operation, you can specify an RDS-approved
          * SSL/TLS certificate for new DB instances that is different from the default
          * certificate provided by RDS. You can also use this operation to remove the
          * override, so that new DB instances use the default certificate provided by
@@ -4205,8 +4278,8 @@ namespace Aws
 
         /**
          * <p>Override the system-default Secure Sockets Layer/Transport Layer Security
-         * (SSL/TLS) certificate for Amazon RDS for new DB instances, or remove the
-         * override.</p> <p>By using this operation, you can specify an RDS-approved
+         * (SSL/TLS) certificate for Amazon RDS for new DB instances temporarily, or remove
+         * the override.</p> <p>By using this operation, you can specify an RDS-approved
          * SSL/TLS certificate for new DB instances that is different from the default
          * certificate provided by RDS. You can also use this operation to remove the
          * override, so that new DB instances use the default certificate provided by
@@ -4864,9 +4937,9 @@ namespace Aws
         virtual void ModifyDBSubnetGroupAsync(const Model::ModifyDBSubnetGroupRequest& request, const ModifyDBSubnetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies an existing RDS event notification subscription. Note that you can't
-         * modify the source identifiers using this call; to change source identifiers for
-         * a subscription, use the <code>AddSourceIdentifierToSubscription</code> and
+         * <p>Modifies an existing RDS event notification subscription. You can't modify
+         * the source identifiers using this call. To change source identifiers for a
+         * subscription, use the <code>AddSourceIdentifierToSubscription</code> and
          * <code>RemoveSourceIdentifierFromSubscription</code> calls.</p> <p>You can see a
          * list of the event categories for a given SourceType in the <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
@@ -4878,9 +4951,9 @@ namespace Aws
         virtual Model::ModifyEventSubscriptionOutcome ModifyEventSubscription(const Model::ModifyEventSubscriptionRequest& request) const;
 
         /**
-         * <p>Modifies an existing RDS event notification subscription. Note that you can't
-         * modify the source identifiers using this call; to change source identifiers for
-         * a subscription, use the <code>AddSourceIdentifierToSubscription</code> and
+         * <p>Modifies an existing RDS event notification subscription. You can't modify
+         * the source identifiers using this call. To change source identifiers for a
+         * subscription, use the <code>AddSourceIdentifierToSubscription</code> and
          * <code>RemoveSourceIdentifierFromSubscription</code> calls.</p> <p>You can see a
          * list of the event categories for a given SourceType in the <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
@@ -4894,9 +4967,9 @@ namespace Aws
         virtual Model::ModifyEventSubscriptionOutcomeCallable ModifyEventSubscriptionCallable(const Model::ModifyEventSubscriptionRequest& request) const;
 
         /**
-         * <p>Modifies an existing RDS event notification subscription. Note that you can't
-         * modify the source identifiers using this call; to change source identifiers for
-         * a subscription, use the <code>AddSourceIdentifierToSubscription</code> and
+         * <p>Modifies an existing RDS event notification subscription. You can't modify
+         * the source identifiers using this call. To change source identifiers for a
+         * subscription, use the <code>AddSourceIdentifierToSubscription</code> and
          * <code>RemoveSourceIdentifierFromSubscription</code> calls.</p> <p>You can see a
          * list of the event categories for a given SourceType in the <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
@@ -5972,6 +6045,34 @@ namespace Aws
         virtual void StartDBInstanceAsync(const Model::StartDBInstanceRequest& request, const StartDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts an export of a snapshot to Amazon S3. The provided IAM role must have
+         * access to the S3 bucket. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartExportTaskOutcome StartExportTask(const Model::StartExportTaskRequest& request) const;
+
+        /**
+         * <p>Starts an export of a snapshot to Amazon S3. The provided IAM role must have
+         * access to the S3 bucket. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartExportTaskOutcomeCallable StartExportTaskCallable(const Model::StartExportTaskRequest& request) const;
+
+        /**
+         * <p>Starts an export of a snapshot to Amazon S3. The provided IAM role must have
+         * access to the S3 bucket. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartExportTask">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartExportTaskAsync(const Model::StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Stops a database activity stream that was started using the AWS console, the
          * <code>start-activity-stream</code> AWS CLI command, or the
          * <code>StartActivityStream</code> action.</p> <p>For more information, see <a
@@ -6120,6 +6221,7 @@ namespace Aws
         void ApplyPendingMaintenanceActionAsyncHelper(const Model::ApplyPendingMaintenanceActionRequest& request, const ApplyPendingMaintenanceActionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AuthorizeDBSecurityGroupIngressAsyncHelper(const Model::AuthorizeDBSecurityGroupIngressRequest& request, const AuthorizeDBSecurityGroupIngressResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BacktrackDBClusterAsyncHelper(const Model::BacktrackDBClusterRequest& request, const BacktrackDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CancelExportTaskAsyncHelper(const Model::CancelExportTaskRequest& request, const CancelExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopyDBClusterParameterGroupAsyncHelper(const Model::CopyDBClusterParameterGroupRequest& request, const CopyDBClusterParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopyDBClusterSnapshotAsyncHelper(const Model::CopyDBClusterSnapshotRequest& request, const CopyDBClusterSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CopyDBParameterGroupAsyncHelper(const Model::CopyDBParameterGroupRequest& request, const CopyDBParameterGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6185,6 +6287,7 @@ namespace Aws
         void DescribeEventCategoriesAsyncHelper(const Model::DescribeEventCategoriesRequest& request, const DescribeEventCategoriesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventSubscriptionsAsyncHelper(const Model::DescribeEventSubscriptionsRequest& request, const DescribeEventSubscriptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEventsAsyncHelper(const Model::DescribeEventsRequest& request, const DescribeEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeExportTasksAsyncHelper(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeGlobalClustersAsyncHelper(const Model::DescribeGlobalClustersRequest& request, const DescribeGlobalClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeInstallationMediaAsyncHelper(const Model::DescribeInstallationMediaRequest& request, const DescribeInstallationMediaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeOptionGroupOptionsAsyncHelper(const Model::DescribeOptionGroupOptionsRequest& request, const DescribeOptionGroupOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -6237,6 +6340,7 @@ namespace Aws
         void StartActivityStreamAsyncHelper(const Model::StartActivityStreamRequest& request, const StartActivityStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDBClusterAsyncHelper(const Model::StartDBClusterRequest& request, const StartDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDBInstanceAsyncHelper(const Model::StartDBInstanceRequest& request, const StartDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartExportTaskAsyncHelper(const Model::StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopActivityStreamAsyncHelper(const Model::StopActivityStreamRequest& request, const StopActivityStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopDBClusterAsyncHelper(const Model::StopDBClusterRequest& request, const StopDBClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopDBInstanceAsyncHelper(const Model::StopDBInstanceRequest& request, const StopDBInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;

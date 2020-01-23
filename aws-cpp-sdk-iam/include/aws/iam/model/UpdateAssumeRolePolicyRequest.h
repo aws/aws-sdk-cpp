@@ -127,10 +127,11 @@ namespace Model
      * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
@@ -142,10 +143,11 @@ namespace Model
      * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
 
@@ -157,10 +159,11 @@ namespace Model
      * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
@@ -172,10 +175,11 @@ namespace Model
      * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
 
@@ -187,10 +191,11 @@ namespace Model
      * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
@@ -202,10 +207,11 @@ namespace Model
      * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline UpdateAssumeRolePolicyRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
@@ -217,10 +223,11 @@ namespace Model
      * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline UpdateAssumeRolePolicyRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
@@ -232,10 +239,11 @@ namespace Model
      * submitting it to IAM.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> used to validate this parameter is a string of characters consisting
      * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
-     * the space character (\u0020) through the end of the ASCII character range</p>
-     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
-     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     * the space character (<code>\u0020</code>) through the end of the ASCII character
+     * range</p> </li> <li> <p>The printable characters in the Basic Latin and Latin-1
+     * Supplement character set (through <code>\u00FF</code>)</p> </li> <li> <p>The
+     * special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
+     * and carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
     inline UpdateAssumeRolePolicyRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 

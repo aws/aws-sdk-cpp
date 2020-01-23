@@ -56,9 +56,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -70,9 +70,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
@@ -84,9 +84,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -98,9 +98,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
@@ -112,9 +112,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
@@ -126,9 +126,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline CreateUserRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
@@ -140,9 +140,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline CreateUserRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
@@ -154,9 +154,9 @@ namespace Model
      * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
      * string of characters consisting of either a forward slash (/) by itself or a
      * string that must begin and end with forward slashes. In addition, it can contain
-     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
-     * including most punctuation characters, digits, and upper and lowercased
-     * letters.</p>
+     * any ASCII character from the ! (<code>\u0021</code>) through the DEL character
+     * (<code>\u007F</code>), including most punctuation characters, digits, and upper
+     * and lowercased letters.</p>
      */
     inline CreateUserRequest& WithPath(const char* value) { SetPath(value); return *this;}
 

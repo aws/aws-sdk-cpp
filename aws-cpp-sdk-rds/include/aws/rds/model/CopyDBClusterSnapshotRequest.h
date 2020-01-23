@@ -254,11 +254,11 @@ namespace Model
 
 
     /**
-     * <p>The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID
-     * is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-     * the KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot
-     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
-     * encrypt the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
+     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
+     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
+     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
+     * the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
      * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
      * encrypted DB cluster snapshot that is shared from another AWS account, then you
@@ -274,11 +274,11 @@ namespace Model
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID
-     * is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-     * the KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot
-     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
-     * encrypt the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
+     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
+     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
+     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
+     * the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
      * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
      * encrypted DB cluster snapshot that is shared from another AWS account, then you
@@ -294,11 +294,11 @@ namespace Model
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID
-     * is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-     * the KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot
-     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
-     * encrypt the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
+     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
+     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
+     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
+     * the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
      * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
      * encrypted DB cluster snapshot that is shared from another AWS account, then you
@@ -314,11 +314,11 @@ namespace Model
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID
-     * is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-     * the KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot
-     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
-     * encrypt the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
+     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
+     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
+     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
+     * the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
      * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
      * encrypted DB cluster snapshot that is shared from another AWS account, then you
@@ -334,11 +334,11 @@ namespace Model
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID
-     * is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-     * the KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot
-     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
-     * encrypt the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
+     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
+     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
+     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
+     * the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
      * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
      * encrypted DB cluster snapshot that is shared from another AWS account, then you
@@ -354,11 +354,11 @@ namespace Model
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID
-     * is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-     * the KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot
-     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
-     * encrypt the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
+     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
+     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
+     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
+     * the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
      * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
      * encrypted DB cluster snapshot that is shared from another AWS account, then you
@@ -374,11 +374,11 @@ namespace Model
     inline CopyDBClusterSnapshotRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID
-     * is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-     * the KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot
-     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
-     * encrypt the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
+     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
+     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
+     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
+     * the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
      * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
      * encrypted DB cluster snapshot that is shared from another AWS account, then you
@@ -394,11 +394,11 @@ namespace Model
     inline CopyDBClusterSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID
-     * is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for
-     * the KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot
-     * from your AWS account, you can specify a value for <code>KmsKeyId</code> to
-     * encrypt the copy with a new KMS encryption key. If you don't specify a value for
+     * <p>The AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is
+     * the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the
+     * KMS encryption key. </p> <p>If you copy an encrypted DB cluster snapshot from
+     * your AWS account, you can specify a value for <code>KmsKeyId</code> to encrypt
+     * the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted
      * with the same KMS key as the source DB cluster snapshot. </p> <p>If you copy an
      * encrypted DB cluster snapshot that is shared from another AWS account, then you
@@ -430,7 +430,7 @@ namespace Model
      * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
      * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
      * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot will be created in.</p> </li> <li> <p>
+     * snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -469,7 +469,7 @@ namespace Model
      * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
      * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
      * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot will be created in.</p> </li> <li> <p>
+     * snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -508,7 +508,7 @@ namespace Model
      * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
      * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
      * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot will be created in.</p> </li> <li> <p>
+     * snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -547,7 +547,7 @@ namespace Model
      * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
      * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
      * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot will be created in.</p> </li> <li> <p>
+     * snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -586,7 +586,7 @@ namespace Model
      * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
      * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
      * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot will be created in.</p> </li> <li> <p>
+     * snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -625,7 +625,7 @@ namespace Model
      * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
      * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
      * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot will be created in.</p> </li> <li> <p>
+     * snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -664,7 +664,7 @@ namespace Model
      * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
      * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
      * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot will be created in.</p> </li> <li> <p>
+     * snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For
@@ -703,7 +703,7 @@ namespace Model
      * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS
      * Region, and the action contained in the pre-signed URL.</p> </li> <li> <p>
      * <code>DestinationRegion</code> - The name of the AWS Region that the DB cluster
-     * snapshot will be created in.</p> </li> <li> <p>
+     * snapshot is to be created in.</p> </li> <li> <p>
      * <code>SourceDBClusterSnapshotIdentifier</code> - The DB cluster snapshot
      * identifier for the encrypted DB cluster snapshot to be copied. This identifier
      * must be in the Amazon Resource Name (ARN) format for the source AWS Region. For

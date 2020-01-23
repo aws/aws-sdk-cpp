@@ -2170,64 +2170,64 @@ namespace Model
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * Security TDE, can't be removed from an option group. Also, that option group
+     * can't be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * Security TDE, can't be removed from an option group. Also, that option group
+     * can't be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * Security TDE, can't be removed from an option group. Also, that option group
+     * can't be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * Security TDE, can't be removed from an option group. Also, that option group
+     * can't be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * Security TDE, can't be removed from an option group. Also, that option group
+     * can't be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * Security TDE, can't be removed from an option group. Also, that option group
+     * can't be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * Security TDE, can't be removed from an option group. Also, that option group
+     * can't be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
      * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
-     * Security TDE, can't be removed from an option group, and that option group can't
-     * be removed from a DB instance once it is associated with a DB instance</p>
+     * Security TDE, can't be removed from an option group. Also, that option group
+     * can't be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline CreateDBInstanceRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
 

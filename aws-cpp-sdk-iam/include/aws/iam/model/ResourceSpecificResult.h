@@ -20,6 +20,7 @@
 #include <aws/iam/model/PolicyEvaluationDecisionType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iam/model/PermissionsBoundaryDecisionDetail.h>
 #include <aws/iam/model/Statement.h>
 #include <utility>
 
@@ -334,112 +335,137 @@ namespace Model
 
 
     /**
-     * <p>Additional details about the results of the evaluation decision. When there
-     * are both IAM policies and resource policies, this parameter explains how each
-     * set of policies contributes to the final evaluation decision. When simulating
-     * cross-account access to a resource, both the resource-based policy and the
-     * caller's IAM policy must grant access.</p>
+     * <p>Additional details about the results of the evaluation decision on a single
+     * resource. This parameter is returned only for cross-account simulations. This
+     * parameter explains how each policy type contributes to the resource-specific
+     * evaluation decision.</p>
      */
     inline const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& GetEvalDecisionDetails() const{ return m_evalDecisionDetails; }
 
     /**
-     * <p>Additional details about the results of the evaluation decision. When there
-     * are both IAM policies and resource policies, this parameter explains how each
-     * set of policies contributes to the final evaluation decision. When simulating
-     * cross-account access to a resource, both the resource-based policy and the
-     * caller's IAM policy must grant access.</p>
+     * <p>Additional details about the results of the evaluation decision on a single
+     * resource. This parameter is returned only for cross-account simulations. This
+     * parameter explains how each policy type contributes to the resource-specific
+     * evaluation decision.</p>
      */
     inline bool EvalDecisionDetailsHasBeenSet() const { return m_evalDecisionDetailsHasBeenSet; }
 
     /**
-     * <p>Additional details about the results of the evaluation decision. When there
-     * are both IAM policies and resource policies, this parameter explains how each
-     * set of policies contributes to the final evaluation decision. When simulating
-     * cross-account access to a resource, both the resource-based policy and the
-     * caller's IAM policy must grant access.</p>
+     * <p>Additional details about the results of the evaluation decision on a single
+     * resource. This parameter is returned only for cross-account simulations. This
+     * parameter explains how each policy type contributes to the resource-specific
+     * evaluation decision.</p>
      */
     inline void SetEvalDecisionDetails(const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails = value; }
 
     /**
-     * <p>Additional details about the results of the evaluation decision. When there
-     * are both IAM policies and resource policies, this parameter explains how each
-     * set of policies contributes to the final evaluation decision. When simulating
-     * cross-account access to a resource, both the resource-based policy and the
-     * caller's IAM policy must grant access.</p>
+     * <p>Additional details about the results of the evaluation decision on a single
+     * resource. This parameter is returned only for cross-account simulations. This
+     * parameter explains how each policy type contributes to the resource-specific
+     * evaluation decision.</p>
      */
     inline void SetEvalDecisionDetails(Aws::Map<Aws::String, PolicyEvaluationDecisionType>&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails = std::move(value); }
 
     /**
-     * <p>Additional details about the results of the evaluation decision. When there
-     * are both IAM policies and resource policies, this parameter explains how each
-     * set of policies contributes to the final evaluation decision. When simulating
-     * cross-account access to a resource, both the resource-based policy and the
-     * caller's IAM policy must grant access.</p>
+     * <p>Additional details about the results of the evaluation decision on a single
+     * resource. This parameter is returned only for cross-account simulations. This
+     * parameter explains how each policy type contributes to the resource-specific
+     * evaluation decision.</p>
      */
     inline ResourceSpecificResult& WithEvalDecisionDetails(const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& value) { SetEvalDecisionDetails(value); return *this;}
 
     /**
-     * <p>Additional details about the results of the evaluation decision. When there
-     * are both IAM policies and resource policies, this parameter explains how each
-     * set of policies contributes to the final evaluation decision. When simulating
-     * cross-account access to a resource, both the resource-based policy and the
-     * caller's IAM policy must grant access.</p>
+     * <p>Additional details about the results of the evaluation decision on a single
+     * resource. This parameter is returned only for cross-account simulations. This
+     * parameter explains how each policy type contributes to the resource-specific
+     * evaluation decision.</p>
      */
     inline ResourceSpecificResult& WithEvalDecisionDetails(Aws::Map<Aws::String, PolicyEvaluationDecisionType>&& value) { SetEvalDecisionDetails(std::move(value)); return *this;}
 
     /**
-     * <p>Additional details about the results of the evaluation decision. When there
-     * are both IAM policies and resource policies, this parameter explains how each
-     * set of policies contributes to the final evaluation decision. When simulating
-     * cross-account access to a resource, both the resource-based policy and the
-     * caller's IAM policy must grant access.</p>
+     * <p>Additional details about the results of the evaluation decision on a single
+     * resource. This parameter is returned only for cross-account simulations. This
+     * parameter explains how each policy type contributes to the resource-specific
+     * evaluation decision.</p>
      */
     inline ResourceSpecificResult& AddEvalDecisionDetails(const Aws::String& key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, value); return *this; }
 
     /**
-     * <p>Additional details about the results of the evaluation decision. When there
-     * are both IAM policies and resource policies, this parameter explains how each
-     * set of policies contributes to the final evaluation decision. When simulating
-     * cross-account access to a resource, both the resource-based policy and the
-     * caller's IAM policy must grant access.</p>
+     * <p>Additional details about the results of the evaluation decision on a single
+     * resource. This parameter is returned only for cross-account simulations. This
+     * parameter explains how each policy type contributes to the resource-specific
+     * evaluation decision.</p>
      */
     inline ResourceSpecificResult& AddEvalDecisionDetails(Aws::String&& key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Additional details about the results of the evaluation decision. When there
-     * are both IAM policies and resource policies, this parameter explains how each
-     * set of policies contributes to the final evaluation decision. When simulating
-     * cross-account access to a resource, both the resource-based policy and the
-     * caller's IAM policy must grant access.</p>
+     * <p>Additional details about the results of the evaluation decision on a single
+     * resource. This parameter is returned only for cross-account simulations. This
+     * parameter explains how each policy type contributes to the resource-specific
+     * evaluation decision.</p>
      */
     inline ResourceSpecificResult& AddEvalDecisionDetails(const Aws::String& key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional details about the results of the evaluation decision. When there
-     * are both IAM policies and resource policies, this parameter explains how each
-     * set of policies contributes to the final evaluation decision. When simulating
-     * cross-account access to a resource, both the resource-based policy and the
-     * caller's IAM policy must grant access.</p>
+     * <p>Additional details about the results of the evaluation decision on a single
+     * resource. This parameter is returned only for cross-account simulations. This
+     * parameter explains how each policy type contributes to the resource-specific
+     * evaluation decision.</p>
      */
     inline ResourceSpecificResult& AddEvalDecisionDetails(Aws::String&& key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Additional details about the results of the evaluation decision. When there
-     * are both IAM policies and resource policies, this parameter explains how each
-     * set of policies contributes to the final evaluation decision. When simulating
-     * cross-account access to a resource, both the resource-based policy and the
-     * caller's IAM policy must grant access.</p>
+     * <p>Additional details about the results of the evaluation decision on a single
+     * resource. This parameter is returned only for cross-account simulations. This
+     * parameter explains how each policy type contributes to the resource-specific
+     * evaluation decision.</p>
      */
     inline ResourceSpecificResult& AddEvalDecisionDetails(const char* key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Additional details about the results of the evaluation decision. When there
-     * are both IAM policies and resource policies, this parameter explains how each
-     * set of policies contributes to the final evaluation decision. When simulating
-     * cross-account access to a resource, both the resource-based policy and the
-     * caller's IAM policy must grant access.</p>
+     * <p>Additional details about the results of the evaluation decision on a single
+     * resource. This parameter is returned only for cross-account simulations. This
+     * parameter explains how each policy type contributes to the resource-specific
+     * evaluation decision.</p>
      */
     inline ResourceSpecificResult& AddEvalDecisionDetails(const char* key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Contains information about the effect that a permissions boundary has on a
+     * policy simulation when that boundary is applied to an IAM entity.</p>
+     */
+    inline const PermissionsBoundaryDecisionDetail& GetPermissionsBoundaryDecisionDetail() const{ return m_permissionsBoundaryDecisionDetail; }
+
+    /**
+     * <p>Contains information about the effect that a permissions boundary has on a
+     * policy simulation when that boundary is applied to an IAM entity.</p>
+     */
+    inline bool PermissionsBoundaryDecisionDetailHasBeenSet() const { return m_permissionsBoundaryDecisionDetailHasBeenSet; }
+
+    /**
+     * <p>Contains information about the effect that a permissions boundary has on a
+     * policy simulation when that boundary is applied to an IAM entity.</p>
+     */
+    inline void SetPermissionsBoundaryDecisionDetail(const PermissionsBoundaryDecisionDetail& value) { m_permissionsBoundaryDecisionDetailHasBeenSet = true; m_permissionsBoundaryDecisionDetail = value; }
+
+    /**
+     * <p>Contains information about the effect that a permissions boundary has on a
+     * policy simulation when that boundary is applied to an IAM entity.</p>
+     */
+    inline void SetPermissionsBoundaryDecisionDetail(PermissionsBoundaryDecisionDetail&& value) { m_permissionsBoundaryDecisionDetailHasBeenSet = true; m_permissionsBoundaryDecisionDetail = std::move(value); }
+
+    /**
+     * <p>Contains information about the effect that a permissions boundary has on a
+     * policy simulation when that boundary is applied to an IAM entity.</p>
+     */
+    inline ResourceSpecificResult& WithPermissionsBoundaryDecisionDetail(const PermissionsBoundaryDecisionDetail& value) { SetPermissionsBoundaryDecisionDetail(value); return *this;}
+
+    /**
+     * <p>Contains information about the effect that a permissions boundary has on a
+     * policy simulation when that boundary is applied to an IAM entity.</p>
+     */
+    inline ResourceSpecificResult& WithPermissionsBoundaryDecisionDetail(PermissionsBoundaryDecisionDetail&& value) { SetPermissionsBoundaryDecisionDetail(std::move(value)); return *this;}
 
   private:
 
@@ -457,6 +483,9 @@ namespace Model
 
     Aws::Map<Aws::String, PolicyEvaluationDecisionType> m_evalDecisionDetails;
     bool m_evalDecisionDetailsHasBeenSet;
+
+    PermissionsBoundaryDecisionDetail m_permissionsBoundaryDecisionDetail;
+    bool m_permissionsBoundaryDecisionDetailHasBeenSet;
   };
 
 } // namespace Model
