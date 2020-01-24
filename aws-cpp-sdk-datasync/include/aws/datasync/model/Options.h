@@ -25,6 +25,7 @@
 #include <aws/datasync/model/PreserveDevices.h>
 #include <aws/datasync/model/PosixPermissions.h>
 #include <aws/datasync/model/TaskQueueing.h>
+#include <aws/datasync/model/LogLevel.h>
 #include <utility>
 
 namespace Aws
@@ -738,6 +739,61 @@ namespace Model
      */
     inline Options& WithTaskQueueing(TaskQueueing&& value) { SetTaskQueueing(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A value that determines the type of logs DataSync will deliver to your AWS
+     * CloudWatch Logs file. If set to <code>OFF</code>, no logs will be delivered.
+     * <code>BASIC</code> will deliver a few logs per transfer operation and
+     * <code>TRANSFER</code> will deliver a verbose log that contains logs for every
+     * file that is transferred.</p>
+     */
+    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * <p>A value that determines the type of logs DataSync will deliver to your AWS
+     * CloudWatch Logs file. If set to <code>OFF</code>, no logs will be delivered.
+     * <code>BASIC</code> will deliver a few logs per transfer operation and
+     * <code>TRANSFER</code> will deliver a verbose log that contains logs for every
+     * file that is transferred.</p>
+     */
+    inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
+
+    /**
+     * <p>A value that determines the type of logs DataSync will deliver to your AWS
+     * CloudWatch Logs file. If set to <code>OFF</code>, no logs will be delivered.
+     * <code>BASIC</code> will deliver a few logs per transfer operation and
+     * <code>TRANSFER</code> will deliver a verbose log that contains logs for every
+     * file that is transferred.</p>
+     */
+    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+
+    /**
+     * <p>A value that determines the type of logs DataSync will deliver to your AWS
+     * CloudWatch Logs file. If set to <code>OFF</code>, no logs will be delivered.
+     * <code>BASIC</code> will deliver a few logs per transfer operation and
+     * <code>TRANSFER</code> will deliver a verbose log that contains logs for every
+     * file that is transferred.</p>
+     */
+    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
+
+    /**
+     * <p>A value that determines the type of logs DataSync will deliver to your AWS
+     * CloudWatch Logs file. If set to <code>OFF</code>, no logs will be delivered.
+     * <code>BASIC</code> will deliver a few logs per transfer operation and
+     * <code>TRANSFER</code> will deliver a verbose log that contains logs for every
+     * file that is transferred.</p>
+     */
+    inline Options& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
+
+    /**
+     * <p>A value that determines the type of logs DataSync will deliver to your AWS
+     * CloudWatch Logs file. If set to <code>OFF</code>, no logs will be delivered.
+     * <code>BASIC</code> will deliver a few logs per transfer operation and
+     * <code>TRANSFER</code> will deliver a verbose log that contains logs for every
+     * file that is transferred.</p>
+     */
+    inline Options& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+
   private:
 
     VerifyMode m_verifyMode;
@@ -772,6 +828,9 @@ namespace Model
 
     TaskQueueing m_taskQueueing;
     bool m_taskQueueingHasBeenSet;
+
+    LogLevel m_logLevel;
+    bool m_logLevelHasBeenSet;
   };
 
 } // namespace Model

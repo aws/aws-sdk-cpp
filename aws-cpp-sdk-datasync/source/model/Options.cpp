@@ -50,7 +50,9 @@ Options::Options() :
     m_bytesPerSecond(0),
     m_bytesPerSecondHasBeenSet(false),
     m_taskQueueing(TaskQueueing::NOT_SET),
-    m_taskQueueingHasBeenSet(false)
+    m_taskQueueingHasBeenSet(false),
+    m_logLevel(LogLevel::NOT_SET),
+    m_logLevelHasBeenSet(false)
 {
 }
 
@@ -76,7 +78,9 @@ Options::Options(JsonView jsonValue) :
     m_bytesPerSecond(0),
     m_bytesPerSecondHasBeenSet(false),
     m_taskQueueing(TaskQueueing::NOT_SET),
-    m_taskQueueingHasBeenSet(false)
+    m_taskQueueingHasBeenSet(false),
+    m_logLevel(LogLevel::NOT_SET),
+    m_logLevelHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -160,6 +164,13 @@ Options& Options::operator =(JsonView jsonValue)
     m_taskQueueingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("LogLevel"))
+  {
+    m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("LogLevel"));
+
+    m_logLevelHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -221,6 +232,11 @@ JsonValue Options::Jsonize() const
   if(m_taskQueueingHasBeenSet)
   {
    payload.WithString("TaskQueueing", TaskQueueingMapper::GetNameForTaskQueueing(m_taskQueueing));
+  }
+
+  if(m_logLevelHasBeenSet)
+  {
+   payload.WithString("LogLevel", LogLevelMapper::GetNameForLogLevel(m_logLevel));
   }
 
   return payload;

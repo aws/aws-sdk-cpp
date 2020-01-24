@@ -27,10 +27,12 @@ namespace Model
   {
     NOT_SET,
     AutoScalingGroupNotFound,
+    AutoScalingGroupInvalidConfiguration,
     Ec2SecurityGroupNotFound,
     Ec2SecurityGroupDeletionFailure,
     Ec2LaunchTemplateNotFound,
     Ec2LaunchTemplateVersionMismatch,
+    Ec2SubnetNotFound,
     IamInstanceProfileNotFound,
     IamNodeRoleNotFound,
     AsgInstanceLaunchFailures,

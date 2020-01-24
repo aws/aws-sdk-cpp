@@ -55,7 +55,8 @@ TaskSet::TaskSet() :
     m_scaleHasBeenSet(false),
     m_stabilityStatus(StabilityStatus::NOT_SET),
     m_stabilityStatusHasBeenSet(false),
-    m_stabilityStatusAtHasBeenSet(false)
+    m_stabilityStatusAtHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -86,7 +87,8 @@ TaskSet::TaskSet(JsonView jsonValue) :
     m_scaleHasBeenSet(false),
     m_stabilityStatus(StabilityStatus::NOT_SET),
     m_stabilityStatusHasBeenSet(false),
-    m_stabilityStatusAtHasBeenSet(false)
+    m_stabilityStatusAtHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -256,6 +258,16 @@ TaskSet& TaskSet::operator =(JsonView jsonValue)
     m_stabilityStatusAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -403,6 +415,17 @@ JsonValue TaskSet::Jsonize() const
   if(m_stabilityStatusAtHasBeenSet)
   {
    payload.WithDouble("stabilityStatusAt", m_stabilityStatusAt.SecondsWithMSPrecision());
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
   }
 
   return payload;

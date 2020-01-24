@@ -46,6 +46,11 @@ namespace Model
 
     /**
      * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Chef Automate servers:</i> If
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> includes
+     * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
+     * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
+     * have had at least one successful maintenance run after November 1, 2019.</p> <p>
      * <i>For Puppet Server:</i>
      * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
      * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
@@ -56,6 +61,11 @@ namespace Model
 
     /**
      * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Chef Automate servers:</i> If
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> includes
+     * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
+     * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
+     * have had at least one successful maintenance run after November 1, 2019.</p> <p>
      * <i>For Puppet Server:</i>
      * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
      * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
@@ -66,6 +76,11 @@ namespace Model
 
     /**
      * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Chef Automate servers:</i> If
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> includes
+     * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
+     * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
+     * have had at least one successful maintenance run after November 1, 2019.</p> <p>
      * <i>For Puppet Server:</i>
      * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
      * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
@@ -76,6 +91,11 @@ namespace Model
 
     /**
      * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Chef Automate servers:</i> If
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> includes
+     * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
+     * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
+     * have had at least one successful maintenance run after November 1, 2019.</p> <p>
      * <i>For Puppet Server:</i>
      * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
      * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
@@ -86,6 +106,11 @@ namespace Model
 
     /**
      * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Chef Automate servers:</i> If
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> includes
+     * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
+     * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
+     * have had at least one successful maintenance run after November 1, 2019.</p> <p>
      * <i>For Puppet Server:</i>
      * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
      * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
@@ -96,6 +121,11 @@ namespace Model
 
     /**
      * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Chef Automate servers:</i> If
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> includes
+     * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
+     * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
+     * have had at least one successful maintenance run after November 1, 2019.</p> <p>
      * <i>For Puppet Server:</i>
      * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
      * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the
@@ -106,6 +136,11 @@ namespace Model
 
     /**
      * <p>Contains the response to a <code>DescribeServers</code> request.</p> <p>
+     * <i>For Chef Automate servers:</i> If
+     * <code>DescribeServersResponse$Servers$EngineAttributes</code> includes
+     * CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to Chef
+     * Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
+     * have had at least one successful maintenance run after November 1, 2019.</p> <p>
      * <i>For Puppet Server:</i>
      * <code>DescribeServersResponse$Servers$EngineAttributes</code> contains
      * PUPPET_API_CA_CERT. This is the PEM-encoded CA certificate that is used by the

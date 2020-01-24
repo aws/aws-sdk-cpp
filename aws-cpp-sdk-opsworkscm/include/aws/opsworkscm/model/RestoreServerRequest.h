@@ -127,7 +127,7 @@ namespace Model
 
 
     /**
-     * <p> The type of the instance to create. Valid values must be specified in the
+     * <p> The type of instance to restore. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
      * <code>m5.large</code>. Valid values are <code>m5.large</code>,
      * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
@@ -136,7 +136,7 @@ namespace Model
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p> The type of the instance to create. Valid values must be specified in the
+     * <p> The type of instance to restore. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
      * <code>m5.large</code>. Valid values are <code>m5.large</code>,
      * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
@@ -145,7 +145,7 @@ namespace Model
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p> The type of the instance to create. Valid values must be specified in the
+     * <p> The type of instance to restore. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
      * <code>m5.large</code>. Valid values are <code>m5.large</code>,
      * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
@@ -154,7 +154,7 @@ namespace Model
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p> The type of the instance to create. Valid values must be specified in the
+     * <p> The type of instance to restore. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
      * <code>m5.large</code>. Valid values are <code>m5.large</code>,
      * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
@@ -163,7 +163,7 @@ namespace Model
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p> The type of the instance to create. Valid values must be specified in the
+     * <p> The type of instance to restore. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
      * <code>m5.large</code>. Valid values are <code>m5.large</code>,
      * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
@@ -172,7 +172,7 @@ namespace Model
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p> The type of the instance to create. Valid values must be specified in the
+     * <p> The type of instance to restore. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
      * <code>m5.large</code>. Valid values are <code>m5.large</code>,
      * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
@@ -181,7 +181,7 @@ namespace Model
     inline RestoreServerRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p> The type of the instance to create. Valid values must be specified in the
+     * <p> The type of instance to restore. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
      * <code>m5.large</code>. Valid values are <code>m5.large</code>,
      * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this
@@ -190,7 +190,7 @@ namespace Model
     inline RestoreServerRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p> The type of the instance to create. Valid values must be specified in the
+     * <p> The type of instance to restore. Valid values must be specified in the
      * following format: <code>^([cm][34]|t2).*</code> For example,
      * <code>m5.large</code>. Valid values are <code>m5.large</code>,
      * <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If you do not specify this

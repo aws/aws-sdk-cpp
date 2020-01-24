@@ -31,10 +31,12 @@ namespace Aws
       {
 
         static const int AutoScalingGroupNotFound_HASH = HashingUtils::HashString("AutoScalingGroupNotFound");
+        static const int AutoScalingGroupInvalidConfiguration_HASH = HashingUtils::HashString("AutoScalingGroupInvalidConfiguration");
         static const int Ec2SecurityGroupNotFound_HASH = HashingUtils::HashString("Ec2SecurityGroupNotFound");
         static const int Ec2SecurityGroupDeletionFailure_HASH = HashingUtils::HashString("Ec2SecurityGroupDeletionFailure");
         static const int Ec2LaunchTemplateNotFound_HASH = HashingUtils::HashString("Ec2LaunchTemplateNotFound");
         static const int Ec2LaunchTemplateVersionMismatch_HASH = HashingUtils::HashString("Ec2LaunchTemplateVersionMismatch");
+        static const int Ec2SubnetNotFound_HASH = HashingUtils::HashString("Ec2SubnetNotFound");
         static const int IamInstanceProfileNotFound_HASH = HashingUtils::HashString("IamInstanceProfileNotFound");
         static const int IamNodeRoleNotFound_HASH = HashingUtils::HashString("IamNodeRoleNotFound");
         static const int AsgInstanceLaunchFailures_HASH = HashingUtils::HashString("AsgInstanceLaunchFailures");
@@ -51,6 +53,10 @@ namespace Aws
           {
             return NodegroupIssueCode::AutoScalingGroupNotFound;
           }
+          else if (hashCode == AutoScalingGroupInvalidConfiguration_HASH)
+          {
+            return NodegroupIssueCode::AutoScalingGroupInvalidConfiguration;
+          }
           else if (hashCode == Ec2SecurityGroupNotFound_HASH)
           {
             return NodegroupIssueCode::Ec2SecurityGroupNotFound;
@@ -66,6 +72,10 @@ namespace Aws
           else if (hashCode == Ec2LaunchTemplateVersionMismatch_HASH)
           {
             return NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch;
+          }
+          else if (hashCode == Ec2SubnetNotFound_HASH)
+          {
+            return NodegroupIssueCode::Ec2SubnetNotFound;
           }
           else if (hashCode == IamInstanceProfileNotFound_HASH)
           {
@@ -111,6 +121,8 @@ namespace Aws
           {
           case NodegroupIssueCode::AutoScalingGroupNotFound:
             return "AutoScalingGroupNotFound";
+          case NodegroupIssueCode::AutoScalingGroupInvalidConfiguration:
+            return "AutoScalingGroupInvalidConfiguration";
           case NodegroupIssueCode::Ec2SecurityGroupNotFound:
             return "Ec2SecurityGroupNotFound";
           case NodegroupIssueCode::Ec2SecurityGroupDeletionFailure:
@@ -119,6 +131,8 @@ namespace Aws
             return "Ec2LaunchTemplateNotFound";
           case NodegroupIssueCode::Ec2LaunchTemplateVersionMismatch:
             return "Ec2LaunchTemplateVersionMismatch";
+          case NodegroupIssueCode::Ec2SubnetNotFound:
+            return "Ec2SubnetNotFound";
           case NodegroupIssueCode::IamInstanceProfileNotFound:
             return "IamInstanceProfileNotFound";
           case NodegroupIssueCode::IamNodeRoleNotFound:

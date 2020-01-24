@@ -186,66 +186,82 @@ namespace Model
 
 
     /**
-     * <p>The name of a family that this task definition is registered to. A family
-     * groups multiple versions of a task definition. Amazon ECS gives the first task
-     * definition that you registered to a family a revision number of 1. Amazon ECS
-     * gives sequential revision numbers to each task definition that you add.</p>
+     * <p>The name of a family that this task definition is registered to. Up to 255
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed.</p> <p>A family groups multiple versions of a task definition. Amazon
+     * ECS gives the first task definition that you registered to a family a revision
+     * number of 1. Amazon ECS gives sequential revision numbers to each task
+     * definition that you add.</p>
      */
     inline const Aws::String& GetFamily() const{ return m_family; }
 
     /**
-     * <p>The name of a family that this task definition is registered to. A family
-     * groups multiple versions of a task definition. Amazon ECS gives the first task
-     * definition that you registered to a family a revision number of 1. Amazon ECS
-     * gives sequential revision numbers to each task definition that you add.</p>
+     * <p>The name of a family that this task definition is registered to. Up to 255
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed.</p> <p>A family groups multiple versions of a task definition. Amazon
+     * ECS gives the first task definition that you registered to a family a revision
+     * number of 1. Amazon ECS gives sequential revision numbers to each task
+     * definition that you add.</p>
      */
     inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
 
     /**
-     * <p>The name of a family that this task definition is registered to. A family
-     * groups multiple versions of a task definition. Amazon ECS gives the first task
-     * definition that you registered to a family a revision number of 1. Amazon ECS
-     * gives sequential revision numbers to each task definition that you add.</p>
+     * <p>The name of a family that this task definition is registered to. Up to 255
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed.</p> <p>A family groups multiple versions of a task definition. Amazon
+     * ECS gives the first task definition that you registered to a family a revision
+     * number of 1. Amazon ECS gives sequential revision numbers to each task
+     * definition that you add.</p>
      */
     inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
 
     /**
-     * <p>The name of a family that this task definition is registered to. A family
-     * groups multiple versions of a task definition. Amazon ECS gives the first task
-     * definition that you registered to a family a revision number of 1. Amazon ECS
-     * gives sequential revision numbers to each task definition that you add.</p>
+     * <p>The name of a family that this task definition is registered to. Up to 255
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed.</p> <p>A family groups multiple versions of a task definition. Amazon
+     * ECS gives the first task definition that you registered to a family a revision
+     * number of 1. Amazon ECS gives sequential revision numbers to each task
+     * definition that you add.</p>
      */
     inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = std::move(value); }
 
     /**
-     * <p>The name of a family that this task definition is registered to. A family
-     * groups multiple versions of a task definition. Amazon ECS gives the first task
-     * definition that you registered to a family a revision number of 1. Amazon ECS
-     * gives sequential revision numbers to each task definition that you add.</p>
+     * <p>The name of a family that this task definition is registered to. Up to 255
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed.</p> <p>A family groups multiple versions of a task definition. Amazon
+     * ECS gives the first task definition that you registered to a family a revision
+     * number of 1. Amazon ECS gives sequential revision numbers to each task
+     * definition that you add.</p>
      */
     inline void SetFamily(const char* value) { m_familyHasBeenSet = true; m_family.assign(value); }
 
     /**
-     * <p>The name of a family that this task definition is registered to. A family
-     * groups multiple versions of a task definition. Amazon ECS gives the first task
-     * definition that you registered to a family a revision number of 1. Amazon ECS
-     * gives sequential revision numbers to each task definition that you add.</p>
+     * <p>The name of a family that this task definition is registered to. Up to 255
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed.</p> <p>A family groups multiple versions of a task definition. Amazon
+     * ECS gives the first task definition that you registered to a family a revision
+     * number of 1. Amazon ECS gives sequential revision numbers to each task
+     * definition that you add.</p>
      */
     inline TaskDefinition& WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
 
     /**
-     * <p>The name of a family that this task definition is registered to. A family
-     * groups multiple versions of a task definition. Amazon ECS gives the first task
-     * definition that you registered to a family a revision number of 1. Amazon ECS
-     * gives sequential revision numbers to each task definition that you add.</p>
+     * <p>The name of a family that this task definition is registered to. Up to 255
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed.</p> <p>A family groups multiple versions of a task definition. Amazon
+     * ECS gives the first task definition that you registered to a family a revision
+     * number of 1. Amazon ECS gives sequential revision numbers to each task
+     * definition that you add.</p>
      */
     inline TaskDefinition& WithFamily(Aws::String&& value) { SetFamily(std::move(value)); return *this;}
 
     /**
-     * <p>The name of a family that this task definition is registered to. A family
-     * groups multiple versions of a task definition. Amazon ECS gives the first task
-     * definition that you registered to a family a revision number of 1. Amazon ECS
-     * gives sequential revision numbers to each task definition that you add.</p>
+     * <p>The name of a family that this task definition is registered to. Up to 255
+     * letters (uppercase and lowercase), numbers, hyphens, and underscores are
+     * allowed.</p> <p>A family groups multiple versions of a task definition. Amazon
+     * ECS gives the first task definition that you registered to a family a revision
+     * number of 1. Amazon ECS gives sequential revision numbers to each task
+     * definition that you add.</p>
      */
     inline TaskDefinition& WithFamily(const char* value) { SetFamily(value); return *this;}
 
