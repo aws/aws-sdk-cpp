@@ -32,9 +32,18 @@ TEST(HttpClientTest, TestHttpResponseNetworkError)
     auto httpClient = CreateHttpClient(Aws::Client::ClientConfiguration());
     auto response = httpClient->MakeRequest(request);
     ASSERT_NE(nullptr, response);
-    ASSERT_TRUE(response->HasClientError());
-    ASSERT_EQ(CoreErrors::NETWORK_CONNECTION, response->GetClientErrorType());
-    ASSERT_EQ(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE, response->GetResponseCode());
+    //Modified the tests so that we catch an edge case where ISP's would try to get a response to the weird url
+    //by doing a search instead of failing, we've had 2 issues where they get forbidden instead: #1305 & #1051
+    if (response->HasClientError())
+    {
+        ASSERT_EQ(CoreErrors::NETWORK_CONNECTION, response->GetClientErrorType());
+        ASSERT_EQ(Aws::Http::HttpResponseCode::REQUEST_NOT_MADE, response->GetResponseCode());
+    }
+    else
+    {
+        ASSERT_EQ(HttpResponseCode::FORBIDDEN, response->GetResponseCode());
+    }
+    
 }
 
 //Test CURL HTTP Client Settings.
