@@ -108,38 +108,38 @@ namespace Model
 
 
     /**
-     * <p>The field name in <code>SyncSource</code> for the
-     * <code>ResourceDataSyncAwsOrganizationsSource</code> type.</p>
+     * <p>Information about the AwsOrganizationsSource resource data sync source. A
+     * sync source of this type can synchronize data from AWS Organizations.</p>
      */
     inline const ResourceDataSyncAwsOrganizationsSource& GetAwsOrganizationsSource() const{ return m_awsOrganizationsSource; }
 
     /**
-     * <p>The field name in <code>SyncSource</code> for the
-     * <code>ResourceDataSyncAwsOrganizationsSource</code> type.</p>
+     * <p>Information about the AwsOrganizationsSource resource data sync source. A
+     * sync source of this type can synchronize data from AWS Organizations.</p>
      */
     inline bool AwsOrganizationsSourceHasBeenSet() const { return m_awsOrganizationsSourceHasBeenSet; }
 
     /**
-     * <p>The field name in <code>SyncSource</code> for the
-     * <code>ResourceDataSyncAwsOrganizationsSource</code> type.</p>
+     * <p>Information about the AwsOrganizationsSource resource data sync source. A
+     * sync source of this type can synchronize data from AWS Organizations.</p>
      */
     inline void SetAwsOrganizationsSource(const ResourceDataSyncAwsOrganizationsSource& value) { m_awsOrganizationsSourceHasBeenSet = true; m_awsOrganizationsSource = value; }
 
     /**
-     * <p>The field name in <code>SyncSource</code> for the
-     * <code>ResourceDataSyncAwsOrganizationsSource</code> type.</p>
+     * <p>Information about the AwsOrganizationsSource resource data sync source. A
+     * sync source of this type can synchronize data from AWS Organizations.</p>
      */
     inline void SetAwsOrganizationsSource(ResourceDataSyncAwsOrganizationsSource&& value) { m_awsOrganizationsSourceHasBeenSet = true; m_awsOrganizationsSource = std::move(value); }
 
     /**
-     * <p>The field name in <code>SyncSource</code> for the
-     * <code>ResourceDataSyncAwsOrganizationsSource</code> type.</p>
+     * <p>Information about the AwsOrganizationsSource resource data sync source. A
+     * sync source of this type can synchronize data from AWS Organizations.</p>
      */
     inline ResourceDataSyncSource& WithAwsOrganizationsSource(const ResourceDataSyncAwsOrganizationsSource& value) { SetAwsOrganizationsSource(value); return *this;}
 
     /**
-     * <p>The field name in <code>SyncSource</code> for the
-     * <code>ResourceDataSyncAwsOrganizationsSource</code> type.</p>
+     * <p>Information about the AwsOrganizationsSource resource data sync source. A
+     * sync source of this type can synchronize data from AWS Organizations.</p>
      */
     inline ResourceDataSyncSource& WithAwsOrganizationsSource(ResourceDataSyncAwsOrganizationsSource&& value) { SetAwsOrganizationsSource(std::move(value)); return *this;}
 

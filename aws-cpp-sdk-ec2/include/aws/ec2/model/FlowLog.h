@@ -607,6 +607,47 @@ namespace Model
      */
     inline FlowLog& WithLogFormat(const char* value) { SetLogFormat(value); return *this;}
 
+
+    /**
+     * <p>The maximum interval of time, in seconds, during which a flow of packets is
+     * captured and aggregated into a flow log record.</p> <p>For network interfaces
+     * attached to <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>, the aggregation interval is always 60 seconds (1 minute),
+     * regardless of the specified value.</p>
+     */
+    inline int GetMaxAggregationInterval() const{ return m_maxAggregationInterval; }
+
+    /**
+     * <p>The maximum interval of time, in seconds, during which a flow of packets is
+     * captured and aggregated into a flow log record.</p> <p>For network interfaces
+     * attached to <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>, the aggregation interval is always 60 seconds (1 minute),
+     * regardless of the specified value.</p>
+     */
+    inline bool MaxAggregationIntervalHasBeenSet() const { return m_maxAggregationIntervalHasBeenSet; }
+
+    /**
+     * <p>The maximum interval of time, in seconds, during which a flow of packets is
+     * captured and aggregated into a flow log record.</p> <p>For network interfaces
+     * attached to <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>, the aggregation interval is always 60 seconds (1 minute),
+     * regardless of the specified value.</p>
+     */
+    inline void SetMaxAggregationInterval(int value) { m_maxAggregationIntervalHasBeenSet = true; m_maxAggregationInterval = value; }
+
+    /**
+     * <p>The maximum interval of time, in seconds, during which a flow of packets is
+     * captured and aggregated into a flow log record.</p> <p>For network interfaces
+     * attached to <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>, the aggregation interval is always 60 seconds (1 minute),
+     * regardless of the specified value.</p>
+     */
+    inline FlowLog& WithMaxAggregationInterval(int value) { SetMaxAggregationInterval(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_creationTime;
@@ -644,6 +685,9 @@ namespace Model
 
     Aws::String m_logFormat;
     bool m_logFormatHasBeenSet;
+
+    int m_maxAggregationInterval;
+    bool m_maxAggregationIntervalHasBeenSet;
   };
 
 } // namespace Model

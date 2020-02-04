@@ -86,6 +86,12 @@ DescribeOrganizationResult& DescribeOrganizationResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("ARN"))
+  {
+    m_aRN = jsonValue.GetString("ARN");
+
+  }
+
 
 
   return *this;

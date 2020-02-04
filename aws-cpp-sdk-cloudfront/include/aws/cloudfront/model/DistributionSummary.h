@@ -638,50 +638,38 @@ namespace Model
 
 
     /**
-     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
-     * to request your objects, whether you're using an alternate domain name with
-     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
-     * certificate authority.</p>
+     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * communicating with viewers.</p>
      */
     inline const ViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
 
     /**
-     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
-     * to request your objects, whether you're using an alternate domain name with
-     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
-     * certificate authority.</p>
+     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * communicating with viewers.</p>
      */
     inline bool ViewerCertificateHasBeenSet() const { return m_viewerCertificateHasBeenSet; }
 
     /**
-     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
-     * to request your objects, whether you're using an alternate domain name with
-     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
-     * certificate authority.</p>
+     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * communicating with viewers.</p>
      */
     inline void SetViewerCertificate(const ViewerCertificate& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = value; }
 
     /**
-     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
-     * to request your objects, whether you're using an alternate domain name with
-     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
-     * certificate authority.</p>
+     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * communicating with viewers.</p>
      */
     inline void SetViewerCertificate(ViewerCertificate&& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = std::move(value); }
 
     /**
-     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
-     * to request your objects, whether you're using an alternate domain name with
-     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
-     * certificate authority.</p>
+     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * communicating with viewers.</p>
      */
     inline DistributionSummary& WithViewerCertificate(const ViewerCertificate& value) { SetViewerCertificate(value); return *this;}
 
     /**
-     * <p>A complex type that specifies whether you want viewers to use HTTP or HTTPS
-     * to request your objects, whether you're using an alternate domain name with
-     * HTTPS, and if so, if you're using AWS Certificate Manager (ACM) or a third-party
-     * certificate authority.</p>
+     * <p>A complex type that determines the distribution’s SSL/TLS configuration for
+     * communicating with viewers.</p>
      */
     inline DistributionSummary& WithViewerCertificate(ViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
 

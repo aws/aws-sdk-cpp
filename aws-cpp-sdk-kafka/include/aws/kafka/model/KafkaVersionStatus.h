@@ -14,31 +14,28 @@
 */
 
 #pragma once
-#include <aws/storagegateway/StorageGateway_EXPORTS.h>
+#include <aws/kafka/Kafka_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 namespace Aws
 {
-namespace StorageGateway
+namespace Kafka
 {
 namespace Model
 {
-  enum class HostEnvironment
+  enum class KafkaVersionStatus
   {
     NOT_SET,
-    VMWARE,
-    HYPER_V,
-    EC2,
-    KVM,
-    OTHER
+    ACTIVE,
+    DEPRECATED
   };
 
-namespace HostEnvironmentMapper
+namespace KafkaVersionStatusMapper
 {
-AWS_STORAGEGATEWAY_API HostEnvironment GetHostEnvironmentForName(const Aws::String& name);
+AWS_KAFKA_API KafkaVersionStatus GetKafkaVersionStatusForName(const Aws::String& name);
 
-AWS_STORAGEGATEWAY_API Aws::String GetNameForHostEnvironment(HostEnvironment value);
-} // namespace HostEnvironmentMapper
+AWS_KAFKA_API Aws::String GetNameForKafkaVersionStatus(KafkaVersionStatus value);
+} // namespace KafkaVersionStatusMapper
 } // namespace Model
-} // namespace StorageGateway
+} // namespace Kafka
 } // namespace Aws

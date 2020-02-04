@@ -137,7 +137,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   }
   else if (hashCode == E_C2_THROTTLED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_THROTTLED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(LambdaErrors::E_C2_THROTTLED), true);
   }
   else if (hashCode == RESOURCE_CONFLICT_HASH)
   {

@@ -34,7 +34,9 @@ CreateFlowLogsRequest::CreateFlowLogsRequest() :
     m_logDestinationType(LogDestinationType::NOT_SET),
     m_logDestinationTypeHasBeenSet(false),
     m_logDestinationHasBeenSet(false),
-    m_logFormatHasBeenSet(false)
+    m_logFormatHasBeenSet(false),
+    m_maxAggregationInterval(0),
+    m_maxAggregationIntervalHasBeenSet(false)
 {
 }
 
@@ -96,6 +98,11 @@ Aws::String CreateFlowLogsRequest::SerializePayload() const
   if(m_logFormatHasBeenSet)
   {
     ss << "LogFormat=" << StringUtils::URLEncode(m_logFormat.c_str()) << "&";
+  }
+
+  if(m_maxAggregationIntervalHasBeenSet)
+  {
+    ss << "MaxAggregationInterval=" << m_maxAggregationInterval << "&";
   }
 
   ss << "Version=2016-11-15";

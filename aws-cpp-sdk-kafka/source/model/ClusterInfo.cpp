@@ -45,6 +45,7 @@ ClusterInfo::ClusterInfo() :
     m_numberOfBrokerNodesHasBeenSet(false),
     m_state(ClusterState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_stateInfoHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_zookeeperConnectStringHasBeenSet(false)
 {
@@ -67,6 +68,7 @@ ClusterInfo::ClusterInfo(JsonView jsonValue) :
     m_numberOfBrokerNodesHasBeenSet(false),
     m_state(ClusterState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_stateInfoHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_zookeeperConnectStringHasBeenSet(false)
 {
@@ -166,6 +168,13 @@ ClusterInfo& ClusterInfo::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("stateInfo"))
+  {
+    m_stateInfo = jsonValue.GetObject("stateInfo");
+
+    m_stateInfoHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -263,6 +272,12 @@ JsonValue ClusterInfo::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", ClusterStateMapper::GetNameForClusterState(m_state));
+  }
+
+  if(m_stateInfoHasBeenSet)
+  {
+   payload.WithObject("stateInfo", m_stateInfo.Jsonize());
+
   }
 
   if(m_tagsHasBeenSet)

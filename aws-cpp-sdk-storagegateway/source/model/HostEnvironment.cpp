@@ -33,6 +33,7 @@ namespace Aws
         static const int VMWARE_HASH = HashingUtils::HashString("VMWARE");
         static const int HYPER_V_HASH = HashingUtils::HashString("HYPER-V");
         static const int EC2_HASH = HashingUtils::HashString("EC2");
+        static const int KVM_HASH = HashingUtils::HashString("KVM");
         static const int OTHER_HASH = HashingUtils::HashString("OTHER");
 
 
@@ -50,6 +51,10 @@ namespace Aws
           else if (hashCode == EC2_HASH)
           {
             return HostEnvironment::EC2;
+          }
+          else if (hashCode == KVM_HASH)
+          {
+            return HostEnvironment::KVM;
           }
           else if (hashCode == OTHER_HASH)
           {
@@ -75,6 +80,8 @@ namespace Aws
             return "HYPER-V";
           case HostEnvironment::EC2:
             return "EC2";
+          case HostEnvironment::KVM:
+            return "KVM";
           case HostEnvironment::OTHER:
             return "OTHER";
           default:

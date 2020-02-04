@@ -14,31 +14,33 @@
 */
 
 #pragma once
-#include <aws/storagegateway/StorageGateway_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workmail/WorkMail_EXPORTS.h>
 
 namespace Aws
 {
-namespace StorageGateway
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace WorkMail
 {
 namespace Model
 {
-  enum class HostEnvironment
+  class AWS_WORKMAIL_API TagResourceResult
   {
-    NOT_SET,
-    VMWARE,
-    HYPER_V,
-    EC2,
-    KVM,
-    OTHER
+  public:
+    TagResourceResult();
+    TagResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    TagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
   };
 
-namespace HostEnvironmentMapper
-{
-AWS_STORAGEGATEWAY_API HostEnvironment GetHostEnvironmentForName(const Aws::String& name);
-
-AWS_STORAGEGATEWAY_API Aws::String GetNameForHostEnvironment(HostEnvironment value);
-} // namespace HostEnvironmentMapper
 } // namespace Model
-} // namespace StorageGateway
+} // namespace WorkMail
 } // namespace Aws

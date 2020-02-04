@@ -34,6 +34,7 @@ PatchRule::PatchRule() :
     m_complianceLevelHasBeenSet(false),
     m_approveAfterDays(0),
     m_approveAfterDaysHasBeenSet(false),
+    m_approveUntilDateHasBeenSet(false),
     m_enableNonSecurity(false),
     m_enableNonSecurityHasBeenSet(false)
 {
@@ -45,6 +46,7 @@ PatchRule::PatchRule(JsonView jsonValue) :
     m_complianceLevelHasBeenSet(false),
     m_approveAfterDays(0),
     m_approveAfterDaysHasBeenSet(false),
+    m_approveUntilDateHasBeenSet(false),
     m_enableNonSecurity(false),
     m_enableNonSecurityHasBeenSet(false)
 {
@@ -72,6 +74,13 @@ PatchRule& PatchRule::operator =(JsonView jsonValue)
     m_approveAfterDays = jsonValue.GetInteger("ApproveAfterDays");
 
     m_approveAfterDaysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ApproveUntilDate"))
+  {
+    m_approveUntilDate = jsonValue.GetString("ApproveUntilDate");
+
+    m_approveUntilDateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EnableNonSecurity"))
@@ -102,6 +111,12 @@ JsonValue PatchRule::Jsonize() const
   if(m_approveAfterDaysHasBeenSet)
   {
    payload.WithInteger("ApproveAfterDays", m_approveAfterDays);
+
+  }
+
+  if(m_approveUntilDateHasBeenSet)
+  {
+   payload.WithString("ApproveUntilDate", m_approveUntilDate);
 
   }
 

@@ -44,7 +44,9 @@ FlowLog::FlowLog() :
     m_logDestinationType(LogDestinationType::NOT_SET),
     m_logDestinationTypeHasBeenSet(false),
     m_logDestinationHasBeenSet(false),
-    m_logFormatHasBeenSet(false)
+    m_logFormatHasBeenSet(false),
+    m_maxAggregationInterval(0),
+    m_maxAggregationIntervalHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ FlowLog::FlowLog(const XmlNode& xmlNode) :
     m_logDestinationType(LogDestinationType::NOT_SET),
     m_logDestinationTypeHasBeenSet(false),
     m_logDestinationHasBeenSet(false),
-    m_logFormatHasBeenSet(false)
+    m_logFormatHasBeenSet(false),
+    m_maxAggregationInterval(0),
+    m_maxAggregationIntervalHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -145,6 +149,12 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
       m_logFormat = Aws::Utils::Xml::DecodeEscapedXmlText(logFormatNode.GetText());
       m_logFormatHasBeenSet = true;
     }
+    XmlNode maxAggregationIntervalNode = resultNode.FirstChild("maxAggregationInterval");
+    if(!maxAggregationIntervalNode.IsNull())
+    {
+      m_maxAggregationInterval = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxAggregationIntervalNode.GetText()).c_str()).c_str());
+      m_maxAggregationIntervalHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -212,6 +222,11 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location, unsign
       oStream << location << index << locationValue << ".LogFormat=" << StringUtils::URLEncode(m_logFormat.c_str()) << "&";
   }
 
+  if(m_maxAggregationIntervalHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".MaxAggregationInterval=" << m_maxAggregationInterval << "&";
+  }
+
 }
 
 void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -263,6 +278,10 @@ void FlowLog::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_logFormatHasBeenSet)
   {
       oStream << location << ".LogFormat=" << StringUtils::URLEncode(m_logFormat.c_str()) << "&";
+  }
+  if(m_maxAggregationIntervalHasBeenSet)
+  {
+      oStream << location << ".MaxAggregationInterval=" << m_maxAggregationInterval << "&";
   }
 }
 

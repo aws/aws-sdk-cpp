@@ -24,6 +24,7 @@
 #include <aws/kafka/model/EnhancedMonitoring.h>
 #include <aws/kafka/model/OpenMonitoring.h>
 #include <aws/kafka/model/ClusterState.h>
+#include <aws/kafka/model/StateInfo.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -710,6 +711,25 @@ namespace Model
     inline ClusterInfo& WithState(ClusterState&& value) { SetState(std::move(value)); return *this;}
 
 
+    
+    inline const StateInfo& GetStateInfo() const{ return m_stateInfo; }
+
+    
+    inline bool StateInfoHasBeenSet() const { return m_stateInfoHasBeenSet; }
+
+    
+    inline void SetStateInfo(const StateInfo& value) { m_stateInfoHasBeenSet = true; m_stateInfo = value; }
+
+    
+    inline void SetStateInfo(StateInfo&& value) { m_stateInfoHasBeenSet = true; m_stateInfo = std::move(value); }
+
+    
+    inline ClusterInfo& WithStateInfo(const StateInfo& value) { SetStateInfo(value); return *this;}
+
+    
+    inline ClusterInfo& WithStateInfo(StateInfo&& value) { SetStateInfo(std::move(value)); return *this;}
+
+
     /**
      * 
             <p>Tags attached to the cluster.</p>
@@ -906,6 +926,9 @@ namespace Model
 
     ClusterState m_state;
     bool m_stateHasBeenSet;
+
+    StateInfo m_stateInfo;
+    bool m_stateInfoHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet;

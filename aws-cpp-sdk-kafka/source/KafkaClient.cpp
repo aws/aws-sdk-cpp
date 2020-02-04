@@ -42,6 +42,7 @@
 #include <aws/kafka/model/ListClustersRequest.h>
 #include <aws/kafka/model/ListConfigurationRevisionsRequest.h>
 #include <aws/kafka/model/ListConfigurationsRequest.h>
+#include <aws/kafka/model/ListKafkaVersionsRequest.h>
 #include <aws/kafka/model/ListNodesRequest.h>
 #include <aws/kafka/model/ListTagsForResourceRequest.h>
 #include <aws/kafka/model/TagResourceRequest.h>
@@ -599,6 +600,41 @@ void KafkaClient::ListConfigurationsAsync(const ListConfigurationsRequest& reque
 void KafkaClient::ListConfigurationsAsyncHelper(const ListConfigurationsRequest& request, const ListConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
   handler(this, request, ListConfigurations(request), context);
+}
+
+ListKafkaVersionsOutcome KafkaClient::ListKafkaVersions(const ListKafkaVersionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/kafka-versions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListKafkaVersionsOutcome(ListKafkaVersionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListKafkaVersionsOutcome(outcome.GetError());
+  }
+}
+
+ListKafkaVersionsOutcomeCallable KafkaClient::ListKafkaVersionsCallable(const ListKafkaVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListKafkaVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListKafkaVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void KafkaClient::ListKafkaVersionsAsync(const ListKafkaVersionsRequest& request, const ListKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListKafkaVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void KafkaClient::ListKafkaVersionsAsyncHelper(const ListKafkaVersionsRequest& request, const ListKafkaVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListKafkaVersions(request), context);
 }
 
 ListNodesOutcome KafkaClient::ListNodes(const ListNodesRequest& request) const

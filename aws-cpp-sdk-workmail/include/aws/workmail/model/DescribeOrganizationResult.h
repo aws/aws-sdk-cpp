@@ -339,6 +339,42 @@ namespace Model
      */
     inline DescribeOrganizationResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the organization.</p>
+     */
+    inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the organization.</p>
+     */
+    inline void SetARN(const Aws::String& value) { m_aRN = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the organization.</p>
+     */
+    inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the organization.</p>
+     */
+    inline void SetARN(const char* value) { m_aRN.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the organization.</p>
+     */
+    inline DescribeOrganizationResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the organization.</p>
+     */
+    inline DescribeOrganizationResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the organization.</p>
+     */
+    inline DescribeOrganizationResult& WithARN(const char* value) { SetARN(value); return *this;}
+
   private:
 
     Aws::String m_organizationId;
@@ -356,6 +392,8 @@ namespace Model
     Aws::Utils::DateTime m_completedDate;
 
     Aws::String m_errorMessage;
+
+    Aws::String m_aRN;
   };
 
 } // namespace Model

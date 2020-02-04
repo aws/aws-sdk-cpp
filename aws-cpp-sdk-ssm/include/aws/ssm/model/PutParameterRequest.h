@@ -51,22 +51,24 @@ namespace Model
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
-     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
-     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
-     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
-     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
-     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * and name. For parameters in a hierarchy, you must include a leading forward
+     * slash character (/) when you create or reference a parameter. For example:
+     * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
+     * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
+     * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
+     * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
+     * <p>Parameter names can include only the following symbols and letters:
+     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
+     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
+     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
+     * values for parameter names, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters,
-     * including the full length of the parameter ARN. For example, the following fully
-     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * maximum length for a parameter name, including the full length of the parameter
+     * ARN, is 1011 characters. For example, the length of the following parameter name
+     * is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -75,22 +77,24 @@ namespace Model
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
-     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
-     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
-     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
-     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
-     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * and name. For parameters in a hierarchy, you must include a leading forward
+     * slash character (/) when you create or reference a parameter. For example:
+     * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
+     * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
+     * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
+     * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
+     * <p>Parameter names can include only the following symbols and letters:
+     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
+     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
+     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
+     * values for parameter names, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters,
-     * including the full length of the parameter ARN. For example, the following fully
-     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * maximum length for a parameter name, including the full length of the parameter
+     * ARN, is 1011 characters. For example, the length of the following parameter name
+     * is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -99,22 +103,24 @@ namespace Model
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
-     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
-     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
-     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
-     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
-     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * and name. For parameters in a hierarchy, you must include a leading forward
+     * slash character (/) when you create or reference a parameter. For example:
+     * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
+     * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
+     * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
+     * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
+     * <p>Parameter names can include only the following symbols and letters:
+     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
+     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
+     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
+     * values for parameter names, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters,
-     * including the full length of the parameter ARN. For example, the following fully
-     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * maximum length for a parameter name, including the full length of the parameter
+     * ARN, is 1011 characters. For example, the length of the following parameter name
+     * is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -123,22 +129,24 @@ namespace Model
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
-     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
-     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
-     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
-     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
-     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * and name. For parameters in a hierarchy, you must include a leading forward
+     * slash character (/) when you create or reference a parameter. For example:
+     * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
+     * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
+     * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
+     * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
+     * <p>Parameter names can include only the following symbols and letters:
+     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
+     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
+     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
+     * values for parameter names, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters,
-     * including the full length of the parameter ARN. For example, the following fully
-     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * maximum length for a parameter name, including the full length of the parameter
+     * ARN, is 1011 characters. For example, the length of the following parameter name
+     * is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -147,22 +155,24 @@ namespace Model
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
-     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
-     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
-     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
-     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
-     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * and name. For parameters in a hierarchy, you must include a leading forward
+     * slash character (/) when you create or reference a parameter. For example:
+     * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
+     * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
+     * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
+     * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
+     * <p>Parameter names can include only the following symbols and letters:
+     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
+     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
+     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
+     * values for parameter names, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters,
-     * including the full length of the parameter ARN. For example, the following fully
-     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * maximum length for a parameter name, including the full length of the parameter
+     * ARN, is 1011 characters. For example, the length of the following parameter name
+     * is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -171,22 +181,24 @@ namespace Model
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
-     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
-     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
-     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
-     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
-     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * and name. For parameters in a hierarchy, you must include a leading forward
+     * slash character (/) when you create or reference a parameter. For example:
+     * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
+     * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
+     * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
+     * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
+     * <p>Parameter names can include only the following symbols and letters:
+     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
+     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
+     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
+     * values for parameter names, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters,
-     * including the full length of the parameter ARN. For example, the following fully
-     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * maximum length for a parameter name, including the full length of the parameter
+     * ARN, is 1011 characters. For example, the length of the following parameter name
+     * is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -195,22 +207,24 @@ namespace Model
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
-     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
-     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
-     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
-     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
-     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * and name. For parameters in a hierarchy, you must include a leading forward
+     * slash character (/) when you create or reference a parameter. For example:
+     * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
+     * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
+     * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
+     * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
+     * <p>Parameter names can include only the following symbols and letters:
+     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
+     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
+     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
+     * values for parameter names, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters,
-     * including the full length of the parameter ARN. For example, the following fully
-     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * maximum length for a parameter name, including the full length of the parameter
+     * ARN, is 1011 characters. For example, the length of the following parameter name
+     * is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
@@ -219,22 +233,24 @@ namespace Model
     /**
      * <p>The fully qualified name of the parameter that you want to add to the system.
      * The fully qualified name includes the complete hierarchy of the parameter path
-     * and name. For example: <code>/Dev/DBServer/MySQL/db-string13</code> </p>
-     * <p>Naming Constraints:</p> <ul> <li> <p>Parameter names are case sensitive.</p>
-     * </li> <li> <p>A parameter name must be unique within an AWS Region</p> </li>
-     * <li> <p>A parameter name can't be prefixed with "aws" or "ssm"
-     * (case-insensitive).</p> </li> <li> <p>Parameter names can include only the
-     * following symbols and letters: <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A
-     * parameter name can't include spaces.</p> </li> <li> <p>Parameter hierarchies are
-     * limited to a maximum depth of fifteen levels.</p> </li> </ul> <p>For additional
-     * information about valid values for parameter names, see <a
+     * and name. For parameters in a hierarchy, you must include a leading forward
+     * slash character (/) when you create or reference a parameter. For example:
+     * <code>/Dev/DBServer/MySQL/db-string13</code> </p> <p>Naming Constraints:</p>
+     * <ul> <li> <p>Parameter names are case sensitive.</p> </li> <li> <p>A parameter
+     * name must be unique within an AWS Region</p> </li> <li> <p>A parameter name
+     * can't be prefixed with "aws" or "ssm" (case-insensitive).</p> </li> <li>
+     * <p>Parameter names can include only the following symbols and letters:
+     * <code>a-zA-Z0-9_.-/</code> </p> </li> <li> <p>A parameter name can't include
+     * spaces.</p> </li> <li> <p>Parameter hierarchies are limited to a maximum depth
+     * of fifteen levels.</p> </li> </ul> <p>For additional information about valid
+     * values for parameter names, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements
      * and Constraints for Parameter Names</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p> <note> <p>The maximum length constraint listed below includes
      * capacity for additional system attributes that are not part of the name. The
-     * maximum length for the fully qualified parameter name is 1011 characters,
-     * including the full length of the parameter ARN. For example, the following fully
-     * qualified parameter name is 65 characters, not 20 characters:</p> <p>
+     * maximum length for a parameter name, including the full length of the parameter
+     * ARN, is 1011 characters. For example, the length of the following parameter name
+     * is 65 characters, not 20 characters:</p> <p>
      * <code>arn:aws:ssm:us-east-2:111122223333:parameter/ExampleParameterName</code>
      * </p> </note>
      */
