@@ -33,7 +33,7 @@ namespace Aws
         using namespace Aws::Utils;
         HttpClientMetricsType GetHttpClientMetricTypeByName(const Aws::String& name)
         {
-            static std::map<int, HttpClientMetricsType> metricsNameHashToType =
+            static const std::map<int, HttpClientMetricsType> metricsNameHashToType =
             {
                 std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_DESTINATION_IP), HttpClientMetricsType::DestinationIp),
                 std::pair<int, HttpClientMetricsType>(HashingUtils::HashString(HTTP_CLIENT_METRICS_ACQUIRE_CONNECTION_LATENCY), HttpClientMetricsType::AcquireConnectionLatency),
@@ -56,7 +56,7 @@ namespace Aws
 
         Aws::String GetHttpClientMetricNameByType(HttpClientMetricsType type)
         {
-            static std::map<int, std::string> metricsTypeToName =
+            static const std::map<int, std::string> metricsTypeToName =
             {
                 std::pair<int, std::string>(static_cast<int>(HttpClientMetricsType::DestinationIp), HTTP_CLIENT_METRICS_DESTINATION_IP),
                 std::pair<int, std::string>(static_cast<int>(HttpClientMetricsType::AcquireConnectionLatency), HTTP_CLIENT_METRICS_ACQUIRE_CONNECTION_LATENCY),
